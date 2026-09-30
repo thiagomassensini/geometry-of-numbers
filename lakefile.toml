@@ -1,0 +1,6 @@
+name = "geometry-of-numbers"
+version = "0.1.0"
+defaultTargets = ["GeometryOfNumbers", "GeometryOfNumbers.Foundation.Audit"]
+
+[[lean_lib]]
+name = "GeometryOfNumbers"
