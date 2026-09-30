@@ -121,6 +121,8 @@ namespace GeometryOfNumbers.Foundation
 #assert_no_axioms quadraticAmplitudeScaleCompatibleAt_zero
 #assert_no_axioms quadraticAmplitudeScaleCompatibleAt_one
 #assert_no_axioms quadraticAmplitudeScaleCompatibleAt_denominator_zero
+#assert_no_axioms foundational_half_scaling_capstone
+#assert_no_axioms exists_foundational_half_scaling_capstone
 
 #print axioms sameLocal_forces_extension_difference
 #print axioms faithfulRepresentation_comp
@@ -229,6 +231,8 @@ namespace GeometryOfNumbers.Foundation
 #print axioms quadraticAmplitudeScaleCompatibleAt_zero
 #print axioms quadraticAmplitudeScaleCompatibleAt_one
 #print axioms quadraticAmplitudeScaleCompatibleAt_denominator_zero
+#print axioms foundational_half_scaling_capstone
+#print axioms exists_foundational_half_scaling_capstone
 
 -- Small examples; no positional/carry capstone is asserted.
 example : FaithfulRepresentation (fun n : Nat => (0, n)) := by

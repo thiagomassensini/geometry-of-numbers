@@ -29,7 +29,8 @@ while IFS= read -r proof_name; do
 done < <(rg --no-filename --only-matching --replace '$1' \
   '^theorem ([A-Za-z0-9_]+)' GeometryOfNumbers/Foundation --glob '*.lean')
 
-lake build
+lake env lean --run scripts/check-foundation-imports.lean
+lake build GeometryOfNumbers GeometryOfNumbers.Foundation.Audit
 lake env lean GeometryOfNumbers/Foundation/Audit.lean
 git diff --check
 

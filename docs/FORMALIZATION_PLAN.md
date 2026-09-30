@@ -7,14 +7,17 @@ Não substitui os enunciados Lean nem declara fechadas as metas do plano.
 
 ## Zonas de confiança
 
-**Zona A — fundação:** quantidade, carry, centro–pernas, profundidade,
-massa/expoentes e rigidez quadrática. Axiomas transitivamente usados:
+**Zona A — fundação discreta:** quantidade, carry, profundidade,
+massa/expoentes e rigidez quadrática. O núcleo de seleção da escala está
+encerrado em `FoundationalHalfScalingCapstone`. Isso não fecha outras metas
+históricas do plano, como a porta centro–pernas. Axiomas transitivamente usados:
 **nenhum**. Nem `Classical.choice`, nem `propext`, nem `Quot.sound`.
 As provas atuais importam apenas `Init`.
 
-**Zona B — análise real:** após a fundação, podem entrar Mathlib, raízes,
-logaritmos, rotações, Hilbert, adjuntos, limites e cálculo funcional reais.
-Os axiomas usuais serão exibidos, não ocultados. Nenhuma representação
+**Zona B — análise real:** aberta somente para realizar massa e amplitude
+escalares. Mathlib entra por `Analysis/`; raízes, rotações, Hilbert, adjuntos,
+limites e cálculo funcional não são novas construções desta rodada.
+Os axiomas usuais são exibidos, não ocultados. Nenhuma representação
 complexa justificará um resultado fundacional.
 
 ## Ordem e estado
@@ -23,7 +26,7 @@ complexa justificará um resultado fundacional.
 | --- | --- | --- |
 | F0 | Fidelidade → recorrência → primeiro retorno → carry → torre | Primeiro retorno, reset, torre finita, capacidade prefixal e fibras de refinamento fechados; crosswalk clássico ainda aberto |
 | F1 | Centro–pernas, profundidade e resíduo | Não portada |
-| F2 | Massa/amplitude e rigidez algébrica do expoente `1/2` | Massa formal coerente ligada à seleção do expoente por compatibilidade quadrática de cotas; amplitude numérica ainda não construída |
+| F2 | Massa/amplitude e rigidez algébrica do expoente `1/2` | Núcleo discreto encerrado em capstone; massa e amplitude reais realizadas em camada separada, com amplitude² = massa |
 | R0 | Rotação e estado espectral reais | Não iniciada |
 | R1 | Câmeras e brackets reais | Não iniciada |
 | R2 | Reconstrução TFVD real, Green e retorno | Não iniciada |
@@ -101,8 +104,9 @@ que finitude e fidelidade, sozinhas, forçam toda a notação posicional.
    candidata e a composição de `q` cópias da massa derivada. Para `1 < b`,
    ela implica a equação `2 * (k * p) = k * q`, que em profundidade positiva
    equivale a `2 * p = q`. Essa ponte está fechada, com axiomas vazios.
-4. **Realização real:** interpretar a razão formal e usar as leis existentes
-   de potências reais para conectar amplitude, massa e exponentes. Fase futura.
+4. **Realização real:** cota formal → divisão real → potência negativa;
+   razão formal selecionada → amplitude → quadrado = massa. Essa ponte
+   escalar está fechada na Zona B, sem novo argumento de seleção.
 
 Não usar `FoundationalCapstoneAt` como premissa do encadeamento inicial:
 esse certificado histórico já contém normalização carry e representação
@@ -113,9 +117,9 @@ O núcleo discreto recebe explicitamente o requisito semântico de composição
 quadrática para uma escala candidata; a equação de expoentes é deduzida, não
 recebida. Ele não demonstra, por si só, que a contagem produz uma métrica
 quadrática. A injetividade das potências naturais para `1 < b` está provada;
-a ponte correspondente para potências reais continua posterior.
-Sua família formal cobre razões não negativas; o enunciado sobre expoentes
-reais arbitrários permanece na realização real posterior.
+a classificação de expoentes reais arbitrários não é refeita aqui.
+Sua família formal cobre razões não negativas; a Zona B realiza essas razões
+e em particular a já selecionada metade, sem alterar a seleção discreta.
 
 ## Normalização neutra: princípio explícito e resultado
 
@@ -176,8 +180,34 @@ O requisito quadrático é a especificação de uma amplitude candidata; não fo
 derivado de finitude, neutralidade ou conservação. Nenhuma hipótese nova de
 igualdade de expoentes, métrica ou amplitude numérica é usada. `b=1` e `k=0`
 não selecionam expoentes; `q=0` é excluído. Os dezessete teoremas públicos e
-quatro definições novos têm footprint vazio. O próximo gate é a realização
-numérica dessa razão formal, não reprovar sua rigidez.
+quatro definições novos têm footprint vazio. A realização numérica descrita
+abaixo não reprova essa rigidez.
+
+## Corte discreto e realização real
+
+`FoundationalHalfScalingCapstone` contém dois teoremas de composição:
+o capstone para uma capacidade emergente e a existência de tal capacidade
+com o capstone, a partir da apresentação finita e do primeiro passo alterado.
+Não acrescenta estruturas, princípios ou provas aritméticas. Seus dois
+teoremas têm footprint vazio. **Fim da fundação discreta desta cadeia.**
+
+`Analysis/RealDepthMass` realiza a apresentação formal existente em `ℝ`;
+sua equivalência com divisão por `b^k` e potência negativa é provada depois.
+`Analysis/RealQuadraticAmplitude` realiza a razão formal, identifica todas
+as apresentações de metade e verifica o quadrado da amplitude. A identidade
+vale para `b>0`; a rigidez discreta ainda exige `b>1`, `k>0`. Profundidade
+zero e base um têm realização trivial, sem selecionar expoente.
+
+O import `GeometryOfNumbers` e o audit fundacional permanecem discretos.
+`GeometryOfNumbers.Analysis` é outro import público. O checker de headers
+protege essa direção com o parser Lean, não uma regex de imports de uma linha.
+`audit-foundation.sh` compila apenas seus alvos e exige footprint vazio;
+`audit-analysis.sh` compila seus alvos e permite apenas os axiomas padrão.
+Os quatorze teoremas analíticos usam `propext`, `Classical.choice`, `Quot.sound`.
+
+Continuam abertos: realização vetorial/rotacional, norma, câmeras, brackets,
+TFVD, Green, isometrias e operadores. A identidade escalar `A²=M` não fecha
+nenhum deles. Também não se cria uma medida analítica na torre infinita.
 
 ## Regras para as etapas seguintes
 

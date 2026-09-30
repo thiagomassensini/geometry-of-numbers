@@ -19,10 +19,12 @@ está formalizada aqui. O escopo é o plano de trabalho da geometria real do car
 
 **Projeto compilando; recorrência, primeiro retorno, ciclo/reset, torre residual,
 capacidade prefixal, normalização neutra e conservação por refinamento fechados;
-ponte da massa formal à rigidez quadrática discreta fechada.**
+ponte da massa formal à rigidez quadrática discreta fechada e consolidada em
+capstone. Zona B aberta: massa real, amplitude real e identidade do quadrado
+compiladas, sem estrutura vetorial ou norma.**
 
-O núcleo atual depende apenas de `Init`, sem Mathlib e sem dependências de
-outros repositórios. Noventa teoremas públicos e dezessete definições
+O núcleo da Zona A depende apenas de `Init`, sem Mathlib ou imports históricos.
+Noventa e dois teoremas públicos e dezessete definições
 de transporte, bijeção, fibra, cota e massa estão auditados com lista de axiomas vazia.
 A camada inicial contém:
 
@@ -184,7 +186,7 @@ theorem canonicalResidualDepthMass_quadraticCompatibility_iff_half
 
 Composição quadrática é um requisito semântico explícito para uma amplitude
 candidata, não uma conclusão da contagem isoladamente. Seu expoente formal
-compatível é forçado; nenhuma amplitude numérica foi construída. Em `b=1`
+compatível é forçado; nenhuma amplitude numérica é construída na Zona A. Em `b=1`
 ou `k=0`, qualquer razão válida passa o teste e nenhum expoente é selecionado.
 `q=0` é inválido, e `b=0` não fornece a massa com denominador positivo.
 
@@ -194,36 +196,82 @@ finita já têm coordenadas únicas, e os prefixos têm capacidade exata `b^k`.
 Sua normalização formal por contagem agora está construída, com neutralidade
 explicitamente separada da cardinalidade, e sua conservação entre profundidades
 foi provada pelo refinamento. Sua ligação à compatibilidade quadrática formal
-está fechada; ainda falta a realização numérica. Também não se provou aqui
-a passagem da igualdade de potências reais para a igualdade de expoentes.
-Não há realização em `ℚ`/`ℝ`, TFVD,
-isometria ou autoadjunticidade nesta árvore ainda.
+está fechada. A realização numérica real também está disponível, na camada
+separada descrita abaixo; não foi usada para selecionar o expoente.
+Não há estado rotacional, norma derivada, câmeras, brackets, TFVD, Green,
+isometria ou autoadjunticidade nesta árvore.
+
+## Corte da Zona A e abertura da Zona B
+
+**Fim da fundação discreta de seleção da escala, com footprint vazio.**
+`FoundationalHalfScalingCapstone` compõe somente resultados anteriores.
+`foundational_half_scaling_capstone` usa a capacidade emergente da própria
+trajetória; `exists_foundational_half_scaling_capstone` produz essa capacidade
+a partir da apresentação finita e do primeiro passo não trivial, com o limite
+do orçamento e a seleção formal em todas as profundidades positivas.
+Autonomia e injetividade continuam explícitas, e o requisito quadrático não
+é apresentado como consequência da contagem isoladamente.
+
+Os dois imports públicos têm papéis distintos:
+
+```text
+GeometryOfNumbers           — somente Foundation; axiomas vazios
+GeometryOfNumbers.Analysis  — Foundation → Mathlib → realização real
+```
+
+`realizeCountingShare` interpreta uma apresentação por divisão em `ℝ` e
+preserva exatamente `SameCountingShare`. A massa real é definida por:
+
+```lean
+def realDepthMass (b k : ℕ) (hb : 0 < b) : ℝ :=
+  realizeCountingShare (canonicalResidualDepthMass b k hb)
+```
+
+Só depois, `realize_canonicalResidualDepthMass` prova que essa realização é
+`(b : ℝ) ^ (-(k : ℝ))`. `formalHalf_realizes_half` interpreta `2*p=q`
+como `(p : ℝ)/(q : ℝ) = 1/2`; todas essas apresentações realizam a mesma
+`realCriticalAmplitude`, cujo valor é `(b : ℝ) ^ (-(k : ℝ)/2)`.
+`realCriticalAmplitude_sq_eq_realDepthMass` verifica seu quadrado.
+
+A identidade analítica exige apenas `b>0`. Para `b=1` ou `k=0`, os valores
+são `1`; isso não fornece a rigidez ausente nesses casos na Zona A. Não se
+realiza uma massa canônica para `b=0`. Os quatorze teoremas da Zona B estão
+auditados separadamente: usam `propext`, `Classical.choice` e `Quot.sound`,
+sem axiomas adicionais. Essa camada não é anunciada como axiom-free e não
+define uma medida infinita, espaço vetorial ou norma.
 
 ## Executar
 
 Requer Elan; a versão do Lean está fixada em `lean-toolchain`.
-Não é necessário baixar Mathlib.
+Mathlib está fixada no commit `81a5d257c8e410db227a6665ed08f64fea08e997`
+(versão `v4.32.0`); a dependência serve à Zona B, não às provas da Zona A.
 
 ```bash
+lake update
 lake build
-lake env lean GeometryOfNumbers/Foundation/Audit.lean
 bash scripts/audit-foundation.sh
+bash scripts/audit-analysis.sh
 ```
 
-O alvo de auditoria participa do build padrão. Além de `#print axioms`,
+As duas auditorias participam do build padrão e também têm comandos separados.
+Na fundação, além de `#print axioms`,
 `#assert_no_axioms` rejeita qualquer dependência de axiomas nos teoremas
-fundacionais listados — inclusive os axiomas usuais de Mathlib.
+fundacionais listados — inclusive os axiomas usuais de Mathlib. Na análise,
+`#assert_analysis_axioms` permite somente os três axiomas padrão indicados.
+`scripts/check-foundation-imports.lean` usa o parser Lean para impedir imports
+analíticos/Mathlib na fundação ou em seu import público, inclusive multilinha.
 
 ## Organização e fronteiras
 
 - [Versão humana da teoria](docs/HUMAN_THEORY.md): narrativa matemática contínua,
-  das entradas dinâmicas à seleção formal do expoente, com hipóteses e limites explícitos.
+  das entradas dinâmicas à seleção formal e sua realização real, com limites explícitos.
 - [Plano de execução](docs/FORMALIZATION_PLAN.md): ordem causal e critérios
   de saída, distinguindo resultados atuais de metas.
 - [Proveniência das portas](docs/SOURCE_PROVENANCE.md): fontes, commits,
   adaptações e por que os capstones históricos não foram simplesmente importados.
 - `GeometryOfNumbers/Foundation/`: Zona A, sem axiomas.
-- `Real/`, `Operator/`, `Height/`, `Limit/`: fases futuras, ainda não criadas.
+- `GeometryOfNumbers/Analysis/`: Zona B, realização escalar real, auditoria separada.
+- Camadas vetorial, de câmeras, de operadores e de limites: fases futuras.
 
 O gerador logarítmico e o operador de alturas são objetos diferentes.
 Os operadores não serão usados para justificar retroativamente a geometria.

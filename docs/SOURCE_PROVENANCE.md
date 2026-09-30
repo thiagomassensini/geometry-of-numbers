@@ -117,8 +117,8 @@ empacotados diretamente. Dez teoremas públicos novos e esse empacotamento
 têm footprint vazio. O limite `n < b^k` força cauda zero, sem afirmar que toda
 cauda termina em alguma profundidade.
 
-Não se portaram a eliminação eventual da cauda, o crosswalk clássico de normalização carry, centro–pernas
-ou realização da amplitude em potências reais. Não há prova de
+Não se portaram a eliminação eventual da cauda, o crosswalk clássico de normalização carry ou centro–pernas.
+A realização da amplitude em potências reais está agora na Zona B abaixo. Não há prova de
 autoadjunticidade nesta árvore. Essas fronteiras constam do README e do plano.
 
 ## Normalização formal do prefixo
@@ -210,3 +210,40 @@ dependência. Os dezessete teoremas públicos e quatro definições finais têm
 footprint vazio. Não há amplitude real, quociente racional ou métrica nessa
 ponte, e a contagem isoladamente não foi apresentada como prova de que uma
 lei observável deve ser quadrática.
+
+## Capstone discreto final e abertura da Zona B
+
+`Foundation/FoundationalHalfScalingCapstone.lean` é somente costura local:
+capacidade não trivial, seleção pela mesma massa e existência a partir da
+apresentação finita. Não introduz import histórico nem nova hipótese. Os
+dois teoremas públicos foram acrescentados ao audit vazio da Zona A.
+
+Referência histórica adicional consultada: `thiagomassensini/carry-geometry`,
+commit `1f85b8c3ab5ded27a0782956e1ada0dd8a1b6fd4`,
+`CarryGeometry/Mass.lean` e `CarryGeometry/QuadraticAmplitude.lean`.
+A referência contém a técnica `Real.rpow_mul_natCast` para verificar o quadrado
+da amplitude. Não importamos `CarryGeometry`, nem sua definição de massa por
+potência como origem da massa nova. Aqui a definição numérica realiza
+`canonicalResidualDepthMass`, construída anteriormente pela torre e contagem.
+Não portamos a seleção de expoentes reais por `Real.rpow_right_inj`.
+
+| Objeto novo | Proveniência e fronteira |
+| --- | --- |
+| `realizeCountingShare` | Divisão real sobre a apresentação fundacional com denominador positivo; equivalência de realizações é provada pela comparação cruzada existente |
+| `realDepthMass`, `realize_canonicalResidualDepthMass` | Realização da massa local anterior; `(b : ℝ)^(-k)` é conclusão, não a definição da massa geométrica |
+| `realizeFormalExponent`, `formalHalf_realizes_half` | Interpretação de `2*p=q` após a seleção discreta; não há nova prova de seleção analítica |
+| `realCriticalAmplitude`, `formalHalf_realizes_realCriticalAmplitude` | Usa a apresentação formal `(1,2)`; outras apresentações de metade dão o mesmo valor real |
+| `realCriticalAmplitude_sq_eq_realDepthMass` | Técnica elementar de composição de potências reais também presente na referência; a massa do lado direito é a realização da massa fundacional |
+| `quadraticScaleCompatible_realizes_realCriticalAmplitude` | Composição direta com a classificação da Zona A, sem usar `A²=M` para justificá-la retroativamente |
+
+A única dependência externa nova é Mathlib oficial, commit fixo
+`81a5d257c8e410db227a6665ed08f64fea08e997` (`v4.32.0`), compatível com
+o Lean fixado no projeto. Nenhum repositório histórico entra no manifest.
+O audit analítico lista os axiomas padrão `propext`, `Classical.choice` e
+`Quot.sound` e rejeita outros. A auditoria discreta continua vazia e separada.
+O checker de imports usa o parser da própria distribuição Lean para impedir
+dependências de Mathlib ou Analysis na fundação e no import público discreto.
+
+Foram revisadas todas as notas Markdown rastreadas do projeto: README,
+versão humana, plano, proveniência e instruções AGENTS. A pasta pessoal
+`.obsidian/` é local e não foi importada, alterada ou versionada.

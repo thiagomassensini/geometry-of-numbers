@@ -7,6 +7,10 @@
 - Zona A: `GeometryOfNumbers/Foundation/`. Manter a auditoria transitiva de
   axiomas vazia. Adicionar todo teorema público novo ao audit explícito.
 - Não importar Mathlib/analítica na fundação atual nem dependências complexas.
+- O import `GeometryOfNumbers` é exclusivamente discreto. A Zona B usa
+  `GeometryOfNumbers.Analysis`; nunca importar essa camada na fundação.
+- Auditar a Zona B separadamente com `bash scripts/audit-analysis.sh`;
+  seus axiomas padrão não são permitidos na auditoria vazia da Zona A.
 - Não introduzir escapes de confiança, placeholders ou axiomas novos.
 - Os nomes do plano são metas, não evidência de existência de provas.
 - Registrar a fonte/commit e quaisquer hipóteses operacionais de uma porta.

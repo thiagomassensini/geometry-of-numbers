@@ -1,4 +1,4 @@
-# Da quantidade à normalização do prefixo residual
+# Da quantidade à seleção da escala e sua realização real
 
 ## Escopo e modo de leitura
 
@@ -11,8 +11,8 @@ Este texto acompanha os resultados já compilados nesta árvore. Distingue
 entradas, construções e consequências. Todos os resultados fundacionais
 citados são verificados pelo kernel com lista de axiomas vazia. Isso não
 significa ausência de hipóteses: finitude apresentada, autonomia e injetividade
-são entradas explícitas. Na última etapa entra também um princípio explícito
-de neutralidade da normalização por contagem.
+são entradas explícitas. A contagem usa neutralidade e a seleção exige composição
+quadrática. A realização real, na seção 17, tem outra auditoria e axiomas padrão.
 
 ## 1. Quantidade, passos e representação fiel
 
@@ -625,7 +625,163 @@ aparece somente na classificação final, sob `b>1` e `k>0`.
 - `k=0`: qualquer razão válida passa o teste, mesmo com capacidade não trivial.
 - `q=0`: é excluído pela validade da razão, em todas as profundidades.
 
-O próximo gate é realizar numericamente essa razão formal e sua amplitude.
-Não construímos nesta etapa números racionais ou reais, raízes, normas ou
-espaços métricos. A seleção formal já está ligada à massa geométrica; a
-realização numérica e a justificativa de uma métrica permanecem posteriores.
+A realização numérica dessa razão formal aparece na seção 17. Na etapa
+discreta acima não entram números racionais ou reais, raízes ou normas.
+A seleção formal já está ligada à massa geométrica; sua interpretação numérica
+é posterior, e a construção/justificativa de uma métrica continua aberta.
+
+## 16. Fechamento da Zona A: da massa formal à rigidez de metade
+
+### INPUT E COSTURA
+
+A trajetória global é injetiva; a observação local possui apresentação finita,
+e sua evolução é autônoma e injetiva. O primeiro passo altera a observação.
+Essas hipóteses não são deduzidas de uma conservação abstrata isolada, nem
+guardadas num certificado contendo as conclusões desejadas.
+
+`FoundationalHalfScalingCapstone` compõe os resultados anteriores, sem novas
+definições matemáticas. A existência já provada produz o menor retorno
+positivo `b`, com `1<b` e `b` limitado pelo orçamento da apresentação local.
+A massa utilizada é a mesma massa dos prefixos da torre com essa capacidade.
+
+### TEOREMA
+
+`foundational_half_scaling_capstone` vale para a capacidade emergente da
+própria trajetória. `exists_foundational_half_scaling_capstone` produz uma
+capacidade com esse resultado, a partir da apresentação finita. Para todo
+`k>0`, a comparação quadrática com a massa é equivalente a metade:
+
+$$
+\mu_{b,k}\ \xrightarrow{\text{compatibilidade quadrática}}
+2(kp)=kq\ \Longleftrightarrow\ 2p=q,\qquad q>0.
+$$
+
+Os dois teoremas são costuras: não repetem as provas da torre, de contagem,
+de injetividade da escala ou de cancelamento de expoentes.
+
+### INTERPRETAÇÃO E LIMITES
+
+**Aqui termina a fundação discreta de seleção da escala.** Seu footprint é
+vazio: nem axiomas clássicos nem axiomas de quocientes participam da prova.
+Isso não elimina as hipóteses operacionais ou o requisito semântico quadrático.
+
+O corte não declara pronta uma norma, nem todas as metas históricas de
+geometria. A cauda continua explícita. A massa é uma cota formal finita e
+coerente por refinamento, não uma medida em uma torre infinita. Metade é uma
+relação entre naturais, não ainda uma amplitude numérica.
+
+## 17. Realização real da massa e da amplitude
+
+### INPUT: o que a análise recebe
+
+A nova camada recebe o objeto formal de massa e a classificação do expoente,
+já provados antes de qualquer número real. Sua dependência é unilateral:
+
+```text
+Foundation — seleção formal da escala, axiomas vazios
+    ↓
+Analysis — realização real, axiomas padrão de Mathlib
+```
+
+Não existe uma seta de volta justificando a fundação. O import público
+`GeometryOfNumbers` permanece discreto; `GeometryOfNumbers.Analysis` abre
+a nova camada. O parser Lean verifica que os arquivos fundacionais não
+importam análise ou Mathlib.
+
+### CONSTRUÇÃO: interpretar, não redefinir a massa
+
+Uma apresentação formal tem numerador natural `a` e denominador natural
+positivo `d`. `realizeCountingShare` interpreta esse dado como divisão real:
+
+$$
+\operatorname{realize}(a,d)=\frac{(a:\mathbb R)}{(d:\mathbb R)}.
+$$
+
+O theorem `realizeCountingShare_eq_iff_sameCountingShare` garante que duas
+interpretações são iguais exatamente quando as apresentações já eram a
+mesma cota por multiplicação cruzada. Assim `(2,18)` e `(1,9)` dão o mesmo
+valor sem exigir igualdade dos pares.
+
+Definimos a massa real como a realização do objeto já existente:
+
+$$
+M_b(k):=\operatorname{realize}(\mu_{b,k}).
+$$
+
+Esta é `realDepthMass`. Não começamos com `b^{-k}` como definição de massa.
+Usando a identificação fundacional `μₖ=(1,b^k)`, provamos depois:
+
+$$
+\boxed{M_b(k)=\frac1{(b:\mathbb R)^k}=(b:\mathbb R)^{-k}.}
+$$
+
+`realDepthMass_eq_one_div_pow`, `realDepthMass_eq_inv_pow` e
+`realize_canonicalResidualDepthMass` expõem essas apresentações numéricas.
+A potência negativa é consequência da realização, não uma nova hipótese
+sobre a torre ou sua contagem.
+
+### CONSTRUÇÃO: realizar o expoente já selecionado
+
+Agora podemos interpretar a razão formal válida `p,q` em `ℝ`. O fato
+fundacional `2p=q`, com `q>0`, implica
+
+$$
+\frac{(p:\mathbb R)}{(q:\mathbb R)}=\frac12.
+$$
+
+Esse é `formalHalf_realizes_half`, uma conversão após a seleção, não um
+argumento analítico para selecioná-la. A realização de uma escala candidata é
+
+$$
+A_{b;p,q}(k)=(b:\mathbb R)^{-k\,(p/q)}.
+$$
+
+Usamos `(1,2)` para nomear a amplitude crítica real `A_b(k)`.
+`formalHalf_realizes_realCriticalAmplitude` prova que toda apresentação de
+metade — inclusive `(17,34)` — realiza esse mesmo valor. Portanto:
+
+$$
+\boxed{A_b(k)=(b:\mathbb R)^{-k/2}.}
+$$
+
+Não colocamos essa função na fundação para justificar o expoente anterior.
+Sua definição e as potências reais pertencem somente à camada analítica.
+
+### TEOREMA: o quadrado realiza a massa
+
+A lei de composição das potências reais verifica
+
+$$
+A_b(k)^2=(b:\mathbb R)^{(-k/2)\,2}
+        =(b:\mathbb R)^{-k}=M_b(k).
+$$
+
+Esse é `realCriticalAmplitude_sq_eq_realDepthMass`. A prova usa o expoente
+selecionado; não usa o quadrado como premissa para selecionar metade.
+`quadraticScaleCompatible_realizes_realCriticalAmplitude` torna explícita
+a composição: compatibilidade formal → classificação fundacional → mesma
+amplitude real.
+
+### INTERPRETAÇÃO, HIPÓTESES E LIMITES
+
+A realização e sua identidade do quadrado exigem `b>0`. Em profundidade
+zero, a massa formal `(1,1)` e ambas as realizações dão `1`. Em base `1`,
+os valores também são `1`; a realização trivial existe, mas a fundação não
+seleciona expoentes nessa base. Para `b=0`, não realizamos uma família
+canônica de massa com denominador positivo. Uma amplitude de razão geral
+exige também `q>0`. A seleção discreta permanece no regime `b>1`, `k>0`.
+
+Os exemplos formais verificam massas em base `2`, profundidades `0` e `1`,
+e base `3`, profundidade `2`, bem como `A_3(2)=1/3` e apresentações equivalentes.
+São testes de realização, não dados usados para definir os objetos.
+
+A auditoria analítica registra `propext`, `Classical.choice` e `Quot.sound`.
+Ela permite somente esses axiomas padrão; não é uma auditoria de footprint
+vazio. A auditoria da fundação permanece separada e vazia.
+
+Ainda não construímos estado rotacional, espaço vetorial, produto interno,
+norma, câmeras, brackets, TFVD, Green, isometria ou operador. `A²=M` é uma
+identidade de escalares reais; não deriva, sozinha, uma norma quadrática.
+A massa real continua sendo a realização de cotas finitas, não uma medida
+analítica mais forte. A próxima estrutura geométrica deve ser introduzida
+explicitamente quando chegar sua rodada, sem retornar como premissa da fundação.
