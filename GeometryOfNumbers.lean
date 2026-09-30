@@ -5,4 +5,5 @@ import GeometryOfNumbers.Foundation.EmergentCycleTransport
 import GeometryOfNumbers.Foundation.EmergentResidualTower
 import GeometryOfNumbers.Foundation.ResidualTowerCapacity
 import GeometryOfNumbers.Foundation.ResidualPrefixNormalization
+import GeometryOfNumbers.Foundation.ResidualPrefixRefinement
 import GeometryOfNumbers.Foundation.QuadraticAmplitudeExponent

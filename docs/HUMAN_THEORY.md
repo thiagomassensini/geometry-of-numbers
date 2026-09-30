@@ -319,7 +319,141 @@ numerador e denominador. O teorema de unicidade mostra que contar cada estado
 duas ou mais vezes não altera a cota normalizada. Nenhuma massa antecipada
 foi usada para justificar a torre ou sua capacidade.
 
-## 12. Fronteira atual
+## 12. Refinamento geométrico: esquecer apenas o novo resíduo
+
+**INPUT.** Já temos os prefixos limitados, a torre que os produz e sua
+codificação finita. Nenhuma nova hipótese de simetria é necessária aqui.
+
+**CONSTRUÇÃO.** O primeiro elemento da tupla é o resíduo mais baixo `r₀`.
+Por isso, a projeção para a segunda componente não é o truncamento desejado:
+ela removeria `r₀`. Definimos recursivamente uma operação que percorre a tupla,
+preserva os resíduos baixos e remove apenas o último:
+
+\[
+(r_0,\ldots,r_{k-1},r_k)\longmapsto(r_0,\ldots,r_{k-1}).
+\]
+
+A operação inversa de extensão recebe um pai e um elemento `a` de `Fin b`,
+acrescentando `a` na posição mais profunda. `topResidual` lê essa nova
+coordenada. As três operações são construídas sobre as tuplas existentes;
+nenhuma delas usa potências ou divisão.
+
+**TEOREMA.** As operações satisfazem
+
+\[
+truncate(extend(x,a))=x,\qquad top(extend(x,a))=a,
+\]
+
+e
+
+\[
+extend(truncate(y),top(y))=y.
+\]
+
+Além disso, extrair o prefixo da torre canônica em profundidade `k+1` e
+truncá-lo dá exatamente o prefixo extraído em profundidade `k`, para qualquer
+quantidade inicial, inclusive quando permanece uma cauda não nula
+(`truncateResidualPrefix_of_canonicalTower`). Portanto não estamos
+acrescentando uma segunda noção desconectada de profundidade.
+
+Para um pai `x`, definimos sua fibra como o conjunto efetivo
+
+\[
+\{y:ResidualPrefix(b,k+1)\mid truncate(y)=x\}.
+\]
+
+O mapa `a ↦ extend(x,a)` tem inverso `y ↦ top(y)`. As leis acima provam
+que todos os membros da fibra aparecem exatamente uma vez. Assim,
+
+\[
+\boxed{Fin(b)\longleftrightarrow\text{fibra de refinamento de }x.}
+\]
+
+`residualPrefixRefinementEquivFin` empacota essa bijeção e
+`residualPrefixRefinement_fiber_cardinality` prova injetividade e
+sobrejetividade. O fator `b` vem da coordenada residual nova, não de uma
+reinterpretação da identidade entre potências.
+
+Depois dessa construção, a avaliação ainda prova
+
+\[
+P_{k+1}(extend(x,a))=P_k(x)+a\,b^k.
+\]
+
+**INTERPRETAÇÃO.** A nova coordenada resolve informação adicional na
+profundidade seguinte sem modificar a informação já resolvida. Ela não
+é a ordem de uma derivada nem uma alteração dos resíduos anteriores.
+
+**LIMITES.** Para `b=0`, o prefixo vazio existe, mas não tem refinamentos;
+os tipos e as leis da fibra continuam fazendo sentido. Para `b=1`, cada pai
+tem um único filho. Nada disso implica eliminação da cauda da torre completa.
+
+## 13. Conservação das cotas e massa formal de profundidade
+
+**INPUT.** Usamos a fibra já parametrizada e as cotas canônicas construídas
+pela normalização neutra da seção 11. Não recebemos conservação de massa
+como premissa.
+
+**CONSTRUÇÃO.** Para cada filho efetivo `extend(x,a)`, tomamos sua cota
+canônica em profundidade `k+1`. Todas possuem o mesmo denominador nessa
+profundidade. Somamos seus numeradores sobre os parâmetros `a : Fin b`,
+preservando esse denominador comum. Essa é a definição de
+`residualPrefixRefinementAggregateShare`; ela não inclui uma igualdade com
+a cota do pai.
+
+**TEOREMA.** A soma das contagens unitárias dos filhos vale `b` porque
+esses parâmetros enumeram exatamente a fibra. Logo a apresentação da
+agregação é `(b,b^(k+1))`. Só agora a identidade aritmética de potências
+verifica a igualdade cruzada
+
+\[
+b\,b^k=1\,b^{k+1}.
+\]
+
+Obtemos
+
+\[
+\boxed{\text{soma das cotas dos filhos}\sim\text{cota do pai}.}
+\]
+
+`residualPrefix_refinement_conserves_share` prova isso na relação
+`SameCountingShare`. Não é igualdade de apresentações: em base `3` e
+profundidade `2`, a agregação é `(3,27)` e a cota do pai é `(1,9)`.
+O código testa tanto a equivalência quanto a desigualdade desses pares.
+
+**INTERPRETAÇÃO.** Já podemos chamar a família construída de **massa formal
+de profundidade dos prefixos resolvidos**: ela atribui a unidade ao prefixo
+vazio e conserva a cota de cada pai sob o refinamento finito.
+
+`canonicalResidualDepthMass` não define uma nova lei numérica. Ele toma
+a cota canônica existente num prefixo representante, e o theorem
+`canonicalResidualPrefixCountingShare_eq_depthMass` prova que qualquer
+prefixo da mesma profundidade produz literalmente a mesma apresentação.
+O representante não recebe massa privilegiada.
+
+Se `μₖ` denota essa massa formal, os teoremas provam
+
+\[
+\mu_0=(1,1),\qquad b\,\mu_{k+1}\sim\mu_k.
+\]
+
+A multiplicação por `b` aqui significa agregar `b` cotas iguais pela adição
+finita de seus numeradores (`repeatCountingShare`), não multiplicar números
+racionais já construídos. O theorem da lei de escala é obtido da conservação
+da fibra. A identificação posterior continua sendo `μₖ=(1,b^k)`.
+
+**LIMITES.** Trata-se de massa formal em níveis finitos, não de uma medida
+numérica sobre uma torre infinita ou de um teorema de aditividade enumerável.
+Não provamos aqui a unicidade de qualquer família arbitrária a partir somente
+da equação recursiva. A unicidade já disponível é a das cotas sob neutralidade
+e normalização em cada nível. São afirmações diferentes.
+
+Uma família coerente com unidade inicial requer `b>0`. Quando `b=0`, a soma
+dos filhos é vazia e nenhuma cota com denominador positivo pode fazê-la
+equivaler à unidade (`zeroRefinement_cannot_conserve_unit`). Não forçamos
+uma massa de profundidade zero a estender-se coerentemente a uma fibra vazia.
+
+## 14. Fronteira atual
 
 A cadeia verificada é
 
@@ -331,16 +465,18 @@ A cadeia verificada é
 \Downarrow\\
 \text{prefixos}\leftrightarrow Fin(b^k)\\
 \Downarrow\quad\text{com neutralidade explícita da contagem}\\
-\text{cotas iguais}\to\text{normalização formal }(1,b^k).
+\text{cotas iguais}\to\text{normalização formal }(1,b^k)\\
+\Downarrow\quad\text{pela fibra de refinamento parametrizada por }Fin(b)\\
+\text{agregação conservativa}\to\text{massa formal coerente por profundidade}.
 \end{gathered}
 \]
 
 A invariância é satisfeita pela contagem canônica construída. Não foi provado
 que toda atribuição admissível pela dinâmica tenha essa invariância.
 
-Permanecem posteriores: compatibilidade da normalização entre profundidades,
-cotas de agrupamentos de estados, interpretação numérica das cotas formais,
-eliminação eventual da cauda e construções métricas. Nenhum desses objetos é
+Permanecem posteriores: agrupamentos finitos arbitrários além da fibra de um
+pai, interpretação numérica das cotas formais, eventual medida sobre estados
+infinitos, eliminação eventual da cauda e construções métricas. Nenhum desses objetos é
 premissa dos resultados acima. A rigidez aritmética de expoentes, já existente
 em módulo separado, não foi usada nesta passagem: relacioná-la à normalização
 exige uma etapa adicional, ainda não realizada aqui.

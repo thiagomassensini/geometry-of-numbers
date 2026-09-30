@@ -69,6 +69,33 @@ namespace GeometryOfNumbers.Foundation
 #assert_no_axioms canonicalResidualPrefixCountingShare_invariant
 #assert_no_axioms canonicalResidualPrefixCountingShare_eq_unit_over_capacity
 #assert_no_axioms residualPrefix_normalizedShare_unique
+#assert_no_axioms truncateResidualPrefix
+#assert_no_axioms extendResidualPrefix
+#assert_no_axioms topResidual
+#assert_no_axioms ResidualPrefixRefinementFiber
+#assert_no_axioms residualPrefixRefinementChild
+#assert_no_axioms residualPrefixRefinementEquivFin
+#assert_no_axioms residualPrefixRefinementAggregateShare
+#assert_no_axioms repeatCountingShare
+#assert_no_axioms zeroRefinement_cannot_conserve_unit
+#assert_no_axioms canonicalResidualDepthMass
+#assert_no_axioms truncateResidualPrefix_extend
+#assert_no_axioms topResidual_extend
+#assert_no_axioms extendResidualPrefix_truncate_top
+#assert_no_axioms truncateResidualPrefix_of_canonicalTower
+#assert_no_axioms residualPrefixRefinementChild_top
+#assert_no_axioms residualPrefixRefinementChild_recovers
+#assert_no_axioms residualPrefixRefinementChild_injective
+#assert_no_axioms residualPrefixRefinement_fiber_cardinality
+#assert_no_axioms residualPrefixValue_extend
+#assert_no_axioms residualPrefixRefinementAggregateShare_common_denominator
+#assert_no_axioms residualPrefixRefinementAggregateShare_numerator
+#assert_no_axioms residualPrefix_refinement_conserves_share
+#assert_no_axioms canonicalResidualPrefixCountingShare_eq_depthMass
+#assert_no_axioms residualPrefixRefinementAggregateShare_eq_repeat_depthMass
+#assert_no_axioms canonicalResidualDepthMass_zero
+#assert_no_axioms canonicalResidualDepthMass_refinement
+#assert_no_axioms canonicalResidualDepthMass_eq_unit_over_capacity
 #assert_no_axioms quadraticExponentEquation_iff_half
 #assert_no_axioms quadraticCarryCompatibleAt_iff_half
 #assert_no_axioms quadratic_carry_exponent_iff_half
@@ -129,6 +156,33 @@ namespace GeometryOfNumbers.Foundation
 #print axioms canonicalResidualPrefixCountingShare_invariant
 #print axioms canonicalResidualPrefixCountingShare_eq_unit_over_capacity
 #print axioms residualPrefix_normalizedShare_unique
+#print axioms truncateResidualPrefix
+#print axioms extendResidualPrefix
+#print axioms topResidual
+#print axioms ResidualPrefixRefinementFiber
+#print axioms residualPrefixRefinementChild
+#print axioms residualPrefixRefinementEquivFin
+#print axioms residualPrefixRefinementAggregateShare
+#print axioms repeatCountingShare
+#print axioms zeroRefinement_cannot_conserve_unit
+#print axioms canonicalResidualDepthMass
+#print axioms truncateResidualPrefix_extend
+#print axioms topResidual_extend
+#print axioms extendResidualPrefix_truncate_top
+#print axioms truncateResidualPrefix_of_canonicalTower
+#print axioms residualPrefixRefinementChild_top
+#print axioms residualPrefixRefinementChild_recovers
+#print axioms residualPrefixRefinementChild_injective
+#print axioms residualPrefixRefinement_fiber_cardinality
+#print axioms residualPrefixValue_extend
+#print axioms residualPrefixRefinementAggregateShare_common_denominator
+#print axioms residualPrefixRefinementAggregateShare_numerator
+#print axioms residualPrefix_refinement_conserves_share
+#print axioms canonicalResidualPrefixCountingShare_eq_depthMass
+#print axioms residualPrefixRefinementAggregateShare_eq_repeat_depthMass
+#print axioms canonicalResidualDepthMass_zero
+#print axioms canonicalResidualDepthMass_refinement
+#print axioms canonicalResidualDepthMass_eq_unit_over_capacity
 #print axioms quadraticExponentEquation_iff_half
 #print axioms quadraticCarryCompatibleAt_iff_half
 #print axioms quadratic_carry_exponent_iff_half
@@ -341,5 +395,66 @@ example : (canonicalResidualPrefixCountingShare 1 2 (by decide)
 -- Finite capacity and a positive normalized total alone do NOT select uniformity.
 example : ∃ weight : Fin 2 → Nat, finiteLabelTotal 2 weight = 1 ∧
     ¬ RelabelingInvariant weight := finiteCapacity_does_not_force_uniformity
+
+-- Refinement appends at the DEEPEST end; .2 would instead remove the lowest residual.
+example : extendResidualPrefix 3 twoTwoPrefix ⟨1, by decide⟩ =
+    (⟨2, by decide⟩, ⟨2, by decide⟩, ⟨1, by decide⟩, (PUnit.unit : PUnit)) := rfl
+example : truncateResidualPrefix 3 (depth := 2)
+    (⟨2, by decide⟩, ⟨2, by decide⟩, ⟨1, by decide⟩, (PUnit.unit : PUnit)) =
+    twoTwoPrefix := rfl
+example : topResidual 3 (extendResidualPrefix 3 twoTwoPrefix ⟨1, by decide⟩) =
+    ⟨1, by decide⟩ := rfl
+example : residualPrefixValue 3 (extendResidualPrefix 3 twoTwoPrefix ⟨1, by decide⟩) =
+    17 := rfl
+example : residualPrefixValue 3 (extendResidualPrefix 3 twoTwoPrefix ⟨2, by decide⟩) =
+    8 + 2 * 3 ^ 2 := residualPrefixValue_extend 3 2 twoTwoPrefix ⟨2, by decide⟩
+
+-- The same truncation operates on the original tower even when a tail remains.
+example : truncateResidualPrefix 3
+    (residualPrefixOfBoundedTower 3 (emergentResidualTower 3 3 100)
+      (emergentResidualTower_bounded 3 3 100 (by decide))) =
+    residualPrefixOfBoundedTower 3 (emergentResidualTower 3 2 100)
+      (emergentResidualTower_bounded 3 2 100 (by decide)) :=
+  truncateResidualPrefix_of_canonicalTower 3 2 100 (by decide)
+
+-- The fiber has one distinct member for each child label.
+example : (residualPrefixRefinementEquivFin 3 2 twoTwoPrefix).val.2
+    ((residualPrefixRefinementEquivFin 3 2 twoTwoPrefix).val.1 ⟨2, by decide⟩) =
+    ⟨2, by decide⟩ :=
+  (residualPrefixRefinementEquivFin 3 2 twoTwoPrefix).property.1 _
+
+-- Aggregating actual child shares gives (3,27), equivalent but not equal to (1,9).
+example : (residualPrefixRefinementAggregateShare 3 2 (by decide) twoTwoPrefix).numerator =
+    3 := residualPrefixRefinementAggregateShare_numerator 3 2 (by decide) twoTwoPrefix
+example : (residualPrefixRefinementAggregateShare 3 2 (by decide) twoTwoPrefix).denominator =
+    27 := rfl
+example : SameCountingShare (residualPrefixRefinementAggregateShare 3 2 (by decide) twoTwoPrefix)
+    (canonicalResidualPrefixCountingShare 3 2 (by decide) twoTwoPrefix) :=
+  residualPrefix_refinement_conserves_share 3 2 (by decide) twoTwoPrefix
+example : residualPrefixRefinementAggregateShare 3 2 (by decide) twoTwoPrefix ≠
+    canonicalResidualPrefixCountingShare 3 2 (by decide) twoTwoPrefix := by
+  intro heq
+  have h := congrArg FormalCountingShare.numerator heq
+  exact (by decide : (3 : Nat) ≠ 1) h
+
+-- Depth zero has the one empty parent and exactly b first refinements.
+example : truncateResidualPrefix 3 (depth := 0)
+    (extendResidualPrefix 3 (depth := 0) (PUnit.unit : PUnit) ⟨2, by decide⟩) =
+    (PUnit.unit : PUnit) := truncateResidualPrefix_extend 3 0 _ _
+example : canonicalResidualDepthMass 3 0 (by decide) = ⟨1, 1, by decide⟩ :=
+  canonicalResidualDepthMass_zero 3 (by decide)
+
+-- Capacity one: there is only one child and aggregation changes no presentation.
+example : residualPrefixRefinementAggregateShare 1 2 (by decide)
+    (residualPrefixDecode 1 2 (by decide) ⟨0, by decide⟩) =
+    canonicalResidualDepthMass 1 2 (by decide) := rfl
+
+-- Capacity zero: the empty parent exists, but its refinement fiber is empty.
+-- Structural maps still make sense; no positive-denominator mass is asserted.
+example : ¬ Nonempty (ResidualPrefixRefinementFiber 0 0 (PUnit.unit : PUnit)) := by
+  intro hexists
+  rcases hexists with ⟨refined⟩
+  exact Nat.not_lt_zero _ refined.val.1.isLt
+example : repeatCountingShare 0 ⟨1, 7, by decide⟩ = ⟨0, 7, by decide⟩ := rfl
 
 end GeometryOfNumbers.Foundation

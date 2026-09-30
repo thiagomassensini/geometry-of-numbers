@@ -21,9 +21,9 @@ complexa justificará um resultado fundacional.
 
 | Fase | Conteúdo | Estado nesta árvore |
 | --- | --- | --- |
-| F0 | Fidelidade → recorrência → primeiro retorno → carry → torre | Primeiro retorno, reset, torre finita e capacidade prefixal fechados; crosswalk clássico ainda aberto |
+| F0 | Fidelidade → recorrência → primeiro retorno → carry → torre | Primeiro retorno, reset, torre finita, capacidade prefixal e fibras de refinamento fechados; crosswalk clássico ainda aberto |
 | F1 | Centro–pernas, profundidade e resíduo | Não portada |
-| F2 | Massa/amplitude e rigidez algébrica do expoente `1/2` | Cota formal neutra por contagem e cancelamento discreto fechados separadamente; ligação quadrática e realização ainda abertas |
+| F2 | Massa/amplitude e rigidez algébrica do expoente `1/2` | Massa formal neutra coerente por refinamento e cancelamento discreto fechados separadamente; ligação quadrática e realização ainda abertas |
 | R0 | Rotação e estado espectral reais | Não iniciada |
 | R1 | Câmeras e brackets reais | Não iniciada |
 | R2 | Reconstrução TFVD real, Green e retorno | Não iniciada |
@@ -127,8 +127,30 @@ do conjunto nu preserve a dinâmica com origem ou os valores reconstruídos.
 Um contraexemplo de dois estados impede esconder essa distinção.
 Os dez teoremas novos e três definições de transporte/cota têm axiomas vazios.
 
-Próximos gates possíveis, ainda não implementados: compatibilidade das cotas
-sob mudança de profundidade e interpretação numérica da normalização.
+## Refinamento fechado antes da lei de escala
+
+`ResidualPrefixRefinement` esquece apenas o resíduo mais profundo, não `r₀`.
+Extensão, truncamento e leitura da coordenada nova são recursivos; suas leis
+inversas provam uma bijeção da fibra de cada pai com `Fin b`. A construção
+da fibra e sua cardinalidade não usam identidades de potências. Uma ponte
+adicional identifica o truncamento com a extração de prefixos da torre
+canônica, inclusive quando a cauda não nula permanece explícita.
+
+A soma das cotas canônicas dos filhos é definida sobre essa parametrização.
+Seu numerador vale `b` por soma finita; a identidade de potências verifica
+depois a equivalência cruzada com a cota do pai. A lei não é premissa da soma.
+`canonicalResidualDepthMass` nomeia a cota existente, independente do prefixo
+representante, e herda unidade inicial e conservação pelo theorem da fibra.
+Não define uma medida na torre infinita nem usa a rigidez quadrática.
+
+As leis estruturais fazem sentido em `b=0`; sua fibra sobre o prefixo vazio
+é vazia. Um theorem prova que agregar zero filhos não pode conservar a
+unidade: uma família de massa coerente requer `b>0`.
+Dezoito teoremas públicos novos e nove definições têm footprint vazio.
+
+Próximos gates possíveis: agregações finitas mais gerais e interpretação
+numérica da normalização. A unicidade de famílias arbitrárias baseada
+somente na recorrência de massa não foi provada nesta rodada.
 Não ligar automaticamente essa cota à equação de rigidez quadrática.
 `docs/HUMAN_THEORY.md` acompanha a cadeia em linguagem matemática humana.
 

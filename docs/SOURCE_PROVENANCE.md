@@ -149,3 +149,34 @@ Os dez teoremas públicos e as três definições de transporte/cota são audita
 com footprint vazio. A auditoria detectou `propext` em `Nat.one_ne_zero`;
 a mesma contradição foi escrita com `Nat.zero_ne_one` e simetria da igualdade,
 preservando o footprint vazio. Não há dependência histórica nova.
+
+## Refinamento e conservação das cotas
+
+`ResidualPrefixRefinement.lean` foi construído localmente sobre os prefixos
+e a normalização anteriores. Nenhum módulo histórico foi importado ou
+consultado como fonte de prova nova nesta etapa.
+
+| Objeto | Proveniência e limite |
+| --- | --- |
+| `truncateResidualPrefix`, `extendResidualPrefix`, `topResidual` | Recursão no tipo já existente; preservam os resíduos baixos e removem/adicionam somente o mais profundo |
+| `truncateResidualPrefix_of_canonicalTower` | Indução usando a construção original de ciclos; alinha refinamento à extração da torre, sem hipótese de cauda zero |
+| `ResidualPrefixRefinementFiber` | Preimagem efetiva do truncamento; não contém cardinalidade como campo |
+| `residualPrefixRefinementEquivFin`, `residualPrefixRefinement_fiber_cardinality` | As três leis das operações provam a parametrização completa e sem duplicação por `Fin b`; não derivadas de uma identidade de potências |
+| `residualPrefixValue_extend` | A reconstrução existente identifica a escala da coordenada nova depois de sua construção |
+| `residualPrefixRefinementAggregateShare` | Soma dos numeradores das cotas dos filhos efetivos da fibra, com denominador comum canônico; conservação não é campo |
+| `residualPrefix_refinement_conserves_share` | Soma finita computa `b` filhos; aritmética de potências verifica a equivalência cruzada das cotas |
+| `canonicalResidualDepthMass` | Nome para a cota canônica existente num representante; igualdade com a cota de qualquer prefixo elimina privilégio do representante |
+| `canonicalResidualDepthMass_zero`, `canonicalResidualDepthMass_refinement` | Unidade inicial e conservação herdadas; não são axiomas nem definem uma medida numérica infinita |
+| `zeroRefinement_cannot_conserve_unit` | Exclui coerência com unidade inicial numa fibra vazia de capacidade zero |
+
+Não foi acrescentado princípio estrutural: a neutralidade permanece aquela
+da etapa anterior. As cotas são comparadas por `SameCountingShare`, não por
+igualdade dos pares agregados. A identificação do novo nome de massa com a
+apresentação canônica anterior é literal; a conservação não exige igualdade
+de apresentações, embora ela possa ocorrer em casos particulares como `b=1`.
+
+Os dezoito teoremas públicos e nove definições novos têm footprint vazio.
+Identidades multiplicativas específicas repetem as provas indutivas já
+usadas na torre, em vez de recorrer aos lemas gerais com footprint não vazio.
+A unicidade anterior da normalização continua ponto a ponto; não foi
+substituída por uma alegação de unicidade de qualquer família recursiva.

@@ -18,12 +18,12 @@ está formalizada aqui. O escopo é o plano de trabalho da geometria real do car
 ## Estado verificado
 
 **Projeto compilando; recorrência, primeiro retorno, ciclo/reset, torre residual,
-capacidade prefixal e normalização formal neutra por contagem fechados;
+capacidade prefixal, normalização neutra e conservação por refinamento fechados;
 rigidez quadrática discreta fechada em módulo separado.**
 
 O núcleo atual depende apenas de `Init`, sem Mathlib e sem dependências de
-outros repositórios. Cinquenta e cinco teoremas públicos e quatro definições
-de transporte/bijeção/cota estão auditados com lista de axiomas vazia.
+outros repositórios. Setenta e três teoremas públicos e treze definições
+de transporte, bijeção, fibra, cota e massa estão auditados com lista de axiomas vazia.
 A camada inicial contém:
 
 - `sameLocal_forces_extension_difference`: a distinção que coincide no canal
@@ -130,6 +130,24 @@ seu denominador por soma finita. Sua invariância é provada; a unicidade vale
 como cota, não como par numerador/denominador. Não se afirmou uniformidade
 de medidas arbitrárias.
 
+`ResidualPrefixRefinement` constrói truncamento e extensão na extremidade
+mais profunda, preservando `r₀,...,rₖ₋₁`. Suas inversas parametrizam por
+`Fin b` a fibra efetiva de refinamentos de cada pai, sem usar potências nessa
+construção. O truncamento também coincide com a extração dos prefixos da
+torre canônica, mesmo quando a cauda não é zero.
+
+A agregação soma os numeradores das cotas dos filhos dessa fibra e conserva
+o denominador comum. Prova-se que essa agregação representa a mesma cota do
+pai: `(b,b^(k+1))` é equivalente a `(1,b^k)`, não necessariamente igual como
+apresentação. Só depois disso, `canonicalResidualDepthMass` nomeia a cota
+existente; independência do representante, unidade inicial e conservação
+por refinamento são provadas. É massa formal nos níveis finitos, não uma
+medida numérica ou enumeravelmente aditiva na torre infinita.
+
+As leis estruturais da fibra também valem para capacidade zero, onde o
+prefixo vazio não tem filhos. A conservação de uma unidade inicial por uma
+fibra vazia é formalmente impossível; a massa coerente exige `b > 0`.
+
 O módulo `QuadraticAmplitudeExponent` apresenta um expoente não negativo por
 dois naturais `p, q`, com `q > 0`, sem formar `p/q`. Seu núcleo prova:
 
@@ -148,9 +166,9 @@ Denominador zero é excluído; profundidade zero não seleciona expoente.
 existe sob as hipóteses explícitas acima; seu reset e sua torre de profundidade
 finita já têm coordenadas únicas, e os prefixos têm capacidade exata `b^k`.
 Sua normalização formal por contagem agora está construída, com neutralidade
-explicitamente separada da cardinalidade. Ainda faltam compatibilidade entre
-profundidades, interpretação numérica e a ligação dessa cota à compatibilidade
-quadrática. Também não se provou aqui a passagem da igualdade de
+explicitamente separada da cardinalidade, e sua conservação entre profundidades
+foi provada pelo refinamento. Ainda faltam interpretação numérica e a ligação
+dessa cota à compatibilidade quadrática. Também não se provou aqui a passagem da igualdade de
 potências reais para a igualdade de expoentes. Não há realização em `ℚ`/`ℝ`, TFVD,
 isometria ou autoadjunticidade nesta árvore ainda.
 
