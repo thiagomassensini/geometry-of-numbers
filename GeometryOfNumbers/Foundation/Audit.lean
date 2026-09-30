@@ -100,6 +100,27 @@ namespace GeometryOfNumbers.Foundation
 #assert_no_axioms quadraticCarryCompatibleAt_iff_half
 #assert_no_axioms quadratic_carry_exponent_iff_half
 #assert_no_axioms quadraticCarryCompatibleAt_zero
+#assert_no_axioms radixShare
+#assert_no_axioms multiplyCountingShares
+#assert_no_axioms powerCountingShare
+#assert_no_axioms QuadraticAmplitudeScaleCompatibleAt
+#assert_no_axioms powerCountingShare_zero
+#assert_no_axioms powerCountingShare_succ
+#assert_no_axioms canonicalResidualDepthMass_eq_radixShare
+#assert_no_axioms radixShare_multiply
+#assert_no_axioms canonicalResidualDepthMass_power_eq_radixShare
+#assert_no_axioms radixShare_same_iff_power_eq
+#assert_no_axioms radixShare_same_iff_exponent_eq
+#assert_no_axioms radixShare_one_same
+#assert_no_axioms quadraticAmplitudeScaleCompatibleAt_iff_scaleComparison
+#assert_no_axioms quadraticAmplitudeScaleCompatibleAt_iff_exponentEquation
+#assert_no_axioms quadraticAmplitudeScaleCompatibleAt_iff_carryCompatibleAt
+#assert_no_axioms canonicalResidualDepthMass_quadraticCompatibility_iff_half
+#assert_no_axioms canonicalResidualDepthMass_all_positive_quadraticCompatibility_iff_half
+#assert_no_axioms emergentResidualDepthMass_quadraticCompatibility_iff_half
+#assert_no_axioms quadraticAmplitudeScaleCompatibleAt_zero
+#assert_no_axioms quadraticAmplitudeScaleCompatibleAt_one
+#assert_no_axioms quadraticAmplitudeScaleCompatibleAt_denominator_zero
 
 #print axioms sameLocal_forces_extension_difference
 #print axioms faithfulRepresentation_comp
@@ -187,6 +208,27 @@ namespace GeometryOfNumbers.Foundation
 #print axioms quadraticCarryCompatibleAt_iff_half
 #print axioms quadratic_carry_exponent_iff_half
 #print axioms quadraticCarryCompatibleAt_zero
+#print axioms radixShare
+#print axioms multiplyCountingShares
+#print axioms powerCountingShare
+#print axioms QuadraticAmplitudeScaleCompatibleAt
+#print axioms powerCountingShare_zero
+#print axioms powerCountingShare_succ
+#print axioms canonicalResidualDepthMass_eq_radixShare
+#print axioms radixShare_multiply
+#print axioms canonicalResidualDepthMass_power_eq_radixShare
+#print axioms radixShare_same_iff_power_eq
+#print axioms radixShare_same_iff_exponent_eq
+#print axioms radixShare_one_same
+#print axioms quadraticAmplitudeScaleCompatibleAt_iff_scaleComparison
+#print axioms quadraticAmplitudeScaleCompatibleAt_iff_exponentEquation
+#print axioms quadraticAmplitudeScaleCompatibleAt_iff_carryCompatibleAt
+#print axioms canonicalResidualDepthMass_quadraticCompatibility_iff_half
+#print axioms canonicalResidualDepthMass_all_positive_quadraticCompatibility_iff_half
+#print axioms emergentResidualDepthMass_quadraticCompatibility_iff_half
+#print axioms quadraticAmplitudeScaleCompatibleAt_zero
+#print axioms quadraticAmplitudeScaleCompatibleAt_one
+#print axioms quadraticAmplitudeScaleCompatibleAt_denominator_zero
 
 -- Small examples; no positional/carry capstone is asserted.
 example : FaithfulRepresentation (fun n : Nat => (0, n)) := by
@@ -456,5 +498,29 @@ example : ¬ Nonempty (ResidualPrefixRefinementFiber 0 0 (PUnit.unit : PUnit)) :
   rcases hexists with ⟨refined⟩
   exact Nat.not_lt_zero _ refined.val.1.isLt
 example : repeatCountingShare 0 ⟨1, 7, by decide⟩ = ⟨0, 7, by decide⟩ := rfl
+
+-- Scale composition is multiplicative, not the earlier aggregation of children.
+example : powerCountingShare (canonicalResidualDepthMass 3 2 (by decide)) 3 =
+    radixShare 3 6 (by decide) :=
+  canonicalResidualDepthMass_power_eq_radixShare 3 2 3 (by decide)
+example : SameCountingShare (radixShare 3 2 (by decide))
+    (radixShare 3 3 (by decide)) ↔ (2 : Nat) = 3 :=
+  radixShare_same_iff_exponent_eq 3 2 3 (by decide)
+example : QuadraticAmplitudeScaleCompatibleAt 3 2 2 4 (by decide) :=
+  (canonicalResidualDepthMass_quadraticCompatibility_iff_half 3 2 2 4
+    (by decide) (by decide)).2 ⟨by decide, rfl⟩
+
+-- Positive depth and nontrivial capacity are indispensable: a valid NON-half
+-- ratio passes either degenerate test. Denominator zero never passes.
+example : QuadraticAmplitudeScaleCompatibleAt 1 7 0 1 Nat.zero_lt_one :=
+  (quadraticAmplitudeScaleCompatibleAt_one 7 0 1).2 Nat.zero_lt_one
+example : QuadraticAmplitudeScaleCompatibleAt 3 0 0 1 (by decide) :=
+  (quadraticAmplitudeScaleCompatibleAt_zero 3 0 1 (by decide)).2 Nat.zero_lt_one
+example : ¬ FormalExponentRepresentsHalf 0 1 := by
+  intro h
+  exact Nat.zero_ne_one h.2
+example : ¬ QuadraticAmplitudeScaleCompatibleAt 3 2 1 0 (by decide) :=
+  quadraticAmplitudeScaleCompatibleAt_denominator_zero 3 2 1 (by decide)
+example : ¬ (0 < (0 : Nat)) := Nat.not_lt_zero 0
 
 end GeometryOfNumbers.Foundation

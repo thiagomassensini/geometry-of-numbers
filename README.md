@@ -19,10 +19,10 @@ está formalizada aqui. O escopo é o plano de trabalho da geometria real do car
 
 **Projeto compilando; recorrência, primeiro retorno, ciclo/reset, torre residual,
 capacidade prefixal, normalização neutra e conservação por refinamento fechados;
-rigidez quadrática discreta fechada em módulo separado.**
+ponte da massa formal à rigidez quadrática discreta fechada.**
 
 O núcleo atual depende apenas de `Init`, sem Mathlib e sem dependências de
-outros repositórios. Setenta e três teoremas públicos e treze definições
+outros repositórios. Noventa teoremas públicos e dezessete definições
 de transporte, bijeção, fibra, cota e massa estão auditados com lista de axiomas vazia.
 A camada inicial contém:
 
@@ -162,14 +162,41 @@ profundidades positivas. O resultado seleciona a razão formal, não uma
 apresentação reduzida: tanto `(1, 2)` quanto `(2, 4)` representam metade.
 Denominador zero é excluído; profundidade zero não seleciona expoente.
 
-**Essa rigidez aritmética não fecha a cadeia inteira.** A capacidade agora
+`QuadraticMassCompatibility` conecta agora essa rigidez à massa já derivada.
+Primeiro identifica literalmente `canonicalResidualDepthMass b k hb` com
+`radixShare b k hb`, a apresentação `(1,b^k)`. A composição de `q` cópias
+da massa tem escala `k*q`. Uma escala candidata `k*p`, composta consigo
+mesma, tem escala `2*(k*p)`. A compatibilidade é definida por comparação
+cruzada dessas cotas, mencionando a massa geométrica na própria definição;
+não é definida pela equação dos expoentes.
+
+Para `1 < b`, a injetividade das potências naturais deriva essa equação.
+Para `k > 0`, o módulo aritmético anterior seleciona `2*p=q` sem nova prova
+do cancelamento. O capstone público é:
+
+```lean
+theorem canonicalResidualDepthMass_quadraticCompatibility_iff_half
+    (b k p q : Nat) (hb : 1 < b) (hk : 0 < k) :
+    QuadraticAmplitudeScaleCompatibleAt b k p q
+      (Nat.lt_trans Nat.zero_lt_one hb) ↔
+      FormalExponentRepresentsHalf p q
+```
+
+Composição quadrática é um requisito semântico explícito para uma amplitude
+candidata, não uma conclusão da contagem isoladamente. Seu expoente formal
+compatível é forçado; nenhuma amplitude numérica foi construída. Em `b=1`
+ou `k=0`, qualquer razão válida passa o teste e nenhum expoente é selecionado.
+`q=0` é inválido, e `b=0` não fornece a massa com denominador positivo.
+
+**Essa ponte não fecha a teoria inteira.** A capacidade agora
 existe sob as hipóteses explícitas acima; seu reset e sua torre de profundidade
 finita já têm coordenadas únicas, e os prefixos têm capacidade exata `b^k`.
 Sua normalização formal por contagem agora está construída, com neutralidade
 explicitamente separada da cardinalidade, e sua conservação entre profundidades
-foi provada pelo refinamento. Ainda faltam interpretação numérica e a ligação
-dessa cota à compatibilidade quadrática. Também não se provou aqui a passagem da igualdade de
-potências reais para a igualdade de expoentes. Não há realização em `ℚ`/`ℝ`, TFVD,
+foi provada pelo refinamento. Sua ligação à compatibilidade quadrática formal
+está fechada; ainda falta a realização numérica. Também não se provou aqui
+a passagem da igualdade de potências reais para a igualdade de expoentes.
+Não há realização em `ℚ`/`ℝ`, TFVD,
 isometria ou autoadjunticidade nesta árvore ainda.
 
 ## Executar
@@ -190,7 +217,7 @@ fundacionais listados — inclusive os axiomas usuais de Mathlib.
 ## Organização e fronteiras
 
 - [Versão humana da teoria](docs/HUMAN_THEORY.md): narrativa matemática contínua,
-  das entradas dinâmicas à normalização formal, com hipóteses e limites explícitos.
+  das entradas dinâmicas à seleção formal do expoente, com hipóteses e limites explícitos.
 - [Plano de execução](docs/FORMALIZATION_PLAN.md): ordem causal e critérios
   de saída, distinguindo resultados atuais de metas.
 - [Proveniência das portas](docs/SOURCE_PROVENANCE.md): fontes, commits,

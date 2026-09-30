@@ -7,3 +7,4 @@ import GeometryOfNumbers.Foundation.ResidualTowerCapacity
 import GeometryOfNumbers.Foundation.ResidualPrefixNormalization
 import GeometryOfNumbers.Foundation.ResidualPrefixRefinement
 import GeometryOfNumbers.Foundation.QuadraticAmplitudeExponent
+import GeometryOfNumbers.Foundation.QuadraticMassCompatibility

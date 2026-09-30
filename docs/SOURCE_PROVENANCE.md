@@ -180,3 +180,33 @@ Identidades multiplicativas específicas repetem as provas indutivas já
 usadas na torre, em vez de recorrer aos lemas gerais com footprint não vazio.
 A unicidade anterior da normalização continua ponto a ponto; não foi
 substituída por uma alegação de unicidade de qualquer família recursiva.
+
+## Ponte da massa formal à compatibilidade quadrática
+
+`QuadraticMassCompatibility.lean` é uma composição local, autocontida, das
+camadas `ResidualPrefixRefinement` e `QuadraticAmplitudeExponent`. A inspiração
+histórica massa/amplitude permanece a de `carry-geometry`, commit
+`3a64ccebfa3849251b2d564432d693ed19a4b74b`, já registrada acima; não houve
+novo import histórico nem consulta a uma realização analítica como premissa.
+
+| Objeto | Proveniência e limite |
+| --- | --- |
+| `radixShare`, `canonicalResidualDepthMass_eq_radixShare` | Apresentação posterior da massa geométrica existente; igualdade literal provada pela identificação de seu numerador e denominador |
+| `multiplyCountingShares`, `powerCountingShare` | Operações sobre apresentações naturais; composição multiplicativa, distinta de somar cotas de filhos |
+| `canonicalResidualDepthMass_power_eq_radixShare` | A massa real do nível `k` aparece como entrada, e sua composição `q` vezes é identificada com escala `k*q` |
+| `radixShare_same_iff_exponent_eq` | Igualdade cruzada reduz a igualdade de capacidades; crescimento estrito das potências naturais recupera o expoente somente para `b>1` |
+| `QuadraticAmplitudeScaleCompatibleAt` | Requisito semântico novo e explícito de composição quadrática; compara cotas, não define a igualdade de expoentes nem assume metade |
+| `quadraticAmplitudeScaleCompatibleAt_iff_carryCompatibleAt` | Redução provada da comparação geométrica à interface aritmética existente |
+| `canonicalResidualDepthMass_quadraticCompatibility_iff_half` | Composição da ponte com `quadraticCarryCompatibleAt_iff_half`, sem reprovar a aritmética de metade |
+| `emergentResidualDepthMass_quadraticCompatibility_iff_half` | Usa o mesmo primeiro retorno; `b>1` vem do theorem pré-carry de primeiro passo não trivial |
+| Casos `b=1`, `k=0`, `q=0` | Dois primeiros não selecionam expoente; o último é inválido. Não se cria massa positiva para `b=0` |
+
+A auditoria local encontrou `propext` em `Nat.pow_add`, `Nat.pow_mul` e no
+theorem de crescimento das potências; `Nat.pow_right_inj` também trouxe
+`Classical.choice` e `Quot.sound`. Foram usadas provas indutivas específicas
+de composição/crescimento. Reescrever um `iff` dentro de proposições também
+introduziu `propext`; aplicar suas duas direções explicitamente removeu essa
+dependência. Os dezessete teoremas públicos e quatro definições finais têm
+footprint vazio. Não há amplitude real, quociente racional ou métrica nessa
+ponte, e a contagem isoladamente não foi apresentada como prova de que uma
+lei observável deve ser quadrática.

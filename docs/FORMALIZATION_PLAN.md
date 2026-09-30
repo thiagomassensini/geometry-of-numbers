@@ -23,7 +23,7 @@ complexa justificará um resultado fundacional.
 | --- | --- | --- |
 | F0 | Fidelidade → recorrência → primeiro retorno → carry → torre | Primeiro retorno, reset, torre finita, capacidade prefixal e fibras de refinamento fechados; crosswalk clássico ainda aberto |
 | F1 | Centro–pernas, profundidade e resíduo | Não portada |
-| F2 | Massa/amplitude e rigidez algébrica do expoente `1/2` | Massa formal neutra coerente por refinamento e cancelamento discreto fechados separadamente; ligação quadrática e realização ainda abertas |
+| F2 | Massa/amplitude e rigidez algébrica do expoente `1/2` | Massa formal coerente ligada à seleção do expoente por compatibilidade quadrática de cotas; amplitude numérica ainda não construída |
 | R0 | Rotação e estado espectral reais | Não iniciada |
 | R1 | Câmeras e brackets reais | Não iniciada |
 | R2 | Reconstrução TFVD real, Green e retorno | Não iniciada |
@@ -97,8 +97,10 @@ que finitude e fidelidade, sozinhas, forçam toda a notação posicional.
    usa neutralidade e total normalizado explicitamente. Não inferir uniformidade
    de medidas arbitrárias só de finitude; não contar a cauda ilimitada.
 3. **Rigidez discreta:** usar `p, q : Nat`, `q > 0`, sem quociente racional.
-   A equação `2 * (k * p) = k * q`, em profundidade positiva, equivale a
-   `2 * p = q`. Essa parte está fechada, com axiomas vazios.
+   A compatibilidade é agora uma comparação entre o quadrado da escala
+   candidata e a composição de `q` cópias da massa derivada. Para `1 < b`,
+   ela implica a equação `2 * (k * p) = k * q`, que em profundidade positiva
+   equivale a `2 * p = q`. Essa ponte está fechada, com axiomas vazios.
 4. **Realização real:** interpretar a razão formal e usar as leis existentes
    de potências reais para conectar amplitude, massa e exponentes. Fase futura.
 
@@ -107,9 +109,11 @@ esse certificado histórico já contém normalização carry e representação
 posicional. O lema `emergentLocalCapacity_gt_one_of_first_step_changes` foi
 portado para a interface anterior, sem importar aquele certificado.
 
-O núcleo discreto recebe a lei de compatibilidade dos expoentes explicitamente.
-Ele não demonstra, por si só, que a contagem produz uma métrica quadrática,
-nem que uma igualdade de potências implica igualdade de expoentes.
+O núcleo discreto recebe explicitamente o requisito semântico de composição
+quadrática para uma escala candidata; a equação de expoentes é deduzida, não
+recebida. Ele não demonstra, por si só, que a contagem produz uma métrica
+quadrática. A injetividade das potências naturais para `1 < b` está provada;
+a ponte correspondente para potências reais continua posterior.
 Sua família formal cobre razões não negativas; o enunciado sobre expoentes
 reais arbitrários permanece na realização real posterior.
 
@@ -151,8 +155,29 @@ Dezoito teoremas públicos novos e nove definições têm footprint vazio.
 Próximos gates possíveis: agregações finitas mais gerais e interpretação
 numérica da normalização. A unicidade de famílias arbitrárias baseada
 somente na recorrência de massa não foi provada nesta rodada.
-Não ligar automaticamente essa cota à equação de rigidez quadrática.
 `docs/HUMAN_THEORY.md` acompanha a cadeia em linguagem matemática humana.
+
+## Ponte massa → escala → rigidez fechada
+
+`QuadraticMassCompatibility` importa somente as camadas locais de massa e
+rigidez. A identificação `canonicalResidualDepthMass_eq_radixShare` usa a
+contagem já derivada; não altera a definição de massa. Produto e potência
+de apresentações são multiplicativos, distintos da agregação aditiva de
+filhos em `repeatCountingShare`. Suas leis de composição são provadas.
+
+`QuadraticAmplitudeScaleCompatibleAt` compara o produto de duas escalas
+`k*p` com a potência `q` da massa em profundidade `k`. Normalização de escalas,
+injetividade para `b>1` e o theorem aritmético anterior dão o capstone
+`canonicalResidualDepthMass_quadraticCompatibility_iff_half`.
+`emergentResidualDepthMass_quadraticCompatibility_iff_half` reutiliza o
+primeiro passo não trivial para obter `b>1` da mesma capacidade emergente.
+
+O requisito quadrático é a especificação de uma amplitude candidata; não foi
+derivado de finitude, neutralidade ou conservação. Nenhuma hipótese nova de
+igualdade de expoentes, métrica ou amplitude numérica é usada. `b=1` e `k=0`
+não selecionam expoentes; `q=0` é excluído. Os dezessete teoremas públicos e
+quatro definições novos têm footprint vazio. O próximo gate é a realização
+numérica dessa razão formal, não reprovar sua rigidez.
 
 ## Regras para as etapas seguintes
 

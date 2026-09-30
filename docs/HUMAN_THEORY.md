@@ -478,5 +478,154 @@ Permanecem posteriores: agrupamentos finitos arbitrários além da fibra de um
 pai, interpretação numérica das cotas formais, eventual medida sobre estados
 infinitos, eliminação eventual da cauda e construções métricas. Nenhum desses objetos é
 premissa dos resultados acima. A rigidez aritmética de expoentes, já existente
-em módulo separado, não foi usada nesta passagem: relacioná-la à normalização
-exige uma etapa adicional, ainda não realizada aqui.
+em módulo separado, não foi usada na construção da massa. A próxima seção
+formaliza sua ligação com essa massa mediante compatibilidade quadrática.
+
+## 15. Da massa derivada à seleção de um expoente formal
+
+### INPUT: o que existe antes da ponte
+
+Já temos a massa formal `μₖ = canonicalResidualDepthMass b k hb`, com `b>0`.
+Ela é a cota da contagem neutra dos prefixos, nomeada somente depois de sua
+conservação nas fibras de refinamento. Seu numerador é `1` e seu denominador
+é a capacidade `b^k`, pelo theorem anterior. Não voltamos a definir a massa
+por uma fórmula de potência nem usamos uma amplitude para justificá-la.
+
+A profundidade `k` continua sendo o número de coordenadas residuais resolvidas
+na mesma torre. A cauda não faz parte da contagem desses estados.
+
+### CONSTRUÇÃO: uma apresentação de escala posterior à massa
+
+Definimos a cota de escala `S_b(e) = radixShare b e hb` pela apresentação
+
+$$
+S_b(e)=(1,b^e).
+$$
+
+O expoente `e` é um natural. Esse objeto não é uma fração numérica nem uma
+potência real com expoente negativo. A identificação
+`canonicalResidualDepthMass_eq_radixShare` prova, como igualdade literal de
+apresentações e não apenas equivalência de cotas,
+
+$$
+\boxed{\mu_k=S_b(k).}
+$$
+
+A direção da prova usa os campos já calculados da massa. A notação de escala
+é uma interpretação posterior, não uma nova origem da normalização.
+
+Introduzimos também a composição multiplicativa de apresentações:
+
+$$
+(a,d)\otimes(c,e)=(ac,de),\qquad (a,d)^{\otimes q}=(a^q,d^q).
+$$
+
+Os denominadores permanecem positivos. As leis de potência zero e sucessor
+provam que a segunda operação é a composição repetida da primeira. Isso é
+distinto de agregar filhos: naquele caso somávamos numeradores mantendo um
+denominador comum. Aqui compomos escalas, não somamos massas de estados.
+Não afirmamos uma nova lei de independência probabilística.
+
+### TEOREMA: a escala permite ler seu expoente quando `b>1`
+
+Comparar duas cotas de escala por multiplicação cruzada dá
+
+$$
+S_b(a)\sim S_b(c)\quad\Longleftrightarrow\quad b^a=b^c.
+$$
+
+Para `b>1`, cada passo aumenta estritamente a potência: `b^n<b^(n+1)`.
+Indução e comparação de naturais dão injetividade, portanto
+
+$$
+\boxed{S_b(a)\sim S_b(c)\quad\Longleftrightarrow\quad a=c.}
+$$
+
+Esse é `radixShare_same_iff_exponent_eq`. Nenhum teorema sobre potências reais
+entra na prova. A hipótese `b>1` é indispensável: para `b=1`, todas as cotas
+são `(1,1)` independentemente do expoente. A capacidade positiva, sozinha,
+não permite ler escala.
+
+### CONSTRUÇÃO: o requisito quadrático, antes da equação
+
+Uma razão candidata é apresentada por naturais `p,q`, com `q>0`. Não formamos
+o número `p/q`. Para interpretar uma lei de amplitude formal, usamos unidades
+de expoente com esse denominador já eliminado: sua escala candidata na
+profundidade `k` tem expoente `kp`. Compor essa escala consigo mesma é a
+operação quadrática. Para comparar com a massa, compomos a massa `q` vezes.
+
+Definimos `QuadraticAmplitudeScaleCompatibleAt` pelo requisito
+
+$$
+q>0\quad\text{e}\quad
+S_b(kp)\otimes S_b(kp)\sim\mu_k^{\otimes q}.
+$$
+
+A massa geométrica aparece no lado direito da própria definição. Nem
+`2kp=kq` nem `2p=q` são campos da compatibilidade. Não definimos uma amplitude
+numérica: especificamos apenas quais escalas formais seriam compatíveis.
+
+**Princípio semântico explícito:** exigir composição quadrática é o critério
+para essa amplitude candidata. A contagem neutra e o refinamento não provam
+que todo observável deva obedecer a ele. O teorema abaixo classifica as leis
+que satisfazem esse requisito, não cria uma métrica a partir da contagem.
+
+### TEOREMA: a comparação com a massa produz a equação
+
+As leis de composição provam
+
+$$
+S_b(kp)\otimes S_b(kp)=S_b(2(kp)),\qquad
+\mu_k^{\otimes q}=S_b(kq).
+$$
+
+A segunda igualdade é `canonicalResidualDepthMass_power_eq_radixShare`:
+parte da massa de profundidade `k`, não de uma cota desconectada. Logo, para
+`b>1`, a comparação semântica equivale à equação
+
+$$
+q>0,\qquad 2(kp)=kq.
+$$
+
+`quadraticAmplitudeScaleCompatibleAt_iff_carryCompatibleAt` liga esse resultado
+à interface aritmética já existente. Em profundidade positiva, o theorem
+anterior `quadraticCarryCompatibleAt_iff_half` cancela `k` e obtém
+
+$$
+\boxed{2p=q.}
+$$
+
+Essa relação representa metade sem divisão. `(1,2)`, `(2,4)` e `(17,34)`
+são apresentações distintas da mesma razão formal; não se afirma unicidade
+do par. O capstone `canonicalResidualDepthMass_quadraticCompatibility_iff_half`
+prova ambas as direções: uma escala é compatível exatamente quando sua razão
+representa metade. A aritmética antiga não foi reprovada.
+
+Uma versão `emergentResidualDepthMass_quadraticCompatibility_iff_half` usa
+literalmente a capacidade do primeiro retorno da trajetória. Seu `b>1` vem
+do primeiro passo local não trivial, pelo theorem pré-carry já existente.
+Assim a condição de leitura da escala também se conecta à origem dinâmica.
+
+### INTERPRETAÇÃO E LIMITES
+
+A nova cadeia é
+
+$$
+\text{massa derivada}\to\text{apresentação de escala}
+\xrightarrow{\text{requisito quadrático explícito}}
+\text{comparação de cotas}\to 2kp=kq\to 2p=q.
+$$
+
+Não começamos com metade para construir a massa ou a compatibilidade. Ela
+aparece somente na classificação final, sob `b>1` e `k>0`.
+
+- `b=0`: não fornece a família anterior de massa com denominador positivo;
+  não inventamos uma escala para contornar a fibra vazia.
+- `b=1`: qualquer razão válida passa o teste, mesmo em profundidade positiva.
+- `k=0`: qualquer razão válida passa o teste, mesmo com capacidade não trivial.
+- `q=0`: é excluído pela validade da razão, em todas as profundidades.
+
+O próximo gate é realizar numericamente essa razão formal e sua amplitude.
+Não construímos nesta etapa números racionais ou reais, raízes, normas ou
+espaços métricos. A seleção formal já está ligada à massa geométrica; a
+realização numérica e a justificativa de uma métrica permanecem posteriores.
