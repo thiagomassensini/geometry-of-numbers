@@ -1,4 +1,6 @@
-import GeometryOfNumbers.Analysis.QuadraticReflection
+import Mathlib.Data.Real.Basic
+
+assert_not_exists Real.log Real.exp
 
 /-!
 # An explicit semantic compatibility for integer offsets

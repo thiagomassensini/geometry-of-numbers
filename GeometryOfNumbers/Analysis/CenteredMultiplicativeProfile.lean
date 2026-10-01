@@ -94,6 +94,14 @@ theorem profile_realCenteredSecondDifference_eq_factor (C : ℝ) {Q : Int → �
   rw [profile_realCenteredSecondDifference_eq_pow C hQ]
   exact quadraticCenteredBracket_eq_factor C _ (ne_of_gt (pow_pos hQ.2.2 r))
 
+/-- Division is a derived presentation of the existing local factorization. -/
+theorem profile_realCenteredSecondDifference_eq_factor_div (C : ℝ) {Q : Int → ℝ}
+    (hQ : IsPositiveMultiplicativeOffsetTransport Q) (c : Int) (r : Nat) :
+    realCenteredSecondDifference (centeredMultiplicativeProfile C Q c) c r =
+      C * (((Q 1) ^ r - 1) ^ 2 / (Q 1) ^ r) := by
+  rw [profile_realCenteredSecondDifference_eq_factor C hQ]
+  simp only [div_eq_mul_inv, mul_assoc]
+
 def criticalCenteredMultiplicativeProfile (b k : Nat) (hb : 0 < b)
     (Q : Int → ℝ) (center : Int) : Int → ℝ :=
   centeredMultiplicativeProfile (realCriticalAmplitude b k hb) Q center

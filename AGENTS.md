@@ -46,8 +46,9 @@
   Nunca extrair esse dado por escolha nem acrescentar primalidade.
   Geometry usa soma recursiva dos raios `1,...,half` e observáveis inteiros;
   bracket por pernas menos cópias do centro e soma saturada têm definições
-  independentes. Na Analysis, `q_r` é entrada livre positiva no domínio,
-  não uma lei derivada do raio. Não afirmar `F(c±r)=C*q_r^{±1}` sem nova ponte.
+  independentes. A câmera quadrática abstrata recebe `q_r` livre positivo;
+  o crosswalk do perfil usa a compatibilidade explícita abaixo para provar
+  `q_r=Q(r)=rho^r` e as avaliações das pernas.
   Reflexão independente conserva o total; a massa é conservada por PAR,
   não somada ou identificada com esse total. Câmera vazia não seleciona
   expoente; C2 e seleção do passo de deformação permanecem gates separados.
@@ -60,6 +61,9 @@
   potência do ponto absoluto, razão histórica ou amplitude vertical.
   Raio horizontal `r` não é profundidade vertical `k`; câmera vazia não
   seleciona o passo. Não introduzir log/exp para classificar offsets inteiros.
+  O módulo de transporte importa somente `Mathlib.Data.Real.Basic` e guarda
+  a ausência de `Real.log`/`Real.exp`; preservar essa independência dos
+  módulos de amplitude e das pernas quadráticas.
 - Não introduzir escapes de confiança, placeholders ou axiomas novos.
 - Os nomes do plano são metas, não evidência de existência de provas.
 - Registrar a fonte/commit e quaisquer hipóteses operacionais de uma porta.

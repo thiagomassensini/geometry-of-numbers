@@ -72,6 +72,26 @@ example : realOddCameraBracket 2
   norm_num [realOddCameraBracket, realOddCameraLegSum, Geometry.sumPositiveRadii,
     Geometry.leftLeg, Geometry.rightLeg, centeredMultiplicativeProfile, canonicalMultiplicativeOffsetTransport]
 
+-- Inverting the single step swaps EVERY displayed leg, not just the total.
+example : centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport (1 / 2)) 10 9 = 1 / 6 ∧
+    centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport (1 / 2)) 10 11 = 2 / 3 ∧
+    centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport (1 / 2)) 10 8 = 1 / 12 ∧
+    centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport (1 / 2)) 10 12 = 4 / 3 := by
+  norm_num [centeredMultiplicativeProfile, canonicalMultiplicativeOffsetTransport]
+
+example (C : ℝ) (c x : Int) :
+    centeredMultiplicativeProfile C (canonicalMultiplicativeOffsetTransport 1) c x = C := by
+  simp [centeredMultiplicativeProfile, canonicalMultiplicativeOffsetTransport]
+
+-- The composite-capacity readout also has an exact rational total.
+example : Geometry.oddCameraCapacity 4 = 9 ∧ realOddCameraBracket 4
+    (centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport 2) 10) 10 = 367 / 48 := by
+  constructor
+  · rfl
+  · norm_num [realOddCameraBracket, realOddCameraLegSum, Geometry.sumPositiveRadii,
+      Geometry.leftLeg, Geometry.rightLeg, centeredMultiplicativeProfile,
+      canonicalMultiplicativeOffsetTransport]
+
 -- Empty camera: zero does NOT select the step (here it is 2, not 1).
 example : realOddCameraBracket 0
     (centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport 2) 10) 10 = 0 ∧
@@ -115,12 +135,14 @@ example (c : Int) : realOddCameraBracket 2
 #assert_analysis_axioms stepProfile_realOddCameraBracket_eq_quadratic
 #assert_analysis_axioms stepProfile_realOddCameraBracket_eq_closed
 #assert_analysis_axioms stepProfile_realOddCameraBracket_eq_factor
+#assert_analysis_axioms stepProfile_realOddCameraBracket_eq_factor_div
 #assert_analysis_axioms stepProfile_realOddCameraBracket_nonneg
 #assert_analysis_axioms stepProfile_realOddCameraBracket_zero_iff
 #assert_analysis_axioms stepProfile_inverse_left_eq_right
 #assert_analysis_axioms stepProfile_inverse_right_eq_left
 #assert_analysis_axioms stepProfile_realOddCameraBracket_reflection
 #assert_analysis_axioms stepProfile_realOddCameraBracket_C3
+#assert_analysis_axioms stepProfile_realOddCameraBracket_C3_readout
 #assert_analysis_axioms criticalProfile_realOddCameraBracket_eq_quadratic
 #assert_analysis_axioms balancedCarryDepth_multiplicativeProfile_provenance
 #assert_analysis_axioms centeredMultiplicativeProfile
@@ -137,6 +159,7 @@ example (c : Int) : realOddCameraBracket 2
 #assert_analysis_axioms profile_realCenteredSecondDifference_eq_pow
 #assert_analysis_axioms profile_realCenteredSecondDifference_eq_closed
 #assert_analysis_axioms profile_realCenteredSecondDifference_eq_factor
+#assert_analysis_axioms profile_realCenteredSecondDifference_eq_factor_div
 #assert_analysis_axioms criticalCenteredMultiplicativeProfile
 #assert_analysis_axioms criticalCenteredMultiplicativeProfile_product
 #assert_analysis_axioms IsPositiveMultiplicativeOffsetTransport
@@ -164,12 +187,14 @@ example (c : Int) : realOddCameraBracket 2
 #print axioms stepProfile_realOddCameraBracket_eq_quadratic
 #print axioms stepProfile_realOddCameraBracket_eq_closed
 #print axioms stepProfile_realOddCameraBracket_eq_factor
+#print axioms stepProfile_realOddCameraBracket_eq_factor_div
 #print axioms stepProfile_realOddCameraBracket_nonneg
 #print axioms stepProfile_realOddCameraBracket_zero_iff
 #print axioms stepProfile_inverse_left_eq_right
 #print axioms stepProfile_inverse_right_eq_left
 #print axioms stepProfile_realOddCameraBracket_reflection
 #print axioms stepProfile_realOddCameraBracket_C3
+#print axioms stepProfile_realOddCameraBracket_C3_readout
 #print axioms criticalProfile_realOddCameraBracket_eq_quadratic
 #print axioms balancedCarryDepth_multiplicativeProfile_provenance
 #print axioms centeredMultiplicativeProfile_center
@@ -184,6 +209,7 @@ example (c : Int) : realOddCameraBracket 2
 #print axioms profile_realCenteredSecondDifference_eq_pow
 #print axioms profile_realCenteredSecondDifference_eq_closed
 #print axioms profile_realCenteredSecondDifference_eq_factor
+#print axioms profile_realCenteredSecondDifference_eq_factor_div
 #print axioms criticalCenteredMultiplicativeProfile_product
 #print axioms multiplicativeOffsetTransport_zero
 #print axioms multiplicativeOffsetTransport_add

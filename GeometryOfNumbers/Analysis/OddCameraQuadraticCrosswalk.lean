@@ -91,6 +91,14 @@ theorem stepProfile_realOddCameraBracket_eq_factor (half : Nat) (C : ℝ)
   rw [stepProfile_realOddCameraBracket_eq_quadratic half C hrho]
   exact quadraticCameraBracket_eq_factor half C _ (fun r _ _ => ne_of_gt (pow_pos hrho r))
 
+theorem stepProfile_realOddCameraBracket_eq_factor_div (half : Nat) (C : ℝ)
+    {rho : ℝ} (hrho : 0 < rho) (c : Int) :
+    realOddCameraBracket half
+      (centeredMultiplicativeProfile C (canonicalMultiplicativeOffsetTransport rho) c) c =
+        C * sumPositiveRadii half (fun r => (rho ^ r - 1) ^ 2 / rho ^ r) := by
+  simpa only [div_eq_mul_inv] using
+    stepProfile_realOddCameraBracket_eq_factor half C hrho c
+
 theorem stepProfile_realOddCameraBracket_nonneg (half : Nat) {C rho : ℝ}
     (hC : 0 < C) (hrho : 0 < rho) (c : Int) :
     0 ≤ realOddCameraBracket half
@@ -154,6 +162,18 @@ theorem stepProfile_realOddCameraBracket_C3 (C : ℝ) {rho : ℝ} (hrho : 0 < rh
     profile_realCenteredSecondDifference_eq_pow C
       (canonicalMultiplicativeOffsetTransport_isPositive hrho)]
   simp only [canonicalMultiplicativeOffsetTransport_one, pow_one]
+
+/-- The one-pair camera is literally the local readout on its integer points. -/
+theorem stepProfile_realOddCameraBracket_C3_readout (C : ℝ) {rho : ℝ}
+    (hrho : 0 < rho) (c : Int) :
+    let F := centeredMultiplicativeProfile C (canonicalMultiplicativeOffsetTransport rho) c
+    realOddCameraBracket 1 F c = F (c - 1) - 2 * F c + F (c + 1) ∧
+      F (c - 1) - 2 * F c + F (c + 1) = quadraticCenteredBracket C rho := by
+  dsimp only
+  have hreadout := realOddCameraBracket_C3
+    (centeredMultiplicativeProfile C (canonicalMultiplicativeOffsetTransport rho) c) c
+  change realOddCameraBracket 1 _ c = _ at hreadout
+  exact ⟨hreadout, hreadout.symm.trans (stepProfile_realOddCameraBracket_C3 C hrho c)⟩
 
 theorem criticalProfile_realOddCameraBracket_eq_quadratic (half k : Nat)
     {Q : Int → ℝ} (hQ : IsPositiveMultiplicativeOffsetTransport Q) (c : Int) :

@@ -2139,6 +2139,13 @@ $$
 =C\sum_{r=1}^{h}\frac{(\rho^r-1)^2}{\rho^r}.}
 $$
 
+As apresentações por divisão são teoremas explícitos:
+`profile_realCenteredSecondDifference_eq_factor_div` e
+`stepProfile_realOddCameraBracket_eq_factor_div`. Ambas reutilizam a fatoração;
+não redefinem o bracket. O transporte depende somente de
+`Mathlib.Data.Real.Basic`, com guard que impede `Real.log` e `Real.exp` nesse
+módulo. Sua classificação permanece discreta e independente da amplitude.
+
 ### TEOREMA: positividade, zero e reflexão do passo
 
 Para `C>0,rho>0`, o bracket do observável concreto é não negativo. Para
@@ -2162,7 +2169,12 @@ pares e funciona sem primalidade. O problema antipodal C2 continua separado.
 Para `C=1/3,rho=2,h=2`, as deformações são `2,4`, não uma escolha independente
 por raio. As avaliações das pernas são `2/3,1/6` e `4/3,1/12`; cada produto
 é `1/9`. Os brackets são `1/6` e `3/4`, totalizando `11/12`. O passo `1/2`
-troca as pernas e preserva esse total; o passo `1` produz total zero.
+troca as pernas e preserva esse total; a troca foi verificada nas quatro
+avaliações. O passo `1` produz o perfil constante `F(x)=C` em todo ponto e
+total zero. Com quatro pares, capacidade composta `9`, os mesmos `C=1/3` e
+`rho=2` dão o total exato `367/48`, também verificado formalmente.
+O corolário `stepProfile_realOddCameraBracket_C3_readout` registra em conjunto
+a igualdade do bracket de um par com a leitura nos pontos e com `B_C(rho)`.
 
 ### ESTADO E AUDITORIA
 
@@ -2172,7 +2184,7 @@ foi deduzida da fundação ou que o perfil seja toda a radialidade da teoria.
 A seleção do passo, sua ligação com outras estruturas e comparações históricas
 são gates posteriores. Nenhuma camada de leituras posteriores é aberta aqui.
 
-Os três módulos acrescentam 44 teoremas e nove definições guardados no audit
+Os três módulos contêm 47 teoremas e nove definições guardados no audit
 analítico, com somente os três axiomas padrão permitidos. Foundation e Geometry,
 inclusive seus audits e seleção de escala, não são modificadas. Não se usa
 esta nova realização para justificar retroativamente qualquer resultado delas.

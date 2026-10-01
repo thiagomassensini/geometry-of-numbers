@@ -489,9 +489,11 @@ Foundation, seleção de metade e sua auditoria vazia permanecem congeladas.
 
 ## Compatibilidade multiplicativa dos offsets e crosswalk real do perfil
 
-A busca no código local não encontrou uma interface anterior que transportasse
-a soma de offsets inteiros para composição multiplicativa. Não houve consulta
-histórica nova como fonte de prova nesta etapa. A especificação
+Na busca anterior à implementação, sobre a etapa `c8bae78`, não existia uma
+interface local que transportasse a soma de offsets para multiplicação. A
+implementação foi introduzida no commit `5a1bd24` e foi encontrada e reutilizada
+na revisão atual, sem criar uma segunda especificação. Não houve consulta
+histórica nova como fonte de prova. A especificação
 `IsPositiveMultiplicativeOffsetTransport` é uma entrada semântica NOVA:
 unidade em zero, preservação de soma como produto e passo unitário positivo.
 Não é apresentada como uma conclusão da torre, massa ou reflexão isolada.
@@ -522,7 +524,14 @@ participa da classificação do transporte. Não se usa log/exp para selecionar
 ou classificar o passo; não se abre fase ou uma leitura posterior.
 
 Todos os novos módulos estão em Analysis. Foundation, Geometry, scripts,
-manifest e dependências históricas permanecem inalterados. São 44 teoremas
+manifest e dependências históricas permanecem inalterados. São 47 teoremas
 públicos e nove definições guardadas, footprint limitado a `propext`,
 `Classical.choice`, `Quot.sound`. A fonte histórica registrada nas etapas
 anteriores continua referência de comparação, não dependência lógica.
+
+A revisão removeu do transporte o import das pernas quadráticas: sua única
+dependência direta é `Mathlib.Data.Real.Basic`, com guard explícito de ausência
+de `Real.log`/`Real.exp`. Os corolários por divisão derivam das fatorações já
+provadas; o corolário C3 une saturação genérica e crosswalk local. Os testes
+acrescentados verificam as quatro pernas com passo `1/2`, o perfil constante
+para passo `1` e o total racional `367/48` na capacidade composta 9.

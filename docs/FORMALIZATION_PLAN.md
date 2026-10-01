@@ -478,14 +478,19 @@ Positividade do bracket do perfil decorre do crosswalk. O zero equivale a
 `rho=1` somente em câmera não vazia, pois o raio 1 recupera o passo. Em
 `half=0`, qualquer passo tem bracket zero. A inversão do passo troca pernas
 e preserva o total pelo theorem estrutural de reflexão da câmera quadrática.
-C3, capacidade composta 9 e o total concreto `11/12` foram testados.
+C3 tem corolário explícito leitura nos pontos = bracket local. Foram testados
+capacidade composta 9, o total `11/12` para dois pares e `367/48` para quatro
+pares (`C=1/3,rho=2`), além da troca pontual com passo `1/2` e do perfil
+constante para passo `1`. As formas por divisão são corolários da fatoração.
+O transporte importa somente `Mathlib.Data.Real.Basic`, com guard que exclui
+`Real.log` e `Real.exp` desse módulo.
 
 A especialização crítica reutiliza amplitude e massa já realizadas; o
 suporte carry-derived registra o MESMO índice `k`, sem participar da
 classificação horizontal. R1 fecha o crosswalk sob a especificação nova;
 seleção do passo, comparações históricas e R2 permanecem posteriores.
 
-44 teoremas públicos e nove definições novos entram no audit de Analysis,
+47 teoremas públicos e nove definições do transporte/crosswalk entram no audit de Analysis,
 com footprint limitado aos três axiomas padrão. Foundation/Geometry e seus
 audits não são alterados. A direção de imports permanece unilateral.
 

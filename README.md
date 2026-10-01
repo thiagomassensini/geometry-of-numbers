@@ -421,9 +421,15 @@ rho↦rho⁻¹ troca as pernas e preserva o total
 
 A igualdade global passa por saturação e crosswalk local, não pela expansão
 bruta da fórmula final. Para `h=0`, o total é zero para qualquer passo.
+As formas locais/globais por divisão são corolários explícitos da fatoração.
+O módulo de transporte importa somente `Mathlib.Data.Real.Basic`, com guard
+`assert_not_exists Real.log Real.exp`; a classificação independe da amplitude.
+C3 tem um corolário com a cadeia literal leitura nos pontos = bracket local.
 C3 reduz ao bracket local no passo `rho`; capacidade composta `9` funciona
 sem primalidade. O teste `C=1/3,h=2,rho=2` dá deformações `2,4`, brackets
 `1/6,3/4` e total `11/12`, invariante sob inversão do passo.
+As quatro avaliações com passo `1/2` também são testadas. Com `half=4`,
+capacidade `9`, `C=1/3` e `rho=2`, o total formal é `367/48`.
 
 **R1: crosswalk fechado sob compatibilidade explícita; seleção de `rho`
 continua aberta.** `r` compõe offsets horizontais; `k` indexa massa/amplitude
@@ -432,8 +438,8 @@ amplitude foi provada. O perfil não é uma potência do argumento absoluto,
 nem uma identificação com razões históricas. Não se introduziram fase,
 log/exp, tempo ou leituras posteriores nos novos objetos/provas.
 
-São 44 teoremas e nove definições novos, todos guardados no audit analítico
-(128 teoremas públicos no total), com apenas os três axiomas padrão.
+São 47 teoremas e nove definições do transporte/crosswalk, todos guardados no
+audit analítico (131 teoremas públicos no total), com apenas os três axiomas padrão.
 Nenhum resultado novo é usado para justificar retroativamente a fundação.
 
 ## Geometria discreta centro–pernas
@@ -595,7 +601,7 @@ introduzida depois da amplitude, não usada para justificar metade.
 Quinze teoremas públicos novos e cinco nomes de carrier/mapas entram no audit
 analítico, com somente os três axiomas padrão. Ao fechar o plano, Analysis
 contava 29 teoremas públicos auditados; a reflexão acima aumenta esse total
-para 60, a câmera para 84 e o transporte/crosswalk para 128. Foundation
+para 60, a câmera para 84 e o transporte/crosswalk para 131. Foundation
 permanece inalterada; a câmera amplia somente Geometry e Analysis. Os testes
 incluem base `3`, nível `2`, semente `(1/3,0)`, energia `1/9`, ângulo zero,
 quarto de volta `(0,1/3)`, e o suporte do nível `2` pelo centro `25` de `26`.
