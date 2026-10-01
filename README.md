@@ -27,8 +27,10 @@ Essa geometria não justificou retroativamente a massa ou metade. A realização
 já existe. Agora há também um estado real de profundidade com energia
 quadrática preservada por rotação de ângulo livre. A reflexão recíproca agora
 constrói pernas com produto igual à massa; o readout centrado dessas pernas
-deriva um bracket local não negativo. Lei de fase, estado global de uma quantidade,
-câmeras e agregação de brackets históricos permanecem posteriores.
+deriva um bracket local não negativo. A câmera ímpar agora reúne pares de
+raios positivos e seu bracket discreto é a soma saturada de segundas diferenças.
+A realização quadrática soma defeitos não negativos por par. A lei que
+associa cada raio à sua deformação, a fase e o estado global permanecem abertos.
 
 O nome do repositório não afirma que a geometria clássica dos números já
 está formalizada aqui. O escopo é o plano de trabalho da geometria real do carry.
@@ -46,7 +48,10 @@ crosswalk balanceado de uma célula para capacidades ímpares, sem primalidade.
 Relação de profundidade por zeros sucessivos e identificação relacional do
 único canal profundo com o centro fechadas, sem valuation ou máximo.
 Reflexão quadrática recíproca e bracket local derivados, com produto conservado,
-fatoração, positividade, zero central único e invariância por reflexão.**
+fatoração, positividade, zero central único e invariância por reflexão.
+Câmera ímpar sem primalidade, identidade discreta de saturação e realização
+quadrática com deformações livres fechadas; zero total equivale a equilíbrio
+de todos os pares, com reflexão independente de cada um.**
 
 O núcleo da Zona A depende apenas de `Init`, sem Mathlib ou imports históricos.
 Noventa e dois teoremas públicos e dezessete definições
@@ -224,7 +229,7 @@ foi provada pelo refinamento. Sua ligação à compatibilidade quadrática forma
 está fechada. A realização numérica real também está disponível, na camada
 separada descrita abaixo; não foi usada para selecionar o expoente.
 O estado angular de profundidade está construído abaixo, sem lei de fase.
-Não há norma derivada, câmeras, brackets históricos agregados, TFVD, Green, isometria ou
+Não há norma derivada, identificação com câmeras/brackets históricos, TFVD, Green, isometria ou
 autoadjunticidade nesta árvore.
 
 ## Corte da Zona A e abertura da Zona B
@@ -306,9 +311,67 @@ identificação com bracket de câmera. Nível zero e capacidade um dão centro 
 massa unitários. Inversão em Lean é total, mas `q=0` é excluído da lei do
 produto: ali o bracket vale `-2*C`, não um defeito não negativo desse regime.
 
-São 31 teoremas públicos e oito definições novos, todos guardados no audit
-analítico; o total da Analysis é 60 teoremas. Axiomas padrão de Mathlib,
-sem adicionais. Foundation e Geometry matemáticas e seus audits não mudam.
+Essa etapa local acrescentou 31 teoremas e oito definições ao audit analítico,
+que então contava 60 teoremas. A etapa de câmera abaixo aumenta esse total
+para 84. Não houve axioma adicional ou mudança na fundação.
+
+## Câmera ímpar e saturação por pares
+
+`Geometry/OddCamera.lean` recebe `half=h` como dado: capacidade `b=2*h+1`,
+raios `1,...,h` e pares `(c-r,c+r)` indexados por `Fin h`. Limites, cobertura,
+ausência de repetição e troca por reflexão são provados. A fundação
+não é alterada e nenhuma escolha extrai `h` de uma proposição existencial.
+Uma soma recursiva genérica enumera exatamente esses raios; não há Finset
+ou Mathlib em Geometry. Contar duas pernas por raio dá `2*h=b-1` como theorem.
+
+`Geometry/OddCameraBracket.lean` mantém observáveis `Int → Int`. Define
+primeiro a soma das pernas, depois o bracket independentemente da saturação:
+
+```text
+LegSum_h(F,c) = sum_r [F(c-r)+F(c+r)]
+CameraBracket_h(F,c) = LegSum_h(F,c) - 2*h*F(c)
+Saturated_h(F,c) = sum_r centeredSecondDifference(F,c,r)
+CameraBracket_h(F,c) = Saturated_h(F,c)   -- theorem
+```
+
+Primalidade não participa: capacidade composta `9` tem quatro pares e oito
+pernas. C3 tem um par e reduz literalmente ao stencil de raio `1`.
+Capacidade `1` tem câmera vazia e bracket zero; C2 não é câmera ímpar e
+seu crosswalk continua aberto. Um observável arbitrário não dá positividade
+automática: há teste discreto com bracket negativo.
+
+`Analysis/QuadraticCameraBracket.lean` usa a MESMA soma e os mesmos índices,
+mas recebe uma família livre `q : Nat → ℝ`, positiva somente em `1≤r≤h`.
+Cada termo reutiliza as pernas e o bracket locais. A definição é soma de
+brackets, não soma da fatoração desejada; prova-se:
+
+```text
+B_quad(h,C,q) = sum_r B_C(q_r)
+             = quadraticLegSum - 2*h*C
+             = C * sum_r [(q_r-1)^2*q_r⁻¹]
+para C>0 e q_r>0 no domínio:
+B_quad ≥ 0
+B_quad = 0 ↔ todos os q_r do domínio são 1
+```
+
+Uma máscara booleana pode inverter qualquer subconjunto dos pares sem mudar
+o total; inverter um par ou todos são corolários. Cada par preserva `C²`,
+não se somam massas para obter esse bracket. A especialização crítica usa
+a capacidade da própria câmera `2*h+1` e a amplitude anterior no mesmo `k`.
+O capstone de suporte mostra campos da massa formal, produto por par como
+realização dessa massa e total como soma dos defeitos locais.
+
+**Raio e deformação são distintos.** `r` desloca o argumento de `F` na câmera
+discreta; `q_r` modifica os valores escalares na realização quadrática.
+Não se provou `F(c±r)=C*q_r^{±1}` nem se escolheu uma lei `r↦q_r`.
+R1 permanece parcial exatamente nessa ponte. Não há fase, logaritmo, tempo,
+Green ou operador novos. O total de defeito não é identificado com a energia
+coordenada do plano nem com a massa central.
+
+A etapa acrescenta 23 teoremas/oito definições discretas e 24 teoremas/quatro
+definições analíticas. Geometry tem 87 teoremas e 22 definições auditadas,
+sem escolha; Analysis tem 84 teoremas, com os mesmos três axiomas padrão.
+Foundation continua congelada e com footprint vazio.
 
 ## Geometria discreta centro–pernas
 
@@ -421,7 +484,7 @@ que seu teste de prefixo zero não caracteriza divisibilidade. A relação natur
 também vale em capacidades pares positivas; o centro balanceado continua no
 regime ímpar. **C2, terminação e funções de profundidade máxima ficam abertos.**
 
-Geometry tem agora 64 teoremas públicos e 14 definições auditadas. O módulo
+Ao fechar o crosswalk, Geometry contava 64 teoremas e 14 definições auditadas. O módulo
 natural é vazio; a ponte inteira/balanceada usa no máximo `propext`/`Quot.sound`,
 sem escolha. Os testes verificam a seleção `9 → (10,-1)` em base `5`, os
 níveis `1,2` mas não `3` de `26 → (25,1)`, e um caso natural par `2,8,3`.
@@ -469,7 +532,8 @@ introduzida depois da amplitude, não usada para justificar metade.
 Quinze teoremas públicos novos e cinco nomes de carrier/mapas entram no audit
 analítico, com somente os três axiomas padrão. Ao fechar o plano, Analysis
 contava 29 teoremas públicos auditados; a reflexão acima aumenta esse total
-para 60. Foundation e Geometry permanecem inalteradas. Os testes
+para 60 e a câmera para 84. Foundation permanece inalterada; a câmera
+amplia somente Geometry e Analysis. Os testes
 incluem base `3`, nível `2`, semente `(1/3,0)`, energia `1/9`, ângulo zero,
 quarto de volta `(0,1/3)`, e o suporte do nível `2` pelo centro `25` de `26`.
 
@@ -513,7 +577,8 @@ identificações nem qualquer realização analítica da geometria.
 - `GeometryOfNumbers/Foundation/`: Zona A, sem axiomas.
 - `GeometryOfNumbers/Geometry/`: geometria discreta sobre `Int`, audit próprio.
 - `GeometryOfNumbers/Analysis/`: Zona B, escalares e plano quadrático real, audit separado.
-- Lei angular/espectral, câmeras, operadores e limites: fases futuras.
+- Lei angular/espectral, seleção das deformações por raio, crosswalk com
+  câmeras históricas, operadores e limites: fases futuras.
 
 O gerador logarítmico e o operador de alturas são objetos diferentes.
 Os operadores não serão usados para justificar retroativamente a geometria.

@@ -3,6 +3,7 @@ import GeometryOfNumbers.Geometry.CenterLegReflection
 import GeometryOfNumbers.Geometry.CenteredSecondDifference
 import GeometryOfNumbers.Geometry.CarryCenterLegCrosswalk
 import GeometryOfNumbers.Geometry.BalancedCarryDepthCrosswalk
+import GeometryOfNumbers.Geometry.OddCameraBracket
 
 /-! Discrete geometry downstream of the frozen Foundation entry point.
 The one-cell crosswalk now derives balanced reflected legs from the same

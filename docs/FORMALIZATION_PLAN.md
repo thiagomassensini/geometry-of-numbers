@@ -37,7 +37,7 @@ complexa justificará um resultado fundacional.
 | F1 | Centro–pernas, profundidade e resíduo | Geometria e célula ímpar fechadas; profundidade relacional da torre e único offset profundo identificados; máximo/terminação e ramo antipodal par/C2 ainda abertos |
 | F2 | Massa/amplitude e rigidez algébrica do expoente `1/2` | Núcleo discreto encerrado em capstone; massa e amplitude reais realizadas em camada separada, com amplitude² = massa |
 | R0 | Rotação e estado espectral reais | Estado de profundidade, energia quadrática e rotação abstrata fechados; lei de fase/espectro e estado global de quantidade ainda abertos |
-| R1 | Câmeras e brackets reais | Forma local do bracket derivada da reflexão quadrática; câmeras e agregação saturada ainda abertas |
+| R1 | Câmeras e brackets reais | Bracket local, câmera ímpar, saturação discreta e realização quadrática fechados; lei raio→deformação e crosswalk dos valores ainda abertos |
 | R2 | Reconstrução TFVD real, Green e retorno | Não iniciada |
 | R3 | Frame global, whitening e isometria | Não iniciada |
 | R4 | Fatorização de câmeras pelo mesmo estado global | Não iniciada |
@@ -216,7 +216,7 @@ Os quatorze teoremas analíticos usam `propext`, `Classical.choice`, `Quot.sound
 
 A realização bidimensional/rotacional é acrescentada na etapa abaixo,
 recebendo `A²=M` como theorem anterior, não como fonte de uma norma.
-Continuam abertos lei de fase, norma, câmeras, brackets históricos agregados, TFVD, Green, isometrias
+Continuam abertos lei de fase, norma, identificação com câmeras/brackets históricos, TFVD, Green, isometrias
 e operadores. Não se cria uma medida analítica na torre infinita.
 
 ## Regras para as etapas seguintes
@@ -328,7 +328,7 @@ A relação natural inclui capacidades pares; a seleção balanceada continua
 os níveis `1,2`, mas não `3`, para centro `25` de `n=26`. C2 não foi resolvido.
 
 Onze teoremas da ponte inteira são auditados com no máximo `propext` e
-`Quot.sound`, sem escolha. Ao todo Geometry tem 64 teoremas e 14 definições
+`Quot.sound`, sem escolha. Ao fechar essa etapa Geometry contava 64 teoremas e 14 definições
 auditados. Foundation e Analysis matemáticas permanecem inalteradas.
 Não foi abordado o gate opcional de terminação: ficam abertas tanto a prova
 de término eventual da cauda quanto a seleção de uma profundidade finita
@@ -397,13 +397,59 @@ Base positiva basta para a amplitude; a ponte de centro continua ímpar.
 Zero profundidade e base um têm centro unitário sem reabrir seleção de
 expoente. `q=0` não satisfaz a lei do produto e dá bracket `-2*C`.
 
-31 teoremas públicos e oito definições entram no audit analítico; total 60
-teoremas. Footprint padrão, sem axioma novo. Foundation e Geometry ficam
+31 teoremas públicos e oito definições entram no audit analítico; então 60
+teoremas. Footprint padrão, sem axioma novo. Nessa etapa Foundation e Geometry ficam
 inalteradas. Nenhum import histórico ou pacote novo entra na construção.
-R1 é **parcial**: forma local fechada; câmeras, agregação e identificação
-com brackets históricos continuam abertas. R0 mantém ângulo livre; `q` não
+R1 era **parcial**: forma local fechada; câmera e agregação são acrescentadas
+na etapa abaixo, sem identificação histórica. R0 mantém ângulo livre; `q` não
 é `theta`. Não há lei de fase, parametrização exponencial, tempo ou
 identificação analítica posterior nessa etapa.
+
+## Câmera ímpar: geometria discreta antes da realização quadrática
+
+Gate A está em `Geometry/OddCamera` e `Geometry/OddCameraBracket`, apenas
+com Init e imports locais da Geometry/Foundation. `half` é dado computável;
+`oddCapacity_exists_cameraHalf` abre o witness somente dentro de uma prova
+de existência e unicidade, sem uma definição não computável da câmera.
+`Fin half` enumera raios positivos sem duplicação; cada raio fornece duas
+pernas da API existente, em lados opostos do centro. Reflexão troca o par.
+A contagem recursiva de duas pernas por raio é identificada com `2*half`
+e depois com `b-1`. Não há hipótese de primalidade.
+
+A soma genérica `sumPositiveRadii` usa somente zero e adição para construir
+a enumeração. Seus lemas necessários são especializados aos carriers Int
+e real nas respectivas camadas; não se recria uma biblioteca de Finset.
+O bracket discreto é soma das pernas menos `2*h` cópias do centro.
+A saturação soma a segunda diferença existente e tem definição separada.
+Sua igualdade é provada por distribuição finita e soma de constantes.
+C3 reduz a uma segunda diferença; base `5` dá dois pares; base composta
+`9` dá quatro. Observáveis arbitrários podem produzir valores negativos.
+
+Gate B está em `Analysis/QuadraticCameraBracket`. Recebe `q_r` como entrada
+livre, positiva no domínio, e define o total somando brackets locais.
+O theorem por soma de termos não negativos e total zero elimina cada
+defeito e usa o zero local para recuperar `q_r=1`. A fatoração total vem
+depois da definição. Uma máscara booleana permite refletir pares de modo
+independente; todos/um par são corolários, sem construir um grupo abstrato.
+
+A versão crítica usa `b=oddCameraCapacity half`, não uma base desligada da
+câmera. Cada par preserva a realização da mesma massa de nível `k`; não
+se declara soma de massas ou energia de plano igual ao bracket. Suporte
+carry-derived registra proveniência do índice, não necessidade algébrica.
+Base um tem zero pares, com total zero e condição de equilíbrio vacuamente
+verdadeira. C2 não recebe uma metade artificial e permanece aberto.
+
+R1 continua **parcial**: câmera ímpar e agregação saturada estão fechadas;
+falta selecionar/derivar uma lei `r↦q_r` e provar uma ponte entre os valores
+`F(c±r)` e as pernas `C*q_r^{±1}`. A identidade de saturação discreta não
+fornece essa ponte. A família livre não é uma prova de que um observável
+arbitrário possua tal realização. R0 permanece separado, sem fase nova.
+
+23 teoremas e oito definições novos em Geometry (totais 87/22); 24 teoremas
+e quatro definições na Analysis (84 teoremas ao todo). Guards incluem todos
+os nomes novos. Geometry admite somente propext/Quot.sound, sem escolha;
+Analysis mantém os três axiomas padrão, sem adicionais. Foundation, seus
+capstones e sua auditoria vazia permanecem inalterados.
 
 - Reusar uma prova somente após comparar seu tipo e suas dependências.
 - Manter mapas, estados, parâmetros e domínios antes de scalarizar.

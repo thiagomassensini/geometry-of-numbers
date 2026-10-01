@@ -42,6 +42,15 @@
   resolve esse domínio. Manter `q` independente do ângulo livre; nenhum
   parâmetro físico ou bracket histórico é identificado por essa construção.
   Não usar o bracket para selecionar retroativamente metade ou uma norma.
+- A câmera ímpar recebe `half` explicitamente e tem capacidade `2*half+1`.
+  Nunca extrair esse dado por escolha nem acrescentar primalidade.
+  Geometry usa soma recursiva dos raios `1,...,half` e observáveis inteiros;
+  bracket por pernas menos cópias do centro e soma saturada têm definições
+  independentes. Na Analysis, `q_r` é entrada livre positiva no domínio,
+  não uma lei derivada do raio. Não afirmar `F(c±r)=C*q_r^{±1}` sem nova ponte.
+  Reflexão independente conserva o total; a massa é conservada por PAR,
+  não somada ou identificada com esse total. Câmera vazia não seleciona
+  expoente; C2 e lei de deformação permanecem gates separados.
 - Não introduzir escapes de confiança, placeholders ou axiomas novos.
 - Os nomes do plano são metas, não evidência de existência de provas.
 - Registrar a fonte/commit e quaisquer hipóteses operacionais de uma porta.

@@ -29,6 +29,62 @@ namespace GeometryOfNumbers.Geometry
 
 open Foundation
 
+#assert_geometry_axioms oddCameraPair_straddles_center
+#assert_geometry_axioms oddCameraPair_injective
+#print axioms oddCameraPair_straddles_center
+#print axioms oddCameraPair_injective
+
+#assert_geometry_definition_no_axioms sumPositiveRadii
+#assert_geometry_definition_no_axioms oddCameraCapacity
+#assert_geometry_definition_no_axioms positiveCameraRadius
+#assert_geometry_definition_no_axioms oddCameraPair
+#assert_geometry_definition_no_axioms oddCameraLegCount
+#assert_geometry_definition_no_axioms oddCameraLegSum
+#assert_geometry_definition_no_axioms oddCameraBracket
+#assert_geometry_definition_no_axioms oddCameraSaturatedSecondDifference
+#assert_geometry_axioms sumPositiveRadii_int_add
+#assert_geometry_axioms sumPositiveRadii_int_sub
+#assert_geometry_axioms sumPositiveRadii_int_constant
+#assert_geometry_axioms oddCameraBracket_eq_saturatedSecondDifference
+#assert_geometry_axioms oddCameraBracket_zero
+#assert_geometry_axioms oddCameraBracket_C3
+#assert_geometry_axioms oddCameraBracket_two_pairs
+#assert_geometry_axioms oddCameraBracket_identity
+#assert_geometry_axioms sumPositiveRadii_zero
+#assert_geometry_axioms sumPositiveRadii_succ
+#assert_geometry_axioms sumPositiveRadii_congr
+#assert_geometry_axioms positiveCameraRadius_bounds
+#assert_geometry_axioms positiveCameraRadius_exists
+#assert_geometry_axioms positiveCameraRadius_injective
+#assert_geometry_axioms oddCameraPair_reflection
+#assert_geometry_axioms oddCameraCapacity_isOdd
+#assert_geometry_axioms oddCameraCapacity_pos
+#assert_geometry_axioms oddCameraHalf_unique
+#assert_geometry_axioms oddCapacity_exists_cameraHalf
+#assert_geometry_axioms oddCameraLegCount_eq_twice_half
+#assert_geometry_axioms oddCameraLegCount_eq_capacity_sub_one
+#print axioms sumPositiveRadii_int_add
+#print axioms sumPositiveRadii_int_sub
+#print axioms sumPositiveRadii_int_constant
+#print axioms oddCameraBracket_eq_saturatedSecondDifference
+#print axioms oddCameraBracket_zero
+#print axioms oddCameraBracket_C3
+#print axioms oddCameraBracket_two_pairs
+#print axioms oddCameraBracket_identity
+#print axioms sumPositiveRadii_zero
+#print axioms sumPositiveRadii_succ
+#print axioms sumPositiveRadii_congr
+#print axioms positiveCameraRadius_bounds
+#print axioms positiveCameraRadius_exists
+#print axioms positiveCameraRadius_injective
+#print axioms oddCameraPair_reflection
+#print axioms oddCameraCapacity_isOdd
+#print axioms oddCameraCapacity_pos
+#print axioms oddCameraHalf_unique
+#print axioms oddCapacity_exists_cameraHalf
+#print axioms oddCameraLegCount_eq_twice_half
+#print axioms oddCameraLegCount_eq_capacity_sub_one
+
 #assert_geometry_definition_no_axioms ResidualTowerZeroPrefix
 #assert_geometry_definition_no_axioms HasCarryDepthAtLeast
 #assert_geometry_definition_no_axioms HasIntegerCarryDepthAtLeast
@@ -301,5 +357,35 @@ example (depth : Nat) :
     HasIntegerCarryDepthAtLeast 5 ((1 : Int) - balancedCarryOffset 5 1 ⟨2, rfl⟩) depth :=
   (balancedCarry_canonical_offset_depth_iff 5 1 depth ⟨2, rfl⟩).2
     (hasIntegerCarryDepthAtLeast_zero_quantity 5 depth)
+
+-- Camera radii are explicit; C3, two-pair and composite capacities need no primality.
+example : oddCameraPair 10 (⟨0, by decide⟩ : Fin 2) = (9, 11) := rfl
+example : oddCameraPair 10 (⟨1, by decide⟩ : Fin 2) = (8, 12) := rfl
+example : oddCameraCapacity 1 = 3 ∧ oddCameraLegCount 1 = 2 := ⟨rfl, rfl⟩
+example : oddCameraCapacity 2 = 5 ∧ oddCameraLegCount 2 = 4 := ⟨rfl, rfl⟩
+example : oddCameraCapacity 4 = 9 ∧ oddCameraLegCount 4 = 8 := ⟨rfl, rfl⟩
+example : IsOddCapacity 9 := oddCameraCapacity_isOdd 4
+example (f : Int → Int) (center : Int) : oddCameraBracket 1 f center =
+    f (center - 1) - 2 * f center + f (center + 1) := oddCameraBracket_C3 f center
+example (f : Int → Int) (center : Int) : oddCameraBracket 2 f center =
+    centeredSecondDifference f center 1 + centeredSecondDifference f center 2 :=
+  oddCameraBracket_two_pairs f center
+example (f : Int → Int) (center : Int) : oddCameraBracket 2 f center =
+    f (center - 2) + f (center - 1) + f (center + 1) + f (center + 2) - 4 * f center := by
+  change ((0 + (f (center - 1) + f (center + 1))) +
+    (f (center - 2) + f (center + 2))) - 4 * f center = _
+  omega
+example (f : Int → Int) (center : Int) : oddCameraBracket 4 f center =
+    centeredSecondDifference f center 1 + centeredSecondDifference f center 2 +
+      centeredSecondDifference f center 3 + centeredSecondDifference f center 4 := by
+  rw [oddCameraBracket_eq_saturatedSecondDifference]
+  change (((0 + centeredSecondDifference f center 1) + centeredSecondDifference f center 2) +
+    centeredSecondDifference f center 3) + centeredSecondDifference f center 4 = _
+  omega
+example : oddCameraBracket 4 (fun x => x * x) 10 = 60 := by decide
+example : oddCameraBracket 1 (fun x => -(x * x)) 10 = -2 := by decide
+example (f : Int → Int) (center : Int) : oddCameraBracket 0 f center = 0 :=
+  oddCameraBracket_zero f center
+example : oddCameraCapacity 0 = 1 ∧ oddCameraLegCount 0 = 0 := ⟨rfl, rfl⟩
 
 end GeometryOfNumbers.Geometry

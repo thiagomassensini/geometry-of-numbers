@@ -1323,7 +1323,7 @@ valuation, bracket, Green, tilt ou estado rotacional. O estado real angular
 é uma construção analítica posterior, descrita a seguir.
 
 A ponte inteira tem onze teoremas públicos, com no máximo `propext` e
-`Quot.sound`, sem escolha ou axioma novo. Geometry tem ao todo 64 teoremas
+`Quot.sound`, sem escolha ou axioma novo. Ao fechar essa etapa Geometry contava 64 teoremas
 e 14 definições auditados; o submódulo natural continua vazio. Foundation e
 seu capstone permanecem byte a byte inalterados. A cadeia adicional fechada é:
 
@@ -1701,14 +1701,260 @@ carrier nem assume que um bracket histórico seja igual ao novo objeto.
 ### AUDITORIA E FRONTEIRA
 
 31 teoremas públicos e oito definições novos têm guard no audit analítico;
-a Analysis tem agora 60 teoremas públicos. Seu footprint consiste nos
+ao fechar essa etapa a Analysis contava 60 teoremas públicos. Seu footprint consiste nos
 axiomas padrão `propext`, `Classical.choice`, `Quot.sound`, sem adicionais.
 Foundation e Geometry e seus audits permanecem sem alterações.
 
-R1 está parcialmente fechado: temos a forma local do bracket, sem câmeras,
+Nessa etapa R1 tinha somente a forma local do bracket, sem câmera,
 agregação saturada ou crosswalk histórico. R0 conserva ângulo livre e lei
 angular aberta. Não se introduziram parametrização física de `q`, logaritmo,
 tempo, estrutura complexa, Green, TFVD ou operador nos novos objetos/provas.
 Nenhum resultado daqui retorna como justificativa da massa, de metade ou de
 uma norma. O próximo gate pode comparar uma realização histórica local com
 este readout, mas terá de provar essa ponte em vez de presumir identidade.
+
+## 28. A câmera ímpar como coleção de pares refletidos
+
+### INPUT: metade da capacidade como dado, não como escolha
+
+A geometria das pernas já existe antes da câmera. Recebemos um natural `h`
+e um centro inteiro `c`. A capacidade da câmera é:
+
+$$
+b=2h+1.
+$$
+
+Essa definição não altera a capacidade emergente da dinâmica. Ela fornece
+uma apresentação explícita da câmera no regime ímpar. Quando se parte de
+uma capacidade emergente ímpar, seu witness `b=2h+1` pode ser aberto numa
+prova e usado como dado. Não deduzimos oddness da dinâmica, nem selecionamos
+um witness computacional por escolha clássica.
+
+`oddCapacity_exists_cameraHalf` prova existência e unicidade desse witness;
+`oddCameraHalf_unique` compara duas apresentações. Isso não é uma função
+que extraia a metade escondida de uma proposição existencial.
+
+### CONSTRUÇÃO: raios positivos e pernas existentes
+
+Os raios são exatamente `1,...,h`. `Fin h` os indexa explicitamente:
+o índice `i` representa o raio `i.val+1`. Prova-se o limite, que todo raio
+do intervalo tem um índice e que não existem índices repetidos para um raio.
+Cada índice produz, pela geometria já construída, o par:
+
+$$
+(c-r,c+r).
+$$
+
+`oddCameraPair_reflection` reutiliza a troca das pernas pela reflexão em `c`.
+`oddCameraPair_straddles_center` prova que as pernas ficam em lados estritos
+do centro; `oddCameraPair_injective` impede repetição de pares.
+Não usamos primalidade, divisão por dois ou offsets históricos como premissa.
+
+### CONSTRUÇÃO E TEOREMA: enumerar antes de contar
+
+Uma soma recursiva pequena enumera os raios na ordem:
+
+$$
+S_0(t)=0,\qquad S_{h+1}(t)=S_h(t)+t(h+1).
+$$
+
+É `sumPositiveRadii`, construída apenas com zero e adição. Seu código é
+comum às camadas inteira e real, mas as leis algébricas são provadas em
+seus respectivos carriers. Geometry não importa Mathlib ou Finset.
+
+A contagem das pernas soma duas unidades em cada raio. Só depois a indução
+identifica essa contagem com `2h`, e a apresentação da capacidade dá:
+
+$$
+\boxed{\text{número de pernas}=2h=b-1.}
+$$
+
+São `oddCameraLegCount_eq_twice_half` e
+`oddCameraLegCount_eq_capacity_sub_one`. A potência ou a cardinalidade de
+outro carrier não é usada para criar os pares.
+
+### LIMITES
+
+Capacidade composta `9` fornece `h=4`, quatro pares e oito pernas; não
+precisa ser prima. Em `h=0`, a capacidade é `1` e não há pares. Isso não
+produz seleção fundacional de expoente. Capacidade `2` não é desta forma:
+não introduzimos meia coordenada nem resolvemos seu crosswalk antipodal.
+
+## 29. Bracket da câmera como soma saturada
+
+### INPUT E CONSTRUÇÃO: observável sobre a geometria discreta
+
+A API inicial permanece inteira: `F : Int → Int`. Primeiro somamos as
+leituras das pernas já construídas:
+
+$$
+\operatorname{LegSum}_h(F,c)=
+\sum_{r=1}^{h}\bigl(F(c-r)+F(c+r)\bigr).
+$$
+
+Só depois definimos o bracket da câmera pela contagem de pernas:
+
+$$
+\boxed{\operatorname{CameraBracket}_h(F,c)
+=\operatorname{LegSum}_h(F,c)-2hF(c).}
+$$
+
+`oddCameraLegSum` precede `oddCameraBracket`. A subtração não é definida
+como uma soma de segundas diferenças; queremos provar essa identidade.
+Separadamente, `oddCameraSaturatedSecondDifference` soma a segunda diferença
+existente, com a mesma convenção de orientação:
+
+$$
+\sum_{r=1}^{h}\left[F(c-r)-2F(c)+F(c+r)\right].
+$$
+
+### TEOREMA: distribuir as cópias do centro
+
+A distribuição da soma finita e a soma de uma constante dão:
+
+$$
+\boxed{\operatorname{CameraBracket}_h(F,c)
+=\sum_{r=1}^{h}\Delta^2_{c,r}F.}
+$$
+
+Esse é `oddCameraBracket_eq_saturatedSecondDifference`. A prova não importa
+um theorem histórico de pareamento: agrupa as duas pernas por raio e
+distribui as `h` cópias de `2F(c)` na mesma enumeração.
+
+Em C3, `h=1`, o corolário `oddCameraBracket_C3` reduz a uma única segunda
+diferença de raio `1`. Em capacidade `5`, `h=2`, o teste também verifica:
+
+$$
+B=F(c-2)+F(c-1)+F(c+1)+F(c+2)-4F(c).
+$$
+
+Em capacidade `9`, a identidade soma quatro diferenças. Para `F(x)=x²`
+e `c=10`, o resultado testado é `60=2(1²+2²+3²+4²)`.
+
+### INTERPRETAÇÃO E LIMITES
+
+Uma câmera agrupa um conjunto finito de pares refletidos em torno do mesmo
+centro. Seu bracket soma a resposta centrada de cada par. A identidade usa
+somente esse pareamento e a contagem; primalidade não participa.
+
+Não se conclui positividade para qualquer observável. A identidade tem
+bracket zero para a função identidade, mas o teste `F(x)=-x²` em C3 dá
+`-2`. A positividade da próxima realização será um theorem com suas próprias
+hipóteses, não uma consequência da saturação para `F` arbitrário.
+
+## 30. Câmera quadrática e total não negativo de defeito
+
+### INPUT: a mesma câmera, uma família livre por par
+
+Agora recebemos `C>0` e uma função `q : Nat → ℝ`, exigindo positividade
+somente quando `1≤r≤h`. Os valores fora da câmera não são consultados.
+Cada raio rotula um par, mas não determina seu valor `q_r`.
+Não se escolhe lei de deformação nesta construção.
+
+As pernas locais já provadas são reutilizadas:
+
+$$
+L_r=Cq_r,\qquad R_r=Cq_r^{-1},\qquad L_rR_r=C².
+$$
+
+### CONSTRUÇÃO: somar brackets locais, não fatorações
+
+Definimos `quadraticCameraBracket` pela mesma enumeração dos raios:
+
+$$
+\boxed{B_h^{\rm quad}(C,q)=\sum_{r=1}^{h}B_C(q_r).}
+$$
+
+Uma soma das pernas quadráticas é definida separadamente. A álgebra finita
+também prova que o total é essa soma menos `2hC`, mantendo a mesma forma
+centrada da câmera discreta.
+
+### TEOREMAS: fatoração, positividade e equilíbrio de todos os pares
+
+Somando os teoremas locais e extraindo o centro comum, provamos:
+
+$$
+\boxed{B_h^{\rm quad}(C,q)
+=C\sum_{r=1}^{h}(q_r+q_r^{-1}-2)
+=C\sum_{r=1}^{h}(q_r-1)^2q_r^{-1}.}
+$$
+
+O domínio positivo torna cada bracket local não negativo, portanto:
+
+$$
+\boxed{B_h^{\rm quad}(C,q)\ge0.}
+$$
+
+`sumPositiveRadii_real_zero_iff` prova por indução que uma soma de parcelas
+não negativas só pode zerar quando cada parcela zera. Aplicando depois o
+zero único do bracket local, obtemos `quadraticCameraBracket_zero_iff`:
+
+$$
+\boxed{B_h^{\rm quad}(C,q)=0
+\iff \forall r\in\{1,\ldots,h\},\ q_r=1.}
+$$
+
+Não há cancelamento de defeitos positivos entre pares. Em `h=0`, a soma
+é zero e a condição à direita é vacuamente verdadeira, mesmo que a função
+fornecida tenha valores arbitrários fora do domínio vazio.
+
+### TEOREMA: reflexão independente em qualquer subconjunto
+
+Uma máscara booleana fornecida decide quais pares serão refletidos. A
+invariância local de cada bracket implica invariância da soma inteira.
+`quadraticCameraBracket_independent_reflections` permite qualquer máscara;
+inverter todos os pares ou apenas um são corolários. Não se escolhe a
+máscara por uma regra física nem se precisa formalizar um grupo abstrato.
+
+O teste `C=1/3`, `h=2`, com entradas `q₁=2,q₂=3`, dá:
+
+$$
+B_1=\frac16,\qquad B_2=\frac49,\qquad
+B_{\rm cam}=\frac{11}{18}.
+$$
+
+Inverter ambos ou somente o primeiro preserva `11/18`; fornecer ambos
+iguais a `1` dá zero. São escolhas explícitas de teste, não uma lei canônica
+que selecione as deformações. O centro genérico `1/3` desse teste não é
+apresentado como amplitude crítica da câmera de capacidade `5`.
+
+### PROVENIÊNCIA: a especialização crítica usa a capacidade da câmera
+
+`criticalQuadraticCameraBracket half k q` usa a amplitude anterior com
+base `oddCameraCapacity half=2h+1`. Assim sua base não fica desligada da
+coleção de pares. `criticalQuadraticCameraPair_product` prova que cada par
+conserva a mesma massa `M_b(k)`. Não se somam essas massas para obter o
+bracket; ele soma defeitos, não o produto conservado.
+
+`balancedCarryDepth_quadraticCamera_provenance` registra o suporte carry-derived
+do mesmo `k`, os campos `(1,b^k)` da massa formal, a realização dessa massa
+no produto de cada par e o total como soma dos brackets locais. O suporte
+não é usado para tornar verdadeiras as identidades algébricas.
+
+### LIMITES: a ponte de valores continua aberta
+
+Na câmera discreta, `r` desloca o argumento do observável: `F(c±r)`.
+Na câmera quadrática, `q_r` deforma o valor radial: `Cq_r,Cq_r⁻¹`.
+As duas usam a forma `left-2*center+right`, mas isso **não prova**:
+
+$$
+F(c-r)=Cq_r,\qquad F(c+r)=Cq_r^{-1}.
+$$
+
+Não se definiu um observável para forçar essa igualdade nem se assumiu uma
+lei `r↦q_r`. Esse é o próximo gap explícito de R1. O ângulo do plano permanece
+independente; não se introduziram fase, logaritmo, tempo ou leituras posteriores.
+
+O total pode ser interpretado como custo não negativo de incompatibilidade
+aditiva dos pares multiplicativos. Isso não introduz uma nova norma, nem
+identifica esse readout com `realPlaneEnergy` ou com a massa central.
+
+### AUDITORIA
+
+Geometry recebeu 23 teoremas e oito definições, totalizando 87 teoremas e
+22 definições guardadas. As definições têm footprint vazio; as provas usam
+no máximo `propext` e `Quot.sound`, sem escolha. Analysis recebeu 24 teoremas
+e quatro definições, totalizando 84 teoremas públicos, com somente os três
+axiomas padrão. Foundation e sua auditoria vazia não foram alteradas.
+R1 fica parcial: câmera ímpar e agregação fechadas, seleção e crosswalk dos
+valores ainda abertos. C2 continua separado.

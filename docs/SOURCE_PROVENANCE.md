@@ -440,3 +440,49 @@ explicitamente distinguida do domínio válido do produto. `q=0` dá readout
 contêm somente `propext`, `Classical.choice` e `Quot.sound`. Não há axioma
 novo, alteração matemática na Foundation ou Geometry, nem dependência
 reversa. A nova forma local não justifica retroativamente a seleção de metade.
+
+## Câmera ímpar e soma saturada de brackets locais
+
+Esta etapa é uma construção local sobre `CenterLegReflection`,
+`CenteredSecondDifference` e `QuadraticCenteredBracket`. Não houve nova
+consulta histórica como fonte de prova, import de repositório histórico
+ou alteração de dependências. As referências previamente consultadas a
+`CPFormal/Finite/Bracket.lean` no commit
+`65d50f6db1208708e109982ba97e1d51d3039956` permanecem registradas acima.
+
+A comparação arquitetural solicitada é:
+
+```text
+camada histórica Cp: câmera prima, balancedOffsets, pareamento por Finset
+camada nova: capacidade ímpar, half explícito, pares de raios positivos
+```
+
+Isso não afirma que todo lema genérico de `Finite/Bracket` exigia primalidade.
+A nova identidade é independente de primalidade: nem o código nem os
+enunciados usam essa hipótese. O teste composto `b=9` verifica a diferença.
+Não portamos a enumeração histórica de offsets ou sua seleção computacional.
+
+| Objeto novo | Fonte da prova e limite |
+| --- | --- |
+| `sumPositiveRadii` | Recursão local em Nat, somente Init; a mesma enumeração é usada com Int e real |
+| `positiveCameraRadius`, `oddCameraPair` | Índice `Fin half` lido como `val+1`, pernas existentes; cobertura, injetividade, lados estritos e reflexão provados |
+| `oddCapacity_exists_cameraHalf` | Witness aberto somente numa prova; não se extrai por escolha para definir a câmera |
+| `oddCameraLegCount` | Soma duas pernas por raio antes de identificar `2*h=b-1` |
+| `oddCameraBracket_eq_saturatedSecondDifference` | Soma de diferenças e de constantes sobre o mesmo intervalo; nenhuma identidade histórica entra como premissa |
+| `quadraticCameraBracket` | Soma dos brackets locais já derivados, não definida pela fatoração |
+| Zero global | Indução na soma real não negativa, seguida do zero único local; não se usa convexidade ou cálculo |
+| Reflexões independentes | Invariância local somada por máscara booleana fornecida; nenhum grupo ou fase nova |
+| Versão crítica e suporte | Capacidade da câmera define a base da amplitude anterior; o mesmo índice k é certificado pelo centro, sem nova massa |
+
+Foi mantido o carrier `Int → Int` da segunda diferença discreta; só os lemas
+necessários da soma foram especializados. Não se introduziu um grupo aditivo
+abstrato que exigisse Mathlib em Geometry. A máscara e os valores `q_r` são
+dados livres; a igualdade `F(c±r)=C*q_r^{±1}` não foi assumida ou provada.
+
+O audit detectou escolha quando `omega` resolveu diretamente a conjunção
+dos limites do raio. Construir a conjunção explicitamente e provar as duas
+desigualdades separadamente removeu essa dependência. O guard final permite
+apenas `propext`/`Quot.sound` nas 23 provas geométricas novas; oito definições
+são vazias. Os 24 teoremas/quatro definições analíticos usam apenas os
+axiomas padrão permitidos. Todos os nomes públicos entram nos audits.
+Foundation, seleção de metade e sua auditoria vazia permanecem congeladas.

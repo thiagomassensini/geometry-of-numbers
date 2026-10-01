@@ -21,6 +21,59 @@ namespace GeometryOfNumbers.Analysis
 
 open Foundation
 
+#assert_analysis_axioms quadraticCameraLegSum
+#assert_analysis_axioms quadraticCameraBracket
+#assert_analysis_axioms reflectCameraPairs
+#assert_analysis_axioms criticalQuadraticCameraBracket
+#assert_analysis_axioms sumPositiveRadii_real_sub
+#assert_analysis_axioms sumPositiveRadii_real_constant
+#assert_analysis_axioms sumPositiveRadii_real_mul
+#assert_analysis_axioms sumPositiveRadii_real_nonneg
+#assert_analysis_axioms sumPositiveRadii_real_zero_iff
+#assert_analysis_axioms quadraticCameraBracket_eq_legs_sub_centers
+#assert_analysis_axioms quadraticCameraBracket_eq_closed
+#assert_analysis_axioms quadraticCameraBracket_eq_factor
+#assert_analysis_axioms quadraticCameraBracket_nonneg
+#assert_analysis_axioms quadraticCameraBracket_zero_iff
+#assert_analysis_axioms quadraticCameraBracket_zero_pairs
+#assert_analysis_axioms quadraticCameraBracket_reflection
+#assert_analysis_axioms quadraticCameraBracket_independent_reflections
+#assert_analysis_axioms quadraticCameraBracket_reflect_one_pair
+#assert_analysis_axioms criticalQuadraticCameraBracket_eq_sum_local
+#assert_analysis_axioms criticalQuadraticCameraBracket_eq_closed
+#assert_analysis_axioms criticalQuadraticCameraBracket_eq_factor
+#assert_analysis_axioms criticalQuadraticCameraBracket_nonneg
+#assert_analysis_axioms criticalQuadraticCameraBracket_zero_iff
+#assert_analysis_axioms criticalQuadraticCameraBracket_independent_reflections
+#assert_analysis_axioms criticalQuadraticCameraBracket_reflection
+#assert_analysis_axioms criticalQuadraticCameraBracket_zero_pairs
+#assert_analysis_axioms criticalQuadraticCameraPair_product
+#assert_analysis_axioms balancedCarryDepth_quadraticCamera_provenance
+#print axioms sumPositiveRadii_real_sub
+#print axioms sumPositiveRadii_real_constant
+#print axioms sumPositiveRadii_real_mul
+#print axioms sumPositiveRadii_real_nonneg
+#print axioms sumPositiveRadii_real_zero_iff
+#print axioms quadraticCameraBracket_eq_legs_sub_centers
+#print axioms quadraticCameraBracket_eq_closed
+#print axioms quadraticCameraBracket_eq_factor
+#print axioms quadraticCameraBracket_nonneg
+#print axioms quadraticCameraBracket_zero_iff
+#print axioms quadraticCameraBracket_zero_pairs
+#print axioms quadraticCameraBracket_reflection
+#print axioms quadraticCameraBracket_independent_reflections
+#print axioms quadraticCameraBracket_reflect_one_pair
+#print axioms criticalQuadraticCameraBracket_eq_sum_local
+#print axioms criticalQuadraticCameraBracket_eq_closed
+#print axioms criticalQuadraticCameraBracket_eq_factor
+#print axioms criticalQuadraticCameraBracket_nonneg
+#print axioms criticalQuadraticCameraBracket_zero_iff
+#print axioms criticalQuadraticCameraBracket_independent_reflections
+#print axioms criticalQuadraticCameraBracket_reflection
+#print axioms criticalQuadraticCameraBracket_zero_pairs
+#print axioms criticalQuadraticCameraPair_product
+#print axioms balancedCarryDepth_quadraticCamera_provenance
+
 #assert_analysis_axioms reciprocalReflection
 #assert_analysis_axioms quadraticLeftLeg
 #assert_analysis_axioms quadraticRightLeg
@@ -277,5 +330,43 @@ example : criticalQuadraticLeftLeg 5 2 (Geometry.oddCapacity_pos ⟨2, rfl⟩) 2
   · change (5 : Int) ^ 2 ∣ (25 : Int)
     exact ⟨1, rfl⟩
   · norm_num
+
+-- The following family is a test INPUT, not a canonical law selected for the radii.
+example : quadraticCameraBracket 2 ((1 : ℝ) / 3)
+    (fun r => if r = 1 then 2 else 3) = (11 : ℝ) / 18 := by
+  change (0 + quadraticCenteredBracket ((1 : ℝ) / 3) 2) +
+    quadraticCenteredBracket ((1 : ℝ) / 3) 3 = _
+  rw [quadraticCenteredBracket_eq_closed, quadraticCenteredBracket_eq_closed]
+  norm_num
+example : quadraticCameraBracket 2 ((1 : ℝ) / 3)
+    (fun r => reciprocalReflection (if r = 1 then 2 else 3)) = (11 : ℝ) / 18 := by
+  rw [quadraticCameraBracket_reflection]
+  change (0 + quadraticCenteredBracket ((1 : ℝ) / 3) 2) +
+    quadraticCenteredBracket ((1 : ℝ) / 3) 3 = _
+  rw [quadraticCenteredBracket_eq_closed, quadraticCenteredBracket_eq_closed]
+  norm_num
+example : quadraticCameraBracket 2 ((1 : ℝ) / 3)
+    (reflectCameraPairs (fun r => if r = 1 then 2 else 3) (fun r => r == 1)) = (11 : ℝ) / 18 := by
+  rw [quadraticCameraBracket_independent_reflections]
+  change (0 + quadraticCenteredBracket ((1 : ℝ) / 3) 2) +
+    quadraticCenteredBracket ((1 : ℝ) / 3) 3 = _
+  rw [quadraticCenteredBracket_eq_closed, quadraticCenteredBracket_eq_closed]
+  norm_num
+example : quadraticCameraBracket 2 ((1 : ℝ) / 3) (fun _ => 1) = 0 :=
+  (quadraticCameraBracket_zero_iff 2 (by norm_num) _ (fun _ _ _ => by norm_num)).2
+    (fun _ _ _ => rfl)
+example (q : ℕ → ℝ) : quadraticCameraBracket 0 ((1 : ℝ) / 3) q = 0 ↔
+    ∀ r, 1 ≤ r → r ≤ 0 → q r = 1 :=
+  quadraticCameraBracket_zero_iff 0 (by norm_num) q (fun r hr hbound => by omega)
+example (k : ℕ) (q : ℕ → ℝ) : criticalQuadraticCameraBracket 0 k q = 0 :=
+  criticalQuadraticCameraBracket_zero_pairs k q
+example : criticalQuadraticCameraBracket 4 2 (fun _ => 2) = (2 : ℝ) / 9 := by
+  rw [criticalQuadraticCameraBracket_eq_closed, sumPositiveRadii_real_constant,
+    realCriticalAmplitude_eq_rpow]
+  norm_num [Geometry.oddCameraCapacity, Real.rpow_neg_one]
+example (r : ℕ) (hr : 1 ≤ r) (hbound : r ≤ 2) :
+    criticalQuadraticLeftLeg 5 2 (by decide) 2 *
+      criticalQuadraticRightLeg 5 2 (by decide) 2 = realDepthMass 5 2 (by decide) :=
+  criticalQuadraticCameraPair_product 2 2 (fun _ => 2) r hr hbound (by norm_num)
 
 end GeometryOfNumbers.Analysis
