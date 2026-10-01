@@ -3,14 +3,26 @@
 Formalização da quantidade sob mudanças de representação posicional.
 A pergunta-guia é: **o que permanece quando a câmera/base muda?**
 
-Este repositório começa pela proveniência, não por um operador:
+Este repositório começa pela proveniência, não por um operador. A cadeia
+fundacional efetivamente construída é:
 
 ```text
-quantidade → transporte/carry → centro–pernas → profundidade
-          → massa → amplitude quadrática → expoente 1/2
-          → representação real → câmeras → TFVD → realização global
-          → operador logarítmico autoadjunto
+dinâmica local finita → primeiro retorno → ciclos/reset → torre residual
+→ prefixos/profundidade → capacidade → normalização neutra → massa formal
+→ refinamento coerente → compatibilidade quadrática de escala → metade
 ```
+
+A geometria centro–pernas foi construída **depois**, como camada adicional:
+
+```text
+centro e raio inteiros → pernas simétricas → reflexão involutiva
+→ teste de centro contra pernas fixas → segunda diferença de observáveis
+```
+
+O crosswalk da torre/carry para essa geometria continua pendente. Ela não
+justificou retroativamente a massa ou metade. A realização real da escala
+já existe; estado rotacional, câmeras, brackets e demais camadas do plano
+permanecem posteriores, ainda não formalizados aqui.
 
 O nome do repositório não afirma que a geometria clássica dos números já
 está formalizada aqui. O escopo é o plano de trabalho da geometria real do carry.
@@ -21,7 +33,8 @@ está formalizada aqui. O escopo é o plano de trabalho da geometria real do car
 capacidade prefixal, normalização neutra e conservação por refinamento fechados;
 ponte da massa formal à rigidez quadrática discreta fechada e consolidada em
 capstone. Zona B aberta: massa real, amplitude real e identidade do quadrado
-compiladas, sem estrutura vetorial ou norma.**
+compiladas, sem estrutura vetorial ou norma. Geometria discreta centro–pernas,
+reflexão e segunda diferença agora compiladas e auditadas separadamente.**
 
 O núcleo da Zona A depende apenas de `Init`, sem Mathlib ou imports históricos.
 Noventa e dois teoremas públicos e dezessete definições
@@ -212,11 +225,12 @@ do orçamento e a seleção formal em todas as profundidades positivas.
 Autonomia e injetividade continuam explícitas, e o requisito quadrático não
 é apresentado como consequência da contagem isoladamente.
 
-Os dois imports públicos têm papéis distintos:
+Os três imports públicos têm papéis distintos:
 
 ```text
 GeometryOfNumbers           — somente Foundation; axiomas vazios
-GeometryOfNumbers.Analysis  — Foundation → Mathlib → realização real
+GeometryOfNumbers.Geometry  — Foundation + geometria Int; audit separado
+GeometryOfNumbers.Analysis  — reúne Geometry + realização real com Mathlib
 ```
 
 `realizeCountingShare` interpreta uma apresentação por divisão em `ℝ` e
@@ -240,6 +254,36 @@ auditados separadamente: usam `propext`, `Classical.choice` e `Quot.sound`,
 sem axiomas adicionais. Essa camada não é anunciada como axiom-free e não
 define uma medida infinita, espaço vetorial ou norma.
 
+## Geometria discreta centro–pernas
+
+`Geometry/CenterLegReflection.lean` recebe apenas `center radius : Int`.
+As pernas `c-r` e `c+r` são definidas, e sua soma `2*c` é provada. O raio pode
+ser negativo ou zero, sem truncamento. `reflect c x = 2*c-x` fixa o centro,
+troca as pernas e é involutiva. `IsCenterOf` expressa essa troca para pernas
+fixas; equivale à soma igual a `2*candidate`. O centro construído é único;
+não se afirma que todo par inteiro tenha um centro inteiro.
+
+O teste `centerDefect left candidate right = left - 2*candidate + right` dá:
+
+```text
+pernas fixas:   D(c-r, c+δ, c+r) = -2*δ
+pernas novas:   D((c+δ)-r, c+δ, (c+δ)+r) = 0
+```
+
+`Geometry/CenteredSecondDifference.lean` define `secondDifferenceAt` sobre
+três nós e `centeredSecondDifference` sobre as pernas construídas. A identidade
+recupera exatamente o defeito de centro. Já `f(x)=x*x` tem resposta `2*r*r`
+mesmo em simetria: resposta/curvatura de um observável não é necessariamente
+assimetria geométrica. Os exemplos verificam `(7,10,13)`, teste em `11` dando
+`-2`, recentramento `(8,11,14)` dando zero, reflexão e resposta quadrática `18`.
+
+Sete definições têm footprint vazio. Os 21 teoremas públicos são auditados;
+a ponte definicional da identidade tem footprint vazio e os demais usam
+`propext` e `Quot.sound`, **sem `Classical.choice`**. Esses axiomas vêm da
+aritmética/provas de Init; não foi necessário importar Mathlib nesta camada.
+Isso não é uma extensão da auditoria vazia da Zona A. Não foram identificados
+brackets, Green ou tilt com esses objetos.
+
 ## Executar
 
 Requer Elan; a versão do Lean está fixada em `lean-toolchain`.
@@ -250,16 +294,21 @@ Mathlib está fixada no commit `81a5d257c8e410db227a6665ed08f64fea08e997`
 lake update
 lake build
 bash scripts/audit-foundation.sh
+bash scripts/audit-geometry.sh
 bash scripts/audit-analysis.sh
 ```
 
-As duas auditorias participam do build padrão e também têm comandos separados.
+As três auditorias Lean participam do build padrão e têm scripts separados.
 Na fundação, além de `#print axioms`,
 `#assert_no_axioms` rejeita qualquer dependência de axiomas nos teoremas
 fundacionais listados — inclusive os axiomas usuais de Mathlib. Na análise,
 `#assert_analysis_axioms` permite somente os três axiomas padrão indicados.
 `scripts/check-foundation-imports.lean` usa o parser Lean para impedir imports
 analíticos/Mathlib na fundação ou em seu import público, inclusive multilinha.
+O checker separado de Geometry admite apenas Init, Foundation e Geometry,
+exceto a ferramenta Lean usada pelo audit; análise e fontes históricas não
+podem retornar como dependências. A direção das entradas é
+`Foundation → Geometry → Analysis`, não um crosswalk matemático já fechado.
 
 ## Organização e fronteiras
 
@@ -270,6 +319,7 @@ analíticos/Mathlib na fundação ou em seu import público, inclusive multilinh
 - [Proveniência das portas](docs/SOURCE_PROVENANCE.md): fontes, commits,
   adaptações e por que os capstones históricos não foram simplesmente importados.
 - `GeometryOfNumbers/Foundation/`: Zona A, sem axiomas.
+- `GeometryOfNumbers/Geometry/`: geometria discreta sobre `Int`, audit próprio.
 - `GeometryOfNumbers/Analysis/`: Zona B, realização escalar real, auditoria separada.
 - Camadas vetorial, de câmeras, de operadores e de limites: fases futuras.
 

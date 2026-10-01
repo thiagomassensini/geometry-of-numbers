@@ -785,3 +785,173 @@ identidade de escalares reais; não deriva, sozinha, uma norma quadrática.
 A massa real continua sendo a realização de cotas finitas, não uma medida
 analítica mais forte. A próxima estrutura geométrica deve ser introduzida
 explicitamente quando chegar sua rodada, sem retornar como premissa da fundação.
+
+## 18. Geometria centro–pernas e reflexão
+
+### INPUT: uma camada adicional, não uma premissa retroativa
+
+A fundação de seleção da escala já foi encerrada: primeiro retorno, torre,
+contagem, massa formal coerente e compatibilidade quadrática selecionam a
+razão formal de metade. Nada dessa prova pressupôs a geometria que agora
+construímos. A realização escalar real também permanece aquela da seção
+anterior; não a usamos para construir a nova configuração discreta.
+
+Recebemos um centro `c` e um raio **inteiro com sinal** `r`. Esse carrier
+permite deslocamentos para os dois lados sem a subtração truncada dos
+naturais. Nenhuma divisão, média, estrutura normada ou novo dado analítico
+é necessária.
+
+### CONSTRUÇÃO: o centro vem antes das pernas
+
+Definimos apenas as duas avaliações determinadas pelos dados:
+
+$$
+\ell(c,r)=c-r,\qquad \rho(c,r)=c+r.
+$$
+
+Não colocamos sua simetria como hipótese nem armazenamos relações
+redundantes num certificado. `leftLeg` e `rightLeg` são essas construções;
+`leftLeg_add_rightLeg` prova depois:
+
+$$
+\ell(c,r)+\rho(c,r)=2c.
+$$
+
+Raio zero faz ambas as pernas coincidir com o centro. Inverter o sinal do
+raio troca os nomes das pernas, sem mudar a configuração não orientada.
+Esse resultado vale também para centros e raios negativos.
+
+### TEOREMA: reflexão involutiva e centro recuperável
+
+A reflexão em torno do centro é
+
+$$
+R_c(x)=2c-x.
+$$
+
+Ela fixa `c`, leva `c-r` a `c+r`, leva `c+r` a `c-r` e satisfaz
+
+$$
+R_c(R_c(x))=x.
+$$
+
+`reflect_center`, `reflect_leftLeg`, `reflect_rightLeg` e
+`reflect_involutive` provam essas leis. Elas não escolhem um novo centro;
+testam a operação determinada pelo centro já recebido.
+
+Para duas pernas **fixas**, podemos perguntar se um candidato `a` é centro:
+`IsCenterOf left right a` significa que sua reflexão troca esses endpoints.
+`isCenterOf_iff_sum` caracteriza essa condição, sem dividir por dois:
+
+$$
+R_a(\ell)=\rho\iff \ell+\rho=2a.
+$$
+
+As pernas construídas possuem o centro `c`, e `constructed_center_unique`
+prova que qualquer candidato que satisfaça a condição coincide com ele.
+Não concluímos que quaisquer endpoints inteiros tenham centro inteiro:
+`0` e `1`, por exemplo, não admitem um inteiro `a` com `2a=1`.
+
+### INTERPRETAÇÃO E LIMITES
+
+O centro construído e sua caracterização são afirmações diferentes: a
+primeira fornece uma configuração a partir de dados; a segunda testa um
+candidato contra endpoints mantidos fixos. Nenhum teorema novo identifica
+esse centro ou raio com resíduos, contadores ou profundidades da torre.
+**O crosswalk torre/carry → centro–pernas continua pendente.**
+
+Essa geometria adicional é Init-only, mas não pertence ao capstone vazio
+da Zona A. As provas inteiras usuais desta versão usam `propext` e
+`Quot.sound`; o audit próprio rejeita escolha e qualquer outro axioma.
+As definições geométricas têm footprint vazio. A fundação continua com
+footprint vazio e sem importar Geometry. A organização das entradas
+`Foundation → Geometry → Analysis` não é uma prova desse crosswalk.
+
+## 19. Segunda diferença e defeito de centro
+
+### CONSTRUÇÃO: um candidato contra pernas fixas
+
+Só depois da configuração definimos o teste geométrico
+
+$$
+D(\ell,a,\rho)=\ell-2a+\rho.
+$$
+
+Ele zera precisamente quando `a` é centro dessas pernas, conforme
+`centerDefect_eq_zero_iff_isCenterOf`. Para pernas produzidas por `c_0`,
+`centerDefect_constructed` dá zero no centro original. Se mantemos **as mesmas
+pernas** e deslocamos somente o candidato, o capstone da camada é:
+
+$$
+\boxed{D(c_0-r,c_0+\delta,c_0+r)=-2\delta.}
+$$
+
+`centerDefect_fixed_legs_shift` prova esse resultado para todo deslocamento
+inteiro; `centerDefect_fixed_legs_shift_neg` dá `2δ` ao testar `c_0-δ`.
+O sinal vem da orientação definida, não de um ajuste posterior.
+
+### TEOREMA: recentrar as pernas elimina o mismatch
+
+Se mudamos também as pernas para a geometria do novo centro, temos
+
+$$
+\ell'=(c_0+\delta)-r,\qquad \rho'=(c_0+\delta)+r,
+$$
+
+e `centerDefect_recentered` prova
+
+$$
+D(\ell',c_0+\delta,\rho')=0.
+$$
+
+Portanto o defeito **não é uma propriedade absoluta do número chamado
+centro**. É a incompatibilidade entre um candidato e as pernas fixas da
+geometria anterior. Os exemplos dão `(7,10,13)` no centro verdadeiro,
+`D(7,11,13)=-2` no candidato deslocado e `D(8,11,14)=0` após recentramento.
+
+### CONSTRUÇÃO: observar a configuração
+
+Para um observável inteiro `f : Int → Int`, a operação sobre três nós é
+
+$$
+\operatorname{SD}_f(\ell,a,\rho)=f(\ell)-2f(a)+f(\rho).
+$$
+
+Essa é `secondDifferenceAt`. Depois a especializamos às pernas construídas:
+
+$$
+\Delta^2_{c,r}f=\operatorname{SD}_f(c-r,c,c+r).
+$$
+
+Essa é `centeredSecondDifference`. Separar as duas APIs é importante: testar
+`a=c_0+δ` com as pernas originais **não** equivale a construir
+`centeredSecondDifference f (c_0+δ) r`, pois esta última também muda as pernas.
+
+### TEOREMA: identidade detecta miscentering; não linearidade responde à geometria
+
+`secondDifferenceAt_identity` recupera literalmente `D`. Assim a identidade
+tem segunda diferença zero na configuração centrada, e o mesmo teste com
+pernas fixas e candidato deslocado dá `-2δ`. Não foi preciso scalarizar
+outro carrier: trabalhamos diretamente com a geometria inteira definida.
+
+Não generalizamos essa anulação a qualquer observável. O exemplo formal
+`centeredSecondDifference_square` prova
+
+$$
+(c-r)^2-2c^2+(c+r)^2=2r^2.
+$$
+
+Para `c=10,r=3`, a resposta é `49-200+169=18`, embora a configuração esteja
+perfeitamente centrada. A identidade lê diretamente o defeito de centro;
+um observável geral lê sua resposta — ou curvatura discreta — sobre essa
+geometria. Raio negativo preserva a segunda diferença, e raio zero a anula
+para qualquer observável, pois os três nós então coincidem.
+
+### LIMITES E PRÓXIMAS PONTES
+
+A camada tem 21 teoremas públicos e sete definições auditados separadamente.
+Seus testes não são pressupostos das provas gerais. Não construímos um mapa
+da torre para centro–pernas; não identificamos o bracket histórico, Green
+ou tilt com a segunda diferença ou com o defeito. Não há nova norma, estado
+rotacional, câmera ou operador. Essas pontes serão enunciadas e provadas
+em suas próprias etapas, sem reescrever a origem da massa e de metade.

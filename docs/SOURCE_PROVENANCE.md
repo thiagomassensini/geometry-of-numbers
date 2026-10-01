@@ -117,7 +117,9 @@ empacotados diretamente. Dez teoremas públicos novos e esse empacotamento
 têm footprint vazio. O limite `n < b^k` força cauda zero, sem afirmar que toda
 cauda termina em alguma profundidade.
 
-Não se portaram a eliminação eventual da cauda, o crosswalk clássico de normalização carry ou centro–pernas.
+Não se portaram a eliminação eventual da cauda, o crosswalk clássico de normalização carry
+ou o crosswalk carry/centro–pernas. A geometria abstrata centro–pernas foi
+construída posteriormente, na camada separada registrada abaixo.
 A realização da amplitude em potências reais está agora na Zona B abaixo. Não há prova de
 autoadjunticidade nesta árvore. Essas fronteiras constam do README e do plano.
 
@@ -247,3 +249,38 @@ dependências de Mathlib ou Analysis na fundação e no import público discreto
 Foram revisadas todas as notas Markdown rastreadas do projeto: README,
 versão humana, plano, proveniência e instruções AGENTS. A pasta pessoal
 `.obsidian/` é local e não foi importada, alterada ou versionada.
+
+## Geometria discreta centro–pernas e segunda diferença
+
+Foram consultadas cópias locais das dependências históricas de
+`carry-self-adjoint-operator`, HEAD `cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa`:
+
+| Fonte e commit | Conteúdo consultado e adaptação |
+| --- | --- |
+| `CPFormal`, `65d50f6db1208708e109982ba97e1d51d3039956`, `Finite/SymmetricPair.lean` | Pernas `c-r`, `c+r`, soma `2*c` e troca por inversão do raio; inspiração direta, sem importar Mathlib ou copiar uma estrutura redundante |
+| Mesma fonte, `Finite/Bracket.lean` | `centeredSecondDifference` abstrata aditiva e invariância sob raio negativo; aqui a API inicial é somente `Int → Int`, separada da operação sobre três nós fixos |
+| `GreenFrame`, `cd2d838bee67ad23f869a02f8ed9f0a0feb926fa`, `Analysis/GreenBounds.lean` | Forma de três termos `greenStencil`; somente referência de orientação. Não foram portados estimativas, energias ou uma identificação com Green |
+| `FiniteNativeCarryOperator`, `00e9d6beb17226545abf5ddf90bbfede6c7146b0`, `Operator/FiniteReal.lean` | `centeredBracket` como realização posterior em outro carrier; não portamos estados rotacionais, amplitudes, câmeras ou esse bracket |
+
+A consulta prévia de `native-carry-geometry` permanece registrada acima:
+`centerOffsetDecomposition_existsUnique` tem footprint com `Classical.choice`,
+`Quot.sound` e `propext`. **Não foi portado**, nem usado para alegar que a
+nova geometria tem footprint vazio. Não houve nova importação histórica;
+essas bibliotecas não entram no manifest do projeto.
+
+`CenterLegReflection` e `CenteredSecondDifference` são provas locais com Init.
+O defeito de centro com pernas fixas e a distinção de recentramento são
+explicitados como novas consequências elementares da configuração, não
+como uma identificação com o carry ou com observáveis históricos.
+A verificação `f(x)=x*x` impede confundir resposta não linear e miscentering.
+
+O probe desta versão encontrou `propext` nos lemas aditivos/multiplicativos
+usuais de Int. As provas lineares por `omega` usam `propext` e `Quot.sound`.
+Aplicar esse tactic diretamente a equivalências também introduziu escolha;
+separar construtivamente as duas direções antes da aritmética eliminou essa
+dependência. O audit final rejeita escolha ou qualquer axioma além dos dois
+permitidos; sete definições e a ponte definicional da identidade são vazias.
+Nenhuma dessas provas ou axiomas retorna à fundação congelada.
+
+A profundidade/massa/metade já foram derivadas sem centro–pernas nesta árvore.
+Não foi inventada uma ponte retroativa para alterar essa proveniência.

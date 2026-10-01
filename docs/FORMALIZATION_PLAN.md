@@ -10,9 +10,14 @@ Não substitui os enunciados Lean nem declara fechadas as metas do plano.
 **Zona A — fundação discreta:** quantidade, carry, profundidade,
 massa/expoentes e rigidez quadrática. O núcleo de seleção da escala está
 encerrado em `FoundationalHalfScalingCapstone`. Isso não fecha outras metas
-históricas do plano, como a porta centro–pernas. Axiomas transitivamente usados:
+históricas do plano, como o crosswalk carry/centro–pernas. Axiomas transitivamente usados:
 **nenhum**. Nem `Classical.choice`, nem `propext`, nem `Quot.sound`.
 As provas atuais importam apenas `Init`.
+
+**Geometria discreta adicional — `Geometry/`:** centro–pernas, reflexão e
+segunda diferença sobre `Int`, somente com Init nos arquivos matemáticos.
+Sua auditoria permite `propext` e `Quot.sound`, rejeitando escolha e qualquer
+outro axioma. Não pertence ao capstone axiom-free de seleção da escala.
 
 **Zona B — análise real:** aberta somente para realizar massa e amplitude
 escalares. Mathlib entra por `Analysis/`; raízes, rotações, Hilbert, adjuntos,
@@ -25,7 +30,7 @@ complexa justificará um resultado fundacional.
 | Fase | Conteúdo | Estado nesta árvore |
 | --- | --- | --- |
 | F0 | Fidelidade → recorrência → primeiro retorno → carry → torre | Primeiro retorno, reset, torre finita, capacidade prefixal e fibras de refinamento fechados; crosswalk clássico ainda aberto |
-| F1 | Centro–pernas, profundidade e resíduo | Não portada |
+| F1 | Centro–pernas, profundidade e resíduo | Geometria inteira abstrata, reflexão e segunda diferença fechadas; crosswalk com a torre/carry ainda aberto |
 | F2 | Massa/amplitude e rigidez algébrica do expoente `1/2` | Núcleo discreto encerrado em capstone; massa e amplitude reais realizadas em camada separada, com amplitude² = massa |
 | R0 | Rotação e estado espectral reais | Não iniciada |
 | R1 | Câmeras e brackets reais | Não iniciada |
@@ -210,6 +215,36 @@ TFVD, Green, isometrias e operadores. A identidade escalar `A²=M` não fecha
 nenhum deles. Também não se cria uma medida analítica na torre infinita.
 
 ## Regras para as etapas seguintes
+
+### Nova camada discreta, sem reabrir a seleção da escala
+
+`Geometry/CenterLegReflection` define as pernas a partir do centro e raio,
+nunca as relações desejadas como campos de um certificado. Reflection
+troca as pernas e é involutiva. `IsCenterOf` caracteriza candidatos contra
+pernas fixas pela reflexão, e sua equivalência com `left+right=2*candidate`
+é provada. Existência e unicidade valem para o par construído; não para
+qualquer par de inteiros, como confirma o teste de endpoints `0,1`.
+
+O capstone `centerDefect_fixed_legs_shift` prova `-2*displacement` quando só
+o candidato muda. `centerDefect_recentered` prova zero quando também se
+reconstroem as pernas. `secondDifferenceAt` distingue nós fixos da configuração
+construída em `centeredSecondDifference`; identidade recupera o defeito,
+quadrado tem resposta `2*r*r`. Não se universaliza a anulação por simetria.
+
+As entradas públicas agora seguem `Foundation → Geometry → Analysis`;
+os arquivos de provas geométricas usam somente Init e sua camada anterior
+geométrica. A fundação matemática e seu audit não foram modificados.
+Essa organização não prova uma relação da torre com centro–pernas: ainda
+falta especificar e provar um mapa com essa proveniência. Também não se
+identificaram bracket, Green, tilt ou estados vetoriais com a nova API.
+
+21 teoremas públicos e sete definições são auditados separadamente, com
+testes de sinal, raio negativo/zero e observável quadrático. A axiomática
+permitida é somente `propext`/`Quot.sound`; todas as definições e a igualdade
+definicional da identidade são vazias. O audit da fundação continua vazio.
+Não foi criada uma álgebra inteira alternativa para esconder os axiomas
+das provas de Init. O próximo gate pode ser um crosswalk, mas não foi
+inserido como hipótese desta rodada.
 
 - Reusar uma prova somente após comparar seu tipo e suas dependências.
 - Manter mapas, estados, parâmetros e domínios antes de scalarizar.

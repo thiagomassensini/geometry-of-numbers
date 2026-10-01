@@ -1,6 +1,6 @@
 name = "geometry-of-numbers"
 version = "0.1.0"
-defaultTargets = ["GeometryOfNumbers", "GeometryOfNumbers.Foundation.Audit", "GeometryOfNumbers.Analysis", "GeometryOfNumbers.Analysis.Audit"]
+defaultTargets = ["GeometryOfNumbers", "GeometryOfNumbers.Foundation.Audit", "GeometryOfNumbers.Geometry", "GeometryOfNumbers.Geometry.Audit", "GeometryOfNumbers.Analysis", "GeometryOfNumbers.Analysis.Audit"]
 
 [[lean_lib]]
 name = "GeometryOfNumbers"

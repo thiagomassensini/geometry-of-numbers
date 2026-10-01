@@ -1,7 +1,8 @@
 # Instruções de trabalho
 
-- Preservar a ordem quantidade → carry → geometria → métrica → representação
-  real → operador. Nunca importar um operador como justificativa da fundação.
+- Preservar a proveniência quantidade → carry e distinguir a fundação de escala
+  já encerrada da geometria adicional. Centro–pernas não foi premissa da massa
+  ou de metade. Nunca importar um operador como justificativa da fundação.
 - Ler `docs/FORMALIZATION_PLAN.md` e `docs/SOURCE_PROVENANCE.md` antes de portar
   módulos históricos.
 - Zona A: `GeometryOfNumbers/Foundation/`. Manter a auditoria transitiva de
@@ -9,6 +10,12 @@
 - Não importar Mathlib/analítica na fundação atual nem dependências complexas.
 - O import `GeometryOfNumbers` é exclusivamente discreto. A Zona B usa
   `GeometryOfNumbers.Analysis`; nunca importar essa camada na fundação.
+- `GeometryOfNumbers.Geometry` é a entrada separada para centro–pernas,
+  reflexão e segunda diferença sobre `Int`. Não importá-la na Foundation.
+  A entrada Analysis reúne Geometry; isso não prova o crosswalk torre/centro.
+- Auditar a geometria com `bash scripts/audit-geometry.sh`: definições sem
+  axiomas; teoremas permitem somente `propext` e `Quot.sound` da aritmética
+  inteira de Init. Não anunciar footprint vazio nessa camada nem permitir escolha.
 - Auditar a Zona B separadamente com `bash scripts/audit-analysis.sh`;
   seus axiomas padrão não são permitidos na auditoria vazia da Zona A.
 - Não introduzir escapes de confiança, placeholders ou axiomas novos.

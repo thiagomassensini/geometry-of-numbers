@@ -1,3 +1,4 @@
+import GeometryOfNumbers.Geometry
 import GeometryOfNumbers.Analysis.RealDepthMass
 import GeometryOfNumbers.Analysis.RealQuadraticAmplitude
 
