@@ -25,8 +25,10 @@ capacidade ímpar. A profundidade relacional agora é derivada da torre, e somen
 o offset canônico expõe a profundidade do centro em qualquer nível positivo.
 Essa geometria não justificou retroativamente a massa ou metade. A realização real da escala
 já existe. Agora há também um estado real de profundidade com energia
-quadrática preservada por rotação de ângulo livre. Lei de fase, estado global
-de uma quantidade, câmeras, brackets e demais camadas permanecem posteriores.
+quadrática preservada por rotação de ângulo livre. A reflexão recíproca agora
+constrói pernas com produto igual à massa; o readout centrado dessas pernas
+deriva um bracket local não negativo. Lei de fase, estado global de uma quantidade,
+câmeras e agregação de brackets históricos permanecem posteriores.
 
 O nome do repositório não afirma que a geometria clássica dos números já
 está formalizada aqui. O escopo é o plano de trabalho da geometria real do carry.
@@ -42,7 +44,9 @@ também fechado, sem construção de norma ou produto interno. Geometria discret
 reflexão e segunda diferença compiladas e auditadas separadamente, com
 crosswalk balanceado de uma célula para capacidades ímpares, sem primalidade.
 Relação de profundidade por zeros sucessivos e identificação relacional do
-único canal profundo com o centro fechadas, sem valuation ou máximo.**
+único canal profundo com o centro fechadas, sem valuation ou máximo.
+Reflexão quadrática recíproca e bracket local derivados, com produto conservado,
+fatoração, positividade, zero central único e invariância por reflexão.**
 
 O núcleo da Zona A depende apenas de `Init`, sem Mathlib ou imports históricos.
 Noventa e dois teoremas públicos e dezessete definições
@@ -220,7 +224,7 @@ foi provada pelo refinamento. Sua ligação à compatibilidade quadrática forma
 está fechada. A realização numérica real também está disponível, na camada
 separada descrita abaixo; não foi usada para selecionar o expoente.
 O estado angular de profundidade está construído abaixo, sem lei de fase.
-Não há norma derivada, câmeras, brackets, TFVD, Green, isometria ou
+Não há norma derivada, câmeras, brackets históricos agregados, TFVD, Green, isometria ou
 autoadjunticidade nesta árvore.
 
 ## Corte da Zona A e abertura da Zona B
@@ -263,6 +267,48 @@ auditados separadamente: usam `propext`, `Classical.choice` e `Quot.sound`,
 sem axiomas adicionais. Essa camada não é anunciada como axiom-free e não
 define uma medida infinita ou uma norma. A construção coordenada do plano
 real é uma etapa posterior registrada abaixo, não fonte dessa ponte escalar.
+
+## Reflexão quadrática e bracket local
+
+Os módulos `Analysis/QuadraticReflection.lean` e
+`Analysis/QuadraticCenteredBracket.lean` compõem somente a amplitude e massa
+existentes. Para `C=A_b(k)>0` e `q>0`, definem primeiro a reflexão e as pernas:
+
+```text
+reciprocalReflection q = q⁻¹
+L_C(q) = C*q, R_C(q) = C*q⁻¹
+L_C(q⁻¹) = R_C(q), R_C(q⁻¹) = L_C(q)
+L_C(q)*R_C(q) = C² = M_b(k)
+```
+
+A lei funcional `F_C(q)*F_C(q⁻¹)=C²` usa `F_C=L_C`. Não é uma identificação
+com uma função clássica. `criticalQuadraticLegs_product_realizes_formalMass`
+mostra que a massa preservada é literalmente a realização da cota fundacional.
+
+Só depois das pernas define-se o readout `D(L,C,R)=L-2*C+R` e o bracket
+como sua aplicação. Os teoremas, não as definições, dão:
+
+```text
+B_C(q) = C*(q+q⁻¹-2) = C*(q-1)²*q⁻¹
+B_C(q) ≥ 0, B_C(q)=0 ↔ q=1, B_C(q)>0 se q≠1
+B_C(q⁻¹) = B_C(q)
+```
+
+A invariância vem da troca das pernas. Na geometria aditiva, `c-a,c+a`
+conservam a soma `2*c`; aqui `C*q,C*q⁻¹` conservam o produto `C²`.
+O bracket lê a segunda configuração com a forma aditiva da primeira.
+Não há nova seleção de metade nem construção de norma.
+
+O suporte do centro carry-derived registra somente a proveniência de `k`.
+`q` atua nas pernas escalares; o ângulo livre `theta` do plano permanece
+independente. Não se introduz parametrização física, logaritmo, tempo ou
+identificação com bracket de câmera. Nível zero e capacidade um dão centro e
+massa unitários. Inversão em Lean é total, mas `q=0` é excluído da lei do
+produto: ali o bracket vale `-2*C`, não um defeito não negativo desse regime.
+
+São 31 teoremas públicos e oito definições novos, todos guardados no audit
+analítico; o total da Analysis é 60 teoremas. Axiomas padrão de Mathlib,
+sem adicionais. Foundation e Geometry matemáticas e seus audits não mudam.
 
 ## Geometria discreta centro–pernas
 
@@ -416,13 +462,14 @@ os campos `(1,b^k)` da massa formal e a energia como realização dessa cota.
 O estado não recebe `n` como índice; não é um estado global de um inteiro.
 
 A escala radial já possui proveniência na torre e na massa. **O ângulo ainda
-é um parâmetro livre; esta etapa não seleciona uma lei de fase.** Não se
-introduziram logaritmo, tempo, operador, bracket ou Green. A energia foi
+é um parâmetro livre; esta etapa não seleciona uma lei de fase.** Na etapa
+do plano não se introduziram logaritmo, tempo, operador, bracket ou Green. A energia foi
 introduzida depois da amplitude, não usada para justificar metade.
 
 Quinze teoremas públicos novos e cinco nomes de carrier/mapas entram no audit
-analítico, com somente os três axiomas padrão. Analysis tem agora 29 teoremas
-públicos auditados; Foundation e Geometry permanecem inalteradas. Os testes
+analítico, com somente os três axiomas padrão. Ao fechar o plano, Analysis
+contava 29 teoremas públicos auditados; a reflexão acima aumenta esse total
+para 60. Foundation e Geometry permanecem inalteradas. Os testes
 incluem base `3`, nível `2`, semente `(1/3,0)`, energia `1/9`, ângulo zero,
 quarto de volta `(0,1/3)`, e o suporte do nível `2` pelo centro `25` de `26`.
 

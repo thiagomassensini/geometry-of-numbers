@@ -2,8 +2,9 @@ import GeometryOfNumbers.Analysis
 import Lean
 
 /-! Zone B reports standard Mathlib axioms separately from Foundation's empty
-footprint. Examples test scalar realization and angular quadratic energy,
-not exponent selection or a law for the angle. -/
+footprint. Examples test scalar realization, angular quadratic energy and
+reciprocal legs with their derived bracket, not exponent selection or a
+physical law for either parameter. -/
 
 open Lean Elab Command
 
@@ -19,6 +20,78 @@ elab "#assert_analysis_axioms " id:ident : command => do
 namespace GeometryOfNumbers.Analysis
 
 open Foundation
+
+#assert_analysis_axioms reciprocalReflection
+#assert_analysis_axioms quadraticLeftLeg
+#assert_analysis_axioms quadraticRightLeg
+#assert_analysis_axioms criticalQuadraticLeftLeg
+#assert_analysis_axioms criticalQuadraticRightLeg
+#assert_analysis_axioms realCenteredReadout
+#assert_analysis_axioms quadraticCenteredBracket
+#assert_analysis_axioms criticalQuadraticBracket
+#assert_analysis_axioms realCenteredReadout_swap
+#assert_analysis_axioms realCenteredReadout_additiveLegs
+#assert_analysis_axioms quadraticCenteredBracket_eq_closed
+#assert_analysis_axioms quadraticCenteredBracket_eq_factor
+#assert_analysis_axioms quadraticCenteredBracket_nonneg
+#assert_analysis_axioms quadraticCenteredBracket_at_one
+#assert_analysis_axioms quadraticCenteredBracket_zero_iff
+#assert_analysis_axioms quadraticCenteredBracket_pos
+#assert_analysis_axioms quadraticCenteredBracket_reflection
+#assert_analysis_axioms quadraticCenteredBracket_zero_parameter
+#assert_analysis_axioms criticalQuadraticBracket_eq_readout
+#assert_analysis_axioms criticalQuadraticBracket_eq_closed
+#assert_analysis_axioms criticalQuadraticBracket_eq_factor
+#assert_analysis_axioms criticalQuadraticBracket_nonneg
+#assert_analysis_axioms criticalQuadraticBracket_zero_iff
+#assert_analysis_axioms criticalQuadraticBracket_pos
+#assert_analysis_axioms criticalQuadraticBracket_reflection
+#assert_analysis_axioms criticalQuadraticBracket_zero_depth
+#assert_analysis_axioms criticalQuadraticBracket_capacity_one
+#assert_analysis_axioms balancedCarryDepth_quadraticReflection_provenance
+#assert_analysis_axioms reciprocalReflection_involutive
+#assert_analysis_axioms reciprocalReflection_pos
+#assert_analysis_axioms quadraticLeftLeg_reflection
+#assert_analysis_axioms quadraticRightLeg_reflection
+#assert_analysis_axioms quadraticReflectedLegs_at_one
+#assert_analysis_axioms quadraticReflectedLegs_product
+#assert_analysis_axioms quadraticReflection_product
+#assert_analysis_axioms criticalQuadraticLegs_product
+#assert_analysis_axioms criticalQuadraticReflection_product
+#assert_analysis_axioms criticalQuadraticLegs_product_realizes_formalMass
+#assert_analysis_axioms balancedCarryDepth_quadraticLegs_product
+
+#print axioms realCenteredReadout_swap
+#print axioms realCenteredReadout_additiveLegs
+#print axioms quadraticCenteredBracket_eq_closed
+#print axioms quadraticCenteredBracket_eq_factor
+#print axioms quadraticCenteredBracket_nonneg
+#print axioms quadraticCenteredBracket_at_one
+#print axioms quadraticCenteredBracket_zero_iff
+#print axioms quadraticCenteredBracket_pos
+#print axioms quadraticCenteredBracket_reflection
+#print axioms quadraticCenteredBracket_zero_parameter
+#print axioms criticalQuadraticBracket_eq_readout
+#print axioms criticalQuadraticBracket_eq_closed
+#print axioms criticalQuadraticBracket_eq_factor
+#print axioms criticalQuadraticBracket_nonneg
+#print axioms criticalQuadraticBracket_zero_iff
+#print axioms criticalQuadraticBracket_pos
+#print axioms criticalQuadraticBracket_reflection
+#print axioms criticalQuadraticBracket_zero_depth
+#print axioms criticalQuadraticBracket_capacity_one
+#print axioms balancedCarryDepth_quadraticReflection_provenance
+#print axioms reciprocalReflection_involutive
+#print axioms reciprocalReflection_pos
+#print axioms quadraticLeftLeg_reflection
+#print axioms quadraticRightLeg_reflection
+#print axioms quadraticReflectedLegs_at_one
+#print axioms quadraticReflectedLegs_product
+#print axioms quadraticReflection_product
+#print axioms criticalQuadraticLegs_product
+#print axioms criticalQuadraticReflection_product
+#print axioms criticalQuadraticLegs_product_realizes_formalMass
+#print axioms balancedCarryDepth_quadraticLegs_product
 
 #assert_analysis_axioms RealPlaneState
 #assert_analysis_axioms realPlaneEnergy
@@ -155,5 +228,54 @@ example (theta : ℝ) :
   apply balancedCarryDepth_realState_energy 5 26 2 ⟨2, rfl⟩
   change (5 : Int) ^ 2 ∣ (25 : Int)
   exact ⟨1, rfl⟩
+
+-- Reciprocal legs: central product is unchanged, while the additive readout changes.
+example : criticalQuadraticLeftLeg 3 2 (by decide) 2 = (2 : ℝ) / 3 := by
+  unfold criticalQuadraticLeftLeg quadraticLeftLeg
+  rw [realCriticalAmplitude_eq_rpow]
+  norm_num [Real.rpow_neg_one]
+example : criticalQuadraticRightLeg 3 2 (by decide) 2 = (1 : ℝ) / 6 := by
+  unfold criticalQuadraticRightLeg quadraticRightLeg reciprocalReflection
+  rw [realCriticalAmplitude_eq_rpow]
+  norm_num [Real.rpow_neg_one]
+example : criticalQuadraticLeftLeg 3 2 (by decide) 2 *
+    criticalQuadraticRightLeg 3 2 (by decide) 2 = (1 : ℝ) / 9 := by
+  rw [criticalQuadraticLegs_product _ _ _ _ (by norm_num), realDepthMass_eq_one_div_pow]
+  norm_num
+example : criticalQuadraticBracket 3 2 (by decide) 2 = (1 : ℝ) / 6 := by
+  rw [criticalQuadraticBracket_eq_closed, realCriticalAmplitude_eq_rpow]
+  norm_num [Real.rpow_neg_one]
+example : criticalQuadraticBracket 3 2 (by decide) ((1 : ℝ) / 2) = (1 : ℝ) / 6 := by
+  rw [criticalQuadraticBracket_eq_closed, realCriticalAmplitude_eq_rpow]
+  norm_num [Real.rpow_neg_one]
+example : criticalQuadraticLeftLeg 3 2 (by decide) 1 = (1 : ℝ) / 3 ∧
+    criticalQuadraticRightLeg 3 2 (by decide) 1 = (1 : ℝ) / 3 ∧
+    criticalQuadraticBracket 3 2 (by decide) 1 = 0 := by
+  simp only [criticalQuadraticLeftLeg, criticalQuadraticRightLeg, quadraticLeftLeg,
+    quadraticRightLeg, reciprocalReflection, inv_one, mul_one]
+  rw [criticalQuadraticBracket_eq_closed, realCriticalAmplitude_eq_rpow]
+  norm_num [Real.rpow_neg_one]
+example (b : ℕ) (hb : 0 < b) {q : ℝ} (hq : 0 < q) :
+    criticalQuadraticLeftLeg b 0 hb q * criticalQuadraticRightLeg b 0 hb q = 1 := by
+  rw [criticalQuadraticLegs_product _ _ _ _ (ne_of_gt hq), realDepthMass_zero]
+example (k : ℕ) {q : ℝ} (hq : 0 < q) :
+    criticalQuadraticLeftLeg 1 k Nat.zero_lt_one q *
+      criticalQuadraticRightLeg 1 k Nat.zero_lt_one q = 1 := by
+  rw [criticalQuadraticLegs_product _ _ _ _ (ne_of_gt hq), realDepthMass_one]
+example : quadraticLeftLeg 1 0 * quadraticRightLeg 1 0 ≠ (1 : ℝ) ^ 2 := by
+  norm_num [quadraticLeftLeg, quadraticRightLeg, reciprocalReflection]
+example : quadraticCenteredBracket 1 0 = -2 := by
+  simpa using quadraticCenteredBracket_zero_parameter 1
+example : quadraticCenteredBracket 0 2 = 0 := by
+  rw [quadraticCenteredBracket_eq_closed]
+  norm_num
+set_option maxRecDepth 2048 in
+example : criticalQuadraticLeftLeg 5 2 (Geometry.oddCapacity_pos ⟨2, rfl⟩) 2 *
+    criticalQuadraticRightLeg 5 2 (Geometry.oddCapacity_pos ⟨2, rfl⟩) 2 =
+      realizeCountingShare (canonicalResidualDepthMass 5 2 (Geometry.oddCapacity_pos ⟨2, rfl⟩)) := by
+  apply balancedCarryDepth_quadraticLegs_product 5 26 2 ⟨2, rfl⟩
+  · change (5 : Int) ^ 2 ∣ (25 : Int)
+    exact ⟨1, rfl⟩
+  · norm_num
 
 end GeometryOfNumbers.Analysis

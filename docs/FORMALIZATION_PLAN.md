@@ -37,7 +37,7 @@ complexa justificará um resultado fundacional.
 | F1 | Centro–pernas, profundidade e resíduo | Geometria e célula ímpar fechadas; profundidade relacional da torre e único offset profundo identificados; máximo/terminação e ramo antipodal par/C2 ainda abertos |
 | F2 | Massa/amplitude e rigidez algébrica do expoente `1/2` | Núcleo discreto encerrado em capstone; massa e amplitude reais realizadas em camada separada, com amplitude² = massa |
 | R0 | Rotação e estado espectral reais | Estado de profundidade, energia quadrática e rotação abstrata fechados; lei de fase/espectro e estado global de quantidade ainda abertos |
-| R1 | Câmeras e brackets reais | Não iniciada |
+| R1 | Câmeras e brackets reais | Forma local do bracket derivada da reflexão quadrática; câmeras e agregação saturada ainda abertas |
 | R2 | Reconstrução TFVD real, Green e retorno | Não iniciada |
 | R3 | Frame global, whitening e isometria | Não iniciada |
 | R4 | Fatorização de câmeras pelo mesmo estado global | Não iniciada |
@@ -216,7 +216,7 @@ Os quatorze teoremas analíticos usam `propext`, `Classical.choice`, `Quot.sound
 
 A realização bidimensional/rotacional é acrescentada na etapa abaixo,
 recebendo `A²=M` como theorem anterior, não como fonte de uma norma.
-Continuam abertos lei de fase, norma, câmeras, brackets, TFVD, Green, isometrias
+Continuam abertos lei de fase, norma, câmeras, brackets históricos agregados, TFVD, Green, isometrias
 e operadores. Não se cria uma medida analítica na torre infinita.
 
 ## Regras para as etapas seguintes
@@ -361,7 +361,7 @@ para `b=0`. Os testes verificam base `3`, nível `2`, quarto de volta,
 energia preservada para `(3,4)` e o nível `2` do centro `25` de `26`.
 
 Quinze teoremas públicos e cinco nomes de carrier/mapas são auditados nesta
-etapa; ao todo Analysis tem 29 teoremas públicos. Footprint padrão de Mathlib,
+etapa; ao fechar o plano Analysis contava 29 teoremas públicos. Footprint padrão de Mathlib,
 sem axioma adicional. Foundation e Geometry ficam byte a byte inalteradas,
 e os checkers continuam impedindo a dependência reversa.
 
@@ -369,6 +369,41 @@ R0 está **parcialmente** fechado: geometria radial/angular estática.
 Lei de fase/espectro, estado global por quantidade, segunda diferença real,
 norma, câmeras e demais camadas permanecem gates posteriores. Nenhum
 logaritmo ou tempo foi introduzido nos novos objetos ou provas.
+
+## Reflexão recíproca e bracket centrado local
+
+`Analysis/QuadraticReflection` parte do centro como entrada e define a
+involução `q↦q⁻¹`, seguida das pernas `C*q,C*q⁻¹`. Sua troca e a lei de
+produto são teoremas. A especialização recebe `realCriticalAmplitude`,
+reutiliza seu quadrado e identifica o produto com `realDepthMass`, inclusive
+como realização literal da massa formal anterior. Não há nova massa.
+
+`Analysis/QuadraticCenteredBracket` define primeiro o readout real de três
+termos e depois o aplica às pernas. A forma fechada e a fatoração são
+provadas. Em `C>0,q>0`, quadrado e inverso positivo dão não negatividade,
+zero somente em `q=1` e positividade fora do centro. A reflexão apenas troca
+as pernas, preservando o readout simétrico. A identidade funcional de
+reflexão é da função local `F_C(q)=C*q`, não de uma função clássica.
+
+A mesma arquitetura possui conservações distintas: pernas aditivas conservam
+soma; pernas recíprocas conservam produto. A leitura aditiva da conservação
+multiplicativa produz o bracket. Isso não identifica a geometria inteira
+com a amplitude escalar nem constrói uma câmera.
+
+O capstone de proveniência expõe suporte do canal canônico, campos formais
+`(1,b^k)`, produto como realização da massa e bracket como readout das mesmas
+pernas. A profundidade não é necessária para provar essas identidades.
+Base positiva basta para a amplitude; a ponte de centro continua ímpar.
+Zero profundidade e base um têm centro unitário sem reabrir seleção de
+expoente. `q=0` não satisfaz a lei do produto e dá bracket `-2*C`.
+
+31 teoremas públicos e oito definições entram no audit analítico; total 60
+teoremas. Footprint padrão, sem axioma novo. Foundation e Geometry ficam
+inalteradas. Nenhum import histórico ou pacote novo entra na construção.
+R1 é **parcial**: forma local fechada; câmeras, agregação e identificação
+com brackets históricos continuam abertas. R0 mantém ângulo livre; `q` não
+é `theta`. Não há lei de fase, parametrização exponencial, tempo ou
+identificação analítica posterior nessa etapa.
 
 - Reusar uma prova somente após comparar seu tipo e suas dependências.
 - Manter mapas, estados, parâmetros e domínios antes de scalarizar.

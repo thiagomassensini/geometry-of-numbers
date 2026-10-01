@@ -402,3 +402,41 @@ a ausência de logaritmo/complexos refere-se aos novos objetos e argumentos
 de prova, não a uma alegação de que tais conceitos estejam ausentes de toda
 a implementação transitiva da biblioteca. Nenhuma especialização física
 ou identificação de energia com norma foi extraída dessa infraestrutura.
+
+## Reflexão quadrática e bracket local derivado
+
+`Analysis/QuadraticReflection` e `Analysis/QuadraticCenteredBracket` foram
+construídos localmente sobre a amplitude, massa e suporte de profundidade
+anteriores. Nenhum repositório histórico foi consultado como fonte de nova
+prova nesta rodada; as referências a `CPFormal/Finite/Bracket.lean` e às
+pernas aditivas continuam registradas acima. Não foram portadas câmeras,
+brackets agregados ou emparelhamentos históricos.
+
+| Objeto novo | Origem e limite |
+| --- | --- |
+| `reciprocalReflection`, pernas e troca | Inversão real e multiplicação; segunda realização da arquitetura de reflexão, sem parametrização exponencial |
+| `quadraticReflectedLegs_product` | Rearranjo algébrico e cancelamento do inverso em `q≠0` |
+| `criticalQuadraticLegs_product` | Reutiliza `realCriticalAmplitude_sq_eq_realDepthMass`, sem redefinir o centro por uma raiz |
+| `criticalQuadraticLegs_product_realizes_formalMass` | A definição anterior de massa real realiza a cota da fundação; não se inventa massa nova |
+| `quadraticReflection_product` e versão crítica | A função da perna esquerda avaliada em parâmetros recíprocos; identidade local, não identificação com função clássica |
+| `realCenteredReadout`, `quadraticCenteredBracket` | Readout de três termos aplicado às pernas derivadas; não copiado de `centeredSecondDifference` como definição primitiva |
+| Forma fechada, fatoração, positividade e zero | Álgebra real de Mathlib; quadrado e inverso positivo, sem cálculo ou convexidade |
+| `quadraticCenteredBracket_reflection` | Troca estrutural das pernas seguida da simetria do readout |
+| Ponte carry-depth | Apenas composição da API local anterior; suporte do índice não é usado para provar a lei algébrica |
+
+O paralelo com a geometria aditiva é documentado e a versão real
+`realCenteredReadout_additiveLegs` é provada: conservação da soma e conservação
+do produto são distintas. Não foi afirmada igualdade entre o novo bracket
+e qualquer câmera histórica. Não se copiam amplitude global por quantidade,
+fase, logaritmo, tempo ou uma especialização física do parâmetro recíproco.
+
+Mathlib é a mesma dependência já fixada; `ring`, `field_simp`, cancelamento
+do inverso e positividade são as ferramentas de prova. Nenhuma biblioteca
+histórica ou pacote novo entra no manifest. A inversão total em zero é
+explicitamente distinguida do domínio válido do produto. `q=0` dá readout
+`-2*C`, e a positividade/zero único são enunciados somente em `C>0,q>0`.
+
+31 teoremas públicos e oito definições novos são guardados. Seus footprints
+contêm somente `propext`, `Classical.choice` e `Quot.sound`. Não há axioma
+novo, alteração matemática na Foundation ou Geometry, nem dependência
+reversa. A nova forma local não justifica retroativamente a seleção de metade.

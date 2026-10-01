@@ -35,6 +35,13 @@
   Não transformar suporte de `k` pelo centro em estado global de `n`;
   a hipótese de suporte registra proveniência, não necessidade algébrica.
   Não usar a norma pronta do produto como definição dessa energia.
+- A reflexão quadrática usa o centro da amplitude anterior: `C*q,C*q⁻¹`.
+  Seu produto conserva a massa; o bracket local é definido pelo readout das
+  pernas, nunca pela fatoração desejada. Positividade/zero único exigem
+  `C>0,q>0`; produto/fatoração exigem `q≠0`. A inversão total em zero não
+  resolve esse domínio. Manter `q` independente do ângulo livre; nenhum
+  parâmetro físico ou bracket histórico é identificado por essa construção.
+  Não usar o bracket para selecionar retroativamente metade ou uma norma.
 - Não introduzir escapes de confiança, placeholders ou axiomas novos.
 - Os nomes do plano são metas, não evidência de existência de provas.
 - Registrar a fonte/commit e quaisquer hipóteses operacionais de uma porta.

@@ -1500,13 +1500,215 @@ Nível zero e capacidade um têm energia unitária em todo ângulo.
 
 Quinze teoremas novos e cinco nomes de carrier/mapas são auditados na Zona B,
 com os axiomas padrão `propext`, `Classical.choice` e `Quot.sound`, sem
-axioma adicional. A Analysis tem agora 29 teoremas públicos auditados.
+axioma adicional. Ao fechar esta etapa, a Analysis contava 29 teoremas públicos auditados.
 Foundation e Geometry matemáticas e seus audits permanecem inalterados.
 
 R0 está parcialmente fechado: construímos a geometria quadrática estática
-do plano e sua família angular de profundidade. Não construímos uma lei de
-fase, tempo, espectro, operador, norma, bracket real, Green ou câmera.
+do plano e sua família angular de profundidade. Nessa etapa não construímos
+lei de fase, tempo, espectro, operador, norma, bracket real, Green ou câmera.
 Nenhum logaritmo aparece nos novos objetos ou argumentos de prova; isso
 não afirma que a infraestrutura transitiva de Mathlib dispense logaritmos
 ou complexos internamente. O próximo gate deverá introduzir explicitamente
 qualquer estrutura adicional, sem reinterpretar o ângulo livre como fase física.
+
+## 25. Reflexão quadrática das pernas
+
+### INPUT: o centro já vem da massa
+
+Fixemos capacidade positiva e profundidade `k`. A massa real e a amplitude
+crítica já foram construídas, antes desta geometria. Escrevemos:
+
+$$
+C=A_b(k)>0,\qquad M=M_b(k),\qquad C^2=M.
+$$
+
+Não definimos um novo centro como raiz da massa, não selecionamos novamente
+um expoente e não usamos o bracket como premissa dessas identidades.
+A fundação discreta e a geometria inteira permanecem inalteradas.
+
+### CONSTRUÇÃO: uma reflexão multiplicativa
+
+Para um parâmetro real positivo `q`, definimos a reflexão recíproca:
+
+$$
+\iota(q)=q^{-1}.
+$$
+
+Ela conserva positividade e é involutiva. As duas pernas vêm depois:
+
+$$
+L_C(q)=Cq,\qquad R_C(q)=Cq^{-1}.
+$$
+
+São `reciprocalReflection`, `quadraticLeftLeg` e `quadraticRightLeg`.
+Não se parametriza `q` por uma exponencial nem se identifica essa involução
+com a reflexão aditiva de um parâmetro anterior.
+
+### TEOREMA: troca das pernas e conservação do produto
+
+A reflexão troca literalmente as funções das pernas:
+
+$$
+L_C(q^{-1})=R_C(q),\qquad R_C(q^{-1})=L_C(q).
+$$
+
+Para `q≠0`, a álgebra da inversão dá:
+
+$$
+\boxed{L_C(q)R_C(q)=C^2.}
+$$
+
+`quadraticReflectedLegs_product` prova a lei genérica. Só então a
+especialização `criticalQuadraticLegs_product` usa o theorem anterior da
+amplitude e obtém:
+
+$$
+\boxed{L_{b,k}(q)R_{b,k}(q)=M_b(k).}
+$$
+
+A deformação modifica cada perna, mas sua reflexão recíproca preserva a
+quantidade quadrática determinada pelo centro. Não é uma lei assumida como
+campo: resulta das pernas construídas e da identidade anterior `C²=M`.
+
+### INTERPRETAÇÃO E LIMITES: duas conservações, não uma identificação
+
+Na geometria aditiva anterior, as pernas `c-a,c+a`, trocadas por `a↦-a`,
+conservam a soma `2c`. Agora, `Cq,Cq⁻¹`, trocadas por `q↦q⁻¹`, conservam
+o produto `C²`. Temos a mesma arquitetura centro–reflexão–pernas, mas duas
+leis de conservação diferentes. Não transportamos ainda entre os dois
+parâmetros por uma função exponencial.
+
+`q` atua radialmente nas pernas escalares; `theta` continua um ângulo livre
+do estado bidimensional. São parâmetros independentes, sem lei que os ligue.
+Não se define um novo estado global por quantidade.
+
+## 26. O bracket como defeito entre centro multiplicativo e centro aditivo
+
+### CONSTRUÇÃO: o readout vem depois das pernas
+
+Introduzimos a versão real da forma centrada de três termos:
+
+$$
+D(L,C,R)=L-2C+R.
+$$
+
+`realCenteredReadout` não consulta produto, massa ou expoente. Aplicado às
+pernas aditivas `C-a,C+a`, ele é zero, como prova
+`realCenteredReadout_additiveLegs`. Aplicado às pernas recíprocas já
+construídas, ele **define** o bracket local:
+
+$$
+\boxed{B_C(q)=D(L_C(q),C,R_C(q)).}
+$$
+
+`quadraticCenteredBracket` usa essa aplicação como definição, não uma
+fatoração contendo de antemão um quadrado positivo.
+
+### TEOREMA: forma fechada, fatoração e zero central
+
+A expansão e, para `q≠0`, a álgebra da inversão provam sucessivamente:
+
+$$
+\boxed{B_C(q)=C(q+q^{-1}-2)=C(q-1)^2q^{-1}.}
+$$
+
+A última expressão pode ser escrita `C(q-1)²/q`. Não usamos cálculo ou
+convexidade para obtê-la. Sob `C>0,q>0`, quadrado não negativo e inverso
+positivo dão:
+
+$$
+\boxed{B_C(q)\ge0,\qquad B_C(q)=0\iff q=1.}
+$$
+
+Também se prova `B_C(q)>0` se `q≠1`. Em `q=1`, as pernas coincidem com
+o centro: `L=R=C`. Fora desse ponto, a simetria multiplicativa permanece
+perfeita, `LR=C²`, mas sua leitura aditiva tem defeito estritamente positivo.
+Esses resultados têm versões `criticalQuadraticBracket_*` no mesmo `(b,k)`.
+
+### INTERPRETAÇÃO: por que o bracket aparece
+
+A lei `LR=C²` caracteriza o centro positivo como centro geométrico das
+pernas. O readout pergunta outra coisa: sua soma é `2C`? As duas condições
+coincidem apenas quando as pernas colapsam no centro. A fatoração é a
+forma algébrica local dessa diferença entre médias geométrica e aritmética;
+nenhuma raiz precisa ser introduzida no código.
+
+**A simetria multiplicativa conserva a massa; o bracket mede quanto ela
+se afasta da simetria aditiva do centro.** O bracket lê a segunda configuração
+usando a forma aditiva da primeira. Isso não é uma afirmação de que toda
+segunda diferença seja assimetria geométrica: a distinção anterior entre
+defeito de centro e resposta de observável continua válida.
+
+### TESTES E DOMÍNIOS
+
+Base `3`, nível `2`, tem `C=1/3` e `M=1/9`. Em `q=2`, as pernas são
+`2/3,1/6`, seu produto é `1/9` e o bracket é `1/6`. Em `q=1/2` as pernas
+trocam e o bracket mantém `1/6`. Em `q=1`, ambas valem `1/3` e o bracket zera.
+Esses exemplos são provas Lean, não identificação por cálculo numérico.
+
+Nível zero e capacidade um dão `C=M=1`, produto unitário e bracket
+`q+q⁻¹-2`, sem produzir seleção de expoente nesses casos degenerados.
+Capacidade zero continua excluída da amplitude canônica. Em Lean, `0⁻¹=0`
+é uma convenção de inversão total: a involutividade ainda é verdadeira,
+mas a lei de produto não vale em `q=0`. Nesse parâmetro, as pernas são zero
+e o bracket vale `-2C`. Por isso o domínio positivo não pode ser omitido.
+Se `C=0`, o bracket também zera para qualquer `q`: a hipótese `C>0` no
+teorema de zero único é essencial.
+
+## 27. Identidade funcional de reflexão e proveniência da massa
+
+### TEOREMA: a função local preserva a massa refletida
+
+Considere a própria função da perna esquerda `F_C(q)=L_C(q)=Cq`.
+A troca das pernas e a lei do produto dão:
+
+$$
+\boxed{F_C(q)F_C(q^{-1})=C^2,\qquad
+F_{b,k}(q)F_{b,k}(q^{-1})=M_b(k).}
+$$
+
+São `quadraticReflection_product` e `criticalQuadraticReflection_product`.
+É uma identidade funcional de reflexão **da construção atual**, não uma
+equação funcional de função clássica nem uma ponte já provada para ela.
+
+O readout é simétrico nas duas pernas. Portanto, usando sua troca, e não
+tomando a forma fechada como origem da simetria, prova-se:
+
+$$
+\boxed{B_C(q^{-1})=B_C(q).}
+$$
+
+### PROVENIÊNCIA: o produto realiza a cota que veio da torre
+
+`criticalQuadraticLegs_product_realizes_formalMass` expõe literalmente:
+
+$$
+L_{b,k}(q)R_{b,k}(q)
+=\operatorname{realize}(\operatorname{canonicalResidualDepthMass}(b,k)).
+$$
+
+A massa preservada não foi inventada neste módulo. A origem continua sendo
+o prefixo e sua normalização coerente. Quando o centro balanceado associado
+a uma quantidade suporta `k`, `balancedCarryDepth_quadraticLegs_product`
+registra essa proveniência. A hipótese de suporte é desnecessária para a
+álgebra do produto; ela justifica qual nível estamos lendo.
+
+`balancedCarryDepth_quadraticReflection_provenance` também compõe o suporte
+do canal canônico, os campos formais `(1,b^k)`, o produto como realização
+dessa cota e o bracket como readout das mesmas pernas. Não constrói outro
+carrier nem assume que um bracket histórico seja igual ao novo objeto.
+
+### AUDITORIA E FRONTEIRA
+
+31 teoremas públicos e oito definições novos têm guard no audit analítico;
+a Analysis tem agora 60 teoremas públicos. Seu footprint consiste nos
+axiomas padrão `propext`, `Classical.choice`, `Quot.sound`, sem adicionais.
+Foundation e Geometry e seus audits permanecem sem alterações.
+
+R1 está parcialmente fechado: temos a forma local do bracket, sem câmeras,
+agregação saturada ou crosswalk histórico. R0 conserva ângulo livre e lei
+angular aberta. Não se introduziram parametrização física de `q`, logaritmo,
+tempo, estrutura complexa, Green, TFVD ou operador nos novos objetos/provas.
+Nenhum resultado daqui retorna como justificativa da massa, de metade ou de
+uma norma. O próximo gate pode comparar uma realização histórica local com
+este readout, mas terá de provar essa ponte em vez de presumir identidade.
