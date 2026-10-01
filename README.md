@@ -29,8 +29,11 @@ quadrática preservada por rotação de ângulo livre. A reflexão recíproca ag
 constrói pernas com produto igual à massa; o readout centrado dessas pernas
 deriva um bracket local não negativo. A câmera ímpar agora reúne pares de
 raios positivos e seu bracket discreto é a soma saturada de segundas diferenças.
-A realização quadrática soma defeitos não negativos por par. A lei que
-associa cada raio à sua deformação, a fase e o estado global permanecem abertos.
+A realização quadrática soma defeitos não negativos por par. Uma compatibilidade
+semântica explícita agora liga offsets aditivos a um transporte multiplicativo:
+ela classifica as deformações como `q_r=rho^r` e fecha o crosswalk dos valores
+de um perfil centrado. A seleção do passo positivo `rho`, a fase e o estado
+global permanecem abertos; essa compatibilidade não foi derivada da torre.
 
 O nome do repositório não afirma que a geometria clássica dos números já
 está formalizada aqui. O escopo é o plano de trabalho da geometria real do carry.
@@ -363,15 +366,75 @@ realização dessa massa e total como soma dos defeitos locais.
 
 **Raio e deformação são distintos.** `r` desloca o argumento de `F` na câmera
 discreta; `q_r` modifica os valores escalares na realização quadrática.
-Não se provou `F(c±r)=C*q_r^{±1}` nem se escolheu uma lei `r↦q_r`.
-R1 permanece parcial exatamente nessa ponte. Não há fase, logaritmo, tempo,
-Green ou operador novos. O total de defeito não é identificado com a energia
-coordenada do plano nem com a massa central.
+Na etapa de família livre, não se assumiu `F(c±r)=C*q_r^{±1}` nem uma lei
+`r↦q_r`. A etapa seguinte fecha essa ponte para um perfil específico sob
+compatibilidade multiplicativa explícita; não para qualquer observável.
+O total de defeito não é identificado com a energia coordenada do plano
+nem com a massa central.
 
-A etapa acrescenta 23 teoremas/oito definições discretas e 24 teoremas/quatro
+A etapa acrescentou 23 teoremas/oito definições discretas e 24 teoremas/quatro
 definições analíticas. Geometry tem 87 teoremas e 22 definições auditadas,
-sem escolha; Analysis tem 84 teoremas, com os mesmos três axiomas padrão.
+sem escolha; Analysis então tinha 84 teoremas, com os mesmos três axiomas padrão.
 Foundation continua congelada e com footprint vazio.
+
+## Transporte dos offsets e crosswalk real da câmera
+
+Toda a nova ponte vive em Analysis; Foundation e Geometry permanecem
+inalteradas. A busca local não encontrou uma interface anterior de composição
+aditiva dos offsets para composição multiplicativa. A nova especificação é:
+
+```text
+IsPositiveMultiplicativeOffsetTransport Q:
+  Q(0)=1
+  Q(a+b)=Q(a)*Q(b)
+  Q(1)>0
+```
+
+É uma entrada semântica adicional, não consequência gratuita da simetria,
+da torre ou da massa. `MultiplicativeOffsetTransport` prova:
+
+```text
+Q(a)*Q(-a)=1; Q(a)≠0; Q(-a)=Q(a)⁻¹; Q(a)>0
+Q(r)=Q(1)^r                -- indução natural
+Q(z)=Q(1)^z                -- extensão inteira, sem log/exp
+rho>0 → Q_rho(z)=rho^z     -- transporte existente e único com Q(1)=rho
+```
+
+`CenteredMultiplicativeProfile` orienta o offset como `c-x` e define
+`F(x)=C*Q(c-x)`. Assim esquerda, centro e direita têm valores
+`C*rho^r`, `C`, `C*(rho^r)⁻¹`. O produto refletido é `C²`; com a amplitude
+crítica anterior, é exatamente a massa real do mesmo nível `k`.
+
+`OddCameraQuadraticCrosswalk` levanta a câmera para `Int → ℝ`, com as MESMAS
+pernas e soma recursiva de Geometry. Primeiro prova saturação para um
+observável real qualquer; depois especializa ao perfil:
+
+```text
+Delta²_real F(c,r) = quadraticCenteredBracket(C,Q(r))
+RealCameraBracket_h(F,c) = QuadraticCameraBracket_h(C,r↦Q(r))
+                        = QuadraticCameraBracket_h(C,r↦rho^r)
+                        = C * sum_r [(rho^r-1)^2*(rho^r)⁻¹]
+C>0, rho>0 → bracket≥0
+C>0, rho>0, h>0 → (bracket=0 ↔ rho=1)
+rho↦rho⁻¹ troca as pernas e preserva o total
+```
+
+A igualdade global passa por saturação e crosswalk local, não pela expansão
+bruta da fórmula final. Para `h=0`, o total é zero para qualquer passo.
+C3 reduz ao bracket local no passo `rho`; capacidade composta `9` funciona
+sem primalidade. O teste `C=1/3,h=2,rho=2` dá deformações `2,4`, brackets
+`1/6,3/4` e total `11/12`, invariante sob inversão do passo.
+
+**R1: crosswalk fechado sob compatibilidade explícita; seleção de `rho`
+continua aberta.** `r` compõe offsets horizontais; `k` indexa massa/amplitude
+verticais. Nenhuma lei relacionando esses índices ou selecionando `rho` pela
+amplitude foi provada. O perfil não é uma potência do argumento absoluto,
+nem uma identificação com razões históricas. Não se introduziram fase,
+log/exp, tempo ou leituras posteriores nos novos objetos/provas.
+
+São 44 teoremas e nove definições novos, todos guardados no audit analítico
+(128 teoremas públicos no total), com apenas os três axiomas padrão.
+Nenhum resultado novo é usado para justificar retroativamente a fundação.
 
 ## Geometria discreta centro–pernas
 
@@ -532,8 +595,8 @@ introduzida depois da amplitude, não usada para justificar metade.
 Quinze teoremas públicos novos e cinco nomes de carrier/mapas entram no audit
 analítico, com somente os três axiomas padrão. Ao fechar o plano, Analysis
 contava 29 teoremas públicos auditados; a reflexão acima aumenta esse total
-para 60 e a câmera para 84. Foundation permanece inalterada; a câmera
-amplia somente Geometry e Analysis. Os testes
+para 60, a câmera para 84 e o transporte/crosswalk para 128. Foundation
+permanece inalterada; a câmera amplia somente Geometry e Analysis. Os testes
 incluem base `3`, nível `2`, semente `(1/3,0)`, energia `1/9`, ângulo zero,
 quarto de volta `(0,1/3)`, e o suporte do nível `2` pelo centro `25` de `26`.
 
@@ -577,7 +640,7 @@ identificações nem qualquer realização analítica da geometria.
 - `GeometryOfNumbers/Foundation/`: Zona A, sem axiomas.
 - `GeometryOfNumbers/Geometry/`: geometria discreta sobre `Int`, audit próprio.
 - `GeometryOfNumbers/Analysis/`: Zona B, escalares e plano quadrático real, audit separado.
-- Lei angular/espectral, seleção das deformações por raio, crosswalk com
+- Lei angular/espectral, seleção do passo horizontal positivo `rho`, crosswalk com
   câmeras históricas, operadores e limites: fases futuras.
 
 O gerador logarítmico e o operador de alturas são objetos diferentes.

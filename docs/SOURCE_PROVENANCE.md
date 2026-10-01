@@ -486,3 +486,43 @@ apenas `propext`/`Quot.sound` nas 23 provas geométricas novas; oito definiçõe
 são vazias. Os 24 teoremas/quatro definições analíticos usam apenas os
 axiomas padrão permitidos. Todos os nomes públicos entram nos audits.
 Foundation, seleção de metade e sua auditoria vazia permanecem congeladas.
+
+## Compatibilidade multiplicativa dos offsets e crosswalk real do perfil
+
+A busca no código local não encontrou uma interface anterior que transportasse
+a soma de offsets inteiros para composição multiplicativa. Não houve consulta
+histórica nova como fonte de prova nesta etapa. A especificação
+`IsPositiveMultiplicativeOffsetTransport` é uma entrada semântica NOVA:
+unidade em zero, preservação de soma como produto e passo unitário positivo.
+Não é apresentada como uma conclusão da torre, massa ou reflexão isolada.
+
+| Objeto/resultado | Fonte local da construção ou prova |
+| --- | --- |
+| Produto com offset negativo e reciprocidade | Soma `a+(-a)=0`, unidade e cancelamento real; inversão não é campo da especificação |
+| Classificação natural | Indução e composição, seguida de `pow_succ` |
+| Positividade e classificação inteira | Classificação natural + reciprocidade nos negativos; nenhuma classificação analítica contínua |
+| Transporte canônico e unicidade | Potência inteira de Mathlib (`zpow_add₀`, `zpow_one`), classificação anterior e extensionalidade |
+| Perfil `C*Q(c-x)` | Orientação explicitamente declarada; pernas de `CenterLegReflection` já existentes |
+| Produto crítico do perfil | Identificação literal das avaliações com pernas quadráticas e theorem anterior da massa |
+| Saturação real genérica | MESMA enumeração recursiva/pernas de Geometry, distribuição finita e soma de constantes |
+| Crosswalk global | Saturação genérica → crosswalk local → soma dos brackets existentes; não expansão da fórmula fatorada |
+| Zero no passo unitário | Zero global anterior da câmera quadrática + presença do raio 1 quando `half>0` |
+| Inversão do passo | `inv_pow` e invariância estrutural da câmera quadrática; troca das avaliações também provada |
+
+A construção difere de usar `branchRatio`, `cpLegTilt` ou uma potência do
+argumento absoluto como premissa. Não assume `q_r=branchRatio^r` nem
+`F(x)=x^(-delta)`. A potência `rho^r` emerge da compatibilidade de offsets
+aditivos inteiros, com `rho=Q(1)>0` ainda livre. Nenhum transporte histórico
+foi identificado com o novo sem um crosswalk adicional.
+
+O raio horizontal não é profundidade vertical: não se coloca `k` no expoente
+de `rho`, nem se identifica `rho` com razão entre amplitudes de níveis.
+O capstone de suporte mantém a mesma massa formal no produto por par e não
+participa da classificação do transporte. Não se usa log/exp para selecionar
+ou classificar o passo; não se abre fase ou uma leitura posterior.
+
+Todos os novos módulos estão em Analysis. Foundation, Geometry, scripts,
+manifest e dependências históricas permanecem inalterados. São 44 teoremas
+públicos e nove definições guardadas, footprint limitado a `propext`,
+`Classical.choice`, `Quot.sound`. A fonte histórica registrada nas etapas
+anteriores continua referência de comparação, não dependência lógica.

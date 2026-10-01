@@ -50,7 +50,16 @@
   não uma lei derivada do raio. Não afirmar `F(c±r)=C*q_r^{±1}` sem nova ponte.
   Reflexão independente conserva o total; a massa é conservada por PAR,
   não somada ou identificada com esse total. Câmera vazia não seleciona
-  expoente; C2 e lei de deformação permanecem gates separados.
+  expoente; C2 e seleção do passo de deformação permanecem gates separados.
+- A ponte atual exige EXPLICITAMENTE `Q(0)=1`, `Q(a+b)=Q(a)*Q(b)` e
+  `Q(1)>0`: nova compatibilidade semântica, não conclusão da torre/reflexão.
+  Reciprocidade, positividade global e `Q(r)=rho^r` são teoremas; `rho`
+  permanece livre. Perfil orientado por `center-point`, esquerda com `Q(r)`.
+  O lift real da câmera prova saturação para qualquer observável antes do
+  crosswalk do perfil. Não identificar esse caráter do offset com uma
+  potência do ponto absoluto, razão histórica ou amplitude vertical.
+  Raio horizontal `r` não é profundidade vertical `k`; câmera vazia não
+  seleciona o passo. Não introduzir log/exp para classificar offsets inteiros.
 - Não introduzir escapes de confiança, placeholders ou axiomas novos.
 - Os nomes do plano são metas, não evidência de existência de provas.
 - Registrar a fonte/commit e quaisquer hipóteses operacionais de uma porta.

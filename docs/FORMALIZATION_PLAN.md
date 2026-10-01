@@ -37,7 +37,7 @@ complexa justificará um resultado fundacional.
 | F1 | Centro–pernas, profundidade e resíduo | Geometria e célula ímpar fechadas; profundidade relacional da torre e único offset profundo identificados; máximo/terminação e ramo antipodal par/C2 ainda abertos |
 | F2 | Massa/amplitude e rigidez algébrica do expoente `1/2` | Núcleo discreto encerrado em capstone; massa e amplitude reais realizadas em camada separada, com amplitude² = massa |
 | R0 | Rotação e estado espectral reais | Estado de profundidade, energia quadrática e rotação abstrata fechados; lei de fase/espectro e estado global de quantidade ainda abertos |
-| R1 | Câmeras e brackets reais | Bracket local, câmera ímpar, saturação discreta e realização quadrática fechados; lei raio→deformação e crosswalk dos valores ainda abertos |
+| R1 | Câmeras e brackets reais | Câmera ímpar, saturação e realização quadrática fechadas; ponte offset→deformação e crosswalk do perfil fechados sob compatibilidade multiplicativa explícita, q_r=rho^r; seleção do passo rho ainda aberta |
 | R2 | Reconstrução TFVD real, Green e retorno | Não iniciada |
 | R3 | Frame global, whitening e isometria | Não iniciada |
 | R4 | Fatorização de câmeras pelo mesmo estado global | Não iniciada |
@@ -439,8 +439,8 @@ carry-derived registra proveniência do índice, não necessidade algébrica.
 Base um tem zero pares, com total zero e condição de equilíbrio vacuamente
 verdadeira. C2 não recebe uma metade artificial e permanece aberto.
 
-R1 continua **parcial**: câmera ímpar e agregação saturada estão fechadas;
-falta selecionar/derivar uma lei `r↦q_r` e provar uma ponte entre os valores
+Ao encerrar a etapa de câmera livre, R1 era **parcial**: câmera ímpar e agregação
+saturada fechadas, ainda sem uma lei `r↦q_r` ou ponte entre os valores
 `F(c±r)` e as pernas `C*q_r^{±1}`. A identidade de saturação discreta não
 fornece essa ponte. A família livre não é uma prova de que um observável
 arbitrário possua tal realização. R0 permanece separado, sem fase nova.
@@ -450,6 +450,44 @@ e quatro definições na Analysis (84 teoremas ao todo). Guards incluem todos
 os nomes novos. Geometry admite somente propext/Quot.sound, sem escolha;
 Analysis mantém os três axiomas padrão, sem adicionais. Foundation, seus
 capstones e sua auditoria vazia permanecem inalterados.
+
+## R1: compatibilidade dos offsets e crosswalk do perfil fechados
+
+Três módulos novos, todos em Analysis, compõem as APIs anteriores:
+
+1. `MultiplicativeOffsetTransport`: especificação explícita `Q(0)=1`,
+   composição `Q(a+b)=Q(a)*Q(b)` e passo positivo `Q(1)>0`. Não se diz que
+   essa compatibilidade foi derivada da torre. Prova reciprocidade a partir
+   de `a+(-a)=0`, classificação natural por indução, positividade global,
+   classificação inteira e existência/unicidade do transporte `rho^z`.
+2. `CenteredMultiplicativeProfile`: perfil `C*Q(c-x)` sobre pontos inteiros.
+   Avaliações esquerda/centro/direita identificam literalmente as pernas
+   quadráticas; produto e segunda diferença reutilizam leis locais anteriores.
+3. `OddCameraQuadraticCrosswalk`: lift real com pernas/enumeração existentes,
+   saturação genérica antes de especializar ao perfil. O capstone passa por
+   soma das segundas diferenças → soma dos brackets quadráticos locais.
+
+A nova compatibilidade reduz a família livre a `q_r=rho^r`, com UM passo
+positivo livre. Ela não seleciona esse passo. `r` continua horizontal e `k`
+vertical; não se usa amplitude, capacidade ou massa para identificar `rho`.
+O perfil de offsets não é uma potência do argumento absoluto e não assume
+`branchRatio` ou um tilt histórico. Não se introduzem parametrizações
+analíticas posteriores para provar a classificação discreta.
+
+Positividade do bracket do perfil decorre do crosswalk. O zero equivale a
+`rho=1` somente em câmera não vazia, pois o raio 1 recupera o passo. Em
+`half=0`, qualquer passo tem bracket zero. A inversão do passo troca pernas
+e preserva o total pelo theorem estrutural de reflexão da câmera quadrática.
+C3, capacidade composta 9 e o total concreto `11/12` foram testados.
+
+A especialização crítica reutiliza amplitude e massa já realizadas; o
+suporte carry-derived registra o MESMO índice `k`, sem participar da
+classificação horizontal. R1 fecha o crosswalk sob a especificação nova;
+seleção do passo, comparações históricas e R2 permanecem posteriores.
+
+44 teoremas públicos e nove definições novos entram no audit de Analysis,
+com footprint limitado aos três axiomas padrão. Foundation/Geometry e seus
+audits não são alterados. A direção de imports permanece unilateral.
 
 - Reusar uma prova somente após comparar seu tipo e suas dependências.
 - Manter mapas, estados, parâmetros e domínios antes de scalarizar.

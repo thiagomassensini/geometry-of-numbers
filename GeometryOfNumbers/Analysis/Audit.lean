@@ -3,8 +3,8 @@ import Lean
 
 /-! Zone B reports standard Mathlib axioms separately from Foundation's empty
 footprint. Examples test scalar realization, angular quadratic energy and
-reciprocal legs with their derived bracket, not exponent selection or a
-physical law for either parameter. -/
+reciprocal legs with their derived bracket, and the explicitly compatible
+offset profile. They do not select a physical law for any parameter. -/
 
 open Lean Elab Command
 
@@ -20,6 +20,185 @@ elab "#assert_analysis_axioms " id:ident : command => do
 namespace GeometryOfNumbers.Analysis
 
 open Foundation
+
+-- Integer transport and the same discrete points, with a FREE positive step.
+example : IsPositiveMultiplicativeOffsetTransport (canonicalMultiplicativeOffsetTransport 2) :=
+  canonicalMultiplicativeOffsetTransport_isPositive (by norm_num)
+
+example : canonicalMultiplicativeOffsetTransport 2 0 = 1 ∧
+    canonicalMultiplicativeOffsetTransport 2 1 = 2 ∧
+    canonicalMultiplicativeOffsetTransport 2 2 = 4 ∧
+    canonicalMultiplicativeOffsetTransport 2 3 = 8 ∧
+    canonicalMultiplicativeOffsetTransport 2 (-1) = 1 / 2 ∧
+    canonicalMultiplicativeOffsetTransport 2 (-2) = 1 / 4 := by
+  norm_num [canonicalMultiplicativeOffsetTransport]
+
+example : canonicalMultiplicativeOffsetTransport 2 (1 + 2) =
+    canonicalMultiplicativeOffsetTransport 2 1 * canonicalMultiplicativeOffsetTransport 2 2 := by
+  norm_num [canonicalMultiplicativeOffsetTransport]
+
+example : centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport 2) 10 10 = 1 / 3 ∧
+    centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport 2) 10 9 = 2 / 3 ∧
+    centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport 2) 10 11 = 1 / 6 ∧
+    centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport 2) 10 8 = 4 / 3 ∧
+    centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport 2) 10 12 = 1 / 12 := by
+  norm_num [centeredMultiplicativeProfile, canonicalMultiplicativeOffsetTransport]
+
+example : centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport 2) 10 9 *
+    centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport 2) 10 11 = 1 / 9 ∧
+    centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport 2) 10 8 *
+    centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport 2) 10 12 = 1 / 9 := by
+  norm_num [centeredMultiplicativeProfile, canonicalMultiplicativeOffsetTransport]
+
+example : realCenteredSecondDifference
+    (centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport 2) 10) 10 1 = 1 / 6 ∧
+    realCenteredSecondDifference
+    (centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport 2) 10) 10 2 = 3 / 4 := by
+  norm_num [realCenteredSecondDifference, realCenteredReadout, Geometry.leftLeg, Geometry.rightLeg,
+    centeredMultiplicativeProfile, canonicalMultiplicativeOffsetTransport]
+
+example : realOddCameraBracket 2
+    (centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport 2) 10) 10 = 11 / 12 := by
+  norm_num [realOddCameraBracket, realOddCameraLegSum, Geometry.sumPositiveRadii,
+    Geometry.leftLeg, Geometry.rightLeg, centeredMultiplicativeProfile, canonicalMultiplicativeOffsetTransport]
+
+example : realOddCameraBracket 2
+    (centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport (1 / 2)) 10) 10 = 11 / 12 := by
+  norm_num [realOddCameraBracket, realOddCameraLegSum, Geometry.sumPositiveRadii,
+    Geometry.leftLeg, Geometry.rightLeg, centeredMultiplicativeProfile, canonicalMultiplicativeOffsetTransport]
+
+example : realOddCameraBracket 2
+    (centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport 1) 10) 10 = 0 := by
+  norm_num [realOddCameraBracket, realOddCameraLegSum, Geometry.sumPositiveRadii,
+    Geometry.leftLeg, Geometry.rightLeg, centeredMultiplicativeProfile, canonicalMultiplicativeOffsetTransport]
+
+-- Empty camera: zero does NOT select the step (here it is 2, not 1).
+example : realOddCameraBracket 0
+    (centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport 2) 10) 10 = 0 ∧
+    (2 : ℝ) ≠ 1 := ⟨realOddCameraBracket_zero _ _, by norm_num⟩
+
+example (F : Int → ℝ) (c : Int) : realOddCameraBracket 1 F c =
+    F (c - 1) - 2 * F c + F (c + 1) := by
+  simpa [realCenteredSecondDifference, realCenteredReadout, Geometry.leftLeg, Geometry.rightLeg]
+    using realOddCameraBracket_C3 F c
+
+-- Capacity 9 is composite; the four-pair crosswalk has no prime hypothesis.
+example (C : ℝ) (c : Int) : realOddCameraBracket 4
+    (centeredMultiplicativeProfile C (canonicalMultiplicativeOffsetTransport 2) c) c =
+    quadraticCameraBracket 4 C (fun r => 2 ^ r) :=
+  stepProfile_realOddCameraBracket_eq_quadratic 4 C (by norm_num) c
+
+example : Geometry.oddCameraCapacity 4 = 9 := rfl
+
+example (c : Int) : realOddCameraBracket 1
+    (centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport 2) c) c =
+      quadraticCenteredBracket (1 / 3) 2 :=
+  stepProfile_realOddCameraBracket_C3 _ (by norm_num) c
+
+example (c : Int) : realOddCameraBracket 2
+    (centeredMultiplicativeProfile (1 / 3) (canonicalMultiplicativeOffsetTransport 2) c) c ≠ 0 := by
+  intro hz
+  have hstep := (stepProfile_realOddCameraBracket_zero_iff 2 (by decide)
+    (C := 1 / 3) (rho := 2) (by norm_num) (by norm_num) c).1 hz
+  norm_num at hstep
+
+#assert_analysis_axioms realOddCameraLegSum
+#assert_analysis_axioms realOddCameraBracket
+#assert_analysis_axioms realOddCameraSaturatedSecondDifference
+#assert_analysis_axioms realOddCameraBracket_eq_saturatedSecondDifference
+#assert_analysis_axioms realOddCameraBracket_zero
+#assert_analysis_axioms realOddCameraBracket_C3
+#assert_analysis_axioms cameraOffsetDeformations
+#assert_analysis_axioms cameraOffsetDeformations_eq_pow
+#assert_analysis_axioms profile_realOddCameraBracket_eq_quadratic
+#assert_analysis_axioms profile_realOddCameraBracket_eq_pow
+#assert_analysis_axioms stepProfile_realOddCameraBracket_eq_quadratic
+#assert_analysis_axioms stepProfile_realOddCameraBracket_eq_closed
+#assert_analysis_axioms stepProfile_realOddCameraBracket_eq_factor
+#assert_analysis_axioms stepProfile_realOddCameraBracket_nonneg
+#assert_analysis_axioms stepProfile_realOddCameraBracket_zero_iff
+#assert_analysis_axioms stepProfile_inverse_left_eq_right
+#assert_analysis_axioms stepProfile_inverse_right_eq_left
+#assert_analysis_axioms stepProfile_realOddCameraBracket_reflection
+#assert_analysis_axioms stepProfile_realOddCameraBracket_C3
+#assert_analysis_axioms criticalProfile_realOddCameraBracket_eq_quadratic
+#assert_analysis_axioms balancedCarryDepth_multiplicativeProfile_provenance
+#assert_analysis_axioms centeredMultiplicativeProfile
+#assert_analysis_axioms centeredMultiplicativeProfile_center
+#assert_analysis_axioms centeredMultiplicativeProfile_leftLeg
+#assert_analysis_axioms centeredMultiplicativeProfile_rightLeg
+#assert_analysis_axioms profile_leftLeg_eq_quadraticLeftLeg
+#assert_analysis_axioms profile_rightLeg_eq_quadraticRightLeg
+#assert_analysis_axioms centeredMultiplicativeProfile_leftLeg_eq_pow
+#assert_analysis_axioms centeredMultiplicativeProfile_rightLeg_eq_inv_pow
+#assert_analysis_axioms centeredMultiplicativeProfile_reflected_product
+#assert_analysis_axioms realCenteredSecondDifference
+#assert_analysis_axioms profile_realCenteredSecondDifference_eq_local
+#assert_analysis_axioms profile_realCenteredSecondDifference_eq_pow
+#assert_analysis_axioms profile_realCenteredSecondDifference_eq_closed
+#assert_analysis_axioms profile_realCenteredSecondDifference_eq_factor
+#assert_analysis_axioms criticalCenteredMultiplicativeProfile
+#assert_analysis_axioms criticalCenteredMultiplicativeProfile_product
+#assert_analysis_axioms IsPositiveMultiplicativeOffsetTransport
+#assert_analysis_axioms multiplicativeOffsetTransport_zero
+#assert_analysis_axioms multiplicativeOffsetTransport_add
+#assert_analysis_axioms multiplicativeOffsetTransport_product_neg
+#assert_analysis_axioms multiplicativeOffsetTransport_ne_zero
+#assert_analysis_axioms multiplicativeOffsetTransport_neg
+#assert_analysis_axioms multiplicativeOffsetTransport_natCast
+#assert_analysis_axioms multiplicativeOffsetTransport_neg_natCast
+#assert_analysis_axioms multiplicativeOffsetTransport_eq_zpow
+#assert_analysis_axioms multiplicativeOffsetTransport_pos
+#assert_analysis_axioms canonicalMultiplicativeOffsetTransport
+#assert_analysis_axioms canonicalMultiplicativeOffsetTransport_isPositive
+#assert_analysis_axioms canonicalMultiplicativeOffsetTransport_one
+#assert_analysis_axioms multiplicativeOffsetTransport_eq_canonical
+#assert_analysis_axioms multiplicativeOffsetTransport_unique
+#assert_analysis_axioms existsUnique_multiplicativeOffsetTransport
+#print axioms realOddCameraBracket_eq_saturatedSecondDifference
+#print axioms realOddCameraBracket_zero
+#print axioms realOddCameraBracket_C3
+#print axioms cameraOffsetDeformations_eq_pow
+#print axioms profile_realOddCameraBracket_eq_quadratic
+#print axioms profile_realOddCameraBracket_eq_pow
+#print axioms stepProfile_realOddCameraBracket_eq_quadratic
+#print axioms stepProfile_realOddCameraBracket_eq_closed
+#print axioms stepProfile_realOddCameraBracket_eq_factor
+#print axioms stepProfile_realOddCameraBracket_nonneg
+#print axioms stepProfile_realOddCameraBracket_zero_iff
+#print axioms stepProfile_inverse_left_eq_right
+#print axioms stepProfile_inverse_right_eq_left
+#print axioms stepProfile_realOddCameraBracket_reflection
+#print axioms stepProfile_realOddCameraBracket_C3
+#print axioms criticalProfile_realOddCameraBracket_eq_quadratic
+#print axioms balancedCarryDepth_multiplicativeProfile_provenance
+#print axioms centeredMultiplicativeProfile_center
+#print axioms centeredMultiplicativeProfile_leftLeg
+#print axioms centeredMultiplicativeProfile_rightLeg
+#print axioms profile_leftLeg_eq_quadraticLeftLeg
+#print axioms profile_rightLeg_eq_quadraticRightLeg
+#print axioms centeredMultiplicativeProfile_leftLeg_eq_pow
+#print axioms centeredMultiplicativeProfile_rightLeg_eq_inv_pow
+#print axioms centeredMultiplicativeProfile_reflected_product
+#print axioms profile_realCenteredSecondDifference_eq_local
+#print axioms profile_realCenteredSecondDifference_eq_pow
+#print axioms profile_realCenteredSecondDifference_eq_closed
+#print axioms profile_realCenteredSecondDifference_eq_factor
+#print axioms criticalCenteredMultiplicativeProfile_product
+#print axioms multiplicativeOffsetTransport_zero
+#print axioms multiplicativeOffsetTransport_add
+#print axioms multiplicativeOffsetTransport_product_neg
+#print axioms multiplicativeOffsetTransport_ne_zero
+#print axioms multiplicativeOffsetTransport_neg
+#print axioms multiplicativeOffsetTransport_natCast
+#print axioms multiplicativeOffsetTransport_neg_natCast
+#print axioms multiplicativeOffsetTransport_eq_zpow
+#print axioms multiplicativeOffsetTransport_pos
+#print axioms canonicalMultiplicativeOffsetTransport_isPositive
+#print axioms canonicalMultiplicativeOffsetTransport_one
+#print axioms multiplicativeOffsetTransport_eq_canonical
+#print axioms multiplicativeOffsetTransport_unique
+#print axioms existsUnique_multiplicativeOffsetTransport
 
 #assert_analysis_axioms quadraticCameraLegSum
 #assert_analysis_axioms quadraticCameraBracket

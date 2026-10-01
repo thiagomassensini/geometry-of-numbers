@@ -1931,7 +1931,7 @@ do mesmo `k`, os campos `(1,b^k)` da massa formal, a realização dessa massa
 no produto de cada par e o total como soma dos brackets locais. O suporte
 não é usado para tornar verdadeiras as identidades algébricas.
 
-### LIMITES: a ponte de valores continua aberta
+### LIMITES DA ETAPA DE FAMÍLIA LIVRE: a ponte de valores ainda não existia
 
 Na câmera discreta, `r` desloca o argumento do observável: `F(c±r)`.
 Na câmera quadrática, `q_r` deforma o valor radial: `Cq_r,Cq_r⁻¹`.
@@ -1941,8 +1941,9 @@ $$
 F(c-r)=Cq_r,\qquad F(c+r)=Cq_r^{-1}.
 $$
 
-Não se definiu um observável para forçar essa igualdade nem se assumiu uma
-lei `r↦q_r`. Esse é o próximo gap explícito de R1. O ângulo do plano permanece
+Nessa etapa não se definiu um observável para forçar essa igualdade nem se assumiu
+uma lei `r↦q_r`. Era o próximo gap explícito de R1, tratado na seção seguinte
+sob uma compatibilidade semântica nova e explícita. O ângulo do plano permanece
 independente; não se introduziram fase, logaritmo, tempo ou leituras posteriores.
 
 O total pode ser interpretado como custo não negativo de incompatibilidade
@@ -1956,5 +1957,222 @@ Geometry recebeu 23 teoremas e oito definições, totalizando 87 teoremas e
 no máximo `propext` e `Quot.sound`, sem escolha. Analysis recebeu 24 teoremas
 e quatro definições, totalizando 84 teoremas públicos, com somente os três
 axiomas padrão. Foundation e sua auditoria vazia não foram alteradas.
-R1 fica parcial: câmera ímpar e agregação fechadas, seleção e crosswalk dos
-valores ainda abertos. C2 continua separado.
+Ao fim dessa etapa R1 ficava parcial: câmera ímpar e agregação fechadas,
+seleção e crosswalk dos valores ainda abertos. C2 continua separado.
+
+## 31. Do offset aditivo ao transporte multiplicativo
+
+### INPUT: uma compatibilidade nova, não uma conclusão da reflexão
+
+Já existiam a geometria dos offsets inteiros, as pernas `c-r,c+r`, a câmera
+finita e os brackets quadráticos para uma família livre de deformações.
+Nada disso, sozinho, obrigava as deformações de raios diferentes a comporem.
+Refletir um par não determina como outro par deve ser realizado.
+
+Introduzimos agora uma especificação semântica explícita para uma função
+`Q : Int → ℝ`:
+
+$$
+Q(0)=1,\qquad Q(a+b)=Q(a)Q(b),\qquad Q(1)>0.
+$$
+
+Ela pede que realizar dois deslocamentos somados seja o mesmo que compor
+suas deformações multiplicativamente. Essa é a entrada adicional de
+`IsPositiveMultiplicativeOffsetTransport`. Não é apresentada como um fato
+extraído da torre residual, da massa ou da reflexão isolada.
+
+### TEOREMA: a reflexão aditiva vira inversão
+
+Como `a+(-a)=0`, a composição e a unidade dão:
+
+$$
+Q(a)Q(-a)=Q(0)=1.
+$$
+
+Portanto nenhum valor de `Q` é zero, e o fator correspondente à reflexão
+é necessariamente o inverso:
+
+$$
+\boxed{Q(-a)=Q(a)^{-1}.}
+$$
+
+Essa lei não foi adicionada como um campo independente. Os teoremas
+`multiplicativeOffsetTransport_product_neg` e
+`multiplicativeOffsetTransport_neg` a deduzem da compatibilidade.
+
+### TEOREMA: toda a família é classificada por um passo
+
+Escreva `rho=Q(1)`. Em raio zero, `Q(0)=rho^0=1`. Se a igualdade vale
+em `r`, então:
+
+$$
+Q(r+1)=Q(r)Q(1)=\rho^r\rho=\rho^{r+1}.
+$$
+
+Logo, por indução discreta:
+
+$$
+\boxed{Q(r)=\rho^r\quad(r\in\mathbb N).}
+$$
+
+A reciprocidade determina os negativos. O passo positivo e seus produtos
+têm valores positivos, assim como seus inversos; obtemos `Q(a)>0` para
+todo inteiro. A classificação completa é `Q(z)=rho^z`, usando potência
+inteira, sem precisar de logaritmo ou exponencial analítica.
+
+### CONSTRUÇÃO E CANONICIDADE RELATIVA AO PASSO
+
+Dado um passo positivo `rho`, definimos `Q_rho(z)=rho^z`. As leis de
+potências inteiras provam a unidade, a composição e `Q_rho(1)=rho`.
+Qualquer transporte compatível com esse mesmo passo coincide com ele em
+todos os inteiros, não apenas nos raios da câmera.
+
+`existsUnique_multiplicativeOffsetTransport` fornece existência e unicidade
+para cada passo positivo. **Não seleciona o passo.** Há uma família de
+transportes possíveis, parametrizada por `rho>0`. A unicidade é condicional
+ao dado unitário, não uma afirmação de que a geometria já escolheu um valor.
+
+### LIMITES
+
+O raio `r` é um deslocamento horizontal; a profundidade `k` é um índice
+vertical da torre. Não foi provada uma relação entre o passo horizontal
+`rho` e a amplitude ou a massa vertical. A compatibilidade transforma uma
+família arbitrária em uma progressão geométrica; a origem do passo continua
+como próximo problema independente.
+
+## 32. O perfil multiplicativo centrado
+
+### CONSTRUÇÃO: orientação dos offsets e observável real
+
+Recebemos um centro espacial inteiro `c`, um valor central real `C` e um
+transporte compatível `Q`. A orientação é `offset_c(x)=c-x`. Portanto a
+perna espacial esquerda tem offset positivo e a direita, negativo.
+Construímos o observável:
+
+$$
+F_{C,Q,c}(x)=C\,Q(c-x).
+$$
+
+Esse é `centeredMultiplicativeProfile`. A definição realiza o transporte
+fornecido; não pretende caracterizar todo observável possível na câmera.
+
+### TEOREMA: avaliações e conservação do produto
+
+Os argumentos do transporte nos três pontos são `r,0,-r`. Assim:
+
+$$
+\boxed{F(c-r)=C\rho^r,\qquad F(c)=C,\qquad
+F(c+r)=C(\rho^r)^{-1}.}
+$$
+
+Os teoremas `profile_leftLeg_eq_quadraticLeftLeg` e
+`profile_rightLeg_eq_quadraticRightLeg` identificam esses valores com as
+pernas quadráticas anteriores. Não são apenas fórmulas parecidas:
+as avaliações são literalmente os objetos `quadraticLeftLeg` e
+`quadraticRightLeg` nos parâmetros `Q(r)`.
+
+Reutilizando a lei do produto desses objetos:
+
+$$
+\boxed{F(c-r)F(c+r)=C^2.}
+$$
+
+Se `C=A_b(k)`, o theorem anterior do quadrado da amplitude transforma esse
+produto na massa real `M_b(k)`. Não se reconstrói o centro por uma raiz nem
+se seleciona novamente o expoente. O suporte carry-derived de `k` pode
+registrar a proveniência da camada cuja massa cada par conserva.
+
+### INTERPRETAÇÃO E LIMITES
+
+Trata-se de um caráter multiplicativo do **offset aditivo**: a variável
+realizada é `c-x`, não o argumento absoluto `x`. Não identificamos esse
+perfil com uma potência de `x` ou com uma razão de ramificação histórica.
+O parâmetro angular anterior permanece independente e não entra aqui.
+
+## 33. Crosswalk discreto–quadrático do bracket
+
+### CONSTRUÇÃO: lift real sem modificar a geometria discreta
+
+Na Analysis, `realCenteredSecondDifference` aplica o readout real existente
+às duas pernas inteiras e ao centro:
+
+$$
+\Delta^2_{\mathbb R}F(c,r)=F(c-r)-2F(c)+F(c+r).
+$$
+
+`realOddCameraLegSum`, `realOddCameraBracket` e
+`realOddCameraSaturatedSecondDifference` usam exatamente `sumPositiveRadii`,
+`leftLeg` e `rightLeg` da Geometry. Como antes, o bracket por soma das
+pernas menos cópias do centro é definido independentemente da saturação.
+Para qualquer observável `Int → ℝ`, demonstra-se primeiro:
+
+$$
+\operatorname{RealCameraBracket}_h(F,c)
+=\sum_{r=1}^{h}\Delta^2_{\mathbb R}F(c,r).
+$$
+
+Essa igualdade genérica não depende do perfil ou da compatibilidade nova.
+
+### TEOREMA LOCAL E GLOBAL: a mesma leitura nas duas realizações
+
+Somente então aplicamos as avaliações do perfil. Elas dão:
+
+$$
+\boxed{\Delta^2_{\mathbb R}F_{C,Q,c}(c,r)=B_C(Q(r))=B_C(\rho^r).}
+$$
+
+Somar o crosswalk local sobre os mesmos raios fecha o capstone
+`profile_realOddCameraBracket_eq_quadratic`:
+
+$$
+\boxed{\operatorname{RealCameraBracket}_h(F_{C,Q,c},c)
+=\operatorname{QuadraticCameraBracket}_h(C,r\mapsto Q(r))
+=\operatorname{QuadraticCameraBracket}_h(C,r\mapsto\rho^r).}
+$$
+
+A prova preserva a cadeia câmera → saturação → brackets locais. Depois
+reutilizamos a fatoração e a não negatividade já provadas para a câmera
+quadrática:
+
+$$
+\boxed{\operatorname{RealCameraBracket}_h(F,c)
+=C\sum_{r=1}^{h}\frac{(\rho^r-1)^2}{\rho^r}.}
+$$
+
+### TEOREMA: positividade, zero e reflexão do passo
+
+Para `C>0,rho>0`, o bracket do observável concreto é não negativo. Para
+`h>0`, o zero total exige que todos os valores `rho^r` sejam `1`; o raio
+`1`, presente na câmera, recupera diretamente `rho`. Portanto:
+
+$$
+\boxed{\operatorname{RealCameraBracket}_h(F,c)=0\iff\rho=1
+\quad(h>0).}
+$$
+
+Em câmera vazia (`h=0`), o bracket zera para qualquer passo: não há seleção.
+Inverter o passo troca as avaliações das duas pernas, porque
+`(rho^{-1})^r=(rho^r)^{-1}`. A invariância estrutural anterior dos pares
+prova a invariância global, sem usar a fatoração como origem da simetria.
+C3 reduz ao bracket local `B_C(rho)`; capacidade composta `9` usa quatro
+pares e funciona sem primalidade. O problema antipodal C2 continua separado.
+
+### TESTE DE ORIENTAÇÃO E TOTAL
+
+Para `C=1/3,rho=2,h=2`, as deformações são `2,4`, não uma escolha independente
+por raio. As avaliações das pernas são `2/3,1/6` e `4/3,1/12`; cada produto
+é `1/9`. Os brackets são `1/6` e `3/4`, totalizando `11/12`. O passo `1/2`
+troca as pernas e preserva esse total; o passo `1` produz total zero.
+
+### ESTADO E AUDITORIA
+
+R1 tem agora o crosswalk do perfil **fechado sob compatibilidade multiplicativa
+explícita**. O passo positivo continua livre. Não se afirma que essa condição
+foi deduzida da fundação ou que o perfil seja toda a radialidade da teoria.
+A seleção do passo, sua ligação com outras estruturas e comparações históricas
+são gates posteriores. Nenhuma camada de leituras posteriores é aberta aqui.
+
+Os três módulos acrescentam 44 teoremas e nove definições guardados no audit
+analítico, com somente os três axiomas padrão permitidos. Foundation e Geometry,
+inclusive seus audits e seleção de escala, não são modificadas. Não se usa
+esta nova realização para justificar retroativamente qualquer resultado delas.
