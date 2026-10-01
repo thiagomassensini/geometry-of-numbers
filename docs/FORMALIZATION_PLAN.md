@@ -10,7 +10,7 @@ Não substitui os enunciados Lean nem declara fechadas as metas do plano.
 **Zona A — fundação discreta:** quantidade, carry, profundidade,
 massa/expoentes e rigidez quadrática. O núcleo de seleção da escala está
 encerrado em `FoundationalHalfScalingCapstone`. Isso não fecha outras metas
-históricas do plano, como o crosswalk carry/centro–pernas. Axiomas transitivamente usados:
+históricas do plano, como a identificação de profundidades centro/carry. Axiomas transitivamente usados:
 **nenhum**. Nem `Classical.choice`, nem `propext`, nem `Quot.sound`.
 As provas atuais importam apenas `Init`.
 
@@ -30,7 +30,7 @@ complexa justificará um resultado fundacional.
 | Fase | Conteúdo | Estado nesta árvore |
 | --- | --- | --- |
 | F0 | Fidelidade → recorrência → primeiro retorno → carry → torre | Primeiro retorno, reset, torre finita, capacidade prefixal e fibras de refinamento fechados; crosswalk clássico ainda aberto |
-| F1 | Centro–pernas, profundidade e resíduo | Geometria inteira abstrata, reflexão e segunda diferença fechadas; crosswalk com a torre/carry ainda aberto |
+| F1 | Centro–pernas, profundidade e resíduo | Geometria abstrata e crosswalk de uma célula carry para capacidade ímpar fechados; profundidades e ramo antipodal par/C2 ainda abertos |
 | F2 | Massa/amplitude e rigidez algébrica do expoente `1/2` | Núcleo discreto encerrado em capstone; massa e amplitude reais realizadas em camada separada, com amplitude² = massa |
 | R0 | Rotação e estado espectral reais | Não iniciada |
 | R1 | Câmeras e brackets reais | Não iniciada |
@@ -232,10 +232,11 @@ construída em `centeredSecondDifference`; identidade recupera o defeito,
 quadrado tem resposta `2*r*r`. Não se universaliza a anulação por simetria.
 
 As entradas públicas agora seguem `Foundation → Geometry → Analysis`;
-os arquivos de provas geométricas usam somente Init e sua camada anterior
-geométrica. A fundação matemática e seu audit não foram modificados.
-Essa organização não prova uma relação da torre com centro–pernas: ainda
-falta especificar e provar um mapa com essa proveniência. Também não se
+os arquivos de provas geométricas usam somente Init e as camadas locais
+Foundation/Geometry. A fundação matemática e seu audit não foram modificados.
+Na etapa abstrata essa organização não provava uma relação da torre com
+centro–pernas. A célula ímpar é construída abaixo; a relação de profundidades
+continua pendente. Também não se
 identificaram bracket, Green, tilt ou estados vetoriais com a nova API.
 
 21 teoremas públicos e sete definições são auditados separadamente, com
@@ -243,8 +244,43 @@ testes de sinal, raio negativo/zero e observável quadrático. A axiomática
 permitida é somente `propext`/`Quot.sound`; todas as definições e a igualdade
 definicional da identidade são vazias. O audit da fundação continua vazio.
 Não foi criada uma álgebra inteira alternativa para esconder os axiomas
-das provas de Init. O próximo gate pode ser um crosswalk, mas não foi
-inserido como hipótese desta rodada.
+das provas de Init. Essa etapa não recebeu um crosswalk como hipótese.
+
+### Crosswalk local carry → centro/pernas, fechado para capacidade ímpar
+
+`BalancedCarryOffset` recebe os ciclos/resíduos gerados por stepping/reset.
+O predicado explícito `IsOddCapacity b` fornece `b=2*h+1`, logo `b>0` e
+nenhum resíduo empata em `2*r=b`. As funções de centro/offset exigem essa
+hipótese: o ramo `else` não é uma convenção para o antipodal par.
+
+A reconstrução existente fornece `n=q*b+r`; comparar `2*r` com `b` mantém
+`(q*b,r)` ou troca para `((q+1)*b,r-b)`. Casts transportam a igualdade
+natural para Int, sem reconstituir ciclos por divisão. O centro é múltiplo
+da capacidade, e os limites assinados `-b<2*a<b` equivalem a `2*natAbs(a)<b`.
+A unicidade usa que a diferença de centros é múltiplo de `b`, mas tem módulo
+estritamente menor que `b`; não exige primalidade nem oddness, uma vez
+que ambos os representantes estritos existem.
+
+`CarryCenterLegCrosswalk` reaproveita `rightLeg`, `reflect`, `centerDefect`
+e `secondDifferenceAt_identity`. A quantidade é a perna `c+a`, a reflexão
+é `c-a`, e testar o centro deslocado dá `-2*δ` por composição, não nova
+álgebra de defeito. `emergentCapacity_balancedCarry_spec` alinha explicitamente
+essa construção ao primeiro retorno da mesma trajetória. Oddness permanece
+uma hipótese de regime adicional; não é uma conclusão sobre todo retorno.
+
+O resíduo zero permanece centro; não zero permanece perna não central.
+O caso composto `b=9` confirma que primalidade não é input. `b=1` tem apenas
+centros, `b=0` está excluído pelo domínio ímpar. Os dois theorems antipodais
+de C2 provam ausência de solução estrita em `n=1` e não unicidade no bordo.
+C2 não foi resolvido por uma escolha arbitrária.
+
+Há 23 novos teoremas públicos e quatro definições com audit próprio; nenhum
+axioma além de `propext`/`Quot.sound`, nenhuma escolha. As definições e o
+contraexemplo explícito de não unicidade no bordo são vazios. A fundação
+matemática, seu audit e a cadeia massa/metade não foram alterados.
+
+Próximos gates: ramo par/C2 com regra própria e crosswalk de profundidades.
+Não se portaram `effectiveDepth=centerDepth`, brackets, Green ou tilt.
 
 - Reusar uma prova somente após comparar seu tipo e suas dependências.
 - Manter mapas, estados, parâmetros e domínios antes de scalarizar.

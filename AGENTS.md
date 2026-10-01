@@ -12,7 +12,11 @@
   `GeometryOfNumbers.Analysis`; nunca importar essa camada na fundação.
 - `GeometryOfNumbers.Geometry` é a entrada separada para centro–pernas,
   reflexão e segunda diferença sobre `Int`. Não importá-la na Foundation.
-  A entrada Analysis reúne Geometry; isso não prova o crosswalk torre/centro.
+  A entrada Analysis reúne Geometry. O crosswalk de uma célula usa os ciclos
+  existentes, com capacidade ímpar; não implica identificação de profundidades.
+- Não importar primalidade histórica para o balanceamento. Oddness é hipótese
+  explícita de regime, não conclusão da emergência da capacidade. Preservar
+  resíduo zero como centro; não atribuir lado arbitrário ao antipodal par/C2.
 - Auditar a geometria com `bash scripts/audit-geometry.sh`: definições sem
   axiomas; teoremas permitem somente `propext` e `Quot.sound` da aritmética
   inteira de Init. Não anunciar footprint vazio nessa camada nem permitir escolha.

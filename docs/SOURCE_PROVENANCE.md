@@ -118,8 +118,9 @@ têm footprint vazio. O limite `n < b^k` força cauda zero, sem afirmar que toda
 cauda termina em alguma profundidade.
 
 Não se portaram a eliminação eventual da cauda, o crosswalk clássico de normalização carry
-ou o crosswalk carry/centro–pernas. A geometria abstrata centro–pernas foi
-construída posteriormente, na camada separada registrada abaixo.
+ou o crosswalk de profundidades carry/centro–pernas. A geometria abstrata e
+depois a célula carry balanceada ímpar foram construídas na camada separada
+registrada abaixo; o ramo par não foi portado.
 A realização da amplitude em potências reais está agora na Zona B abaixo. Não há prova de
 autoadjunticidade nesta árvore. Essas fronteiras constam do README e do plano.
 
@@ -284,3 +285,36 @@ Nenhuma dessas provas ou axiomas retorna à fundação congelada.
 
 A profundidade/massa/metade já foram derivadas sem centro–pernas nesta árvore.
 Não foi inventada uma ponte retroativa para alterar essa proveniência.
+
+## Crosswalk de uma célula carry para centro–offset balanceado
+
+Referências consultadas: a mesma cópia local de `CPFormal`, commit
+`65d50f6db1208708e109982ba97e1d51d3039956`, em
+`Genuine/BalancedOffsets.lean`, `Carry/CpBalancedResidue.lean` e
+`Carry/CpGlobalIncidence.lean`.
+
+| Referência histórica | Uso e diferença da implementação local |
+| --- | --- |
+| `balancedOffsets`, `BalancedOffset` | Motivação para a janela simétrica. Não importamos Finset, não excluímos zero e não usamos `(p-1)/2` para construir os offsets |
+| `balancedOffsetEquivNonzeroResidue` | A fonte usa `ZMod.valMinAbs`, não computabilidade e primalidade/oddness. Não foi portada: os resíduos locais já vêm de stepping/reset |
+| `centerOfNonmultiple`, `dvd_centerOfNonmultiple`, `existsUnique_incidence` | Motivação para alinhamento e canonicidade. Novas provas usam `completedCycleCount`, `cycleResidual` e limites estritos; cobrem também resíduo zero |
+
+A primalidade foi eliminada: o regime suficiente é capacidade ímpar,
+expressa como `b=2*h+1`. Esse testemunho não é a divisão por dois, nem foi
+deduzido da emergência de uma capacidade arbitrária. A comparação `2*r<b`
+seleciona o centro atual ou seguinte. Nenhum módulo histórico entra como
+dependência lógica, e os centros não são definidos por quociente/modulo.
+
+`balancedCenterOffset_unique` é uma prova local sobre múltiplos inteiros.
+Usa os lemas de Init `Int.dvd_sub` e `Int.le_of_dvd` (ambos com `propext`)
+para excluir uma diferença não nula de centros dentro da janela estrita.
+Esses lemas não redefinem a decomposição emergente. A referência histórica
+`centerOffsetDecomposition_existsUnique` não foi importada ou simplesmente
+rebatizada; seu footprint anterior permanece registrado, fora da Zona A.
+
+Os 23 teoremas públicos novos têm footprint contido em `propext` e
+`Quot.sound`; nenhum depende de escolha. As quatro definições e o witness
+antipodal explícito de bordo são vazios. A família canônica não tem input
+par: em C2 provamos tanto a ausência de representante estrito para `1`
+quanto as duas apresentações distintas no bordo. Não construímos uma
+resolução C2, uma identificação de profundidades ou observáveis históricos.

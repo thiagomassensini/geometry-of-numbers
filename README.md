@@ -19,8 +19,10 @@ centro e raio inteiros → pernas simétricas → reflexão involutiva
 → teste de centro contra pernas fixas → segunda diferença de observáveis
 ```
 
-O crosswalk da torre/carry para essa geometria continua pendente. Ela não
-justificou retroativamente a massa ou metade. A realização real da escala
+O crosswalk de **uma célula** agora fecha: ciclos/resíduo existentes →
+offset estritamente balanceado → centro alinhado → par refletido, para
+capacidade ímpar. A identificação de profundidades da torre continua pendente.
+Essa geometria não justificou retroativamente a massa ou metade. A realização real da escala
 já existe; estado rotacional, câmeras, brackets e demais camadas do plano
 permanecem posteriores, ainda não formalizados aqui.
 
@@ -34,7 +36,8 @@ capacidade prefixal, normalização neutra e conservação por refinamento fecha
 ponte da massa formal à rigidez quadrática discreta fechada e consolidada em
 capstone. Zona B aberta: massa real, amplitude real e identidade do quadrado
 compiladas, sem estrutura vetorial ou norma. Geometria discreta centro–pernas,
-reflexão e segunda diferença agora compiladas e auditadas separadamente.**
+reflexão e segunda diferença compiladas e auditadas separadamente, com
+crosswalk balanceado de uma célula para capacidades ímpares, sem primalidade.**
 
 O núcleo da Zona A depende apenas de `Init`, sem Mathlib ou imports históricos.
 Noventa e dois teoremas públicos e dezessete definições
@@ -277,12 +280,53 @@ mesmo em simetria: resposta/curvatura de um observável não é necessariamente
 assimetria geométrica. Os exemplos verificam `(7,10,13)`, teste em `11` dando
 `-2`, recentramento `(8,11,14)` dando zero, reflexão e resposta quadrática `18`.
 
-Sete definições têm footprint vazio. Os 21 teoremas públicos são auditados;
+As sete definições da geometria abstrata têm footprint vazio. Seus 21 teoremas públicos são auditados;
 a ponte definicional da identidade tem footprint vazio e os demais usam
 `propext` e `Quot.sound`, **sem `Classical.choice`**. Esses axiomas vêm da
 aritmética/provas de Init; não foi necessário importar Mathlib nesta camada.
 Isso não é uma extensão da auditoria vazia da Zona A. Não foram identificados
 brackets, Green ou tilt com esses objetos.
+
+## Do carry emergente ao centro balanceado
+
+`Geometry/BalancedCarryOffset.lean` usa literalmente
+`q = completedCycleCount b n` e `r = cycleResidual b n`. Com
+`IsOddCapacity b := ∃ h : Nat, b = 2*h+1`, a comparação por duplicação
+não pode empatar. A construção é:
+
+```text
+2*r < b:  center = q*b,       offset = r
+b < 2*r:  center = (q+1)*b,   offset = r-b  (subtração inteira)
+```
+
+Não há divisão/módulo, base posicional externa ou import histórico na
+construção. `balancedCarry_spec` prova `n=center+offset`, `b ∣ center` e
+`2*offset.natAbs < b`. A unicidade `balancedCenterOffset_unique` vale para
+qualquer par de decomposições alinhadas com offsets estritos, sem hipótese
+de paridade; oddness é usada para a existência para todo resíduo.
+
+`Geometry/CarryCenterLegCrosswalk.lean` prova que `rightLeg center offset = n`
+e `reflect center n = leftLeg center offset = center-offset`. Por composição
+com a geometria abstrata, o defeito do centro correto é zero e o teste de
+`center+δ`, com as mesmas pernas, é `-2*δ`. A segunda diferença da identidade
+herda essa mesma fórmula, sem outra definição de defeito.
+
+`emergentCapacity_balancedCarry_spec` recebe o primeiro retorno da trajetória
+e expõe os ciclos originais junto da especificação geométrica. **Não deriva
+oddness da fundação**: uma capacidade emergente pode ser par. Primalidade
+não aparece; o teste com capacidade composta `9` também compila.
+
+Resíduo zero dá offset zero, centro igual à quantidade e reflexão fixa.
+Resíduo não zero dá offset não zero e quantidade distinta do centro.
+Para capacidade `1` a construção é trivial; `0` não é ímpar positiva.
+O antipodal `b=2,n=1` não tem representante estrito; permitindo
+`2*|offset|=b`, `1=0+1=2-1` tem centros distintos. Nenhum lado foi escolhido:
+as funções canônicas exigem oddness. **C2 continua um crosswalk futuro.**
+
+Os 23 teoremas e quatro definições novos entram no audit próprio. As
+definições têm footprint vazio; os teoremas usam no máximo `propext` e
+`Quot.sound`, sem escolha. Ao todo Geometry tem 44 teoremas públicos e onze
+definições auditadas. A Foundation e sua axiomática continuam intocadas.
 
 ## Executar
 
@@ -308,7 +352,9 @@ analíticos/Mathlib na fundação ou em seu import público, inclusive multilinh
 O checker separado de Geometry admite apenas Init, Foundation e Geometry,
 exceto a ferramenta Lean usada pelo audit; análise e fontes históricas não
 podem retornar como dependências. A direção das entradas é
-`Foundation → Geometry → Analysis`, não um crosswalk matemático já fechado.
+`Foundation → Geometry → Analysis`. A entrada Geometry contém agora o
+crosswalk de uma célula ímpar; a direção de imports, por si só, não prova
+qualquer identificação de profundidades ou realização analítica da geometria.
 
 ## Organização e fronteiras
 

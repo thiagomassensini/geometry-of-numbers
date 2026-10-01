@@ -858,14 +858,16 @@ O centro construído e sua caracterização são afirmações diferentes: a
 primeira fornece uma configuração a partir de dados; a segunda testa um
 candidato contra endpoints mantidos fixos. Nenhum teorema novo identifica
 esse centro ou raio com resíduos, contadores ou profundidades da torre.
-**O crosswalk torre/carry → centro–pernas continua pendente.**
+Nesta etapa abstrata o crosswalk ainda não estava construído. A seção 20
+fecha uma célula carry → centro/pernas para capacidade ímpar; a identificação
+de profundidades da torre continua pendente.
 
 Essa geometria adicional é Init-only, mas não pertence ao capstone vazio
 da Zona A. As provas inteiras usuais desta versão usam `propext` e
 `Quot.sound`; o audit próprio rejeita escolha e qualquer outro axioma.
 As definições geométricas têm footprint vazio. A fundação continua com
 footprint vazio e sem importar Geometry. A organização das entradas
-`Foundation → Geometry → Analysis` não é uma prova desse crosswalk.
+`Foundation → Geometry → Analysis` não é, por si só, uma prova desse crosswalk.
 
 ## 19. Segunda diferença e defeito de centro
 
@@ -950,8 +952,170 @@ para qualquer observável, pois os três nós então coincidem.
 ### LIMITES E PRÓXIMAS PONTES
 
 A camada tem 21 teoremas públicos e sete definições auditados separadamente.
-Seus testes não são pressupostos das provas gerais. Não construímos um mapa
-da torre para centro–pernas; não identificamos o bracket histórico, Green
+Seus testes não são pressupostos das provas gerais. Na etapa abstrata não
+construímos o mapa da célula carry para centro–pernas, acrescentado abaixo;
+não identificamos o bracket histórico, Green
 ou tilt com a segunda diferença ou com o defeito. Não há nova norma, estado
 rotacional, câmera ou operador. Essas pontes serão enunciadas e provadas
 em suas próprias etapas, sem reescrever a origem da massa e de metade.
+
+## 20. Do resíduo ordinário ao offset balanceado
+
+### INPUT: a mesma célula de carry, com seu regime explicitado
+
+A decomposição ordinária já foi construída por passos unitários e reset:
+
+$$
+n=qb+r,\qquad 0\le r<b,
+$$
+
+onde `q=completedCycleCount b n` e `r=cycleResidual b n`. Esses objetos
+continuam exatamente os da fundação: não são redefinidos por divisão ou
+módulo. O natural `n` é a contagem do relógio usada nessa construção; não
+se presume aritmética adicional no tipo abstrato de quantidade da trajetória.
+
+Para este crosswalk recebemos a hipótese explícita de que a capacidade é
+ímpar. Sua apresentação mínima é um testemunho natural `h` com
+
+$$
+b=2h+1.
+$$
+
+`IsOddCapacity` expressa esse regime. Ele implica positividade e exclui
+`2r=b` para qualquer resíduo natural. Não exigimos primalidade. Também
+**não deduzimos oddness da fundação**: o primeiro retorno pode ser par;
+a geometria desse regime não se fecha mudando silenciosamente a capacidade.
+
+`emergentCapacity_balancedCarry_spec` recebe o primeiro retorno da mesma
+trajetória e, separadamente, sua oddness; expõe a decomposição original
+junto da geometria obtida dela. Não introduz uma base posicional externa.
+
+### PROBLEMA: resíduo ordinário não é ainda offset simétrico
+
+O resíduo ordinário lê a posição no ciclo a partir do múltiplo anterior.
+Isso não determina que esse múltiplo seja o centro mais próximo. Em
+capacidade `5`:
+
+$$
+9=1\cdot5+4=10-1.
+$$
+
+O resíduo é `4`, mas a coordenada simétrica é o offset `-1` do centro `10`.
+Conservar sempre o centro `qb` perderia esse balanceamento.
+
+### CONSTRUÇÃO: comparar distâncias sem dividir por dois
+
+Comparamos apenas `2r` e `b`, e definimos:
+
+$$
+(c,a)=
+\begin{cases}
+(qb,r),&2r<b,\\
+((q+1)b,r-b),&b<2r.
+\end{cases}
+$$
+
+A subtração `r-b` ocorre em `Int`, não é truncada. As funções
+`balancedCarryCenter` e `balancedCarryOffset` exigem a hipótese ímpar;
+seu segundo ramo nunca representa uma escolha de lado no empate par.
+Nenhuma fórmula nova escolhe ciclos ou resíduos: somente reexpressa os
+mesmos dados já construídos.
+
+### TEOREMA: reconstrução, alinhamento e janela estrita
+
+`balancedCarry_spec` reúne as conclusões:
+
+$$
+\boxed{n=c+a,\qquad b\mid c,\qquad 2|a|<b.}
+$$
+
+O primeiro resultado transporta a reconstrução natural existente para
+inteiros. O segundo vem do fato de que o centro é `qb` ou `(q+1)b`. O
+terceiro usa `r<b` e a comparação estrita dos dois lados.
+
+Na implementação, `IsBalancedOffset b a` significa `-b<2a<b`;
+`balancedOffset_iff_natAbs` prova a equivalência com `2*natAbs(a)<b`.
+Portanto não se supõe unicidade como campo de um predicado. A janela
+estrita expressa que o offset permanece dentro da meia-célula, sem formar
+uma fração.
+
+### TEOREMA: por que a representação é canônica
+
+Considere duas decomposições da mesma quantidade, com centros alinhados
+e offsets estritamente balanceados. Sua diferença de centros é um múltiplo
+de `b`; pela igualdade das quantidades, é também a diferença dos offsets.
+Os limites estritos colocam essa diferença entre `-b` e `b`. Um múltiplo
+não nulo de `b` não cabe nessa janela. Logo os centros coincidem, e então
+os offsets também.
+
+Esse é `balancedCenterOffset_unique`; ele não precisa de paridade, uma vez
+que os representantes estritos existam. A oddness é necessária nesta API
+para garantir a construção para **todo** resíduo da capacidade, não como
+ingrediente da prova de unicidade. `balancedCarry_unique` identifica
+qualquer decomposição válida com a que veio do carry.
+
+### TEOREMA: quantidade e reflexão são as pernas da API existente
+
+Não criamos outra geometria. A reconstrução identifica
+
+$$
+\operatorname{rightLeg}(c,a)=c+a=n,
+$$
+
+e a reflexão existente dá
+
+$$
+\operatorname{reflect}(c,n)=c-a=\operatorname{leftLeg}(c,a).
+$$
+
+Com raio/offset negativo, os nomes `leftLeg` e `rightLeg` são os nomes
+algébricos da API, não uma afirmação de ordem numérica. As pernas vivem
+em `Int`; uma reflexão próxima da origem pode ser negativa.
+
+Em capacidade `5`, os testes certificam:
+
+| Quantidade | Ciclos, resíduo | Centro, offset | Reflexão |
+| --- | --- | --- | --- |
+| `6` | `(1,1)` | `(5,+1)` | `4` |
+| `7` | `(1,2)` | `(5,+2)` | `3` |
+| `8` | `(1,3)` | `(10,-2)` | `12` |
+| `9` | `(1,4)` | `(10,-1)` | `11` |
+| `10` | `(2,0)` | `(10,0)` | `10` |
+
+Resíduo zero implica offset zero e centro igual à quantidade. Sua reflexão
+é fixa; um múltiplo não é declarado perna não central. Resíduo não zero
+implica offset não zero e quantidade distinta do centro.
+
+Por composição com os teoremas da seção anterior, o centro correto tem
+defeito zero para `reflect(c,n),n`. Mantendo essas pernas e testando `c+δ`,
+`balancedCarry_centerDefect_shift` dá `-2δ`; a segunda diferença da
+identidade herda exatamente esse resultado. Não foi redefinido o defeito.
+
+### LIMITES: a obstrução antipodal e o próximo gate
+
+Em capacidade par pode ocorrer `2r=b`. O caso mínimo é:
+
+$$
+b=2,\quad n=1,\qquad 1=0+1=2-1.
+$$
+
+`antipodal_two_no_strict_decomposition` prova que nenhum centro alinhado
+representa essa quantidade com offset estrito. Se permitimos o bordo
+`2|a|=b`, `antipodal_two_boundary_nonunique` exibe os dois centros distintos
+`0` e `2`, ambos válidos. Portanto não se pode estender a construção ímpar
+ao antipodal apenas relaxando uma desigualdade e alegando canonicidade.
+**C2 permanece uma ponte dedicada futura; nenhum lado foi escolhido.**
+
+Capacidade `1` é ímpar e tem apenas o caso central; capacidade `0` não entra
+no domínio. O teste com capacidade composta `9` dá `17=18-1`, confirmando
+que primalidade não é input. A fundação de massa e metade não foi alterada.
+
+Esta rodada acrescenta 23 teoremas e quatro definições ao audit geométrico.
+As definições são vazias; os teoremas usam somente os axiomas já permitidos
+`propext` e `Quot.sound`, sem escolha. O witness antipodal de bordo também
+tem footprint vazio. A fundação continua intocada, com seu audit vazio.
+
+Fechou uma célula: carry existente → centro/offset canônicos no regime
+ímpar → pernas refletidas. Não identificamos profundidade do centro com
+profundidade efetiva da quantidade, nem construímos brackets históricos,
+Green, tilt ou estado rotacional. Essas são pontes posteriores.
