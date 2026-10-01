@@ -2,7 +2,8 @@ import GeometryOfNumbers.Analysis
 import Lean
 
 /-! Zone B reports standard Mathlib axioms separately from Foundation's empty
-footprint. These examples test the real realization, not exponent selection. -/
+footprint. Examples test scalar realization and angular quadratic energy,
+not exponent selection or a law for the angle. -/
 
 open Lean Elab Command
 
@@ -18,6 +19,42 @@ elab "#assert_analysis_axioms " id:ident : command => do
 namespace GeometryOfNumbers.Analysis
 
 open Foundation
+
+#assert_analysis_axioms RealPlaneState
+#assert_analysis_axioms realPlaneEnergy
+#assert_analysis_axioms rotateRealPlane
+#assert_analysis_axioms realCriticalDepthSeed
+#assert_analysis_axioms realCriticalDepthState
+#assert_analysis_axioms rotateRealPlane_energy
+#assert_analysis_axioms rotateRealPlane_zero
+#assert_analysis_axioms rotateRealPlane_add
+#assert_analysis_axioms realCriticalDepthSeed_energy_eq_amplitude_sq
+#assert_analysis_axioms realCriticalDepthSeed_energy
+#assert_analysis_axioms realCriticalAmplitude_pos
+#assert_analysis_axioms realCriticalDepthState_eq_coordinates
+#assert_analysis_axioms realCriticalDepthState_energy
+#assert_analysis_axioms realCriticalDepthState_zero_angle
+#assert_analysis_axioms realCriticalDepthSeed_zero_depth
+#assert_analysis_axioms realCriticalDepthState_zero_depth_energy
+#assert_analysis_axioms realCriticalDepthSeed_capacity_one
+#assert_analysis_axioms realCriticalDepthState_capacity_one_energy
+#assert_analysis_axioms balancedCarryDepth_realState_energy
+#assert_analysis_axioms balancedCarryDepth_realState_realizes_formalMass
+#print axioms rotateRealPlane_energy
+#print axioms rotateRealPlane_zero
+#print axioms rotateRealPlane_add
+#print axioms realCriticalDepthSeed_energy_eq_amplitude_sq
+#print axioms realCriticalDepthSeed_energy
+#print axioms realCriticalAmplitude_pos
+#print axioms realCriticalDepthState_eq_coordinates
+#print axioms realCriticalDepthState_energy
+#print axioms realCriticalDepthState_zero_angle
+#print axioms realCriticalDepthSeed_zero_depth
+#print axioms realCriticalDepthState_zero_depth_energy
+#print axioms realCriticalDepthSeed_capacity_one
+#print axioms realCriticalDepthState_capacity_one_energy
+#print axioms balancedCarryDepth_realState_energy
+#print axioms balancedCarryDepth_realState_realizes_formalMass
 
 #assert_analysis_axioms realizeCountingShare
 #assert_analysis_axioms realDepthMass
@@ -79,5 +116,44 @@ example : realizeCountingShare ⟨2, 18, by decide⟩ =
   apply (realizeCountingShare_eq_iff_sameCountingShare _ _).2
   change 2 * 9 = 1 * 18
   decide
+
+-- Coordinate tests: the same radial amplitude, with no angular law.
+example : realCriticalDepthSeed 3 2 (by decide) = ((1 : ℝ) / 3, 0) := by
+  unfold realCriticalDepthSeed
+  rw [realCriticalAmplitude_eq_rpow]
+  norm_num [Real.rpow_neg_one]
+example : realPlaneEnergy (realCriticalDepthSeed 3 2 (by decide)) = 1 / 9 := by
+  rw [realCriticalDepthSeed_energy, realDepthMass_eq_one_div_pow]
+  norm_num
+example : realCriticalDepthState 3 2 (by decide) 0 =
+    realCriticalDepthSeed 3 2 (by decide) :=
+  realCriticalDepthState_zero_angle 3 2 (by decide)
+example : realCriticalDepthState 3 2 (by decide) (Real.pi / 2) =
+    (0, (1 : ℝ) / 3) := by
+  rw [realCriticalDepthState_eq_coordinates, Real.cos_pi_div_two, Real.sin_pi_div_two,
+    realCriticalAmplitude_eq_rpow]
+  norm_num [Real.rpow_neg_one]
+example (theta : ℝ) :
+    realPlaneEnergy (realCriticalDepthState 3 2 (by decide) theta) = 1 / 9 := by
+  rw [realCriticalDepthState_energy, realDepthMass_eq_one_div_pow]
+  norm_num
+example (theta : ℝ) : realPlaneEnergy (rotateRealPlane theta (3, 4)) = 25 := by
+  rw [rotateRealPlane_energy]
+  norm_num [realPlaneEnergy]
+example (b : ℕ) (hb : 0 < b) (theta : ℝ) :
+    realCriticalDepthSeed b 0 hb = (1, 0) ∧
+      realPlaneEnergy (realCriticalDepthState b 0 hb theta) = 1 :=
+  ⟨realCriticalDepthSeed_zero_depth b hb,
+    realCriticalDepthState_zero_depth_energy b hb theta⟩
+example (k : ℕ) (theta : ℝ) :
+    realPlaneEnergy (realCriticalDepthState 1 k Nat.zero_lt_one theta) = 1 :=
+  realCriticalDepthState_capacity_one_energy k theta
+set_option maxRecDepth 2048 in
+example (theta : ℝ) :
+    realPlaneEnergy (realCriticalDepthState 5 2 (Geometry.oddCapacity_pos ⟨2, rfl⟩) theta) =
+      realDepthMass 5 2 (Geometry.oddCapacity_pos ⟨2, rfl⟩) := by
+  apply balancedCarryDepth_realState_energy 5 26 2 ⟨2, rfl⟩
+  change (5 : Int) ^ 2 ∣ (25 : Int)
+  exact ⟨1, rfl⟩
 
 end GeometryOfNumbers.Analysis

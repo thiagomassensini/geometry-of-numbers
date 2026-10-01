@@ -363,3 +363,42 @@ Primalidade não reaparece: capacidade positiva basta para a torre e capacidade
 ímpar basta para a seleção do centro já construído. O índice `k` é compartilhado
 com a massa formal anterior; não há massa da quantidade ou amplitude global
 por quantidade nova. Terminação, máximo e resolução C2 permanecem gates futuros.
+
+## Plano real quadrático e rotação de ângulo livre
+
+Esta etapa é uma construção local sobre `Analysis/RealQuadraticAmplitude`
+e `Geometry/BalancedCarryDepthCrosswalk`, não uma porta de estado histórico.
+Não houve nova consulta a repositórios históricos nem dependência lógica
+deles. As referências anteriores permanecem registradas; não foram copiadas
+especializações por quantidade, logaritmo ou tempo espectral.
+
+Fonte de trigonometria: Mathlib oficial já fixada em
+`81a5d257c8e410db227a6665ed08f64fea08e997`,
+`Mathlib/Analysis/SpecialFunctions/Trigonometric/Basic.lean` e sua API real.
+Reutilizam-se `Real.sin_sq_add_cos_sq`, `Real.cos_add`, `Real.sin_add`,
+os valores em zero e, somente em testes, `Real.cos_pi_div_two` e
+`Real.sin_pi_div_two`. Álgebra usa `ring`; nenhum pacote novo entra no manifest.
+
+| Objeto local | Proveniência e limite |
+| --- | --- |
+| `RealPlaneState`, `realPlaneEnergy` | Produto coordenado e polinômio explícito; não se identifica a norma pronta do produto com a energia |
+| `rotateRealPlane` | Fórmula real usual com orientação `(1,0) → (cosθ,sinθ)`; θ é arbitrário, não fase selecionada |
+| `rotateRealPlane_energy` | Expansão algébrica e identidade trigonométrica; invariância é provada, não assumida |
+| `rotateRealPlane_zero`, `rotateRealPlane_add` | Valores em zero e fórmulas de adição; não definem uma lei física para θ |
+| `realCriticalDepthSeed`, `realCriticalDepthSeed_energy` | Usa a amplitude local anterior e seu theorem de quadrado; nenhuma nova prova de seleção de metade |
+| `realCriticalAmplitude_pos` | Consequência de `Real.rpow_pos_of_pos` aplicada à realização existente |
+| `realCriticalDepthState`, `realCriticalDepthState_energy` | Rotaciona somente a semente; índice de profundidade e energia preservados, sem objeto global de quantidade |
+| `balancedCarryDepth_realState_energy` | Suporte pelo centro registra proveniência do mesmo `k`; a identidade algébrica não usa essa hipótese |
+| `balancedCarryDepth_realState_realizes_formalMass` | Composição com o corolário local de massa; mantém campos formais e realização real, sem uma nova massa de `n` |
+
+Os quinze teoremas novos têm exatamente os axiomas padrão `propext`,
+`Classical.choice` e `Quot.sound`. Cinco nomes de carrier/mapas também são
+verificados pelo guard analítico. Foundation e Geometry matemáticas e seus
+audits não foram modificados, nem o estado foi usado para selecionar a escala.
+Não se construiu produto interno, norma, lei de fase, câmera ou operador.
+
+Os imports transitivos de Mathlib mantêm sua infraestrutura analítica padrão;
+a ausência de logaritmo/complexos refere-se aos novos objetos e argumentos
+de prova, não a uma alegação de que tais conceitos estejam ausentes de toda
+a implementação transitiva da biblioteca. Nenhuma especialização física
+ou identificação de energia com norma foi extraída dessa infraestrutura.

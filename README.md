@@ -24,8 +24,9 @@ offset estritamente balanceado → centro alinhado → par refletido, para
 capacidade ímpar. A profundidade relacional agora é derivada da torre, e somente
 o offset canônico expõe a profundidade do centro em qualquer nível positivo.
 Essa geometria não justificou retroativamente a massa ou metade. A realização real da escala
-já existe; estado rotacional, câmeras, brackets e demais camadas do plano
-permanecem posteriores, ainda não formalizados aqui.
+já existe. Agora há também um estado real de profundidade com energia
+quadrática preservada por rotação de ângulo livre. Lei de fase, estado global
+de uma quantidade, câmeras, brackets e demais camadas permanecem posteriores.
 
 O nome do repositório não afirma que a geometria clássica dos números já
 está formalizada aqui. O escopo é o plano de trabalho da geometria real do carry.
@@ -36,7 +37,8 @@ está formalizada aqui. O escopo é o plano de trabalho da geometria real do car
 capacidade prefixal, normalização neutra e conservação por refinamento fechados;
 ponte da massa formal à rigidez quadrática discreta fechada e consolidada em
 capstone. Zona B aberta: massa real, amplitude real e identidade do quadrado
-compiladas, sem estrutura vetorial ou norma. Geometria discreta centro–pernas,
+compiladas; primeiro estado bidimensional com energia `x²+y²` e rotação livre
+também fechado, sem construção de norma ou produto interno. Geometria discreta centro–pernas,
 reflexão e segunda diferença compiladas e auditadas separadamente, com
 crosswalk balanceado de uma célula para capacidades ímpares, sem primalidade.
 Relação de profundidade por zeros sucessivos e identificação relacional do
@@ -217,8 +219,9 @@ explicitamente separada da cardinalidade, e sua conservação entre profundidade
 foi provada pelo refinamento. Sua ligação à compatibilidade quadrática formal
 está fechada. A realização numérica real também está disponível, na camada
 separada descrita abaixo; não foi usada para selecionar o expoente.
-Não há estado rotacional, norma derivada, câmeras, brackets, TFVD, Green,
-isometria ou autoadjunticidade nesta árvore.
+O estado angular de profundidade está construído abaixo, sem lei de fase.
+Não há norma derivada, câmeras, brackets, TFVD, Green, isometria ou
+autoadjunticidade nesta árvore.
 
 ## Corte da Zona A e abertura da Zona B
 
@@ -255,10 +258,11 @@ como `(p : ℝ)/(q : ℝ) = 1/2`; todas essas apresentações realizam a mesma
 
 A identidade analítica exige apenas `b>0`. Para `b=1` ou `k=0`, os valores
 são `1`; isso não fornece a rigidez ausente nesses casos na Zona A. Não se
-realiza uma massa canônica para `b=0`. Os quatorze teoremas da Zona B estão
+realiza uma massa canônica para `b=0`. Os quatorze teoremas dessa ponte escalar estão
 auditados separadamente: usam `propext`, `Classical.choice` e `Quot.sound`,
 sem axiomas adicionais. Essa camada não é anunciada como axiom-free e não
-define uma medida infinita, espaço vetorial ou norma.
+define uma medida infinita ou uma norma. A construção coordenada do plano
+real é uma etapa posterior registrada abaixo, não fonte dessa ponte escalar.
 
 ## Geometria discreta centro–pernas
 
@@ -376,6 +380,52 @@ natural é vazio; a ponte inteira/balanceada usa no máximo `propext`/`Quot.soun
 sem escolha. Os testes verificam a seleção `9 → (10,-1)` em base `5`, os
 níveis `1,2` mas não `3` de `26 → (25,1)`, e um caso natural par `2,8,3`.
 
+## Primeiro estado quadrático real: raio derivado, ângulo livre
+
+`Analysis/RealQuadraticPlane.lean` usa `RealPlaneState := ℝ × ℝ` e define
+explicitamente `realPlaneEnergy (x,y) := x²+y²`. Não usa a norma do produto
+como energia nem constrói uma estrutura de Hilbert. A rotação escolhida é:
+
+```text
+R_theta(x,y) = (x*cos theta - y*sin theta, x*sin theta + y*cos theta)
+```
+
+`rotateRealPlane_energy` prova invariância por álgebra e `sin²+cos²=1`.
+`rotateRealPlane_zero` e `rotateRealPlane_add` provam identidade e composição
+angular; nenhuma dessas leis seleciona um ângulo ou uma parametrização.
+
+`Analysis/RealCriticalDepthState.lean` recebe a amplitude escalar existente:
+
+```text
+seed(b,k) = (realCriticalAmplitude b k hb, 0)
+state(b,k,theta) = R_theta(seed(b,k))
+                = (A_b(k)*cos theta, A_b(k)*sin theta)
+E(seed(b,k)) = E(state(b,k,theta)) = realDepthMass b k hb
+```
+
+A identidade da semente reutiliza `realCriticalAmplitude_sq_eq_realDepthMass`;
+não reprova seleção ou potências. `realCriticalAmplitude_pos` registra
+positividade. `k=0` e `b=1` produzem semente `(1,0)` e energia `1` em qualquer
+ângulo, sem selecionar um expoente ou canal carry nesses casos.
+
+`balancedCarryDepth_realState_energy` recebe suporte de `k` pelo centro
+canônico. Essa hipótese documenta proveniência do índice e é explicitamente
+desnecessária para a identidade algébrica. O capstone
+`balancedCarryDepth_realState_realizes_formalMass` expõe o canal canônico,
+os campos `(1,b^k)` da massa formal e a energia como realização dessa cota.
+O estado não recebe `n` como índice; não é um estado global de um inteiro.
+
+A escala radial já possui proveniência na torre e na massa. **O ângulo ainda
+é um parâmetro livre; esta etapa não seleciona uma lei de fase.** Não se
+introduziram logaritmo, tempo, operador, bracket ou Green. A energia foi
+introduzida depois da amplitude, não usada para justificar metade.
+
+Quinze teoremas públicos novos e cinco nomes de carrier/mapas entram no audit
+analítico, com somente os três axiomas padrão. Analysis tem agora 29 teoremas
+públicos auditados; Foundation e Geometry permanecem inalteradas. Os testes
+incluem base `3`, nível `2`, semente `(1/3,0)`, energia `1/9`, ângulo zero,
+quarto de volta `(0,1/3)`, e o suporte do nível `2` pelo centro `25` de `26`.
+
 ## Executar
 
 Requer Elan; a versão do Lean está fixada em `lean-toolchain`.
@@ -415,8 +465,8 @@ identificações nem qualquer realização analítica da geometria.
   adaptações e por que os capstones históricos não foram simplesmente importados.
 - `GeometryOfNumbers/Foundation/`: Zona A, sem axiomas.
 - `GeometryOfNumbers/Geometry/`: geometria discreta sobre `Int`, audit próprio.
-- `GeometryOfNumbers/Analysis/`: Zona B, realização escalar real, auditoria separada.
-- Camadas vetorial, de câmeras, de operadores e de limites: fases futuras.
+- `GeometryOfNumbers/Analysis/`: Zona B, escalares e plano quadrático real, audit separado.
+- Lei angular/espectral, câmeras, operadores e limites: fases futuras.
 
 O gerador logarítmico e o operador de alturas são objetos diferentes.
 Os operadores não serão usados para justificar retroativamente a geometria.

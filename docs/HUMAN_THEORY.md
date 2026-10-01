@@ -779,8 +779,9 @@ A auditoria analítica registra `propext`, `Classical.choice` e `Quot.sound`.
 Ela permite somente esses axiomas padrão; não é uma auditoria de footprint
 vazio. A auditoria da fundação permanece separada e vazia.
 
-Ainda não construímos estado rotacional, espaço vetorial, produto interno,
-norma, câmeras, brackets, TFVD, Green, isometria ou operador. `A²=M` é uma
+Até esta etapa escalar não havíamos construído estado rotacional, espaço
+vetorial, produto interno, norma, câmeras, brackets, TFVD, Green, isometria
+ou operador. O estado coordenado é introduzido nas seções 23–24. `A²=M` é uma
 identidade de escalares reais; não deriva, sozinha, uma norma quadrática.
 A massa real continua sendo a realização de cotas finitas, não uma medida
 analítica mais forte. A próxima estrutura geométrica deve ser introduzida
@@ -1119,7 +1120,8 @@ Essa etapa fechou uma célula: carry existente → centro/offset canônicos no
 regime ímpar → pernas refletidas. Ainda não definimos uma profundidade
 efetiva máxima da quantidade. A etapa seguinte identifica os níveis de
 profundidade relacional do centro e do único offset profundo. Brackets
-históricos, Green, tilt e estado rotacional permanecem posteriores.
+históricos, Green e tilt permanecem posteriores. O primeiro estado angular
+de profundidade é construído somente nas seções 23–24.
 
 ## 21. Profundidade como zeros sucessivos da torre
 
@@ -1316,8 +1318,9 @@ existia; a novidade é identificar onde um candidato deixa exposto esse nível.
 Centro zero sobrevive em todos os níveis. Capacidade um permanece degenerada.
 A relação natural vale também para capacidades pares positivas; a seleção
 balanceada continua no regime ímpar já provado. Não resolvemos C2 nem usamos
-primalidade. Não criamos profundidades máximas, valuation, bracket, Green,
-tilt ou estado rotacional.
+primalidade. Nessa etapa relacional não criamos profundidades máximas,
+valuation, bracket, Green, tilt ou estado rotacional. O estado real angular
+é uma construção analítica posterior, descrita a seguir.
 
 A ponte inteira tem onze teoremas públicos, com no máximo `propext` e
 `Quot.sound`, sem escolha ou axioma novo. Geometry tem ao todo 64 teoremas
@@ -1329,3 +1332,181 @@ torre → zeros sucessivos → divisibilidade por b^k
 → offset balanceado único em níveis positivos → profundidade do centro
 → identificação do mesmo índice k da massa já existente
 ```
+
+## 23. Do raio crítico ao estado real bidimensional
+
+### INPUT: a escala já selecionada e realizada
+
+A fundação já selecionou a razão formal compatível com composição quadrática.
+A camada real já realizou a massa formal e a amplitude correspondente, para
+`b>0`:
+
+$$
+M_b(k)=\operatorname{realize}(\mu_{b,k})=b^{-k},
+\qquad A_b(k)=b^{-k/2},\qquad A_b(k)^2=M_b(k).
+$$
+
+A igualdade do quadrado é um theorem anterior,
+`realCriticalAmplitude_sq_eq_realDepthMass`. Não a usamos como uma nova
+premissa para selecionar metade. A massa continua sendo a realização das
+cotas finitas já construídas, não uma nova medida sobre uma torre infinita.
+
+### CONSTRUÇÃO: duas coordenadas e uma energia explícita
+
+Usamos o carrier `RealPlaneState := ℝ × ℝ`. Introduzimos explicitamente:
+
+$$
+E(x,y)=x^2+y^2.
+$$
+
+Esta é `realPlaneEnergy`. A forma quadrática é uma construção desta camada,
+não uma conclusão de que contagem finita, sozinha, produziria uma norma.
+Não usamos a norma pronta do produto como definição dessa energia e não
+introduzimos uma API de produto interno ou de espaço de Hilbert.
+
+Só então empacotamos a amplitude existente na semente:
+
+$$
+\boxed{v_{b,k}=(A_b(k),0).}
+$$
+
+`realCriticalDepthSeed` recebe apenas capacidade positiva e profundidade.
+Não recebe quantidade, centro, offset, ângulo ou qualquer parâmetro temporal.
+É um estado desse nível radial, não um estado global de um inteiro.
+
+### TEOREMA: a energia realiza a massa do mesmo nível
+
+Primeiro, pela própria energia coordenada:
+
+$$
+E(v_{b,k})=A_b(k)^2+0^2=A_b(k)^2.
+$$
+
+`realCriticalDepthSeed_energy_eq_amplitude_sq` prova essa igualdade. Depois,
+reutilizando o theorem escalar anterior, `realCriticalDepthSeed_energy` dá:
+
+$$
+\boxed{E(v_{b,k})=M_b(k).}
+$$
+
+Não há nova prova de seleção do expoente nem repetição da identidade de
+potências. `realCriticalAmplitude_pos` também registra `A_b(k)>0` por
+potência real de base positiva; `M_b(k)>0` já estava provado na ponte escalar.
+
+### INTERPRETAÇÃO E LIMITES
+
+A semente escolhe a primeira coordenada como direção de referência para
+representar um raio já conhecido. Essa escolha não é uma direção física
+selecionada pela teoria. A rotação introduzida em seguida mostrará que a
+energia não privilegia essa direção. Não foi construída uma evolução,
+um estado por quantidade ou uma aplicação da segunda diferença a esses estados.
+
+No nível basal `k=0`, a semente é `(1,0)` e sua energia é `1`. Em capacidade
+`b=1`, isso vale para todo `k`; a realização trivial não recupera a seleção
+de expoente que a fundação não fornece nesse regime. Não há semente canônica
+de massa positiva para `b=0`, pois o argumento `hb : 0<b` é exigido.
+
+## 24. Rotação sem escolha de fase
+
+### CONSTRUÇÃO: ângulo real arbitrário
+
+Para qualquer `θ : ℝ`, definimos:
+
+$$
+R_\theta(x,y)=
+(x\cos\theta-y\sin\theta,\;x\sin\theta+y\cos\theta).
+$$
+
+Essa é `rotateRealPlane`. A orientação manda `(1,0)` para
+`(cosθ,sinθ)`; um quarto de volta positivo manda a semente para o eixo da
+segunda coordenada positiva. Não se introduz sentido espectral, tempo ou
+lei que determine `θ`. A API usa somente coordenadas reais e trigonometria real.
+
+### TEOREMA: invariância, identidade e composição angular
+
+Expandindo os quadrados, os termos cruzados cancelam e obtemos:
+
+$$
+E(R_\theta(x,y))=(x^2+y^2)(\sin^2\theta+\cos^2\theta)=x^2+y^2.
+$$
+
+`rotateRealPlane_energy` prova essa identidade usando apenas álgebra e a
+identidade trigonométrica. A invariância não é campo de uma estrutura nem
+uma hipótese. As fórmulas de adição também dão:
+
+$$
+R_0(v)=v,\qquad R_{\theta+\phi}(v)=R_\theta(R_\phi(v)).
+$$
+
+São `rotateRealPlane_zero` e `rotateRealPlane_add`. A composição é uma lei
+geométrica de ângulos; não implica que tenha sido selecionada uma lei física
+para organizar esses ângulos.
+
+### CONSTRUÇÃO E TEOREMA: estado de profundidade com direção livre
+
+Agora, e somente depois da semente e da rotação, definimos:
+
+$$
+\psi_{b,k,\theta}=R_\theta(v_{b,k}).
+$$
+
+`realCriticalDepthState_eq_coordinates` prova a forma explícita:
+
+$$
+\boxed{\psi_{b,k,\theta}=
+(A_b(k)\cos\theta,\;A_b(k)\sin\theta).}
+$$
+
+A invariância e a energia da semente, por composição, produzem o capstone
+`realCriticalDepthState_energy`:
+
+$$
+\boxed{E(\psi_{b,k,\theta})=M_b(k)\quad\text{para todo }\theta.}
+$$
+
+**A escala radial já possui proveniência na torre e na massa. O ângulo ainda
+é um parâmetro livre. Esta rodada não seleciona uma lei de fase.**
+
+### PROVENIÊNCIA: um nível realmente suportado pelo centro
+
+Se o centro balanceado associado a uma quantidade suporta o nível `k`,
+podemos registrar a mesma identidade de energia nesse nível por
+`balancedCarryDepth_realState_energy`. Sua hipótese de suporte é
+intencionalmente desnecessária na prova algébrica: a identidade vale para
+qualquer nível. O papel da hipótese é certificar por que estamos usando
+esse `k` na leitura carry-derived, não tornar verdadeiro um cálculo falso
+fora dos níveis suportados.
+
+O capstone `balancedCarryDepth_realState_realizes_formalMass` expõe juntos:
+
+```text
+o canal do offset canônico suporta k
+a massa formal nesse k tem campos (1,b^k)
+a energia do estado nesse k é a realização real dessa mesma cota
+```
+
+O estado ainda recebe somente `(b,k,θ)`. A quantidade aparece na hipótese
+de proveniência do centro, não na definição do estado. Não se definiu uma
+massa por quantidade, uma amplitude global por quantidade ou um máximo de
+profundidade. A ponte de centro permanece ímpar; o plano real só exige `b>0`.
+
+### TESTES, AUDITORIA E PRÓXIMO LIMITE
+
+Base `3`, nível `2`, dá semente `(1/3,0)`, energia `1/9`, a mesma semente
+em ângulo zero e `(0,1/3)` em `π/2`. Para qualquer ângulo, a energia continua
+`1/9`. Um teste genérico rotaciona `(3,4)` e preserva energia `25`. Outro
+usa o nível `2` suportado pelo centro `25` da quantidade `26` em base `5`.
+Nível zero e capacidade um têm energia unitária em todo ângulo.
+
+Quinze teoremas novos e cinco nomes de carrier/mapas são auditados na Zona B,
+com os axiomas padrão `propext`, `Classical.choice` e `Quot.sound`, sem
+axioma adicional. A Analysis tem agora 29 teoremas públicos auditados.
+Foundation e Geometry matemáticas e seus audits permanecem inalterados.
+
+R0 está parcialmente fechado: construímos a geometria quadrática estática
+do plano e sua família angular de profundidade. Não construímos uma lei de
+fase, tempo, espectro, operador, norma, bracket real, Green ou câmera.
+Nenhum logaritmo aparece nos novos objetos ou argumentos de prova; isso
+não afirma que a infraestrutura transitiva de Mathlib dispense logaritmos
+ou complexos internamente. O próximo gate deverá introduzir explicitamente
+qualquer estrutura adicional, sem reinterpretar o ângulo livre como fase física.

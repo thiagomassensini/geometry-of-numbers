@@ -22,9 +22,10 @@ outro axioma. Não pertence ao capstone axiom-free de seleção da escala.
 `ResidualTowerDepth` é uma extensão conservativa da API da torre nesta camada,
 com footprint vazio verificado separadamente; não modifica Foundation.
 
-**Zona B — análise real:** aberta somente para realizar massa e amplitude
-escalares. Mathlib entra por `Analysis/`; raízes, rotações, Hilbert, adjuntos,
-limites e cálculo funcional não são novas construções desta rodada.
+**Zona B — análise real:** realiza massa e amplitude e agora constrói o
+estado de profundidade em `ℝ × ℝ`, com energia coordenada e rotação de ângulo
+livre. Mathlib entra por `Analysis/`; lei de fase, Hilbert, adjuntos, limites
+e cálculo funcional continuam posteriores.
 Os axiomas usuais são exibidos, não ocultados. Nenhuma representação
 complexa justificará um resultado fundacional.
 
@@ -35,7 +36,7 @@ complexa justificará um resultado fundacional.
 | F0 | Fidelidade → recorrência → primeiro retorno → carry → torre | Primeiro retorno, reset, torre finita, capacidade prefixal e fibras de refinamento fechados; crosswalk clássico ainda aberto |
 | F1 | Centro–pernas, profundidade e resíduo | Geometria e célula ímpar fechadas; profundidade relacional da torre e único offset profundo identificados; máximo/terminação e ramo antipodal par/C2 ainda abertos |
 | F2 | Massa/amplitude e rigidez algébrica do expoente `1/2` | Núcleo discreto encerrado em capstone; massa e amplitude reais realizadas em camada separada, com amplitude² = massa |
-| R0 | Rotação e estado espectral reais | Não iniciada |
+| R0 | Rotação e estado espectral reais | Estado de profundidade, energia quadrática e rotação abstrata fechados; lei de fase/espectro e estado global de quantidade ainda abertos |
 | R1 | Câmeras e brackets reais | Não iniciada |
 | R2 | Reconstrução TFVD real, Green e retorno | Não iniciada |
 | R3 | Frame global, whitening e isometria | Não iniciada |
@@ -213,9 +214,10 @@ protege essa direção com o parser Lean, não uma regex de imports de uma linha
 `audit-analysis.sh` compila seus alvos e permite apenas os axiomas padrão.
 Os quatorze teoremas analíticos usam `propext`, `Classical.choice`, `Quot.sound`.
 
-Continuam abertos: realização vetorial/rotacional, norma, câmeras, brackets,
-TFVD, Green, isometrias e operadores. A identidade escalar `A²=M` não fecha
-nenhum deles. Também não se cria uma medida analítica na torre infinita.
+A realização bidimensional/rotacional é acrescentada na etapa abaixo,
+recebendo `A²=M` como theorem anterior, não como fonte de uma norma.
+Continuam abertos lei de fase, norma, câmeras, brackets, TFVD, Green, isometrias
+e operadores. Não se cria uma medida analítica na torre infinita.
 
 ## Regras para as etapas seguintes
 
@@ -331,6 +333,42 @@ auditados. Foundation e Analysis matemáticas permanecem inalteradas.
 Não foi abordado o gate opcional de terminação: ficam abertas tanto a prova
 de término eventual da cauda quanto a seleção de uma profundidade finita
 para quantidades não nulas em capacidade `b>1`.
+
+### Primeiro gate real bidimensional, sem escolha da fase
+
+`Analysis/RealQuadraticPlane` define o carrier coordenado `ℝ × ℝ`, a energia
+`x²+y²` e a rotação `(x cosθ-y sinθ, x sinθ+y cosθ)`. Invariância é theorem
+de álgebra e `sin²θ+cos²θ=1`, não campo nem uso de uma norma pronta.
+Identidade em zero e composição por soma de ângulos também são provadas.
+Não se introduz uma API de operadores ou uma parametrização física de θ.
+
+`Analysis/RealCriticalDepthState` constrói primeiro a semente `(A_b(k),0)`
+com a amplitude existente, prova energia igual ao quadrado e reutiliza a
+identidade escalar para obter massa. Só depois rotaciona a semente e deriva
+coordenadas explícitas e energia igual à massa para todo θ. Positividade da
+amplitude usa potência real de base positiva; massa positiva já estava provada.
+
+A ponte `balancedCarryDepth_realState_energy` recebe suporte do mesmo `k`
+pelo centro, deixando documentado que essa hipótese é de proveniência,
+não necessária para a álgebra. O capstone conjunto mostra o canal canônico,
+campos da massa formal `(1,b^k)` e energia como realização dessa cota.
+Não constrói um estado de `n`, nem escolhe profundidade máxima ou fase.
+
+Hipótese radial: `b>0`. Base um e nível zero dão semente `(1,0)` e energia
+unitária, sem reabrir a rigidez discreta. A ponte de centro exige capacidade
+ímpar, mas a construção do plano não. O domínio não admite massa canônica
+para `b=0`. Os testes verificam base `3`, nível `2`, quarto de volta,
+energia preservada para `(3,4)` e o nível `2` do centro `25` de `26`.
+
+Quinze teoremas públicos e cinco nomes de carrier/mapas são auditados nesta
+etapa; ao todo Analysis tem 29 teoremas públicos. Footprint padrão de Mathlib,
+sem axioma adicional. Foundation e Geometry ficam byte a byte inalteradas,
+e os checkers continuam impedindo a dependência reversa.
+
+R0 está **parcialmente** fechado: geometria radial/angular estática.
+Lei de fase/espectro, estado global por quantidade, segunda diferença real,
+norma, câmeras e demais camadas permanecem gates posteriores. Nenhum
+logaritmo ou tempo foi introduzido nos novos objetos ou provas.
 
 - Reusar uma prova somente após comparar seu tipo e suas dependências.
 - Manter mapas, estados, parâmetros e domínios antes de scalarizar.

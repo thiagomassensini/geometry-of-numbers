@@ -29,6 +29,12 @@
   A seleção do offset requer nível positivo; não resolver o antipodal C2 aqui.
 - Auditar a Zona B separadamente com `bash scripts/audit-analysis.sh`;
   seus axiomas padrão não são permitidos na auditoria vazia da Zona A.
+- O estado real atual é de profundidade: `(b,k,theta)`, com energia explícita
+  `x²+y²`. A amplitude vem da realização anterior; energia não seleciona
+  retroativamente metade. O ângulo é livre, sem lei física ou espectral.
+  Não transformar suporte de `k` pelo centro em estado global de `n`;
+  a hipótese de suporte registra proveniência, não necessidade algébrica.
+  Não usar a norma pronta do produto como definição dessa energia.
 - Não introduzir escapes de confiança, placeholders ou axiomas novos.
 - Os nomes do plano são metas, não evidência de existência de provas.
 - Registrar a fonte/commit e quaisquer hipóteses operacionais de uma porta.
