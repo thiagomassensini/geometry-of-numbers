@@ -13,13 +13,20 @@
 - `GeometryOfNumbers.Geometry` é a entrada separada para centro–pernas,
   reflexão e segunda diferença sobre `Int`. Não importá-la na Foundation.
   A entrada Analysis reúne Geometry. O crosswalk de uma célula usa os ciclos
-  existentes, com capacidade ímpar; não implica identificação de profundidades.
+  existentes, com capacidade ímpar. A profundidade relacional consulta zeros
+  sucessivos da torre; sua equivalência com divisibilidade é um teorema.
+  Não importar valuation nem substituir essa relação por um máximo finito.
 - Não importar primalidade histórica para o balanceamento. Oddness é hipótese
   explícita de regime, não conclusão da emergência da capacidade. Preservar
   resíduo zero como centro; não atribuir lado arbitrário ao antipodal par/C2.
 - Auditar a geometria com `bash scripts/audit-geometry.sh`: definições sem
   axiomas; teoremas permitem somente `propext` e `Quot.sound` da aritmética
-  inteira de Init. Não anunciar footprint vazio nessa camada nem permitir escolha.
+  inteira de Init. Não anunciar footprint vazio para toda essa camada nem permitir
+  escolha. A extensão `Geometry/ResidualTowerDepth.lean` tem guard adicional de
+  footprint vazio para cada teorema público; Foundation permanece congelada.
+  A versão inteira da profundidade estende a equivalência natural já provada;
+  não criar uma segunda torre. Zero e capacidade um sobrevivem em todo nível.
+  A seleção do offset requer nível positivo; não resolver o antipodal C2 aqui.
 - Auditar a Zona B separadamente com `bash scripts/audit-analysis.sh`;
   seus axiomas padrão não são permitidos na auditoria vazia da Zona A.
 - Não introduzir escapes de confiança, placeholders ou axiomas novos.

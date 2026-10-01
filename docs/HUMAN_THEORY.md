@@ -859,8 +859,8 @@ primeira fornece uma configuração a partir de dados; a segunda testa um
 candidato contra endpoints mantidos fixos. Nenhum teorema novo identifica
 esse centro ou raio com resíduos, contadores ou profundidades da torre.
 Nesta etapa abstrata o crosswalk ainda não estava construído. A seção 20
-fecha uma célula carry → centro/pernas para capacidade ímpar; a identificação
-de profundidades da torre continua pendente.
+fecha uma célula carry → centro/pernas para capacidade ímpar; as seções 21–22
+acrescentam depois a identificação relacional de profundidades, sem valuation.
 
 Essa geometria adicional é Init-only, mas não pertence ao capstone vazio
 da Zona A. As provas inteiras usuais desta versão usam `propext` e
@@ -1115,7 +1115,217 @@ As definições são vazias; os teoremas usam somente os axiomas já permitidos
 `propext` e `Quot.sound`, sem escolha. O witness antipodal de bordo também
 tem footprint vazio. A fundação continua intocada, com seu audit vazio.
 
-Fechou uma célula: carry existente → centro/offset canônicos no regime
-ímpar → pernas refletidas. Não identificamos profundidade do centro com
-profundidade efetiva da quantidade, nem construímos brackets históricos,
-Green, tilt ou estado rotacional. Essas são pontes posteriores.
+Essa etapa fechou uma célula: carry existente → centro/offset canônicos no
+regime ímpar → pernas refletidas. Ainda não definimos uma profundidade
+efetiva máxima da quantidade. A etapa seguinte identifica os níveis de
+profundidade relacional do centro e do único offset profundo. Brackets
+históricos, Green, tilt e estado rotacional permanecem posteriores.
+
+## 21. Profundidade como zeros sucessivos da torre
+
+### INPUT: a torre já construída, com sua cauda
+
+Para capacidade positiva `b`, a torre em nível `k` já resolve:
+
+$$
+x\longmapsto(r_0,\ldots,r_{k-1},q_k),\qquad 0\le r_i<b.
+$$
+
+Seu carrier e suas coordenadas vêm da repetição de `cycleResidual` e
+`completedCycleCount`, não de uma função de valuation. Já sabemos reconstruir
+o mesmo `x` e identificar unicamente qualquer tupla limitada que o reconstrua.
+Não sabemos ainda que a cauda eventualmente termine para todo `x` em `b>1`.
+
+### CONSTRUÇÃO: uma relação, não uma profundidade máxima
+
+`ResidualTowerZeroPrefix` testa recursivamente se todos os resíduos de uma
+tupla são zero. Não consulta nem restringe a cauda. Definimos:
+
+$$
+\operatorname{Depth}_{\ge k}(b,x)
+\quad\Longleftrightarrow\quad
+r_0=\cdots=r_{k-1}=0
+\quad\text{na torre canônica de }x.
+$$
+
+Essa é `HasCarryDepthAtLeast`. Potências e divisibilidade não aparecem em
+sua definição. O teste vazio sempre é verdadeiro:
+
+$$
+\operatorname{Depth}_{\ge0}(b,x).
+$$
+
+O próximo nível vem literalmente da recursão da mesma torre:
+
+$$
+\operatorname{Depth}_{\ge k+1}(b,x)
+\iff
+\operatorname{cycleResidual}(b,x)=0
+\ \land\
+\operatorname{Depth}_{\ge k}
+  (b,\operatorname{completedCycleCount}(b,x)).
+$$
+
+`hasCarryDepthAtLeast_succ` certifica essa lei por expansão da definição,
+sem recorrer à divisibilidade. Cada zero deixa a informação inteira no
+contador de ciclos seguinte, e a mesma operação pode ser aplicada novamente.
+
+### TEOREMA: a divisibilidade emerge da reconstrução
+
+O valor prefixal é uma soma de naturais com pesos positivos. Para `b>0`,
+seu valor é zero exatamente quando cada resíduo é zero. A expansão já
+provada da torre então reduz a:
+
+$$
+\operatorname{Depth}_{\ge k}(b,x)
+\ \Longrightarrow\
+x=q_k b^k.
+$$
+
+Esta é `hasCarryDepthAtLeast_eq_scaled_tail`, com a **cauda da própria
+torre** no lado direito. A direção inversa não calcula quociente ou módulo.
+Dado um witness `x=b^k t`, formamos apenas uma tupla comparativa com `k`
+resíduos zero e cauda `t`. Ela é limitada e reconstrói `x`; a unicidade
+`residualTower_eq_canonical` obriga essa tupla a ser a torre canônica.
+Concluímos:
+
+$$
+\boxed{\operatorname{Depth}_{\ge k}(b,x)\iff b^k\mid x}
+\qquad(b>0).
+$$
+
+O teorema é `hasCarryDepthAtLeast_iff_dvd_pow`. Também provamos a equivalência
+com `residualTowerPrefixValue = 0`. Não se trata de `tail = 0`: no exemplo
+`b=5,x=25,k=2`, os resíduos são `(0,0)` e a cauda é `1`. Profundidade positiva
+concentra a informação na cauda; não a elimina.
+
+### INTERPRETAÇÃO, DEGENERADOS E LIMITES
+
+Zero suporta qualquer nível, pois sua torre mantém resíduos zero. A capacidade
+`1` também suporta qualquer nível de qualquer quantidade: seu único resíduo
+é zero e os contadores não precisam decrescer. Não lhes atribuímos um máximo.
+O nível zero vale para todos por ser um prefixo vazio, mas não seleciona
+nenhum canal entre offsets candidatos.
+
+As funções totais antigas ainda têm valores em capacidade `0`, mas ali não
+representam uma célula carry positiva. O contraexemplo formal
+`zeroCapacity_depth_does_not_characterize_divisibility` dá teste de prefixo
+zero em `(b,x,k)=(0,1,1)`, embora `0^1` não divida `1`. A hipótese `b>0` na
+ponte é portanto substantiva, não cosmética.
+
+Para preservar a fundação congelada, esta extensão está em
+`Geometry/ResidualTowerDepth.lean`, importando apenas a API fundacional da
+torre. Seus nove teoremas públicos têm footprint vazio e guard adicional
+de auditoria. Não alteramos a seleção de metade nem suas premissas.
+Terminação eventual, profundidade exata finita e uma função máxima continuam
+abertas; nada disso é necessário para os enunciados relacionais desta etapa.
+
+## 22. Profundidade do centro balanceado
+
+### INPUT E EXTENSÃO TIPADA
+
+Agora recebemos a decomposição já canônica, no regime de capacidade ímpar:
+
+$$
+n=c+a,\qquad b\mid c,\qquad 2|a|<b.
+$$
+
+Offsets candidatos são inteiros, logo `n-a'` também é inteiro. Depois de
+provar a caracterização natural, estendemos a relação por:
+
+$$
+\operatorname{Depth}^{\mathbb Z}_{\ge k}(b,x)
+\iff (b:\mathbb Z)^k\mid x.
+$$
+
+`hasIntegerCarryDepthAtLeast_natCast_iff` mostra que essa extensão restringe-se
+exatamente à relação da torre nos naturais para `b>0`. Não construímos uma
+torre inteira paralela e não introduzimos nenhuma valuation pronta.
+
+### TEOREMA: o offset canônico deixa o centro exposto
+
+A reconstrução dá literalmente:
+
+$$
+n-a=c.
+$$
+
+`balancedCarry_sub_offset_eq_center` nomeia esse elo. Assim, para qualquer
+nível, a sobrevivência de `n-a` coincide com a do centro. Isso ainda não
+afirma que um centro não nulo tenha sobrevivência ilimitada ou máximo definido.
+
+Para um candidato estritamente balanceado `a'`, se `b\mid(n-a')`, então
+`n=(n-a')+a'` é outra decomposição alinhada e balanceada. A unicidade já
+provada na etapa anterior força `a'=a`. Não é preciso reprovar o argumento
+de diferença pequena de múltiplos; `balancedCarry_offset_unique_of_dvd`
+reutiliza exatamente `balancedCarry_unique`.
+
+Em nível `k>0`, a divisibilidade por `b^k` implica divisibilidade por `b`.
+Portanto o primeiro nível já seleciona o canal, e os níveis seguintes
+interrogam somente o centro desse canal:
+
+$$
+\boxed{
+b^k\mid(n-a')
+\iff
+a'=a\ \land\ b^k\mid c
+}
+\qquad(k>0,\quad 2|a'|<b).
+$$
+
+Este é `balancedCarry_positive_depth_iff`. Eliminando o candidato obtemos:
+
+$$
+\boxed{
+\exists a'\text{ balanceado},\
+\operatorname{Depth}^{\mathbb Z}_{\ge k}(b,n-a')
+\iff
+\operatorname{Depth}^{\mathbb Z}_{\ge k}(b,c)
+}.
+$$
+
+`balancedCarry_exists_depth_iff_center_depth` prova essa equivalência, e
+`balancedCarry_unique_depth_witness` fornece o witness com sua lei de
+unicidade. Essa é a forma relacional, pré-valuation, da identidade histórica
+entre profundidade efetiva e profundidade do centro. Não é uma igualdade
+de duas funções máximas que tenhamos definido aqui.
+
+### EXEMPLOS E O MESMO ÍNDICE VERTICAL
+
+Em base `5`, `9=10-1`. Dos offsets `-2,-1,0,1,2`, somente `-1` deixa um
+múltiplo de `5`: os outros candidatos dão `11,9,8,7`. Para `26=25+1`, o
+offset `1` deixa o centro `25`, divisível por `5` e `25`, mas não por `125`.
+Os testes verificam esses níveis sem dar ao objeto um nome de máximo.
+
+O índice `k` usado na torre, na divisibilidade do centro e em
+`canonicalResidualDepthMass b k hb` é o mesmo. O corolário
+`balancedCarry_depth_and_mass_at_same_index` expõe conjuntamente a relação
+do canal canônico nesse nível e os campos da massa existente:
+
+$$
+\operatorname{numerador}(\mu_{b,k})=1,\qquad
+\operatorname{denominador}(\mu_{b,k})=b^k.
+$$
+
+Ele não redefine a massa, não cria massa de `n` e não transforma a amplitude
+por profundidade em amplitude global por quantidade. A fórmula de massa já
+existia; a novidade é identificar onde um candidato deixa exposto esse nível.
+
+### LIMITES E AUDITORIA
+
+Centro zero sobrevive em todos os níveis. Capacidade um permanece degenerada.
+A relação natural vale também para capacidades pares positivas; a seleção
+balanceada continua no regime ímpar já provado. Não resolvemos C2 nem usamos
+primalidade. Não criamos profundidades máximas, valuation, bracket, Green,
+tilt ou estado rotacional.
+
+A ponte inteira tem onze teoremas públicos, com no máximo `propext` e
+`Quot.sound`, sem escolha ou axioma novo. Geometry tem ao todo 64 teoremas
+e 14 definições auditados; o submódulo natural continua vazio. Foundation e
+seu capstone permanecem byte a byte inalterados. A cadeia adicional fechada é:
+
+```text
+torre → zeros sucessivos → divisibilidade por b^k
+→ offset balanceado único em níveis positivos → profundidade do centro
+→ identificação do mesmo índice k da massa já existente
+```

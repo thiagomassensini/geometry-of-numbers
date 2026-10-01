@@ -10,7 +10,8 @@ Não substitui os enunciados Lean nem declara fechadas as metas do plano.
 **Zona A — fundação discreta:** quantidade, carry, profundidade,
 massa/expoentes e rigidez quadrática. O núcleo de seleção da escala está
 encerrado em `FoundationalHalfScalingCapstone`. Isso não fecha outras metas
-históricas do plano, como a identificação de profundidades centro/carry. Axiomas transitivamente usados:
+históricas do plano. A identificação relacional de profundidades foi acrescentada
+posteriormente em Geometry, sem alterar esse capstone. Axiomas transitivamente usados:
 **nenhum**. Nem `Classical.choice`, nem `propext`, nem `Quot.sound`.
 As provas atuais importam apenas `Init`.
 
@@ -18,6 +19,8 @@ As provas atuais importam apenas `Init`.
 segunda diferença sobre `Int`, somente com Init nos arquivos matemáticos.
 Sua auditoria permite `propext` e `Quot.sound`, rejeitando escolha e qualquer
 outro axioma. Não pertence ao capstone axiom-free de seleção da escala.
+`ResidualTowerDepth` é uma extensão conservativa da API da torre nesta camada,
+com footprint vazio verificado separadamente; não modifica Foundation.
 
 **Zona B — análise real:** aberta somente para realizar massa e amplitude
 escalares. Mathlib entra por `Analysis/`; raízes, rotações, Hilbert, adjuntos,
@@ -30,7 +33,7 @@ complexa justificará um resultado fundacional.
 | Fase | Conteúdo | Estado nesta árvore |
 | --- | --- | --- |
 | F0 | Fidelidade → recorrência → primeiro retorno → carry → torre | Primeiro retorno, reset, torre finita, capacidade prefixal e fibras de refinamento fechados; crosswalk clássico ainda aberto |
-| F1 | Centro–pernas, profundidade e resíduo | Geometria abstrata e crosswalk de uma célula carry para capacidade ímpar fechados; profundidades e ramo antipodal par/C2 ainda abertos |
+| F1 | Centro–pernas, profundidade e resíduo | Geometria e célula ímpar fechadas; profundidade relacional da torre e único offset profundo identificados; máximo/terminação e ramo antipodal par/C2 ainda abertos |
 | F2 | Massa/amplitude e rigidez algébrica do expoente `1/2` | Núcleo discreto encerrado em capstone; massa e amplitude reais realizadas em camada separada, com amplitude² = massa |
 | R0 | Rotação e estado espectral reais | Não iniciada |
 | R1 | Câmeras e brackets reais | Não iniciada |
@@ -235,8 +238,8 @@ As entradas públicas agora seguem `Foundation → Geometry → Analysis`;
 os arquivos de provas geométricas usam somente Init e as camadas locais
 Foundation/Geometry. A fundação matemática e seu audit não foram modificados.
 Na etapa abstrata essa organização não provava uma relação da torre com
-centro–pernas. A célula ímpar é construída abaixo; a relação de profundidades
-continua pendente. Também não se
+centro–pernas. A célula ímpar e a relação de profundidades são construídas nas
+etapas seguintes registradas abaixo. Também não se
 identificaram bracket, Green, tilt ou estados vetoriais com a nova API.
 
 21 teoremas públicos e sete definições são auditados separadamente, com
@@ -279,8 +282,55 @@ axioma além de `propext`/`Quot.sound`, nenhuma escolha. As definições e o
 contraexemplo explícito de não unicidade no bordo são vazios. A fundação
 matemática, seu audit e a cadeia massa/metade não foram alterados.
 
-Próximos gates: ramo par/C2 com regra própria e crosswalk de profundidades.
-Não se portaram `effectiveDepth=centerDepth`, brackets, Green ou tilt.
+O gate relacional de profundidades é fechado abaixo; máximo/terminação e ramo
+par/C2 com regra própria permanecem posteriores. Não se portou uma igualdade
+de valuations `effectiveDepth=centerDepth`, nem brackets, Green ou tilt.
+
+### Profundidade relacional e seleção do único canal profundo
+
+`Geometry/ResidualTowerDepth` define `ResidualTowerZeroPrefix` por recursão
+nos dados da torre e `HasCarryDepthAtLeast b x k` aplicando esse teste à
+torre canônica. Os primeiros `k` resíduos são zero; a cauda é livre.
+Profundidade zero é verdadeira, e o sucessor equivale a resíduo zero seguido
+da mesma relação no contador de ciclos. Não há valuation, máximo ou terminação
+assumida. A API fica fora da Foundation para preservar seu congelamento absoluto.
+
+Para `b>0`, prefixo zero equivale a valor prefixal zero. A reconstrução então
+fornece `x=tail*b^k`. Inversamente, um witness de divisibilidade monta apenas
+uma tupla comparativa de `k` zeros e a cauda; `residualTower_eq_canonical`
+identifica essa tupla com a torre real. Assim `Depth≥k ↔ b^k ∣ x` é teorema,
+não definição. Todos os nove teoremas públicos naturais têm footprint vazio,
+com guard adicional e cobertura automática no script geométrico.
+
+`Geometry/BalancedCarryDepthCrosswalk` só depois estende a relação para
+inteiros por divisibilidade. A restrição aos naturais coincide com a relação
+primitiva para capacidade positiva. `balancedCarry_unique` seleciona o offset
+de qualquer candidato alinhado `n-a'`. Para `k>0`, `b ∣ b^k` reduz um nível
+arbitrário a esse alinhamento, produzindo:
+
+```text
+b^k ∣ (n-a') ↔ a'=a ∧ b^k ∣ c          (a' estritamente balanceado)
+∃ a' balanceado, Depth≥k(b,n-a') ↔ Depth≥k(b,c)
+```
+
+Há também um witness existencial com lei explícita de unicidade. Essa é a
+versão relacional pré-valuation da identidade histórica; não define três
+funções numéricas de profundidade. O corolário de massa mantém o mesmo `k`
+na relação do centro e no numerador/denominador existentes `(1,b^k)`.
+Não define massa da quantidade, nem amplitude global por quantidade.
+
+Quantidade/centro zero e capacidade um sobrevivem em todos os níveis.
+O contraexemplo `b=0,x=1,k=1` delimita o domínio positivo da equivalência.
+A relação natural inclui capacidades pares; a seleção balanceada continua
+ímpar. Os testes base `5` selecionam somente `-1` para `n=9` e verificam
+os níveis `1,2`, mas não `3`, para centro `25` de `n=26`. C2 não foi resolvido.
+
+Onze teoremas da ponte inteira são auditados com no máximo `propext` e
+`Quot.sound`, sem escolha. Ao todo Geometry tem 64 teoremas e 14 definições
+auditados. Foundation e Analysis matemáticas permanecem inalteradas.
+Não foi abordado o gate opcional de terminação: ficam abertas tanto a prova
+de término eventual da cauda quanto a seleção de uma profundidade finita
+para quantidades não nulas em capacidade `b>1`.
 
 - Reusar uma prova somente após comparar seu tipo e suas dependências.
 - Manter mapas, estados, parâmetros e domínios antes de scalarizar.

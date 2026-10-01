@@ -19,9 +19,68 @@ elab "#assert_geometry_definition_no_axioms " id:ident : command => do
   unless axioms.isEmpty do
     throwError "Geometry definition violation: {decl} depends on {axioms}"
 
+elab "#assert_tower_depth_no_axioms " id:ident : command => do
+  let decl ← liftCoreM <| realizeGlobalConstNoOverloadWithInfo id
+  let axioms ← collectAxioms decl
+  unless axioms.isEmpty do
+    throwError "Tower depth violation: {decl} depends on {axioms}"
+
 namespace GeometryOfNumbers.Geometry
 
 open Foundation
+
+#assert_geometry_definition_no_axioms ResidualTowerZeroPrefix
+#assert_geometry_definition_no_axioms HasCarryDepthAtLeast
+#assert_geometry_definition_no_axioms HasIntegerCarryDepthAtLeast
+#assert_geometry_axioms hasCarryDepthAtLeast_zero
+#assert_geometry_axioms hasCarryDepthAtLeast_succ
+#assert_geometry_axioms residualTowerZeroPrefix_iff_prefixValue_zero
+#assert_geometry_axioms hasCarryDepthAtLeast_iff_prefixValue_zero
+#assert_geometry_axioms hasCarryDepthAtLeast_eq_scaled_tail
+#assert_geometry_axioms hasCarryDepthAtLeast_iff_dvd_pow
+#assert_geometry_axioms hasCarryDepthAtLeast_zero_quantity
+#assert_geometry_axioms hasCarryDepthAtLeast_capacity_one
+#assert_geometry_axioms zeroCapacity_depth_does_not_characterize_divisibility
+#assert_geometry_axioms hasIntegerCarryDepthAtLeast_natCast_iff
+#assert_geometry_axioms hasIntegerCarryDepthAtLeast_zero_quantity
+#assert_geometry_axioms balancedCarry_sub_offset_eq_center
+#assert_geometry_axioms balancedCarry_canonical_offset_depth_iff
+#assert_geometry_axioms balancedCarry_offset_unique_of_dvd
+#assert_geometry_axioms capacity_dvd_power_of_positive
+#assert_geometry_axioms balancedCarry_positive_depth_iff
+#assert_geometry_axioms balancedCarry_offset_unique_of_positive_depth
+#assert_geometry_axioms balancedCarry_exists_depth_iff_center_depth
+#assert_geometry_axioms balancedCarry_unique_depth_witness
+#assert_geometry_axioms balancedCarry_depth_and_mass_at_same_index
+#assert_tower_depth_no_axioms hasCarryDepthAtLeast_zero
+#assert_tower_depth_no_axioms hasCarryDepthAtLeast_succ
+#assert_tower_depth_no_axioms residualTowerZeroPrefix_iff_prefixValue_zero
+#assert_tower_depth_no_axioms hasCarryDepthAtLeast_iff_prefixValue_zero
+#assert_tower_depth_no_axioms hasCarryDepthAtLeast_eq_scaled_tail
+#assert_tower_depth_no_axioms hasCarryDepthAtLeast_iff_dvd_pow
+#assert_tower_depth_no_axioms hasCarryDepthAtLeast_zero_quantity
+#assert_tower_depth_no_axioms hasCarryDepthAtLeast_capacity_one
+#assert_tower_depth_no_axioms zeroCapacity_depth_does_not_characterize_divisibility
+#print axioms hasCarryDepthAtLeast_zero
+#print axioms hasCarryDepthAtLeast_succ
+#print axioms residualTowerZeroPrefix_iff_prefixValue_zero
+#print axioms hasCarryDepthAtLeast_iff_prefixValue_zero
+#print axioms hasCarryDepthAtLeast_eq_scaled_tail
+#print axioms hasCarryDepthAtLeast_iff_dvd_pow
+#print axioms hasCarryDepthAtLeast_zero_quantity
+#print axioms hasCarryDepthAtLeast_capacity_one
+#print axioms zeroCapacity_depth_does_not_characterize_divisibility
+#print axioms hasIntegerCarryDepthAtLeast_natCast_iff
+#print axioms hasIntegerCarryDepthAtLeast_zero_quantity
+#print axioms balancedCarry_sub_offset_eq_center
+#print axioms balancedCarry_canonical_offset_depth_iff
+#print axioms balancedCarry_offset_unique_of_dvd
+#print axioms capacity_dvd_power_of_positive
+#print axioms balancedCarry_positive_depth_iff
+#print axioms balancedCarry_offset_unique_of_positive_depth
+#print axioms balancedCarry_exists_depth_iff_center_depth
+#print axioms balancedCarry_unique_depth_witness
+#print axioms balancedCarry_depth_and_mass_at_same_index
 
 #assert_geometry_definition_no_axioms IsOddCapacity
 #assert_geometry_definition_no_axioms IsBalancedOffset
@@ -185,5 +244,62 @@ example : (balancedCarryCenter 5 0 ⟨2, rfl⟩, balancedCarryOffset 5 0 ⟨2, r
     (0, 0) := rfl
 example : (1 : Int) = 0 + 1 := rfl
 example : (1 : Int) = 2 + (-1) := rfl
+
+-- Relational depth tests keep the unresolved tail, not a maximum valuation.
+example : HasCarryDepthAtLeast 5 25 1 := ⟨rfl, True.intro⟩
+example : HasCarryDepthAtLeast 5 25 2 := ⟨rfl, rfl, True.intro⟩
+example : ¬ HasCarryDepthAtLeast 5 25 3 := by
+  intro h
+  have hz : (1 : Nat) = 0 := h.2.2.1
+  exact Nat.zero_ne_one hz.symm
+example : residualTowerTail (emergentResidualTower 5 2 25) = 1 := rfl
+example : HasCarryDepthAtLeast 2 8 3 := ⟨rfl, rfl, rfl, True.intro⟩
+example (depth : Nat) : HasCarryDepthAtLeast 5 0 depth :=
+  hasCarryDepthAtLeast_zero_quantity 5 depth (by decide)
+example (x depth : Nat) : HasCarryDepthAtLeast 1 x depth :=
+  hasCarryDepthAtLeast_capacity_one x depth
+example : HasCarryDepthAtLeast 0 1 1 ∧ ¬ (0 ^ 1 ∣ (1 : Nat)) :=
+  zeroCapacity_depth_does_not_characterize_divisibility
+
+-- Only -1 among the five strict balanced offsets exposes depth at n=9.
+example (offset : Int) (hbalanced : IsBalancedOffset 5 offset) :
+    HasIntegerCarryDepthAtLeast 5 (9 - offset) 1 ↔ offset = -1 := by
+  constructor
+  · intro hd
+    exact balancedCarry_offset_unique_of_positive_depth 5 9 1 ⟨2, rfl⟩
+      (by decide) offset hbalanced hd
+  · intro h
+    rw [h]
+    exact ⟨2, rfl⟩
+example : HasIntegerCarryDepthAtLeast 5 (9 - (-1)) 1 := ⟨2, rfl⟩
+example : ¬ HasIntegerCarryDepthAtLeast 5 (9 - (-2)) 1 ∧
+    ¬ HasIntegerCarryDepthAtLeast 5 (9 - 0) 1 ∧
+    ¬ HasIntegerCarryDepthAtLeast 5 (9 - 1) 1 ∧
+    ¬ HasIntegerCarryDepthAtLeast 5 (9 - 2) 1 := by
+  refine ⟨?_, ?_, ?_, ?_⟩
+  all_goals
+    intro h
+    rcases h with ⟨q, hq⟩
+    change _ = (5 : Int) * q at hq
+    omega
+
+set_option maxRecDepth 2048 in
+example : (balancedCarryCenter 5 26 ⟨2, rfl⟩,
+    balancedCarryOffset 5 26 ⟨2, rfl⟩) = (25, 1) := rfl
+example : HasIntegerCarryDepthAtLeast 5 (26 - 1) 1 := ⟨5, rfl⟩
+example : HasIntegerCarryDepthAtLeast 5 (26 - 1) 2 := ⟨1, rfl⟩
+example : ¬ HasIntegerCarryDepthAtLeast 5 (26 - 1) 3 := by
+  intro h
+  rcases h with ⟨q, hq⟩
+  change (25 : Int) = 125 * q at hq
+  omega
+-- A zero center survives every level; it is not assigned finite depth zero.
+example (depth : Nat) :
+    HasIntegerCarryDepthAtLeast 5 (balancedCarryCenter 5 1 ⟨2, rfl⟩) depth :=
+  hasIntegerCarryDepthAtLeast_zero_quantity 5 depth
+example (depth : Nat) :
+    HasIntegerCarryDepthAtLeast 5 ((1 : Int) - balancedCarryOffset 5 1 ⟨2, rfl⟩) depth :=
+  (balancedCarry_canonical_offset_depth_iff 5 1 depth ⟨2, rfl⟩).2
+    (hasIntegerCarryDepthAtLeast_zero_quantity 5 depth)
 
 end GeometryOfNumbers.Geometry

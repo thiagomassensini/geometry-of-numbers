@@ -117,8 +117,9 @@ empacotados diretamente. Dez teoremas públicos novos e esse empacotamento
 têm footprint vazio. O limite `n < b^k` força cauda zero, sem afirmar que toda
 cauda termina em alguma profundidade.
 
-Não se portaram a eliminação eventual da cauda, o crosswalk clássico de normalização carry
-ou o crosswalk de profundidades carry/centro–pernas. A geometria abstrata e
+Não se portaram a eliminação eventual da cauda ou o crosswalk clássico de normalização carry.
+O conteúdo relacional de profundidades carry/centro–pernas é reconstruído
+na etapa final registrada abaixo, sem importar valuations. A geometria abstrata e
 depois a célula carry balanceada ímpar foram construídas na camada separada
 registrada abaixo; o ramo par não foi portado.
 A realização da amplitude em potências reais está agora na Zona B abaixo. Não há prova de
@@ -317,4 +318,48 @@ Os 23 teoremas públicos novos têm footprint contido em `propext` e
 antipodal explícito de bordo são vazios. A família canônica não tem input
 par: em C2 provamos tanto a ausência de representante estrito para `1`
 quanto as duas apresentações distintas no bordo. Não construímos uma
-resolução C2, uma identificação de profundidades ou observáveis históricos.
+resolução C2, uma identificação de profundidades ou observáveis históricos
+nessa etapa de uma célula. A identificação relacional foi acrescentada depois.
+
+## Profundidade relacional derivada da torre
+
+Referência histórica consultada: cópia local de `CPFormal`, commit
+`65d50f6db1208708e109982ba97e1d51d3039956`,
+`CPFormal/Carry/CpDepth.lean` e `CPFormal/Carry/C2Depth.lean`.
+Nenhum import dessa fonte entra na prova nova ou no manifest.
+
+| Objeto histórico | Reconstrução local e limite |
+| --- | --- |
+| `offsetDepth p n a := padicValInt p (n-a)` | Não portado como definição. `HasCarryDepthAtLeast` consulta o prefixo zero da torre natural; a versão inteira por divisibilidade vem somente depois da equivalência provada |
+| `dvd_sub_iff_eq_offset` | Motivação do canal único. `balancedCarry_offset_unique_of_dvd` aplica a unicidade local de centro/offset à decomposição candidata `(n-a')+a'`, sem ZMod ou primalidade |
+| `effectiveDepth` como supremo, `centerDepth` como valuation | Nenhum máximo ou valuation foi importado ou definido; enunciados são por todos os níveis positivos |
+| `effectiveDepth_eq_centerDepth` | Conteúdo relacional reconstruído por `balancedCarry_positive_depth_iff`, equivalência existencial e witness único; o mesmo offset expõe exatamente os níveis do centro |
+| Convenção histórica `padicValInt ... 0 = 0` | Não adotada. Quantidade e centro zero sobrevivem em todo nível; não se atribui profundidade máxima finita a zero |
+| `C2Depth`, escolha de vizinho e análise módulo quatro | Consultado apenas para delimitar a ponte par futura. Não portado, não usado para resolver o antipodal nem para definir a relação natural |
+
+O registro anterior de `native-carry-geometry`, commit
+`43c7348908c573da826d9dba7d59102931e6a45a`, permanece referência histórica;
+seu `Arithmetic/CarryDepth.lean` não foi consultado nesta rodada nem importado.
+As fontes de **prova** da nova relação são os módulos locais
+`EmergentResidualTower` (expansão e unicidade) e `BalancedCarryOffset`
+(unicidade geométrica já provada). A consulta histórica serviu para comparar
+enunciados e convenções, não para substituir a proveniência da torre.
+
+`Geometry/ResidualTowerDepth` mantém Foundation congelada e usa somente
+sua API anterior. Um tuple comparativo de zeros e cauda identifica por
+unicidade qualquer witness de divisibilidade com a torre real. Não é uma
+nova dinâmica. Nove teoremas públicos têm footprint vazio; a aritmética
+necessária usa aplicações explícitas de equivalências e lemas naturais de
+Init com footprint vazio. Nenhuma prova nova usa `Nat.find` ou fatorização.
+
+`Geometry/BalancedCarryDepthCrosswalk` estende a relação para Int só depois
+da caracterização natural e prova compatibilidade dos casts. Onze teoremas
+públicos usam no máximo `propext` e `Quot.sound`; nenhum usa escolha.
+As três definições novas têm footprint vazio. O audit geral cobre todos os
+teoremas e um guard adicional rejeita qualquer axioma no submódulo natural.
+Nenhum resultado retorna como premissa da massa ou da seleção de metade.
+
+Primalidade não reaparece: capacidade positiva basta para a torre e capacidade
+ímpar basta para a seleção do centro já construído. O índice `k` é compartilhado
+com a massa formal anterior; não há massa da quantidade ou amplitude global
+por quantidade nova. Terminação, máximo e resolução C2 permanecem gates futuros.

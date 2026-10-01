@@ -21,7 +21,8 @@ centro e raio inteiros → pernas simétricas → reflexão involutiva
 
 O crosswalk de **uma célula** agora fecha: ciclos/resíduo existentes →
 offset estritamente balanceado → centro alinhado → par refletido, para
-capacidade ímpar. A identificação de profundidades da torre continua pendente.
+capacidade ímpar. A profundidade relacional agora é derivada da torre, e somente
+o offset canônico expõe a profundidade do centro em qualquer nível positivo.
 Essa geometria não justificou retroativamente a massa ou metade. A realização real da escala
 já existe; estado rotacional, câmeras, brackets e demais camadas do plano
 permanecem posteriores, ainda não formalizados aqui.
@@ -37,7 +38,9 @@ ponte da massa formal à rigidez quadrática discreta fechada e consolidada em
 capstone. Zona B aberta: massa real, amplitude real e identidade do quadrado
 compiladas, sem estrutura vetorial ou norma. Geometria discreta centro–pernas,
 reflexão e segunda diferença compiladas e auditadas separadamente, com
-crosswalk balanceado de uma célula para capacidades ímpares, sem primalidade.**
+crosswalk balanceado de uma célula para capacidades ímpares, sem primalidade.
+Relação de profundidade por zeros sucessivos e identificação relacional do
+único canal profundo com o centro fechadas, sem valuation ou máximo.**
 
 O núcleo da Zona A depende apenas de `Init`, sem Mathlib ou imports históricos.
 Noventa e dois teoremas públicos e dezessete definições
@@ -325,8 +328,53 @@ as funções canônicas exigem oddness. **C2 continua um crosswalk futuro.**
 
 Os 23 teoremas e quatro definições novos entram no audit próprio. As
 definições têm footprint vazio; os teoremas usam no máximo `propext` e
-`Quot.sound`, sem escolha. Ao todo Geometry tem 44 teoremas públicos e onze
+`Quot.sound`, sem escolha. Essa etapa tinha 44 teoremas públicos e onze
 definições auditadas. A Foundation e sua axiomática continuam intocadas.
+
+## Profundidade relacional da torre e do centro
+
+`Geometry/ResidualTowerDepth.lean` consulta os resíduos de
+`emergentResidualTower b k x`. `HasCarryDepthAtLeast b x k` significa que
+todos os primeiros `k` resíduos são zero, sem restringir a cauda. Vale:
+
+```text
+Depth≥0(b,x)
+Depth≥k+1(b,x) ↔ cycleResidual b x = 0 ∧ Depth≥k(b,completedCycleCount b x)
+para b>0: Depth≥k(b,x) ↔ b^k ∣ x
+sob Depth≥k: x = tail_k(x) * b^k
+```
+
+Divisibilidade não é a definição: reconstrução prova a direção direta;
+unicidade da torre identifica uma tupla de prefixo zero na direção inversa.
+Os nove teoremas públicos desse módulo têm footprint vazio, com guard próprio
+no audit geométrico. Ele é uma extensão conservativa fora de Foundation;
+nenhum arquivo da fundação ou do capstone de metade foi alterado.
+
+Só depois, `HasIntegerCarryDepthAtLeast b x k := (b : Int)^k ∣ x` estende a
+relação aos argumentos assinados. Sua restrição aos naturais coincide com
+a relação da torre para `b>0`, sem construir uma torre inteira paralela.
+`Geometry/BalancedCarryDepthCrosswalk.lean` usa `n=c+a` e a unicidade existente:
+
+```text
+para capacidade ímpar, offset balanceado a' e k>0:
+b^k ∣ (n-a') ↔ a'=a ∧ b^k ∣ c
+∃ a' balanceado com Depth≥k(b,n-a') ↔ Depth≥k(b,c)
+```
+
+Quando existe um witness, ele é único e canônico. O mesmo índice `k` aparece
+na massa formal existente `(1,b^k)`; isso não define massa de `n` nem converte
+a amplitude por profundidade em amplitude global de `n`.
+
+Quantidade zero, centro zero e capacidade `1` sobrevivem em todos os níveis.
+Em `b=0` a recursão total não descreve carry positivo: um contraexemplo mostra
+que seu teste de prefixo zero não caracteriza divisibilidade. A relação natural
+também vale em capacidades pares positivas; o centro balanceado continua no
+regime ímpar. **C2, terminação e funções de profundidade máxima ficam abertos.**
+
+Geometry tem agora 64 teoremas públicos e 14 definições auditadas. O módulo
+natural é vazio; a ponte inteira/balanceada usa no máximo `propext`/`Quot.sound`,
+sem escolha. Os testes verificam a seleção `9 → (10,-1)` em base `5`, os
+níveis `1,2` mas não `3` de `26 → (25,1)`, e um caso natural par `2,8,3`.
 
 ## Executar
 
@@ -353,8 +401,9 @@ O checker separado de Geometry admite apenas Init, Foundation e Geometry,
 exceto a ferramenta Lean usada pelo audit; análise e fontes históricas não
 podem retornar como dependências. A direção das entradas é
 `Foundation → Geometry → Analysis`. A entrada Geometry contém agora o
-crosswalk de uma célula ímpar; a direção de imports, por si só, não prova
-qualquer identificação de profundidades ou realização analítica da geometria.
+crosswalk de uma célula ímpar e a identificação relacional de profundidades,
+provada nos módulos acima; a direção de imports, por si só, não prova essas
+identificações nem qualquer realização analítica da geometria.
 
 ## Organização e fronteiras
 
