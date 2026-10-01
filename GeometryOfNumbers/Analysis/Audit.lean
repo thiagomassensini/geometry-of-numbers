@@ -21,6 +21,72 @@ namespace GeometryOfNumbers.Analysis
 
 open Foundation
 
+-- Vector center-leg synthesis precedes its quadratic energy readout.
+#assert_analysis_axioms scaleRealPlane
+#assert_analysis_axioms realPlaneCenteredReadout
+#assert_analysis_axioms centerLegFormLeftLeg
+#assert_analysis_axioms centerLegFormRightLeg
+#assert_analysis_axioms centerLegForm
+#assert_analysis_axioms centerLegForm_eq_closed
+#assert_analysis_axioms centerLegForm_eq_factor
+#assert_analysis_axioms scaleRealPlane_energy
+#assert_analysis_axioms centerLegForm_energy_eq_closed
+#assert_analysis_axioms centerLegForm_energy_eq_factor
+#assert_analysis_axioms centerLegForm_energy_eq_fourth
+#assert_analysis_axioms centerLegForm_energy_angle_independent
+#assert_analysis_axioms centerLegForm_energy_zero_iff
+#assert_analysis_axioms centerLegForm_criticalSeed_eq_factor
+#assert_analysis_axioms centerLegForm_criticalSeed_energy_eq_amplitude_sq
+#assert_analysis_axioms centerLegForm_criticalSeed_energy_eq_mass
+#print axioms scaleRealPlane
+#print axioms realPlaneCenteredReadout
+#print axioms centerLegFormLeftLeg
+#print axioms centerLegFormRightLeg
+#print axioms centerLegForm
+#print axioms centerLegForm_eq_closed
+#print axioms centerLegForm_eq_factor
+#print axioms scaleRealPlane_energy
+#print axioms centerLegForm_energy_eq_closed
+#print axioms centerLegForm_energy_eq_factor
+#print axioms centerLegForm_energy_eq_fourth
+#print axioms centerLegForm_energy_angle_independent
+#print axioms centerLegForm_energy_zero_iff
+#print axioms centerLegForm_criticalSeed_eq_factor
+#print axioms centerLegForm_criticalSeed_energy_eq_amplitude_sq
+#print axioms centerLegForm_criticalSeed_energy_eq_mass
+
+example : centerLegForm 2 0 (3, 4) = (3 / 2, 2) := by
+  rw [centerLegForm_eq_factor _ _ _ (by norm_num), rotateRealPlane_zero]
+  norm_num [scaleRealPlane]
+
+example (theta : ℝ) : realPlaneEnergy (centerLegForm 2 theta (3, 4)) = 25 / 4 := by
+  rw [centerLegForm_energy_eq_fourth _ _ _ (by norm_num)]
+  norm_num [realPlaneEnergy]
+
+example (theta : ℝ) : realPlaneEnergy (centerLegForm (1 / 2) theta (3, 4)) = 25 / 4 := by
+  rw [centerLegForm_energy_eq_fourth _ _ _ (by norm_num)]
+  norm_num [realPlaneEnergy]
+
+example (theta : ℝ) {q : ℝ} (hq : 0 < q) :
+    realPlaneEnergy (centerLegForm q theta (3, 4)) = 0 ↔ q = 1 :=
+  centerLegForm_energy_zero_iff q theta _ hq (by norm_num [realPlaneEnergy])
+
+example (theta : ℝ) :
+    realPlaneEnergy (centerLegForm 2 theta (realCriticalDepthSeed 3 2 (by decide))) = 1 / 36 := by
+  rw [centerLegForm_criticalSeed_energy_eq_mass _ _ _ _ _ (by norm_num),
+    realDepthMass_eq_one_div_pow]
+  norm_num
+
+-- Positive initial energy is essential for the zero criterion.
+example (theta : ℝ) : realPlaneEnergy (centerLegForm 2 theta (0, 0)) = 0 ∧ (2 : ℝ) ≠ 1 := by
+  rw [centerLegForm_energy_eq_closed]
+  norm_num [realPlaneEnergy]
+
+-- Total inversion at zero does not satisfy the nonzero quotient formula.
+example (theta : ℝ) : realPlaneEnergy (centerLegForm 0 theta (3, 4)) = 100 := by
+  rw [centerLegForm_energy_eq_closed]
+  norm_num [realPlaneEnergy]
+
 -- Integer transport and the same discrete points, with a FREE positive step.
 example : IsPositiveMultiplicativeOffsetTransport (canonicalMultiplicativeOffsetTransport 2) :=
   canonicalMultiplicativeOffsetTransport_isPositive (by norm_num)
