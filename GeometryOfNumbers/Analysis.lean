@@ -4,6 +4,7 @@ import GeometryOfNumbers.Analysis.RealQuadraticAmplitude
 import GeometryOfNumbers.Analysis.RealCriticalDepthState
 import GeometryOfNumbers.Analysis.QuadraticCenteredBracket
 import GeometryOfNumbers.Analysis.CenterLegForm
+import GeometryOfNumbers.Analysis.CenterLegCameraForm
 import GeometryOfNumbers.Analysis.QuadraticCameraBracket
 import GeometryOfNumbers.Analysis.OddCameraQuadraticCrosswalk
 

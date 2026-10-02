@@ -71,3 +71,20 @@
   como campos.
 - Verificar com `bash scripts/audit-foundation.sh`.
 - Não fazer commit/push sem pedido do usuário; não incluir alterações paralelas.
+
+
+## Guardrails da Forma Centro–Pernas
+
+- Definir as posições e o readout vetorial geometricamente antes de fatorar.
+  Energia continua sendo `x²+y²`; reutilizar sua invariância rotacional.
+- Preservar estado, deformação e ângulo por canal até a leitura energética.
+  Ângulos locais continuam na definição mesmo quando desaparecem da energia.
+- Somar energias locais; nunca substituir essa soma por energia da soma dos
+  vetores. Vetores opostos fornecem um contraexemplo formal.
+- O crosswalk escalar é soma ponderada de quadrados de brackets locais,
+  não quadrado do bracket total. Coincidência de zeros exige suas hipóteses.
+- No defeito comum, o critério de zero usa energia inicial total positiva;
+  não exigir que todos os canais sejam não triviais. Câmera vazia permanece
+  degenerada e não seleciona o defeito radial.
+- A especialização crítica reutiliza massa/amplitude anteriores; estas formas
+  não justificam retroativamente metade nem selecionam ângulo ou parâmetro.

@@ -21,6 +21,96 @@ namespace GeometryOfNumbers.Analysis
 
 open Foundation
 
+-- Resolved camera energy: sum AFTER each local vector's quadratic readout.
+#assert_analysis_axioms centerLegCameraEnergy
+#assert_analysis_axioms centerLegCameraEnergy_eq_sum_local
+#assert_analysis_axioms centerLegCameraEnergy_eq_factor
+#assert_analysis_axioms centerLegCameraEnergy_angle_independent
+#assert_analysis_axioms realPlaneEnergy_nonneg
+#assert_analysis_axioms centerLegCameraEnergy_nonneg
+#assert_analysis_axioms centerLegCameraEnergy_zero_iff_local_zero
+#assert_analysis_axioms centerLegCameraEnergy_zero_iff
+#assert_analysis_axioms centerLegCameraEnergy_zero_pairs
+#assert_analysis_axioms centerLegCameraEnergy_common_eq_factor
+#assert_analysis_axioms centerLegCameraEnergy_common_zero_iff
+#assert_analysis_axioms centerLegForm_energy_eq_unitBracket
+#assert_analysis_axioms centerLegCameraEnergy_eq_sum_sq_brackets
+#assert_analysis_axioms centerLegCameraEnergy_zero_iff_quadraticCameraBracket_zero
+#assert_analysis_axioms centerLegCameraEnergy_criticalSeed_eq_mass
+#assert_analysis_axioms centerLegCameraEnergy_criticalSeed_common_eq_mass
+#print axioms centerLegCameraEnergy
+#print axioms centerLegCameraEnergy_eq_sum_local
+#print axioms centerLegCameraEnergy_eq_factor
+#print axioms centerLegCameraEnergy_angle_independent
+#print axioms realPlaneEnergy_nonneg
+#print axioms centerLegCameraEnergy_nonneg
+#print axioms centerLegCameraEnergy_zero_iff_local_zero
+#print axioms centerLegCameraEnergy_zero_iff
+#print axioms centerLegCameraEnergy_zero_pairs
+#print axioms centerLegCameraEnergy_common_eq_factor
+#print axioms centerLegCameraEnergy_common_zero_iff
+#print axioms centerLegForm_energy_eq_unitBracket
+#print axioms centerLegCameraEnergy_eq_sum_sq_brackets
+#print axioms centerLegCameraEnergy_zero_iff_quadraticCameraBracket_zero
+#print axioms centerLegCameraEnergy_criticalSeed_eq_mass
+#print axioms centerLegCameraEnergy_criticalSeed_common_eq_mass
+
+-- Different states and arbitrary local angles, with one common radial factor.
+example (theta : Nat → ℝ) : centerLegCameraEnergy 2 (fun _ => 2) theta
+    (fun r => if r = 1 then (3, 4) else (0, 2)) = 29 / 4 := by
+  rw [centerLegCameraEnergy_common_eq_factor _ _ _ _ (by norm_num)]
+  norm_num [Geometry.sumPositiveRadii, realPlaneEnergy]
+
+-- A common defect needs positive TOTAL energy; a zero-energy channel is allowed.
+example (q : ℝ) (hq : 0 < q) (theta : Nat → ℝ) :
+    centerLegCameraEnergy 2 (fun _ => q) theta
+      (fun r => if r = 1 then (0, 0) else (1, 0)) = 0 ↔ q = 1 := by
+  apply centerLegCameraEnergy_common_zero_iff _ _ _ _ (ne_of_gt hq)
+  norm_num [Geometry.sumPositiveRadii, realPlaneEnergy]
+
+example (theta : Nat → ℝ) : centerLegCameraEnergy 2
+    (fun r => if r = 1 then 2 else 3) theta
+    (fun _ => realCriticalDepthSeed 3 2 (by decide)) = 73 / 324 := by
+  rw [centerLegCameraEnergy_criticalSeed_eq_mass _ _ _ _ _ _ (by
+    intro r _ _
+    split_ifs <;> norm_num), realDepthMass_eq_one_div_pow]
+  norm_num [Geometry.sumPositiveRadii]
+
+example (theta : Nat → ℝ) : centerLegCameraEnergy 4 (fun _ => 2) theta
+    (fun _ => realCriticalDepthSeed 9 2 (by decide)) = 1 / 81 := by
+  rw [centerLegCameraEnergy_criticalSeed_common_eq_mass _ _ _ _ _ _ (by norm_num),
+    realDepthMass_eq_one_div_pow]
+  norm_num
+
+-- An unobserved state cannot identify its local radial parameter.
+example (theta : Nat → ℝ) : centerLegCameraEnergy 2
+    (fun r => if r = 1 then 2 else 1) theta
+    (fun r => if r = 1 then (0, 0) else (1, 0)) = 0 := by
+  rw [centerLegCameraEnergy_eq_factor _ _ _ _ (by
+    intro r _ _
+    split_ifs <;> norm_num)]
+  norm_num [Geometry.sumPositiveRadii, realPlaneEnergy]
+
+example (theta : Nat → ℝ) :
+    centerLegCameraEnergy 0 (fun _ => 2) theta (fun _ => (1, 0)) = 0 ∧ (2 : ℝ) ≠ 1 :=
+  ⟨centerLegCameraEnergy_zero_pairs _ _ _, by norm_num⟩
+
+-- Scalarizing the vector sum first can cancel two nonzero local defects.
+example :
+    let D₁ := centerLegForm 2 0 (2, 0)
+    let D₂ := centerLegForm 2 0 (-2, 0)
+    realPlaneEnergy D₁ + realPlaneEnergy D₂ = 2 ∧
+      realPlaneEnergy (D₁ + D₂) = 0 ∧
+      realPlaneEnergy D₁ + realPlaneEnergy D₂ ≠ realPlaneEnergy (D₁ + D₂) := by
+  norm_num [centerLegForm_eq_closed, rotateRealPlane_zero, scaleRealPlane, realPlaneEnergy]
+
+-- Sum of squared local brackets is not the square of the scalar camera bracket.
+example : centerLegCameraEnergy 2 (fun _ => 2) (fun _ => 0) (fun _ => (1, 0)) ≠
+    quadraticCameraBracket 2 1 (fun _ => 2) ^ 2 := by
+  rw [centerLegCameraEnergy_common_eq_factor _ _ _ _ (by norm_num)]
+  norm_num [Geometry.sumPositiveRadii, realPlaneEnergy, quadraticCameraBracket,
+    quadraticCenteredBracket_eq_closed]
+
 -- Vector center-leg synthesis precedes its quadratic energy readout.
 #assert_analysis_axioms scaleRealPlane
 #assert_analysis_axioms realPlaneCenteredReadout

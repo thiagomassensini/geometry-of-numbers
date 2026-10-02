@@ -503,3 +503,22 @@ audits não são alterados. A direção de imports permanece unilateral.
 - Não fabricar momentos ou inserir uma lista externa de alturas.
 - Uma fase só fecha quando seu capstone compila e sua auditoria passa.
 - Nenhuma meta incompleta será representada por um placeholder de prova.
+
+
+## Forma Centro–Pernas: dois gates fechados
+
+| Gate | Estado | Resultado e fronteira |
+| --- | --- | --- |
+| Forma local | CLOSED | Definição vetorial pelas três posições; fatoração e energia quartica; independência angular; zero central sob energia positiva |
+| Forma na câmera | CLOSED | Soma de energias locais; fatoração canal a canal; zero sem cancelamento; fator radial comum vezes energia inicial total |
+| Atlas all-bases | OPEN | Falta investigar uma lei que distribua a mesma informação entre bases diferentes; massa dentro de uma base não fornece essa lei |
+
+`CenterLegForm` já integra main desde `698778b`. `CenterLegCameraForm` usa
+somente essa API e `sumPositiveRadii`; não introduz um carrier de atlas.
+Ângulos locais permanecem na definição. Não se identifica soma de energias
+com energia da soma dos vetores, nem soma ponderada de quadrados locais
+com quadrado do bracket escalar total. Ambos os erros têm contraexemplos
+formais no audit. Zero comum exige somente `q≠0` e energia inicial total
+positiva; câmera vazia não seleciona `q`. A massa crítica da especialização
+é anterior a essas formas. São 26 teoremas e seis definições adicionais,
+auditados na mesma política analítica; nenhuma alteração em Foundation/Geometry.

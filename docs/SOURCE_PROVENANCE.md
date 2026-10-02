@@ -535,3 +535,34 @@ de `Real.log`/`Real.exp`. Os corolários por divisão derivam das fatorações j
 provadas; o corolário C3 une saturação genérica e crosswalk local. Os testes
 acrescentados verificam as quatro pernas com passo `1/2`, o perfil constante
 para passo `1` e o total racional `367/48` na capacidade composta 9.
+
+
+## Forma Centro–Pernas local e sua câmera
+
+A forma local em `CenterLegForm` foi integrada em `698778b`. A construção
+coordenada reutiliza `RealPlaneState`, `rotateRealPlane`, o readout escalar e
+a reflexão recíproca existentes. Define posições e síntese vetorial antes
+de provar fatoração. A energia sob escala é álgebra de `x²+y²`; a eliminação
+angular usa explicitamente `rotateRealPlane_energy`. A especialização crítica
+reutiliza a energia da semente e o quadrado da amplitude anteriormente provado.
+Não fornece nova seleção da massa, metade ou parâmetro angular.
+
+A câmera em `CenterLegCameraForm` soma literalmente energias locais pela
+enumeração existente `sumPositiveRadii`. Fatoração, independência angular e
+zero canal a canal compõem teoremas anteriores, incluindo
+`sumPositiveRadii_real_zero_iff`. O defeito comum sai da soma por distribuição;
+seu critério de zero usa energia inicial total positiva, sem exigir todos
+os estados positivos. O caso vazio continua degenerado.
+
+O crosswalk com a câmera escalar é soma ponderada dos quadrados de brackets
+locais unitários. Sob positividade local apropriada, os critérios de zero
+coincidem, sem igualdade entre readouts. Dois vetores opostos dão energias
+somadas `2` e energia da soma `0`; dois canais unitários em `q=2` dão energia
+`1/2` e quadrado do bracket total `1`. São exemplos Lean no audit, não
+hipóteses de prova. Nenhum operador, norma abstrata ou fonte histórica foi
+importado para fechar essas identidades. A próxima fronteira é uma lei
+entre bases, ausente destas construções dentro de uma câmera.
+
+Os 26 teoremas e seis definições têm guards analíticos e `#print axioms`,
+permitindo apenas `propext`, `Classical.choice`, `Quot.sound`. As camadas
+Foundation/Geometry e as dependências externas permanecem inalteradas.

@@ -2188,3 +2188,95 @@ Os três módulos contêm 47 teoremas e nove definições guardados no audit
 analítico, com somente os três axiomas padrão permitidos. Foundation e Geometry,
 inclusive seus audits e seleção de escala, não são modificadas. Não se usa
 esta nova realização para justificar retroativamente qualquer resultado delas.
+
+
+## 34. Forma Centro–Pernas local
+
+Recebemos um estado real `v`, um ângulo livre `theta` e uma deformação `q`.
+A energia continua sendo `E(x,y)=x²+y²`. Primeiro rotacionamos o estado,
+`u=R_theta v`, construímos as posições `q u,u,q⁻¹u` por escala coordenada
+e aplicamos o readout existente a cada coordenada:
+
+$$
+D(q,\theta,v)=qR_\theta v-2R_\theta v+q^{-1}R_\theta v.
+$$
+
+Essa é a definição geométrica de `centerLegForm`. A fatoração é theorem:
+
+$$
+D=(q+q^{-1}-2)R_\theta v
+=\frac{(q-1)^2}{q}R_\theta v\quad(q\ne0).
+$$
+
+Depois provamos `E(a v)=a²E(v)` e reutilizamos `rotateRealPlane_energy`:
+
+$$
+\boxed{E(D(q,\theta,v))=\frac{(q-1)^4}{q^2}E(v)\quad(q\ne0).}
+$$
+
+A energia independe do ângulo; a forma vetorial ainda o recebe. Sob `q>0`
+e `E(v)>0`, `centerLegForm_energy_zero_iff` dá `E(D)=0` exatamente quando
+`q=1`. A especialização à semente crítica reutiliza a amplitude e o theorem
+anterior `realCriticalAmplitude_sq_eq_realDepthMass`, obtendo o fator radial
+vezes `M_b(k)`. Não seleciona novamente massa ou metade.
+
+É álgebra real coordenada: a rotação continua livre, sem selecionar fase,
+tempo, sigma ou função clássica. Nenhum operador foi usado. Os onze teoremas
+e cinco definições locais estão em `Analysis/CenterLegForm.lean`.
+
+## 35. Forma Centro–Pernas na câmera
+
+A câmera recebe, em cada raio positivo `r=1,...,h`, seu próprio estado,
+ângulo e deformação. Mantemos cada canal até construir `D_r` e ler sua energia:
+
+$$
+\mathcal E_h(q,\theta,v)=\sum_{r=1}^{h}E(D_r)
+=\sum_{r=1}^{h}\frac{(q_r-1)^4}{q_r^2}E(v_r),
+$$
+
+onde a segunda igualdade exige apenas `q_r≠0` nos raios ativos. A definição
+usa literalmente `centerLegForm` e `sumPositiveRadii`, antes da fatoração.
+A energia é não negativa sem hipótese sobre `q`; cada ângulo local pode
+variar independentemente sem alterar o total. Uma soma de energias zero força
+cada energia local a zero. Se `q_r>0` e `E(v_r)>0` nos raios ativos, isso
+é equivalente a `q_r=1` em todos eles.
+
+Para um defeito comum não nulo, a álgebra extrai o fator universal:
+
+$$
+\boxed{\mathcal E_h(q,\theta,v)=\frac{(q-1)^4}{q^2}
+\sum_{r=1}^{h}E(v_r).}
+$$
+
+Se essa energia inicial total é positiva, o zero equivale a `q=1`, sem
+exigir que cada canal seja não trivial nem impor separadamente `h>0`.
+Em câmera vazia o total é zero para qualquer `q`, e a energia inicial não
+é positiva: a degenerescência continua explícita.
+
+A distinção entre canais é essencial. O contraexemplo formal usa
+`D_1=D(2,0,(2,0))=(1,0)` e `D_2=D(2,0,(-2,0))=(-1,0)`:
+
+$$
+E(D_1)+E(D_2)=2,\qquad E(D_1+D_2)=0.
+$$
+
+Portanto soma de energias e energia da soma são diferentes em geral. O
+crosswalk escalar correto é local, depois somado:
+
+$$
+\mathcal E_h=\sum_{r=1}^{h}B_1(q_r)^2E(v_r).
+$$
+
+Não é o quadrado de `quadraticCameraBracket`. Dois canais com `q=2` e
+estado `(1,0)` dão energia `1/2`, enquanto o bracket total ao quadrado é `1`.
+Sob as hipóteses positivas locais acima, somente os critérios de zero
+coincidem. A especialização à mesma semente de profundidade dá
+`M_b(k)` vezes a soma dos fatores radiais; no defeito comum dá o fator
+vezes `h M_b(k)`, reutilizando a energia da semente.
+
+`Analysis/CenterLegCameraForm.lean` contém uma definição e quinze teoremas.
+Os dezesseis nomes recebem guards e impressão de axiomas, limitados a
+`propext`, `Classical.choice`, `Quot.sound`. Foundation e Geometry não mudam.
+A Forma sobe de célula para câmera preservando proveniência por canal.
+Uma distribuição da mesma informação entre bases diferentes ainda exige
+uma lei própria; essas duas rodadas não construíram um atlas.

@@ -653,3 +653,22 @@ O gerador logarítmico e o operador de alturas são objetos diferentes.
 Os operadores não serão usados para justificar retroativamente a geometria.
 Representações complexas e comparações com funções clássicas ficam fora
 do núcleo e não são premissas deste projeto.
+
+
+## Forma Centro–Pernas local e resolvida por câmera
+
+`Analysis/CenterLegForm` constrói primeiro as posições reais
+`q R_theta v`, `R_theta v`, `q⁻¹ R_theta v` e seu readout vetorial. Para
+`q≠0`, prova `E(D)=(q-1)^4/q² · E(v)` usando a energia coordenada e a
+invariância da rotação existente. A energia independe do ângulo livre.
+
+`Analysis/CenterLegCameraForm` preserva esses canais e soma suas energias.
+Para defeito radial comum, o total é o mesmo fator vezes a energia inicial
+resolvida. Com energia inicial positiva, zera exatamente em `q=1`.
+Soma de energias difere de energia da soma; o crosswalk escalar é soma
+ponderada dos quadrados de brackets locais, sem identificação com o quadrado
+do bracket total. Os dois guardrails têm contraexemplos formais.
+
+Esses gates locais e de câmera estão fechados, com 26 teoremas e seis
+definições adicionais na auditoria padrão de Analysis. A distribuição
+entre bases exige uma lei própria e permanece uma fronteira separada.
