@@ -1,0 +1,158 @@
+[
+  {
+    "repository": "carry-self-adjoint-operator",
+    "sha": "cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa",
+    "path": "CarrySelfAdjointOperator/CanonicalTowerChannel.lean",
+    "sha256": "29c6d1370b60ba4d2ec6d7a681db7c36c95a4992b7e75ddc992a1881d5401d8c"
+  },
+  {
+    "repository": "carry-self-adjoint-operator",
+    "sha": "cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa",
+    "path": "CarrySelfAdjointOperator/CausalBracketStateUniqueness.lean",
+    "sha256": "fae075add9792530fbc89ebad3842b445ed8cdb47b719a26f25c1f088d775a7d"
+  },
+  {
+    "repository": "carry-self-adjoint-operator",
+    "sha": "cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa",
+    "path": "CarrySelfAdjointOperator/CompletedC3ValveNaturality.lean",
+    "sha256": "ed49652e076dcaf6393fda9cbf526c752b453b7204b3bdb6e773c0f5283226f1"
+  },
+  {
+    "repository": "carry-self-adjoint-operator",
+    "sha": "cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa",
+    "path": "CarrySelfAdjointOperator/DiscreteProjectiveReconstruction.lean",
+    "sha256": "8b92b37c1bb664fda675f8bf080aa892b457d75a8ccad46f9408f5de7ad699a7"
+  },
+  {
+    "repository": "carry-self-adjoint-operator",
+    "sha": "cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa",
+    "path": "CarrySelfAdjointOperator/DiscreteValve.lean",
+    "sha256": "0230d5f148d5f3e74368a18c9b3e56e1e73d0a1dce60a55c8b7c9fb24d75f6ca"
+  },
+  {
+    "repository": "carry-self-adjoint-operator",
+    "sha": "cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa",
+    "path": "CarrySelfAdjointOperator/DiscreteValveSeries.lean",
+    "sha256": "d0c5a5db054a753b78785ee2717d77e1112ab9280ae7785b42cc933661a67943"
+  },
+  {
+    "repository": "carry-self-adjoint-operator",
+    "sha": "cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa",
+    "path": "CarrySelfAdjointOperator/GreenMultiplicativeValveBridge.lean",
+    "sha256": "09edac991818d89050dcc900922827c0824f764600947e7f0983f0f082dafafe"
+  },
+  {
+    "repository": "carry-self-adjoint-operator",
+    "sha": "cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa",
+    "path": "CarrySelfAdjointOperator/GreenMultiplicativeValveMass.lean",
+    "sha256": "11e7ec87dd8e7b143d3dc28ee9f3f13528e05ee43f08e8fdaacfcd8c6de0a47b"
+  },
+  {
+    "repository": "carry-self-adjoint-operator",
+    "sha": "cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa",
+    "path": "CarrySelfAdjointOperator/MultiplicativeValve.lean",
+    "sha256": "83bec15e1cd77242a39bfb8a1438ad7f1e9beba9a0d41205dce3bfd483bb9499"
+  },
+  {
+    "repository": "carry-self-adjoint-operator",
+    "sha": "cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa",
+    "path": "CarrySelfAdjointOperator/ProjectiveDepthCoordinate.lean",
+    "sha256": "866a7b1981e268120f8c5f42258a8c390c9fee98983d6d84e66cb5e927524b37"
+  },
+  {
+    "repository": "carry-self-adjoint-operator",
+    "sha": "cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa",
+    "path": "CarrySelfAdjointOperator/ProjectiveDepthEquivalence.lean",
+    "sha256": "e15c9bb2c08854ac7b121f9c9c2ead8cfeb518e42f6a07d6f1c468cebcf433bf"
+  },
+  {
+    "repository": "carry-self-adjoint-operator",
+    "sha": "cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa",
+    "path": "CarrySelfAdjointOperator/ProjectiveDepthInverse.lean",
+    "sha256": "4afdb96767ccbf3cb0885f5905584ec0777f5e37875e33a1155936fd55ebd143"
+  },
+  {
+    "repository": "carry-self-adjoint-operator",
+    "sha": "cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa",
+    "path": "CarrySelfAdjointOperator/ProjectiveValveAlgebra.lean",
+    "sha256": "31b7673e05709d5d623a79d567a2959603a64c8090ddc93ed901ff91bbd37f27"
+  },
+  {
+    "repository": "carry-self-adjoint-operator",
+    "sha": "cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa",
+    "path": "CarrySelfAdjointOperator/ProjectiveValveEquivalence.lean",
+    "sha256": "5bd05429a6d0aa9094a253700fd7b96a1b5b39516eaa53de83d2a45608bc87c1"
+  },
+  {
+    "repository": "carry-self-adjoint-operator",
+    "sha": "cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa",
+    "path": "CarrySelfAdjointOperator/ProjectiveValveFundamentalTheorem.lean",
+    "sha256": "41e6242a970c8f4cce1ad7311e363696ed09f85d822b91aa7f2ccb0ea94435a6"
+  },
+  {
+    "repository": "primos",
+    "sha": "e2a723b4ec3e645539de0b9ca881951d93259cda",
+    "path": "CPFormal/Analytic/CpCarryL2UnilateralShift.lean",
+    "sha256": "d846e547c97bc362678d14dee26d4ac0ad589f01a86f7762bca09b16963ad6fc"
+  },
+  {
+    "repository": "primos",
+    "sha": "e2a723b4ec3e645539de0b9ca881951d93259cda",
+    "path": "CPFormal/Analytic/CpCarryWeightedVerticalBracketTrace.lean",
+    "sha256": "814a8026955ac6f37a4611cc352e07ac6433bfc1dd52fbdf68cec38a653d196a"
+  },
+  {
+    "repository": "primos",
+    "sha": "e2a723b4ec3e645539de0b9ca881951d93259cda",
+    "path": "CPFormal/Analytic/CpCarryWeightedVerticalGreen.lean",
+    "sha256": "2ea4c8fc8763e3894b7670fdebcd181231d6091b978137abcea059c3ad7f7da9"
+  },
+  {
+    "repository": "primos",
+    "sha": "e2a723b4ec3e645539de0b9ca881951d93259cda",
+    "path": "CPFormal/Analytic/CpCarryWeightedVerticalReturn.lean",
+    "sha256": "0e6fbd5aad83658c3f75a304f00ec23fa6473d1d58ef21bd464c5771d95f2b6a"
+  },
+  {
+    "repository": "primos",
+    "sha": "e2a723b4ec3e645539de0b9ca881951d93259cda",
+    "path": "CPFormal/Analytic/CpCarryWeightedVerticalTfvd.lean",
+    "sha256": "782d70764cdbf8f340cdefa6705df743e22e8e8402c17e05016294a762613241"
+  },
+  {
+    "repository": "primos",
+    "sha": "e2a723b4ec3e645539de0b9ca881951d93259cda",
+    "path": "CPFormal/Analytic/CpCarryWeightedVerticalTfvdFinite.lean",
+    "sha256": "90a03f53afd54b774ea7d9a126832506b694f5496dc6b5b820174e35819dac81"
+  },
+  {
+    "repository": "primos",
+    "sha": "e2a723b4ec3e645539de0b9ca881951d93259cda",
+    "path": "CPFormal/Analytic/CpCarryWeightedVerticalTfvdIdentity.lean",
+    "sha256": "c4eb05289ea2f6225483f0ed945a534b3ae97b83732dd876cb4641ac1afd5524"
+  },
+  {
+    "repository": "primos",
+    "sha": "e2a723b4ec3e645539de0b9ca881951d93259cda",
+    "path": "CPFormal/Analytic/CpNativeCarryMobiusLogDerivativeGuardrail.lean",
+    "sha256": "b1da22abcbf54276e2fe96819370de0b2ccbc3c8ad4a2da9911535ca869df642"
+  },
+  {
+    "repository": "primos",
+    "sha": "e2a723b4ec3e645539de0b9ca881951d93259cda",
+    "path": "CPFormal/Analytic/CpPrimeDepthLogWaveBridge.lean",
+    "sha256": "792dbe6d253e1c164fd21c2960442ba981f6d0e7f72119058ad7dce9584752af"
+  },
+  {
+    "repository": "primos",
+    "sha": "e2a723b4ec3e645539de0b9ca881951d93259cda",
+    "path": "CPFormal/Analytic/CpPrimeTowerCarryMangoldtBridge.lean",
+    "sha256": "11fc0de0da7cf438b72e95e6c4466adaca8d512524ceebbe1ec334429aa2513f"
+  },
+  {
+    "repository": "primos",
+    "sha": "e2a723b4ec3e645539de0b9ca881951d93259cda",
+    "path": "CPFormal/Analytic/CpUniversalCarryStructuralPersistence.lean",
+    "sha256": "745356371f41c21b2fbf8c6f93dcb5ea1e1a309ec026775897e9ca7f8ec65d8f"
+  }
+]

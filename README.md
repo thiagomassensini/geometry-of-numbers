@@ -40,6 +40,9 @@ está formalizada aqui. O escopo é o plano de trabalho da geometria real do car
 
 ## Estado verificado
 
+**R2 CLOSED:** reconstrução discreta/projetiva, gauge crítico e TFVD real com
+análise/síntese exata; veja os capstones R2 ao final.
+
 **Projeto compilando; recorrência, primeiro retorno, ciclo/reset, torre residual,
 capacidade prefixal, normalização neutra e conservação por refinamento fechados;
 ponte da massa formal à rigidez quadrática discreta fechada e consolidada em
@@ -232,8 +235,7 @@ foi provada pelo refinamento. Sua ligação à compatibilidade quadrática forma
 está fechada. A realização numérica real também está disponível, na camada
 separada descrita abaixo; não foi usada para selecionar o expoente.
 O estado angular de profundidade está construído abaixo, sem lei de fase.
-Não há norma derivada, identificação com câmeras/brackets históricos, TFVD, Green, isometria ou
-autoadjunticidade nesta árvore.
+Esse checkpoint inicial não continha TFVD/Green; R2 acrescenta agora sua reconstrução real exata, descrita abaixo. Isometria e autoadjunticidade permanecem posteriores.
 
 ## Corte da Zona A e abertura da Zona B
 
@@ -709,3 +711,28 @@ crosswalk quantidade→canal; em `n=1` os pesos somam zero, e a incompatibilidad
 com a interface total foi provada. A Forma Centro–Pernas continua com o atlas
 parametrizado anterior. Nenhum peso de fallback, seed ou dependência histórica
 foi introduzido; Foundation e Geometry permanecem congeladas.
+
+
+## R2 — reconstrução exata real: CLOSED
+
+A segunda diferença, o Green com retorno de bordo, a TFVD real e a válvula
+projetiva são apresentações compatíveis da reconstrução do mesmo estado.
+
+- `DiscreteValve.realDiscreteGreenReconstruction`: curvatura + valor/inclinação
+  iniciais reconstroem toda sequência.
+- `DiscreteValve.mk_discrete_valve`: reconstrução em séries formais, com
+  `(1-X)^2 G1 = 1`.
+- `ProjectiveDepth.greenKernel_subst_inverse_mul_inverseDerivative`: Y=X/(1-X)
+  absorve Green pelo jacobiano.
+- `ProjectiveValve.projectiveValveEquiv`: massa normalizada e curvatura são
+  inversas; A'=DA e soma de curvaturas vira produto de massas.
+- `DiscreteProjective.realDiscreteProjectiveReconstructionEquiv`:
+  estado ≃ (valor inicial, inclinação inicial, massa projetiva).
+- `realCriticalCarryTfvdGreenValveCapstone`: gauge pela amplitude b^(-k/2),
+  TFVD GB+RTr=I em ℓ²(ℕ,ℝ), e S∘T=I como interface para R3.
+
+Leia [a rota normativa R2](docs/R2_TFVD_GREEN_VALVE_ROUTE.md) e
+[a auditoria técnica](docs/R2_IMPLEMENTATION_AUDIT.md).
+Raio horizontal não é profundidade vertical; deformação q não é razão eta.
+R2 fecha reconstrução. Head/tail, momentos e normalização/isometria global
+permanecem downstream. Nenhuma conclusão espectral é feita.

@@ -2494,3 +2494,93 @@ incluindo compostas. Aqui o denominador é exatamente `log n`, pela fatoração
 consultado como referência de arquitetura; nenhum código, theorem ou
 dependência dele entrou na prova. Seu gap histórico LSB/Parseval/Green não é
 uma premissa ou obstrução desta cadeia elementar.
+
+
+## 39. R2: curvatura e bordo reconstroem exatamente o estado
+
+A genealogia anterior continua unilateral: carry/depth → massa b^(-k)
+→ amplitude b^(-k/2) → centro–pernas → segunda diferença → bracket.
+R2 recebe essa API sem retornar à Foundation como justificativa.
+O índice abaixo é a profundidade vertical; o raio horizontal da câmera não
+é esse índice. A deformação recíproca q continua independente da razão eta.
+
+Para uma sequência real f, a primeira diferença é Δf(k)=f(k+1)-f(k), e
+sua curvatura vertical é Δ²f(k)=f(k+2)-2f(k+1)+f(k). O theorem fundamental é
+
+$$
+\boxed{f(n+1)=f(0)+(n+1)\Delta f(0)+
+\sum_{j<n}(n-j)\Delta^2f(j).}
+$$
+
+Assim, curvatura mais dois dados de bordo — valor e inclinação — reconstroem
+exatamente o estado. Curvatura zero equivale a estado afim. O Green é o
+inverso discreto da segunda diferença no interior, enquanto o retorno afim
+reconstitui seu kernel. Em séries formais, G0=∑X^n e G1=∑(n+1)X^n satisfazem
+(1-X)G0=1 e (1-X)^2G1=1. A reconstrução inteira é
+
+$$
+F=C(f_0)G_0+X C(\Delta f_0)G_1+X^2G_1B.
+$$
+
+Todas essas identidades são algébricas exatas, sem divisão analítica.
+A coordenada projetiva Y=X/(1-X) e sua inversa X=Y/(1+Y) são construídas por
+séries geométricas. Seus round-trips valem em toda série formal. Seu jacobiano
+é G1; logo G1(X(Y)) X'(Y)=1. Se K'=G1 C, então a derivada de K transportado
+para Y é C transportado. Esse é o sentido preciso de absorver o Green.
+
+A válvula associa a cada curvatura projetiva D a única massa formal A com
+
+$$
+\boxed{A'=DA,\quad A(0)=1.}
+$$
+
+Extrair A' A^(-1) e integrar são mapas inversos. Somar curvaturas multiplica
+massas: Mass(D+E)=Mass(D)Mass(E). A massa da sequência nasce de sua segunda
+diferença transportada, sem definir a curvatura a partir de uma massa escolhida.
+A equivalência `realDiscreteProjectiveReconstructionEquiv`, especializada em ℝ,
+fecha a reconstrução completa
+
+$$
+\boxed{f\ \simeq\ (f_0,\Delta f_0,A_f).}
+$$
+
+### Gauge crítico e TFVD real
+
+A razão vertical é a amplitude local já existente no nível um:
+eta_b=realCriticalAmplitude(b,1)=b^(-1/2). Prova-se A_b(k)=eta_b^k e,
+para b≥2, 0<eta_b<1. No gauge x_k=eta^k f_k, a diferença ponderada
+é d_eta x(k)=eta^(-1)x(k+1)-x(k), e
+
+$$
+\boxed{d_\eta^2(\eta^k f_k)=\eta^{k+1}\Delta^2f(k).}
+$$
+
+Aqui d_eta² significa d_eta x(k+1)-eta d_eta x(k), exatamente a convenção
+histórica. Ela corresponde à coordenada k+1 do bracket B_eta, cuja
+coordenada zero é reservada ao bordo. A TFVD ponderada é a mesma reconstrução
+transportada para unidades da amplitude crítica; o crosswalk das somas Green
+registra também o deslocamento de uma coordenada.
+
+No espaço real ℓ²(ℕ,ℝ), construímos operadores contínuos: bracket B_eta,
+trace Tr_eta x=(x0,eta^(-1)x1-x0), retorno
+R_eta(a,slope)(k)=eta^k(a+k slope), e Green causal com kernel distance eta^distance.
+A somabilidade do kernel dá um operador limitado, sem renormalização por cutoff.
+Os teoremas de bordo e a identidade operatorial são
+
+$$
+Tr_\eta R_\eta=I,\qquad B_\eta R_\eta=0,\qquad
+\boxed{G_\eta B_\eta+R_\eta Tr_\eta=I.}
+$$
+
+A análise mantém os dois canais T_eta x=(B_eta x,Tr_eta x); a síntese é
+S_eta(y,tau)=G_eta y+R_eta tau. `realCarryTfvdSynthesis_comp_analysis` prova
+S_eta∘T_eta=I. Essa é a interface mínima oferecida por R2 a R3.
+
+O capstone `realCriticalCarryTfvdGreenValveCapstone` somente compõe essas provas.
+R2 está CLOSED: segunda diferença, Green com bordo, TFVD e válvula projetiva
+são reconstruções exatas compatíveis do mesmo estado discreto, nas unidades
+correspondentes. Isso não fecha seleção de atlas, whitening, isometrias ou
+qualquer afirmação espectral. Head/tail e transporte de momentos ficam downstream.
+Foundation e Geometry permanecem inalteradas; Analysis mantém somente
+propext, Classical.choice e Quot.sound. Os exemplos formais são verificações
+adicionais, não substitutos das identidades universais.

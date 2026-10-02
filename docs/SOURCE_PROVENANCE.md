@@ -679,3 +679,97 @@ Os 26 nomes novos (24 teoremas e duas definições) possuem guards e #print axio
 na política padrão de Analysis. Foundation, Geometry e lakefile/manifest
 permanecem inalterados. Os testes incluem 12, 64, 5, 1, zero, nível zero,
 base 2, primo ímpar e peso zero de rótulo composto.
+
+
+## R2 — genealogia recuperada e reescrita local
+
+Checkpoint novo: `4cc4261fb2910c72d35e1746c983a28999f6d7eb`.
+Branch: `r2-real-tfvd-green-valve`, em worktree isolado.
+
+| Corpus | SHA exato das fontes consultadas |
+| --- | --- |
+| carry-self-adjoint-operator | `cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa` |
+| primos | `e2a723b4ec3e645539de0b9ca881951d93259cda` |
+
+O checkout primos existente era anterior aos bridges solicitados. A consulta
+usou `git show` do main acima; o checkout e suas alterações foram preservados.
+No carry, usaram-se objetos COMMITADOS do HEAD indicado, não arquivos dirty.
+O main remoto observado do carry era `8e85d06c44f31457e231d4f4528f2af4f5bfacb3`;
+essa versão não foi a fonte do porte R2. Os SHAs da tabela são os efetivamente lidos.
+
+### Arquivos lidos integralmente
+
+Em `CarrySelfAdjointOperator/`, todos no SHA carry acima:
+
+- `CanonicalTowerChannel.lean`
+- `CausalBracketStateUniqueness.lean`
+- `CompletedC3ValveNaturality.lean`
+- `DiscreteProjectiveReconstruction.lean`
+- `DiscreteValve.lean`
+- `DiscreteValveSeries.lean`
+- `GreenMultiplicativeValveBridge.lean`
+- `GreenMultiplicativeValveMass.lean`
+- `MultiplicativeValve.lean`
+- `ProjectiveDepthCoordinate.lean`
+- `ProjectiveDepthEquivalence.lean`
+- `ProjectiveDepthInverse.lean`
+- `ProjectiveValveAlgebra.lean`
+- `ProjectiveValveEquivalence.lean`
+- `ProjectiveValveFundamentalTheorem.lean`
+
+Em `CPFormal/Analytic/`, todos no SHA primos acima:
+
+- `CpCarryL2UnilateralShift.lean`
+- `CpCarryWeightedVerticalBracketTrace.lean`
+- `CpCarryWeightedVerticalGreen.lean`
+- `CpCarryWeightedVerticalReturn.lean`
+- `CpCarryWeightedVerticalTfvd.lean`
+- `CpCarryWeightedVerticalTfvdFinite.lean`
+- `CpCarryWeightedVerticalTfvdIdentity.lean`
+- `CpNativeCarryMobiusLogDerivativeGuardrail.lean`
+- `CpPrimeDepthLogWaveBridge.lean`
+- `CpPrimeTowerCarryMangoldtBridge.lean`
+- `CpUniversalCarryStructuralPersistence.lean`
+
+### Crosswalk recuperado → núcleo local
+
+| Fonte histórica e theorem | Reescrita local / decisão |
+| --- | --- |
+| DiscreteValve: `discrete_valve`, `bracket_eq_zero_iff_affine` | RealDiscreteValve: `realDiscreteGreenReconstruction`, kernel afim; manteve-se a generalidade AddCommGroup sem abstração nova |
+| DiscreteValveSeries: `one_sub_X_sq_mul_greenKernelSeries`, `mk_discrete_valve` | RealDiscreteValveSeries: mesmas identidades multiplicativas em séries formais |
+| CausalBracketStateUniqueness: `causalBracketReconstruction`, `causalUnitBracket_reconstruction`, `eq_of_seed_eq_of_causalUnitBracket_eq` | Somente recorrência causal e unicidade necessárias, dentro de RealDiscreteValve; nenhuma câmera histórica ou estado analítico |
+| ProjectiveDepthCoordinate/Inverse/Equivalence | RealProjectiveGreenValve: coordenadas inversas, transportes, round-trips e jacobianos |
+| GreenMultiplicativeValveBridge/Mass: `derivative_toProjective_greenLogPotential`, `derivative_projectiveGreenMass` | Potencial e massa Green reais por especialização; cancelamento exato sem limite |
+| MultiplicativeValve + CanonicalTowerChannel | RealTowerValve: deconvolução triangular, integração e seus inversos; omitidas especializações aritméticas e operações finitas não necessárias |
+| ProjectiveValveFundamentalTheorem/Equivalence/Algebra | RealMultiplicativeValve: ODE normalizada, unicidade, massa↔curvatura e lei soma→produto; sem flows/orbits/spans |
+| DiscreteProjectiveReconstruction | RealDiscreteProjectiveReconstruction: mesmos dois dados de bordo e massa normalizada; campo local `projectiveMass` |
+| CompletedC3ValveNaturality: primeiros theorems de gauge | RealCarryTfvd: versão real, eta independente, e crosswalk Green escalar↔Green aditivo |
+| CpCarryWeightedVerticalGreen + CpCarryL2UnilateralShift | RealCarryGreenKernel/L2: somabilidade, bound, shifts e Green em ℓ²(ℕ,ℝ) |
+| CpCarryWeightedVerticalBracketTrace/Return/Tfvd/TfvdFinite/TfvdIdentity | RealCarryWeightedValve: trace/return, bracket/return, coordenadas Green e GB+RTr=I, todos sobre ℝ |
+| CpUniversalCarryStructuralPersistence: núcleo base-neutral | Capstone local para toda base b≥2; não portado o certificado histórico maior |
+
+A busca anterior ao porte procurou realizações reais/genéricas equivalentes
+nas árvores CPFormal e CarrySelfAdjointOperator. O núcleo discreto/projetivo
+já era genérico; isso foi preservado. Não foi encontrada uma TFVD real ℓ²
+com esses mesmos operadores. Na implementação vertical consultada, ℂ é o
+campo escalar da construção de shifts; as provas foram reescritas em ℝ e
+compiladas localmente. Não foi introduzida complexificação nem dependência
+lógica de um repositório histórico. Mathlib permaneceu no SHA já fixado.
+
+`bracket_eq_realCenteredReadout` é o crosswalk ao readout real local anterior:
+o mesmo stencil 1,-2,1 atua agora no índice vertical. Não identifica eixos.
+`criticalVerticalAmplitudeRatio` usa `realCriticalAmplitude b 1`, cuja origem
+local é torre→massa formal→metade→realização; não copia primeCarryAmplitudeRatio.
+
+### Consistência downstream, sem porte
+
+PR 47 do primos: `Formalize prime-tower carry / von Mangoldt bridge`, MERGED,
+merge SHA `298a54f7be6111b6f83c4fee4de3bf3fed9f4a95`.
+Os três bridges aritméticos foram lidos para registrar sua fronteira. Nenhum
+Lambda/Mangoldt, Möbius, LSeries, Zeta, wave/Dirichlet ou consequência de zeros
+foi portado. O crosswalk primo e `log_eq_sum_primeCarryVoice` já existem
+localmente e não são premissas da TFVD. Também não foram portadas as camadas
+C3 completion, cumulantes ou momentos dos módulos históricos maiores.
+
+Os hashes dos conteúdos consultados estão em `R2_SOURCE_MANIFEST.json`.
+Todos os nomes públicos novos recebem guards e #print axioms no audit.

@@ -1025,3 +1025,556 @@ example : ¬ ∃ P : AdmissibleAtlasPartition,
   primeVoiceWeight_no_total_atlas_partition
 
 end GeometryOfNumbers.Analysis
+
+-- R2 audit coverage
+
+namespace GeometryOfNumbers.Analysis.DiscreteValve
+#assert_analysis_axioms fdiff
+#print axioms fdiff
+#assert_analysis_axioms bracket
+#print axioms bracket
+#assert_analysis_axioms bracket_eq_fdiff_sub
+#print axioms bracket_eq_fdiff_sub
+#assert_analysis_axioms greenSum
+#print axioms greenSum
+#assert_analysis_axioms sum_range_bracket
+#print axioms sum_range_bracket
+#assert_analysis_axioms greenSum_succ
+#print axioms greenSum_succ
+#assert_analysis_axioms realDiscreteGreenReconstruction
+#print axioms realDiscreteGreenReconstruction
+#assert_analysis_axioms bracket_greenSum
+#print axioms bracket_greenSum
+#assert_analysis_axioms greenSum_zero
+#print axioms greenSum_zero
+#assert_analysis_axioms bracket_eq_zero_iff_affine
+#print axioms bracket_eq_zero_iff_affine
+#assert_analysis_axioms bracket_add
+#print axioms bracket_add
+#assert_analysis_axioms greenSum_add
+#print axioms greenSum_add
+#assert_analysis_axioms bracket_eq_realCenteredReadout
+#print axioms bracket_eq_realCenteredReadout
+#assert_analysis_axioms X_mul_mk_fdiff
+#print axioms X_mul_mk_fdiff
+#assert_analysis_axioms X_sq_mul_mk_bracket
+#print axioms X_sq_mul_mk_bracket
+#assert_analysis_axioms geometricSeries
+#print axioms geometricSeries
+#assert_analysis_axioms greenKernelSeries
+#print axioms greenKernelSeries
+#assert_analysis_axioms one_sub_X_mul_geometricSeries
+#print axioms one_sub_X_mul_geometricSeries
+#assert_analysis_axioms one_sub_X_mul_greenKernelSeries
+#print axioms one_sub_X_mul_greenKernelSeries
+#assert_analysis_axioms one_sub_X_sq_mul_greenKernelSeries
+#print axioms one_sub_X_sq_mul_greenKernelSeries
+#assert_analysis_axioms X_mul_greenKernelSeries
+#print axioms X_mul_greenKernelSeries
+#assert_analysis_axioms mk_greenSum
+#print axioms mk_greenSum
+#assert_analysis_axioms mk_discrete_valve
+#print axioms mk_discrete_valve
+end GeometryOfNumbers.Analysis.DiscreteValve
+
+namespace GeometryOfNumbers.Analysis
+#assert_analysis_axioms causalUnitBracket
+#print axioms causalUnitBracket
+#assert_analysis_axioms rightLeg_eq_bracket_sub_left_add_two_center
+#print axioms rightLeg_eq_bracket_sub_left_add_two_center
+#assert_analysis_axioms rightLeg_eq_of_left_center_bracket_eq
+#print axioms rightLeg_eq_of_left_center_bracket_eq
+#assert_analysis_axioms CausalBracketData
+#print axioms CausalBracketData
+#assert_analysis_axioms causalBracketReconstruction
+#print axioms causalBracketReconstruction
+#assert_analysis_axioms causalBracketReconstruction_zero
+#print axioms causalBracketReconstruction_zero
+#assert_analysis_axioms causalBracketReconstruction_one
+#print axioms causalBracketReconstruction_one
+#assert_analysis_axioms causalBracketReconstruction_step
+#print axioms causalBracketReconstruction_step
+#assert_analysis_axioms causalUnitBracket_reconstruction
+#print axioms causalUnitBracket_reconstruction
+#assert_analysis_axioms eq_of_seed_eq_of_causalUnitBracket_eq
+#print axioms eq_of_seed_eq_of_causalUnitBracket_eq
+#assert_analysis_axioms criticalVerticalAmplitudeRatio
+#print axioms criticalVerticalAmplitudeRatio
+#assert_analysis_axioms criticalVerticalAmplitudeRatio_eq_rpow
+#print axioms criticalVerticalAmplitudeRatio_eq_rpow
+#assert_analysis_axioms criticalVerticalAmplitudeRatio_pos
+#print axioms criticalVerticalAmplitudeRatio_pos
+#assert_analysis_axioms criticalVerticalAmplitudeRatio_lt_one
+#print axioms criticalVerticalAmplitudeRatio_lt_one
+#assert_analysis_axioms realCriticalAmplitude_eq_verticalRatio_pow
+#print axioms realCriticalAmplitude_eq_verticalRatio_pow
+#assert_analysis_axioms realCriticalAmplitude_succ_verticalRatio
+#print axioms realCriticalAmplitude_succ_verticalRatio
+#assert_analysis_axioms realCarryAmplitudeGauge
+#print axioms realCarryAmplitudeGauge
+#assert_analysis_axioms realCarryWeightedFirstDifference_gauge
+#print axioms realCarryWeightedFirstDifference_gauge
+#assert_analysis_axioms realCarryWeightedSecondDifference_gauge
+#print axioms realCarryWeightedSecondDifference_gauge
+#assert_analysis_axioms realCarryWeightedGreenSum_gauge
+#print axioms realCarryWeightedGreenSum_gauge
+#assert_analysis_axioms realCarryTfvdAnalysis
+#print axioms realCarryTfvdAnalysis
+#assert_analysis_axioms realCarryTfvdSynthesis
+#print axioms realCarryTfvdSynthesis
+#assert_analysis_axioms realCarryTfvdSynthesis_comp_analysis
+#print axioms realCarryTfvdSynthesis_comp_analysis
+#assert_analysis_axioms realCriticalCarryTfvd_identity
+#print axioms realCriticalCarryTfvd_identity
+#assert_analysis_axioms realCriticalCarryTfvdSynthesis_comp_analysis
+#print axioms realCriticalCarryTfvdSynthesis_comp_analysis
+#assert_analysis_axioms RealCriticalCarryTfvdGreenValveCertificate
+#print axioms RealCriticalCarryTfvdGreenValveCertificate
+#assert_analysis_axioms realCriticalCarryTfvdGreenValveCapstone
+#print axioms realCriticalCarryTfvdGreenValveCapstone
+end GeometryOfNumbers.Analysis
+
+namespace GeometryOfNumbers.Analysis.TowerValve
+#assert_analysis_axioms IsTowerChannel
+#print axioms IsTowerChannel
+#assert_analysis_axioms tower_channel_unique
+#print axioms tower_channel_unique
+#assert_analysis_axioms IsLogDerivChannel
+#print axioms IsLogDerivChannel
+#assert_analysis_axioms isLogDerivChannel_mul
+#print axioms isLogDerivChannel_mul
+#assert_analysis_axioms isTowerChannel_iff_isLogDerivChannel
+#print axioms isTowerChannel_iff_isLogDerivChannel
+#assert_analysis_axioms towerMass
+#print axioms towerMass
+#assert_analysis_axioms towerMass_zero
+#print axioms towerMass_zero
+#assert_analysis_axioms isTowerChannel_towerMass
+#print axioms isTowerChannel_towerMass
+#assert_analysis_axioms towerMass_unique
+#print axioms towerMass_unique
+#assert_analysis_axioms towerMass_eq_of_isTowerChannel
+#print axioms towerMass_eq_of_isTowerChannel
+#assert_analysis_axioms expSeries
+#print axioms expSeries
+#assert_analysis_axioms isLogDerivChannel_expSeries
+#print axioms isLogDerivChannel_expSeries
+#assert_analysis_axioms constantCoeff_expSeries
+#print axioms constantCoeff_expSeries
+#assert_analysis_axioms logIntegral
+#print axioms logIntegral
+#assert_analysis_axioms constantCoeff_logIntegral
+#print axioms constantCoeff_logIntegral
+#assert_analysis_axioms X_mul_derivativeFun_logIntegral
+#print axioms X_mul_derivativeFun_logIntegral
+#assert_analysis_axioms mk_towerMass_eq_expSeries
+#print axioms mk_towerMass_eq_expSeries
+#assert_analysis_axioms canonicalTowerChannel
+#print axioms canonicalTowerChannel
+#assert_analysis_axioms canonicalTowerChannel_eq
+#print axioms canonicalTowerChannel_eq
+#assert_analysis_axioms canonicalTowerChannel_zero
+#print axioms canonicalTowerChannel_zero
+#assert_analysis_axioms canonicalTowerChannel_isTowerChannel
+#print axioms canonicalTowerChannel_isTowerChannel
+#assert_analysis_axioms canonicalTowerChannel_eq_of_isTowerChannel
+#print axioms canonicalTowerChannel_eq_of_isTowerChannel
+#assert_analysis_axioms existsUnique_towerChannel
+#print axioms existsUnique_towerChannel
+#assert_analysis_axioms towerMass_canonicalTowerChannel
+#print axioms towerMass_canonicalTowerChannel
+#assert_analysis_axioms canonicalTowerChannel_towerMass
+#print axioms canonicalTowerChannel_towerMass
+#assert_analysis_axioms mk_eq_expSeries_logIntegral_canonicalTowerChannel
+#print axioms mk_eq_expSeries_logIntegral_canonicalTowerChannel
+end GeometryOfNumbers.Analysis.TowerValve
+
+namespace GeometryOfNumbers.Analysis.ProjectiveDepth
+#assert_analysis_axioms coordinate
+#print axioms coordinate
+#assert_analysis_axioms coordinate_constantCoeff
+#print axioms coordinate_constantCoeff
+#assert_analysis_axioms one_sub_X_mul_coordinate
+#print axioms one_sub_X_mul_coordinate
+#assert_analysis_axioms one_add_coordinate_eq_geometricSeries
+#print axioms one_add_coordinate_eq_geometricSeries
+#assert_analysis_axioms geometricSeries_mul_self_eq_greenKernelSeries
+#print axioms geometricSeries_mul_self_eq_greenKernelSeries
+#assert_analysis_axioms coordinate_derivativeFun
+#print axioms coordinate_derivativeFun
+#assert_analysis_axioms greenVelocity
+#print axioms greenVelocity
+#assert_analysis_axioms euler_coordinate
+#print axioms euler_coordinate
+#assert_analysis_axioms greenVelocity_eq_coordinate_mul_one_add
+#print axioms greenVelocity_eq_coordinate_mul_one_add
+#assert_analysis_axioms coordinate_sq_eq_X_sq_mul_greenKernelSeries
+#print axioms coordinate_sq_eq_X_sq_mul_greenKernelSeries
+#assert_analysis_axioms euler_subst_coordinate
+#print axioms euler_subst_coordinate
+#assert_analysis_axioms inverseGeometricSeries
+#print axioms inverseGeometricSeries
+#assert_analysis_axioms one_add_X_mul_inverseGeometricSeries
+#print axioms one_add_X_mul_inverseGeometricSeries
+#assert_analysis_axioms inverseCoordinate
+#print axioms inverseCoordinate
+#assert_analysis_axioms inverseCoordinate_constantCoeff
+#print axioms inverseCoordinate_constantCoeff
+#assert_analysis_axioms one_add_X_mul_inverseCoordinate
+#print axioms one_add_X_mul_inverseCoordinate
+#assert_analysis_axioms one_sub_inverseCoordinate_eq_inverseGeometricSeries
+#print axioms one_sub_inverseCoordinate_eq_inverseGeometricSeries
+#assert_analysis_axioms coordinate_hasSubst
+#print axioms coordinate_hasSubst
+#assert_analysis_axioms inverseCoordinate_hasSubst
+#print axioms inverseCoordinate_hasSubst
+#assert_analysis_axioms coordinate_subst_inverseCoordinate
+#print axioms coordinate_subst_inverseCoordinate
+#assert_analysis_axioms inverseCoordinate_subst_coordinate
+#print axioms inverseCoordinate_subst_coordinate
+#assert_analysis_axioms subst_X_eq_self
+#print axioms subst_X_eq_self
+#assert_analysis_axioms toProjective
+#print axioms toProjective
+#assert_analysis_axioms fromProjective
+#print axioms fromProjective
+#assert_analysis_axioms fromProjective_toProjective
+#print axioms fromProjective_toProjective
+#assert_analysis_axioms toProjective_fromProjective
+#print axioms toProjective_fromProjective
+#assert_analysis_axioms coordinateChangeEquiv
+#print axioms coordinateChangeEquiv
+#assert_analysis_axioms toProjective_add
+#print axioms toProjective_add
+#assert_analysis_axioms toProjective_mul
+#print axioms toProjective_mul
+#assert_analysis_axioms fromProjective_add
+#print axioms fromProjective_add
+#assert_analysis_axioms fromProjective_mul
+#print axioms fromProjective_mul
+#assert_analysis_axioms coordinate_inverse_jacobian
+#print axioms coordinate_inverse_jacobian
+#assert_analysis_axioms inverse_coordinate_jacobian
+#print axioms inverse_coordinate_jacobian
+#assert_analysis_axioms greenKernel_subst_inverse_mul_inverseDerivative
+#print axioms greenKernel_subst_inverse_mul_inverseDerivative
+#assert_analysis_axioms inverseDerivative_subst_coordinate_mul_greenKernel
+#print axioms inverseDerivative_subst_coordinate_mul_greenKernel
+#assert_analysis_axioms constantCoeff_toProjective
+#print axioms constantCoeff_toProjective
+end GeometryOfNumbers.Analysis.ProjectiveDepth
+
+namespace GeometryOfNumbers.Analysis.GreenValve
+#assert_analysis_axioms greenChannelSeries
+#print axioms greenChannelSeries
+#assert_analysis_axioms greenChannel
+#print axioms greenChannel
+#assert_analysis_axioms greenChannel_zero
+#print axioms greenChannel_zero
+#assert_analysis_axioms mk_greenChannel
+#print axioms mk_greenChannel
+#assert_analysis_axioms greenLogPotential
+#print axioms greenLogPotential
+#assert_analysis_axioms greenLogPotential_constantCoeff
+#print axioms greenLogPotential_constantCoeff
+#assert_analysis_axioms X_mul_derivative_greenLogPotential
+#print axioms X_mul_derivative_greenLogPotential
+#assert_analysis_axioms derivative_greenLogPotential
+#print axioms derivative_greenLogPotential
+#assert_analysis_axioms derivative_toProjective_greenLogPotential
+#print axioms derivative_toProjective_greenLogPotential
+#assert_analysis_axioms greenMassSeries
+#print axioms greenMassSeries
+#assert_analysis_axioms greenMassSeries_constantCoeff
+#print axioms greenMassSeries_constantCoeff
+#assert_analysis_axioms isLogDerivChannel_greenMassSeries
+#print axioms isLogDerivChannel_greenMassSeries
+#assert_analysis_axioms mk_towerMass_greenChannel
+#print axioms mk_towerMass_greenChannel
+#assert_analysis_axioms derivative_greenMassSeries
+#print axioms derivative_greenMassSeries
+#assert_analysis_axioms projectiveGreenMass
+#print axioms projectiveGreenMass
+#assert_analysis_axioms projectiveGreenMass_constantCoeff
+#print axioms projectiveGreenMass_constantCoeff
+#assert_analysis_axioms derivative_projectiveGreenMass
+#print axioms derivative_projectiveGreenMass
+end GeometryOfNumbers.Analysis.GreenValve
+
+namespace GeometryOfNumbers.Analysis.ProjectiveValve
+#assert_analysis_axioms projectiveValveMass
+#print axioms projectiveValveMass
+#assert_analysis_axioms projectiveValveMass_constantCoeff
+#print axioms projectiveValveMass_constantCoeff
+#assert_analysis_axioms derivative_projectiveValveMass
+#print axioms derivative_projectiveValveMass
+#assert_analysis_axioms normalized_projective_ode_unique
+#print axioms normalized_projective_ode_unique
+#assert_analysis_axioms projectiveValveMass_unique
+#print axioms projectiveValveMass_unique
+#assert_analysis_axioms existsUnique_projectiveValveMass
+#print axioms existsUnique_projectiveValveMass
+#assert_analysis_axioms projectiveValveMass_toProjective
+#print axioms projectiveValveMass_toProjective
+#assert_analysis_axioms projectiveValveCurvature
+#print axioms projectiveValveCurvature
+#assert_analysis_axioms projectiveValveCurvature_mul_self
+#print axioms projectiveValveCurvature_mul_self
+#assert_analysis_axioms projectiveValveCurvature_eq_of_ode
+#print axioms projectiveValveCurvature_eq_of_ode
+#assert_analysis_axioms projectiveValveCurvature_projectiveValveMass
+#print axioms projectiveValveCurvature_projectiveValveMass
+#assert_analysis_axioms projectiveValveMass_projectiveValveCurvature
+#print axioms projectiveValveMass_projectiveValveCurvature
+#assert_analysis_axioms NormalizedProjectiveMass
+#print axioms NormalizedProjectiveMass
+#assert_analysis_axioms projectiveValveEquiv
+#print axioms projectiveValveEquiv
+#assert_analysis_axioms projectiveValveMass_injective
+#print axioms projectiveValveMass_injective
+#assert_analysis_axioms projectiveValveCurvature_surjective
+#print axioms projectiveValveCurvature_surjective
+#assert_analysis_axioms projectiveValveMass_zero
+#print axioms projectiveValveMass_zero
+#assert_analysis_axioms projectiveValveMass_add
+#print axioms projectiveValveMass_add
+end GeometryOfNumbers.Analysis.ProjectiveValve
+
+namespace GeometryOfNumbers.Analysis.DiscreteProjective
+#assert_analysis_axioms discreteBracket_eq_causalUnitBracket
+#print axioms discreteBracket_eq_causalUnitBracket
+#assert_analysis_axioms ReconstructionData
+#print axioms ReconstructionData
+#assert_analysis_axioms reconstructionBracketData
+#print axioms reconstructionBracketData
+#assert_analysis_axioms reconstruct
+#print axioms reconstruct
+#assert_analysis_axioms reconstruct_zero
+#print axioms reconstruct_zero
+#assert_analysis_axioms reconstruct_fdiff_zero
+#print axioms reconstruct_fdiff_zero
+#assert_analysis_axioms bracket_reconstruct
+#print axioms bracket_reconstruct
+#assert_analysis_axioms mk_bracket_reconstruct
+#print axioms mk_bracket_reconstruct
+#assert_analysis_axioms mk_reconstruct_eq_green
+#print axioms mk_reconstruct_eq_green
+#assert_analysis_axioms stateMass
+#print axioms stateMass
+#assert_analysis_axioms stateMass_eq_projectiveGreenMass
+#print axioms stateMass_eq_projectiveGreenMass
+#assert_analysis_axioms stateMass_constantCoeff
+#print axioms stateMass_constantCoeff
+#assert_analysis_axioms projectiveValveCurvature_stateMass
+#print axioms projectiveValveCurvature_stateMass
+#assert_analysis_axioms stateMass_eq_iff_bracket_eq
+#print axioms stateMass_eq_iff_bracket_eq
+#assert_analysis_axioms eq_of_boundary_and_stateMass_eq
+#print axioms eq_of_boundary_and_stateMass_eq
+#assert_analysis_axioms eq_iff_boundary_and_stateMass_eq
+#print axioms eq_iff_boundary_and_stateMass_eq
+#assert_analysis_axioms stateMass_reconstruct
+#print axioms stateMass_reconstruct
+#assert_analysis_axioms encode
+#print axioms encode
+#assert_analysis_axioms reconstruct_encode
+#print axioms reconstruct_encode
+#assert_analysis_axioms encode_reconstruct
+#print axioms encode_reconstruct
+#assert_analysis_axioms realDiscreteProjectiveReconstructionEquiv
+#print axioms realDiscreteProjectiveReconstructionEquiv
+#assert_analysis_axioms encode_injective
+#print axioms encode_injective
+#assert_analysis_axioms existsUnique_state_of_boundary_and_mass
+#print axioms existsUnique_state_of_boundary_and_mass
+end GeometryOfNumbers.Analysis.DiscreteProjective
+
+namespace GeometryOfNumbers.Analysis.RealCarry
+#assert_analysis_axioms carryWeightedVerticalGreenKernel
+#print axioms carryWeightedVerticalGreenKernel
+#assert_analysis_axioms carryWeightedVerticalGreenKernel_zero
+#print axioms carryWeightedVerticalGreenKernel_zero
+#assert_analysis_axioms carryWeightedVerticalGreenKernel_nonneg
+#print axioms carryWeightedVerticalGreenKernel_nonneg
+#assert_analysis_axioms carryConjugatedVerticalGreenKernel
+#print axioms carryConjugatedVerticalGreenKernel
+#assert_analysis_axioms carryConjugatedVerticalGreenKernel_of_lt
+#print axioms carryConjugatedVerticalGreenKernel_of_lt
+#assert_analysis_axioms carryConjugatedVerticalGreenKernel_of_not_lt
+#print axioms carryConjugatedVerticalGreenKernel_of_not_lt
+#assert_analysis_axioms carryWeightedVerticalGreenKernel_summable
+#print axioms carryWeightedVerticalGreenKernel_summable
+#assert_analysis_axioms CarryVerticalShiftFamily
+#print axioms CarryVerticalShiftFamily
+#assert_analysis_axioms carryWeightedVerticalGreenTerm
+#print axioms carryWeightedVerticalGreenTerm
+#assert_analysis_axioms carryWeightedVerticalGreenTerm_norm_le
+#print axioms carryWeightedVerticalGreenTerm_norm_le
+#assert_analysis_axioms carryWeightedVerticalGreenTerm_summable
+#print axioms carryWeightedVerticalGreenTerm_summable
+#assert_analysis_axioms carryWeightedVerticalGreen
+#print axioms carryWeightedVerticalGreen
+#assert_analysis_axioms carryWeightedVerticalGreen_norm_le_kernelMass
+#print axioms carryWeightedVerticalGreen_norm_le_kernelMass
+#assert_analysis_axioms CarryVerticalL2
+#print axioms CarryVerticalL2
+#assert_analysis_axioms carryVerticalL2BackwardShiftLinear
+#print axioms carryVerticalL2BackwardShiftLinear
+#assert_analysis_axioms carryVerticalL2BackwardShiftLinear_apply
+#print axioms carryVerticalL2BackwardShiftLinear_apply
+#assert_analysis_axioms carryVerticalL2BackwardShiftLinear_norm_le
+#print axioms carryVerticalL2BackwardShiftLinear_norm_le
+#assert_analysis_axioms carryVerticalL2BackwardShift
+#print axioms carryVerticalL2BackwardShift
+#assert_analysis_axioms carryVerticalL2BackwardShift_apply
+#print axioms carryVerticalL2BackwardShift_apply
+#assert_analysis_axioms carryVerticalL2BackwardShift_norm_le_one
+#print axioms carryVerticalL2BackwardShift_norm_le_one
+#assert_analysis_axioms carryVerticalL2BackwardShift_single
+#print axioms carryVerticalL2BackwardShift_single
+#assert_analysis_axioms carryVerticalL2UnilateralShift
+#print axioms carryVerticalL2UnilateralShift
+#assert_analysis_axioms carryVerticalL2UnilateralShift_apply
+#print axioms carryVerticalL2UnilateralShift_apply
+#assert_analysis_axioms carryVerticalL2UnilateralShift_norm_le_one
+#print axioms carryVerticalL2UnilateralShift_norm_le_one
+#assert_analysis_axioms carryVerticalL2ShiftFamily
+#print axioms carryVerticalL2ShiftFamily
+#assert_analysis_axioms carryVerticalL2WeightedGreen
+#print axioms carryVerticalL2WeightedGreen
+#assert_analysis_axioms carryVerticalL2EvalLinear
+#print axioms carryVerticalL2EvalLinear
+#assert_analysis_axioms carryVerticalL2Eval
+#print axioms carryVerticalL2Eval
+#assert_analysis_axioms carryVerticalL2Eval_apply
+#print axioms carryVerticalL2Eval_apply
+#assert_analysis_axioms carryVerticalL2ZeroHeadProjection
+#print axioms carryVerticalL2ZeroHeadProjection
+#assert_analysis_axioms carryVerticalL2ZeroHeadProjection_apply
+#print axioms carryVerticalL2ZeroHeadProjection_apply
+#assert_analysis_axioms carryWeightedVerticalCenteredBracketCore
+#print axioms carryWeightedVerticalCenteredBracketCore
+#assert_analysis_axioms carryWeightedVerticalCenteredBracketCore_apply
+#print axioms carryWeightedVerticalCenteredBracketCore_apply
+#assert_analysis_axioms carryWeightedVerticalCenteredBracket
+#print axioms carryWeightedVerticalCenteredBracket
+#assert_analysis_axioms carryWeightedVerticalCenteredBracket_zero
+#print axioms carryWeightedVerticalCenteredBracket_zero
+#assert_analysis_axioms carryWeightedVerticalCenteredBracket_succ
+#print axioms carryWeightedVerticalCenteredBracket_succ
+#assert_analysis_axioms carryWeightedVerticalTrace
+#print axioms carryWeightedVerticalTrace
+#assert_analysis_axioms carryWeightedVerticalTrace_apply
+#print axioms carryWeightedVerticalTrace_apply
+#assert_analysis_axioms carryGeometricAmplitudeVector
+#print axioms carryGeometricAmplitudeVector
+#assert_analysis_axioms carryGeometricAmplitudeVector_apply
+#print axioms carryGeometricAmplitudeVector_apply
+#assert_analysis_axioms carryAffineSlopeAmplitudeVector
+#print axioms carryAffineSlopeAmplitudeVector
+#assert_analysis_axioms carryAffineSlopeAmplitudeVector_apply
+#print axioms carryAffineSlopeAmplitudeVector_apply
+#assert_analysis_axioms carryWeightedVerticalReturn
+#print axioms carryWeightedVerticalReturn
+#assert_analysis_axioms carryWeightedVerticalReturn_apply
+#print axioms carryWeightedVerticalReturn_apply
+#assert_analysis_axioms carryWeightedVerticalTrace_comp_return
+#print axioms carryWeightedVerticalTrace_comp_return
+#assert_analysis_axioms carryWeightedVerticalCenteredBracket_comp_return
+#print axioms carryWeightedVerticalCenteredBracket_comp_return
+#assert_analysis_axioms carryVerticalL2OperatorApply
+#print axioms carryVerticalL2OperatorApply
+#assert_analysis_axioms carryVerticalL2OperatorApply_apply
+#print axioms carryVerticalL2OperatorApply_apply
+#assert_analysis_axioms carryVerticalL2OperatorCoordinate
+#print axioms carryVerticalL2OperatorCoordinate
+#assert_analysis_axioms carryVerticalL2OperatorCoordinate_apply
+#print axioms carryVerticalL2OperatorCoordinate_apply
+#assert_analysis_axioms carryVerticalL2WeightedGreen_apply
+#print axioms carryVerticalL2WeightedGreen_apply
+#assert_analysis_axioms carryVerticalL2WeightedGreen_apply_reindexed
+#print axioms carryVerticalL2WeightedGreen_apply_reindexed
+#assert_analysis_axioms carryWeightedScalarFirstDifference
+#print axioms carryWeightedScalarFirstDifference
+#assert_analysis_axioms carryWeightedScalarSecondDifference
+#print axioms carryWeightedScalarSecondDifference
+#assert_analysis_axioms carryWeightedScalarSecondDifference_eq
+#print axioms carryWeightedScalarSecondDifference_eq
+#assert_analysis_axioms carryWeightedScalarGreenSum
+#print axioms carryWeightedScalarGreenSum
+#assert_analysis_axioms carryWeightedScalarSecondDifference_telescope
+#print axioms carryWeightedScalarSecondDifference_telescope
+#assert_analysis_axioms carryWeightedScalarGreenSum_succ
+#print axioms carryWeightedScalarGreenSum_succ
+#assert_analysis_axioms carryWeightedScalarReconstruction
+#print axioms carryWeightedScalarReconstruction
+#assert_analysis_axioms carryVerticalL2WeightedGreen_bracket_apply
+#print axioms carryVerticalL2WeightedGreen_bracket_apply
+#assert_analysis_axioms carryWeightedVerticalTfvd_apply
+#print axioms carryWeightedVerticalTfvd_apply
+#assert_analysis_axioms carryWeightedVerticalTfvd_identity
+#print axioms carryWeightedVerticalTfvd_identity
+end GeometryOfNumbers.Analysis.RealCarry
+
+namespace GeometryOfNumbers.Analysis
+open DiscreteValve RealCarry ProjectiveDepth ProjectiveValve
+open scoped lp ENNReal NNReal
+
+-- Affine curvature and its Green interior vanish.
+example (a slope : ℝ) (k : ℕ) :
+    bracket (fun n => a + (n : ℝ) * slope) k = 0 := by
+  simp only [bracket, nsmul_eq_mul]
+  push_cast
+  ring
+
+example (a slope : ℝ) (n : ℕ) :
+    greenSum (fun k => a + (k : ℝ) * slope) n = 0 := by
+  apply Finset.sum_eq_zero
+  intro k _
+  simp only [bracket, nsmul_eq_mul]
+  push_cast
+  ring
+
+-- Constant quadratic curvature and concrete reconstruction endpoints.
+example (k : ℕ) : bracket (fun n => (n : ℝ) ^ 2) k = 2 := by
+  simp only [bracket, nsmul_eq_mul]
+  push_cast
+  ring
+
+example : greenSum (fun n => (n : ℝ) ^ 2) 3 = 12 := by
+  norm_num [greenSum, bracket, nsmul_eq_mul, Finset.sum_range_succ]
+
+example : (4 : ℝ) ^ 2 = 0 + 4 * 1 + greenSum (fun n => (n : ℝ) ^ 2) 3 := by
+  have h := realDiscreteGreenReconstruction (fun n => (n : ℝ) ^ 2) 3
+  norm_num [nsmul_eq_mul] at h ⊢
+  exact h
+
+-- Base two: the gauge is symbolic, with the locally derived b^(-1/2).
+example (f : ℕ → ℝ) (k : ℕ) :
+    carryWeightedScalarSecondDifference (criticalVerticalAmplitudeRatio 2 (by decide))
+        (realCarryAmplitudeGauge (criticalVerticalAmplitudeRatio 2 (by decide)) f) k =
+      criticalVerticalAmplitudeRatio 2 (by decide) ^ (k + 1) * bracket f k :=
+  realCarryWeightedSecondDifference_gauge _ (criticalVerticalAmplitudeRatio_pos 2 _).ne' f k
+
+example : criticalVerticalAmplitudeRatio 2 (by decide) = (2 : ℝ) ^ (-(1 : ℝ) / 2) :=
+  criticalVerticalAmplitudeRatio_eq_rpow 2 _
+
+example (eta : ℝ) (h0 : 0 < eta) (h1 : eta < 1) (a slope : ℝ) :
+    carryWeightedVerticalTrace eta (carryWeightedVerticalReturn eta h0.le h1 (a, slope)) =
+      (a, slope) := by
+  have h := congrArg (fun T => T (a, slope)) (carryWeightedVerticalTrace_comp_return eta h0 h1)
+  exact h
+
+-- All initial coordinates, with no numerical substitution for the general proof.
+example (eta : ℝ) (h0 : 0 < eta) (h1 : eta < 1)
+    (x : CarryVerticalL2) (i : Fin 3) :
+    carryVerticalL2WeightedGreen eta (carryWeightedVerticalCenteredBracket eta x) i.val +
+      carryWeightedVerticalReturn eta h0.le h1 (carryWeightedVerticalTrace eta x) i.val = x i.val :=
+  carryWeightedVerticalTfvd_apply eta h0 h1 x i.val
+
+-- The projective round trips specialize to real coefficients.
+example (f : ℕ → ℝ) : DiscreteProjective.reconstruct (DiscreteProjective.encode f) = f :=
+  DiscreteProjective.reconstruct_encode f
+example (D : PowerSeries ℝ) : projectiveValveCurvature (projectiveValveMass D) = D :=
+  projectiveValveCurvature_projectiveValveMass D
+end GeometryOfNumbers.Analysis

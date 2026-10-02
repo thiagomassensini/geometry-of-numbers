@@ -38,7 +38,7 @@ complexa justificará um resultado fundacional.
 | F2 | Massa/amplitude e rigidez algébrica do expoente `1/2` | Núcleo discreto encerrado em capstone; massa e amplitude reais realizadas em camada separada, com amplitude² = massa |
 | R0 | Rotação e estado espectral reais | Estado de profundidade, energia quadrática e rotação abstrata fechados; lei de fase/espectro e estado global de quantidade ainda abertos |
 | R1 | Câmeras e brackets reais | Câmera ímpar, saturação e realização quadrática fechadas; ponte offset→deformação e crosswalk do perfil fechados sob compatibilidade multiplicativa explícita, q_r=rho^r; seleção do passo rho ainda aberta |
-| R2 | Reconstrução TFVD real, Green e retorno | Não iniciada |
+| R2 | Reconstrução TFVD real, Green e retorno | CLOSED — reconstrução discreta/projetiva, gauge crítico e TFVD real com análise/síntese |
 | R3 | Frame global, whitening e isometria | Não iniciada |
 | R4 | Fatorização de câmeras pelo mesmo estado global | Não iniciada |
 | R5 | Gerador logarítmico e transporte autoadjunto | Não iniciada |
@@ -580,3 +580,26 @@ Os critérios parametrizados de energia/ângulos/zero da Forma permanecem válid
 **Menor gap:** quantity-index → camera-channel-index crosswalk, com tratamento
 legítimo do seed; não a identidade de fatoração ou um gap histórico de Parseval.
 Reconstrução prima não prova combinação linear de câmeras compostas.
+
+
+## R2 — reconstrução mínima encerrada
+
+Antes de R2 ou posteriores, ler R2_TFVD_GREEN_VALVE_ROUTE.md.
+Resultado A: FULL R2 PASS. Todos os capstones vivem em Analysis.
+
+| Gate | Estado | Evidência |
+| --- | --- | --- |
+| R2-DISCRETE-FUNDAMENTAL-THEOREM | CLOSED | realDiscreteGreenReconstruction; kernel afim |
+| R2-GREEN-KERNEL | CLOSED | one_sub_X_sq_mul_greenKernelSeries; mk_discrete_valve |
+| R2-PROJECTIVE-GREEN | CLOSED | round-trips, jacobiano Green e derivative_toProjective_greenLogPotential |
+| R2-MULTIPLICATIVE-VALVE | CLOSED | derivative_projectiveValveMass, ambos os round-trips e projectiveValveMass_add |
+| R2-DISCRETE-PROJECTIVE-RECONSTRUCTION | CLOSED | realDiscreteProjectiveReconstructionEquiv |
+| R2-CRITICAL-GAUGE | CLOSED | razão derivada da amplitude no nível um; realCarryWeightedSecondDifference_gauge e GreenSum_gauge |
+| R2-REAL-TFVD | CLOSED | operadores contínuos em ℓ²(ℕ,ℝ), TrR=I, BR=0, GB+RTr=I |
+| R2-ANALYSIS-SYNTHESIS | CLOSED | realCarryTfvdSynthesis_comp_analysis; especialização crítica |
+
+R2 closes reconstruction. Head/tail and moment transport belong downstream.
+R3 recebe análise/síntese; Gram T* T, normalização/whitening e isometria não
+foram implementados. Os gaps de atlas/seed das rodadas anteriores continuam
+abertos e independentes desta reconstrução. Nenhuma complexificação, dependência
+histórica ou mudança em Foundation/Geometry foi usada para fechar R2.

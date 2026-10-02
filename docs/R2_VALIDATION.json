@@ -1,0 +1,148 @@
+{
+  "stage": "isolated R2 branch before integration",
+  "lean": "4.32.0",
+  "mathlib_sha": "81a5d257c8e410db227a6665ed08f64fea08e997",
+  "commands": [
+    {
+      "command": [
+        "/home/thlinux/.elan/bin/lake",
+        "build",
+        "GeometryOfNumbers.Analysis.RealDiscreteValve"
+      ],
+      "exit_code": 0,
+      "seconds": 7.798
+    },
+    {
+      "command": [
+        "/home/thlinux/.elan/bin/lake",
+        "build",
+        "GeometryOfNumbers.Analysis.RealDiscreteValveSeries"
+      ],
+      "exit_code": 0,
+      "seconds": 7.674
+    },
+    {
+      "command": [
+        "/home/thlinux/.elan/bin/lake",
+        "build",
+        "GeometryOfNumbers.Analysis.RealTowerValve"
+      ],
+      "exit_code": 0,
+      "seconds": 8.004
+    },
+    {
+      "command": [
+        "/home/thlinux/.elan/bin/lake",
+        "build",
+        "GeometryOfNumbers.Analysis.RealProjectiveGreenValve"
+      ],
+      "exit_code": 0,
+      "seconds": 7.935
+    },
+    {
+      "command": [
+        "/home/thlinux/.elan/bin/lake",
+        "build",
+        "GeometryOfNumbers.Analysis.RealMultiplicativeValve"
+      ],
+      "exit_code": 0,
+      "seconds": 7.301
+    },
+    {
+      "command": [
+        "/home/thlinux/.elan/bin/lake",
+        "build",
+        "GeometryOfNumbers.Analysis.RealDiscreteProjectiveReconstruction"
+      ],
+      "exit_code": 0,
+      "seconds": 7.343
+    },
+    {
+      "command": [
+        "/home/thlinux/.elan/bin/lake",
+        "build",
+        "GeometryOfNumbers.Analysis.RealCarryGreenKernel"
+      ],
+      "exit_code": 0,
+      "seconds": 2.977
+    },
+    {
+      "command": [
+        "/home/thlinux/.elan/bin/lake",
+        "build",
+        "GeometryOfNumbers.Analysis.RealCarryL2"
+      ],
+      "exit_code": 0,
+      "seconds": 3.096
+    },
+    {
+      "command": [
+        "/home/thlinux/.elan/bin/lake",
+        "build",
+        "GeometryOfNumbers.Analysis.RealCarryWeightedValve"
+      ],
+      "exit_code": 0,
+      "seconds": 3.033
+    },
+    {
+      "command": [
+        "/home/thlinux/.elan/bin/lake",
+        "build",
+        "GeometryOfNumbers.Analysis.RealCarryTfvd"
+      ],
+      "exit_code": 0,
+      "seconds": 10.662
+    },
+    {
+      "command": [
+        "/home/thlinux/.elan/bin/lake",
+        "build",
+        "GeometryOfNumbers.Analysis"
+      ],
+      "exit_code": 0,
+      "seconds": 6.802
+    },
+    {
+      "command": [
+        "/home/thlinux/.elan/bin/lake",
+        "build",
+        "GeometryOfNumbers.Analysis.Audit"
+      ],
+      "exit_code": 0,
+      "seconds": 16.079
+    },
+    {
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 8.566
+    },
+    {
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 12.562
+    },
+    {
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 19.218
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.01
+    }
+  ]
+}

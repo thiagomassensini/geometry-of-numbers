@@ -122,3 +122,14 @@
   origem da profundidade, classificação dos offsets ou seleção do passo rho.
 - Reconstrução por exponentes primos não prova combinação linear das câmeras
   compostas nem injetividade de uma síntese escalar real arbitrária.
+
+## Leitura obrigatória de R2 e posteriores
+
+Antes de qualquer trabalho na fase R2 ou posterior, leia
+`docs/R2_TFVD_GREEN_VALVE_ROUTE.md`.
+
+Horizontal radius ≠ vertical depth: odd-camera radius / horizontal displacement
+is not vertical carry depth (`r_horizontal ≠ k_vertical`).
+Center-leg deformation ≠ vertical amplitude ratio: the center-leg reciprocal
+parameter `q` is not the TFVD ratio `eta_b = b^(-1/2)`
+(`q_center-leg ≠ eta_vertical`). Use distinct names. No theorem identifies them.
