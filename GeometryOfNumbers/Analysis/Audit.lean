@@ -21,6 +21,160 @@ namespace GeometryOfNumbers.Analysis
 
 open Foundation
 
+-- Coordinate atlas: partition is explicit INPUT; conservation is derived.
+#assert_analysis_axioms AtlasBase
+#print axioms AtlasBase
+#assert_analysis_axioms AdmissibleAtlasPartition
+#print axioms AdmissibleAtlasPartition
+#assert_analysis_axioms atlasPartition_support_finite
+#print axioms atlasPartition_support_finite
+#assert_analysis_axioms atlasPartition_finsum_eq_one
+#print axioms atlasPartition_finsum_eq_one
+#assert_analysis_axioms atlasPartition_support_nonempty
+#print axioms atlasPartition_support_nonempty
+#assert_analysis_axioms atlasActiveBases
+#print axioms atlasActiveBases
+#assert_analysis_axioms atlasPartition_support_subset_active
+#print axioms atlasPartition_support_subset_active
+#assert_analysis_axioms atlasPartition_sum_active_eq_one
+#print axioms atlasPartition_sum_active_eq_one
+#assert_analysis_axioms atlasCoordinate
+#print axioms atlasCoordinate
+#assert_analysis_axioms atlasCoordinate_energy
+#print axioms atlasCoordinate_energy
+#assert_analysis_axioms atlasCoordinate_off_support
+#print axioms atlasCoordinate_off_support
+#assert_analysis_axioms atlasCoordinate_energy_sum
+#print axioms atlasCoordinate_energy_sum
+#assert_analysis_axioms atlasCoordinate_energy_finsum
+#print axioms atlasCoordinate_energy_finsum
+#assert_analysis_axioms atlasCoordinate_energy_sum_active
+#print axioms atlasCoordinate_energy_sum_active
+#assert_analysis_axioms sumPositiveRadii_finset_sum
+#print axioms sumPositiveRadii_finset_sum
+#assert_analysis_axioms atlasResolvedEnergy
+#print axioms atlasResolvedEnergy
+#assert_analysis_axioms atlasResolvedEnergy_eq_input
+#print axioms atlasResolvedEnergy_eq_input
+#assert_analysis_axioms atlasResolvedEnergy_nonneg
+#print axioms atlasResolvedEnergy_nonneg
+#assert_analysis_axioms centerLegAtlasEnergy
+#print axioms centerLegAtlasEnergy
+#assert_analysis_axioms centerLegAtlasEnergy_eq_sum_cameras
+#print axioms centerLegAtlasEnergy_eq_sum_cameras
+#assert_analysis_axioms centerLegAtlasEnergy_eq_sum_local
+#print axioms centerLegAtlasEnergy_eq_sum_local
+#assert_analysis_axioms centerLegAtlasEnergy_eq_factor
+#print axioms centerLegAtlasEnergy_eq_factor
+#assert_analysis_axioms centerLegAtlasEnergy_angle_independent
+#print axioms centerLegAtlasEnergy_angle_independent
+#assert_analysis_axioms centerLegAtlasEnergy_nonneg
+#print axioms centerLegAtlasEnergy_nonneg
+#assert_analysis_axioms centerLegAtlasEnergy_zero_iff_local_zero
+#print axioms centerLegAtlasEnergy_zero_iff_local_zero
+#assert_analysis_axioms centerLegAtlasEnergy_common_eq_resolved
+#print axioms centerLegAtlasEnergy_common_eq_resolved
+#assert_analysis_axioms centerLegAtlasEnergy_common_eq_input
+#print axioms centerLegAtlasEnergy_common_eq_input
+#assert_analysis_axioms centerLegAtlasEnergy_common_partition_independent
+#print axioms centerLegAtlasEnergy_common_partition_independent
+#assert_analysis_axioms centerLegAtlasEnergy_common_zero_iff
+#print axioms centerLegAtlasEnergy_common_zero_iff
+#assert_analysis_axioms centerLegAtlasEnergy_zero_pairs
+#print axioms centerLegAtlasEnergy_zero_pairs
+#assert_analysis_axioms centerLegAtlasEnergy_zero_input
+#print axioms centerLegAtlasEnergy_zero_input
+
+#assert_analysis_axioms AdmissibleAtlasPartition.weight
+#print axioms AdmissibleAtlasPartition.weight
+#assert_analysis_axioms AdmissibleAtlasPartition.support
+#print axioms AdmissibleAtlasPartition.support
+#assert_analysis_axioms AdmissibleAtlasPartition.nonneg
+#print axioms AdmissibleAtlasPartition.nonneg
+#assert_analysis_axioms AdmissibleAtlasPartition.off_support
+#print axioms AdmissibleAtlasPartition.off_support
+#assert_analysis_axioms AdmissibleAtlasPartition.sum_eq_one
+#print axioms AdmissibleAtlasPartition.sum_eq_one
+
+-- A supplied test partition splits every coordinate between bases 2 and 9.
+-- These numerical test weights are NOT a selection from carry geometry.
+private noncomputable def atlasTwoBaseTestPartition : AdmissibleAtlasPartition := by
+  refine {
+    weight := fun b _ => if b = (⟨2, by decide⟩ : AtlasBase) then 1 / 4
+      else if b = (⟨9, by decide⟩ : AtlasBase) then 3 / 4 else 0
+    support := fun _ => {(⟨2, by decide⟩ : AtlasBase), (⟨9, by decide⟩ : AtlasBase)}
+    nonneg := ?_
+    off_support := ?_
+    sum_eq_one := ?_ }
+  · intro b n; split_ifs <;> norm_num
+  · intro b n hb
+    simp only [Finset.mem_insert, Finset.mem_singleton, not_or] at hb
+    simp [hb.1, hb.2]
+  · intro n; norm_num
+
+#assert_analysis_axioms atlasTwoBaseTestPartition
+#print axioms atlasTwoBaseTestPartition
+
+-- The interface admits different weight laws; it does not select one.
+private def atlasSingleBaseTestPartition (base : AtlasBase) : AdmissibleAtlasPartition where
+  weight b _ := if b = base then 1 else 0
+  support _ := {base}
+  nonneg := by intro b n; split_ifs <;> norm_num
+  off_support := by
+    intro b n hb
+    simp only [Finset.mem_singleton] at hb
+    simp [hb]
+  sum_eq_one := by intro n; simp
+
+#assert_analysis_axioms atlasSingleBaseTestPartition
+#print axioms atlasSingleBaseTestPartition
+
+example : ∃ P₁ P₂ : AdmissibleAtlasPartition,
+    P₁.weight ⟨2, by decide⟩ 1 ≠ P₂.weight ⟨2, by decide⟩ 1 := by
+  refine ⟨atlasSingleBaseTestPartition ⟨2, by decide⟩,
+    atlasSingleBaseTestPartition ⟨9, by decide⟩, ?_⟩
+  norm_num [atlasSingleBaseTestPartition]
+
+example : atlasCoordinate atlasTwoBaseTestPartition ⟨2, by decide⟩ 1 (2, 0) = (1, 0) := by
+  have hs : Real.sqrt (4 : ℝ) = 2 :=
+    (Real.sqrt_eq_iff_eq_sq (by norm_num) (by norm_num)).2 (by norm_num)
+  norm_num [atlasCoordinate, atlasTwoBaseTestPartition, scaleRealPlane,
+    Real.sqrt_div, hs]
+
+example (theta : AtlasBase → Nat → ℝ) :
+    centerLegAtlasEnergy atlasTwoBaseTestPartition 2 (fun _ _ => 2) theta
+      (fun r => if r = 1 then (3, 4) else (0, 2)) = 29 / 4 := by
+  rw [centerLegAtlasEnergy_common_eq_input _ _ _ _ _ (by norm_num)]
+  norm_num [Geometry.sumPositiveRadii, realPlaneEnergy]
+
+-- Positive total energy; a zero input channel and zero-weight bases are allowed.
+example (P : AdmissibleAtlasPartition) (theta : AtlasBase → Nat → ℝ)
+    (q : ℝ) (hq : 0 < q) :
+    centerLegAtlasEnergy P 2 (fun _ _ => q) theta
+      (fun r => if r = 1 then (0, 0) else (1, 0)) = 0 ↔ q = 1 := by
+  apply centerLegAtlasEnergy_common_zero_iff _ _ _ _ _ (ne_of_gt hq)
+  norm_num [Geometry.sumPositiveRadii, realPlaneEnergy]
+
+example (P : AdmissibleAtlasPartition) (theta : AtlasBase → Nat → ℝ) :
+    centerLegAtlasEnergy P 0 (fun _ _ => 2) theta (fun _ => (1, 0)) = 0 ∧
+      (2 : ℝ) ≠ 1 := ⟨centerLegAtlasEnergy_zero_pairs _ _ _ _, by norm_num⟩
+
+example (P : AdmissibleAtlasPartition) (theta : AtlasBase → Nat → ℝ) :
+    centerLegAtlasEnergy P 2 (fun _ _ => 2) theta (fun _ => (0, 0)) = 0 :=
+  centerLegAtlasEnergy_zero_input _ _ _ _
+
+-- The quotient form deliberately excludes q=0; the actual readout has energy 4.
+example (P : AdmissibleAtlasPartition) (theta : AtlasBase → Nat → ℝ) :
+    centerLegAtlasEnergy P 1 (fun _ _ => 0) theta (fun _ => (1, 0)) = 4 := by
+  rw [centerLegAtlasEnergy_eq_sum_local, sumPositiveRadii_finset_sum]
+  simp only [Geometry.sumPositiveRadii, zero_add, centerLegForm_energy_eq_closed,
+    inv_zero, add_zero, zero_sub, neg_sq, atlasCoordinate_energy]
+  have h := atlasPartition_sum_active_eq_one P 1 1 (by decide) (by decide)
+  simp only [realPlaneEnergy, one_pow, zero_pow (by decide : 2 ≠ 0), add_zero, mul_one]
+  rw [← Finset.mul_sum, h]
+  norm_num
+
+
 -- Resolved camera energy: sum AFTER each local vector's quadratic readout.
 #assert_analysis_axioms centerLegCameraEnergy
 #assert_analysis_axioms centerLegCameraEnergy_eq_sum_local

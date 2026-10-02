@@ -672,3 +672,22 @@ do bracket total. Os dois guardrails têm contraexemplos formais.
 Esses gates locais e de câmera estão fechados, com 26 teoremas e seis
 definições adicionais na auditoria padrão de Analysis. A distribuição
 entre bases exige uma lei própria e permanece uma fronteira separada.
+
+
+## Distribuição entre bases: conservação sob interface explícita
+
+`Analysis/AtlasEnergyPartition` recebe uma partição de unidade não negativa,
+com suporte finito por coordenada, sobre rótulos `b≥2`. Escala os estados reais
+por `sqrt(weight)` e prova conservação exata da energia coordenada. Para uma
+entrada finitamente resolvida, `Analysis/CenterLegAtlasForm` soma as câmeras
+ponderadas e prova
+
+$$
+\mathcal E_{\rm atlas}=\frac{(q-1)^4}{q^2}\mathcal E_{\rm input}\quad(q\ne0).
+$$
+
+Todos os ângulos locais desaparecem da energia por theorem. Energia inicial
+total positiva dá zero iff `q=1`, permitindo canais de peso zero.
+**STRUCTURAL PASS / INTERFACE ONLY:** a geometria atual ainda não seleciona
+uma partição all-bases canônica. O resultado é real, coordenado e finito nas
+entradas; não importa os três atlas históricos nem uma lei entre profundidades.

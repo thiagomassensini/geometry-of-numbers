@@ -511,7 +511,7 @@ audits não são alterados. A direção de imports permanece unilateral.
 | --- | --- | --- |
 | Forma local | CLOSED | Definição vetorial pelas três posições; fatoração e energia quartica; independência angular; zero central sob energia positiva |
 | Forma na câmera | CLOSED | Soma de energias locais; fatoração canal a canal; zero sem cancelamento; fator radial comum vezes energia inicial total |
-| Atlas all-bases | OPEN | Falta investigar uma lei que distribua a mesma informação entre bases diferentes; massa dentro de uma base não fornece essa lei |
+| Atlas all-bases | INTERFACE ONLY | STRUCTURAL PASS: partição admissível implica conservação e preservação da Forma; seleção canônica entre bases continua OPEN |
 
 `CenterLegForm` já integra main desde `698778b`. `CenterLegCameraForm` usa
 somente essa API e `sumPositiveRadii`; não introduz um carrier de atlas.
@@ -522,3 +522,30 @@ formais no audit. Zero comum exige somente `q≠0` e energia inicial total
 positiva; câmera vazia não seleciona `q`. A massa crítica da especialização
 é anterior a essas formas. São 26 teoremas e seis definições adicionais,
 auditados na mesma política analítica; nenhuma alteração em Foundation/Geometry.
+
+
+## Auditoria all-bases: STRUCTURAL PASS, seleção INTERFACE ONLY
+
+A busca nos módulos Foundation/Geometry/Analysis identificou normalização e
+conservação de prefixos DENTRO de uma base, mas nenhuma distribuição derivada
+entre bases. `AtlasEnergyPartition` acrescenta uma interface explicitamente
+parametrizada: pesos não negativos, envelope finito por coordenada, peso zero
+fora do envelope e soma unitária. Finitude do suporte real, soma `finsum` de
+pesos/energias e conservação dos estados ponderados são teoremas.
+
+`CenterLegAtlasForm` soma câmeras existentes, cada qual com seus estados
+ponderados e ângulos locais. Prova fatoração canal a canal, não negatividade,
+zero sem cancelamento, independência angular, fator radial comum vezes energia
+inicial total e zero iff `q=1` sob energia inicial positiva e `q≠0`.
+Partições admissíveis distintas têm a mesma energia no defeito comum; isso
+não seleciona nenhuma delas. O audit testa partições admissíveis distintas,
+base composta 9, canais nulos, resolução vazia e o domínio excluído `q=0`.
+
+**Menor gap:** derivar/selecionar uma distribuição entre bases a partir da
+geometria residual, com a proveniência aritmética dos pesos. Nenhuma regra
+logarítmica, valuation ou normalização arbitrária foi escolhida para fechar
+esse gap. A interface não conta como existência canônica derivada.
+O escopo provado resolve coordenadas finitas com rótulos em todas as bases
+`b≥2`; soma infinita de entradas e identificação das câmeras ponderadas com
+realizações carry de cada base não foram feitas. Nenhum Gram histórico,
+completion ou packing foi transportado.

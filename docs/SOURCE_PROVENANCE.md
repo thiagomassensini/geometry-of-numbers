@@ -566,3 +566,57 @@ entre bases, ausente destas construções dentro de uma câmera.
 Os 26 teoremas e seis definições têm guards analíticos e `#print axioms`,
 permitindo apenas `propext`, `Classical.choice`, `Quot.sound`. As camadas
 Foundation/Geometry e as dependências externas permanecem inalteradas.
+
+
+## Atlas coordenado de energia: interface nova e auditoria histórica
+
+Checkpoint das Formas local/câmera: `cf10920be982fe6a45df726829624c7df9f541c8`.
+A rodada do atlas foi desenvolvida em `atlas-energy` a partir desse main.
+A busca local por atlas, multibase, all-bases, partição, pesos, normalização
+e conservação encontrou apenas normalizações internas a cada base e nenhum
+princípio que selecione pesos entre bases. A tabela de módulos também foi
+inspecionada: não havia carrier público de atlas antes desta rodada.
+
+| Referência consultada | Versão e arquivos |
+| --- | --- |
+| green-frame-theorem | Clone local `green-frame-theorem-limit`, origin do repo solicitado, `12445c08087fa0c5fc5b2350f3455e09bc6b8b42`; PositionalDepth; ElementaryAtlasCoordinates, Summability, Camera, Isometry; HorizontalResolution |
+| native-carry-spectral-weyl | `2236bc5d881b7945ff1737e4b6d158ab733ea532`; Infinite/GramKernel, CameraCompletion, Naimark |
+| native-carry-c3-crosswalk | `d9e9e3a7469cb2a95ad3a07d08d0c1a860377ec0`; PrimeAllBasesCameraForm, RealPlaneCameraExtension, ArithmeticNonlocalTrace |
+| Dois arquivos C3 ausentes do clone atual | Snapshot local do MESMO repo em `carry-hp-notes-audit-20260904/snapshots/native-carry-c3-crosswalk`, versão registrada em snapshots.json `1e9e06e1d51d176a909c187828f7c880e5d1207d`; CompletedTfvdNaimarkFeasibility e CompletedTfvdGreenIntertwining |
+
+Esses arquivos foram lidos como referência, sem compilar/importar seus
+pacotes. Nenhum theorem deles é premissa dos novos resultados. As fontes
+mostram três objetos diferentes: (1) elementary atlas GreenFrame, coordenadas
+weighted-ℓ² com partição e Parseval literal; (2) CameraHilbert Spectral-Weyl,
+Gram intrínseco não diagonal e completion/Naimark; (3) C3, extension prime-to-
+all-bases, packing injetivo e preservação de energia/zero sob packaging.
+Não foi provada identificação entre esses objetos, nem entre eles e o novo.
+
+O GreenFrame escolhe profundidade por `padicValNat` e atividade por
+`depth_b(n) * log b`, depois normaliza. Essa seleção NÃO foi copiada.
+A profundidade local continua definida pela torre residual, e nenhum
+`Real.log`/`Real.exp` entra nos novos módulos. Não há peso chamado canônico.
+Nenhuma dependência nova foi adicionada ao lakefile ou manifest.
+
+`AdmissibleAtlasPartition` é uma NOVA entrada semântica explícita, não um
+resultado da torre: peso real, envelope finito por coordenada, não negatividade,
+anulação fora do envelope e soma unitária. Seu índice `AtlasBase` representa
+naturais `b≥2`, sem primalidade; não exige evento `b|n` nem determina a
+capacidade ímpar da câmera em cada rótulo. A origem de qualquer instanciação
+aritmética ainda deve ser provada. As partições numéricas no audit são somente
+witnesses de teste e não uma lei de seleção.
+
+A raiz quadrada escala o `RealPlaneState` já existente. A identidade de energia
+usa `scaleRealPlane_energy` e `Real.sq_sqrt`; conservação usa a soma unitária.
+A união recursiva de suportes segue `sumPositiveRadii`, e a troca das somas
+é finita. A energia do atlas vem literalmente de `centerLegCameraEnergy`;
+o fator radial comum sai da soma e só então a conservação identifica a energia
+inicial. A eliminação angular reutiliza o theorem da câmera e, transitivamente,
+a rotação local. Zero iff centro reutiliza o critério comum da câmera.
+Não se introduzem norma abstrata, Gram, completion ou leis entre profundidades.
+
+Resultado: STRUCTURAL PASS. Conservação e transporte da Forma estão provados
+para a interface; seleção de partição all-bases permanece INTERFACE ONLY.
+Há 25 teoremas, quatro definições, um carrier e uma estrutura novos, todos
+com guards e impressão de axiomas. O footprint continua limitado aos três
+axiomas padrão de Analysis. Foundation e Geometry permanecem inalteradas.

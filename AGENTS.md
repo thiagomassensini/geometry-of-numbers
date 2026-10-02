@@ -88,3 +88,20 @@
   degenerada e não seleciona o defeito radial.
 - A especialização crítica reutiliza massa/amplitude anteriores; estas formas
   não justificam retroativamente metade nem selecionam ângulo ou parâmetro.
+
+
+## Guardrails do atlas coordenado parametrizado
+
+- `AdmissibleAtlasPartition` é entrada semântica explícita. Conservação de
+  energia é theorem derivado dela; seleção canônica pela torre permanece aberta.
+  Não anunciar FULL PASS apenas por receber soma unitária na interface.
+- Distinguir conservação de prefixos dentro de uma base de distribuição da
+  mesma informação entre bases. Não definir profundidade por `padicValNat`
+  nem selecionar pesos por log/exp histórico sem derivação interna.
+- Rótulos `AtlasBase` não provam eventos carry ou capacidade ímpar por base.
+  O atlas atual resolve finitos canais, com suporte finito por coordenada;
+  não anunciar uma completion ou soma infinita de entradas.
+- Preservar base e canal até a energia local. Não substituir sua soma por
+  energia de síntese vetorial. Peso zero não identifica o defeito de um canal.
+- Separar partição coordenada/Parseval, Gram intrínseco não diagonal e packing
+  de proveniência históricos; qualquer identificação requer theorem próprio.

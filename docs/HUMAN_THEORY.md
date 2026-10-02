@@ -2280,3 +2280,108 @@ Os dezesseis nomes recebem guards e impressão de axiomas, limitados a
 A Forma sobe de célula para câmera preservando proveniência por canal.
 Uma distribuição da mesma informação entre bases diferentes ainda exige
 uma lei própria; essas duas rodadas não construíram um atlas.
+
+
+## 36. Da câmera a uma distribuição energética entre bases
+
+Somar canais distintos dentro de uma câmera preserva sua proveniência.
+Distribuir a mesma coordenada entre várias câmeras exige outro dado: uma
+regra entre bases. Repetir integralmente o estado em cada câmera multiplicaria
+sua energia. A massa por profundidade dentro de uma base e a conservação
+entre filhos de um prefixo não selecionam essa distribuição entre bases.
+
+A busca nos módulos atuais não encontrou uma partição de unidade all-bases,
+normalização multibase ou lei de competição entre profundidades de bases
+diferentes. O menor elo ainda aberto é selecionar essa lei a partir da
+geometria residual. A rodada tem resultado **STRUCTURAL PASS**, com estado
+**INTERFACE ONLY** para a seleção do atlas, sem atlas canônico derivado.
+
+Introduzimos `AdmissibleAtlasPartition` como entrada semântica explícita.
+Para cada coordenada `n`, ela recebe pesos `w_b(n)≥0`, um envelope finito
+`S_n` fora do qual os pesos são zero e a condição
+
+$$
+\sum_{b\in S_n}w_b(n)=1.
+$$
+
+`AtlasBase` permite qualquer natural `b≥2`, incluindo compostos. A finitude
+do suporte não nulo e a soma unitária literal sobre todas as bases são
+teoremas derivados desses dados. Não há seleção dos pesos nessa estrutura.
+Os exemplos do audit exibem partições distintas admissíveis; os dados não
+impõem unicidade. Não se presume evento de divisibilidade, profundidade
+máxima ou relação entre um rótulo `b` e a capacidade ímpar `2h+1`.
+
+Só depois construímos a coordenada real ponderada:
+
+$$
+A_{b,n}(v_n)=\sqrt{w_b(n)}\,v_n.
+$$
+
+A energia continua sendo a primitiva `x²+y²`. `scaleRealPlane_energy` e o
+quadrado da raiz de um peso não negativo dão
+
+$$
+E(A_{b,n}(v_n))=w_b(n)E(v_n),\qquad
+\boxed{\sum_b E(A_{b,n}(v_n))=E(v_n).}
+$$
+
+A conservação energética não é um campo da interface. É um theorem sobre
+os estados construídos a partir dela. A soma usa o suporte finito e possui
+também apresentação literal `finsum` sobre todas as bases.
+
+Resolvemos agora as coordenadas `1,...,h` com a enumeração existente
+`sumPositiveRadii`. A união finita de seus envelopes contém todas as bases
+ativas. Cada base mantém sua própria câmera de estados ponderados; trocar
+a ordem das duas somas finitas prova
+
+$$
+\boxed{E_{\rm resolved}=\sum_b\sum_{r=1}^{h}E(A_{b,r}(v_r))
+=\sum_{r=1}^{h}E(v_r)=E_{\rm input}.}
+$$
+
+O alcance é finito nas coordenadas de entrada, embora os rótulos disponíveis
+percorram todas as bases. Não se constrói norma abstrata, completion ou
+resultado de convergência para infinitas coordenadas. As câmeras ponderadas
+são portadoras indexadas desta interface; não se afirma uma realização carry
+de cada base nem `half=(b-1)/2`. Essa ponte aritmética permanece separada.
+
+A Forma Centro–Pernas é aplicada aos estados ponderados ANTES de somar:
+
+$$
+\mathcal E_{\rm atlas}=\sum_b\operatorname{centerLegCameraEnergy}_h
+(q_b,\theta_b,r\mapsto A_{b,r}(v_r)).
+$$
+
+Cada ângulo `theta_b(r)` pode variar independentemente. A invariância das
+câmeras existentes prova a invariância de todo o atlas, sem hipótese sobre
+os parâmetros radiais. As energias são não negativas, e zero total implica
+zero em cada canal ponderado; não há cancelamento entre câmeras.
+Para o mesmo defeito `q≠0` em todos os canais, primeiro extraímos o fator
+nas câmeras e só depois usamos a conservação da partição:
+
+$$
+\boxed{\mathcal E_{\rm atlas}
+=\frac{(q-1)^4}{q^2}E_{\rm resolved}
+=\frac{(q-1)^4}{q^2}E_{\rm input}.}
+$$
+
+Sob `E_input>0`, o zero equivale a `q=1`; não é necessário exigir cada
+câmera não nula ou acrescentar `h>0`. Entrada totalmente zero e resolução
+vazia dão zero para qualquer defeito. Pesos zero são permitidos e não
+identificam o parâmetro radial de um canal inativo. A fatoração por divisão
+exclui `q=0`: a leitura real existente nesse valor continua bem definida e
+o audit verifica energia `4` para entrada unitária de um canal.
+
+O resultado preserva o fator radial comum para QUALQUER partição admissível;
+partições diferentes produzem a mesma energia comum para a mesma entrada.
+Essa independência não escolhe a partição. A soma permanece soma de energias
+e não energia de vetores somados; tampouco é quadrado do bracket escalar total.
+
+Três arquiteturas históricas foram consultadas apenas como referência:
+o elementary atlas GreenFrame tem partição coordenada e isometria Parseval
+em weighted-ℓ²; CameraHilbert Spectral-Weyl usa Gram intrínseco não diagonal
+e completion/Naimark; C3 Crosswalk preserva proveniência em extension e packing.
+Não são identificadas entre si. Aqui reconstruímos somente o mecanismo real
+finito de partição coordenada → conservação, parametrizado pela interface.
+Nenhum theorem histórico entrou como premissa, nenhuma profundidade foi
+copiada de `padicValNat` e nenhum peso logarítmico foi selecionado.
