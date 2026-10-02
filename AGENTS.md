@@ -105,3 +105,20 @@
   energia de síntese vetorial. Peso zero não identifica o defeito de um canal.
 - Separar partição coordenada/Parseval, Gram intrínseco não diagonal e packing
   de proveniência históricos; qualquer identificação requer theorem próprio.
+
+
+## Guardrails do crosswalk primo downstream
+
+- Factorization/valuation só pode representar a profundidade após theorem de
+  equivalência relacional; nunca redefinir retroativamente a torre. O crosswalk
+  atual usa primo p e n≠0, preservando zero com profundidade em todo nível.
+- Manter o crosswalk discreto com Mathlib em Analysis enquanto Geometry excluir
+  essa dependência. Não introduzir logaritmo nesse módulo discreto.
+- Quantidade n e índice de canal/raio r não se identificam sem crosswalk.
+  A partição prima derivada tem soma um somente para quantidades n>1;
+  em um todos os pesos são zero. Não reparar essa obstrução com base arbitrária,
+  deslocamento de índice ou alteração silenciosa da interface total do atlas.
+- Logaritmos das vozes são leitura downstream da fatoração única; não são
+  origem da profundidade, classificação dos offsets ou seleção do passo rho.
+- Reconstrução por exponentes primos não prova combinação linear das câmeras
+  compostas nem injetividade de uma síntese escalar real arbitrária.

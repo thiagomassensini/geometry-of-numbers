@@ -2385,3 +2385,112 @@ Não são identificadas entre si. Aqui reconstruímos somente o mecanismo real
 finito de partição coordenada → conservação, parametrizado pela interface.
 Nenhum theorem histórico entrou como premissa, nenhuma profundidade foi
 copiada de `padicValNat` e nenhum peso logarítmico foi selecionado.
+
+
+## 37. A leitura clássica dos thresholds residuais nas bases primas
+
+A profundidade nasceu da torre residual antes de qualquer fatoração clássica.
+Para capacidade positiva, já se provou que seus resíduos iniciais são zero
+até o nível `k` exatamente quando `b^k` divide a quantidade. Agora, para uma
+base prima `p` e quantidade `n≠0`, compomos esse theorem com a API de fatoração:
+
+$$
+\boxed{\operatorname{HasCarryDepthAtLeast}(p,n,k)
+\iff p^k\mid n\iff k\le n.\operatorname{factorization}(p).}
+$$
+
+Essa equivalência vale simultaneamente para todos os níveis. A família dos
+thresholds caracteriza o expoente clássico sem introduzir função de máximo,
+segunda torre ou profundidade definida por valuation. Todos os thresholds
+em todas as bases primas determinam uma quantidade não nula: igualdade das
+famílias dá igualdade dos expoentes e a fatoração única reconstrói a quantidade.
+O produto finito `∏ p^{v_p(n)}=n` é uma representação downstream, não a causa
+da relação residual.
+
+Primalidade é necessária no passo clássico, não no theorem residual de
+qualquer capacidade positiva. A base `2` está incluída. Nível zero sempre
+sobrevive. Para `n=1`, somente nível zero sobrevive em uma base prima. Para
+`n=0`, a torre sobrevive em TODO nível, enquanto `Nat.factorization 0=0`:
+a equivalência com os thresholds clássicos exige honestamente `n≠0`.
+O audit registra a incompatibilidade já no nível um.
+
+`Analysis/PrimeResidualDepthCrosswalk` é um módulo matematicamente discreto,
+com a API de fatoração do Mathlib e sem logaritmos reais. Sua localização
+preserva a política de imports de Geometry, que permanece sem Mathlib.
+Foundation e Geometry não foram alteradas.
+
+## 38. Vozes primas, partição não seed e fronteira de índices
+
+Depois do crosswalk, a fatoração única oferece as vozes de uma QUANTIDADE:
+
+$$
+a_p(n)=v_p(n)\log p,\qquad
+\boxed{\log n=\sum_{p\in\operatorname{supp}(n.\operatorname{factorization})}a_p(n).}
+$$
+
+A identidade logarítmica é a leitura do produto único de potências primas.
+O Mathlib fornece essa identidade a partir desse produto; o novo módulo
+reutiliza-a e identifica semanticamente seu expoente pelos thresholds da torre.
+A igualdade escalar também vale em zero pelas convenções totais da biblioteca,
+mas isso não estende o crosswalk residual de zero. Primos ausentes e rótulos
+compostos têm voz zero.
+
+Para `n>1`, o denominador `log n` é estritamente positivo. Somente após a
+identidade anterior definimos os pesos e provamos sua soma unitária:
+
+$$
+\boxed{w_p(n)=\frac{v_p(n)\log p}{\log n}\ge0,\qquad
+\sum_{p\in\operatorname{supp}(n.\operatorname{factorization})}w_p(n)=1.}
+$$
+
+O suporte não nulo é finito, pesos fora do suporte clássico são zero e a
+soma literal `finsum` sobre todos os naturais também é um. A soma unitária
+foi DERIVADA, não recebida como hipótese nem como campo de uma estrutura.
+Essa é uma partição prima canônica para quantidades não seed. O nome não
+sugere uma partição canônica de todas as câmeras naturais.
+
+O audit verifica `12=2²·3`, os quatro thresholds em bases `2` e `3`,
+`2 log 2 + log 3 = log 12` e os dois pesos com soma um. A quantidade `64=2⁶`
+tem somente a voz `2`, de peso um; a quantidade prima `5` tem peso um em `5`.
+O rótulo composto `4` tem peso zero como voz de `12`, sem negar a existência
+de uma câmera composta.
+
+A informação multiplicativa de uma quantidade é reconstruída pelas suas
+coordenadas primas. Não se provou que uma câmera composta do carrier novo
+seja combinação linear das câmeras primas. Também não se anuncia injetividade
+da síntese escalar real das vozes: reconstrução por expoentes únicos e leitura
+logarítmica são afirmações distintas.
+
+O índice `n` desta partição é uma quantidade. Na §36, o argumento natural
+da partição era aplicado aos canais `r=1,...,half` da câmera. Nenhum theorem
+atual identifica esses índices ou seleciona uma quantidade para cada canal.
+Não fazemos `n=r`, deslocamento de índice ou escolha arbitrária de seed.
+
+Além dessa fronteira semântica, `n=1` tem suporte vazio, `log 1=0` e todas
+as vozes zero. A divisão total do Lean dá pesos zero, cuja soma é zero.
+`primeVoiceWeight_no_total_atlas_partition` prova que NÃO existe partição da
+interface atual que coincida literalmente com esses pesos em todo natural,
+mesmo escolhendo outro envelope finito: a obrigação unitária em um é impossível.
+As sementes de estado crítico existentes não constituem uma arquitetura
+seed-plus-quantidade; nenhuma câmera foi escolhida para reparar esse caso.
+
+Resultado **PRIME PARTITION PASS / INDEX GAP (B)**, com a obstrução seed
+adicional formalizada. A cadeia para em:
+
+```
+PRIME PARTITION DERIVED ON NONSEED QUANTITIES;
+CROSSWALK TO CHANNEL-INDEXED ATLAS OPEN.
+```
+
+A Forma Centro–Pernas mantém os theorems parametrizados da §36, mas NÃO ganhou
+uma instância canônica nesta rodada. Seu fator radial, independência angular
+e zero sob energia positiva não são reprovados nem especializados por um mapa
+sem proveniência. O próximo gate é um crosswalk quantidade→canal com tratamento
+legítimo da entrada unitária.
+
+O GreenFrame histórico normaliza atividades sobre todas as bases naturais,
+incluindo compostas. Aqui o denominador é exatamente `log n`, pela fatoração
+única sobre primos. Essas partições não foram identificadas. O Primus foi
+consultado como referência de arquitetura; nenhum código, theorem ou
+dependência dele entrou na prova. Seu gap histórico LSB/Parseval/Green não é
+uma premissa ou obstrução desta cadeia elementar.

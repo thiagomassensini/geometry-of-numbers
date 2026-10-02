@@ -884,4 +884,144 @@ example (r : ℕ) (hr : 1 ≤ r) (hbound : r ≤ 2) :
       criticalQuadraticRightLeg 5 2 (by decide) 2 = realDepthMass 5 2 (by decide) :=
   criticalQuadraticCameraPair_product 2 2 (fun _ => 2) r hr hbound (by norm_num)
 
+
+-- Prime quantity voices: depth is represented downstream; no channel identification.
+#assert_analysis_axioms primeResidualDepth_iff_le_factorization
+#print axioms primeResidualDepth_iff_le_factorization
+#assert_analysis_axioms primeResidualDepth_factorization_characterized
+#print axioms primeResidualDepth_factorization_characterized
+#assert_analysis_axioms primeResidualDepth_one_iff
+#print axioms primeResidualDepth_one_iff
+#assert_analysis_axioms primeResidualDepth_zero_obstruction
+#print axioms primeResidualDepth_zero_obstruction
+#assert_analysis_axioms primeResidualDepth_reconstruction
+#print axioms primeResidualDepth_reconstruction
+#assert_analysis_axioms primeResidualDepth_quantity_ext
+#print axioms primeResidualDepth_quantity_ext
+#assert_analysis_axioms primeCarryVoice
+#print axioms primeCarryVoice
+#assert_analysis_axioms primeCarryVoice_eq_of_residual_thresholds
+#print axioms primeCarryVoice_eq_of_residual_thresholds
+#assert_analysis_axioms primeCarryVoice_nonneg
+#print axioms primeCarryVoice_nonneg
+#assert_analysis_axioms primeCarryVoice_off_support
+#print axioms primeCarryVoice_off_support
+#assert_analysis_axioms primeCarryVoice_nonprime
+#print axioms primeCarryVoice_nonprime
+#assert_analysis_axioms log_eq_sum_primeCarryVoice
+#print axioms log_eq_sum_primeCarryVoice
+#assert_analysis_axioms primeVoiceWeight
+#print axioms primeVoiceWeight
+#assert_analysis_axioms primeVoiceWeight_nonneg
+#print axioms primeVoiceWeight_nonneg
+#assert_analysis_axioms primeVoiceWeight_off_support
+#print axioms primeVoiceWeight_off_support
+#assert_analysis_axioms primeVoiceWeight_nonprime
+#print axioms primeVoiceWeight_nonprime
+#assert_analysis_axioms primeVoiceWeight_support_finite
+#print axioms primeVoiceWeight_support_finite
+#assert_analysis_axioms primeVoiceWeight_sum_eq_one
+#print axioms primeVoiceWeight_sum_eq_one
+#assert_analysis_axioms primeVoiceWeight_finsum_eq_one
+#print axioms primeVoiceWeight_finsum_eq_one
+#assert_analysis_axioms primeVoiceWeight_prime_pow
+#print axioms primeVoiceWeight_prime_pow
+#assert_analysis_axioms primeVoiceWeight_prime
+#print axioms primeVoiceWeight_prime
+#assert_analysis_axioms primeCarryVoice_one
+#print axioms primeCarryVoice_one
+#assert_analysis_axioms primeVoiceWeight_one
+#print axioms primeVoiceWeight_one
+#assert_analysis_axioms primeVoiceWeight_one_sum
+#print axioms primeVoiceWeight_one_sum
+#assert_analysis_axioms primeVoiceWeight_one_finsum
+#print axioms primeVoiceWeight_one_finsum
+#assert_analysis_axioms primeVoiceWeight_no_total_atlas_partition
+#print axioms primeVoiceWeight_no_total_atlas_partition
+
+-- The prime threshold crosswalk includes base 2, odd primes and level zero.
+example : (12 : Nat).factorization 2 = 2 ∧ (12 : Nat).factorization 3 = 1 := by
+  have h12 : (12 : Nat).factorization = Finsupp.single 2 2 + Finsupp.single 3 1 := by
+    rw [show (12 : Nat) = 2 ^ 2 * 3 from rfl,
+      Nat.factorization_mul (by decide) (by decide),
+      Nat.Prime.factorization_pow (by decide : Nat.Prime 2),
+      Nat.Prime.factorization (by decide : Nat.Prime 3)]
+  simp [h12]
+
+example : Geometry.HasCarryDepthAtLeast 2 12 2 ∧
+    ¬ Geometry.HasCarryDepthAtLeast 2 12 3 ∧
+    Geometry.HasCarryDepthAtLeast 3 12 1 ∧
+    ¬ Geometry.HasCarryDepthAtLeast 3 12 2 := by
+  rw [Geometry.hasCarryDepthAtLeast_iff_dvd_pow 2 12 2 (by decide),
+    Geometry.hasCarryDepthAtLeast_iff_dvd_pow 2 12 3 (by decide),
+    Geometry.hasCarryDepthAtLeast_iff_dvd_pow 3 12 1 (by decide),
+    Geometry.hasCarryDepthAtLeast_iff_dvd_pow 3 12 2 (by decide)]
+  decide
+
+example (p n : Nat) (hp : Nat.Prime p) (hn : n ≠ 0) :
+    Geometry.HasCarryDepthAtLeast p n 0 :=
+  (primeResidualDepth_iff_le_factorization hp hn).2 (Nat.zero_le _)
+
+example (p k : Nat) (hp : Nat.Prime p) :
+    Geometry.HasCarryDepthAtLeast p 1 k ↔ k = 0 := primeResidualDepth_one_iff hp
+
+example (p : Nat) (hp : Nat.Prime p) :
+    Geometry.HasCarryDepthAtLeast p 0 1 ∧ ¬ 1 ≤ (0 : Nat).factorization p :=
+  primeResidualDepth_zero_obstruction hp
+
+example : 2 * Real.log 2 + Real.log 3 = Real.log 12 := by
+  rw [show (12 : ℝ) = 2 ^ 2 * 3 from by norm_num,
+    Real.log_mul (by norm_num) (by norm_num), Real.log_pow]
+  norm_num
+
+example : primeVoiceWeight 12 2 = 2 * Real.log 2 / Real.log 12 ∧
+    primeVoiceWeight 12 3 = Real.log 3 / Real.log 12 := by
+  have h12 : (12 : Nat).factorization = Finsupp.single 2 2 + Finsupp.single 3 1 := by
+    rw [show (12 : Nat) = 2 ^ 2 * 3 from rfl,
+      Nat.factorization_mul (by decide) (by decide),
+      Nat.Prime.factorization_pow (by decide : Nat.Prime 2),
+      Nat.Prime.factorization (by decide : Nat.Prime 3)]
+  norm_num [primeVoiceWeight, primeCarryVoice, h12]
+
+example : primeVoiceWeight 12 2 + primeVoiceWeight 12 3 = 1 := by
+  have h12 : (12 : Nat).factorization = Finsupp.single 2 2 + Finsupp.single 3 1 := by
+    rw [show (12 : Nat) = 2 ^ 2 * 3 from rfl,
+      Nat.factorization_mul (by decide) (by decide),
+      Nat.Prime.factorization_pow (by decide : Nat.Prime 2),
+      Nat.Prime.factorization (by decide : Nat.Prime 3)]
+  have hs := primeVoiceWeight_sum_eq_one (n := 12) (by decide)
+  have hsupport : (12 : Nat).factorization.support = {2, 3} := by
+    rw [h12]
+    ext p
+    by_cases h2 : p = 2 <;> by_cases h3 : p = 3 <;>
+      simp_all [Finsupp.mem_support_iff]
+  rw [hsupport] at hs
+  simpa using hs
+
+example : primeVoiceWeight 64 2 = 1 := by
+  rw [show (64 : Nat) = 2 ^ 6 from rfl]
+  exact primeVoiceWeight_prime_pow (p := 2) (k := 6) (by decide) (by decide)
+
+example : ∀ p, p ≠ 2 → primeVoiceWeight 64 p = 0 := by
+  intro p hp
+  apply primeVoiceWeight_off_support
+  change p ∉ (2 ^ 6 : Nat).factorization.support
+  rw [Nat.Prime.factorization_pow (by decide : Nat.Prime 2)]
+  simpa using hp
+
+example : primeVoiceWeight 5 5 = 1 := primeVoiceWeight_prime (by decide)
+
+-- Composite cameras still exist, but composite labels are not prime voices.
+example : primeVoiceWeight 12 4 = 0 := primeVoiceWeight_nonprime (by decide)
+
+-- Quantity one has no prime voice: Lean's total division returns zero,
+-- which fails the unit sum and supplies no seed camera.
+example : (1 : Nat).factorization.support = ∅ ∧ Real.log (1 : ℝ) = 0 ∧
+    (∑ᶠ p : Nat, primeVoiceWeight 1 p) = 0 := by
+  simp [primeVoiceWeight_one]
+
+example : ¬ ∃ P : AdmissibleAtlasPartition,
+    ∀ (b : AtlasBase) (n : Nat), P.weight b n = primeVoiceWeight n b.val :=
+  primeVoiceWeight_no_total_atlas_partition
+
 end GeometryOfNumbers.Analysis

@@ -549,3 +549,34 @@ O escopo provado resolve coordenadas finitas com rótulos em todas as bases
 `b≥2`; soma infinita de entradas e identificação das câmeras ponderadas com
 realizações carry de cada base não foram feitas. Nenhum Gram histórico,
 completion ou packing foi transportado.
+
+
+## Vozes primas: partição de quantidades, crosswalk de canais aberto
+
+| Gate | Estado | Evidência e fronteira |
+| --- | --- | --- |
+| PRIME-DEPTH-CROSSWALK | CLOSED | Torre residual → divisibilidade já provada → thresholds de Nat.factorization, para primo p e n≠0 |
+| PRIME-VOICE-DECOMPOSITION | CLOSED | Produto único de potências primas e soma finita das vozes igual a log n; exponentes caracterizados pela relação residual |
+| PRIME-VOICE-PARTITION | NONSEED-ONLY | Pesos não negativos, suporte finito, soma finita e finsum iguais a 1 DERIVADOS para quantidades n>1 |
+| PRIME-PARTITION→ATLAS | INDEX-CROSSWALK-OPEN | Quantidade n não é canal r; falta transporte semântico, e pesos literais em n=1 contradizem a interface total |
+
+Resultado B: PRIME PARTITION PASS / INDEX GAP. A obstrução seed também é
+formal: a família literal de pesos não pode instanciar AdmissibleAtlasPartition,
+que exige soma unitária em TODO natural. Não houve fallback de base, deslocamento
+de índice, alteração da interface ou construção ad hoc de seed. A arquitetura
+seed-plus-quantidade não foi derivada dos estados críticos existentes.
+
+O crosswalk discreto fica em Analysis para respeitar a proibição de imports
+Mathlib em Geometry. Não usa Real.log nem redefine a profundidade. O módulo
+PrimeCarryVoice introduz logaritmos somente downstream, pela fatoração única;
+esses logaritmos não classificam o transporte horizontal nem selecionam rho.
+São dois módulos, duas definições e 24 teoremas, com 26 nomes públicos auditados.
+Foundation/Geometry, dependências e políticas de axiomas permanecem congeladas.
+
+A Forma local e a câmera continuam CLOSED. O atlas coordenado continua
+INTERFACE ONLY para uma instanciação aritmética dos canais atuais: a partição
+prima de quantidades é um avanço derivado, mas ainda não fornece essa instância.
+Os critérios parametrizados de energia/ângulos/zero da Forma permanecem válidos.
+**Menor gap:** quantity-index → camera-channel-index crosswalk, com tratamento
+legítimo do seed; não a identidade de fatoração ou um gap histórico de Parseval.
+Reconstrução prima não prova combinação linear de câmeras compostas.

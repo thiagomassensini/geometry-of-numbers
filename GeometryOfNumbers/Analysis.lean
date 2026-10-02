@@ -8,5 +8,7 @@ import GeometryOfNumbers.Analysis.CenterLegCameraForm
 import GeometryOfNumbers.Analysis.CenterLegAtlasForm
 import GeometryOfNumbers.Analysis.QuadraticCameraBracket
 import GeometryOfNumbers.Analysis.OddCameraQuadraticCrosswalk
+import GeometryOfNumbers.Analysis.PrimeResidualDepthCrosswalk
+import GeometryOfNumbers.Analysis.PrimeCarryVoice
 
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/

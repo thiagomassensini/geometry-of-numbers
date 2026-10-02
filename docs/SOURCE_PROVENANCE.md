@@ -620,3 +620,62 @@ para a interface; seleção de partição all-bases permanece INTERFACE ONLY.
 Há 25 teoremas, quatro definições, um carrier e uma estrutura novos, todos
 com guards e impressão de axiomas. O footprint continua limitado aos três
 axiomas padrão de Analysis. Foundation e Geometry permanecem inalteradas.
+
+
+## Crosswalk residual primo e partição de vozes não seed
+
+Checkpoint inicial: `f0c4b240e57ff7b5d4f38cfabee0de15e65f682f`, atlas parametrizado.
+Branch da rodada: `prime-voice-atlas`. Referência histórica consultada: clone
+local `primos`, HEAD `8c4b7fdf65a49d1d0febe8193d56e2cfb2191260`.
+
+Arquivos Lean lidos como referência:
+
+- `CPFormal/Carry/CpMultibaseCameraAtlas.lean`
+- `CPFormal/Carry/CpMultibaseCameraAtlasHilbert.lean`
+- `CPFormal/Analytic/CpPrimeCarryDefectBessel.lean`
+- `CPFormal/Analytic/CpPrimeAdimensionalLsbCrosswalk.lean`
+- `CPFormal/Analytic/CpGenuineSimpleRootLsbLedgerBessel.lean`
+- `CPFormal/Analytic/CpGenuineSimpleRootLsbLedgerExactDuality.lean`
+
+Notas consultadas: `docs/recovered/2026-08-01/ADIMENSIONALIZACAO_LSB_MULTIBASE_PRIMA.md`
+(profundidade e energia), `C2_EQUACAO_ANGULAR_PROJETIVA_MULTIBASE.md` (frame
+logarítmico e distinção das projeções) e `docs/CLAIM_LEDGER.md` (status das
+pontes). As rotas históricas Bessel/LSB/Green não foram transportadas.
+Nenhum código ou theorem do Primus foi importado ou copiado; nenhuma dependência
+externa foi acrescentada. Em particular, os gaps LSB-PARSEVAL-GREEN-CROSSWALK,
+HIL-001 e HIL-002 não são premissas do resultado novo.
+
+A entrada causal nova é o theorem LOCAL já existente
+`hasCarryDepthAtLeast_iff_dvd_pow`. Composto com
+`Nat.Prime.pow_dvd_iff_le_factorization` do Mathlib, dá a equivalência para
+primo p, n≠0 e todo k. Nat.factorization não define a profundidade residual;
+padicValNat não substitui a torre. A própria API clássica tem sua implementação
+bibliotecária, sem que sua representação seja promovida à definição geométrica.
+O crosswalk usa somente o módulo de fatoração Basic do Mathlib, sem Real.log,
+e fica em Analysis porque Geometry exclui Mathlib pela política vigente.
+Não ampliamos a política nem os imports de Geometry.
+
+A reconstrução multiplicativa usa Nat.prod_factorization_pow_eq_self.
+A decomposição das vozes usa Real.log_nat_eq_sum_factorization, cuja prova
+bibliotecária aplica logaritmo ao produto reconstruído; não replica a prova
+histórica. O expoente que essa representação lê é identificado pela família
+de thresholds residual. A soma dos pesos normalizados decorre dessa identidade
+e da positividade de log n para n>1. É uma seleção DERIVADA de pesos primos
+para quantidades não seed, não uma normalização externa entre todas as bases.
+
+O denominador difere da soma all-natural-bases do GreenFrame: contém somente
+as coordenadas primas da fatoração única e é exatamente log n. Não identificamos
+os dois atlas. Reconstrução por coordenadas primas não prova que câmeras
+compostas sejam combinações lineares no carrier geométrico novo.
+
+A incompatibilidade com AdmissibleAtlasPartition foi mantida explícita:
+quantidade n e raio/canal r não têm crosswalk; em n=1, todas as vozes/pesos
+são zero. Um theorem refuta a tentativa de instanciar a família literal em
+todo natural. Não se criou seed nem se alterou a obrigação unitária.
+Resultado B, com partição prima NONSEED-ONLY e INDEX-CROSSWALK-OPEN para o atlas.
+Não há nova instância canônica da Forma Centro–Pernas.
+
+Os 26 nomes novos (24 teoremas e duas definições) possuem guards e #print axioms
+na política padrão de Analysis. Foundation, Geometry e lakefile/manifest
+permanecem inalterados. Os testes incluem 12, 64, 5, 1, zero, nível zero,
+base 2, primo ímpar e peso zero de rótulo composto.

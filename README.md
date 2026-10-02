@@ -691,3 +691,21 @@ total positiva dá zero iff `q=1`, permitindo canais de peso zero.
 **STRUCTURAL PASS / INTERFACE ONLY:** a geometria atual ainda não seleciona
 uma partição all-bases canônica. O resultado é real, coordenado e finito nas
 entradas; não importa os três atlas históricos nem uma lei entre profundidades.
+
+
+## Profundidade residual e vozes primas de quantidades
+
+`Analysis/PrimeResidualDepthCrosswalk` prova, para primo `p` e `n≠0`,
+`HasCarryDepthAtLeast p n k ↔ k ≤ n.factorization p`, passando pelo theorem
+anterior da torre sobre divisibilidade. A fatoração é representação posterior;
+zero mantém profundidade residual em todo nível. As famílias de thresholds
+primos determinam uma quantidade não nula, reconstruída pelo produto único.
+
+`Analysis/PrimeCarryVoice` prova `log n = ∑ v_p(n) log p` e deriva os pesos
+`v_p(n) log p / log n`, não negativos, com suporte finito e soma um para `n>1`.
+**PRIME PARTITION PASS / INDEX GAP:** a partição canônica de quantidades não
+seed ainda não instancia o atlas indexado pelos canais da câmera. Falta o
+crosswalk quantidade→canal; em `n=1` os pesos somam zero, e a incompatibilidade
+com a interface total foi provada. A Forma Centro–Pernas continua com o atlas
+parametrizado anterior. Nenhum peso de fallback, seed ou dependência histórica
+foi introduzido; Foundation e Geometry permanecem congeladas.
