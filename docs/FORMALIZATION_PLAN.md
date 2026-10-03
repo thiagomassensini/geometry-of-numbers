@@ -714,3 +714,11 @@ nonvanishing and normalized Taylor germ: CLOSED in
 `BaseTwoCanonicalCameraDressing`. Completion, dressed response all-order
 crosswalk, concrete phi(0) and definitive moment sequence remain OPEN at this
 increment. Dressing is downstream; no Gram positivity is asserted.
+
+### Canonical dressing — increment B
+
+Explicit polynomial/pi-exponential/Gamma completion, local analyticity,
+normalized germ and nonzero center: CLOSED in
+`BaseTwoCanonicalArchimedeanDressing`. No xi/zeta identification is imported.
+All-order dressed-response coefficients and concrete phi(0) remain next gates;
+completion never supplies a premise for the already-derived geometry.

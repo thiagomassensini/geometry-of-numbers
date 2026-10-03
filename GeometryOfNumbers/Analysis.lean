@@ -1,3 +1,4 @@
+import GeometryOfNumbers.Analysis.BaseTwoCanonicalArchimedeanDressing
 import GeometryOfNumbers.Analysis.BaseTwoCanonicalCameraDressing
 import GeometryOfNumbers.Analysis.BaseTwoCompletedSignalRegularity
 import GeometryOfNumbers.Analysis.BaseTwoSynthesizedClockMoments

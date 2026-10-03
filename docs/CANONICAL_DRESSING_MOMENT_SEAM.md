@@ -68,3 +68,39 @@ allow-list guards and `#print axioms` for every public declaration. No proof
 placeholder or trust escape occurs in the new source. The mathematical
 publication commit is the commit introducing this increment; its exact SHA
 will be recorded in the following increment (a commit cannot contain its own SHA).
+
+## Increment B: explicit archimedean completion
+
+Increment A was published in `3c0010f87afec21356df7af563ac8a5de72d856c`.
+
+`BaseTwoCanonicalArchimedeanDressing.lean` defines directly
+
+$$C(t)=\tfrac12s(t)(s(t)-1)\exp\bigl(-\tfrac{s(t)}2\log\pi\bigr)
+\Gamma\bigl(\tfrac{s(t)}2\bigr).$$
+
+This is the historical `nativeXiCompletionFactor` formula with a neutral
+name; no identification with xi or zeta is asserted or needed.
+In each complex quarter-ball around a real time, the Gamma argument has
+positive real part. Its differentiability there and Cauchy regularity give
+`canonicalArchimedeanCompletion_analyticAt` and `_contDiff`.
+
+`canonicalArchimedeanCompletion_zero` proves
+
+$$C(0)=-\tfrac18 e^{-\log\pi/4}\Gamma(1/4).$$
+
+`canonicalArchimedeanCompletion_zero_re_neg` uses the classical positive
+Gamma integral at $1/4$, and `_zero_ne_zero` follows. No zero information
+from another function enters the proof. The completion series is the
+factorial-normalized Taylor coefficient sequence, with exact coefficient
+and nonzero-constant theorems.
+
+At this increment the two concrete dressing germs are fixed, but the
+all-order response-series crosswalk and concrete phi(0) proof are separate
+next obligations. No Gram or positivity theorem is claimed.
+
+### Increment B verification
+
+Exit status 0 for the archimedean module and dedicated audit builds,
+Analysis and central Audit builds (`--wfail`), all three audit scripts,
+and `git diff --check`. All new public declarations have kernel dependency
+guards and printed axioms within the standard three-axiom footprint.

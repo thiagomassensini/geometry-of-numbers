@@ -1309,3 +1309,14 @@ package). Formula locally reconstructed, no historical theorem imported:
 Proof source is existing local complete-signal/clock APIs plus Mathlib complex
 powers and analytic regularity. NativeScalarZetaIdentification is not used.
 No dependency, Foundation or Geometry change.
+
+### Explicit archimedean completion
+
+Exact formula from `CompletedOperatorCharacteristic.lean` at the read-only
+carry revision above: `s=1/2+i*t`,
+`(1/2)*s*(s-1)*exp(-(s/2)*log(pi))*Gamma(s/2)`.
+Locally named `canonicalArchimedeanCompletion`; only Mathlib Gamma
+regularity on positive real part and Gamma positivity at 1/4 are proof
+inputs. No nativeScalar, xi/zeta equality, or historical completion theorem
+is used as a premise. Normalization and negative material-phase orientation
+are preserved exactly.
