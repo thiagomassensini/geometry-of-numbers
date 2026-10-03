@@ -1334,3 +1334,24 @@ GreenWronskianHankelBridge.lean and CompletedNativeTfvdGreenMomentGramBridge.lea
 Their conditional Gram interfaces and Taylor/forward-difference residual
 remain future gates; no representation/positivity hypothesis was added.
 Material n^(-1/2) and modern depth amplitude 2^(-k/2) remain distinct.
+
+
+## Neutral parity moment Gram, 2026-10-03
+
+Starting main `9d6b687cc7a2b7d57e37c94cc644f1a79696ff0f`.
+Read-only blueprint: carry-self-adjoint-operator at
+`62b1c0d6b18e70b4c156c3bdf0253893fdb27a35`,
+`CarrySelfAdjointOperator/GreenWronskianHankelBridge.lean`.
+Only its neutral sum-index parity kernel and elementary Gram restrictions are
+reconstructed locally in `ParityMomentGram`. Proof dependencies are the local
+`MomentGramPositivity` and Mathlib Gram matrices; no historical import or
+package change. The generic representation predicate is not instantiated for
+the canonical base-two sequence in this increment.
+
+Read-only seam audits at that same revision:
+`C2GeometryNativeSourceBridge.lean`,
+`CompletedNativeTfvdGreenMomentGramBridge.lean`,
+`CompletedNativeGreenWeylHeight.lean`. Their first-column transport,
+factor representation, Taylor/forward-difference residual and independence
+are explicit inputs; no such input is imported as a local proof or assumption.
+No height construction or downstream conclusion is ported.

@@ -736,3 +736,19 @@ orthogonal Green jet/readout representation of these moments, preserving the
 still-open modern depth-amplitude source to material-amplitude observable
 crosswalk and the Taylor/Green jet seam. Historical mismatch is REDUCED, not
 wholly erased. No height or spectral identification is claimed.
+
+
+## Canonical Green moment Gram — current round
+
+Starting main `9d6b687cc7a2b7d57e37c94cc644f1a79696ff0f`.
+
+| Gate | Status | Evidence |
+| --- | --- | --- |
+| Neutral parity Gram → both Hankel PSD sections | CLOSED, generic | `hankelPair_posSemidef_of_parityMomentGram` |
+| Neutral parity Gram + independent prefixes → both PD sections | CLOSED, generic | `hankelPair_posDef_of_parityMomentGram` |
+| Actual synthesized Green first column = canonical moments | OPEN | Concrete readout identification remains an independent obligation |
+| Concrete full parity Gram | OPEN | Not inferred from Parseval isometry or scalar analyticity |
+| Concrete even/odd independence, all-order PSD/PD | OPEN | Generic implications alone do not prove their premises |
+
+See `CANONICAL_GREEN_MOMENT_GRAM.md`. No source amplitude is changed;
+no residual-zero assumption, scalar Gram or moment-manufactured carrier is added.

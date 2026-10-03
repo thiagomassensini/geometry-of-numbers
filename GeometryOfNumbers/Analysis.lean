@@ -1,3 +1,4 @@
+import GeometryOfNumbers.Analysis.ParityMomentGram
 import GeometryOfNumbers.Analysis.BaseTwoCanonicalDressingMoments
 import GeometryOfNumbers.Analysis.BaseTwoCanonicalArchimedeanDressing
 import GeometryOfNumbers.Analysis.BaseTwoCanonicalCameraDressing

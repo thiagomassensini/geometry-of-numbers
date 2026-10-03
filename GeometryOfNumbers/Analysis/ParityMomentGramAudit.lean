@@ -1,0 +1,19 @@
+import GeometryOfNumbers.Analysis.ParityMomentGram
+import GeometryOfNumbers.Analysis.Audit
+
+namespace GeometryOfNumbers.Analysis
+#assert_analysis_axioms parityMomentKernel
+#print axioms parityMomentKernel
+#assert_analysis_axioms IsParityMomentGramRepresentation
+#print axioms IsParityMomentGramRepresentation
+#assert_analysis_axioms parityMomentGram_even
+#print axioms parityMomentGram_even
+#assert_analysis_axioms parityMomentGram_odd
+#print axioms parityMomentGram_odd
+#assert_analysis_axioms parityMomentGram_even_odd_orthogonal
+#print axioms parityMomentGram_even_odd_orthogonal
+#assert_analysis_axioms hankelPair_posSemidef_of_parityMomentGram
+#print axioms hankelPair_posSemidef_of_parityMomentGram
+#assert_analysis_axioms hankelPair_posDef_of_parityMomentGram
+#print axioms hankelPair_posDef_of_parityMomentGram
+end GeometryOfNumbers.Analysis
