@@ -669,3 +669,14 @@ The estimate preserves whole-cell second-difference cancellation and uses only
 current local APIs and Mathlib. R2, Foundation, Geometry, moment transport and
 finite-height modules are unchanged. Both historical files provide comparison
 provenance only, with no historical package dependency.
+
+
+## R6/R7: synthesis before scalarization, block 1
+
+`BaseTwoSynthesizedClockCompletion`: `PASS_DERIVED_TAIL_JETS` at the normalized
+iterated-derivative coefficient interface. Complete function equality precedes
+all-order jet extraction. Tail coefficients are uniquely derived residuals;
+no free tail is used to define them. Actual analytic/Taylor recovery and tail
+termwise differentiation are not asserted. Ledger/moment specialization follows
+in a separate validated increment; dressing and global Gram seams remain open.
+See `SYNTHESIS_BEFORE_SCALARIZATION_CLOCK_MOMENTS.md`.

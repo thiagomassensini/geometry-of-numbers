@@ -1,3 +1,4 @@
+import GeometryOfNumbers.Analysis.BaseTwoSynthesizedClockCompletion
 import GeometryOfNumbers.Analysis.BaseTwoExactHeadTailCompletion
 import GeometryOfNumbers.Analysis.FiniteMaterialClockJets
 import GeometryOfNumbers.Analysis.FiniteClockHeightLedger

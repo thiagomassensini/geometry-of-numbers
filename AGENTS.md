@@ -133,3 +133,16 @@ is not vertical carry depth (`r_horizontal ≠ k_vertical`).
 Center-leg deformation ≠ vertical amplitude ratio: the center-leg reciprocal
 parameter `q` is not the TFVD ratio `eta_b = b^(-1/2)`
 (`q_center-leg ≠ eta_vertical`). Use distinct names. No theorem identifies them.
+
+
+## R6/R7 — no premature scalarization
+
+No premature scalarization: intermediary channel/readout data may not be
+identified with the global observable before exact synthesis/reconstruction
+has been proved. A failed prematurely scalarized candidate is a no-go for
+that representation, not automatically a no-go for the complete theory.
+
+Preserve the causal order: provenance → complete channels → exact head/tail
+synthesis → jets/scalar readout → log derivative → moments. Derived tail
+coefficients are residuals of the synthesized observable; do not substitute
+an independently supplied tail or conflate a head jet with a complete jet.

@@ -1242,3 +1242,20 @@ Unchanged checkpoints: `log_eq_sum_primeCarryVoice`, `historicalInitialState`,
 `finiteClockJets_to_head`. Material amplitude n^(-1/2) remains distinct from the
 modern depth amplitude. Historical scalarization mismatch remains active;
 external tail in the finite ledger, moments and height modules are unchanged.
+
+
+## Base-two synthesized clock coefficients, 2026-10-03
+
+Canonical starting main: `fd3216eb4b908507070ca856d6dc990ea59683c3`.
+Local proof source: exact function synthesis in BaseTwoExactHeadTailCompletion
+and existing factorial-normalized head jets in FiniteMaterialClockJets.
+No historical module, namespace or package is imported.
+
+Read-only blueprint: `thiagomassensini/carry-self-adjoint-operator`, revision
+`62b1c0d6b18e70b4c156c3bdf0253893fdb27a35`,
+`CarrySelfAdjointOperator/C2GeometryNativeSourceBridge.lean`, SHA-256
+`acdb8d67ba096275bedb85c436b8945187374a596425458b22cf7e339cfe3217`.
+Technique reused: equality of whole functions before rewriting iteratedDeriv,
+not derivative/tsum interchange. Historical common-camera and canonical moment
+conclusions are not used. No analytical regularity of the local complete signal
+is inferred from a historical theorem about a different completed object.
