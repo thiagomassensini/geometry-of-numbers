@@ -1292,3 +1292,20 @@ was audited; no theorem, namespace, certificate, completed dressing, or package
 from these files is imported. The local bound and regularity are proved anew
 from the already-local whole-cell geometry. The exposed mean-value estimate
 has exactly its pre-round statement and proof body.
+
+## Canonical downstream camera dressing, 2026-10-03
+
+Starting main `24a01bfad74ac85fff51bc5b6f6191cf1e19f8e1`.
+Read-only comparison at carry-self-adjoint-operator
+`62b1c0d6b18e70b4c156c3bdf0253893fdb27a35`:
+CompletedOperatorCharacteristic, CompletedNativeCharacteristic,
+CompletedNativeAllOrderCameraBridge, CompletedNativeRealWeylMoments,
+C2GeometryNativeSourceBridge (all under CarrySelfAdjointOperator/).
+Exact camera factor origin: native-carry-spectral-weyl
+`298d83c9351e308a5213b9f5ac32e44087f98a9f`,
+`NativeCarrySpectralWeyl/Camera/Factors.lean` (read-only pinned historical
+package). Formula locally reconstructed, no historical theorem imported:
+`(1+2^(-s))*(1-2^(1-s))`, `s=1/2+it`.
+Proof source is existing local complete-signal/clock APIs plus Mathlib complex
+powers and analytic regularity. NativeScalarZetaIdentification is not used.
+No dependency, Foundation or Geometry change.

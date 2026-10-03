@@ -706,3 +706,11 @@ path has no arbitrary tail input. Common-camera/completion dressing, modern
 provenance-correct C2/Green source to the historical observable, and Gram/Hankel
 positivity remain OPEN. Historical scalarization mismatch is REDUCED and still
 active at those seams. Existing guardrail externalTail_changes_phi_zero remains.
+
+### Canonical dressing / concrete moment seam — increment A
+
+Exact base-two camera denominator, entire complex extension, real-line
+nonvanishing and normalized Taylor germ: CLOSED in
+`BaseTwoCanonicalCameraDressing`. Completion, dressed response all-order
+crosswalk, concrete phi(0) and definitive moment sequence remain OPEN at this
+increment. Dressing is downstream; no Gram positivity is asserted.
