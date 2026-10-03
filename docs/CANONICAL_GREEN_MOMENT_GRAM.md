@@ -235,3 +235,25 @@ The four new Lean modules have no forbidden proof declarations.
 All 19 new public theorems from increments A/B are guarded and kernel checked.
 Only the round files were staged; the canonical checkpoint was initially clean.
 No dependencies, Foundation, Geometry, R2 or existing moment definitions changed.
+
+## Publication ledger and final scope
+
+| Increment | Integrated main / GitHub SHA | Build, audits, kernel guards |
+|---|---|---|
+| A: neutral parity Gram | `4c2f51828cac07edeec10cd0d76621ddfb320c10` | PASS, all exit 0 |
+| B: actual orbit jet transport and first-column seam | `d4d07ac6c7c0b8c48c2f7989de2fea26ead58ea5` | PASS, all exit 0 |
+
+For each mathematical increment, the dedicated branch was committed and
+pushed, main was fast-forwarded and pushed, then HEAD/main/origin-main and
+`git ls-remote origin refs/heads/main` were checked equal before the next block.
+Both mathematical increments are already in main. This final documentation
+ledger is published by the same branch/fast-forward sequence.
+
+Final mathematical status: `PASS_PARITY_GRAM_TRANSPORT_FIRST_COLUMN_OPEN`.
+The requested concrete canonical moment Gram is not yet proved.
+No unconditional canonical Hankel positivity or jet independence is asserted.
+The existing concrete moments, canonical dressing, complete tail and source
+provenance statements remain unchanged. The next required proof is a typed
+completed vector boundary/readout identity giving the canonical first column;
+regularity, two-variable transport and independence cannot be replaced by a
+residual-zero hypothesis. Work stops before any global height construction.
