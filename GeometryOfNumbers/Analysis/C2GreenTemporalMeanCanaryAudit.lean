@@ -1,0 +1,171 @@
+import GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary
+import Lean
+
+open Lean Elab Command
+elab "#assert_c2_temporal_mean_axioms " id:ident : command => do
+  let decl ← liftCoreM <| realizeGlobalConstNoOverloadWithInfo id
+  let deps ← collectAxioms decl
+  let allowed := #[`propext, `Classical.choice, `Quot.sound]
+  for name in deps do
+    unless allowed.contains name do
+      throwError "Unexpected foundational dependency: {decl} depends on {name}"
+
+namespace GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary
+
+#assert_c2_temporal_mean_axioms phaseFactor
+#print axioms phaseFactor
+
+#assert_c2_temporal_mean_axioms phaseFactor_zero
+#print axioms phaseFactor_zero
+
+#assert_c2_temporal_mean_axioms phaseFactor_norm
+#print axioms phaseFactor_norm
+
+#assert_c2_temporal_mean_axioms phaseFactor_add
+#print axioms phaseFactor_add
+
+#assert_c2_temporal_mean_axioms phaseFactor_conj
+#print axioms phaseFactor_conj
+
+#assert_c2_temporal_mean_axioms phaseFactor_eq_mk
+#print axioms phaseFactor_eq_mk
+
+#assert_c2_temporal_mean_axioms realPlanePackaging_rotate
+#print axioms realPlanePackaging_rotate
+
+#assert_c2_temporal_mean_axioms c2Source_phase
+#print axioms c2Source_phase
+
+#assert_c2_temporal_mean_axioms c2Source_normSq_time
+#print axioms c2Source_normSq_time
+
+#assert_c2_temporal_mean_axioms c2Source_coordinate_continuous
+#print axioms c2Source_coordinate_continuous
+
+#assert_c2_temporal_mean_axioms eventGreenDefect
+#print axioms eventGreenDefect
+
+#assert_c2_temporal_mean_axioms eventDiagonalDefect
+#print axioms eventDiagonalDefect
+
+#assert_c2_temporal_mean_axioms eventCrossDefect
+#print axioms eventCrossDefect
+
+#assert_c2_temporal_mean_axioms eventDiagonalDefect_nonneg
+#print axioms eventDiagonalDefect_nonneg
+
+#assert_c2_temporal_mean_axioms eventGreenDefect_eq_diagonal_add_cross
+#print axioms eventGreenDefect_eq_diagonal_add_cross
+
+#assert_c2_temporal_mean_axioms eventDiagonalDefect_eq_explicit
+#print axioms eventDiagonalDefect_eq_explicit
+
+#assert_c2_temporal_mean_axioms temporalMean
+#print axioms temporalMean
+
+#assert_c2_temporal_mean_axioms complexTemporalMean
+#print axioms complexTemporalMean
+
+#assert_c2_temporal_mean_axioms phaseFactor_timeAverage
+#print axioms phaseFactor_timeAverage
+
+#assert_c2_temporal_mean_axioms oscillatoryCross
+#print axioms oscillatoryCross
+
+#assert_c2_temporal_mean_axioms oscillatoryCross_continuous
+#print axioms oscillatoryCross_continuous
+
+#assert_c2_temporal_mean_axioms oscillatoryCross_timeAverage
+#print axioms oscillatoryCross_timeAverage
+
+#assert_c2_temporal_mean_axioms camera_log_frequency_pos
+#print axioms camera_log_frequency_pos
+
+#assert_c2_temporal_mean_axioms eventCrossDefect_eq_frequencies
+#print axioms eventCrossDefect_eq_frequencies
+
+#assert_c2_temporal_mean_axioms eventCrossDefect_continuous
+#print axioms eventCrossDefect_continuous
+
+#assert_c2_temporal_mean_axioms eventCrossDefect_timeAverage
+#print axioms eventCrossDefect_timeAverage
+
+#assert_c2_temporal_mean_axioms eventGreenDefect_continuous
+#print axioms eventGreenDefect_continuous
+
+#assert_c2_temporal_mean_axioms eventGreenDefect_timeAverage
+#print axioms eventGreenDefect_timeAverage
+
+#assert_c2_temporal_mean_axioms finiteGreenDefect_timeAverage
+#print axioms finiteGreenDefect_timeAverage
+
+#assert_c2_temporal_mean_axioms greenMajorant_c2Source_time
+#print axioms greenMajorant_c2Source_time
+
+#assert_c2_temporal_mean_axioms eventUniformBound
+#print axioms eventUniformBound
+
+#assert_c2_temporal_mean_axioms eventUniformBound_summable
+#print axioms eventUniformBound_summable
+
+#assert_c2_temporal_mean_axioms eventGreenDefect_uniform_bound
+#print axioms eventGreenDefect_uniform_bound
+
+#assert_c2_temporal_mean_axioms eventDiagonalDefect_summable
+#print axioms eventDiagonalDefect_summable
+
+#assert_c2_temporal_mean_axioms eventGreenDefect_summable
+#print axioms eventGreenDefect_summable
+
+#assert_c2_temporal_mean_axioms rawGreenDefect_eq_tsum_event
+#print axioms rawGreenDefect_eq_tsum_event
+
+#assert_c2_temporal_mean_axioms globalGreenDefect_timeAverage
+#print axioms globalGreenDefect_timeAverage
+
+#assert_c2_temporal_mean_axioms eventDiagonalDefect_uniform_bound
+#print axioms eventDiagonalDefect_uniform_bound
+
+#assert_c2_temporal_mean_axioms eventCrossDefect_uniform_bound
+#print axioms eventCrossDefect_uniform_bound
+
+#assert_c2_temporal_mean_axioms eventCrossDefect_summable
+#print axioms eventCrossDefect_summable
+
+#assert_c2_temporal_mean_axioms rawGreenDefect_eq_diagonal_add_cross_tsum
+#print axioms rawGreenDefect_eq_diagonal_add_cross_tsum
+
+#assert_c2_temporal_mean_axioms globalCrossDefect_timeAverage
+#print axioms globalCrossDefect_timeAverage
+
+#assert_c2_temporal_mean_axioms baseTwoDefect_timeAverage
+#print axioms baseTwoDefect_timeAverage
+
+#assert_c2_temporal_mean_axioms eventCrossDefect_baseTwo_eq_zero
+#print axioms eventCrossDefect_baseTwo_eq_zero
+
+#assert_c2_temporal_mean_axioms eventDiagonalDefect_baseTwo_eq_green
+#print axioms eventDiagonalDefect_baseTwo_eq_green
+
+#assert_c2_temporal_mean_axioms baseTwoDefect_le_totalDiagonal
+#print axioms baseTwoDefect_le_totalDiagonal
+
+#assert_c2_temporal_mean_axioms totalDiagonal_pos
+#print axioms totalDiagonal_pos
+
+#assert_c2_temporal_mean_axioms globalGreenDefect_timeAverage_positive
+#print axioms globalGreenDefect_timeAverage_positive
+
+#assert_c2_temporal_mean_axioms exists_time_rawGreenDefect_pos
+#print axioms exists_time_rawGreenDefect_pos
+
+#assert_c2_temporal_mean_axioms exists_time_rawGreenDefect_ne_zero
+#print axioms exists_time_rawGreenDefect_ne_zero
+
+#assert_c2_temporal_mean_axioms exists_time_restrictedGram_ne_identity
+#print axioms exists_time_restrictedGram_ne_identity
+
+#assert_c2_temporal_mean_axioms not_forall_restrictedGram_eq_identity
+#print axioms not_forall_restrictedGram_eq_identity
+
+end GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary

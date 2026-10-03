@@ -1124,3 +1124,13 @@ Read-only source: `/home/thlinux/carry-c2-source-raw-green` at `cb33c845a7ee0ca1
 - `docs/C2_BASE_TWO_GREEN_LEDGER.md` ← `/home/thlinux/carry-c2-source-raw-green/docs/C2_BASE_TWO_GREEN_LEDGER.md`; SHA-256 `c5c17027d788f0738e941cc73fa04225f6f4add6557376ec0ced981aeba5671c`.
 
 Only path/namespace adaptation; no import of the historical carry project. Foundation and Geometry remain unchanged.
+
+## Recovery round 12 — PASS
+
+Read-only source: `/home/thlinux/carry-c2-source-raw-green` at `cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa`; uncommitted source is identified by SHA-256.
+
+- `GeometryOfNumbers/Analysis/C2GreenTemporalMeanCanary.lean` ← `/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/C2GreenTemporalMeanCanary.lean`; SHA-256 `a810ea85080b6137b30438bbea96351eed95b5de002578930eb9bee29d93ae28`.
+- `GeometryOfNumbers/Analysis/C2GreenTemporalMeanCanaryAudit.lean` ← `/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/C2GreenTemporalMeanCanaryAudit.lean`; SHA-256 `1fd2e415e14d698465a02874c69986d038d882f9cc99deef736e2e25dabeb5ae`.
+- `docs/C2_GREEN_TEMPORAL_MEAN_AUDIT.md` ← `/home/thlinux/carry-c2-source-raw-green/docs/C2_GREEN_TEMPORAL_MEAN_AUDIT.md`; SHA-256 `fb1c7e212e269395b8d86d4be60641bc271ecd07816bfcdf28df9ca5857f6c1b`.
+
+Only path/namespace adaptation; no import of the historical carry project. Foundation and Geometry remain unchanged.
