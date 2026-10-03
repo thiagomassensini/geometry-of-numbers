@@ -1182,3 +1182,27 @@ Read-only source: `/home/thlinux/carry-c2-source-raw-green` at `cb33c845a7ee0ca1
 - `docs/GREEN_MATERIAL_UNITARY_EVOLUTION.md` ← `/home/thlinux/carry-c2-source-raw-green/docs/GREEN_MATERIAL_UNITARY_EVOLUTION.md`; SHA-256 `4aceff9e378aa57ca9f346aefefa9abc85b5f10050774512e78c62c5b954a28f`.
 
 Only path/namespace adaptation; no import of the historical carry project. Foundation and Geometry remain unchanged.
+
+## Recovery round 17 — HISTORICAL_SCALARIZATION_MISMATCH
+
+Read-only source: `/home/thlinux/carry-finite-clock-jet-height` at `cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa`; uncommitted source is identified by SHA-256.
+
+- `GeometryOfNumbers/Analysis/FiniteMaterialClockJets.lean` ← `/home/thlinux/carry-finite-clock-jet-height/CarrySelfAdjointOperator/FiniteMaterialClockJets.lean`; SHA-256 `7e29498f4e1a788cd8f5f6e4e3ff5a5301dc67080c9cac256edaee85113fae9f`.
+- `GeometryOfNumbers/Analysis/FiniteClockHeightLedger.lean` ← `/home/thlinux/carry-finite-clock-jet-height/CarrySelfAdjointOperator/FiniteClockHeightLedger.lean`; SHA-256 `950b56f3f54d65090ae18d6a1cd701c541c744bcc7bec597ca8b792d701f3b07`.
+- `GeometryOfNumbers/Analysis/FiniteHistoricalChebyshev.lean` ← `/home/thlinux/carry-finite-clock-jet-height/CarrySelfAdjointOperator/FiniteHistoricalChebyshev.lean`; SHA-256 `c1ac8a17195d99b8088d933abc27be169eeb9f0ad57f0ad39a042c0f8b7e68f0`.
+- `GeometryOfNumbers/Analysis/FiniteClockHeightAudit.lean` ← `/home/thlinux/carry-finite-clock-jet-height/CarrySelfAdjointOperator/FiniteClockHeightAudit.lean`; SHA-256 `9f2607f9951105504cc73e6c2cf63fc0a3403e0ab2aebc769c89282ce57bda5e`.
+- `docs/FINITE_CLOCK_JET_HEIGHT_FORENSIC.md` ← `/home/thlinux/carry-finite-clock-jet-height/docs/FINITE_CLOCK_JET_HEIGHT_FORENSIC.md`; SHA-256 `f272ba013516b5b84fe37258b4107834b0eaf59be7313964a086919deebc40e5`.
+
+Only path/namespace adaptation; no import of the historical carry project. Foundation and Geometry remain unchanged.
+
+### Minimal recovered prerequisites for round 17
+
+- `/home/thlinux/carry-c2-source-raw-green/.lake/packages/CPFormal/CPFormal/Analytic/CpRealSpectralGenerator.lean`; SHA-256 `2f5337715b94144c8a087837014106d049d6d171eba0fb927c9e4e87d9eb4384`; Recover finite diagonal clock/phase/evolution/basis block before historical state and resonance definitions.
+- `/home/thlinux/carry-finite-clock-jet-height/CarrySelfAdjointOperator/LogarithmicMomentHankel.lean`; SHA-256 `e2e564636ffa10dea4be4016f2d400a969bb17986db991a400ec6dd1f4c72be3`; Literal mathematical prerequisite, path/namespace only; downstream finite ledger, never used as foundation for material clock.
+- `/home/thlinux/carry-finite-clock-jet-height/CarrySelfAdjointOperator/MomentGramPositivity.lean`; SHA-256 `972d95fc7e6056a0e0099411046e8345f145f209c848c95da42489e33cfdffd0`; Literal mathematical prerequisite, path/namespace only; downstream finite ledger, never used as foundation for material clock.
+- `/home/thlinux/carry-finite-clock-jet-height/CarrySelfAdjointOperator/FiniteJacobiTransport.lean`; SHA-256 `e5dab35d6b0ba766d906803a439c605546656c37fded854e21f9205848427c07`; Literal mathematical prerequisite, path/namespace only; downstream finite ledger, never used as foundation for material clock.
+- `/home/thlinux/carry-finite-clock-jet-height/CarrySelfAdjointOperator/CanonicalLDLWhitening.lean`; SHA-256 `53445305c7ba9acbf3d23524e136d88ff5572c09f6b9b940cf5a927d4469a19b`; Literal mathematical prerequisite, path/namespace only; downstream finite ledger, never used as foundation for material clock.
+- `/home/thlinux/carry-finite-clock-jet-height/CarrySelfAdjointOperator/FiniteHeightOperator.lean`; SHA-256 `943a4f796ea8254fbe5b092ccdf13c7e1656d05d4392f418ffaca3d92316f547`; Literal mathematical prerequisite, path/namespace only; downstream finite ledger, never used as foundation for material clock.
+- `/home/thlinux/carry-finite-clock-jet-height/CarrySelfAdjointOperator/CanonicalFiniteHeight.lean`; SHA-256 `d92b418f76d6a7eb6d8f62f0faedc5427dc9a9d8a8732d352c10bfe47f880ca3`; Literal mathematical prerequisite, path/namespace only; downstream finite ledger, never used as foundation for material clock.
+
+FiniteMaterialClockJets now directly imports Mathlib.Analysis.Calculus.Deriv.Prod and Mathlib.Analysis.SpecialFunctions.ExpDeriv; these APIs previously arrived transitively through the removed historical spectral/readout module. Proof bodies and statements are unchanged.

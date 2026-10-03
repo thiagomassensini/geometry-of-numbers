@@ -1,3 +1,6 @@
+import GeometryOfNumbers.Analysis.FiniteMaterialClockJets
+import GeometryOfNumbers.Analysis.FiniteClockHeightLedger
+import GeometryOfNumbers.Analysis.FiniteHistoricalChebyshev
 import GeometryOfNumbers.Analysis.GreenStateMaterialEvolution
 import GeometryOfNumbers.Analysis.GreenParsevalMaterialEvolution
 import GeometryOfNumbers.Analysis.GreenParsevalMaterialLogOperator
