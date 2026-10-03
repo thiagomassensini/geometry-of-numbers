@@ -761,8 +761,19 @@ Capstones locais em `GeometryOfNumbers.Analysis.BaseTwoCompletion`:
 - `baseTwoSynthesizedLogMoment_cutoff_independent`;
 - `baseTwoSynthesizedLogMoment_formal_logDerivative` (`phi(0) ≠ 0`).
 
-A resposta e os momentos independem do cutoff mantendo fixos `cameraFactor`
-e `completion`, ainda entradas explícitas. O crosswalk da source C2/Green
+Na API parametrizada, resposta e momentos independem do cutoff mantendo fixos
+`cameraFactor` e `completion`. A instanciação canônica abaixo elimina essas
+entradas livres. O crosswalk da source C2/Green
 moderna para esse observable histórico e a positividade Gram/Hankel permanecem
 abertos. Não se identifica o clock com um operador de alturas.
 Veja [o relatório da síntese antes da scalarização](docs/SYNTHESIS_BEFORE_SCALARIZATION_CLOCK_MOMENTS.md).
+
+### Dressing canônico e momentos concretos de base 2
+
+`PASS_CANONICAL_DRESSING_MOMENTS`: o novo caminho canônico fixa explicitamente
+os germs de câmera e completion após a síntese, identifica a response com
+seus jets normalizados all-order, prova `baseTwoCanonicalPhi_zero_pos` e
+`baseTwoCanonicalLogMoment_formal_logDerivative`, com unicidade e independência
+do cutoff. Não recebe tail, cameraFactor, completion ou positividade como
+parâmetros. [Seam e limites](docs/CANONICAL_DRESSING_MOMENT_SEAM.md).
+A representação Gram global e o crosswalk da source moderna continuam abertos.

@@ -1320,3 +1320,17 @@ regularity on positive real part and Gamma positivity at 1/4 are proof
 inputs. No nativeScalar, xi/zeta equality, or historical completion theorem
 is used as a premise. Normalization and negative material-phase orientation
 are preserved exactly.
+
+### Concrete response-series and moment proof
+
+Local proof inputs: exact synthesized signal and regularity; concrete germs
+from increments A/B; Mathlib iteratedDeriv_mul and Nat.cast_choose; exact
+PowerSeries inverse identities; convexity from the nonnegative second
+ordinary derivative of x^(-1/2); existing whole-cell summability; existing
+baseTwoSynthesizedLogMoment uniqueness and formal log-derivative identities.
+No historical proof is imported or used as a premise.
+Read-only planning comparison at carry revision 62b1c0d6b18e70b4c156c3bdf0253893fdb27a35:
+GreenWronskianHankelBridge.lean and CompletedNativeTfvdGreenMomentGramBridge.lean.
+Their conditional Gram interfaces and Taylor/forward-difference residual
+remain future gates; no representation/positivity hypothesis was added.
+Material n^(-1/2) and modern depth amplitude 2^(-k/2) remain distinct.

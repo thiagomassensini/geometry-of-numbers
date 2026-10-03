@@ -104,3 +104,139 @@ Exit status 0 for the archimedean module and dedicated audit builds,
 Analysis and central Audit builds (`--wfail`), all three audit scripts,
 and `git diff --check`. All new public declarations have kernel dependency
 guards and printed axioms within the standard three-axiom footprint.
+
+## Increment C: concrete response and unique moments
+
+Increment B was published in `6d8010685ddcb191f267820b0aacfecbe7078f62`.
+
+### Function before coefficients
+
+Let $S(t)=\texttt{baseTwoCriticalCompleteSignal}(t)$, already synthesized
+from complete cells with its derived whole-cell tail. Define
+
+$$R(t)=C(t)\,S(t)\,B(t)^{-1}.$$
+
+`baseTwoCanonicalResponse_analyticAt` proves local analyticity for every
+real time. `baseTwoCanonicalResponseSeries` specializes the existing response
+ledger to the two concrete germs. The exact all-order identification is
+`baseTwoCanonicalResponseSeries_eq_normalizedJets`, equivalently
+`baseTwoCanonicalResponseSeries_coeff`:
+
+$$[t^r]\mathcal R = (r!)^{-1}\,\mathrm{iteratedDeriv}_r R(0).$$
+
+The proof uses the iterated Leibniz identity, the exact binomial/factorial
+identity and the inverse-germ product identity. No derivative/tsum interchange
+and no scalar/zeta identification is used. `baseTwoCanonicalClosedResponse_eq`
+identifies every cutoff ledger with this same series; no arbitrary tail remains.
+
+### Center nonvanishing, proved rather than received
+
+At time zero, the material samples are real $n^{-1/2}$. This function is
+convex on $(0,\infty)$: its second derivative is nonnegative. Midpoint convexity
+therefore proves each complete cell has nonnegative real part
+(`baseTwoCriticalCenterCell_zero_re_nonneg`). The separately retained seed
+then gives $S(0)>0$, with imaginary part zero, using the already-proved
+summability of complete cells. Since $C(0)<0$ and $B(0)<0$,
+
+$$\phi_0=\operatorname{Re}R(0)>0.$$
+
+This is `baseTwoCanonicalPhi_zero_pos`, hence `_zero_ne_zero`. No numerical
+value or zero-location claim is used.
+
+### Definitive real-even convention and recurrence
+
+The existing convention is preserved exactly:
+
+$$\phi_r=\operatorname{Re}[t^{2r}]\mathcal R,
+\qquad \Phi(u)=\sum_{r\ge0}\phi_ru^r.$$
+
+`baseTwoCanonicalPhi_eq_normalizedEvenJet` includes the $(2r)!$ denominator.
+This real-even extraction does not itself assert that the entire dressed
+function is even or real-valued for every time. No such symmetry theorem is
+needed or claimed in this round.
+
+`baseTwoCanonicalLogMoment` is the existing recurrence specialized to this
+concrete phi, and `baseTwoCanonicalMomentSequence` is literally that sequence:
+
+$$h_r=\frac{-(r+1)\phi_{r+1}-\sum_{j<r}h_j\phi_{r-j}}{\phi_0}.$$
+
+Public theorems:
+
+- `baseTwoCanonicalLogMoment_isSequence`;
+- `baseTwoCanonicalLogMoment_unique`;
+- `baseTwoCanonicalLogMoment_formal_logDerivative`:
+  $\operatorname{mk}(h)\operatorname{mk}(\phi)=-\partial\operatorname{mk}(\phi)$;
+- `baseTwoCanonicalLogMoment_unique_of_formal_identity`;
+- `baseTwoCanonicalLogMoment_cutoff_independent`;
+- `baseTwoCanonicalMomentSequence_eq_logMoment`.
+
+Neither `cameraFactor`, `completion`, a freely supplied tail, nor a nonzero-phi
+hypothesis is an input to the new canonical sequence. The general parametrized
+ledger and `externalTail_changes_phi_zero` remain correct and unchanged.
+
+## Strict status and remaining gates
+
+`PASS_CANONICAL_DRESSING_MOMENTS` means only the concrete dressing/moment seam
+above. The historical scalarization mismatch is REDUCED: arbitrary tail and
+arbitrary dressing have disappeared from this canonical base-two path.
+The independent modern depth-amplitude C2/Green source to this material-amplitude
+observable crosswalk is still OPEN; the two amplitudes are not identified.
+
+The next mathematical gate is an actual global orthogonal jet family whose
+parity Gram equals these concrete moments:
+
+$$h_{i+j}=\langle e_i,e_j\rangle,\quad
+h_{i+j+1}=\langle o_i,o_j\rangle,\quad\langle e_i,o_j\rangle=0.$$
+
+This includes the necessary provenance/readout and Taylor-jet-to-Green-jet
+identification. Strict Hankel positivity additionally needs independence of
+those jets. No positivity, Gram representation or independence is assumed or
+proved here, and no Jacobi/global-height construction was changed.
+
+Read-only next-round comparison at the same historical carry revision:
+`GreenWronskianHankelBridge.lean` gives a generic conditional parity Gram kernel;
+`CompletedNativeTfvdGreenMomentGramBridge.lean` still exposes a Taylor/forward-
+difference Gram residual. Neither was imported and that residual was not
+received as a hypothesis. The new local analytic signal and exact tail-jet
+identity may help address it later; this round does not close it.
+
+### Increment C verification and kernel certificate
+
+Exit status 0:
+
+- `lake build --wfail GeometryOfNumbers.Analysis.BaseTwoCanonicalDressingMoments`;
+- `lake build --wfail GeometryOfNumbers.Analysis.BaseTwoCanonicalDressingMomentsAudit GeometryOfNumbers.Analysis GeometryOfNumbers.Analysis.Audit`;
+- `bash scripts/audit-analysis.sh`;
+- `bash scripts/audit-foundation.sh`;
+- `bash scripts/audit-geometry.sh`;
+- `git diff --check` and new-source placeholder/trust-escape scan.
+
+[Kernel certificate](CANONICAL_DRESSING_KERNEL_CERTIFICATE.json) records the
+actual printed axiom list for all 49 public definitions/theorems across the
+three modules, together with source SHA-256 hashes. Dedicated audits and
+central Analysis Audit guard each name. All principal capstones below print
+exactly `[propext, Classical.choice, Quot.sound]`:
+
+| Capstone | Printed footprint |
+| --- | --- |
+| `baseTwoCanonicalCameraFactor_ne_zero` | standard three axioms |
+| `baseTwoCanonicalCameraFactor_zero` | standard three axioms |
+| `canonicalArchimedeanCompletion_analyticAt` | standard three axioms |
+| `canonicalArchimedeanCompletion_zero_ne_zero` | standard three axioms |
+| `baseTwoCanonicalResponse_analyticAt` | standard three axioms |
+| `baseTwoCanonicalResponseSeries_eq_normalizedJets` | standard three axioms |
+| `baseTwoCanonicalResponseSeries_coeff` | standard three axioms |
+| `baseTwoCanonicalClosedResponse_eq` | standard three axioms |
+| `baseTwoCriticalCompleteSignal_zero_re_pos` | standard three axioms |
+| `baseTwoCanonicalPhi_zero_pos` | standard three axioms |
+| `baseTwoCanonicalLogMoment_isSequence` | standard three axioms |
+| `baseTwoCanonicalLogMoment_unique` | standard three axioms |
+| `baseTwoCanonicalLogMoment_formal_logDerivative` | standard three axioms |
+| `baseTwoCanonicalLogMoment_unique_of_formal_identity` | standard three axioms |
+| `baseTwoCanonicalLogMoment_cutoff_independent` | standard three axioms |
+
+No dependency configuration or Foundation/Geometry/R2/finite-height module
+was changed. No zero table, numerical argument, zeta/RH/HP premise, imported
+historical certificate, Hankel positivity or Gram representation occurs in
+these proofs. Increment C is published under the commit subject
+`feat: close canonical dressed response and unique concrete moments`.

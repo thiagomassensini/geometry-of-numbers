@@ -1,0 +1,463 @@
+{
+  "initial_main": "24a01bfad74ac85fff51bc5b6f6191cf1e19f8e1",
+  "source_scope": "local synthesized material signal; explicit downstream classical dressing; no historical theorem premise",
+  "mathlib": "81a5d257c8e410db227a6665ed08f64fea08e997",
+  "declarations": [
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoDressingParameter",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalCameraDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalCameraFactorComplex",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalCameraDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalCameraFactor",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalCameraDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalCameraFactor_formula",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalCameraDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalCameraFactorComplex_differentiable",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalCameraDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalCameraFactor_analyticAt",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalCameraDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalCameraFactor_contDiff",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalCameraDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalCameraFactor_ne_zero",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalCameraDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalCameraFactor_zero",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalCameraDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalCameraFactorSeries",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalCameraDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalCameraFactorSeries_coeff",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalCameraDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalCameraFactorSeries_constantCoeff",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalCameraDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalCameraFactorSeries_constantCoeff_ne_zero",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalCameraDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.canonicalArchimedeanCompletionComplex",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalArchimedeanDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.canonicalArchimedeanCompletion",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalArchimedeanDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.canonicalArchimedeanCompletion_formula",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalArchimedeanDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.canonicalArchimedeanCompletionComplex_differentiableOn_ball",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalArchimedeanDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.canonicalArchimedeanCompletion_analyticAt",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalArchimedeanDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.canonicalArchimedeanCompletion_contDiff",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalArchimedeanDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.canonicalArchimedeanCompletion_zero",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalArchimedeanDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.canonicalArchimedeanCompletion_zero_re_neg",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalArchimedeanDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.canonicalArchimedeanCompletion_zero_ne_zero",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalArchimedeanDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalCompletionSeries",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalArchimedeanDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalCompletionSeries_coeff",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalArchimedeanDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalCompletionSeries_constantCoeff",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalArchimedeanDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalCompletionSeries_constantCoeff_ne_zero",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalArchimedeanDressing.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalResponse",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalResponseSeries",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalResponse_analyticAt",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalResponseSeries_eq_normalizedJets",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalResponseSeries_coeff",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalClosedResponse_eq",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCriticalCenterCell_zero_re_nonneg",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCriticalCompleteSignal_zero_re_pos",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCriticalCompleteSignal_zero_im",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalPhi",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalLogMoment",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalMomentSequence",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalPhi_eq_synthesized",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalLogMoment_eq_synthesized",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalMomentSequence_eq_logMoment",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalPhi_eq_normalizedEvenJet",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalPhi_zero_pos",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalPhi_zero_ne_zero",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalLogMoment_isSequence",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalLogMoment_unique",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalLogMoment_formal_logDerivative",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalLogMoment_unique_of_formal_identity",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "GeometryOfNumbers.Analysis.BaseTwoCompletion.baseTwoCanonicalLogMoment_cutoff_independent",
+      "module": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "source_sha256": {
+    "GeometryOfNumbers/Analysis/BaseTwoCanonicalCameraDressing.lean": "5cb7246bb0f317d40691c007bdc16a6e11cff93933ec81f79f68c57a648fa79b",
+    "GeometryOfNumbers/Analysis/BaseTwoCanonicalArchimedeanDressing.lean": "10fee41639a5f64da9deb4aa82ad5e917299ab0e6344062ad7087fe8c442ffc8",
+    "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean": "0f0560b62e9cd889ff6a70dc45bb0c9751e085fda54292fade9e05f4882be716"
+  },
+  "validation": {
+    "isolated_modules": "exit 0, --wfail",
+    "dedicated_audits": "exit 0, --wfail",
+    "analysis_entry_and_audit": "exit 0, --wfail",
+    "audit_analysis": "exit 0",
+    "audit_foundation": "exit 0",
+    "audit_geometry": "exit 0",
+    "diff_check": "exit 0",
+    "new_source_placeholder_scan": "no matches"
+  }
+}

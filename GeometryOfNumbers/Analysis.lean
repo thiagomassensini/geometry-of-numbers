@@ -1,3 +1,4 @@
+import GeometryOfNumbers.Analysis.BaseTwoCanonicalDressingMoments
 import GeometryOfNumbers.Analysis.BaseTwoCanonicalArchimedeanDressing
 import GeometryOfNumbers.Analysis.BaseTwoCanonicalCameraDressing
 import GeometryOfNumbers.Analysis.BaseTwoCompletedSignalRegularity

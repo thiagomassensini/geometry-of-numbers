@@ -722,3 +722,17 @@ normalized germ and nonzero center: CLOSED in
 `BaseTwoCanonicalArchimedeanDressing`. No xi/zeta identification is imported.
 All-order dressed-response coefficients and concrete phi(0) remain next gates;
 completion never supplies a premise for the already-derived geometry.
+
+### Concrete canonical response and moments — increment C
+
+Status: `PASS_CANONICAL_DRESSING_MOMENTS`.
+`BaseTwoCanonicalDressingMoments` closes the local analytic dressed function,
+its all-order factorial-normalized response series, concrete real-even phi,
+direct phi(0)>0 proof, unique formal log-derivative sequence and cutoff
+independence. The canonical path has no free tail/cameraFactor/completion.
+The general ledger and external-tail guardrail are unchanged.
+No Gram/Hankel positivity is inferred. The next gate is the actual global
+orthogonal Green jet/readout representation of these moments, preserving the
+still-open modern depth-amplitude source to material-amplitude observable
+crosswalk and the Taylor/Green jet seam. Historical mismatch is REDUCED, not
+wholly erased. No height or spectral identification is claimed.
