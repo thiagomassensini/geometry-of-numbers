@@ -165,4 +165,68 @@ gate at this point; the coefficient identities alone do not discharge it.
 | --- | --- | --- | --- |
 | 1 — synthesized jet residual and derived tail series | `9c7731b3bcb53d00530a4db6fbae2016104e9bdb` | identical, verified before block 2 | four --wfail targets + Analysis audit + diff check, exit 0 |
 
-The next mathematical commit is recorded after its immediate integration.
+| 2 — derived-tail response and unique cutoff-invariant moments | `f9cd0edf8b992d6ef084620cf89e9553578368c3` | identical, verified before block 3 | four --wfail targets + Analysis audit + diff check, exit 0 |
+
+Block 3 is recorded after its immediate integration.
+
+
+## Block 3: genuine all-order jets of the completed signal
+
+Module: `BaseTwoCompletedSignalRegularity.lean`.
+
+The existing second-difference mean-value estimate is exposed as
+`baseTwoSecondDifference_norm_le` with an unchanged statement and proof.
+No head/tail identity is reopened. For the local complex extension of the SAME
+material sample, each COMPLETE cell in a radius-1/4 ball around real time t
+satisfies
+
+$$
+|B_k(w)| \le (|t|+2)(|t|+3)(k+1)^{-9/4}.
+$$
+
+The exponent has real part at most -1/4 in this ball; taking the full second
+difference adds two powers of decay. The bound is summable and retains the
+1,-2,1 cancellation. Mathlib local uniform convergence proves holomorphy of
+this already-synthesized signal. `baseTwoComplexCompleteSignal_ofReal` identifies
+it with the original real-time signal, not with a second clock.
+
+The local proof closes:
+
+* `baseTwoCriticalCompleteSignal_contDiff`: all-order regularity;
+* `baseTwoCriticalCompleteSignal_analyticAt`: local analyticity at every real time;
+* `baseTwoFiniteHead_contDiff` and `baseTwoCriticalCompleteTail_contDiff`;
+* `baseTwoSynthesizedTailCoefficient_eq_normalizedTailJet`:
+  the derived residual is literally (r!)^-1 times the r-th derivative at zero
+  of the existing whole-cell tail.
+
+The last equality uses Tail = Signal - Head and `iteratedDeriv_sub` AFTER
+regularity. It does not interchange a derivative with the infinite tail sum.
+Thus the coefficient tower is made of genuine derivatives, not merely values
+of Mathlib totalized derivative definitions. Local analyticity is proved;
+no global-in-time Taylor reconstruction theorem or termwise tail derivative
+formula is claimed.
+
+### Final scope / status
+
+`PASS_SYNTHESIZED_CLOCK_MOMENTS`, for the existing historical MATERIAL critical
+orbit, fixed explicit cameraFactor/completion and the existing nonzero phi(0)
+gate for the exact log-derivative identity and its uniqueness.
+
+The arbitrary-tail input is eliminated from the new base-two path. It remains
+in the general ledger as a useful guardrail. The complete-signal regularity gate
+listed at the end of block 2 is now CLOSED. Dressing is still external and the
+modern depth-amplitude C2/Green source to this historical material observable
+crosswalk remains OPEN. Therefore `HISTORICAL_SCALARIZATION_MISMATCH` is REDUCED,
+not globally eliminated. No positive Hankel/Gram, global Jacobi/height or common
+camera-completion dressing theorem was proved.
+
+Block 3 validation additionally includes:
+
+```bash
+lake build --wfail GeometryOfNumbers.Analysis.BaseTwoCompletedSignalRegularity
+lake build --wfail GeometryOfNumbers.Analysis.BaseTwoCompletedSignalRegularityAudit
+lake build --wfail GeometryOfNumbers.Analysis.BaseTwoExactHeadTailCompletionAudit
+```
+
+All public declarations are guarded and printed in the dedicated and central
+Analysis audits. Capstones retain precisely the three allowed standard axioms.

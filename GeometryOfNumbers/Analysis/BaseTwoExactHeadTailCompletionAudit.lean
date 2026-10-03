@@ -75,4 +75,7 @@ namespace GeometryOfNumbers.Analysis.BaseTwoCompletion
 #assert_base_two_completion_axioms baseTwoHistoricalReadout_add_completeTail
 #print axioms baseTwoHistoricalReadout_add_completeTail
 
+#assert_base_two_completion_axioms baseTwoSecondDifference_norm_le
+#print axioms baseTwoSecondDifference_norm_le
+
 end GeometryOfNumbers.Analysis.BaseTwoCompletion

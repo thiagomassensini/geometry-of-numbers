@@ -690,3 +690,19 @@ unique log-derivative moment sequence under the existing phi(0) != 0 gate.
 No Gram or height proof is used. Dressing remains external; the modern-source
 crosswalk and complete-signal analytical recovery remain separate open gates.
 The general externalTail_changes_phi_zero theorem remains unchanged.
+
+
+### Synthesized complete-signal regularity — block 3
+
+`BaseTwoCompletedSignalRegularity` closes local analyticity and all-order
+regularity of the complete base-two signal using a locally uniform summable
+whole-cell bound. The derived tail coefficient is the actual normalized jet
+of the existing tail, by smooth subtraction after synthesis. No termwise
+infinite-tail differentiation is required.
+
+Current status: `PASS_SYNTHESIZED_CLOCK_MOMENTS` at the historical material
+orbit / fixed explicit dressing / nonzero phi(0) interface. The new base-two
+path has no arbitrary tail input. Common-camera/completion dressing, modern
+provenance-correct C2/Green source to the historical observable, and Gram/Hankel
+positivity remain OPEN. Historical scalarization mismatch is REDUCED and still
+active at those seams. Existing guardrail externalTail_changes_phi_zero remains.

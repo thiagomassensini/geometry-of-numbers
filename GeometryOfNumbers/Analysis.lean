@@ -1,3 +1,4 @@
+import GeometryOfNumbers.Analysis.BaseTwoCompletedSignalRegularity
 import GeometryOfNumbers.Analysis.BaseTwoSynthesizedClockMoments
 import GeometryOfNumbers.Analysis.BaseTwoSynthesizedClockCompletion
 import GeometryOfNumbers.Analysis.BaseTwoExactHeadTailCompletion

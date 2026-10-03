@@ -1271,3 +1271,24 @@ BaseTwoSynthesizedClockMoments composes those APIs with the published
 BaseTwoSynthesizedClockCompletion from 9c7731b3bcb53d00530a4db6fbae2016104e9bdb.
 No new historical theorem is a proof dependency. External cameraFactor,
 completion, and the nonzero phi(0) gate remain explicit.
+
+
+### Local complete-signal regularity and tail-jet identification
+
+Proof dependencies remain local: the unchanged second-difference estimate from
+BaseTwoExactHeadTailCompletion (now public as baseTwoSecondDifference_norm_le),
+Mathlib complex-power derivatives, local uniform convergence of summably bounded
+holomorphic cells, Cauchy regularity, and iteratedDeriv_sub. The complex extension
+is proved equal to the existing synthesized real-time signal.
+
+Additional read-only technique comparisons at carry-self-adjoint-operator
+revision `62b1c0d6b18e70b4c156c3bdf0253893fdb27a35`:
+
+* `CarrySelfAdjointOperator/CompletedNativeAllOrderCameraBridge.lean`, SHA-256 `aa8938c8e9ce09a6a3da57a2ec25d42b355f3a8bedd918d7fac8aad3445fd664`;
+* `CarrySelfAdjointOperator/BR2RealComplexAllOrderBridge.lean`, SHA-256 `987e14f8126d5cad5807c651678d72cec7f084b91192886135692b81c99a869c`.
+
+Their technique, holomorphic regularity before separating tail derivatives,
+was audited; no theorem, namespace, certificate, completed dressing, or package
+from these files is imported. The local bound and regularity are proved anew
+from the already-local whole-cell geometry. The exposed mean-value estimate
+has exactly its pre-round statement and proof body.

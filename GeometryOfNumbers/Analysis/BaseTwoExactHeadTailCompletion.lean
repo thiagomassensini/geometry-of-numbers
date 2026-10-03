@@ -210,7 +210,7 @@ theorem criticalMaterialSample_eq_rpow_phase (t : ℝ) {n : ℕ} (hn : 0 < n) :
   norm_num
 
 /-- Two applications of the mean-value bound preserve the full second difference. -/
-private theorem secondDifference_norm_le (f f' f'' : ℝ → ℂ) (a C : ℝ)
+theorem baseTwoSecondDifference_norm_le (f f' f'' : ℝ → ℂ) (a C : ℝ)
     (hf : ∀ x ∈ Set.Icc a (a + 2), HasDerivAt f (f' x) x)
     (hf' : ∀ x ∈ Set.Icc a (a + 2), HasDerivAt f' (f'' x) x)
     (hb : ∀ x ∈ Set.Icc a (a + 2), ‖f'' x‖ ≤ C) :
@@ -273,7 +273,7 @@ theorem baseTwoCriticalCenterCell_norm_le (t : ℝ) (k : ℕ) :
     rw [he]
     exact mul_le_mul_of_nonneg_left
       (Real.rpow_le_rpow_of_nonpos ha hx.1 (by norm_num)) (norm_nonneg _)
-  have hb := secondDifference_norm_le
+  have hb := baseTwoSecondDifference_norm_le
     (fun x => (x : ℂ)^z) (fun x => z * (x : ℂ)^(z-1))
     (fun x => z*(z-1)*(x : ℂ)^(z-2)) a (‖z*(z-1)‖ * a^(-5/2 : ℝ))
     (fun x hx => hasDerivAt_ofReal_cpow_const
