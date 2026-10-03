@@ -5,6 +5,11 @@ autor em 2026-09-29. Este resumo orienta a implementação em
 `geometry-of-numbers`, o repositório escolhido para esta rodada.
 Não substitui os enunciados Lean nem declara fechadas as metas do plano.
 
+Atualização da consolidação de 1–2/10/2026: o [índice de recuperação](RECOVERY_2026-10-02.md)
+registra as etapas C2 locais e as etapas Green/Parseval no pacote downstream
+`carry-self-adjoint-operator`. A tabela abaixo distingue esses dois locais.
+As seções de implementação posteriores conservam seus checkpoints históricos.
+
 ## Zonas de confiança
 
 **Zona A — fundação discreta:** quantidade, carry, profundidade,
@@ -39,11 +44,11 @@ complexa justificará um resultado fundacional.
 | R0 | Rotação e estado espectral reais | Estado de profundidade, energia quadrática e rotação abstrata fechados; lei de fase/espectro e estado global de quantidade ainda abertos |
 | R1 | Câmeras e brackets reais | Câmera ímpar, saturação e realização quadrática fechadas; ponte offset→deformação e crosswalk do perfil fechados sob compatibilidade multiplicativa explícita, q_r=rho^r; seleção do passo rho ainda aberta |
 | R2 | Reconstrução TFVD real, Green e retorno | CLOSED — reconstrução discreta/projetiva, gauge crítico e TFVD real com análise/síntese |
-| R3 | Frame global, whitening e isometria | Não iniciada |
-| R4 | Fatorização de câmeras pelo mesmo estado global | Não iniciada |
-| R5 | Gerador logarítmico e transporte autoadjunto | Não iniciada |
-| R6 | Momentos provenientes de operador positivo real; Jacobi | Não iniciada |
-| R7 | Operador de alturas e ponte com dinâmica real | Não iniciada |
+| R3 | Frame global, whitening e isometria | Source C2 global isométrica nesta árvore; análise raw e whitening canônico certificados no carry downstream, com Gram raw não identidade |
+| R4 | Fatorização de câmeras pelo mesmo estado global | Source física C2 e proveniência fechadas; embedding concreto Green downstream. Não se presume uma fatorização geral ainda não provada |
+| R5 | Gerador logarítmico e transporte autoadjunto | CLOSED no carry downstream para o material log clock: domínio maximal, transporte Parseval e grupos fortemente contínuos; órbita C2 global sem gate de domínio |
+| R6 | Momentos provenientes de operador positivo real; Jacobi | Jets e dependência triangular finitos certificados downstream; identificação integral com completion e Jacobi históricos mantém gaps explícitos |
+| R7 | Operador de alturas e ponte com dinâmica real | Construção finita positiva e ledger downstream; HISTORICAL_SCALARIZATION_MISMATCH na ponte histórica. Nenhuma identificação com o clock material |
 | R8 | Compatibilidade/convergência e operador limite | Não iniciada |
 | R9 | Capstones da álgebra real da teoria | Não iniciada |
 
