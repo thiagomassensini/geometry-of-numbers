@@ -608,3 +608,7 @@ R3 recebe análise/síntese; Gram T* T, normalização/whitening e isometria nã
 foram implementados. Os gaps de atlas/seed das rodadas anteriores continuam
 abertos e independentes desta reconstrução. Nenhuma complexificação, dependência
 histórica ou mudança em Foundation/Geometry foi usada para fechar R2.
+
+### Recovery round 9: PASS_RESTRICTED_GRAM
+
+Ported to local Analysis: `C2GlobalGreenBridge`. Original hypotheses, open gaps and no-go quantifiers preserved.

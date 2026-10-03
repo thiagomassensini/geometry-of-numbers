@@ -1094,3 +1094,13 @@ and the even sector are excluded. Amplitude is `2^(-k/2)` at the decoded branch
 depth; phase is rotation by `-t*log(n)` at the material point. Never replace
 this amplitude by `n^(-1/2)`. The historical diagonal source is not recovered.
 See `docs/C2_GLOBAL_PHYSICAL_BRANCH_CANARY.md` for proofs and validation.
+
+## Recovery round 9 — PASS_RESTRICTED_GRAM
+
+Read-only source: `/home/thlinux/carry-c2-source-raw-green` at `cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa`; uncommitted source is identified by SHA-256.
+
+- `GeometryOfNumbers/Analysis/C2GlobalGreenBridge.lean` ← `/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/C2GlobalGreenBridge.lean`; SHA-256 `ceba5dc151babe1aa9b142361efcc6d29b80ed38fc0008683980e8990573c55b`.
+- `GeometryOfNumbers/Analysis/C2GlobalGreenBridgeAudit.lean` ← `/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/C2GlobalGreenBridgeAudit.lean`; SHA-256 `d36fb60543a174e30d42aeb48e8d15d813a1526aa1e5f1cf5678512c9ec5264c`.
+- `docs/C2_GLOBAL_GREEN_BRIDGE.md` ← `/home/thlinux/carry-c2-source-raw-green/docs/C2_GLOBAL_GREEN_BRIDGE.md`; SHA-256 `d99082a14362b7d6276e41c60b2f99903ddb44575dc7fb4c3e523dd9465d6126`.
+
+Only path/namespace adaptation; no import of the historical carry project. Foundation and Geometry remain unchanged.
