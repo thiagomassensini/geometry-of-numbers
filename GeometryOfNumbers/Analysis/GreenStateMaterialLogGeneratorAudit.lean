@@ -1,0 +1,87 @@
+import GeometryOfNumbers.Analysis.GreenStateMaterialLogGenerator
+import Lean
+
+open Lean Elab Command
+elab "#assert_material_log_axioms " id:ident : command => do
+  let decl ← liftCoreM <| realizeGlobalConstNoOverloadWithInfo id
+  let deps ← collectAxioms decl
+  let allowed := #[`propext, `Classical.choice, `Quot.sound]
+  for name in deps do
+    unless allowed.contains name do
+      throwError "Unexpected foundational dependency: {decl} depends on {name}"
+
+namespace GeometryOfNumbers.Analysis.GreenStateMaterialLog
+
+#assert_material_log_axioms natEquivPNat
+#print axioms natEquivPNat
+
+#assert_material_log_axioms natEquivPNat_val
+#print axioms natEquivPNat_val
+
+#assert_material_log_axioms natEquivPNat_symm
+#print axioms natEquivPNat_symm
+
+#assert_material_log_axioms natEquivPNat_symm_add_one
+#print axioms natEquivPNat_symm_add_one
+
+#assert_material_log_axioms nativeLogHilbertEquivGreenState
+#print axioms nativeLogHilbertEquivGreenState
+
+#assert_material_log_axioms nativeLogHilbertEquivGreenState_apply
+#print axioms nativeLogHilbertEquivGreenState_apply
+
+#assert_material_log_axioms nativeLogHilbertEquivGreenState_symm_apply
+#print axioms nativeLogHilbertEquivGreenState_symm_apply
+
+#assert_material_log_axioms nativeLogHilbertEquivGreenState_norm
+#print axioms nativeLogHilbertEquivGreenState_norm
+
+#assert_material_log_axioms greenMaterialBasisVector
+#print axioms greenMaterialBasisVector
+
+#assert_material_log_axioms nativeLogHilbertEquivGreenState_basisVector
+#print axioms nativeLogHilbertEquivGreenState_basisVector
+
+#assert_material_log_axioms greenStateMaterialLogGenerator
+#print axioms greenStateMaterialLogGenerator
+
+#assert_material_log_axioms greenStateMaterialLogGenerator_mem_domain_iff
+#print axioms greenStateMaterialLogGenerator_mem_domain_iff
+
+#assert_material_log_axioms greenStateMaterialLogGenerator_domain_iff_memℓp
+#print axioms greenStateMaterialLogGenerator_domain_iff_memℓp
+
+#assert_material_log_axioms greenStateMaterialLogGenerator_apply
+#print axioms greenStateMaterialLogGenerator_apply
+
+#assert_material_log_axioms greenMaterialBasisVector_mem_domain
+#print axioms greenMaterialBasisVector_mem_domain
+
+#assert_material_log_axioms greenStateMaterialLogGenerator_basisVector_log
+#print axioms greenStateMaterialLogGenerator_basisVector_log
+
+#assert_material_log_axioms greenStateMaterialLogGenerator_isSelfAdjoint
+#print axioms greenStateMaterialLogGenerator_isSelfAdjoint
+
+#assert_material_log_axioms greenStateMaterialLogGenerator_dense_domain
+#print axioms greenStateMaterialLogGenerator_dense_domain
+
+#assert_material_log_axioms greenStateMaterialLogGenerator_isClosed
+#print axioms greenStateMaterialLogGenerator_isClosed
+
+#assert_material_log_axioms materialLogPhase_hasDerivAt
+#print axioms materialLogPhase_hasDerivAt
+
+#assert_material_log_axioms c2Source_materialLog_hasDerivAt
+#print axioms c2Source_materialLog_hasDerivAt
+
+#assert_material_log_axioms greenStateMaterialLogGenerator_domain_iff_log_moment
+#print axioms greenStateMaterialLogGenerator_domain_iff_log_moment
+
+#assert_material_log_axioms c2Source_log_domain_iff
+#print axioms c2Source_log_domain_iff
+
+#assert_material_log_axioms c2Source_log_domain_time_independent
+#print axioms c2Source_log_domain_time_independent
+
+end GeometryOfNumbers.Analysis.GreenStateMaterialLog

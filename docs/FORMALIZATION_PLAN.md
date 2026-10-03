@@ -628,3 +628,7 @@ Ported to local Analysis: `C2GreenTemporalMeanCanary`. Original hypotheses, open
 ### Recovery round 13: PASS
 
 Ported to local Analysis: `C2GreenWhiteningGenealogy`. Original hypotheses, open gaps and no-go quantifiers preserved.
+
+### Recovery round 14: PASS_DOMAIN_GATE_OPEN
+
+Ported to local Analysis: `GreenStateMaterialLogGenerator`. Original hypotheses, open gaps and no-go quantifiers preserved.

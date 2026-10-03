@@ -18,7 +18,7 @@ while IFS= read -r proof_name; do
     fi
   done
 done < <(rg --no-filename --only-matching --replace '$1' \
-  '^theorem ([A-Za-z0-9_]+)' GeometryOfNumbers/Analysis --glob '*.lean')
+  '^(?:@\[[^]]+\][[:space:]]*)?theorem ([\p{L}\p{N}_.]+)' GeometryOfNumbers/Analysis --glob '*.lean')
 
 lake build GeometryOfNumbers.Analysis GeometryOfNumbers.Analysis.Audit
 lake env lean GeometryOfNumbers/Analysis/Audit.lean

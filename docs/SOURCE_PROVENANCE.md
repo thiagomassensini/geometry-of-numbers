@@ -1144,3 +1144,20 @@ Read-only source: `/home/thlinux/carry-c2-source-raw-green` at `cb33c845a7ee0ca1
 - `docs/C2_GREEN_WHITENING_GENEALOGY.md` ← `/home/thlinux/carry-c2-source-raw-green/docs/C2_GREEN_WHITENING_GENEALOGY.md`; SHA-256 `03e849888c34ee90dd8e8ade09d05fedb0ce88cf1c2000866b1ba3c382abf205`.
 
 Only path/namespace adaptation; no import of the historical carry project. Foundation and Geometry remain unchanged.
+
+## Recovery round 14 — PASS_DOMAIN_GATE_OPEN
+
+Read-only source: `/home/thlinux/carry-c2-source-raw-green` at `cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa`; uncommitted source is identified by SHA-256.
+
+- `GeometryOfNumbers/Analysis/GreenStateMaterialLogGenerator.lean` ← `/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/GreenStateMaterialLogGenerator.lean`; SHA-256 `031719f090c00f0aaeb973676a067aa0bc19d11348b1346a758652bc18d8bee1`.
+- `GeometryOfNumbers/Analysis/GreenStateMaterialLogGeneratorAudit.lean` ← `/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/GreenStateMaterialLogGeneratorAudit.lean`; SHA-256 `b6756b219e1a561f0078f40ce474d219c86a0afc20cdbfa915982233d36a2b73`.
+- `docs/GREEN_STATE_MATERIAL_LOG_GENERATOR.md` ← `/home/thlinux/carry-c2-source-raw-green/docs/GREEN_STATE_MATERIAL_LOG_GENERATOR.md`; SHA-256 `c2d98ced48e2b71037148d59d1f03af2fd8e63bfd767acce8b99224abc69308a`.
+
+Only path/namespace adaptation; no import of the historical carry project. Foundation and Geometry remain unchanged.
+
+### Minimal recovered prerequisites for round 14
+
+- `/home/thlinux/carry-c2-source-raw-green/.lake/packages/CPFormal/CPFormal/Analytic/CpInfiniteRealSpectralGenerator.lean`; SHA-256 `85d6f2e98a09fcdd09f5d43993d2d9a10bc7862162b311e3afce4bf487d1c642`; Discard import CpRealSpectralGenerator; recover self-contained infinite log multiplier/evolution with Mathlib imports. Recover six pure native aliases, excluding historical state/readout theorems.
+- `/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/NativeLogEvolution.lean`; SHA-256 `376a7f5eb07ed3ad72a8a2e728345f79710edb373a64f10474cb988eb414c090`; native alias source
+
+The Analysis audit name scanner now accepts Unicode identifiers, dotted theorem names and inline simp attributes; rejecting kernel guards and the allowed axiom set are unchanged.
