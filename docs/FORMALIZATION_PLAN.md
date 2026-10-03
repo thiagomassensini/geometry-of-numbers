@@ -752,3 +752,20 @@ Starting main `9d6b687cc7a2b7d57e37c94cc644f1a79696ff0f`.
 
 See `CANONICAL_GREEN_MOMENT_GRAM.md`. No source amplitude is changed;
 no residual-zero assumption, scalar Gram or moment-manufactured carrier is added.
+
+
+### Exact Parseval transport; canonical first column remains open
+
+`CanonicalGreenMomentJetSeam` proves transport of normalized jets of the
+existing full C2 vector orbit, invariance of their real pairings and first-column
+residual, and equivalence of Hilbert regularity before and after Parseval.
+The first strong derivative is equivalent to the existing logarithmic moment.
+No generator power is applied without domain proof.
+
+Status: `PASS_PARITY_GRAM_TRANSPORT_FIRST_COLUMN_OPEN`.
+The orbit-jet first column is a diagnostic candidate, not a certified completed
+boundary Green readout. Its zeroth pairing is exactly the core norm squared.
+The actual vector completed/dressed boundary readout and its equality with the
+canonical log-derivative column remain OPEN. Scalar analyticity does not prove
+that identity. Concrete PSD, mixed orthogonality, independence and PD remain
+OPEN; no downstream operator construction is started.

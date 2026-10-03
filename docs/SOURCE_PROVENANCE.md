@@ -1355,3 +1355,24 @@ Read-only seam audits at that same revision:
 factor representation, Taylor/forward-difference residual and independence
 are explicit inputs; no such input is imported as a local proof or assumption.
 No height construction or downstream conclusion is ported.
+
+
+### Actual C2 vector jets: local Parseval transport and first-column audit
+
+Increment A published: `4c2f51828cac07edeec10cd0d76621ddfb320c10`.
+`CanonicalGreenMomentJetSeam` uses ONLY current local APIs:
+`GreenParsevalMaterialEvolution`, `GreenStateMaterialEvolution`,
+`C2GlobalGreenBridge`, `C2GreenWhiteningGenealogy`,
+`BaseTwoCanonicalDressingMoments` and the local neutral `ParityMomentGram`.
+Mathlib calculus gives composition with a bounded linear map. The identity
+P†P=I supplies a bounded left inverse, so regularity can also be recovered.
+The existing private real/complex inner-product compatibility lemma is reused
+via Batteries open-private, with its transitive kernel axioms audited.
+No historical theorem, first-column assumption, normalized kernel certificate,
+height module or new package is imported.
+
+The local declaration search found no preexisting boundary/readout from the
+complete C2/Parseval vector source to the concrete scalar log-derivative column.
+This is a source/API audit conclusion, not a Lean theorem about the absence of
+all possible proofs. The newly named orbit-jet residual is not received as a
+hypothesis and is not proved zero. Material and depth amplitudes stay distinct.
