@@ -700,7 +700,7 @@ whole-cell bound. The derived tail coefficient is the actual normalized jet
 of the existing tail, by smooth subtraction after synthesis. No termwise
 infinite-tail differentiation is required.
 
-Current status: `PASS_SYNTHESIZED_CLOCK_MOMENTS` at the historical material
+Status of the preceding synthesis round: `PASS_SYNTHESIZED_CLOCK_MOMENTS` at the historical material
 orbit / fixed explicit dressing / nonzero phi(0) interface. The new base-two
 path has no arbitrary tail input. Common-camera/completion dressing, modern
 provenance-correct C2/Green source to the historical observable, and Gram/Hankel

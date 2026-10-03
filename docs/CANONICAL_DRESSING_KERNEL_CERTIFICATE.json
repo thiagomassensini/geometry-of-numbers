@@ -459,5 +459,18 @@
     "audit_geometry": "exit 0",
     "diff_check": "exit 0",
     "new_source_placeholder_scan": "no matches"
+  },
+  "mathematical_publication_commits": [
+    "3c0010f87afec21356df7af563ac8a5de72d856c",
+    "6d8010685ddcb191f267820b0aacfecbe7078f62",
+    "5335306a9d3ec3ea36cf18f3bfc80c166b94019a"
+  ],
+  "main_after_mathematical_integration": "5335306a9d3ec3ea36cf18f3bfc80c166b94019a",
+  "main_recheck": {
+    "all_modules_and_audits_wfail": 0,
+    "dedicated_moment_audit_lean": 0,
+    "source_hash_and_49_footprints": "verified",
+    "head_main_origin_github": "equal",
+    "working_tree": "clean"
   }
 }

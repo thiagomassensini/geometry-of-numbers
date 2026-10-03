@@ -240,3 +240,29 @@ was changed. No zero table, numerical argument, zeta/RH/HP premise, imported
 historical certificate, Hankel positivity or Gram representation occurs in
 these proofs. Increment C is published under the commit subject
 `feat: close canonical dressed response and unique concrete moments`.
+
+## Published increments and final main check
+
+Each mathematical increment was built, audited, kernel-guarded, committed,
+pushed on the dedicated branch, fast-forwarded into main, pushed again and
+verified against the GitHub remote before the next increment began.
+
+| Increment | Mathematical publication commit | HEAD/main/origin/main/GitHub after integration |
+| --- | --- | --- |
+| A: exact camera germ | `3c0010f87afec21356df7af563ac8a5de72d856c` | all equal |
+| B: explicit archimedean germ | `6d8010685ddcb191f267820b0aacfecbe7078f62` | all equal |
+| C: analytic response, nonzero phi, concrete unique moments | `5335306a9d3ec3ea36cf18f3bfc80c166b94019a` | all equal |
+
+On main at the third mathematical publication: all three proof modules,
+all three dedicated audits, Analysis and central Audit built together with
+`--wfail`, exit 0. The concrete-moment audit was additionally rerun with
+`lake env lean`, exit 0. The certificate source hashes and all 49 printed
+footprints were verified against main. Working tree was clean and the
+GitHub `refs/heads/main` value equaled all local refs. This final publication
+record is documentation only; it introduces no new mathematical claim.
+
+Final strict status: `PASS_CANONICAL_DRESSING_MOMENTS`.
+Arbitrary tail, arbitrary cameraFactor, arbitrary completion and a received
+phi(0)-nonzero hypothesis are absent from the concrete base-two path.
+The modern-source/observable crosswalk and actual global parity-jet Gram
+representation remain open; historical scalarization mismatch is REDUCED.
