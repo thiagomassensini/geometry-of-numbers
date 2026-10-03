@@ -642,3 +642,30 @@ Ported to local Analysis: `GreenStateMaterialEvolution`, `GreenParsevalMaterialE
 ### Recovery round 17: HISTORICAL_SCALARIZATION_MISMATCH
 
 Ported to local Analysis: `FiniteMaterialClockJets`, `FiniteClockHeightLedger`, `FiniteHistoricalChebyshev`. Original hypotheses, open gaps and no-go quantifiers preserved.
+
+
+## Base-two exact whole-cell head/tail completion
+
+Status: `PASS_EXACT_HEAD_TAIL`. Local module:
+`GeometryOfNumbers.Analysis.BaseTwoExactHeadTailCompletion`;
+report: `docs/BASE_TWO_EXACT_HEAD_TAIL_COMPLETION.md`.
+
+| Gate | Status | Local theorem |
+| --- | --- | --- |
+| Existing critical material orbit | CLOSED | `criticalMaterialSample_eq_finiteMaterialOrbit` |
+| Geometric camera-2 complete cells | CLOSED | `baseTwoCriticalCenterCell_eq_causalUnitBracket` |
+| Literal existing finite-head readout | CLOSED | `baseTwoFiniteHead_eq_historicalFiniteHeadReadout` |
+| Absolute summability of complete cells | CLOSED | `summable_norm_baseTwoCriticalCenterCell` |
+| Derived whole omitted-cell tail | CLOSED | `baseTwoCriticalCompleteTail_hasSum` |
+| Exact head + tail | CLOSED | `baseTwoFiniteHead_add_completeTail` |
+| Arbitrary cutoff independence | CLOSED | `baseTwoCompletedSignal_cutoff_independent` |
+| C2 endpoint incidence | CLOSED | `baseTwo_endpoint_incidence`; first omitted triple `(4M+3,4M+4,4M+5)` |
+| Existing clock jets are jets of this head | CLOSED | `baseTwoFiniteHead_normalizedClockJet` |
+| Replace downstream external tail | OPEN / later round | Existing finite ledger unchanged |
+| Infinite tail jet tower | OPEN / not attempted | No derivative/sum interchange claimed |
+| Modern C2/Green source to historical full scalarization | OPEN / mismatch active | This round identifies the historical head only |
+
+The estimate preserves whole-cell second-difference cancellation and uses only
+current local APIs and Mathlib. R2, Foundation, Geometry, moment transport and
+finite-height modules are unchanged. Both historical files provide comparison
+provenance only, with no historical package dependency.

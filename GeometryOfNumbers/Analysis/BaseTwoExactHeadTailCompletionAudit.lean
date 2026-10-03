@@ -1,0 +1,78 @@
+import GeometryOfNumbers.Analysis.BaseTwoExactHeadTailCompletion
+import Lean
+
+open Lean Elab Command
+elab "#assert_base_two_completion_axioms " id:ident : command => do
+  let decl ← liftCoreM <| realizeGlobalConstNoOverloadWithInfo id
+  let deps ← collectAxioms decl
+  let allowed := #[`propext, `Classical.choice, `Quot.sound]
+  for name in deps do
+    unless allowed.contains name do
+      throwError "Unexpected foundational dependency: {decl} depends on {name}"
+
+namespace GeometryOfNumbers.Analysis.BaseTwoCompletion
+
+#assert_base_two_completion_axioms criticalMaterialSample
+#print axioms criticalMaterialSample
+#assert_base_two_completion_axioms criticalMaterialSample_eq_finiteMaterialOrbit
+#print axioms criticalMaterialSample_eq_finiteMaterialOrbit
+#assert_base_two_completion_axioms baseTwoCenter
+#print axioms baseTwoCenter
+#assert_base_two_completion_axioms baseTwoLeftLeg
+#print axioms baseTwoLeftLeg
+#assert_base_two_completion_axioms baseTwoRightLeg
+#print axioms baseTwoRightLeg
+#assert_base_two_completion_axioms baseTwo_center_eq
+#print axioms baseTwo_center_eq
+#assert_base_two_completion_axioms baseTwo_leftLeg_eq
+#print axioms baseTwo_leftLeg_eq
+#assert_base_two_completion_axioms baseTwo_rightLeg_eq
+#print axioms baseTwo_rightLeg_eq
+#assert_base_two_completion_axioms baseTwoCriticalCenterCell
+#print axioms baseTwoCriticalCenterCell
+#assert_base_two_completion_axioms baseTwoCriticalCenterCell_eq_causalUnitBracket
+#print axioms baseTwoCriticalCenterCell_eq_causalUnitBracket
+#assert_base_two_completion_axioms baseTwoFiniteHead
+#print axioms baseTwoFiniteHead
+#assert_base_two_completion_axioms baseTwo_headDimension
+#print axioms baseTwo_headDimension
+#assert_base_two_completion_axioms baseTwo_retained_cell_in_head
+#print axioms baseTwo_retained_cell_in_head
+#assert_base_two_completion_axioms baseTwo_endpoint_incidence
+#print axioms baseTwo_endpoint_incidence
+#assert_base_two_completion_axioms baseTwoFiniteHead_eq_historicalFiniteHeadReadout
+#print axioms baseTwoFiniteHead_eq_historicalFiniteHeadReadout
+#assert_base_two_completion_axioms baseTwoFiniteHead_iteratedDerivative
+#print axioms baseTwoFiniteHead_iteratedDerivative
+#assert_base_two_completion_axioms baseTwoFiniteHead_normalizedClockJet
+#print axioms baseTwoFiniteHead_normalizedClockJet
+#assert_base_two_completion_axioms criticalMaterialExponent
+#print axioms criticalMaterialExponent
+#assert_base_two_completion_axioms criticalMaterialSample_eq_cpow
+#print axioms criticalMaterialSample_eq_cpow
+#assert_base_two_completion_axioms criticalMaterialSample_eq_rpow_phase
+#print axioms criticalMaterialSample_eq_rpow_phase
+#assert_base_two_completion_axioms baseTwoCriticalCenterCell_norm_le
+#print axioms baseTwoCriticalCenterCell_norm_le
+#assert_base_two_completion_axioms summable_norm_baseTwoCriticalCenterCell
+#print axioms summable_norm_baseTwoCriticalCenterCell
+#assert_base_two_completion_axioms summable_baseTwoCriticalCenterCell
+#print axioms summable_baseTwoCriticalCenterCell
+#assert_base_two_completion_axioms baseTwoCriticalCompleteTail
+#print axioms baseTwoCriticalCompleteTail
+#assert_base_two_completion_axioms baseTwoCriticalCompleteSignal
+#print axioms baseTwoCriticalCompleteSignal
+#assert_base_two_completion_axioms baseTwoFiniteHead_add_completeTail
+#print axioms baseTwoFiniteHead_add_completeTail
+#assert_base_two_completion_axioms baseTwoCompletedSignal_cutoff_independent
+#print axioms baseTwoCompletedSignal_cutoff_independent
+#assert_base_two_completion_axioms criticalMaterialSample_one
+#print axioms criticalMaterialSample_one
+#assert_base_two_completion_axioms baseTwo_firstOmittedCell_points
+#print axioms baseTwo_firstOmittedCell_points
+#assert_base_two_completion_axioms baseTwoCriticalCompleteTail_hasSum
+#print axioms baseTwoCriticalCompleteTail_hasSum
+#assert_base_two_completion_axioms baseTwoHistoricalReadout_add_completeTail
+#print axioms baseTwoHistoricalReadout_add_completeTail
+
+end GeometryOfNumbers.Analysis.BaseTwoCompletion

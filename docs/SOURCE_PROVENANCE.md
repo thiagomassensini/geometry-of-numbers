@@ -1206,3 +1206,39 @@ Only path/namespace adaptation; no import of the historical carry project. Found
 - `/home/thlinux/carry-finite-clock-jet-height/CarrySelfAdjointOperator/CanonicalFiniteHeight.lean`; SHA-256 `d92b418f76d6a7eb6d8f62f0faedc5427dc9a9d8a8732d352c10bfe47f880ca3`; Literal mathematical prerequisite, path/namespace only; downstream finite ledger, never used as foundation for material clock.
 
 FiniteMaterialClockJets now directly imports Mathlib.Analysis.Calculus.Deriv.Prod and Mathlib.Analysis.SpecialFunctions.ExpDeriv; these APIs previously arrived transitively through the removed historical spectral/readout module. Proof bodies and statements are unchanged.
+
+
+## Base-two exact head/tail completion — local proof, 2026-10-03
+
+Target base: `9ac65f62f714b276155617f4646fa7911727f7e0`.
+New module: `GeometryOfNumbers/Analysis/BaseTwoExactHeadTailCompletion.lean`.
+Dedicated audit: `BaseTwoExactHeadTailCompletionAudit.lean`.
+Report: `docs/BASE_TWO_EXACT_HEAD_TAIL_COMPLETION.md`.
+
+The proof composes local APIs: existing finite material orbit, camera weights
+and period, reflected-leg indices and causal unit bracket; Mathlib mean-value
+bounds, real-power summability and `Summable.sum_add_tsum_nat_add`.
+No old worktree is a source. No dependency or Foundation/Geometry change.
+
+Only permitted read-only historical comparisons:
+
+| Repository/reference | Exact revision | File | SHA-256 |
+| --- | --- | --- | --- |
+| `primos`, PR #3 merge | `6dcecd52ff0e46ea7599892ba1d1ded62e5dd4ab` | `CPFormal/Analytic/CpGenuineFirstCutoffTail.lean` | `3b3a57bed0e6c600bde81ff8b02d996416b14f829e5ee8ef01db95e61db52493` |
+| `native-carry-c3-crosswalk` | `d9e9e3a7469cb2a95ad3a07d08d0c1a860377ec0` | `NativeCarryC3Crosswalk/GeometricCutoffCompleteness.lean` | `b58a7102ecda16d808d1766ac153157406684b05bf9456738a602583b6944d04` |
+
+`primos` local HEAD: `8c4b7fdf65a49d1d0febe8193d56e2cfb2191260`;
+the file was verified byte-identical to PR #3 merge version.
+PR: https://github.com/thiagomassensini/primos/pull/3.
+
+Comparison identities: `bracketedDirichletChart_eq_finite_add_cutoffTail`,
+`c2_complete_horizon`, `included_center_has_both_legs_in_window`,
+`last_right_leg_eq_finiteCameraWindow`, `complete_head_add_complete_center_tail`.
+None is imported. The even-camera shared-endpoint theorem assumes camera >= 4;
+the C2 proof instead proves disjointness of head horizon and first omitted cell.
+
+Unchanged checkpoints: `log_eq_sum_primeCarryVoice`, `historicalInitialState`,
+`finiteMaterialOrbit`, `finiteHeadReadout_iteratedDerivative`,
+`finiteClockJets_to_head`. Material amplitude n^(-1/2) remains distinct from the
+modern depth amplitude. Historical scalarization mismatch remains active;
+external tail in the finite ledger, moments and height modules are unchanged.
