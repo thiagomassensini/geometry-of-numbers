@@ -1,0 +1,156 @@
+import GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger
+import Lean
+
+open Lean Elab Command
+elab "#assert_c2_base_two_axioms " id:ident : command => do
+  let decl ← liftCoreM <| realizeGlobalConstNoOverloadWithInfo id
+  let deps ← collectAxioms decl
+  let allowed := #[`propext, `Classical.choice, `Quot.sound]
+  for name in deps do
+    unless allowed.contains name do
+      throwError "Unexpected foundational dependency: {decl} depends on {name}"
+
+namespace GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger
+
+#assert_c2_base_two_axioms baseTwo_code
+#print axioms baseTwo_code
+
+#assert_c2_base_two_axioms baseTwo_positive_code
+#print axioms baseTwo_positive_code
+
+#assert_c2_base_two_axioms baseTwo_real_code
+#print axioms baseTwo_real_code
+
+#assert_c2_base_two_axioms baseTwoGreenProjection
+#print axioms baseTwoGreenProjection
+
+#assert_c2_base_two_axioms nonBaseTwoGreenProjection
+#print axioms nonBaseTwoGreenProjection
+
+#assert_c2_base_two_axioms baseTwoGreenProjection_apply
+#print axioms baseTwoGreenProjection_apply
+
+#assert_c2_base_two_axioms nonBaseTwoGreenProjection_apply
+#print axioms nonBaseTwoGreenProjection_apply
+
+#assert_c2_base_two_axioms baseTwoGreenProjection_idempotent
+#print axioms baseTwoGreenProjection_idempotent
+
+#assert_c2_base_two_axioms baseTwoGreenProjection_isSelfAdjoint
+#print axioms baseTwoGreenProjection_isSelfAdjoint
+
+#assert_c2_base_two_axioms nonBaseTwoGreenProjection_idempotent
+#print axioms nonBaseTwoGreenProjection_idempotent
+
+#assert_c2_base_two_axioms nonBaseTwoGreenProjection_isSelfAdjoint
+#print axioms nonBaseTwoGreenProjection_isSelfAdjoint
+
+#assert_c2_base_two_axioms c2GlobalGreenInput_even_eq_zero
+#print axioms c2GlobalGreenInput_even_eq_zero
+
+#assert_c2_base_two_axioms directGreenCoordinate_baseTwo_c2Source_eq_zero
+#print axioms directGreenCoordinate_baseTwo_c2Source_eq_zero
+
+#assert_c2_base_two_axioms baseTwo_directGreenAnalysis_c2Source_eq_zero
+#print axioms baseTwo_directGreenAnalysis_c2Source_eq_zero
+
+#assert_c2_base_two_axioms carryRatio_baseTwo_sq
+#print axioms carryRatio_baseTwo_sq
+
+#assert_c2_base_two_axioms verticalGreenStencil_baseTwo_oddParent
+#print axioms verticalGreenStencil_baseTwo_oddParent
+
+#assert_c2_base_two_axioms grandparentIndex_baseTwo_twice
+#print axioms grandparentIndex_baseTwo_twice
+
+#assert_c2_base_two_axioms verticalGreenStencil_baseTwo_twiceParent
+#print axioms verticalGreenStencil_baseTwo_twiceParent
+
+#assert_c2_base_two_axioms verticalGreenStencil_baseTwo_twiceOddParent
+#print axioms verticalGreenStencil_baseTwo_twiceOddParent
+
+#assert_c2_base_two_axioms verticalGreenStencil_baseTwo_parent_four_dvd_eq_zero
+#print axioms verticalGreenStencil_baseTwo_parent_four_dvd_eq_zero
+
+#assert_c2_base_two_axioms positionalDepth_two_two_mul_odd
+#print axioms positionalDepth_two_two_mul_odd
+
+#assert_c2_base_two_axioms positionalDepth_two_four_mul_odd
+#print axioms positionalDepth_two_four_mul_odd
+
+#assert_c2_base_two_axioms allBaseActivity_two_two_mul_odd
+#print axioms allBaseActivity_two_two_mul_odd
+
+#assert_c2_base_two_axioms carryCameraWeight_two_pos_of_dvd
+#print axioms carryCameraWeight_two_pos_of_dvd
+
+#assert_c2_base_two_axioms carryCameraWeight_two_two_mul_odd_pos
+#print axioms carryCameraWeight_two_two_mul_odd_pos
+
+#assert_c2_base_two_axioms carryCameraWeight_two_four_mul_odd_pos
+#print axioms carryCameraWeight_two_four_mul_odd_pos
+
+#assert_c2_base_two_axioms baseTwo_firstGeneration_greenCoordinate_normSq
+#print axioms baseTwo_firstGeneration_greenCoordinate_normSq
+
+#assert_c2_base_two_axioms baseTwo_secondGeneration_greenCoordinate_normSq
+#print axioms baseTwo_secondGeneration_greenCoordinate_normSq
+
+#assert_c2_base_two_axioms baseTwoGenerationEvent
+#print axioms baseTwoGenerationEvent
+
+#assert_c2_base_two_axioms baseTwoGenerationEvent_injective
+#print axioms baseTwoGenerationEvent_injective
+
+#assert_c2_base_two_axioms baseTwoGreen_c2Source_eq_zero_off_generations
+#print axioms baseTwoGreen_c2Source_eq_zero_off_generations
+
+#assert_c2_base_two_axioms baseTwoOddDiagonalWeight
+#print axioms baseTwoOddDiagonalWeight
+
+#assert_c2_base_two_axioms baseTwoOddDiagonalWeight_pos
+#print axioms baseTwoOddDiagonalWeight_pos
+
+#assert_c2_base_two_axioms baseTwoGreenStencilEnergy_eq_odd_diagonal
+#print axioms baseTwoGreenStencilEnergy_eq_odd_diagonal
+
+#assert_c2_base_two_axioms c2GlobalGreenInput_exists_nonzero_odd_coordinate
+#print axioms c2GlobalGreenInput_exists_nonzero_odd_coordinate
+
+#assert_c2_base_two_axioms baseTwoGreenStencilEnergy_pos_of_c2Source_ne_zero
+#print axioms baseTwoGreenStencilEnergy_pos_of_c2Source_ne_zero
+
+#assert_c2_base_two_axioms baseTwoGreenStencilEnergy_pos_of_core_ne_zero
+#print axioms baseTwoGreenStencilEnergy_pos_of_core_ne_zero
+
+#assert_c2_base_two_axioms baseTwoDefect
+#print axioms baseTwoDefect
+
+#assert_c2_base_two_axioms baseTwoDefect_eq_stencilEnergy
+#print axioms baseTwoDefect_eq_stencilEnergy
+
+#assert_c2_base_two_axioms baseTwoDefect_pos
+#print axioms baseTwoDefect_pos
+
+#assert_c2_base_two_axioms baseTwo_nonBaseTwo_norm_sq_add
+#print axioms baseTwo_nonBaseTwo_norm_sq_add
+
+#assert_c2_base_two_axioms nonBaseTwoDefect
+#print axioms nonBaseTwoDefect
+
+#assert_c2_base_two_axioms c2GlobalRawGreenDefect_eq_camera_ledger
+#print axioms c2GlobalRawGreenDefect_eq_camera_ledger
+
+#assert_c2_base_two_axioms restrictedGram_eq_identity_implies_nonBaseTwo_exact_cancellation
+#print axioms restrictedGram_eq_identity_implies_nonBaseTwo_exact_cancellation
+
+#assert_c2_base_two_axioms restrictedGram_eq_identity_implies_nonBaseTwo_negative
+#print axioms restrictedGram_eq_identity_implies_nonBaseTwo_negative
+
+#assert_c2_base_two_axioms c2GlobalGreenInput_normSq_independent_time
+#print axioms c2GlobalGreenInput_normSq_independent_time
+
+#assert_c2_base_two_axioms baseTwoDefect_independent_time
+#print axioms baseTwoDefect_independent_time
+
+end GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger
