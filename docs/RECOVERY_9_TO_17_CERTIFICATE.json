@@ -1,0 +1,6077 @@
+{
+  "status": "PASS_RECOVERY_9_TO_17_PUSHED",
+  "initial_main": "b444840919f33330a5e588e05002a29bcaee38cd",
+  "initial_origin_main": "b444840919f33330a5e588e05002a29bcaee38cd",
+  "rounds": [
+    {
+      "round": 9,
+      "status": "PASS_RESTRICTED_GRAM",
+      "commit": "0cbb7930cef6ce2eced554e8d268916c8187b86f",
+      "main": "0cbb7930cef6ce2eced554e8d268916c8187b86f",
+      "origin_main": "0cbb7930cef6ce2eced554e8d268916c8187b86f",
+      "files": [
+        "GeometryOfNumbers/Analysis.lean",
+        "GeometryOfNumbers/Analysis/Audit.lean",
+        "docs/SOURCE_PROVENANCE.md",
+        "docs/FORMALIZATION_PLAN.md",
+        "docs/RECOVERY_2026-10-02.md",
+        "docs/C2_GLOBAL_GREEN_BRIDGE.md",
+        "GeometryOfNumbers/Analysis/C2GlobalGreenBridge.lean",
+        "GeometryOfNumbers/Analysis/C2GlobalGreenBridgeAudit.lean",
+        "lakefile.toml",
+        "lake-manifest.json"
+      ],
+      "build": "PASS",
+      "audit": "PASS",
+      "kernel": "PASS"
+    },
+    {
+      "round": 10,
+      "status": "PASS",
+      "commit": "d3826895aefaf753996445b5a7280d6b689b9bad",
+      "main": "d3826895aefaf753996445b5a7280d6b689b9bad",
+      "origin_main": "d3826895aefaf753996445b5a7280d6b689b9bad",
+      "files": [
+        "GeometryOfNumbers/Analysis.lean",
+        "GeometryOfNumbers/Analysis/Audit.lean",
+        "docs/SOURCE_PROVENANCE.md",
+        "docs/FORMALIZATION_PLAN.md",
+        "docs/RECOVERY_2026-10-02.md",
+        "docs/C2_GREEN_PRE_STENCIL_AUDIT.md",
+        "GeometryOfNumbers/Analysis/C2GreenPreStencilCanary.lean",
+        "GeometryOfNumbers/Analysis/C2GreenPreStencilCanaryAudit.lean"
+      ],
+      "build": "PASS",
+      "audit": "PASS",
+      "kernel": "PASS"
+    },
+    {
+      "round": 11,
+      "status": "PASS",
+      "commit": "8b3aa7fc0711cd98e1e1721bd1fcc7ef1cbee511",
+      "main": "8b3aa7fc0711cd98e1e1721bd1fcc7ef1cbee511",
+      "origin_main": "8b3aa7fc0711cd98e1e1721bd1fcc7ef1cbee511",
+      "files": [
+        "GeometryOfNumbers/Analysis.lean",
+        "GeometryOfNumbers/Analysis/Audit.lean",
+        "docs/SOURCE_PROVENANCE.md",
+        "docs/FORMALIZATION_PLAN.md",
+        "docs/RECOVERY_2026-10-02.md",
+        "docs/C2_BASE_TWO_GREEN_LEDGER.md",
+        "GeometryOfNumbers/Analysis/C2BaseTwoGreenLedger.lean",
+        "GeometryOfNumbers/Analysis/C2BaseTwoGreenLedgerAudit.lean"
+      ],
+      "build": "PASS",
+      "audit": "PASS",
+      "kernel": "PASS"
+    },
+    {
+      "round": 12,
+      "status": "PASS",
+      "commit": "f8fbd0d4e22eed0486123ac8fc5589c9bb84af5e",
+      "main": "f8fbd0d4e22eed0486123ac8fc5589c9bb84af5e",
+      "origin_main": "f8fbd0d4e22eed0486123ac8fc5589c9bb84af5e",
+      "files": [
+        "GeometryOfNumbers/Analysis.lean",
+        "GeometryOfNumbers/Analysis/Audit.lean",
+        "docs/SOURCE_PROVENANCE.md",
+        "docs/FORMALIZATION_PLAN.md",
+        "docs/RECOVERY_2026-10-02.md",
+        "docs/C2_GREEN_TEMPORAL_MEAN_AUDIT.md",
+        "GeometryOfNumbers/Analysis/C2GreenTemporalMeanCanary.lean",
+        "GeometryOfNumbers/Analysis/C2GreenTemporalMeanCanaryAudit.lean"
+      ],
+      "build": "PASS",
+      "audit": "PASS",
+      "kernel": "PASS"
+    },
+    {
+      "round": 13,
+      "status": "PASS",
+      "commit": "1d8a12d2a3f1a9bfdc6040f5999fde85318afe12",
+      "main": "1d8a12d2a3f1a9bfdc6040f5999fde85318afe12",
+      "origin_main": "1d8a12d2a3f1a9bfdc6040f5999fde85318afe12",
+      "files": [
+        "GeometryOfNumbers/Analysis.lean",
+        "GeometryOfNumbers/Analysis/Audit.lean",
+        "docs/SOURCE_PROVENANCE.md",
+        "docs/FORMALIZATION_PLAN.md",
+        "docs/RECOVERY_2026-10-02.md",
+        "docs/C2_GREEN_WHITENING_GENEALOGY.md",
+        "GeometryOfNumbers/Analysis/C2GreenWhiteningGenealogy.lean",
+        "GeometryOfNumbers/Analysis/C2GreenWhiteningGenealogyAudit.lean"
+      ],
+      "build": "PASS",
+      "audit": "PASS",
+      "kernel": "PASS"
+    },
+    {
+      "round": 14,
+      "status": "PASS_DOMAIN_GATE_OPEN",
+      "commit": "f38f8681756235fbaa6935e928e0e45b955ac18f",
+      "main": "f38f8681756235fbaa6935e928e0e45b955ac18f",
+      "origin_main": "f38f8681756235fbaa6935e928e0e45b955ac18f",
+      "files": [
+        "GeometryOfNumbers/Analysis.lean",
+        "GeometryOfNumbers/Analysis/Audit.lean",
+        "docs/SOURCE_PROVENANCE.md",
+        "docs/FORMALIZATION_PLAN.md",
+        "docs/RECOVERY_2026-10-02.md",
+        "docs/GREEN_STATE_MATERIAL_LOG_GENERATOR.md",
+        "GeometryOfNumbers/Analysis/GreenStateMaterialLogGenerator.lean",
+        "GeometryOfNumbers/Analysis/GreenStateMaterialLogGeneratorAudit.lean",
+        "GeometryOfNumbers/Analysis/NativeMaterialLogClock.lean",
+        "scripts/audit-analysis.sh"
+      ],
+      "build": "PASS",
+      "audit": "PASS",
+      "kernel": "PASS"
+    },
+    {
+      "round": 15,
+      "status": "PASS",
+      "commit": "f1f13afc00a98da0a09ac250f66079be833c44f3",
+      "main": "f1f13afc00a98da0a09ac250f66079be833c44f3",
+      "origin_main": "f1f13afc00a98da0a09ac250f66079be833c44f3",
+      "files": [
+        "GeometryOfNumbers/Analysis.lean",
+        "GeometryOfNumbers/Analysis/Audit.lean",
+        "docs/SOURCE_PROVENANCE.md",
+        "docs/FORMALIZATION_PLAN.md",
+        "docs/RECOVERY_2026-10-02.md",
+        "docs/GREEN_PARSEVAL_MATERIAL_LOG_OPERATOR.md",
+        "GeometryOfNumbers/Analysis/GreenParsevalMaterialLogOperator.lean",
+        "GeometryOfNumbers/Analysis/GreenParsevalMaterialLogOperatorAudit.lean"
+      ],
+      "build": "PASS",
+      "audit": "PASS",
+      "kernel": "PASS"
+    },
+    {
+      "round": 16,
+      "status": "PASS_C2_ORBIT",
+      "commit": "93e7961be820f4dd86d1531920a4fde0becefd1f",
+      "main": "93e7961be820f4dd86d1531920a4fde0becefd1f",
+      "origin_main": "93e7961be820f4dd86d1531920a4fde0becefd1f",
+      "files": [
+        "GeometryOfNumbers/Analysis.lean",
+        "GeometryOfNumbers/Analysis/Audit.lean",
+        "docs/SOURCE_PROVENANCE.md",
+        "docs/FORMALIZATION_PLAN.md",
+        "docs/RECOVERY_2026-10-02.md",
+        "docs/GREEN_MATERIAL_UNITARY_EVOLUTION.md",
+        "GeometryOfNumbers/Analysis/GreenStateMaterialEvolution.lean",
+        "GeometryOfNumbers/Analysis/GreenParsevalMaterialEvolution.lean",
+        "GeometryOfNumbers/Analysis/GreenMaterialEvolutionAudit.lean"
+      ],
+      "build": "PASS",
+      "audit": "PASS",
+      "kernel": "PASS"
+    },
+    {
+      "round": 17,
+      "status": "HISTORICAL_SCALARIZATION_MISMATCH",
+      "commit": "d1577400c0d61bc90ecfd1f5759b8e4aaf5fc241",
+      "main": "d1577400c0d61bc90ecfd1f5759b8e4aaf5fc241",
+      "origin_main": "d1577400c0d61bc90ecfd1f5759b8e4aaf5fc241",
+      "files": [
+        "GeometryOfNumbers/Analysis.lean",
+        "GeometryOfNumbers/Analysis/Audit.lean",
+        "docs/SOURCE_PROVENANCE.md",
+        "docs/FORMALIZATION_PLAN.md",
+        "docs/RECOVERY_2026-10-02.md",
+        "docs/FINITE_CLOCK_JET_HEIGHT_FORENSIC.md",
+        "GeometryOfNumbers/Analysis/FiniteMaterialClockJets.lean",
+        "GeometryOfNumbers/Analysis/FiniteClockHeightLedger.lean",
+        "GeometryOfNumbers/Analysis/FiniteHistoricalChebyshev.lean",
+        "GeometryOfNumbers/Analysis/FiniteClockHeightAudit.lean",
+        "GeometryOfNumbers/Analysis/FiniteNativeMaterialClock.lean",
+        "GeometryOfNumbers/Analysis/LogarithmicMomentHankel.lean",
+        "GeometryOfNumbers/Analysis/MomentGramPositivity.lean",
+        "GeometryOfNumbers/Analysis/FiniteJacobiTransport.lean",
+        "GeometryOfNumbers/Analysis/CanonicalLDLWhitening.lean",
+        "GeometryOfNumbers/Analysis/FiniteHeightOperator.lean",
+        "GeometryOfNumbers/Analysis/CanonicalFiniteHeight.lean"
+      ],
+      "build": "PASS",
+      "audit": "PASS",
+      "kernel": "PASS"
+    }
+  ],
+  "files": {
+    "GeometryOfNumbers/Analysis/C2GlobalGreenBridge.lean": "7aac58aa576a3b0e877a728f5007efe15f207d74043ae6ce9967c75526f2c5fa",
+    "GeometryOfNumbers/Analysis/C2GlobalGreenBridgeAudit.lean": "d351b5a95b977cab5a316d3dddd19f8382c8d59958ec5f1afcacce52306e1b1a",
+    "docs/C2_GLOBAL_GREEN_BRIDGE.md": "4ef89874bfd4b96fca3f92253e49fe613f6e485ad476b752f6bb07845902adb7",
+    "GeometryOfNumbers/Analysis/C2GreenPreStencilCanary.lean": "cf3b3436a9e6ba2ca689388dc8ae2fa26f386e6924f1e6f80bdf24f2b37c5c9f",
+    "GeometryOfNumbers/Analysis/C2GreenPreStencilCanaryAudit.lean": "f9b13e3fb629902385c6ffbf2ce7d700f8cba2fa0a6146ad56374505d3f1b552",
+    "docs/C2_GREEN_PRE_STENCIL_AUDIT.md": "1a967df95da7b567f444c337ebcc80b7cd9cf1fcfd9c87d9e6cfca0dcc723efe",
+    "GeometryOfNumbers/Analysis/C2BaseTwoGreenLedger.lean": "5dffd9851fcd91df5c8acbc3a5c2bff62bf66c78529c7c3e342c89554caf4d2f",
+    "GeometryOfNumbers/Analysis/C2BaseTwoGreenLedgerAudit.lean": "12d4b183e64edf0ff6491ff9642175a2b9fc3657bb0415182949b8f9cfad7a67",
+    "docs/C2_BASE_TWO_GREEN_LEDGER.md": "aed71806d20433dd14d4e6d80f673392db2d1010f284bd390100d0b825f87d4e",
+    "GeometryOfNumbers/Analysis/C2GreenTemporalMeanCanary.lean": "5693fb97f111ef3065a17f1ba9fc7cd0de877bfb6cb6d1d9a784c33484279cc3",
+    "GeometryOfNumbers/Analysis/C2GreenTemporalMeanCanaryAudit.lean": "cc06f5672dd78888abc0cbb31ab63c358ac87937611531f2f1da8ce7b348f480",
+    "docs/C2_GREEN_TEMPORAL_MEAN_AUDIT.md": "eb275bd6a0f48242313c228c84167e2abb2ac63a95474a7d8f15133c9ce30573",
+    "GeometryOfNumbers/Analysis/C2GreenWhiteningGenealogy.lean": "805f010466b3a3274fa8701defd560f9889fc33263a21a02d24aa11aeb1cb5dc",
+    "GeometryOfNumbers/Analysis/C2GreenWhiteningGenealogyAudit.lean": "0dfb073ca7f16912e4946498d1cf3434673229ab1382efeb209ce2b95c1dca7d",
+    "docs/C2_GREEN_WHITENING_GENEALOGY.md": "4d2a80bfb20b03efde33ff0b56f9371ab8e454cf2bcbc36da47ba8eeb5dc940b",
+    "GeometryOfNumbers/Analysis/NativeMaterialLogClock.lean": "c3b99e6eb1917132359f3b854bf5c182d7e19a5cacb2baf32003c67793b4cb2e",
+    "GeometryOfNumbers/Analysis/GreenStateMaterialLogGenerator.lean": "ae90975d65e2eae2ca1118438383c447f3471072082dee4c739cf008355ce3f1",
+    "GeometryOfNumbers/Analysis/GreenStateMaterialLogGeneratorAudit.lean": "2c3107dbb6382697b692352b9e754399520265c3d4f2dd832f010a2dd1a5c111",
+    "docs/GREEN_STATE_MATERIAL_LOG_GENERATOR.md": "75c0863280659ebd36169225bf9cd434e06b8380bb93999b6f7ad5bb6c583af3",
+    "GeometryOfNumbers/Analysis/GreenParsevalMaterialLogOperator.lean": "801eb60f6115fe869a0eddd2ec7e87b7ffbb51bc0bbf554b23914bc72b402508",
+    "GeometryOfNumbers/Analysis/GreenParsevalMaterialLogOperatorAudit.lean": "3e90a089271d4d15c3f43652a13602a7f36eb0bfa044a31bda2f9d77d5afd43e",
+    "docs/GREEN_PARSEVAL_MATERIAL_LOG_OPERATOR.md": "3e7911bc6a630529dafef1b79f36c17000cc44b6fa065980201a28081bc3657b",
+    "GeometryOfNumbers/Analysis/GreenStateMaterialEvolution.lean": "097f2baedb2370c8387865be61bc484379c17797aaf280f34ae4ca3a4bfb5a70",
+    "GeometryOfNumbers/Analysis/GreenParsevalMaterialEvolution.lean": "68437a57c97813296516d64400f0d42c451f16575571068bd95a4616ce3801bb",
+    "GeometryOfNumbers/Analysis/GreenMaterialEvolutionAudit.lean": "189b4b1c80c824eab864de4dc050d852ed59b1deeea9e9662fba1bdf3dda4fa7",
+    "docs/GREEN_MATERIAL_UNITARY_EVOLUTION.md": "04df33eaa5baa32d6314d76abb3a5578e5841026c6573b1ec74ffb267ac68b10",
+    "GeometryOfNumbers/Analysis/FiniteNativeMaterialClock.lean": "d675e188e8516e90243bbce52073514aa5887366624e4180a07b068773756605",
+    "GeometryOfNumbers/Analysis/LogarithmicMomentHankel.lean": "4ddf2de8d2a0b79d0855d0070db2a2ae34e8bfe45c41475daa224b566f449620",
+    "GeometryOfNumbers/Analysis/MomentGramPositivity.lean": "d9bad007bc4e0c9fe61b2eb9197a55b7dfec956590f43a77bddc4d6c0a111e22",
+    "GeometryOfNumbers/Analysis/FiniteJacobiTransport.lean": "dd48de6e7b4632b57f8d0e270971ac048a459d2f87d2a463eccf72a67e1ef61a",
+    "GeometryOfNumbers/Analysis/CanonicalLDLWhitening.lean": "1f0f04d54d4f1fb60b704a3216317e59353bc2e08a4752b316d48c7534f7e245",
+    "GeometryOfNumbers/Analysis/FiniteHeightOperator.lean": "e7546cd44fa9310cd60e5ac310656614d7ffd8d65937678a160746ab76a9512d",
+    "GeometryOfNumbers/Analysis/CanonicalFiniteHeight.lean": "d26fe2d6f330322079af32fbb988f016fa687c85a3d602075491bd4e0b16cc5f",
+    "GeometryOfNumbers/Analysis/FiniteMaterialClockJets.lean": "844bb7059ab06b504b3a8e864f8bffab526ebbb98ec3caab327c217145b04152",
+    "GeometryOfNumbers/Analysis/FiniteClockHeightLedger.lean": "71306d8b7c5362c11567eddfd07c642665d0fc11287f2051f0e3d579c4b9c3a3",
+    "GeometryOfNumbers/Analysis/FiniteHistoricalChebyshev.lean": "b3a4060c30442d72d042363730cfcdefbc1cc506cc634cecf4553b32ed6bfd06",
+    "GeometryOfNumbers/Analysis/FiniteClockHeightAudit.lean": "2313dddf9698e8a2668e2b72d95561dd8fe5eb414ee639ca30b13018d38de189",
+    "docs/FINITE_CLOCK_JET_HEIGHT_FORENSIC.md": "dcd5ff42f5788913e5ab1e4682cecc2cbbfd5f795c51ac3a934482f1b1d84c07"
+  },
+  "source_hashes": {
+    "/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/C2GlobalGreenBridge.lean": "ceba5dc151babe1aa9b142361efcc6d29b80ed38fc0008683980e8990573c55b",
+    "/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/C2GlobalGreenBridgeAudit.lean": "d36fb60543a174e30d42aeb48e8d15d813a1526aa1e5f1cf5678512c9ec5264c",
+    "/home/thlinux/carry-c2-source-raw-green/docs/C2_GLOBAL_GREEN_BRIDGE.md": "d99082a14362b7d6276e41c60b2f99903ddb44575dc7fb4c3e523dd9465d6126",
+    "/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/C2GreenPreStencilCanary.lean": "9137ad25dd338b468f1b31e40e0a98dfdabef002d4e8e30dcfdbf5c22e5720ec",
+    "/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/C2GreenPreStencilCanaryAudit.lean": "77a3267b59821cbbe7420ae70ccc6de50d365165000af0c866c94c56e1fb43cb",
+    "/home/thlinux/carry-c2-source-raw-green/docs/C2_GREEN_PRE_STENCIL_AUDIT.md": "e29bf329f8d72fd37605a354f8ef71e4fd24146e7363639a47df57e847178255",
+    "/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/C2BaseTwoGreenLedger.lean": "85cd88c114aaac8b57426007990f439a99b31dd01df64295820e59c182508564",
+    "/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/C2BaseTwoGreenLedgerAudit.lean": "3fd21a1301798327636ea32283249754a9aba6df59deb46cc1e37737571110c1",
+    "/home/thlinux/carry-c2-source-raw-green/docs/C2_BASE_TWO_GREEN_LEDGER.md": "c5c17027d788f0738e941cc73fa04225f6f4add6557376ec0ced981aeba5671c",
+    "/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/C2GreenTemporalMeanCanary.lean": "a810ea85080b6137b30438bbea96351eed95b5de002578930eb9bee29d93ae28",
+    "/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/C2GreenTemporalMeanCanaryAudit.lean": "1fd2e415e14d698465a02874c69986d038d882f9cc99deef736e2e25dabeb5ae",
+    "/home/thlinux/carry-c2-source-raw-green/docs/C2_GREEN_TEMPORAL_MEAN_AUDIT.md": "fb1c7e212e269395b8d86d4be60641bc271ecd07816bfcdf28df9ca5857f6c1b",
+    "/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/C2GreenWhiteningGenealogy.lean": "acde2e3ba661367df3d06a2266ef11cdbbbcbd2bfc4146175f79f331b985350c",
+    "/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/C2GreenWhiteningGenealogyAudit.lean": "f4e6055fc4ab762ac5c4f650491ee9a390e76e8efe6bda7c266522ccfa836054",
+    "/home/thlinux/carry-c2-source-raw-green/docs/C2_GREEN_WHITENING_GENEALOGY.md": "03e849888c34ee90dd8e8ade09d05fedb0ce88cf1c2000866b1ba3c382abf205",
+    "/home/thlinux/carry-c2-source-raw-green/.lake/packages/CPFormal/CPFormal/Analytic/CpInfiniteRealSpectralGenerator.lean": "85d6f2e98a09fcdd09f5d43993d2d9a10bc7862162b311e3afce4bf487d1c642",
+    "/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/GreenStateMaterialLogGenerator.lean": "031719f090c00f0aaeb973676a067aa0bc19d11348b1346a758652bc18d8bee1",
+    "/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/GreenStateMaterialLogGeneratorAudit.lean": "b6756b219e1a561f0078f40ce474d219c86a0afc20cdbfa915982233d36a2b73",
+    "/home/thlinux/carry-c2-source-raw-green/docs/GREEN_STATE_MATERIAL_LOG_GENERATOR.md": "c2d98ced48e2b71037148d59d1f03af2fd8e63bfd767acce8b99224abc69308a",
+    "/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/NativeLogEvolution.lean": "376a7f5eb07ed3ad72a8a2e728345f79710edb373a64f10474cb988eb414c090",
+    "/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/GreenParsevalMaterialLogOperator.lean": "30ab89dc5f68b9d842a869a6fd6172c2fa42ebab533779cf1171cca137e8cf20",
+    "/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/GreenParsevalMaterialLogOperatorAudit.lean": "5f1f7e228ccc161616b81dec30eb03c46aa4609ee40bab5130d1d7beba0c9f9c",
+    "/home/thlinux/carry-c2-source-raw-green/docs/GREEN_PARSEVAL_MATERIAL_LOG_OPERATOR.md": "8edbbdf844ffeaabefb386a2e0751ff5b94149d1350fed749fc0fc7088843d08",
+    "/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/GreenStateMaterialEvolution.lean": "80336198d2db56c379315794f28735bf9af57d69dcbd54768a082fb04debfca1",
+    "/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/GreenParsevalMaterialEvolution.lean": "69ec8ca6cb51ffb666406badc38a998e2a34cb8c4c6209dd78e6c1a4a914deb8",
+    "/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/GreenMaterialEvolutionAudit.lean": "d11f359ed1ab0dba7f135a4a1034a2598cd89231fd9c09ffb7d5c9e86346ec7b",
+    "/home/thlinux/carry-c2-source-raw-green/docs/GREEN_MATERIAL_UNITARY_EVOLUTION.md": "4aceff9e378aa57ca9f346aefefa9abc85b5f10050774512e78c62c5b954a28f",
+    "/home/thlinux/carry-c2-source-raw-green/.lake/packages/CPFormal/CPFormal/Analytic/CpRealSpectralGenerator.lean": "2f5337715b94144c8a087837014106d049d6d171eba0fb927c9e4e87d9eb4384",
+    "/home/thlinux/carry-finite-clock-jet-height/CarrySelfAdjointOperator/LogarithmicMomentHankel.lean": "e2e564636ffa10dea4be4016f2d400a969bb17986db991a400ec6dd1f4c72be3",
+    "/home/thlinux/carry-finite-clock-jet-height/CarrySelfAdjointOperator/MomentGramPositivity.lean": "972d95fc7e6056a0e0099411046e8345f145f209c848c95da42489e33cfdffd0",
+    "/home/thlinux/carry-finite-clock-jet-height/CarrySelfAdjointOperator/FiniteJacobiTransport.lean": "e5dab35d6b0ba766d906803a439c605546656c37fded854e21f9205848427c07",
+    "/home/thlinux/carry-finite-clock-jet-height/CarrySelfAdjointOperator/CanonicalLDLWhitening.lean": "53445305c7ba9acbf3d23524e136d88ff5572c09f6b9b940cf5a927d4469a19b",
+    "/home/thlinux/carry-finite-clock-jet-height/CarrySelfAdjointOperator/FiniteHeightOperator.lean": "943a4f796ea8254fbe5b092ccdf13c7e1656d05d4392f418ffaca3d92316f547",
+    "/home/thlinux/carry-finite-clock-jet-height/CarrySelfAdjointOperator/CanonicalFiniteHeight.lean": "d92b418f76d6a7eb6d8f62f0faedc5427dc9a9d8a8732d352c10bfe47f880ca3",
+    "/home/thlinux/carry-finite-clock-jet-height/CarrySelfAdjointOperator/FiniteMaterialClockJets.lean": "7e29498f4e1a788cd8f5f6e4e3ff5a5301dc67080c9cac256edaee85113fae9f",
+    "/home/thlinux/carry-finite-clock-jet-height/CarrySelfAdjointOperator/FiniteClockHeightLedger.lean": "950b56f3f54d65090ae18d6a1cd701c541c744bcc7bec597ca8b792d701f3b07",
+    "/home/thlinux/carry-finite-clock-jet-height/CarrySelfAdjointOperator/FiniteHistoricalChebyshev.lean": "c1ac8a17195d99b8088d933abc27be169eeb9f0ad57f0ad39a042c0f8b7e68f0",
+    "/home/thlinux/carry-finite-clock-jet-height/CarrySelfAdjointOperator/FiniteClockHeightAudit.lean": "9f2607f9951105504cc73e6c2cf63fc0a3403e0ab2aebc769c89282ce57bda5e",
+    "/home/thlinux/carry-finite-clock-jet-height/docs/FINITE_CLOCK_JET_HEIGHT_FORENSIC.md": "f272ba013516b5b84fe37258b4107834b0eaf59be7313964a086919deebc40e5"
+  },
+  "printed_axioms": {
+    "GeometryOfNumbers.Analysis.AdmissibleAtlasPartition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.atlasPartition_support_finite": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.atlasPartition_finsum_eq_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.atlasPartition_support_nonempty": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.atlasActiveBases": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.atlasPartition_support_subset_active": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.atlasPartition_sum_active_eq_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.atlasCoordinate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.atlasCoordinate_energy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.atlasCoordinate_off_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.atlasCoordinate_energy_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.atlasCoordinate_energy_finsum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.atlasCoordinate_energy_sum_active": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.sumPositiveRadii_finset_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.atlasResolvedEnergy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.atlasResolvedEnergy_eq_input": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.atlasResolvedEnergy_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegAtlasEnergy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegAtlasEnergy_eq_sum_cameras": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegAtlasEnergy_eq_sum_local": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegAtlasEnergy_eq_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegAtlasEnergy_angle_independent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegAtlasEnergy_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegAtlasEnergy_zero_iff_local_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegAtlasEnergy_common_eq_resolved": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegAtlasEnergy_common_eq_input": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegAtlasEnergy_common_partition_independent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegAtlasEnergy_common_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegAtlasEnergy_zero_pairs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegAtlasEnergy_zero_input": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.AdmissibleAtlasPartition.weight": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.AdmissibleAtlasPartition.support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.AdmissibleAtlasPartition.nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.AdmissibleAtlasPartition.off_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.AdmissibleAtlasPartition.sum_eq_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "_private.GeometryOfNumbers.Analysis.Audit.0.GeometryOfNumbers.Analysis.atlasTwoBaseTestPartition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "_private.GeometryOfNumbers.Analysis.Audit.0.GeometryOfNumbers.Analysis.atlasSingleBaseTestPartition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegCameraEnergy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegCameraEnergy_eq_sum_local": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegCameraEnergy_eq_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegCameraEnergy_angle_independent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realPlaneEnergy_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegCameraEnergy_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegCameraEnergy_zero_iff_local_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegCameraEnergy_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegCameraEnergy_zero_pairs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegCameraEnergy_common_eq_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegCameraEnergy_common_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegForm_energy_eq_unitBracket": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegCameraEnergy_eq_sum_sq_brackets": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegCameraEnergy_zero_iff_quadraticCameraBracket_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegCameraEnergy_criticalSeed_eq_mass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegCameraEnergy_criticalSeed_common_eq_mass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.scaleRealPlane": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realPlaneCenteredReadout": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegFormLeftLeg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegFormRightLeg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegForm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegForm_eq_closed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegForm_eq_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.scaleRealPlane_energy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegForm_energy_eq_closed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegForm_energy_eq_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegForm_energy_eq_fourth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegForm_energy_angle_independent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegForm_energy_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegForm_criticalSeed_eq_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegForm_criticalSeed_energy_eq_amplitude_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegForm_criticalSeed_energy_eq_mass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realOddCameraBracket_eq_saturatedSecondDifference": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realOddCameraBracket_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realOddCameraBracket_C3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.cameraOffsetDeformations_eq_pow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.profile_realOddCameraBracket_eq_quadratic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.profile_realOddCameraBracket_eq_pow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.stepProfile_realOddCameraBracket_eq_quadratic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.stepProfile_realOddCameraBracket_eq_closed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.stepProfile_realOddCameraBracket_eq_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.stepProfile_realOddCameraBracket_eq_factor_div": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.stepProfile_realOddCameraBracket_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.stepProfile_realOddCameraBracket_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.stepProfile_inverse_left_eq_right": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.stepProfile_inverse_right_eq_left": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.stepProfile_realOddCameraBracket_reflection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.stepProfile_realOddCameraBracket_C3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.stepProfile_realOddCameraBracket_C3_readout": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalProfile_realOddCameraBracket_eq_quadratic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.balancedCarryDepth_multiplicativeProfile_provenance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centeredMultiplicativeProfile_center": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centeredMultiplicativeProfile_leftLeg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centeredMultiplicativeProfile_rightLeg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.profile_leftLeg_eq_quadraticLeftLeg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.profile_rightLeg_eq_quadraticRightLeg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centeredMultiplicativeProfile_leftLeg_eq_pow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centeredMultiplicativeProfile_rightLeg_eq_inv_pow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centeredMultiplicativeProfile_reflected_product": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.profile_realCenteredSecondDifference_eq_local": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.profile_realCenteredSecondDifference_eq_pow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.profile_realCenteredSecondDifference_eq_closed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.profile_realCenteredSecondDifference_eq_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.profile_realCenteredSecondDifference_eq_factor_div": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalCenteredMultiplicativeProfile_product": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.multiplicativeOffsetTransport_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.multiplicativeOffsetTransport_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.multiplicativeOffsetTransport_product_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.multiplicativeOffsetTransport_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.multiplicativeOffsetTransport_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.multiplicativeOffsetTransport_natCast": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.multiplicativeOffsetTransport_neg_natCast": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.multiplicativeOffsetTransport_eq_zpow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.multiplicativeOffsetTransport_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.canonicalMultiplicativeOffsetTransport_isPositive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.canonicalMultiplicativeOffsetTransport_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.multiplicativeOffsetTransport_eq_canonical": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.multiplicativeOffsetTransport_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.existsUnique_multiplicativeOffsetTransport": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.sumPositiveRadii_real_sub": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.sumPositiveRadii_real_constant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.sumPositiveRadii_real_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.sumPositiveRadii_real_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.sumPositiveRadii_real_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticCameraBracket_eq_legs_sub_centers": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticCameraBracket_eq_closed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticCameraBracket_eq_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticCameraBracket_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticCameraBracket_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticCameraBracket_zero_pairs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticCameraBracket_reflection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticCameraBracket_independent_reflections": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticCameraBracket_reflect_one_pair": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalQuadraticCameraBracket_eq_sum_local": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalQuadraticCameraBracket_eq_closed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalQuadraticCameraBracket_eq_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalQuadraticCameraBracket_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalQuadraticCameraBracket_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalQuadraticCameraBracket_independent_reflections": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalQuadraticCameraBracket_reflection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalQuadraticCameraBracket_zero_pairs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalQuadraticCameraPair_product": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.balancedCarryDepth_quadraticCamera_provenance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCenteredReadout_swap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCenteredReadout_additiveLegs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticCenteredBracket_eq_closed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticCenteredBracket_eq_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticCenteredBracket_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticCenteredBracket_at_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticCenteredBracket_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticCenteredBracket_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticCenteredBracket_reflection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticCenteredBracket_zero_parameter": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalQuadraticBracket_eq_readout": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalQuadraticBracket_eq_closed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalQuadraticBracket_eq_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalQuadraticBracket_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalQuadraticBracket_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalQuadraticBracket_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalQuadraticBracket_reflection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalQuadraticBracket_zero_depth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalQuadraticBracket_capacity_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.balancedCarryDepth_quadraticReflection_provenance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.reciprocalReflection_involutive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.reciprocalReflection_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticLeftLeg_reflection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticRightLeg_reflection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticReflectedLegs_at_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticReflectedLegs_product": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticReflection_product": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalQuadraticLegs_product": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalQuadraticReflection_product": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalQuadraticLegs_product_realizes_formalMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.balancedCarryDepth_quadraticLegs_product": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.rotateRealPlane_energy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.rotateRealPlane_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.rotateRealPlane_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalDepthSeed_energy_eq_amplitude_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalDepthSeed_energy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalAmplitude_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalDepthState_eq_coordinates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalDepthState_energy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalDepthState_zero_angle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalDepthSeed_zero_depth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalDepthState_zero_depth_energy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalDepthSeed_capacity_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalDepthState_capacity_one_energy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.balancedCarryDepth_realState_energy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.balancedCarryDepth_realState_realizes_formalMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realizeCountingShare_eq_iff_sameCountingShare": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realDepthMass_eq_one_div_pow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realDepthMass_eq_inv_pow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realize_canonicalResidualDepthMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realDepthMass_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realDepthMass_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realDepthMass_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.formalHalf_realizes_half": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalAmplitude_eq_rpow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.formalHalf_realizes_realCriticalAmplitude": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalAmplitude_sq_eq_realDepthMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalAmplitude_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalAmplitude_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.quadraticScaleCompatible_realizes_realCriticalAmplitude": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeResidualDepth_iff_le_factorization": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeResidualDepth_factorization_characterized": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeResidualDepth_one_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeResidualDepth_zero_obstruction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeResidualDepth_reconstruction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeResidualDepth_quantity_ext": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeCarryVoice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeCarryVoice_eq_of_residual_thresholds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeCarryVoice_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeCarryVoice_off_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeCarryVoice_nonprime": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.log_eq_sum_primeCarryVoice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeVoiceWeight": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeVoiceWeight_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeVoiceWeight_off_support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeVoiceWeight_nonprime": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeVoiceWeight_support_finite": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeVoiceWeight_sum_eq_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeVoiceWeight_finsum_eq_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeVoiceWeight_prime_pow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeVoiceWeight_prime": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeCarryVoice_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeVoiceWeight_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeVoiceWeight_one_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeVoiceWeight_one_finsum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.primeVoiceWeight_no_total_atlas_partition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteValve.bracket_eq_fdiff_sub": [
+      "propext"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteValve.greenSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteValve.sum_range_bracket": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteValve.greenSum_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteValve.realDiscreteGreenReconstruction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteValve.bracket_greenSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteValve.greenSum_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteValve.bracket_eq_zero_iff_affine": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteValve.bracket_add": [
+      "propext"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteValve.greenSum_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteValve.bracket_eq_realCenteredReadout": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteValve.X_mul_mk_fdiff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteValve.X_sq_mul_mk_bracket": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteValve.geometricSeries": [
+      "propext",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteValve.greenKernelSeries": [
+      "propext",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteValve.one_sub_X_mul_geometricSeries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteValve.one_sub_X_mul_greenKernelSeries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteValve.one_sub_X_sq_mul_greenKernelSeries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteValve.X_mul_greenKernelSeries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteValve.mk_greenSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteValve.mk_discrete_valve": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.rightLeg_eq_bracket_sub_left_add_two_center": [
+      "propext"
+    ],
+    "GeometryOfNumbers.Analysis.rightLeg_eq_of_left_center_bracket_eq": [
+      "propext"
+    ],
+    "GeometryOfNumbers.Analysis.causalUnitBracket_reconstruction": [
+      "propext"
+    ],
+    "GeometryOfNumbers.Analysis.eq_of_seed_eq_of_causalUnitBracket_eq": [
+      "propext",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalVerticalAmplitudeRatio": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalVerticalAmplitudeRatio_eq_rpow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalVerticalAmplitudeRatio_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalVerticalAmplitudeRatio_lt_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalAmplitude_eq_verticalRatio_pow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalAmplitude_succ_verticalRatio": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCarryAmplitudeGauge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCarryWeightedFirstDifference_gauge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCarryWeightedSecondDifference_gauge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCarryWeightedGreenSum_gauge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCarryTfvdAnalysis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCarryTfvdSynthesis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCarryTfvdSynthesis_comp_analysis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalCarryTfvd_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalCarryTfvdSynthesis_comp_analysis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCriticalCarryTfvdGreenValveCertificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalCarryTfvdGreenValveCapstone": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.IsTowerChannel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.tower_channel_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.IsLogDerivChannel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.isLogDerivChannel_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.isTowerChannel_iff_isLogDerivChannel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.towerMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.towerMass_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.isTowerChannel_towerMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.towerMass_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.towerMass_eq_of_isTowerChannel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.expSeries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.isLogDerivChannel_expSeries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.constantCoeff_expSeries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.logIntegral": [
+      "propext",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.constantCoeff_logIntegral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.X_mul_derivativeFun_logIntegral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.mk_towerMass_eq_expSeries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.canonicalTowerChannel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.canonicalTowerChannel_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.canonicalTowerChannel_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.canonicalTowerChannel_isTowerChannel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.canonicalTowerChannel_eq_of_isTowerChannel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.existsUnique_towerChannel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.towerMass_canonicalTowerChannel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.canonicalTowerChannel_towerMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.TowerValve.mk_eq_expSeries_logIntegral_canonicalTowerChannel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.coordinate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.coordinate_constantCoeff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.one_sub_X_mul_coordinate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.one_add_coordinate_eq_geometricSeries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.geometricSeries_mul_self_eq_greenKernelSeries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.coordinate_derivativeFun": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.greenVelocity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.euler_coordinate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.greenVelocity_eq_coordinate_mul_one_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.coordinate_sq_eq_X_sq_mul_greenKernelSeries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.euler_subst_coordinate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.inverseGeometricSeries": [
+      "propext",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.one_add_X_mul_inverseGeometricSeries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.inverseCoordinate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.inverseCoordinate_constantCoeff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.one_add_X_mul_inverseCoordinate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.one_sub_inverseCoordinate_eq_inverseGeometricSeries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.coordinate_hasSubst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.inverseCoordinate_hasSubst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.coordinate_subst_inverseCoordinate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.inverseCoordinate_subst_coordinate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.subst_X_eq_self": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.toProjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.fromProjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.fromProjective_toProjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.toProjective_fromProjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.coordinateChangeEquiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.toProjective_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.toProjective_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.fromProjective_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.fromProjective_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.coordinate_inverse_jacobian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.inverse_coordinate_jacobian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.greenKernel_subst_inverse_mul_inverseDerivative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.inverseDerivative_subst_coordinate_mul_greenKernel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveDepth.constantCoeff_toProjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenValve.greenChannelSeries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenValve.greenChannel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenValve.greenChannel_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenValve.mk_greenChannel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenValve.greenLogPotential": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenValve.greenLogPotential_constantCoeff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenValve.X_mul_derivative_greenLogPotential": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenValve.derivative_greenLogPotential": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenValve.derivative_toProjective_greenLogPotential": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenValve.greenMassSeries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenValve.greenMassSeries_constantCoeff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenValve.isLogDerivChannel_greenMassSeries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenValve.mk_towerMass_greenChannel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenValve.derivative_greenMassSeries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenValve.projectiveGreenMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenValve.projectiveGreenMass_constantCoeff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenValve.derivative_projectiveGreenMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveValve.projectiveValveMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveValve.projectiveValveMass_constantCoeff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveValve.derivative_projectiveValveMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveValve.normalized_projective_ode_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveValve.projectiveValveMass_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveValve.existsUnique_projectiveValveMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveValve.projectiveValveMass_toProjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveValve.projectiveValveCurvature": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveValve.projectiveValveCurvature_mul_self": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveValve.projectiveValveCurvature_eq_of_ode": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveValve.projectiveValveCurvature_projectiveValveMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveValve.projectiveValveMass_projectiveValveCurvature": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveValve.NormalizedProjectiveMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveValve.projectiveValveEquiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveValve.projectiveValveMass_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveValve.projectiveValveCurvature_surjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveValve.projectiveValveMass_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.ProjectiveValve.projectiveValveMass_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.discreteBracket_eq_causalUnitBracket": [
+      "propext"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.ReconstructionData": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.reconstructionBracketData": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.reconstruct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.reconstruct_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.reconstruct_fdiff_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.bracket_reconstruct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.mk_bracket_reconstruct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.mk_reconstruct_eq_green": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.stateMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.stateMass_eq_projectiveGreenMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.stateMass_constantCoeff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.projectiveValveCurvature_stateMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.stateMass_eq_iff_bracket_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.eq_of_boundary_and_stateMass_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.eq_iff_boundary_and_stateMass_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.stateMass_reconstruct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.encode": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.reconstruct_encode": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.encode_reconstruct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.realDiscreteProjectiveReconstructionEquiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.encode_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.DiscreteProjective.existsUnique_state_of_boundary_and_mass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalGreenKernel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalGreenKernel_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalGreenKernel_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryConjugatedVerticalGreenKernel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryConjugatedVerticalGreenKernel_of_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryConjugatedVerticalGreenKernel_of_not_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalGreenKernel_summable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.CarryVerticalShiftFamily": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalGreenTerm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalGreenTerm_norm_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalGreenTerm_summable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalGreen": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalGreen_norm_le_kernelMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.CarryVerticalL2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2BackwardShiftLinear": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2BackwardShiftLinear_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2BackwardShiftLinear_norm_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2BackwardShift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2BackwardShift_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2BackwardShift_norm_le_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2BackwardShift_single": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2UnilateralShift": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2UnilateralShift_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2UnilateralShift_norm_le_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2ShiftFamily": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2WeightedGreen": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2EvalLinear": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2Eval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2Eval_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2ZeroHeadProjection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2ZeroHeadProjection_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalCenteredBracketCore": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalCenteredBracketCore_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalCenteredBracket": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalCenteredBracket_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalCenteredBracket_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalTrace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalTrace_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryGeometricAmplitudeVector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryGeometricAmplitudeVector_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryAffineSlopeAmplitudeVector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryAffineSlopeAmplitudeVector_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalReturn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalReturn_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalTrace_comp_return": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalCenteredBracket_comp_return": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2OperatorApply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2OperatorApply_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2OperatorCoordinate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2OperatorCoordinate_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2WeightedGreen_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2WeightedGreen_apply_reindexed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedScalarFirstDifference": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedScalarSecondDifference": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedScalarSecondDifference_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedScalarGreenSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedScalarSecondDifference_telescope": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedScalarGreenSum_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedScalarReconstruction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryVerticalL2WeightedGreen_bracket_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalTfvd_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealCarry.carryWeightedVerticalTfvd_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.rotateRealPlane_neg_comp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.rotateRealPlane_eq_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegForm_eq_rotate_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegForm_zero_iff_zero_angle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.centerLegForm_independent_angles_not_common_rotation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialLogAngle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialLogRotate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialLogRotate_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialLogRotate_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialLogRotate_energy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialLogRotate_neg_comp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialLogRotate_eq_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realQuadratureRotate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realQuadratureMap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realQuadratureRotate_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realQuadratureRotate_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realQuadratureRotate_neg_comp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realQuadratureRotate_eq_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realQuadratureMap_rotate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialLogPhase": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialLogPhase_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialLogPhase_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialLogPhase_neg_comp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialLogPhase_eq_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realQuadratureRotate_eq_rotateRealPlane": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.MaterialVerticalCarrier": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.MaterialVerticalAnalysisCarrier": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialTfvdAnalysis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialTfvdSynthesis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialTfvdSynthesis_comp_analysis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialTfvdAnalysis_phase": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialTfvdSynthesis_phase": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialTfvdSynthesized_logOrbit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialVerticalPlaneAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialLogPhase_planeAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialLogPhase_planeEnergy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialLogPhase_centerLeg_orbit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialLogPhase_centerLeg_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialTfvdSynthesized_centerLeg_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialTfvdSynthesis_phase_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialLogPhase_finiteEnergy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.sampleTwo_materialThree_binaryDepth_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.materialSampleIndex_not_intrinsicBinaryDepth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2FiberPoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2FiberPoint_centered": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2FiberPoint_center_eq_nat": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2FiberPoint_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2FiberCenter_hasCarryDepthAtLeast": [
+      "propext"
+    ],
+    "GeometryOfNumbers.Analysis.c2FiberCenter_not_hasCarryDepthAtLeast_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2FiberPoint_center_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2FiberPoint_right_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2FiberPoint_left_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2FiberPoint_centered_log": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2FiberPoint_centered_log_increment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2FiberLogDefect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2FiberLogDefect_center": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2FiberPoint_log_center_defect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2FiberPoint_log_eq_depth_core_defect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2FiberPoint_log_increment_defect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2FiberLogDefect_right_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2FiberPoint_right_log_increment_lt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2FiberRealState": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2FiberRealState_energy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2FiberRealState_succ_eq_logIncrement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2CenterFiberStep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2CenterFiberRealState_succ_eq_fixedStep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2CenterFiberRealState_eq_iterate_step": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2CenterFiber_phase_factorization": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2LegFiberRealState_succ_eq_correctedStep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2LegFiberRealState_succ_eq_fixedStep_add_logDefect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchDepth_ge_two_iff_center_four_dvd": [
+      "propext",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchDirections_distinct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchDirections_card": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2RadialAmplitudeRatio": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2RadialEnergyRatio": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2RadialEnergyRatio_eq_rpow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2RadialEnergyRatio_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2RadialEnergyRatio_lt_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2DeformedFiberStep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2DeformedFiberStep_energy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2DeformedFiberStep_energy_independent_time": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2DeformedFiberStep_iterate_energy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2DeformedUnitOrbit_energy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2RadialAmplitudeRatio_half": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2RadialEnergyRatio_half": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2DeformedFiberStep_half_eq_c2CenterFiberStep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchOrbitMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchOrbitMass_eq_geometric_series": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchOrbitMass_independent_time": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.legacyC2BranchWeight": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.legacyC2BranchNormSq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2RadialEnergyRatio_eq_legacyBranchWeight": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchOrbitMass_eq_legacyBranchNormSq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchUnitOrbitEnergy_summable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchOrbitMass_closed_form": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchOrbitMass_half": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchOrbitMass_eq_one_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchOrbitMass_lt_one_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchOrbitMass_gt_one_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealPlaneHilbert": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchDirectionSign": [
+      "propext"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchDirectionSign_values": [
+      "propext",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BranchCarrier": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realPlaneHilbertEquiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realPlaneHilbert_energy_eq_norm_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2DeformedFiberStepLinear": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2DeformedFiberStep_iterate_eq_radial_rotation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realBranchCoordinates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realBranchCoordinates_norm_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realBranchCoordinates_square_summable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realBranchCoordinates_mem_l2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realBranchOperator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realBranchOperator_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realBranchOperator_apply_closed_form": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realBranchOperatorLinear": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realBranchOperator_norm_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realBranchOperator_norm_sq_eq_legacyBranchNormSq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realBranchOperator_norm_sq_of_realPlaneState": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realBranchOperator_norm_independent_time": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalBranchOperator_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalBranchIsometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalBranchIsometry_apply_centerStep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalBranch_adjoint_comp_self": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.RealMaterialState": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchMaterialNat": [
+      "propext"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchMaterialNat_ge_three": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchMaterialAddress": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchMaterialNat_sign_mod_four": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchMaterialAddress_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchMaterialAddress_eq_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchMaterialNat_core_recovery": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchMaterialAddress_depth_recovery": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchMaterialAddress_cast_eq_fiberPoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.branchIncidenceCoordinates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.branchIncidenceIsometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.branchIncidenceIsometry_apply_address": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.branchIncidenceIsometry_apply_off_range": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.branchIncidenceIsometry_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.branchIncidenceIsometry_coordinate_roundtrip": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2PhysicalLegCorrectionAngle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2PhysicalLegPhase_factorization": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realPlaneHilbertRotation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realPlaneHilbertRotation_neg_comp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.physicalLegCorrection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.physicalLegCorrection_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.physicalLegCorrection_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.physicalLegCorrection_neg_comp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.physicalBranchOperator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.physicalBranchOperator_apply_address": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.physicalBranchOperator_apply_off_range": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.physicalBranchOperator_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.physicalBranchOperator_norm_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalPhysicalBranchIsometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalPhysicalBranchIsometry_eq_operator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalPhysicalBranchIsometry_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.realCriticalPhysicalBranch_adjoint_comp_self": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.c2BranchMaterialAddress_range_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.physicalBranchOperator_nonzero_provenance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.physicalBranchOperator_branch_coordinate_roundtrip": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.PositiveOddCore": [
+      "propext"
+    ],
+    "GeometryOfNumbers.Analysis.GlobalC2BranchAddress": [
+      "propext"
+    ],
+    "GeometryOfNumbers.Analysis.OddMaterialIndex": [
+      "propext"
+    ],
+    "GeometryOfNumbers.Analysis.globalC2MaterialAddress": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.globalC2MaterialAddress_odd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.globalC2OddMaterialAddress": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.globalC2MaterialAddress_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.oddMaterialNeighborCenter": [
+      "propext"
+    ],
+    "GeometryOfNumbers.Analysis.oddMaterialNeighbor_depth_crosswalk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.oddMaterialC2Address": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.oddMaterialC2Address_depth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.globalC2MaterialAddress_decode": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.oddMaterialC2Address_encode": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.globalC2BranchAddressEquivOddMaterial": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.globalC2MaterialAddress_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GlobalC2BranchCarrier": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.OddMaterialState": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.CoreState": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.globalBranchIncidenceIsometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.globalBranchIncidenceIsometry_apply_address": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.globalBranchIncidenceIsometry_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalPhysicalCoreFiber": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.criticalPhysicalCoreFiber_eq_local_physical": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.globalCriticalPhysicalBranch": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.globalCriticalPhysicalBranchIsometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.globalCriticalPhysicalBranchIsometry_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.globalCriticalPhysicalBranchIsometry_norm_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.globalCriticalPhysicalBranchIsometry_apply_address": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.globalCriticalPhysicalBranchIsometry_pointwise": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.physicalBranch_support_disjoint_of_core_ne": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.globalCriticalPhysicalBranch_core_orthogonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.globalC2_provenance_roundtrip": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.globalC2Address_components_roundtrip": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.oddMaterialC2Address_sign": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.oddMaterialC2Address_core": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.globalCriticalPhysicalBranch_single_core": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.globalCriticalPhysicalBranch_zero_of_core_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalGreenAnalysis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalGreenAnalysis_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalGreenAnalysis_norm_sq_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalGreenAnalysis_split_external_bulk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalGreenAnalysis_split_residual_depthOne_bulk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalGreenAnalysis_split_seedResidual_green": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalGreenAnalysis_split_three": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalGreenInputIsometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalGreenInput_adjoint_comp_self": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalGreenInput_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalGreenInput_closed_form": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalGreenInput_even": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalGreenInput_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalGreenInput_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalGreenInput_provenance": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalGreenInput_quadrature_roundtrip": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalGreenInput_seedResidual_eq_residual": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalRawGreenDefect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalRawGreenDefect_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalRawGreenDefect_eq_gram_defect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalRawGreenDefect_split": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalRawGreenDefect_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalRestrictedGreenGram": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalRestrictedGreenGram_bijective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalRestrictedGreenGram_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalRestrictedGreenGram_compression": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalRestrictedGreenGram_eq_one_iff_defect_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalRestrictedGreenGram_eq_one_iff_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalRestrictedGreenGram_inner": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalRestrictedGreenGram_isUnit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalRestrictedGreenGram_positive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalRestrictedGreenGram_source_factors": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalRestrictedGreenGram_strictlyPositive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalSource_adjoint_comp_self": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.oddMaterialGreenCoordinates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.oddMaterialToGreenState": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.oddMaterialToGreenState_adjoint_comp_self": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.oddMaterialToGreenState_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.oddMaterialToGreenState_apply_off_sector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.oddMaterialToGreenState_even": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.oddMaterialToGreenState_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.oddMaterialToGreenState_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.realPlaneToComplexIsometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.realPlaneToComplexIsometry_coordinate_roundtrip": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.realPlaneToComplexIsometry_im": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.realPlaneToComplexIsometry_normSq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.realPlaneToComplexIsometry_re": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GlobalGreenBridge.realPlaneToComplexIsometry_scale_rotate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.AtlasBase": [],
+    "GeometryOfNumbers.Analysis.DiscreteValve.fdiff": [],
+    "GeometryOfNumbers.Analysis.DiscreteValve.bracket": [],
+    "GeometryOfNumbers.Analysis.causalUnitBracket": [],
+    "GeometryOfNumbers.Analysis.CausalBracketData": [],
+    "GeometryOfNumbers.Analysis.causalBracketReconstruction": [],
+    "GeometryOfNumbers.Analysis.causalBracketReconstruction_zero": [],
+    "GeometryOfNumbers.Analysis.causalBracketReconstruction_one": [],
+    "GeometryOfNumbers.Analysis.causalBracketReconstruction_step": [],
+    "GeometryOfNumbers.Analysis.C2BranchDirection": [],
+    "GeometryOfNumbers.Analysis.C2BranchAddress": [],
+    "GeometryOfNumbers.Analysis.c2BranchDepth": [],
+    "GeometryOfNumbers.Analysis.C2LegHasCarryDepthAtLeast": [],
+    "GreenFrame.Concrete.canonicalCarryElementaryAtlas_isometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GreenFrame.Concrete.elementaryAtlasLinearIsometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GreenFrame.Concrete.elementaryAtlas_isometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GreenFrame.Concrete.elementaryAtlas_norm_sq_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GreenFrame.Concrete.greenCoordinate_eq_canonicalNormalizedTowerTFVD": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GreenFrame.Concrete.greenMass_add_residualMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GreenFrame.Concrete.verticalGreenStencil_eq_canonicalNormalizedTowerTFVD": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.PreStencilSpace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.c2GlobalPreStencilIsometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.c2GlobalPreStencil_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.c2GlobalPreStencil_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.c2GlobalRawGreenDefect_eq_stencil_defect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.c2GlobalRestrictedGreenGram_stencil_defect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.canonicalDirectGreenMass_add_residualEventMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.concreteAnalysis_norm_defect_eq_stencil_defect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.concreteAnalysis_norm_sq_sub_preStencil_norm_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.directGreenAnalysis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.directGreenAnalysisLinearMap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.directGreenAnalysisOperator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.directGreenAnalysis_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.directGreenAnalysis_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.directGreenAnalysis_norm_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.directGreenAnalysis_norm_sq_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.directGreenAnalysis_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.directGreenCoordinate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.directGreenCoordinate_normSq_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.directGreenCoordinate_normSq_summable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.directGreenEnergyTerm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.directGreenEnergyTerm_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.directGreenEnergyTerm_summable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.directGreenMass_add_residualEventMass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.directGreen_add_residual_eq_elementaryCamera": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.greenCoordinate_eq_direct_add_ancestorCorrection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.greenStencilCorrection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.greenStencilCorrectionAnalysis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.greenStencilCorrectionAnalysis_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.greenStencilCorrectionOperator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.greenStencilCorrectionOperator_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.greenStencilCorrection_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.preStencilAnalysis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.preStencilAnalysis_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.preStencilAnalysis_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.preStencilAnalysis_norm_sq_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.preStencilAnalysis_norm_sq_eq_components": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.preStencilAnalysis_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.preStencilLinearIsometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenPreStencilCanary.preStencilRealLinearIsometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.allBaseActivity_two_two_mul_odd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwoDefect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwoDefect_eq_stencilEnergy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwoDefect_independent_time": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwoDefect_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwoGenerationEvent": [
+      "propext"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwoGenerationEvent_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwoGreenProjection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwoGreenProjection_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwoGreenProjection_idempotent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwoGreenProjection_isSelfAdjoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwoGreenStencilEnergy_eq_odd_diagonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwoGreenStencilEnergy_pos_of_c2Source_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwoGreenStencilEnergy_pos_of_core_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwoGreen_c2Source_eq_zero_off_generations": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwoOddDiagonalWeight": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwoOddDiagonalWeight_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwo_directGreenAnalysis_c2Source_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwo_firstGeneration_greenCoordinate_normSq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwo_nonBaseTwo_norm_sq_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwo_positive_code": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwo_real_code": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwo_secondGeneration_greenCoordinate_normSq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.c2GlobalGreenInput_even_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.c2GlobalGreenInput_exists_nonzero_odd_coordinate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.c2GlobalGreenInput_normSq_independent_time": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.c2GlobalRawGreenDefect_eq_camera_ledger": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.carryCameraWeight_two_four_mul_odd_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.carryCameraWeight_two_pos_of_dvd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.carryCameraWeight_two_two_mul_odd_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.carryRatio_baseTwo_sq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.directGreenCoordinate_baseTwo_c2Source_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.grandparentIndex_baseTwo_twice": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.nonBaseTwoDefect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.nonBaseTwoGreenProjection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.nonBaseTwoGreenProjection_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.nonBaseTwoGreenProjection_idempotent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.nonBaseTwoGreenProjection_isSelfAdjoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.positionalDepth_two_four_mul_odd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.positionalDepth_two_two_mul_odd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.restrictedGram_eq_identity_implies_nonBaseTwo_exact_cancellation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.restrictedGram_eq_identity_implies_nonBaseTwo_negative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.verticalGreenStencil_baseTwo_oddParent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.verticalGreenStencil_baseTwo_parent_four_dvd_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.verticalGreenStencil_baseTwo_twiceOddParent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.verticalGreenStencil_baseTwo_twiceParent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger.baseTwo_code": [],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.baseTwoDefect_le_totalDiagonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.baseTwoDefect_timeAverage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.c2Source_coordinate_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.c2Source_normSq_time": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.c2Source_phase": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.camera_log_frequency_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.complexTemporalMean": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.eventCrossDefect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.eventCrossDefect_baseTwo_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.eventCrossDefect_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.eventCrossDefect_eq_frequencies": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.eventCrossDefect_summable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.eventCrossDefect_timeAverage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.eventCrossDefect_uniform_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.eventDiagonalDefect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.eventDiagonalDefect_baseTwo_eq_green": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.eventDiagonalDefect_eq_explicit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.eventDiagonalDefect_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.eventDiagonalDefect_summable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.eventDiagonalDefect_uniform_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.eventGreenDefect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.eventGreenDefect_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.eventGreenDefect_eq_diagonal_add_cross": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.eventGreenDefect_summable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.eventGreenDefect_timeAverage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.eventGreenDefect_uniform_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.eventUniformBound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.eventUniformBound_summable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.exists_time_rawGreenDefect_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.exists_time_rawGreenDefect_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.exists_time_restrictedGram_ne_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.finiteGreenDefect_timeAverage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.globalCrossDefect_timeAverage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.globalGreenDefect_timeAverage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.globalGreenDefect_timeAverage_positive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.greenMajorant_c2Source_time": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.not_forall_restrictedGram_eq_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.oscillatoryCross": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.oscillatoryCross_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.oscillatoryCross_timeAverage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.phaseFactor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.phaseFactor_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.phaseFactor_conj": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.phaseFactor_eq_mk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.phaseFactor_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.phaseFactor_timeAverage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.phaseFactor_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.rawGreenDefect_eq_diagonal_add_cross_tsum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.rawGreenDefect_eq_tsum_event": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.realPlanePackaging_rotate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.temporalMean": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary.totalDiagonal_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.c2GreenInput_gram_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.c2PreStencil_gram_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.c2RawGreenDefect_eq_material_norm_sq_sub": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.c2RawMetricDefect_is_stencil_defect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.c2RawMetricWitness": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.c2RawMetricWitness_exists_time_defect_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.c2RawMetricWitness_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.c2RawMetricWitness_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.c2RestrictedGreenGram_eq_W_J_frame_J_W": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.c2RestrictedGreenGram_eq_source_frame_compression": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.c2RestrictedGreenGram_not_uniform_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.canonicalC2GreenAnalysis_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.canonicalGreenAnalysis_eq_raw_comp_inverseSqrt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.canonicalGreenAnalysis_gram_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.canonicalGreenAnalysis_isometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.canonicalGreenAnalysis_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.canonicalRawGreenAnalysis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.canonicalRawGreenAnalysis_ne_canonicalAnalysis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.canonicalRawGreenAnalysis_not_isometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.canonicalRawGreenFrameBounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.canonicalRawGreen_frameOperator_ne_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.canonicalRawGreen_inverseSqrtFrame_ne_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.canonicalRawGreen_inverseSqrt_normalization": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.criticalBranch_gram_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.elementaryAtlas_gram_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.exists_c2_state_rawGreen_norm_gt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.exists_c2_time_rawGreen_norm_gt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.exists_c2_time_rawGreen_norm_sq_gt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.exists_c2_unit_state_rawGreen_norm_gt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.globalPhysicalBranch_gram_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.materialInclusion_gram_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.preStencil_gram_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy.rawGreen_realGram_eq_frameOperator_restrictScalars": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.c2Source_log_domain_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.c2Source_log_domain_time_independent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.c2Source_materialLog_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.greenMaterialBasisVector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.greenMaterialBasisVector_mem_domain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.greenStateMaterialLogGenerator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.greenStateMaterialLogGenerator_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.greenStateMaterialLogGenerator_basisVector_log": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.greenStateMaterialLogGenerator_dense_domain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.greenStateMaterialLogGenerator_domain_iff_log_moment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.greenStateMaterialLogGenerator_domain_iff_memℓp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.greenStateMaterialLogGenerator_isClosed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.greenStateMaterialLogGenerator_isSelfAdjoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.greenStateMaterialLogGenerator_mem_domain_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.materialLogPhase_hasDerivAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.natEquivPNat": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.natEquivPNat_symm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.natEquivPNat_symm_add_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.natEquivPNat_val": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.nativeLogHilbertEquivGreenState": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.nativeLogHilbertEquivGreenState_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.nativeLogHilbertEquivGreenState_basisVector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.nativeLogHilbertEquivGreenState_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialLog.nativeLogHilbertEquivGreenState_symm_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.InfiniteRealSpectralHilbert": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralFrequency": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralMaximalDomain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralGenerator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralGenerator_domain_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralGenerator_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.mem_infiniteRealSpectralGenerator_domain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralBasisVector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralBasisVector_mem_domain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralGenerator_basisVector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralHilbertBasis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralHilbertBasis_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralGenerator_dense_domain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralGenerator_isFormalAdjoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralGenerator_adjoint_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralGenerator_adjoint_domain_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralGenerator_isSelfAdjoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralGenerator_isClosed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralPhase": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralPhase_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralPhase_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralPhase_neg_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralPhase_mul_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.conj_infiniteRealSpectralPhase": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.norm_infiniteRealSpectralPhase": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralPhase_mul_memℓp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralEvolutionLinearEquiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralEvolutionLinearEquiv_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralEvolution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralEvolution_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralEvolution_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralEvolution_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralEvolution_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.infiniteRealSpectralEvolution_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeLogHilbert": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.nativeLogGenerator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.nativeLogGenerator_isSelfAdjoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.nativeLogBasisVector_mem_domain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.nativeLogGenerator_basisVector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.nativeLogGenerator_basisVector_log": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.ParsevalOrthogonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.ParsevalRange": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.greenParsevalAnalysis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.greenParsevalAnalysis_gram_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.greenParsevalAnalysis_isometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.greenParsevalMaterialLogOperator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.greenParsevalMaterialLogOperator_P_mem_domain_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.greenParsevalMaterialLogOperator_c2Source_domain_iff_log_moment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.greenParsevalMaterialLogOperator_c2Source_intertwining": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.greenParsevalMaterialLogOperator_c2Source_mem_domain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.greenParsevalMaterialLogOperator_domain_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.greenParsevalMaterialLogOperator_eq_zero_of_mem_orthogonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.greenParsevalMaterialLogOperator_intertwining": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.greenParsevalMaterialLogOperator_isSelfAdjoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.greenParsevalMaterialLogOperator_mem_domain_of_mem_orthogonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.greenParsevalMaterialLogOperator_transported_basis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.greenParsevalMaterialLogOperator_transported_basis_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.greenParsevalOrthogonalDecomposition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.parsevalRangeMaterialLogGenerator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.parsevalRangeMaterialLogGenerator_domain_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.parsevalRangeMaterialLogGenerator_intertwines": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.parsevalRangeMaterialLogGenerator_isSelfAdjoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.parsevalRangeMaterialLogGenerator_unitary_mem_domain_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.parsevalRangeSubmodule": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.parsevalRangeUnitary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.parsevalRangeUnitary_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.parsevalRange_completeSpace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialLog.parsevalRange_isClosed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.UnitaryZeroExtension.hilbertPartialProdZero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.UnitaryZeroExtension.hilbertPartialProdZero_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.UnitaryZeroExtension.hilbertPartialProdZero_dense_domain": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.UnitaryZeroExtension.hilbertPartialProdZero_isSelfAdjoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.UnitaryZeroExtension.hilbertPartialProdZero_mem_domain_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.UnitaryZeroExtension.selfAdjointZeroExtension": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.UnitaryZeroExtension.selfAdjointZeroExtension_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.UnitaryZeroExtension.selfAdjointZeroExtension_domain_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.UnitaryZeroExtension.selfAdjointZeroExtension_isSelfAdjoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialDynamics.greenParsevalMaterialEvolution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialDynamics.greenParsevalMaterialEvolution_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialDynamics.greenParsevalMaterialEvolution_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialDynamics.greenParsevalMaterialEvolution_apply_adjoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialDynamics.greenParsevalMaterialEvolution_c2Source": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialDynamics.greenParsevalMaterialEvolution_c2Source_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialDynamics.greenParsevalMaterialEvolution_derivative_on_range": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialDynamics.greenParsevalMaterialEvolution_eq_self_of_mem_orthogonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialDynamics.greenParsevalMaterialEvolution_hasDerivative_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialDynamics.greenParsevalMaterialEvolution_intertwining": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialDynamics.greenParsevalMaterialEvolution_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialDynamics.greenParsevalMaterialEvolution_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialDynamics.greenParsevalMaterialEvolution_stronglyContinuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialDynamics.greenParsevalMaterialEvolution_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialDynamics.parsevalRangeMaterialEvolution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialDynamics.parsevalRangeMaterialEvolution_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialDynamics.parsevalRangeMaterialEvolution_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialDynamics.parsevalRangeMaterialEvolution_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenParsevalMaterialDynamics.parsevalRange_inverse_projection_eq_adjoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialDynamics.c2GlobalGreenInput_evolution_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialDynamics.greenStateMaterialEvolution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialDynamics.greenStateMaterialEvolution_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialDynamics.greenStateMaterialEvolution_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialDynamics.greenStateMaterialEvolution_basis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialDynamics.greenStateMaterialEvolution_differentiableAt_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialDynamics.greenStateMaterialEvolution_hasDerivative_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialDynamics.greenStateMaterialEvolution_mem_domain_of_hasDerivative_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialDynamics.greenStateMaterialEvolution_native_intertwining": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialDynamics.greenStateMaterialEvolution_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialDynamics.greenStateMaterialEvolution_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialDynamics.greenStateMaterialEvolution_stronglyContinuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialDynamics.greenStateMaterialEvolution_stronglyContinuous_at_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialDynamics.greenStateMaterialEvolution_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialDynamics.greenStateMaterialPhase": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialDynamics.greenStateMaterialPhase_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialDynamics.greenStateMaterialPhase_eq_native": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialDynamics.greenStateMaterialPhase_eq_phaseFactor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialDynamics.greenStateMaterialPhase_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialDynamics.greenStateMaterialPhase_norm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.GreenStateMaterialDynamics.greenStateMaterialPhase_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.closedResponseSeries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.closedResponseSeries_camera_quotient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.externalTail_changes_phi_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.finiteClockJets_determine_JacobiSection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.finiteClockJets_determine_phiPrefix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.finiteClockJets_to_phi_with_external_germs": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.finiteLogMoment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.finiteLogMoment_eq_existing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.finiteLogMoment_formal_logDerivative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.finiteLogMoment_formal_quotient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.finiteLogMoment_isSequence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.finiteLogMoment_recurrence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.finiteLogMoment_triangular": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.finitePhiPrefix_determine_Hankel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.finitePhiPrefix_determine_JacobiSection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.headSeries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.historicalPhi": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.historicalPhi_congr_head": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.historicalScale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.historicalScale_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.historicalScaledMoment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.scaledFiniteHeightOperator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.scaledFiniteHeightOperator_charpoly": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.scaledFiniteHeightOperator_eigenvector_formula": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.scaledFiniteHeightOperator_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.scaledFiniteHeight_positive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.scaledMoment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockHeightLedger.scaledMoment_hankel_entries": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.clockJetOrbit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.clockRate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.finiteClockJets_to_head": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.finiteClockStrongGenerator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.finiteClockStrongGenerator_pow_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.finiteHeadReadout": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.finiteHeadReadout_hasSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.finiteHeadReadout_iteratedDerivative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.finiteMaterialBasis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.finiteMaterialClock": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.finiteMaterialClockJet_all_times": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.finiteMaterialClockJet_basis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.finiteMaterialClockJet_eq_generatorPow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.finiteMaterialClock_basis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.finiteMaterialOrbit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.finiteMaterialOrbit_basis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.finiteMaterialOrbit_coordinate_hasSum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.finitePhase_eq_exp": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.historicalCameraWeight": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.historicalCameraWeights": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.historicalCameraWeights_default": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.historicalFiniteHeadCoefficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.historicalInitialState": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.historicalQuarter": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.historicalQuarter_eq_I_pow": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.historicalRotationCoefficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.historicalRotationCoefficient_exact": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.nativeStateSeries_eq_normalizedClockJet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.nativeStateSeries_quadratures": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.normalizedClockJet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteHistoricalChebyshev.ChebyshevState": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteHistoricalChebyshev.HistoricalChebyshevAdmissible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteHistoricalChebyshev.chebyshevRun": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteHistoricalChebyshev.chebyshevSeed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteHistoricalChebyshev.chebyshevStep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteHistoricalChebyshev.chebyshevUpdated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteHistoricalChebyshev.finiteClockJets_determine_historicalChebyshev": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteHistoricalChebyshev.finiteClockJets_determine_historicalHeight": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteHistoricalChebyshev.historicalChebyshevHeight": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteHistoricalChebyshev.historicalChebyshevHeight_charpoly": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteHistoricalChebyshev.historicalChebyshevJacobi": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteHistoricalChebyshev.historicalChebyshevJacobi_isSymm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteHistoricalChebyshev.historicalChebyshevJacobi_prefix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.FiniteRealSpectralHilbert": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.finiteRealSpectralFrequency": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.finiteRealSpectralGenerator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.finiteRealSpectralGenerator_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.finiteRealSpectralGenerator_isSymmetric": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.finiteRealSpectralSelfAdjointGenerator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.finiteRealSpectralPhase": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.finiteRealSpectralPhase_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.finiteRealSpectralPhase_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.finiteRealSpectralPhase_neg_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.finiteRealSpectralPhase_mul_neg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.conj_finiteRealSpectralPhase": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.finiteRealSpectralEvolutionLinearEquiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.finiteRealSpectralEvolutionLinearEquiv_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.finiteRealSpectralEvolution": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.finiteRealSpectralEvolution_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.finiteRealSpectralEvolution_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.finiteRealSpectralEvolution_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.finiteRealSpectralBasisVector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.NativeMaterialClock.finiteRealSpectralGenerator_basisVector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.IsLogDerivativeMomentSequence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.logarithmicMoment_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.IsLogDerivativeMomentSequence.unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.logarithmicMoment_eq_of_two_relations": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.hankelGram": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.shiftedHankel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.hankelGram_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.shiftedHankel_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.hankelGram_isSymm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.shiftedHankel_isSymm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.hankelGram_succ_principal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.shiftedHankel_succ_principal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.IsMomentGramRepresentation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.IsShiftedMomentGramRepresentation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.hankelGram_posSemidef_of_gramRepresentation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.hankelGram_posDef_of_gramRepresentation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.shiftedHankel_posSemidef_of_gramRepresentation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.shiftedHankel_posDef_of_gramRepresentation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.jacobiCongruence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.finiteJacobiTransport": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.finiteJacobiTransport_eq_jacobiCongruence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.finiteJacobiTransport_posSemidef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.finiteJacobiTransport_isSymm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.finiteJacobiTransport_posDef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.inverseFactor_vecMul_injective_of_whitening": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteGramWhitening": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteGramWhitening.ofIdentity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.finiteJacobiSection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.finiteGramWhitening_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.finiteJacobiSection_posSemidef_of_shiftedGram": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.finiteJacobiSection_posDef_of_shiftedGram": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.finiteJacobiSection_isSymm_of_shiftedGram": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.LDL_diagEntries_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.canonicalLDLScale": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.canonicalLDLScale_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.canonicalLDLInverseFactor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.canonicalLDLInverseFactor_triangular": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.canonicalLDL_diagonal_normalization": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.canonicalLDLInverseFactor_whitens": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.canonicalHankelWhitening": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.finiteHeightEigenvalue": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.finiteHeightEigenvalue_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.finiteHeightOperator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.finiteHeightOperator_isSymm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.finiteHeightOperator_charpoly": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.nativeFiniteHeightOperator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.nativeFiniteHeightOperator_charpoly": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.canonicalFiniteJacobiSection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.canonicalFiniteJacobiSection_posDef_of_shiftedGram": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.canonicalFiniteHeightOperator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.canonicalFiniteHeightOperator_isSymm": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.canonicalFiniteHeightOperator_charpoly": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.historicalCameraPeriod": [],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.historicalCameraRadiiCount": [],
+    "GeometryOfNumbers.Analysis.FiniteClockJets.historicalHeadDimension": []
+  },
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "preexisting_math_unchanged": true,
+  "forbidden_historical_imports": false,
+  "required_modules": [
+    "C2GlobalGreenBridge",
+    "C2GreenPreStencilCanary",
+    "C2BaseTwoGreenLedger",
+    "C2GreenTemporalMeanCanary",
+    "C2GreenWhiteningGenealogy",
+    "GreenStateMaterialLogGenerator",
+    "GreenParsevalMaterialLogOperator",
+    "GreenStateMaterialEvolution",
+    "GreenParsevalMaterialEvolution",
+    "FiniteMaterialClockJets",
+    "FiniteClockHeightLedger",
+    "FiniteHistoricalChebyshev",
+    "FiniteClockHeightAudit"
+  ],
+  "missing_files": [],
+  "open_gaps": [
+    "C2 arbitrary CoreState log domain requires extra logarithmic moment",
+    "NOT PROVED: G_t differs from identity for every t",
+    "NOT CLAIMED: H_Green = height operator",
+    "NOT CLAIMED: clock L = height operator",
+    "OPEN: modern provenance-correct source to historical full phi",
+    "ACTIVE: HISTORICAL_SCALARIZATION_MISMATCH"
+  ]
+}

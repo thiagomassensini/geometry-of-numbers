@@ -42,7 +42,7 @@ está formalizada aqui. O escopo é o plano de trabalho da geometria real do car
 
 **Consolidação de 1–2/10/2026:** os oito módulos C2/dinâmica posteriores a R2
 estão integrados ao agregador Analysis e à auditoria. O [índice de recuperação](docs/RECOVERY_2026-10-02.md) reúne os resultados, limites e a localização
-das provas Green/Parseval no pacote downstream. Os parágrafos históricos
+das provas Green/Parseval. **Atualização de 3/10:** as rodadas 9–17 também estão recuperadas na Analysis canônica deste repositório, com seus status e gaps originais. Os parágrafos históricos
 abaixo descrevem seus respectivos checkpoints.
 
 **R2 CLOSED:** reconstrução discreta/projetiva, gauge crítico e TFVD real com
@@ -741,3 +741,7 @@ Leia [a rota normativa R2](docs/R2_TFVD_GREEN_VALVE_ROUTE.md) e
 Raio horizontal não é profundidade vertical; deformação q não é razão eta.
 R2 fecha reconstrução. Head/tail, momentos e normalização/isometria global
 permanecem downstream. Nenhuma conclusão espectral é feita.
+
+## Recuperação downstream 9–17 (3/10/2026)
+
+A cadeia C2→Green→Gram→Parseval→clock material→evolução unitária e o ledger finito forense agora vivem na Analysis deste repositório. [Ledger de recuperação](docs/RECOVERY_2026-10-02.md) e [certificado de commits/hashes/axiomas](docs/RECOVERY_9_TO_17_CERTIFICATE.json). O mismatch de scalarização histórica permanece ativo; clock e altura não foram identificados. Foundation/Geometry/R2 permanecem intactos.

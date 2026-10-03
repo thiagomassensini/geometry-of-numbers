@@ -6,8 +6,7 @@ autor em 2026-09-29. Este resumo orienta a implementação em
 Não substitui os enunciados Lean nem declara fechadas as metas do plano.
 
 Atualização da consolidação de 1–2/10/2026: o [índice de recuperação](RECOVERY_2026-10-02.md)
-registra as etapas C2 locais e as etapas Green/Parseval no pacote downstream
-`carry-self-adjoint-operator`. A tabela abaixo distingue esses dois locais.
+registra o checkpoint anterior das etapas C2 e Green/Parseval. Atualização de 3/10: as rodadas 9–17 foram recuperadas em Analysis deste repositório canônico; o carry é somente fonte histórica de leitura.
 As seções de implementação posteriores conservam seus checkpoints históricos.
 
 ## Zonas de confiança
@@ -27,10 +26,9 @@ outro axioma. Não pertence ao capstone axiom-free de seleção da escala.
 `ResidualTowerDepth` é uma extensão conservativa da API da torre nesta camada,
 com footprint vazio verificado separadamente; não modifica Foundation.
 
-**Zona B — análise real:** realiza massa e amplitude e agora constrói o
+**Zona B — realização real e camadas downstream de análise:** realiza massa e amplitude e agora constrói o
 estado de profundidade em `ℝ × ℝ`, com energia coordenada e rotação de ângulo
-livre. Mathlib entra por `Analysis/`; lei de fase, Hilbert, adjuntos, limites
-e cálculo funcional continuam posteriores.
+livre. Mathlib entra por `Analysis/`. As camadas downstream recuperadas agora incluem fase material, Hilbert, adjuntos, limites e normalização de frame; nenhuma delas redefine a fundação real.
 Os axiomas usuais são exibidos, não ocultados. Nenhuma representação
 complexa justificará um resultado fundacional.
 
@@ -44,11 +42,11 @@ complexa justificará um resultado fundacional.
 | R0 | Rotação e estado espectral reais | Estado de profundidade, energia quadrática e rotação abstrata fechados; lei de fase/espectro e estado global de quantidade ainda abertos |
 | R1 | Câmeras e brackets reais | Câmera ímpar, saturação e realização quadrática fechadas; ponte offset→deformação e crosswalk do perfil fechados sob compatibilidade multiplicativa explícita, q_r=rho^r; seleção do passo rho ainda aberta |
 | R2 | Reconstrução TFVD real, Green e retorno | CLOSED — reconstrução discreta/projetiva, gauge crítico e TFVD real com análise/síntese |
-| R3 | Frame global, whitening e isometria | Source C2 global isométrica nesta árvore; análise raw e whitening canônico certificados no carry downstream, com Gram raw não identidade |
-| R4 | Fatorização de câmeras pelo mesmo estado global | Source física C2 e proveniência fechadas; embedding concreto Green downstream. Não se presume uma fatorização geral ainda não provada |
-| R5 | Gerador logarítmico e transporte autoadjunto | CLOSED no carry downstream para o material log clock: domínio maximal, transporte Parseval e grupos fortemente contínuos; órbita C2 global sem gate de domínio |
-| R6 | Momentos provenientes de operador positivo real; Jacobi | Jets e dependência triangular finitos certificados downstream; identificação integral com completion e Jacobi históricos mantém gaps explícitos |
-| R7 | Operador de alturas e ponte com dinâmica real | Construção finita positiva e ledger downstream; HISTORICAL_SCALARIZATION_MISMATCH na ponte histórica. Nenhuma identificação com o clock material |
+| R3 | Frame global, whitening e isometria | Source C2 global isométrica nesta árvore; análise raw e whitening canônico certificados na Analysis canônica recuperada, com Gram raw não identidade |
+| R4 | Fatorização de câmeras pelo mesmo estado global | Source física C2 e proveniência fechadas; embedding concreto Green em Analysis. Não se presume uma fatorização geral ainda não provada |
+| R5 | Gerador logarítmico e transporte autoadjunto | CLOSED na Analysis canônica recuperada para o material log clock: domínio maximal, transporte Parseval e grupos fortemente contínuos; órbita C2 global sem gate de domínio |
+| R6 | Momentos provenientes de operador positivo real; Jacobi | Jets e dependência triangular finitos certificados em Analysis; identificação integral com completion e Jacobi históricos mantém gaps explícitos |
+| R7 | Operador de alturas e ponte com dinâmica real | Construção finita positiva e ledger em Analysis; HISTORICAL_SCALARIZATION_MISMATCH na ponte histórica. Nenhuma identificação com o clock material |
 | R8 | Compatibilidade/convergência e operador limite | Não iniciada |
 | R9 | Capstones da álgebra real da teoria | Não iniciada |
 
