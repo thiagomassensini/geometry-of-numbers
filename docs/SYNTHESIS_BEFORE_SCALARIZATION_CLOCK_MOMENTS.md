@@ -52,13 +52,13 @@ value already proved in the previous round.
 coefficient series. `baseTwoSynthesizedTailSeries_unique` proves uniqueness
 relative to the fixed head and complete coefficient series.
 
-## Scope and gates
+## Scope and gates at the end of block 1
 
 These are identities of the existing `iteratedDeriv` coefficient construction.
 They alone do not assert analytic recovery of the infinite complete signal
 from its Taylor series, smoothness of that signal, or interchange of derivatives
 with the infinite cell sum. No smoothness premise was added to obtain them.
-Such a regularity certificate must be proved before making those stronger claims.
+The actual local analyticity/all-order regularity certificate is proved in block 3 below; no global Taylor reconstruction or termwise tail derivative formula is asserted.
 
 The camera-factor and completion germs have not been derived in this block.
 The modern provenance-correct C2/Green source → historical complete scalar
@@ -167,7 +167,7 @@ gate at this point; the coefficient identities alone do not discharge it.
 
 | 2 — derived-tail response and unique cutoff-invariant moments | `f9cd0edf8b992d6ef084620cf89e9553578368c3` | identical, verified before block 3 | four --wfail targets + Analysis audit + diff check, exit 0 |
 
-Block 3 is recorded after its immediate integration.
+| 3 — local analyticity, all-order regularity and actual whole-tail normalized jets | `56cc3aef5f813aed1e39582634097b1220429387` | identical, verified after immediate integration | five --wfail targets + Analysis audit + diff check, exit 0 |
 
 
 ## Block 3: genuine all-order jets of the completed signal
@@ -230,3 +230,51 @@ lake build --wfail GeometryOfNumbers.Analysis.BaseTwoExactHeadTailCompletionAudi
 
 All public declarations are guarded and printed in the dedicated and central
 Analysis audits. Capstones retain precisely the three allowed standard axioms.
+
+
+## Checked capstone footprints
+
+The following `#print axioms` outputs were checked by the dedicated audits and
+`Analysis/Audit.lean`. Each listed theorem has exactly
+`[propext, Classical.choice, Quot.sound]`; no additional axiom is permitted.
+All names belong to `GeometryOfNumbers.Analysis.BaseTwoCompletion`.
+
+| Capstone | Printed axioms |
+| --- | --- |
+| `baseTwoCompletedClockJet_cutoff_independent` | propext, Classical.choice, Quot.sound |
+| `baseTwoHeadSeries_add_synthesizedTailSeries` | propext, Classical.choice, Quot.sound |
+| `baseTwoCriticalCompleteSignal_analyticAt` | propext, Classical.choice, Quot.sound |
+| `baseTwoCriticalCompleteSignal_contDiff` | propext, Classical.choice, Quot.sound |
+| `baseTwoSynthesizedTailCoefficient_eq_normalizedTailJet` | propext, Classical.choice, Quot.sound |
+| `baseTwoClosedResponseSeries_eq_synthesized` | propext, Classical.choice, Quot.sound |
+| `baseTwoHistoricalPhi_cutoff_independent` | propext, Classical.choice, Quot.sound |
+| `baseTwoSynthesizedLogMoment_cutoff_independent` | propext, Classical.choice, Quot.sound |
+| `baseTwoSynthesizedLogMoment_unique` | propext, Classical.choice, Quot.sound |
+| `baseTwoSynthesizedLogMoment_formal_logDerivative` | propext, Classical.choice, Quot.sound |
+| `baseTwoSynthesizedLogMoment_formal_quotient` | propext, Classical.choice, Quot.sound |
+| `baseTwoLogMoment_two_formal_constructions_eq` | propext, Classical.choice, Quot.sound |
+
+## Final validation ledger
+
+All commands below completed with exit 0. No `sorry`, `admit`, new `axiom` or
+`unsafe` occurs in the new proof modules. Foundation and Geometry files,
+R2 mathematics, finite moment recurrence, Jacobi and height modules, and the
+Lake dependency configuration are unchanged.
+
+* `lake build --wfail` for all three new proof modules and their dedicated audits;
+* `lake build --wfail GeometryOfNumbers.Analysis.BaseTwoExactHeadTailCompletionAudit`;
+* `lake build --wfail GeometryOfNumbers.Analysis`;
+* `lake build --wfail GeometryOfNumbers.Analysis.Audit`;
+* `bash scripts/audit-analysis.sh` (source coverage plus kernel axiom guards);
+* `bash scripts/audit-foundation.sh` (empty Foundation footprint);
+* `bash scripts/audit-geometry.sh` (unchanged discrete-zone footprint);
+* `git diff --check` for every published increment.
+
+Build/audit logs remain in the canonical checkout under `.lake/` with names
+`synthesized-clock-block{1,2,3}-{build,audit}.log`,
+`synthesized-clock-foundation-audit.log`, `synthesized-clock-geometry-audit.log`.
+The guards and print commands themselves are versioned and rerunnable.
+The three mathematical commits above were individually branch-pushed,
+fast-forward integrated into main, main-pushed, and verified with `git ls-remote`.
+A final documentation-only commit records the complete publication ledger.
+No preexisting dirty changes were present; no historical artifacts were removed.

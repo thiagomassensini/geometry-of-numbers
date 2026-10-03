@@ -661,8 +661,8 @@ report: `docs/BASE_TWO_EXACT_HEAD_TAIL_COMPLETION.md`.
 | Arbitrary cutoff independence | CLOSED | `baseTwoCompletedSignal_cutoff_independent` |
 | C2 endpoint incidence | CLOSED | `baseTwo_endpoint_incidence`; first omitted triple `(4M+3,4M+4,4M+5)` |
 | Existing clock jets are jets of this head | CLOSED | `baseTwoFiniteHead_normalizedClockJet` |
-| Replace downstream external tail | OPEN / later round | Existing finite ledger unchanged |
-| Infinite tail jet tower | OPEN / not attempted | No derivative/sum interchange claimed |
+| Replace downstream external tail | CLOSED in new base-two path | `baseTwoClosedResponseSeries_eq_synthesized`; general ledger unchanged |
+| Infinite tail jet tower | CLOSED via synthesis and smooth subtraction | `baseTwoSynthesizedTailCoefficient_eq_normalizedTailJet`; no termwise derivative/sum claim |
 | Modern C2/Green source to historical full scalarization | OPEN / mismatch active | This round identifies the historical head only |
 
 The estimate preserves whole-cell second-difference cancellation and uses only

@@ -745,3 +745,24 @@ permanecem downstream. Nenhuma conclusão espectral é feita.
 ## Recuperação downstream 9–17 (3/10/2026)
 
 A cadeia C2→Green→Gram→Parseval→clock material→evolução unitária e o ledger finito forense agora vivem na Analysis deste repositório. [Ledger de recuperação](docs/RECOVERY_2026-10-02.md) e [certificado de commits/hashes/axiomas](docs/RECOVERY_9_TO_17_CERTIFICATE.json). O mismatch de scalarização histórica permanece ativo; clock e altura não foram identificados. Foundation/Geometry/R2 permanecem intactos.
+
+
+## Jets e momentos após a síntese completa de base 2
+
+A cabeça e a cauda de células completas já sintetizadas determinam os jets
+normalizados, com o fator `1/r!`. A cauda de coeficientes é derivada como
+resíduo dessa síntese; não é uma entrada livre no novo caminho de base 2.
+
+Capstones locais em `GeometryOfNumbers.Analysis.BaseTwoCompletion`:
+
+- `baseTwoCriticalCompleteSignal_analyticAt`;
+- `baseTwoSynthesizedTailCoefficient_eq_normalizedTailJet`;
+- `baseTwoClosedResponseSeries_eq_synthesized`;
+- `baseTwoSynthesizedLogMoment_cutoff_independent`;
+- `baseTwoSynthesizedLogMoment_formal_logDerivative` (`phi(0) ≠ 0`).
+
+A resposta e os momentos independem do cutoff mantendo fixos `cameraFactor`
+e `completion`, ainda entradas explícitas. O crosswalk da source C2/Green
+moderna para esse observable histórico e a positividade Gram/Hankel permanecem
+abertos. Não se identifica o clock com um operador de alturas.
+Veja [o relatório da síntese antes da scalarização](docs/SYNTHESIS_BEFORE_SCALARIZATION_CLOCK_MOMENTS.md).
