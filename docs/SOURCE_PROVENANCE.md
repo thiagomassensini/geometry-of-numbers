@@ -773,3 +773,324 @@ C3 completion, cumulantes ou momentos dos módulos históricos maiores.
 
 Os hashes dos conteúdos consultados estão em `R2_SOURCE_MANIFEST.json`.
 Todos os nomes públicos novos recebem guards e #print axioms no audit.
+
+
+## Canário downstream: relógio material logarítmico × TFVD vertical
+
+Rodada 2026-10-02, branch `audit-material-log-tfvd`, sem commit/merge/push.
+Fonte consultada: carry-self-adjoint-operator,
+`cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa`.
+Dependência CPFormal auditada em
+`65d50f6db1208708e109982ba97e1d51d3039956`.
+
+- `NativeLogEvolution.lean`: os quatro fatos de gerador/log-basis/orbit/finite
+  evolution solicitados; somente existência e convenção material/signo auditadas.
+- CPFormal `CpInfiniteRealSpectralGenerator.lean`: frequência `log(n+1)` e
+  fase com sinal negativo; `CpRealSpectralGenerator.lean`: evolução finita.
+- CPFormal `CpNativeCarryLogPhaseOrbit.lean` e `CpRealSpectralOperator.lean`:
+  material n enumera o ponto positivo n+1; fatoração da semente na órbita.
+- `PositionalDepthRefinement.lean`, `FinitePositionalObservableShift.lean`,
+  `C2FiberDepthLogTransport.lean` e CPFormal `C2OddCorePushforward.lean`:
+  quantidade fixa/chart-depth e fibra crescente/core-depth são distintos.
+
+Porte local: SOMENTE a fórmula real do ângulo material `-t log(n+1)` e o
+canário solicitado de duas quadraturas por fibra vertical real. Nenhum import
+histórico; nenhum resultado de autoadjunção ou consequência espectral é usado
+nas provas do novo canário. Intertwining e roundtrip são derivados da
+linearidade real e do theorem R2 existente, sem identificar material n com k.
+A fonte nativa ainda não possui encoder identificado nesse carrier analítico.
+A torre discreta retém quantidade/depth; isso não fornece por si o encoder ℓ².
+
+Detalhes, nomes, status e axiomas:
+[MATERIAL_LOG_TFVD_CANARY.md](MATERIAL_LOG_TFVD_CANARY.md).
+
+## Auditoria da fonte ponderada: material sample versus profundidade
+
+Rodada 2026-10-02, branch de trabalho audit-weighted-source-diagonal,
+baseline geometry-of-numbers 93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f.
+Sem commit, merge ou push. R2 permaneceu inalterado.
+
+Snapshots históricos somente para leitura/auditoria:
+
+- carry-self-adjoint-operator: cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa;
+- primos: 8c4b7fdf65a49d1d0febe8193d56e2cfb2191260;
+- dependência CPFormal no carry: 65d50f6db1208708e109982ba97e1d51d3039956.
+
+Fontes obrigatórias lidas:
+
+- CPFormal/Analytic/CpNativeCarryWeightedSpectralState.lean:
+  definição e apply por rfl, trace, bracket e especialização de amplitude
+  por base. O conteúdo é idêntico nos dois snapshots CPFormal; SHA256
+  ede53efc04e972b04d80178e23ad41b6fc552b2e68f8e15b4dd7a1b542ab24bc.
+- CarrySelfAdjointOperator/NativeLogEvolution.lean: o índice material
+  enumera o ponto positivo n+1, com relógio log(n+1).
+- CarrySelfAdjointOperator/C2FiberDepthLogTransport.lean: centro 2^k m,
+  incremento vertical log 2 e correções logarítmicas preservadas nas pernas.
+- CarrySelfAdjointOperator/PrimeDepthTfvdLogJetCrosswalk.lean: ledger primo,
+  log-factorization e igualdade de prefixos mantendo os samples existentes.
+- CarrySelfAdjointOperator/MultibaseCameraLogTfvdChannelTransport.lean:
+  câmera p versus slot de log-slope; naturalidade da soma de canais e TFVD.
+
+Fontes complementares efetivamente usadas no diagnóstico:
+
+- CarrySelfAdjointOperator/C2AlignedBoxOddCoreCrosswalk.lean:
+  factorization canônica, core positivo/ímpar e depth do centro alinhado.
+- CPFormal/Carry/PositionalDecomposition.lean: quotient/residue, reconstrução
+  única em janela escolhida e profundidade máxima/core.
+- CPFormal/Carry/C2Adjacent.lean e CPFormal/Carry/C2Depth.lean:
+  oddLegEquivIncidence, centro adjacente e effectiveDepth_eq_centerDepth.
+- CPFormal/Carry/PositionalCarryInverseCausalInheritance.lean:
+  distinção entre escala/log e profundidade de divisão exata.
+- CPFormal/Analytic/CpRealSpectralOperator.lean e CpReflectedEndpoint.lean:
+  origem de realSpectralState e enumeração material positiva n+1.
+- CPFormal/Analytic/CpCarryL2UnilateralShift.lean e
+  CpCarryWeightedVerticalBracketTrace.lean: carriers e slots do trace/bracket.
+- CarrySelfAdjointOperator/NativeDepthCpLogJetCommutatorCrosswalk.lean:
+  consulta pontual da dependência de clock numa torre, sem usar resultados
+  radiais/zero-confinement downstream.
+- Referências ao weighted state em C3ProjectiveCompletedJetBridge,
+  C3ProjectiveHilbertReadoutKernel e KernelConstructionAudit foram buscadas
+  para verificar se forneciam reindexação posicional; não fornecem a ponte
+  exigida. Nenhuma conclusão de completion/kernel foi usada como premissa.
+
+Crosswalk local usado para os DOIS certificados novos:
+GeometryOfNumbers.Analysis.primeResidualDepth_iff_le_factorization.
+As APIs Foundation emergentResidualTower/value/expansion/uniqueness e
+Geometry HasCarryDepthAtLeast/divisibility foram auditadas sem alterações.
+O único porte matemático desta rodada é a composição desse crosswalk já
+local com a fatorização de 3 em Mathlib. Nenhuma definição histórica de
+fonte foi copiada e nenhum import histórico foi adicionado.
+
+Resultado: SEMANTIC_DIAGONAL_GAP, leitura diagonal apenas
+DIAGONAL_ONLY_REPRESENTATION. Nenhum theorem recuperado identifica
+sample n com a profundidade posicional de n+1. A leitura universal de
+profundidade binária intrínseca foi refutada por
+sampleTwo_materialThree_binaryDepth_iff e
+materialSampleIndex_not_intrinsicBinaryDepth.
+Isso não invalida a fonte unidimensional e não prova inexistência de
+qualquer encoder; impede afirmar o encoder pretendido nesta rodada.
+
+Relatório: [HISTORICAL_WEIGHTED_SOURCE_DIAGONAL_AUDIT.md](HISTORICAL_WEIGHTED_SOURCE_DIAGONAL_AUDIT.md).
+Tabela anterior à construção: [WEIGHTED_SOURCE_GATE_ZERO.md](WEIGHTED_SOURCE_GATE_ZERO.md).
+Manifesto com SHA256, referências arquivadas, logs e resultados:
+weighted_source_audit_work local e weighted-source-diagonal-artifacts no llm.
+
+## Fibra C2: dinâmica real de contração e rotação
+
+Rodada 2026-10-02; branch canary-c2-fiber-real-dynamics, baseline local
+93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f.
+Sem commit, merge ou push. R2 e todos os canários anteriores preservados.
+
+Única fonte histórica consultada nesta rodada:
+carry-self-adjoint-operator,
+cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa,
+CarrySelfAdjointOperator/C2FiberDepthLogTransport.lean.
+Nenhum import do repositório histórico foi adicionado.
+
+Crosswalk de proveniência para C2FiberRealDynamics:
+
+| Origem | Papel original | Alvo local / justificativa |
+| --- | --- | --- |
+| c2FiberPoint/centered/succ | Core fixo m, depth variável k, offset epsilon | Coordenada literal e doubling; centro convertido ao natural 2^k m |
+| c2FiberPoint_centered_log/increment | Log do centro de fibra crescente | Reescritos por Real.log_mul/log_pow e ring, com m>0 |
+| c2FiberPoint_log_center_defect/increment_defect | Correção exata da perna | Defect explícito local; hipóteses físicas x_k,x_(k+1)>0 fortalecem o não anulamento histórico |
+| right_log_defect_pos/right_log_increment_lt | Correção realmente não nula e incremento distinto no exemplo | Positividade geral do defect direito e exemplo exato log 9-log 5<log 2, sem aproximação |
+| Geometry.hasCarryDepthAtLeast_iff_dvd_pow, já local | Proveniência residual de profundidade | Suporte de k para 2^k m e ausência em k+1 sob core ímpar; não é identificação de sample |
+| realCriticalDepthState/energy, já local | Amplitude de depth e rotação livre | Estado físico pointwise seleciona ângulo por log do ponto da fibra; energia reutilizada sem alteração |
+| realCriticalAmplitude_succ_verticalRatio, já local | Razão consecutiva da amplitude já derivada | Passo real com eta=criticalVerticalAmplitudeRatio 2 |
+| rotateRealPlane_add/scaleRealPlane, já locais | Ação angular real e escala de coordenadas | Core/depth angular, fixed step e step composto com defect; duas pequenas lemmas privadas de composição |
+
+Não foram portados sampling matrices, commutadores, Newton/Green modes ou
+outros resultados do restante do módulo histórico. Nenhuma fonte diagonal
+foi recuperada. A escolha de fase usa o ponto material 2^k m+epsilon,
+não um sample arbitrário. O estado exige core e material point positivos.
+Odd m identifica k com a profundidade intrínseca exata; sem oddness o
+enunciado de proveniência garante somente um nível suportado.
+
+Resultado: CENTER_FIXED_STEP=PASS, LEG_EXACT_CORRECTION=PASS.
+A iteração do passo central é theorem por indução a partir da source
+geométrica independente, não sua definição. As correções das pernas
+permanecem exatas.
+
+Auditoria downstream: a TFVD R2 continua escalar em eta. O peso rotacional
+eta R_omega é apenas um próximo-alvo documental, sem implementação.
+THREE_PHASE_CENTER_LEG_GATE permanece OPEN: o readout de ângulo comum
+não foi aplicado às três fases logarítmicas físicas.
+
+27 nomes públicos e exemplos formais adicionados ao Analysis/Audit.
+Footprints permitidos; nenhum axioma extra.
+Relatório: [C2_FIBER_REAL_DYNAMICS_CANARY.md](C2_FIBER_REAL_DYNAMICS_CANARY.md).
+Hashes, scripts e logs: c2_fiber_real_dynamics_work local e
+c2-fiber-real-dynamics-artifacts no llm.
+
+## Massa quadrática do ramo C2 como energia de órbita real
+
+Rodada 2026-10-02, branch canary-c2-branch-orbit; baseline
+93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f.
+Sem commit, merge ou push. R2 e os canários anteriores preservados.
+
+Histórico somente para leitura:
+formalizacao_C2 em dc35555879e3c0f188508c729c4a0ea31be246fb.
+LeanC2/Operators/BranchBarrier.lean e LeanC2/Operators/Tilt.lean estão
+sem alterações nesse checkout; outras alterações históricas não foram tocadas.
+Nenhum import histórico ou build do checkout histórico foi usado.
+
+BranchBarrier consultado integralmente: branchWeightSigma,
+branchNormSqSigma, branchWeightSigma_half, branchNormSq_closed_form,
+branchNormSq_half, branchNormSq_lt_one_of_half_lt,
+branchNormSq_gt_one_of_pos_of_lt_half, branchNormSq_barrier_eq_one e
+branchNormSq_barrier. Wrappers complexos não foram portados.
+
+Crosswalk para C2BranchOrbitCanary:
+
+| Origem | Papel | Alvo / justificativa local |
+| --- | --- | --- |
+| branchWeightSigma = 2^(-2 sigma) | Razão quadrática radial histórica | Quadrado da razão comparativa 2^(-sigma); c2RadialEnergyRatio_eq_legacyBranchWeight |
+| branchNormSqSigma = 2 tsum q^(j+2) | Massa das duas direções desde depth 2 | Massa DEFINIDA pela energia da órbita com t; c2BranchOrbitMass_eq_legacyBranchNormSq |
+| Primeiro depth histórico j+2 | Admissão C2 de centro divisível por quatro | Para core ímpar, 4 dvd 2^k*m iff 2≤k; preserva a restrição histórica sem afirmar unicidade de toda regra de admissão |
+| Dois ramos | Offsets C2 -1,+1 | Pontos distintos/cardinalidade dois nas coordenadas locais; não soma vetorial nem fases iguais |
+| realCriticalDepthSeed 2 0, preexistente | Seed unitário real (1,0) | Usado sem normalização nova na órbita iterada |
+| realCriticalDepthState/amplitude e c2CenterFiberStep, preexistentes | Objeto crítico já derivado | Igualdade de funções F_(1/2,t)=c2CenterFiberStep t, anterior à classificação de massa |
+| Barreira histórica | Série geométrica real | Somabilidade para sigma>0, forma fechada e três critérios reconstruídos em Lean |
+
+A família em sigma é exclusivamente deformação/comparison family downstream.
+Não usa massa unitária para definir/selecionar amplitude crítica nem para
+modificar a fundação da metade. O tempo permanece na definição da massa,
+e sua eliminação é theorem por invariância angular.
+O peso radial q_branch não é a deformação recíproca da Forma Centro–Pernas.
+
+Tilt foi auditado depois do fechamento da órbita/massa:
+tiltBracket e normalizedTiltCurvature são leituras locais de curvatura.
+bracket_tilt_zero_iff_delta_zero e normalizedTiltCurvature_zero_iff_delta_zero
+mostram o mesmo locus da massa menos 1 quando delta=sigma-1/2, sigma>0,c>1.
+Os sinais são opostos fora da metade; não foi forçada igualdade.
+Classificação: TILT_ZERO_LOCUS_ONLY_MATCHES_BRANCH_DEFECT.
+Nenhuma definição ou prova de Tilt foi importada/portada.
+
+29 nomes públicos, 10 exemplos formais e guards/prints no Audit.
+Relatório: [C2_BRANCH_ORBIT_CANARY.md](C2_BRANCH_ORBIT_CANARY.md).
+Hashes dos conteúdos, logs, footprints e preservação:
+c2_branch_orbit_work local e c2-branch-orbit-artifacts no llm.
+
+## Realização Hilbert real do operador de ramo C2
+
+Rodada downstream na branch `canary-c2-branch-isometry`, sem commit/merge/push.
+Base geometry-of-numbers: `93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f`.
+Implementação: `Analysis/C2BranchIsometryCanary.lean`; relatório:
+`docs/C2_BRANCH_ISOMETRY_CANARY.md`.
+
+- formalizacao_C2, SHA `dc35555879e3c0f188508c729c4a0ea31be246fb`:
+  `operadores/cp_branch_operator.py`, leitura integral. Especificação C2:
+  duas direções, k0=2, coeficiente exp(-k(sigma+it)log2), massa quadrática
+  geométrica. Python não executado nem usado como prova.
+- Recuperação local, sem mudanças: `C2BranchOrbitCanary`, energia iterada,
+  somabilidade, crosswalk legacy, massa crítica e igualdade do passo crítico;
+  `C2FiberRealDynamics`, passo central preexistente.
+- Mathlib da versão fixada em lake-manifest: `PiL2`, `l2Space`, `Adjoint`,
+  séries reais/produtos. Carrier euclidiano, identidade de norma l2 e
+  `LinearIsometry.adjoint_comp_self`. Nenhuma geometria nova importada.
+
+Auditoria da relação com Parseval (somente leitura, nunca dependência da prova):
+
+- carry-self-adjoint-operator, SHA
+  `cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa`:
+  `CarrySelfAdjointOperator/BR2GreenFrameDslopeLimitBridge.lean`,
+  trechos de definição da análise CLM e Parseval, linhas 20–74.
+- Dependência GreenFrame desse checkout, SHA
+  `cd2d838bee67ad23f869a02f8ed9f0a0feb926fa`:
+  `GreenFrame/Concrete/Analysis/CanonicalParseval.lean`,
+  `ConcreteSplitOperators.lean`, `ConcreteSplitBounds.lean`,
+  `GreenDepthSplit.lean`, `GreenDepthSectorEnergy.lean`,
+  `GreenAnalysisVector.lean`, `GreenStencilComplex.lean`,
+  `InfinitePartition.lean` e `FrameOperator.lean`, trechos de tipos,
+  definições e empacotamento. `T=((seed,residual,G1),G>=2)` tem coordenadas
+  de stencil Green, sem inclusão/intertwining de W encontrada.
+- Buscas de consistência em `primos`, SHA
+  `8c4b7fdf65a49d1d0febe8193d56e2cfb2191260`, CPFormal/Analytic,
+  não forneceram o objeto Parseval procurado; nenhum módulo portado.
+
+Classificação limitada aos objetos auditados: `NO_RELATION_FOUND` entre
+este W e um bloco do T concreto. A isometria e `W*W=I` de W foram
+construídas independentemente da normalização Parseval. R2 permanece fechado.
+
+## Source material física C2 por incidência e correção exata das pernas
+
+Branch `canary-c2-physical-material`; base geometry-of-numbers
+`93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f`. Sem commit/merge/push.
+Módulo `Analysis/C2PhysicalBranchCanary.lean`; relatório
+`docs/C2_PHYSICAL_BRANCH_CANARY.md`.
+
+Referência histórica única para endereçamento: formalizacao_C2,
+`LeanC2/Foundations/Dyadic.lean`, commit
+`dc35555879e3c0f188508c729c4a0ea31be246fb`.
+O arquivo está modificado: conteúdo consultado SHA256
+`a7b17be4ee2a41064886ef4179495aa229c3ee73da8e5028f382e9a717944c98`.
+A alteração troca o import Basic por BasicCore. HEAD, working copy e diff
+arquivados; fonte histórica não alterada nem importada como prova.
+Lidos BranchSign/toInt, natDescendant/cast/address_unique,
+keff_left_leg/right_leg, bracket_bijection_odd_ge_three e seus lemas.
+
+Crosswalk local: Fin 2 de direções preexistente, depth j+2, natural
+2^(j+2)m ±1, injetividade para core positivo fixo, thresholds de profundidade
+relacional dos dois vizinhos para core ímpar e recuperação do core por divisão.
+Não portados v2/padicValNat/keff nem a bijeção global de todos os cores.
+Provas usam a relação Geometry.HasCarryDepthAtLeast e seus capstones locais.
+
+Reutilizados sem mudança C2FiberRealDynamics, C2BranchOrbitCanary e
+C2BranchIsometryCanary. O log-defect das pernas é preservado literalmente;
+incidência por extensão zero e rotação coordenada são isometrias distintas.
+Source crítica e identidade do adjunto são composições de isometrias.
+
+Auditoria adicional explicitamente solicitada do tipo de entrada GreenFrame:
+dependência do checkout carry-self-adjoint-operator, SHA
+`cd2d838bee67ad23f869a02f8ed9f0a0feb926fa`,
+`GreenFrame/Concrete/Analysis/GreenStencilComplex.lean:16` (State) e
+`ConcreteSplitOperators.lean:20–65` (tipo/definição de concreteAnalysisOperator).
+Leitura somente de tipos/definições; nenhum import ou porte desses módulos.
+Mesmo índice PNat; R² euclidiano por material é a realificação natural.
+Empacotamento complexo e conexão da nova source ao T concreto não implementados.
+Classificação READY_FOR_GREEN_ANALYSIS_INPUT apenas quanto a índice/carrier.
+
+PASS; PROVENANCE_GAP_CLOSED_FOR_FIXED_C2_CORE. Nenhuma recuperação da source
+histórica diagonal q^n ψ_t(n), nenhum resultado TFVD/Green/Parseval novo.
+39 nomes públicos auditados; logs, conteúdo histórico dirty e hashes
+arquivados em c2_physical_branch_work / c2-physical-branch-artifacts.
+
+## Global odd-material C2 physical source canary (2026-10-02)
+
+Working branch: `canary-c2-global-odd-source`; base HEAD
+`93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f`. No commit, merge or push.
+
+New module: `Analysis/C2GlobalPhysicalBranchCanary.lean`. It continues the
+unchanged `C2PhysicalBranchCanary` using its critical local isometry, exact leg
+phase correction, incidence coordinates and relational leg-depth recovery.
+The new explicit inverse selects the neighbor divisible by four and its odd
+complement. `PrimeResidualDepthCrosswalk.lean` certifies the use of the classical
+factorization exponent as a representation of the already-existing relational
+thresholds. This does not replace Geometry's depth definition with valuation.
+
+Read-only historical reference: `formalizacao_C2/LeanC2/Foundations/Dyadic.lean`,
+HEAD `dc35555879e3c0f188508c729c4a0ea31be246fb`, dirty working-content SHA256
+`a7b17be4ee2a41064886ef4179495aa229c3ee73da8e5028f382e9a717944c98`.
+Consulted `bracket_bijection_odd_ge_three_exists`,
+`natDescendant_address_unique`, `bracket_bijection_odd_ge_three`; no historical
+import or theorem is a dependency. The new inverse is explicitly arithmetic;
+no `Classical.choose` selects an address or enumerates cores.
+
+Norm construction: local real linear isometries → square-summability over the
+product index (nonnegative Fubini) → global real linear isometry → bijective
+material reindexing. The local geometric series is not reproved. Each single
+core agrees with the preexisting physical operator at every odd material
+coordinate, including zeros off its range.
+
+Final index-only audit: historical GreenFrame dependency at
+`cd2d838bee67ad23f869a02f8ed9f0a0feb926fa`,
+`GreenFrame/Concrete/Analysis/GreenStencilComplex.lean`, declaration `State`:
+`ℓ²(PNat, ℂ)`. This is a read-only type comparison, not a proof import or an
+identification with any analysis operator.
+
+Scope: positive odd cores and odd material integers at least three. Seed one
+and the even sector are excluded. Amplitude is `2^(-k/2)` at the decoded branch
+depth; phase is rotation by `-t*log(n)` at the material point. Never replace
+this amplitude by `n^(-1/2)`. The historical diagonal source is not recovered.
+See `docs/C2_GLOBAL_PHYSICAL_BRANCH_CANARY.md` for proofs and validation.

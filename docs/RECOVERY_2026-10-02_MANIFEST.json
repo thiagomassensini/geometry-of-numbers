@@ -1,0 +1,29 @@
+{
+  "base": "93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f",
+  "original_worktree": "/home/thlinux/geometry-of-numbers-phase-canary",
+  "original_branch": "canary-c2-global-odd-source",
+  "recovered_source_sha256": {
+    "GeometryOfNumbers/Analysis/C2BranchIsometryCanary.lean": "e6aaa0e9d0a541fe014745f7fd137c330939424771adbfb2ca40c350f47bdadc",
+    "GeometryOfNumbers/Analysis/C2BranchOrbitCanary.lean": "add763dd290f29b4d2795c5450db3a337bd5032e52e9022b76830b2b990e6fd1",
+    "GeometryOfNumbers/Analysis/C2FiberRealDynamics.lean": "60abcd61a664c1b8f0180a03bab92e4382e93dc417505fb76216901c7a270233",
+    "GeometryOfNumbers/Analysis/C2GlobalPhysicalBranchCanary.lean": "264cb62f13fb8510d99817c5e251847c1e7cdf641f4828860fd04b9044a546ac",
+    "GeometryOfNumbers/Analysis/C2PhysicalBranchCanary.lean": "7205686c2060a227d6f8f564959d9d57528ec2e5ea182ccee3511ff0bbca4d91",
+    "GeometryOfNumbers/Analysis/HistoricalWeightedSourceIndexAudit.lean": "97910ea7937258a6aafbde74a537dedc8e122f8d87d874c7c9898b647b98415d",
+    "GeometryOfNumbers/Analysis/MaterialLogTfvdCanary.lean": "d353d14a402e29df040f8f7134c4d992d5ca8612feb4716f7b3797be13a2bd96",
+    "GeometryOfNumbers/Analysis/SynthesizedPhaseCenterLegCanary.lean": "09103908a41d9f5204f40700af5ba6ca0c5eaeaba75eb68b93cb48db032f20a7",
+    "docs/C2_BRANCH_ISOMETRY_CANARY.md": "60bc039f0c87eb0fdad48073a8d2e4ef63a528ffc2a0767040ce4e04bf5b24a3",
+    "docs/C2_BRANCH_ORBIT_CANARY.md": "e49eff689e70254b1de3b115aaf99ed124246275147e7fc7d9d5545f3d3b038f",
+    "docs/C2_FIBER_REAL_DYNAMICS_CANARY.md": "4ad9b3a76918e60c514c0d43ac3662576fc39c81c94394bf0be5673047c7cc5b",
+    "docs/C2_GLOBAL_PHYSICAL_BRANCH_CANARY.md": "843f6d121fa78ad9f1e0dea900adf4cd9adc5023b7685f2a4f0fcd9f9e8d76e1",
+    "docs/C2_PHYSICAL_BRANCH_CANARY.md": "8801608d43250f4be14c98eecd1e6947320b1f1b3cdf278bd8203d00f786d6ce",
+    "docs/HISTORICAL_WEIGHTED_SOURCE_DIAGONAL_AUDIT.md": "8c2d1221c7d4930169689b91c09cff77da5c30bba790711cfc0ea1c331aff77b",
+    "docs/MATERIAL_LOG_TFVD_CANARY.md": "4c0fba660222a38a34054fb05aaef2dbc825d7f35c41281ba205a87f7d3e438b",
+    "docs/SYNTHESIZED_PHASE_CENTER_LEG_CANARY.md": "3c2b9a2388eefe22413a1f2c1864c18ea0e821f8d622bacc2ca841ab2404f272",
+    "docs/WEIGHTED_SOURCE_GATE_ZERO.md": "050f4ae5c1eaf3feffcb98b41422d35a7b12c80b3cd23ad0250e4cb5ea517b73",
+    "GeometryOfNumbers/Analysis.lean": "17a9585ac95ef9865d9645d0ff16a26555ebe44fb3e7ece1a6ad5f549854c2da",
+    "GeometryOfNumbers/Analysis/Audit.lean": "11e533eb7af95a57d9dcf823735092e5a75388f5d666f7036b0a09520bfa811a",
+    "docs/SOURCE_PROVENANCE.md": "5ec090f728b02ce208ac4e6a31d374b16556691f922da226d29f055cd6a8a462"
+  },
+  "new_public_theorems": 142,
+  "backup": "/home/thlinux/formalization-recovery-20261002-233654"
+}

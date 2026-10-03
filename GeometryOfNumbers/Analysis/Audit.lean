@@ -1577,4 +1577,589 @@ example (f : ℕ → ℝ) : DiscreteProjective.reconstruct (DiscreteProjective.e
   DiscreteProjective.reconstruct_encode f
 example (D : PowerSeries ℝ) : projectiveValveCurvature (projectiveValveMass D) = D :=
   projectiveValveCurvature_projectiveValveMass D
+
+-- Local phase canary; no post-synthesis phase is defined or assumed.
+#assert_analysis_axioms rotateRealPlane_neg_comp
+#print axioms rotateRealPlane_neg_comp
+#assert_analysis_axioms rotateRealPlane_eq_zero_iff
+#print axioms rotateRealPlane_eq_zero_iff
+#assert_analysis_axioms centerLegForm_eq_rotate_zero
+#print axioms centerLegForm_eq_rotate_zero
+#assert_analysis_axioms centerLegForm_zero_iff_zero_angle
+#print axioms centerLegForm_zero_iff_zero_angle
+#assert_analysis_axioms centerLegForm_independent_angles_not_common_rotation
+#print axioms centerLegForm_independent_angles_not_common_rotation
+
+-- One material log time, separate vertical depth: downstream finite canary.
+#assert_analysis_axioms materialLogAngle
+#print axioms materialLogAngle
+#assert_analysis_axioms materialLogRotate
+#print axioms materialLogRotate
+#assert_analysis_axioms materialLogRotate_zero
+#print axioms materialLogRotate_zero
+#assert_analysis_axioms materialLogRotate_add
+#print axioms materialLogRotate_add
+#assert_analysis_axioms materialLogRotate_energy
+#print axioms materialLogRotate_energy
+#assert_analysis_axioms materialLogRotate_neg_comp
+#print axioms materialLogRotate_neg_comp
+#assert_analysis_axioms materialLogRotate_eq_zero_iff
+#print axioms materialLogRotate_eq_zero_iff
+#assert_analysis_axioms realQuadratureRotate
+#print axioms realQuadratureRotate
+#assert_analysis_axioms realQuadratureMap
+#print axioms realQuadratureMap
+#assert_analysis_axioms realQuadratureRotate_zero
+#print axioms realQuadratureRotate_zero
+#assert_analysis_axioms realQuadratureRotate_add
+#print axioms realQuadratureRotate_add
+#assert_analysis_axioms realQuadratureRotate_neg_comp
+#print axioms realQuadratureRotate_neg_comp
+#assert_analysis_axioms realQuadratureRotate_eq_zero_iff
+#print axioms realQuadratureRotate_eq_zero_iff
+#assert_analysis_axioms realQuadratureMap_rotate
+#print axioms realQuadratureMap_rotate
+#assert_analysis_axioms materialLogPhase
+#print axioms materialLogPhase
+#assert_analysis_axioms materialLogPhase_zero
+#print axioms materialLogPhase_zero
+#assert_analysis_axioms materialLogPhase_add
+#print axioms materialLogPhase_add
+#assert_analysis_axioms materialLogPhase_neg_comp
+#print axioms materialLogPhase_neg_comp
+#assert_analysis_axioms materialLogPhase_eq_zero_iff
+#print axioms materialLogPhase_eq_zero_iff
+#assert_analysis_axioms realQuadratureRotate_eq_rotateRealPlane
+#print axioms realQuadratureRotate_eq_rotateRealPlane
+#assert_analysis_axioms MaterialVerticalCarrier
+#print axioms MaterialVerticalCarrier
+#assert_analysis_axioms MaterialVerticalAnalysisCarrier
+#print axioms MaterialVerticalAnalysisCarrier
+#assert_analysis_axioms materialTfvdAnalysis
+#print axioms materialTfvdAnalysis
+#assert_analysis_axioms materialTfvdSynthesis
+#print axioms materialTfvdSynthesis
+#assert_analysis_axioms materialTfvdSynthesis_comp_analysis
+#print axioms materialTfvdSynthesis_comp_analysis
+#assert_analysis_axioms materialTfvdAnalysis_phase
+#print axioms materialTfvdAnalysis_phase
+#assert_analysis_axioms materialTfvdSynthesis_phase
+#print axioms materialTfvdSynthesis_phase
+#assert_analysis_axioms materialTfvdSynthesized_logOrbit
+#print axioms materialTfvdSynthesized_logOrbit
+#assert_analysis_axioms materialVerticalPlaneAt
+#print axioms materialVerticalPlaneAt
+#assert_analysis_axioms materialLogPhase_planeAt
+#print axioms materialLogPhase_planeAt
+#assert_analysis_axioms materialLogPhase_planeEnergy
+#print axioms materialLogPhase_planeEnergy
+#assert_analysis_axioms materialLogPhase_centerLeg_orbit
+#print axioms materialLogPhase_centerLeg_orbit
+#assert_analysis_axioms materialLogPhase_centerLeg_zero_iff
+#print axioms materialLogPhase_centerLeg_zero_iff
+#assert_analysis_axioms materialTfvdSynthesized_centerLeg_zero_iff
+#print axioms materialTfvdSynthesized_centerLeg_zero_iff
+#assert_analysis_axioms materialTfvdSynthesis_phase_zero_iff
+#print axioms materialTfvdSynthesis_phase_zero_iff
+#assert_analysis_axioms materialLogPhase_finiteEnergy
+#print axioms materialLogPhase_finiteEnergy
+
+-- Material index zero has frequency log 1 = 0, at every vertical coordinate.
+example (t : ℝ) (v : RealPlaneState) : materialLogRotate t 0 v = v := by
+  simp [materialLogRotate, materialLogAngle, rotateRealPlane_zero]
+
+-- The same material angle is used at all vertical coordinates.
+example (t : ℝ) (X : MaterialVerticalCarrier 3) (n : Fin 3) (k j : ℕ) :
+    materialVerticalPlaneAt (materialLogPhase t X) n k =
+      materialLogRotate t n.val (materialVerticalPlaneAt X n k) ∧
+    materialVerticalPlaneAt (materialLogPhase t X) n j =
+      materialLogRotate t n.val (materialVerticalPlaneAt X n j) :=
+  ⟨materialLogPhase_planeAt _ _ _ _, materialLogPhase_planeAt _ _ _ _⟩
+
+-- Critical base two uses the existing R2 ratio, without an index crosswalk.
+example (t : ℝ) (X : MaterialVerticalCarrier 3) :
+    let eta := criticalVerticalAmplitudeRatio 2 (by decide)
+    materialTfvdSynthesis eta (criticalVerticalAmplitudeRatio_pos 2 _).le
+      (criticalVerticalAmplitudeRatio_lt_one 2 (by decide))
+      (materialLogPhase t (materialTfvdAnalysis eta X)) = materialLogPhase t X :=
+  materialTfvdSynthesized_logOrbit _ (criticalVerticalAmplitudeRatio_pos 2 _)
+    (criticalVerticalAmplitudeRatio_lt_one 2 (by decide)) t X
+
+
+-- Intrinsic binary depth differs from the historical material sample index.
+#assert_analysis_axioms sampleTwo_materialThree_binaryDepth_iff
+#print axioms sampleTwo_materialThree_binaryDepth_iff
+#assert_analysis_axioms materialSampleIndex_not_intrinsicBinaryDepth
+#print axioms materialSampleIndex_not_intrinsicBinaryDepth
+
+
+-- Exact geometric C2 fiber dynamics, downstream of the frozen R2.
+#assert_analysis_axioms c2FiberPoint
+#print axioms c2FiberPoint
+#assert_analysis_axioms c2FiberPoint_centered
+#print axioms c2FiberPoint_centered
+#assert_analysis_axioms c2FiberPoint_center_eq_nat
+#print axioms c2FiberPoint_center_eq_nat
+#assert_analysis_axioms c2FiberPoint_succ
+#print axioms c2FiberPoint_succ
+#assert_analysis_axioms c2FiberCenter_hasCarryDepthAtLeast
+#print axioms c2FiberCenter_hasCarryDepthAtLeast
+#assert_analysis_axioms c2FiberCenter_not_hasCarryDepthAtLeast_succ
+#print axioms c2FiberCenter_not_hasCarryDepthAtLeast_succ
+#assert_analysis_axioms c2FiberPoint_center_pos
+#print axioms c2FiberPoint_center_pos
+#assert_analysis_axioms c2FiberPoint_right_pos
+#print axioms c2FiberPoint_right_pos
+#assert_analysis_axioms c2FiberPoint_left_pos
+#print axioms c2FiberPoint_left_pos
+#assert_analysis_axioms c2FiberPoint_centered_log
+#print axioms c2FiberPoint_centered_log
+#assert_analysis_axioms c2FiberPoint_centered_log_increment
+#print axioms c2FiberPoint_centered_log_increment
+#assert_analysis_axioms c2FiberLogDefect
+#print axioms c2FiberLogDefect
+#assert_analysis_axioms c2FiberLogDefect_center
+#print axioms c2FiberLogDefect_center
+#assert_analysis_axioms c2FiberPoint_log_center_defect
+#print axioms c2FiberPoint_log_center_defect
+#assert_analysis_axioms c2FiberPoint_log_eq_depth_core_defect
+#print axioms c2FiberPoint_log_eq_depth_core_defect
+#assert_analysis_axioms c2FiberPoint_log_increment_defect
+#print axioms c2FiberPoint_log_increment_defect
+#assert_analysis_axioms c2FiberLogDefect_right_pos
+#print axioms c2FiberLogDefect_right_pos
+#assert_analysis_axioms c2FiberPoint_right_log_increment_lt
+#print axioms c2FiberPoint_right_log_increment_lt
+#assert_analysis_axioms c2FiberRealState
+#print axioms c2FiberRealState
+#assert_analysis_axioms c2FiberRealState_energy
+#print axioms c2FiberRealState_energy
+#assert_analysis_axioms c2FiberRealState_succ_eq_logIncrement
+#print axioms c2FiberRealState_succ_eq_logIncrement
+#assert_analysis_axioms c2CenterFiberStep
+#print axioms c2CenterFiberStep
+#assert_analysis_axioms c2CenterFiberRealState_succ_eq_fixedStep
+#print axioms c2CenterFiberRealState_succ_eq_fixedStep
+#assert_analysis_axioms c2CenterFiberRealState_eq_iterate_step
+#print axioms c2CenterFiberRealState_eq_iterate_step
+#assert_analysis_axioms c2CenterFiber_phase_factorization
+#print axioms c2CenterFiber_phase_factorization
+#assert_analysis_axioms c2LegFiberRealState_succ_eq_correctedStep
+#print axioms c2LegFiberRealState_succ_eq_correctedStep
+#assert_analysis_axioms c2LegFiberRealState_succ_eq_fixedStep_add_logDefect
+#print axioms c2LegFiberRealState_succ_eq_fixedStep_add_logDefect
+
+-- Positive C2 legs keep the actual material points and their exact defects.
+example : c2FiberPoint 1 (-1) 2 = 3 := by norm_num [c2FiberPoint]
+example : c2FiberPoint 1 0 2 = 4 := by norm_num [c2FiberPoint]
+example : c2FiberPoint 1 1 2 = 5 := by norm_num [c2FiberPoint]
+example : c2FiberLogDefect 1 (-1) 2 = Real.log ((3 : ℝ) / 4) := by
+  norm_num [c2FiberLogDefect]
+example : c2FiberLogDefect 1 1 2 = Real.log ((5 : ℝ) / 4) := by
+  norm_num [c2FiberLogDefect]
+example (t : ℝ) (v : RealPlaneState) :
+    realPlaneEnergy (c2CenterFiberStep t v) =
+      criticalVerticalAmplitudeRatio 2 (by decide) ^ 2 * realPlaneEnergy v := by
+  rw [c2CenterFiberStep, scaleRealPlane_energy, rotateRealPlane_energy]
+example : (0 : ℝ) < criticalVerticalAmplitudeRatio 2 (by decide) :=
+  criticalVerticalAmplitudeRatio_pos 2 (by decide)
+example : criticalVerticalAmplitudeRatio 2 (by decide) < 1 :=
+  criticalVerticalAmplitudeRatio_lt_one 2 (by decide)
+example (t : ℝ) :
+    c2FiberRealState 1 0 t 0 (by decide) (by norm_num [c2FiberPoint]) = (1, 0) := by
+  simp [c2FiberRealState, c2FiberPoint, realCriticalDepthState_zero_angle,
+    realCriticalDepthSeed_zero_depth]
+example : Geometry.HasCarryDepthAtLeast 2 (2 ^ 2 * 1) 2 :=
+  c2FiberCenter_hasCarryDepthAtLeast 1 2
+example : ¬ Geometry.HasCarryDepthAtLeast 2 (2 ^ 2 * 1) 3 :=
+  c2FiberCenter_not_hasCarryDepthAtLeast_succ 1 2 (by decide)
+
+
+-- Downstream C2 radial comparison orbit and exact legacy branch mass.
+#assert_analysis_axioms c2BranchDepth_ge_two_iff_center_four_dvd
+#print axioms c2BranchDepth_ge_two_iff_center_four_dvd
+#assert_analysis_axioms c2BranchDirections_distinct
+#print axioms c2BranchDirections_distinct
+#assert_analysis_axioms c2BranchDirections_card
+#print axioms c2BranchDirections_card
+#assert_analysis_axioms c2RadialAmplitudeRatio
+#print axioms c2RadialAmplitudeRatio
+#assert_analysis_axioms c2RadialEnergyRatio
+#print axioms c2RadialEnergyRatio
+#assert_analysis_axioms c2RadialEnergyRatio_eq_rpow
+#print axioms c2RadialEnergyRatio_eq_rpow
+#assert_analysis_axioms c2RadialEnergyRatio_pos
+#print axioms c2RadialEnergyRatio_pos
+#assert_analysis_axioms c2RadialEnergyRatio_lt_one
+#print axioms c2RadialEnergyRatio_lt_one
+#assert_analysis_axioms c2DeformedFiberStep
+#print axioms c2DeformedFiberStep
+#assert_analysis_axioms c2DeformedFiberStep_energy
+#print axioms c2DeformedFiberStep_energy
+#assert_analysis_axioms c2DeformedFiberStep_energy_independent_time
+#print axioms c2DeformedFiberStep_energy_independent_time
+#assert_analysis_axioms c2DeformedFiberStep_iterate_energy
+#print axioms c2DeformedFiberStep_iterate_energy
+#assert_analysis_axioms c2DeformedUnitOrbit_energy
+#print axioms c2DeformedUnitOrbit_energy
+#assert_analysis_axioms c2RadialAmplitudeRatio_half
+#print axioms c2RadialAmplitudeRatio_half
+#assert_analysis_axioms c2RadialEnergyRatio_half
+#print axioms c2RadialEnergyRatio_half
+#assert_analysis_axioms c2DeformedFiberStep_half_eq_c2CenterFiberStep
+#print axioms c2DeformedFiberStep_half_eq_c2CenterFiberStep
+#assert_analysis_axioms c2BranchOrbitMass
+#print axioms c2BranchOrbitMass
+#assert_analysis_axioms c2BranchOrbitMass_eq_geometric_series
+#print axioms c2BranchOrbitMass_eq_geometric_series
+#assert_analysis_axioms c2BranchOrbitMass_independent_time
+#print axioms c2BranchOrbitMass_independent_time
+#assert_analysis_axioms legacyC2BranchWeight
+#print axioms legacyC2BranchWeight
+#assert_analysis_axioms legacyC2BranchNormSq
+#print axioms legacyC2BranchNormSq
+#assert_analysis_axioms c2RadialEnergyRatio_eq_legacyBranchWeight
+#print axioms c2RadialEnergyRatio_eq_legacyBranchWeight
+#assert_analysis_axioms c2BranchOrbitMass_eq_legacyBranchNormSq
+#print axioms c2BranchOrbitMass_eq_legacyBranchNormSq
+#assert_analysis_axioms c2BranchUnitOrbitEnergy_summable
+#print axioms c2BranchUnitOrbitEnergy_summable
+#assert_analysis_axioms c2BranchOrbitMass_closed_form
+#print axioms c2BranchOrbitMass_closed_form
+#assert_analysis_axioms c2BranchOrbitMass_half
+#print axioms c2BranchOrbitMass_half
+#assert_analysis_axioms c2BranchOrbitMass_eq_one_iff
+#print axioms c2BranchOrbitMass_eq_one_iff
+#assert_analysis_axioms c2BranchOrbitMass_lt_one_iff
+#print axioms c2BranchOrbitMass_lt_one_iff
+#assert_analysis_axioms c2BranchOrbitMass_gt_one_iff
+#print axioms c2BranchOrbitMass_gt_one_iff
+
+-- Exact formal examples: count, energy, operator equality and barrier.
+example : ({c2FiberPoint 1 (-1) 2, c2FiberPoint 1 1 2} : Finset ℝ).card = 2 :=
+  c2BranchDirections_card 1 2
+example : 4 ∣ 2 ^ 2 * 1 :=
+  (c2BranchDepth_ge_two_iff_center_four_dvd 1 2 (by decide)).mpr (by decide)
+example : ¬ 4 ∣ 2 ^ 1 * 1 := by decide
+example : c2RadialEnergyRatio ((1 : ℝ) / 2) = (1 : ℝ) / 2 :=
+  c2RadialEnergyRatio_half
+example (t : ℝ) : c2DeformedFiberStep ((1 : ℝ) / 2) t = c2CenterFiberStep t :=
+  c2DeformedFiberStep_half_eq_c2CenterFiberStep t
+example (t : ℝ) : c2BranchOrbitMass ((1 : ℝ) / 2) t = 1 :=
+  c2BranchOrbitMass_half t
+example (t : ℝ) : c2BranchOrbitMass 1 t = (1 : ℝ) / 6 := by
+  rw [c2BranchOrbitMass_closed_form _ _ (by norm_num)]
+  norm_num [c2RadialEnergyRatio_eq_rpow, Real.rpow_neg]
+example (t : ℝ) : 1 < c2BranchOrbitMass ((1 : ℝ) / 4) t :=
+  (c2BranchOrbitMass_gt_one_iff _ t (by norm_num)).mpr (by norm_num)
+example (sigma t : ℝ) : c2BranchOrbitMass sigma t = legacyC2BranchNormSq sigma :=
+  c2BranchOrbitMass_eq_legacyBranchNormSq sigma t
+example (t : ℝ) : Summable (fun j : ℕ => realPlaneEnergy
+    ((c2DeformedFiberStep ((1 : ℝ) / 2) t)^[j + 2]
+      (realCriticalDepthSeed 2 0 (by decide)))) :=
+  c2BranchUnitOrbitEnergy_summable _ t (by norm_num)
+
+-- C2 pure branch: actual real Hilbert operator, before any whitening.
+#assert_analysis_axioms RealPlaneHilbert
+#print axioms RealPlaneHilbert
+#assert_analysis_axioms C2BranchDirection
+#print axioms C2BranchDirection
+#assert_analysis_axioms c2BranchDirectionSign
+#print axioms c2BranchDirectionSign
+#assert_analysis_axioms c2BranchDirectionSign_values
+#print axioms c2BranchDirectionSign_values
+#assert_analysis_axioms C2BranchCarrier
+#print axioms C2BranchCarrier
+#assert_analysis_axioms realPlaneHilbertEquiv
+#print axioms realPlaneHilbertEquiv
+#assert_analysis_axioms realPlaneHilbert_energy_eq_norm_sq
+#print axioms realPlaneHilbert_energy_eq_norm_sq
+#assert_analysis_axioms c2DeformedFiberStepLinear
+#print axioms c2DeformedFiberStepLinear
+#assert_analysis_axioms c2DeformedFiberStep_iterate_eq_radial_rotation
+#print axioms c2DeformedFiberStep_iterate_eq_radial_rotation
+#assert_analysis_axioms realBranchCoordinates
+#print axioms realBranchCoordinates
+#assert_analysis_axioms realBranchCoordinates_norm_sq
+#print axioms realBranchCoordinates_norm_sq
+#assert_analysis_axioms realBranchCoordinates_square_summable
+#print axioms realBranchCoordinates_square_summable
+#assert_analysis_axioms realBranchCoordinates_mem_l2
+#print axioms realBranchCoordinates_mem_l2
+#assert_analysis_axioms realBranchOperator
+#print axioms realBranchOperator
+#assert_analysis_axioms realBranchOperator_apply
+#print axioms realBranchOperator_apply
+#assert_analysis_axioms realBranchOperator_apply_closed_form
+#print axioms realBranchOperator_apply_closed_form
+#assert_analysis_axioms realBranchOperatorLinear
+#print axioms realBranchOperatorLinear
+#assert_analysis_axioms realBranchOperator_norm_sq
+#print axioms realBranchOperator_norm_sq
+#assert_analysis_axioms realBranchOperator_norm_sq_eq_legacyBranchNormSq
+#print axioms realBranchOperator_norm_sq_eq_legacyBranchNormSq
+#assert_analysis_axioms realBranchOperator_norm_sq_of_realPlaneState
+#print axioms realBranchOperator_norm_sq_of_realPlaneState
+#assert_analysis_axioms realBranchOperator_norm_independent_time
+#print axioms realBranchOperator_norm_independent_time
+#assert_analysis_axioms realCriticalBranchOperator_norm
+#print axioms realCriticalBranchOperator_norm
+#assert_analysis_axioms realCriticalBranchIsometry
+#print axioms realCriticalBranchIsometry
+#assert_analysis_axioms realCriticalBranchIsometry_apply_centerStep
+#print axioms realCriticalBranchIsometry_apply_centerStep
+#assert_analysis_axioms realCriticalBranch_adjoint_comp_self
+#print axioms realCriticalBranch_adjoint_comp_self
+
+-- Exact examples at arbitrary time, including both branch labels and depth two.
+example (v : RealPlaneHilbert) :
+    realPlaneEnergy (realPlaneHilbertEquiv.symm v) = ‖v‖ ^ 2 :=
+  realPlaneHilbert_energy_eq_norm_sq v
+example (t : ℝ) (v : RealPlaneHilbert) :
+    realBranchOperator ((1 : ℝ) / 2) t (by norm_num) v (0, 0) =
+      realBranchOperator ((1 : ℝ) / 2) t (by norm_num) v (1, 0) := rfl
+example (t : ℝ) (v : RealPlaneHilbert) :
+    ‖realBranchOperator ((1 : ℝ) / 2) t (by norm_num) v (0, 0)‖ ^ 2 =
+      (1 / 4 : ℝ) * ‖v‖ ^ 2 := by
+  change ‖realBranchCoordinates ((1 : ℝ) / 2) t v (0, 0)‖ ^ 2 = _
+  rw [realBranchCoordinates_norm_sq, c2RadialEnergyRatio_half]
+  norm_num
+example (sigma t : ℝ) (hsigma : 0 < sigma) (v w : RealPlaneHilbert) :
+    realBranchOperatorLinear sigma t hsigma (v + w) =
+      realBranchOperatorLinear sigma t hsigma v + realBranchOperatorLinear sigma t hsigma w :=
+  (realBranchOperatorLinear sigma t hsigma).map_add v w
+example (t : ℝ) :
+    ‖realCriticalBranchIsometry t (realPlaneHilbertEquiv (1, 0))‖ = 1 := by
+  rw [(realCriticalBranchIsometry t).norm_map]
+  have h : ‖realPlaneHilbertEquiv (1, 0)‖ ^ 2 = 1 := by
+    rw [← realPlaneHilbert_energy_eq_norm_sq, LinearEquiv.symm_apply_apply]
+    norm_num [realPlaneEnergy]
+  nlinarith [norm_nonneg (realPlaneHilbertEquiv (1, 0))]
+example (t : ℝ) (v : RealPlaneHilbert) :
+    (realCriticalBranchIsometry t).toContinuousLinearMap.adjoint
+      (realCriticalBranchIsometry t v) = v := by
+  change ((realCriticalBranchIsometry t).toContinuousLinearMap.adjoint ∘L
+    (realCriticalBranchIsometry t).toContinuousLinearMap) v = v
+  rw [realCriticalBranch_adjoint_comp_self]
+  rfl
+
+-- Physical C2 incidence: sign, depth, core and exact leg log-defect.
+#assert_analysis_axioms C2BranchAddress
+#print axioms C2BranchAddress
+#assert_analysis_axioms RealMaterialState
+#print axioms RealMaterialState
+#assert_analysis_axioms c2BranchDepth
+#print axioms c2BranchDepth
+#assert_analysis_axioms c2BranchMaterialNat
+#print axioms c2BranchMaterialNat
+#assert_analysis_axioms c2BranchMaterialNat_ge_three
+#print axioms c2BranchMaterialNat_ge_three
+#assert_analysis_axioms c2BranchMaterialAddress
+#print axioms c2BranchMaterialAddress
+#assert_analysis_axioms c2BranchMaterialNat_sign_mod_four
+#print axioms c2BranchMaterialNat_sign_mod_four
+#assert_analysis_axioms c2BranchMaterialAddress_injective
+#print axioms c2BranchMaterialAddress_injective
+#assert_analysis_axioms c2BranchMaterialAddress_eq_iff
+#print axioms c2BranchMaterialAddress_eq_iff
+#assert_analysis_axioms c2BranchMaterialNat_core_recovery
+#print axioms c2BranchMaterialNat_core_recovery
+#assert_analysis_axioms C2LegHasCarryDepthAtLeast
+#print axioms C2LegHasCarryDepthAtLeast
+#assert_analysis_axioms c2BranchMaterialAddress_depth_recovery
+#print axioms c2BranchMaterialAddress_depth_recovery
+#assert_analysis_axioms c2BranchMaterialAddress_cast_eq_fiberPoint
+#print axioms c2BranchMaterialAddress_cast_eq_fiberPoint
+#assert_analysis_axioms branchIncidenceCoordinates
+#print axioms branchIncidenceCoordinates
+#assert_analysis_axioms branchIncidenceIsometry
+#print axioms branchIncidenceIsometry
+#assert_analysis_axioms branchIncidenceIsometry_apply_address
+#print axioms branchIncidenceIsometry_apply_address
+#assert_analysis_axioms branchIncidenceIsometry_apply_off_range
+#print axioms branchIncidenceIsometry_apply_off_range
+#assert_analysis_axioms branchIncidenceIsometry_norm
+#print axioms branchIncidenceIsometry_norm
+#assert_analysis_axioms branchIncidenceIsometry_coordinate_roundtrip
+#print axioms branchIncidenceIsometry_coordinate_roundtrip
+#assert_analysis_axioms c2PhysicalLegCorrectionAngle
+#print axioms c2PhysicalLegCorrectionAngle
+#assert_analysis_axioms c2PhysicalLegPhase_factorization
+#print axioms c2PhysicalLegPhase_factorization
+#assert_analysis_axioms realPlaneHilbertRotation
+#print axioms realPlaneHilbertRotation
+#assert_analysis_axioms realPlaneHilbertRotation_neg_comp
+#print axioms realPlaneHilbertRotation_neg_comp
+#assert_analysis_axioms physicalLegCorrection
+#print axioms physicalLegCorrection
+#assert_analysis_axioms physicalLegCorrection_apply
+#print axioms physicalLegCorrection_apply
+#assert_analysis_axioms physicalLegCorrection_norm
+#print axioms physicalLegCorrection_norm
+#assert_analysis_axioms physicalLegCorrection_neg_comp
+#print axioms physicalLegCorrection_neg_comp
+#assert_analysis_axioms physicalBranchOperator
+#print axioms physicalBranchOperator
+#assert_analysis_axioms physicalBranchOperator_apply_address
+#print axioms physicalBranchOperator_apply_address
+#assert_analysis_axioms physicalBranchOperator_apply_off_range
+#print axioms physicalBranchOperator_apply_off_range
+#assert_analysis_axioms physicalBranchOperator_norm
+#print axioms physicalBranchOperator_norm
+#assert_analysis_axioms physicalBranchOperator_norm_sq
+#print axioms physicalBranchOperator_norm_sq
+#assert_analysis_axioms realCriticalPhysicalBranchIsometry
+#print axioms realCriticalPhysicalBranchIsometry
+#assert_analysis_axioms realCriticalPhysicalBranchIsometry_eq_operator
+#print axioms realCriticalPhysicalBranchIsometry_eq_operator
+#assert_analysis_axioms realCriticalPhysicalBranchIsometry_norm
+#print axioms realCriticalPhysicalBranchIsometry_norm
+#assert_analysis_axioms realCriticalPhysicalBranch_adjoint_comp_self
+#print axioms realCriticalPhysicalBranch_adjoint_comp_self
+#assert_analysis_axioms c2BranchMaterialAddress_range_unique
+#print axioms c2BranchMaterialAddress_range_unique
+#assert_analysis_axioms physicalBranchOperator_nonzero_provenance
+#print axioms physicalBranchOperator_nonzero_provenance
+
+#assert_analysis_axioms physicalBranchOperator_branch_coordinate_roundtrip
+#print axioms physicalBranchOperator_branch_coordinate_roundtrip
+
+-- Addresses of core one at the first genuine level are exactly 3 and 5.
+example : (c2BranchMaterialAddress 1 (by decide) (0, 0) : ℕ) = 3 := by
+  norm_num [c2BranchMaterialAddress, c2BranchMaterialNat, c2BranchDepth]
+example : (c2BranchMaterialAddress 1 (by decide) (1, 0) : ℕ) = 5 := by
+  norm_num [c2BranchMaterialAddress, c2BranchMaterialNat, c2BranchDepth]
+example : C2LegHasCarryDepthAtLeast 3 2 ∧ ¬ C2LegHasCarryDepthAtLeast 3 3 := by
+  have h := c2BranchMaterialAddress_depth_recovery 1 (by decide) (by decide) (0,0)
+  constructor
+  · simpa [c2BranchMaterialNat, c2BranchDepth] using (h 2).mpr (by decide)
+  · simpa [c2BranchMaterialNat, c2BranchDepth] using (h 3).not.mpr (by decide)
+example (m : ℕ) (hm : 0 < m) (x : C2BranchCarrier) :
+    ‖branchIncidenceIsometry m hm x‖ = ‖x‖ := branchIncidenceIsometry_norm m hm x
+example (m : ℕ) (t : ℝ) (x : C2BranchCarrier) :
+    physicalLegCorrection m (-t) (physicalLegCorrection m t x) = x :=
+  physicalLegCorrection_neg_comp m t x
+example (t : ℝ) (v : RealPlaneHilbert) :
+    realPlaneHilbertEquiv.symm
+      (physicalBranchOperator ((1 : ℝ) / 2) t (by norm_num) 1 (by decide) v ⟨3, by decide⟩) =
+      scaleRealPlane ((2 : ℝ) ^ (-2 * ((1 : ℝ) / 2)))
+        (rotateRealPlane (-t * Real.log 3) (realPlaneHilbertEquiv.symm v)) := by
+  simpa [c2BranchMaterialAddress, c2BranchMaterialNat, c2BranchDepth] using
+    physicalBranchOperator_apply_address ((1 : ℝ) / 2) t (by norm_num)
+      1 (by decide) v (0,0)
+example (sigma t : ℝ) (hsigma : 0 < sigma) (m : ℕ) (hm : 0 < m) (v : RealPlaneHilbert) :
+    physicalBranchOperator sigma t hsigma m hm v ⟨2, by decide⟩ = 0 := by
+  apply physicalBranchOperator_apply_off_range
+  rintro ⟨i,h⟩
+  have hg := c2BranchMaterialNat_ge_three m hm i
+  have hn := congrArg PNat.val h
+  change c2BranchMaterialNat m i = 2 at hn
+  omega
+example (m : ℕ) (hm : 0 < m) (t : ℝ) (v : RealPlaneHilbert) :
+    ‖realCriticalPhysicalBranchIsometry m hm t v‖ = ‖v‖ :=
+  realCriticalPhysicalBranchIsometry_norm m hm t v
+example (m : ℕ) (hm : 0 < m) (t : ℝ) :
+    (realCriticalPhysicalBranchIsometry m hm t).toContinuousLinearMap.adjoint ∘L
+      (realCriticalPhysicalBranchIsometry m hm t).toContinuousLinearMap = 1 :=
+  realCriticalPhysicalBranch_adjoint_comp_self m hm t
+
+-- Global physical C2: canonical odd-material addresses and orthogonal core sum.
+#assert_analysis_axioms PositiveOddCore
+#print axioms PositiveOddCore
+#assert_analysis_axioms GlobalC2BranchAddress
+#print axioms GlobalC2BranchAddress
+#assert_analysis_axioms OddMaterialIndex
+#print axioms OddMaterialIndex
+#assert_analysis_axioms globalC2MaterialAddress
+#print axioms globalC2MaterialAddress
+#assert_analysis_axioms globalC2MaterialAddress_odd
+#print axioms globalC2MaterialAddress_odd
+#assert_analysis_axioms globalC2OddMaterialAddress
+#print axioms globalC2OddMaterialAddress
+#assert_analysis_axioms globalC2MaterialAddress_injective
+#print axioms globalC2MaterialAddress_injective
+#assert_analysis_axioms oddMaterialNeighborCenter
+#print axioms oddMaterialNeighborCenter
+#assert_analysis_axioms oddMaterialNeighbor_depth_crosswalk
+#print axioms oddMaterialNeighbor_depth_crosswalk
+#assert_analysis_axioms oddMaterialC2Address
+#print axioms oddMaterialC2Address
+#assert_analysis_axioms oddMaterialC2Address_depth
+#print axioms oddMaterialC2Address_depth
+#assert_analysis_axioms globalC2MaterialAddress_decode
+#print axioms globalC2MaterialAddress_decode
+#assert_analysis_axioms oddMaterialC2Address_encode
+#print axioms oddMaterialC2Address_encode
+#assert_analysis_axioms globalC2BranchAddressEquivOddMaterial
+#print axioms globalC2BranchAddressEquivOddMaterial
+#assert_analysis_axioms globalC2MaterialAddress_unique
+#print axioms globalC2MaterialAddress_unique
+#assert_analysis_axioms GlobalC2BranchCarrier
+#print axioms GlobalC2BranchCarrier
+#assert_analysis_axioms OddMaterialState
+#print axioms OddMaterialState
+#assert_analysis_axioms CoreState
+#print axioms CoreState
+#assert_analysis_axioms globalBranchIncidenceIsometry
+#print axioms globalBranchIncidenceIsometry
+#assert_analysis_axioms globalBranchIncidenceIsometry_apply_address
+#print axioms globalBranchIncidenceIsometry_apply_address
+#assert_analysis_axioms globalBranchIncidenceIsometry_norm
+#print axioms globalBranchIncidenceIsometry_norm
+#assert_analysis_axioms criticalPhysicalCoreFiber
+#print axioms criticalPhysicalCoreFiber
+#assert_analysis_axioms criticalPhysicalCoreFiber_eq_local_physical
+#print axioms criticalPhysicalCoreFiber_eq_local_physical
+#assert_analysis_axioms globalCriticalPhysicalBranch
+#print axioms globalCriticalPhysicalBranch
+#assert_analysis_axioms globalCriticalPhysicalBranchIsometry
+#print axioms globalCriticalPhysicalBranchIsometry
+#assert_analysis_axioms globalCriticalPhysicalBranchIsometry_norm
+#print axioms globalCriticalPhysicalBranchIsometry_norm
+#assert_analysis_axioms globalCriticalPhysicalBranchIsometry_norm_sq
+#print axioms globalCriticalPhysicalBranchIsometry_norm_sq
+#assert_analysis_axioms globalCriticalPhysicalBranchIsometry_apply_address
+#print axioms globalCriticalPhysicalBranchIsometry_apply_address
+#assert_analysis_axioms globalCriticalPhysicalBranchIsometry_pointwise
+#print axioms globalCriticalPhysicalBranchIsometry_pointwise
+#assert_analysis_axioms physicalBranch_support_disjoint_of_core_ne
+#print axioms physicalBranch_support_disjoint_of_core_ne
+#assert_analysis_axioms globalCriticalPhysicalBranch_core_orthogonal
+#print axioms globalCriticalPhysicalBranch_core_orthogonal
+#assert_analysis_axioms globalC2_provenance_roundtrip
+#print axioms globalC2_provenance_roundtrip
+#assert_analysis_axioms globalC2Address_components_roundtrip
+#print axioms globalC2Address_components_roundtrip
+#assert_analysis_axioms oddMaterialC2Address_sign
+#print axioms oddMaterialC2Address_sign
+#assert_analysis_axioms oddMaterialC2Address_core
+#print axioms oddMaterialC2Address_core
+#assert_analysis_axioms globalCriticalPhysicalBranch_single_core
+#print axioms globalCriticalPhysicalBranch_single_core
+#assert_analysis_axioms globalCriticalPhysicalBranch_zero_of_core_zero
+#print axioms globalCriticalPhysicalBranch_zero_of_core_zero
+
+-- Kernel-checked coordinate and provenance examples; no numerical evidence.
+example : (globalC2MaterialAddress (⟨1, by norm_num⟩, (0,0)) : ℕ) = 3 := by decide
+example : (globalC2MaterialAddress (⟨1, by norm_num⟩, (1,0)) : ℕ) = 5 := by decide
+example : (globalC2MaterialAddress (⟨1, by norm_num⟩, (0,1)) : ℕ) = 7 := by decide
+example : (globalC2MaterialAddress (⟨3, by norm_num⟩, (1,0)) : ℕ) = 13 := by decide
+example : oddMaterialC2Address ⟨⟨3, by decide⟩, by decide⟩ =
+    (⟨1, by norm_num⟩, (0,0)) :=
+  oddMaterialC2Address_encode (⟨1, by norm_num⟩, (0,0))
+example : oddMaterialC2Address ⟨⟨13, by decide⟩, by decide⟩ =
+    (⟨3, by norm_num⟩, (1,0)) :=
+  oddMaterialC2Address_encode (⟨3, by norm_num⟩, (1,0))
+example (i : GlobalC2BranchAddress) :
+    oddMaterialC2Address (globalC2OddMaterialAddress i) = i :=
+  oddMaterialC2Address_encode i
+example (n : OddMaterialIndex) : ∃! i : GlobalC2BranchAddress,
+    globalC2MaterialAddress i = n.val := globalC2MaterialAddress_unique n
+example (t : ℝ) (v : CoreState) :
+    ‖globalCriticalPhysicalBranchIsometry t v‖ = ‖v‖ :=
+  globalCriticalPhysicalBranchIsometry_norm t v
+example (t : ℝ) (m : PositiveOddCore) (v : RealPlaneHilbert) (n : OddMaterialIndex) :
+    globalCriticalPhysicalBranchIsometry t (lp.single 2 m v) n =
+      realCriticalPhysicalBranchIsometry m.val m.property.1 t v n.val :=
+  globalCriticalPhysicalBranch_single_core t m v n
 end GeometryOfNumbers.Analysis

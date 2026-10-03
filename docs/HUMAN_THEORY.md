@@ -19,9 +19,9 @@ quadrática. A realização real, na seção 17, tem outra auditoria e axiomas p
 Seja `Q` um tipo de quantidades. Não supomos adição, multiplicação ou ordem
 em `Q`. Uma trajetória é uma família `xₙ` acompanhada de uma transição `T`:
 
-\[
+$$
 x_{n+1}=T(x_n).
-\]
+$$
 
 O natural `n` conta passos externos. A trajetória é injetiva: passos distintos
 correspondem a quantidades distintas. Esses dados são a entrada
@@ -29,9 +29,9 @@ correspondem a quantidades distintas. Esses dados são a entrada
 
 Uma representação fiel `e` satisfaz
 
-\[
+$$
 e(a)=e(c)\Longrightarrow a=c.
-\]
+$$
 
 Se a representação se separa em dois canais, `e(a)=(local(a), extension(a))`,
 duas quantidades distintas com o mesmo canal local devem ter extensões
@@ -53,9 +53,9 @@ enumeração a partir de uma mera afirmação abstrata de finitude.
 Observamos `x₀,…,x_N`: são `N+1` observações com apenas `N` códigos
 disponíveis. Uma prova combinatória por indução produz
 
-\[
+$$
 0\le m<n\le N,\qquad observe(x_m)=observe(x_n).
-\]
+$$
 
 `finiteCodeCollision` e `unitTrajectory_forces_localRecurrence` certificam
 essa colisão. Ela não identifica as quantidades: a trajetória permanece
@@ -69,9 +69,9 @@ não implica isso sem uma hipótese sobre a evolução local.
 
 Recebemos uma evolução local `S` que é autônoma e injetiva:
 
-\[
+$$
 observe(T(x))=S(observe(x)).
-\]
+$$
 
 Autonomia propaga coincidências. Injetividade permite cancelar os primeiros
 `m` passos de uma colisão e obter um retorno positivo à observação inicial.
@@ -80,9 +80,9 @@ positivo limitado por `N`.
 
 Uma busca limitada encontra o menor retorno positivo, chamado `b`:
 
-\[
+$$
 observe(x_b)=observe(x_0),\qquad b>0,
-\]
+$$
 
 e nenhum retorno positivo ocorre antes dele. A especificação
 `EmergentLocalCapacity` registra essa minimalidade, enquanto
@@ -91,9 +91,9 @@ Não introduzimos uma base previamente escolhida para produzir esse retorno.
 
 Se o primeiro passo altera a observação, `b` não pode ser `1`; então
 
-\[
+$$
 1<b\le N.
-\]
+$$
 
 Esse reforço usa explicitamente a não trivialidade do primeiro passo.
 Uma observação constante admite capacidade `1`. O orçamento `N` dos códigos
@@ -103,22 +103,22 @@ e a capacidade emergente `b` não são identificados.
 
 Dado `b>0`, construímos coordenadas `(c,r)` a partir de `(0,0)` pela regra
 
-\[
+$$
 (c,r)\longmapsto
 \begin{cases}
 (c,r+1),&r+1<b,\\
 (c+1,0),&r+1=b.
 \end{cases}
-\]
+$$
 
 É uma definição recursiva por passos. Não calculamos divisão ou resto para
 depois atribuir-lhes uma interpretação dinâmica.
 
 Por indução, a construção satisfaz
 
-\[
+$$
 n=c_b(n)b+r_b(n),\qquad r_b(n)<b.
-\]
+$$
 
 `cycleCoordinatesRec_spec` prova conservação e limite. A prova de
 `cycleDecomposition_unique` mostra que dois pares limitados reconstruindo
@@ -134,22 +134,22 @@ tem coordenadas `(1,0)` (`firstSaturation_coordinates`).
 
 O retorno inicial se propaga para todo tempo:
 
-\[
+$$
 observe(x_{n+b})=observe(x_n).
-\]
+$$
 
 Usando essa periodicidade e a conservação das coordenadas, provamos
 
-\[
+$$
 observe(x_n)=observe(x_{r_b(n)}).
-\]
+$$
 
 Pela minimalidade de `b`, um resíduo estritamente entre `0` e `b` não retorna
 à observação inicial. Assim,
 
-\[
+$$
 observe(x_n)=observe(x_0)\quad\Longleftrightarrow\quad r_b(n)=0.
-\]
+$$
 
 São os teoremas `cycleResidual_controls_localReadout` e
 `localReturn_iff_cycleResidual_zero`. O resíduo construído mede a posição
@@ -168,9 +168,9 @@ O contador de ciclos é um natural. Podemos aplicar a ele a mesma regra,
 sem postular uma nova dinâmica para a extensão abstrata. Repetindo a operação
 `k` vezes, obtemos
 
-\[
+$$
 (r_0,r_1,\ldots,r_{k-1},q_k).
-\]
+$$
 
 Em profundidade zero permanece apenas `n`. No próximo nível extraímos
 `r_b(n)` e construímos a torre do contador `c_b(n)`. Essa é a definição de
@@ -190,15 +190,15 @@ Para `b=1`, uma cauda não nula pode permanecer para sempre.
 
 A definição da torre não usa potências. Depois dela, a reconstrução prova
 
-\[
+$$
 n=P_k(r_0,\ldots,r_{k-1})+q_k b^k,
-\]
+$$
 
 onde
 
-\[
+$$
 P_k=r_0+b r_1+\cdots+b^{k-1}r_{k-1}.
-\]
+$$
 
 `emergentResidualTower_expansion` é consequência da aplicação repetida da
 mesma reconstrução de uma célula. `b^k` aparece como escala da cauda, não
@@ -210,10 +210,10 @@ o prefixo independentemente da informação ainda não resolvida.
 O carrier da torre completa não é finito: guarda uma cauda natural. Para
 contar somente os estados resolvidos, definimos outro tipo:
 
-\[
+$$
 ResidualPrefix(b,0)=\{\ast\},\qquad
 ResidualPrefix(b,k+1)=Fin(b)\times ResidualPrefix(b,k).
-\]
+$$
 
 Cada coordenada é limitada, e a primeira é `r₀`. O tipo não menciona `b^k`.
 Sua avaliação é a reconstrução da torre existente com cauda zero.
@@ -225,9 +225,9 @@ contribuiria pelo menos `b^k`. Extraímos então o prefixo da torre canônica.
 A avaliação e essa extração são inversas. Uma direção usa reconstrução;
 a outra, unicidade da torre. Temos assim uma bijeção explícita
 
-\[
+$$
 ResidualPrefix(b,k)\longleftrightarrow Fin(b^k),\qquad b>0.
-\]
+$$
 
 `residualPrefixEquivFin` guarda os mapas e ambas as inversas;
 `residualPrefix_cardinality` prova uma codificação fiel e sobrejetiva.
@@ -256,9 +256,9 @@ Uma relabeling é uma mudança reversível dos nomes dos estados. A exigência
 da normalização por contagem é que seu peso permaneça igual após qualquer
 dessas mudanças:
 
-\[
+$$
 w(\pi(x))=w(x)\qquad\text{para toda permutação }\pi.
-\]
+$$
 
 `RelabelingInvariant` expressa esse princípio. É mais forte do que mudar
 simultaneamente os rótulos de estados e de pesos: uma distribuição não
@@ -270,9 +270,9 @@ Não colocamos a igualdade dos pesos como campo. Construímos a troca de
 quaisquer dois códigos finitos, provamos suas inversas e a transportamos
 ao prefixo pela bijeção existente. Aplicar invariância a essa troca prova
 
-\[
+$$
 w(x)=w(y)\qquad\text{para quaisquer prefixos }x,y.
-\]
+$$
 
 O caminho inverso também vale: uma atribuição constante é invariante.
 `residualPrefix_relabelingInvariant_iff_constant` certifica as duas direções.
@@ -289,9 +289,9 @@ recursivamente por adição (`finiteLabelTotal`).
 Se há `C` estados e cada contagem é `c`, a soma prova `D=Cc`. Logo, para
 cada estado,
 
-\[
+$$
 w(x)C=D.
-\]
+$$
 
 Essa igualdade diz, sem divisão, que a apresentação `(w(x),D)` é a mesma
 cota que `(1,C)`. `FormalCountingShare` guarda numerador e denominador
@@ -308,9 +308,9 @@ A apresentação canônica conta cada estado uma vez e obtém o denominador
 pela soma dessas unidades sobre os códigos da bijeção já provada. A soma
 total vale `C=b^k`; só então identificamos a cota como
 
-\[
+$$
 \boxed{(1,b^k).}
-\]
+$$
 
 `canonicalResidualPrefixCountingShare` constrói essa apresentação;
 `canonicalResidualPrefixCountingShare_invariant` prova neutralidade;
@@ -329,9 +329,9 @@ Por isso, a projeção para a segunda componente não é o truncamento desejado:
 ela removeria `r₀`. Definimos recursivamente uma operação que percorre a tupla,
 preserva os resíduos baixos e remove apenas o último:
 
-\[
+$$
 (r_0,\ldots,r_{k-1},r_k)\longmapsto(r_0,\ldots,r_{k-1}).
-\]
+$$
 
 A operação inversa de extensão recebe um pai e um elemento `a` de `Fin b`,
 acrescentando `a` na posição mais profunda. `topResidual` lê essa nova
@@ -340,15 +340,15 @@ nenhuma delas usa potências ou divisão.
 
 **TEOREMA.** As operações satisfazem
 
-\[
+$$
 truncate(extend(x,a))=x,\qquad top(extend(x,a))=a,
-\]
+$$
 
 e
 
-\[
+$$
 extend(truncate(y),top(y))=y.
-\]
+$$
 
 Além disso, extrair o prefixo da torre canônica em profundidade `k+1` e
 truncá-lo dá exatamente o prefixo extraído em profundidade `k`, para qualquer
@@ -358,16 +358,16 @@ acrescentando uma segunda noção desconectada de profundidade.
 
 Para um pai `x`, definimos sua fibra como o conjunto efetivo
 
-\[
+$$
 \{y:ResidualPrefix(b,k+1)\mid truncate(y)=x\}.
-\]
+$$
 
 O mapa `a ↦ extend(x,a)` tem inverso `y ↦ top(y)`. As leis acima provam
 que todos os membros da fibra aparecem exatamente uma vez. Assim,
 
-\[
+$$
 \boxed{Fin(b)\longleftrightarrow\text{fibra de refinamento de }x.}
-\]
+$$
 
 `residualPrefixRefinementEquivFin` empacota essa bijeção e
 `residualPrefixRefinement_fiber_cardinality` prova injetividade e
@@ -376,9 +376,9 @@ reinterpretação da identidade entre potências.
 
 Depois dessa construção, a avaliação ainda prova
 
-\[
+$$
 P_{k+1}(extend(x,a))=P_k(x)+a\,b^k.
-\]
+$$
 
 **INTERPRETAÇÃO.** A nova coordenada resolve informação adicional na
 profundidade seguinte sem modificar a informação já resolvida. Ela não
@@ -406,15 +406,15 @@ esses parâmetros enumeram exatamente a fibra. Logo a apresentação da
 agregação é `(b,b^(k+1))`. Só agora a identidade aritmética de potências
 verifica a igualdade cruzada
 
-\[
+$$
 b\,b^k=1\,b^{k+1}.
-\]
+$$
 
 Obtemos
 
-\[
+$$
 \boxed{\text{soma das cotas dos filhos}\sim\text{cota do pai}.}
-\]
+$$
 
 `residualPrefix_refinement_conserves_share` prova isso na relação
 `SameCountingShare`. Não é igualdade de apresentações: em base `3` e
@@ -433,9 +433,9 @@ O representante não recebe massa privilegiada.
 
 Se `μₖ` denota essa massa formal, os teoremas provam
 
-\[
+$$
 \mu_0=(1,1),\qquad b\,\mu_{k+1}\sim\mu_k.
-\]
+$$
 
 A multiplicação por `b` aqui significa agregar `b` cotas iguais pela adição
 finita de seus numeradores (`repeatCountingShare`), não multiplicar números
@@ -457,7 +457,7 @@ uma massa de profundidade zero a estender-se coerentemente a uma fibra vazia.
 
 A cadeia verificada é
 
-\[
+$$
 \begin{gathered}
 \text{trajetória e observação finita autônoma injetiva}\\
 \Downarrow\\
@@ -469,7 +469,7 @@ A cadeia verificada é
 \Downarrow\quad\text{pela fibra de refinamento parametrizada por }Fin(b)\\
 \text{agregação conservativa}\to\text{massa formal coerente por profundidade}.
 \end{gathered}
-\]
+$$
 
 A invariância é satisfeita pela contagem canônica construída. Não foi provado
 que toda atribuição admissível pela dinâmica tenha essa invariância.
@@ -480,6 +480,7 @@ infinitos, eliminação eventual da cauda e construções métricas. Nenhum dess
 premissa dos resultados acima. A rigidez aritmética de expoentes, já existente
 em módulo separado, não foi usada na construção da massa. A próxima seção
 formaliza sua ligação com essa massa mediante compatibilidade quadrática.
+
 
 ## 15. Da massa derivada à seleção de um expoente formal
 

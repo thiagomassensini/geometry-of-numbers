@@ -40,6 +40,11 @@ está formalizada aqui. O escopo é o plano de trabalho da geometria real do car
 
 ## Estado verificado
 
+**Consolidação de 1–2/10/2026:** os oito módulos C2/dinâmica posteriores a R2
+estão integrados ao agregador Analysis e à auditoria. O [índice de recuperação](docs/RECOVERY_2026-10-02.md) reúne os resultados, limites e a localização
+das provas Green/Parseval no pacote downstream. Os parágrafos históricos
+abaixo descrevem seus respectivos checkpoints.
+
 **R2 CLOSED:** reconstrução discreta/projetiva, gauge crítico e TFVD real com
 análise/síntese exata; veja os capstones R2 ao final.
 

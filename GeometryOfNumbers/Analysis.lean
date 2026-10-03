@@ -1,3 +1,6 @@
+import GeometryOfNumbers.Analysis.C2GlobalPhysicalBranchCanary
+import GeometryOfNumbers.Analysis.C2PhysicalBranchCanary
+import GeometryOfNumbers.Analysis.C2BranchIsometryCanary
 import GeometryOfNumbers.Analysis.RealDiscreteValve
 import GeometryOfNumbers.Analysis.RealDiscreteValveSeries
 import GeometryOfNumbers.Analysis.RealTowerValve
@@ -14,6 +17,11 @@ import GeometryOfNumbers.Analysis.RealQuadraticAmplitude
 import GeometryOfNumbers.Analysis.RealCriticalDepthState
 import GeometryOfNumbers.Analysis.QuadraticCenteredBracket
 import GeometryOfNumbers.Analysis.CenterLegForm
+import GeometryOfNumbers.Analysis.SynthesizedPhaseCenterLegCanary
+import GeometryOfNumbers.Analysis.MaterialLogTfvdCanary
+import GeometryOfNumbers.Analysis.HistoricalWeightedSourceIndexAudit
+import GeometryOfNumbers.Analysis.C2FiberRealDynamics
+import GeometryOfNumbers.Analysis.C2BranchOrbitCanary
 import GeometryOfNumbers.Analysis.CenterLegCameraForm
 import GeometryOfNumbers.Analysis.CenterLegAtlasForm
 import GeometryOfNumbers.Analysis.QuadraticCameraBracket
