@@ -25,5 +25,11 @@
     "docs/SOURCE_PROVENANCE.md": "5ec090f728b02ce208ac4e6a31d374b16556691f922da226d29f055cd6a8a462"
   },
   "new_public_theorems": 142,
-  "backup": "/home/thlinux/formalization-recovery-20261002-233654"
+  "backup": "/home/thlinux/formalization-recovery-20261002-233654",
+  "snapshot_inventory": {
+    "same": 239,
+    "older_import_or_audit_variants": 42,
+    "missing_math_modules": 0,
+    "key": "relative path below GeometryOfNumbers"
+  }
 }
