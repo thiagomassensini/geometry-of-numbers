@@ -102,3 +102,67 @@ Each validated block is committed, branch-pushed, immediately integrated into
 main, main-pushed and checked against `origin/main` and the GitHub remote.
 The publication ledger is filled with the mathematical commit SHAs after each
 integration. Foundation, Geometry, R2 and dependency configuration are unchanged.
+
+
+## Block 2: derived-tail ledger and unique formal moments
+
+Module: `BaseTwoSynthesizedClockMoments.lean`.
+
+The new `baseTwoClosedResponseSeries M cameraFactor completion` specializes
+exactly the existing ledger with `baseTwoSynthesizedTailSeries M`.
+`baseTwoClosedResponseSeries_eq_synthesized` proves
+
+$$
+\mathrm{Response}_M=A\,(\mathrm{CompleteClockSeries}\,B^{-1}).
+$$
+
+It follows that the response and `baseTwoHistoricalPhi` do not depend on the
+cutoff when the SAME cameraFactor and completion are held fixed.
+`baseTwoSynthesizedPhi` is the cutoff-free canonical real-even extraction:
+$\phi_r=\operatorname{Re}([t^{2r}]\mathrm{Response})$, preserving $u=t^2$.
+`baseTwoSynthesizedPhi_coefficient_formula` records the complete normalized
+jet convolution with the two explicit dressing germs.
+
+`baseTwoSynthesizedLogMoment` reuses `finiteLogMoment` without a tail input.
+`baseTwoHistoricalLogMoment_eq_synthesized` and
+`baseTwoSynthesizedLogMoment_cutoff_independent` identify every cutoff ledger
+with that same sequence. These equalities are unconditional identities of the
+existing total definitions; they are not unconditional log-derivative existence.
+
+The existing normalization gate $\phi_0\ne0$ is required for:
+
+* `baseTwoSynthesizedLogMoment_isSequence`;
+* `baseTwoSynthesizedLogMoment_unique`;
+* `baseTwoSynthesizedLogMoment_formal_logDerivative`, $H\Phi=-\Phi'$;
+* `baseTwoSynthesizedLogMoment_formal_quotient`, $H=-\Phi'\Phi^{-1}$;
+* `baseTwoSynthesizedLogMoment_unique_of_formal_identity` and
+  `baseTwoLogMoment_two_formal_constructions_eq`.
+
+These proofs compose the unchanged `finiteLogMoment_isSequence`,
+`finiteLogMoment_eq_existing`, `IsLogDerivativeMomentSequence.unique` and
+formal quotient/derivative theorems. No positive Gram hypothesis is used.
+`baseTwoSynthesizedLogMoment_depends_only_on_phi` states the exact dependency.
+The camera quotient separately retains its existing $B(0)\ne0$ gate.
+
+### What has changed, and what remains
+
+A freely supplied tail disappears completely from this NEW base-two response
+and moment path. The general historical ledger and its arbitrary-tail guardrail
+remain unchanged. CameraFactor and completion are still explicit external
+inputs, and no identification of them with physical completed dressing was
+proved. Different dressing germs may change phi and moments.
+
+The historical scalarization mismatch is reduced only at the head/tail and
+formal coefficient seam. It remains active at the modern provenance-correct
+C2/Green source → historical observable/dressing seam. An early scalar mismatch
+is not promoted to a no-go of the complete theory.
+Regularity/Taylor recovery of the complete infinite signal remains a distinct
+gate at this point; the coefficient identities alone do not discharge it.
+
+## Publication ledger
+
+| Block | Mathematical commit | Integrated main / origin / GitHub | Validation |
+| --- | --- | --- | --- |
+| 1 — synthesized jet residual and derived tail series | `9c7731b3bcb53d00530a4db6fbae2016104e9bdb` | identical, verified before block 2 | four --wfail targets + Analysis audit + diff check, exit 0 |
+
+The next mathematical commit is recorded after its immediate integration.

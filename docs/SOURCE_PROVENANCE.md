@@ -1259,3 +1259,15 @@ Technique reused: equality of whole functions before rewriting iteratedDeriv,
 not derivative/tsum interchange. Historical common-camera and canonical moment
 conclusions are not used. No analytical regularity of the local complete signal
 is inferred from a historical theorem about a different completed object.
+
+
+### Local derived-tail ledger / moment specialization
+
+Source theorem APIs: FiniteClockHeightLedger.finiteLogMoment_isSequence,
+finiteLogMoment_eq_existing, finiteLogMoment_formal_logDerivative,
+finiteLogMoment_formal_quotient, and LogarithmicMomentHankel's
+IsLogDerivativeMomentSequence.unique, all local and unchanged.
+BaseTwoSynthesizedClockMoments composes those APIs with the published
+BaseTwoSynthesizedClockCompletion from 9c7731b3bcb53d00530a4db6fbae2016104e9bdb.
+No new historical theorem is a proof dependency. External cameraFactor,
+completion, and the nonzero phi(0) gate remain explicit.

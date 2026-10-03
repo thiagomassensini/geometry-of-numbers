@@ -680,3 +680,13 @@ no free tail is used to define them. Actual analytic/Taylor recovery and tail
 termwise differentiation are not asserted. Ledger/moment specialization follows
 in a separate validated increment; dressing and global Gram seams remain open.
 See `SYNTHESIS_BEFORE_SCALARIZATION_CLOCK_MOMENTS.md`.
+
+
+### Synthesized base-two response and moments — block 2
+
+`BaseTwoSynthesizedClockMoments` closes the formal ledger seam: no free tail,
+response/phi/moments cutoff-independent for fixed cameraFactor and completion,
+unique log-derivative moment sequence under the existing phi(0) != 0 gate.
+No Gram or height proof is used. Dressing remains external; the modern-source
+crosswalk and complete-signal analytical recovery remain separate open gates.
+The general externalTail_changes_phi_zero theorem remains unchanged.
