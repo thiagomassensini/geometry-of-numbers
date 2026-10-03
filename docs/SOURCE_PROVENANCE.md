@@ -1134,3 +1134,13 @@ Read-only source: `/home/thlinux/carry-c2-source-raw-green` at `cb33c845a7ee0ca1
 - `docs/C2_GREEN_TEMPORAL_MEAN_AUDIT.md` ← `/home/thlinux/carry-c2-source-raw-green/docs/C2_GREEN_TEMPORAL_MEAN_AUDIT.md`; SHA-256 `fb1c7e212e269395b8d86d4be60641bc271ecd07816bfcdf28df9ca5857f6c1b`.
 
 Only path/namespace adaptation; no import of the historical carry project. Foundation and Geometry remain unchanged.
+
+## Recovery round 13 — PASS
+
+Read-only source: `/home/thlinux/carry-c2-source-raw-green` at `cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa`; uncommitted source is identified by SHA-256.
+
+- `GeometryOfNumbers/Analysis/C2GreenWhiteningGenealogy.lean` ← `/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/C2GreenWhiteningGenealogy.lean`; SHA-256 `acde2e3ba661367df3d06a2266ef11cdbbbcbd2bfc4146175f79f331b985350c`.
+- `GeometryOfNumbers/Analysis/C2GreenWhiteningGenealogyAudit.lean` ← `/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/C2GreenWhiteningGenealogyAudit.lean`; SHA-256 `f4e6055fc4ab762ac5c4f650491ee9a390e76e8efe6bda7c266522ccfa836054`.
+- `docs/C2_GREEN_WHITENING_GENEALOGY.md` ← `/home/thlinux/carry-c2-source-raw-green/docs/C2_GREEN_WHITENING_GENEALOGY.md`; SHA-256 `03e849888c34ee90dd8e8ade09d05fedb0ce88cf1c2000866b1ba3c382abf205`.
+
+Only path/namespace adaptation; no import of the historical carry project. Foundation and Geometry remain unchanged.

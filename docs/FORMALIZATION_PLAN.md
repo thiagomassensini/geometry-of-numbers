@@ -624,3 +624,7 @@ Ported to local Analysis: `C2BaseTwoGreenLedger`. Original hypotheses, open gaps
 ### Recovery round 12: PASS
 
 Ported to local Analysis: `C2GreenTemporalMeanCanary`. Original hypotheses, open gaps and no-go quantifiers preserved.
+
+### Recovery round 13: PASS
+
+Ported to local Analysis: `C2GreenWhiteningGenealogy`. Original hypotheses, open gaps and no-go quantifiers preserved.

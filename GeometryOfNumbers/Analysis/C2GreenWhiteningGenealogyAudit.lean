@@ -1,0 +1,114 @@
+import GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy
+import Lean
+
+open Lean Elab Command
+elab "#assert_c2_whitening_genealogy_axioms " id:ident : command => do
+  let decl ← liftCoreM <| realizeGlobalConstNoOverloadWithInfo id
+  let deps ← collectAxioms decl
+  let allowed := #[`propext, `Classical.choice, `Quot.sound]
+  for name in deps do
+    unless allowed.contains name do
+      throwError "Unexpected foundational dependency: {decl} depends on {name}"
+
+namespace GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy
+
+#assert_c2_whitening_genealogy_axioms canonicalRawGreenAnalysis
+#print axioms canonicalRawGreenAnalysis
+
+#assert_c2_whitening_genealogy_axioms canonicalRawGreenFrameBounds
+#print axioms canonicalRawGreenFrameBounds
+
+#assert_c2_whitening_genealogy_axioms c2RawMetricWitness
+#print axioms c2RawMetricWitness
+
+#assert_c2_whitening_genealogy_axioms c2RawMetricWitness_ne_zero
+#print axioms c2RawMetricWitness_ne_zero
+
+#assert_c2_whitening_genealogy_axioms c2RawMetricWitness_norm
+#print axioms c2RawMetricWitness_norm
+
+#assert_c2_whitening_genealogy_axioms c2RawMetricWitness_exists_time_defect_pos
+#print axioms c2RawMetricWitness_exists_time_defect_pos
+
+#assert_c2_whitening_genealogy_axioms c2RawGreenDefect_eq_material_norm_sq_sub
+#print axioms c2RawGreenDefect_eq_material_norm_sq_sub
+
+#assert_c2_whitening_genealogy_axioms exists_c2_time_rawGreen_norm_sq_gt
+#print axioms exists_c2_time_rawGreen_norm_sq_gt
+
+#assert_c2_whitening_genealogy_axioms exists_c2_time_rawGreen_norm_gt
+#print axioms exists_c2_time_rawGreen_norm_gt
+
+#assert_c2_whitening_genealogy_axioms exists_c2_state_rawGreen_norm_gt
+#print axioms exists_c2_state_rawGreen_norm_gt
+
+#assert_c2_whitening_genealogy_axioms exists_c2_unit_state_rawGreen_norm_gt
+#print axioms exists_c2_unit_state_rawGreen_norm_gt
+
+#assert_c2_whitening_genealogy_axioms canonicalRawGreenAnalysis_not_isometry
+#print axioms canonicalRawGreenAnalysis_not_isometry
+
+#assert_c2_whitening_genealogy_axioms canonicalRawGreen_frameOperator_ne_identity
+#print axioms canonicalRawGreen_frameOperator_ne_identity
+
+#assert_c2_whitening_genealogy_axioms rawGreen_realGram_eq_frameOperator_restrictScalars
+#print axioms rawGreen_realGram_eq_frameOperator_restrictScalars
+
+#assert_c2_whitening_genealogy_axioms c2RestrictedGreenGram_eq_source_frame_compression
+#print axioms c2RestrictedGreenGram_eq_source_frame_compression
+
+#assert_c2_whitening_genealogy_axioms c2RestrictedGreenGram_eq_W_J_frame_J_W
+#print axioms c2RestrictedGreenGram_eq_W_J_frame_J_W
+
+#assert_c2_whitening_genealogy_axioms c2RestrictedGreenGram_not_uniform_identity
+#print axioms c2RestrictedGreenGram_not_uniform_identity
+
+#assert_c2_whitening_genealogy_axioms criticalBranch_gram_identity
+#print axioms criticalBranch_gram_identity
+
+#assert_c2_whitening_genealogy_axioms globalPhysicalBranch_gram_identity
+#print axioms globalPhysicalBranch_gram_identity
+
+#assert_c2_whitening_genealogy_axioms materialInclusion_gram_identity
+#print axioms materialInclusion_gram_identity
+
+#assert_c2_whitening_genealogy_axioms c2GreenInput_gram_identity
+#print axioms c2GreenInput_gram_identity
+
+#assert_c2_whitening_genealogy_axioms elementaryAtlas_gram_identity
+#print axioms elementaryAtlas_gram_identity
+
+#assert_c2_whitening_genealogy_axioms preStencil_gram_identity
+#print axioms preStencil_gram_identity
+
+#assert_c2_whitening_genealogy_axioms c2PreStencil_gram_identity
+#print axioms c2PreStencil_gram_identity
+
+#assert_c2_whitening_genealogy_axioms c2RawMetricDefect_is_stencil_defect
+#print axioms c2RawMetricDefect_is_stencil_defect
+
+#assert_c2_whitening_genealogy_axioms canonicalRawGreen_inverseSqrt_normalization
+#print axioms canonicalRawGreen_inverseSqrt_normalization
+
+#assert_c2_whitening_genealogy_axioms canonicalRawGreen_inverseSqrtFrame_ne_identity
+#print axioms canonicalRawGreen_inverseSqrtFrame_ne_identity
+
+#assert_c2_whitening_genealogy_axioms canonicalGreenAnalysis_eq_raw_comp_inverseSqrt
+#print axioms canonicalGreenAnalysis_eq_raw_comp_inverseSqrt
+
+#assert_c2_whitening_genealogy_axioms canonicalGreenAnalysis_gram_identity
+#print axioms canonicalGreenAnalysis_gram_identity
+
+#assert_c2_whitening_genealogy_axioms canonicalGreenAnalysis_isometry
+#print axioms canonicalGreenAnalysis_isometry
+
+#assert_c2_whitening_genealogy_axioms canonicalGreenAnalysis_norm
+#print axioms canonicalGreenAnalysis_norm
+
+#assert_c2_whitening_genealogy_axioms canonicalRawGreenAnalysis_ne_canonicalAnalysis
+#print axioms canonicalRawGreenAnalysis_ne_canonicalAnalysis
+
+#assert_c2_whitening_genealogy_axioms canonicalC2GreenAnalysis_norm
+#print axioms canonicalC2GreenAnalysis_norm
+
+end GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy

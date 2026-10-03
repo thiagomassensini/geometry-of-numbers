@@ -1,3 +1,4 @@
+import GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy
 import GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary
 import GeometryOfNumbers.Analysis.C2BaseTwoGreenLedger
 import GeometryOfNumbers.Analysis.C2GreenPreStencilCanary
