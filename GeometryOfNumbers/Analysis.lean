@@ -1,3 +1,5 @@
+import GeometryOfNumbers.Analysis.GreenStateMaterialEvolution
+import GeometryOfNumbers.Analysis.GreenParsevalMaterialEvolution
 import GeometryOfNumbers.Analysis.GreenParsevalMaterialLogOperator
 import GeometryOfNumbers.Analysis.GreenStateMaterialLogGenerator
 import GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy

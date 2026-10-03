@@ -1171,3 +1171,14 @@ Read-only source: `/home/thlinux/carry-c2-source-raw-green` at `cb33c845a7ee0ca1
 - `docs/GREEN_PARSEVAL_MATERIAL_LOG_OPERATOR.md` ← `/home/thlinux/carry-c2-source-raw-green/docs/GREEN_PARSEVAL_MATERIAL_LOG_OPERATOR.md`; SHA-256 `8edbbdf844ffeaabefb386a2e0751ff5b94149d1350fed749fc0fc7088843d08`.
 
 Only path/namespace adaptation; no import of the historical carry project. Foundation and Geometry remain unchanged.
+
+## Recovery round 16 — PASS_C2_ORBIT
+
+Read-only source: `/home/thlinux/carry-c2-source-raw-green` at `cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa`; uncommitted source is identified by SHA-256.
+
+- `GeometryOfNumbers/Analysis/GreenStateMaterialEvolution.lean` ← `/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/GreenStateMaterialEvolution.lean`; SHA-256 `80336198d2db56c379315794f28735bf9af57d69dcbd54768a082fb04debfca1`.
+- `GeometryOfNumbers/Analysis/GreenParsevalMaterialEvolution.lean` ← `/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/GreenParsevalMaterialEvolution.lean`; SHA-256 `69ec8ca6cb51ffb666406badc38a998e2a34cb8c4c6209dd78e6c1a4a914deb8`.
+- `GeometryOfNumbers/Analysis/GreenMaterialEvolutionAudit.lean` ← `/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/GreenMaterialEvolutionAudit.lean`; SHA-256 `d11f359ed1ab0dba7f135a4a1034a2598cd89231fd9c09ffb7d5c9e86346ec7b`.
+- `docs/GREEN_MATERIAL_UNITARY_EVOLUTION.md` ← `/home/thlinux/carry-c2-source-raw-green/docs/GREEN_MATERIAL_UNITARY_EVOLUTION.md`; SHA-256 `4aceff9e378aa57ca9f346aefefa9abc85b5f10050774512e78c62c5b954a28f`.
+
+Only path/namespace adaptation; no import of the historical carry project. Foundation and Geometry remain unchanged.

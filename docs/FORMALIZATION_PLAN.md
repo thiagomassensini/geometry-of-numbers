@@ -636,3 +636,7 @@ Ported to local Analysis: `GreenStateMaterialLogGenerator`. Original hypotheses,
 ### Recovery round 15: PASS
 
 Ported to local Analysis: `GreenParsevalMaterialLogOperator`. Original hypotheses, open gaps and no-go quantifiers preserved.
+
+### Recovery round 16: PASS_C2_ORBIT
+
+Ported to local Analysis: `GreenStateMaterialEvolution`, `GreenParsevalMaterialEvolution`. Original hypotheses, open gaps and no-go quantifiers preserved.
