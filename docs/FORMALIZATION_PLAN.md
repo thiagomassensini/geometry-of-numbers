@@ -632,3 +632,7 @@ Ported to local Analysis: `C2GreenWhiteningGenealogy`. Original hypotheses, open
 ### Recovery round 14: PASS_DOMAIN_GATE_OPEN
 
 Ported to local Analysis: `GreenStateMaterialLogGenerator`. Original hypotheses, open gaps and no-go quantifiers preserved.
+
+### Recovery round 15: PASS
+
+Ported to local Analysis: `GreenParsevalMaterialLogOperator`. Original hypotheses, open gaps and no-go quantifiers preserved.

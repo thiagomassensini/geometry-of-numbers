@@ -1161,3 +1161,13 @@ Only path/namespace adaptation; no import of the historical carry project. Found
 - `/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/NativeLogEvolution.lean`; SHA-256 `376a7f5eb07ed3ad72a8a2e728345f79710edb373a64f10474cb988eb414c090`; native alias source
 
 The Analysis audit name scanner now accepts Unicode identifiers, dotted theorem names and inline simp attributes; rejecting kernel guards and the allowed axiom set are unchanged.
+
+## Recovery round 15 — PASS
+
+Read-only source: `/home/thlinux/carry-c2-source-raw-green` at `cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa`; uncommitted source is identified by SHA-256.
+
+- `GeometryOfNumbers/Analysis/GreenParsevalMaterialLogOperator.lean` ← `/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/GreenParsevalMaterialLogOperator.lean`; SHA-256 `30ab89dc5f68b9d842a869a6fd6172c2fa42ebab533779cf1171cca137e8cf20`.
+- `GeometryOfNumbers/Analysis/GreenParsevalMaterialLogOperatorAudit.lean` ← `/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/GreenParsevalMaterialLogOperatorAudit.lean`; SHA-256 `5f1f7e228ccc161616b81dec30eb03c46aa4609ee40bab5130d1d7beba0c9f9c`.
+- `docs/GREEN_PARSEVAL_MATERIAL_LOG_OPERATOR.md` ← `/home/thlinux/carry-c2-source-raw-green/docs/GREEN_PARSEVAL_MATERIAL_LOG_OPERATOR.md`; SHA-256 `8edbbdf844ffeaabefb386a2e0751ff5b94149d1350fed749fc0fc7088843d08`.
+
+Only path/namespace adaptation; no import of the historical carry project. Foundation and Geometry remain unchanged.

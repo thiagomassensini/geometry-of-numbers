@@ -1,3 +1,4 @@
+import GeometryOfNumbers.Analysis.GreenParsevalMaterialLogOperator
 import GeometryOfNumbers.Analysis.GreenStateMaterialLogGenerator
 import GeometryOfNumbers.Analysis.C2GreenWhiteningGenealogy
 import GeometryOfNumbers.Analysis.C2GreenTemporalMeanCanary
