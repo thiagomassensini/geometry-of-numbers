@@ -612,3 +612,7 @@ histórica ou mudança em Foundation/Geometry foi usada para fechar R2.
 ### Recovery round 9: PASS_RESTRICTED_GRAM
 
 Ported to local Analysis: `C2GlobalGreenBridge`. Original hypotheses, open gaps and no-go quantifiers preserved.
+
+### Recovery round 10: PASS
+
+Ported to local Analysis: `C2GreenPreStencilCanary`. Original hypotheses, open gaps and no-go quantifiers preserved.

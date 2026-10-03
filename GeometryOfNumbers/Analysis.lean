@@ -1,3 +1,4 @@
+import GeometryOfNumbers.Analysis.C2GreenPreStencilCanary
 import GeometryOfNumbers.Analysis.C2GlobalGreenBridge
 import GeometryOfNumbers.Analysis.C2GlobalPhysicalBranchCanary
 import GeometryOfNumbers.Analysis.C2PhysicalBranchCanary

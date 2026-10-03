@@ -1,0 +1,157 @@
+import GeometryOfNumbers.Analysis.C2GreenPreStencilCanary
+import Lean
+
+open Lean Elab Command
+elab "#assert_pre_stencil_axioms " id:ident : command => do
+  let decl ← liftCoreM <| realizeGlobalConstNoOverloadWithInfo id
+  let deps ← collectAxioms decl
+  let allowed := #[`propext, `Classical.choice, `Quot.sound]
+  for name in deps do
+    unless allowed.contains name do
+      throwError "Unexpected foundational dependency: {decl} depends on {name}"
+
+namespace GeometryOfNumbers.Analysis.C2GreenPreStencilCanary
+
+#assert_pre_stencil_axioms directGreenCoordinate
+#print axioms directGreenCoordinate
+
+#assert_pre_stencil_axioms directGreenCoordinate_normSq_eq
+#print axioms directGreenCoordinate_normSq_eq
+
+#assert_pre_stencil_axioms directGreenEnergyTerm
+#print axioms directGreenEnergyTerm
+
+#assert_pre_stencil_axioms directGreenEnergyTerm_nonneg
+#print axioms directGreenEnergyTerm_nonneg
+
+#assert_pre_stencil_axioms directGreenEnergyTerm_summable
+#print axioms directGreenEnergyTerm_summable
+
+#assert_pre_stencil_axioms directGreenCoordinate_normSq_summable
+#print axioms directGreenCoordinate_normSq_summable
+
+#assert_pre_stencil_axioms directGreenAnalysis
+#print axioms directGreenAnalysis
+
+#assert_pre_stencil_axioms directGreenAnalysis_apply
+#print axioms directGreenAnalysis_apply
+
+#assert_pre_stencil_axioms directGreenAnalysis_norm_sq_eq
+#print axioms directGreenAnalysis_norm_sq_eq
+
+#assert_pre_stencil_axioms directGreenMass_add_residualEventMass
+#print axioms directGreenMass_add_residualEventMass
+
+#assert_pre_stencil_axioms canonicalDirectGreenMass_add_residualEventMass
+#print axioms canonicalDirectGreenMass_add_residualEventMass
+
+#assert_pre_stencil_axioms directGreen_add_residual_eq_elementaryCamera
+#print axioms directGreen_add_residual_eq_elementaryCamera
+
+#assert_pre_stencil_axioms PreStencilSpace
+#print axioms PreStencilSpace
+
+#assert_pre_stencil_axioms preStencilAnalysis
+#print axioms preStencilAnalysis
+
+#assert_pre_stencil_axioms preStencilAnalysis_norm_sq_eq_components
+#print axioms preStencilAnalysis_norm_sq_eq_components
+
+#assert_pre_stencil_axioms preStencilAnalysis_norm_sq_eq
+#print axioms preStencilAnalysis_norm_sq_eq
+
+#assert_pre_stencil_axioms preStencilAnalysis_norm
+#print axioms preStencilAnalysis_norm
+
+#assert_pre_stencil_axioms directGreenAnalysis_add
+#print axioms directGreenAnalysis_add
+
+#assert_pre_stencil_axioms directGreenAnalysis_smul
+#print axioms directGreenAnalysis_smul
+
+#assert_pre_stencil_axioms directGreenAnalysis_norm_le
+#print axioms directGreenAnalysis_norm_le
+
+#assert_pre_stencil_axioms directGreenAnalysisLinearMap
+#print axioms directGreenAnalysisLinearMap
+
+#assert_pre_stencil_axioms directGreenAnalysisOperator
+#print axioms directGreenAnalysisOperator
+
+#assert_pre_stencil_axioms preStencilAnalysis_add
+#print axioms preStencilAnalysis_add
+
+#assert_pre_stencil_axioms preStencilAnalysis_smul
+#print axioms preStencilAnalysis_smul
+
+#assert_pre_stencil_axioms preStencilLinearIsometry
+#print axioms preStencilLinearIsometry
+
+#assert_pre_stencil_axioms preStencilRealLinearIsometry
+#print axioms preStencilRealLinearIsometry
+
+#assert_pre_stencil_axioms c2GlobalPreStencilIsometry
+#print axioms c2GlobalPreStencilIsometry
+
+#assert_pre_stencil_axioms c2GlobalPreStencil_apply
+#print axioms c2GlobalPreStencil_apply
+
+#assert_pre_stencil_axioms c2GlobalPreStencil_norm
+#print axioms c2GlobalPreStencil_norm
+
+#assert_pre_stencil_axioms greenStencilCorrection
+#print axioms greenStencilCorrection
+
+#assert_pre_stencil_axioms greenCoordinate_eq_direct_add_ancestorCorrection
+#print axioms greenCoordinate_eq_direct_add_ancestorCorrection
+
+#assert_pre_stencil_axioms greenStencilCorrection_eq
+#print axioms greenStencilCorrection_eq
+
+#assert_pre_stencil_axioms greenStencilCorrectionAnalysis
+#print axioms greenStencilCorrectionAnalysis
+
+#assert_pre_stencil_axioms greenStencilCorrectionAnalysis_apply
+#print axioms greenStencilCorrectionAnalysis_apply
+
+#assert_pre_stencil_axioms greenStencilCorrectionOperator
+#print axioms greenStencilCorrectionOperator
+
+#assert_pre_stencil_axioms greenStencilCorrectionOperator_apply
+#print axioms greenStencilCorrectionOperator_apply
+
+#assert_pre_stencil_axioms concreteAnalysis_norm_sq_sub_preStencil_norm_sq
+#print axioms concreteAnalysis_norm_sq_sub_preStencil_norm_sq
+
+#assert_pre_stencil_axioms concreteAnalysis_norm_defect_eq_stencil_defect
+#print axioms concreteAnalysis_norm_defect_eq_stencil_defect
+
+#assert_pre_stencil_axioms c2GlobalRawGreenDefect_eq_stencil_defect
+#print axioms c2GlobalRawGreenDefect_eq_stencil_defect
+
+#assert_pre_stencil_axioms c2GlobalRestrictedGreenGram_stencil_defect
+#print axioms c2GlobalRestrictedGreenGram_stencil_defect
+
+end GeometryOfNumbers.Analysis.C2GreenPreStencilCanary
+
+#check GreenFrame.Concrete.elementaryAtlas_norm_sq_eq
+#assert_pre_stencil_axioms GreenFrame.Concrete.elementaryAtlas_norm_sq_eq
+#print axioms GreenFrame.Concrete.elementaryAtlas_norm_sq_eq
+#check GreenFrame.Concrete.elementaryAtlas_isometry
+#assert_pre_stencil_axioms GreenFrame.Concrete.elementaryAtlas_isometry
+#print axioms GreenFrame.Concrete.elementaryAtlas_isometry
+#check GreenFrame.Concrete.elementaryAtlasLinearIsometry
+#assert_pre_stencil_axioms GreenFrame.Concrete.elementaryAtlasLinearIsometry
+#print axioms GreenFrame.Concrete.elementaryAtlasLinearIsometry
+#check GreenFrame.Concrete.canonicalCarryElementaryAtlas_isometry
+#assert_pre_stencil_axioms GreenFrame.Concrete.canonicalCarryElementaryAtlas_isometry
+#print axioms GreenFrame.Concrete.canonicalCarryElementaryAtlas_isometry
+#check GreenFrame.Concrete.greenMass_add_residualMass
+#assert_pre_stencil_axioms GreenFrame.Concrete.greenMass_add_residualMass
+#print axioms GreenFrame.Concrete.greenMass_add_residualMass
+#check GreenFrame.Concrete.verticalGreenStencil_eq_canonicalNormalizedTowerTFVD
+#assert_pre_stencil_axioms GreenFrame.Concrete.verticalGreenStencil_eq_canonicalNormalizedTowerTFVD
+#print axioms GreenFrame.Concrete.verticalGreenStencil_eq_canonicalNormalizedTowerTFVD
+#check GreenFrame.Concrete.greenCoordinate_eq_canonicalNormalizedTowerTFVD
+#assert_pre_stencil_axioms GreenFrame.Concrete.greenCoordinate_eq_canonicalNormalizedTowerTFVD
+#print axioms GreenFrame.Concrete.greenCoordinate_eq_canonicalNormalizedTowerTFVD

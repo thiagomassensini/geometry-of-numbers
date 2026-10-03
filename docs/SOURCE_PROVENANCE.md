@@ -1104,3 +1104,13 @@ Read-only source: `/home/thlinux/carry-c2-source-raw-green` at `cb33c845a7ee0ca1
 - `docs/C2_GLOBAL_GREEN_BRIDGE.md` ← `/home/thlinux/carry-c2-source-raw-green/docs/C2_GLOBAL_GREEN_BRIDGE.md`; SHA-256 `d99082a14362b7d6276e41c60b2f99903ddb44575dc7fb4c3e523dd9465d6126`.
 
 Only path/namespace adaptation; no import of the historical carry project. Foundation and Geometry remain unchanged.
+
+## Recovery round 10 — PASS
+
+Read-only source: `/home/thlinux/carry-c2-source-raw-green` at `cb33c845a7ee0ca1c6bf195d34d7f3ac1628edfa`; uncommitted source is identified by SHA-256.
+
+- `GeometryOfNumbers/Analysis/C2GreenPreStencilCanary.lean` ← `/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/C2GreenPreStencilCanary.lean`; SHA-256 `9137ad25dd338b468f1b31e40e0a98dfdabef002d4e8e30dcfdbf5c22e5720ec`.
+- `GeometryOfNumbers/Analysis/C2GreenPreStencilCanaryAudit.lean` ← `/home/thlinux/carry-c2-source-raw-green/CarrySelfAdjointOperator/C2GreenPreStencilCanaryAudit.lean`; SHA-256 `77a3267b59821cbbe7420ae70ccc6de50d365165000af0c866c94c56e1fb43cb`.
+- `docs/C2_GREEN_PRE_STENCIL_AUDIT.md` ← `/home/thlinux/carry-c2-source-raw-green/docs/C2_GREEN_PRE_STENCIL_AUDIT.md`; SHA-256 `e29bf329f8d72fd37605a354f8ef71e4fd24146e7363639a47df57e847178255`.
+
+Only path/namespace adaptation; no import of the historical carry project. Foundation and Geometry remain unchanged.
