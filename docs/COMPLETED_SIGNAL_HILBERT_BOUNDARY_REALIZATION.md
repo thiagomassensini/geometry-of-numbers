@@ -81,3 +81,30 @@ git diff --check
 
 Initial main: `a0e4dff8e296c90ae382036d5bb8d52d245a3e13`.
 The integration commit is the commit introducing this document and module.
+
+## Raw ℓ² readout: nonclosability
+
+Additional status: `RAW_L2_READOUT_NOT_CLOSABLE`.
+`BaseTwoRawL2ReadoutNonclosable.lean` uses the existing signed witness
+`u_(N+1)` and sets `v_N = u_(N+1)/(2(N+1))`.
+Its squared ℓ² norm is `1/(2(N+1))`, so it tends to zero.
+For **any** partial linear operator `T` whose graph contains the coordinate
+pairs `(delta_n, rawEdgeCoefficient n)`, linearity puts `(v_N,1)` in its graph.
+Thus `(0,1)` belongs to its graph closure. That closure cannot be a graph of a
+partial linear map, since a linear map sends zero to zero.
+
+This is expressed using Mathlib's actual `LinearPMap.IsClosable`:
+`baseTwoRawL2Readout_not_closable`. It excludes every partial extension agreeing
+on all finite coordinate deltas, and hence includes the usual finite-support
+raw readout. It neither requires nor constructs a new Hilbert representation.
+
+Capstones: `baseTwoRawL2NormalizedWitness_norm_sq`,
+`baseTwoRawL2NormalizedWitness_tendsto`,
+`baseTwoRawL2NormalizedWitness_mem_graph`,
+`baseTwoRawL2Readout_vertical_graph_limit`,
+`baseTwoRawL2Readout_not_closable`.
+All are independently registered in the Analysis audit and specific audit.
+Commands: the same build/kernel/audit commands above, additionally targeting
+`BaseTwoRawL2ReadoutNonclosable` and `BaseTwoRawL2ReadoutNonclosableAudit`.
+The Hilbert boundary realization was integrated as
+`4dc53afc206c3407388806082bd89bc0a36291ab` before this increment began.

@@ -916,3 +916,11 @@ the observable equals the complete base-two signal and the earlier Banach
 readout. The raw ℓ² readout obstruction is unchanged. No material-edge/depth
 identification, carrier isometry, autonomous generator, or moment Gram is
 claimed. See `docs/COMPLETED_SIGNAL_HILBERT_BOUNDARY_REALIZATION.md`.
+
+## Raw material-edge readout nonclosability
+
+`BaseTwoRawL2ReadoutNonclosable.lean` strengthens the existing bounded-extension
+no-go. The normalized finite signed witnesses converge to zero with output
+one; every partial extension agreeing on deltas has `(0,1)` in its graph
+closure and is not `LinearPMap.IsClosable`. This applies to raw ℓ² only and
+does not obstruct the separately derived geometric boundary coordinate.
