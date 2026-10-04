@@ -1572,3 +1572,13 @@ from the norm-level gradient proof and geometric ℓ¹ return differentiation.
 Material deltas supply the infinite standard-metric non-symmetry witness,
 independent of moments. Finite pullback symmetry is recorded but no infinite
 TFVD/Green metric identification is assumed. No new dependency or old certificate.
+
+## Completed clock candidate obstructions (2026-10-04)
+
+CompletedClockCandidateObstructions proves harmonic raw-node exclusion,
+isometric standard-product intertwiner obstruction, and direct C2 source
+amplitude mismatch on material 3/7 of the same core. These are scoped
+representation tests, not obstructions to enriched geometric synthesis.
+Proof inputs are local current modules and Mathlib; the three read-only
+blueprints at carry revision 62b1c0d6b18e70b4c156c3bdf0253893fdb27a35
+are listed in COMPLETED_CLOCK_GREEN_INTERTWINER.md. No dependency is added.

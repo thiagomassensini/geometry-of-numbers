@@ -974,3 +974,13 @@ infinite domain by encoded material deltas at 1 and 2. Status:
 `PASS_TRANSPORTED_CLOCK_NO_STANDARD_SYMMETRY`. No metric was changed. Before
 Krylov, the infinite geometric/TFVD symmetry pairing and its domain/intertwining
 must be identified; no canonical moment or Hankel consequence is asserted.
+
+## Completed clock candidate obstructions (2026-10-04)
+
+CompletedClockCandidateObstructions proves harmonic raw-node exclusion,
+isometric standard-product intertwiner obstruction, and direct C2 source
+amplitude mismatch on material 3/7 of the same core. These are scoped
+representation tests, not obstructions to enriched geometric synthesis.
+Proof inputs are local current modules and Mathlib; the three read-only
+blueprints at carry revision 62b1c0d6b18e70b4c156c3bdf0253893fdb27a35
+are listed in COMPLETED_CLOCK_GREEN_INTERTWINER.md. No dependency is added.
