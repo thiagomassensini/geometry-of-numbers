@@ -151,3 +151,76 @@ the specific audit, all three Analysis/Foundation/Geometry scripts and
 in the new Lean source. The witness norm/readout and both no-go capstones
 print exactly `[propext, Classical.choice, Quot.sound]`.
 Commit message: `audit: exclude raw L2 completion readout and bounded factorizations`.
+
+
+## Derived boundary limit: second increment
+
+`BaseTwoCompletedBoundaryLimit.lean` names the **geometrically determined**
+return target without packaging it as a Hilbert coordinate:
+
+```text
+baseTwoCompletedBoundaryPrefix M t
+ = ∑ k<M (G_t(rightEdge k)-G_t(leftEdge k));
+baseTwoCompletedBoundaryValue t
+ = ∑' k (G_t(rightEdge k)-G_t(leftEdge k)).
+```
+
+`baseTwoCompletedBoundaryPrefix_eq_head_sub_seed` identifies each return with
+`baseTwoFiniteHead M t - criticalMaterialSample t 1`.
+`baseTwoCompletedBoundaryPrefix_tendsto` proves the norm limit to the boundary
+value by the already proved summability of **complete cells**, without a free
+tail or a new summability premise.
+
+`baseTwoCompletedBoundaryValue_eq_readout_sub_seed` and
+`baseTwoCompletedBoundaryValue_add_seed_eq_signal` prove, literally:
+
+```text
+boundaryValue t = ell(X(t)) - criticalMaterialSample t 1;
+criticalMaterialSample t 1 + boundaryValue t = S(t).
+```
+
+Separately, `baseTwoCompletedMaterialInteriorPrefix_tendsto` proves that the
+finite material-coordinate interior truncations converge in ℓ² to the same
+`baseTwoCompletedMaterialGradientL2 t`. Its coordinate N is a material-edge
+cutoff; M in the boundary prefix is a whole-cell cutoff. No identification of
+these cutoffs with C2 vertical depth is made.
+
+These are positive completion facts. They are **not** the missing Hilbert
+boundary transform: no Hilbert metric on the completion data, no map
+`(g,ell(g))`, no additional scalar field equal to S(t), and no extension of
+the readout to ℓ² are introduced. The exact scalar boundary target is now a
+named, kernel-checked object. The missing operation must geometrically produce
+**this** `baseTwoCompletedBoundaryValue`, plus the retained seed, as its
+boundary output. A function-family TFVD fiber chart alone does not do so.
+The current trace `(x0,eta⁻¹*x1-x0)` is not asserted to equal that return.
+
+The missing identity for a future justified Hilbert boundary transform is:
+
+```text
+its_derived_return (baseTwoCompletedUndressedState t)
+ = baseTwoCompletedBoundaryValue t,
+```
+
+together with retained seed and material provenance. The left-hand operator
+is absent locally; it is neither hypothesized in a theorem nor invented from
+the right-hand scalar. Thus there is no Hilbert first-column theorem yet.
+A realization on the actual source orbit or on the stronger source topology
+is not refuted by the raw-ℓ² no-go.
+
+No clock/differentiation computation is attempted: the user required that
+only after the geometric Hilbert lift exists. The new limits cannot be used
+to claim an autonomous clock or a moment Gram.
+
+First increment published as
+`ccb032daa6655a6aec0e0d0454a7256e3950c0ec`.
+Second increment commit message:
+`feat: identify exact completed boundary and material interior limits`.
+
+Second increment verification: new module, specific audit, Analysis and
+Analysis/Audit all build with `--wfail`, exit 0. Direct kernel elaboration,
+Analysis/Foundation/Geometry audit scripts and `git diff --check`: exit 0.
+Both convergence capstones and the return/readout/signal identities print
+`[propext, Classical.choice, Quot.sound]`. Placeholder scan: no matches.
+No boundary/Hilbert realization is claimed by these scalar return and ℓ²
+interior convergence theorems. The round's status remains the raw no-go,
+with the constructive boundary-map gate explicitly isolated.

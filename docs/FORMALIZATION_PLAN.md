@@ -895,3 +895,14 @@ OPEN: a provenance-preserving geometric transform from the seeded complete
 source to Hilbert interior + seed + derived boundary, realizing the existing
 signal readout. No material edge is identified with vertical depth. Details:
 COMPLETED_SIGNAL_HILBERT_BOUNDARY_AUDIT.md.
+
+
+### Derived boundary target (same audit round)
+
+`BaseTwoCompletedBoundaryLimit` proves that whole-cell edge-return prefixes
+converge to `baseTwoCompletedBoundaryValue`, exactly the existing undressed
+readout minus seed. Material-coordinate interior prefixes independently
+converge in ℓ² to the completed gradient. No Hilbert boundary state is defined
+by adding that scalar. OPEN: a geometric channel map producing this return
+with provenance; the standard TFVD initial trace is not identified with it.
+No moment/Gram/clock conclusion follows from these two completion limits.

@@ -1498,3 +1498,10 @@ CompletedTfvdGreenAllOrderIntertwining. Explicit scalar completion tails and
 conditional boundary calibration remain distinct from Hilbert port identities.
 The local TFVD boundary inventory and literal missing geometric transform
 are documented in COMPLETED_SIGNAL_HILBERT_BOUNDARY_AUDIT.md.
+
+
+The second increment `BaseTwoCompletedBoundaryLimit` is entirely local:
+current complete-cell summability, exact gradient-edge identity, current
+ℓ¹ readout and Mathlib `HasSum.tendsto_sum_nat` / `lp.hasSum_single`.
+It proves the return and interior limits separately, and adds no Hilbert
+carrier, boundary metric, historical premise or freely chosen tail.
