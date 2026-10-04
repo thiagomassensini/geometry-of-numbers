@@ -906,3 +906,13 @@ converge in ℓ² to the completed gradient. No Hilbert boundary state is define
 by adding that scalar. OPEN: a geometric channel map producing this return
 with provenance; the standard TFVD initial trace is not identified with it.
 No moment/Gram/clock conclusion follows from these two completion limits.
+
+## Completed signal Hilbert boundary realization
+
+`BaseTwoCompletedBoundaryHilbert.lean` constructs the standard Hilbert sum of
+seed, material-edge interior, and the existing geometrically derived return.
+Prefix convergence and bounded seed-plus-boundary readout are proved locally;
+the observable equals the complete base-two signal and the earlier Banach
+readout. The raw ℓ² readout obstruction is unchanged. No material-edge/depth
+identification, carrier isometry, autonomous generator, or moment Gram is
+claimed. See `docs/COMPLETED_SIGNAL_HILBERT_BOUNDARY_REALIZATION.md`.

@@ -70,4 +70,6 @@ import GeometryOfNumbers.Analysis.BaseTwoRawL2ReadoutObstruction
 
 import GeometryOfNumbers.Analysis.BaseTwoCompletedBoundaryLimit
 
+import GeometryOfNumbers.Analysis.BaseTwoCompletedBoundaryHilbert
+
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/
