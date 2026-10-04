@@ -924,3 +924,13 @@ no-go. The normalized finite signed witnesses converge to zero with output
 one; every partial extension agreeing on deltas has `(0,1)` in its graph
 closure and is not `LinearPMap.IsClosable`. This applies to raw ℓ² only and
 does not obstruct the separately derived geometric boundary coordinate.
+
+## Completed boundary component dynamics
+
+`BaseTwoCompletedBoundaryDynamics.lean` proves seed constancy, each material-
+edge coordinate derivative, the exact nonzero residual against diagonal
+`log(j+1)` at the first edge, and the induced coordinate clock formula using
+finite reconstruction. The boundary derivative follows from the already
+synthesized analytic signal. Strong product-Hilbert differentiation and an
+autonomous boundary operator remain open. No moment first-column or Gram
+claim is made; see the completed Hilbert boundary realization report.

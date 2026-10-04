@@ -108,3 +108,62 @@ Commands: the same build/kernel/audit commands above, additionally targeting
 `BaseTwoRawL2ReadoutNonclosable` and `BaseTwoRawL2ReadoutNonclosableAudit`.
 The Hilbert boundary realization was integrated as
 `4dc53afc206c3407388806082bd89bc0a36291ab` before this increment began.
+
+## Dynamics: exact component audit, autonomous operator still open
+
+`BaseTwoCompletedBoundaryDynamics.lean` proves the material sample derivative
+`f'_t(n) = -i log(n) f_t(n)`, using its existing exponential definition.
+The seed is constant. For the interior edge `g_t(j) = f_t(j+2)-f_t(j+1)`:
+
+```text
+g'_t(j) = -i [log(j+2) f_t(j+2) - log(j+1) f_t(j+1)]
+        = -i log(j+1) g_t(j)
+          - i [log(j+2)-log(j+1)] f_t(j+2).
+```
+
+`criticalMaterialGradient_deriv_eq_diagonalClock_add_residual` proves this
+exact residual, and `baseTwoMaterialGradientDiagonalClockResidual_zeroEdge_ne_zero`
+proves it is nonzero at `j=0` for every real time. Consequently the ordinary
+diagonal clock reading `log(j+1)` on the edge coordinate is not its evolution
+law (`criticalMaterialGradient_deriv_zeroEdge_ne_diagonalClock`). This is a
+no-go for that candidate, not for every possible induced generator.
+
+The finite reconstruction theorem already in the repo supplies the natural
+coordinate formula, defined on the completed carrier before moments:
+
+```text
+K_j(seed,g,boundary)
+  = log(j+2) g(j)
+    + [log(j+2)-log(j+1)] (seed + sum_(k<j) g(k)).
+```
+
+`baseTwoCompletedBoundaryHilbertClockCoordinate_eq` verifies it on the
+completed state. `baseTwoCompletedBoundaryHilbertInterior_coordinate_hasDerivAt`
+proves each interior coordinate has derivative `-i K_j`.
+
+`baseTwoCompletedBoundaryValue_hasDerivAt` proves the boundary derivative is
+`deriv baseTwoCriticalCompleteSignal t`, using the already proved seed-plus-
+return identity and signal analyticity. This is a derivative consequence, not
+a new definition of the boundary.
+
+No strong ℓ² derivative or autonomous operator on the whole product is
+asserted. An operator realization would still need an exact domain for the
+reconstructed interior clock, a boundary action compatible with the derived
+return derivative, and strong differentiation in the product norm. These
+coordinate laws do not supply those facts automatically.
+
+All public declarations have standard-axiom guards and `#print axioms`.
+The specific audit additionally checks `InnerProductSpace ℂ` and
+`CompleteSpace` instances of the product carrier. All relevant `--wfail`
+builds, kernel audit, and Analysis/Foundation/Geometry scripts are run for
+this increment. The no-closability increment was integrated as
+`df8fda9d0acdf59a40fa3e02e381fe6b7309e835` before this dynamics audit began.
+
+## Next first-column gate
+
+No first-column pairing has been built. The remaining moment question is to
+identify geometrically a jet family `J_r` in the completed carrier such that
+`baseTwoCanonicalMomentSequence r = Re(inner ℂ (J_r) (J_0))`, with the correct
+normalization and dressing. Using Krylov in that question additionally needs
+the autonomous generator/domain seam above. No equality of moments and vector
+pairings is assumed or concluded here.
