@@ -962,3 +962,15 @@ triangular material clock coordinates. The boundary derivative is the sum of
 clocked whole-cell returns, via the existing bounded ℓ¹ readout. Packaging a
 partial clock on the geometric boundary graph remains the next step; no moment,
 Hankel, metric or all-CoreState-domain inference.
+
+### Completed boundary transported clock: strong equation and metric no-go
+
+`CompletedBoundaryTransportedClock` defines the natural partial domain by
+geometric boundary coherence, ℓ² triangular clock interior, and summable clocked
+whole-cell return. The concrete completed state is in the domain at every time
+and satisfies the strong full-product equation `Y' = -i L_boundary Y`.
+Standard-product symmetry and self-adjointness are excluded on this actual
+infinite domain by encoded material deltas at 1 and 2. Status:
+`PASS_TRANSPORTED_CLOCK_NO_STANDARD_SYMMETRY`. No metric was changed. Before
+Krylov, the infinite geometric/TFVD symmetry pairing and its domain/intertwining
+must be identified; no canonical moment or Hankel consequence is asserted.

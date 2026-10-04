@@ -151,3 +151,98 @@ partial domain, retaining the geometric boundary graph.
 
 Finite graph and standard-metric no-go published in
 `318ee32070224a82cba5fb936867bd4a2e97af90` before this increment.
+
+## Completed partial clock and final status
+
+**PASS_TRANSPORTED_CLOCK_NO_STANDARD_SYMMETRY**.
+The infinite operator/domain and strong orbit equation close, but the standard
+Hilbert product is formally excluded as a symmetry metric. No adjusted metric
+is installed and no moment/Gram theorem is inferred.
+
+`CompletedBoundaryTransportedClock.lean` defines three real-provenance complex
+linear coordinate maps: the already existing triangular interior clock, the
+geometric whole-cell interior return, and the clocked whole-cell return.
+Its natural partial domain is exactly
+
+```text
+HasSum (k ↦ g(rightEdge k)-g(leftEdge k)) storedBoundary
+∧ Memℓp (j ↦ C_j(seed,g)) 2
+∧ Summable (k ↦ C_rightEdge(k)-C_leftEdge(k)).
+```
+
+`completedBoundaryTransportedClock` is a `LinearPMap` on that submodule:
+
+```text
+(seed,g,b) ↦ (0, (C_j(seed,g))_j, sum_k(C_right-C_left)).
+```
+
+This is an autonomous operator derived from sample reconstruction, with no
+moment-defined coefficients and no arbitrary action on an independent boundary.
+`completedBoundaryTransportedClock_image_boundary` verifies the literal
+boundary graph relation for its image; it does not claim second-order domain
+invariance. `baseTwoCompletedBoundaryHilbertState_mem_clockDomain` proves the
+concrete orbit belongs to this domain for every real time.
+`completedBoundaryState_hasDerivAt_clock` proves in the full standard Hilbert
+norm
+
+```text
+HasDerivAt Y (-i • L_boundary(Y(t))) t.
+```
+
+No everywhere boundedness, maximal-domain, density, closedness, or higher-power
+domain assertion is made. This concrete gradient orbit result does not close
+the separate arbitrary-CoreState material-log moment gate.
+
+## Infinite standard-metric witness
+
+The two states are encoded material deltas, not chosen from moments:
+
+```text
+delta at material 1: (1, -delta_edge0, 0)
+delta at material 2: (0, delta_edge0-delta_edge1, 0).
+```
+
+Both satisfy the infinite domain conditions. Their boundary and clocked
+boundary are zero because the complete-cell edges start at 2 and 3. The first
+clock image is zero, the second is `log 2 • deltaTwo`, while their standard
+product inner product is -1.
+`completedBoundaryTransportedClock_not_standard_symmetric` proves failure of
+`L.IsFormalAdjoint L`. `completedBoundaryTransportedClock_not_selfAdjoint`
+then excludes self-adjointness in this same metric. These are representation
+and metric diagnostics, not no-go results for the material clock or theory.
+
+## Symmetry metric and next exact seam
+
+In finite dimension the existing recorded pullback pairing is
+`inner (Decode x) (Decode y)`, with quadratic form
+`sum_j |seed + sum_(k<j)g_k|²`. It makes the transported material clock symmetric.
+The standard product metric is different, as the delta witness proves.
+No infinite completion of this pairing or identification with an existing
+TFVD/Green energy has been proved. In particular, finite linear similarity
+must not be treated as an infinite unitary identification.
+
+Before invoking symmetric Krylov transport, the next gate is to identify a
+**geometrically derived** infinite realization/pairing of this clock with a
+proved domain/intertwining and
+
+```text
+inner_geom (L_boundary x) y = inner_geom x (L_boundary y).
+```
+
+This pairing does not yet exist as an identified TFVD/Green metric here.
+The first-column equality with canonical moments remains a later, separate
+claim; none is assumed in this construction.
+
+## Published increments before the final clock block
+
+- `02d24b2e8f7fa51ecbc022169e5451a9127a3845`: finite seed-gradient transport.
+- `318ee32070224a82cba5fb936867bd4a2e97af90`: finite boundary graph and metric no-go.
+- `a91f448b14305d9259cff11a37db57482fb77ff3`: strong gradient and clocked boundary.
+
+The final block is recorded by the dedicated commit modifying this section
+and `CompletedBoundaryTransportedClock.lean`. Every block is published on main
+and its GitHub reference is verified before beginning the next one.
+All public declarations enter central and module-specific audits. Kernel
+`#print axioms` and guards allow only `propext`, `Classical.choice`, `Quot.sound`;
+no new axiom, placeholder, unsafe implementation, historical certificate,
+metric fitting, or premature scalarization is used.

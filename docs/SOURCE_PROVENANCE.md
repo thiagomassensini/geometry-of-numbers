@@ -1561,3 +1561,14 @@ The norm-level vector proof precedes derivative evaluation. Triangular clock
 coordinates remain those previously derived by sample reconstruction; whole-cell
 boundary returns are summed independently of moments and of `deriv Signal`.
 No historical package, fitted metric or complex product-ledger certificate.
+
+### Completed partial material clock
+
+`Analysis/CompletedBoundaryTransportedClock.lean` reuses the locally derived
+triangular clock and complete C2 cell returns. The domain stores the true
+boundary sum and requires the clock interior and return to converge; the
+operator is not defined via signal differentiation. Strong dynamics follows
+from the norm-level gradient proof and geometric ℓ¹ return differentiation.
+Material deltas supply the infinite standard-metric non-symmetry witness,
+independent of moments. Finite pullback symmetry is recorded but no infinite
+TFVD/Green metric identification is assumed. No new dependency or old certificate.
