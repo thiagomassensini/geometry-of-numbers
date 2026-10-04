@@ -1418,3 +1418,12 @@ PosDef premise. The contradictory `(0,2)` / `(1,1)` entries use only index-sum
 Hankel arithmetic. This is not a claim that the canonical Hankels are nonpositive.
 The completed vector readout and its canonical-moment pairing remain open.
 The scope, axioms and command ledger are in `VERTICAL_GRAM_POSDEF_INVESTIGATION.md`.
+
+## Symmetric Krylov Hankel identity, 2026-10-04
+
+Starting main `c33c4cd7863bcd4d2ba0d70b89e6d865e39a7f44`.
+`SymmetricKrylovHankel.lean` derives the power-transfer identity from Mathlib
+`LinearMap.IsSymmetric.pow` and `pow_add`, and reuses only the local Gram and
+log-derivative uniqueness APIs. The vector and total linear operator are inputs
+that precede the spectral sequence. No historical repo/module/certificate is
+ported; no package is added. Canonical moment identification remains open.

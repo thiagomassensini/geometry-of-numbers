@@ -814,3 +814,14 @@ that actual completed family. No such family is constructed in this round.
 Scalar synthesis/analyticity and arbitrary-CoreState clock-domain gates are
 unchanged. No finite/global height or Jacobi step is implemented.
 See `VERTICAL_GRAM_POSDEF_INVESTIGATION.md` for the exact two-entry obstruction.
+
+## Symmetric Krylov → Hankel (2026-10-04), increment A
+
+`SymmetricKrylovHankel` closes the generic sum-index identity for total symmetric
+endomorphisms over ℝ/ℂ and the real spectral-moment Hankel representation.
+First-column identification propagates to the whole kernel; PSD follows and
+PD needs independence of that SAME Krylov prefix. The recurrence uniqueness
+bridge requires an independently established log-derivative coefficient
+relation. No canonical first column, completed vector, parity orthogonality or
+canonical positivity is asserted. Finite orbit-jet factors are the next step.
+See `SYMMETRIC_KRYLOV_CANONICAL_MOMENT_SEAM.md`.

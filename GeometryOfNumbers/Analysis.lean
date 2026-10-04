@@ -58,4 +58,6 @@ import GeometryOfNumbers.Analysis.RealTfvdCenterLegMomentSeam
 
 import GeometryOfNumbers.Analysis.VerticalIncidenceGramObstruction
 
+import GeometryOfNumbers.Analysis.SymmetricKrylovHankel
+
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/
