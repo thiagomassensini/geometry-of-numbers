@@ -879,3 +879,19 @@ observable with the required first-column moment metric, vector domains and
 canonical Gram. The existing depth-amplitude source remains distinct.
 Forensic types, scalar tail projections, historical conditional sewing and
 seeded atlas provenance are in EXISTING_COMPLETED_VECTOR_SIGNAL_FORENSIC.md.
+
+
+## Raw ℓ² complete-signal readout obstruction (2026-10-04)
+
+`NO_GO_RAW_L2_COMPLETED_SIGNAL_READOUT` is proved by the finite signed-edge
+witness: readout=2N and norm²=2N. `BaseTwoRawL2ReadoutObstruction` excludes
+continuous extension of the existing ℓ¹ readout to raw material-edge ℓ²,
+and any bounded analysis/boundary factorization agreeing on all deltas.
+This does not exclude stronger-domain or source-specific geometric boundary
+realizations. Current TFVD trace stores vertical value and slope; no theorem
+identifies those with the global material-edge return. The historical finite
+completion ledger keeps scalar tails separately from the finite Green port.
+OPEN: a provenance-preserving geometric transform from the seeded complete
+source to Hilbert interior + seed + derived boundary, realizing the existing
+signal readout. No material edge is identified with vertical depth. Details:
+COMPLETED_SIGNAL_HILBERT_BOUNDARY_AUDIT.md.

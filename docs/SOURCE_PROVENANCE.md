@@ -1481,3 +1481,20 @@ is added. The standard ℓ¹ state differs in topology from the historical ℓ²
 channel; equality of coordinates is local, not an assertion of norm equality.
 All samples are recoverable from the retained seed and gradients. The exact
 readout theorem is local and has no moment input. See the forensic report.
+
+
+## Raw material-edge ℓ² readout / boundary audit, 2026-10-04
+
+Initial main b5c83128d686868adb59c5d47ff4aae7d9b33652.
+The no-go is local: current C2 edges, `lp.single` finite supports,
+`lp.norm_sum_single`, continuous operator norm and the Archimedean property.
+It is tied to the existing ℓ¹ readout by a coordinate-delta equality.
+No Riesz assumption, fitted metric, moment input or dependency is added.
+Read-only carry-self-adjoint-operator revision
+62b1c0d6b18e70b4c156c3bdf0253893fdb27a35: CompletedC3AllCutoffHilbertState,
+CompletedC3BracketTfvdGreenFactorization, CompletedC3SeededClockBoundaryReduction,
+ProjectiveValveFirstColumnMomentGate, CompletedNativeClockGreenMomentGate,
+CompletedTfvdGreenAllOrderIntertwining. Explicit scalar completion tails and
+conditional boundary calibration remain distinct from Hilbert port identities.
+The local TFVD boundary inventory and literal missing geometric transform
+are documented in COMPLETED_SIGNAL_HILBERT_BOUNDARY_AUDIT.md.
