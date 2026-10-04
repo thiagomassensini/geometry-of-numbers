@@ -1376,3 +1376,13 @@ complete C2/Parseval vector source to the concrete scalar log-derivative column.
 This is a source/API audit conclusion, not a Lean theorem about the absence of
 all possible proofs. The newly named orbit-jet residual is not received as a
 hypothesis and is not proved zero. Material and depth amplitudes stay distinct.
+
+## Real polarized coefficient algebra (2026-10-03)
+
+Read-only comparison: `carry-self-adjoint-operator` at
+`62b1c0d6b18e70b4c156c3bdf0253893fdb27a35`,
+`CompletedGreenJetCoefficientRecurrence.lean`. The new
+`PolarizedMomentCoefficients.lean` reconstructs only generic arithmetic in ℝ
+and reuses local `ParityMomentGram`; no historical dependency. The positive
+and negative incidence blueprints consulted are itemized in
+`REAL_TFVD_CENTER_LEG_MOMENT_SEAM.md`; their readout premises are not imported.

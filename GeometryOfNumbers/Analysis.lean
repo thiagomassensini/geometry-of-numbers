@@ -50,4 +50,6 @@ import GeometryOfNumbers.Analysis.OddCameraQuadraticCrosswalk
 import GeometryOfNumbers.Analysis.PrimeResidualDepthCrosswalk
 import GeometryOfNumbers.Analysis.PrimeCarryVoice
 
+import GeometryOfNumbers.Analysis.PolarizedMomentCoefficients
+
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/

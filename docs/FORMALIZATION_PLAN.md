@@ -769,3 +769,10 @@ The actual vector completed/dressed boundary readout and its equality with the
 canonical log-derivative column remain OPEN. Scalar analyticity does not prove
 that identity. Concrete PSD, mixed orthogonality, independence and PD remain
 OPEN; no downstream operator construction is started.
+
+## Real TFVD center–leg seam (2026-10-03)
+
+Neutral real polarized coefficient algebra is CLOSED in
+`PolarizedMomentCoefficients.lean`. Concrete incidence/TFVD transport and the
+completed canonical center–leg readout remain OPEN; no new Hankel positivity
+is claimed. See `REAL_TFVD_CENTER_LEG_MOMENT_SEAM.md`.
