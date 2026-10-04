@@ -934,3 +934,13 @@ finite reconstruction. The boundary derivative follows from the already
 synthesized analytic signal. Strong product-Hilbert differentiation and an
 autonomous boundary operator remain open. No moment first-column or Gram
 claim is made; see the completed Hilbert boundary realization report.
+
+## Exact finite material-clock transport to seeded gradients
+
+`FiniteSeedGradientClock.lean` constructs a linear samples ↔ seed+gradient
+coordinate equivalence and transports the existing finite material clock by
+conjugation. It proves the triangular coordinate action, strong finite orbit
+equation, and synchronized C2 material cutoff. The material pullback pairing is
+recorded separately; the standard metric is not replaced. Boundary graph,
+standard-metric symmetry, and the infinite strong-domain seam are separate.
+See `docs/COMPLETED_BOUNDARY_TRANSPORTED_CLOCK.md`.
