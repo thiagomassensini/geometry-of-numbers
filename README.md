@@ -777,3 +777,12 @@ seus jets normalizados all-order, prova `baseTwoCanonicalPhi_zero_pos` e
 do cutoff. Não recebe tail, cameraFactor, completion ou positividade como
 parâmetros. [Seam e limites](docs/CANONICAL_DRESSING_MOMENT_SEAM.md).
 A representação Gram global e o crosswalk da source moderna continuam abertos.
+
+### Auditoria vertical do Gram (4/10/2026)
+
+A reconstrução TFVD integral e qualquer transporte linear isométrico das
+incidências preservam seu Gram de coordenadas. Esse Gram tem prefixos PosDef,
+mas não realiza o kernel Hankel canônico, já por uma obstrução de ordem 3.
+Isso exclui esse candidato; não exclui a teoria completada nem prova falta de
+positividade canônica. A família vetorial completada e seu readout permanecem
+abertos. [Relatório formal](docs/VERTICAL_GRAM_POSDEF_INVESTIGATION.md).

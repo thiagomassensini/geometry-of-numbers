@@ -789,3 +789,28 @@ proved **not** to realize a parity Hankel kernel (even `(0,2)` versus `(1,1)`);
 this excludes that representation only. Status:
 `PASS_REAL_TFVD_INCIDENCE_TRANSPORT_CENTER_LEG_OPEN`. Completed real bilinear
 readout → canonical moments → canonical Gram/PSD/PD remains OPEN.
+
+## Vertical quadratic norm → canonical moment Gram audit (2026-10-04)
+
+Status: `NO_GO_ISOMETRIC_INCIDENCE_SYNTHESIS`.
+Starting main `e0145b7f8e062de5e741e6225149c56e0654d701`.
+
+`VerticalIncidenceGramObstruction` reconstructs whole branch states from both
+real TFVD quadratures and their boundary data before taking inner products.
+The reconstructed vector equals the input. Any real linear isometry of the
+coordinate incidence family preserves its delta Gram and its independence.
+Both own parity Gram prefixes are PosDef at every order; already the even
+order-three matrix cannot equal a Hankel section of any moment sequence.
+This is a no-go only for that representation and its isometric images.
+It does not disprove canonical Hankel positivity or a completed vector readout.
+
+CLOSED: exact full-vector TFVD reconstruction; incidence independence;
+Gram positivity of incidence/isometric-image prefixes; generic correct parity
+Gram + independence of the SAME family → Hankel PosDef.
+OPEN: a geometrically completed vector family, defined before moments, whose
+pairings equal `polarizedRealMomentCoefficient baseTwoCanonicalMomentSequence
+(parityJetNumber i) (parityJetNumber j)` for all i,j; independent prefixes of
+that actual completed family. No such family is constructed in this round.
+Scalar synthesis/analyticity and arbitrary-CoreState clock-domain gates are
+unchanged. No finite/global height or Jacobi step is implemented.
+See `VERTICAL_GRAM_POSDEF_INVESTIGATION.md` for the exact two-entry obstruction.

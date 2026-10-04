@@ -56,4 +56,6 @@ import GeometryOfNumbers.Analysis.C2RealFiberTfvdIncidence
 
 import GeometryOfNumbers.Analysis.RealTfvdCenterLegMomentSeam
 
+import GeometryOfNumbers.Analysis.VerticalIncidenceGramObstruction
+
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/

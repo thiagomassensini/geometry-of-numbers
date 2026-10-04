@@ -1401,3 +1401,20 @@ Its coordinate-basis obstruction is proved locally, independent of every
 moment value. Historical complex-Taylor/causal no-gos are comparison guards
 only; neither their downstream premises nor a Gamma-state hypothesis is
 ported. The new no-go is scoped to the bare coordinate incidence candidate.
+
+## Vertical incidence Gram obstruction, 2026-10-04
+
+Starting main `e0145b7f8e062de5e741e6225149c56e0654d701`.
+`VerticalIncidenceGramObstruction.lean` uses ONLY current local
+`RealTfvdCenterLegMomentSeam`, `C2RealFiberTfvdIncidence`, R2 fiber synthesis,
+and Mathlib Gram/linear-isometry lemmas. No historical module, package or
+certificate is imported or ported. The reassembled branch vector reads the
+actual synthesis output, both quadratures and boundary-inclusive channels.
+
+The new obstruction extends the already local bare-incidence no-go to exact
+TFVD reconstruction and arbitrary real linear isometric transport. Independence
+and own-Gram PosDef are proved without moment values, fitted vectors, or a
+PosDef premise. The contradictory `(0,2)` / `(1,1)` entries use only index-sum
+Hankel arithmetic. This is not a claim that the canonical Hankels are nonpositive.
+The completed vector readout and its canonical-moment pairing remain open.
+The scope, axioms and command ledger are in `VERTICAL_GRAM_POSDEF_INVESTIGATION.md`.
