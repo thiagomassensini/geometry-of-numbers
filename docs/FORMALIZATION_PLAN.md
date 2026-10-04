@@ -776,3 +776,9 @@ Neutral real polarized coefficient algebra is CLOSED in
 `PolarizedMomentCoefficients.lean`. Concrete incidence/TFVD transport and the
 completed canonical center–leg readout remain OPEN; no new Hankel positivity
 is claimed. See `REAL_TFVD_CENTER_LEG_MOMENT_SEAM.md`.
+
+Real C2 vertical-fiber analysis/synthesis and incidence independence are
+CLOSED in `C2RealFiberTfvdIncidence.lean`. The faithful analysis retains core,
+sign and both quadratures; depth is `j+2`. Its incidence vectors are not yet
+completed canonical moment jets. The completed real center–leg readout and
+canonical parity Gram remain OPEN.

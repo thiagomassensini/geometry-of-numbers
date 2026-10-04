@@ -1386,3 +1386,11 @@ Read-only comparison: `carry-self-adjoint-operator` at
 and reuses local `ParityMomentGram`; no historical dependency. The positive
 and negative incidence blueprints consulted are itemized in
 `REAL_TFVD_CENTER_LEG_MOMENT_SEAM.md`; their readout premises are not imported.
+
+`C2RealFiberTfvdIncidence.lean` is derived locally from
+`C2GlobalPhysicalBranchCanary`, `RealCarryTfvd`, and existing Mathlib ℓ²
+restriction/coordinate bounds. The historical BR2 incidence/TFVD blueprints
+listed above were consulted read-only at the same exact revision; their
+material-index-to-vertical-index identification and readout premises are
+not copied. The new lift keeps external labels and uses only the existing
+depth-from-two chart inside each physical fiber.

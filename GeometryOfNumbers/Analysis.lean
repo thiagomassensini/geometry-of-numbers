@@ -52,4 +52,6 @@ import GeometryOfNumbers.Analysis.PrimeCarryVoice
 
 import GeometryOfNumbers.Analysis.PolarizedMomentCoefficients
 
+import GeometryOfNumbers.Analysis.C2RealFiberTfvdIncidence
+
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/

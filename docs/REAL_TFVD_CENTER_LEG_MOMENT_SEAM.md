@@ -65,3 +65,74 @@ Analysis and Analysis.Audit: exit 0. All three repository audit scripts: exit
 footprint for coefficient theorems and `[propext, Quot.sound]` for the parity
 index injection. No placeholder or trust escape appears in the new modules.
 Publication commit subject: `feat: prove real polarized parity coefficient algebra`.
+
+## Increment B/C/D: actual real vertical fibers and address independence
+
+`C2RealFiberTfvdIncidence.lean` retains the existing Hilbert carrier
+`GlobalC2BranchCarrier = ℓ²(PositiveOddCore × C2BranchAddress, RealPlaneHilbert)`.
+Each fixed core, direction and real quadrature is extracted into the existing
+`RealCarry.CarryVerticalL2`. The extraction's ℓ² membership follows by an
+injective restriction of the square sum and coordinate norm domination.
+No new Hilbert norm is invented.
+
+The vertical chart is exactly `j ↦ depth = j + 2`, inherited from
+`C2BranchAddress`. A shift of j advances physical depth, not material n.
+`C2RealVerticalChannels` and `C2RealTfvdChannels` are labelled function spaces
+of existing vertical carriers. No global Hilbert norm on these function
+spaces is asserted. The global inner product remains on the existing branch
+Hilbert carrier.
+
+`c2FiberTfvdAnalysis` applies R2 independently to all those fibers.
+`c2FiberTfvdSynthesis_analysis` reuses the existing left inverse and retains
+trace/return in each quadrature. `c2FiberTfvdAnalysis_injective` follows from
+this reconstruction. `c2OddMaterialTfvdAnalysis_injective` first decodes the
+provenance-correct material incidence, then applies this faithful analysis.
+`c2OddMaterial_verticalCoordinate` proves the exact material/fiber crosswalk.
+The critical specialization uses the already derived vertical ratio.
+
+For an explicit incidence family, the canonical unit odd core has both
+physical signs at every depth `j+2`. `c2ParityIncidenceAddress` assigns even
+labels to left legs and odd labels to right legs of the same fixed-core
+fibers. `c2ParityIncidence_left`, `_right`, `_depth_recovery`, and
+`_center_ne_leg` certify the actual physical incidence. All centers are even;
+all legs are odd, so even cross-index center–leg pairs are distinct.
+
+`c2RealIncidenceJet` is the coordinate basis in the **existing** global branch
+carrier, with real quadrature seed `(1,0)`. Its coefficients do not involve
+moments, response, dressing or a fit. Unique address pivots prove combined
+independence. Injective TFVD analysis transports that independence in
+`c2RealTfvdIncidenceJet_linearIndependent`, with even/odd and every finite
+prefix corollaries. These are incidence jets, **not** derivatives of the
+completed dressed observable and **not** designated canonical moment jets.
+
+### Provenance test
+
+1. Vectors exist before mentioning the canonical moments: YES.
+2. Incidence comes from existing C2 integers/core/sign/depth: YES.
+3. Exact synthesis is available before any proposed inner-product readout: YES.
+4. Carrier defined retroactively from a readout: NO.
+5. Moments select vector coefficients: NO.
+6. Material and depth amplitudes identified: NO. No amplitude is inserted in
+   this coordinate incidence basis; the existing physical source is only
+   decoded by its previously proved incidence equivalence.
+
+### Remaining gate
+
+The current APIs give faithful reconstruction and independent incidence
+channels. They do not identify their reconstructed inner product with the
+completed, dressed logarithmic-moment coefficient. A center–leg boundary
+readout of the completed synthesis still needs a concrete state/channel
+crosswalk. Analyticity of the scalar response does not define such a vector
+readout. Neither Gamma sewing nor an assumed vector completion is added.
+No Hankel positivity is inferred from incidence independence alone.
+
+Increment A was published as
+`9d112a3423958692ace07dfb4d3ad5c00f057a10`, with main/origin/GitHub equal.
+
+Increment B/C/D validation: isolated `--wfail` module build, specific audit,
+Analysis and Analysis.Audit: exit 0. Analysis, Foundation and Geometry scripts:
+exit 0. `git diff --check`: exit 0. Public transport, reconstruction,
+injectivity, incidence and independence statements are guarded and kernel
+printed; their footprint is at most the three standard Analysis axioms.
+Publication commit subject:
+`feat: transport provenance-preserving C2 fibers through real TFVD`.
