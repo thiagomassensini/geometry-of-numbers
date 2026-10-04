@@ -944,3 +944,12 @@ equation, and synchronized C2 material cutoff. The material pullback pairing is
 recorded separately; the standard metric is not replaced. Boundary graph,
 standard-metric symmetry, and the infinite strong-domain seam are separate.
 See `docs/COMPLETED_BOUNDARY_TRANSPORTED_CLOCK.md`.
+
+### Completed boundary clock: finite graph and standard-metric test
+
+`FiniteCompletedBoundaryClock` transports the finite material clock on the
+redundant whole-cell boundary graph and proves its strong orbit equation.
+The standard product graph metric is formally nonsymmetric (deltas at material
+1 and 2, one complete cell). This is a metric/representation no-go, not a no-go
+of the clock or complete theory. Infinite domain/strong orbit and identification
+of a geometric symmetry metric remain open; no Krylov or Hankel inference.

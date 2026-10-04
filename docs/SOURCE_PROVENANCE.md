@@ -1543,3 +1543,12 @@ equation, and synchronized C2 material cutoff. The material pullback pairing is
 recorded separately; the standard metric is not replaced. Boundary graph,
 standard-metric symmetry, and the infinite strong-domain seam are separate.
 See `docs/COMPLETED_BOUNDARY_TRANSPORTED_CLOCK.md`.
+
+### Finite completed boundary graph clock
+
+`Analysis/FiniteCompletedBoundaryClock.lean` derives its graph, cell-return
+boundary and operator solely from local finite seed-gradient transport and C2
+edge indices. No moments define vectors/operators. It preserves the boundary
+as a redundant graph coordinate and formally excludes standard-product symmetry
+using transported material basis vectors. No metric adjustment or external
+certificate is used.

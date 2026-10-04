@@ -84,3 +84,35 @@ No new axiom or trust escape is permitted. Analysis capstones allow only
 `propext`, `Classical.choice`, `Quot.sound`; foundation and geometry retain
 separate audits. Every validated increment is integrated and pushed on main
 before the next mathematical increment.
+
+## Finite whole-cell boundary graph and metric witness
+
+`FiniteCompletedBoundaryClock.lean` keeps the boundary redundant:
+`finiteCompletedBoundaryGraph N` is the range of
+`finiteCompletedBoundaryEmbed N`, equivalently `b = B_N(g)`.
+Here `B_N(g)` sums right-minus-left material edge coordinates over the first
+N complete C2 cells. The graph clock is the core transported clock followed
+by this same embedding. Its boundary action is therefore exactly the sum of
+clocked cell returns; no extension on an independent ambient boundary is made.
+
+`finiteCompletedBoundaryOrbit_hasDerivAt` proves the strong graph-valued orbit
+equation with factor `-i`. `finiteCompletedBoundaryOrbit_historical_boundary`
+identifies the existing historical finite material orbit's boundary with the
+already defined geometric prefix. The boundary derivative is explicitly the
+sum of clocked right-minus-left edges.
+
+`finiteCompletedBoundaryClock_not_standard_symmetric` excludes symmetry in the
+standard product Hilbert metric already for one complete C2 cell. Transport
+material deltas at 1 and 2: their graph inner product is -1, but their clock
+eigenvalues are 0 and log 2. Symmetry would force their inner product to vanish.
+The witness uses the actual boundary graph; it does not test an arbitrary
+extension to the full product.
+
+Thus the transported clock is correct, while the standard seed-gradient-boundary
+metric does not preserve material-clock symmetry. The recorded pullback pairing
+in the first increment does preserve symmetry, but no equality with TFVD/Green
+energy has been proved and no metric instance was changed. The infinite
+operator/domain and strong differentiation remain separate gates.
+
+First increment, published and reference-verified before the second:
+`02d24b2e8f7fa51ecbc022169e5451a9127a3845`.
