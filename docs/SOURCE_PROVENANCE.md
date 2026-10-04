@@ -1394,3 +1394,10 @@ listed above were consulted read-only at the same exact revision; their
 material-index-to-vertical-index identification and readout premises are
 not copied. The new lift keeps external labels and uses only the existing
 depth-from-two chart inside each physical fiber.
+
+`RealTfvdCenterLegMomentSeam.lean` uses only local real coefficient algebra,
+C2 incidence, exact real TFVD reconstruction and canonical dressing moments.
+Its coordinate-basis obstruction is proved locally, independent of every
+moment value. Historical complex-Taylor/causal no-gos are comparison guards
+only; neither their downstream premises nor a Gamma-state hypothesis is
+ported. The new no-go is scoped to the bare coordinate incidence candidate.

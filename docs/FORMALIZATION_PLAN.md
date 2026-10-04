@@ -782,3 +782,10 @@ CLOSED in `C2RealFiberTfvdIncidence.lean`. The faithful analysis retains core,
 sign and both quadratures; depth is `j+2`. Its incidence vectors are not yet
 completed canonical moment jets. The completed real center–leg readout and
 canonical parity Gram remain OPEN.
+
+The real completed center–leg target is now explicitly typed in
+`RealTfvdCenterLegMomentSeam.lean`. The bare coordinate incidence basis is
+proved **not** to realize a parity Hankel kernel (even `(0,2)` versus `(1,1)`);
+this excludes that representation only. Status:
+`PASS_REAL_TFVD_INCIDENCE_TRANSPORT_CENTER_LEG_OPEN`. Completed real bilinear
+readout → canonical moments → canonical Gram/PSD/PD remains OPEN.

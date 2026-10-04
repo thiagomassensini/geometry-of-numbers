@@ -54,4 +54,6 @@ import GeometryOfNumbers.Analysis.PolarizedMomentCoefficients
 
 import GeometryOfNumbers.Analysis.C2RealFiberTfvdIncidence
 
+import GeometryOfNumbers.Analysis.RealTfvdCenterLegMomentSeam
+
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/
