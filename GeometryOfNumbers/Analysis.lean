@@ -64,4 +64,6 @@ import GeometryOfNumbers.Analysis.FiniteClockKrylovHankel
 
 import GeometryOfNumbers.Analysis.BaseTwoCompletedVectorLiftGate
 
+import GeometryOfNumbers.Analysis.BaseTwoCompletedGradientSignalLift
+
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/

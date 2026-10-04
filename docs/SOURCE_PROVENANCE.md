@@ -1459,3 +1459,25 @@ Read-only blueprint: carry-self-adjoint-operator revision
 completion-state and residual hypotheses are not imported or assumed.
 Inventory, exact missing synthesis/readout equation, generator correction
 and limited status are recorded in CANONICAL_COMPLETED_VECTOR_LIFT.md.
+
+
+## Completed seeded gradient signal lift, 2026-10-04
+
+Starting main d74324f833487ee80cd224d9a43fd37e3edeb84e.
+Read-only carry-self-adjoint-operator revision
+62b1c0d6b18e70b4c156c3bdf0253893fdb27a35: the priority TFVD/Green provenance,
+existing dressed-state audit, seeded-clock gate, C2 source bridge, TFVD moment
+bridge and projective first-column gate were inspected. Their definitions
+were traced to CompletedC3AllCutoffHilbertState (ordinary/log gradients),
+CompletedC3BracketTfvdGreenFactorization (finite transport vs scalar tails),
+CompletedC3GreenFrameOrientedCarrier, CompletedC3ConcreteRealAxisKernelCarrier,
+CompletedC3SeededClockBoundaryReduction and C3SeededClockShiftIdentity.
+The only reconstructed mathematical technique is absolute summability of
+ordinary consecutive material gradients via the first-derivative bound.
+The new proof uses the local sample/cpow identity, current geometric camera
+edges, Mathlib mean-value/p-series and standard ℓ¹ restrictions/tsumCLM.
+No historical package, certificate, Gamma-state or positive-sewing hypothesis
+is added. The standard ℓ¹ state differs in topology from the historical ℓ²
+channel; equality of coordinates is local, not an assertion of norm equality.
+All samples are recoverable from the retained seed and gradients. The exact
+readout theorem is local and has no moment input. See the forensic report.

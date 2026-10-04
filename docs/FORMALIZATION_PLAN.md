@@ -859,3 +859,23 @@ correction, finite-head test. OPEN: full vector synthesis/boundary readout;
 completed spectral first column; its regularity/domains and canonical Gram.
 The historical seeded atlas has conditional boundary calibration, not an
 available completed-vector theorem. See CANONICAL_COMPLETED_VECTOR_LIFT.md.
+
+
+## Existing completed material-gradient signal lift (2026-10-04)
+
+Status: `PASS_EXISTING_COMPLETED_VECTOR_SIGNAL_LIFT` (Banach signal lift only).
+`BaseTwoCompletedGradientSignalLift` reconstructs the historical ordinary
+completed material-gradient architecture locally from existing samples.
+The seed and every consecutive gradient form a complete state in the standard
+carrier ℂ × ℓ¹(ℕ,ℂ); finite prefix reconstruction recovers every material value.
+The continuous linear base-two edge readout is proved equal to the already
+synthesized baseTwoCriticalCompleteSignal, and concrete scalar dressing then
+reads out baseTwoCanonicalResponse. No moment defines a vector. The same
+ordinary coordinates are also ℓ², without a norm identification or a continuous
+ℓ² summation claim. No whole-cell vector fallback was needed.
+CLOSED: the previous undressed linear signal-readout gate for this concrete
+seeded gradient state. OPEN: Hilbert/Green realization of this completed
+observable with the required first-column moment metric, vector domains and
+canonical Gram. The existing depth-amplitude source remains distinct.
+Forensic types, scalar tail projections, historical conditional sewing and
+seeded atlas provenance are in EXISTING_COMPLETED_VECTOR_SIGNAL_FORENSIC.md.
