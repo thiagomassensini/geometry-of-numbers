@@ -786,3 +786,12 @@ mas não realiza o kernel Hankel canônico, já por uma obstrução de ordem 3.
 Isso exclui esse candidato; não exclui a teoria completada nem prova falta de
 positividade canônica. A família vetorial completada e seu readout permanecem
 abertos. [Relatório formal](docs/VERTICAL_GRAM_POSDEF_INVESTIGATION.md).
+
+### Krylov simétrico e momentos (4/10/2026)
+
+A simetria do clock finito produz o índice-soma do Hankel de seus próprios
+momentos espectrais. Os jets temporais são exatamente `(-i)^r/r!` vezes as
+potências do clock; suas quadraturas reais realizam o parity Gram dos momentos
+de `L²`. A primeira coluna dos momentos **canônicos** continua aberta: nenhum
+vetor completado foi identificado por essa prova.
+[Seam e fatores exatos](docs/SYMMETRIC_KRYLOV_CANONICAL_MOMENT_SEAM.md).

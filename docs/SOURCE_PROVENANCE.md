@@ -1427,3 +1427,15 @@ Starting main `c33c4cd7863bcd4d2ba0d70b89e6d865e39a7f44`.
 log-derivative uniqueness APIs. The vector and total linear operator are inputs
 that precede the spectral sequence. No historical repo/module/certificate is
 ported; no package is added. Canonical moment identification remains open.
+
+### Finite material clock Krylov / temporal jets / parity Gram
+
+`FiniteClockKrylovHankel` depends only on local `FiniteMaterialClockJets`,
+`FiniteNativeMaterialClock`, the new neutral `SymmetricKrylovHankel`, existing
+Gram APIs and Mathlib. No historical source is imported or ported. The helper
+real/complex inner-product compatibility uses the same norm-polarization
+identity already used in `C2GreenWhiteningGenealogy`, without importing it.
+The parity family is defined from a given vector and the existing clock before
+its moments; its exact normalized-jet crosswalk derives all signs/factorials.
+The sequence represented is auxiliary spectral data of L or L², not the
+canonical response log-derivative. No fitted vector or amplitude crosswalk.

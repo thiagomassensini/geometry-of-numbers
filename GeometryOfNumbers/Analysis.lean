@@ -60,4 +60,6 @@ import GeometryOfNumbers.Analysis.VerticalIncidenceGramObstruction
 
 import GeometryOfNumbers.Analysis.SymmetricKrylovHankel
 
+import GeometryOfNumbers.Analysis.FiniteClockKrylovHankel
+
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/

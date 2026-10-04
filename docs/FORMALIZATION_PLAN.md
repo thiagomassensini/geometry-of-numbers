@@ -825,3 +825,18 @@ bridge requires an independently established log-derivative coefficient
 relation. No canonical first column, completed vector, parity orthogonality or
 canonical positivity is asserted. Finite orbit-jet factors are the next step.
 See `SYMMETRIC_KRYLOV_CANONICAL_MOMENT_SEAM.md`.
+
+### Finite clock jets → Krylov / parity spectral Gram — increment B
+
+Status: `PASS_KRYLOV_HANKEL_FIRST_COLUMN_OPEN`.
+`FiniteClockKrylovHankel` proves exact (-i)^r and r! crosswalks, skew symmetry
+of the temporal generator, real Hankel representation of its auxiliary
+spectral moments and real parity Gram of the even-power sequence (moments of
+L²). Mixed orthogonality is DERIVED for quadrature jets, while a log 2 witness
+shows it fails for raw even/odd powers. Both auxiliary parity Hankels are PSD.
+No canonical moment Gram/positivity or arbitrary-vector Krylov independence
+is asserted. Existing finite head readout is connected with all factors.
+The completed vector itself and its spectral first column remain unidentified.
+The alternative recurrence gate is exactly IsLogDerivativeMomentSequence
+baseTwoCanonicalPhi q for the independently derived spectral q; it is not
+assumed as canonical proof. No unbounded power or new domain claim is made.
