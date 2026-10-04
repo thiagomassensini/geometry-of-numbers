@@ -86,4 +86,6 @@ import GeometryOfNumbers.Analysis.CompletedBoundaryTransportedClock
 
 import GeometryOfNumbers.Analysis.CompletedClockCandidateObstructions
 
+import GeometryOfNumbers.Analysis.FiniteCompletedClockGreenIntertwiner
+
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/

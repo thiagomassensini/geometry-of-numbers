@@ -1582,3 +1582,16 @@ representation tests, not obstructions to enriched geometric synthesis.
 Proof inputs are local current modules and Mathlib; the three read-only
 blueprints at carry revision 62b1c0d6b18e70b4c156c3bdf0253893fdb27a35
 are listed in COMPLETED_CLOCK_GREEN_INTERTWINER.md. No dependency is added.
+
+### Finite completed-clock Green intertwiner / energy obstruction
+
+FiniteCompletedClockGreenIntertwiner retains graph data and its clock step,
+reconstructs finite material nodes, embeds at exact PNat j+1, and reuses the
+existing canonical Parseval map and ambient self-adjoint material clock.
+Injectivity, domain membership and exact intertwining are local theorems.
+The critical ordinary/enriched energies are harmonic/clock-weighted harmonic
+prefixes and diverge; this specific candidate has no infinite Hilbert limit.
+No arbitrary TFVD metric or old certificate is added. The general enriched
+finite-energy transform remains open; no canonical-moment pairing is claimed.
+The three authorized historical blueprints were architectural comparison only.
+See COMPLETED_CLOCK_GREEN_INTERTWINER.md for the exact map and scoped no-go.
