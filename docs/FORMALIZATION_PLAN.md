@@ -840,3 +840,22 @@ The completed vector itself and its spectral first column remain unidentified.
 The alternative recurrence gate is exactly IsLogDerivativeMomentSequence
 baseTwoCanonicalPhi q for the independently derived spectral q; it is not
 assumed as canonical proof. No unbounded power or new domain claim is made.
+
+
+## Completed vector response inventory / dressing gate (2026-10-04)
+
+Status: `PASS_COMPLETED_VECTOR_LIFT_GATE_ISOLATED`, diagnostic only.
+`BaseTwoCompletedVectorLiftGate` proves that the concrete scalar dressing
+D=C/B is analytic and nonzero on the real line, acts linearly/injectively on
+an existing complex vector carrier, and commutes with the existing Parseval
+map. Its readout residual is D times the undressed full-synthesis residual.
+Thus a dressed linear response lift is equivalent to the exact undressed
+readout equality ell(X(t))=baseTwoCriticalCompleteSignal t. No such completed
+X/readout pair is instantiated here. The actual finite vector readout still
+needs D times the exact omitted whole-cell tail. The vector product-rule
+residual is D'(t) X(t); keeping the same total clock requires this term zero.
+CLOSED: scalar vector action, nonvanishing, residual equivalence, generator
+correction, finite-head test. OPEN: full vector synthesis/boundary readout;
+completed spectral first column; its regularity/domains and canonical Gram.
+The historical seeded atlas has conditional boundary calibration, not an
+available completed-vector theorem. See CANONICAL_COMPLETED_VECTOR_LIFT.md.

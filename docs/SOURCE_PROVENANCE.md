@@ -1439,3 +1439,23 @@ The parity family is defined from a given vector and the existing clock before
 its moments; its exact normalized-jet crosswalk derives all signs/factorials.
 The sequence represented is auxiliary spectral data of L or L², not the
 canonical response log-derivative. No fitted vector or amplitude crosswalk.
+
+
+## Completed vector lift gate, 2026-10-04
+
+Starting main `73f5e192a16eaf4ad43f8516c55b921753aa4f53`.
+`BaseTwoCompletedVectorLiftGate` uses local complete head/tail synthesis,
+concrete camera/archimedean factors and existing Parseval map. Standard Gamma
+nonvanishing with positive real argument is used directly from Mathlib.
+No moment defines a vector, no new carrier is fitted, and no historical
+package is added. Scalar multiplication on the existing complex carrier
+retains real/imaginary quadratures; it is not a Gamma metric representation.
+Read-only blueprint: carry-self-adjoint-operator revision
+`62b1c0d6b18e70b4c156c3bdf0253893fdb27a35`, files
+`CompletedNativeClockGreenMomentGate.lean`,
+`ProjectiveValveFirstColumnMomentGate.lean`,
+`C2GeometryNativeSourceBridge.lean`, and
+`CompletedNativeTfvdGreenMomentGramBridge.lean`. Their seeded boundary,
+completion-state and residual hypotheses are not imported or assumed.
+Inventory, exact missing synthesis/readout equation, generator correction
+and limited status are recorded in CANONICAL_COMPLETED_VECTOR_LIFT.md.
