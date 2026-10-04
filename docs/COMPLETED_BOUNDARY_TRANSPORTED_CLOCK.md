@@ -116,3 +116,38 @@ operator/domain and strong differentiation remain separate gates.
 
 First increment, published and reference-verified before the second:
 `02d24b2e8f7fa51ecbc022169e5451a9127a3845`.
+
+## Strong infinite gradient and geometric boundary derivative
+
+`CompletedMaterialGradientStrongClock.lean` proves strong differentiability of
+the preexisting gradient orbit both in standard ℓ¹ and standard ℓ². It first
+bounds complex-time material first differences uniformly near each real time:
+`norm ≤ (|t|+2) (j+1)^(-5/4)`. This summable bound controls the series of coordinate
+vectors `lp.single`, not just scalar coordinates. Mathlib's Banach-valued
+holomorphic normal-series theorem gives strong differentiability; restriction
+to the real time line recovers the existing material gradient exactly.
+This legitimate material-sample continuation is not the refuted normalized
+complex Taylor product-ledger candidate, and it supplies no moment Gram.
+
+Only after this norm-level proof, bounded coordinate evaluation and derivative
+uniqueness identify the strong derivative with `-i C_j(Y(t))`. Absolute
+summability of the triangular coordinates follows from the strong ℓ¹ derivative.
+`baseTwoCompletedMaterialClockL1/L2` package those preexisting coordinates;
+the operator formula is not defined from a fitted derivative.
+
+The actual clocked cell series is
+`sum_k (C_rightEdge(k)(y)-C_leftEdge(k)(y))`, named
+`baseTwoCompletedBoundaryClockReturn`. On the concrete completed orbit it is
+summable. `baseTwoCompletedBoundaryValue_hasDerivAt_clock` derives the boundary
+derivative from the existing bounded ℓ¹ whole-cell return readout composed with
+the strong gradient derivative. It does not define the boundary clock via `S'`.
+The previously proved signal-based derivative theorem is preserved.
+
+No material edge is identified with vertical depth. No claim is made that an
+arbitrary CoreState is in a material-log domain. This concrete gradient orbit
+has its own norm-level summability proof. The remaining operator step is to
+package the triangular coordinates and summed boundary return on a natural
+partial domain, retaining the geometric boundary graph.
+
+Finite graph and standard-metric no-go published in
+`318ee32070224a82cba5fb936867bd4a2e97af90` before this increment.

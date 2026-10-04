@@ -80,4 +80,6 @@ import GeometryOfNumbers.Analysis.FiniteSeedGradientClock
 
 import GeometryOfNumbers.Analysis.FiniteCompletedBoundaryClock
 
+import GeometryOfNumbers.Analysis.CompletedMaterialGradientStrongClock
+
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/

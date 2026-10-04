@@ -1552,3 +1552,12 @@ edge indices. No moments define vectors/operators. It preserves the boundary
 as a redundant graph coordinate and formally excludes standard-product symmetry
 using transported material basis vectors. No metric adjustment or external
 certificate is used.
+
+### Strong gradient clock provenance
+
+`Analysis/CompletedMaterialGradientStrongClock.lean` uses the local material
+complex-power continuation and standard Mathlib lp/normal-series calculus.
+The norm-level vector proof precedes derivative evaluation. Triangular clock
+coordinates remain those previously derived by sample reconstruction; whole-cell
+boundary returns are summed independently of moments and of `deriv Signal`.
+No historical package, fitted metric or complex product-ledger certificate.

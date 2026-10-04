@@ -953,3 +953,12 @@ The standard product graph metric is formally nonsymmetric (deltas at material
 1 and 2, one complete cell). This is a metric/representation no-go, not a no-go
 of the clock or complete theory. Infinite domain/strong orbit and identification
 of a geometric symmetry metric remain open; no Krylov or Hankel inference.
+
+### Strong completed material-gradient and clocked return
+
+`CompletedMaterialGradientStrongClock` proves strong ℓ¹/ℓ² differentiation using
+a summable norm majorant for vector first differences, then identifies the
+triangular material clock coordinates. The boundary derivative is the sum of
+clocked whole-cell returns, via the existing bounded ℓ¹ readout. Packaging a
+partial clock on the geometric boundary graph remains the next step; no moment,
+Hankel, metric or all-CoreState-domain inference.
