@@ -108,4 +108,6 @@ import GeometryOfNumbers.Analysis.BaseTwoSampledHardy
 
 import GeometryOfNumbers.Analysis.BaseTwoBoundedCenterCoupling
 
+import GeometryOfNumbers.Analysis.BaseTwoBoundedPhysicalCenterCoupling
+
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/

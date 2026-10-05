@@ -38,3 +38,22 @@ The finite nonsymmetry remains valid. Boundedness alone does not imply symmetry.
 Commit already integrated for increment 1: `0e2d7d81753348a538e4745a0668edc020570c36`.
 
 Increment 2 validation: new module, scoped audit, Analysis and Analysis.Audit all pass `lake build --wfail`; Analysis/Foundation/Geometry scripts, placeholder scan and `git diff --check` all exit 0. The new public capstones have exactly [propext, Classical.choice, Quot.sound]. Status of this increment: PASS_BOUNDED_CENTER_COUPLING.
+
+
+## Increment 3: bounded physical self-coupling
+
+`baseTwoPhysicalCenterSelfCoupling` is the composition x -> (0, physicalEmbedding x) -> bounded center coupling. It is bounded in the unchanged standard l2 norm. `baseTwoPhysicalCenterSelfCoupling_first_cell` reuses the existing raw first-cell formula, so the matrix on {L0,R0} is still
+
+$$\begin{pmatrix}\log4-\log3&0\\ \log5-\log4&0\end{pmatrix}.$$
+
+The already defined physical deltas give the two exact Hilbert pairings:
+
+$$\langle K\delta_L,\delta_R\rangle=\log5-\log4>0,\qquad\langle\delta_L,K\delta_R\rangle=0.$$
+
+`baseTwoPhysicalCenterSelfCoupling_not_symmetric` proves the localized global obstruction. This is not a no-go for the full clock or theory. It excludes symmetry of this physical diagonal block in the standard physical metric only.
+
+Next gate (not implemented): analyze geometric auxiliary/center coupling and its adjoint placement, preserving this physical self-coupling defect. No adjoint or block symmetry theorem is claimed here. No Naimark, moments or Krylov is constructed.
+
+Increment 2 integrated commit: `1e885fab0d06e1aa0f2ec528826105588c693802`.
+
+Increment 3 validation: module, scoped audit, Analysis and Analysis.Audit pass `lake build --wfail`; Analysis/Foundation/Geometry scripts, placeholder scan and `git diff --check` all exit 0. All six new public declarations are audited and print exactly [propext, Classical.choice, Quot.sound]. Final status: PASS_BOUNDED_CENTER_COUPLING_NO_STANDARD_PHYSICAL_SYMMETRY. No adjoint, block, Naimark, moment or Krylov increment was started.
