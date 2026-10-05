@@ -1662,3 +1662,7 @@ FinitePhysicalCenterCoupling uses only the existing FiniteSeedGradientCarrier, g
 ### Raw center coupling and explicit Hardy gate
 
 BaseTwoCenterCouplingRaw is reconstructed from current geometric centers, finite gradient prefixes, physical/residual coordinate masks and standard lp zero-extension along the existing edge index. Orbit defect equality is a theorem after construction. Directed Mathlib/local Hardy search did not supply an adequate uniform l2 prefix bound; no historical imports, new weights, moments or free boundedness hypothesis.
+
+### Sampled center Hardy bound
+
+BaseTwoSampledHardy proves the finite bound at m_k=4k+3 with constant 4, independent of cutoff. Weighted finite Cauchy-Schwarz and two elementary square-root telescopes are the only analytic inputs. No historical dependency, new metric, moment or assumed Hardy inequality. The next increment is arbitrary seeded-input l2 membership and the bounded center coupling.

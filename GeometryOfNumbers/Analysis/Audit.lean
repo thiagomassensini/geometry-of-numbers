@@ -5630,3 +5630,10 @@ namespace GeometryOfNumbers.Analysis.BaseTwoCompletion
 #assert_analysis_axioms baseTwoPhysicalCenterSelfCouplingRaw_deltaRight_first_cell
 #print axioms baseTwoPhysicalCenterSelfCouplingRaw_deltaRight_first_cell
 end GeometryOfNumbers.Analysis.BaseTwoCompletion
+
+namespace GeometryOfNumbers.Analysis.BaseTwoCompletion
+#assert_analysis_axioms baseTwoSampledHardy_tail
+#print axioms baseTwoSampledHardy_tail
+#assert_analysis_axioms baseTwoSampledHardy_finite
+#print axioms baseTwoSampledHardy_finite
+end GeometryOfNumbers.Analysis.BaseTwoCompletion
