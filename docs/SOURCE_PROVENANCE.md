@@ -1642,3 +1642,7 @@ clock intertwining and symmetry test. No moment, metric, nodal decoding,
 C2 amplitude-source substitution or edge=depth assumption enters this proof.
 All proof inputs are current local modules/Mathlib/existing Green coordinate
 mask; no historical dependency. See BASE_TWO_PHYSICAL_EDGE_C2_TFVD_BRIDGE.md.
+
+### Physical center-clock defect: local finite energy
+
+BaseTwoPhysicalCenterClockDefect uses only current physical-edge addresses, completed material clocks and Mathlib log/p-series inequalities. No historical source, moment, metric or amplitude-source identification is used. The correction is reindexed by the existing exact C2 equivalence.

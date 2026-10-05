@@ -1044,3 +1044,7 @@ clock intertwining and symmetry test. No moment, metric, nodal decoding,
 C2 amplitude-source substitution or edge=depth assumption enters this proof.
 All proof inputs are current local modules/Mathlib/existing Green coordinate
 mask; no historical dependency. See BASE_TWO_PHYSICAL_EDGE_C2_TFVD_BRIDGE.md.
+
+### Physical center-clock defect: local finite energy
+
+The physical center-clock defect is now defined by subtraction from the certified transported clock. Left/right formulas use one decoded center; its unweighted L2 membership follows from a square-summable log-gap bound. Green domain and Parseval transport are the next increment of this round.
