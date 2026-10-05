@@ -1650,3 +1650,7 @@ BaseTwoPhysicalCenterClockDefect uses only current physical-edge addresses, comp
 ### Center-clock correction: exact Green/Parseval transport
 
 BaseTwoPhysicalCenterClockGreenParseval composes only existing real incidence/quadrature index isometries and canonical Parseval. Domain follows from the certified L2 endpoint-clock representative; ambient transport reuses greenParsevalMaterialLogOperator_intertwining. No c2GlobalGreenInputIsometry, depth frequency, historical import, or moments.
+
+### Center-clock defect in both unchanged pre-stencil sectors
+
+BaseTwoPhysicalCenterClockPreStencil reuses the existing preStencilLinearIsometry and seedResidual lower bound. Material endpoint 3 and physical base-3 event (1,1) give a nonzero direct Green witness using canonical carry-weight positivity. Only local definitions, existing geometry and analytic log/sample facts are used. No historical imports or moment assumptions.

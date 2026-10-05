@@ -1052,3 +1052,7 @@ The physical center-clock defect is now defined by subtraction from the certifie
 ### Center-clock correction: exact Green/Parseval transport
 
 The exact Green/Parseval center-clock decomposition and concrete ordinary-gradient generator domain are closed. The center sample retains seed + physical + residual prefixes. This does not assert symmetry of the completed clock. Next: pre-stencil sector localization, followed in a separate round by a symmetric block-coupling test.
+
+### Center-clock defect in both unchanged pre-stencil sectors
+
+PASS_PHYSICAL_CENTER_CLOCK_DEFECT_PRESTENCIL: local left/right center corrections, L2/C2 packaging, concrete Green maximal domain and exact Green/Parseval decomposition are closed. The unchanged pre-stencil has both nonzero sectors (seed itself zero). No symmetry of the completed clock follows. Next: geometric center coupling with matching adjoint/domains; bounded Hardy coupling remains open.
