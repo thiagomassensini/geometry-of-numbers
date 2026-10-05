@@ -1,0 +1,47 @@
+import GeometryOfNumbers.Analysis.Audit
+
+/-! Scoped kernel checks for the material-edge ordinary/log pair. -/
+
+namespace GeometryOfNumbers.Analysis.BaseTwoCompletion
+#assert_analysis_axioms baseTwoNativeOrdinaryGradientFormula
+#print axioms baseTwoNativeOrdinaryGradientFormula
+#assert_analysis_axioms baseTwoNativeLogGradientFormula
+#print axioms baseTwoNativeLogGradientFormula
+#assert_analysis_axioms criticalMaterialGradient_eq_nativeOrdinaryFormula
+#print axioms criticalMaterialGradient_eq_nativeOrdinaryFormula
+#assert_analysis_axioms baseTwoCompletedClockCoordinate_eq_nativeLogFormula
+#print axioms baseTwoCompletedClockCoordinate_eq_nativeLogFormula
+#assert_analysis_axioms criticalMaterialGradient_hasDerivAt_nativeLogFormula
+#print axioms criticalMaterialGradient_hasDerivAt_nativeLogFormula
+#assert_analysis_axioms criticalMaterialGradient_deriv_eq_nativeLogFormula
+#print axioms criticalMaterialGradient_deriv_eq_nativeLogFormula
+#assert_analysis_axioms BaseTwoOrdinaryLogGradientCarrier
+#print axioms BaseTwoOrdinaryLogGradientCarrier
+#assert_analysis_axioms baseTwoOrdinaryLogGradientState
+#print axioms baseTwoOrdinaryLogGradientState
+#assert_analysis_axioms baseTwoOrdinaryLogGradientState_ordinary
+#print axioms baseTwoOrdinaryLogGradientState_ordinary
+#assert_analysis_axioms baseTwoOrdinaryLogGradientState_log
+#print axioms baseTwoOrdinaryLogGradientState_log
+#assert_analysis_axioms baseTwoOrdinaryLogGradientState_ordinary_apply
+#print axioms baseTwoOrdinaryLogGradientState_ordinary_apply
+#assert_analysis_axioms baseTwoOrdinaryLogGradientState_log_apply
+#print axioms baseTwoOrdinaryLogGradientState_log_apply
+#assert_analysis_axioms baseTwoOrdinaryLogGradientState_norm_sq
+#print axioms baseTwoOrdinaryLogGradientState_norm_sq
+#assert_analysis_axioms baseTwoOrdinaryLogGradientPrefixState
+#print axioms baseTwoOrdinaryLogGradientPrefixState
+#assert_analysis_axioms baseTwoOrdinaryLogGradientPrefixState_tendsto
+#print axioms baseTwoOrdinaryLogGradientPrefixState_tendsto
+end GeometryOfNumbers.Analysis.BaseTwoCompletion
+
+noncomputable section
+
+-- The bundle carries the standard complex Hilbert structure, not just a norm.
+example : InnerProductSpace ℂ
+    GeometryOfNumbers.Analysis.BaseTwoCompletion.BaseTwoOrdinaryLogGradientCarrier :=
+  inferInstance
+
+example : CompleteSpace
+    GeometryOfNumbers.Analysis.BaseTwoCompletion.BaseTwoOrdinaryLogGradientCarrier :=
+  inferInstance

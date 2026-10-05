@@ -88,4 +88,6 @@ import GeometryOfNumbers.Analysis.CompletedClockCandidateObstructions
 
 import GeometryOfNumbers.Analysis.FiniteCompletedClockGreenIntertwiner
 
+import GeometryOfNumbers.Analysis.BaseTwoOrdinaryLogGradientCrosswalk
+
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/

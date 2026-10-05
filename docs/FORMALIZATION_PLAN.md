@@ -997,3 +997,21 @@ No arbitrary TFVD metric or old certificate is added. The general enriched
 finite-energy transform remains open; no canonical-moment pairing is claimed.
 The three authorized historical blueprints were architectural comparison only.
 See COMPLETED_CLOCK_GREEN_INTERTWINER.md for the exact map and scoped no-go.
+
+## Ordinary/logarithmic material-gradient crosswalk (2026-10-04)
+
+`BaseTwoOrdinaryLogGradientCrosswalk` identifies the current consecutive
+material edge n+1 -> n+2 with the explicit ordinary Dirichlet power difference,
+and the existing triangular clock coordinate with its logarithmic difference
+on s=1/2+it. The derivative is -i times the latter. A standard Hilbert pair of
+the two existing ℓ² states and direct difference-prefix norm convergence are
+proved without nodal decoding or new summability assumptions. Historical
+formula comparison at carry revision 62b1c0d6b18e70b4c156c3bdf0253893fdb27a35
+has zero index shift and uses only the three files listed in
+`docs/ORDINARY_LOG_GRADIENT_CROSSWALK.md`; no dependency is added.
+Status: `PASS_ORDINARY_LOG_GRADIENT_CROSSWALK_TFVD_MAP_OPEN`.
+The remaining map is a provenance-preserving, reconstructible real analysis
+from this material-edge pair to the two C2 real vertical fiber channels,
+including quadratures and boundary data. Material edges are not relabelled as
+depth. The nodal divergence no-go is preserved and does not automatically
+exclude these completed differences. No moment/Gram/symmetric-clock claim.
