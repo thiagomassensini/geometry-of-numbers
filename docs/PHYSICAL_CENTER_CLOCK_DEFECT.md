@@ -38,3 +38,33 @@ Parseval, and inspect the unchanged pre-stencil components. No self-adjointness
 of the completed transported clock follows from this local correction.
 Global boundedness of center coupling and a larger symmetric block realization
 are separate gates. No moment, Hankel, Krylov or new metric enters this round.
+
+## Exact Green/Parseval generator transport
+
+The first local energy increment was published as
+`963e1ecaa91f0b786669af98f230192cf5f7bd1f`.
+
+`baseTwoPhysicalOddEndpointDiagonalClock` is literally multiplication by
+`log(globalC2MaterialAddress)`. Its membership is certified by the C2 difference
+log-gradient minus center defect, not assumed. The existing real incidence and
+odd-material inclusion compose to `baseTwoPhysicalC2GreenIsometry`, preserving
+norm, exact endpoints and both quadratures. This is not the physical-amplitude
+source isometry.
+
+`baseTwoPhysicalOrdinaryGreenState_mem_domain` is unconditional for this
+concrete gradient orbit. `baseTwoPhysicalClock_Green_generator_decomposition`
+proves `logGradientGreen = A ordinaryGreen + defectGreen` with the exact
+maximal-domain proof. The existing ambient operator intertwining then gives
+`baseTwoPhysicalClock_Parseval_decomposition` and its Parseval domain proof.
+No generator, inverse square root, or ambient operator is changed.
+
+`baseTwoCenterSample_eq_seed_physical_residual_prefix` reconstructs the central
+sample from seed and both finite material-edge prefixes. Residual edges are
+retained. There is no global nodal L2 reconstruction.
+
+Status of this increment: `PASS_PHYSICAL_CENTER_CLOCK_DEFECT_PARSEVAL`.
+Pre-stencil sector localization remains a separate test in this round.
+`CENTER_DEFECT_BOUNDED_OPERATOR_OPEN`: no Hardy operator bound is claimed.
+A larger symmetric block clock still requires the geometric center-coupling
+block and its matching adjoint; the identity above does not prove symmetry of
+the completed transported clock.

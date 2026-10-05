@@ -1048,3 +1048,7 @@ mask; no historical dependency. See BASE_TWO_PHYSICAL_EDGE_C2_TFVD_BRIDGE.md.
 ### Physical center-clock defect: local finite energy
 
 The physical center-clock defect is now defined by subtraction from the certified transported clock. Left/right formulas use one decoded center; its unweighted L2 membership follows from a square-summable log-gap bound. Green domain and Parseval transport are the next increment of this round.
+
+### Center-clock correction: exact Green/Parseval transport
+
+The exact Green/Parseval center-clock decomposition and concrete ordinary-gradient generator domain are closed. The center sample retains seed + physical + residual prefixes. This does not assert symmetry of the completed clock. Next: pre-stencil sector localization, followed in a separate round by a symmetric block-coupling test.

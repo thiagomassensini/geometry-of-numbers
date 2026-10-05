@@ -1646,3 +1646,7 @@ mask; no historical dependency. See BASE_TWO_PHYSICAL_EDGE_C2_TFVD_BRIDGE.md.
 ### Physical center-clock defect: local finite energy
 
 BaseTwoPhysicalCenterClockDefect uses only current physical-edge addresses, completed material clocks and Mathlib log/p-series inequalities. No historical source, moment, metric or amplitude-source identification is used. The correction is reindexed by the existing exact C2 equivalence.
+
+### Center-clock correction: exact Green/Parseval transport
+
+BaseTwoPhysicalCenterClockGreenParseval composes only existing real incidence/quadrature index isometries and canonical Parseval. Domain follows from the certified L2 endpoint-clock representative; ambient transport reuses greenParsevalMaterialLogOperator_intertwining. No c2GlobalGreenInputIsometry, depth frequency, historical import, or moments.
