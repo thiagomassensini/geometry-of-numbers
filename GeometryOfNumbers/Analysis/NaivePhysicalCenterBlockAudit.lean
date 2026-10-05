@@ -1,0 +1,12 @@
+import GeometryOfNumbers.Analysis.Audit
+
+namespace GeometryOfNumbers.Analysis.BaseTwoCompletion
+#assert_analysis_axioms BaseTwoPhysicalCenterHilbert
+#print axioms BaseTwoPhysicalCenterHilbert
+#assert_analysis_axioms naivePhysicalCenterBlock
+#print axioms naivePhysicalCenterBlock
+#assert_analysis_axioms naivePhysicalCenterBlock_apply
+#print axioms naivePhysicalCenterBlock_apply
+#assert_analysis_axioms naivePhysicalCenterBlock_not_symmetric
+#print axioms naivePhysicalCenterBlock_not_symmetric
+end GeometryOfNumbers.Analysis.BaseTwoCompletion

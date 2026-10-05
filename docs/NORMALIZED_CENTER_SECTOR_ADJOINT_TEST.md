@@ -44,3 +44,24 @@ The minimal next question is how geometry separates incoming reconstruction from
 Increment 1 integrated commit: `3843d939f6e7be5533a9f1a9627d7834e090d9cc`.
 
 Increment 2 validation: module/scoped audit/Analysis/Analysis.Audit `--wfail`, Analysis/Foundation/Geometry scripts and placeholder scan all exit 0. The explicit adjoint formula, K_pp factorization and adjoint mismatch capstones print only [propext, Classical.choice, Quot.sound]. Status: PASS_CENTER_SECTOR_ADJOINT_MISMATCH.
+
+
+## Increment 3: naive single-center product block
+
+`BaseTwoPhysicalCenterHilbert` is the standard WithLp 2 product of PhysicalEdgeL2 and BaseTwoCenterL2. `naivePhysicalCenterBlock` is exactly
+
+$$B(p,c)=(S c,T_{phys}p).$$
+
+Its bound 4 follows from S's isometry and T_phys's inherited bound. `naivePhysicalCenterBlock_not_symmetric` tests pure physical and pure center inputs: symmetry would imply
+
+$$\langle T_{phys}p,c\rangle=\langle p,S c\rangle=\langle S^\dagger p,c\rangle$$
+
+for all p,c, hence T_phys=S.adjoint by nondegeneracy. The published delta-right mismatch refutes that equality.
+
+Final status: NO_GO_NAIVE_SINGLE_CENTER_SECTOR_SYMMETRY. This statement excludes only this standard product block with these natural S and T_phys maps. It does not exclude center doubling, graph realization, a return/dual center sector or a larger dilation. No minimal additional carrier has been proved and no such option is constructed or selected.
+
+The next gate is to distinguish geometrically reconstructed/incoming center from leg-return/outgoing center. No Naimark, moment, Hankel or Krylov step is included. No new Hardy proof or raw nodal l2 reconstruction is used.
+
+Increment 2 integrated commit: `959cc669a6491b815b38fe45e2fd7e2a265789ab`.
+
+Increment 3 validation: module/scoped audit/Analysis/Analysis.Audit `--wfail`, Analysis/Foundation/Geometry scripts and placeholder scan all exit 0. The block nonsymmetry capstone prints [propext, Classical.choice, Quot.sound]. Foundation remains empty-footprint. Final status is restricted to the named naive block. No further mathematical increment was started.

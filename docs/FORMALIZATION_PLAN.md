@@ -1084,3 +1084,7 @@ BaseTwoNormalizedCenterSector factors the unchanged bounded coupling K=S T. The 
 ### Incoming center versus outgoing adjoint
 
 BaseTwoCenterSectorAdjointMismatch derives the explicit standard adjoint of isometric leg synthesis. It reuses the existing physical zero-seed embedding under a public name and proves K_pp=S T_phys. The existing causal first-cell delta gives T_phys(deltaRight)(0)=0, whereas S.adjoint(deltaRight)(0) is the strictly positive right log-gap divided by the geometric gap norm. Thus T_phys is not S.adjoint. No moment, new metric, historical import, fitted coefficient or unnormalized center l2 state is introduced. Status: PASS_CENTER_SECTOR_ADJOINT_MISMATCH.
+
+### Naive single-center block excluded
+
+NaivePhysicalCenterBlock constructs only B(p,c)=(S c,T_phys p), with the unchanged standard product Hilbert norm and certified bound 4. Symmetry of this block would force T_phys=S.adjoint by testing pure physical and pure center inputs and applying the standard adjoint identity. The already proved mismatch refutes it. Status: NO_GO_NAIVE_SINGLE_CENTER_SECTOR_SYMMETRY, restricted to these maps and this block. No minimal larger carrier or sufficient dilation has been proved; separate incoming and outgoing center roles remain the next geometric question.
