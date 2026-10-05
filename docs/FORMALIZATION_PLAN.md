@@ -1068,3 +1068,7 @@ PASS_FINITE_CENTER_COUPLING_NONSYMMETRY_HARDY_OPEN: raw center reconstruction/co
 ### Sampled center Hardy bound
 
 BaseTwoSampledHardy proves the finite bound at m_k=4k+3 with constant 4, independent of cutoff. Weighted finite Cauchy-Schwarz and two elementary square-root telescopes are the only analytic inputs. No historical dependency, new metric, moment or assumed Hardy inequality. The next increment is arbitrary seeded-input l2 membership and the bounded center coupling.
+
+### Bounded center coupling
+
+The sampled Hardy gate is closed: arbitrary seeded standard-l2 inputs have physical output in standard l2, with norm bound 4. BaseTwoBoundedCenterCoupling constructs the complex-linear ContinuousLinearMap from the unchanged geometric raw coordinates and proves its exact image on the concrete orbit is the existing defectL2. Seed energy is bounded by 1 using a reciprocal telescope. Proof inputs are only current local modules and Mathlib finite/infinite sums; no historical import or new metric. No adjoint/block/Naimark/moment/Krylov construction is included.
