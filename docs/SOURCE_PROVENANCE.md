@@ -1686,3 +1686,19 @@ BaseTwoCenterSectorAdjointMismatch derives the explicit standard adjoint of isom
 ### Naive single-center block excluded
 
 NaivePhysicalCenterBlock constructs only B(p,c)=(S c,T_phys p), with the unchanged standard product Hilbert norm and certified bound 4. Symmetry of this block would force T_phys=S.adjoint by testing pure physical and pure center inputs and applying the standard adjoint identity. The already proved mismatch refutes it. Status: NO_GO_NAIVE_SINGLE_CENTER_SECTOR_SYMMETRY, restricted to these maps and this block. No minimal larger carrier or sufficient dilation has been proved; separate incoming and outgoing center roles remain the next geometric question.
+
+### Full vertical observation: own PosDef, index-sum obstruction
+
+CompleteVerticalObservationGram repackages the existing real TFVD bracket and both
+boundary values in a standard Hilbert product. Exact synthesis proves observer
+injectivity, independent finite prefixes and all-order PosDef of its own
+observability Gram. The full observed channels are paired before reconstruction
+or scalar compression; this is not the old isometric incidence reconstruction.
+Nevertheless entries (0,2)=1 and (1,1)=4+eta^2+eta^-2 differ. Thus even this
+complete fiber observation is not an index-sum moment Gram for any sequence;
+the critical base-two canonical specialization is formally excluded at order 3.
+Status: NO_GO_FULL_TFVD_CHANNEL_GRAM_HANKEL, only for this observation and
+standard channel metric. No canonical Hankel PosDef, completed material-state
+identification, new metric or full-theory obstruction is claimed. Seed/residual
+material and distinct incoming/outgoing center roles remain separate existing
+channels. See COMPLETE_VERTICAL_OBSERVATION_GRAM_INVESTIGATION.md.

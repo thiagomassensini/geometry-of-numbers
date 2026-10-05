@@ -115,5 +115,6 @@ import GeometryOfNumbers.Analysis.BaseTwoNormalizedCenterSector
 import GeometryOfNumbers.Analysis.BaseTwoCenterSectorAdjointMismatch
 
 import GeometryOfNumbers.Analysis.NaivePhysicalCenterBlock
+import GeometryOfNumbers.Analysis.CompleteVerticalObservationGram
 
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/
