@@ -1015,3 +1015,13 @@ from this material-edge pair to the two C2 real vertical fiber channels,
 including quadratures and boundary data. Material edges are not relabelled as
 depth. The nodal divergence no-go is preserved and does not automatically
 exclude these completed differences. No moment/Gram/symmetric-clock claim.
+
+## Physical base-two edge/C2 address chart (2026-10-04)
+
+`BaseTwoPhysicalEdgeC2Address` explicitly identifies the two complete-cell
+edges (residues 2/3 mod 4) with their odd endpoints and the existing C2 address
+chart. Its arithmetic inverse requires no choice. Direction, original cell
+center and true center-depth are recovered exactly; material edge is never
+called depth. The Hilbert restriction/residual and TFVD input are the next
+increment. No amplitude, moment or metric identification is asserted.
+See `docs/BASE_TWO_PHYSICAL_EDGE_C2_TFVD_BRIDGE.md`.

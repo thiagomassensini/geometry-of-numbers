@@ -90,4 +90,6 @@ import GeometryOfNumbers.Analysis.FiniteCompletedClockGreenIntertwiner
 
 import GeometryOfNumbers.Analysis.BaseTwoOrdinaryLogGradientCrosswalk
 
+import GeometryOfNumbers.Analysis.BaseTwoPhysicalEdgeC2Address
+
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/
