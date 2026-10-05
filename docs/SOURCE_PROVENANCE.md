@@ -1658,3 +1658,7 @@ BaseTwoPhysicalCenterClockPreStencil reuses the existing preStencilLinearIsometr
 ### Finite center-coupling physical symmetry test
 
 FinitePhysicalCenterCoupling uses only the existing FiniteSeedGradientCarrier, geometric base-two center/edge indices and standard finite Hilbert basis. The asymmetry witness uses strict log monotonicity. No historical import, new metric, moments or amplitude identification.
+
+### Raw center coupling and explicit Hardy gate
+
+BaseTwoCenterCouplingRaw is reconstructed from current geometric centers, finite gradient prefixes, physical/residual coordinate masks and standard lp zero-extension along the existing edge index. Orbit defect equality is a theorem after construction. Directed Mathlib/local Hardy search did not supply an adequate uniform l2 prefix bound; no historical imports, new weights, moments or free boundedness hypothesis.

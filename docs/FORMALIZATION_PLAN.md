@@ -1060,3 +1060,7 @@ PASS_PHYSICAL_CENTER_CLOCK_DEFECT_PRESTENCIL: local left/right center correction
 ### Finite center-coupling physical symmetry test
 
 First-cell physical center self-coupling is proved nonsymmetric in the standard physical Hilbert metric. Matrix [[log4-log3,0],[log5-log4,0]] comes from geometric center reconstruction, not the orbit defect. This result must be integrated before the Hardy-bound investigation.
+
+### Raw center coupling and explicit Hardy gate
+
+PASS_FINITE_CENTER_COUPLING_NONSYMMETRY_HARDY_OPEN: raw center reconstruction/coupling is complex-linear; orbit crosswalk and seed/physical/residual split are exact; physical zero-extension is isometric with both roundtrips. Global raw first-cell compression reproduces the finite nonsymmetry witness. The uniform arbitrary-input prefix bound is still open. No bounded K, auxiliary adjoint or naive global block was built.
