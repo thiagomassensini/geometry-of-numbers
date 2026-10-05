@@ -99,7 +99,7 @@ theorem baseTwoCenterCouplingRaw_finite_bound (y : BaseTwoSeededMaterialHilbert)
     simpa only [ENNReal.toReal_ofNat, Real.rpow_two] using
       (lp.memℓp y.snd).summable (by norm_num : 0 < (2:ℝ≥0∞).toReal)
   have hn : (∑ j ∈ Finset.range (4*N+3), ‖y.snd j‖^2) ≤ ‖y.snd‖^2 := by
-    have ht := hg.sum_le_tsum (Finset.range (4*N+3)) (fun _ _ => sq_nonneg _) 
+    have ht := hg.sum_le_tsum (Finset.range (4*N+3)) (fun _ _ => sq_nonneg _)
     have he := lp.norm_rpow_eq_tsum (by norm_num : 0 < (2:ℝ≥0∞).toReal) y.snd
     simp only [ENNReal.toReal_ofNat, Real.rpow_two] at he
     rw [he]
