@@ -156,3 +156,100 @@ Classical.choice and Quot.sound; Foundation keeps an empty footprint.
 Commit message: audit: test complete vertical observation Gram before compression.
 The integrated SHA is recorded in the delivery report. No canonical moment
 Gram/PosDef or sufficiency/minimality of a larger carrier is claimed.
+
+## Second increment: distinct incoming/outgoing center roles
+
+The first increment was integrated at
+`b221721ffd98e6172097799cec29c9497c236e88` before starting this construction.
+
+The existing maps have types
+
+```text
+T = baseTwoPhysicalCenterReconstruction : PhysicalEdgeL2 ->L CenterL2
+S = baseTwoCenterLegSynthesis           : CenterL2 ->li PhysicalEdgeL2.
+```
+
+`SeparatedCenterObservation` tests the permitted standard product
+`PhysicalEdgeL2 + Center_in + Center_out` (nested WithLp 2 products). These are
+copies of existing Hilbert spaces, with no new component norm or coefficient.
+The complex-linear packaging reuses the existing complex physical and center
+maps; the preceding TFVD test remains real. No scalar response is used as a
+Hilbert vector.
+
+The bounded block is exactly
+
+$$A(p,c_{in},c_{out})=(T^\dagger c_{in}+S c_{out},\;T p,\;S^\dagger p).$$
+
+`baseTwoSeparatedCenterBlock_symmetric` proves symmetry from the standard
+adjoint identities. Each adjoint accompanies **its own** map. It does not
+identify T with S.adjoint, and does not revive the excluded single-center
+block. Boundedness comes from composition/products/sums of existing bounded
+maps and their standard adjoints. The certified Hardy result is reused, not
+proved again.
+
+`baseTwoCenterRoleObservation` keeps (T p,S.adjoint p) as two vector coordinates.
+`baseTwoSeparatedCenterBlock_physical` gives A(p,0,0)=(0,T p,S.adjoint p).
+`baseTwoCenterRoleObservation_energy` proves the exact sum of their squared
+norms. This role observation has **not** been proved injective in this round;
+no PosDef claim is made for its Gram. The all-order own PosDef result above
+belongs to the separately proved injective full TFVD observer.
+
+`baseTwoSeparatedCenterKrylov_inner_add` specializes the existing abstract
+symmetric-Krylov theorem to this block. Hence, for any v in this standard
+product, its powers have the index-sum property. The explicit conditional
+`baseTwoSeparatedCenter_firstColumn_implies_evenKernel` says
+
+```text
+IF for every r:
+  baseTwoCanonicalMomentSequence r
+    = Re inner Complex v ((A^(2*r)) v)
+THEN for every i,j:
+  baseTwoCanonicalMomentSequence (i+j)
+    = Re inner Complex ((A^(2*i)) v) ((A^(2*j)) v).
+```
+
+This conditional is a reduction, not a proved calibration. No v_completed is
+constructed from moments or designated by this theorem. No independently
+verified canonical first column is supplied. Nor is A identified with the
+transported completed material clock: it is the bounded **center-role block**,
+without the unbounded material diagonal or the full seed/residual/boundary
+source. A symmetric organization of the coupling maps does not establish a
+clock intertwining for the actual completed orbit.
+
+Consequently this candidate still requires a provenance-correct completed seed
+in this carrier (or an enlargement retaining the other material channels),
+independent clock/readout identification and the displayed first-column
+calibration. Independence of its Krylov prefixes and mixed-parity orthogonality
+are also unproved. It would be inaccurate to report all remaining work as one
+scalar equality while no such completed seed/clock realization has been
+identified. The theorem isolates the exact **algebraic even-kernel** seam once
+that realization exists.
+
+No minimality/sufficiency of two centers for the full theory is claimed. What
+is closed is the much narrower test: the two existing distinct roles can occupy
+separate adjoint blocks and give a bounded symmetric operator in the unchanged
+standard metric.
+
+## Final conclusion of this investigation
+
+- CLOSED: full TFVD observer is separating; its same-family Gram is PosDef.
+- REFUTED: its full channel Gram equals a canonical (or any) index-sum Hankel.
+  The first structural collision is exactly (0,2) versus (1,1).
+- CLOSED: distinct incoming/outgoing center maps admit the explicit symmetric
+  bounded block above, and its powers obey the generic Krylov index-sum law.
+- OPEN: completed-state/clock provenance and canonical first column for that
+  new block; same-family independence and full parity moment Gram.
+
+Main status: `NO_GO_FULL_TFVD_CHANNEL_GRAM_HANKEL`, strictly representation-specific.
+Additional result: `PASS_SEPARATED_CENTER_BLOCK_SYMMETRY`.
+There is no `PASS_CANONICAL_HANKEL_POSDEF` and no change to Jacobi/finite-height
+assumptions. Complete geometric observability gives formal support to positivity
+of its own Gram; it does not close the canonical-moment seam. Neither result
+refutes the complete theory.
+
+Second increment: SeparatedCenterObservation/scoped audit/Analysis/Analysis.Audit
+--wfail builds and Analysis/Foundation/Geometry scripts all exited 0. Public
+names pass #assert_analysis_axioms and print only [propext, Classical.choice,
+Quot.sound]. Placeholder scan and unstaged/staged diff checks pass. Commit
+message: feat: separate geometric incoming and outgoing center adjoint blocks.
+The integrated SHA and remote equality are recorded in the delivery report.

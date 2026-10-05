@@ -1104,3 +1104,19 @@ standard channel metric. No canonical Hankel PosDef, completed material-state
 identification, new metric or full-theory obstruction is claimed. Seed/residual
 material and distinct incoming/outgoing center roles remain separate existing
 channels. See COMPLETE_VERTICAL_OBSERVATION_GRAM_INVESTIGATION.md.
+
+### Separate incoming/outgoing center roles: bounded symmetric test block
+
+SeparatedCenterObservation uses only the existing physical T and leg synthesis S
+and their respective adjoints, in the standard product P + Center_in + Center_out.
+The block (T.adjoint c_in + S c_out, T p, S.adjoint p) is bounded and symmetric.
+This preserves T != S.adjoint and the old single-center nonsymmetry theorem.
+The two-role observation and its exact norm-squared identity are named, without
+claiming its injectivity. The symmetric Krylov index-sum theorem is instantiated;
+an explicitly conditional first-column theorem gives only the even moment kernel
+if its spectral calibration is independently supplied. No completed seed, actual
+material-clock intertwining, canonical calibration, Krylov independence or full
+parity Gram is claimed. This is a coupling-block test, not a completed global
+clock, a sufficient/minimal dilation or canonical Hankel PosDef. The full TFVD
+channel Gram no-go from the previous increment remains.
+See COMPLETE_VERTICAL_OBSERVATION_GRAM_INVESTIGATION.md.
