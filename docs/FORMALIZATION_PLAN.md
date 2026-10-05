@@ -1056,3 +1056,7 @@ The exact Green/Parseval center-clock decomposition and concrete ordinary-gradie
 ### Center-clock defect in both unchanged pre-stencil sectors
 
 PASS_PHYSICAL_CENTER_CLOCK_DEFECT_PRESTENCIL: local left/right center corrections, L2/C2 packaging, concrete Green maximal domain and exact Green/Parseval decomposition are closed. The unchanged pre-stencil has both nonzero sectors (seed itself zero). No symmetry of the completed clock follows. Next: geometric center coupling with matching adjoint/domains; bounded Hardy coupling remains open.
+
+### Finite center-coupling physical symmetry test
+
+First-cell physical center self-coupling is proved nonsymmetric in the standard physical Hilbert metric. Matrix [[log4-log3,0],[log5-log4,0]] comes from geometric center reconstruction, not the orbit defect. This result must be integrated before the Hardy-bound investigation.

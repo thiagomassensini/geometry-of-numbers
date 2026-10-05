@@ -1654,3 +1654,7 @@ BaseTwoPhysicalCenterClockGreenParseval composes only existing real incidence/qu
 ### Center-clock defect in both unchanged pre-stencil sectors
 
 BaseTwoPhysicalCenterClockPreStencil reuses the existing preStencilLinearIsometry and seedResidual lower bound. Material endpoint 3 and physical base-3 event (1,1) give a nonzero direct Green witness using canonical carry-weight positivity. Only local definitions, existing geometry and analytic log/sample facts are used. No historical imports or moment assumptions.
+
+### Finite center-coupling physical symmetry test
+
+FinitePhysicalCenterCoupling uses only the existing FiniteSeedGradientCarrier, geometric base-two center/edge indices and standard finite Hilbert basis. The asymmetry witness uses strict log monotonicity. No historical import, new metric, moments or amplitude identification.

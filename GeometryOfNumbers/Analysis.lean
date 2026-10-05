@@ -100,4 +100,6 @@ import GeometryOfNumbers.Analysis.BaseTwoPhysicalCenterClockGreenParseval
 
 import GeometryOfNumbers.Analysis.BaseTwoPhysicalCenterClockPreStencil
 
+import GeometryOfNumbers.Analysis.FinitePhysicalCenterCoupling
+
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/
