@@ -1076,3 +1076,7 @@ The sampled Hardy gate is closed: arbitrary seeded standard-l2 inputs have physi
 ### Bounded physical self-coupling: unchanged nonsymmetry
 
 BaseTwoBoundedPhysicalCenterCoupling composes only the existing isometric physical zero-extension, zero seed and bounded geometric center coupling. Its first-cell restriction is exactly the finite matrix already proved; existing delta calculations give inner(K deltaLeft,deltaRight)=log5-log4 and inner(deltaLeft,K deltaRight)=0. Strict log monotonicity proves global nonsymmetry in the standard physical l2 metric. No adjoint, block or new metric is constructed. Status: PASS_BOUNDED_CENTER_COUPLING_NO_STANDARD_PHYSICAL_SYMMETRY.
+
+### Normalized geometric center sector
+
+BaseTwoNormalizedCenterSector factors the unchanged bounded coupling K=S T. The center normalization is the Euclidean length of the two existing real log gaps; normalized leg synthesis is an isometry. Normalized reconstruction has exactly K energy and norm, so membership and bound 4 reuse the already proved coupling without new Hardy. The concrete center state is q_k times the reconstructed material sample. No raw center samples are placed in l2, no new metric or historical dependency is added. Adjoint compatibility is the next test.
