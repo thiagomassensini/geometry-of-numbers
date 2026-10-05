@@ -1623,3 +1623,22 @@ center and true center-depth are recovered exactly; material edge is never
 called depth. The Hilbert restriction/residual and TFVD input are the next
 increment. No amplitude, moment or metric identification is asserted.
 See `docs/BASE_TWO_PHYSICAL_EDGE_C2_TFVD_BRIDGE.md`.
+
+### Physical/residual edge Hilbert split and genuine C2 TFVD input
+
+`BaseTwoPhysicalEdgeTfvdBridge` closes the physical material-edge input seam:
+contractive restriction, existing two-quadrature packaging, and exact C2
+address reindexing precede fiber TFVD. The actual C2 physical state + residual
+is lossless and preserves the unweighted squared norm; the joint TFVD +
+residual analysis is injective by the existing R2 synthesis. Ordinary/log
+states use the existing completed gradient/clock vectors. The concrete
+summable whole-cell return is reexpressed in physical coordinates, without
+claiming a bounded global boundary sum. Strong ordinary derivatives transport
+to each actual TFVD fiber including trace, with -i before realification.
+The critical base-two ratio is the existing derived vertical amplitude ratio,
+not a new gradient weight. Status: `PASS_BASE_TWO_PHYSICAL_EDGE_C2_TFVD_BRIDGE`.
+Next: joint physical TFVD + retained residual -> geometric Green/Naimark,
+clock intertwining and symmetry test. No moment, metric, nodal decoding,
+C2 amplitude-source substitution or edge=depth assumption enters this proof.
+All proof inputs are current local modules/Mathlib/existing Green coordinate
+mask; no historical dependency. See BASE_TWO_PHYSICAL_EDGE_C2_TFVD_BRIDGE.md.

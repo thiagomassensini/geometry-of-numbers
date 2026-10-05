@@ -92,4 +92,6 @@ import GeometryOfNumbers.Analysis.BaseTwoOrdinaryLogGradientCrosswalk
 
 import GeometryOfNumbers.Analysis.BaseTwoPhysicalEdgeC2Address
 
+import GeometryOfNumbers.Analysis.BaseTwoPhysicalEdgeTfvdBridge
+
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/
