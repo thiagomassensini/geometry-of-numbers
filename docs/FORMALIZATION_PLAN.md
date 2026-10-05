@@ -1080,3 +1080,7 @@ BaseTwoBoundedPhysicalCenterCoupling composes only the existing isometric physic
 ### Normalized geometric center sector
 
 BaseTwoNormalizedCenterSector factors the unchanged bounded coupling K=S T. The center normalization is the Euclidean length of the two existing real log gaps; normalized leg synthesis is an isometry. Normalized reconstruction has exactly K energy and norm, so membership and bound 4 reuse the already proved coupling without new Hardy. The concrete center state is q_k times the reconstructed material sample. No raw center samples are placed in l2, no new metric or historical dependency is added. Adjoint compatibility is the next test.
+
+### Incoming center versus outgoing adjoint
+
+BaseTwoCenterSectorAdjointMismatch derives the explicit standard adjoint of isometric leg synthesis. It reuses the existing physical zero-seed embedding under a public name and proves K_pp=S T_phys. The existing causal first-cell delta gives T_phys(deltaRight)(0)=0, whereas S.adjoint(deltaRight)(0) is the strictly positive right log-gap divided by the geometric gap norm. Thus T_phys is not S.adjoint. No moment, new metric, historical import, fitted coefficient or unnormalized center l2 state is introduced. Status: PASS_CENTER_SECTOR_ADJOINT_MISMATCH.
