@@ -1718,3 +1718,24 @@ parity Gram is claimed. This is a coupling-block test, not a completed global
 clock, a sufficient/minimal dilation or canonical Hankel PosDef. The full TFVD
 channel Gram no-go from the previous increment remains.
 See COMPLETE_VERTICAL_OBSERVATION_GRAM_INVESTIGATION.md.
+
+
+### Separated center block: complete material-clock frequency obstruction
+
+`SeparatedCenterClockObstruction` tests the unchanged bounded
+`baseTwoSeparatedCenterBlock` against the existing finite material clock,
+its exact seed/gradient coordinates and the actual completed boundary graph.
+If `log(j+1)` exceeds the block operator norm, no injective complex-linear
+intertwiner can exist, even without an isometry assumption. An exact exp/log
+argument supplies such a synchronized `4N+1`-sample cutoff; consequently a
+faithful family covering every cutoff is excluded.
+
+Status: `NO_GO_SEPARATED_CENTER_AS_COMPLETE_CLOCK`, restricted to this fixed
+bounded target. Individual smaller cutoffs, cutoff-dependent growing operators
+and an unbounded symmetric amplification are not excluded. The theorem isolates
+missing material-frequency capacity; it does not prove a sufficient/minimal
+amplification. The already local finite Green intertwiner remains valid, with its
+already proved divergent critical nodal energy. No completed seed, canonical
+first column, moment Gram or Krylov independence is added. Foundation, metrics
+and amplitudes are unchanged. All five public theorems have standard-footprint
+Analysis guards. See `COMPLETED_CLOCK_SYMMETRIC_REALIZATION_INVESTIGATION.md`.

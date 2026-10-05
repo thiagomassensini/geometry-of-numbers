@@ -117,5 +117,6 @@ import GeometryOfNumbers.Analysis.BaseTwoCenterSectorAdjointMismatch
 import GeometryOfNumbers.Analysis.NaivePhysicalCenterBlock
 import GeometryOfNumbers.Analysis.CompleteVerticalObservationGram
 import GeometryOfNumbers.Analysis.SeparatedCenterObservation
+import GeometryOfNumbers.Analysis.SeparatedCenterClockObstruction
 
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/
