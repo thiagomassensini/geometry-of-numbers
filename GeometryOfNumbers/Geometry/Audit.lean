@@ -389,3 +389,43 @@ example (f : Int → Int) (center : Int) : oddCameraBracket 0 f center = 0 :=
 example : oddCameraCapacity 0 = 1 ∧ oddCameraLegCount 0 = 0 := ⟨rfl, rfl⟩
 
 end GeometryOfNumbers.Geometry
+
+namespace GeometryOfNumbers.Geometry
+
+-- Integer provenance: explicit type/body axiom audit of the new public roots.
+#assert_geometry_definition_no_axioms IntegerCameraCell
+#print axioms IntegerCameraCell
+#assert_geometry_definition_no_axioms IntegerCellRole
+#print axioms IntegerCellRole
+#assert_geometry_definition_no_axioms integerCameraRadius
+#print axioms integerCameraRadius
+#assert_geometry_definition_no_axioms integerCameraCenter
+#print axioms integerCameraCenter
+#assert_geometry_definition_no_axioms integerCameraPoint
+#print axioms integerCameraPoint
+#assert_geometry_definition_no_axioms IntegerCameraIncidence
+#print axioms IntegerCameraIncidence
+#assert_geometry_definition_no_axioms integerCameraTowerCell
+#print axioms integerCameraTowerCell
+#assert_geometry_axioms integerCameraTowerCell_reconstruction
+#print axioms integerCameraTowerCell_reconstruction
+#assert_geometry_axioms integerCameraTowerCell_center
+#print axioms integerCameraTowerCell_center
+#assert_geometry_axioms integerCamera_common_integer
+#print axioms integerCamera_common_integer
+#assert_geometry_axioms integerCamera_point_reflection
+#print axioms integerCamera_point_reflection
+#assert_geometry_axioms integerCamera_same_center_leg_displacement
+#print axioms integerCamera_same_center_leg_displacement
+#assert_geometry_axioms integerCamera_same_center_overlap
+#print axioms integerCamera_same_center_overlap
+#assert_geometry_definition_no_axioms integerCamera72Two
+#print axioms integerCamera72Two
+#assert_geometry_definition_no_axioms integerCamera72Three
+#print axioms integerCamera72Three
+#assert_geometry_axioms integerCamera72_positions
+#print axioms integerCamera72_positions
+#assert_geometry_axioms integerCamera72_only_shared_center
+#print axioms integerCamera72_only_shared_center
+
+end GeometryOfNumbers.Geometry

@@ -1,0 +1,92 @@
+[
+  {
+    "path": "Foundation/FirstLocalReturnCapacity.lean",
+    "sha256": "c241951128b490d06929d96ffa71122546595cc0226a797b536bd1556b26faef",
+    "snapshot": "e1084b43533255b399b82dc307b536d7dfdca07f",
+    "last_touch_commit": "92c2c3178d167bc4cfef0653b8e2eebbdc96bff4"
+  },
+  {
+    "path": "Foundation/EmergentResidualTower.lean",
+    "sha256": "95b6aa8a38f7babfeff268a586e2b1d72b9bd69b795946cc67197416d3a34715",
+    "snapshot": "e1084b43533255b399b82dc307b536d7dfdca07f",
+    "last_touch_commit": "92c2c3178d167bc4cfef0653b8e2eebbdc96bff4"
+  },
+  {
+    "path": "Foundation/QuadraticMassCompatibility.lean",
+    "sha256": "2d9f7e44cc327aecf72c40239e42a1a1bab89b6ea206a73d07fd6f4bcab474d2",
+    "snapshot": "e1084b43533255b399b82dc307b536d7dfdca07f",
+    "last_touch_commit": "0295a650fd5f48e39279659772a311369a2e8645"
+  },
+  {
+    "path": "Foundation/FoundationalHalfScalingCapstone.lean",
+    "sha256": "516c940e762acefa72c6a570c84d53a9e10e64c6d5a42dd47085a009a95b3249",
+    "snapshot": "e1084b43533255b399b82dc307b536d7dfdca07f",
+    "last_touch_commit": "4051572613b2a1f9ecae026668541bed2bb14ae3"
+  },
+  {
+    "path": "Geometry/BalancedCarryOffset.lean",
+    "sha256": "3249094fcb4daed5f5a78b0132f216ea0a6e29194c2b89312e5d245d6500a0e4",
+    "snapshot": "e1084b43533255b399b82dc307b536d7dfdca07f",
+    "last_touch_commit": "44e75af358880705b8cff50f2850d08f91fc0b50"
+  },
+  {
+    "path": "Geometry/CarryCenterLegCrosswalk.lean",
+    "sha256": "b5deec0026830900e5317f262cb9ea942107c80bd6da457d69a95228cd4083c8",
+    "snapshot": "e1084b43533255b399b82dc307b536d7dfdca07f",
+    "last_touch_commit": "44e75af358880705b8cff50f2850d08f91fc0b50"
+  },
+  {
+    "path": "Geometry/BalancedCarryDepthCrosswalk.lean",
+    "sha256": "feecf5c2664a6582de5daba612ab8f6336882c83b0d197b0a348a0efc3bbd6c8",
+    "snapshot": "e1084b43533255b399b82dc307b536d7dfdca07f",
+    "last_touch_commit": "c2ac6556ffa9463318c885fdd530abe599bd0457"
+  },
+  {
+    "path": "Geometry/ResidualTowerDepth.lean",
+    "sha256": "90e807a2058a7bd8488116c2fd6e067000cd9175ad5b14399914f503ca2f421e",
+    "snapshot": "e1084b43533255b399b82dc307b536d7dfdca07f",
+    "last_touch_commit": "c2ac6556ffa9463318c885fdd530abe599bd0457"
+  },
+  {
+    "path": "Geometry/CenterLegReflection.lean",
+    "sha256": "4912f3fda79593acce74e861fd43d525e586d695d63ca77fb51327a6311a0845",
+    "snapshot": "e1084b43533255b399b82dc307b536d7dfdca07f",
+    "last_touch_commit": "6569971b60ca60d5e852bcd166b511e6285d37ea"
+  },
+  {
+    "path": "Analysis/RealDepthMass.lean",
+    "sha256": "13c9dbb9841f7c858ec0c2dc230556b53a9bbfee75d45a620859684077c44183",
+    "snapshot": "e1084b43533255b399b82dc307b536d7dfdca07f",
+    "last_touch_commit": "4051572613b2a1f9ecae026668541bed2bb14ae3"
+  },
+  {
+    "path": "Analysis/CompleteVerticalObservationGram.lean",
+    "sha256": "7be753f04875aac6cdc135010656ff839532fdd0f91863b3327f340dd9db4279",
+    "snapshot": "e1084b43533255b399b82dc307b536d7dfdca07f",
+    "last_touch_commit": "b221721ffd98e6172097799cec29c9497c236e88"
+  },
+  {
+    "path": "Analysis/CanonicalGreenMomentJetSeam.lean",
+    "sha256": "77a5b83b55e022a790f2d650404e458d4d699e4483c5de84d4c20daacd382296",
+    "snapshot": "e1084b43533255b399b82dc307b536d7dfdca07f",
+    "last_touch_commit": "d4d07ac6c7c0b8c48c2f7989de2fea26ead58ea5"
+  },
+  {
+    "path": "Analysis/PrimeResidualDepthCrosswalk.lean",
+    "sha256": "45ef4e1a149e88ec34d3dbacab7f7aedba3eec685af44cab0507ce39ac040618",
+    "snapshot": "e1084b43533255b399b82dc307b536d7dfdca07f",
+    "last_touch_commit": "4cc4261fb2910c72d35e1746c983a28999f6d7eb"
+  },
+  {
+    "path": "Analysis/AtlasEnergyPartition.lean",
+    "sha256": "c5a6962fe94033e0875544c0adef2e45e83472e297d3e977cc8988f01a948b85",
+    "snapshot": "e1084b43533255b399b82dc307b536d7dfdca07f",
+    "last_touch_commit": "f0c4b240e57ff7b5d4f38cfabee0de15e65f682f"
+  },
+  {
+    "path": "Analysis/PrimeCarryVoice.lean",
+    "sha256": "bca7b9480fa396d1e5fe5effd8007666e9bc81431281dd11e13be5a92b7c8d5d",
+    "snapshot": "e1084b43533255b399b82dc307b536d7dfdca07f",
+    "last_touch_commit": "4cc4261fb2910c72d35e1746c983a28999f6d7eb"
+  }
+]

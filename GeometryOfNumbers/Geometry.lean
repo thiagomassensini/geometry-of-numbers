@@ -1,3 +1,4 @@
+import GeometryOfNumbers.Geometry.IntegerCameraIncidence
 import GeometryOfNumbers
 import GeometryOfNumbers.Geometry.CenterLegReflection
 import GeometryOfNumbers.Geometry.CenteredSecondDifference
