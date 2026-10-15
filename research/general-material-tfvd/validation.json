@@ -1,0 +1,37 @@
+{
+  "base": "ab0c47651d414271cf6fda60c2d32fa2f2997927",
+  "lean": "v4.32.0",
+  "new_public_roots": 37,
+  "new_theorems": 32,
+  "new_definitions": 5,
+  "axiom_audit": "37 roots, transitive declaration types and bodies via Lean.collectAxioms; allowed propext, Classical.choice, Quot.sound only",
+  "axiom_footprints": "footprints.json",
+  "commands": [
+    {
+      "command": "lake build --wfail GeometryOfNumbers.Analysis.CarryMaterialTfvdGreenReadout",
+      "exit_code": 0,
+      "jobs": 8784
+    },
+    {
+      "command": "lake build --wfail",
+      "exit_code": 0,
+      "jobs": 8824
+    },
+    {
+      "command": "bash scripts/audit-foundation.sh && bash scripts/audit-geometry.sh && bash scripts/audit-analysis.sh",
+      "exit_code": 0
+    },
+    {
+      "command": "lake env lean -DwarningAsError=true research/general-material-tfvd/Regression.lean",
+      "exit_code": 0
+    }
+  ],
+  "pins_changed": false,
+  "other_repositories_modified": false,
+  "logs_sha256": {
+    "focused-build.log.gz": "cace0a703c644f6ae7df9c8a8a142ecf07f89d920ea4cc61f405117852cb347e",
+    "full-build.log.gz": "f68973dffe2f6ae8d977713a8f396242f4b6ea7f6d30a2bd287d9f70ae3f5f66",
+    "zone-audits.log.gz": "98e9a4eed4bc885be76d8c39e305948e71008978435be073ad7270861de008ad",
+    "regression.log.gz": "9d8d22eb02e0f23e204b63297e3517ea1c256511e1d5d6edc9ec323b3cfc85c6"
+  }
+}

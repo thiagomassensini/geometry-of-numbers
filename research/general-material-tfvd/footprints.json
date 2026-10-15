@@ -1,0 +1,372 @@
+[
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialGeneralTransport",
+    "kind": "def",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialIntervalReadout",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialGeneralTransport",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialIntervalReadout_apply",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialGeneralTransport",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialIntervalReadout_telescope",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialGeneralTransport",
+    "kind": "def",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialRadiusCorrection",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialGeneralTransport",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialRadiusCorrection_source",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialGeneralTransport",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialCamera_radius_readout",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialGeneralTransport",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialCamera_general_transport",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialGeneralTransport",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialTower_general_transport",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialGeneralTransport",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialRadiusCorrection_equal",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialGeneralTransport",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialCamera_general_reverse",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialGeneralTransport",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialRadiusCorrection72",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialGeneralTransport",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialCamera_general_transport72",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialGeneralTransport",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialCamera_general_pairing_transport",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialGeneralTransport",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialCamera_general_energy_defect",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialGeneralTransport",
+    "kind": "def",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialCameraNineTerms",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialGeneralTransport",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialCamera_nine_pairing",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialGeneralTransport",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialCamera_nine_real_pairing",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialGeneralTransport",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialCameraNineTerms72",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialTfvdGreenReadout",
+    "kind": "def",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialTfvdGreenReadout",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialTfvdGreenReadout",
+    "kind": "def",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialTfvdReturnReadout",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialTfvdGreenReadout",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialTfvd_coordinate",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialTfvdGreenReadout",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialTfvdGreen_hasDerivAt",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialTfvdGreenReadout",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialTfvdReturn_hasDerivAt",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialTfvdGreenReadout",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialTfvd_return_formula",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialTfvdGreenReadout",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialTfvd_green_zero",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialTfvdGreenReadout",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialTfvd_green_two",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialTfvdGreenReadout",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialTfvd_edge",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialTfvdGreenReadout",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialTfvd_edge_pairing",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialTfvdGreenReadout",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialTfvd_edge_source",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialTfvdGreenReadout",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialTfvd72_addresses",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialTfvdGreenReadout",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialTfvd72_correction",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialTfvdGreenReadout",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialTfvd_unit_samples",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialTfvdGreenReadout",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialTfvd_unit_cross",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialTfvdGreenReadout",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialTfvd_return_zero_negative",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialTfvdGreenReadout",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterial_physical_residual_pairing",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialTfvdGreenReadout",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterialRadiusCorrection_residual_ledger",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "module": "GeometryOfNumbers.Analysis.CarryMaterialTfvdGreenReadout",
+    "kind": "theorem",
+    "name": "GeometryOfNumbers.Analysis.carryMaterial_complete_real_pairing",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  }
+]
