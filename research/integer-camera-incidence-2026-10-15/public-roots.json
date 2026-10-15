@@ -1,0 +1,241 @@
+{
+  "Geometry": [
+    {
+      "name": "IntegerCameraCell",
+      "kind": "structure",
+      "module": "IntegerCameraIncidence"
+    },
+    {
+      "name": "IntegerCellRole",
+      "kind": "inductive",
+      "module": "IntegerCameraIncidence"
+    },
+    {
+      "name": "integerCameraRadius",
+      "kind": "def",
+      "module": "IntegerCameraIncidence"
+    },
+    {
+      "name": "integerCameraCenter",
+      "kind": "def",
+      "module": "IntegerCameraIncidence"
+    },
+    {
+      "name": "integerCameraPoint",
+      "kind": "def",
+      "module": "IntegerCameraIncidence"
+    },
+    {
+      "name": "IntegerCameraIncidence",
+      "kind": "def",
+      "module": "IntegerCameraIncidence"
+    },
+    {
+      "name": "integerCameraTowerCell",
+      "kind": "def",
+      "module": "IntegerCameraIncidence"
+    },
+    {
+      "name": "integerCameraTowerCell_reconstruction",
+      "kind": "theorem",
+      "module": "IntegerCameraIncidence"
+    },
+    {
+      "name": "integerCameraTowerCell_center",
+      "kind": "theorem",
+      "module": "IntegerCameraIncidence"
+    },
+    {
+      "name": "integerCamera_common_integer",
+      "kind": "theorem",
+      "module": "IntegerCameraIncidence"
+    },
+    {
+      "name": "integerCamera_point_reflection",
+      "kind": "theorem",
+      "module": "IntegerCameraIncidence"
+    },
+    {
+      "name": "integerCamera_same_center_leg_displacement",
+      "kind": "theorem",
+      "module": "IntegerCameraIncidence"
+    },
+    {
+      "name": "integerCamera_same_center_overlap",
+      "kind": "theorem",
+      "module": "IntegerCameraIncidence"
+    },
+    {
+      "name": "integerCamera72Two",
+      "kind": "def",
+      "module": "IntegerCameraIncidence"
+    },
+    {
+      "name": "integerCamera72Three",
+      "kind": "def",
+      "module": "IntegerCameraIncidence"
+    },
+    {
+      "name": "integerCamera72_positions",
+      "kind": "theorem",
+      "module": "IntegerCameraIncidence"
+    },
+    {
+      "name": "integerCamera72_only_shared_center",
+      "kind": "theorem",
+      "module": "IntegerCameraIncidence"
+    }
+  ],
+  "Analysis": [
+    {
+      "name": "primeCamera_maximal_depth_iff",
+      "kind": "theorem",
+      "module": "PrimeCameraProvenance"
+    },
+    {
+      "name": "integerCamera_other_depth_iff",
+      "kind": "theorem",
+      "module": "PrimeCameraProvenance"
+    },
+    {
+      "name": "primeCamera_other_depth_iff",
+      "kind": "theorem",
+      "module": "PrimeCameraProvenance"
+    },
+    {
+      "name": "integerCamera_maximal_core_not_dvd",
+      "kind": "theorem",
+      "module": "PrimeCameraProvenance"
+    },
+    {
+      "name": "primeCamera_maximal_core_coprime",
+      "kind": "theorem",
+      "module": "PrimeCameraProvenance"
+    },
+    {
+      "name": "primeCamera_common_maximal_presentations",
+      "kind": "theorem",
+      "module": "PrimeCameraProvenance"
+    },
+    {
+      "name": "primeCamera72_depths_and_cores",
+      "kind": "theorem",
+      "module": "PrimeCameraProvenance"
+    },
+    {
+      "name": "compositeCamera_maximal_not_coprime_canary",
+      "kind": "theorem",
+      "module": "PrimeCameraProvenance"
+    },
+    {
+      "name": "integerCamera72_local_masses",
+      "kind": "theorem",
+      "module": "PrimeCameraProvenance"
+    },
+    {
+      "name": "integerCameraReadout",
+      "kind": "def",
+      "module": "IntegerIncidenceEnergy"
+    },
+    {
+      "name": "integerCellStencil",
+      "kind": "def",
+      "module": "IntegerIncidenceEnergy"
+    },
+    {
+      "name": "integerIncidenceSynthesis",
+      "kind": "def",
+      "module": "IntegerIncidenceEnergy"
+    },
+    {
+      "name": "integerIncidenceLedger",
+      "kind": "def",
+      "module": "IntegerIncidenceEnergy"
+    },
+    {
+      "name": "integerCellStencil_synthesis",
+      "kind": "theorem",
+      "module": "IntegerIncidenceEnergy"
+    },
+    {
+      "name": "integerIncidenceLedger_synthesis",
+      "kind": "theorem",
+      "module": "IntegerIncidenceEnergy"
+    },
+    {
+      "name": "integerIncidenceSynthesis_ext_iff",
+      "kind": "theorem",
+      "module": "IntegerIncidenceEnergy"
+    },
+    {
+      "name": "integerObservationPair",
+      "kind": "def",
+      "module": "IntegerIncidenceEnergy"
+    },
+    {
+      "name": "integerObservationPair_polarization",
+      "kind": "theorem",
+      "module": "IntegerIncidenceEnergy"
+    },
+    {
+      "name": "integerIncidenceSynthesis_transport",
+      "kind": "theorem",
+      "module": "IntegerIncidenceEnergy"
+    },
+    {
+      "name": "integerIncidence_pairing_transport",
+      "kind": "theorem",
+      "module": "IntegerIncidenceEnergy"
+    },
+    {
+      "name": "integerIncidence_energy_transport",
+      "kind": "theorem",
+      "module": "IntegerIncidenceEnergy"
+    },
+    {
+      "name": "integerIncidence_energy_conservation_iff",
+      "kind": "theorem",
+      "module": "IntegerIncidenceEnergy"
+    },
+    {
+      "name": "integerCamera72_center_multiplicity",
+      "kind": "theorem",
+      "module": "IntegerIncidenceEnergy"
+    },
+    {
+      "name": "integerCamera72SignField",
+      "kind": "def",
+      "module": "IntegerIncidenceEnergy"
+    },
+    {
+      "name": "integerCamera72_sign_field_local_energy",
+      "kind": "theorem",
+      "module": "IntegerIncidenceEnergy"
+    },
+    {
+      "name": "integerCamera72_sign_field_readouts",
+      "kind": "theorem",
+      "module": "IntegerIncidenceEnergy"
+    },
+    {
+      "name": "integerCamera72_sign_field_synthesis",
+      "kind": "theorem",
+      "module": "IntegerIncidenceEnergy"
+    },
+    {
+      "name": "integerCamera72_weighted_synthesis",
+      "kind": "theorem",
+      "module": "IntegerIncidenceEnergy"
+    },
+    {
+      "name": "integerCamera72_weighted_energy_gap",
+      "kind": "theorem",
+      "module": "IntegerIncidenceEnergy"
+    },
+    {
+      "name": "integerCamera72_local_energy_does_not_determine_synthesis",
+      "kind": "theorem",
+      "module": "IntegerIncidenceEnergy"
+    }
+  ]
+}

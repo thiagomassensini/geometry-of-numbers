@@ -1,0 +1,178 @@
+{
+  "Geometry": {
+    "IntegerCameraCell": [],
+    "IntegerCellRole": [],
+    "integerCameraRadius": [],
+    "integerCameraCenter": [],
+    "integerCameraPoint": [],
+    "IntegerCameraIncidence": [],
+    "integerCameraTowerCell": [],
+    "integerCameraTowerCell_reconstruction": [],
+    "integerCameraTowerCell_center": [],
+    "integerCamera_common_integer": [],
+    "integerCamera_point_reflection": [
+      "propext",
+      "Quot.sound"
+    ],
+    "integerCamera_same_center_leg_displacement": [
+      "propext",
+      "Quot.sound"
+    ],
+    "integerCamera_same_center_overlap": [
+      "propext",
+      "Quot.sound"
+    ],
+    "integerCamera72Two": [],
+    "integerCamera72Three": [],
+    "integerCamera72_positions": [],
+    "integerCamera72_only_shared_center": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  "Analysis": {
+    "primeCamera_maximal_depth_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerCamera_other_depth_iff": [
+      "propext",
+      "Quot.sound"
+    ],
+    "primeCamera_other_depth_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerCamera_maximal_core_not_dvd": [
+      "propext"
+    ],
+    "primeCamera_maximal_core_coprime": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "primeCamera_common_maximal_presentations": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "primeCamera72_depths_and_cores": [
+      "propext"
+    ],
+    "compositeCamera_maximal_not_coprime_canary": [
+      "propext"
+    ],
+    "integerCamera72_local_masses": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerCameraReadout": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerCellStencil": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerIncidenceSynthesis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerIncidenceLedger": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerCellStencil_synthesis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerIncidenceLedger_synthesis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerIncidenceSynthesis_ext_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerObservationPair": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerObservationPair_polarization": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerIncidenceSynthesis_transport": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerIncidence_pairing_transport": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerIncidence_energy_transport": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerIncidence_energy_conservation_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerCamera72_center_multiplicity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerCamera72SignField": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerCamera72_sign_field_local_energy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerCamera72_sign_field_readouts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerCamera72_sign_field_synthesis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerCamera72_weighted_synthesis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerCamera72_weighted_energy_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerCamera72_local_energy_does_not_determine_synthesis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  }
+}

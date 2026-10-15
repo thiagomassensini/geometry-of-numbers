@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-15",
+  "host": "llm",
+  "base": "e1084b43533255b399b82dc307b536d7dfdca07f",
+  "carry_source_snapshot": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "new_public_roots": 47,
+  "new_theorems": 32,
+  "geometry_roots": 17,
+  "analysis_roots": 30,
+  "regression_type_checks": 11,
+  "root_build_command": "lake build --wfail",
+  "root_build_jobs": 8820,
+  "root_build_exit_code": 0,
+  "official_audits": [
+    "bash scripts/audit-foundation.sh",
+    "bash scripts/audit-geometry.sh",
+    "bash scripts/audit-analysis.sh"
+  ],
+  "official_audit_exit_code": 0,
+  "axiom_collection": "Lean.Util.CollectAxioms.collect visits .type and .value for definitions and theorems; verified in installed Lean 4.32.0 source.",
+  "proof_sha256": {
+    "IntegerCameraIncidence.lean": "9f8513a62203a97a2835d55fa247c4951c38fea06b3115ef880e144cf41ec540",
+    "PrimeCameraProvenance.lean": "28b206ed52860f0d0f42c0b633d9eac3a8a88009baea3d19517497d0a557d98d",
+    "IntegerIncidenceEnergy.lean": "be161f4511910b053a27cc1dfc2ecabd9d7d66ebe5d674058867044771a80a22"
+  },
+  "unchanged": {
+    "foundation": "all existing Foundation source and entrypoint unchanged",
+    "geometry_manifest": "9868872bae98d0c7e22c597d8e27d38d247498161cf70cdcdc193e9ea0608602",
+    "carry_manifest": "822866313e377adcb9c6249680ed67ceb47682af1bb0cd3cc5203554786bcfeb",
+    "carry_C2OddTfvdTransport": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "carry_C2OddTfvdTransportAudit": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "related_unmerged_source": {
+    "repo": "thiagomassensini/native-carry-spectral-weyl",
+    "pr": 15,
+    "state": "OPEN",
+    "consulted_head": "871217099a069083791738578b2e44005b31986e",
+    "scientific_commit": "f83ad1ab388ad627595eec20dbd393d2cc300f4e",
+    "remote_main": "248249ce098491f4194209d8e698dc5965f1405d",
+    "relational_module_in_remote_main": false
+  },
+  "results": {
+    "A": "proved",
+    "B": "proved general incidence overlap and exact finite countermodel",
+    "C": "proved finite polarized defect ledger",
+    "D": "not constructed: no typed physical map to the prime tower or completed TFVD/Green carrier"
+  },
+  "not_claimed": [
+    "Unique global quadratic pairing from integer incidences or local masses.",
+    "Equality of different-camera local masses.",
+    "Canonical source selection of the countermodel fields.",
+    "A bounded phase generator or new height operator.",
+    "Vanishing or positivity of the physical Green defect.",
+    "General canonical Hankel positivity."
+  ]
+}

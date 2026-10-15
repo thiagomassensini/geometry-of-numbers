@@ -1,3 +1,5 @@
+import GeometryOfNumbers.Analysis.PrimeCameraProvenance
+import GeometryOfNumbers.Analysis.IntegerIncidenceEnergy
 import GeometryOfNumbers.Analysis.CanonicalGreenMomentJetSeam
 import GeometryOfNumbers.Analysis.ParityMomentGram
 import GeometryOfNumbers.Analysis.BaseTwoCanonicalDressingMoments
