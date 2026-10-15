@@ -1,0 +1,381 @@
+{
+  "base": "1c530e7114fbaa2960e2c95209de307e6d939b83",
+  "lean": "v4.32.0",
+  "public_roots": 34,
+  "theorems": 27,
+  "audit_scope": "Lean.collectAxioms transitively traverses declaration types and bodies",
+  "commands": [
+    {
+      "command": "lake build --wfail GeometryOfNumbers.Analysis.CarryMaterialCameraTransport",
+      "exit_code": 0,
+      "jobs": 8775,
+      "log": "focused-build.log.gz"
+    },
+    {
+      "command": "lake build --wfail",
+      "exit_code": 0,
+      "jobs": 8822,
+      "log": "full-build.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-foundation.sh && bash scripts/audit-geometry.sh && bash scripts/audit-analysis.sh",
+      "exit_code": 0,
+      "log": "zone-audits.log.gz"
+    },
+    {
+      "command": "lake env lean -DwarningAsError=true research/carry-material-camera-source/Regression.lean",
+      "exit_code": 0,
+      "log": "regression.log.gz"
+    }
+  ],
+  "pins_changed": false,
+  "other_repositories_modified": false,
+  "axiom_footprints": [
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialSourceRealization",
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealSample",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialSourceRealization",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealSample_coordinates",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialSourceRealization",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterial_amplitude_depth_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialSourceRealization",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealSample_eq_depthState",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialSourceRealization",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterial_camera_amplitude_factorization",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialSourceRealization",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealSample_camera_factorization",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialSourceRealization",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialTower_center_realization",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialSourceRealization",
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialGradientReadout",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialSourceRealization",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialGradientReadout_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialSourceRealization",
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialPointReadout",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialSourceRealization",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialPointReadout_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialSourceRealization",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialPointReadout_source",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialSourceRealization",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialPointReadout_step",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialSourceRealization",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterial72_common_center",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialSourceRealization",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterial_completed_source_pairing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialCameraTransport",
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCameraReadout",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialCameraTransport",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCameraReadout_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialCameraTransport",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCameraReadout_source",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialCameraTransport",
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealCamera",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialCameraTransport",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealCamera_eq_integerReadout",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialCameraTransport",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCamera72_transport",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialCameraTransport",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCamera72_source_transport",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialCameraTransport",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCamera72_source_values",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialCameraTransport",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCamera72_defect_zero_positive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialCameraTransport",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCamera_clock_connection",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialCameraTransport",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCamera72_pairing_transport",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialCameraTransport",
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialSamplePair",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialCameraTransport",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialSamplePair_real_forms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialCameraTransport",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialSamplePair_phase",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialCameraTransport",
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCamera72NineTerms",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialCameraTransport",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCamera72_pairing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialCameraTransport",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCamera72_real_pairing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialCameraTransport",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterial_dressed_completed_readout",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "module": "GeometryOfNumbers.Analysis.CarryMaterialCameraTransport",
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterial_dressed_completed_pairing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "logs_sha256": {
+    "regression.log.gz": "e977feff93fb62bf260e45f1fa6a5bce270f3bebe45b8f7fe94a7d8dfa034ffc",
+    "full-build.log.gz": "5d9cb71c111331d12cdb41c48805bafb2fb2ca53a5ba28d2c1d6c346ca4a5256",
+    "focused-build.log.gz": "a82a559b0893dc0903ec8cf2c911084253efebba548f146fe2633b057e43784b",
+    "zone-audits.log.gz": "32959c9bb72fab2878594a1ae02f88127d45848eed389360ddc4b479e3b1bb0a"
+  }
+}
