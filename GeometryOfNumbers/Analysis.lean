@@ -1,3 +1,4 @@
+import GeometryOfNumbers.Analysis.CarryMaterialCentralProjectionBounds
 import GeometryOfNumbers.Analysis.CarryMaterialResidualResponse
 import GeometryOfNumbers.Analysis.CarryMaterialNormalizedResponse
 import GeometryOfNumbers.Analysis.CarryMaterialCentralCalibration

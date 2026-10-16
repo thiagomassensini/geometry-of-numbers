@@ -1,3 +1,5 @@
+import GeometryOfNumbers.Analysis.CarryMaterialCentralProjectionBounds
+import CarrySelfAdjointOperator.CompletedNativeChiralReturnSeventhSourceJet
 import GeometryOfNumbers.Analysis.CarryMaterialResidualResponse
 import CarrySelfAdjointOperator.NativeCompletedSourceTwoPositiveChannels
 import GeometryOfNumbers.Analysis.CarryMaterialNormalizedResponse
@@ -773,3 +775,120 @@ namespace CarryMaterialResidualComparison
 #assert_central_comparison_axioms material_real_energy_on_positive_nullspace
 #print axioms material_real_energy_on_positive_nullspace
 end CarryMaterialResidualComparison
+
+namespace CarryMaterialCentralProjectionComparison
+open GeometryOfNumbers.Analysis CarrySelfAdjointOperator
+open scoped InnerProductSpace
+noncomputable section
+set_option autoImplicit false
+set_option maxHeartbeats 800000
+
+/-- Coarse bound from existing raw theta integral certificates, not numerical
+fitting or a new moment source. -/
+theorem canonical_first_shifted_moment_lt :
+    canonicalCompletedNativeLogDerivativeMoment 1 < (1/1024 : ℝ) := by
+  have he := nativeSourceOddBoundaryCoefficient_integral_formulas.2.1
+  rw [nativeSourceOddBoundaryCoefficient_eq_twice_primeDepthGeometricMoment,
+    primeDepthGeometricMoment_eq_canonical] at he
+  rcases nativeSourceCosineIntegral_refined_box with ⟨ha, _, hb, hbu, hc, _⟩
+  have hap : 0 < completedNativeXiCosineMoment 0 := by linarith
+  have hbp : 0 < completedNativeXiCosineMoment 1 := by linarith
+  have hcp : 0 < completedNativeXiCosineMoment 2 := by linarith
+  have hbs : completedNativeXiCosineMoment 1 ^ 2 < (23/1000 : ℝ)^2 := by nlinarith
+  have has : (49/100 : ℝ)^2 < completedNativeXiCosineMoment 0 ^ 2 := by nlinarith
+  have hac := mul_pos hap hcp
+  have ht : (3 * completedNativeXiCosineMoment 1^2 -
+      completedNativeXiCosineMoment 0 * completedNativeXiCosineMoment 2) /
+      (6*completedNativeXiCosineMoment 0^2) < (1/512 : ℝ) := by
+    apply (div_lt_iff₀ (by positivity)).mpr
+    nlinarith
+  linarith
+
+/-- The proposed central-plane deflation fails the genuine first-jet test.
+This rejects this candidate only, without changing its metric or scale. -/
+theorem material_centered_firstJet_gap :
+    (1/1024 : ℝ) < ‖deriv carryMaterialCenteredState 0‖^2 -
+      canonicalCompletedNativeLogDerivativeMoment 1 := by
+  linarith [carryMaterialCenteredState_firstJet_energy_gt, canonical_first_shifted_moment_lt]
+
+theorem material_centered_firstJet_ne_canonical :
+    ‖deriv carryMaterialCenteredState 0‖^2 ≠ canonicalCompletedNativeLogDerivativeMoment 1 := by
+  linarith [material_centered_firstJet_gap]
+
+open CarryMaterialResidualComparison CarryMaterialResponseComparison Filter
+open scoped Topology ComplexConjugate
+
+/-- Equality of the actual residual diagonals forces the first mixed jet.
+No identification of vertical coordinates with jets is used. -/
+theorem material_centered_residual_firstJet_necessary
+    (h : (fun t : ℝ => (‖carryMaterialCenteredState t‖^2 : ℂ)) =ᶠ[nhds 0]
+      (fun t => conj (carryMaterialNormalizedResponse t)*carryMaterialNormalizedResponse t *
+        dslope carryMaterialReducedResponse t t)) :
+    ‖deriv carryMaterialCenteredState 0‖^2 = canonicalCompletedNativeLogDerivativeMoment 1 := by
+  have hG : ContinuousAt (fun t : ℝ => ‖dslope carryMaterialCenteredState 0 t‖^2) 0 :=
+    (continuousAt_dslope_same.mpr carryMaterialCenteredState_hasDerivAt_zero.differentiableAt).norm.pow 2
+  have ha : ContinuousAt carryMaterialResponseAxis 0 :=
+    (SourcePositiveReduction.sourceAxis_analyticAt_zero.differentiableAt.hasDerivAt.comp_ofReal.congr_of_eventuallyEq
+      material_axis_eventually_eq).continuousAt
+  have hF : ContinuousAt (fun t : ℝ => ‖carryMaterialResponseAxis t‖^2 *
+      (deriv carryMaterialReducedResponse t).re) 0 :=
+    (ha.norm.pow 2).mul (Complex.continuous_re.continuousAt.comp' material_reduced_deriv_continuous)
+  have heq : (fun t : ℝ => ‖dslope carryMaterialCenteredState 0 t‖^2) =ᶠ[nhdsWithin 0 {0}ᶜ]
+      (fun t : ℝ => ‖carryMaterialResponseAxis t‖^2 * (deriv carryMaterialReducedResponse t).re) := by
+    filter_upwards [h.filter_mono nhdsWithin_le_nhds, self_mem_nhdsWithin] with t ht hne
+    have hn : t ≠ 0 := by simpa using hne
+    have hZ : ‖carryMaterialCenteredState t‖^2 = t^2*‖dslope carryMaterialCenteredState 0 t‖^2 := by
+      have hr : carryMaterialCenteredState t = t • dslope carryMaterialCenteredState 0 t := by
+        simpa only [sub_zero, carryMaterialCenteredState_zero] using
+          (sub_smul_dslope carryMaterialCenteredState 0 t).symm
+      rw [hr, norm_smul, mul_pow, Real.norm_eq_abs, sq_abs]
+    have hq : ‖carryMaterialNormalizedResponse t‖^2 = t^2*‖carryMaterialResponseAxis t‖^2 := by
+      have hr : carryMaterialNormalizedResponse t = t • carryMaterialResponseAxis t := by
+        simpa only [sub_zero, material_normalized_response_zero, carryMaterialResponseAxis] using
+          (sub_smul_dslope carryMaterialNormalizedResponse 0 t).symm
+      rw [hr, norm_smul, mul_pow, Real.norm_eq_abs, sq_abs]
+    have hh : ‖carryMaterialCenteredState t‖^2 =
+        ‖carryMaterialNormalizedResponse t‖^2*(deriv carryMaterialReducedResponse t).re := by
+      have hr := congrArg Complex.re ht
+      simp only [← Complex.ofReal_pow, Complex.ofReal_re, dslope_same, ← Complex.normSq_eq_conj_mul_self,
+        Complex.mul_re, Complex.ofReal_im, zero_mul, sub_zero, ← Complex.sq_norm] at hr
+      change ‖carryMaterialCenteredState t‖^2 =
+        ‖carryMaterialNormalizedResponse t‖^2*(deriv carryMaterialReducedResponse t).re at hr
+      exact hr
+    rw [hZ, hq, mul_assoc] at hh
+    exact mul_left_cancel₀ (pow_ne_zero 2 hn) hh
+  have hv := tendsto_nhds_unique
+    ((hG.tendsto.mono_left nhdsWithin_le_nhds).congr' heq)
+    (hF.tendsto.mono_left nhdsWithin_le_nhds)
+  have hFzero : ‖carryMaterialResponseAxis 0‖^2*(deriv carryMaterialReducedResponse 0).re =
+      canonicalCompletedNativeLogDerivativeMoment 1 := by
+    rw [material_axis_zero, material_reduced_hasDerivAt_zero.deriv]
+    simp only [Complex.norm_real, Real.norm_eq_abs, sq_abs, ← Complex.ofReal_pow,
+      ← Complex.ofReal_div, Complex.ofReal_re]
+    field_simp [canonicalCompletedNativeLogDerivativeMoment_zero_pos.ne']
+  simpa only [dslope_same, hFzero] using hv
+
+/-- Narrow no-go: this actual projected source cannot equal the weighted
+canonical residual even just on a real diagonal germ. -/
+theorem material_centered_not_residual_diagonal_germ :
+    ¬ (fun t : ℝ => (‖carryMaterialCenteredState t‖^2 : ℂ)) =ᶠ[nhds 0]
+      (fun t => conj (carryMaterialNormalizedResponse t)*carryMaterialNormalizedResponse t *
+        dslope carryMaterialReducedResponse t t) := by
+  intro h
+  exact material_centered_firstJet_ne_canonical (material_centered_residual_firstJet_necessary h)
+
+end
+end CarryMaterialCentralProjectionComparison
+
+namespace CarryMaterialCentralProjectionComparison
+#assert_central_comparison_axioms canonical_first_shifted_moment_lt
+#print axioms canonical_first_shifted_moment_lt
+#assert_central_comparison_axioms material_centered_firstJet_gap
+#print axioms material_centered_firstJet_gap
+#assert_central_comparison_axioms material_centered_firstJet_ne_canonical
+#print axioms material_centered_firstJet_ne_canonical
+#assert_central_comparison_axioms material_centered_residual_firstJet_necessary
+#print axioms material_centered_residual_firstJet_necessary
+#assert_central_comparison_axioms material_centered_not_residual_diagonal_germ
+#print axioms material_centered_not_residual_diagonal_germ
+end CarryMaterialCentralProjectionComparison

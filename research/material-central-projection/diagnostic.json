@@ -1,0 +1,8 @@
+{
+  "status": "UNCERTIFIED_DIAGNOSTIC_ONLY",
+  "gradient_cutoff": 1000000,
+  "cell_cutoff": 100000,
+  "projected_firstJet_energy_approx": 0.11352866502485076,
+  "h1_refined_box_midpoint_approx": 3.7172387889465586e-05,
+  "warning": "Floating partial sums without tail enclosures; not a proof or certified interval."
+}
