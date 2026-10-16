@@ -1,0 +1,107 @@
+{
+  "GeometryOfNumbers.Analysis.carryMaterialReducedResponse": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterial_physical_residual_origin_norm_pos": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialResidualComparison.material_reduced_eventually_eq": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialResidualComparison.material_reduced_zero": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialResidualComparison.material_reduced_hasDerivAt_zero": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialResidualComparison.material_reduced_deriv_real_pos": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialResidualComparison.material_reduced_not_zero_germ": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialResidualComparison.material_response_conj": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialResidualComparison.material_axis_conj": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialResidualComparison.material_reduced_conj": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialResidualComparison.material_weighted_residual_center": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialResidualComparison.material_real_kernel_split_offdiag": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialResidualComparison.material_real_kernel_split": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialResidualComparison.material_real_finite_energy_split": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialResidualComparison.material_reduced_deriv_continuous": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialResidualComparison.material_weighted_residual_diagonal_pos": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialResidualComparison.material_weighted_residual_not_zero_germ": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialResidualComparison.material_second_channel_hasDerivAt_zero": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialResidualComparison.material_second_channel_firstJet_energy": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialResidualComparison.material_weighted_residual_not_physical_edge_energy": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialResidualComparison.material_real_energy_on_positive_nullspace": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-16",
+  "host": "llm",
+  "geometry_base": "87597b95c398d6d70c5db5793cecd646a45ae7dd",
+  "operator_base": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "new_library_definitions": 1,
+  "new_library_theorems": 1,
+  "new_comparison_theorems": 19,
+  "focused_build": {
+    "command": "lake build GeometryOfNumbers.Analysis.CarryMaterialResidualResponse --wfail",
+    "jobs": 8788,
+    "exit_code": 0,
+    "log": "focused-2.log.gz"
+  },
+  "full_build": {
+    "command": "lake build --wfail",
+    "jobs": 8827,
+    "exit_code": 0,
+    "log": "full-build.log.gz"
+  },
+  "zone_audits": {
+    "commands": [
+      "bash scripts/audit-foundation.sh",
+      "bash scripts/audit-geometry.sh",
+      "bash scripts/audit-analysis.sh"
+    ],
+    "exit_code": 0,
+    "log": "zone-audits.log.gz"
+  },
+  "regression": {
+    "command": "lake env lean -DwarningAsError=true research/material-residual-study/Regression.lean",
+    "exit_code": 0,
+    "log": "regression.log.gz"
+  },
+  "comparison": {
+    "command": "bash scripts/audit-material-central-comparison.sh /home/thlinux/carry-self-adjoint-operator",
+    "exit_code": 0,
+    "log": "cross-audit.log.gz",
+    "new_roots": 19,
+    "previous_roots_reaudited": 34,
+    "additional_lake_dependency": false
+  },
+  "axioms": {
+    "guard": "collectAxioms traverses transitive declaration types and bodies; print axioms for all new roots",
+    "allowed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "new_roots_checked": 21
+  },
+  "pin_changes": false,
+  "other_repositories_modified": false,
+  "scope": "Actual material reduction; real diagonal extension; finite energy identity with all repeated points; strictly positive punctured local real diagonal of weighted residual. No full residual PSD, physical Gram realization or all-order positivity is claimed."
+}

@@ -6126,3 +6126,11 @@ namespace GeometryOfNumbers.Analysis
 #assert_analysis_axioms carryMaterialNormalizedResponse_connection
 #print axioms carryMaterialNormalizedResponse_connection
 end GeometryOfNumbers.Analysis
+
+-- Actual-source first reduction and the distinct physical coordinate residual.
+namespace GeometryOfNumbers.Analysis
+#assert_analysis_axioms carryMaterialReducedResponse
+#print axioms carryMaterialReducedResponse
+#assert_analysis_axioms carryMaterial_physical_residual_origin_norm_pos
+#print axioms carryMaterial_physical_residual_origin_norm_pos
+end GeometryOfNumbers.Analysis

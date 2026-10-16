@@ -1,0 +1,29 @@
+{
+  "library_definitions": [
+    "GeometryOfNumbers.Analysis.carryMaterialReducedResponse"
+  ],
+  "library_theorems": [
+    "GeometryOfNumbers.Analysis.carryMaterial_physical_residual_origin_norm_pos"
+  ],
+  "comparison_theorems": [
+    "CarryMaterialResidualComparison.material_reduced_eventually_eq",
+    "CarryMaterialResidualComparison.material_reduced_zero",
+    "CarryMaterialResidualComparison.material_reduced_hasDerivAt_zero",
+    "CarryMaterialResidualComparison.material_reduced_deriv_real_pos",
+    "CarryMaterialResidualComparison.material_reduced_not_zero_germ",
+    "CarryMaterialResidualComparison.material_response_conj",
+    "CarryMaterialResidualComparison.material_axis_conj",
+    "CarryMaterialResidualComparison.material_reduced_conj",
+    "CarryMaterialResidualComparison.material_weighted_residual_center",
+    "CarryMaterialResidualComparison.material_real_kernel_split_offdiag",
+    "CarryMaterialResidualComparison.material_real_kernel_split",
+    "CarryMaterialResidualComparison.material_real_finite_energy_split",
+    "CarryMaterialResidualComparison.material_reduced_deriv_continuous",
+    "CarryMaterialResidualComparison.material_weighted_residual_diagonal_pos",
+    "CarryMaterialResidualComparison.material_weighted_residual_not_zero_germ",
+    "CarryMaterialResidualComparison.material_second_channel_hasDerivAt_zero",
+    "CarryMaterialResidualComparison.material_second_channel_firstJet_energy",
+    "CarryMaterialResidualComparison.material_weighted_residual_not_physical_edge_energy",
+    "CarryMaterialResidualComparison.material_real_energy_on_positive_nullspace"
+  ]
+}
