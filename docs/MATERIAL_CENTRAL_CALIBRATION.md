@@ -14,7 +14,7 @@ Bases conferidas:
 | carry-self-adjoint-operator | `045369f6dedcb2e75e9aefed1d12c9f73b9a2532` | PRs 105/106 e contratos canônicos atuais |
 | momentos | `a54f267365d5d8c965376734b17b10ae89ed3f74` | Auditoria histórica de coeficientes, somente leitura |
 
-Os hashes dos arquivos, commits de última alteração, merges dos PRs e nomes completos das 29 novas declarações estão em [provenance.json](../research/material-central-calibration/provenance.json).
+Os hashes dos arquivos, commits de última alteração, merges dos PRs e nomes completos das 31 novas declarações estão em [provenance.json](../research/material-central-calibration/provenance.json).
 
 Nos nomes abaixo, `A = GeometryOfNumbers.Analysis`, `B = A.BaseTwoCompletion` e `C = CarrySelfAdjointOperator`; as abreviações são apenas deste relatório.
 
@@ -91,7 +91,7 @@ Reutiliza-se, sem reprova, `A.carryMaterialTfvd_edge_pairing` do PR #3. Para end
 
 ## 3. Identificação escalar efetiva entre os repositórios
 
-O verificador [CanonicalComparison.lean](../research/material-central-calibration/CanonicalComparison.lean) contém 15 teoremas no namespace `CarryMaterialCanonicalComparison`.
+O verificador [CanonicalComparison.lean](../research/material-central-calibration/CanonicalComparison.lean) contém 17 teoremas no namespace `CarryMaterialCanonicalComparison`.
 
 A aplicação explícita de parâmetros é a inclusão `t:ℝ ↦ (t:ℂ)`. As definições dão
 
@@ -109,7 +109,7 @@ com a comutação `t*i=i*t` verificada. Em seguida foram identificados os dois l
 
 A divisão usa a não anulação do fator da câmera já provada; a linha tem parte real 1/2 e está no domínio `-1<Re(s)<1` requerido pelo teorema de `nativeScalar`.
 
-Isto prova uma identificação escalar, não uma conjugação entre relógio material e operador das alturas. Também não transforma a derivada real de um vetor em derivada holomorfa. O verificador externo não acrescenta dependência ao Lake: combina os oleans já compilados, sob pins compartilhados idênticos, e fixa o commit do operador. Os 15 resultados são checados pelo kernel, mas ficam fora do build padrão da biblioteca para preservar seus pins.
+Isto prova uma identificação escalar, não uma conjugação entre relógio material e operador das alturas. Também não transforma a derivada real de um vetor em derivada holomorfa. O verificador externo não acrescenta dependência ao Lake: combina os oleans já compilados, sob pins compartilhados idênticos, e fixa o commit do operador. Os 17 resultados são checados pelo kernel, mas ficam fora do build padrão da biblioteca para preservar seus pins.
 
 ## 4. Teste da candidata literal e defeito exato
 
@@ -187,12 +187,36 @@ Na diagonal a energia real e a norma complexa do mesmo estado coincidem. A obstr
 
 Não há uma hipótese de isometria artificial preenchendo a lacuna. Uma nova ponte terá de explicar matematicamente por que seu estado central é diferente do lift literal testado, preservando a proveniência, e então verificar o kernel completo. Não se autoriza modificar a métrica para apagar o excesso. O certificado complexo anterior obstruído pelo primeiro jet ímpar não foi reutilizado.
 
+### Antecedente ambient C3 e a correspondência exata
+
+O resultado indicado pelo usuário em [CompletedNativeAmbientCentralCurvatureDecision.lean](https://github.com/thiagomassensini/carry-self-adjoint-operator/blob/045369f6dedcb2e75e9aefed1d12c9f73b9a2532/CarrySelfAdjointOperator/CompletedNativeAmbientCentralCurvatureDecision.lean) já estava provado no operador; sua última alteração é `d24418fe03cd0af306b9c0e15ca095ae0dfda570`. O [documento original](https://github.com/thiagomassensini/carry-self-adjoint-operator/blob/045369f6dedcb2e75e9aefed1d12c9f73b9a2532/docs/completed-native-ambient-central-curvature-decision.md) registra a decisão. Esta rodada não reivindica a descoberta da obstrução ambient.
+
+A comparação com as definições trouxe uma ponte adicional: **o gradiente da fonte material é literalmente o mesmo vetor ℓ² da componente ordinária C3** na mesma linha nativa. `CarryMaterialCanonicalComparison.material_gradient` prova, para todo t real e a condição de domínio `0<Re(1/2+it)`:
+
+\[
+g_t=canonicalCompletedC3DirichletGradientState(1/2+it).
+\]
+
+É a ação da projeção original `Y ↦ Y.snd.fst`; não é uma equivalência entre os estados completos. O nome histórico do alias `CarryVerticalL2` não transforma o índice dessa sequência de diferenças materiais em profundidade TFVD, nem prova conjugação das dinâmicas.
+
+O estado ambient tem norma central `M_ambient=‖g_0‖²/|F(0)|²`, enquanto o lift completo testado aqui tem `M_material=(1+‖g_0‖²+|β_0|²)/(2|S_0|²)`. As duas fórmulas usam as suas próprias definições; não se igualam os carriers.
+
+Também foi formalizada a correspondência dos sinais:
+
+\[
+\boxed{D_{ambient}=-4|F(0)|^2\,(M_{ambient}-h_0).}
+\]
+
+É `ambient_curvature_defect_eq_negative_normalized_gap`, reutilizando os teoremas anteriores. Logo o defeito de curvatura negativo do estudo antigo corresponde a excesso positivo do Gram normalizado. Não há inversão do diagnóstico.
+
+**O avanço específico desta rodada é a ponte tipada da mesma componente gradiente e da resposta escalar entre os repositórios, junto ao teste do estado completo com semente, residual e retorno global.** A separação numérica de réguas, por si só, já tinha antecedente formal. A nova decomposição mostra que conservar esses dados no lift literal também não produz a calibração canônica. A procura de outra aplicação derivada da geometria continua aberta.
+
 ## 7. Status e reprodução
 
 | Status | Resultado |
 | --- | --- |
 | **PROVADO em Lean — biblioteca** | 14 identidades da norma completa, retorno, cancelamento e excesso central da candidata |
-| **PROVADO em Lean — verificação externa** | 15 teoremas: identificação da fonte escalar, parâmetro explícito, defeito contra h0 e no-go estreito |
+| **PROVADO em Lean — verificação externa** | 17 teoremas: identificação da fonte escalar, parâmetro explícito, defeito contra h0 e no-go estreito |
 | **PROVADO anteriormente / reutilizado** | Reconstrução TFVD + traço, quatro cruzamentos, duas quadraturas e limite h0<1/16 |
 | **CONDICIONAL — interface existente** | Aplicar certificados HP quando seu Gram e independências forem demonstrados; não preenchidos nesta rodada |
 | **OBSTRUÍDO** | Kernel normalizado para qualquer extensão com valor literal `D_0Y_0` na origem, no carrier original |
@@ -210,6 +234,6 @@ lake env lean -DwarningAsError=true research/material-central-calibration/Regres
 bash scripts/audit-material-central-comparison.sh /home/thlinux/carry-self-adjoint-operator
 ```
 
-Build completo: **8825 jobs**, sem warnings. Guardas transitivos por `collectAxioms` inspecionam tipos e corpos; os 29 resultados permitem somente `propext`, `Classical.choice`, `Quot.sound`. A Foundation conserva footprint vazio; Geometry mantém seu guard próprio. Sem `sorry`, `admit`, novos axiomas ou mudanças de pins. O verificador cruzado requer módulos do operador previamente compilados no commit fixado e pins Lean/Mathlib/GreenFrame idênticos; ele não altera fontes ou manifests do outro repositório.
+Build completo: **8825 jobs**, sem warnings. Guardas transitivos por `collectAxioms` inspecionam tipos e corpos; os 31 resultados permitem somente `propext`, `Classical.choice`, `Quot.sound`. A Foundation conserva footprint vazio; Geometry mantém seu guard próprio. Sem `sorry`, `admit`, novos axiomas ou mudanças de pins. O verificador cruzado requer módulos do operador previamente compilados no commit fixado e pins Lean/Mathlib/GreenFrame idênticos; ele não altera fontes ou manifests do outro repositório.
 
-[Evidência de validação](../research/material-central-calibration/validation.json), [footprints novos](../research/material-central-calibration/footprints.json) e logs comprimidos na mesma pasta. As regressões conservam o canário 72, os nove cruzamentos, endereços TFVD, relógio e obstruções anteriores. O módulo de comparação externo também audita suas 15 declarações em toda execução.
+[Evidência de validação](../research/material-central-calibration/validation.json), [footprints novos](../research/material-central-calibration/footprints.json) e logs comprimidos na mesma pasta. As regressões conservam o canário 72, os nove cruzamentos, endereços TFVD, relógio e obstruções anteriores. O módulo de comparação externo também audita suas 17 declarações em toda execução.

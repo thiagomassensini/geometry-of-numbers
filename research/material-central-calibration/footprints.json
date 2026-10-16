@@ -94,6 +94,11 @@
     "Classical.choice",
     "Quot.sound"
   ],
+  "CarryMaterialCanonicalComparison.material_gradient": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
   "CarryMaterialCanonicalComparison.material_camera_factor": [
     "propext",
     "Classical.choice",
@@ -135,6 +140,11 @@
     "Quot.sound"
   ],
   "CarryMaterialCanonicalComparison.normalized_jet_order_zero": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialCanonicalComparison.ambient_curvature_defect_eq_negative_normalized_gap": [
     "propext",
     "Classical.choice",
     "Quot.sound"

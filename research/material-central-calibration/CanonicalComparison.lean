@@ -1,6 +1,7 @@
 import GeometryOfNumbers.Analysis.CarryMaterialCentralCalibration
 import CarrySelfAdjointOperator.C2GeometryNativeSourceBridge
 import CarrySelfAdjointOperator.CompletedC3KernelMetricCalibration
+import CarrySelfAdjointOperator.CompletedNativeAmbientCentralCurvatureDecision
 import Lean
 
 /-! Read-only cross-repository verification with identical Lean/Mathlib and
@@ -40,6 +41,20 @@ theorem material_signal (t : ℝ) :
     baseTwoCriticalCompleteSignal t = bracketCharacteristic 2 (nativeLine t) := by
   simp only [baseTwoCriticalCompleteSignal, bracketCharacteristic, seedDirichletTerm,
     if_true, material_sample t 1 (by decide), material_cell]
+
+/-- The gradient component is literally the ordinary C3 gradient on the same
+native line. This identifies a component, not the full ambient/material state. -/
+theorem material_gradient (t : ℝ)
+    (ht : 0 < (operatorHeightParameter (t : ℂ)).re) :
+    baseTwoCompletedMaterialGradientL2 t =
+      canonicalCompletedC3DirichletGradientState (operatorHeightParameter (t : ℂ)) ht := by
+  apply lp.ext
+  funext n
+  simp only [baseTwoCompletedMaterialGradientL2_apply, baseTwoCompletedMaterialGradient_apply,
+    canonicalCompletedC3DirichletGradientState_apply,
+    criticalMaterialGradient_eq_nativeLinePowerDifference,
+    CPFormal.Analytic.Cp.positiveDirichletGradient, CPFormal.Analytic.Cp.natDirichletTerm,
+    CPFormal.Analytic.Cp.dirichletTerm, Int.cast_natCast, height_parameter]
 
 theorem material_camera_factor (t : ℝ) :
     baseTwoCanonicalCameraFactor t = factor 2 (nativeLine t) := by
@@ -119,6 +134,21 @@ theorem normalized_jet_order_zero
       normalizedCompletedGreenState completedNativeOperatorCharacteristic state 0 := by
   simp [completedGreenTaylorJet]
 
+/-- The earlier negative curvature defect is minus a positive characteristic
+weight times its normalized Gram gap. The two sign conventions agree. -/
+theorem ambient_curvature_defect_eq_negative_normalized_gap :
+    canonicalCompletedAmbientCentralCurvatureDefect =
+      -4 * ‖completedNativeOperatorCharacteristic 0‖ ^ 2 *
+        (‖canonicalCompletedC3NormalizedAmbientResponseState 0
+          (by norm_num [operatorHeightParameter])‖ ^ 2 -
+          canonicalCompletedNativeLogDerivativeMoment 0) := by
+  rw [canonicalCompletedAmbientCentralCurvatureDefect_eq_characteristicWeightedMoment_sub_gradient,
+    norm_sq_canonicalCompletedC3NormalizedAmbientResponseState_zero]
+  have hf : ‖completedNativeOperatorCharacteristic 0‖ ≠ 0 :=
+    norm_ne_zero_iff.mpr completedNativeOperatorCharacteristic_zero_ne_zero
+  field_simp
+  ring
+
 /-- Even just the literal candidate's value at zero excludes the normalized
 Green contract. No differentiability or holomorphic extension is assumed. -/
 theorem no_normalized_kernel_with_literal_material_origin
@@ -162,6 +192,8 @@ namespace CarryMaterialCanonicalComparison
 #print axioms material_cell
 #assert_central_comparison_axioms material_signal
 #print axioms material_signal
+#assert_central_comparison_axioms material_gradient
+#print axioms material_gradient
 #assert_central_comparison_axioms material_camera_factor
 #print axioms material_camera_factor
 #assert_central_comparison_axioms material_completion_factor
@@ -180,6 +212,8 @@ namespace CarryMaterialCanonicalComparison
 #print axioms canonical_kernel_at_origin
 #assert_central_comparison_axioms normalized_jet_order_zero
 #print axioms normalized_jet_order_zero
+#assert_central_comparison_axioms ambient_curvature_defect_eq_negative_normalized_gap
+#print axioms ambient_curvature_defect_eq_negative_normalized_gap
 #assert_central_comparison_axioms no_normalized_kernel_with_literal_material_origin
 #print axioms no_normalized_kernel_with_literal_material_origin
 end CarryMaterialCanonicalComparison

@@ -1,6 +1,6 @@
 {
   "geometry-of-numbers": {
-    "base_commit": "9e5f9ce93ce2f421b0b65bd7a3ffc5351e213f02",
+    "base_commit": "b5cb200f31a8ff360394860a5ff2d4a1151611b2",
     "files": [
       {
         "path": "GeometryOfNumbers/Foundation/FirstLocalReturnCapacity.lean",
@@ -214,6 +214,26 @@
     "base_commit": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
     "files": [
       {
+        "path": "CarrySelfAdjointOperator/CompletedNativeAmbientCentralCurvatureDecision.lean",
+        "sha256": "4233cc69ecfcd3bfb83480b770482c2eff2d1a6498b89c527aa9834c78f2f4f9",
+        "last_touch_commit": "d24418fe03cd0af306b9c0e15ca095ae0dfda570"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedC3CoisometricAmbientMomentGate.lean",
+        "sha256": "592e9587b791ecaefcdd22b9a7b2d61badfadce1871a196da48b7b4152983d61",
+        "last_touch_commit": "7d8e0da5d5624490026b8eddf8b9dbbdb265d8ff"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedC3AmbientRadialTiltSamplePositivity.lean",
+        "sha256": "0a4316bf9070efb81cdd9646e85290b59696b0c801ff99f11ca625a1acea38a6",
+        "last_touch_commit": "2d64c901f4125e576e5145caee8d3b99a38e2d30"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedC3AllCutoffHilbertState.lean",
+        "sha256": "b626017245b8bc2251189c731a1e17a06dd6c1bc67a561ac11da37c38a5ca2cc",
+        "last_touch_commit": "4c275aadddfc80abf98428b1265f5e04ff3d0c2e"
+      },
+      {
         "path": "CarrySelfAdjointOperator/CompletedOperatorCharacteristic.lean",
         "sha256": "de21570ecf684ee42e8222ccbc598b6bb84c21404c8cd55f815504ab3ae093a2",
         "last_touch_commit": "7fe207aedddcca5bc51add04561a2880cd2fca3e"
@@ -396,6 +416,7 @@
       "CarryMaterialCanonicalComparison.material_sample",
       "CarryMaterialCanonicalComparison.material_cell",
       "CarryMaterialCanonicalComparison.material_signal",
+      "CarryMaterialCanonicalComparison.material_gradient",
       "CarryMaterialCanonicalComparison.material_camera_factor",
       "CarryMaterialCanonicalComparison.material_completion_factor",
       "CarryMaterialCanonicalComparison.material_response",
@@ -405,7 +426,25 @@
       "CarryMaterialCanonicalComparison.material_canonical_central_defect_physical",
       "CarryMaterialCanonicalComparison.canonical_kernel_at_origin",
       "CarryMaterialCanonicalComparison.normalized_jet_order_zero",
+      "CarryMaterialCanonicalComparison.ambient_curvature_defect_eq_negative_normalized_gap",
       "CarryMaterialCanonicalComparison.no_normalized_kernel_with_literal_material_origin"
+    ]
+  },
+  "ambient_antecedent": {
+    "doc_sha256": "0a2386ee98ca726f9859d407f516e1ef45ee871f47457b85bc39ee523ce7e0bd",
+    "doc_last_touch_commit": "d24418fe03cd0af306b9c0e15ca095ae0dfda570"
+  },
+  "common_gradient_dependency": {
+    "commit": "65d50f6db1208708e109982ba97e1d51d3039956",
+    "files": [
+      {
+        "path": "CPFormal/Analytic/CpFiniteGreen.lean",
+        "sha256": "d7412a78af45b003ca8a5635700ae852eca8b602f1cb191760c693dca8e25b8a"
+      },
+      {
+        "path": "CPFormal/Analytic/CpFiniteDirichletChart.lean",
+        "sha256": "a387c78b6d0b22c4af93d0a82096632c20c7c3ad2c44bd34cd0c82703c5d612a"
+      }
     ]
   }
 }
