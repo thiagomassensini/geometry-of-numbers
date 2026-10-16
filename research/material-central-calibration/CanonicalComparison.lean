@@ -1,3 +1,6 @@
+import GeometryOfNumbers.Analysis.CarryMaterialNormalizedResponse
+import CarrySelfAdjointOperator.NativeCompletedSourcePositiveReductionJet
+import Mathlib.Analysis.Complex.RealDeriv
 import GeometryOfNumbers.Analysis.CarryMaterialCentralCalibration
 import CarrySelfAdjointOperator.C2GeometryNativeSourceBridge
 import CarrySelfAdjointOperator.CompletedC3KernelMetricCalibration
@@ -217,3 +220,207 @@ namespace CarryMaterialCanonicalComparison
 #assert_central_comparison_axioms no_normalized_kernel_with_literal_material_origin
 #print axioms no_normalized_kernel_with_literal_material_origin
 end CarryMaterialCanonicalComparison
+
+namespace CarryMaterialResponseComparison
+open GeometryOfNumbers.Analysis GeometryOfNumbers.Analysis.BaseTwoCompletion
+open CarrySelfAdjointOperator CarryMaterialCanonicalComparison
+open CarrySelfAdjointOperator.SourcePositiveReduction
+open Filter
+open scoped Topology InnerProductSpace ComplexConjugate
+noncomputable section
+set_option autoImplicit false
+set_option backward.isDefEq.respectTransparency false
+
+/-- Derivatives are transported by restricting the known holomorphic SCALAR
+characteristic to the real axis. No holomorphy of the material state is used. -/
+theorem material_characteristic_hasDerivAt (t : ℝ) :
+    HasDerivAt baseTwoCanonicalResponse
+      (deriv completedNativeOperatorCharacteristic (t : ℂ)) t := by
+  have he : baseTwoCanonicalResponse =
+      fun u : ℝ => completedNativeOperatorCharacteristic (u : ℂ) := funext material_response
+  rw [he]
+  exact (completedNativeOperatorCharacteristic_analyticAt
+    (ofReal_mem_completedNativeHeightDomain t)).differentiableAt.hasDerivAt.comp_ofReal
+
+theorem material_companion (t : ℝ) :
+    baseTwoCompletedBoundaryHilbertReadout (carryMaterialDressedCompanion t
+      ⟨baseTwoCompletedBoundaryHilbertState t, baseTwoCompletedBoundaryHilbertState_mem_clockDomain t⟩) =
+      completedNativeOperatorBoundaryCompanion (t : ℂ) := by
+  rw [carryMaterialDressedCompanion_source_readout, (material_characteristic_hasDerivAt t).deriv]
+  rfl
+
+/-- The original scalar Green pair comes from the full vector companion,
+including the derivative of the dressing and the clocked global return. -/
+theorem material_boundary_pair (t : ℝ) :
+    (baseTwoCompletedBoundaryHilbertReadout (carryMaterialDressedCompanion t
+        ⟨baseTwoCompletedBoundaryHilbertState t, baseTwoCompletedBoundaryHilbertState_mem_clockDomain t⟩),
+      baseTwoCompletedBoundaryHilbertReadout (baseTwoVectorDressing t
+        (baseTwoCompletedBoundaryHilbertState t))) =
+      canonicalCompletedC3ScalarBoundaryPair (t : ℂ) := by
+  rw [material_companion, carryMaterial_dressed_completed_readout, material_response]
+  rfl
+
+theorem material_normalized_response (t : ℝ) :
+    carryMaterialNormalizedResponse t =
+      completedGreenNormalizedResponse completedNativeOperatorCharacteristic
+        completedNativeOperatorBoundaryCompanion (t : ℂ) := by
+  rw [carryMaterialNormalizedResponse, carryMaterialResponseReadout,
+    material_companion, carryMaterial_dressed_completed_readout, material_response]
+  rfl
+
+theorem material_normalized_response_zero : carryMaterialNormalizedResponse 0 = 0 := by
+  rw [material_normalized_response]
+  simpa only [Complex.ofReal_zero] using completedNativeGreenNormalizedResponse_zero
+
+theorem material_normalized_response_hasDerivAt_zero :
+    HasDerivAt carryMaterialNormalizedResponse
+      (canonicalCompletedNativeLogDerivativeMoment 0 : ℂ) 0 := by
+  have he : carryMaterialNormalizedResponse =
+      fun t : ℝ => completedGreenNormalizedResponse completedNativeOperatorCharacteristic
+        completedNativeOperatorBoundaryCompanion (t : ℂ) := funext material_normalized_response
+  rw [he]
+  exact completedNativeGreenNormalizedResponse_hasDerivAt_h0.comp_ofReal
+
+/-- Equality of source responses is local; no global vector identification
+with the four-sector carrier is asserted. -/
+theorem material_source_response_eventually_eq :
+    carryMaterialNormalizedResponse =ᶠ[nhds 0] fun t : ℝ => sourceResponse (t : ℂ) := by
+  have hc := sourceResponse_eventuallyEq_native
+  have hr := hc.comp_tendsto (show Tendsto (fun t : ℝ => (t : ℂ)) (nhds 0) (nhds 0) from
+    by simpa only [Complex.ofReal_zero] using Complex.continuous_ofReal.tendsto 0)
+  filter_upwards [hr] with t ht
+  exact (material_normalized_response t).trans ht.symm
+
+theorem material_axis_zero :
+    carryMaterialResponseAxis 0 = (canonicalCompletedNativeLogDerivativeMoment 0 : ℂ) := by
+  simpa only [carryMaterialResponseAxis, dslope_same] using material_normalized_response_hasDerivAt_zero.deriv
+
+theorem material_axis_eventually_eq :
+    carryMaterialResponseAxis =ᶠ[nhds 0] fun t : ℝ => sourceAxis (t : ℂ) := by
+  filter_upwards [material_source_response_eventually_eq] with t ht
+  by_cases hz : t = 0
+  · subst t
+    simpa only [Complex.ofReal_zero, sourceAxis_zero] using material_axis_zero
+  · have hc : (t : ℂ) ≠ 0 := Complex.ofReal_ne_zero.mpr hz
+    have he := sourceResponse_eq_mul_axis (t : ℂ)
+    rw [← ht] at he
+    rw [carryMaterialResponseAxis, dslope_of_ne _ hz]
+    simp only [slope, sub_zero, material_normalized_response_zero]
+    rw [he]
+    simp [Complex.real_smul, hc]
+
+theorem material_scale_eq : carryMaterialResponseScale = canonicalCompletedNativeLogDerivativeMoment 0 := by
+  rw [carryMaterialResponseScale, material_axis_zero, Complex.ofReal_re]
+
+theorem material_scale_pos : 0 < carryMaterialResponseScale := by
+  rw [material_scale_eq]
+  exact canonicalCompletedNativeLogDerivativeMoment_zero_pos
+
+theorem material_feature_eventually_eq :
+    carryMaterialPositiveFeature =ᶠ[nhds 0] fun t : ℝ => positiveFeature (t : ℂ) := by
+  filter_upwards [material_axis_eventually_eq] with t ht
+  simp only [carryMaterialPositiveFeature, positiveFeature, ht, material_scale_eq, sourceScale_eq]
+
+theorem material_feature_center_energy :
+    ‖carryMaterialPositiveFeature 0‖ ^ 2 = canonicalCompletedNativeLogDerivativeMoment 0 := by
+  have he := material_feature_eventually_eq.eq_of_nhds
+  rw [he]
+  simpa only [Complex.ofReal_zero, sourceScale_eq] using positiveFeature_center_energy
+
+theorem material_feature_center_row :
+    ∀ᶠ t : ℝ in nhds 0,
+      inner ℂ (carryMaterialPositiveFeature 0) (carryMaterialPositiveFeature t) =
+        carryMaterialResponseAxis t := by
+  have hz := material_feature_eventually_eq.eq_of_nhds
+  filter_upwards [material_feature_eventually_eq, material_axis_eventually_eq] with t ht ha
+  rw [hz, ht, Complex.ofReal_zero, positiveFeature_center_row, ha]
+
+/-- A genuine two-input identity for the extracted channel, not the full
+material Hilbert Gram. -/
+theorem material_feature_pairing_local :
+    ∃ U : Set ℝ, IsOpen U ∧ (0 : ℝ) ∈ U ∧
+      ∀ t ∈ U, ∀ u ∈ U,
+        inner ℂ (carryMaterialPositiveFeature t) (carryMaterialPositiveFeature u) =
+          inner ℂ (positiveFeature (t : ℂ)) (positiveFeature (u : ℂ)) := by
+  rcases mem_nhds_iff.mp material_feature_eventually_eq with ⟨U, hU, ho, hz⟩
+  refine ⟨U, ho, hz, ?_⟩
+  intro t ht u hu
+  rw [hU ht, hU hu]
+
+/-- The complete source numerator, with both independent real parameters.
+There is no division by their difference, including at a collision. -/
+theorem material_kernel_numerator_split_local :
+    ∃ U : Set ℝ, IsOpen U ∧ (0 : ℝ) ∈ U ∧
+      ∀ t ∈ U, ∀ u ∈ U,
+        carryMaterialNormalizedResponse u - conj (carryMaterialNormalizedResponse t) =
+          ((u : ℂ) - conj (t : ℂ)) *
+            inner ℂ (carryMaterialPositiveFeature t) (carryMaterialPositiveFeature u) +
+          conj (carryMaterialNormalizedResponse t) * carryMaterialNormalizedResponse u *
+            (reducedResponse (u : ℂ) - conj (reducedResponse (t : ℂ))) := by
+  have hn := (show Tendsto (fun t : ℝ => (t : ℂ)) (nhds 0) (nhds 0) from
+      by simpa only [Complex.ofReal_zero] using Complex.continuous_ofReal.tendsto 0).eventually
+        sourceAxis_eventually_ne_zero
+  rcases mem_nhds_iff.mp (material_source_response_eventually_eq.and
+      (material_feature_eventually_eq.and hn)) with ⟨U, hU, ho, hz⟩
+  refine ⟨U, ho, hz, ?_⟩
+  intro t ht u hu
+  rw [(hU ht).1, (hU hu).1, (hU ht).2.1, (hU hu).2.1]
+  exact sourceKernel_numerator_split _ _ (hU ht).2.2 (hU hu).2.2
+
+/-- The divided kernel is used only at separated real parameters. Central
+calibration was proved independently above; no 0/0 value is substituted. -/
+theorem material_kernel_split_local :
+    ∃ U : Set ℝ, IsOpen U ∧ (0 : ℝ) ∈ U ∧
+      ∀ t ∈ U, ∀ u ∈ U, u ≠ t →
+        (carryMaterialNormalizedResponse u - conj (carryMaterialNormalizedResponse t)) /
+            ((u : ℂ) - conj (t : ℂ)) =
+          inner ℂ (carryMaterialPositiveFeature t) (carryMaterialPositiveFeature u) +
+          conj (carryMaterialNormalizedResponse t) * carryMaterialNormalizedResponse u *
+            reducedKernel (t : ℂ) (u : ℂ) := by
+  rcases material_kernel_numerator_split_local with ⟨U, ho, hz, hU⟩
+  refine ⟨U, ho, hz, ?_⟩
+  intro t ht u hu hne
+  have hd : (u : ℂ) - conj (t : ℂ) ≠ 0 := by
+    simpa only [Complex.conj_ofReal, ne_eq, sub_eq_zero, Complex.ofReal_inj] using hne
+  rw [hU t ht u hu, reducedKernel]
+  field_simp
+
+end
+end CarryMaterialResponseComparison
+
+namespace CarryMaterialResponseComparison
+#assert_central_comparison_axioms material_characteristic_hasDerivAt
+#print axioms material_characteristic_hasDerivAt
+#assert_central_comparison_axioms material_companion
+#print axioms material_companion
+#assert_central_comparison_axioms material_boundary_pair
+#print axioms material_boundary_pair
+#assert_central_comparison_axioms material_normalized_response
+#print axioms material_normalized_response
+#assert_central_comparison_axioms material_normalized_response_zero
+#print axioms material_normalized_response_zero
+#assert_central_comparison_axioms material_normalized_response_hasDerivAt_zero
+#print axioms material_normalized_response_hasDerivAt_zero
+#assert_central_comparison_axioms material_source_response_eventually_eq
+#print axioms material_source_response_eventually_eq
+#assert_central_comparison_axioms material_axis_zero
+#print axioms material_axis_zero
+#assert_central_comparison_axioms material_axis_eventually_eq
+#print axioms material_axis_eventually_eq
+#assert_central_comparison_axioms material_scale_eq
+#print axioms material_scale_eq
+#assert_central_comparison_axioms material_scale_pos
+#print axioms material_scale_pos
+#assert_central_comparison_axioms material_feature_eventually_eq
+#print axioms material_feature_eventually_eq
+#assert_central_comparison_axioms material_feature_center_energy
+#print axioms material_feature_center_energy
+#assert_central_comparison_axioms material_feature_center_row
+#print axioms material_feature_center_row
+#assert_central_comparison_axioms material_feature_pairing_local
+#print axioms material_feature_pairing_local
+#assert_central_comparison_axioms material_kernel_numerator_split_local
+#print axioms material_kernel_numerator_split_local
+#assert_central_comparison_axioms material_kernel_split_local
+#print axioms material_kernel_split_local
+end CarryMaterialResponseComparison
