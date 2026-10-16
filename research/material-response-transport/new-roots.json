@@ -1,0 +1,39 @@
+{
+  "library_definitions": [
+    "GeometryOfNumbers.Analysis.carryMaterialDressedCompanion",
+    "GeometryOfNumbers.Analysis.carryMaterialResponseReadout",
+    "GeometryOfNumbers.Analysis.carryMaterialNormalizedResponse",
+    "GeometryOfNumbers.Analysis.carryMaterialResponseAxis",
+    "GeometryOfNumbers.Analysis.carryMaterialResponseScale",
+    "GeometryOfNumbers.Analysis.carryMaterialPositiveFeature"
+  ],
+  "library_theorems": [
+    "GeometryOfNumbers.Analysis.carryMaterialDressedCompanion_apply",
+    "GeometryOfNumbers.Analysis.carryMaterialDressedSource_hasDerivAt",
+    "GeometryOfNumbers.Analysis.carryMaterialClock_readout",
+    "GeometryOfNumbers.Analysis.carryMaterialDressedCompanion_readout",
+    "GeometryOfNumbers.Analysis.carryMaterialDressedReadout_hasDerivAt",
+    "GeometryOfNumbers.Analysis.carryMaterialDressedCompanion_source_readout",
+    "GeometryOfNumbers.Analysis.carryMaterialNormalizedResponse_eq",
+    "GeometryOfNumbers.Analysis.carryMaterialNormalizedResponse_connection"
+  ],
+  "comparison_theorems": [
+    "CarryMaterialResponseComparison.material_characteristic_hasDerivAt",
+    "CarryMaterialResponseComparison.material_companion",
+    "CarryMaterialResponseComparison.material_boundary_pair",
+    "CarryMaterialResponseComparison.material_normalized_response",
+    "CarryMaterialResponseComparison.material_normalized_response_zero",
+    "CarryMaterialResponseComparison.material_normalized_response_hasDerivAt_zero",
+    "CarryMaterialResponseComparison.material_source_response_eventually_eq",
+    "CarryMaterialResponseComparison.material_axis_zero",
+    "CarryMaterialResponseComparison.material_axis_eventually_eq",
+    "CarryMaterialResponseComparison.material_scale_eq",
+    "CarryMaterialResponseComparison.material_scale_pos",
+    "CarryMaterialResponseComparison.material_feature_eventually_eq",
+    "CarryMaterialResponseComparison.material_feature_center_energy",
+    "CarryMaterialResponseComparison.material_feature_center_row",
+    "CarryMaterialResponseComparison.material_feature_pairing_local",
+    "CarryMaterialResponseComparison.material_kernel_numerator_split_local",
+    "CarryMaterialResponseComparison.material_kernel_split_local"
+  ]
+}
