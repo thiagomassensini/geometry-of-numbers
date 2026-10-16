@@ -1,0 +1,194 @@
+{
+  "geometry": [
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReadoutMeanVector"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReadoutProjection"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReadoutComplement"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReadoutComplement_apply"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReadoutComplement_readout"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReadoutComplement_of_readout_zero"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReadout_reconstruct"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReadout_pairing"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialPairGreen"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialPairComplement"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialPairReadout"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialPairGreen_readout_ledger"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCompanionValuePair"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCompanionValuePair_readout"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialPairReduction"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialPairReduction_reconstruct"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialPairReduction_green"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialPairReduction_readout"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialPairReduction_complement"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCompanion_center_ne_zero"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialPairDressing"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCompanionValuePair_dressing"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialPairDressing_green"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReducedCompanionPair"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReducedCompanionPair_zero"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReducedCenteredPair"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReducedCenteredPair_zero"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReducedCenteredPair_reconstruct"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReducedCenteredPair_green"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReducedCenter_self_green"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReadoutComplement_pairing"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialPairGreen_hidden_expansion"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialPairDressing_complement"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialPairReductionWithValue"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialPairReductionWithValue_reconstruct"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialPairReductionWithValue_injective"
+    }
+  ],
+  "external": [
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialGreenPairComparison.material_pair_green_eq_existing"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialGreenPairComparison.material_pair_readout_native"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialGreenPairComparison.material_pair_corrected_green"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialGreenPairComparison.material_companion_center_readout_zero"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialGreenPairComparison.material_companion_hidden_center"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialGreenPairComparison.material_reduced_pair_center_invisible_nonzero"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialGreenPairComparison.material_reduced_centering_readout"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialGreenPairComparison.material_reduced_pair_homogeneous"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialGreenPairComparison.material_reduced_pair_denominator"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialGreenPairComparison.material_reduced_pair_green_dslope"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialGreenPairComparison.material_reduced_pair_canonical_residual_numerator"
+    }
+  ]
+}

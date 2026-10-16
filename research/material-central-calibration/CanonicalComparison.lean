@@ -1,3 +1,4 @@
+import GeometryOfNumbers.Analysis.CarryMaterialCompanionGreenTransport
 import GeometryOfNumbers.Analysis.CarryMaterialCentralProjectionBounds
 import CarrySelfAdjointOperator.CompletedNativeChiralReturnSeventhSourceJet
 import GeometryOfNumbers.Analysis.CarryMaterialResidualResponse
@@ -892,3 +893,226 @@ namespace CarryMaterialCentralProjectionComparison
 #assert_central_comparison_axioms material_centered_not_residual_diagonal_germ
 #print axioms material_centered_not_residual_diagonal_germ
 end CarryMaterialCentralProjectionComparison
+
+namespace CarryMaterialGreenPairComparison
+open GeometryOfNumbers.Analysis GeometryOfNumbers.Analysis.BaseTwoCompletion
+open CarrySelfAdjointOperator CarryMaterialResponseComparison CarryMaterialResidualComparison
+open Filter
+open scoped InnerProductSpace ComplexConjugate Topology
+noncomputable section
+set_option autoImplicit false
+set_option backward.isDefEq.respectTransparency false
+set_option maxHeartbeats 1000000
+
+/-- Literal sign/order calibration against the existing boundary API. -/
+theorem material_pair_green_eq_existing {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℂ E]
+    (x y : E × E) : carryMaterialPairGreen x y =
+      NativeCarrySpectralWeyl.Boundary.greenForm (𝕜 := ℂ) x y := rfl
+
+theorem material_pair_readout_native (t : ℝ) :
+    carryMaterialPairReadout (carryMaterialCompanionValuePair t) =
+      ((canonicalCompletedC3ScalarBoundaryPair (t : ℂ)).1,
+        2*(canonicalCompletedC3ScalarBoundaryPair (t : ℂ)).2) := by
+  apply Prod.ext
+  · exact material_companion t
+  · simp only [carryMaterialPairReadout, carryMaterialCompanionValuePair, map_smul,
+      carryMaterial_dressed_completed_readout, smul_eq_mul,
+      CarryMaterialCanonicalComparison.material_response]
+    rfl
+
+/-- Signed physical Green balance equals the existing completed Wronskian.
+This is not an equality of positive Hilbert Gram kernels. -/
+theorem material_pair_corrected_green (t u : ℝ) :
+    carryMaterialPairGreen (carryMaterialCompanionValuePair t) (carryMaterialCompanionValuePair u) -
+      carryMaterialPairGreen (carryMaterialPairComplement (carryMaterialCompanionValuePair t))
+        (carryMaterialPairComplement (carryMaterialCompanionValuePair u)) =
+      completedGreenWronskian completedNativeOperatorCharacteristic completedNativeOperatorBoundaryCompanion
+        (u : ℂ) (t : ℂ) := by
+  have h := carryMaterialPairGreen_readout_ledger
+    (carryMaterialCompanionValuePair t) (carryMaterialCompanionValuePair u)
+  rw [material_pair_readout_native t, material_pair_readout_native u] at h
+  rw [completedGreenWronskian_eq_scalarGreenForm]
+  simp only [carryMaterialPairGreen, canonicalCompletedC3ScalarBoundaryPair,
+    NativeCarrySpectralWeyl.Boundary.greenForm, RCLike.inner_apply, map_mul, map_ofNat] at h ⊢
+  linear_combination h
+
+theorem material_companion_center_readout_zero :
+    baseTwoCompletedBoundaryHilbertReadout (carryMaterialCompanionValuePair 0).1 = 0 := by
+  have h := material_normalized_response_zero
+  rw [carryMaterialNormalizedResponse_eq] at h
+  have hf : baseTwoCanonicalResponse 0 ≠ 0 := by
+    rw [baseTwoCanonicalResponse_eq_dressing_mul_signal]
+    exact mul_ne_zero (baseTwoCanonicalDressingScalar_ne_zero 0) carryMaterial_origin_signal_ne_zero
+  have hd := (div_eq_zero_iff.mp h).resolve_right (mul_ne_zero (by norm_num : (2 : ℂ) ≠ 0) hf)
+  change baseTwoCompletedBoundaryHilbertReadout (carryMaterialDressedCompanion 0
+    ⟨baseTwoCompletedBoundaryHilbertState 0, baseTwoCompletedBoundaryHilbertState_mem_clockDomain 0⟩) = 0
+  rw [carryMaterialDressedCompanion_source_readout]
+  exact hd
+
+theorem material_companion_hidden_center :
+    carryMaterialReadoutComplement (carryMaterialCompanionValuePair 0).1 =
+      (carryMaterialCompanionValuePair 0).1 ∧
+    0 < ‖carryMaterialReadoutComplement (carryMaterialCompanionValuePair 0).1‖ := by
+  have he := carryMaterialReadoutComplement_of_readout_zero _ material_companion_center_readout_zero
+  exact ⟨he, by rw [he]; exact norm_pos_iff.mpr carryMaterialCompanion_center_ne_zero⟩
+
+theorem material_reduced_pair_center_invisible_nonzero :
+    carryMaterialPairReadout (carryMaterialReducedCompanionPair 0) = 0 ∧
+      carryMaterialReducedCompanionPair 0 ≠ 0 := by
+  constructor
+  · simp only [carryMaterialReducedCompanionPair_zero, carryMaterialPairReadout,
+      material_companion_center_readout_zero, map_zero, Prod.zero_eq_mk]
+  · intro h
+    have he := congrArg Prod.fst h
+    rw [carryMaterialReducedCompanionPair_zero] at he
+    exact carryMaterialCompanion_center_ne_zero he
+
+theorem material_reduced_centering_readout (t : ℝ) :
+    carryMaterialPairReadout (carryMaterialReducedCenteredPair t) =
+      carryMaterialPairReadout (carryMaterialReducedCompanionPair t) := by
+  simp only [carryMaterialPairReadout, carryMaterialReducedCenteredPair, map_sub,
+    material_companion_center_readout_zero, sub_zero]
+
+/-- Source reduction, before division and including the removable center. -/
+theorem material_reduced_pair_homogeneous :
+    ∀ᶠ t : ℝ in nhds 0,
+      baseTwoCompletedBoundaryHilbertReadout (carryMaterialReducedCompanionPair t).1 =
+        baseTwoCompletedBoundaryHilbertReadout (carryMaterialReducedCompanionPair t).2 *
+          carryMaterialReducedResponse t := by
+  have hc : Tendsto (fun t : ℝ => (t : ℂ)) (nhds 0) (nhds 0) := by
+    simpa only [Complex.ofReal_zero] using Complex.continuous_ofReal.tendsto 0
+  have hf0 : baseTwoCanonicalResponse 0 ≠ 0 := by
+    rw [baseTwoCanonicalResponse_eq_dressing_mul_signal]
+    exact mul_ne_zero (baseTwoCanonicalDressingScalar_ne_zero 0) carryMaterial_origin_signal_ne_zero
+  have hfn := (baseTwoCanonicalResponse_analyticAt 0).continuousAt.eventually_ne hf0
+  filter_upwards [material_source_response_eventually_eq, material_reduced_eventually_eq,
+    hc.eventually SourcePositiveReduction.sourceAxis_eventually_ne_zero, hfn] with t hr hb ha hf
+  have hs : carryMaterialResponseScale = SourcePositiveReduction.sourceScale := by
+    rw [material_scale_eq, SourcePositiveReduction.sourceScale_eq]
+  have he := SourcePositiveReduction.sourceResponse_reconstruction (t : ℂ) ha
+  have hre : carryMaterialNormalizedResponse t *
+      (1-(carryMaterialResponseScale : ℂ)*(t : ℂ)*carryMaterialReducedResponse t) =
+        (carryMaterialResponseScale : ℂ)*(t : ℂ) := by
+    simpa only [hr, hb, hs] using he
+  have hp := congrArg Prod.fst (carryMaterialCompanionValuePair_readout t)
+  have hq := congrArg Prod.snd (carryMaterialCompanionValuePair_readout t)
+  change baseTwoCompletedBoundaryHilbertReadout (carryMaterialCompanionValuePair t).1 =
+    -deriv baseTwoCanonicalResponse t at hp
+  change baseTwoCompletedBoundaryHilbertReadout (carryMaterialCompanionValuePair t).2 =
+    2*baseTwoCanonicalResponse t at hq
+  have hpq : baseTwoCompletedBoundaryHilbertReadout (carryMaterialCompanionValuePair t).1 =
+      (2*baseTwoCanonicalResponse t)*carryMaterialNormalizedResponse t := by
+    rw [hp, carryMaterialNormalizedResponse_eq]
+    field_simp
+  change baseTwoCompletedBoundaryHilbertReadout ((carryMaterialCompanionValuePair t).1-
+      ((carryMaterialResponseScale*t : ℝ) : ℂ) • (carryMaterialCompanionValuePair t).2) =
+    baseTwoCompletedBoundaryHilbertReadout (((carryMaterialResponseScale*t : ℝ) : ℂ) •
+      (carryMaterialCompanionValuePair t).1) * carryMaterialReducedResponse t
+  rw [map_sub, map_smul, map_smul, hpq, hq]
+  simp only [smul_eq_mul, Complex.ofReal_mul]
+  linear_combination (2*baseTwoCanonicalResponse t)*hre
+
+/-- The new denominator is an actual companion readout, with its clock and
+completion derivative; its factorization is local where F is nonzero. -/
+theorem material_reduced_pair_denominator :
+    ∀ᶠ t : ℝ in nhds 0,
+      baseTwoCompletedBoundaryHilbertReadout (carryMaterialReducedCompanionPair t).2 =
+        (2 : ℂ)*((carryMaterialResponseScale*t : ℝ) : ℂ)*
+          baseTwoCanonicalResponse t*carryMaterialNormalizedResponse t := by
+  have hf0 : baseTwoCanonicalResponse 0 ≠ 0 := by
+    rw [baseTwoCanonicalResponse_eq_dressing_mul_signal]
+    exact mul_ne_zero (baseTwoCanonicalDressingScalar_ne_zero 0) carryMaterial_origin_signal_ne_zero
+  filter_upwards [(baseTwoCanonicalResponse_analyticAt 0).continuousAt.eventually_ne hf0] with t hf
+  change baseTwoCompletedBoundaryHilbertReadout (((carryMaterialResponseScale*t : ℝ) : ℂ) •
+    (carryMaterialCompanionValuePair t).1) = _
+  rw [map_smul]
+  change ((carryMaterialResponseScale*t : ℝ) : ℂ)*
+    baseTwoCompletedBoundaryHilbertReadout (carryMaterialDressedCompanion t
+      ⟨baseTwoCompletedBoundaryHilbertState t, baseTwoCompletedBoundaryHilbertState_mem_clockDomain t⟩) = _
+  rw [carryMaterialDressedCompanion_source_readout, carryMaterialNormalizedResponse_eq]
+  field_simp
+
+/-- Exact signed Green realization of the reduced dslope numerator.
+Every local diagonal is included; division at collisions is not asserted. -/
+theorem material_reduced_pair_green_dslope :
+    ∃ U : Set ℝ, IsOpen U ∧ (0 : ℝ) ∈ U ∧
+      ∀ t ∈ U, ∀ u ∈ U,
+        carryMaterialPairGreen (carryMaterialReducedCompanionPair t) (carryMaterialReducedCompanionPair u) -
+          carryMaterialPairGreen (carryMaterialPairComplement (carryMaterialReducedCompanionPair t))
+            (carryMaterialPairComplement (carryMaterialReducedCompanionPair u)) =
+        (1/2 : ℂ)*conj (baseTwoCompletedBoundaryHilbertReadout (carryMaterialReducedCompanionPair t).2)*
+          baseTwoCompletedBoundaryHilbertReadout (carryMaterialReducedCompanionPair u).2 *
+            ((u-t : ℝ) : ℂ)*dslope carryMaterialReducedResponse t u := by
+  rcases mem_nhds_iff.mp material_reduced_pair_homogeneous with ⟨U, hU, ho, hz⟩
+  refine ⟨U, ho, hz, ?_⟩
+  intro t ht u hu
+  have hpt := hU ht
+  have hpu := hU hu
+  have h := carryMaterialPairGreen_readout_ledger
+    (carryMaterialReducedCompanionPair t) (carryMaterialReducedCompanionPair u)
+  have hg : carryMaterialPairGreen (carryMaterialReducedCompanionPair t) (carryMaterialReducedCompanionPair u) -
+      carryMaterialPairGreen (carryMaterialPairComplement (carryMaterialReducedCompanionPair t))
+        (carryMaterialPairComplement (carryMaterialReducedCompanionPair u)) =
+      (1/2 : ℂ)*carryMaterialPairGreen
+        (carryMaterialPairReadout (carryMaterialReducedCompanionPair t))
+        (carryMaterialPairReadout (carryMaterialReducedCompanionPair u)) := by
+    linear_combination h
+  rw [hg]
+  simp only [carryMaterialPairGreen, carryMaterialPairReadout, RCLike.inner_apply]
+  rw [hpt, hpu]
+  simp only [map_mul, material_reduced_conj]
+  have hs : ((u-t : ℝ) : ℂ)*dslope carryMaterialReducedResponse t u =
+      carryMaterialReducedResponse u-carryMaterialReducedResponse t := by
+    simpa only [Complex.real_smul] using sub_smul_dslope carryMaterialReducedResponse t u
+  linear_combination
+    -((1/2 : ℂ)*conj (baseTwoCompletedBoundaryHilbertReadout (carryMaterialReducedCompanionPair t).2)*
+      baseTwoCompletedBoundaryHilbertReadout (carryMaterialReducedCompanionPair u).2)*hs
+
+/-- The same canonical weighted residual as PR #6, derived from the full
+physical companion/value pair with its explicit null-readout Green balance. -/
+theorem material_reduced_pair_canonical_residual_numerator :
+    ∃ U : Set ℝ, IsOpen U ∧ (0 : ℝ) ∈ U ∧
+      ∀ t ∈ U, ∀ u ∈ U,
+        carryMaterialPairGreen (carryMaterialReducedCompanionPair t) (carryMaterialReducedCompanionPair u) -
+          carryMaterialPairGreen (carryMaterialPairComplement (carryMaterialReducedCompanionPair t))
+            (carryMaterialPairComplement (carryMaterialReducedCompanionPair u)) =
+        (2 : ℂ)*((carryMaterialResponseScale^2*t*u : ℝ) : ℂ)*
+          conj (baseTwoCanonicalResponse t)*baseTwoCanonicalResponse u*((u-t : ℝ) : ℂ)*
+            (conj (carryMaterialNormalizedResponse t)*carryMaterialNormalizedResponse u *
+              dslope carryMaterialReducedResponse t u) := by
+  rcases material_reduced_pair_green_dslope with ⟨V, hVo, hVz, hV⟩
+  rcases mem_nhds_iff.mp material_reduced_pair_denominator with ⟨W, hW, hWo, hWz⟩
+  refine ⟨V ∩ W, hVo.inter hWo, ⟨hVz,hWz⟩, ?_⟩
+  intro t ht u hu
+  rw [hV t ht.1 u hu.1, hW ht.2, hW hu.2]
+  simp only [map_mul, map_ofNat, Complex.conj_ofReal]
+  push_cast
+  ring
+
+end
+end CarryMaterialGreenPairComparison
+
+namespace CarryMaterialGreenPairComparison
+#assert_central_comparison_axioms material_pair_green_eq_existing
+#print axioms material_pair_green_eq_existing
+#assert_central_comparison_axioms material_pair_readout_native
+#print axioms material_pair_readout_native
+#assert_central_comparison_axioms material_pair_corrected_green
+#print axioms material_pair_corrected_green
+#assert_central_comparison_axioms material_companion_center_readout_zero
+#print axioms material_companion_center_readout_zero
+#assert_central_comparison_axioms material_companion_hidden_center
+#print axioms material_companion_hidden_center
+#assert_central_comparison_axioms material_reduced_pair_center_invisible_nonzero
+#print axioms material_reduced_pair_center_invisible_nonzero
+#assert_central_comparison_axioms material_reduced_centering_readout
+#print axioms material_reduced_centering_readout
+#assert_central_comparison_axioms material_reduced_pair_homogeneous
+#print axioms material_reduced_pair_homogeneous
+#assert_central_comparison_axioms material_reduced_pair_denominator
+#print axioms material_reduced_pair_denominator
+#assert_central_comparison_axioms material_reduced_pair_green_dslope
+#print axioms material_reduced_pair_green_dslope
+#assert_central_comparison_axioms material_reduced_pair_canonical_residual_numerator
+#print axioms material_reduced_pair_canonical_residual_numerator
+end CarryMaterialGreenPairComparison

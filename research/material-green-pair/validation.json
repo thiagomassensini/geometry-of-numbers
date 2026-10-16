@@ -1,0 +1,88 @@
+{
+  "base_commit": "5dcca37b088b3d1975d76f116b9e856a27fd6e19",
+  "host": "llm",
+  "checks": [
+    {
+      "command": "lake build GeometryOfNumbers.Analysis.CarryMaterialCompanionGreenTransport --wfail",
+      "exit_code": 0,
+      "jobs": 8791,
+      "log": "focused-build.log.gz",
+      "capture": "Successful focused segment from cross-3.log, before the external pin check"
+    },
+    {
+      "command": "lake build --wfail",
+      "exit_code": 0,
+      "jobs": 8830,
+      "log": "full-build.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-foundation.sh && bash scripts/audit-geometry.sh && bash scripts/audit-analysis.sh",
+      "exit_code": 0,
+      "log": "zone-audits.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-material-central-comparison.sh /home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "warningAsError": true,
+      "log": "cross-audit.log.gz",
+      "total_external_theorems": 69
+    },
+    {
+      "command": "lake env lean -DwarningAsError=true research/material-green-pair/Regression.lean",
+      "exit_code": 0,
+      "log": "regression.log.gz"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "new_public_roots": {
+    "geometry_definitions": 12,
+    "geometry_theorems": 24,
+    "external_theorems": 11,
+    "total": 47
+  },
+  "axioms": {
+    "guard": "Lean.collectAxioms over transitive declaration types and bodies",
+    "allowed_in_analysis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "new_root_footprints": "footprints.json",
+    "foundation": "empty; checked separately",
+    "geometry": "distinct policy, no Classical.choice"
+  },
+  "trust_scan": {
+    "files": [
+      "GeometryOfNumbers/Analysis/CarryMaterialCompanionGreenTransport.lean",
+      "research/material-central-calibration/CanonicalComparison.lean",
+      "research/material-green-pair/Regression.lean"
+    ],
+    "forbidden": [
+      "sorry",
+      "admit",
+      "native_decide",
+      "unsafe",
+      "implemented_by",
+      "new axiom declarations"
+    ],
+    "result": "PASS"
+  },
+  "regression_scope": [
+    "same-source camera 72 correction and nine crossings",
+    "original TFVD quadratures and trace return",
+    "material clock domain and dressing derivative",
+    "old source central calibration and projection first jet",
+    "retained-value inverse at the singular center",
+    "four TFVD Green/return crossings of hidden reduced companion and value"
+  ],
+  "not_claimed": [
+    "positive Gram realization of the residual",
+    "division on the parameter axes or diagonal",
+    "second strong derivative or holomorphic global vector jets",
+    "clock-height operator identification"
+  ],
+  "development_note": "An initial root-audit generation duplicated guard commands; that development run was stopped, the registration was corrected to one block, and the successful complete build is the log included here."
+}
