@@ -1,0 +1,450 @@
+{
+  "geometry-of-numbers": {
+    "base_commit": "b5cb200f31a8ff360394860a5ff2d4a1151611b2",
+    "files": [
+      {
+        "path": "GeometryOfNumbers/Foundation/FirstLocalReturnCapacity.lean",
+        "sha256": "c241951128b490d06929d96ffa71122546595cc0226a797b536bd1556b26faef",
+        "last_touch_commit": "92c2c3178d167bc4cfef0653b8e2eebbdc96bff4"
+      },
+      {
+        "path": "GeometryOfNumbers/Foundation/EmergentResidualTower.lean",
+        "sha256": "95b6aa8a38f7babfeff268a586e2b1d72b9bd69b795946cc67197416d3a34715",
+        "last_touch_commit": "92c2c3178d167bc4cfef0653b8e2eebbdc96bff4"
+      },
+      {
+        "path": "GeometryOfNumbers/Foundation/QuadraticMassCompatibility.lean",
+        "sha256": "2d9f7e44cc327aecf72c40239e42a1a1bab89b6ea206a73d07fd6f4bcab474d2",
+        "last_touch_commit": "0295a650fd5f48e39279659772a311369a2e8645"
+      },
+      {
+        "path": "GeometryOfNumbers/Foundation/FoundationalHalfScalingCapstone.lean",
+        "sha256": "516c940e762acefa72c6a570c84d53a9e10e64c6d5a42dd47085a009a95b3249",
+        "last_touch_commit": "4051572613b2a1f9ecae026668541bed2bb14ae3"
+      },
+      {
+        "path": "GeometryOfNumbers/Geometry/ResidualTowerDepth.lean",
+        "sha256": "90e807a2058a7bd8488116c2fd6e067000cd9175ad5b14399914f503ca2f421e",
+        "last_touch_commit": "c2ac6556ffa9463318c885fdd530abe599bd0457"
+      },
+      {
+        "path": "GeometryOfNumbers/Geometry/CenterLegReflection.lean",
+        "sha256": "4912f3fda79593acce74e861fd43d525e586d695d63ca77fb51327a6311a0845",
+        "last_touch_commit": "6569971b60ca60d5e852bcd166b511e6285d37ea"
+      },
+      {
+        "path": "GeometryOfNumbers/Geometry/CenteredSecondDifference.lean",
+        "sha256": "460118b2dbe28f1838a9d823a268692dea72dc303a11c8a135b3d5e5b61ed080",
+        "last_touch_commit": "6569971b60ca60d5e852bcd166b511e6285d37ea"
+      },
+      {
+        "path": "GeometryOfNumbers/Geometry/CarryCenterLegCrosswalk.lean",
+        "sha256": "b5deec0026830900e5317f262cb9ea942107c80bd6da457d69a95228cd4083c8",
+        "last_touch_commit": "44e75af358880705b8cff50f2850d08f91fc0b50"
+      },
+      {
+        "path": "GeometryOfNumbers/Geometry/BalancedCarryDepthCrosswalk.lean",
+        "sha256": "feecf5c2664a6582de5daba612ab8f6336882c83b0d197b0a348a0efc3bbd6c8",
+        "last_touch_commit": "c2ac6556ffa9463318c885fdd530abe599bd0457"
+      },
+      {
+        "path": "GeometryOfNumbers/Geometry/IntegerCameraIncidence.lean",
+        "sha256": "9f8513a62203a97a2835d55fa247c4951c38fea06b3115ef880e144cf41ec540",
+        "last_touch_commit": "8ae0074674105cb6c5b011f7a5e242ea5364d520"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/CarryMaterialGeneralTransport.lean",
+        "sha256": "1d952723a1e8143a13c82afbd3411663ecd6bfe6818a1dd516894eca21223232",
+        "last_touch_commit": "36718e438c1fa1d738ffa7e0c6ad6fd9310bf06f"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdGreenReadout.lean",
+        "sha256": "91c21dd8df331bf048609b81913ca24dd3683764742b31bcccb476b42f708168",
+        "last_touch_commit": "36718e438c1fa1d738ffa7e0c6ad6fd9310bf06f"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceRealization.lean",
+        "sha256": "35602e706455ea9596c547d32f4cdd334b78b468b730a3a460d1c9a9bc8a3090",
+        "last_touch_commit": "ad9d663212ee9af442e72eb29cb28180c8423858"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/CarryMaterialCameraTransport.lean",
+        "sha256": "000ec049376c0d96b5748b1b1e6aab1209b18e385bbc8d0842bcfb9cbf4f4fdf",
+        "last_touch_commit": "ad9d663212ee9af442e72eb29cb28180c8423858"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/BaseTwoPhysicalEdgeTfvdBridge.lean",
+        "sha256": "68f1c1c811556070aac501acd8032cd8bb8343976f6c14161bb65bb91bf42781",
+        "last_touch_commit": "cae0dc65a369518b7583ef51cc74a16d2a6e8a38"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/BaseTwoPhysicalEdgeC2Address.lean",
+        "sha256": "7691a8eb11cbc7c25b89c58cf85323fee475508420c69039aab910aa3b15ce90",
+        "last_touch_commit": "da5f8a58d2380c95ef56ac8471046ebbc208e8c5"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/C2RealFiberTfvdIncidence.lean",
+        "sha256": "1071c93ad8ec6d7c8bdddc526537daee949274b8ac829921044d92c0f7cac0b1",
+        "last_touch_commit": "9740b3e65010a9743b20c18da91dca8d9f98d5b1"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/CompleteVerticalObservationGram.lean",
+        "sha256": "7be753f04875aac6cdc135010656ff839532fdd0f91863b3327f340dd9db4279",
+        "last_touch_commit": "b221721ffd98e6172097799cec29c9497c236e88"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/SeparatedCenterClockObstruction.lean",
+        "sha256": "5860323f6db856448fe20cef896698bf9f315b98ff865e9c39763d6c12607909",
+        "last_touch_commit": "e1084b43533255b399b82dc307b536d7dfdca07f"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/PrimeCameraProvenance.lean",
+        "sha256": "28b206ed52860f0d0f42c0b633d9eac3a8a88009baea3d19517497d0a557d98d",
+        "last_touch_commit": "8ae0074674105cb6c5b011f7a5e242ea5364d520"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/IntegerIncidenceEnergy.lean",
+        "sha256": "be161f4511910b053a27cc1dfc2ecabd9d7d66ebe5d674058867044771a80a22",
+        "last_touch_commit": "8ae0074674105cb6c5b011f7a5e242ea5364d520"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/RealDepthMass.lean",
+        "sha256": "13c9dbb9841f7c858ec0c2dc230556b53a9bbfee75d45a620859684077c44183",
+        "last_touch_commit": "4051572613b2a1f9ecae026668541bed2bb14ae3"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/RealQuadraticAmplitude.lean",
+        "sha256": "508ba03e1edf64cbc1b9738e20420a40e53a3062170c22a876d59201415b0215",
+        "last_touch_commit": "4051572613b2a1f9ecae026668541bed2bb14ae3"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/RealCriticalDepthState.lean",
+        "sha256": "d221c4f976ee4c6848021e38e04b77792ec678a1486dcc8b6555db48d5f6491a",
+        "last_touch_commit": "fb3d6ca7a8d5c06786a6a3efed4d860a036b48ea"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/C2FiberRealDynamics.lean",
+        "sha256": "60abcd61a664c1b8f0180a03bab92e4382e93dc417505fb76216901c7a270233",
+        "last_touch_commit": "d7cc54f5c485320f1fada33118e9e6101488819a"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/RealCarryTfvd.lean",
+        "sha256": "40f40703c5085c94cdb72dbd90002e57c365a16568b320febb1cef01978ba6bb",
+        "last_touch_commit": "93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/CompleteVerticalObservationGram.lean",
+        "sha256": "7be753f04875aac6cdc135010656ff839532fdd0f91863b3327f340dd9db4279",
+        "last_touch_commit": "b221721ffd98e6172097799cec29c9497c236e88"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/CanonicalGreenMomentJetSeam.lean",
+        "sha256": "77a5b83b55e022a790f2d650404e458d4d699e4483c5de84d4c20daacd382296",
+        "last_touch_commit": "d4d07ac6c7c0b8c48c2f7989de2fea26ead58ea5"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/C2GlobalPhysicalBranchCanary.lean",
+        "sha256": "264cb62f13fb8510d99817c5e251847c1e7cdf641f4828860fd04b9044a546ac",
+        "last_touch_commit": "d7cc54f5c485320f1fada33118e9e6101488819a"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/FiniteMaterialClockJets.lean",
+        "sha256": "844bb7059ab06b504b3a8e864f8bffab526ebbb98ec3caab327c217145b04152",
+        "last_touch_commit": "d1577400c0d61bc90ecfd1f5759b8e4aaf5fc241"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/FiniteNativeMaterialClock.lean",
+        "sha256": "d675e188e8516e90243bbce52073514aa5887366624e4180a07b068773756605",
+        "last_touch_commit": "d1577400c0d61bc90ecfd1f5759b8e4aaf5fc241"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/BaseTwoExactHeadTailCompletion.lean",
+        "sha256": "d356bace8371d7ba747f25c5ac1b8929774c9d326d841904543749d1abcc62fc",
+        "last_touch_commit": "56cc3aef5f813aed1e39582634097b1220429387"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/BaseTwoCompletedGradientSignalLift.lean",
+        "sha256": "b2a4efb19e057e39cc31fd6483af8dd71cb29f6ad6e93ac8403918fc7cdbb2ed",
+        "last_touch_commit": "b5c83128d686868adb59c5d47ff4aae7d9b33652"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/BaseTwoCompletedBoundaryLimit.lean",
+        "sha256": "eb4bcd3b4149e4c7c23272ac338fb3dcc41ac3bd71341f07650ad9e59283e374",
+        "last_touch_commit": "a0e4dff8e296c90ae382036d5bb8d52d245a3e13"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/BaseTwoCompletedBoundaryHilbert.lean",
+        "sha256": "cd95890c9c553bd7718412f06a8fcd75e9c6ba7484c65193889704a8db212ebe",
+        "last_touch_commit": "4dc53afc206c3407388806082bd89bc0a36291ab"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/BaseTwoCompletedBoundaryDynamics.lean",
+        "sha256": "61c5c3d7ba8bf43efef57b5f872f7c06fb7dbbc0cb8b3db45682a0d1b459256b",
+        "last_touch_commit": "d9ccecb8b2c8240d68c2874d544f0e2bd8b8150c"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/BaseTwoCompletedVectorLiftGate.lean",
+        "sha256": "5f7986f04c0efd141e3f1245b339b1082db666c9a087cc744c7cc44b97b814d4",
+        "last_touch_commit": "d74324f833487ee80cd224d9a43fd37e3edeb84e"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.lean",
+        "sha256": "0f0560b62e9cd889ff6a70dc45bb0c9751e085fda54292fade9e05f4882be716",
+        "last_touch_commit": "5335306a9d3ec3ea36cf18f3bfc80c166b94019a"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/BaseTwoCanonicalArchimedeanDressing.lean",
+        "sha256": "10fee41639a5f64da9deb4aa82ad5e917299ab0e6344062ad7087fe8c442ffc8",
+        "last_touch_commit": "6d8010685ddcb191f267820b0aacfecbe7078f62"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/BaseTwoCanonicalCameraDressing.lean",
+        "sha256": "5cb7246bb0f317d40691c007bdc16a6e11cff93933ec81f79f68c57a648fa79b",
+        "last_touch_commit": "3c0010f87afec21356df7af563ac8a5de72d856c"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/BaseTwoCompletedSignalRegularity.lean",
+        "sha256": "a972a4249228178d4d4a93bf2b3239111f1df5c329e86cf46ea10e139f8299b3",
+        "last_touch_commit": "56cc3aef5f813aed1e39582634097b1220429387"
+      }
+    ],
+    "manifest_sha256": "9868872bae98d0c7e22c597d8e27d38d247498161cf70cdcdc193e9ea0608602"
+  },
+  "carry-self-adjoint-operator": {
+    "base_commit": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+    "files": [
+      {
+        "path": "CarrySelfAdjointOperator/CompletedNativeAmbientCentralCurvatureDecision.lean",
+        "sha256": "4233cc69ecfcd3bfb83480b770482c2eff2d1a6498b89c527aa9834c78f2f4f9",
+        "last_touch_commit": "d24418fe03cd0af306b9c0e15ca095ae0dfda570"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedC3CoisometricAmbientMomentGate.lean",
+        "sha256": "592e9587b791ecaefcdd22b9a7b2d61badfadce1871a196da48b7b4152983d61",
+        "last_touch_commit": "7d8e0da5d5624490026b8eddf8b9dbbdb265d8ff"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedC3AmbientRadialTiltSamplePositivity.lean",
+        "sha256": "0a4316bf9070efb81cdd9646e85290b59696b0c801ff99f11ca625a1acea38a6",
+        "last_touch_commit": "2d64c901f4125e576e5145caee8d3b99a38e2d30"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedC3AllCutoffHilbertState.lean",
+        "sha256": "b626017245b8bc2251189c731a1e17a06dd6c1bc67a561ac11da37c38a5ca2cc",
+        "last_touch_commit": "4c275aadddfc80abf98428b1265f5e04ff3d0c2e"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedOperatorCharacteristic.lean",
+        "sha256": "de21570ecf684ee42e8222ccbc598b6bb84c21404c8cd55f815504ab3ae093a2",
+        "last_touch_commit": "7fe207aedddcca5bc51add04561a2880cd2fca3e"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/DivisionFreeGreenConfinement.lean",
+        "sha256": "53508488a7471b925f3c6d7e864776e8ee071a252279e8e2fce92774fced2760",
+        "last_touch_commit": "50955f1ee882b5d79a5df950cd622d7bd97ca934"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedNativeRealWeylMoments.lean",
+        "sha256": "99b68c3237442760b391707dafa39c98ce8e27b5139966b0a6cc87a6dcfd1011",
+        "last_touch_commit": "29bae368732ac5a5ee0dce79a281bbec23bc58dc"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedNativeHerglotzFourthOrderGate.lean",
+        "sha256": "f3aba8efd81920a720081fd18b4e22aafc06d52eebf4487b655a32760072964f",
+        "last_touch_commit": "f93b7f77fb5fb076ea46fbb0a0bd5c72a0799103"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedC3KernelMetricCalibration.lean",
+        "sha256": "b56f172daef156db2894ac6047fd028eb30b125f202a22ab2fc5e15518cba7b4",
+        "last_touch_commit": "7c778e4a49409f51fd6742fc30ffe2d5045c300a"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedNativeCentralProductDressingAudit.lean",
+        "sha256": "a5b3b310632c67aa79b7c74d1d5e2ac2c55572648d3608d5d3a1f0908e834f7d",
+        "last_touch_commit": "8c482c178e2bcaa658a440df45ab3533b8156241"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/C2GeometryNativeSourceBridge.lean",
+        "sha256": "acdb8d67ba096275bedb85c436b8945187374a596425458b22cf7e339cfe3217",
+        "last_touch_commit": "1a5f60bb9c642b679be064cf2c8dad458fd04cca"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/RealQuadratureDomainTransport.lean",
+        "sha256": "bf87bbf180cece4f470852999c51f2df4e55912528b97d91c440270cac6d8853",
+        "last_touch_commit": "a1891b93973d49a8a3aabd36b2c977d464e5db31"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/RealMaterialPhaseConnection.lean",
+        "sha256": "13be945e90230a25fd4b3d8ef34c8ad51822f4c11c593df046a52c1867a4cddf",
+        "last_touch_commit": "a1891b93973d49a8a3aabd36b2c977d464e5db31"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/NativeRealComplementTransport.lean",
+        "sha256": "ee9a4a2f70a0d84c6cdcfaf7d8be2838e25bb3435afdb9f79f491d21e3f11f21",
+        "last_touch_commit": "a1891b93973d49a8a3aabd36b2c977d464e5db31"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/NativeRealFirstQuadratureNaturality.lean",
+        "sha256": "2954374e411b750d61c3bbb832a85e39835ea7ba71166a43ba3ba123880bc768",
+        "last_touch_commit": "a1891b93973d49a8a3aabd36b2c977d464e5db31"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedNativeSourceThreeSectorSewing.lean",
+        "sha256": "524c3fb227b6eea6f2133ca3654cf17bdc28c67b91b8f280a738a02cf36ac247",
+        "last_touch_commit": "acdcb127ad75b14103781e2128092e0115a48b87"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedNativeHPGateAudit.lean",
+        "sha256": "eec079bec698133f54df8618d712ba3f190ce6f4a2ecb66440a842f18f357817",
+        "last_touch_commit": "bda1620c2bd58763d7b62fb6c629042175ca1c38"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedGreenForwardDifferenceGramBridge.lean",
+        "sha256": "716e2ac6f53bf73e67fc50671d9e9194d7d9d84d5dd5f3c425101999d937a695",
+        "last_touch_commit": "350cec8f622b9352e8877dc8edaba2bb6cf8ecca"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedGreenMomentJets.lean",
+        "sha256": "c60c1874c53f1d68267f834af1c703289185226a7b069fe678f7354072121a0b",
+        "last_touch_commit": "0978dbc61b14b39c178c04920a4d34fadbfaaae6"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedGreenJetCoefficientRecurrence.lean",
+        "sha256": "3b43f363a4bbcc2eb36c3ca0c8472629ba3bc5c8954c9552d50c1818d97295e3",
+        "last_touch_commit": "4ea066b8f8986885ae143a366b267cc76c4ad4fe"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/BR2CenterLegMomentKernel.lean",
+        "sha256": "28aed1e543e0950621111aec4255707195fcb1856e50e5e9c18abc4527f1b013",
+        "last_touch_commit": "903f5c23152a6fcb48915474c83887e47a680b8b"
+      }
+    ],
+    "manifest_sha256": "822866313e377adcb9c6249680ed67ceb47682af1bb0cd3cc5203554786bcfeb"
+  },
+  "base_pull_requests": [
+    {
+      "mergeCommit": {
+        "oid": "1c530e7114fbaa2960e2c95209de307e6d939b83"
+      },
+      "mergedAt": "2026-10-15T18:39:40Z",
+      "number": 1,
+      "state": "MERGED",
+      "title": "Integer camera provenance and finite incidence transport defects",
+      "url": "https://github.com/thiagomassensini/geometry-of-numbers/pull/1"
+    },
+    {
+      "mergeCommit": {
+        "oid": "ab0c47651d414271cf6fda60c2d32fa2f2997927"
+      },
+      "mergedAt": "2026-10-15T20:31:26Z",
+      "number": 2,
+      "state": "MERGED",
+      "title": "Transport integer cameras through the existing completed Carry source",
+      "url": "https://github.com/thiagomassensini/geometry-of-numbers/pull/2"
+    },
+    {
+      "mergeCommit": {
+        "oid": "9e5f9ce93ce2f421b0b65bd7a3ffc5351e213f02"
+      },
+      "mergedAt": "2026-10-15T21:22:11Z",
+      "number": 3,
+      "state": "MERGED",
+      "title": "Generalize same-source camera transport and real TFVD Green readouts",
+      "url": "https://github.com/thiagomassensini/geometry-of-numbers/pull/3"
+    },
+    {
+      "mergeCommit": {
+        "oid": "bde8af97a34923563965128b7748e8ac088d7d9b"
+      },
+      "mergedAt": "2026-10-15T17:05:52Z",
+      "number": 105,
+      "state": "MERGED",
+      "title": "Transporta a fonte completada pelos tr\u00eas setores e preserva o defeito Green",
+      "url": "https://github.com/thiagomassensini/carry-self-adjoint-operator/pull/105"
+    },
+    {
+      "mergeCommit": {
+        "oid": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532"
+      },
+      "mergedAt": "2026-10-15T18:10:11Z",
+      "number": 106,
+      "state": "MERGED",
+      "title": "Real quadrature transport from Carry source to the height interface",
+      "url": "https://github.com/thiagomassensini/carry-self-adjoint-operator/pull/106"
+    }
+  ],
+  "momentos": {
+    "base_commit": "a54f267365d5d8c965376734b17b10ae89ed3f74",
+    "files": [
+      {
+        "path": "AUDITORIA_CORRECTED_MOMENTS_VS_CANONICAL_RECURRENCE.md",
+        "sha256": "11339693674fbdadac86b97afd20325c068ad929a05a68f52c33302bfa96b800",
+        "last_touch_commit": "d9361704bd28038f1c2b1160d056fa0e54f4d560"
+      },
+      {
+        "path": "native_jet_exploration/auditoria_corrected_vs_canonical/stage_A/coefficients.json",
+        "sha256": "ab31ac45968c054733965795f48b91997d11b269e345c88f2cfa145b8ce3254d",
+        "last_touch_commit": "d9361704bd28038f1c2b1160d056fa0e54f4d560"
+      },
+      {
+        "path": "native_jet_exploration/auditoria_corrected_vs_canonical/stage_B/coefficients.json",
+        "sha256": "50bc111bc10174e406260a90fe8271ba3f6897c7467e3472822a0bee8d5d351a",
+        "last_touch_commit": "d9361704bd28038f1c2b1160d056fa0e54f4d560"
+      }
+    ]
+  },
+  "new_roots": {
+    "library": [
+      "GeometryOfNumbers.Analysis.carryMaterial_source_seed",
+      "GeometryOfNumbers.Analysis.carryMaterialCarrier_norm_sq",
+      "GeometryOfNumbers.Analysis.carryMaterial_source_norm_sq",
+      "GeometryOfNumbers.Analysis.carryMaterial_origin_norm_physical_residual",
+      "GeometryOfNumbers.Analysis.carryMaterial_origin_boundary",
+      "GeometryOfNumbers.Analysis.carryMaterial_origin_signal_ne_zero",
+      "GeometryOfNumbers.Analysis.carryMaterial_origin_gradient_norm_pos",
+      "GeometryOfNumbers.Analysis.carryMaterial_readout_norm_gap",
+      "GeometryOfNumbers.Analysis.carryMaterial_origin_readout_norm_gap",
+      "GeometryOfNumbers.Analysis.carryMaterial_origin_dressing_cancel",
+      "GeometryOfNumbers.Analysis.carryMaterial_origin_normalized_mass",
+      "GeometryOfNumbers.Analysis.carryMaterial_origin_normalized_defect",
+      "GeometryOfNumbers.Analysis.carryMaterial_origin_normalized_defect_physical",
+      "GeometryOfNumbers.Analysis.carryMaterial_origin_normalized_mass_gt_quarter"
+    ],
+    "cross_repository": [
+      "CarryMaterialCanonicalComparison.height_parameter",
+      "CarryMaterialCanonicalComparison.native_line_parameter",
+      "CarryMaterialCanonicalComparison.material_sample",
+      "CarryMaterialCanonicalComparison.material_cell",
+      "CarryMaterialCanonicalComparison.material_signal",
+      "CarryMaterialCanonicalComparison.material_gradient",
+      "CarryMaterialCanonicalComparison.material_camera_factor",
+      "CarryMaterialCanonicalComparison.material_completion_factor",
+      "CarryMaterialCanonicalComparison.material_response",
+      "CarryMaterialCanonicalComparison.material_canonical_central_mass_gt_quarter",
+      "CarryMaterialCanonicalComparison.material_canonical_central_defect_gt_three_sixteenths",
+      "CarryMaterialCanonicalComparison.material_canonical_central_defect_exact",
+      "CarryMaterialCanonicalComparison.material_canonical_central_defect_physical",
+      "CarryMaterialCanonicalComparison.canonical_kernel_at_origin",
+      "CarryMaterialCanonicalComparison.normalized_jet_order_zero",
+      "CarryMaterialCanonicalComparison.ambient_curvature_defect_eq_negative_normalized_gap",
+      "CarryMaterialCanonicalComparison.no_normalized_kernel_with_literal_material_origin"
+    ]
+  },
+  "ambient_antecedent": {
+    "doc_sha256": "0a2386ee98ca726f9859d407f516e1ef45ee871f47457b85bc39ee523ce7e0bd",
+    "doc_last_touch_commit": "d24418fe03cd0af306b9c0e15ca095ae0dfda570"
+  },
+  "common_gradient_dependency": {
+    "commit": "65d50f6db1208708e109982ba97e1d51d3039956",
+    "files": [
+      {
+        "path": "CPFormal/Analytic/CpFiniteGreen.lean",
+        "sha256": "d7412a78af45b003ca8a5635700ae852eca8b602f1cb191760c693dca8e25b8a"
+      },
+      {
+        "path": "CPFormal/Analytic/CpFiniteDirichletChart.lean",
+        "sha256": "a387c78b6d0b22c4af93d0a82096632c20c7c3ad2c44bd34cd0c82703c5d612a"
+      }
+    ]
+  }
+}
