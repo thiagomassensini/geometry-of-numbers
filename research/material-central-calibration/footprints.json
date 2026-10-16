@@ -1,0 +1,147 @@
+{
+  "GeometryOfNumbers.Analysis.carryMaterial_source_seed": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterialCarrier_norm_sq": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterial_source_norm_sq": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterial_origin_norm_physical_residual": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterial_origin_boundary": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterial_origin_signal_ne_zero": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterial_origin_gradient_norm_pos": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterial_readout_norm_gap": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterial_origin_readout_norm_gap": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterial_origin_dressing_cancel": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterial_origin_normalized_mass": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterial_origin_normalized_defect": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterial_origin_normalized_defect_physical": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterial_origin_normalized_mass_gt_quarter": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialCanonicalComparison.height_parameter": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialCanonicalComparison.native_line_parameter": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialCanonicalComparison.material_sample": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialCanonicalComparison.material_cell": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialCanonicalComparison.material_signal": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialCanonicalComparison.material_camera_factor": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialCanonicalComparison.material_completion_factor": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialCanonicalComparison.material_response": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialCanonicalComparison.material_canonical_central_mass_gt_quarter": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialCanonicalComparison.material_canonical_central_defect_gt_three_sixteenths": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialCanonicalComparison.material_canonical_central_defect_exact": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialCanonicalComparison.material_canonical_central_defect_physical": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialCanonicalComparison.canonical_kernel_at_origin": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialCanonicalComparison.normalized_jet_order_zero": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialCanonicalComparison.no_normalized_kernel_with_literal_material_origin": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ]
+}

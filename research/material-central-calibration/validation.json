@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-16",
+  "host": "llm",
+  "geometry_base": "9e5f9ce93ce2f421b0b65bd7a3ffc5351e213f02",
+  "operator_base": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "focused_build": {
+    "command": "lake build GeometryOfNumbers.Analysis.CarryMaterialCentralCalibration --wfail",
+    "exit_code": 0,
+    "log": "focused-build.log.gz"
+  },
+  "full_build": {
+    "command": "lake build --wfail",
+    "jobs": 8825,
+    "exit_code": 0,
+    "log": "full-build.log.gz"
+  },
+  "zone_audits_and_regression": {
+    "commands": [
+      "bash scripts/audit-foundation.sh",
+      "bash scripts/audit-geometry.sh",
+      "bash scripts/audit-analysis.sh",
+      "lake env lean -DwarningAsError=true research/material-central-calibration/Regression.lean"
+    ],
+    "exit_code": 0,
+    "log": "zone-regression-audits.log.gz"
+  },
+  "cross_audit": {
+    "command": "bash scripts/audit-material-central-comparison.sh /home/thlinux/carry-self-adjoint-operator",
+    "exit_code": 0,
+    "log": "cross-audit.log.gz",
+    "default_library_dependency": false,
+    "library_roots": 14,
+    "cross_repository_roots": 15,
+    "axioms": "collectAxioms inspects transitive types and bodies; standard propext/Classical.choice/Quot.sound only"
+  },
+  "pins_unchanged": {
+    "lake-manifest.json": "9868872bae98d0c7e22c597d8e27d38d247498161cf70cdcdc193e9ea0608602",
+    "lakefile.toml": "2f034f906810f36cc55ff0bcdf98fa629fb91085b107f238e21cca93e136f9f8",
+    "lean-toolchain": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e"
+  },
+  "result": "The literal dressed complete source has normalized central mass > 1/4; actual h0 < 1/16; defect > 3/16. Scalar source identification holds for every real time. No all-transport impossibility is claimed."
+}
