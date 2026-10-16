@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-16",
+  "host": "llm",
+  "geometry_base": "ce809345a79d7f2aa1bbc51ba69605e408c53899",
+  "operator_base": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "new_library_definition_roots": 9,
+  "includes_carrier_type_alias": true,
+  "new_library_theorems": 28,
+  "new_external_theorems": 5,
+  "focused_build": {
+    "command": "lake build GeometryOfNumbers.Analysis.CarryMaterialCentralProjectionBounds --wfail",
+    "jobs": 8790,
+    "exit_code": 0,
+    "log": "focused-build.log.gz",
+    "capture": "Output of the successful focused command before the separate comparison command; the final comparison is independently captured in cross-audit.log.gz."
+  },
+  "full_build": {
+    "command": "lake build --wfail",
+    "jobs": 8829,
+    "exit_code": 0,
+    "log": "full-build.log.gz"
+  },
+  "zone_audits": {
+    "commands": [
+      "bash scripts/audit-foundation.sh",
+      "bash scripts/audit-geometry.sh",
+      "bash scripts/audit-analysis.sh"
+    ],
+    "exit_code": 0,
+    "log": "zone-audits.log.gz"
+  },
+  "regression": {
+    "command": "lake env lean -DwarningAsError=true research/material-central-projection/Regression.lean",
+    "exit_code": 0,
+    "log": "regression.log.gz"
+  },
+  "comparison": {
+    "command": "bash scripts/audit-material-central-comparison.sh /home/thlinux/carry-self-adjoint-operator",
+    "exit_code": 0,
+    "log": "cross-audit.log.gz",
+    "new_roots": 5,
+    "old_roots_reaudited": 53,
+    "new_lake_dependency": false
+  },
+  "axioms": {
+    "guard": "collectAxioms traverses transitive declaration types and bodies; print axioms",
+    "new_roots_checked": 42,
+    "allowed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "claims": {
+    "lossless_physical_projection_split": true,
+    "preserves_clock_graph_domain": true,
+    "complement_clock_intertwining": "refuted at actual source center",
+    "firstJet_energy_gt": "1/512",
+    "canonical_h1_lt": "1/1024",
+    "firstJet_gap_gt": "1/1024",
+    "canonical_residual_diagonal_germ": "refuted for this fixed projected candidate",
+    "general_physical_residual_realization": "open",
+    "all_order_positivity": false
+  },
+  "pin_changes": false,
+  "other_repositories_modified": false,
+  "numeric_diagnostic_used_as_proof": false
+}

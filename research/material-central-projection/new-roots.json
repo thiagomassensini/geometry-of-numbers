@@ -1,0 +1,50 @@
+{
+  "library_definitions": [
+    "GeometryOfNumbers.Analysis.MaterialCarrier",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralUnit",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralProjection",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralComplement",
+    "GeometryOfNumbers.Analysis.carryMaterialNormalizedState",
+    "GeometryOfNumbers.Analysis.carryMaterialCenteredState",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralSplit",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralEdgeContrast",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralClock"
+  ],
+  "library_theorems": [
+    "GeometryOfNumbers.Analysis.carryMaterial_center_ne_zero",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralUnit_norm",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralUnit_inner",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralProjection_apply",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralComplement_apply",
+    "GeometryOfNumbers.Analysis.carryMaterialCentral_reconstruct",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralComplement_unit_inner",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralComplement_rotation",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralComplement_center",
+    "GeometryOfNumbers.Analysis.carryMaterialCentral_pairing",
+    "GeometryOfNumbers.Analysis.carryMaterialCentral_full_pairing",
+    "GeometryOfNumbers.Analysis.carryMaterialNormalizedState_cancel",
+    "GeometryOfNumbers.Analysis.carryMaterialCenteredState_zero",
+    "GeometryOfNumbers.Analysis.carryMaterialCenteredState_hasDerivAt_zero",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralComplement_mem_clockDomain",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralComplement_norm_sq",
+    "GeometryOfNumbers.Analysis.carryMaterialCenteredState_firstJet_energy",
+    "GeometryOfNumbers.Analysis.carryMaterialCenteredState_pairing",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralSplit_pairing",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralComplement_quadratures",
+    "GeometryOfNumbers.Analysis.carryMaterial_signal_zero_norm_le",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralEdgeContrast_unit",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralEdgeContrast_complement",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralEdgeContrast_norm_le",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralEdgeContrast_clock",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralClock_complement_norm_lower",
+    "GeometryOfNumbers.Analysis.carryMaterialCenteredState_firstJet_energy_gt",
+    "GeometryOfNumbers.Analysis.carryMaterialCentralComplement_clock_center_ne"
+  ],
+  "comparison_theorems": [
+    "CarryMaterialCentralProjectionComparison.canonical_first_shifted_moment_lt",
+    "CarryMaterialCentralProjectionComparison.material_centered_firstJet_gap",
+    "CarryMaterialCentralProjectionComparison.material_centered_firstJet_ne_canonical",
+    "CarryMaterialCentralProjectionComparison.material_centered_residual_firstJet_necessary",
+    "CarryMaterialCentralProjectionComparison.material_centered_not_residual_diagonal_germ"
+  ]
+}
