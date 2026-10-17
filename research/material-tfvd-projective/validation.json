@@ -1,0 +1,73 @@
+{
+  "host": "llm",
+  "base": "31e8ff082cccac2a881180eb3b079824591e22d3",
+  "checks": [
+    {
+      "command": "lake build GeometryOfNumbers.Analysis.CarryMaterialTfvdProjectiveTransport --wfail",
+      "exit_code": 0,
+      "log": "evidence/focused-build.log.gz"
+    },
+    {
+      "command": "lake build --wfail",
+      "exit_code": 0,
+      "log": "evidence/full-build.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-foundation.sh",
+      "exit_code": 0,
+      "log": "evidence/foundation-audit.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-geometry.sh",
+      "exit_code": 0,
+      "log": "evidence/geometry-audit.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-analysis.sh",
+      "exit_code": 0,
+      "log": "evidence/analysis-audit.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-material-projective-comparison.sh /home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "log": "evidence/comparison.log.gz"
+    },
+    {
+      "command": "lake env lean -DwarningAsError=true research/material-tfvd-projective/Regression.lean",
+      "exit_code": 0,
+      "log": "evidence/regression.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-material-central-comparison.sh /home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "log": "evidence/previous-comparison-regression.log.gz"
+    }
+  ],
+  "new_roots_audited": 46,
+  "new_theorems": 33,
+  "axiom_policy": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "audit": "Lean.collectAxioms transitive type and body, plus #print axioms per root",
+  "unchanged_literal_sources": [
+    "lakefile.toml",
+    "lake-manifest.json",
+    "lean-toolchain",
+    "research/material-central-calibration/CanonicalComparison.lean",
+    "GeometryOfNumbers/Analysis/CarryMaterialClockCentralCoupling.lean"
+  ],
+  "existing_audit_prefix_preserved": true,
+  "existing_analysis_imports_preserved": true,
+  "new_metric": false,
+  "new_operator": false,
+  "new_source": false,
+  "numeric_proof_input": false,
+  "open": [
+    "joint canonical pairing identification",
+    "normalized Green residual positivity",
+    "all-order hierarchy positivity"
+  ],
+  "narrow_obstruction": "direct unit-core real depth-mass identification at time zero"
+}
