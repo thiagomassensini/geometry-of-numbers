@@ -1,0 +1,16 @@
+{
+  "library_definitions": 10,
+  "library_public_theorems": 24,
+  "external_public_theorems": 3,
+  "new_roots_guarded": 37,
+  "external_comparison_total_theorems": 215,
+  "focused_build": "PASS (8792 jobs)",
+  "full_build": "PASS (8835 jobs)",
+  "regressions": "PASS",
+  "foundation": "PASS (empty footprint)",
+  "geometry": "PASS (original policy)",
+  "analysis": "PASS (standard axioms only)",
+  "external_comparison": "PASS (type/body guards, warnings as errors)",
+  "old_sources_literal_preserved": true,
+  "pins_and_user_files_preserved": true
+}
