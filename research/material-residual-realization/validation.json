@@ -1,0 +1,89 @@
+{
+  "base_commit": "12da1bf7d48881a608a3df545fd561e766233ecb",
+  "host": "llm",
+  "checks": [
+    {
+      "command": "lake build GeometryOfNumbers.Analysis.CarryMaterialResidualPositiveTransport --wfail",
+      "exit_code": 0,
+      "jobs": 8792,
+      "log": "focused-build.log.gz",
+      "capture": "Successful focused segment of cross-3.log before the external pin check; the module source is unchanged since this build."
+    },
+    {
+      "command": "lake build --wfail",
+      "exit_code": 0,
+      "jobs": 8831,
+      "log": "full-build.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-foundation.sh && bash scripts/audit-geometry.sh && bash scripts/audit-analysis.sh",
+      "exit_code": 0,
+      "log": "zone-audits.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-material-central-comparison.sh /home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "warningAsError": true,
+      "log": "cross-audit.log.gz",
+      "total_external_theorems": 88,
+      "source_regression": "Actual readings at e and -e with c=(1,-1), nonzero first moment"
+    },
+    {
+      "command": "lake env lean -DwarningAsError=true research/material-residual-realization/Regression.lean",
+      "exit_code": 0,
+      "log": "regression.log.gz"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "new_public_roots": {
+    "geometry_definitions": 11,
+    "geometry_theorems": 15,
+    "external_theorems": 19,
+    "total": 45
+  },
+  "axioms": {
+    "guard": "Lean.collectAxioms over transitive declaration types and bodies",
+    "allowed_in_analysis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "new_root_footprints": "footprints.json",
+    "foundation": "empty; checked separately",
+    "geometry": "distinct policy; no Classical.choice"
+  },
+  "trust_scan": {
+    "files": [
+      "GeometryOfNumbers/Analysis/CarryMaterialResidualPositiveTransport.lean",
+      "research/material-central-calibration/CanonicalComparison.lean",
+      "research/material-residual-realization/Regression.lean"
+    ],
+    "forbidden": [
+      "sorry",
+      "admit",
+      "native_decide",
+      "unsafe",
+      "implemented_by",
+      "new axiom declarations"
+    ],
+    "result": "PASS"
+  },
+  "positive_result_quantifiers": "Every fixed finite real family with sum(c_i*a_i) != 0 has positive residual energy at sufficiently small nonzero scale; the neighborhood depends on the family.",
+  "not_claimed": [
+    "positive Gram realization of the complete residual",
+    "uniform neighborhood for all source families",
+    "sign on cancelling first-moment directions",
+    "physical carrier supplied by conditional extraction/lift",
+    "new operator or metric or normalization"
+  ],
+  "regression_scope": [
+    "prior 72 and clock/domain/source regressions",
+    "two real quadratures and all TFVD Green/return crosses",
+    "retained-value center reconstruction from PR8",
+    "zero leading coefficient in the other actual reflection parity",
+    "actual noncentral two-source positivity in external comparison"
+  ]
+}

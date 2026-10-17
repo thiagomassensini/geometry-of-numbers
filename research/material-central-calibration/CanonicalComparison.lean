@@ -1,3 +1,4 @@
+import GeometryOfNumbers.Analysis.CarryMaterialResidualPositiveTransport
 import GeometryOfNumbers.Analysis.CarryMaterialCompanionGreenTransport
 import GeometryOfNumbers.Analysis.CarryMaterialCentralProjectionBounds
 import CarrySelfAdjointOperator.CompletedNativeChiralReturnSeventhSourceJet
@@ -1116,3 +1117,266 @@ namespace CarryMaterialGreenPairComparison
 #assert_central_comparison_axioms material_reduced_pair_canonical_residual_numerator
 #print axioms material_reduced_pair_canonical_residual_numerator
 end CarryMaterialGreenPairComparison
+
+namespace CarryMaterialPositiveResidualComparison
+open GeometryOfNumbers.Analysis GeometryOfNumbers.Analysis.BaseTwoCompletion
+open CarrySelfAdjointOperator CarrySelfAdjointOperator.SourcePositiveReduction
+open CarryMaterialResponseComparison CarryMaterialResidualComparison
+open Filter
+open scoped BigOperators Topology InnerProductSpace ComplexConjugate
+noncomputable section
+set_option autoImplicit false
+set_option backward.isDefEq.respectTransparency false
+set_option maxHeartbeats 1000000
+
+private theorem real_dslope_conj (f : ℝ → ℂ) (h : ∀ t, conj (f t) = f t) (t u : ℝ) :
+    conj (dslope f t u) = dslope f t u := by
+  have he : Complex.conjCLE.toContinuousLinearMap ∘ f = f := by
+    funext t
+    exact h t
+  by_cases htu : t = u
+  · subst u
+    by_cases hd : DifferentiableAt ℝ f t
+    · have hh := Complex.conjCLE.toContinuousLinearMap.dslope_comp f t t (fun _ => hd)
+      rw [he] at hh
+      exact hh.symm
+    · simp only [dslope_same, deriv_zero_of_not_differentiableAt hd, map_zero]
+  · have hh := Complex.conjCLE.toContinuousLinearMap.dslope_comp f t u
+      (fun heq => False.elim (htu heq))
+    rw [he] at hh
+    exact hh.symm
+
+theorem material_real_kernel_coe (t u : ℝ) :
+    (carryMaterialRealKernel t u : ℂ) = dslope carryMaterialNormalizedResponse t u := by
+  exact Complex.conj_eq_iff_re.mp (real_dslope_conj _ material_response_conj t u)
+
+theorem material_real_residual_coe (t u : ℝ) :
+    (carryMaterialRealResidual t u : ℂ) =
+      conj (carryMaterialNormalizedResponse t)*carryMaterialNormalizedResponse u*
+        dslope carryMaterialReducedResponse t u := by
+  apply Complex.conj_eq_iff_re.mp
+  simp only [Complex.star_def, map_mul, material_response_conj,
+    real_dslope_conj _ material_reduced_conj]
+
+theorem material_real_feature_coe (t : ℝ) :
+    (carryMaterialRealFeature t : ℂ) = carryMaterialPositiveFeature t := by
+  apply Complex.conj_eq_iff_re.mp
+  simp only [carryMaterialPositiveFeature, map_div₀, Complex.conj_ofReal, material_axis_conj]
+
+theorem material_real_feature_zero :
+    carryMaterialRealFeature 0 = Real.sqrt carryMaterialResponseScale := by
+  unfold carryMaterialRealFeature carryMaterialPositiveFeature
+  rw [material_axis_zero, ← material_scale_eq]
+  have hp := material_scale_pos
+  have hs := Real.sq_sqrt hp.le
+  have hn := (Real.sqrt_pos.mpr hp).ne'
+  simp only [Complex.div_ofReal_re, Complex.ofReal_re]
+  apply (div_eq_iff hn).mpr
+  nlinarith
+
+theorem material_real_feature_zero_pos : 0 < carryMaterialRealFeature 0 := by
+  rw [material_real_feature_zero]
+  exact Real.sqrt_pos.mpr material_scale_pos
+
+theorem material_real_residual_zero_left (t : ℝ) : carryMaterialRealResidual 0 t = 0 := by
+  simp [carryMaterialRealResidual, material_normalized_response_zero]
+
+theorem material_real_residual_zero_right (t : ℝ) : carryMaterialRealResidual t 0 = 0 := by
+  simp [carryMaterialRealResidual, material_normalized_response_zero]
+
+theorem material_real_kernel_split :
+    ∃ U : Set ℝ, IsOpen U ∧ (0 : ℝ) ∈ U ∧
+      ∀ t ∈ U, ∀ u ∈ U, carryMaterialRealKernel t u =
+        carryMaterialRealFeature t*carryMaterialRealFeature u + carryMaterialRealResidual t u := by
+  rcases CarryMaterialResidualComparison.material_real_kernel_split with ⟨U, ho, hz, h⟩
+  refine ⟨U, ho, hz, ?_⟩
+  intro t ht u hu
+  have he := congrArg Complex.re (h t ht u hu)
+  rw [← material_real_feature_coe t, ← material_real_feature_coe u] at he
+  simpa only [carryMaterialRealKernel, carryMaterialRealResidual, Complex.add_re,
+    RCLike.inner_apply, Complex.conj_ofReal, ← Complex.ofReal_mul, Complex.ofReal_re,
+    Complex.star_def, mul_comm] using he
+
+/-- Adding the same canonical source at zero is an exact finite reduction,
+not a new field, a positive-kernel hypothesis or a dimension cutoff. -/
+theorem material_centered_test_energy :
+    ∃ U : Set ℝ, IsOpen U ∧ (0 : ℝ) ∈ U ∧
+      ∀ (n : ℕ) (c t : Fin n → ℝ), (∀ i, t i ∈ U) →
+        carryRealKernelEnergy carryMaterialRealKernel (carryMaterialCenteredCoefficients c t)
+          (carryMaterialCenteredParameters t) = carryRealKernelEnergy carryMaterialRealResidual c t := by
+  rcases material_real_kernel_split with ⟨U, ho, hz, h⟩
+  refine ⟨U, ho, hz, ?_⟩
+  intro n c t ht
+  exact carryMaterialReal_centered_energy hz material_real_feature_zero_pos.ne' h
+    material_real_residual_zero_left material_real_residual_zero_right c t ht
+
+/-- A single source neighborhood, and every central subset of it. Both
+sign obligations concern ALL finite real families, including every diagonal. -/
+theorem material_full_residual_nonnegative_iff :
+    ∃ U : Set ℝ, IsOpen U ∧ (0 : ℝ) ∈ U ∧
+      ∀ V ⊆ U, (0 : ℝ) ∈ V →
+        (CarryRealKernelNonnegativeOn carryMaterialRealKernel V ↔
+          CarryRealKernelNonnegativeOn carryMaterialRealResidual V) := by
+  rcases material_real_kernel_split with ⟨U, ho, hz, h⟩
+  refine ⟨U, ho, hz, ?_⟩
+  intro V hV hzV
+  exact carryMaterialReal_nonnegative_iff hzV material_real_feature_zero_pos.ne'
+    (fun t ht u hu => h t (hV ht) u (hV hu))
+    material_real_residual_zero_left material_real_residual_zero_right
+
+/-- Conditional extraction from a GIVEN positive realization of the FULL
+kernel, using its central direction and the inherited real inner product. -/
+theorem material_extract_residual_of_full_realization
+    {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℝ H] :
+    ∃ U : Set ℝ, IsOpen U ∧ (0 : ℝ) ∈ U ∧
+      ∀ v : ℝ → H, (∀ t ∈ U, ∀ u ∈ U, inner ℝ (v t) (v u) = carryMaterialRealKernel t u) →
+        ∀ t ∈ U, ∀ u ∈ U,
+          inner ℝ (carryMaterialRealOrthogonalResidual v t) (carryMaterialRealOrthogonalResidual v u) =
+            carryMaterialRealResidual t u := by
+  rcases material_real_kernel_split with ⟨U, ho, hz, h⟩
+  refine ⟨U, ho, hz, ?_⟩
+  intro v hv t ht u hu
+  have h00 : inner ℝ (v 0) (v 0) = carryMaterialRealFeature 0^2 := by
+    rw [hv 0 hz 0 hz, h 0 hz 0 hz, material_real_residual_zero_left, add_zero, pow_two]
+  have ht0 : inner ℝ (v t) (v 0) = carryMaterialRealFeature t*carryMaterialRealFeature 0 := by
+    rw [hv t ht 0 hz, h t ht 0 hz, material_real_residual_zero_right, add_zero]
+  have h0u : inner ℝ (v 0) (v u) = carryMaterialRealFeature 0*carryMaterialRealFeature u := by
+    rw [hv 0 hz u hu, h 0 hz u hu, material_real_residual_zero_left, add_zero]
+  rw [carryMaterialRealOrthogonalResidual_pairing v t u material_real_feature_zero_pos.ne' h00 ht0 h0u,
+    hv t ht u hu, h t ht u hu]
+  ring
+
+/-- A residual realization assembles the full kernel in the inherited
+real direct sum. This does NOT assert existence of the residual input. -/
+theorem material_lift_full_of_residual_realization
+    {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℝ H] :
+    ∃ U : Set ℝ, IsOpen U ∧ (0 : ℝ) ∈ U ∧
+      ∀ v : ℝ → H, (∀ t ∈ U, ∀ u ∈ U, inner ℝ (v t) (v u) = carryMaterialRealResidual t u) →
+        ∀ t ∈ U, ∀ u ∈ U,
+          inner ℝ (carryMaterialRealKernelLift v t) (carryMaterialRealKernelLift v u) =
+            carryMaterialRealKernel t u := by
+  rcases material_real_kernel_split with ⟨U, ho, hz, h⟩
+  refine ⟨U, ho, hz, ?_⟩
+  intro v hv t ht u hu
+  rw [carryMaterialRealKernelLift_pairing, hv t ht u hu, h t ht u hu]
+
+/-- The central zero is compulsory for ANY real residual realization. -/
+theorem material_residual_realization_center_zero
+    {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℝ H] (v : ℝ → H)
+    (hv : inner ℝ (v 0) (v 0) = carryMaterialRealResidual 0 0) : v 0 = 0 := by
+  rw [material_real_residual_zero_left] at hv
+  exact inner_self_eq_zero.mp hv
+
+/-- Specific source obstruction: a realization of the normalized residual
+cannot also preserve the complete raw reduced-pair energy at the center. -/
+theorem material_residual_not_raw_reduced_pair_energy
+    {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℝ H] (v : ℝ → H)
+    (hv : inner ℝ (v 0) (v 0) = carryMaterialRealResidual 0 0) :
+    ‖v 0‖^2 ≠ ‖(carryMaterialReducedCompanionPair 0).1‖^2 +
+      ‖(carryMaterialReducedCompanionPair 0).2‖^2 := by
+  rw [material_residual_realization_center_zero v hv, carryMaterialReducedCompanionPair_zero]
+  simp only [norm_zero, zero_pow (by decide : 2 ≠ 0), add_zero]
+  exact (sq_pos_of_pos (norm_pos_iff.mpr carryMaterialCompanion_center_ne_zero)).ne
+
+theorem material_axis_continuous : ContinuousAt carryMaterialResponseAxis 0 := by
+  exact (sourceAxis_analyticAt_zero.differentiableAt.hasDerivAt.comp_ofReal.congr_of_eventuallyEq
+    material_axis_eventually_eq).continuousAt
+
+/-- The tangent coefficient is precisely the existing canonical h1. -/
+theorem material_residual_core_center :
+    carryMaterialResidualCore 0 0 = canonicalCompletedNativeLogDerivativeMoment 1 := by
+  unfold carryMaterialResidualCore
+  rw [material_axis_zero, dslope_same, material_reduced_hasDerivAt_zero.deriv]
+  have hn : (canonicalCompletedNativeLogDerivativeMoment 0 : ℂ) ≠ 0 :=
+    Complex.ofReal_ne_zero.mpr canonicalCompletedNativeLogDerivativeMoment_zero_pos.ne'
+  have he : star (canonicalCompletedNativeLogDerivativeMoment 0 : ℂ)*
+      (canonicalCompletedNativeLogDerivativeMoment 0 : ℂ)*
+        ((canonicalCompletedNativeLogDerivativeMoment 1 : ℂ) /
+          (canonicalCompletedNativeLogDerivativeMoment 0 : ℂ)^2) =
+      (canonicalCompletedNativeLogDerivativeMoment 1 : ℂ) := by
+    rw [Complex.star_def, Complex.conj_ofReal]
+    field_simp
+  rw [he, Complex.ofReal_re]
+
+theorem material_residual_core_center_pos : 0 < carryMaterialResidualCore 0 0 := by
+  rw [material_residual_core_center]
+  have h := reducedSourceScale_pos
+  rw [reducedSourceScale_eq, sourceScale_eq] at h
+  rcases div_pos_iff.mp h with h | h
+  · exact h.1
+  · exact False.elim ((not_lt_of_ge (sq_nonneg _)) h.2)
+
+/-- Source-derived asymptotic positivity for every FIXED finite material
+family with nonzero first moment. The small neighborhood depends on the
+family. No uniform radius in c, n or direction is asserted. -/
+theorem material_residual_fixed_family_positive {n : ℕ} (c t : Fin n → ℝ)
+    (hm : (∑ i, c i*t i) ≠ 0) :
+    ∀ᶠ e : ℝ in nhds 0, e ≠ 0 →
+      0 < carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*t i) := by
+  exact carryMaterialResidual_fixed_family_pos material_normalized_response_zero
+    material_axis_continuous material_reduced_zero material_reduced_hasDerivAt_zero.differentiableAt
+    material_reduced_deriv_continuous material_residual_core_center_pos c t hm
+
+theorem material_residual_rescaled_energy_limit {n : ℕ} (c t : Fin n → ℝ) :
+    Tendsto (carryMaterialRescaledResidualEnergy c t) (nhds 0)
+      (nhds (canonicalCompletedNativeLogDerivativeMoment 1*(∑ i, c i*t i)^2)) := by
+  have hc := carryMaterialRescaledResidualEnergy_continuous material_axis_continuous
+    material_reduced_zero material_reduced_hasDerivAt_zero.differentiableAt
+    material_reduced_deriv_continuous c t
+  have hh := hc.tendsto
+  rw [carryMaterialRescaledResidualEnergy_zero, material_residual_core_center] at hh
+  exact hh
+
+end
+end CarryMaterialPositiveResidualComparison
+
+namespace CarryMaterialPositiveResidualComparison
+#assert_central_comparison_axioms material_real_kernel_coe
+#print axioms material_real_kernel_coe
+#assert_central_comparison_axioms material_real_residual_coe
+#print axioms material_real_residual_coe
+#assert_central_comparison_axioms material_real_feature_coe
+#print axioms material_real_feature_coe
+#assert_central_comparison_axioms material_real_feature_zero
+#print axioms material_real_feature_zero
+#assert_central_comparison_axioms material_real_feature_zero_pos
+#print axioms material_real_feature_zero_pos
+#assert_central_comparison_axioms material_real_residual_zero_left
+#print axioms material_real_residual_zero_left
+#assert_central_comparison_axioms material_real_residual_zero_right
+#print axioms material_real_residual_zero_right
+#assert_central_comparison_axioms material_real_kernel_split
+#print axioms material_real_kernel_split
+#assert_central_comparison_axioms material_centered_test_energy
+#print axioms material_centered_test_energy
+#assert_central_comparison_axioms material_full_residual_nonnegative_iff
+#print axioms material_full_residual_nonnegative_iff
+#assert_central_comparison_axioms material_extract_residual_of_full_realization
+#print axioms material_extract_residual_of_full_realization
+#assert_central_comparison_axioms material_lift_full_of_residual_realization
+#print axioms material_lift_full_of_residual_realization
+#assert_central_comparison_axioms material_residual_realization_center_zero
+#print axioms material_residual_realization_center_zero
+#assert_central_comparison_axioms material_residual_not_raw_reduced_pair_energy
+#print axioms material_residual_not_raw_reduced_pair_energy
+#assert_central_comparison_axioms material_axis_continuous
+#print axioms material_axis_continuous
+#assert_central_comparison_axioms material_residual_core_center
+#print axioms material_residual_core_center
+#assert_central_comparison_axioms material_residual_core_center_pos
+#print axioms material_residual_core_center_pos
+#assert_central_comparison_axioms material_residual_fixed_family_positive
+#print axioms material_residual_fixed_family_positive
+#assert_central_comparison_axioms material_residual_rescaled_energy_limit
+#print axioms material_residual_rescaled_energy_limit
+end CarryMaterialPositiveResidualComparison
+
+-- Two genuinely noncentral material readings, with all ordered crosses.
+namespace CarryMaterialPositiveResidualComparison
+example : ∀ᶠ e : ℝ in nhds 0, e ≠ 0 →
+    0 < GeometryOfNumbers.Analysis.carryRealKernelEnergy
+      GeometryOfNumbers.Analysis.carryMaterialRealResidual ![1,-1]
+      (fun i : Fin 2 => e*(![1,-1] : Fin 2 → ℝ) i) := by
+  apply material_residual_fixed_family_positive ![1,-1] ![1,-1]
+  norm_num [Fin.sum_univ_two]
+end CarryMaterialPositiveResidualComparison

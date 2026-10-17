@@ -1,0 +1,186 @@
+{
+  "geometry": [
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealFeature"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealKernel"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealResidual"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryRealKernelEnergy"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.CarryRealKernelNonnegativeOn"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCenteredCoefficients"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCenteredParameters"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCenteredParameters_mem"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCenteredCoefficients_cancel"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReal_energy_split"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReal_centered_energy"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReal_nonnegative_iff"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealOrthogonalResidual"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealKernelLift"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealKernelLift_pairing"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealOrthogonalResidual_pairing"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealOrthogonalResidual_center"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealOrthogonalResidual_reconstruct"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialResidualCore"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRescaledResidualEnergy"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealResidual_factor"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialResidual_scaled_energy"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRescaledResidualEnergy_zero"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReduced_scaledSlope_continuous"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRescaledResidualEnergy_continuous"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialResidual_fixed_family_pos"
+    }
+  ],
+  "external": [
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_real_kernel_coe"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_real_residual_coe"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_real_feature_coe"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_real_feature_zero"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_real_feature_zero_pos"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_real_residual_zero_left"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_real_residual_zero_right"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_real_kernel_split"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_centered_test_energy"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_full_residual_nonnegative_iff"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_extract_residual_of_full_realization"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_lift_full_of_residual_realization"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_residual_realization_center_zero"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_residual_not_raw_reduced_pair_energy"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_axis_continuous"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_residual_core_center"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_residual_core_center_pos"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_residual_fixed_family_positive"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_residual_rescaled_energy_limit"
+    }
+  ]
+}
