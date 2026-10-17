@@ -1,0 +1,164 @@
+[
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialFourthPivot",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialFourthPivot.lean",
+    "line": 11
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialFourthOldCoupling",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialFourthPivot.lean",
+    "line": 15
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialFourthPivot_split",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialFourthPivot.lean",
+    "line": 25
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialFourthSourceThreshold",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialFourthPivot.lean",
+    "line": 34
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialFourthBilinear_sewing",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialFourthPivot.lean",
+    "line": 39
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialFourthCritical",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialFourthPivot.lean",
+    "line": 94
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialFourthCritical_last",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialFourthPivot.lean",
+    "line": 102
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialFourthCritical_ne_zero",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialFourthPivot.lean",
+    "line": 104
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialFourthCritical_annihilates",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialFourthPivot.lean",
+    "line": 109
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialFourthCritical_pairing",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialFourthPivot.lean",
+    "line": 129
+  },
+  {
+    "name": "CarryMaterialFourthPivotComparison.material_fourth_threshold_eq",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4568
+  },
+  {
+    "name": "CarryMaterialFourthPivotComparison.material_fourth_pivot_source",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4578
+  },
+  {
+    "name": "CarryMaterialFourthPivotComparison.material_fourth_old_coupling_squares",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4586
+  },
+  {
+    "name": "CarryMaterialFourthPivotComparison.material_fourth_old_coupling_nonneg",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4598
+  },
+  {
+    "name": "CarryMaterialFourthPivotComparison.material_fourth_pivot_characteristic",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4607
+  },
+  {
+    "name": "CarryMaterialFourthPivotComparison.material_fourth_characteristic_ceiling",
+    "kind": "def",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4617
+  },
+  {
+    "name": "CarryMaterialFourthPivotComparison.material_fourth_pivot_pos_iff_characteristic",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4620
+  },
+  {
+    "name": "CarryMaterialFourthPivotComparison.material_fourth_c9_theta",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4630
+  },
+  {
+    "name": "CarryMaterialFourthPivotComparison.material_fourth_pivot_pos_iff_theta_balance",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4642
+  },
+  {
+    "name": "CarryMaterialFourthPivotComparison.material_fourth_theta_balance_integral",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4652
+  },
+  {
+    "name": "CarryMaterialFourthPivotComparison.material_fourth_pivot_pos_iff_theta_integral",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4664
+  },
+  {
+    "name": "CarryMaterialFourthPivotComparison.material_fourth_bilinear",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4673
+  },
+  {
+    "name": "CarryMaterialFourthPivotComparison.material_fourth_critical_pairing",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4684
+  },
+  {
+    "name": "CarryMaterialFourthPivotComparison.material_fourth_critical_energy",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4690
+  },
+  {
+    "name": "CarryMaterialFourthPivotComparison.material_fourth_block_posDef_iff",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4695
+  },
+  {
+    "name": "CarryMaterialFourthPivotComparison.material_fourth_block_posDef_iff_theta_balance",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4713
+  },
+  {
+    "name": "CarryMaterialFourthPivotComparison.material_fourth_cholesky_of_source_estimate",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4721
+  }
+]

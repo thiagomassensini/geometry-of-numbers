@@ -1,0 +1,168 @@
+{
+  "utc": "2026-10-17T07:04:44.008795+00:00",
+  "records": [
+    {
+      "name": "focused",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "GeometryOfNumbers.Analysis.CarryMaterialFourthPivot"
+      ],
+      "exit_code": 0,
+      "seconds": 8.143305951962247,
+      "log": "evidence/focused.log.gz"
+    },
+    {
+      "name": "full",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "exit_code": 0,
+      "seconds": 39.93399932200555,
+      "log": "evidence/full.log.gz"
+    },
+    {
+      "name": "foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 6.635700132988859,
+      "log": "evidence/foundation.log.gz"
+    },
+    {
+      "name": "geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 10.09426111303037,
+      "log": "evidence/geometry.log.gz"
+    },
+    {
+      "name": "analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 45.833459732006304,
+      "log": "evidence/analysis.log.gz"
+    },
+    {
+      "name": "fourth-regression",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "research/material-fourth-pivot/Regression.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 7.144888407958206,
+      "log": "evidence/fourth-regression.log.gz"
+    },
+    {
+      "name": "factor-regression",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "research/material-source-factor/Regression.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 7.063841910974588,
+      "log": "evidence/factor-regression.log.gz"
+    },
+    {
+      "name": "return-regression",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "research/projective-global-return/Regression.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 7.896630769013427,
+      "log": "evidence/return-regression.log.gz"
+    },
+    {
+      "name": "valve-comparison",
+      "command": [
+        "bash",
+        "scripts/audit-material-projective-comparison.sh",
+        "/home/thlinux/carry-self-adjoint-operator"
+      ],
+      "exit_code": 0,
+      "seconds": 9.935854983981699,
+      "log": "evidence/valve-comparison.log.gz"
+    },
+    {
+      "name": "source-replay",
+      "command": [
+        "python3",
+        "research/material-fourth-pivot/diagnostic.py",
+        "/tmp/material-fourth-pivot-validation/diagnostic.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.09359395201317966,
+      "log": "evidence/source-replay.log.gz"
+    },
+    {
+      "name": "fourth-pivot-comparison",
+      "command": [
+        "bash",
+        "scripts/audit-material-central-comparison.sh",
+        "/home/thlinux/carry-self-adjoint-operator"
+      ],
+      "exit_code": 0,
+      "seconds": 57.865315505012404,
+      "log": "evidence/fourth-pivot-comparison.log.gz"
+    }
+  ],
+  "host": "llm",
+  "base": "c1acf41d0d842861e85ceb50e0a79fd833b530f3",
+  "new_roots_audited": 27,
+  "new_theorems": 22,
+  "axiom_policy": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "audit": "Lean.collectAxioms transitive types and bodies plus #print axioms per public root",
+  "preserved_literal_sources": [
+    "lakefile.toml",
+    "lake-manifest.json",
+    "lean-toolchain",
+    "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "GeometryOfNumbers/Analysis/CarryMaterialNullHierarchy.lean",
+    "GeometryOfNumbers/Analysis/CarryMaterialClockCentralCoupling.lean",
+    "GeometryOfNumbers/Analysis/CompletedBoundaryTransportedClock.lean",
+    "research/material-tfvd-projective/CanonicalValveComparison.lean"
+  ],
+  "old_audit_and_comparison_prefixes_preserved": true,
+  "positive_block": "No new positive block: next source sign remains open",
+  "native_hankel_factor": "No additional unconditional factor at the new order",
+  "result": "Fourth polarized sewing, critical energy and equivalence to original theta integral estimate",
+  "new_pivot_sign_proved": false,
+  "source_estimate_proved": false,
+  "numeric_proof_input": false,
+  "new_metric": false,
+  "new_operator": false,
+  "new_physical_source": false,
+  "source_sha256": {
+    "GeometryOfNumbers/Analysis/CarryMaterialFourthPivot.lean": "5cfd795fd5302ce74ff163a5bedd22784a8932214734e815547d161e4f41e470",
+    "research/material-central-calibration/CanonicalComparison.lean": "dfea130c4627d1efc6b9a28052260d5b3c7963c42387cbc096563626fde15537",
+    "research/material-fourth-pivot/Regression.lean": "b6eb4f4152cb265870834ce43bf739ceab0ae4c9a595779826cb8b34d1e2be79"
+  }
+}
