@@ -1,0 +1,78 @@
+{
+  "base_commit": "741fd2159a44d060a80240fbc1e9c967dcffb1a5",
+  "host": "llm",
+  "new_definitions": 1,
+  "new_theorems": 23,
+  "total_external_public_theorems": 168,
+  "new_root_footprints": "footprints.json",
+  "checks": [
+    {
+      "command": "lake build GeometryOfNumbers.Analysis.CarryMaterialNullHierarchy --wfail",
+      "exit_code": 0,
+      "log": "build.log.gz"
+    },
+    {
+      "command": "lake build --wfail",
+      "exit_code": 0,
+      "jobs": 8834,
+      "log": "build.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-foundation.sh && bash scripts/audit-geometry.sh && bash scripts/audit-analysis.sh",
+      "exit_code": 0,
+      "log": "zone-audits.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-material-central-comparison.sh /home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "warningAsError": true,
+      "log": "cross-audit.log.gz"
+    },
+    {
+      "command": "lake env lean -DwarningAsError=true research/material-null-hierarchy/Regression.lean",
+      "exit_code": 0,
+      "log": "regression.log.gz"
+    },
+    {
+      "command": "source trust scan",
+      "exit_code": 0,
+      "forbidden": [
+        "sorry",
+        "admit",
+        "native_decide",
+        "unsafe",
+        "implemented_by",
+        "new axioms"
+      ]
+    },
+    {
+      "command": "old comparison prefix byte preservation after two imports",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --cached --check",
+      "exit_code": 0
+    }
+  ],
+  "regressions": [
+    "all previous comparison and 72/clock/TFVD/return examples retained",
+    "fifth difference: M1..M4=0, M5=120, M0=1; positivity and Q5 limit",
+    "sixth difference: M1..M5=0, M6=720, M0=-1; positivity and Q6 limit",
+    "C7=h7 calibrated without a sign claim",
+    "all-order coefficients tend to zero"
+  ],
+  "proved": [
+    "C5>0 and C6>0 from certified source boundary faces",
+    "source signs C1..C6>0 and fixed-family radial positivity",
+    "all-order literal source theta integral and Green transfer",
+    "odd source density has a negative tail at every odd order",
+    "all-order sign iff positive theta mass dominates negative mass",
+    "unconditional exponential magnitude bound, Ck tends to zero, no uniform positive floor"
+  ],
+  "open": [
+    "all Ck positive",
+    "all-order theta mass dominance",
+    "residual PSD on a common neighborhood",
+    "positive Hilbert realization and physical-to-canonical pairing"
+  ]
+}

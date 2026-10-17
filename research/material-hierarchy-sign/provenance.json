@@ -1,0 +1,211 @@
+{
+  "geometry": {
+    "head": "741fd2159a44d060a80240fbc1e9c967dcffb1a5",
+    "files": [
+      {
+        "path": "GeometryOfNumbers/Analysis/CarryMaterialNullHierarchy.lean",
+        "sha256": "e53392016fe515a067c7e4b9288aef8e5d41d8ca63c50a170e3df46ee8a5dc4f",
+        "last_touch_commit": "a0d64694ed24f7ef418b66c79246d147519c77be"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/CarryMaterialThirdNullSector.lean",
+        "sha256": "ae6ef3fed61a1c3ff533a038783d16ca7ea8f1481570f74663d0f2deb9ab8d06",
+        "last_touch_commit": "9721bf45ff81fa475dd18da94f32d921be060a7d"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/CarryMaterialSecondNullSector.lean",
+        "sha256": "8799bb8fe404adbe2e3cad9a0e1181ad2fa7acf6d55cc3c15ee9060c1c9bdd00",
+        "last_touch_commit": "045183b0c88d316f255668fb00540c54a324f3f4"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/CarryMaterialResidualPositiveTransport.lean",
+        "sha256": "d953fc584f41dab0d0c806944f9018e042c87ff58cbe7088a1ad690a755da734",
+        "last_touch_commit": "045183b0c88d316f255668fb00540c54a324f3f4"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceRealization.lean",
+        "sha256": "35602e706455ea9596c547d32f4cdd334b78b468b730a3a460d1c9a9bc8a3090",
+        "last_touch_commit": "ad9d663212ee9af442e72eb29cb28180c8423858"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/CarryMaterialCameraTransport.lean",
+        "sha256": "000ec049376c0d96b5748b1b1e6aab1209b18e385bbc8d0842bcfb9cbf4f4fdf",
+        "last_touch_commit": "ad9d663212ee9af442e72eb29cb28180c8423858"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdGreenReadout.lean",
+        "sha256": "91c21dd8df331bf048609b81913ca24dd3683764742b31bcccb476b42f708168",
+        "last_touch_commit": "36718e438c1fa1d738ffa7e0c6ad6fd9310bf06f"
+      },
+      {
+        "path": "GeometryOfNumbers/Analysis/CarryMaterialNormalizedResponse.lean",
+        "sha256": "70616d69b433de03956bcf6bde6e736359641e36ad8cf724a634a9ec62e50e03",
+        "last_touch_commit": "51df90c049c66be1cff370af65030e2cef371de6"
+      }
+    ],
+    "manifest_sha256": "9868872bae98d0c7e22c597d8e27d38d247498161cf70cdcdc193e9ea0608602",
+    "shared_pins": {
+      "GreenFrame": "cd2d838bee67ad23f869a02f8ed9f0a0feb926fa",
+      "mathlib": "81a5d257c8e410db227a6665ed08f64fea08e997"
+    },
+    "lean_toolchain": "leanprover/lean4:v4.32.0"
+  },
+  "operator": {
+    "head": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+    "files": [
+      {
+        "path": "CarrySelfAdjointOperator/NativeSourceThetaMomentPolynomials.lean",
+        "sha256": "fd06a15ef76aef0777bb0d4d115df145aa2fd574e976485c9b9354742d494a59",
+        "last_touch_commit": "ca7d7cc71cff2fb15f3e94f97d2bed0362e3ba43"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/NativeSourceSchurThetaMasses.lean",
+        "sha256": "6a887d7b7ef3e430ec4063e8ac5501db6916e7d724e8ce6d7be6dc180aa9b806",
+        "last_touch_commit": "ca7d7cc71cff2fb15f3e94f97d2bed0362e3ba43"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/NativeSourceSchurThetaIntegral.lean",
+        "sha256": "1661dc1f356f5aa8e9fd134ef322e28c4ce0b0fa5acec2cc22c9e8ba33823a86",
+        "last_touch_commit": "ca7d7cc71cff2fb15f3e94f97d2bed0362e3ba43"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/NativeSourceThetaGreenTransport.lean",
+        "sha256": "60e91af322bb4f43a06504e806106bd38cafb0dee26e898d6c541b0d3d82217b",
+        "last_touch_commit": "96853b3c3c9da9b78b614d930947c2e866006c6b"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedNativeXiCosineKernel.lean",
+        "sha256": "34cba083a3672a73af8502b4a79e161c2a55e70e77432d5eafaf2281a42c4390",
+        "last_touch_commit": "f164598281f0e66490e7444e312e18f2e44afce1"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedNativeRealWeylMoments.lean",
+        "sha256": "99b68c3237442760b391707dafa39c98ce8e27b5139966b0a6cc87a6dcfd1011",
+        "last_touch_commit": "29bae368732ac5a5ee0dce79a281bbec23bc58dc"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedNativeLogCoefficientMajorant.lean",
+        "sha256": "753bdaa7db8978f124f31e812e9c9e4e15e629bc1d25a577cf08a4a59ae58cd3",
+        "last_touch_commit": "96ae105a14f522fd59a21d3ea7190255fa0c24b4"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedNativeChiralReturnFiveBoundaryFace.lean",
+        "sha256": "aa66493e88fd7c0dc9805bf9c0ead018c78f495660ad2bdfa27347cd48ca5a89",
+        "last_touch_commit": "b0e75b5a24b7209d99bcc6dd2177493a6bd90408"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedNativeChiralReturnSixBoundaryFace.lean",
+        "sha256": "42bfb53056102e24bf2274668fcf6d364d152454cbea5160aadd4017e3135c97",
+        "last_touch_commit": "2aa62068e03cfa869f924d5fb2d7af39b4f355b3"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedNativeChiralReturnSevenBoundaryFace.lean",
+        "sha256": "f7fd33a14a796ff33ef0e015f0f39c8b3bf3a16712b8abead8c23fa4082071ac",
+        "last_touch_commit": "0c750186ffdcdc65371b8688436c96e58f9c6d03"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedNativeChiralReturnEightBoundaryFace.lean",
+        "sha256": "d23046827fbff784840369d17ce71cd56df23072a287c1cb05d71cc67be02c64",
+        "last_touch_commit": "b52acc2b90b75f349f480eeb8b35f3e1f09196ca"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedNativeChiralReturnTenthSourceIntegral.lean",
+        "sha256": "b425c7880ed756fb967ec71584c100233ac99f445a1285b9409a1df92983ca55",
+        "last_touch_commit": "06bebca729054d2331df085d301725202d2db137"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedNativeChiralReturnTwelfthSourceIntegral.lean",
+        "sha256": "d624b52e61bc668464f97c6a7971e257d34cf0093c44ef60de7712819c921867",
+        "last_touch_commit": "f068d2988b4f606d2ad17f3956ff9179514aa0a8"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedNativeChiralReturnFourteenthSourceIntegral.lean",
+        "sha256": "308d663ce14a4fedef3c291ade0038d9f589b3a13c432ab1a55e8d10075d6569",
+        "last_touch_commit": "f46bc2277736c368b53570c1da31f1546f07aa5a"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedNativeThetaTenthSourceCertificate.lean",
+        "sha256": "94ce07d138e83a7e12bd03938266a109fdc06d996f8e1cd33e6d7a0667fac2cd",
+        "last_touch_commit": "b20d4e8ac5aa6521cf1babd2d99ee38f497c7dd5"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedNativeThetaTwelfthSourceCertificate.lean",
+        "sha256": "e0d37095651f32a080afb743338b1927413da3116d6c212f7add31b04c185169",
+        "last_touch_commit": "f068d2988b4f606d2ad17f3956ff9179514aa0a8"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedNativeThetaFourteenthSourceCertificate.lean",
+        "sha256": "6dd133e42d40ca5ed5ed43da274fc313ff71e8829499a7692c5799a9788fd749",
+        "last_touch_commit": "3130dcfc84d83d9c38700e27bb1da783a712c386"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/CompletedNativeChiralReturnBoundaryCoefficientProvenance.lean",
+        "sha256": "11d52e63bdabe1060481e0a354eeca0cad169ad935b5000f9be5d8ac87c96603",
+        "last_touch_commit": "de493c82c62eda714b8fd0c859770edbd48befbf"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/PrimeDepthGeometricMomentRecurrence.lean",
+        "sha256": "13bbe870d6c147925239df23b2746517f94fa6b4487de5a8fb66961455e0bad9",
+        "last_touch_commit": "71accfc85da3427e4cda993fff57e32ab170f746"
+      },
+      {
+        "path": "CarrySelfAdjointOperator/NativeCompletedSourceFourthPositiveChannel.lean",
+        "sha256": "4c014259826e73c680aef4c3f4c81ce5d8ce8fbd7575b9278fa305eae1b2ee98",
+        "last_touch_commit": "5299e2803086403aa3ee692559649767b7b2a834"
+      }
+    ],
+    "manifest_sha256": "822866313e377adcb9c6249680ed67ceb47682af1bb0cd3cc5203554786bcfeb",
+    "shared_pins": {
+      "mathlib": "81a5d257c8e410db227a6665ed08f64fea08e997",
+      "GreenFrame": "cd2d838bee67ad23f869a02f8ed9f0a0feb926fa"
+    },
+    "lean_toolchain": "leanprover/lean4:v4.32.0"
+  },
+  "momentos": {
+    "head": "a54f267365d5d8c965376734b17b10ae89ed3f74",
+    "status": "?? investigations/",
+    "note": "Existing untracked investigations preserved; no new numerical experiment."
+  },
+  "preserved_user_files": [
+    {
+      "path": "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean",
+      "sha256": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0"
+    },
+    {
+      "path": "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+      "sha256": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+    }
+  ],
+  "base_pr": {
+    "mergeCommit": {
+      "oid": "741fd2159a44d060a80240fbc1e9c967dcffb1a5"
+    },
+    "number": 12,
+    "state": "MERGED",
+    "title": "Generalize material cancellation transport and certify eighth-order energy",
+    "url": "https://github.com/thiagomassensini/geometry-of-numbers/pull/12"
+  },
+  "prior_provenance": {
+    "path": "research/material-null-hierarchy/provenance.json",
+    "sha256": "6cfd4c315a2b68c8e390be4855c3216986d9908198fd0b83cd5469c502600968"
+  },
+  "task_sources": [
+    {
+      "path": "research/material-central-calibration/CanonicalComparison.lean",
+      "sha256": "1bebe0c12f09e6d95be75e35426755d42e6fde0320e85af2267c608acbedbf8f"
+    },
+    {
+      "path": "research/material-hierarchy-sign/new-roots.json",
+      "sha256": "1b5331d49bb6446a6c36331753cb8f2345fa59189b030f0fbd41bc9951372e65"
+    },
+    {
+      "path": "docs/MATERIAL_HIERARCHY_SIGN.md",
+      "sha256": "80c8cbe624d7e0ecdebbd4ad38293c247aa7b6ac706c314acf0a1679c44f4493"
+    },
+    {
+      "path": "scripts/audit-material-central-comparison.sh",
+      "sha256": "2a825ccf035259791c9439aa82338caeeb2f8cda6333adc2112fd8673507a841"
+    }
+  ],
+  "collection_note": "Before task commit; new sources identified by SHA256. Other source modules unchanged."
+}

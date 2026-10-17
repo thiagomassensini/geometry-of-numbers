@@ -1,3 +1,5 @@
+import CarrySelfAdjointOperator.CompletedNativeChiralReturnFourteenthSourceIntegral
+import CarrySelfAdjointOperator.NativeSourceThetaGreenTransport
 import GeometryOfNumbers.Analysis.CarryMaterialNullHierarchy
 import CarrySelfAdjointOperator.CompletedNativeChiralReturnTenthSourceIntegral
 import GeometryOfNumbers.Analysis.CarryMaterialThirdNullSector
@@ -2417,3 +2419,387 @@ example (k : ℕ) {n : ℕ} (c a : Fin n → ℝ) (hM : (∑ i, c i*(a i)^k)=0) 
   simpa only [hM, zero_pow (by decide : 2 ≠ 0), mul_zero] using material_null_energy_limit k c a
 
 end CarryMaterialNullHierarchyComparison
+
+namespace CarryMaterialHierarchySignComparison
+open GeometryOfNumbers.Analysis CarrySelfAdjointOperator Filter
+open CarryMaterialNullHierarchyComparison
+open scoped BigOperators Topology ComplexConjugate
+noncomputable section
+set_option autoImplicit false
+set_option maxHeartbeats 1800000
+set_option backward.isDefEq.respectTransparency false
+
+local notation "h" => canonicalCompletedNativeLogDerivativeMoment
+local notation "P" => nativeThetaMomentPolynomial
+
+/-- The actual source density for the radial null coefficient. In even
+order this retains BOTH ordered mixed terms and the central diagonal.
+This polynomial is a ledger for a previously synthesized source, not a
+new physical state, metric or positive measure. -/
+def carryMaterialNullThetaPolynomial (k : ℕ) : Polynomial ℝ :=
+  if k % 2 = 0 then
+    P k - (2*h (k/2)/h 0) • P (k/2) + (h (k/2)/h 0)^2 • P 0
+  else P k
+
+theorem material_null_theta_even (p : ℕ) :
+    carryMaterialNullThetaPolynomial (2*p) =
+      P (2*p) - (2*h p/h 0) • P p + (h p/h 0)^2 • P 0 := by
+  simp [carryMaterialNullThetaPolynomial]
+
+theorem material_null_theta_odd (p : ℕ) :
+    carryMaterialNullThetaPolynomial (2*p+1) = P (2*p+1) := by
+  simp [carryMaterialNullThetaPolynomial]
+
+/-- All orders, with the ORIGINAL theta kernel and its original c0
+normalization. The source integral is signed; its sign is not a premise. -/
+theorem material_null_theta_integral (k : ℕ) :
+    nativeXiPolynomialIntegral (carryMaterialNullThetaPolynomial k) =
+      carryMaterialNullCoefficient k := by
+  by_cases he : k % 2 = 0
+  · have hk : k = 2*(k/2) := by omega
+    rw [hk, material_null_theta_even, map_add, map_sub, map_smul, map_smul]
+    simp only [nativeThetaMomentPolynomial_integral, smul_eq_mul]
+    rw [material_null_coefficient_even]
+    field_simp [canonicalCompletedNativeLogDerivativeMoment_zero_pos.ne']
+    ring
+  · have hk : k = 2*(k/2)+1 := by omega
+    rw [hk, material_null_theta_odd, nativeThetaMomentPolynomial_integral,
+      material_null_coefficient_odd]
+
+theorem material_null_theta_coeff_below_two (k d : ℕ) (hd : d < 2) :
+    (carryMaterialNullThetaPolynomial k).coeff d = 0 := by
+  unfold carryMaterialNullThetaPolynomial
+  split_ifs
+  · simp only [Polynomial.coeff_add, Polynomial.coeff_sub, Polynomial.coeff_smul,
+      smul_eq_mul, nativeThetaMomentPolynomial_coeff_below_two _ d hd,
+      mul_zero, sub_self, add_zero]
+  · exact nativeThetaMomentPolynomial_coeff_below_two k d hd
+
+theorem material_null_theta_center_traces (k : ℕ) :
+    (carryMaterialNullThetaPolynomial k).eval 0 = 0 ∧
+      (carryMaterialNullThetaPolynomial k).derivative.eval 0 = 0 := by
+  simp only [← Polynomial.coeff_zero_eq_eval_zero, Polynomial.coeff_derivative,
+    Nat.cast_zero, zero_add, mul_one]
+  exact ⟨material_null_theta_coeff_below_two k 0 (by decide),
+    material_null_theta_coeff_below_two k 1 (by decide)⟩
+
+/-- Green transfer preserves the full source coefficient; the two central
+traces vanish by a theorem, and the existing flux theorem controls infinity. -/
+theorem material_null_coefficient_thetaGreen (k : ℕ) :
+    carryMaterialNullCoefficient k =
+      ∫ u in Set.Ioi (0 : ℝ),
+        (nativeThetaGreenPolynomial (carryMaterialNullThetaPolynomial k)).eval u *
+          XiThetaCosine.thetaTail u := by
+  rw [← material_null_theta_integral, nativeXiPolynomialIntegral_eq_thetaGreen_integral]
+  obtain ⟨h0,h1⟩ := material_null_theta_center_traces k
+  simp only [h0,h1,zero_div,zero_mul,add_zero]
+
+theorem material_null_coefficient_theta_masses (k : ℕ) :
+    carryMaterialNullCoefficient k =
+      nativeThetaPositiveMass (carryMaterialNullThetaPolynomial k) -
+        nativeThetaNegativeMass (carryMaterialNullThetaPolynomial k) := by
+  rw [← material_null_theta_integral, nativeXiPolynomialIntegral_eq_masses]
+
+/-- Exact sign gate on this source density, not a proof of domination. -/
+theorem material_null_coefficient_pos_iff_theta_dominance (k : ℕ) :
+    0 < carryMaterialNullCoefficient k ↔
+      nativeThetaNegativeMass (carryMaterialNullThetaPolynomial k) <
+        nativeThetaPositiveMass (carryMaterialNullThetaPolynomial k) := by
+  rw [material_null_coefficient_theta_masses, sub_pos]
+
+theorem material_hierarchy_pos_iff_theta_dominance :
+    (∀ k : ℕ, 0 < k → 0 < carryMaterialNullCoefficient k) ↔
+      ∀ k : ℕ, 0 < k →
+        nativeThetaNegativeMass (carryMaterialNullThetaPolynomial k) <
+          nativeThetaPositiveMass (carryMaterialNullThetaPolynomial k) := by
+  simp_rw [material_null_coefficient_pos_iff_theta_dominance]
+
+/-- The odd original source density really has a negative highest term.
+Pointwise positivity of theta alone therefore does not prove its integral's sign. -/
+theorem material_null_theta_odd_top_negative (p : ℕ) :
+    (carryMaterialNullThetaPolynomial (2*p+1)).coeff (2*(2*p+1)+2) < 0 := by
+  rw [material_null_theta_odd, nativeThetaMomentPolynomial_coeff_top]
+  apply mul_neg_of_pos_of_neg
+  · exact inv_pos.mpr (lt_of_lt_of_le (by norm_num : (0 : ℝ) < 1/3)
+      completedNativeRealEvenCharacteristicCoefficient_zero_ge_third)
+  · unfold nativeThetaMomentTopCoefficient
+    rw [pow_add, pow_mul]
+    norm_num only [neg_one_sq, one_pow, pow_one, one_mul, neg_one_mul]
+    exact div_neg_of_neg_of_pos (neg_neg_of_pos (by positivity)) (by positivity)
+
+/-- The signed tail is present in the literal original theta density at
+every odd hierarchy order, including orders whose total sign is certified. -/
+theorem material_null_theta_odd_density_eventually_negative (p : ℕ) :
+    ∀ᶠ u : ℝ in atTop,
+      (carryMaterialNullThetaPolynomial (2*p+1)).eval u * completedNativeXiCosineKernel u < 0 := by
+  have hd : (carryMaterialNullThetaPolynomial (2*p+1)).natDegree = 2*(2*p+1)+2 := by
+    apply Polynomial.natDegree_eq_of_le_of_coeff_ne_zero
+    · apply Polynomial.natDegree_le_iff_coeff_eq_zero.mpr
+      intro d hlt
+      rw [material_null_theta_odd]
+      exact nativeThetaMomentPolynomial_coeff_above _ d hlt
+    · exact (material_null_theta_odd_top_negative p).ne
+  have ht : Tendsto (fun u : ℝ => (carryMaterialNullThetaPolynomial (2*p+1)).eval u)
+      atTop atBot := by
+    apply Polynomial.tendsto_atBot_of_leadingCoeff_nonpos
+    · rw [← Polynomial.natDegree_pos_iff_degree_pos, hd]
+      omega
+    · rw [← Polynomial.coeff_natDegree, hd]
+      exact (material_null_theta_odd_top_negative p).le
+  filter_upwards [ht.eventually (eventually_lt_atBot (0 : ℝ)),
+    eventually_ge_atTop (0 : ℝ)] with u hu hu0
+  exact mul_neg_of_neg_of_pos hu (completedNativeXiCosineKernel_pos hu0)
+
+/-- A literal diagonal of the independently certified six-coordinate
+source face. No new source or target Gram is used. -/
+theorem material_source_six_odd_specialization :
+    nativeSourceSixOddBoundaryEnergy 0 0 1 = 2*carryMaterialNullCoefficient 5 := by
+  rw [show carryMaterialNullCoefficient 5 = h 5 by
+    simpa only [show 2*2+1=5 from rfl] using material_null_coefficient_odd 2]
+  unfold nativeSourceSixOddBoundaryEnergy
+  simp_rw [nativeSourceOddBoundaryCoefficient_eq_twice_primeDepthGeometricMoment,
+    primeDepthGeometricMoment_eq_canonical]
+  simp
+
+theorem material_fifth_null_coefficient_pos : 0 < carryMaterialNullCoefficient 5 := by
+  have hp := nativeSourceSixOddBoundaryEnergy_pos 0 0 1 (Or.inr (Or.inr one_ne_zero))
+  rw [material_source_six_odd_specialization] at hp
+  linarith
+
+/-- Original seven-coordinate source face on the two-coordinate direction
+forced by the central channel. Its nonzero u/t crossing remains. -/
+theorem material_source_seven_even_specialization :
+    nativeSourceSevenEvenBoundaryEnergy (((h 3/h 0) : ℝ) : ℂ) 0 0 1 =
+      2*carryMaterialNullCoefficient 6 := by
+  rw [show carryMaterialNullCoefficient 6 = h 6-h 3^2/h 0 by
+    simpa only [show 2*3=6 from rfl] using material_null_coefficient_even 3]
+  unfold nativeSourceSevenEvenBoundaryEnergy nativeSourceFiveEvenBoundaryEnergy
+  simp_rw [nativeSourceOddBoundaryCoefficient_eq_twice_primeDepthGeometricMoment,
+    primeDepthGeometricMoment_eq_canonical]
+  simp [Complex.normSq_apply]
+  field_simp [canonicalCompletedNativeLogDerivativeMoment_zero_pos.ne']
+  ring
+
+theorem material_sixth_null_coefficient_pos : 0 < carryMaterialNullCoefficient 6 := by
+  have hp := nativeSourceSevenEvenBoundaryEnergy_pos (((h 3/h 0) : ℝ) : ℂ) 0 0 1
+    (Or.inr (Or.inr (Or.inr one_ne_zero)))
+  rw [material_source_seven_even_specialization] at hp
+  linarith
+
+/-- Sufficient source criterion for every fixed finite radial family. The
+all-order domination premise is explicit and is NOT discharged here. -/
+theorem material_null_fixed_family_positive_of_theta_dominance
+    (k : ℕ) (hk : 0 < k)
+    (hdom : nativeThetaNegativeMass (carryMaterialNullThetaPolynomial k) <
+      nativeThetaPositiveMass (carryMaterialNullThetaPolynomial k))
+    {n : ℕ} (c a : Fin n → ℝ)
+    (hM : ∀ j, 0 < j → j < k → (∑ i, c i*(a i)^j)=0)
+    (hMk : (∑ i, c i*(a i)^k) ≠ 0) :
+    ∀ᶠ e : ℝ in nhds 0, e ≠ 0 →
+      0 < carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i) :=
+  material_null_fixed_family_positive k hk
+    ((material_null_coefficient_pos_iff_theta_dominance k).mpr hdom) c a hM hMk
+
+theorem material_fifth_null_fixed_family_positive {n : ℕ} (c a : Fin n → ℝ)
+    (hM : ∀ j, 0 < j → j < 5 → (∑ i, c i*(a i)^j)=0)
+    (hMk : (∑ i, c i*(a i)^5) ≠ 0) :
+    ∀ᶠ e : ℝ in nhds 0, e ≠ 0 →
+      0 < carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i) :=
+  material_null_fixed_family_positive 5 (by decide) material_fifth_null_coefficient_pos c a hM hMk
+
+theorem material_sixth_null_fixed_family_positive {n : ℕ} (c a : Fin n → ℝ)
+    (hM : ∀ j, 0 < j → j < 6 → (∑ i, c i*(a i)^j)=0)
+    (hMk : (∑ i, c i*(a i)^6) ≠ 0) :
+    ∀ᶠ e : ℝ in nhds 0, e ≠ 0 →
+      0 < carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i) :=
+  material_null_fixed_family_positive 6 (by decide) material_sixth_null_coefficient_pos c a hM hMk
+
+/-- Every sign through order six is discharged by the original source
+certificates, independently of the radial input family. -/
+theorem material_null_coefficient_pos_through_six (k : ℕ) (hk : 0 < k) (hk6 : k ≤ 6) :
+    0 < carryMaterialNullCoefficient k := by
+  have he : k=1 ∨ k=2 ∨ k=3 ∨ k=4 ∨ k=5 ∨ k=6 := by omega
+  rcases he with rfl | rfl | rfl | rfl | rfl | rfl
+  · have hc := material_null_coefficient_odd 0
+    norm_num only at hc
+    rw [hc]
+    exact SourcePositiveReduction.nativeMoment_one_pos
+  · have hc := material_null_coefficient_even 1
+    norm_num only at hc
+    rw [hc]
+    have he : h 2-h 1^2/h 0 = (h 0*h 2-h 1^2)/h 0 := by
+      field_simp [canonicalCompletedNativeLogDerivativeMoment_zero_pos.ne']
+    rw [he]
+    exact div_pos SourcePositiveReduction.nativeMoment_first_discriminant_pos
+      canonicalCompletedNativeLogDerivativeMoment_zero_pos
+  · have hc := material_null_coefficient_odd 1
+    norm_num only at hc
+    rw [hc]
+    exact CarryMaterialThirdNullComparison.material_moment_three_pos
+  · exact material_fourth_null_coefficient_pos
+  · exact material_fifth_null_coefficient_pos
+  · exact material_sixth_null_coefficient_pos
+
+theorem material_null_fixed_family_positive_through_six
+    (k : ℕ) (hk : 0 < k) (hk6 : k ≤ 6) {n : ℕ} (c a : Fin n → ℝ)
+    (hM : ∀ j, 0 < j → j < k → (∑ i, c i*(a i)^j)=0)
+    (hMk : (∑ i, c i*(a i)^k) ≠ 0) :
+    ∀ᶠ e : ℝ in nhds 0, e ≠ 0 →
+      0 < carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i) :=
+  material_null_fixed_family_positive k hk (material_null_coefficient_pos_through_six k hk hk6)
+    c a hM hMk
+
+local notation "ρ" => (22/175 : ℝ)
+
+private theorem moment_abs_bound (k : ℕ) : |h k| ≤ ρ^(k+1) := by
+  have hb := canonicalCompletedNativeLogDerivativeMoment_sharp_decay k
+  have hn : 0 ≤ (1/25 : ℝ)^(k+1) := by positivity
+  linarith
+
+/-- An unconditional bound at EVERY order of the actual source hierarchy.
+It is an upper bound on magnitude and does not supply a positive sign. -/
+theorem material_null_coefficient_decay_bound (k : ℕ) :
+    |carryMaterialNullCoefficient k| ≤ (1+ρ/h 0)*ρ^(k+1) := by
+  by_cases he : k % 2 = 0
+  · have hk : k = 2*(k/2) := by omega
+    rw [hk, material_null_coefficient_even]
+    have hs : (h (k/2))^2 ≤ (ρ^(k/2+1))^2 := by
+      nlinarith [moment_abs_bound (k/2), abs_nonneg (h (k/2)),
+        sq_abs (h (k/2)), pow_nonneg (by norm_num : (0:ℝ) ≤ ρ) (k/2+1)]
+    calc
+      |h (2*(k/2)) - h (k/2)^2/h 0| ≤
+          |h (2*(k/2))| + |h (k/2)^2/h 0| := abs_sub _ _
+      _ ≤ ρ^(2*(k/2)+1) + (ρ^(k/2+1))^2/h 0 := by
+        apply add_le_add (moment_abs_bound _)
+        rw [abs_div, abs_of_nonneg (sq_nonneg _),
+          abs_of_pos canonicalCompletedNativeLogDerivativeMoment_zero_pos]
+        exact div_le_div_of_nonneg_right hs canonicalCompletedNativeLogDerivativeMoment_zero_pos.le
+      _ = (1+ρ/h 0)*ρ^(2*(k/2)+1) := by
+        rw [← pow_mul, show (k/2+1)*2=(2*(k/2)+1)+1 by omega, pow_succ]
+        ring
+  · have hk : k = 2*(k/2)+1 := by omega
+    rw [hk, material_null_coefficient_odd]
+    calc
+      |h (2*(k/2)+1)| ≤ ρ^(2*(k/2)+1+1) := moment_abs_bound _
+      _ ≤ (1+ρ/h 0)*ρ^(2*(k/2)+1+1) := by
+        have hz : 0 ≤ (ρ/h 0)*ρ^(2*(k/2)+1+1) := by
+          positivity [canonicalCompletedNativeLogDerivativeMoment_zero_pos]
+        linarith
+
+theorem material_null_coefficients_tendsto_zero :
+    Tendsto carryMaterialNullCoefficient atTop (nhds 0) := by
+  apply (tendsto_zero_iff_abs_tendsto_zero _).mpr
+  apply squeeze_zero (fun _ => abs_nonneg _) material_null_coefficient_decay_bound
+  have hp : Tendsto (fun k : ℕ => ρ^k) atTop (nhds 0) :=
+    tendsto_pow_atTop_nhds_zero_of_lt_one (by norm_num) (by norm_num)
+  simpa only [pow_succ, zero_mul, mul_zero] using
+    (hp.mul_const ρ).const_mul (1+ρ/h 0)
+
+/-- Even if every individual sign is positive, there can be no fixed
+positive lower bound across orders in the unchanged source normalization. -/
+theorem material_no_uniform_positive_coefficient_floor :
+    ¬ ∃ δ : ℝ, 0 < δ ∧ ∀ k : ℕ, 0 < k → δ ≤ carryMaterialNullCoefficient k := by
+  rintro ⟨δ,hδ,hfloor⟩
+  have hsmall := (tendsto_order.mp material_null_coefficients_tendsto_zero).2 δ hδ
+  obtain ⟨k,hk,hk1⟩ := (hsmall.and (eventually_ge_atTop (1:ℕ))).exists
+  exact (not_lt_of_ge (hfloor k (by omega))) hk
+
+end
+end CarryMaterialHierarchySignComparison
+
+namespace CarryMaterialHierarchySignComparison
+#assert_central_comparison_axioms carryMaterialNullThetaPolynomial
+#print axioms carryMaterialNullThetaPolynomial
+#assert_central_comparison_axioms material_null_theta_even
+#print axioms material_null_theta_even
+#assert_central_comparison_axioms material_null_theta_odd
+#print axioms material_null_theta_odd
+#assert_central_comparison_axioms material_null_theta_integral
+#print axioms material_null_theta_integral
+#assert_central_comparison_axioms material_null_theta_coeff_below_two
+#print axioms material_null_theta_coeff_below_two
+#assert_central_comparison_axioms material_null_theta_center_traces
+#print axioms material_null_theta_center_traces
+#assert_central_comparison_axioms material_null_coefficient_thetaGreen
+#print axioms material_null_coefficient_thetaGreen
+#assert_central_comparison_axioms material_null_coefficient_theta_masses
+#print axioms material_null_coefficient_theta_masses
+#assert_central_comparison_axioms material_null_coefficient_pos_iff_theta_dominance
+#print axioms material_null_coefficient_pos_iff_theta_dominance
+#assert_central_comparison_axioms material_hierarchy_pos_iff_theta_dominance
+#print axioms material_hierarchy_pos_iff_theta_dominance
+#assert_central_comparison_axioms material_null_theta_odd_top_negative
+#print axioms material_null_theta_odd_top_negative
+#assert_central_comparison_axioms material_null_theta_odd_density_eventually_negative
+#print axioms material_null_theta_odd_density_eventually_negative
+#assert_central_comparison_axioms material_source_six_odd_specialization
+#print axioms material_source_six_odd_specialization
+#assert_central_comparison_axioms material_fifth_null_coefficient_pos
+#print axioms material_fifth_null_coefficient_pos
+#assert_central_comparison_axioms material_source_seven_even_specialization
+#print axioms material_source_seven_even_specialization
+#assert_central_comparison_axioms material_sixth_null_coefficient_pos
+#print axioms material_sixth_null_coefficient_pos
+#assert_central_comparison_axioms material_null_fixed_family_positive_of_theta_dominance
+#print axioms material_null_fixed_family_positive_of_theta_dominance
+#assert_central_comparison_axioms material_fifth_null_fixed_family_positive
+#print axioms material_fifth_null_fixed_family_positive
+#assert_central_comparison_axioms material_sixth_null_fixed_family_positive
+#print axioms material_sixth_null_fixed_family_positive
+#assert_central_comparison_axioms material_null_coefficient_pos_through_six
+#print axioms material_null_coefficient_pos_through_six
+#assert_central_comparison_axioms material_null_fixed_family_positive_through_six
+#print axioms material_null_fixed_family_positive_through_six
+#assert_central_comparison_axioms material_null_coefficient_decay_bound
+#print axioms material_null_coefficient_decay_bound
+#assert_central_comparison_axioms material_null_coefficients_tendsto_zero
+#print axioms material_null_coefficients_tendsto_zero
+#assert_central_comparison_axioms material_no_uniform_positive_coefficient_floor
+#print axioms material_no_uniform_positive_coefficient_floor
+end CarryMaterialHierarchySignComparison
+
+namespace CarryMaterialHierarchySignComparison
+open GeometryOfNumbers.Analysis CarrySelfAdjointOperator Filter
+open CarryMaterialNullHierarchyComparison
+open scoped BigOperators Topology
+
+-- Higher finite differences of actual source readings, allowing M0 ≠ 0.
+example : ∀ᶠ e : ℝ in nhds 0, e ≠ 0 →
+    0 < carryRealKernelEnergy carryMaterialRealResidual (![5,-10,10,-5,1] : Fin 5 → ℝ)
+      (fun i => e*(![1,2,3,4,5] : Fin 5 → ℝ) i) := by
+  apply material_fifth_null_fixed_family_positive ![5,-10,10,-5,1] ![1,2,3,4,5]
+  · intro j hj hlt
+    interval_cases j <;> norm_num [Fin.sum_univ_succ]
+  · norm_num [Fin.sum_univ_succ]
+
+example : ∀ᶠ e : ℝ in nhds 0, e ≠ 0 →
+    0 < carryRealKernelEnergy carryMaterialRealResidual (![-6,15,-20,15,-6,1] : Fin 6 → ℝ)
+      (fun i => e*(![1,2,3,4,5,6] : Fin 6 → ℝ) i) := by
+  apply material_sixth_null_fixed_family_positive ![-6,15,-20,15,-6,1] ![1,2,3,4,5,6]
+  · intro j hj hlt
+    interval_cases j <;> norm_num [Fin.sum_univ_succ]
+  · norm_num [Fin.sum_univ_succ]
+
+example : Tendsto
+    (carryMaterialNullEnergy 5 (![5,-10,10,-5,1] : Fin 5 → ℝ) ![1,2,3,4,5])
+    (nhds 0) (nhds (14400*carryMaterialNullCoefficient 5)) := by
+  have h := material_null_energy_limit 5 (![5,-10,10,-5,1] : Fin 5 → ℝ) ![1,2,3,4,5]
+  norm_num [Fin.sum_univ_succ] at h
+  simpa only [mul_comm] using h
+
+example : Tendsto
+    (carryMaterialNullEnergy 6 (![-6,15,-20,15,-6,1] : Fin 6 → ℝ) ![1,2,3,4,5,6])
+    (nhds 0) (nhds (518400*carryMaterialNullCoefficient 6)) := by
+  have h := material_null_energy_limit 6 (![-6,15,-20,15,-6,1] : Fin 6 → ℝ) ![1,2,3,4,5,6]
+  norm_num [Fin.sum_univ_succ] at h
+  simpa only [mul_comm] using h
+
+-- Next order is identified, with NO unsupported sign claim.
+example : carryMaterialNullCoefficient 7 = canonicalCompletedNativeLogDerivativeMoment 7 := by
+  simpa only [show 2*3+1=7 from rfl] using material_null_coefficient_odd 3
+
+-- The all-order bound is unconditional, and uses the unchanged normalization.
+example : Tendsto carryMaterialNullCoefficient atTop (nhds 0) :=
+  material_null_coefficients_tendsto_zero
+
+end CarryMaterialHierarchySignComparison
