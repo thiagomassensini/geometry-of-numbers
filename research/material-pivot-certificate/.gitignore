@@ -1,0 +1,2 @@
+# Python bytecode is a local cache, not certificate evidence.
+__pycache__/

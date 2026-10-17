@@ -1,0 +1,250 @@
+{
+  "utc": "2026-10-17T07:52:27.669366+00:00",
+  "base": "ac0fe970edeac46a43085960d93d85d7cc4aa17e",
+  "operator": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "records": [
+    {
+      "name": "focused",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "GeometryOfNumbers.Analysis.CarryMaterialFourthPivot"
+      ],
+      "exit_code": 0,
+      "seconds": 8.134530079027172
+    },
+    {
+      "name": "full",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "exit_code": 0,
+      "seconds": 7.648793250962626
+    },
+    {
+      "name": "foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 6.686372169991955
+    },
+    {
+      "name": "geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 9.86030117701739
+    },
+    {
+      "name": "analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 46.039600537973456
+    },
+    {
+      "name": "fourth-regression",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "research/material-fourth-pivot/Regression.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 7.754239442001563
+    },
+    {
+      "name": "factor-regression",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "research/material-source-factor/Regression.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 7.988663607975468
+    },
+    {
+      "name": "return-regression",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "research/projective-global-return/Regression.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 8.79421912302496
+    },
+    {
+      "name": "valve-comparison",
+      "command": [
+        "bash",
+        "scripts/audit-material-projective-comparison.sh",
+        "/home/thlinux/carry-self-adjoint-operator"
+      ],
+      "exit_code": 0,
+      "seconds": 10.941526420996524
+    },
+    {
+      "name": "source-replay",
+      "command": [
+        "python3",
+        "research/material-fourth-pivot/diagnostic.py",
+        "/tmp/carry-pivot-full-validation/diagnostic.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.10387106600683182
+    },
+    {
+      "name": "fourth-pivot-comparison",
+      "command": [
+        "bash",
+        "scripts/audit-material-central-comparison.sh",
+        "/home/thlinux/carry-self-adjoint-operator"
+      ],
+      "exit_code": 0,
+      "seconds": 57.78653254802339
+    },
+    {
+      "name": "new-pivot-certificate",
+      "command": [
+        "lean",
+        "-DwarningAsError=true",
+        "research/material-pivot-certificate/CanonicalPivotCertificate.lean"
+      ],
+      "result": "PASS",
+      "public_guards_verified": 17,
+      "base_module": "compiled CanonicalComparison; unchanged source and matching dependency pins"
+    },
+    {
+      "name": "rational-source-certificate",
+      "grid": [
+        64,
+        128
+      ],
+      "taylor_order": 16,
+      "result": "PASS",
+      "recorded_certificate_reproduced": true,
+      "refined_containment": true,
+      "cache": "diagnostic only"
+    }
+  ],
+  "public_roots": 17,
+  "regression_log_metadata": {
+    "focused": {
+      "sha256": "199eb1f9f726b84f3e8b4d611f1f48bac7912fc9cc159d1dfa5b1311deef02c3",
+      "bytes": 42,
+      "tail": [
+        "Build completed successfully (8802 jobs)."
+      ]
+    },
+    "full": {
+      "sha256": "7f3879dcfc53aaba602d765217fd1bc13fbffd860fb68f3117b4037325d52499",
+      "bytes": 470101,
+      "tail": [
+        " Classical.choice,",
+        " Quot.sound]",
+        "Build completed successfully (8841 jobs)."
+      ]
+    },
+    "foundation": {
+      "sha256": "0cf345cc3bcedfa92250217b4e73bc37834671ac0b8a2b97f66d3c06551ce199",
+      "bytes": 26945,
+      "tail": [
+        "'GeometryOfNumbers.Foundation.foundational_half_scaling_capstone' does not depend on any axioms",
+        "'GeometryOfNumbers.Foundation.exists_foundational_half_scaling_capstone' does not depend on any axioms",
+        "PASS: foundation build and empty-axiom audit."
+      ]
+    },
+    "geometry": {
+      "sha256": "469cddc780755a2a401f4a2d437d4b65bccc9f3333dc598e645025f94caf4888",
+      "bytes": 25625,
+      "tail": [
+        "'GeometryOfNumbers.Geometry.integerCamera72_positions' does not depend on any axioms",
+        "'GeometryOfNumbers.Geometry.integerCamera72_only_shared_center' depends on axioms: [propext, Quot.sound]",
+        "PASS: tower-depth relation has empty footprint; other discrete geometry permits only propext/Quot.sound."
+      ]
+    },
+    "analysis": {
+      "sha256": "41638147d4cbad3e7727185f00c6ec49b0bd2f5b43446412c29f07d81b11cbee",
+      "bytes": 753822,
+      "tail": [
+        " Classical.choice,",
+        " Quot.sound]",
+        "PASS: real analysis build and standard-axiom audit (NOT axiom-free)."
+      ]
+    },
+    "fourth-regression": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "tail": []
+    },
+    "factor-regression": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "tail": []
+    },
+    "return-regression": {
+      "sha256": "0bab87e74d06e638675794c1f564202aa66c350292a67a6ec424f6a17551acac",
+      "bytes": 2395,
+      "tail": [
+        "        (carryMaterialProjectiveReturnProfile eta h0 h1 (baseTwoCompletedMaterialGradientL2 0) c2UnitOddCore 0 0) =",
+        "      1 \u2227",
+        "    carryMaterialProjectiveReturnProfile eta h0 h1 (baseTwoCompletedMaterialGradientL2 0) c2UnitOddCore 0 0 0 < 0"
+      ]
+    },
+    "valve-comparison": {
+      "sha256": "0eb59a153dc4fcbdc9fab3424d7d042ddb4dbbacb3ca988f0a72ef782e066f0b",
+      "bytes": 1345,
+      "tail": [
+        " Classical.choice,",
+        " Quot.sound]",
+        "PASS: same scalar valve, physical curvature and native mass defect; all transitive axiom guards passed"
+      ]
+    },
+    "source-replay": {
+      "sha256": "446c8901e561dcd5c254461f07d5b58ddeb422aecd566d3f94f4f3616709d8a5",
+      "bytes": 794,
+      "tail": [
+        "  \"theta_gap\": \"2.35704928318548518519561574597984023187394307153272210973675363219E-11\",",
+        "  \"critical_energy\": \"1.66628101178247980359627360552698145375174715295068220674953535127E-26\"",
+        "}"
+      ]
+    },
+    "fourth-pivot-comparison": {
+      "sha256": "fdeec26c4bed03ae4b55660e84474cf6ca1d7384ff1811a4adfe8acffd697c21",
+      "bytes": 37968,
+      "tail": [
+        " Classical.choice,",
+        " Quot.sound]",
+        "PASS: scalar source identification, central defect and normalized-kernel obstruction; all transitive axiom guards passed"
+      ]
+    }
+  },
+  "source_box_lean_status": "NOT_PROVED",
+  "pivot_lean_status": "CONDITIONAL_ON_EXPLICIT_THETA_BOX",
+  "analytic_certificate_status": "EXACT_RATIONAL_COMPUTATION_WITH_WRITTEN_ANALYTIC_JUSTIFICATION",
+  "files": {
+    "research/material-pivot-certificate/.gitignore": "893c5781716f36203a0ecfb9b8b3714bf3bc6ab487b2d7d7ccb33f34c5ca45b1",
+    "research/material-pivot-certificate/CanonicalPivotCertificate.lean": "3061bd125a835846eb1e6163f20268c04cc76d4783607d9d8b130b856c8fe73e",
+    "research/material-pivot-certificate/IntervalHelpers.lean": "5569967487b5eab159cbc7896522228067779321ab772818cc5e9a91d32c34e2",
+    "research/material-pivot-certificate/REPORT.md": "03cfd1b4b6dcde4365cf6deab1ed57e1e500a489391f9e587d4f6826306b4633",
+    "research/material-pivot-certificate/ThetaTailAppend.lean": "48234e3d2d3f106e2c5d7926c86cfa558a8712633f7508b3db029669fba88749",
+    "research/material-pivot-certificate/certificate.json": "3a05bb12273d9a277803abae24676504f7e876523cfd4bad187342e7edb890d4",
+    "research/material-pivot-certificate/certify.py": "a919145412dededb4d6d7516d2a277b3847f49e5321be69fd53c31e58b56039a",
+    "research/material-pivot-certificate/check_certificate.py": "4da495cac5059c90d4971dc570f09c8b40d71d0bd2b30eb624983e460f10cddc",
+    "research/material-pivot-certificate/generate_lean.py": "a69773fcc37dfad05070d092400e70d2932b2f7ebf0003a9787f3253e31675ea"
+  }
+}

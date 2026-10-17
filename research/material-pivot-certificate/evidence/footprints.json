@@ -1,0 +1,87 @@
+{
+  "CarryMaterialThetaCertificate.theta_certificate_exp_lower": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialThetaCertificate.theta_certificate_exp_upper": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialThetaCertificate.theta_certificate_exp_bounds": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialThetaCertificate.theta_mode_after_three_le": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialThetaCertificate.theta_tail_after_three_le": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialThetaCertificate.theta_three_mode_split": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialPivotCertificate.enclose_add": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialPivotCertificate.enclose_neg": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialPivotCertificate.enclose_mul": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialPivotCertificate.enclose_inv": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialPivotCertificate.material_fourth_theta_box_lower": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialPivotCertificate.material_fourth_theta_box_upper": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialPivotCertificate.material_fourth_theta_box": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialPivotCertificate.material_fourth_bounds_of_theta_box": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialPivotCertificate.material_fourth_critical_margin_of_theta_box": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialPivotCertificate.material_fourth_posDef_of_theta_box": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialPivotCertificate.material_fourth_cholesky_of_theta_box": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ]
+}

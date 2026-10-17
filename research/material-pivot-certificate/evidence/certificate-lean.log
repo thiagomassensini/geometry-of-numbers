@@ -1,0 +1,29 @@
+'CarryMaterialThetaCertificate.theta_certificate_exp_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialThetaCertificate.theta_certificate_exp_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialThetaCertificate.theta_certificate_exp_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialThetaCertificate.theta_mode_after_three_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialThetaCertificate.theta_tail_after_three_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialThetaCertificate.theta_three_mode_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialPivotCertificate.enclose_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialPivotCertificate.enclose_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialPivotCertificate.enclose_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialPivotCertificate.enclose_inv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialPivotCertificate.material_fourth_theta_box_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPivotCertificate.material_fourth_theta_box_upper' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPivotCertificate.material_fourth_theta_box' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialPivotCertificate.material_fourth_bounds_of_theta_box' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPivotCertificate.material_fourth_critical_margin_of_theta_box' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPivotCertificate.material_fourth_posDef_of_theta_box' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPivotCertificate.material_fourth_cholesky_of_theta_box' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
