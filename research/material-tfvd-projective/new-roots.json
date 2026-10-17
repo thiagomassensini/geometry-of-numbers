@@ -1,0 +1,278 @@
+[
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjectiveProfile",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 19
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjectiveCurvature",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 24
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjectiveFiberData",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 29
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_mass",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 33
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_curvature",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 38
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_curvature_add",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 47
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_mass_add",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 66
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_curvature_zero",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 76
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_regauge",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 87
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_boundary",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 96
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_bracket",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 110
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_reconstruct",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 123
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjectiveGreenProfile",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 131
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjectiveReturnProfile",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 135
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_profile_split",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 140
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_profile_hasDerivAt",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 152
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_return_affine",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 162
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_return_bracket",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 173
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_return_mass",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 183
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_mass_eq_green",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 197
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.CarryMaterialProjectiveLedger",
+    "kind": "structure",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 209
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjectiveEncode",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 215
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjectiveCoordinate",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 222
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_coordinate_encode",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 226
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjectiveEncode_injective",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 233
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_crossings",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 248
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_full_pairing",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 266
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_source_pairing",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 298
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_source_return_invisible",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 313
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_unit_curvature",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 325
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_unit_origin_curvature",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 350
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialProjective_unit_origin_curvature_neg",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 378
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.CarryMaterialProjectiveLedger.mk",
+    "kind": "constructor",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 209
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.CarryMaterialProjectiveLedger.seed",
+    "kind": "projection",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 209
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.CarryMaterialProjectiveLedger.fibers",
+    "kind": "projection",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 209
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.CarryMaterialProjectiveLedger.residual",
+    "kind": "projection",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 209
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.CarryMaterialProjectiveLedger.globalReturn",
+    "kind": "projection",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "line": 209
+  },
+  {
+    "name": "CarryMaterialProjectiveComparison.real_valve_eq_operator_valve",
+    "kind": "theorem",
+    "path": "research/material-tfvd-projective/CanonicalValveComparison.lean",
+    "line": 19
+  },
+  {
+    "name": "CarryMaterialProjectiveComparison.real_valve_first_coefficient",
+    "kind": "theorem",
+    "path": "research/material-tfvd-projective/CanonicalValveComparison.lean",
+    "line": 26
+  },
+  {
+    "name": "CarryMaterialProjectiveComparison.physical_mass_eq_native_iff",
+    "kind": "theorem",
+    "path": "research/material-tfvd-projective/CanonicalValveComparison.lean",
+    "line": 37
+  },
+  {
+    "name": "CarryMaterialProjectiveComparison.physical_mass_native_necessary_zero",
+    "kind": "theorem",
+    "path": "research/material-tfvd-projective/CanonicalValveComparison.lean",
+    "line": 48
+  },
+  {
+    "name": "CarryMaterialProjectiveComparison.physical_native_mass_same_constant",
+    "kind": "theorem",
+    "path": "research/material-tfvd-projective/CanonicalValveComparison.lean",
+    "line": 62
+  },
+  {
+    "name": "CarryMaterialProjectiveComparison.physical_native_mass_defect_derivative",
+    "kind": "theorem",
+    "path": "research/material-tfvd-projective/CanonicalValveComparison.lean",
+    "line": 72
+  },
+  {
+    "name": "CarryMaterialProjectiveComparison.physical_native_mass_first_defect",
+    "kind": "theorem",
+    "path": "research/material-tfvd-projective/CanonicalValveComparison.lean",
+    "line": 87
+  },
+  {
+    "name": "CarryMaterialProjectiveComparison.physical_unit_mass_not_native",
+    "kind": "theorem",
+    "path": "research/material-tfvd-projective/CanonicalValveComparison.lean",
+    "line": 103
+  },
+  {
+    "name": "CarryMaterialProjectiveComparison.physical_unit_first_mass_defect_neg",
+    "kind": "theorem",
+    "path": "research/material-tfvd-projective/CanonicalValveComparison.lean",
+    "line": 113
+  }
+]

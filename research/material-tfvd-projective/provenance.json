@@ -1,0 +1,67 @@
+{
+  "geometry_base": "31e8ff082cccac2a881180eb3b079824591e22d3",
+  "operator_head": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "geometry_pins_sha256": {
+    "lakefile.toml": "2f034f906810f36cc55ff0bcdf98fa629fb91085b107f238e21cca93e136f9f8",
+    "lake-manifest.json": "9868872bae98d0c7e22c597d8e27d38d247498161cf70cdcdc193e9ea0608602",
+    "lean-toolchain": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e"
+  },
+  "operator_manifest_sha256": "822866313e377adcb9c6249680ed67ceb47682af1bb0cd3cc5203554786bcfeb",
+  "source_provenance": [
+    {
+      "repo": "geometry-of-numbers",
+      "path": "GeometryOfNumbers/Analysis/RealCarryTfvd.lean",
+      "sha256": "40f40703c5085c94cdb72dbd90002e57c365a16568b320febb1cef01978ba6bb",
+      "last_commit": "93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f"
+    },
+    {
+      "repo": "geometry-of-numbers",
+      "path": "GeometryOfNumbers/Analysis/RealDiscreteProjectiveReconstruction.lean",
+      "sha256": "0b48cc79d7cffc9265d7a557839b062ba1349b579bada824cd3b9cb28a277a9e",
+      "last_commit": "93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f"
+    },
+    {
+      "repo": "geometry-of-numbers",
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdGreenReadout.lean",
+      "sha256": "91c21dd8df331bf048609b81913ca24dd3683764742b31bcccb476b42f708168",
+      "last_commit": "36718e438c1fa1d738ffa7e0c6ad6fd9310bf06f"
+    },
+    {
+      "repo": "geometry-of-numbers",
+      "path": "GeometryOfNumbers/Analysis/BaseTwoPhysicalEdgeTfvdBridge.lean",
+      "sha256": "68f1c1c811556070aac501acd8032cd8bb8343976f6c14161bb65bb91bf42781",
+      "last_commit": "cae0dc65a369518b7583ef51cc74a16d2a6e8a38"
+    },
+    {
+      "repo": "carry-self-adjoint-operator",
+      "path": "CarrySelfAdjointOperator/NativeMomentProjectiveValveBridge.lean",
+      "sha256": "1ea183a49fd57959fb12555ad6eb7415a08663cf44c9d7e8b360350cae9eb4b0",
+      "last_commit": "643b917046891f9a119b2e05bd2ecb197bc4bce2"
+    },
+    {
+      "repo": "carry-self-adjoint-operator",
+      "path": "CarrySelfAdjointOperator/CompletedC3ValveNaturality.lean",
+      "sha256": "ed49652e076dcaf6393fda9cbf526c752b453b7204b3bdb6e773c0f5283226f1",
+      "last_commit": "18cccf54effd8ab3ce99833507adcb7fcf934430"
+    },
+    {
+      "repo": "carry-self-adjoint-operator",
+      "path": "CarrySelfAdjointOperator/CompletedC3ValveGreenNaturality.lean",
+      "sha256": "ef9471dce975bbc61df09b6c3ffaed4223661d9d31407cfa8ce02f497f193631",
+      "last_commit": "18cccf54effd8ab3ce99833507adcb7fcf934430"
+    },
+    {
+      "repo": "carry-self-adjoint-operator",
+      "path": "CarrySelfAdjointOperator/CompletedC3ValveCauchyNaturalityFrontier.lean",
+      "sha256": "2d8452db395afd57897baf665cc5dda9351e924d0815a51f673e4f800723a9d9",
+      "last_commit": "448805ed7d3ad792f8028f6f6842d780f985c4d6"
+    }
+  ],
+  "preserved_operator_files": {
+    "C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "new_library_sha256": "01542f4261b94933bc9efb7f473447ed222133069b2e16e0bf5673619278c389",
+  "new_comparison_sha256": "ebe9ecda5e1201764ba4ab0adb3c385db056f701e43399f434eadda2d40f13b0",
+  "numerical_proof_input": false
+}
