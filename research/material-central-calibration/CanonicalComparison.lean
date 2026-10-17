@@ -1,3 +1,4 @@
+import GeometryOfNumbers.Analysis.CarryMaterialClockCentralCoupling
 import CarrySelfAdjointOperator.NativeThetaAdaptiveBudget
 import CarrySelfAdjointOperator.AllOrderLogJetLedger
 import CarrySelfAdjointOperator.CompletedNativeSixthOrderThetaPositivity
@@ -3774,3 +3775,110 @@ example (k : ℕ) (hk : 0 < k) (hk6 : k ≤ 6) :
 
 end
 end CarryMaterialThetaTailComparison
+
+namespace CarryMaterialClockCouplingComparison
+open GeometryOfNumbers.Analysis GeometryOfNumbers.Analysis.BaseTwoCompletion
+open CarryMaterialGreenPairComparison
+open Filter
+open scoped Topology ComplexConjugate InnerProductSpace
+noncomputable section
+set_option autoImplicit false
+set_option backward.isDefEq.respectTransparency false
+
+/-- The actual coupled-clock ledger, with the readout-hidden Green return
+subtracted ONLY after the central/complement and forcing synthesis. The
+canonical residual is the same source-defined residual as before. No sign
+or positive Hilbert representation is assumed. -/
+theorem material_clock_canonical_residual_ledger :
+    ∃ U : Set ℝ, IsOpen U ∧ (0 : ℝ) ∈ U ∧ ∀ t ∈ U, ∀ u ∈ U,
+      (carryMaterialPairGreen
+          (carryMaterialCentralPairProjection (carryMaterialReducedCompanionPair t))
+          (carryMaterialCentralPairProjection (carryMaterialReducedCompanionPair u)) +
+        carryMaterialPairGreen (carryMaterialPairReduction t (carryMaterialClockCompressedPair t))
+          (carryMaterialPairReduction u (carryMaterialClockCompressedPair u)) +
+        carryMaterialPairGreen (carryMaterialPairReduction t (carryMaterialClockCompressedPair t))
+          (carryMaterialPairReduction u (carryMaterialClockForcingPair u)) +
+        carryMaterialPairGreen (carryMaterialPairReduction t (carryMaterialClockForcingPair t))
+          (carryMaterialPairReduction u (carryMaterialClockCompressedPair u)) +
+        carryMaterialPairGreen (carryMaterialPairReduction t (carryMaterialClockForcingPair t))
+          (carryMaterialPairReduction u (carryMaterialClockForcingPair u))) -
+        carryMaterialPairGreen (carryMaterialPairComplement (carryMaterialReducedCompanionPair t))
+          (carryMaterialPairComplement (carryMaterialReducedCompanionPair u)) =
+      (2 : ℂ)*((carryMaterialResponseScale^2*t*u : ℝ) : ℂ)*
+        conj (baseTwoCanonicalResponse t)*baseTwoCanonicalResponse u*((u-t : ℝ) : ℂ)*
+          (conj (carryMaterialNormalizedResponse t)*carryMaterialNormalizedResponse u *
+            dslope carryMaterialReducedResponse t u) := by
+  obtain ⟨U,hU,h0,h⟩ := material_reduced_pair_canonical_residual_numerator
+  refine ⟨U,hU,h0,?_⟩
+  intro t ht u hu
+  have he := h t ht u hu
+  rw [carryMaterialClock_reduced_green_ledger] at he
+  exact he
+
+/-- Exact central-row cancellation in the physical source. Orthogonal
+central projection and the seed/return readout projection are distinct.
+The hidden Green balance is not discarded as an unobserved coordinate. -/
+theorem material_clock_first_row_hidden_balance (u : ℝ) :
+    carryMaterialPairGreen
+      (carryMaterialPairComplement (carryMaterialReducedCompanionPair 0))
+      (carryMaterialPairComplement (carryMaterialReducedCompanionPair u)) =
+      carryMaterialPairGreen
+        (carryMaterialCentralPairProjection (carryMaterialReducedCompanionPair 0))
+        (carryMaterialCentralPairProjection (carryMaterialReducedCompanionPair u)) +
+      carryMaterialPairGreen (carryMaterialPairReduction 0 (carryMaterialClockForcingPair 0))
+        (carryMaterialPairReduction u (carryMaterialClockCompressedPair u)) +
+      carryMaterialPairGreen (carryMaterialPairReduction 0 (carryMaterialClockForcingPair 0))
+        (carryMaterialPairReduction u (carryMaterialClockForcingPair u)) := by
+  have h := carryMaterialPairGreen_readout_ledger
+    (carryMaterialReducedCompanionPair 0) (carryMaterialReducedCompanionPair u)
+  rw [material_reduced_pair_center_invisible_nonzero.1] at h
+  have hscalar : carryMaterialPairGreen (0 : ℂ × ℂ)
+      (carryMaterialPairReadout (carryMaterialReducedCompanionPair u)) = 0 := by
+    simp [carryMaterialPairGreen]
+  rw [hscalar, mul_zero, zero_add] at h
+  have hzero (x : MaterialCarrier × MaterialCarrier) :
+      carryMaterialPairGreen (0 : MaterialCarrier × MaterialCarrier) x = 0 := by
+    simp [carryMaterialPairGreen]
+  rw [carryMaterialClock_reduced_green_ledger] at h
+  have hc : carryMaterialPairReduction 0 (carryMaterialClockCompressedPair 0) = 0 := by
+    rw [carryMaterialClock_compressed_pair_origin, map_zero]
+  rw [hc,hzero,hzero,add_zero,add_zero] at h
+  exact h.symm
+
+/-- The same coupled physical ledger reaches the REAL canonical residual.
+The complex notation retains the two original quadratures and phases. -/
+theorem material_clock_real_residual_numerator :
+    ∃ U : Set ℝ, IsOpen U ∧ (0 : ℝ) ∈ U ∧ ∀ t ∈ U, ∀ u ∈ U,
+      (carryMaterialPairGreen
+          (carryMaterialCentralPairProjection (carryMaterialReducedCompanionPair t))
+          (carryMaterialCentralPairProjection (carryMaterialReducedCompanionPair u)) +
+        carryMaterialPairGreen (carryMaterialPairReduction t (carryMaterialClockCompressedPair t))
+          (carryMaterialPairReduction u (carryMaterialClockCompressedPair u)) +
+        carryMaterialPairGreen (carryMaterialPairReduction t (carryMaterialClockCompressedPair t))
+          (carryMaterialPairReduction u (carryMaterialClockForcingPair u)) +
+        carryMaterialPairGreen (carryMaterialPairReduction t (carryMaterialClockForcingPair t))
+          (carryMaterialPairReduction u (carryMaterialClockCompressedPair u)) +
+        carryMaterialPairGreen (carryMaterialPairReduction t (carryMaterialClockForcingPair t))
+          (carryMaterialPairReduction u (carryMaterialClockForcingPair u))) -
+        carryMaterialPairGreen (carryMaterialPairComplement (carryMaterialReducedCompanionPair t))
+          (carryMaterialPairComplement (carryMaterialReducedCompanionPair u)) =
+      (2 : ℂ)*((carryMaterialResponseScale^2*t*u : ℝ) : ℂ)*
+        conj (baseTwoCanonicalResponse t)*baseTwoCanonicalResponse u*((u-t : ℝ) : ℂ)*
+          (carryMaterialRealResidual t u : ℂ) := by
+  obtain ⟨U,hU,h0,h⟩ := material_clock_canonical_residual_ledger
+  refine ⟨U,hU,h0,?_⟩
+  intro t ht u hu
+  rw [CarryMaterialPositiveResidualComparison.material_real_residual_coe]
+  exact h t ht u hu
+
+end
+end CarryMaterialClockCouplingComparison
+
+namespace CarryMaterialClockCouplingComparison
+#assert_central_comparison_axioms material_clock_canonical_residual_ledger
+#print axioms material_clock_canonical_residual_ledger
+#assert_central_comparison_axioms material_clock_first_row_hidden_balance
+#print axioms material_clock_first_row_hidden_balance
+#assert_central_comparison_axioms material_clock_real_residual_numerator
+#print axioms material_clock_real_residual_numerator
+end CarryMaterialClockCouplingComparison
