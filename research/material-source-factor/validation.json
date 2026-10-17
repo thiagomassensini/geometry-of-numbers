@@ -1,0 +1,142 @@
+{
+  "utc": "2026-10-17T06:47:09.473572+00:00",
+  "records": [
+    {
+      "name": "focused",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "GeometryOfNumbers.Analysis.CarryMaterialSourceFactor"
+      ],
+      "exit_code": 0,
+      "seconds": 7.974051065044478,
+      "log": "evidence/focused.log.gz"
+    },
+    {
+      "name": "full",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "exit_code": 0,
+      "seconds": 44.451804301002994,
+      "log": "evidence/full.log.gz"
+    },
+    {
+      "name": "foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 6.834667095041368,
+      "log": "evidence/foundation.log.gz"
+    },
+    {
+      "name": "geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 10.154545855999459,
+      "log": "evidence/geometry.log.gz"
+    },
+    {
+      "name": "analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 45.74462568096351,
+      "log": "evidence/analysis.log.gz"
+    },
+    {
+      "name": "factor-regression",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "research/material-source-factor/Regression.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 7.114464759011753,
+      "log": "evidence/factor-regression.log.gz"
+    },
+    {
+      "name": "return-regression",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "research/projective-global-return/Regression.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 7.664357351954095,
+      "log": "evidence/return-regression.log.gz"
+    },
+    {
+      "name": "valve-comparison",
+      "command": [
+        "bash",
+        "scripts/audit-material-projective-comparison.sh",
+        "/home/thlinux/carry-self-adjoint-operator"
+      ],
+      "exit_code": 0,
+      "seconds": 10.148035730002448,
+      "log": "evidence/valve-comparison.log.gz"
+    },
+    {
+      "name": "source-factor-comparison",
+      "command": [
+        "bash",
+        "scripts/audit-material-central-comparison.sh",
+        "/home/thlinux/carry-self-adjoint-operator"
+      ],
+      "exit_code": 0,
+      "seconds": 54.15187608700944,
+      "log": "evidence/source-factor-comparison.log.gz"
+    }
+  ],
+  "host": "llm",
+  "base": "aee21826a385ebd3a2ac16bcf8f50d9435a48209",
+  "new_roots_audited": 52,
+  "new_theorems": 42,
+  "axiom_policy": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "audit": "Lean.collectAxioms transitive types and bodies plus #print axioms per public root",
+  "preserved_literal_sources": [
+    "lakefile.toml",
+    "lake-manifest.json",
+    "lean-toolchain",
+    "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "GeometryOfNumbers/Analysis/CarryMaterialNullHierarchy.lean",
+    "GeometryOfNumbers/Analysis/CarryMaterialClockCentralCoupling.lean",
+    "GeometryOfNumbers/Analysis/CompletedBoundaryTransportedClock.lean",
+    "research/material-tfvd-projective/CanonicalValveComparison.lean"
+  ],
+  "old_audit_and_comparison_prefixes_preserved": true,
+  "positive_block": "Residual Taylor orders 2,4,6; signs reused from existing theta source certificates",
+  "native_hankel_factor": "Exact real invertible factor of the unshifted 4x4 section",
+  "all_order_result": "Signed prefix and exact square-root factor defect, not all-order positivity",
+  "sign_assumptions_in_finite_source_factor": false,
+  "numeric_proof_input": false,
+  "new_metric": false,
+  "new_operator": false,
+  "new_physical_source": false,
+  "source_sha256": {
+    "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean": "0e4aa41f0cc93366fbf285f60a1922d68bf2f4bc2c9957a09a0e3e4b02d2428e",
+    "research/material-central-calibration/CanonicalComparison.lean": "8f99bd9090cfad40a3a0fe75e6a0cf5d0c23aba8d1149074977507699c17d913",
+    "research/material-source-factor/Regression.lean": "a6e1b7574635dc085fac007a87672a4e2e9384dc59a65cd761b273f63d64fce3"
+  }
+}

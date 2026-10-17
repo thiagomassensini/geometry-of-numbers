@@ -1,0 +1,314 @@
+[
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingRemainder",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 16
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingPivot",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 22
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingColumn",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 25
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingPivot_zero",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 28
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingPivot_one",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 30
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingPivot_two",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 33
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingRemainder_symm",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 38
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairing_signed_prefix",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 50
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingRemainder_row_zero",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 68
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingColumn_diagonal",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 85
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingColumn_above",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 89
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairing_signed_factor",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 96
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingCholesky",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 109
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingCholesky_defect",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 115
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingCholesky_identity",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 147
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingCholesky_above",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 163
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingCholesky_diagonal",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 169
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingCholesky_det_pos",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 174
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingCholesky_posDef",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 188
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingBilinear",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 202
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingBilinear_eq_dotProduct",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 205
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingBilinear_factor",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 214
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingBorderFactor",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 237
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingBorderFactor_origin",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 242
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingBorderFactor_origin_succ",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 248
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingBorderFactor_succ_origin",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 255
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingBorderFactor_succ_succ",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 262
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryPairingBorderFactor_det_pos",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 275
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialEvenPairing",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 305
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialOddPairing",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 308
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialEvenCholesky",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean",
+    "line": 311
+  },
+  {
+    "name": "CarryMaterialSourceFactorComparison.material_even_pairing_source",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4328
+  },
+  {
+    "name": "CarryMaterialSourceFactorComparison.material_even_pairing_symm",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4333
+  },
+  {
+    "name": "CarryMaterialSourceFactorComparison.material_odd_pairing_source",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4339
+  },
+  {
+    "name": "CarryMaterialSourceFactorComparison.material_even_pivot_zero_pos",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4343
+  },
+  {
+    "name": "CarryMaterialSourceFactorComparison.material_even_pivot_one_eq",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4346
+  },
+  {
+    "name": "CarryMaterialSourceFactorComparison.material_even_pivot_one_pos",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4349
+  },
+  {
+    "name": "CarryMaterialSourceFactorComparison.material_even_pivot_two_ratio",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4355
+  },
+  {
+    "name": "CarryMaterialSourceFactorComparison.material_even_pivot_two_pos",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4382
+  },
+  {
+    "name": "CarryMaterialSourceFactorComparison.material_even_pivots_three_pos",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4387
+  },
+  {
+    "name": "CarryMaterialSourceFactorComparison.material_even_cholesky_three",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4396
+  },
+  {
+    "name": "CarryMaterialSourceFactorComparison.material_even_cholesky_three_det_pos",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4401
+  },
+  {
+    "name": "CarryMaterialSourceFactorComparison.material_even_bilinear_three",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4407
+  },
+  {
+    "name": "CarryMaterialSourceFactorComparison.material_hankel_cholesky_four",
+    "kind": "def",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4417
+  },
+  {
+    "name": "CarryMaterialSourceFactorComparison.material_hankel_cholesky_four_identity",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4420
+  },
+  {
+    "name": "CarryMaterialSourceFactorComparison.material_hankel_cholesky_four_det_pos",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4445
+  },
+  {
+    "name": "CarryMaterialSourceFactorComparison.material_even_signed_prefix",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4457
+  },
+  {
+    "name": "CarryMaterialSourceFactorComparison.material_even_real_factor_defect",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4465
+  },
+  {
+    "name": "CarryMaterialSourceFactorComparison.material_even_three_posDef",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4474
+  },
+  {
+    "name": "CarryMaterialSourceFactorComparison.material_even_energy_three_pos",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4478
+  },
+  {
+    "name": "CarryMaterialSourceFactorComparison.material_complex_even_factor_three",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4485
+  },
+  {
+    "name": "CarryMaterialSourceFactorComparison.material_valve_even_factor_three",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4497
+  }
+]

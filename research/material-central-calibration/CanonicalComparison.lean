@@ -1,3 +1,4 @@
+import GeometryOfNumbers.Analysis.CarryMaterialSourceFactor
 import GeometryOfNumbers.Analysis.CarryMaterialMixedSchur
 import CarrySelfAdjointOperator.NativeSourceSchurThetaIntegral
 import GeometryOfNumbers.Analysis.CarryMaterialProjectiveReturnGreen
@@ -4311,3 +4312,238 @@ namespace CarryMaterialMixedSchurComparison
 #assert_central_comparison_axioms material_valve_mixed_block_pos
 #print axioms material_valve_mixed_block_pos
 end CarryMaterialMixedSchurComparison
+
+
+namespace CarryMaterialSourceFactorComparison
+open GeometryOfNumbers.Analysis CarrySelfAdjointOperator
+open CarrySelfAdjointOperator.SourcePositiveReduction
+open CarryMaterialMixedSchurComparison
+open scoped Matrix
+noncomputable section
+set_option autoImplicit false
+set_option backward.isDefEq.respectTransparency false
+set_option maxHeartbeats 2400000
+local notation "h" => canonicalCompletedNativeLogDerivativeMoment
+
+theorem material_even_pairing_source (i j : ℕ) :
+    carryMaterialEvenPairing i j = h (i+j+2)-h (i+1)*h (j+1)/h 0 := by
+  have he : i+1+(j+1) = i+j+2 := by omega
+  simpa only [carryMaterialEvenPairing,he] using material_residual_jet_even_even (i+1) (j+1)
+
+theorem material_even_pairing_symm (i j : ℕ) :
+    carryMaterialEvenPairing i j = carryMaterialEvenPairing j i := by
+  rw [material_even_pairing_source,material_even_pairing_source]
+  rw [Nat.add_comm j i]
+  ring
+
+theorem material_odd_pairing_source (i j : ℕ) :
+    carryMaterialOddPairing i j = h (i+j+1) := by
+  exact material_residual_jet_odd_odd i j
+
+theorem material_even_pivot_zero_pos : 0 < carryPairingPivot carryMaterialEvenPairing 0 :=
+  material_mixed_first_pivot_pos
+
+theorem material_even_pivot_one_eq :
+    carryPairingPivot carryMaterialEvenPairing 1 = carryMaterialMixedPivot := rfl
+
+theorem material_even_pivot_one_pos : 0 < carryPairingPivot carryMaterialEvenPairing 1 := by
+  rw [material_even_pivot_one_eq]
+  exact material_mixed_pivot_pos
+
+/-- New physical order-six pivot, computed by the source's ordered
+elimination, not defined by a determinant certificate. -/
+theorem material_even_pivot_two_ratio :
+    carryPairingPivot carryMaterialEvenPairing 2 =
+      nativeSourceSevenEvenDiscriminant/(2*nativeSourceFiveEvenDiscriminant) := by
+  rw [carryPairingPivot_two]
+  simp_rw [material_even_pairing_source]
+  norm_num only [Nat.reduceAdd]
+  have h0 : h 0 ≠ 0 := canonicalCompletedNativeLogDerivativeMoment_zero_pos.ne'
+  have hA : h 2-h 1*h 1/h 0 = (h 0*h 2-h 1^2)/h 0 := by
+    field_simp [h0]
+  have hP : h 4-h 2*h 2/h 0-(h 3-h 2*h 1/h 0)*(h 3-h 1*h 2/h 0)/
+      (h 2-h 1*h 1/h 0) =
+        nativeSourceFiveEvenDiscriminant/(8*(h 0*h 2-h 1^2)) := by
+    simpa only [pow_two,mul_comm (h 2) (h 1)] using
+      material_third_schur_eq.symm.trans material_third_schur_ratio
+  rw [hP,hA]
+  have hd := nativeMoment_first_discriminant_pos.ne'
+  have hD := nativeSourceFiveEvenDiscriminant_pos.ne'
+  field_simp [h0,hd,hD]
+  unfold nativeSourceSevenEvenDiscriminant nativeSourceSevenEvenCoupling0
+    nativeSourceSevenEvenCoupling1 nativeSourceSevenEvenCoupling2
+    nativeSourceFiveEvenDiscriminant
+  simp_rw [nativeSourceOddBoundaryCoefficient_eq_twice_primeDepthGeometricMoment,
+    primeDepthGeometricMoment_eq_canonical]
+  ring
+
+/-- Strict sign transported from the existing raw theta certificate. This
+does not supply a new sign certificate at an unproved source order. -/
+theorem material_even_pivot_two_pos : 0 < carryPairingPivot carryMaterialEvenPairing 2 := by
+  rw [material_even_pivot_two_ratio]
+  exact div_pos nativeSourceSevenEvenDiscriminant_pos
+    (mul_pos (by norm_num) nativeSourceFiveEvenDiscriminant_pos)
+
+theorem material_even_pivots_three_pos (r : ℕ) (hr : r < 3) :
+    0 < carryPairingPivot carryMaterialEvenPairing r := by
+  interval_cases r
+  · exact material_even_pivot_zero_pos
+  · exact material_even_pivot_one_pos
+  · exact material_even_pivot_two_pos
+
+/-- An actual real factor of the physical residual block at Taylor orders
+2, 4, 6, with no `PosDef` input. All nine crossings are retained. -/
+theorem material_even_cholesky_three :
+    carryMaterialEvenCholesky 3 * (carryMaterialEvenCholesky 3)ᵀ =
+      (fun i j : Fin 3 => carryMaterialResidualJet (2*(i.val+1)) (2*(j.val+1))) :=
+  carryPairingCholesky_identity material_even_pairing_symm 3 material_even_pivots_three_pos
+
+theorem material_even_cholesky_three_det_pos :
+    0 < (carryMaterialEvenCholesky 3).det :=
+  carryPairingCholesky_det_pos carryMaterialEvenPairing 3 material_even_pivots_three_pos
+
+/-- Two independent coefficient vectors; this is stronger than a diagonal
+energy formula and retains every original ordered mixed term. -/
+theorem material_even_bilinear_three (x y : Fin 3 → ℝ) :
+    carryPairingBilinear carryMaterialEvenPairing 3 x y =
+      ∑ r : Fin 3, carryPairingPivot carryMaterialEvenPairing r *
+        (∑ i : Fin 3, carryPairingColumn carryMaterialEvenPairing r i*x i) *
+        (∑ j : Fin 3, carryPairingColumn carryMaterialEvenPairing r j*y j) :=
+  carryPairingBilinear_factor material_even_pairing_symm 3
+    (fun r hr => (material_even_pivots_three_pos r hr).ne') x y
+
+/-- A derived Cholesky factor for the original unshifted four-by-four native
+Hankel section, restoring the central channel with its literal normalization. -/
+def material_hankel_cholesky_four : Matrix (Fin 4) (Fin 4) ℝ :=
+  carryPairingBorderFactor (h 0) (fun i : Fin 3 => h (i.val+1)) (carryMaterialEvenCholesky 3)
+
+theorem material_hankel_cholesky_four_identity :
+    material_hankel_cholesky_four*material_hankel_cholesky_fourᵀ =
+      (fun i j : Fin 4 => h (i.val+j.val)) := by
+  have ha := canonicalCompletedNativeLogDerivativeMoment_zero_pos
+  ext i j
+  refine Fin.cases ?_ (fun k => ?_) i
+  · refine Fin.cases ?_ (fun r => ?_) j
+    · exact carryPairingBorderFactor_origin (h 0) ha.le _ _
+    · simpa only [material_hankel_cholesky_four,Fin.val_zero,Fin.val_succ,Nat.zero_add] using
+        carryPairingBorderFactor_origin_succ (h 0) ha (fun i : Fin 3 => h (i.val+1))
+          (carryMaterialEvenCholesky 3) r
+  · refine Fin.cases ?_ (fun r => ?_) j
+    · exact carryPairingBorderFactor_succ_origin (h 0) ha _ _ k
+    · change (carryPairingBorderFactor (h 0) (fun i : Fin 3 => h (i.val+1))
+        (carryMaterialEvenCholesky 3)*
+        (carryPairingBorderFactor (h 0) (fun i : Fin 3 => h (i.val+1))
+          (carryMaterialEvenCholesky 3))ᵀ) k.succ r.succ = _
+      rw [carryPairingBorderFactor_succ_succ (h 0) ha,material_even_cholesky_three]
+      change h (k.val+1)*h (r.val+1)/h 0+carryMaterialEvenPairing k r = _
+      rw [material_even_pairing_source]
+      have he : k.val+1+(r.val+1) = k.val+r.val+2 := by omega
+      change _ = h (k.val+1+(r.val+1))
+      rw [he]
+      ring
+
+theorem material_hankel_cholesky_four_det_pos : 0 < material_hankel_cholesky_four.det := by
+  apply carryPairingBorderFactor_det_pos (h 0) canonicalCompletedNativeLogDerivativeMoment_zero_pos
+  · intro i j hij
+    exact carryPairingCholesky_above carryMaterialEvenPairing 3
+      (fun r hr => (material_even_pivots_three_pos r hr).ne') i j hij
+  · intro i
+    rw [carryMaterialEvenCholesky,carryPairingCholesky_diagonal carryMaterialEvenPairing 3
+      (fun r hr => (material_even_pivots_three_pos r hr).ne')]
+    exact Real.sqrt_pos.mpr (material_even_pivots_three_pos i i.isLt)
+
+/-- Universal algebraic expansion on the actual source observations. No
+sign, nonzero-pivot or all-order positivity assumption is needed here. -/
+theorem material_even_signed_prefix (n i j : ℕ) :
+    carryMaterialResidualJet (2*(i+1)) (2*(j+1)) =
+      (∑ r ∈ Finset.range n, carryPairingPivot carryMaterialEvenPairing r *
+        carryPairingColumn carryMaterialEvenPairing r i *
+        carryPairingColumn carryMaterialEvenPairing r j) +
+          carryPairingRemainder carryMaterialEvenPairing n i j :=
+  carryPairing_signed_prefix material_even_pairing_symm n i j
+
+theorem material_even_real_factor_defect (n : ℕ) (i j : Fin n) :
+    carryMaterialResidualJet (2*(i.val+1)) (2*(j.val+1)) =
+      (carryMaterialEvenCholesky n*(carryMaterialEvenCholesky n)ᵀ) i j+
+        carryPairingRemainder carryMaterialEvenPairing n i j-
+        ∑ r : Fin n, max (-carryPairingPivot carryMaterialEvenPairing r) 0 *
+          carryPairingColumn carryMaterialEvenPairing r i *
+          carryPairingColumn carryMaterialEvenPairing r j :=
+  carryPairingCholesky_defect material_even_pairing_symm n i j
+
+theorem material_even_three_posDef :
+    Matrix.PosDef (fun i j : Fin 3 => carryMaterialEvenPairing i j) :=
+  carryPairingCholesky_posDef material_even_pairing_symm 3 material_even_pivots_three_pos
+
+theorem material_even_energy_three_pos (x : Fin 3 → ℝ) (hx : x ≠ 0) :
+    0 < carryPairingBilinear carryMaterialEvenPairing 3 x x := by
+  rw [carryPairingBilinear_eq_dotProduct]
+  exact material_even_three_posDef.dotProduct_mulVec_pos hx
+
+/-- Full complex confluent observations are reconstructed: their imaginary
+quadrature vanishes by the original source identity, not by a projection. -/
+theorem material_complex_even_factor_three (i j : Fin 3) :
+    carryKernelJet (fun t u => (carryMaterialRealResidual t u : ℂ))
+      (2*(i.val+1)) (2*(j.val+1)) =
+      (((carryMaterialEvenCholesky 3*(carryMaterialEvenCholesky 3)ᵀ) i j : ℝ) : ℂ) := by
+  rw [material_even_cholesky_three]
+  have he := material_residual_complex_jet_even_even (i.val+1) (j.val+1)
+  change carryKernelJet (fun t u => (carryMaterialRealResidual t u : ℂ))
+    (2*(i.val+1)) (2*(j.val+1)) =
+      (carryMaterialResidualJet (2*(i.val+1)) (2*(j.val+1)) : ℂ)
+  rw [material_residual_jet_even_even]
+  exact he
+
+theorem material_valve_even_factor_three (eta : ℝ) (heta : eta ≠ 0) (i j : Fin 3) :
+    carryValveConfluentJet eta (2*(i.val+1)) (2*(j.val+1)) =
+      (((carryMaterialEvenCholesky 3*(carryMaterialEvenCholesky 3)ᵀ) i j : ℝ) : ℂ) := by
+  rw [material_valve_confluent_jet eta heta]
+  exact material_complex_even_factor_three i j
+
+end
+end CarryMaterialSourceFactorComparison
+
+namespace CarryMaterialSourceFactorComparison
+#assert_central_comparison_axioms material_even_pairing_source
+#print axioms material_even_pairing_source
+#assert_central_comparison_axioms material_even_pairing_symm
+#print axioms material_even_pairing_symm
+#assert_central_comparison_axioms material_odd_pairing_source
+#print axioms material_odd_pairing_source
+#assert_central_comparison_axioms material_even_pivot_zero_pos
+#print axioms material_even_pivot_zero_pos
+#assert_central_comparison_axioms material_even_pivot_one_eq
+#print axioms material_even_pivot_one_eq
+#assert_central_comparison_axioms material_even_pivot_one_pos
+#print axioms material_even_pivot_one_pos
+#assert_central_comparison_axioms material_even_pivot_two_ratio
+#print axioms material_even_pivot_two_ratio
+#assert_central_comparison_axioms material_even_pivot_two_pos
+#print axioms material_even_pivot_two_pos
+#assert_central_comparison_axioms material_even_pivots_three_pos
+#print axioms material_even_pivots_three_pos
+#assert_central_comparison_axioms material_even_cholesky_three
+#print axioms material_even_cholesky_three
+#assert_central_comparison_axioms material_even_cholesky_three_det_pos
+#print axioms material_even_cholesky_three_det_pos
+#assert_central_comparison_axioms material_even_bilinear_three
+#print axioms material_even_bilinear_three
+#assert_central_comparison_axioms material_hankel_cholesky_four
+#print axioms material_hankel_cholesky_four
+#assert_central_comparison_axioms material_hankel_cholesky_four_identity
+#print axioms material_hankel_cholesky_four_identity
+#assert_central_comparison_axioms material_hankel_cholesky_four_det_pos
+#print axioms material_hankel_cholesky_four_det_pos
+#assert_central_comparison_axioms material_even_signed_prefix
+#print axioms material_even_signed_prefix
+#assert_central_comparison_axioms material_even_real_factor_defect
+#print axioms material_even_real_factor_defect
+#assert_central_comparison_axioms material_even_three_posDef
+#print axioms material_even_three_posDef
+#assert_central_comparison_axioms material_even_energy_three_pos
+#print axioms material_even_energy_three_pos
+#assert_central_comparison_axioms material_complex_even_factor_three
+#print axioms material_complex_even_factor_three
+#assert_central_comparison_axioms material_valve_even_factor_three
+#print axioms material_valve_even_factor_three
+end CarryMaterialSourceFactorComparison

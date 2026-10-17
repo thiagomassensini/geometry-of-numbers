@@ -1,0 +1,262 @@
+{
+  "GeometryOfNumbers.Analysis.carryPairingRemainder": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingPivot": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingColumn": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingPivot_zero": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingPivot_one": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingPivot_two": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingRemainder_symm": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairing_signed_prefix": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingRemainder_row_zero": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingColumn_diagonal": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingColumn_above": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairing_signed_factor": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingCholesky": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingCholesky_defect": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingCholesky_identity": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingCholesky_above": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingCholesky_diagonal": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingCholesky_det_pos": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingCholesky_posDef": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingBilinear": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingBilinear_eq_dotProduct": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingBilinear_factor": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingBorderFactor": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingBorderFactor_origin": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingBorderFactor_origin_succ": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingBorderFactor_succ_origin": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingBorderFactor_succ_succ": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryPairingBorderFactor_det_pos": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterialEvenPairing": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterialOddPairing": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterialEvenCholesky": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialSourceFactorComparison.material_even_pairing_source": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialSourceFactorComparison.material_even_pairing_symm": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialSourceFactorComparison.material_odd_pairing_source": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialSourceFactorComparison.material_even_pivot_zero_pos": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialSourceFactorComparison.material_even_pivot_one_eq": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialSourceFactorComparison.material_even_pivot_one_pos": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialSourceFactorComparison.material_even_pivot_two_ratio": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialSourceFactorComparison.material_even_pivot_two_pos": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialSourceFactorComparison.material_even_pivots_three_pos": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialSourceFactorComparison.material_even_cholesky_three": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialSourceFactorComparison.material_even_cholesky_three_det_pos": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialSourceFactorComparison.material_even_bilinear_three": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialSourceFactorComparison.material_hankel_cholesky_four": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialSourceFactorComparison.material_hankel_cholesky_four_identity": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialSourceFactorComparison.material_hankel_cholesky_four_det_pos": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialSourceFactorComparison.material_even_signed_prefix": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialSourceFactorComparison.material_even_real_factor_defect": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialSourceFactorComparison.material_even_three_posDef": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialSourceFactorComparison.material_even_energy_three_pos": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialSourceFactorComparison.material_complex_even_factor_three": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialSourceFactorComparison.material_valve_even_factor_three": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ]
+}
