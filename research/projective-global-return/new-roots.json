@@ -1,0 +1,422 @@
+[
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveEdge",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 21
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveEdge_eq",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 28
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveCell",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 39
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveCell_eq",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 42
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturn_graph",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 49
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturn_clock_graph",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 56
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveSource",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 63
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveBeta",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 66
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveKappa",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 68
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveCell_source",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 71
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturn_source",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 76
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturn_clock_source",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 80
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveBeta_eq_tsum",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 85
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveKappa_eq_tsum",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 89
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveEdge_clock",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 94
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveCell_polarized",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 102
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveRealCross",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 112
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveRealCross_eq",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 122
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveEdge_polarized",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 132
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveComplexCross",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 149
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveCell_tfvd_polarized",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 157
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturnPrefix",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 171
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturnTail",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 174
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturnPrefix_polarized",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 177
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturnPrefix_oriented",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 184
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturnPrefix_tfvd",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 194
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturn_tail_ledger",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 206
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturn_product_error",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 216
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturn_prefix_tendsto_of_hasSum",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 240
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturn_prefix_tendsto",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 245
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturn_clock_prefix_tendsto",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 251
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturn_tail_tendsto_of_hasSum",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 257
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturn_product_tendsto_of_hasSum",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 267
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturn_source_product_tendsto",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 279
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturn_mixed_product_tendsto",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 287
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturn_clock_ordinary_product_tendsto",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 295
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturn_clock_product_tendsto",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 303
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturn_error_tendsto_of_hasSum",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "line": 311
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveSummedSignal",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 17
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveSummedClock",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 20
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveSummedSignal_eq",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 23
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveSummedClock_eq",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 27
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveValueReadout",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 31
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveCompanionReadout",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 34
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveValueReadout_eq",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 38
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveCompanionReadout_eq",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 46
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveScalarPair",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 55
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValvePair_readout",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 58
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturnGreen",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 67
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturnGreen_eq",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 75
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturnGreen_physical_ledger",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 85
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValvePrefixValue",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 97
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValvePrefixCompanion",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 101
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveValueTail",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 107
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveCompanionTail",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 111
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValvePrefixPair",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 117
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveTailPair",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 120
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValvePair_prefix_tail",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 123
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReturnGreen_tail_ledger",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 142
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValvePrefixValue_tendsto",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 157
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValvePrefixCompanion_tendsto",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 163
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValvePrefixGreen_tendsto",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 173
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReducedReturnBalance",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 191
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveReducedReturnBalance_physical",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 196
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValvePrefixReducedBalance",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 213
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValvePrefixReducedBalance_tendsto",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "line": 219
+  },
+  {
+    "name": "CarryMaterialValveGlobalReturnComparison.material_valve_return_green_wronskian",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 3897
+  },
+  {
+    "name": "CarryMaterialValveGlobalReturnComparison.material_valve_global_residual_numerator",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 3907
+  },
+  {
+    "name": "CarryMaterialValveGlobalReturnComparison.material_valve_global_central_row",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 3924
+  },
+  {
+    "name": "CarryMaterialValveGlobalReturnComparison.material_valve_prefix_residual_limit",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 3934
+  }
+]
