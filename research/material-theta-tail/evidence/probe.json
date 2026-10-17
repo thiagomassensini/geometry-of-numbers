@@ -1,0 +1,22 @@
+{
+  "status": "finite_nonrigorous_diagnostic",
+  "input_sha256": "50bc111bc10174e406260a90fe8271ba3f6897c7467e3472822a0bee8d5d351a",
+  "working_decimal_digits": 1100,
+  "order_range": [
+    1,
+    255
+  ],
+  "K_rule": "k+2, chosen before reading signs or ratios",
+  "maximum_bound_over_abs_C": {
+    "value": "2.6240994979365825113537749097468952e-13",
+    "order": 1
+  },
+  "minimum_bound_over_abs_C": {
+    "value": "9.8822395058840732728525739940046396e-86274",
+    "order": 255
+  },
+  "fixed_three_maximum_bound_over_abs_C": {
+    "value": "0.0000000001101818580822791565899632295290104",
+    "order": 12
+  }
+}

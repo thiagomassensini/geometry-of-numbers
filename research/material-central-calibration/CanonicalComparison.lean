@@ -1,3 +1,4 @@
+import CarrySelfAdjointOperator.NativeThetaAdaptiveBudget
 import CarrySelfAdjointOperator.AllOrderLogJetLedger
 import CarrySelfAdjointOperator.CompletedNativeSixthOrderThetaPositivity
 import CarrySelfAdjointOperator.CompletedNativeChiralReturnFourteenthSourceIntegral
@@ -3243,3 +3244,533 @@ example : normalizedCompletedNativeEvenFormalSeries =
   simpa only [he,map_zero,zero_mul,sub_zero,one_mul] using
     material_source_formal_deflation 0
 end CarryMaterialPoleDominanceComparison
+
+
+namespace CarryMaterialThetaTailComparison
+open CarrySelfAdjointOperator XiThetaScore MeasureTheory Set Filter Polynomial
+open scoped BigOperators Topology
+noncomputable section
+set_option autoImplicit false
+set_option maxHeartbeats 1200000
+
+private theorem mode_factor (n : ℕ) (u : ℝ) :
+    nativeThetaModeWeight n u =
+      (8*Real.pi^2*((n+1 : ℕ) : ℝ)^4*Real.exp ((9/2 : ℝ)*u) -
+        12*Real.pi*((n+1 : ℕ) : ℝ)^2*Real.exp ((5/2 : ℝ)*u)) *
+        Real.exp (-Real.pi*((n+1 : ℕ) : ℝ)^2*Real.exp (2*u)) := by
+  unfold nativeThetaModeWeight atom
+  ring
+
+private theorem first_mode_lower {u : ℝ} (hu : 0 ≤ u) :
+    4*Real.pi^2*Real.exp ((9/2 : ℝ)*u)*Real.exp (-Real.pi*Real.exp (2*u)) ≤
+      nativeThetaModeWeight 0 u := by
+  rw [mode_factor]
+  norm_num only [Nat.cast_one, zero_add, one_pow, mul_one]
+  have he : Real.exp ((5/2 : ℝ)*u) ≤ Real.exp ((9/2 : ℝ)*u) :=
+    Real.exp_le_exp.mpr (by linarith)
+  have hp : 12*Real.pi ≤ 4*Real.pi^2 := by nlinarith [Real.pi_gt_three]
+  have hm := mul_le_mul hp he (Real.exp_pos _).le (by positivity : 0 ≤ 4*Real.pi^2)
+  exact mul_le_mul_of_nonneg_right (by nlinarith) (Real.exp_pos _).le
+
+private theorem exp_five_ge_sixtyFour : (64 : ℝ) ≤ Real.exp 5 := by
+  have h := Real.sum_le_exp_of_nonneg (by norm_num : (0 : ℝ) ≤ 5) 5
+  norm_num [Finset.sum_range_succ] at h
+  linarith
+
+/-- A bound on each original theta mode by the first original mode.
+The constant is an estimate, not a rescaling of the source. -/
+theorem material_theta_mode_gaussian (n : ℕ) {u : ℝ} (hu : 0 ≤ u) :
+    nativeThetaModeWeight n u ≤
+      2*Real.exp (-3*(n : ℝ)^2-2*(n : ℝ))*nativeThetaModeWeight 0 u := by
+  let j : ℝ := n
+  let v : ℝ := Real.exp (2*u)
+  let A : ℝ := Real.exp ((9/2 : ℝ)*u)*Real.exp (-Real.pi*v)
+  have hj : 0 ≤ j := Nat.cast_nonneg n
+  have hv : 1 ≤ v := Real.one_le_exp (by linarith)
+  have hA : 0 < A := by dsimp [A]; positivity
+  have he : (j+1)^4 ≤ Real.exp (4*j) := by
+    have h := pow_le_pow_left₀ (by positivity : 0 ≤ j+1) (Real.add_one_le_exp j) 4
+    calc
+      _ ≤ (Real.exp j)^4 := h
+      _ = _ := (Real.exp_nat_mul j 4).symm
+  have hgap : Real.exp (-Real.pi*((j+1)^2-1)*v) ≤ Real.exp (-3*((j+1)^2-1)) := by
+    apply Real.exp_le_exp.mpr
+    have hs : 0 ≤ (j+1)^2-1 := by nlinarith
+    have hp := mul_le_mul Real.pi_gt_three.le hv (by positivity : (0 : ℝ) ≤ 1) Real.pi_pos.le
+    nlinarith [mul_nonneg (sub_nonneg.mpr hp) hs]
+  have hdecay : (j+1)^4*Real.exp (-Real.pi*((j+1)^2-1)*v) ≤ Real.exp (-3*j^2-2*j) := by
+    calc
+      _ ≤ Real.exp (4*j)*Real.exp (-3*((j+1)^2-1)) :=
+        mul_le_mul he hgap (Real.exp_pos _).le (Real.exp_pos _).le
+      _ = _ := by rw [← Real.exp_add]; congr 1; ring
+  have hsplit : Real.exp (-Real.pi*(j+1)^2*v) =
+      Real.exp (-Real.pi*((j+1)^2-1)*v)*Real.exp (-Real.pi*v) := by
+    rw [← Real.exp_add]
+    congr 1
+    ring
+  have hupper : nativeThetaModeWeight n u ≤
+      8*Real.pi^2*((j+1)^4*Real.exp (-Real.pi*((j+1)^2-1)*v))*A := by
+    rw [mode_factor]
+    push_cast
+    change (8*Real.pi^2*(j+1)^4*Real.exp ((9/2 : ℝ)*u) -
+      12*Real.pi*(j+1)^2*Real.exp ((5/2 : ℝ)*u))*Real.exp (-Real.pi*(j+1)^2*v) ≤ _
+    rw [hsplit]
+    dsimp [A]
+    nlinarith [mul_nonneg (by positivity : 0 ≤ 12*Real.pi*(j+1)^2*Real.exp ((5/2 : ℝ)*u))
+      (by positivity : 0 ≤ Real.exp (-Real.pi*((j+1)^2-1)*v)*Real.exp (-Real.pi*v))]
+  calc
+    _ ≤ 8*Real.pi^2*((j+1)^4*Real.exp (-Real.pi*((j+1)^2-1)*v))*A := hupper
+    _ ≤ 8*Real.pi^2*Real.exp (-3*j^2-2*j)*A := by gcongr
+    _ = 2*Real.exp (-3*j^2-2*j)*(4*Real.pi^2*A) := by ring
+    _ ≤ _ := mul_le_mul_of_nonneg_left (by simpa only [A, v, mul_assoc] using first_mode_lower hu) (by positivity)
+
+private theorem gaussian_shift_bound (j K : ℕ) :
+    Real.exp (-3*((j+K : ℕ) : ℝ)^2-2*((j+K : ℕ) : ℝ)) ≤
+      (1/64 : ℝ)^j*Real.exp (-3*(K : ℝ)^2-2*(K : ℝ)) := by
+  have hj : (j : ℝ) ≤ (j : ℝ)^2 := by
+    norm_cast
+    simpa only [pow_two] using Nat.le_mul_self j
+  have he : Real.exp (-5*(j : ℝ)) ≤ (1/64 : ℝ)^j := by
+    rw [show -5*(j : ℝ) = (j : ℝ)*(-5) by ring, Real.exp_nat_mul]
+    apply pow_le_pow_left₀ (Real.exp_pos _).le
+    rw [Real.exp_neg]
+    simpa only [one_div] using
+      (inv_le_inv₀ (Real.exp_pos _) (by norm_num : (0 : ℝ) < 64)).2 exp_five_ge_sixtyFour
+  calc
+    _ ≤ Real.exp (-5*(j : ℝ)+(-3*(K : ℝ)^2-2*(K : ℝ))) := by
+      apply Real.exp_le_exp.mpr
+      push_cast
+      nlinarith [mul_nonneg (Nat.cast_nonneg (α := ℝ) j) (Nat.cast_nonneg (α := ℝ) K)]
+    _ = Real.exp (-5*(j : ℝ))*Real.exp (-3*(K : ℝ)^2-2*(K : ℝ)) := Real.exp_add _ _
+    _ ≤ _ := mul_le_mul_of_nonneg_right he (Real.exp_pos _).le
+
+/-- Geometric corollary of the stronger Gaussian source-mode bound. -/
+theorem material_theta_mode_geometric (n : ℕ) {u : ℝ} (hu : 0 ≤ u) :
+    nativeThetaModeWeight n u ≤ 2*(1/64 : ℝ)^n*nativeThetaModeWeight 0 u := by
+  have he := gaussian_shift_bound n 0
+  norm_num only [Nat.add_zero, Nat.cast_zero, zero_pow (by omega : (2 : ℕ) ≠ 0),
+    mul_zero, sub_zero, neg_zero, Real.exp_zero, mul_one] at he
+  exact (material_theta_mode_gaussian n hu).trans
+    (mul_le_mul_of_nonneg_right (mul_le_mul_of_nonneg_left he (by norm_num))
+      (nativeThetaModeWeight_pos 0 hu).le)
+
+/-- Relative error budget for a finite prefix of the UNCHANGED source. -/
+def materialThetaTailBudget (K : ℕ) : ℝ :=
+  (128/63 : ℝ)*Real.exp (-3*(K : ℝ)^2-2*(K : ℝ))
+
+theorem material_theta_first_mode_le_full {u : ℝ} (hu : 0 ≤ u) :
+    nativeThetaModeWeight 0 u ≤ completedNativeXiCosineKernel u := by
+  rw [← nativeThetaModeWeight_tsum]
+  exact (nativeThetaModeWeight_summable u).le_tsum 0 (fun n _ => (nativeThetaModeWeight_pos n hu).le)
+
+/-- The omitted infinite series is retained as a nonnegative defect. -/
+theorem material_theta_prefix_defect (K : ℕ) {u : ℝ} (hu : 0 ≤ u) :
+    0 ≤ completedNativeXiCosineKernel u-nativeThetaPrefixWeight K u ∧
+      completedNativeXiCosineKernel u-nativeThetaPrefixWeight K u ≤
+        materialThetaTailBudget K*completedNativeXiCosineKernel u := by
+  have hs := nativeThetaModeWeight_summable u
+  have hsplit := hs.sum_add_tsum_nat_add K
+  rw [nativeThetaModeWeight_tsum] at hsplit
+  have heq : completedNativeXiCosineKernel u-nativeThetaPrefixWeight K u =
+      ∑' j : ℕ, nativeThetaModeWeight (j+K) u := by
+    change completedNativeXiCosineKernel u - (∑ j ∈ Finset.range K, nativeThetaModeWeight j u) = _
+    linarith
+  constructor
+  · rw [heq]
+    exact tsum_nonneg (fun j => (nativeThetaModeWeight_pos (j+K) hu).le)
+  · rw [heq]
+    have hsum : (∑' j : ℕ, nativeThetaModeWeight (j+K) u) ≤
+        ∑' j : ℕ, (1/64 : ℝ)^j*(2*Real.exp (-3*(K : ℝ)^2-2*(K : ℝ))*nativeThetaModeWeight 0 u) := by
+      apply Summable.tsum_le_tsum
+      · intro j
+        exact (material_theta_mode_gaussian (j+K) hu).trans (by
+          have he := gaussian_shift_bound j K
+          nlinarith [mul_le_mul_of_nonneg_right he (mul_nonneg (by norm_num : (0 : ℝ) ≤ 2)
+            (nativeThetaModeWeight_pos 0 hu).le)])
+      · exact hs.comp_injective (fun a b h => Nat.add_right_cancel h)
+      · exact (summable_geometric_of_lt_one (by norm_num : (0 : ℝ) ≤ 1/64)
+          (by norm_num : (1/64 : ℝ) < 1)).mul_right _
+    rw [tsum_mul_right, tsum_geometric_of_lt_one (by norm_num : (0 : ℝ) ≤ 1/64)
+      (by norm_num : (1/64 : ℝ) < 1)] at hsum
+    have hc : (1-(1/64 : ℝ))⁻¹*(2*Real.exp (-3*(K : ℝ)^2-2*(K : ℝ))*nativeThetaModeWeight 0 u) =
+        materialThetaTailBudget K*nativeThetaModeWeight 0 u := by
+      unfold materialThetaTailBudget
+      norm_num
+      ring
+    rw [hc] at hsum
+    exact hsum.trans (mul_le_mul_of_nonneg_left (material_theta_first_mode_le_full hu) (by
+      unfold materialThetaTailBudget; positivity))
+
+theorem material_theta_prefix_between (K : ℕ) {u : ℝ} (hu : 0 ≤ u) :
+    0 ≤ nativeThetaPrefixWeight K u ∧
+      nativeThetaPrefixWeight K u ≤ completedNativeXiCosineKernel u := by
+  refine ⟨Finset.sum_nonneg (fun n _ => (nativeThetaModeWeight_pos n hu).le), ?_⟩
+  exact sub_nonneg.mp (material_theta_prefix_defect K hu).1
+
+theorem material_theta_prefix_continuous (K : ℕ) : Continuous (nativeThetaPrefixWeight K) := by
+  unfold nativeThetaPrefixWeight
+  exact continuous_finsetSum _ (fun n _ =>
+    continuous_iff_continuousAt.mpr (fun u => (nativeThetaModeWeight_hasDerivAt n u).continuousAt))
+
+theorem material_theta_prefix_integrable (P : ℝ[X]) (K : ℕ) :
+    IntegrableOn (fun u : ℝ => P.eval u*nativeThetaPrefixWeight K u) (Ioi 0) := by
+  apply (integrableOn_polynomial_mul_nativeXiKernel P).norm.mono'
+  · exact (P.continuous.mul (material_theta_prefix_continuous K)).aestronglyMeasurable
+  · filter_upwards [ae_restrict_mem measurableSet_Ioi] with u hu
+    simp only [norm_mul, Real.norm_eq_abs,
+      abs_of_nonneg (material_theta_prefix_between K hu.le).1,
+      abs_of_pos (completedNativeXiCosineKernel_pos hu.le)]
+    exact mul_le_mul_of_nonneg_left (material_theta_prefix_between K hu.le).2 (abs_nonneg _)
+
+/-- A readout of a finite modal prefix; the physical source remains full. -/
+def materialThetaPrefixIntegral (P : ℝ[X]) (K : ℕ) : ℝ :=
+  ∫ u in Ioi (0 : ℝ), P.eval u*nativeThetaPrefixWeight K u
+
+/-- Absolute mass of the already synthesized signed source density.
+This error budget does not define or change a Hilbert metric. -/
+def materialThetaAbsoluteMass (P : ℝ[X]) : ℝ :=
+  ∫ u in Ioi (0 : ℝ), ‖P.eval u*completedNativeXiCosineKernel u‖
+
+theorem material_theta_absolute_mass_nonneg (P : ℝ[X]) :
+    0 ≤ materialThetaAbsoluteMass P := integral_nonneg (fun _ => norm_nonneg _)
+
+/-- Exact signed remainder before taking any estimate. -/
+theorem material_theta_prefix_exact (P : ℝ[X]) (K : ℕ) :
+    nativeXiPolynomialIntegral P = materialThetaPrefixIntegral P K +
+      ∫ u in Ioi (0 : ℝ), P.eval u*(completedNativeXiCosineKernel u-nativeThetaPrefixWeight K u) := by
+  have heq : nativeXiPolynomialIntegral P-materialThetaPrefixIntegral P K =
+      ∫ u in Ioi (0 : ℝ), P.eval u*(completedNativeXiCosineKernel u-nativeThetaPrefixWeight K u) := by
+    change (∫ u in Ioi (0 : ℝ), P.eval u*completedNativeXiCosineKernel u) -
+      (∫ u in Ioi (0 : ℝ), P.eval u*nativeThetaPrefixWeight K u) = _
+    rw [← integral_sub (integrableOn_polynomial_mul_nativeXiKernel P)
+      (material_theta_prefix_integrable P K)]
+    congr 1
+    funext u
+    ring
+  linarith
+
+/-- Signed polynomial cancellations are preserved in the principal integral;
+only the size of the omitted modes is bounded in absolute value. -/
+theorem material_theta_prefix_error (P : ℝ[X]) (K : ℕ) :
+    |nativeXiPolynomialIntegral P-materialThetaPrefixIntegral P K| ≤
+      materialThetaTailBudget K*materialThetaAbsoluteMass P := by
+  have heq : nativeXiPolynomialIntegral P-materialThetaPrefixIntegral P K =
+      ∫ u in Ioi (0 : ℝ), P.eval u*(completedNativeXiCosineKernel u-nativeThetaPrefixWeight K u) := by
+    linarith [material_theta_prefix_exact P K]
+  rw [heq, ← Real.norm_eq_abs]
+  have h := norm_integral_le_of_norm_le
+    ((integrableOn_polynomial_mul_nativeXiKernel P).norm.const_mul (materialThetaTailBudget K))
+    (show ∀ᵐ u : ℝ ∂volume.restrict (Ioi (0 : ℝ)),
+      ‖P.eval u*(completedNativeXiCosineKernel u-nativeThetaPrefixWeight K u)‖ ≤
+        materialThetaTailBudget K*‖P.eval u*completedNativeXiCosineKernel u‖ by
+      filter_upwards [ae_restrict_mem measurableSet_Ioi] with u hu
+      obtain ⟨h0,h1⟩ := material_theta_prefix_defect K hu.le
+      simp only [norm_mul, Real.norm_eq_abs, abs_of_nonneg h0,
+        abs_of_pos (completedNativeXiCosineKernel_pos hu.le)]
+      nlinarith [mul_le_mul_of_nonneg_left h1 (abs_nonneg (P.eval u))])
+  simpa only [integral_const_mul, materialThetaAbsoluteMass] using h
+
+theorem material_theta_tail_budget_tendsto_zero :
+    Tendsto materialThetaTailBudget atTop (nhds 0) := by
+  apply squeeze_zero (g := fun K : ℕ => (128/63 : ℝ)*(1/64 : ℝ)^K)
+  · intro K
+    unfold materialThetaTailBudget
+    positivity
+  · intro K
+    have he := gaussian_shift_bound K 0
+    norm_num only [Nat.add_zero, Nat.cast_zero, zero_pow (by omega : (2 : ℕ) ≠ 0),
+      mul_zero, sub_zero, neg_zero, Real.exp_zero, mul_one] at he
+    exact mul_le_mul_of_nonneg_left he (by norm_num)
+  · simpa only [mul_zero] using
+      (tendsto_pow_atTop_nhds_zero_of_lt_one (by norm_num : (0 : ℝ) ≤ 1/64)
+        (by norm_num : (1/64 : ℝ) < 1)).const_mul (128/63 : ℝ)
+
+/-- Integrated convergence for every synthesized polynomial, proved from
+the actual infinite-mode bound, without an exchange of unjustified limits. -/
+theorem material_theta_prefix_integral_tendsto (P : ℝ[X]) :
+    Tendsto (materialThetaPrefixIntegral P) atTop (nhds (nativeXiPolynomialIntegral P)) := by
+  apply tendsto_iff_norm_sub_tendsto_zero.mpr
+  apply squeeze_zero (g := fun K => materialThetaTailBudget K*materialThetaAbsoluteMass P)
+  · intro K
+    exact norm_nonneg _
+  · intro K
+    rw [Real.norm_eq_abs, abs_sub_comm]
+    exact material_theta_prefix_error P K
+  · simpa only [zero_mul] using
+      material_theta_tail_budget_tendsto_zero.mul_const (materialThetaAbsoluteMass P)
+
+/-- An exact finite-prefix criterion, not an assumed source positivity.
+The bound is necessary as well as sufficient when the cutoff may vary. -/
+theorem material_theta_positive_iff_finite_margin (P : ℝ[X]) :
+    0 < nativeXiPolynomialIntegral P ↔
+      ∃ K : ℕ, materialThetaTailBudget K*materialThetaAbsoluteMass P <
+        materialThetaPrefixIntegral P K := by
+  constructor
+  · intro hpos
+    have hbudget : Tendsto (fun K => materialThetaTailBudget K*materialThetaAbsoluteMass P)
+        atTop (nhds 0) := by
+      simpa only [zero_mul] using
+        material_theta_tail_budget_tendsto_zero.mul_const (materialThetaAbsoluteMass P)
+    have hgap := (material_theta_prefix_integral_tendsto P).sub hbudget
+    simp only [sub_zero] at hgap
+    obtain ⟨K,hK⟩ := (hgap.eventually (eventually_gt_nhds hpos)).exists
+    exact ⟨K, by linarith⟩
+  · rintro ⟨K,hK⟩
+    have he := material_theta_prefix_error P K
+    have hl := (abs_le.mp he).1
+    linarith
+
+/-- A finite coefficient ledger against the original raw theta integrals.
+Coefficients are taken after synthesis, including all ordered crosses. -/
+def materialThetaCoefficientBudget (P : ℝ[X]) : ℝ :=
+  ∑ d ∈ P.support, |P.coeff d| *
+    (∫ u in Ioi (0 : ℝ), u^d*completedNativeXiCosineKernel u)
+
+theorem material_theta_absolute_mass_le_coefficient_budget (P : ℝ[X]) :
+    materialThetaAbsoluteMass P ≤ materialThetaCoefficientBudget P := by
+  classical
+  let Q : ℝ[X] := ∑ d ∈ P.support, Polynomial.monomial d |P.coeff d|
+  have hQ : nativeXiPolynomialIntegral Q = materialThetaCoefficientBudget P := by
+    simp only [Q, map_sum, materialThetaCoefficientBudget]
+    apply Finset.sum_congr rfl
+    intro d hd
+    change (∫ u in Ioi (0 : ℝ), (Polynomial.monomial d |P.coeff d|).eval u*
+      completedNativeXiCosineKernel u) = _
+    simp only [Polynomial.eval_monomial, mul_assoc, integral_const_mul]
+  rw [← hQ]
+  apply integral_mono_ae (integrableOn_polynomial_mul_nativeXiKernel P).norm
+    (integrableOn_polynomial_mul_nativeXiKernel Q)
+  filter_upwards [ae_restrict_mem measurableSet_Ioi] with u hu
+  have heval : |P.eval u| ≤ Q.eval u := by
+    rw [Polynomial.eval_eq_sum, Polynomial.sum]
+    calc
+      _ ≤ ∑ d ∈ P.support, |P.coeff d*u^d| := Finset.abs_sum_le_sum_abs _ _
+      _ = _ := by
+        simp only [Q, Polynomial.eval_finsetSum, Polynomial.eval_monomial,
+          abs_mul, abs_pow, abs_of_nonneg (show 0 ≤ u from le_of_lt hu)]
+  simp only [norm_mul, Real.norm_eq_abs, abs_of_pos (completedNativeXiCosineKernel_pos hu.le)]
+  exact mul_le_mul_of_nonneg_right heval (completedNativeXiCosineKernel_pos hu.le).le
+
+theorem material_theta_coefficient_budget_nonneg (P : ℝ[X]) :
+    0 ≤ materialThetaCoefficientBudget P :=
+  (material_theta_absolute_mass_nonneg P).trans (material_theta_absolute_mass_le_coefficient_budget P)
+
+theorem material_theta_prefix_coefficient_error (P : ℝ[X]) (K : ℕ) :
+    |nativeXiPolynomialIntegral P-materialThetaPrefixIntegral P K| ≤
+      materialThetaTailBudget K*materialThetaCoefficientBudget P := by
+  exact (material_theta_prefix_error P K).trans
+    (mul_le_mul_of_nonneg_left (material_theta_absolute_mass_le_coefficient_budget P)
+      (by unfold materialThetaTailBudget; positivity))
+
+theorem material_theta_source_interval (P : ℝ[X]) (K : ℕ) :
+    materialThetaPrefixIntegral P K-materialThetaTailBudget K*materialThetaCoefficientBudget P ≤
+      nativeXiPolynomialIntegral P ∧
+    nativeXiPolynomialIntegral P ≤
+      materialThetaPrefixIntegral P K+materialThetaTailBudget K*materialThetaCoefficientBudget P := by
+  have he := abs_le.mp (material_theta_prefix_coefficient_error P K)
+  constructor <;> linarith [he.1, he.2]
+
+theorem material_theta_positive_iff_coefficient_margin (P : ℝ[X]) :
+    0 < nativeXiPolynomialIntegral P ↔
+      ∃ K : ℕ, materialThetaTailBudget K*materialThetaCoefficientBudget P <
+        materialThetaPrefixIntegral P K := by
+  constructor
+  · intro hpos
+    have hbudget : Tendsto (fun K => materialThetaTailBudget K*materialThetaCoefficientBudget P)
+        atTop (nhds 0) := by
+      simpa only [zero_mul] using
+        material_theta_tail_budget_tendsto_zero.mul_const (materialThetaCoefficientBudget P)
+    have hgap := (material_theta_prefix_integral_tendsto P).sub hbudget
+    simp only [sub_zero] at hgap
+    obtain ⟨K,hK⟩ := (hgap.eventually (eventually_gt_nhds hpos)).exists
+    exact ⟨K, by linarith⟩
+  · rintro ⟨K,hK⟩
+    have hl := (material_theta_source_interval P K).1
+    linarith
+
+end
+end CarryMaterialThetaTailComparison
+
+namespace CarryMaterialThetaTailComparison
+open GeometryOfNumbers.Analysis CarrySelfAdjointOperator Filter
+open CarryMaterialNullHierarchyComparison CarryMaterialHierarchySignComparison
+open scoped BigOperators Topology
+noncomputable section
+set_option autoImplicit false
+
+/-- The literal ordered quadratic source polynomial is synthesized BEFORE
+its modal error is estimated. No crosses or Schur correction are removed. -/
+theorem material_theta_quadratic_prefix_error (s N K : ℕ) (x : Fin N → ℝ) :
+    |sourceMomentQuadratic canonicalCompletedNativeLogDerivativeMoment s N x -
+      materialThetaPrefixIntegral (nativeThetaQuadraticPolynomial s N x) K| ≤
+      materialThetaTailBudget K*materialThetaCoefficientBudget (nativeThetaQuadraticPolynomial s N x) := by
+  rw [← nativeThetaQuadraticPolynomial_integral]
+  exact material_theta_prefix_coefficient_error _ K
+
+theorem material_null_theta_prefix_exact (k K : ℕ) :
+    carryMaterialNullCoefficient k =
+      materialThetaPrefixIntegral (carryMaterialNullThetaPolynomial k) K +
+        ∫ u in Set.Ioi (0 : ℝ), (carryMaterialNullThetaPolynomial k).eval u *
+          (completedNativeXiCosineKernel u-nativeThetaPrefixWeight K u) := by
+  rw [← material_null_theta_integral]
+  exact material_theta_prefix_exact _ K
+
+theorem material_null_theta_prefix_error (k K : ℕ) :
+    |carryMaterialNullCoefficient k-materialThetaPrefixIntegral (carryMaterialNullThetaPolynomial k) K| ≤
+      materialThetaTailBudget K*materialThetaCoefficientBudget (carryMaterialNullThetaPolynomial k) := by
+  rw [← material_null_theta_integral]
+  exact material_theta_prefix_coefficient_error _ K
+
+/-- A priori K=k+2. This bound is unconditional in EVERY order; it does not
+assert that the principal signed integral dominates the displayed error. -/
+theorem material_null_theta_adaptive_error (k : ℕ) :
+    |carryMaterialNullCoefficient k-materialThetaPrefixIntegral (carryMaterialNullThetaPolynomial k) (k+2)| ≤
+      (128/63 : ℝ)*Real.exp (-3*((k+2 : ℕ) : ℝ)^2-2*((k+2 : ℕ) : ℝ))*
+        materialThetaCoefficientBudget (carryMaterialNullThetaPolynomial k) :=
+  material_null_theta_prefix_error k (k+2)
+
+theorem material_null_theta_prefix_interval (k K : ℕ) :
+    materialThetaPrefixIntegral (carryMaterialNullThetaPolynomial k) K -
+      materialThetaTailBudget K*materialThetaCoefficientBudget (carryMaterialNullThetaPolynomial k) ≤
+        carryMaterialNullCoefficient k ∧
+    carryMaterialNullCoefficient k ≤
+      materialThetaPrefixIntegral (carryMaterialNullThetaPolynomial k) K +
+        materialThetaTailBudget K*materialThetaCoefficientBudget (carryMaterialNullThetaPolynomial k) := by
+  rw [← material_null_theta_integral]
+  exact material_theta_source_interval _ K
+
+theorem material_null_theta_prefix_tendsto (k : ℕ) :
+    Tendsto (materialThetaPrefixIntegral (carryMaterialNullThetaPolynomial k)) atTop
+      (nhds (carryMaterialNullCoefficient k)) := by
+  rw [← material_null_theta_integral]
+  exact material_theta_prefix_integral_tendsto _
+
+theorem material_null_positive_iff_prefix_margin (k : ℕ) :
+    0 < carryMaterialNullCoefficient k ↔
+      ∃ K : ℕ, materialThetaTailBudget K*materialThetaCoefficientBudget (carryMaterialNullThetaPolynomial k) <
+        materialThetaPrefixIntegral (carryMaterialNullThetaPolynomial k) K := by
+  rw [← material_null_theta_integral]
+  exact material_theta_positive_iff_coefficient_margin _
+
+/-- Exact all-order source criterion. A cutoff and a signed principal
+margin for every order remain to be constructed, not assumed proved. -/
+theorem material_hierarchy_positive_iff_prefix_margin :
+    (∀ k : ℕ, 0 < k → 0 < carryMaterialNullCoefficient k) ↔
+      ∀ k : ℕ, 0 < k → ∃ K : ℕ,
+        materialThetaTailBudget K*materialThetaCoefficientBudget (carryMaterialNullThetaPolynomial k) <
+          materialThetaPrefixIntegral (carryMaterialNullThetaPolynomial k) K := by
+  exact forall_congr' (fun k => imp_congr_right (fun _ => material_null_positive_iff_prefix_margin k))
+
+theorem material_null_fixed_family_positive_of_prefix_margin (k K : ℕ) (hk : 0 < k)
+    (hmargin : materialThetaTailBudget K*materialThetaCoefficientBudget (carryMaterialNullThetaPolynomial k) <
+      materialThetaPrefixIntegral (carryMaterialNullThetaPolynomial k) K)
+    {n : ℕ} (c a : Fin n → ℝ)
+    (hM : ∀ j, 0 < j → j < k → (∑ i, c i*(a i)^j)=0)
+    (hMk : (∑ i, c i*(a i)^k) ≠ 0) :
+    ∀ᶠ e : ℝ in nhds 0, e ≠ 0 →
+      0 < carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i) :=
+  material_null_fixed_family_positive k hk
+    ((material_null_positive_iff_prefix_margin k).mpr ⟨K,hmargin⟩) c a hM hMk
+
+end
+end CarryMaterialThetaTailComparison
+
+
+namespace CarryMaterialThetaTailComparison
+#assert_central_comparison_axioms material_theta_mode_gaussian
+#print axioms material_theta_mode_gaussian
+#assert_central_comparison_axioms material_theta_mode_geometric
+#print axioms material_theta_mode_geometric
+#assert_central_comparison_axioms materialThetaTailBudget
+#print axioms materialThetaTailBudget
+#assert_central_comparison_axioms material_theta_first_mode_le_full
+#print axioms material_theta_first_mode_le_full
+#assert_central_comparison_axioms material_theta_prefix_defect
+#print axioms material_theta_prefix_defect
+#assert_central_comparison_axioms material_theta_prefix_between
+#print axioms material_theta_prefix_between
+#assert_central_comparison_axioms material_theta_prefix_continuous
+#print axioms material_theta_prefix_continuous
+#assert_central_comparison_axioms material_theta_prefix_integrable
+#print axioms material_theta_prefix_integrable
+#assert_central_comparison_axioms materialThetaPrefixIntegral
+#print axioms materialThetaPrefixIntegral
+#assert_central_comparison_axioms materialThetaAbsoluteMass
+#print axioms materialThetaAbsoluteMass
+#assert_central_comparison_axioms material_theta_absolute_mass_nonneg
+#print axioms material_theta_absolute_mass_nonneg
+#assert_central_comparison_axioms material_theta_prefix_exact
+#print axioms material_theta_prefix_exact
+#assert_central_comparison_axioms material_theta_prefix_error
+#print axioms material_theta_prefix_error
+#assert_central_comparison_axioms material_theta_tail_budget_tendsto_zero
+#print axioms material_theta_tail_budget_tendsto_zero
+#assert_central_comparison_axioms material_theta_prefix_integral_tendsto
+#print axioms material_theta_prefix_integral_tendsto
+#assert_central_comparison_axioms material_theta_positive_iff_finite_margin
+#print axioms material_theta_positive_iff_finite_margin
+#assert_central_comparison_axioms materialThetaCoefficientBudget
+#print axioms materialThetaCoefficientBudget
+#assert_central_comparison_axioms material_theta_absolute_mass_le_coefficient_budget
+#print axioms material_theta_absolute_mass_le_coefficient_budget
+#assert_central_comparison_axioms material_theta_coefficient_budget_nonneg
+#print axioms material_theta_coefficient_budget_nonneg
+#assert_central_comparison_axioms material_theta_prefix_coefficient_error
+#print axioms material_theta_prefix_coefficient_error
+#assert_central_comparison_axioms material_theta_source_interval
+#print axioms material_theta_source_interval
+#assert_central_comparison_axioms material_theta_positive_iff_coefficient_margin
+#print axioms material_theta_positive_iff_coefficient_margin
+#assert_central_comparison_axioms material_theta_quadratic_prefix_error
+#print axioms material_theta_quadratic_prefix_error
+#assert_central_comparison_axioms material_null_theta_prefix_exact
+#print axioms material_null_theta_prefix_exact
+#assert_central_comparison_axioms material_null_theta_prefix_error
+#print axioms material_null_theta_prefix_error
+#assert_central_comparison_axioms material_null_theta_adaptive_error
+#print axioms material_null_theta_adaptive_error
+#assert_central_comparison_axioms material_null_theta_prefix_interval
+#print axioms material_null_theta_prefix_interval
+#assert_central_comparison_axioms material_null_theta_prefix_tendsto
+#print axioms material_null_theta_prefix_tendsto
+#assert_central_comparison_axioms material_null_positive_iff_prefix_margin
+#print axioms material_null_positive_iff_prefix_margin
+#assert_central_comparison_axioms material_hierarchy_positive_iff_prefix_margin
+#print axioms material_hierarchy_positive_iff_prefix_margin
+#assert_central_comparison_axioms material_null_fixed_family_positive_of_prefix_margin
+#print axioms material_null_fixed_family_positive_of_prefix_margin
+end CarryMaterialThetaTailComparison
+
+namespace CarryMaterialThetaTailComparison
+open GeometryOfNumbers.Analysis CarrySelfAdjointOperator Polynomial
+open CarryMaterialHierarchySignComparison
+noncomputable section
+
+-- Empty and one-mode cutoffs test the zero-based modal conventions.
+example (P : ℝ[X]) : materialThetaPrefixIntegral P 0 = 0 := by
+  simp [materialThetaPrefixIntegral, nativeThetaPrefixWeight]
+
+example (u : ℝ) : nativeThetaPrefixWeight 1 u = nativeThetaModeWeight 0 u := by
+  simp [nativeThetaPrefixWeight]
+
+example : materialThetaTailBudget 0 = (128/63 : ℝ) := by
+  norm_num [materialThetaTailBudget]
+
+-- The actual even-source cross coefficient is preserved literally.
+example : carryMaterialNullThetaPolynomial 2 =
+    nativeThetaMomentPolynomial 2 -
+      (2*canonicalCompletedNativeLogDerivativeMoment 1/canonicalCompletedNativeLogDerivativeMoment 0) •
+        nativeThetaMomentPolynomial 1 +
+      (canonicalCompletedNativeLogDerivativeMoment 1/canonicalCompletedNativeLogDerivativeMoment 0)^2 •
+        nativeThetaMomentPolynomial 0 := material_null_theta_even 1
+
+-- Established source signs imply existence of certified modal margins.
+-- This does not provide numerical cutoffs or a new sign for order seven.
+example (k : ℕ) (hk : 0 < k) (hk6 : k ≤ 6) :
+    ∃ K : ℕ, materialThetaTailBudget K*materialThetaCoefficientBudget (carryMaterialNullThetaPolynomial k) <
+      materialThetaPrefixIntegral (carryMaterialNullThetaPolynomial k) K :=
+  (material_null_positive_iff_prefix_margin k).mp
+    (material_null_coefficient_pos_through_six k hk hk6)
+
+end
+end CarryMaterialThetaTailComparison
