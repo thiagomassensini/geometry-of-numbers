@@ -1,0 +1,56 @@
+{
+  "geometry_base": "4d84edfd53e7e6d5cd087c6b1c7c1349e99dce05",
+  "operator_head": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "momentos_head": "a54f267365d5d8c965376734b17b10ae89ed3f74",
+  "geometry_pins_sha256": {
+    "lakefile.toml": "2f034f906810f36cc55ff0bcdf98fa629fb91085b107f238e21cca93e136f9f8",
+    "lake-manifest.json": "9868872bae98d0c7e22c597d8e27d38d247498161cf70cdcdc193e9ea0608602",
+    "lean-toolchain": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e"
+  },
+  "operator_manifest_sha256": "822866313e377adcb9c6249680ed67ceb47682af1bb0cd3cc5203554786bcfeb",
+  "source_provenance": [
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+      "sha256": "01542f4261b94933bc9efb7f473447ed222133069b2e16e0bf5673619278c389",
+      "last_commit": "1ff184a5bf6777ab7341d731790d8366737d77d0"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CompletedBoundaryTransportedClock.lean",
+      "sha256": "28eefba01a772586334c47d9a058b9a9df0c95cce7443f72cdf3e3d3a997639d",
+      "last_commit": "ce3077323ddb32df1931c1d0c2dba12a78d72c06"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/BaseTwoPhysicalEdgeTfvdBridge.lean",
+      "sha256": "68f1c1c811556070aac501acd8032cd8bb8343976f6c14161bb65bb91bf42781",
+      "last_commit": "cae0dc65a369518b7583ef51cc74a16d2a6e8a38"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialTfvdGreenReadout.lean",
+      "sha256": "91c21dd8df331bf048609b81913ca24dd3683764742b31bcccb476b42f708168",
+      "last_commit": "36718e438c1fa1d738ffa7e0c6ad6fd9310bf06f"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialNormalizedResponse.lean",
+      "sha256": "70616d69b433de03956bcf6bde6e736359641e36ad8cf724a634a9ec62e50e03",
+      "last_commit": "51df90c049c66be1cff370af65030e2cef371de6"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialCompanionGreenTransport.lean",
+      "sha256": "f6ee3f33279eeaf5fcdc6708dc40044097379af71c43e8e44499a6f13bca8163",
+      "last_commit": "b6c6d268abe8827871467409cc966d9a08a5d59b"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialClockCentralCoupling.lean",
+      "sha256": "7c692e45c0e5257d1db535f516526d8d524fcfb70f452ca1684a0837da86bafd",
+      "last_commit": "53f8436dd9bb0899a0ec0db5dcc6b225907accbd"
+    }
+  ],
+  "previous_external_comparison_sha256": "2202cf07f9b50f814e798b4c47f231958a4fe3e4952772aa7b637c538ce65ad1",
+  "preserved_operator_files": {
+    "C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "numerical_proof_input": false,
+  "new_worktree": "/home/thlinux/geometry-projective-global-return",
+  "new_branch": "agent/projective-global-return"
+}

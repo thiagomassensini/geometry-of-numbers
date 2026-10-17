@@ -1,0 +1,352 @@
+{
+  "GeometryOfNumbers.Analysis.carryValveEdge": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveEdge_eq": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveCell": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveCell_eq": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturn_graph": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturn_clock_graph": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveSource": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveBeta": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveKappa": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveCell_source": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturn_source": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturn_clock_source": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveBeta_eq_tsum": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveKappa_eq_tsum": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveEdge_clock": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveCell_polarized": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveRealCross": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveRealCross_eq": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveEdge_polarized": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveComplexCross": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveCell_tfvd_polarized": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturnPrefix": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturnTail": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturnPrefix_polarized": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturnPrefix_oriented": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturnPrefix_tfvd": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturn_tail_ledger": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturn_product_error": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturn_prefix_tendsto_of_hasSum": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturn_prefix_tendsto": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturn_clock_prefix_tendsto": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturn_tail_tendsto_of_hasSum": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturn_product_tendsto_of_hasSum": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturn_source_product_tendsto": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturn_mixed_product_tendsto": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturn_clock_ordinary_product_tendsto": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturn_clock_product_tendsto": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturn_error_tendsto_of_hasSum": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveSummedSignal": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveSummedClock": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveSummedSignal_eq": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveSummedClock_eq": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveValueReadout": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveCompanionReadout": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveValueReadout_eq": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveCompanionReadout_eq": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveScalarPair": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValvePair_readout": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturnGreen": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturnGreen_eq": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturnGreen_physical_ledger": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValvePrefixValue": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValvePrefixCompanion": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveValueTail": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveCompanionTail": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValvePrefixPair": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveTailPair": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValvePair_prefix_tail": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReturnGreen_tail_ledger": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValvePrefixValue_tendsto": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValvePrefixCompanion_tendsto": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValvePrefixGreen_tendsto": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReducedReturnBalance": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveReducedReturnBalance_physical": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValvePrefixReducedBalance": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValvePrefixReducedBalance_tendsto": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialValveGlobalReturnComparison.material_valve_return_green_wronskian": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialValveGlobalReturnComparison.material_valve_global_residual_numerator": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialValveGlobalReturnComparison.material_valve_global_central_row": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialValveGlobalReturnComparison.material_valve_prefix_residual_limit": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ]
+}

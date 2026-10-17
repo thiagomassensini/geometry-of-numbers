@@ -1,0 +1,81 @@
+{
+  "host": "llm",
+  "base": "4d84edfd53e7e6d5cd087c6b1c7c1349e99dce05",
+  "checks": [
+    {
+      "command": "lake build GeometryOfNumbers.Analysis.CarryMaterialProjectiveReturnGreen --wfail",
+      "exit_code": 0,
+      "log": "evidence/focused-build.log.gz"
+    },
+    {
+      "command": "lake build --wfail",
+      "exit_code": 0,
+      "log": "evidence/full-build.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-foundation.sh",
+      "exit_code": 0,
+      "log": "evidence/foundation-audit.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-geometry.sh",
+      "exit_code": 0,
+      "log": "evidence/geometry-audit.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-analysis.sh",
+      "exit_code": 0,
+      "log": "evidence/analysis-audit.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-material-central-comparison.sh /home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "log": "evidence/comparison.log.gz"
+    },
+    {
+      "command": "lake env lean -DwarningAsError=true research/projective-global-return/Regression.lean",
+      "exit_code": 0,
+      "log": "evidence/regression.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-material-projective-comparison.sh /home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "log": "evidence/previous-valve-comparison.log.gz"
+    }
+  ],
+  "new_roots_audited": 70,
+  "new_theorems": 47,
+  "axiom_policy": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "audit": "Lean.collectAxioms transitive type and body, plus #print axioms per root",
+  "unchanged_literal_sources": [
+    "lakefile.toml",
+    "lake-manifest.json",
+    "lean-toolchain",
+    "GeometryOfNumbers/Analysis/CarryMaterialTfvdProjectiveTransport.lean",
+    "GeometryOfNumbers/Analysis/CompletedBoundaryTransportedClock.lean",
+    "GeometryOfNumbers/Analysis/CarryMaterialClockCentralCoupling.lean",
+    "research/material-tfvd-projective/CanonicalValveComparison.lean"
+  ],
+  "old_audit_and_comparison_prefixes_preserved": true,
+  "cutoff_filter": "Filter.atTop \u00d7\u02e2 Filter.atTop on Nat \u00d7 Nat",
+  "second_order_clock_domain_claimed": false,
+  "separate_infinite_green_trace_sums_used": false,
+  "singular_normalization_divided_out": false,
+  "new_metric": false,
+  "new_operator": false,
+  "new_source": false,
+  "numeric_proof_input": false,
+  "open": [
+    "structural sign of the full normalized signed balance",
+    "canonical residual positivity"
+  ],
+  "source_sha256": {
+    "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean": "03f76cc7b10203082ac9112c480c18b8b4da2774d2548fc9e89d44ceb6de17b4",
+    "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean": "1eefe24edbc7bd9c64dd7477fe40fa3999e42c72f72db5dbfb7f849bcf4b46e7",
+    "research/material-central-calibration/CanonicalComparison.lean": "0cb90ec5252b0843ec44d7355dc2d63fac294c33ed939c54b61e89ec4af48639"
+  }
+}

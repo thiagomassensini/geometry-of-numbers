@@ -1,3 +1,4 @@
+import GeometryOfNumbers.Analysis.CarryMaterialProjectiveReturnGreen
 import GeometryOfNumbers.Analysis.CarryMaterialClockCentralCoupling
 import CarrySelfAdjointOperator.NativeThetaAdaptiveBudget
 import CarrySelfAdjointOperator.AllOrderLogJetLedger
@@ -3882,3 +3883,77 @@ namespace CarryMaterialClockCouplingComparison
 #assert_central_comparison_axioms material_clock_real_residual_numerator
 #print axioms material_clock_real_residual_numerator
 end CarryMaterialClockCouplingComparison
+
+namespace CarryMaterialValveGlobalReturnComparison
+open GeometryOfNumbers.Analysis GeometryOfNumbers.Analysis.BaseTwoCompletion
+open CarrySelfAdjointOperator CarryMaterialClockCouplingComparison
+open scoped Topology ComplexConjugate
+noncomputable section
+set_option autoImplicit false
+set_option backward.isDefEq.respectTransparency false
+
+/-- Literal calibration with the original Wronskian: its arguments are u,t,
+as in the existing physical-pair theorem, never silently reversed. -/
+theorem material_valve_return_green_wronskian (eta : ℝ) (heta : eta ≠ 0) (t u : ℝ) :
+    carryValveReturnGreen eta t u =
+      completedGreenWronskian completedNativeOperatorCharacteristic completedNativeOperatorBoundaryCompanion
+        (u : ℂ) (t : ℂ) := by
+  rw [← carryValveReturnGreen_physical_ledger eta heta]
+  exact CarryMaterialGreenPairComparison.material_pair_corrected_green t u
+
+/-- The whole-cell ordinary/clocked return expression reaches the *same*
+six-term signed balance of PR #16, including its hidden complement. This
+does not prove the sign of the normalized real residual. -/
+theorem material_valve_global_residual_numerator (eta : ℝ) (heta : eta ≠ 0) :
+    ∃ U : Set ℝ, IsOpen U ∧ (0 : ℝ) ∈ U ∧ ∀ t ∈ U, ∀ u ∈ U,
+      carryValveReducedReturnBalance eta t u =
+        (2 : ℂ) * ((carryMaterialResponseScale^2*t*u : ℝ) : ℂ) *
+          conj (baseTwoCanonicalResponse t) * baseTwoCanonicalResponse u * ((u-t : ℝ) : ℂ) *
+            (carryMaterialRealResidual t u : ℂ) := by
+  obtain ⟨U,hU,h0,h⟩ := material_clock_real_residual_numerator
+  refine ⟨U,hU,h0,?_⟩
+  intro t ht u hu
+  have he := h t ht u hu
+  rw [← carryMaterialClock_reduced_green_ledger,
+    carryValveReducedReturnBalance_physical eta heta] at he
+  exact he
+
+/-- The full balance cancels on its central row before any normalization.
+This uses the source's actual zero companion readout and keeps the hidden
+Green subtraction; it is not a proof that either physical term vanishes. -/
+theorem material_valve_global_central_row (eta : ℝ) (heta : eta ≠ 0) (u : ℝ) :
+    carryValveReducedReturnBalance eta 0 u = 0 := by
+  rw [carryValveReducedReturnBalance]
+  have hc : carryValveCompanionReadout eta 0 = 0 := by
+    rw [carryValveCompanionReadout_eq eta heta]
+    exact CarryMaterialGreenPairComparison.material_companion_center_readout_zero
+  simp only [hc, zero_mul, mul_zero, Complex.ofReal_zero, map_zero, sub_zero]
+
+/-- The paired cutoff limit reaches the full canonical residual numerator,
+with the scale and response of the full source fixed throughout the limit. -/
+theorem material_valve_prefix_residual_limit (eta : ℝ) (heta : eta ≠ 0) :
+    ∃ U : Set ℝ, IsOpen U ∧ (0 : ℝ) ∈ U ∧ ∀ t ∈ U, ∀ u ∈ U,
+      Filter.Tendsto (fun p : ℕ × ℕ => carryValvePrefixReducedBalance eta p.1 p.2 t u)
+        (Filter.atTop ×ˢ Filter.atTop)
+        (nhds ((2 : ℂ) * ((carryMaterialResponseScale^2*t*u : ℝ) : ℂ) *
+          conj (baseTwoCanonicalResponse t) * baseTwoCanonicalResponse u * ((u-t : ℝ) : ℂ) *
+            (carryMaterialRealResidual t u : ℂ))) := by
+  obtain ⟨U,hU,h0,h⟩ := material_valve_global_residual_numerator eta heta
+  refine ⟨U,hU,h0,?_⟩
+  intro t ht u hu
+  rw [← h t ht u hu]
+  exact carryValvePrefixReducedBalance_tendsto eta heta t u
+
+end
+end CarryMaterialValveGlobalReturnComparison
+
+namespace CarryMaterialValveGlobalReturnComparison
+#assert_central_comparison_axioms material_valve_return_green_wronskian
+#print axioms material_valve_return_green_wronskian
+#assert_central_comparison_axioms material_valve_global_residual_numerator
+#print axioms material_valve_global_residual_numerator
+#assert_central_comparison_axioms material_valve_global_central_row
+#print axioms material_valve_global_central_row
+#assert_central_comparison_axioms material_valve_prefix_residual_limit
+#print axioms material_valve_prefix_residual_limit
+end CarryMaterialValveGlobalReturnComparison
