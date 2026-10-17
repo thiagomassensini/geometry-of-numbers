@@ -1,0 +1,242 @@
+{
+  "GeometryOfNumbers.Analysis.carryScalarJetShift": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryScalarJetShift_succ": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryScalarJetShift_add": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryScalarJetShift_analytic": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryScalarJetShift_germ": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryScalar_dslope_symm": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryScalar_dslope_row_analytic": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryScalar_dslope_left_comm": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryScalar_dslope_row_shift": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryKernelJet": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryKernelJet_germ": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryKernelJet_centered": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterialResidualJet": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterialMixedBlock": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterialMixedPivot": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterialMixedBlock_sewing": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryMaterialMixedBlock_critical": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveResidualFactor": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveConfluentReadout": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveConfluentReadout_zero_left": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveConfluentReadout_zero_right": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveResidualFactor_ne_zero": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveConfluentReadout_physical": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveConfluentJet": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "GeometryOfNumbers.Analysis.carryValveMixedBlock": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_response_real_analytic": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_residual_complex_jet_source": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_residual_jet_source": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_residual_complex_jet_even_even": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_residual_jet_even_even": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_residual_jet_odd_odd": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_residual_jet_even_odd": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_residual_jet_odd_even": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_mixed_entries": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_mixed_first_pivot_pos": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_mixed_pivot_eq": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_third_schur_eq": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_mixed_pivot_eq_schur": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_mixed_pivot_theta": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_third_schur_ratio": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_mixed_pivot_pos": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_mixed_cross_dominance": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_mixed_block_pos": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_valve_confluent_row_germ": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_valve_confluent_jet": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_valve_mixed_block": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_valve_mixed_critical": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "CarryMaterialMixedSchurComparison.material_valve_mixed_block_pos": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ]
+}

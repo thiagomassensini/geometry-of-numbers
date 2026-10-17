@@ -1,3 +1,5 @@
+import GeometryOfNumbers.Analysis.CarryMaterialMixedSchur
+import CarrySelfAdjointOperator.NativeSourceSchurThetaIntegral
 import GeometryOfNumbers.Analysis.CarryMaterialProjectiveReturnGreen
 import GeometryOfNumbers.Analysis.CarryMaterialClockCentralCoupling
 import CarrySelfAdjointOperator.NativeThetaAdaptiveBudget
@@ -3957,3 +3959,355 @@ namespace CarryMaterialValveGlobalReturnComparison
 #assert_central_comparison_axioms material_valve_prefix_residual_limit
 #print axioms material_valve_prefix_residual_limit
 end CarryMaterialValveGlobalReturnComparison
+
+namespace CarryMaterialMixedSchurComparison
+open GeometryOfNumbers.Analysis GeometryOfNumbers.Analysis.BaseTwoCompletion
+open CarrySelfAdjointOperator CarrySelfAdjointOperator.SourcePositiveReduction
+open CarryMaterialResponseComparison CarryMaterialResidualComparison
+open CarryMaterialPositiveResidualComparison CarryMaterialThirdNullComparison
+open CarryMaterialNullHierarchyComparison CarryMaterialValveGlobalReturnComparison
+open scoped Topology ComplexConjugate Matrix
+noncomputable section
+set_option autoImplicit false
+set_option backward.isDefEq.respectTransparency false
+set_option maxHeartbeats 1800000
+
+local notation "h" => canonicalCompletedNativeLogDerivativeMoment
+
+/-- Scalar analyticity after synthesis, obtained from the existing actual
+source germ. No differentiability of the global Hilbert state is assumed. -/
+theorem material_response_real_analytic : AnalyticAt ℝ carryMaterialNormalizedResponse 0 := by
+  have hc : AnalyticAt ℝ (fun t : ℝ => sourceResponse (t : ℂ)) 0 :=
+    AnalyticAt.comp_of_eq (g := sourceResponse) (f := fun t : ℝ => (t : ℂ))
+      (x := 0) (y := 0) (sourceResponse_analyticAt_zero.restrictScalars (𝕜 := ℝ))
+      (Complex.ofRealCLM.analyticAt 0) rfl
+  exact hc.congr material_source_response_eventually_eq.symm
+
+/-- These are mixed confluent observations of the ACTUAL residual, derived
+from its completed-source identity. The equality is not used as a definition. -/
+theorem material_residual_complex_jet_source (p q : ℕ) :
+    carryKernelJet (fun t u => (carryMaterialRealResidual t u : ℂ)) p q =
+      completedNativeGreenResponseTaylorCoefficient (p+q+1)-
+        completedNativeGreenResponseTaylorCoefficient (p+1)*
+          completedNativeGreenResponseTaylorCoefficient (q+1)/(h 0 : ℂ) := by
+  obtain ⟨U,hU,h0,hR⟩ := material_residual_centered_kernel
+  have he := carryKernelJet_germ (K := fun t u => (carryMaterialRealResidual t u : ℂ))
+    (L := fun t u => dslope carryMaterialNormalizedResponse t u-
+      dslope carryMaterialNormalizedResponse 0 t*dslope carryMaterialNormalizedResponse 0 u/
+        (carryMaterialResponseScale : ℂ)) (by
+      filter_upwards [hU.mem_nhds h0] with u hu
+      filter_upwards [hU.mem_nhds h0] with t ht
+      exact hR t ht u hu) p q
+  rw [he,carryKernelJet_centered material_response_real_analytic]
+  change carryMaterialTaylorShift (p+q+1) 0-
+    carryMaterialTaylorShift (p+1) 0*carryMaterialTaylorShift (q+1) 0/
+      (carryMaterialResponseScale : ℂ) = _
+  rw [material_taylor_shift_center,material_taylor_shift_center,material_taylor_shift_center,
+    material_scale_eq]
+
+theorem material_residual_jet_source (p q : ℕ) :
+    carryMaterialResidualJet p q =
+      (completedNativeGreenResponseTaylorCoefficient (p+q+1)-
+        completedNativeGreenResponseTaylorCoefficient (p+1)*
+          completedNativeGreenResponseTaylorCoefficient (q+1)/(h 0 : ℂ)).re :=
+  congrArg Complex.re (material_residual_complex_jet_source p q)
+
+theorem material_residual_complex_jet_even_even (i j : ℕ) :
+    carryKernelJet (fun t u => (carryMaterialRealResidual t u : ℂ)) (2*i) (2*j) =
+      ((h (i+j)-h i*h j/h 0 : ℝ) : ℂ) := by
+  rw [material_residual_complex_jet_source,show 2*i+2*j+1=2*(i+j)+1 by omega,
+    completedNativeGreenResponseTaylorCoefficient_odd_eq_canonical,
+    completedNativeGreenResponseTaylorCoefficient_odd_eq_canonical,
+    completedNativeGreenResponseTaylorCoefficient_odd_eq_canonical]
+  push_cast
+  rfl
+
+theorem material_residual_jet_even_even (i j : ℕ) :
+    carryMaterialResidualJet (2*i) (2*j) = h (i+j)-h i*h j/h 0 := by
+  rw [material_residual_jet_source,show 2*i+2*j+1=2*(i+j)+1 by omega,
+    completedNativeGreenResponseTaylorCoefficient_odd_eq_canonical,
+    completedNativeGreenResponseTaylorCoefficient_odd_eq_canonical,
+    completedNativeGreenResponseTaylorCoefficient_odd_eq_canonical]
+  norm_cast
+
+theorem material_residual_jet_odd_odd (i j : ℕ) :
+    carryMaterialResidualJet (2*i+1) (2*j+1) = h (i+j+1) := by
+  rw [material_residual_jet_source,show 2*i+1+(2*j+1)+1=2*(i+j+1)+1 by omega,
+    completedNativeGreenResponseTaylorCoefficient_odd_eq_canonical,
+    show 2*i+1+1=2*(i+1) by omega,
+    completedNativeGreenResponseTaylorCoefficient_even_eq_zero]
+  simp
+
+theorem material_residual_jet_even_odd (i j : ℕ) :
+    carryMaterialResidualJet (2*i) (2*j+1) = 0 := by
+  rw [material_residual_jet_source,show 2*i+(2*j+1)+1=2*(i+j+1) by omega,
+    completedNativeGreenResponseTaylorCoefficient_even_eq_zero,
+    show 2*j+1+1=2*(j+1) by omega,
+    completedNativeGreenResponseTaylorCoefficient_even_eq_zero]
+  simp
+
+theorem material_residual_jet_odd_even (i j : ℕ) :
+    carryMaterialResidualJet (2*i+1) (2*j) = 0 := by
+  rw [material_residual_jet_source,show 2*i+1+2*j+1=2*(i+j+1) by omega,
+    completedNativeGreenResponseTaylorCoefficient_even_eq_zero,
+    show 2*i+1+1=2*(i+1) by omega,
+    completedNativeGreenResponseTaylorCoefficient_even_eq_zero]
+  simp
+
+theorem material_mixed_entries :
+    carryMaterialResidualJet 2 2 = h 2-h 1^2/h 0 ∧
+    carryMaterialResidualJet 2 4 = h 3-h 1*h 2/h 0 ∧
+    carryMaterialResidualJet 4 2 = h 3-h 1*h 2/h 0 ∧
+    carryMaterialResidualJet 4 4 = h 4-h 2^2/h 0 := by
+  have h11 := material_residual_jet_even_even 1 1
+  have h12 := material_residual_jet_even_even 1 2
+  have h21 := material_residual_jet_even_even 2 1
+  have h22 := material_residual_jet_even_even 2 2
+  norm_num only [Nat.reduceMul,Nat.reduceAdd] at h11 h12 h21 h22
+  exact ⟨by simpa only [pow_two] using h11,h12,by simpa only [mul_comm] using h21,
+    by simpa only [pow_two] using h22⟩
+
+theorem material_mixed_first_pivot_pos : 0 < carryMaterialResidualJet 2 2 := by
+  rw [material_mixed_entries.1]
+  have he : h 2-h 1^2/h 0=(h 0*h 2-h 1^2)/h 0 := by
+    field_simp [canonicalCompletedNativeLogDerivativeMoment_zero_pos.ne']
+  rw [he]
+  exact div_pos nativeMoment_first_discriminant_pos canonicalCompletedNativeLogDerivativeMoment_zero_pos
+
+theorem material_mixed_pivot_eq :
+    carryMaterialMixedPivot = h 4-h 2^2/h 0-
+      (h 3-h 1*h 2/h 0)^2/(h 2-h 1^2/h 0) := by
+  rw [carryMaterialMixedPivot,material_mixed_entries.1,material_mixed_entries.2.1,
+    material_mixed_entries.2.2.1,material_mixed_entries.2.2.2]
+  ring
+
+theorem material_third_schur_eq : sourceMomentSchur h 0 2 = h 4-h 2^2/h 0-
+    (h 3-h 1*h 2/h 0)^2/(h 2-h 1^2/h 0) := by
+  let A := sourceMomentMatrix h 0 2
+  let b := sourceMomentCoupling h 0 2
+  let delta := h 0*h 2-h 1^2
+  have hd : delta ≠ 0 := nativeMoment_first_discriminant_pos.ne'
+  have hdet : IsUnit A.det := by
+    apply isUnit_iff_ne_zero.mpr
+    simpa [A,delta,sourceMomentMatrix,Matrix.det_fin_two,pow_two] using hd
+  let v : Fin 2 → ℝ := ![(h 2^2-h 1*h 3)/delta,(h 0*h 3-h 1*h 2)/delta]
+  have hv : A *ᵥ v = b := by
+    ext i
+    fin_cases i <;> simp [A,b,v,sourceMomentMatrix,sourceMomentCoupling,Matrix.mulVec,
+      dotProduct,Fin.sum_univ_two]
+    all_goals field_simp [hd]; dsimp [delta]; ring
+  have hi : A⁻¹ *ᵥ b = v := by
+    rw [← hv,Matrix.mulVec_mulVec,Matrix.nonsing_inv_mul _ hdet,Matrix.one_mulVec]
+  change h 4-b ⬝ᵥ (A⁻¹ *ᵥ b) = _
+  rw [hi]
+  simp only [b,v,dotProduct,Fin.sum_univ_two,sourceMomentCoupling,Fin.isValue,
+    Matrix.cons_val_zero,Matrix.cons_val_one]
+  have h0 : h 0 ≠ 0 := canonicalCompletedNativeLogDerivativeMoment_zero_pos.ne'
+  have hp : h 2-h 1^2/h 0 ≠ 0 := by
+    intro hz
+    apply hd
+    dsimp [delta]
+    field_simp [h0] at hz
+    nlinarith
+  dsimp [delta] at hd ⊢
+  field_simp [h0,hd,hp]
+  field_simp [hd]
+  ring
+
+
+/-- The mixed material direction is the genuine third ordinary Schur pivot. -/
+theorem material_mixed_pivot_eq_schur :
+    carryMaterialMixedPivot = sourceMomentSchur h 0 2 := by
+  rw [material_mixed_pivot_eq,material_third_schur_eq]
+
+/-- Literal source theta normalization, without a sign conclusion. -/
+theorem material_mixed_pivot_theta :
+    completedNativeRealEvenCharacteristicCoefficient 0*carryMaterialMixedPivot =
+      nativeXiPolynomialIntegral (nativeSchurThetaPolynomial 0 2) := by
+  rw [nativeSchurThetaPolynomial_integral,nativeSourceSchurRemainder_eq,
+    material_mixed_pivot_eq_schur]
+
+theorem material_third_schur_ratio : sourceMomentSchur h 0 2 =
+    nativeSourceFiveEvenDiscriminant/(8*(h 0*h 2-h 1^2)) := by
+  rw [material_third_schur_eq]
+  unfold nativeSourceFiveEvenDiscriminant
+  simp_rw [nativeSourceOddBoundaryCoefficient_eq_twice_primeDepthGeometricMoment,
+    primeDepthGeometricMoment_eq_canonical]
+  have h0 : h 0 ≠ 0 := canonicalCompletedNativeLogDerivativeMoment_zero_pos.ne'
+  have hd : h 0*h 2-h 1^2 ≠ 0 := nativeMoment_first_discriminant_pos.ne'
+  have hp : h 2-h 1^2/h 0 ≠ 0 := by
+    intro hz
+    field_simp [h0] at hz
+    exact hd (by nlinarith)
+  field_simp [h0,hd,hp]
+  field_simp [hd]
+  ring
+
+
+/-- Existing theta source sign, reused through the exact mixed crosswalk. -/
+theorem material_mixed_pivot_pos : 0 < carryMaterialMixedPivot := by
+  rw [material_mixed_pivot_eq_schur,material_third_schur_ratio]
+  exact div_pos nativeSourceFiveEvenDiscriminant_pos
+    (mul_pos (by norm_num) nativeMoment_first_discriminant_pos)
+
+theorem material_mixed_cross_dominance :
+    carryMaterialResidualJet 2 4^2 < carryMaterialResidualJet 2 2*carryMaterialResidualJet 4 4 := by
+  have hs : carryMaterialResidualJet 4 2 = carryMaterialResidualJet 2 4 := by
+    rw [material_mixed_entries.2.2.1,material_mixed_entries.2.1]
+  have hp := material_mixed_pivot_pos
+  rw [carryMaterialMixedPivot,hs] at hp
+  have hh := (div_lt_iff₀ material_mixed_first_pivot_pos).mp (sub_pos.mp hp)
+  simpa only [pow_two,mul_comm] using hh
+
+theorem material_mixed_block_pos (x y : ℝ) (hxy : x ≠ 0 ∨ y ≠ 0) :
+    0 < carryMaterialMixedBlock x y x y := by
+  have hs : carryMaterialResidualJet 4 2 = carryMaterialResidualJet 2 4 := by
+    rw [material_mixed_entries.2.2.1,material_mixed_entries.2.1]
+  rw [carryMaterialMixedBlock_sewing material_mixed_first_pivot_pos.ne',hs]
+  have he : carryMaterialResidualJet 2 2*
+      (x+carryMaterialResidualJet 2 4/carryMaterialResidualJet 2 2*y)*
+      (x+carryMaterialResidualJet 2 4/carryMaterialResidualJet 2 2*y) =
+      carryMaterialResidualJet 2 2*(x+carryMaterialResidualJet 2 4/carryMaterialResidualJet 2 2*y)^2 := by ring
+  rw [he]
+  by_cases hy : y = 0
+  · subst y
+    have hx : x ≠ 0 := hxy.resolve_right (by simp)
+    simpa only [mul_zero,add_zero] using mul_pos material_mixed_first_pivot_pos (sq_pos_of_ne_zero hx)
+  · have hp : 0 < carryMaterialMixedPivot*y*y := by
+      nlinarith [mul_pos material_mixed_pivot_pos (sq_pos_of_ne_zero hy)]
+    exact add_pos_of_nonneg_of_pos (mul_nonneg material_mixed_first_pivot_pos.le (sq_nonneg _)) hp
+
+/-- Row germs are recovered from the regular quotient of the FULL valve
+balance. The excluded noncentral diagonal is not identified as a kernel. -/
+theorem material_valve_confluent_row_germ (eta : ℝ) (heta : eta ≠ 0) :
+    ∀ᶠ u : ℝ in nhds 0,
+      (fun t => carryValveConfluentReadout eta t u) =ᶠ[nhds 0]
+        fun t => (carryMaterialRealResidual t u : ℂ) := by
+  obtain ⟨U,hU,h0,hR⟩ := material_valve_global_residual_numerator eta heta
+  have hF0 : baseTwoCanonicalResponse 0 ≠ 0 := by
+    rw [baseTwoCanonicalResponse_eq_dressing_mul_signal]
+    exact mul_ne_zero (baseTwoCanonicalDressingScalar_ne_zero 0) carryMaterial_origin_signal_ne_zero
+  have hF := (baseTwoCanonicalResponse_analyticAt 0).continuousAt.eventually_ne hF0
+  filter_upwards [hU.mem_nhds h0,hF] with u hu hFu
+  by_cases huz : u = 0
+  · subst u
+    filter_upwards [] with t
+    simp only [carryValveConfluentReadout_zero_right,material_real_residual_zero_right,Complex.ofReal_zero]
+  · have htu : ∀ᶠ t : ℝ in nhds 0, u ≠ t :=
+      (isOpen_ne_fun continuous_const continuous_id).mem_nhds huz
+    filter_upwards [hU.mem_nhds h0,hF,htu] with t ht hFt hne
+    by_cases htz : t = 0
+    · subst t
+      simp only [carryValveConfluentReadout_zero_left,material_real_residual_zero_left,Complex.ofReal_zero]
+    · have hreg := carryValveResidualFactor_ne_zero t u material_scale_pos.ne' htz huz hne hFt hFu
+      rw [carryValveConfluentReadout,if_neg hreg,hR t ht u hu]
+      change carryValveResidualFactor t u*(carryMaterialRealResidual t u : ℂ)/
+        carryValveResidualFactor t u = _
+      exact mul_div_cancel_left₀ _ hreg
+
+theorem material_valve_confluent_jet (eta : ℝ) (heta : eta ≠ 0) (p q : ℕ) :
+    carryValveConfluentJet eta p q =
+      carryKernelJet (fun t u => (carryMaterialRealResidual t u : ℂ)) p q :=
+  carryKernelJet_germ (material_valve_confluent_row_germ eta heta) p q
+
+theorem material_valve_mixed_block (eta : ℝ) (heta : eta ≠ 0) (x y v w : ℝ) :
+    carryValveMixedBlock eta x y v w = carryMaterialMixedBlock x y v w := by
+  simp only [carryValveMixedBlock,material_valve_confluent_jet eta heta,
+    carryMaterialMixedBlock,carryMaterialResidualJet]
+
+theorem material_valve_mixed_critical (eta : ℝ) (heta : eta ≠ 0) :
+    carryValveMixedBlock eta
+      (-carryMaterialResidualJet 4 2/carryMaterialResidualJet 2 2) 1
+      (-carryMaterialResidualJet 2 4/carryMaterialResidualJet 2 2) 1 =
+        sourceMomentSchur h 0 2 := by
+  rw [material_valve_mixed_block eta heta,
+    carryMaterialMixedBlock_critical material_mixed_first_pivot_pos.ne',material_mixed_pivot_eq_schur]
+
+/-- Only this finite confluent block is signed, with no assertion about all
+finite time samples or higher Schur pivots. -/
+theorem material_valve_mixed_block_pos (eta : ℝ) (heta : eta ≠ 0)
+    (x y : ℝ) (hxy : x ≠ 0 ∨ y ≠ 0) :
+    0 < carryValveMixedBlock eta x y x y := by
+  rw [material_valve_mixed_block eta heta]
+  exact material_mixed_block_pos x y hxy
+
+-- Independent ordered jet orders, not diagonal-only or vertical indices.
+example : (carryValveConfluentJet 1 2 4).re = h 3-h 1*h 2/h 0 := by
+  rw [material_valve_confluent_jet 1 (by norm_num)]
+  exact material_mixed_entries.2.1
+
+-- The imaginary quadrature is checked after the complete complex readout.
+example : (carryValveConfluentJet 1 2 4).im = 0 := by
+  rw [material_valve_confluent_jet 1 (by norm_num)]
+  have he := material_residual_complex_jet_even_even 1 2
+  norm_num only [Nat.reduceMul,Nat.reduceAdd] at he
+  rw [he]
+  rfl
+
+example : carryMaterialResidualJet 1 3 = h 2 := material_residual_jet_odd_odd 0 1
+example : carryMaterialResidualJet 2 3 = 0 := material_residual_jet_even_odd 1 1
+
+-- The regular quotient representative deliberately does not claim a full
+-- kernel equality on the noncentral diagonal.
+example (eta t : ℝ) : carryValveConfluentReadout eta t t = 0 := by
+  simp [carryValveConfluentReadout,carryValveResidualFactor]
+
+example : 0 < carryValveMixedBlock 1
+    (-carryMaterialResidualJet 4 2/carryMaterialResidualJet 2 2) 1
+    (-carryMaterialResidualJet 2 4/carryMaterialResidualJet 2 2) 1 :=
+  by
+    rw [material_valve_mixed_critical 1 (by norm_num),← material_mixed_pivot_eq_schur]
+    exact material_mixed_pivot_pos
+
+
+end
+end CarryMaterialMixedSchurComparison
+
+namespace CarryMaterialMixedSchurComparison
+#assert_central_comparison_axioms material_response_real_analytic
+#print axioms material_response_real_analytic
+#assert_central_comparison_axioms material_residual_complex_jet_source
+#print axioms material_residual_complex_jet_source
+#assert_central_comparison_axioms material_residual_jet_source
+#print axioms material_residual_jet_source
+#assert_central_comparison_axioms material_residual_complex_jet_even_even
+#print axioms material_residual_complex_jet_even_even
+#assert_central_comparison_axioms material_residual_jet_even_even
+#print axioms material_residual_jet_even_even
+#assert_central_comparison_axioms material_residual_jet_odd_odd
+#print axioms material_residual_jet_odd_odd
+#assert_central_comparison_axioms material_residual_jet_even_odd
+#print axioms material_residual_jet_even_odd
+#assert_central_comparison_axioms material_residual_jet_odd_even
+#print axioms material_residual_jet_odd_even
+#assert_central_comparison_axioms material_mixed_entries
+#print axioms material_mixed_entries
+#assert_central_comparison_axioms material_mixed_first_pivot_pos
+#print axioms material_mixed_first_pivot_pos
+#assert_central_comparison_axioms material_mixed_pivot_eq
+#print axioms material_mixed_pivot_eq
+#assert_central_comparison_axioms material_third_schur_eq
+#print axioms material_third_schur_eq
+#assert_central_comparison_axioms material_mixed_pivot_eq_schur
+#print axioms material_mixed_pivot_eq_schur
+#assert_central_comparison_axioms material_mixed_pivot_theta
+#print axioms material_mixed_pivot_theta
+#assert_central_comparison_axioms material_third_schur_ratio
+#print axioms material_third_schur_ratio
+#assert_central_comparison_axioms material_mixed_pivot_pos
+#print axioms material_mixed_pivot_pos
+#assert_central_comparison_axioms material_mixed_cross_dominance
+#print axioms material_mixed_cross_dominance
+#assert_central_comparison_axioms material_mixed_block_pos
+#print axioms material_mixed_block_pos
+#assert_central_comparison_axioms material_valve_confluent_row_germ
+#print axioms material_valve_confluent_row_germ
+#assert_central_comparison_axioms material_valve_confluent_jet
+#print axioms material_valve_confluent_jet
+#assert_central_comparison_axioms material_valve_mixed_block
+#print axioms material_valve_mixed_block
+#assert_central_comparison_axioms material_valve_mixed_critical
+#print axioms material_valve_mixed_critical
+#assert_central_comparison_axioms material_valve_mixed_block_pos
+#print axioms material_valve_mixed_block_pos
+end CarryMaterialMixedSchurComparison

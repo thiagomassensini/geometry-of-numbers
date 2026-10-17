@@ -6722,3 +6722,56 @@ namespace GeometryOfNumbers.Analysis
 #assert_analysis_axioms carryValvePrefixReducedBalance_tendsto
 #print axioms carryValvePrefixReducedBalance_tendsto
 end GeometryOfNumbers.Analysis
+
+namespace GeometryOfNumbers.Analysis
+#assert_analysis_axioms carryScalarJetShift
+#print axioms carryScalarJetShift
+#assert_analysis_axioms carryScalarJetShift_succ
+#print axioms carryScalarJetShift_succ
+#assert_analysis_axioms carryScalarJetShift_add
+#print axioms carryScalarJetShift_add
+#assert_analysis_axioms carryScalarJetShift_analytic
+#print axioms carryScalarJetShift_analytic
+#assert_analysis_axioms carryScalarJetShift_germ
+#print axioms carryScalarJetShift_germ
+#assert_analysis_axioms carryScalar_dslope_symm
+#print axioms carryScalar_dslope_symm
+#assert_analysis_axioms carryScalar_dslope_row_analytic
+#print axioms carryScalar_dslope_row_analytic
+#assert_analysis_axioms carryScalar_dslope_left_comm
+#print axioms carryScalar_dslope_left_comm
+#assert_analysis_axioms carryScalar_dslope_row_shift
+#print axioms carryScalar_dslope_row_shift
+#assert_analysis_axioms carryKernelJet
+#print axioms carryKernelJet
+#assert_analysis_axioms carryKernelJet_germ
+#print axioms carryKernelJet_germ
+#assert_analysis_axioms carryKernelJet_centered
+#print axioms carryKernelJet_centered
+#assert_analysis_axioms carryMaterialResidualJet
+#print axioms carryMaterialResidualJet
+#assert_analysis_axioms carryMaterialMixedBlock
+#print axioms carryMaterialMixedBlock
+#assert_analysis_axioms carryMaterialMixedPivot
+#print axioms carryMaterialMixedPivot
+#assert_analysis_axioms carryMaterialMixedBlock_sewing
+#print axioms carryMaterialMixedBlock_sewing
+#assert_analysis_axioms carryMaterialMixedBlock_critical
+#print axioms carryMaterialMixedBlock_critical
+#assert_analysis_axioms carryValveResidualFactor
+#print axioms carryValveResidualFactor
+#assert_analysis_axioms carryValveConfluentReadout
+#print axioms carryValveConfluentReadout
+#assert_analysis_axioms carryValveConfluentReadout_zero_left
+#print axioms carryValveConfluentReadout_zero_left
+#assert_analysis_axioms carryValveConfluentReadout_zero_right
+#print axioms carryValveConfluentReadout_zero_right
+#assert_analysis_axioms carryValveResidualFactor_ne_zero
+#print axioms carryValveResidualFactor_ne_zero
+#assert_analysis_axioms carryValveConfluentReadout_physical
+#print axioms carryValveConfluentReadout_physical
+#assert_analysis_axioms carryValveConfluentJet
+#print axioms carryValveConfluentJet
+#assert_analysis_axioms carryValveMixedBlock
+#print axioms carryValveMixedBlock
+end GeometryOfNumbers.Analysis

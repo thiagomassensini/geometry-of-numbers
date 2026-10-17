@@ -1,0 +1,290 @@
+[
+  {
+    "name": "GeometryOfNumbers.Analysis.carryScalarJetShift",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 16
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryScalarJetShift_succ",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 19
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryScalarJetShift_add",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 23
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryScalarJetShift_analytic",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 28
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryScalarJetShift_germ",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 33
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryScalar_dslope_symm",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 45
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryScalar_dslope_row_analytic",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 61
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryScalar_dslope_left_comm",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 76
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryScalar_dslope_row_shift",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 123
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryKernelJet",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 154
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryKernelJet_germ",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 157
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryKernelJet_centered",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 166
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialResidualJet",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 197
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialMixedBlock",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 200
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialMixedPivot",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 204
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialMixedBlock_sewing",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 210
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryMaterialMixedBlock_critical",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 221
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveResidualFactor",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 230
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveConfluentReadout",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 238
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveConfluentReadout_zero_left",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 242
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveConfluentReadout_zero_right",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 246
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveResidualFactor_ne_zero",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 250
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveConfluentReadout_physical",
+    "kind": "theorem",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 261
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveConfluentJet",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 271
+  },
+  {
+    "name": "GeometryOfNumbers.Analysis.carryValveMixedBlock",
+    "kind": "def",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+    "line": 274
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_response_real_analytic",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 3979
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_residual_complex_jet_source",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 3988
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_residual_jet_source",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4008
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_residual_complex_jet_even_even",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4015
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_residual_jet_even_even",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4025
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_residual_jet_odd_odd",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4033
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_residual_jet_even_odd",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4041
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_residual_jet_odd_even",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4049
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_mixed_entries",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4057
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_mixed_first_pivot_pos",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4070
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_mixed_pivot_eq",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4077
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_third_schur_eq",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4084
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_mixed_pivot_eq_schur",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4119
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_mixed_pivot_theta",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4124
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_third_schur_ratio",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4130
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_mixed_pivot_pos",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4148
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_mixed_cross_dominance",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4153
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_mixed_block_pos",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4162
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_valve_confluent_row_germ",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4182
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_valve_confluent_jet",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4208
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_valve_mixed_block",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4213
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_valve_mixed_critical",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4218
+  },
+  {
+    "name": "CarryMaterialMixedSchurComparison.material_valve_mixed_block_pos",
+    "kind": "theorem",
+    "path": "research/material-central-calibration/CanonicalComparison.lean",
+    "line": 4228
+  }
+]
