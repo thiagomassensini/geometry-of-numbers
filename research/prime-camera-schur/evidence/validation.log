@@ -1,0 +1,16 @@
+PASS: fixed operator, shared pins, unchanged cached comparison dependency
+PASS: PrimeClockBridge
+PASS: PrimeOverlapCanary
+PASS: PrimeClockSchur
+PASS: PrimeCameraGramComparison
+PASS: PrimeClockCanonicalGate
+PASS: LiteralCameraCanary
+PASS: PrimeClockGreenTransport
+PASS: Regression
+PASS: Audit
+PASS: 88 public roots have explicit transitive type-and-body guards
+PASS: root build --wfail
+PASS: foundation audit
+PASS: geometry audit
+PASS: analysis audit
+PASS: completed prime synthesis, Schur, camera overlap and canonical gap

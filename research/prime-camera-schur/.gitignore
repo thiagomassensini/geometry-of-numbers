@@ -1,0 +1,4 @@
+__pycache__/
+evidence/*.log
+!evidence/Audit.log
+!evidence/validation.log

@@ -1,0 +1,16 @@
+{
+  "geometry_head": "21115c7cd51a20898fb01db40cbffb918b503d52",
+  "operator_head": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "lean_toolchain": "leanprover/lean4:v4.32.0",
+  "lean_sources": {
+    "Audit.lean": "77e8fbf269c2994a3ab6993f150ef66df0fbd5de0ff797a0f3f48f4497e04d0b",
+    "LiteralCameraCanary.lean": "c3a92daf749317e30fbb4361d37e34cfba897ffd95a0d7f0c2c8a277063609b2",
+    "PrimeCameraGramComparison.lean": "4957c521565818d06b158f0c16db0dde7e54be8867f649473763e422453092bc",
+    "PrimeClockBridge.lean": "bca63ce3f9cb69db51209c76fe2b79282c3e1260769af936e410745d739c765c",
+    "PrimeClockCanonicalGate.lean": "c787ec2c96b4000d745eeb70cd781f8fb66b83f3797a3a1aa5f05de7ebc2c364",
+    "PrimeClockGreenTransport.lean": "9f6f23ee4b5cb03e0ccbe67719d74fdf4c7f452a41f5eca645cbdbc3b65f9591",
+    "PrimeClockSchur.lean": "7ee454431277090316ce4725cde6846b8d630447aa3bd2a539b2e158b778b7c6",
+    "PrimeOverlapCanary.lean": "96e99f3ac9923d6c24debd7db3b934e864399cc500a67a312c83376d212108af",
+    "Regression.lean": "fe31455f35d7d0ffee6762547279f684ce3b42df8157edda7d58b514380a947f"
+  }
+}
