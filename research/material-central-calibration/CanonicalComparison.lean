@@ -1,3 +1,5 @@
+import GeometryOfNumbers.Analysis.CarryMaterialNullHierarchy
+import CarrySelfAdjointOperator.CompletedNativeChiralReturnTenthSourceIntegral
 import GeometryOfNumbers.Analysis.CarryMaterialThirdNullSector
 import CarrySelfAdjointOperator.NativeCompletedSourceFourthPositiveChannel
 import GeometryOfNumbers.Analysis.CarryMaterialSecondNullSector
@@ -2096,3 +2098,322 @@ example {n : ℕ} (c a : Fin n → ℝ) (hM3 : (∑ i, c i*(a i)^3) = 0) :
     material_third_null_energy_limit c a
 
 end CarryMaterialThirdNullComparison
+
+namespace CarryMaterialNullHierarchyComparison
+open GeometryOfNumbers.Analysis Filter
+open CarrySelfAdjointOperator CarrySelfAdjointOperator.SourcePositiveReduction
+open CarryMaterialResponseComparison CarryMaterialResidualComparison
+open CarryMaterialThirdNullComparison
+open scoped BigOperators Topology ComplexConjugate InnerProductSpace
+noncomputable section
+set_option autoImplicit false
+set_option backward.isDefEq.respectTransparency false
+set_option maxHeartbeats 1800000
+
+/-- Parity and derivative calibration use the already proved ALL-ORDER
+Taylor provenance. They do not postulate the sign of any moment. -/
+theorem material_even_taylor_shift_zero (k : ℕ) : carryMaterialTaylorShift (2*k) 0 = 0 := by
+  rw [material_taylor_shift_center]
+  exact completedNativeGreenResponseTaylorCoefficient_even_eq_zero k
+
+theorem material_even_taylor_shift_hasDerivAt_zero (k : ℕ) :
+    HasDerivAt (carryMaterialTaylorShift (2*k)) (canonicalCompletedNativeLogDerivativeMoment k : ℂ) 0 := by
+  have h := material_taylor_shift_hasDerivAt_zero (2*k)
+  rw [completedNativeGreenResponseTaylorCoefficient_odd_eq_canonical] at h
+  exact h
+
+/-- Literal source coefficient, including the central-channel correction. -/
+theorem material_null_coefficient_source (k : ℕ) :
+    carryMaterialNullCoefficient k = canonicalCompletedNativeLogDerivativeMoment k -
+      ‖completedNativeGreenResponseTaylorCoefficient (k+1)‖^2 /
+        canonicalCompletedNativeLogDerivativeMoment 0 := by
+  rw [carryMaterialNullCoefficient, (material_even_taylor_shift_hasDerivAt_zero k).deriv,
+    Complex.ofReal_re, material_taylor_shift_center, material_scale_eq]
+
+theorem material_null_coefficient_even (p : ℕ) :
+    carryMaterialNullCoefficient (2*p) = canonicalCompletedNativeLogDerivativeMoment (2*p) -
+      canonicalCompletedNativeLogDerivativeMoment p^2 / canonicalCompletedNativeLogDerivativeMoment 0 := by
+  rw [material_null_coefficient_source,
+    completedNativeGreenResponseTaylorCoefficient_odd_eq_canonical,
+    Complex.norm_real, Real.norm_eq_abs, sq_abs]
+
+theorem material_null_coefficient_odd (p : ℕ) :
+    carryMaterialNullCoefficient (2*p+1) = canonicalCompletedNativeLogDerivativeMoment (2*p+1) := by
+  rw [material_null_coefficient_source, show 2*p+1+1 = 2*(p+1) by omega,
+    completedNativeGreenResponseTaylorCoefficient_even_eq_zero]
+  simp only [norm_zero, zero_pow (by decide : 2 ≠ 0), zero_div, sub_zero]
+
+/-- Every finite order, with no sign hypothesis or target Gram. The
+neighborhood may depend on the fixed order and the fixed input family. -/
+theorem material_null_energy_factor (k : ℕ) (hk : 0 < k)
+    {n : ℕ} (c a : Fin n → ℝ)
+    (hM : ∀ j, 0 < j → j < k → (∑ i, c i*(a i)^j) = 0) :
+    ∀ᶠ e : ℝ in nhds 0,
+      carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i) =
+        e^(2*k)*carryMaterialNullEnergy k c a e := by
+  rcases material_residual_centered_kernel with ⟨U, ho, hz, hs⟩
+  have hscale : carryMaterialTaylorShift 1 0 = (carryMaterialResponseScale : ℂ) := by
+    change carryMaterialResponseAxis 0 = _
+    rw [material_axis_zero, material_scale_eq]
+  have hm : ∀ᶠ e : ℝ in nhds 0, ∀ i, e*a i ∈ U := by
+    apply Filter.eventually_all.mpr
+    intro i
+    have ht : Tendsto (fun e : ℝ => e*a i) (nhds 0) (nhds 0) := by
+      simpa only [id_eq, zero_mul] using (continuousAt_id.mul_const (a i)).tendsto (x := (0 : ℝ))
+    exact ht.eventually (ho.mem_nhds hz)
+  have hreg (j : Fin (k+1)) : ∀ᶠ e : ℝ in nhds 0, ∀ i,
+      DifferentiableAt ℝ (carryMaterialTaylorShift (2*j.val)) (e*a i) := by
+    apply Filter.eventually_all.mpr
+    intro i
+    have ht : Tendsto (fun e : ℝ => e*a i) (nhds 0) (nhds 0) := by
+      simpa only [id_eq, zero_mul] using (continuousAt_id.mul_const (a i)).tendsto (x := (0 : ℝ))
+    exact ht.eventually (material_taylor_shift_regular (2*j.val))
+  have hall : ∀ᶠ e : ℝ in nhds 0, ∀ j : Fin (k+1), ∀ i,
+      DifferentiableAt ℝ (carryMaterialTaylorShift (2*j.val)) (e*a i) :=
+    Filter.eventually_all.mpr hreg
+  filter_upwards [hm, hall] with e he hd
+  exact carryMaterialNull_energy_factor hs hscale material_scale_pos k hk
+    (material_taylor_shift_conj (k+1)) c a hM e he
+      (fun i j _ hj => hd ⟨j, by omega⟩ i)
+
+theorem material_null_energy_continuous (k : ℕ) {n : ℕ} (c a : Fin n → ℝ) :
+    ContinuousAt (carryMaterialNullEnergy k c a) 0 :=
+  carryMaterialNullEnergy_continuous k
+    (material_taylor_shift_hasDerivAt_zero (k+1)).continuousAt (material_even_taylor_shift_zero k)
+    (material_even_taylor_shift_hasDerivAt_zero k).differentiableAt
+    (material_taylor_shift_deriv_continuous (2*k)) c a
+
+/-- Calibration at EVERY order; no sign is assumed or concluded. -/
+theorem material_null_energy_limit (k : ℕ) {n : ℕ} (c a : Fin n → ℝ) :
+    Tendsto (carryMaterialNullEnergy k c a) (nhds 0)
+      (nhds (carryMaterialNullCoefficient k*(∑ i, c i*(a i)^k)^2)) := by
+  have h := (material_null_energy_continuous k c a).tendsto
+  rw [carryMaterialNullEnergy_zero] at h
+  exact h
+
+/-- The normalized quotient is compared only on a punctured neighborhood. -/
+theorem material_null_scaled_energy_limit (k : ℕ) (hk : 0 < k)
+    {n : ℕ} (c a : Fin n → ℝ)
+    (hM : ∀ j, 0 < j → j < k → (∑ i, c i*(a i)^j) = 0) :
+    Tendsto (fun e : ℝ => carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i)/e^(2*k))
+      (nhdsWithin 0 {0}ᶜ) (nhds (carryMaterialNullCoefficient k*(∑ i, c i*(a i)^k)^2)) := by
+  have heq : (fun e : ℝ => carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i)/e^(2*k))
+      =ᶠ[nhdsWithin 0 {0}ᶜ] carryMaterialNullEnergy k c a := by
+    filter_upwards [self_mem_nhdsWithin,
+      (material_null_energy_factor k hk c a hM).filter_mono nhdsWithin_le_nhds] with e hne hf
+    have he : e ≠ 0 := by simpa using hne
+    rw [hf]
+    exact mul_div_cancel_left₀ _ (pow_ne_zero _ he)
+  exact ((material_null_energy_limit k c a).mono_left nhdsWithin_le_nhds).congr' heq.symm
+
+/-- Conditional sign consequence of the general identity. In the eighth
+order application below the source itself discharges this coefficient sign. -/
+theorem material_null_fixed_family_positive (k : ℕ) (hk : 0 < k)
+    (hC : 0 < carryMaterialNullCoefficient k) {n : ℕ} (c a : Fin n → ℝ)
+    (hM : ∀ j, 0 < j → j < k → (∑ i, c i*(a i)^j) = 0)
+    (hMk : (∑ i, c i*(a i)^k) ≠ 0) :
+    ∀ᶠ e : ℝ in nhds 0, e ≠ 0 →
+      0 < carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i) := by
+  have hpos : 0 < carryMaterialNullCoefficient k*(∑ i, c i*(a i)^k)^2 :=
+    mul_pos hC (sq_pos_of_ne_zero hMk)
+  have hQ := (tendsto_order.1 (material_null_energy_limit k c a)).1 0 hpos
+  filter_upwards [hQ, material_null_energy_factor k hk c a hM] with e he hf hne
+  rw [hf]
+  have hp : 0 < e^(2*k) := by
+    simpa only [← pow_mul] using pow_pos (sq_pos_of_ne_zero hne) k
+  exact mul_pos hp he
+
+theorem material_null_energy_lower_bound (k : ℕ) (hk : 0 < k)
+    (hC : 0 < carryMaterialNullCoefficient k) {n : ℕ} (c a : Fin n → ℝ)
+    (hM : ∀ j, 0 < j → j < k → (∑ i, c i*(a i)^j) = 0)
+    (hMk : (∑ i, c i*(a i)^k) ≠ 0) :
+    ∀ᶠ e : ℝ in nhds 0,
+      carryMaterialNullCoefficient k*(∑ i, c i*(a i)^k)^2/2*e^(2*k) ≤
+        carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i) := by
+  let C : ℝ := carryMaterialNullCoefficient k*(∑ i, c i*(a i)^k)^2
+  have hC' : 0 < C := mul_pos hC (sq_pos_of_ne_zero hMk)
+  have hlim : Tendsto (carryMaterialNullEnergy k c a) (nhds 0) (nhds C) :=
+    material_null_energy_limit k c a
+  have hmargin : ∀ᶠ e : ℝ in nhds 0, C/2 < carryMaterialNullEnergy k c a e :=
+    (tendsto_order.1 hlim).1 (C/2) (by linarith)
+  filter_upwards [hmargin, material_null_energy_factor k hk c a hM] with e he hf
+  change C/2*e^(2*k) ≤ _
+  rw [hf, mul_comm (C/2)]
+  exact mul_le_mul_of_nonneg_left he.le (by
+    rw [pow_mul]
+    exact pow_nonneg (sq_nonneg e) k)
+
+/-- A literal evaluation of the independently certified source boundary
+face. The alternating middle coordinate is zero, but its source definition
+and the u/w crossing are preserved; no new metric or Gram is introduced. -/
+theorem material_source_five_even_specialization :
+    nativeSourceFiveEvenBoundaryEnergy
+      ((-(canonicalCompletedNativeLogDerivativeMoment 2 /
+        canonicalCompletedNativeLogDerivativeMoment 0) : ℝ) : ℂ) 0 1 =
+      2*carryMaterialNullCoefficient 4 := by
+  have hC : carryMaterialNullCoefficient 4 = canonicalCompletedNativeLogDerivativeMoment 4 -
+      canonicalCompletedNativeLogDerivativeMoment 2^2/canonicalCompletedNativeLogDerivativeMoment 0 := by
+    simpa only [show 2*2=4 from rfl] using material_null_coefficient_even 2
+  rw [hC]
+  unfold nativeSourceFiveEvenBoundaryEnergy
+  simp_rw [nativeSourceOddBoundaryCoefficient_eq_twice_primeDepthGeometricMoment,
+    primeDepthGeometricMoment_eq_canonical]
+  simp [Complex.normSq_apply]
+  field_simp [canonicalCompletedNativeLogDerivativeMoment_zero_pos.ne']
+  ring
+
+/-- The eighth-order coefficient sign is PROVED from the original theta
+source certificate, not supplied by an extra positivity hypothesis. -/
+theorem material_fourth_null_coefficient_pos : 0 < carryMaterialNullCoefficient 4 := by
+  have h := nativeSourceFiveEvenBoundaryEnergy_pos
+    ((-(canonicalCompletedNativeLogDerivativeMoment 2 /
+      canonicalCompletedNativeLogDerivativeMoment 0) : ℝ) : ℂ) 0 1
+    (Or.inr (Or.inr one_ne_zero))
+  rw [material_source_five_even_specialization] at h
+  linarith
+
+private theorem below_four {n : ℕ} (c a : Fin n → ℝ)
+    (h1 : (∑ i, c i*a i)=0) (h2 : (∑ i, c i*(a i)^2)=0) (h3 : (∑ i, c i*(a i)^3)=0) :
+    ∀ j, 0 < j → j < 4 → (∑ i, c i*(a i)^j)=0 := by
+  intro j hj hlt
+  have he : j=1 ∨ j=2 ∨ j=3 := by omega
+  rcases he with rfl | rfl | rfl
+  · simpa only [pow_one] using h1
+  · exact h2
+  · exact h3
+
+theorem material_fourth_null_energy_factor {n : ℕ} (c a : Fin n → ℝ)
+    (h1 : (∑ i, c i*a i)=0) (h2 : (∑ i, c i*(a i)^2)=0) (h3 : (∑ i, c i*(a i)^3)=0) :
+    ∀ᶠ e : ℝ in nhds 0,
+      carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i) =
+        e^8*carryMaterialNullEnergy 4 c a e :=
+  material_null_energy_factor 4 (by decide) c a (below_four c a h1 h2 h3)
+
+theorem material_fourth_null_energy_limit {n : ℕ} (c a : Fin n → ℝ) :
+    Tendsto (carryMaterialNullEnergy 4 c a) (nhds 0)
+      (nhds ((canonicalCompletedNativeLogDerivativeMoment 4 -
+        canonicalCompletedNativeLogDerivativeMoment 2^2/canonicalCompletedNativeLogDerivativeMoment 0)*
+          (∑ i, c i*(a i)^4)^2)) := by
+  have h := material_null_energy_limit 4 c a
+  have hC := material_null_coefficient_even 2
+  norm_num only at hC
+  simpa only [hC] using h
+
+theorem material_fourth_null_scaled_energy_limit {n : ℕ} (c a : Fin n → ℝ)
+    (h1 : (∑ i, c i*a i)=0) (h2 : (∑ i, c i*(a i)^2)=0) (h3 : (∑ i, c i*(a i)^3)=0) :
+    Tendsto (fun e : ℝ => carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i)/e^8)
+      (nhdsWithin 0 {0}ᶜ) (nhds (carryMaterialNullCoefficient 4*(∑ i, c i*(a i)^4)^2)) :=
+  material_null_scaled_energy_limit 4 (by decide) c a (below_four c a h1 h2 h3)
+
+theorem material_fourth_null_fixed_family_positive {n : ℕ} (c a : Fin n → ℝ)
+    (h1 : (∑ i, c i*a i)=0) (h2 : (∑ i, c i*(a i)^2)=0) (h3 : (∑ i, c i*(a i)^3)=0)
+    (h4 : (∑ i, c i*(a i)^4) ≠ 0) :
+    ∀ᶠ e : ℝ in nhds 0, e ≠ 0 →
+      0 < carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i) :=
+  material_null_fixed_family_positive 4 (by decide) material_fourth_null_coefficient_pos
+    c a (below_four c a h1 h2 h3) h4
+
+theorem material_fourth_null_energy_lower_bound {n : ℕ} (c a : Fin n → ℝ)
+    (h1 : (∑ i, c i*a i)=0) (h2 : (∑ i, c i*(a i)^2)=0) (h3 : (∑ i, c i*(a i)^3)=0)
+    (h4 : (∑ i, c i*(a i)^4) ≠ 0) :
+    ∀ᶠ e : ℝ in nhds 0,
+      carryMaterialNullCoefficient 4*(∑ i, c i*(a i)^4)^2/2*e^8 ≤
+        carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i) :=
+  material_null_energy_lower_bound 4 (by decide) material_fourth_null_coefficient_pos
+    c a (below_four c a h1 h2 h3) h4
+
+end
+end CarryMaterialNullHierarchyComparison
+
+namespace CarryMaterialNullHierarchyComparison
+#assert_central_comparison_axioms material_even_taylor_shift_zero
+#print axioms material_even_taylor_shift_zero
+#assert_central_comparison_axioms material_even_taylor_shift_hasDerivAt_zero
+#print axioms material_even_taylor_shift_hasDerivAt_zero
+#assert_central_comparison_axioms material_null_coefficient_source
+#print axioms material_null_coefficient_source
+#assert_central_comparison_axioms material_null_coefficient_even
+#print axioms material_null_coefficient_even
+#assert_central_comparison_axioms material_null_coefficient_odd
+#print axioms material_null_coefficient_odd
+#assert_central_comparison_axioms material_null_energy_factor
+#print axioms material_null_energy_factor
+#assert_central_comparison_axioms material_null_energy_continuous
+#print axioms material_null_energy_continuous
+#assert_central_comparison_axioms material_null_energy_limit
+#print axioms material_null_energy_limit
+#assert_central_comparison_axioms material_null_scaled_energy_limit
+#print axioms material_null_scaled_energy_limit
+#assert_central_comparison_axioms material_null_fixed_family_positive
+#print axioms material_null_fixed_family_positive
+#assert_central_comparison_axioms material_null_energy_lower_bound
+#print axioms material_null_energy_lower_bound
+#assert_central_comparison_axioms material_source_five_even_specialization
+#print axioms material_source_five_even_specialization
+#assert_central_comparison_axioms material_fourth_null_coefficient_pos
+#print axioms material_fourth_null_coefficient_pos
+#assert_central_comparison_axioms material_fourth_null_energy_factor
+#print axioms material_fourth_null_energy_factor
+#assert_central_comparison_axioms material_fourth_null_energy_limit
+#print axioms material_fourth_null_energy_limit
+#assert_central_comparison_axioms material_fourth_null_scaled_energy_limit
+#print axioms material_fourth_null_scaled_energy_limit
+#assert_central_comparison_axioms material_fourth_null_fixed_family_positive
+#print axioms material_fourth_null_fixed_family_positive
+#assert_central_comparison_axioms material_fourth_null_energy_lower_bound
+#print axioms material_fourth_null_energy_lower_bound
+end CarryMaterialNullHierarchyComparison
+
+namespace CarryMaterialNullHierarchyComparison
+open GeometryOfNumbers.Analysis Filter CarrySelfAdjointOperator CarryMaterialThirdNullComparison
+open scoped BigOperators Topology
+
+-- Same fourth-difference family of actual source readings; M0=-1 is allowed.
+example : ∀ᶠ e : ℝ in nhds 0, e ≠ 0 →
+    0 < carryRealKernelEnergy carryMaterialRealResidual (![-4,6,-4,1] : Fin 4 → ℝ)
+      (fun i => e*(![1,2,3,4] : Fin 4 → ℝ) i) := by
+  apply material_fourth_null_fixed_family_positive ![-4,6,-4,1] ![1,2,3,4]
+  all_goals norm_num [Fin.sum_univ_four,
+    show (![-4,6,-4,1] : Fin 4 → ℝ) 2 = -4 from rfl,
+    show (![-4,6,-4,1] : Fin 4 → ℝ) 3 = 1 from rfl,
+    show (![1,2,3,4] : Fin 4 → ℝ) 2 = 3 from rfl,
+    show (![1,2,3,4] : Fin 4 → ℝ) 3 = 4 from rfl]
+
+example : Tendsto (carryMaterialNullEnergy 4 (![-4,6,-4,1] : Fin 4 → ℝ) ![1,2,3,4])
+    (nhds 0) (nhds (576*carryMaterialNullCoefficient 4)) := by
+  have h := material_null_energy_limit 4 (![-4,6,-4,1] : Fin 4 → ℝ) ![1,2,3,4]
+  norm_num [Fin.sum_univ_four,
+    show (![-4,6,-4,1] : Fin 4 → ℝ) 2 = -4 from rfl,
+    show (![-4,6,-4,1] : Fin 4 → ℝ) 3 = 1 from rfl,
+    show (![1,2,3,4] : Fin 4 → ℝ) 2 = 3 from rfl,
+    show (![1,2,3,4] : Fin 4 → ℝ) 3 = 4 from rfl] at h
+  simpa only [mul_comm] using h
+
+-- The general energy agrees LITERALLY with PR #11, with its order-eight correction.
+example {n : ℕ} (c a : Fin n → ℝ) (e : ℝ) :
+    carryMaterialNullEnergy 3 c a e = carryMaterialThirdNullEnergy c a e := by
+  have hS : carryMaterialNullSynthesis 3 c a e =
+      (e : ℂ)*carryMaterialThirdNullSynthesis c a e := by
+    unfold carryMaterialNullSynthesis carryMaterialThirdNullSynthesis
+    rw [Finset.mul_sum]
+    apply Finset.sum_congr rfl
+    intro i _
+    have ht := carryMaterialTaylorShift_reconstruct 4 (e*a i)
+    rw [material_fourth_taylor_shift_zero, zero_add] at ht
+    rw [ht]
+    push_cast
+    ring
+  unfold carryMaterialNullEnergy carryMaterialThirdNullEnergy
+  rw [hS, norm_mul, mul_pow, Complex.norm_real, Real.norm_eq_abs, sq_abs]
+  ring
+
+-- Next odd coefficient is calibrated, with no all-order sign inferred.
+example : carryMaterialNullCoefficient 5 = canonicalCompletedNativeLogDerivativeMoment 5 := by
+  simpa only [show 2*2+1=5 from rfl] using material_null_coefficient_odd 2
+
+-- Vanishing Mk produces a zero coefficient, not a sign theorem for the rest.
+example (k : ℕ) {n : ℕ} (c a : Fin n → ℝ) (hM : (∑ i, c i*(a i)^k)=0) :
+    Tendsto (carryMaterialNullEnergy k c a) (nhds 0) (nhds 0) := by
+  simpa only [hM, zero_pow (by decide : 2 ≠ 0), mul_zero] using material_null_energy_limit k c a
+
+end CarryMaterialNullHierarchyComparison

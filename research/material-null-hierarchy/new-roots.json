@@ -1,0 +1,122 @@
+{
+  "geometry": [
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialNullSynthesis"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialNullEnergy"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialNullCoefficient"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialTaylorShift_reconstruct"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterial_kernel_power_transport"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterial_channel_power_transport"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialNullSynthesis_factor"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialNull_energy_factor"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialNullEnergy_continuous"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialNullSynthesis_zero"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialNullEnergy_zero"
+    }
+  ],
+  "external": [
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_even_taylor_shift_zero"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_even_taylor_shift_hasDerivAt_zero"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_null_coefficient_source"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_null_coefficient_even"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_null_coefficient_odd"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_null_energy_factor"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_null_energy_continuous"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_null_energy_limit"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_null_scaled_energy_limit"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_null_fixed_family_positive"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_null_energy_lower_bound"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_source_five_even_specialization"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_fourth_null_coefficient_pos"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_fourth_null_energy_factor"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_fourth_null_energy_limit"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_fourth_null_scaled_energy_limit"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_fourth_null_fixed_family_positive"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_fourth_null_energy_lower_bound"
+    }
+  ]
+}
