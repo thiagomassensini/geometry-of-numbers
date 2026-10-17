@@ -1,0 +1,298 @@
+{
+  "transitive_type_and_body_guards": true,
+  "allowed_standard_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "new_roots": [
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialTaylorShift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialTaylorShift_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialTaylorShift_succ",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialThirdNullSynthesis",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialThirdNullEnergy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryScalar_dslope_two_shift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryScalar_centered_two_shift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryScalar_finite_energy_shift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialTaylorShift_add_two",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialTaylorShift_conj",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialThirdNull_channel_factor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialThirdNull_energy_factor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialThirdNullEnergy_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialThirdNullEnergy_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialThirdNullComparison.material_taylor_shift_germ",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialThirdNullComparison.material_taylor_shift_center",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialThirdNullComparison.material_taylor_shift_hasDerivAt_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialThirdNullComparison.material_taylor_shift_regular",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialThirdNullComparison.material_taylor_shift_deriv_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialThirdNullComparison.material_taylor_shift_conj",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialThirdNullComparison.material_second_taylor_shift_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialThirdNullComparison.material_fourth_taylor_shift_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialThirdNullComparison.material_sixth_taylor_shift_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialThirdNullComparison.material_sixth_taylor_shift_hasDerivAt_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialThirdNullComparison.material_moment_three_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialThirdNullComparison.material_residual_centered_kernel",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialThirdNullComparison.material_third_null_energy_factor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialThirdNullComparison.material_third_null_energy_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialThirdNullComparison.material_third_null_energy_limit",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialThirdNullComparison.material_third_null_scaled_energy_limit",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialThirdNullComparison.material_third_null_fixed_family_positive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialThirdNullComparison.material_third_null_energy_lower_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ]
+}

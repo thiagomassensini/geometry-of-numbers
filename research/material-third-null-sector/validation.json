@@ -1,0 +1,99 @@
+{
+  "base_commit": "ee02d8deaf46e9b26e771a76434de7ea1050128a",
+  "host": "llm",
+  "checks": [
+    {
+      "command": "lake build GeometryOfNumbers.Analysis.CarryMaterialThirdNullSector --wfail",
+      "exit_code": 0,
+      "jobs": 8794,
+      "log": "focused-build.log.gz",
+      "capture": "Successful focused segment of cross-2.log; module source unchanged since this check."
+    },
+    {
+      "command": "lake build --wfail",
+      "exit_code": 0,
+      "jobs": 8833,
+      "log": "full-build.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-foundation.sh && bash scripts/audit-geometry.sh && bash scripts/audit-analysis.sh",
+      "exit_code": 0,
+      "log": "zone-audits.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-material-central-comparison.sh /home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "warningAsError": true,
+      "log": "cross-audit.log.gz",
+      "total_external_theorems": 127,
+      "source_regressions": [
+        "Double cancellation c=(3,-3,1), a=(1,2,3): now positive at small nonzero scales",
+        "Same double-cancelling canary: Q3 tends to 36*h3",
+        "M3=0: sixth-order central coefficient zero, no sign claim"
+      ]
+    },
+    {
+      "command": "lake env lean -DwarningAsError=true research/material-third-null-sector/Regression.lean",
+      "exit_code": 0,
+      "log": "regression.log.gz"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "new_public_roots": {
+    "geometry_definitions": 3,
+    "geometry_theorems": 11,
+    "external_theorems": 18,
+    "total": 32
+  },
+  "axioms": {
+    "guard": "Lean.collectAxioms over transitive declaration types and bodies",
+    "allowed_in_analysis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "new_root_footprints": "footprints.json",
+    "foundation": "empty; checked separately",
+    "geometry": "distinct policy; no Classical.choice"
+  },
+  "trust_scan": {
+    "files": [
+      "GeometryOfNumbers/Analysis/CarryMaterialThirdNullSector.lean",
+      "GeometryOfNumbers/Analysis.lean",
+      "GeometryOfNumbers/Analysis/Audit.lean",
+      "research/material-central-calibration/CanonicalComparison.lean",
+      "research/material-third-null-sector/Regression.lean"
+    ],
+    "forbidden": [
+      "sorry",
+      "admit",
+      "native_decide",
+      "unsafe",
+      "implemented_by",
+      "new axiom declarations"
+    ],
+    "result": "PASS"
+  },
+  "positive_result_quantifiers": "Every fixed finite real family with M1=M2=0 and M3!=0 has positive COMPLETE residual energy at sufficiently small nonzero scale; the neighborhood depends on that family.",
+  "exact_energy": "E_R(e)=e^6*sum_ij(c_i*c_j*a_i^3*a_j^3*Re(dslope T6(e*a_i,e*a_j)))-e^8*norm(S4(e))^2/h0, with S4=sum_i c_i*a_i^4*T5(e*a_i).",
+  "limit": "E_R(e)/e^6 tends to h3*M3^2 on nhdsWithin 0 {0}^c; the continuous Q3 prolongation has that value at zero.",
+  "lower_bound": "Eventually E_R(e) >= h3*M3^2*e^6/2, for each fixed family with M1=M2=0 and M3!=0.",
+  "not_claimed": [
+    "sign on M1=M2=M3=0 sector",
+    "positive Gram realization of the complete residual",
+    "uniform neighborhood for all source families",
+    "strong extra Hilbert-state derivatives or holomorphic global state",
+    "new operator or metric or normalization"
+  ],
+  "regression_scope": [
+    "prior 72 and material clock/domain/source regressions",
+    "two real quadratures and all TFVD Green/return crosses",
+    "previous retained-value reconstruction and hidden residual",
+    "Taylor shift one equals actual source responseAxis",
+    "double-cancelling canary now positive",
+    "vanishing third moment yields zero coefficient, not sign"
+  ]
+}
