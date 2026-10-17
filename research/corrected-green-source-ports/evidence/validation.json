@@ -1,0 +1,48 @@
+{
+  "status": "pass",
+  "command": "bash research/corrected-green-source-ports/audit-corrected-green-source-ports.sh",
+  "public_roots": 50,
+  "modules": [
+    {
+      "name": "Audit",
+      "status": "pass",
+      "log_sha256": "588485c21b5694ece6bc1ebcd38bb3327e598bc731dc0692d7a4c01b549c7746"
+    },
+    {
+      "name": "CanonicalBlock",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "FiniteSynthesis",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "PhysicalLimits",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "PositivePorts",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "Regression",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "SourceCentering",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "zone_and_root_logs": {
+    "root-build.log": "fd503c1de60ddfcaa12324ca9e90963599a261660145ac3d716a971c00a92d80",
+    "foundation-audit.log": "0cf345cc3bcedfa92250217b4e73bc37834671ac0b8a2b97f66d3c06551ce199",
+    "geometry-audit.log": "469cddc780755a2a401f4a2d437d4b65bccc9f3333dc598e645025f94caf4888",
+    "analysis-audit.log": "41638147d4cbad3e7727185f00c6ec49b0bd2f5b43446412c29f07d81b11cbee"
+  }
+}

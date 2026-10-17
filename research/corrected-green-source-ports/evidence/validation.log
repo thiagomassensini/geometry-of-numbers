@@ -1,0 +1,14 @@
+PASS: fixed operator, shared pins and unchanged previously compiled dependencies
+PASS: SourceCentering
+PASS: PositivePorts
+PASS: FiniteSynthesis
+PASS: PhysicalLimits
+PASS: CanonicalBlock
+PASS: Regression
+PASS: Audit
+PASS: 50 public roots have explicit transitive type-and-body guards
+PASS: root build --wfail
+PASS: foundation audit
+PASS: geometry audit
+PASS: analysis audit
+PASS: corrected Green physical ports and exact seven-jet realization
