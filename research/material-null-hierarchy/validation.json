@@ -1,0 +1,103 @@
+{
+  "base_commit": "e9acca7896674234db229ba498c6cf484a0d3d20",
+  "host": "llm",
+  "checks": [
+    {
+      "command": "lake build GeometryOfNumbers.Analysis.CarryMaterialNullHierarchy --wfail",
+      "exit_code": 0,
+      "jobs": 8795,
+      "log": "focused-build.log.gz"
+    },
+    {
+      "command": "lake build --wfail",
+      "exit_code": 0,
+      "jobs": 8834,
+      "log": "full-build.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-foundation.sh && bash scripts/audit-geometry.sh && bash scripts/audit-analysis.sh",
+      "exit_code": 0,
+      "log": "zone-audits.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-material-central-comparison.sh /home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "warningAsError": true,
+      "log": "cross-audit.log.gz",
+      "total_external_theorems": 145,
+      "source_regressions": [
+        "Triple cancellation c=(-4,6,-4,1), a=(1,2,3,4): M4=24; positivity and Q4 limit 576*C4",
+        "General Q3 is literally equal to previous PR11 Q3, including its correction",
+        "Odd coefficient C5 equals h5 without assuming its sign",
+        "Mk=0 gives a zero central coefficient without deciding the rest"
+      ]
+    },
+    {
+      "command": "lake env lean -DwarningAsError=true research/material-null-hierarchy/Regression.lean",
+      "exit_code": 0,
+      "log": "regression.log.gz"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "new_public_roots": {
+    "geometry_definitions": 3,
+    "geometry_theorems": 8,
+    "external_theorems": 18,
+    "total": 29
+  },
+  "axioms": {
+    "guard": "Lean.collectAxioms over transitive declaration types and bodies",
+    "allowed_in_analysis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "new_root_footprints": "footprints.json",
+    "foundation": "empty; checked separately",
+    "geometry": "distinct policy; no Classical.choice"
+  },
+  "trust_scan": {
+    "files": [
+      "GeometryOfNumbers/Analysis/CarryMaterialNullHierarchy.lean",
+      "GeometryOfNumbers/Analysis.lean",
+      "GeometryOfNumbers/Analysis/Audit.lean",
+      "research/material-central-calibration/CanonicalComparison.lean",
+      "research/material-null-hierarchy/Regression.lean"
+    ],
+    "forbidden": [
+      "sorry",
+      "admit",
+      "native_decide",
+      "unsafe",
+      "implemented_by",
+      "new axiom declarations"
+    ],
+    "result": "PASS"
+  },
+  "exact_all_order_quantifiers": "For every fixed k>=1 and fixed finite real source family with M1=...=M(k-1)=0, eventually E_R(e)=e^(2k)*Qk(e). No coefficient sign is assumed.",
+  "exact_correction": "Qk=sum_ij(c_i*c_j*a_i^k*a_j^k*Re(dslope T_(2k)(e*a_i,e*a_j)))-norm(sum_i c_i*a_i^k*T_(k+1)(e*a_i))^2/h0.",
+  "coefficient_calibration": "C_(2p)=h_(2p)-h_p^2/h0; C_(2p+1)=h_(2p+1).",
+  "general_sign_corollaries": "Explicitly conditional on the computed source coefficient Ck>0 and Mk!=0.",
+  "eighth_order_sign": "C4>0 PROVED from nativeSourceFiveEvenBoundaryEnergy_pos and the literal source coefficient crosswalk. No extra positivity premise in the k=4 application.",
+  "eighth_order_positive_quantifiers": "Every fixed finite family with M1=M2=M3=0 and M4!=0 has positive complete residual energy at sufficiently small nonzero scale; the neighborhood depends on the family.",
+  "lower_bound": "Eventually E_R(e)>=C4*M4^2*e^8/2 for the k=4 application.",
+  "not_claimed": [
+    "all source coefficients positive",
+    "uniform neighborhood in k,c,a",
+    "positive Gram realization of the complete residual",
+    "a carrier isometry from evaluating the source boundary face",
+    "strong extra Hilbert-state derivatives or holomorphic global state",
+    "new operator or metric or normalization"
+  ],
+  "regression_scope": [
+    "prior 72 and material clock/domain/source regressions",
+    "two real quadratures and all TFVD Green/return crosses",
+    "literal compatibility of general k=3 with PR11",
+    "actual fourth-difference canary with M0=-1",
+    "odd calibration beyond k=4 without a sign claim",
+    "zero leading coefficient does not decide the remainder"
+  ]
+}

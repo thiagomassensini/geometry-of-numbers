@@ -1,0 +1,271 @@
+{
+  "transitive_type_and_body_guards": true,
+  "allowed_standard_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "new_roots": [
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialNullSynthesis",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialNullEnergy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialNullCoefficient",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialTaylorShift_reconstruct",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterial_kernel_power_transport",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterial_channel_power_transport",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialNullSynthesis_factor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialNull_energy_factor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialNullEnergy_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialNullSynthesis_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialNullEnergy_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_even_taylor_shift_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_even_taylor_shift_hasDerivAt_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_null_coefficient_source",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_null_coefficient_even",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_null_coefficient_odd",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_null_energy_factor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_null_energy_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_null_energy_limit",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_null_scaled_energy_limit",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_null_fixed_family_positive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_null_energy_lower_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_source_five_even_specialization",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_fourth_null_coefficient_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_fourth_null_energy_factor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_fourth_null_energy_limit",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_fourth_null_scaled_energy_limit",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_fourth_null_fixed_family_positive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialNullHierarchyComparison.material_fourth_null_energy_lower_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ]
+}
