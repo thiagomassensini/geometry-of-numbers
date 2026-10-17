@@ -1,0 +1,415 @@
+{
+  "transitive_type_and_body_guards": true,
+  "allowed_standard_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "new_roots": [
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealFeature",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealKernel",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealResidual",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryRealKernelEnergy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.CarryRealKernelNonnegativeOn",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCenteredCoefficients",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCenteredParameters",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCenteredParameters_mem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialCenteredCoefficients_cancel",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReal_energy_split",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReal_centered_energy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReal_nonnegative_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealOrthogonalResidual",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealKernelLift",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealKernelLift_pairing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealOrthogonalResidual_pairing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealOrthogonalResidual_center",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealOrthogonalResidual_reconstruct",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialResidualCore",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRescaledResidualEnergy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRealResidual_factor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialResidual_scaled_energy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRescaledResidualEnergy_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialReduced_scaledSlope_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialRescaledResidualEnergy_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialResidual_fixed_family_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_real_kernel_coe",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_real_residual_coe",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_real_feature_coe",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_real_feature_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_real_feature_zero_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_real_residual_zero_left",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_real_residual_zero_right",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_real_kernel_split",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_centered_test_energy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_full_residual_nonnegative_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_extract_residual_of_full_realization",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_lift_full_of_residual_realization",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_residual_realization_center_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_residual_not_raw_reduced_pair_energy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_axis_continuous",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_residual_core_center",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_residual_core_center_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_residual_fixed_family_positive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialPositiveResidualComparison.material_residual_rescaled_energy_limit",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ]
+}
