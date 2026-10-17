@@ -1,0 +1,74 @@
+'CarrySixthEven.sixth_even_literal_theta_gate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.sixth_even_integral_gate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.even_six_rectangle_check' depends on axioms: [propext]
+'CarrySixthEven.sixth_ordered_even_lower_check' depends on axioms: [propext]
+'CarrySixthEven.sixth_ordered_even_upper_check' depends on axioms: [propext]
+'CarrySixthEven.sixth_ordered_even_pivot_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.even_six_pivots_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.even_source_six_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.sixth_even_pivot_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.sixth_even_criticalMargin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.sixth_even_sourceThetaGap_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.sixth_even_theta_integral_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.sixth_even_sourceRemainder_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.sixth_even_eventually_above_pivot' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.sixthCharacteristicBox' depends on axioms: [propext]
+'CarrySixthEven.sixthLogMomentBox' depends on axioms: [propext]
+'CarrySixthEven.mem_sixthCharacteristicBox' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.mem_sixthLogMomentBox' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.sixthEvenRemainderBox' depends on axioms: [propext]
+'CarrySixthEven.mem_sixthEvenRemainderBox' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.theta_input_check_0' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.theta_input_check_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.theta_input_check_10' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.theta_input_check_11' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.theta_input_check_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.theta_input_check_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.theta_input_check_4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.theta_input_check_5' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.theta_input_check_6' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.theta_input_check_7' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.theta_input_check_8' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.theta_input_check_9' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.theta_input_checks' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.mem_thetaInputBox' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.mem_tabledTheta_upto_twentyTwo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthEven.thetaInputTable' depends on axioms: [propext]
+'CarrySixthEven.thetaInputBox' depends on axioms: [propext]
+'CarryVariationalSchur.sourceTrialResidual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryVariationalSchur.sourceTrialEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryVariationalSchur.sourceTrialEnergy_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryVariationalSchur.sourceTrialResidual_inverse_of_isUnit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryVariationalSchur.sourceTrialResidual_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryVariationalSchur.sourceTrialEnergy_eq_schur_add_residual_of_isUnit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryVariationalSchur.sourceTrialEnergy_eq_schur_add_residual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryVariationalSchur.sourceTrialResidual_eq_neg_solveResidual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryVariationalSchur.residualQuadratic_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryVariationalSchur.residualSquared_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryVariationalSchur.sourceTrialEnergy_eq_schur_add_solveResidual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryVariationalSchur.sourceMomentSchur_eq_trialEnergy_sub_residual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryVariationalSchur.sourceMomentSchur_lower_bound_of_inverseBound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryVariationalSchur.sourceMomentSchur_pos_of_inverseBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryVariationalSchur.sourceMomentSchur_lower_bound_of_solveResidual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryVariationalSchur.sourceMomentSchur_le_trialEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryVariationalSchur.inverseResidual_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryVariationalSchur.inverseResidual_le_of_coercive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryVariationalSchur.sourceMomentSchur_pos_of_trialResidual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryVariationalSchur.sourceThetaGap_pos_of_trialResidual' depends on axioms: [propext, Classical.choice, Quot.sound]
+elapsed=11.29 maxrss_kb=8228648
