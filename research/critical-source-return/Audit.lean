@@ -1,0 +1,176 @@
+import Regression
+
+namespace CarryCriticalSource
+
+#assert_central_comparison_axioms HasCriticalMargin
+#print axioms HasCriticalMargin
+
+#assert_central_comparison_axioms criticalMargin_iff_pivot
+#print axioms criticalMargin_iff_pivot
+
+#assert_central_comparison_axioms criticalMargin_iff_sourceRemainder
+#print axioms criticalMargin_iff_sourceRemainder
+
+#assert_central_comparison_axioms negativePivot_not_eventually_contractive
+#print axioms negativePivot_not_eventually_contractive
+
+#assert_central_comparison_axioms criticalMargin_iff_jordanGap
+#print axioms criticalMargin_iff_jordanGap
+
+#assert_central_comparison_axioms AllCriticalMargins
+#print axioms AllCriticalMargins
+
+#assert_central_comparison_axioms allCriticalMargins_matrices
+#print axioms allCriticalMargins_matrices
+
+#assert_central_comparison_axioms allCriticalMargins_iff_sourceRemainders
+#print axioms allCriticalMargins_iff_sourceRemainders
+
+#assert_central_comparison_axioms allCriticalMargins_returnBounds
+#print axioms allCriticalMargins_returnBounds
+
+#assert_central_comparison_axioms h
+#print axioms h
+
+#assert_central_comparison_axioms parityCoordinates
+#print axioms parityCoordinates
+
+#assert_central_comparison_axioms parityCoordinates_boundary
+#print axioms parityCoordinates_boundary
+
+#assert_central_comparison_axioms criticalCoefficients
+#print axioms criticalCoefficients
+
+#assert_central_comparison_axioms criticalCoordinates
+#print axioms criticalCoordinates
+
+#assert_central_comparison_axioms criticalInput
+#print axioms criticalInput
+
+#assert_central_comparison_axioms criticalIncident
+#print axioms criticalIncident
+
+#assert_central_comparison_axioms criticalReturned
+#print axioms criticalReturned
+
+#assert_central_comparison_axioms criticalBalance
+#print axioms criticalBalance
+
+#assert_central_comparison_axioms criticalPairing
+#print axioms criticalPairing
+
+#assert_central_comparison_axioms criticalPairing_source
+#print axioms criticalPairing_source
+
+#assert_central_comparison_axioms criticalPairing_self
+#print axioms criticalPairing_self
+
+#assert_central_comparison_axioms criticalBalance_eq_storage
+#print axioms criticalBalance_eq_storage
+
+#assert_central_comparison_axioms criticalCoordinates_boundary
+#print axioms criticalCoordinates_boundary
+
+#assert_central_comparison_axioms criticalBalance_eventually_error
+#print axioms criticalBalance_eventually_error
+
+#assert_central_comparison_axioms criticalBalance_tendsto
+#print axioms criticalBalance_tendsto
+
+#assert_central_comparison_axioms criticalBalance_eq_jordan
+#print axioms criticalBalance_eq_jordan
+
+#assert_central_comparison_axioms parityCoordinates_injective
+#print axioms parityCoordinates_injective
+
+#assert_central_comparison_axioms parityCoordinates_zero
+#print axioms parityCoordinates_zero
+
+#assert_central_comparison_axioms sourceMatrix_posDef_of_boundary
+#print axioms sourceMatrix_posDef_of_boundary
+
+#assert_central_comparison_axioms sourceMatrix_prefix_posDef
+#print axioms sourceMatrix_prefix_posDef
+
+#assert_central_comparison_axioms sourceMatrices_through_four_posDef
+#print axioms sourceMatrices_through_four_posDef
+
+#assert_central_comparison_axioms criticalMargins_through_four
+#print axioms criticalMargins_through_four
+
+#assert_central_comparison_axioms restoredEvenFiveFactor
+#print axioms restoredEvenFiveFactor
+
+#assert_central_comparison_axioms restoredEvenFiveFactor_identity
+#print axioms restoredEvenFiveFactor_identity
+
+#assert_central_comparison_axioms restoredEvenFiveFactor_det_pos
+#print axioms restoredEvenFiveFactor_det_pos
+
+#assert_central_comparison_axioms even_source_five_posDef
+#print axioms even_source_five_posDef
+
+#assert_central_comparison_axioms fifth_even_pivot_pos
+#print axioms fifth_even_pivot_pos
+
+#assert_central_comparison_axioms fifth_even_criticalMargin
+#print axioms fifth_even_criticalMargin
+
+#assert_central_comparison_axioms fifth_even_sourceRemainder_pos
+#print axioms fifth_even_sourceRemainder_pos
+
+#assert_central_comparison_axioms fifth_even_eventually_above_pivot
+#print axioms fifth_even_eventually_above_pivot
+
+#assert_central_comparison_axioms fifthOddCeiling
+#print axioms fifthOddCeiling
+
+#assert_central_comparison_axioms fifthOdd_sourceRemainder
+#print axioms fifthOdd_sourceRemainder
+
+#assert_central_comparison_axioms fifthOdd_margin_iff_coefficient
+#print axioms fifthOdd_margin_iff_coefficient
+
+#assert_central_comparison_axioms source_c10_theta
+#print axioms source_c10_theta
+
+#assert_central_comparison_axioms fifthOdd_margin_iff_thetaMoments
+#print axioms fifthOdd_margin_iff_thetaMoments
+
+#assert_central_comparison_axioms source_theta20_integral
+#print axioms source_theta20_integral
+
+#assert_central_comparison_axioms fifthOdd_margin_iff_thetaIntegral
+#print axioms fifthOdd_margin_iff_thetaIntegral
+
+#assert_central_comparison_axioms criticalPairing_eq_projective
+#print axioms criticalPairing_eq_projective
+
+#assert_central_comparison_axioms criticalPairing_conj
+#print axioms criticalPairing_conj
+
+#assert_central_comparison_axioms criticalPairing_self_tendsto
+#print axioms criticalPairing_self_tendsto
+
+#assert_central_comparison_axioms criticalPairing_even_odd_tendsto
+#print axioms criticalPairing_even_odd_tendsto
+
+#assert_central_comparison_axioms criticalPairing_odd_even_tendsto
+#print axioms criticalPairing_odd_even_tendsto
+
+#assert_central_comparison_axioms initial_pivot_regression
+#print axioms initial_pivot_regression
+
+#assert_central_comparison_axioms eight_source_diagonal_limit_regression
+#print axioms eight_source_diagonal_limit_regression
+
+#assert_central_comparison_axioms eight_source_cross_limit_regression
+#print axioms eight_source_cross_limit_regression
+
+#assert_central_comparison_axioms ten_source_even_direction_regression
+#print axioms ten_source_even_direction_regression
+
+#assert_central_comparison_axioms ten_source_jordan_gap_regression
+#print axioms ten_source_jordan_gap_regression
+
+end CarryCriticalSource
