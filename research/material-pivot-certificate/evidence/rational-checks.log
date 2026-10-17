@@ -1,0 +1,3 @@
+PASS: exact endpoint replay, signed arithmetic, zero-denominator rejection, derivative recurrence, positive pivot and threshold gap
+PASS: all source/moment/pivot intervals contain their refined enclosures
+DIAGNOSTIC ONLY: preserved cache lies inside the source enclosures; cache was not a certificate input
