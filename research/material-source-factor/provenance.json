@@ -1,0 +1,60 @@
+{
+  "geometry_base": "aee21826a385ebd3a2ac16bcf8f50d9435a48209",
+  "operator_head": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "momentos_head": "a54f267365d5d8c965376734b17b10ae89ed3f74",
+  "pins_sha256": {
+    "lakefile.toml": "2f034f906810f36cc55ff0bcdf98fa629fb91085b107f238e21cca93e136f9f8",
+    "lake-manifest.json": "9868872bae98d0c7e22c597d8e27d38d247498161cf70cdcdc193e9ea0608602",
+    "lean-toolchain": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e"
+  },
+  "sources": [
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean",
+      "sha256": "3fd44722328b4af4b72451fbd875d85e1a4228f045c496149028737555a72fa7",
+      "last_commit": "39a881543476de51b0753ce6c686325ef569321d"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+      "sha256": "03f76cc7b10203082ac9112c480c18b8b4da2774d2548fc9e89d44ceb6de17b4",
+      "last_commit": "95533f3308ab27450716d89bb1c8888bb9ed0b69"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+      "sha256": "1eefe24edbc7bd9c64dd7477fe40fa3999e42c72f72db5dbfb7f849bcf4b46e7",
+      "last_commit": "95533f3308ab27450716d89bb1c8888bb9ed0b69"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialNullHierarchy.lean",
+      "sha256": "e53392016fe515a067c7e4b9288aef8e5d41d8ca63c50a170e3df46ee8a5dc4f",
+      "last_commit": "a0d64694ed24f7ef418b66c79246d147519c77be"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialClockCentralCoupling.lean",
+      "sha256": "7c692e45c0e5257d1db535f516526d8d524fcfb70f452ca1684a0837da86bafd",
+      "last_commit": "53f8436dd9bb0899a0ec0db5dcc6b225907accbd"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CompletedBoundaryTransportedClock.lean",
+      "sha256": "28eefba01a772586334c47d9a058b9a9df0c95cce7443f72cdf3e3d3a997639d",
+      "last_commit": "ce3077323ddb32df1931c1d0c2dba12a78d72c06"
+    },
+    {
+      "path": "research/material-tfvd-projective/CanonicalValveComparison.lean",
+      "sha256": "ebe9ecda5e1201764ba4ab0adb3c385db056f701e43399f434eadda2d40f13b0",
+      "last_commit": "1ff184a5bf6777ab7341d731790d8366737d77d0"
+    }
+  ],
+  "branch": "agent/material-source-factor",
+  "new_worktrees": false,
+  "operator_status": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "momentos_status": "?? investigations/",
+  "operator_source_files": {
+    "CanonicalLDLWhitening.lean": "53445305c7ba9acbf3d23524e136d88ff5572c09f6b9b940cf5a927d4469a19b",
+    "NativeSourceAllOrderSchur.lean": "d7abc44bc54da0227e4ac46076d10cc49a98c0e9ff31f28346ff8aa05b7d3e03",
+    "NativeSourceSchurThetaIntegral.lean": "1661dc1f356f5aa8e9fd134ef322e28c4ce0b0fa5acec2cc22c9e8ba33823a86",
+    "CompletedNativeChiralReturnFourteenthSourceIntegral.lean": "308d663ce14a4fedef3c291ade0038d9f589b3a13c432ab1a55e8d10075d6569",
+    "CompletedNativeChiralReturnSevenBoundaryFace.lean": "f7fd33a14a796ff33ef0e015f0f39c8b3bf3a16712b8abead8c23fa4082071ac",
+    "C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  }
+}
