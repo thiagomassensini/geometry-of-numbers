@@ -1,0 +1,90 @@
+'CarryCorrectedGreenPorts.sourceCentralFeature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.sourceCentralFeature_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.sourceCentralFeature_add_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.FullSourceCarrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.fullSourceJet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.fullSourceJet_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.canonical_seven_source_realization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.correctedGreen_seven_real_quadrature_realization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCorrectedGreenPorts.residualEnergySynthesis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.residualJetBilinear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.residualEnergySynthesis_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.residualEnergySynthesis_pairing_tendsto_of_contractive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCorrectedGreenPorts.residualEnergySynthesis_seven_pairing_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCorrectedGreenPorts.correctedGreen_seven_synthesis_pairing_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCorrectedGreenPorts.residualEnergySynthesis_seven_norm_sq_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCorrectedGreenPorts.correctedGreen_seven_energy_nonnegative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCorrectedGreenPorts.correctedGreen_seven_pairing_of_physical_limits' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCorrectedGreenPorts.residualEnergyJet_mixed_cutoff_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCorrectedGreenPorts.incident_mem_fixedSpan' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.energyJet_mem_fixedSpan' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.residualEnergyJet_mem_fixedSpan' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.fixedPhysicalJet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.physicalJets_subsequence_of_contractive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCorrectedGreenPorts.correctedGreen_realization_of_contractive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCorrectedGreenPorts.correctedGreen_seven_physical_realization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCorrectedGreenPorts.residualEnergyJet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.residualEnergyJet_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.residualEnergyJet_pairing_of_contractive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCorrectedGreenPorts.residualEnergyJet_pairing_tendsto_of_contractive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCorrectedGreenPorts.residualEnergyJet_seven_pairing_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCorrectedGreenPorts.correctedGreen_seven_positive_pairing_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCorrectedGreenPorts.residualJet_eq_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.residualEnergyJet_seven_real_pairing_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCorrectedGreenPorts.residualEnergyJet_seven_imaginary_pairing_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCorrectedGreenPorts.positivePort_rotation_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.residualEnergyJet_first_norm_sq_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCorrectedGreenPorts.physical_residual_first_calibration' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCorrectedGreenPorts.sourceCenterWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.sourceCenterWeight_eq_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.sourceCenterWeight_conj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.sourceCenterWeight_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.sourceCenterWeight_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.centerPort' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.centerPort_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.centerPort_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.centered_coefficient_eq_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.residualPositiveJordanJet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.residualNegativeJordanJet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.residualJordan_pairing_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCorrectedGreenPorts.correctedGreenJordan_pairing_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

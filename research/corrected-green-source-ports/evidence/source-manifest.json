@@ -1,0 +1,14 @@
+{
+  "geometry_head": "f8c90fcdf564a0497a8ee682f436301aa10c91b1",
+  "operator_head": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "lean_toolchain": "leanprover/lean4:v4.32.0",
+  "lean_sources": {
+    "Audit.lean": "a6f033a0b2dc7e1884c0d25b2b60c5f77807c0ae1bd8a59349b3910c126c67e0",
+    "CanonicalBlock.lean": "e7ff0f039d3cc9974cf2a4dd245f157c600286050f64fc8120e0e8ed0bf4ba76",
+    "FiniteSynthesis.lean": "87a60fccacc7a0d82b6e817810551ff960e1228fa1c4eb050012859ae0fea6de",
+    "PhysicalLimits.lean": "d3067e820105b494cb355fbd6ccfe858a16f82ae991da173d85e9e0c547fb67c",
+    "PositivePorts.lean": "6a6ab7e17628bc3f5e7d4914afb05d055e2153f8d8d252a815d9ee3d5c097b86",
+    "Regression.lean": "9a2935239ee7fbd839438983f092da05a568dcf0931d37993318018e54160466",
+    "SourceCentering.lean": "8e76308dac70fd7b6764e39b7113ba95d515e209380014a42177dfc486c5c70e"
+  }
+}
