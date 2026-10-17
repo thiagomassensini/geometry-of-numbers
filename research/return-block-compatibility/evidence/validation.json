@@ -1,0 +1,53 @@
+{
+  "status": "pass",
+  "command": "bash research/return-block-compatibility/audit-return-block-compatibility.sh",
+  "public_roots": 66,
+  "modules": [
+    {
+      "name": "Audit",
+      "status": "pass",
+      "log_sha256": "6603d7aa31940dff82e187c8633126b8c0dc331a02438853cfc4e35dd19af77f"
+    },
+    {
+      "name": "EighthPhysical",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "EighthReturnCheck",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "JetCompatibility",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "LimitTower",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "PortTransitions",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "Regression",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ReturnRestriction",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "zone_and_root_logs": {
+    "root-build.log": "4eb4bd388777e8d8ce9540c1b4fde5608804f69b5fb714035e579c0d3b50f337",
+    "foundation-audit.log": "0cf345cc3bcedfa92250217b4e73bc37834671ac0b8a2b97f66d3c06551ce199",
+    "geometry-audit.log": "469cddc780755a2a401f4a2d437d4b65bccc9f3333dc598e645025f94caf4888",
+    "analysis-audit.log": "41638147d4cbad3e7727185f00c6ec49b0bd2f5b43446412c29f07d81b11cbee"
+  }
+}

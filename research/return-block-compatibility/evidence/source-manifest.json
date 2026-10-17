@@ -1,0 +1,15 @@
+{
+  "geometry_head": "329d832fc2a6a869ae281eecb584e9299ed3d49b",
+  "operator_head": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "lean_toolchain": "leanprover/lean4:v4.32.0",
+  "lean_sources": {
+    "Audit.lean": "a2aa461abb3055e29aa45410262c58583e2ce395dcbe52af0019bc13b2d86699",
+    "EighthPhysical.lean": "688b9cf15d7558675a3692a8b94a20893397fcfa99d3d197d34c012b0a5548fb",
+    "EighthReturnCheck.lean": "56f89735f56df22a612e95660cc180adff3357abff37e9aae7ea1aa20fc0bb4d",
+    "JetCompatibility.lean": "4e534dda8ffb6d8897731842e4adaf7d799c6e95379e2b28bfe361119ad5f918",
+    "LimitTower.lean": "ee3c47a713b92ac6102517529e48eb6db500083295942ff7ce1177862d11beee",
+    "PortTransitions.lean": "934ece36df9d5654ba642f8a54c7d76da60e03555ab2c38e494a32e60e4deabf",
+    "Regression.lean": "10c81010361d16fec177c48f9e1de2c453a734cd3ecb9400e9de7472e961d2f3",
+    "ReturnRestriction.lean": "5cde547181a572294ad63f537e07f7bc281d9867511945942d83efdc1a57d368"
+  }
+}
