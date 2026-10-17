@@ -1,0 +1,457 @@
+import Regression
+import IntegralCertificate
+
+/-! Explicit transitive type-and-body axiom guards for every new public root.
+The guard rejects every axiom outside propext, Classical.choice and Quot.sound. -/
+namespace CarryIntegralCertificate
+#assert_central_comparison_axioms argument_node_checks
+#print axioms argument_node_checks
+#assert_central_comparison_axioms cached_integral_checks_0
+#print axioms cached_integral_checks_0
+#assert_central_comparison_axioms cached_integral_checks_1
+#print axioms cached_integral_checks_1
+#assert_central_comparison_axioms cached_integral_checks_2
+#print axioms cached_integral_checks_2
+#assert_central_comparison_axioms cached_integral_checks_3
+#print axioms cached_integral_checks_3
+#assert_central_comparison_axioms cached_integral_input_checks
+#print axioms cached_integral_input_checks
+#assert_central_comparison_axioms cachedMajorantBox
+#print axioms cachedMajorantBox
+#assert_central_comparison_axioms cachedTaylorMassBox
+#print axioms cachedTaylorMassBox
+#assert_central_comparison_axioms cachedCellBox
+#print axioms cachedCellBox
+#assert_central_comparison_axioms cachedFiniteModeBox
+#print axioms cachedFiniteModeBox
+#assert_central_comparison_axioms cachedDecayBox
+#print axioms cachedDecayBox
+#assert_central_comparison_axioms cachedTailModeBox
+#print axioms cachedTailModeBox
+#assert_central_comparison_axioms cachedFullModeBox
+#print axioms cachedFullModeBox
+#assert_central_comparison_axioms cachedFullThetaMomentBox
+#print axioms cachedFullThetaMomentBox
+#assert_central_comparison_axioms thetaCodeMajorant
+#print axioms thetaCodeMajorant
+#assert_central_comparison_axioms thetaCode_eval
+#print axioms thetaCode_eval
+#assert_central_comparison_axioms thetaCode_abs_le
+#print axioms thetaCode_abs_le
+#assert_central_comparison_axioms thetaCode_cell_bound
+#print axioms thetaCode_cell_bound
+#assert_central_comparison_axioms thetaPolynomialCode_correct
+#print axioms thetaPolynomialCode_correct
+#assert_central_comparison_axioms thetaCoefficientCode
+#print axioms thetaCoefficientCode
+#assert_central_comparison_axioms thetaPolynomialCode
+#print axioms thetaPolynomialCode
+#assert_central_comparison_axioms thetaPolynomialCode_step0
+#print axioms thetaPolynomialCode_step0
+#assert_central_comparison_axioms thetaPolynomialCode_step1
+#print axioms thetaPolynomialCode_step1
+#assert_central_comparison_axioms thetaPolynomialCode_step2
+#print axioms thetaPolynomialCode_step2
+#assert_central_comparison_axioms thetaPolynomialCode_step3
+#print axioms thetaPolynomialCode_step3
+#assert_central_comparison_axioms thetaPolynomialCode_step3a
+#print axioms thetaPolynomialCode_step3a
+#assert_central_comparison_axioms thetaPolynomialCode_step3b
+#print axioms thetaPolynomialCode_step3b
+#assert_central_comparison_axioms thetaPolynomialCode_coeff_zero
+#print axioms thetaPolynomialCode_coeff_zero
+#assert_central_comparison_axioms rationalGridWeight
+#print axioms rationalGridWeight
+#assert_central_comparison_axioms rationalGridWeight_eq
+#print axioms rationalGridWeight_eq
+#assert_central_comparison_axioms rationalGridWeight_nonneg
+#print axioms rationalGridWeight_nonneg
+#assert_central_comparison_axioms exactGridWeightBox
+#print axioms exactGridWeightBox
+#assert_central_comparison_axioms mem_exactGridWeightBox
+#print axioms mem_exactGridWeightBox
+#assert_central_comparison_axioms exactTaylorMassBox
+#print axioms exactTaylorMassBox
+#assert_central_comparison_axioms exactCellBox
+#print axioms exactCellBox
+#assert_central_comparison_axioms exactFiniteModeBox
+#print axioms exactFiniteModeBox
+#assert_central_comparison_axioms exactFullModeBox
+#print axioms exactFullModeBox
+#assert_central_comparison_axioms exactFullThetaMomentBox
+#print axioms exactFullThetaMomentBox
+#assert_central_comparison_axioms mem_cachedArgumentNode
+#print axioms mem_cachedArgumentNode
+#assert_central_comparison_axioms mem_cachedModeNode
+#print axioms mem_cachedModeNode
+#assert_central_comparison_axioms mem_cachedMajorantBox
+#print axioms mem_cachedMajorantBox
+#assert_central_comparison_axioms mem_exactTaylorMassBox
+#print axioms mem_exactTaylorMassBox
+#assert_central_comparison_axioms mem_exactCellBox
+#print axioms mem_exactCellBox
+#assert_central_comparison_axioms mem_exactFiniteModeBox
+#print axioms mem_exactFiniteModeBox
+#assert_central_comparison_axioms mem_exactFullModeBox
+#print axioms mem_exactFullModeBox
+#assert_central_comparison_axioms mem_exactFullThetaMomentBox
+#print axioms mem_exactFullThetaMomentBox
+#assert_central_comparison_axioms Box.expTaylor
+#print axioms Box.expTaylor
+#assert_central_comparison_axioms Box.expRemainder
+#print axioms Box.expRemainder
+#assert_central_comparison_axioms Box.exp
+#print axioms Box.exp
+#assert_central_comparison_axioms mem_expTaylor
+#print axioms mem_expTaylor
+#assert_central_comparison_axioms mem_expRemainder
+#print axioms mem_expRemainder
+#assert_central_comparison_axioms mem_exp
+#print axioms mem_exp
+#assert_central_comparison_axioms intervalScale
+#print axioms intervalScale
+#assert_central_comparison_axioms Box
+#print axioms Box
+#assert_central_comparison_axioms Box.Mem
+#print axioms Box.Mem
+#assert_central_comparison_axioms Box.point
+#print axioms Box.point
+#assert_central_comparison_axioms Box.add
+#print axioms Box.add
+#assert_central_comparison_axioms Box.neg
+#print axioms Box.neg
+#assert_central_comparison_axioms intFloor
+#print axioms intFloor
+#assert_central_comparison_axioms intCeil
+#print axioms intCeil
+#assert_central_comparison_axioms Box.mul
+#print axioms Box.mul
+#assert_central_comparison_axioms Box.inv
+#print axioms Box.inv
+#assert_central_comparison_axioms Box.div
+#print axioms Box.div
+#assert_central_comparison_axioms Box.pow
+#print axioms Box.pow
+#assert_central_comparison_axioms mem_point
+#print axioms mem_point
+#assert_central_comparison_axioms mem_add
+#print axioms mem_add
+#assert_central_comparison_axioms mem_neg
+#print axioms mem_neg
+#assert_central_comparison_axioms mem_mul
+#print axioms mem_mul
+#assert_central_comparison_axioms mem_inv
+#print axioms mem_inv
+#assert_central_comparison_axioms mem_div
+#print axioms mem_div
+#assert_central_comparison_axioms mem_pow
+#print axioms mem_pow
+#assert_central_comparison_axioms Box.rat
+#print axioms Box.rat
+#assert_central_comparison_axioms mem_rat
+#print axioms mem_rat
+#assert_central_comparison_axioms Box.outer
+#print axioms Box.outer
+#assert_central_comparison_axioms mem_outer
+#print axioms mem_outer
+#assert_central_comparison_axioms Box.sum
+#print axioms Box.sum
+#assert_central_comparison_axioms mem_sum
+#print axioms mem_sum
+#assert_central_comparison_axioms Box.squares
+#print axioms Box.squares
+#assert_central_comparison_axioms mem_squares
+#print axioms mem_squares
+#assert_central_comparison_axioms mem_scaled
+#print axioms mem_scaled
+#assert_central_comparison_axioms Box.contained
+#print axioms Box.contained
+#assert_central_comparison_axioms mem_of_contained
+#print axioms mem_of_contained
+#assert_central_comparison_axioms Box.positive
+#print axioms Box.positive
+#assert_central_comparison_axioms pos_of_mem
+#print axioms pos_of_mem
+#assert_central_comparison_axioms Box.mulNonnegRat
+#print axioms Box.mulNonnegRat
+#assert_central_comparison_axioms mem_mulNonnegRat
+#print axioms mem_mulNonnegRat
+#assert_central_comparison_axioms mem_gridBox
+#print axioms mem_gridBox
+#assert_central_comparison_axioms mem_finiteModeBox
+#print axioms mem_finiteModeBox
+#assert_central_comparison_axioms mem_decayBox
+#print axioms mem_decayBox
+#assert_central_comparison_axioms mem_tailModeBox
+#print axioms mem_tailModeBox
+#assert_central_comparison_axioms mem_fullModeBox
+#print axioms mem_fullModeBox
+#assert_central_comparison_axioms thetaArgument_coarse_lower
+#print axioms thetaArgument_coarse_lower
+#assert_central_comparison_axioms mem_fullThetaMomentBox
+#print axioms mem_fullThetaMomentBox
+#assert_central_comparison_axioms material_theta_integral_input
+#print axioms material_theta_integral_input
+#assert_central_comparison_axioms material_fourth_pivot_bounds_integral
+#print axioms material_fourth_pivot_bounds_integral
+#assert_central_comparison_axioms material_fourth_pivot_pos_integral
+#print axioms material_fourth_pivot_pos_integral
+#assert_central_comparison_axioms material_fourth_block_posDef_integral
+#print axioms material_fourth_block_posDef_integral
+#assert_central_comparison_axioms material_fourth_critical_positive_integral
+#print axioms material_fourth_critical_positive_integral
+#assert_central_comparison_axioms material_fourth_theta_integral_gate
+#print axioms material_fourth_theta_integral_gate
+#assert_central_comparison_axioms material_fourth_cholesky_integral
+#print axioms material_fourth_cholesky_integral
+#assert_central_comparison_axioms integral_input_checks
+#print axioms integral_input_checks
+#assert_central_comparison_axioms mode_node_checks
+#print axioms mode_node_checks
+#assert_central_comparison_axioms thetaCertificateCellCount
+#print axioms thetaCertificateCellCount
+#assert_central_comparison_axioms argumentNodeData
+#print axioms argumentNodeData
+#assert_central_comparison_axioms modeNodeData
+#print axioms modeNodeData
+#assert_central_comparison_axioms cachedArgumentNode
+#print axioms cachedArgumentNode
+#assert_central_comparison_axioms cachedModeNode
+#print axioms cachedModeNode
+#assert_central_comparison_axioms modeNodeComputation
+#print axioms modeNodeComputation
+#assert_central_comparison_axioms argumentBox_eq_cached
+#print axioms argumentBox_eq_cached
+#assert_central_comparison_axioms modeBox_eq_cached
+#print axioms modeBox_eq_cached
+#assert_central_comparison_axioms majorantBox_eq_cached
+#print axioms majorantBox_eq_cached
+#assert_central_comparison_axioms taylorMassBox_eq_cached
+#print axioms taylorMassBox_eq_cached
+#assert_central_comparison_axioms cellBox_eq_cached
+#print axioms cellBox_eq_cached
+#assert_central_comparison_axioms Box.sum_congr
+#print axioms Box.sum_congr
+#assert_central_comparison_axioms finiteModeBox_eq_cached
+#print axioms finiteModeBox_eq_cached
+#assert_central_comparison_axioms decayBox_eq_cached
+#print axioms decayBox_eq_cached
+#assert_central_comparison_axioms tailModeBox_eq_cached
+#print axioms tailModeBox_eq_cached
+#assert_central_comparison_axioms fullModeBox_eq_cached
+#print axioms fullModeBox_eq_cached
+#assert_central_comparison_axioms fullThetaMomentBox_eq_cached
+#print axioms fullThetaMomentBox_eq_cached
+#assert_central_comparison_axioms fourthPivot_rectangle_check
+#print axioms fourthPivot_rectangle_check
+#assert_central_comparison_axioms material_fourth_positive_of_integral_inputs
+#print axioms material_fourth_positive_of_integral_inputs
+#assert_central_comparison_axioms fourthPivot_lower_margin_check
+#print axioms fourthPivot_lower_margin_check
+#assert_central_comparison_axioms fourthPivot_upper_margin_check
+#print axioms fourthPivot_upper_margin_check
+#assert_central_comparison_axioms material_fourth_bounds_of_integral_inputs
+#print axioms material_fourth_bounds_of_integral_inputs
+#assert_central_comparison_axioms momentInputTable
+#print axioms momentInputTable
+#assert_central_comparison_axioms momentInputBox
+#print axioms momentInputBox
+#assert_central_comparison_axioms characteristicBox
+#print axioms characteristicBox
+#assert_central_comparison_axioms logMomentBox
+#print axioms logMomentBox
+#assert_central_comparison_axioms remainderBox
+#print axioms remainderBox
+#assert_central_comparison_axioms mem_characteristicBox
+#print axioms mem_characteristicBox
+#assert_central_comparison_axioms mem_logMomentBox
+#print axioms mem_logMomentBox
+#assert_central_comparison_axioms mem_remainderBox
+#print axioms mem_remainderBox
+#assert_central_comparison_axioms quadratureCoefficientData
+#print axioms quadratureCoefficientData
+#assert_central_comparison_axioms quadratureErrorData
+#print axioms quadratureErrorData
+#assert_central_comparison_axioms cachedQuadratureCoefficient
+#print axioms cachedQuadratureCoefficient
+#assert_central_comparison_axioms cachedQuadratureError
+#print axioms cachedQuadratureError
+#assert_central_comparison_axioms quadrature_node_checks_0
+#print axioms quadrature_node_checks_0
+#assert_central_comparison_axioms quadrature_node_checks_1
+#print axioms quadrature_node_checks_1
+#assert_central_comparison_axioms quadrature_node_checks_2
+#print axioms quadrature_node_checks_2
+#assert_central_comparison_axioms quadrature_node_checks_3
+#print axioms quadrature_node_checks_3
+#assert_central_comparison_axioms quadrature_node_checks
+#print axioms quadrature_node_checks
+#assert_central_comparison_axioms thetaMode_zero_eq_thetaFirstMode
+#print axioms thetaMode_zero_eq_thetaFirstMode
+#assert_central_comparison_axioms thetaMode_fourth_matches_existing_cubic
+#print axioms thetaMode_fourth_matches_existing_cubic
+#assert_central_comparison_axioms fourth_pivot_preserves_theta_contrast
+#print axioms fourth_pivot_preserves_theta_contrast
+#assert_central_comparison_axioms mem_ofRat
+#print axioms mem_ofRat
+#assert_central_comparison_axioms mem_piBox
+#print axioms mem_piBox
+#assert_central_comparison_axioms mem_argumentBox
+#print axioms mem_argumentBox
+#assert_central_comparison_axioms mem_modeBox
+#print axioms mem_modeBox
+#assert_central_comparison_axioms mem_polynomialBox
+#print axioms mem_polynomialBox
+#assert_central_comparison_axioms mem_derivativeBox
+#print axioms mem_derivativeBox
+#assert_central_comparison_axioms mem_majorantBox
+#print axioms mem_majorantBox
+#assert_central_comparison_axioms mem_powerMassBox
+#print axioms mem_powerMassBox
+#assert_central_comparison_axioms mem_taylorMassBox
+#print axioms mem_taylorMassBox
+#assert_central_comparison_axioms mem_cellBox
+#print axioms mem_cellBox
+#assert_central_comparison_axioms Box.ofRat
+#print axioms Box.ofRat
+#assert_central_comparison_axioms piBox
+#print axioms piBox
+#assert_central_comparison_axioms argumentBox
+#print axioms argumentBox
+#assert_central_comparison_axioms modeBox
+#print axioms modeBox
+#assert_central_comparison_axioms polynomialBox
+#print axioms polynomialBox
+#assert_central_comparison_axioms derivativeBox
+#print axioms derivativeBox
+#assert_central_comparison_axioms majorantBox
+#print axioms majorantBox
+#assert_central_comparison_axioms powerMassBox
+#print axioms powerMassBox
+#assert_central_comparison_axioms taylorMassBox
+#print axioms taylorMassBox
+#assert_central_comparison_axioms cellBox
+#print axioms cellBox
+#assert_central_comparison_axioms gridBox
+#print axioms gridBox
+#assert_central_comparison_axioms finiteModeBox
+#print axioms finiteModeBox
+#assert_central_comparison_axioms decayBox
+#print axioms decayBox
+#assert_central_comparison_axioms tailModeBox
+#print axioms tailModeBox
+#assert_central_comparison_axioms fullModeBox
+#print axioms fullModeBox
+#assert_central_comparison_axioms fullThetaMomentBox
+#print axioms fullThetaMomentBox
+#assert_central_comparison_axioms thetaMode_le_thetaTail
+#print axioms thetaMode_le_thetaTail
+#assert_central_comparison_axioms integrableOn_weighted_thetaMode
+#print axioms integrableOn_weighted_thetaMode
+#assert_central_comparison_axioms weightedThreeModes
+#print axioms weightedThreeModes
+#assert_central_comparison_axioms integrableOn_weightedThreeModes
+#print axioms integrableOn_weightedThreeModes
+#assert_central_comparison_axioms weightedOmittedModes
+#print axioms weightedOmittedModes
+#assert_central_comparison_axioms integrableOn_weightedOmittedModes
+#print axioms integrableOn_weightedOmittedModes
+#assert_central_comparison_axioms weightedOmittedModes_bounds
+#print axioms weightedOmittedModes_bounds
+#assert_central_comparison_axioms integral_weighted_exp95
+#print axioms integral_weighted_exp95
+#assert_central_comparison_axioms integral_weightedOmittedModes_bounds
+#print axioms integral_weightedOmittedModes_bounds
+#assert_central_comparison_axioms completedNativeThetaTailMoment_eq_three_and_remainder
+#print axioms completedNativeThetaTailMoment_eq_three_and_remainder
+#assert_central_comparison_axioms exactTaylorMassBox_eq_tabled
+#print axioms exactTaylorMassBox_eq_tabled
+#assert_central_comparison_axioms exactCellBox_eq_tabled
+#print axioms exactCellBox_eq_tabled
+#assert_central_comparison_axioms exactFiniteModeBox_eq_tabled
+#print axioms exactFiniteModeBox_eq_tabled
+#assert_central_comparison_axioms exactFullModeBox_eq_tabled
+#print axioms exactFullModeBox_eq_tabled
+#assert_central_comparison_axioms exactFullThetaMomentBox_eq_tabled
+#print axioms exactFullThetaMomentBox_eq_tabled
+#assert_central_comparison_axioms mem_tabledFullThetaMomentBox
+#print axioms mem_tabledFullThetaMomentBox
+#assert_central_comparison_axioms tabledTaylorMassBox
+#print axioms tabledTaylorMassBox
+#assert_central_comparison_axioms tabledCellBox
+#print axioms tabledCellBox
+#assert_central_comparison_axioms tabledFiniteModeBox
+#print axioms tabledFiniteModeBox
+#assert_central_comparison_axioms tabledFullModeBox
+#print axioms tabledFullModeBox
+#assert_central_comparison_axioms tabledFullThetaMomentBox
+#print axioms tabledFullThetaMomentBox
+#assert_central_comparison_axioms quadratureCoefficientComputation
+#print axioms quadratureCoefficientComputation
+#assert_central_comparison_axioms quadratureErrorComputation
+#print axioms quadratureErrorComputation
+#assert_central_comparison_axioms thetaMode
+#print axioms thetaMode
+#assert_central_comparison_axioms thetaArgument
+#print axioms thetaArgument
+#assert_central_comparison_axioms thetaDerivativePolynomial
+#print axioms thetaDerivativePolynomial
+#assert_central_comparison_axioms thetaModeDerivative
+#print axioms thetaModeDerivative
+#assert_central_comparison_axioms hasDerivAt_thetaArgument
+#print axioms hasDerivAt_thetaArgument
+#assert_central_comparison_axioms hasDerivAt_thetaMode
+#print axioms hasDerivAt_thetaMode
+#assert_central_comparison_axioms hasDerivAt_thetaModeDerivative
+#print axioms hasDerivAt_thetaModeDerivative
+#assert_central_comparison_axioms iteratedDeriv_thetaMode
+#print axioms iteratedDeriv_thetaMode
+#assert_central_comparison_axioms contDiff_thetaMode
+#print axioms contDiff_thetaMode
+#assert_central_comparison_axioms thetaMode_taylor_remainder
+#print axioms thetaMode_taylor_remainder
+#assert_central_comparison_axioms thetaDerivativeMajorant
+#print axioms thetaDerivativeMajorant
+#assert_central_comparison_axioms thetaDerivativePolynomial_abs_le
+#print axioms thetaDerivativePolynomial_abs_le
+#assert_central_comparison_axioms thetaMode_nonneg
+#print axioms thetaMode_nonneg
+#assert_central_comparison_axioms thetaMode_antitone
+#print axioms thetaMode_antitone
+#assert_central_comparison_axioms thetaModeDerivative_cell_bound
+#print axioms thetaModeDerivative_cell_bound
+#assert_central_comparison_axioms thetaMode_taylor_eq_sum
+#print axioms thetaMode_taylor_eq_sum
+#assert_central_comparison_axioms thetaMode_eq_exp
+#print axioms thetaMode_eq_exp
+#assert_central_comparison_axioms thetaArgument_add
+#print axioms thetaArgument_add
+#assert_central_comparison_axioms thetaMode_shift_le
+#print axioms thetaMode_shift_le
+#assert_central_comparison_axioms shifted_power_le
+#print axioms shifted_power_le
+#assert_central_comparison_axioms thetaMode_weighted_shift_le
+#print axioms thetaMode_weighted_shift_le
+#assert_central_comparison_axioms thetaMode_weighted_tail_bound
+#print axioms thetaMode_weighted_tail_bound
+#assert_central_comparison_axioms weightedPowerMass
+#print axioms weightedPowerMass
+#assert_central_comparison_axioms integral_weightedPowerMass
+#print axioms integral_weightedPowerMass
+#assert_central_comparison_axioms weightedPowerMass_nonneg
+#print axioms weightedPowerMass_nonneg
+#assert_central_comparison_axioms weightedTaylorMass
+#print axioms weightedTaylorMass
+#assert_central_comparison_axioms integral_weightedTaylor
+#print axioms integral_weightedTaylor
+#assert_central_comparison_axioms thetaMode_weighted_cell_bounds
+#print axioms thetaMode_weighted_cell_bounds
+
+-- Final theorem types expose the absence of a source-box hypothesis.
+#check @material_theta_integral_input
+#check @material_fourth_pivot_bounds_integral
+#check @material_fourth_pivot_pos_integral
+#check @material_fourth_block_posDef_integral
+#check @material_fourth_theta_integral_gate
+#check @material_fourth_cholesky_integral
+end CarryIntegralCertificate
