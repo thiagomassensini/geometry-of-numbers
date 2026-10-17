@@ -1,0 +1,15 @@
+{
+  "new_public_roots": 31,
+  "new_theorems": 27,
+  "new_definitions": 4,
+  "total_comparison_public_theorems": 212,
+  "prior_source_literal": true,
+  "standard_axiom_guards_types_and_bodies": "PASS",
+  "focused_build": "PASS (8795 jobs)",
+  "full_build": "PASS (8834 jobs)",
+  "foundation_audit": "PASS",
+  "geometry_audit": "PASS",
+  "analysis_audit": "PASS",
+  "comparison_and_all_old_new_regressions": "PASS",
+  "pins_and_user_work_preserved": true
+}
