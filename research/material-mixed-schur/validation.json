@@ -1,0 +1,128 @@
+{
+  "utc": "2026-10-17T06:06:48.302910+00:00",
+  "records": [
+    {
+      "name": "focused",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "GeometryOfNumbers.Analysis.CarryMaterialMixedSchur"
+      ],
+      "exit_code": 0,
+      "seconds": 8.309888227027841,
+      "log": "evidence/focused.log.gz"
+    },
+    {
+      "name": "full",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "exit_code": 0,
+      "seconds": 41.15005433099577,
+      "log": "evidence/full.log.gz"
+    },
+    {
+      "name": "foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 7.0745346860494465,
+      "log": "evidence/foundation.log.gz"
+    },
+    {
+      "name": "geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 9.9279910090263,
+      "log": "evidence/geometry.log.gz"
+    },
+    {
+      "name": "analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 46.55998142797034,
+      "log": "evidence/analysis.log.gz"
+    },
+    {
+      "name": "return-regression",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "-DwarningAsError=true",
+        "research/projective-global-return/Regression.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 7.471445205039345,
+      "log": "evidence/return-regression.log.gz"
+    },
+    {
+      "name": "valve-comparison",
+      "command": [
+        "bash",
+        "scripts/audit-material-projective-comparison.sh",
+        "/home/thlinux/carry-self-adjoint-operator"
+      ],
+      "exit_code": 0,
+      "seconds": 9.74543862399878,
+      "log": "evidence/valve-comparison.log.gz"
+    },
+    {
+      "name": "mixed-comparison",
+      "command": [
+        "bash",
+        "scripts/audit-material-central-comparison.sh",
+        "/home/thlinux/carry-self-adjoint-operator"
+      ],
+      "exit_code": 0,
+      "seconds": 52.503220537968446,
+      "log": "evidence/mixed-comparison.log.gz"
+    }
+  ],
+  "host": "llm",
+  "base": "b711431f9393db9382739af19ea135d9bc11fc0f",
+  "new_roots_audited": 48,
+  "new_theorems": 39,
+  "axiom_policy": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "audit": "Lean.collectAxioms transitive types and bodies plus #print axioms per public root",
+  "preserved_literal_sources": [
+    "lakefile.toml",
+    "lake-manifest.json",
+    "lean-toolchain",
+    "GeometryOfNumbers/Analysis/CarryMaterialProjectiveGlobalReturn.lean",
+    "GeometryOfNumbers/Analysis/CarryMaterialProjectiveReturnGreen.lean",
+    "GeometryOfNumbers/Analysis/CarryMaterialNullHierarchy.lean",
+    "GeometryOfNumbers/Analysis/CarryMaterialClockCentralCoupling.lean",
+    "GeometryOfNumbers/Analysis/CompletedBoundaryTransportedClock.lean",
+    "research/material-tfvd-projective/CanonicalValveComparison.lean"
+  ],
+  "old_audit_and_comparison_prefixes_preserved": true,
+  "positive_block": "Only the confluent Taylor block at orders 2 and 4; prior five-source sign reused",
+  "valve_readout_scope": "Ordered central row germs, not a joint kernel extension on the noncentral diagonal",
+  "numeric_proof_input": false,
+  "new_metric": false,
+  "new_operator": false,
+  "new_physical_source": false,
+  "strong_global_hilbert_derivatives_added": false,
+  "derivatives_exchanged_with_prefix_limits": false,
+  "all_order_positive_claimed": false,
+  "source_sha256": {
+    "GeometryOfNumbers/Analysis/CarryMaterialMixedSchur.lean": "3fd44722328b4af4b72451fbd875d85e1a4228f045c496149028737555a72fa7",
+    "research/material-central-calibration/CanonicalComparison.lean": "69174f114b1e0a8a88d07c257fd225f978df7580c7626428891be703a3893415"
+  }
+}
