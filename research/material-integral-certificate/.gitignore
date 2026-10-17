@@ -1,0 +1,11 @@
+__pycache__/
+evidence/*
+!evidence/README.md
+!evidence/validation.log
+!evidence/source-manifest.json
+!evidence/Audit.log
+!evidence/root-build.log
+!evidence/foundation-audit.log
+!evidence/geometry-audit.log
+!evidence/analysis-audit.log
+!evidence/build-results.json

@@ -1,0 +1,54 @@
+PASS: fixed operator HEAD and identical shared pins
+PASS: reusing checked PR22 dependencies; their sources are unchanged
+PASS: FixedInterval
+PASS: ThetaDerivatives
+PASS: WeightedQuadrature
+PASS: ThetaRetainedTail
+PASS: SourceIntegral
+PASS: ExponentialEnclosures
+PASS: CoefficientData
+PASS: CoefficientSupport
+PASS: CoefficientStep0
+PASS: CoefficientStep1
+PASS: CoefficientStep2
+PASS: CoefficientStep3A
+PASS: CoefficientStep3B
+PASS: CoefficientStep3
+PASS: CoefficientCode
+PASS: CodeBounds
+PASS: SourceComputation
+PASS: SourceBoxes
+PASS: FullSourceBoxes
+PASS: PivotFromIntegral
+PASS: NumericalPivotCheck
+PASS: NodeCacheData
+PASS: CachedSourceProgram
+PASS: ExactGridWeights
+PASS: ArgNodeChecks
+PASS: ModeNodeChecks
+PASS: NodeCacheEquivalence
+PASS: ExactSourceProgram
+PASS: ExactSourceProof
+PASS: TaylorNodeComputation
+PASS: QuadratureCacheData
+PASS: TabledSourceProgram
+PASS: QuadratureNodeCheck1
+PASS: QuadratureNodeCheck0
+PASS: QuadratureNodeCheck2
+PASS: QuadratureNodeCheck3
+PASS: QuadratureNodeChecks
+PASS: TabledSourceEquivalence
+PASS: CachedIntegralCheck0
+PASS: CachedIntegralCheck1
+PASS: CachedIntegralCheck2
+PASS: CachedIntegralCheck3
+PASS: CachedIntegralChecks
+PASS: IntegralInputChecks
+PASS: IntegralCertificate
+PASS: Regression
+PASS: Audit
+PASS: 221 public roots have explicit transitive type-and-body guards
+PASS: foundation audit
+PASS: geometry audit
+PASS: analysis audit
+PASS: integral certificate, fourth pivot, explicit transitive axiom guards and regressions

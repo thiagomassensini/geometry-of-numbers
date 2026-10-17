@@ -1,0 +1,249 @@
+{
+  "status": "pass",
+  "command": "CARRY_INTEGRAL_REUSE_PR22=1 bash research/material-integral-certificate/audit-material-integral-certificate.sh",
+  "lean_warning_as_error": true,
+  "public_roots": 221,
+  "module_builds": [
+    {
+      "module": "ArgNodeChecks",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Audit",
+      "status": "pass",
+      "log_sha256": "54bb02756331196b6b9a1fb85210f8457204f6689e14bd8d428e2794b8a9b760"
+    },
+    {
+      "module": "CachedIntegralCheck0",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "CachedIntegralCheck1",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "CachedIntegralCheck2",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "CachedIntegralCheck3",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "CachedIntegralChecks",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "CachedSourceProgram",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "CodeBounds",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "CoefficientCode",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "CoefficientData",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "CoefficientStep0",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "CoefficientStep1",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "CoefficientStep2",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "CoefficientStep3",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "CoefficientStep3A",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "CoefficientStep3B",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "CoefficientSupport",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "ExactGridWeights",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "ExactSourceProgram",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "ExactSourceProof",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "ExponentialEnclosures",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "FixedInterval",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "FullSourceBoxes",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "IntegralCertificate",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "IntegralInputChecks",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "ModeNodeChecks",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NodeCacheData",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NodeCacheEquivalence",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "NumericalPivotCheck",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "PivotFromIntegral",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "QuadratureCacheData",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "QuadratureNodeCheck0",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "QuadratureNodeCheck1",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "QuadratureNodeCheck2",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "QuadratureNodeCheck3",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "QuadratureNodeChecks",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "Regression",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "SourceBoxes",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "SourceComputation",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "SourceIntegral",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "TabledSourceEquivalence",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "TabledSourceProgram",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "TaylorNodeComputation",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "ThetaDerivatives",
+      "status": "pass",
+      "log_sha256": "7512b1cd139ccdd3516975d5e0d371239c94baa5a8f12681c45c86e1fba030f9"
+    },
+    {
+      "module": "ThetaRetainedTail",
+      "status": "pass",
+      "log_sha256": "e345f8a3612ed06a1c3c49ade2cfb8ecbe9f17dc58767324d4c98e499bf6d164"
+    },
+    {
+      "module": "WeightedQuadrature",
+      "status": "pass",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "root_and_zone_logs": {
+    "root-build.log": "b2c7a3cde946b3d97b65491bc71d4da60aea83a5f950b79e6dd0fc9efcbc6cc1",
+    "foundation-audit.log": "0cf345cc3bcedfa92250217b4e73bc37834671ac0b8a2b97f66d3c06551ce199",
+    "geometry-audit.log": "469cddc780755a2a401f4a2d437d4b65bccc9f3333dc598e645025f94caf4888",
+    "analysis-audit.log": "41638147d4cbad3e7727185f00c6ec49b0bd2f5b43446412c29f07d81b11cbee"
+  }
+}
