@@ -1,0 +1,82 @@
+'CarryReturnCompatibility.return_eventually_contractive_through_eight' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryReturnCompatibility.correctedGreen_eight_physical_realization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryReturnCompatibility.canonical_eight_physical_realization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryReturnCompatibility.correctedGreen_eight_nested_realization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryReturnCompatibility.residualJets_through_eight_eventually_compatible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryReturnCompatibility.boundaryBox' depends on axioms: [propext]
+'CarryReturnCompatibility.eightCouplingBox0' depends on axioms: [propext]
+'CarryReturnCompatibility.eightCouplingBox1' depends on axioms: [propext]
+'CarryReturnCompatibility.eightCouplingBox2' depends on axioms: [propext]
+'CarryReturnCompatibility.sixDiscriminantBox' depends on axioms: [propext]
+'CarryReturnCompatibility.eightDiscriminantBox' depends on axioms: [propext]
+'CarryReturnCompatibility.mem_boundaryBox' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.mem_eightCouplingBox0' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.mem_eightCouplingBox1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.mem_eightCouplingBox2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.mem_sixDiscriminantBox' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.mem_eightDiscriminantBox' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.eighthDiscriminant_rectangle_check' depends on axioms: [propext]
+'CarryReturnCompatibility.eighthSourceDiscriminant_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.eighthReturn_eventually_contractive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryReturnCompatibility.differenceInput_inclusion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.energyJetSource' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.energyJetSource_port' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.energyJetSource_inclusion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.residualJetSource' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.residualJetSource_port' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.residualJetSource_inclusion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.residualJetImage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.residualJetImage_transition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.residualJets_prefix_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.AllFiniteReturnBounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.allFiniteReturnBounds_diagonal_schedule' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryReturnCompatibility.limitBlock' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.limitBlock_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.finitePhysicalSynthesis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.finitePhysicalSynthesis_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.finitePhysicalSynthesis_pad' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.limitBlock_prefix_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.limitBlock_prefix_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.LimitPhysicalRange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.limitTransition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.limitTransition_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.sourcePad_trans' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.limitTransition_trans' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.limitTransition_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.limitTransition_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.allFiniteReturnBounds_of_source_remainders' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryReturnCompatibility.rangeTransportLinear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.rangeTransportLinear_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.energyPort_prefix_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.PhysicalEnergyRange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.energyTransition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.energyTransition_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.energyTransition_trans' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.energyTransition_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.eighth_block_calibration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.seven_to_eight_residual_crossings' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.incidentSpan_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.incidentInclusion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.incidentInclusion_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.return_restriction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.defect_compression_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.jordanPorts_prefix_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.energyPort_prefix_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.return_prefix_distance_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryReturnCompatibility.return_opNorm_mono' depends on axioms: [propext, Classical.choice, Quot.sound]

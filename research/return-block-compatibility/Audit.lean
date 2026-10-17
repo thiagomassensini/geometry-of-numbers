@@ -1,0 +1,203 @@
+import Regression
+
+namespace CarryReturnCompatibility
+
+#assert_central_comparison_axioms return_eventually_contractive_through_eight
+#print axioms return_eventually_contractive_through_eight
+
+#assert_central_comparison_axioms correctedGreen_eight_physical_realization
+#print axioms correctedGreen_eight_physical_realization
+
+#assert_central_comparison_axioms canonical_eight_physical_realization
+#print axioms canonical_eight_physical_realization
+
+#assert_central_comparison_axioms correctedGreen_eight_nested_realization
+#print axioms correctedGreen_eight_nested_realization
+
+#assert_central_comparison_axioms residualJets_through_eight_eventually_compatible
+#print axioms residualJets_through_eight_eventually_compatible
+
+#assert_central_comparison_axioms boundaryBox
+#print axioms boundaryBox
+
+#assert_central_comparison_axioms eightCouplingBox0
+#print axioms eightCouplingBox0
+
+#assert_central_comparison_axioms eightCouplingBox1
+#print axioms eightCouplingBox1
+
+#assert_central_comparison_axioms eightCouplingBox2
+#print axioms eightCouplingBox2
+
+#assert_central_comparison_axioms sixDiscriminantBox
+#print axioms sixDiscriminantBox
+
+#assert_central_comparison_axioms eightDiscriminantBox
+#print axioms eightDiscriminantBox
+
+#assert_central_comparison_axioms mem_boundaryBox
+#print axioms mem_boundaryBox
+
+#assert_central_comparison_axioms mem_eightCouplingBox0
+#print axioms mem_eightCouplingBox0
+
+#assert_central_comparison_axioms mem_eightCouplingBox1
+#print axioms mem_eightCouplingBox1
+
+#assert_central_comparison_axioms mem_eightCouplingBox2
+#print axioms mem_eightCouplingBox2
+
+#assert_central_comparison_axioms mem_sixDiscriminantBox
+#print axioms mem_sixDiscriminantBox
+
+#assert_central_comparison_axioms mem_eightDiscriminantBox
+#print axioms mem_eightDiscriminantBox
+
+#assert_central_comparison_axioms eighthDiscriminant_rectangle_check
+#print axioms eighthDiscriminant_rectangle_check
+
+#assert_central_comparison_axioms eighthSourceDiscriminant_pos
+#print axioms eighthSourceDiscriminant_pos
+
+#assert_central_comparison_axioms eighthReturn_eventually_contractive
+#print axioms eighthReturn_eventually_contractive
+
+#assert_central_comparison_axioms differenceInput_inclusion
+#print axioms differenceInput_inclusion
+
+#assert_central_comparison_axioms energyJetSource
+#print axioms energyJetSource
+
+#assert_central_comparison_axioms energyJetSource_port
+#print axioms energyJetSource_port
+
+#assert_central_comparison_axioms energyJetSource_inclusion
+#print axioms energyJetSource_inclusion
+
+#assert_central_comparison_axioms residualJetSource
+#print axioms residualJetSource
+
+#assert_central_comparison_axioms residualJetSource_port
+#print axioms residualJetSource_port
+
+#assert_central_comparison_axioms residualJetSource_inclusion
+#print axioms residualJetSource_inclusion
+
+#assert_central_comparison_axioms residualJetImage
+#print axioms residualJetImage
+
+#assert_central_comparison_axioms residualJetImage_transition
+#print axioms residualJetImage_transition
+
+#assert_central_comparison_axioms residualJets_prefix_pairing
+#print axioms residualJets_prefix_pairing
+
+#assert_central_comparison_axioms AllFiniteReturnBounds
+#print axioms AllFiniteReturnBounds
+
+#assert_central_comparison_axioms allFiniteReturnBounds_diagonal_schedule
+#print axioms allFiniteReturnBounds_diagonal_schedule
+
+#assert_central_comparison_axioms limitBlock
+#print axioms limitBlock
+
+#assert_central_comparison_axioms limitBlock_pairing
+#print axioms limitBlock_pairing
+
+#assert_central_comparison_axioms finitePhysicalSynthesis
+#print axioms finitePhysicalSynthesis
+
+#assert_central_comparison_axioms finitePhysicalSynthesis_pairing
+#print axioms finitePhysicalSynthesis_pairing
+
+#assert_central_comparison_axioms finitePhysicalSynthesis_pad
+#print axioms finitePhysicalSynthesis_pad
+
+#assert_central_comparison_axioms limitBlock_prefix_pairing
+#print axioms limitBlock_prefix_pairing
+
+#assert_central_comparison_axioms limitBlock_prefix_norm
+#print axioms limitBlock_prefix_norm
+
+#assert_central_comparison_axioms LimitPhysicalRange
+#print axioms LimitPhysicalRange
+
+#assert_central_comparison_axioms limitTransition
+#print axioms limitTransition
+
+#assert_central_comparison_axioms limitTransition_source
+#print axioms limitTransition_source
+
+#assert_central_comparison_axioms sourcePad_trans
+#print axioms sourcePad_trans
+
+#assert_central_comparison_axioms limitTransition_trans
+#print axioms limitTransition_trans
+
+#assert_central_comparison_axioms limitTransition_self
+#print axioms limitTransition_self
+
+#assert_central_comparison_axioms limitTransition_column
+#print axioms limitTransition_column
+
+#assert_central_comparison_axioms allFiniteReturnBounds_of_source_remainders
+#print axioms allFiniteReturnBounds_of_source_remainders
+
+#assert_central_comparison_axioms rangeTransportLinear
+#print axioms rangeTransportLinear
+
+#assert_central_comparison_axioms rangeTransportLinear_source
+#print axioms rangeTransportLinear_source
+
+#assert_central_comparison_axioms energyPort_prefix_norm
+#print axioms energyPort_prefix_norm
+
+#assert_central_comparison_axioms PhysicalEnergyRange
+#print axioms PhysicalEnergyRange
+
+#assert_central_comparison_axioms energyTransition
+#print axioms energyTransition
+
+#assert_central_comparison_axioms energyTransition_source
+#print axioms energyTransition_source
+
+#assert_central_comparison_axioms energyTransition_trans
+#print axioms energyTransition_trans
+
+#assert_central_comparison_axioms energyTransition_self
+#print axioms energyTransition_self
+
+#assert_central_comparison_axioms eighth_block_calibration
+#print axioms eighth_block_calibration
+
+#assert_central_comparison_axioms seven_to_eight_residual_crossings
+#print axioms seven_to_eight_residual_crossings
+
+#assert_central_comparison_axioms incidentSpan_mono
+#print axioms incidentSpan_mono
+
+#assert_central_comparison_axioms incidentInclusion
+#print axioms incidentInclusion
+
+#assert_central_comparison_axioms incidentInclusion_source
+#print axioms incidentInclusion_source
+
+#assert_central_comparison_axioms return_restriction
+#print axioms return_restriction
+
+#assert_central_comparison_axioms defect_compression_pairing
+#print axioms defect_compression_pairing
+
+#assert_central_comparison_axioms jordanPorts_prefix_pairing
+#print axioms jordanPorts_prefix_pairing
+
+#assert_central_comparison_axioms energyPort_prefix_pairing
+#print axioms energyPort_prefix_pairing
+
+#assert_central_comparison_axioms return_prefix_distance_zero
+#print axioms return_prefix_distance_zero
+
+#assert_central_comparison_axioms return_opNorm_mono
+#print axioms return_opNorm_mono
+
+end CarryReturnCompatibility

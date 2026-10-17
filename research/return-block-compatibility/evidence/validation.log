@@ -1,0 +1,15 @@
+PASS: fixed operator, shared pins and unchanged previously compiled dependencies
+PASS: ReturnRestriction
+PASS: PortTransitions
+PASS: JetCompatibility
+PASS: EighthReturnCheck
+PASS: EighthPhysical
+PASS: LimitTower
+PASS: Regression
+PASS: Audit
+PASS: 66 public roots have explicit transitive type-and-body guards
+PASS: root build --wfail
+PASS: foundation audit
+PASS: geometry audit
+PASS: analysis audit
+PASS: return restrictions, coherent transitions and eight-source integral certificate
