@@ -1,0 +1,19 @@
+{
+  "status": "pass",
+  "command": "bash research/theta-fifth-odd-pattern/audit-theta-fifth-odd-pattern.sh",
+  "public_roots": 75,
+  "logs": {
+    "AllOrderPattern.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Audit.log": "ac4ec2a8cba474eb32696a38aeba57837b60d3bd263983f0491b649b12a1c21f",
+    "FifthOddCertificate.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "GeneralTails.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ModeSchedule.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Regression.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "TenSourceReturn.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ThetaTwenty.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "analysis-audit.log.gz": "af2b5135c317d37f0e441fa7f0617331bdae2cd812c866458c73376564286476",
+    "foundation-audit.log.gz": "56f2c2dd78c40171d308b683cddde7c07724c7bc0192ea9b1b429c03ba7188b2",
+    "geometry-audit.log.gz": "9a34276323f3cc0eaa89ccd25d43e1941b5e69ac3b7ef4c549d1ef0af49fea8d",
+    "root-build.log.gz": "ae5fc1c953498512700798f224f4eeb8588e4c1660c037b2fb245276203b358d"
+  }
+}

@@ -1,0 +1,230 @@
+import Regression
+
+namespace CarryThetaPattern
+
+#assert_central_comparison_axioms sourceCeiling
+#print axioms sourceCeiling
+
+#assert_central_comparison_axioms sourceRemainder_ceiling
+#print axioms sourceRemainder_ceiling
+
+#assert_central_comparison_axioms criticalMargin_iff_sourceCoefficient
+#print axioms criticalMargin_iff_sourceCoefficient
+
+#assert_central_comparison_axioms sourceThetaIntegral
+#print axioms sourceThetaIntegral
+
+#assert_central_comparison_axioms sourceThetaIntegral_moments
+#print axioms sourceThetaIntegral_moments
+
+#assert_central_comparison_axioms sourceThetaIntegral_eq_xiMoment
+#print axioms sourceThetaIntegral_eq_xiMoment
+
+#assert_central_comparison_axioms sourceThetaIntegral_pos
+#print axioms sourceThetaIntegral_pos
+
+#assert_central_comparison_axioms sourceCoefficient_theta
+#print axioms sourceCoefficient_theta
+
+#assert_central_comparison_axioms sourceCoefficient_parity
+#print axioms sourceCoefficient_parity
+
+#assert_central_comparison_axioms criticalMargin_iff_sourceTheta
+#print axioms criticalMargin_iff_sourceTheta
+
+#assert_central_comparison_axioms sourceThetaGap
+#print axioms sourceThetaGap
+
+#assert_central_comparison_axioms sourceSchur_thetaGap
+#print axioms sourceSchur_thetaGap
+
+#assert_central_comparison_axioms physicalThetaGap_tendsto
+#print axioms physicalThetaGap_tendsto
+
+#assert_central_comparison_axioms criticalMargin_iff_thetaGap
+#print axioms criticalMargin_iff_thetaGap
+
+#assert_central_comparison_axioms evenMargin_iff_lower_theta
+#print axioms evenMargin_iff_lower_theta
+
+#assert_central_comparison_axioms oddMargin_iff_upper_theta
+#print axioms oddMargin_iff_upper_theta
+
+#assert_central_comparison_axioms AllSourceThetaGates
+#print axioms AllSourceThetaGates
+
+#assert_central_comparison_axioms allSourceThetaGates_iff_margins
+#print axioms allSourceThetaGates_iff_margins
+
+#assert_central_comparison_axioms allSourceThetaGates_returnBounds
+#print axioms allSourceThetaGates_returnBounds
+
+#assert_central_comparison_axioms sourceCeiling_fifthOdd
+#print axioms sourceCeiling_fifthOdd
+
+#assert_central_comparison_axioms tenthCoefficientBox
+#print axioms tenthCoefficientBox
+
+#assert_central_comparison_axioms ninthMomentBox
+#print axioms ninthMomentBox
+
+#assert_central_comparison_axioms sourceMomentBox
+#print axioms sourceMomentBox
+
+#assert_central_comparison_axioms oddRemainderBox
+#print axioms oddRemainderBox
+
+#assert_central_comparison_axioms mem_tenthCoefficientBox
+#print axioms mem_tenthCoefficientBox
+
+#assert_central_comparison_axioms mem_ninthMomentBox
+#print axioms mem_ninthMomentBox
+
+#assert_central_comparison_axioms mem_sourceMomentBox
+#print axioms mem_sourceMomentBox
+
+#assert_central_comparison_axioms mem_oddRemainderBox
+#print axioms mem_oddRemainderBox
+
+#assert_central_comparison_axioms odd_five_rectangle_check
+#print axioms odd_five_rectangle_check
+
+#assert_central_comparison_axioms odd_fifth_lower_check
+#print axioms odd_fifth_lower_check
+
+#assert_central_comparison_axioms odd_fifth_upper_check
+#print axioms odd_fifth_upper_check
+
+#assert_central_comparison_axioms fifth_ordered_odd_pivot_bounds
+#print axioms fifth_ordered_odd_pivot_bounds
+
+#assert_central_comparison_axioms odd_five_pivots_pos
+#print axioms odd_five_pivots_pos
+
+#assert_central_comparison_axioms odd_source_five_posDef
+#print axioms odd_source_five_posDef
+
+#assert_central_comparison_axioms fifth_odd_pivot_pos
+#print axioms fifth_odd_pivot_pos
+
+#assert_central_comparison_axioms fifth_odd_criticalMargin
+#print axioms fifth_odd_criticalMargin
+
+#assert_central_comparison_axioms fifth_odd_theta_integral_certificate
+#print axioms fifth_odd_theta_integral_certificate
+
+#assert_central_comparison_axioms omittedMajorantRate
+#print axioms omittedMajorantRate
+
+#assert_central_comparison_axioms omittedMajorantConstant
+#print axioms omittedMajorantConstant
+
+#assert_central_comparison_axioms omittedMajorantRate_pos
+#print axioms omittedMajorantRate_pos
+
+#assert_central_comparison_axioms omittedMajorantConstant_pos
+#print axioms omittedMajorantConstant_pos
+
+#assert_central_comparison_axioms theta_mode_after_prefix_le
+#print axioms theta_mode_after_prefix_le
+
+#assert_central_comparison_axioms theta_tail_after_prefix_le
+#print axioms theta_tail_after_prefix_le
+
+#assert_central_comparison_axioms theta_prefix_split
+#print axioms theta_prefix_split
+
+#assert_central_comparison_axioms weightedOmittedPrefix
+#print axioms weightedOmittedPrefix
+
+#assert_central_comparison_axioms weightedOmittedPrefix_eq_tail
+#print axioms weightedOmittedPrefix_eq_tail
+
+#assert_central_comparison_axioms weightedOmittedPrefix_bounds
+#print axioms weightedOmittedPrefix_bounds
+
+#assert_central_comparison_axioms integrableOn_weightedOmittedPrefix
+#print axioms integrableOn_weightedOmittedPrefix
+
+#assert_central_comparison_axioms integral_weightedOmittedPrefix_bounds
+#print axioms integral_weightedOmittedPrefix_bounds
+
+#assert_central_comparison_axioms retained_decay_all_orders
+#print axioms retained_decay_all_orders
+
+#assert_central_comparison_axioms retained_tail_bound_all_orders
+#print axioms retained_tail_bound_all_orders
+
+#assert_central_comparison_axioms omittedMajorantConstant_geometric
+#print axioms omittedMajorantConstant_geometric
+
+#assert_central_comparison_axioms omittedPrefix_geometric_bound
+#print axioms omittedPrefix_geometric_bound
+
+#assert_central_comparison_axioms omittedPrefix_integral_tendsto_zero
+#print axioms omittedPrefix_integral_tendsto_zero
+
+#assert_central_comparison_axioms exists_monotone_common_mode_schedule
+#print axioms exists_monotone_common_mode_schedule
+
+#assert_central_comparison_axioms exists_monotone_mode_schedule
+#print axioms exists_monotone_mode_schedule
+
+#assert_central_comparison_axioms theta_weights_regression
+#print axioms theta_weights_regression
+
+#assert_central_comparison_axioms fifth_odd_pattern_regression
+#print axioms fifth_odd_pattern_regression
+
+#assert_central_comparison_axioms ten_block_calibration
+#print axioms ten_block_calibration
+
+#assert_central_comparison_axioms eight_to_ten_residual_crossings
+#print axioms eight_to_ten_residual_crossings
+
+#assert_central_comparison_axioms next_even_margin_gate
+#print axioms next_even_margin_gate
+
+#assert_central_comparison_axioms next_even_theta_weight
+#print axioms next_even_theta_weight
+
+#assert_central_comparison_axioms reciprocal_tolerance_mode_schedule
+#print axioms reciprocal_tolerance_mode_schedule
+
+#assert_central_comparison_axioms common_prefix_mode_schedule_regression
+#print axioms common_prefix_mode_schedule_regression
+
+#assert_central_comparison_axioms finiteBoundary_positive_iff_sectorMatrices
+#print axioms finiteBoundary_positive_iff_sectorMatrices
+
+#assert_central_comparison_axioms ten_boundary_positive
+#print axioms ten_boundary_positive
+
+#assert_central_comparison_axioms ten_return_eventually_contractive
+#print axioms ten_return_eventually_contractive
+
+#assert_central_comparison_axioms return_contractive_through_ten
+#print axioms return_contractive_through_ten
+
+#assert_central_comparison_axioms correctedGreen_ten_physical_realization
+#print axioms correctedGreen_ten_physical_realization
+
+#assert_central_comparison_axioms canonical_ten_physical_realization
+#print axioms canonical_ten_physical_realization
+
+#assert_central_comparison_axioms ten_nested_physical_realization
+#print axioms ten_nested_physical_realization
+
+#assert_central_comparison_axioms mem_tabledTheta_upto_twenty
+#print axioms mem_tabledTheta_upto_twenty
+
+#assert_central_comparison_axioms thetaTwentyBox
+#print axioms thetaTwentyBox
+
+#assert_central_comparison_axioms thetaTwenty_containment_check
+#print axioms thetaTwenty_containment_check
+
+#assert_central_comparison_axioms mem_thetaTwentyBox
+#print axioms mem_thetaTwentyBox
+
+end CarryThetaPattern
