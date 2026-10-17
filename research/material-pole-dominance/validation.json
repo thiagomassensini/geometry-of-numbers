@@ -1,0 +1,74 @@
+{
+  "host": "llm",
+  "base_commit": "b76a061766537e04e7bffc405f3f6216b92f077f",
+  "public_definitions": 1,
+  "public_theorems": 17,
+  "public_roots": 18,
+  "total_external_public_theorems": 185,
+  "checks": [
+    {
+      "command": "lake build GeometryOfNumbers.Analysis.CarryMaterialNullHierarchy --wfail && lake build --wfail",
+      "exit_code": 0,
+      "full_jobs": 8834,
+      "log": "build.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-foundation.sh && bash scripts/audit-geometry.sh && bash scripts/audit-analysis.sh && lake env lean -DwarningAsError=true research/material-null-hierarchy/Regression.lean",
+      "exit_code": 0,
+      "log": "zone-regression.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-material-central-comparison.sh /home/thlinux/carry-self-adjoint-operator",
+      "warningAsError": true,
+      "exit_code": 0,
+      "log": "cross-audit.log.gz"
+    },
+    {
+      "command": "source trust scan and literal preservation of previous comparison after two imports",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --cached --check",
+      "exit_code": 0
+    }
+  ],
+  "unconditional": [
+    "source h0>=1/50 and h1<=19/500000",
+    "remainder equals actual quotient logarithmic jet at all orders, reusing finite-factor ledger",
+    "formal valve deflation from the original characteristic",
+    "complete even coefficient principal/remainder ledger",
+    "reciprocal-square sector and norm budget for specified complex coordinates"
+  ],
+  "conditional": [
+    "all-order margin Ck >= (71/2500)*a^(k+1) given the explicit source tail inequality",
+    "theta mass domination for every k given the uniform concrete quotient-jet bound",
+    "tail inequality from the actual source power readout, a square-summable separated complex tail and second-power sector control"
+  ],
+  "open": [
+    "a concrete source anchor and uniform quotient-jet bound",
+    "existence and source identification of the infinite pole readout",
+    "unconditional infinite hierarchy positivity",
+    "global residual PSD and physical Hilbert pairing"
+  ],
+  "numerical_diagnostic": {
+    "command": "ssh llm /home/thlinux/miniforge3/bin/python < probe_source_pole.py",
+    "status": "FINITE_NONRIGOROUS_DIAGNOSTIC",
+    "file": "probe.json",
+    "scope": "n=1..255 only; no zero isolation or all-order conclusion"
+  },
+  "regressions": [
+    "all previous examples retained",
+    "a=0 remainder recovers unchanged source moments",
+    "nonreal geometric point tau=20+i/2 retains its imaginary offset",
+    "a=0 formal deflation recovers existing native-valve identity"
+  ],
+  "axioms": {
+    "allowed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "public_root_footprints": "footprints.json",
+    "conditional_premises": "remain visible in theorem types; guards are not existence proofs"
+  }
+}

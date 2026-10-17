@@ -1,0 +1,167 @@
+{
+  "guard": "transitive types and bodies",
+  "new_roots": [
+    {
+      "name": "CarryMaterialPoleDominanceComparison.material_moment_zero_ge_one_fiftieth",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialPoleDominanceComparison.material_moment_one_le_nineteen_five_hundred_thousand",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialPoleDominanceComparison.carryMaterialPoleRemainder",
+      "kind": "def",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialPoleDominanceComparison.material_pole_remainder_eq_quotient_jet",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialPoleDominanceComparison.material_elementary_factor_valve",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialPoleDominanceComparison.material_source_formal_deflation",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialPoleDominanceComparison.material_even_null_pole_ledger",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialPoleDominanceComparison.material_pole_parameter_budget",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialPoleDominanceComparison.material_pole_square_budget",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialPoleDominanceComparison.material_reciprocal_squared_strip_budget",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialPoleDominanceComparison.material_null_coefficient_lower_of_pole_tail",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialPoleDominanceComparison.material_theta_dominance_all_of_pole_tail",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialPoleDominanceComparison.material_theta_dominance_all_of_quotient_jet_bound",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialPoleDominanceComparison.material_pole_tail_of_complex_readout",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialPoleDominanceComparison.material_hierarchy_positive_of_complex_pole_readout",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialPoleDominanceComparison.material_theta_dominance_all_of_complex_pole_readout",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialPoleDominanceComparison.material_first_pole_interval_budget",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialPoleDominanceComparison.material_theta_dominance_all_of_separated_readout",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ]
+}

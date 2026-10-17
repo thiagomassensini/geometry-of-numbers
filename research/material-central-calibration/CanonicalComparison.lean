@@ -1,3 +1,5 @@
+import CarrySelfAdjointOperator.AllOrderLogJetLedger
+import CarrySelfAdjointOperator.CompletedNativeSixthOrderThetaPositivity
 import CarrySelfAdjointOperator.CompletedNativeChiralReturnFourteenthSourceIntegral
 import CarrySelfAdjointOperator.NativeSourceThetaGreenTransport
 import GeometryOfNumbers.Analysis.CarryMaterialNullHierarchy
@@ -2803,3 +2805,441 @@ example : Tendsto carryMaterialNullCoefficient atTop (nhds 0) :=
   material_null_coefficients_tendsto_zero
 
 end CarryMaterialHierarchySignComparison
+
+namespace CarryMaterialPoleDominanceComparison
+open GeometryOfNumbers.Analysis CarrySelfAdjointOperator Filter
+open CarryMaterialNullHierarchyComparison CarryMaterialHierarchySignComparison
+open scoped BigOperators Topology
+noncomputable section
+set_option autoImplicit false
+set_option maxHeartbeats 2400000
+set_option backward.isDefEq.respectTransparency false
+
+local notation "h" => canonicalCompletedNativeLogDerivativeMoment
+local notation "μ" => completedNativeXiCosineMoment
+
+/-- A ruler from the EXISTING source integrals, with no pole premise. -/
+theorem material_moment_zero_ge_one_fiftieth : (1/50 : ℝ) ≤ h 0 := by
+  have h0 : 0 < μ 0 := completedNativeXiCosineMoment_pos 0
+  have hm := completedNativeXiCosineMoment_one_ge_287_div_12500
+  have hu := completedNativeXiCosineMoment_zero_lt_249_div_500
+  rw [canonicalCompletedNativeLogDerivativeMoment_zero_eq_secondOrderRatio,
+    completedNativeRealEvenCharacteristicCoefficient_eq_cosineMoment_allOrder 0,
+    completedNativeRealEvenCharacteristicCoefficient_eq_cosineMoment_allOrder 1]
+  norm_num only [pow_zero,pow_one,zero_mul,one_mul,div_one,Nat.factorial] at ⊢
+  apply (le_div_iff₀ h0).mpr
+  nlinarith
+
+private theorem material_moment_one_cosine_formula :
+    h 1 = μ 1^2/(4*μ 0^2)-μ 2/(12*μ 0) := by
+  rw [canonicalCompletedNativeLogDerivativeMoment_one_eq_fourthOrderDiscriminant]
+  simp only [completedNativeRealEvenCharacteristicCoefficient_eq_cosineMoment_allOrder]
+  norm_num only [Nat.factorial, Nat.reduceMul, pow_zero, pow_one, neg_one_sq,
+    one_mul, div_one]
+  field_simp [(completedNativeXiCosineMoment_pos 0).ne']
+  ring
+
+/-- The second input to the tail budget is also certified by the original
+theta source. No new quadrature and no positive moment model is supplied. -/
+theorem material_moment_one_le_nineteen_five_hundred_thousand :
+    h 1 ≤ (19/500000 : ℝ) := by
+  obtain ⟨ht0l,ht0u⟩ := completedNativeThetaTailMoment_zero_certified_bounds
+  obtain ⟨ht2l,ht2u⟩ := completedNativeThetaTailMoment_two_certified_bounds
+  obtain ⟨ht4l,ht4u⟩ := completedNativeThetaTailMoment_four_certified_bounds
+  have he0 := completedNativeXiCosineMoment_zero_eq_thetaTailMoments
+  have he1 := completedNativeXiCosineMoment_one_eq_thetaTailMoments
+  have he2 := completedNativeXiCosineMoment_two_eq_thetaTailMoments
+  have hc0l : (1988479/4000000 : ℝ) ≤ μ 0 := by linarith
+  have hc0u : μ 0 ≤ (19884847/40000000 : ℝ) := by linarith
+  have hc1u : μ 1 ≤ (4596037/200000000 : ℝ) := by linarith
+  have hc2l : (11848451/4000000000 : ℝ) ≤ μ 2 := by linarith
+  have hs : μ 1^2 ≤ (4596037/200000000 : ℝ)^2 :=
+    (sq_le_sq₀ (completedNativeXiCosineMoment_pos 1).le (by norm_num)).mpr hc1u
+  have hd : (4 : ℝ)*(1988479/4000000)^2 ≤ 4*μ 0^2 := by
+    nlinarith [(sq_le_sq₀ (by norm_num : (0:ℝ) ≤ 1988479/4000000) (completedNativeXiCosineMoment_pos 0).le).mpr hc0l]
+  have ha : μ 1^2/(4*μ 0^2) ≤
+      (4596037/200000000 : ℝ)^2/(4*(1988479/4000000)^2) := by
+    calc
+      _ ≤ (4596037/200000000 : ℝ)^2/(4*μ 0^2) :=
+        div_le_div_of_nonneg_right hs (by positivity)
+      _ ≤ _ := div_le_div_of_nonneg_left (by norm_num) (by norm_num) hd
+  have hb : (11848451/4000000000 : ℝ)/(12*(19884847/40000000)) ≤ μ 2/(12*μ 0) := by
+    calc
+      _ ≤ (11848451/4000000000 : ℝ)/(12*μ 0) :=
+        div_le_div_of_nonneg_left (by norm_num) (by positivity [completedNativeXiCosineMoment_pos 0])
+          (by linarith)
+      _ ≤ _ := div_le_div_of_nonneg_right hc2l (by positivity [completedNativeXiCosineMoment_pos 0])
+  rw [material_moment_one_cosine_formula]
+  linarith
+
+/-- A literal subtraction from the already synthesized source moments.
+The parameter a has NOT been identified with a pole by this definition. -/
+def carryMaterialPoleRemainder (a : ℝ) (n : ℕ) : ℝ := h n-a^(n+1)
+
+/-- The existing finite-factor ledger identifies the remainder with an
+actual analytic quotient jet of the ORIGINAL native characteristic.
+The variable u here is the existing height-squared germ, not material time. -/
+theorem material_pole_remainder_eq_quotient_jet (a : ℝ) (n : ℕ) :
+    (carryMaterialPoleRemainder a n : ℂ) =
+      -iteratedDeriv n (logDeriv (fun u : ℂ =>
+        completedNativeEvenCharacteristic u/(1-(a : ℂ)*u))) 0/(n.factorial : ℂ) := by
+  have he := AllOrderLogJet.nativeMoment_eq_finiteFactors_add_remainder
+    ({0} : Finset ℕ) (fun _ => (a : ℂ)) n
+  simp only [Finset.sum_singleton,Finset.prod_singleton] at he
+  unfold carryMaterialPoleRemainder
+  push_cast
+  linear_combination he
+
+/-- Existing valve uniqueness identifies the elementary factor. This is a
+formal-series calculation, not evidence of an analytic source pole. -/
+theorem material_elementary_factor_valve (a : ℝ) :
+    (1-PowerSeries.C a*PowerSeries.X : PowerSeries ℝ) =
+      CarrySelfAdjointOperator.ProjectiveValve.projectiveValveMass (-(PowerSeries.mk (fun n => a^(n+1)))) := by
+  let G : PowerSeries ℝ := PowerSeries.mk (fun n => a^(n+1))
+  have hg : G*(1-PowerSeries.C a*PowerSeries.X) = PowerSeries.C a := by
+    rw [mul_sub,mul_one]
+    have he : G*(PowerSeries.C a*PowerSeries.X) = PowerSeries.X*(PowerSeries.C a*G) := by ring
+    rw [he]
+    ext n
+    cases n with
+    | zero => simp [G]
+    | succ n => simp [G,PowerSeries.coeff_succ_X_mul,PowerSeries.coeff_C_mul,pow_succ]; ring
+  apply CarrySelfAdjointOperator.ProjectiveValve.projectiveValveMass_unique
+  · simp
+  · change (PowerSeries.derivative ℝ) (1-PowerSeries.C a*PowerSeries.X) = -G*(1-PowerSeries.C a*PowerSeries.X)
+    rw [neg_mul,hg]
+    simp [Derivation.leibniz,smul_eq_mul]
+
+/-- A literal source/valve deflation identity for EVERY a. No root, disk
+of continuation or convergence beyond the initial germ follows from it. -/
+theorem material_source_formal_deflation (a : ℝ) :
+    normalizedCompletedNativeEvenFormalSeries =
+      (1-PowerSeries.C a*PowerSeries.X : PowerSeries ℝ)*
+        CarrySelfAdjointOperator.ProjectiveValve.projectiveValveMass (-(PowerSeries.mk (carryMaterialPoleRemainder a))) := by
+  rw [normalizedCompletedNativeEvenFormalSeries_eq_valveMass_neg,
+    material_elementary_factor_valve,← CarrySelfAdjointOperator.ProjectiveValve.projectiveValveMass_add]
+  congr 1
+  ext n
+  simp [carryMaterialPoleRemainder]
+  ring
+
+/-- The two ordered principal/remainder crosses and the remainder square
+are retained exactly, before any lower estimate. -/
+theorem material_even_null_pole_ledger (a : ℝ) (p : ℕ) :
+    carryMaterialNullCoefficient (2*p) =
+      a^(2*p+1)*(1-a/h 0) + carryMaterialPoleRemainder a (2*p) -
+        2*a^(p+1)*carryMaterialPoleRemainder a p/h 0 -
+        (carryMaterialPoleRemainder a p)^2/h 0 := by
+  rw [material_null_coefficient_even]
+  unfold carryMaterialPoleRemainder
+  have he : (a^(p+1))^2 = a^(2*p+1)*a := by
+    rw [← pow_mul, show (p+1)*2=(2*p+1)+1 by omega, pow_succ]
+  field_simp [canonicalCompletedNativeLogDerivativeMoment_zero_pos.ne']
+  nlinarith [he]
+
+private theorem pole_parameter_pos {a : ℝ} (ha : (25/5041 : ℝ) ≤ a) : 0 < a := by
+  linarith
+
+theorem material_pole_parameter_budget {a : ℝ}
+    (ha : (25/5041 : ℝ) ≤ a) (hau : a ≤ (1/196 : ℝ)) :
+    a ≤ (13/50 : ℝ)*h 0 ∧ (1/400 : ℝ) ≤ (51/100 : ℝ)*a := by
+  constructor
+  · linarith [material_moment_zero_ge_one_fiftieth]
+  · linarith
+
+/-- A concrete square-mass budget. The upper moment bound and a's range
+are source-facing data; the inequality is not the desired null sign. -/
+theorem material_pole_square_budget {a S : ℝ} (ha : (25/5041 : ℝ) ≤ a)
+    (hS : (99/100 : ℝ)*S ≤ h 1-a^2) : S ≤ (3/5 : ℝ)*a^2 := by
+  have hs : (25/5041 : ℝ)^2 ≤ a^2 :=
+    (sq_le_sq₀ (by norm_num) (pole_parameter_pos ha).le).mpr ha
+  nlinarith [material_moment_one_le_nineteen_five_hundred_thousand]
+
+/-- Elementary geometry of a candidate remaining source pole. This does
+not assert that such poles enumerate the source. Small imaginary offsets
+are retained, rather than replaced by real positive atoms. -/
+theorem material_reciprocal_squared_strip_budget (τ : ℂ)
+    (hx : (20 : ℝ) ≤ τ.re) (hy : |τ.im| ≤ (1/2 : ℝ)) :
+    ‖(τ^2)⁻¹‖ ≤ (1/400 : ℝ) ∧
+      (99/100 : ℝ)*‖(τ^2)⁻¹‖^2 ≤ (((τ^2)⁻¹)^2).re := by
+  have hτ : τ ≠ 0 := by intro hz; simp only [hz,Complex.zero_re] at hx; linarith
+  have hz : τ^2 ≠ 0 := pow_ne_zero _ hτ
+  have hD : 0 < Complex.normSq (τ^2) := Complex.normSq_pos.mpr hz
+  have hx2 : (400 : ℝ) ≤ τ.re^2 := by nlinarith
+  have hy2 : τ.im^2 ≤ (1/4 : ℝ) := by nlinarith [sq_abs τ.im,abs_nonneg τ.im]
+  constructor
+  · rw [norm_inv,norm_pow]
+    have hb : (400 : ℝ) ≤ ‖τ‖^2 := by
+      rw [← Complex.normSq_eq_norm_sq,Complex.normSq_apply]
+      nlinarith [sq_nonneg τ.im]
+    simpa only [one_div] using (one_div_le_one_div_of_le (by norm_num : (0:ℝ) < 400) hb)
+  · have hgeom : (99/100 : ℝ)*Complex.normSq (τ^2) ≤ (τ^2).re^2-(τ^2).im^2 := by
+      simp only [pow_two,Complex.mul_re,Complex.mul_im,Complex.normSq_apply]
+      nlinarith [mul_nonneg (sq_nonneg τ.re)
+        (show 0 ≤ τ.re^2-798*τ.im^2 by nlinarith)]
+    have ht := div_le_div_of_nonneg_right hgeom (sq_nonneg (Complex.normSq (τ^2)))
+    have hre (z : ℂ) : (z^2).re=z.re*z.re-z.im*z.im := by simp only [pow_two,Complex.mul_re]
+    rw [hre]
+    rw [← Complex.normSq_eq_norm_sq,Complex.normSq_inv,Complex.inv_re,Complex.inv_im]
+    convert ht using 1 <;> first | rfl | field_simp [hD.ne']
+
+/-- A quantitative all-order implication on the actual source. Its tail
+premise is explicit; the source has not yet been proved to satisfy it. -/
+theorem material_null_coefficient_lower_of_pole_tail {a : ℝ}
+    (ha : (25/5041 : ℝ) ≤ a) (hau : a ≤ (1/196 : ℝ))
+    (htail : ∀ n : ℕ, 0 < n → |carryMaterialPoleRemainder a n| ≤
+      (3/5 : ℝ)*a^(n+1)*(51/100 : ℝ)^(n-1))
+    (k : ℕ) (hk : 0 < k) :
+    (71/2500 : ℝ)*a^(k+1) ≤ carryMaterialNullCoefficient k := by
+  have hap : 0 < a := pole_parameter_pos ha
+  have hb := (material_pole_parameter_budget ha hau).1
+  have hrough (n : ℕ) (hn : 0 < n) :
+      |carryMaterialPoleRemainder a n| ≤ (3/5 : ℝ)*a^(n+1) := by
+    have hp : (51/100 : ℝ)^(n-1) ≤ 1 := pow_le_one₀ (by norm_num) (by norm_num)
+    exact (htail n hn).trans (by nlinarith [pow_nonneg hap.le (n+1)])
+  have hm (n : ℕ) (hn : 0 < n) : |h n| ≤ (8/5 : ℝ)*a^(n+1) := by
+    calc
+      |h n| = |carryMaterialPoleRemainder a n+a^(n+1)| := by
+        unfold carryMaterialPoleRemainder
+        ring_nf
+      _ ≤ |carryMaterialPoleRemainder a n|+|a^(n+1)| := abs_add_le _ _
+      _ ≤ _ := by rw [abs_of_pos (pow_pos hap _)]; linarith [hrough n hn]
+  by_cases he : k%2=0
+  · have hek : k=2*(k/2) := by omega
+    let p := k/2
+    have hp : 0 < p := by dsimp [p]; omega
+    have htheta : (51/100 : ℝ)^(2*p-1) ≤ (51/100 : ℝ) := by
+      rw [show 2*p-1=(2*p-2)+1 by omega, pow_succ]
+      nlinarith [pow_le_one₀ (by norm_num : (0:ℝ) ≤ 51/100)
+        (by norm_num : (51/100:ℝ) ≤ 1) (n := 2*p-2)]
+    have hlow : (1-(3/5 : ℝ)*(51/100))*a^(2*p+1) ≤ h (2*p) := by
+      have ht := (abs_le.mp (htail (2*p) (by omega))).1
+      dsimp [carryMaterialPoleRemainder] at ht
+      nlinarith [mul_le_mul_of_nonneg_left htheta
+        (show 0 ≤ (3/5:ℝ)*a^(2*p+1) by positivity)]
+    have hs : (h p)^2 ≤ (8/5 : ℝ)^2*(a^(p+1))^2 := by
+      nlinarith [hm p hp, abs_nonneg (h p), sq_abs (h p), pow_pos hap (p+1)]
+    have heq : (a^(p+1))^2=a^(2*p+1)*a := by
+      rw [← pow_mul,show (p+1)*2=(2*p+1)+1 by omega,pow_succ]
+    rw [heq] at hs
+    have hc : (h p)^2/h 0 ≤ (13/50 : ℝ)*(8/5 : ℝ)^2*a^(2*p+1) := by
+      apply (div_le_iff₀ canonicalCompletedNativeLogDerivativeMoment_zero_pos).mpr
+      nlinarith [mul_le_mul_of_nonneg_left hb
+        (show 0 ≤ (8/5 : ℝ)^2*a^(2*p+1) by positivity)]
+    rw [hek,material_null_coefficient_even]
+    change (71/2500 : ℝ)*a^(2*p+1) ≤ h (2*p)-(h p)^2/h 0
+    linarith
+  · have hek : k=2*(k/2)+1 := by omega
+    have hl := (abs_le.mp (hrough k hk)).1
+    dsimp [carryMaterialPoleRemainder] at hl
+    rw [hek,material_null_coefficient_odd]
+    rw [← hek]
+    nlinarith [pow_pos hap (k+1)]
+
+theorem material_theta_dominance_all_of_pole_tail {a : ℝ}
+    (ha : (25/5041 : ℝ) ≤ a) (hau : a ≤ (1/196 : ℝ))
+    (htail : ∀ n : ℕ, 0 < n → |carryMaterialPoleRemainder a n| ≤
+      (3/5 : ℝ)*a^(n+1)*(51/100 : ℝ)^(n-1)) :
+    ∀ k : ℕ, 0 < k →
+      nativeThetaNegativeMass (carryMaterialNullThetaPolynomial k) <
+        nativeThetaPositiveMass (carryMaterialNullThetaPolynomial k) := by
+  intro k hk
+  apply (material_null_coefficient_pos_iff_theta_dominance k).mp
+  exact lt_of_lt_of_le (by positivity [pole_parameter_pos ha])
+    (material_null_coefficient_lower_of_pole_tail ha hau htail k hk)
+
+/-- A sufficient estimate on a concrete function of the source itself.
+There is no freely chosen readout or desired Gram in this hypothesis.
+The uniform quotient-jet estimate is still an unproved source obligation. -/
+theorem material_theta_dominance_all_of_quotient_jet_bound {a : ℝ}
+    (ha : (25/5041 : ℝ) ≤ a) (hau : a ≤ (1/196 : ℝ))
+    (hjet : ∀ n : ℕ, 0 < n →
+      ‖-iteratedDeriv n (logDeriv (fun u : ℂ =>
+        completedNativeEvenCharacteristic u/(1-(a : ℂ)*u))) 0/(n.factorial : ℂ)‖ ≤
+        (3/5 : ℝ)*a^(n+1)*(51/100 : ℝ)^(n-1)) :
+    ∀ k : ℕ, 0 < k → nativeThetaNegativeMass (carryMaterialNullThetaPolynomial k) <
+      nativeThetaPositiveMass (carryMaterialNullThetaPolynomial k) := by
+  apply material_theta_dominance_all_of_pole_tail ha hau
+  intro n hn
+  have hb := hjet n hn
+  rw [← material_pole_remainder_eq_quotient_jet] at hb
+  simpa only [Complex.norm_real,Real.norm_eq_abs] using hb
+
+private theorem reciprocal_power_bound (v : ℕ → ℂ)
+    (hv : ∀ j, ‖v j‖ ≤ (1/400 : ℝ)) (n : ℕ) (hn : 0 < n) (j : ℕ) :
+    |((v j)^(n+1)).re| ≤ ‖v j‖^2*(1/400 : ℝ)^(n-1) := by
+  calc
+    _ ≤ ‖(v j)^(n+1)‖ := Complex.abs_re_le_norm _
+    _ = ‖v j‖^2*‖v j‖^(n-1) := by
+      rw [norm_pow, ← pow_add, show 2+(n-1)=n+1 by omega]
+    _ ≤ _ := mul_le_mul_of_nonneg_left
+      (pow_le_pow_left₀ (norm_nonneg _) (hv j) _) (sq_nonneg _)
+
+private theorem reciprocal_power_summable (v : ℕ → ℂ)
+    (hs : Summable (fun j => ‖v j‖^2)) (hv : ∀ j, ‖v j‖ ≤ (1/400 : ℝ))
+    (n : ℕ) (hn : 0 < n) : Summable (fun j => ((v j)^(n+1)).re) := by
+  apply Summable.of_norm_bounded (hs.mul_right ((1/400 : ℝ)^(n-1)))
+  intro j
+  simpa only [Real.norm_eq_abs] using reciprocal_power_bound v hv n hn j
+
+/-- This is a contract on coefficients of the ACTUAL source h, not on a
+freely chosen moment sequence. The v_j are candidate reciprocal squared
+source poles; their source readout and sector bounds are NOT constructed here.
+They need not be real or have positive higher powers. -/
+theorem material_pole_tail_of_complex_readout {a : ℝ} (ha : (25/5041 : ℝ) ≤ a)
+    (v : ℕ → ℂ) (hs : Summable (fun j => ‖v j‖^2))
+    (hv : ∀ j, ‖v j‖ ≤ (1/400 : ℝ))
+    (hsector : ∀ j, (99/100 : ℝ)*‖v j‖^2 ≤ ((v j)^2).re)
+    (hread : ∀ n : ℕ, 0 < n → h n = a^(n+1)+∑' j, ((v j)^(n+1)).re) :
+    ∀ n : ℕ, 0 < n → |carryMaterialPoleRemainder a n| ≤
+      (3/5 : ℝ)*a^(n+1)*(51/100 : ℝ)^(n-1) := by
+  have hap := pole_parameter_pos ha
+  have hr1 : h 1 = a^2+∑' j, ((v j)^2).re := hread 1 (by decide)
+  have hsumre : Summable (fun j => ((v j)^2).re) :=
+    reciprocal_power_summable v hs hv 1 (by decide)
+  have hbudget : (∑' j, ‖v j‖^2) ≤ (3/5 : ℝ)*a^2 := by
+    apply material_pole_square_budget ha
+    have ht := Summable.tsum_le_tsum hsector (hs.mul_left (99/100 : ℝ)) hsumre
+    rw [tsum_mul_left] at ht
+    linarith
+  intro n hn
+  have hsn := reciprocal_power_summable v hs hv n hn
+  have hpoint := reciprocal_power_bound v hv n hn
+  have hq : (1/400 : ℝ)^(n-1) ≤ ((51/100 : ℝ)*a)^(n-1) :=
+    pow_le_pow_left₀ (by norm_num) (by linarith) _
+  calc
+    |carryMaterialPoleRemainder a n| = |∑' j, ((v j)^(n+1)).re| := by
+      simp only [carryMaterialPoleRemainder,hread n hn,add_sub_cancel_left]
+    _ ≤ ∑' j, |((v j)^(n+1)).re| := by
+      simpa only [Real.norm_eq_abs] using norm_tsum_le_tsum_norm hsn.norm
+    _ ≤ ∑' j, ‖v j‖^2*(1/400 : ℝ)^(n-1) :=
+      Summable.tsum_le_tsum hpoint (by simpa only [Real.norm_eq_abs] using hsn.norm)
+        (hs.mul_right _)
+    _ = (∑' j, ‖v j‖^2)*(1/400 : ℝ)^(n-1) := tsum_mul_right
+    _ ≤ (3/5 : ℝ)*a^2*(1/400 : ℝ)^(n-1) :=
+      mul_le_mul_of_nonneg_right hbudget (by positivity)
+    _ ≤ (3/5 : ℝ)*a^2*((51/100 : ℝ)*a)^(n-1) :=
+      mul_le_mul_of_nonneg_left hq (by positivity)
+    _ = (3/5 : ℝ)*a^(n+1)*(51/100 : ℝ)^(n-1) := by
+      rw [mul_pow]
+      have he : a^2*a^(n-1)=a^(n+1) := by
+        rw [← pow_add,show 2+(n-1)=n+1 by omega]
+      calc
+        _ = (3/5 : ℝ)*(a^2*a^(n-1))*(51/100 : ℝ)^(n-1) := by ring
+        _ = _ := by rw [he]
+
+/-- ALL-order source signs follow from one first-pole range, a square-
+summable separated tail, its second-power sector bound, and the exact
+source readout. No higher tail sign or Hankel positivity is assumed.
+Existence and source identification of that pole readout remain open here. -/
+theorem material_hierarchy_positive_of_complex_pole_readout {a : ℝ}
+    (ha : (25/5041 : ℝ) ≤ a) (hau : a ≤ (1/196 : ℝ))
+    (v : ℕ → ℂ) (hs : Summable (fun j => ‖v j‖^2))
+    (hv : ∀ j, ‖v j‖ ≤ (1/400 : ℝ))
+    (hsector : ∀ j, (99/100 : ℝ)*‖v j‖^2 ≤ ((v j)^2).re)
+    (hread : ∀ n : ℕ, 0 < n → h n = a^(n+1)+∑' j, ((v j)^(n+1)).re) :
+    ∀ k : ℕ, 0 < k → (71/2500 : ℝ)*a^(k+1) ≤ carryMaterialNullCoefficient k := by
+  exact material_null_coefficient_lower_of_pole_tail ha hau
+    (material_pole_tail_of_complex_readout ha v hs hv hsector hread)
+
+theorem material_theta_dominance_all_of_complex_pole_readout {a : ℝ}
+    (ha : (25/5041 : ℝ) ≤ a) (hau : a ≤ (1/196 : ℝ))
+    (v : ℕ → ℂ) (hs : Summable (fun j => ‖v j‖^2))
+    (hv : ∀ j, ‖v j‖ ≤ (1/400 : ℝ))
+    (hsector : ∀ j, (99/100 : ℝ)*‖v j‖^2 ≤ ((v j)^2).re)
+    (hread : ∀ n : ℕ, 0 < n → h n = a^(n+1)+∑' j, ((v j)^(n+1)).re) :
+    ∀ k : ℕ, 0 < k → nativeThetaNegativeMass (carryMaterialNullThetaPolynomial k) <
+      nativeThetaPositiveMass (carryMaterialNullThetaPolynomial k) :=
+  material_theta_dominance_all_of_pole_tail ha hau
+    (material_pole_tail_of_complex_readout ha v hs hv hsector hread)
+
+theorem material_first_pole_interval_budget (t : ℝ)
+    (ht : (14 : ℝ) ≤ t) (htu : t ≤ (71/5 : ℝ)) :
+    (25/5041 : ℝ) ≤ 1/t^2 ∧ 1/t^2 ≤ (1/196 : ℝ) := by
+  have htl : (196 : ℝ) ≤ t^2 := by nlinarith
+  have hth : t^2 ≤ (5041/25 : ℝ) := by nlinarith
+  constructor
+  · calc
+      (25/5041 : ℝ) = 1/(5041/25 : ℝ) := by norm_num
+      _ ≤ _ := one_div_le_one_div_of_le (by nlinarith) hth
+  · exact one_div_le_one_div_of_le (by norm_num) htl
+
+/-- A concrete all-order criterion using locations of candidate complex
+source poles. The only identification premise is the literal source
+readout. No source pole enumeration or readout is supplied by this theorem. -/
+theorem material_theta_dominance_all_of_separated_readout (t : ℝ)
+    (ht : (14 : ℝ) ≤ t) (htu : t ≤ (71/5 : ℝ)) (τ : ℕ → ℂ)
+    (hs : Summable (fun j => ‖((τ j)^2)⁻¹‖^2))
+    (hx : ∀ j, (20 : ℝ) ≤ (τ j).re) (hy : ∀ j, |(τ j).im| ≤ (1/2 : ℝ))
+    (hread : ∀ n : ℕ, 0 < n →
+      h n = (1/t^2)^(n+1)+∑' j, ((((τ j)^2)⁻¹)^(n+1)).re) :
+    ∀ k : ℕ, 0 < k → nativeThetaNegativeMass (carryMaterialNullThetaPolynomial k) <
+      nativeThetaPositiveMass (carryMaterialNullThetaPolynomial k) := by
+  obtain ⟨ha,hau⟩ := material_first_pole_interval_budget t ht htu
+  apply material_theta_dominance_all_of_complex_pole_readout ha hau
+    (fun j => ((τ j)^2)⁻¹) hs
+  · exact fun j => (material_reciprocal_squared_strip_budget (τ j) (hx j) (hy j)).1
+  · exact fun j => (material_reciprocal_squared_strip_budget (τ j) (hx j) (hy j)).2
+  · exact hread
+
+end
+end CarryMaterialPoleDominanceComparison
+
+namespace CarryMaterialPoleDominanceComparison
+#assert_central_comparison_axioms material_moment_zero_ge_one_fiftieth
+#print axioms material_moment_zero_ge_one_fiftieth
+#assert_central_comparison_axioms material_moment_one_le_nineteen_five_hundred_thousand
+#print axioms material_moment_one_le_nineteen_five_hundred_thousand
+#assert_central_comparison_axioms carryMaterialPoleRemainder
+#print axioms carryMaterialPoleRemainder
+#assert_central_comparison_axioms material_pole_remainder_eq_quotient_jet
+#print axioms material_pole_remainder_eq_quotient_jet
+#assert_central_comparison_axioms material_elementary_factor_valve
+#print axioms material_elementary_factor_valve
+#assert_central_comparison_axioms material_source_formal_deflation
+#print axioms material_source_formal_deflation
+#assert_central_comparison_axioms material_even_null_pole_ledger
+#print axioms material_even_null_pole_ledger
+#assert_central_comparison_axioms material_pole_parameter_budget
+#print axioms material_pole_parameter_budget
+#assert_central_comparison_axioms material_pole_square_budget
+#print axioms material_pole_square_budget
+#assert_central_comparison_axioms material_reciprocal_squared_strip_budget
+#print axioms material_reciprocal_squared_strip_budget
+#assert_central_comparison_axioms material_null_coefficient_lower_of_pole_tail
+#print axioms material_null_coefficient_lower_of_pole_tail
+#assert_central_comparison_axioms material_theta_dominance_all_of_pole_tail
+#print axioms material_theta_dominance_all_of_pole_tail
+#assert_central_comparison_axioms material_theta_dominance_all_of_quotient_jet_bound
+#print axioms material_theta_dominance_all_of_quotient_jet_bound
+#assert_central_comparison_axioms material_pole_tail_of_complex_readout
+#print axioms material_pole_tail_of_complex_readout
+#assert_central_comparison_axioms material_hierarchy_positive_of_complex_pole_readout
+#print axioms material_hierarchy_positive_of_complex_pole_readout
+#assert_central_comparison_axioms material_theta_dominance_all_of_complex_pole_readout
+#print axioms material_theta_dominance_all_of_complex_pole_readout
+#assert_central_comparison_axioms material_first_pole_interval_budget
+#print axioms material_first_pole_interval_budget
+#assert_central_comparison_axioms material_theta_dominance_all_of_separated_readout
+#print axioms material_theta_dominance_all_of_separated_readout
+end CarryMaterialPoleDominanceComparison
+
+namespace CarryMaterialPoleDominanceComparison
+open GeometryOfNumbers.Analysis CarrySelfAdjointOperator
+example (n : ℕ) : carryMaterialPoleRemainder 0 n = canonicalCompletedNativeLogDerivativeMoment n := by
+  simp [carryMaterialPoleRemainder]
+example :
+    ‖(((20 : ℂ)+Complex.I/2)^2)⁻¹‖ ≤ (1/400 : ℝ) ∧
+      (99/100 : ℝ)*‖(((20 : ℂ)+Complex.I/2)^2)⁻¹‖^2 ≤
+        (((((20 : ℂ)+Complex.I/2)^2)⁻¹)^2).re := by
+  apply material_reciprocal_squared_strip_budget
+  all_goals norm_num [Complex.div_re,Complex.div_im]
+example : normalizedCompletedNativeEvenFormalSeries =
+    CarrySelfAdjointOperator.ProjectiveValve.projectiveValveMass
+      (-(PowerSeries.mk canonicalCompletedNativeLogDerivativeMoment)) := by
+  have he : carryMaterialPoleRemainder 0 = canonicalCompletedNativeLogDerivativeMoment := by
+    funext n
+    simp [carryMaterialPoleRemainder]
+  simpa only [he,map_zero,zero_mul,sub_zero,one_mul] using
+    material_source_formal_deflation 0
+end CarryMaterialPoleDominanceComparison

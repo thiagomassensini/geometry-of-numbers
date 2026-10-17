@@ -1,0 +1,29 @@
+{
+  "status": "FINITE_NONRIGOROUS_DIAGNOSTIC",
+  "input": "/home/thlinux/momentos/native_jet_exploration/auditoria_corrected_vs_canonical/stage_B/coefficients.json",
+  "input_sha256": "50bc111bc10174e406260a90fe8271ba3f6897c7467e3472822a0bee8d5d351a",
+  "mpmath_dps": 240,
+  "polynomial_degree": 256,
+  "range": "1 <= n <= 255",
+  "root_squared_height_of_finite_polynomial": "199.790454832386859463365185961401579046824771027045914468112",
+  "finite_polynomial_anchor_a": "0.00500524412359411607880940123479095743380420404808965181992514",
+  "max_tail_budget_ratio": {
+    "n": 1,
+    "tail_budget_ratio": "0.80631644701649978848059105908",
+    "C_over_a_power": "1.48378986820989987308835463545"
+  },
+  "min_normalized_C": {
+    "n": 2,
+    "tail_budget_ratio": "0.489444229222129827528044807076",
+    "C_over_a_power": "0.672829411275913845314790609818"
+  },
+  "not_certified": [
+    "root of infinite source",
+    "zero simplicity or completeness",
+    "uniform bound for n beyond the finite input",
+    "source pole expansion",
+    "infinite hierarchy positivity"
+  ],
+  "row_count": 255,
+  "all_rows_archive": "probe-rows.json.gz"
+}
