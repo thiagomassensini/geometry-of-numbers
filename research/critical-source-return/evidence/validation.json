@@ -1,0 +1,26 @@
+{
+  "status": "pass",
+  "command": "bash research/critical-source-return/audit-critical-source-return.sh",
+  "public_roots": 57,
+  "logs": {
+    "Audit.log": "ac6b52a2e1b3d35b69aaa27b353917e25bdb5cf907c7999a208a39a2834d725a",
+    "CriticalMargins.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "CriticalSource.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "KnownMargins.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "NextSourceGate.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "PolarizedCritical.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Regression.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "analysis-audit.log.gz": "af2b5135c317d37f0e441fa7f0617331bdae2cd812c866458c73376564286476",
+    "foundation-audit.log.gz": "56f2c2dd78c40171d308b683cddde7c07724c7bc0192ea9b1b429c03ba7188b2",
+    "geometry-audit.log.gz": "9a34276323f3cc0eaa89ccd25d43e1941b5e69ac3b7ef4c549d1ef0af49fea8d",
+    "root-build.log.gz": "df2533ab2d487a0289ff3a30aa076544c275273d522535439e6e33c4e7325414"
+  },
+  "post_validation_refresh": {
+    "reason": "Correct a doc comment: finite self-pairings are already real; no proof or statement changed.",
+    "recompiled_with_warnings_as_errors": [
+      "PolarizedCritical",
+      "Audit"
+    ],
+    "logs_unchanged": true
+  }
+}

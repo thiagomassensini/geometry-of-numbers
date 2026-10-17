@@ -1,0 +1,23 @@
+{
+  "geometry_head": "997d46291d3fb54d1a023d726890d4cc006acd2c",
+  "base": "997d46291d3fb54d1a023d726890d4cc006acd2c",
+  "operator_head": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "lean_toolchain": "leanprover/lean4:v4.32.0",
+  "lean_sources": {
+    "Audit.lean": "be18bf490ac9ac54d0a509305f0379eae6d433276d22084659401b80d79b548b",
+    "CriticalMargins.lean": "bd4eff570fa135801b1125dd31372428291d8a4f2e8f270de1923061e14f1563",
+    "CriticalSource.lean": "f8e57dd92c482cd3cf0fce36cc37d0e407e1faaaa7588b9e17e29a5a1750cb1e",
+    "KnownMargins.lean": "ef7d897a3c312160fe7cdb740c7830213114e948885d96e7409a3abf8c62ef43",
+    "NextSourceGate.lean": "9aaeb7d0c2907cc8ef4c5ef97f80fdce97cac604888a11dbb0e2a4ca3ab3f560",
+    "PolarizedCritical.lean": "fe72a96f3bab8f671e3a2e022dbf9e87a2960a1649108c7435729b6146fbe666",
+    "Regression.lean": "72589d5446f7fe40c9a49532c4cee12930c6214cee79773545013037b27f7ea4"
+  },
+  "post_validation_refresh": {
+    "reason": "Correct a doc comment: finite self-pairings are already real; no proof or statement changed.",
+    "recompiled_with_warnings_as_errors": [
+      "PolarizedCritical",
+      "Audit"
+    ],
+    "logs_unchanged": true
+  }
+}
