@@ -1,0 +1,97 @@
+{
+  "base_commit": "1e2c5f2463b5d61ed56bcc05f6cbc8c446fca833",
+  "host": "llm",
+  "checks": [
+    {
+      "command": "lake build GeometryOfNumbers.Analysis.CarryMaterialSecondNullSector --wfail",
+      "exit_code": 0,
+      "jobs": 8793,
+      "log": "focused-build.log.gz",
+      "capture": "Successful focused segment of cross-3.log; no module changes after this check."
+    },
+    {
+      "command": "lake build --wfail",
+      "exit_code": 0,
+      "jobs": 8832,
+      "log": "full-build.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-foundation.sh && bash scripts/audit-geometry.sh && bash scripts/audit-analysis.sh",
+      "exit_code": 0,
+      "log": "zone-audits.log.gz"
+    },
+    {
+      "command": "bash scripts/audit-material-central-comparison.sh /home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "warningAsError": true,
+      "log": "cross-audit.log.gz",
+      "total_external_theorems": 109,
+      "source_regressions": [
+        "Reflected pair c=(1,1), a=(1,-1) now positive at small nonzero scales",
+        "Double cancellation c=(3,-3,1), a=(1,2,3): Q2 tends to zero, no sign claim"
+      ]
+    },
+    {
+      "command": "lake env lean -DwarningAsError=true research/material-second-null-sector/Regression.lean",
+      "exit_code": 0,
+      "log": "regression.log.gz"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "new_public_roots": {
+    "geometry_definitions": 9,
+    "geometry_theorems": 9,
+    "external_theorems": 21,
+    "total": 39
+  },
+  "axioms": {
+    "guard": "Lean.collectAxioms over transitive declaration types and bodies",
+    "allowed_in_analysis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "new_root_footprints": "footprints.json",
+    "foundation": "empty; checked separately",
+    "geometry": "distinct policy; no Classical.choice"
+  },
+  "trust_scan": {
+    "files": [
+      "GeometryOfNumbers/Analysis/CarryMaterialSecondNullSector.lean",
+      "GeometryOfNumbers/Analysis/CarryMaterialResidualPositiveTransport.lean",
+      "GeometryOfNumbers/Analysis.lean",
+      "GeometryOfNumbers/Analysis/Audit.lean",
+      "research/material-central-calibration/CanonicalComparison.lean",
+      "research/material-second-null-sector/Regression.lean"
+    ],
+    "forbidden": [
+      "sorry",
+      "admit",
+      "native_decide",
+      "unsafe",
+      "implemented_by",
+      "new axiom declarations"
+    ],
+    "result": "PASS"
+  },
+  "positive_result_quantifiers": "Every fixed finite real family with M1=sum(c_i*a_i)=0 and M2=sum(c_i*a_i^2)!=0 has positive complete residual energy at sufficiently small nonzero scale; the neighborhood depends on that family.",
+  "lower_bound": "Eventually E_R(e) >= ((h0*h2-h1^2)/h0)*M2^2*e^4/2, for each fixed family with M1=0 and M2!=0.",
+  "not_claimed": [
+    "sign on M1=M2=0 sector",
+    "positive Gram realization of the complete residual",
+    "uniform neighborhood for all source families",
+    "strong extra Hilbert-state derivatives or holomorphic global state",
+    "new operator or metric or normalization"
+  ],
+  "regression_scope": [
+    "prior 72 and clock/domain/source regressions",
+    "two real quadratures and all TFVD Green/return crosses",
+    "retained-value reconstruction and hidden residual from PR8",
+    "old scalar continuity API preserved by specialization",
+    "actual reflected pair positive after first-moment cancellation",
+    "actual double-cancelling triple limit only"
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "geometry": [
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryReal_scaledSlope_continuous"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialSecondAxis"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialSecondScale"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialSecondReducedResponse"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialSecondAmplitudeCore"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialSecondChannelCore"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialSecondPositiveChannel"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialSecondResidualCore"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialSecondNullSynthesis"
+    },
+    {
+      "kind": "def",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialSecondNullEnergy"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialSecondPositiveChannel_factor"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialSecondAmplitude_factor"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialSecondChannel_null_synthesis"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialSecondResidual_finite_energy"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialSecondNull_energy_factor"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialSecondNullEnergy_zero"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialSecondNullEnergy_continuous"
+    },
+    {
+      "kind": "theorem",
+      "name": "GeometryOfNumbers.Analysis.carryMaterialSecondNull_fixed_family_pos"
+    }
+  ],
+  "external": [
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialSecondNullComparison.material_second_axis_eventually_eq"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialSecondNullComparison.material_second_axis_zero"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialSecondNullComparison.material_second_scale_eq"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialSecondNullComparison.material_second_scale_pos"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialSecondNullComparison.material_second_reduced_eventually_eq"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialSecondNullComparison.material_second_reduced_zero"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialSecondNullComparison.material_second_reduced_hasDerivAt_zero"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialSecondNullComparison.material_second_reduced_deriv_continuous"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialSecondNullComparison.material_second_axis_conj"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialSecondNullComparison.material_second_reduced_conj"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialSecondNullComparison.material_second_axis_hasDerivAt_zero"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialSecondNullComparison.material_second_channelCore_hasDerivAt_zero"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialSecondNullComparison.material_second_amplitude_continuous"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialSecondNullComparison.material_second_real_kernel_split"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialSecondNullComparison.material_second_residual_split"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialSecondNullComparison.material_second_residual_core_center"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialSecondNullComparison.material_second_residual_core_center_pos"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialSecondNullComparison.material_second_null_energy_factor"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialSecondNullComparison.material_second_null_energy_limit"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialSecondNullComparison.material_second_null_fixed_family_positive"
+    },
+    {
+      "kind": "theorem",
+      "name": "CarryMaterialSecondNullComparison.material_second_null_energy_lower_bound"
+    }
+  ]
+}
