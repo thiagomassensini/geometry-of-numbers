@@ -1,0 +1,221 @@
+{
+  "guard": "transitive types and bodies",
+  "new_roots": [
+    {
+      "name": "CarryMaterialHierarchySignComparison.carryMaterialNullThetaPolynomial",
+      "kind": "def",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_null_theta_even",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_null_theta_odd",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_null_theta_integral",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_null_theta_coeff_below_two",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_null_theta_center_traces",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_null_coefficient_thetaGreen",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_null_coefficient_theta_masses",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_null_coefficient_pos_iff_theta_dominance",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_hierarchy_pos_iff_theta_dominance",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_null_theta_odd_top_negative",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_null_theta_odd_density_eventually_negative",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_source_six_odd_specialization",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_fifth_null_coefficient_pos",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_source_seven_even_specialization",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_sixth_null_coefficient_pos",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_null_fixed_family_positive_of_theta_dominance",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_fifth_null_fixed_family_positive",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_sixth_null_fixed_family_positive",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_null_coefficient_pos_through_six",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_null_fixed_family_positive_through_six",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_null_coefficient_decay_bound",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_null_coefficients_tendsto_zero",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "CarryMaterialHierarchySignComparison.material_no_uniform_positive_coefficient_floor",
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ]
+}
