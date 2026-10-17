@@ -1,6 +1,6 @@
 # Certificado integral do quarto pivô par material
 
-**O certificado e sua auditoria transitiva compilaram. A validação reproduzível completa e a publicação estão em andamento.**
+**Certificado integral incondicional verificado pelo kernel do Lean. Validação reproduzível completa aprovada.**
 
 Base: `geometry-of-numbers` em `0ec56d57651c99fa8fd24a5e1d268558bc05ac77`
 (merge do PR #22). Consulta externa, sem alterações: `carry-self-adjoint-operator`
@@ -242,6 +242,8 @@ e o kernel canônico, nem um resultado espectral para o operador infinito.
 - Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`.
 - GreenFrame `cd2d838bee67ad23f869a02f8ed9f0a0feb926fa`.
 - Build geral: `lake build --wfail`, 8.841 alvos, aprovado.
+- Build dedicado completo: 47 módulos com avisos como erros, aprovado.
+- Regeneração literal das três tabelas e inclusões dos dez momentos: aprovada.
 - Auditorias de Foundation, Geometry e Analysis: aprovadas.
 - Os módulos novos ficam em `research/`; exigem o build dedicado, além do build
   geral. `Audit.lean` guarda os 221 nomes públicos listados em `public-roots.txt`,
@@ -276,4 +278,9 @@ antes da composição. A repetição completa do grafo novo usa
 `CARRY_INTEGRAL_REUSE_PR22=1`, que verifica a existência dos artefatos e a ausência
 de alterações nas respectivas fontes contra o merge `0ec56d5`. Essa opção não
 pula nenhuma verificação dos módulos novos. Os logs e hashes em `evidence/`
-identificam a validação efetivamente executada.
+identificam a validação efetivamente executada, encerrada com código de saída 0.
+`build-results.json` registra as 47 compilações; `Audit.log` mostra também os
+tipos dos principais teoremas sem a hipótese auxiliar sobre os momentos.
+
+Nenhuma worktree foi criada nesta rodada. As worktrees históricas e os dois
+módulos C2 não rastreados no checkout do operador foram preservados.
