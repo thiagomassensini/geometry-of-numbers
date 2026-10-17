@@ -1,3 +1,4 @@
+import GeometryOfNumbers.Analysis.CarryMaterialFourthPivot
 import GeometryOfNumbers.Analysis.CarryMaterialSourceFactor
 import GeometryOfNumbers.Analysis.CarryMaterialMixedSchur
 import CarrySelfAdjointOperator.NativeSourceSchurThetaIntegral
@@ -4547,3 +4548,224 @@ namespace CarryMaterialSourceFactorComparison
 #assert_central_comparison_axioms material_valve_even_factor_three
 #print axioms material_valve_even_factor_three
 end CarryMaterialSourceFactorComparison
+
+
+namespace CarryMaterialFourthPivotComparison
+open GeometryOfNumbers.Analysis CarrySelfAdjointOperator
+open CarrySelfAdjointOperator.SourcePositiveReduction
+open CarryMaterialSourceFactorComparison CarryMaterialMixedSchurComparison
+open CarryMaterialNullHierarchyComparison CarryMaterialResponseComparison
+open CarryMaterialThirdNullComparison
+open MeasureTheory
+open scoped Matrix ComplexConjugate
+noncomputable section
+set_option autoImplicit false
+set_option backward.isDefEq.respectTransparency false
+set_option maxHeartbeats 2000000
+local notation "h" => canonicalCompletedNativeLogDerivativeMoment
+local notation "c" => completedNativeRealEvenCharacteristicCoefficient
+
+theorem material_fourth_threshold_eq :
+    carryMaterialFourthSourceThreshold = h 4^2/h 0+carryMaterialFourthOldCoupling := by
+  have he : (carryMaterialTaylorShift 9 0).re = h 4 := by
+    rw [material_taylor_shift_center,
+      show 9=2*4+1 by norm_num,completedNativeGreenResponseTaylorCoefficient_odd_eq_canonical]
+    rfl
+  rw [carryMaterialFourthSourceThreshold,he,material_scale_eq]
+
+/-- The only new moment is h8. The threshold retains all old-new crossings
+and the previously extracted central channel with its original normalization. -/
+theorem material_fourth_pivot_source :
+    carryMaterialFourthPivot = h 8-carryMaterialFourthSourceThreshold := by
+  rw [carryMaterialFourthPivot_split,material_fourth_threshold_eq]
+  have he := material_residual_jet_even_even 4 4
+  norm_num only [Nat.reduceMul,Nat.reduceAdd] at he
+  rw [he]
+  ring
+
+theorem material_fourth_old_coupling_squares : carryMaterialFourthOldCoupling =
+    (carryMaterialEvenPairing 0 3)^2/carryPairingPivot carryMaterialEvenPairing 0+
+      (carryPairingRemainder carryMaterialEvenPairing 1 1 3)^2/
+        carryPairingPivot carryMaterialEvenPairing 1+
+      (carryPairingRemainder carryMaterialEvenPairing 2 2 3)^2/
+        carryPairingPivot carryMaterialEvenPairing 2 := by
+  unfold carryMaterialFourthOldCoupling
+  rw [material_even_pairing_symm 3 0,
+    carryPairingRemainder_symm material_even_pairing_symm 1 3 1,
+    carryPairingRemainder_symm material_even_pairing_symm 2 3 2]
+  ring
+
+theorem material_fourth_old_coupling_nonneg : 0 ≤ carryMaterialFourthOldCoupling := by
+  rw [material_fourth_old_coupling_squares]
+  exact add_nonneg (add_nonneg
+    (div_nonneg (sq_nonneg _) material_even_pivot_zero_pos.le)
+    (div_nonneg (sq_nonneg _) material_even_pivot_one_pos.le))
+    (div_nonneg (sq_nonneg _) material_even_pivot_two_pos.le)
+
+/-- Literal recurrence of the unchanged completed characteristic. There is
+no guessed fourth source sign and no adjusted normalization. -/
+theorem material_fourth_pivot_characteristic :
+    c 0*carryMaterialFourthPivot = -9*c 9-
+      (∑ k ∈ Finset.range 8, h k*c (8-k))-c 0*carryMaterialFourthSourceThreshold := by
+  have he := canonicalCompletedNativeLogDerivativeMoment_real_recurrence 8
+  norm_num only [Nat.reduceAdd,Nat.cast_ofNat] at he
+  rw [material_fourth_pivot_source]
+  nlinarith only [he]
+
+/-- All terms on the right precede c9: h0,...,h7, c0,...,c8 and the actual
+source couplings. This is an exact remaining gate, not an input certificate. -/
+def material_fourth_characteristic_ceiling : ℝ :=
+  -((∑ k ∈ Finset.range 8, h k*c (8-k))+c 0*carryMaterialFourthSourceThreshold)/9
+
+theorem material_fourth_pivot_pos_iff_characteristic :
+    0 < carryMaterialFourthPivot ↔ c 9 < material_fourth_characteristic_ceiling := by
+  have he := material_fourth_pivot_characteristic
+  have hc : 0 < c 0 := lt_of_lt_of_le (by norm_num : (0 : ℝ) < 1/3)
+    completedNativeRealEvenCharacteristicCoefficient_zero_ge_third
+  unfold material_fourth_characteristic_ceiling
+  constructor <;> intro hp <;> nlinarith
+
+/-- The coefficient needed for this pivot uses genuine theta-tail moments
+16 and 18. It is distinct from the eighth-source odd-sector coefficient c8. -/
+theorem material_fourth_c9_theta :
+    c 9 = (completedNativeThetaTailMoment 18-1224*completedNativeThetaTailMoment 16)/
+      (4*(Nat.factorial 18 : ℝ)) := by
+  rw [completedNativeRealEvenCharacteristicCoefficient_eq_cosineMoment_allOrder]
+  have he := completedNativeXiCosineMoment_succ_eq_thetaTailMoments 8
+  norm_num only [Nat.reduceMul,Nat.reduceAdd,Nat.cast_ofNat] at he
+  norm_num only [Nat.reduceMul,show (-1 : ℝ)^9 = -1 by norm_num]
+  rw [show completedNativeXiCosineMoment 9 =
+      306*completedNativeThetaTailMoment 16-(1/4:ℝ)*completedNativeThetaTailMoment 18 by exact he]
+  norm_num [Nat.factorial]
+  ring
+
+theorem material_fourth_pivot_pos_iff_theta_balance :
+    0 < carryMaterialFourthPivot ↔
+      1224*completedNativeThetaTailMoment 16-completedNativeThetaTailMoment 18 >
+        -4*(Nat.factorial 18 : ℝ)*material_fourth_characteristic_ceiling := by
+  rw [material_fourth_pivot_pos_iff_characteristic,material_fourth_c9_theta]
+  norm_num [Nat.factorial]
+  constructor <;> intro hp <;> linarith
+
+/-- The original complete theta integral, without dropping its signed tail
+or exchanging an unproved Green/trace decomposition with an infinite sum. -/
+theorem material_fourth_theta_balance_integral :
+    (∫ u in Set.Ioi (0 : ℝ), (1224*u^16-u^18)*XiThetaCosine.thetaTail u) =
+      1224*completedNativeThetaTailMoment 16-completedNativeThetaTailMoment 18 := by
+  have h16 := (integrableOn_pow_mul_thetaTail 16).const_mul (1224 : ℝ)
+  have h18 := integrableOn_pow_mul_thetaTail 18
+  have he : (fun u : ℝ => (1224*u^16-u^18)*XiThetaCosine.thetaTail u) =
+      fun u => 1224*(u^16*XiThetaCosine.thetaTail u)-u^18*XiThetaCosine.thetaTail u := by
+    funext u
+    ring
+  rw [he,MeasureTheory.integral_sub h16 h18,MeasureTheory.integral_const_mul]
+  rfl
+
+theorem material_fourth_pivot_pos_iff_theta_integral :
+    0 < carryMaterialFourthPivot ↔
+      (∫ u in Set.Ioi (0 : ℝ), (1224*u^16-u^18)*XiThetaCosine.thetaTail u) >
+        -4*(Nat.factorial 18 : ℝ)*material_fourth_characteristic_ceiling := by
+  rw [material_fourth_theta_balance_integral]
+  exact material_fourth_pivot_pos_iff_theta_balance
+
+/-- Four-channel polarized sewing with the three old source signs discharged.
+The new source pivot remains explicitly signed. -/
+theorem material_fourth_bilinear (x y : Fin 4 → ℝ) :
+    carryPairingBilinear carryMaterialEvenPairing 4 x y =
+      (∑ r : Fin 3, carryPairingPivot carryMaterialEvenPairing r *
+        (∑ i : Fin 4, carryPairingColumn carryMaterialEvenPairing r i*x i) *
+        (∑ j : Fin 4, carryPairingColumn carryMaterialEvenPairing r j*y j))+
+          carryMaterialFourthPivot*x 3*y 3 :=
+  carryMaterialFourthBilinear_sewing material_even_pairing_symm
+    (fun r hr => (material_even_pivots_three_pos r hr).ne') x y
+
+/-- This nonzero combination cancels precisely the three old columns and
+reads the new signed pivot, with no positivity assumption on that pivot. -/
+theorem material_fourth_critical_pairing (y : Fin 4 → ℝ) :
+    carryPairingBilinear carryMaterialEvenPairing 4 carryMaterialFourthCritical y =
+      carryMaterialFourthPivot*y 3 :=
+  carryMaterialFourthCritical_pairing material_even_pairing_symm
+    (fun r hr => (material_even_pivots_three_pos r hr).ne') y
+
+theorem material_fourth_critical_energy :
+    carryPairingBilinear carryMaterialEvenPairing 4
+      carryMaterialFourthCritical carryMaterialFourthCritical = carryMaterialFourthPivot := by
+  rw [material_fourth_critical_pairing,carryMaterialFourthCritical_last,mul_one]
+
+theorem material_fourth_block_posDef_iff :
+    Matrix.PosDef (fun i j : Fin 4 => carryMaterialEvenPairing i j) ↔
+      0 < carryMaterialFourthPivot := by
+  constructor
+  · intro hp
+    have he := hp.dotProduct_mulVec_pos carryMaterialFourthCritical_ne_zero
+    simp only [star_trivial] at he
+    rw [← carryPairingBilinear_eq_dotProduct,material_fourth_critical_energy] at he
+    exact he
+  · intro hp
+    apply carryPairingCholesky_posDef material_even_pairing_symm
+    intro r hr
+    by_cases hlt : r < 3
+    · exact material_even_pivots_three_pos r hlt
+    · have he : r = 3 := by omega
+      subst r
+      exact hp
+
+theorem material_fourth_block_posDef_iff_theta_balance :
+    Matrix.PosDef (fun i j : Fin 4 => carryMaterialEvenPairing i j) ↔
+      1224*completedNativeThetaTailMoment 16-completedNativeThetaTailMoment 18 >
+        -4*(Nat.factorial 18 : ℝ)*material_fourth_characteristic_ceiling := by
+  rw [material_fourth_block_posDef_iff,material_fourth_pivot_pos_iff_theta_balance]
+
+/-- Conditional consequence only: the missing source estimate would close
+the four-by-four residual block. No proof of the estimate is supplied here. -/
+theorem material_fourth_cholesky_of_source_estimate
+    (hsource : c 9 < material_fourth_characteristic_ceiling) :
+    carryMaterialEvenCholesky 4*(carryMaterialEvenCholesky 4)ᵀ =
+      (fun i j : Fin 4 => carryMaterialEvenPairing i j) := by
+  apply carryPairingCholesky_identity material_even_pairing_symm
+  intro r hr
+  by_cases hlt : r < 3
+  · exact material_even_pivots_three_pos r hlt
+  · have he : r = 3 := by omega
+    subst r
+    exact material_fourth_pivot_pos_iff_characteristic.mpr hsource
+
+end
+end CarryMaterialFourthPivotComparison
+
+namespace CarryMaterialFourthPivotComparison
+#assert_central_comparison_axioms material_fourth_threshold_eq
+#print axioms material_fourth_threshold_eq
+#assert_central_comparison_axioms material_fourth_pivot_source
+#print axioms material_fourth_pivot_source
+#assert_central_comparison_axioms material_fourth_old_coupling_squares
+#print axioms material_fourth_old_coupling_squares
+#assert_central_comparison_axioms material_fourth_old_coupling_nonneg
+#print axioms material_fourth_old_coupling_nonneg
+#assert_central_comparison_axioms material_fourth_pivot_characteristic
+#print axioms material_fourth_pivot_characteristic
+#assert_central_comparison_axioms material_fourth_characteristic_ceiling
+#print axioms material_fourth_characteristic_ceiling
+#assert_central_comparison_axioms material_fourth_pivot_pos_iff_characteristic
+#print axioms material_fourth_pivot_pos_iff_characteristic
+#assert_central_comparison_axioms material_fourth_c9_theta
+#print axioms material_fourth_c9_theta
+#assert_central_comparison_axioms material_fourth_pivot_pos_iff_theta_balance
+#print axioms material_fourth_pivot_pos_iff_theta_balance
+#assert_central_comparison_axioms material_fourth_theta_balance_integral
+#print axioms material_fourth_theta_balance_integral
+#assert_central_comparison_axioms material_fourth_pivot_pos_iff_theta_integral
+#print axioms material_fourth_pivot_pos_iff_theta_integral
+#assert_central_comparison_axioms material_fourth_bilinear
+#print axioms material_fourth_bilinear
+#assert_central_comparison_axioms material_fourth_critical_pairing
+#print axioms material_fourth_critical_pairing
+#assert_central_comparison_axioms material_fourth_critical_energy
+#print axioms material_fourth_critical_energy
+#assert_central_comparison_axioms material_fourth_block_posDef_iff
+#print axioms material_fourth_block_posDef_iff
+#assert_central_comparison_axioms material_fourth_block_posDef_iff_theta_balance
+#print axioms material_fourth_block_posDef_iff_theta_balance
+#assert_central_comparison_axioms material_fourth_cholesky_of_source_estimate
+#print axioms material_fourth_cholesky_of_source_estimate
+end CarryMaterialFourthPivotComparison
