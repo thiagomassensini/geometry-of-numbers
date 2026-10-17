@@ -223,19 +223,19 @@ theorem carryMaterialRescaledResidualEnergy_zero {n : ℕ} (c t : Fin n → ℝ)
 
 /-- A fixed pair of rescaled parameters, including coincident directions.
 No joint holomorphy of the full material Hilbert state is presumed. -/
-theorem carryMaterialReduced_scaledSlope_continuous
-    (hz : carryMaterialReducedResponse 0 = 0)
-    (hf : DifferentiableAt ℝ carryMaterialReducedResponse 0)
-    (hd : ContinuousAt (deriv carryMaterialReducedResponse) 0) (a b : ℝ) :
-    ContinuousAt (fun e : ℝ => dslope carryMaterialReducedResponse (e*a) (e*b)) 0 := by
+theorem carryReal_scaledSlope_continuous (f : ℝ → ℂ)
+    (hz : f 0 = 0)
+    (hf : DifferentiableAt ℝ f 0)
+    (hd : ContinuousAt (deriv f) 0) (a b : ℝ) :
+    ContinuousAt (fun e : ℝ => dslope f (e*a) (e*b)) 0 := by
   by_cases hab : b = a
   · subst b
     simp only [dslope_same]
-    exact (show ContinuousAt (deriv carryMaterialReducedResponse) ((0 : ℝ)*a) by
+    exact (show ContinuousAt (deriv f) ((0 : ℝ)*a) by
       simpa only [zero_mul] using hd).comp' (f := fun e : ℝ => e*a) (x := 0) (continuousAt_id.mul_const a)
-  · let A := dslope carryMaterialReducedResponse 0
+  · let A := dslope f 0
     have hA : ContinuousAt A 0 := continuousAt_dslope_same.mpr hf
-    have he (e : ℝ) : dslope carryMaterialReducedResponse (e*a) (e*b) =
+    have he (e : ℝ) : dslope f (e*a) (e*b) =
         ((b : ℂ)*A (e*b)-(a : ℂ)*A (e*a))/((b-a : ℝ) : ℂ) := by
       have hn : (b : ℂ)-(a : ℂ) ≠ 0 := by exact_mod_cast sub_ne_zero.mpr hab
       by_cases he : e = 0
@@ -248,8 +248,8 @@ theorem carryMaterialReduced_scaledSlope_continuous
       · have hsep : e*b ≠ e*a := by
           intro h
           exact hab (mul_left_cancel₀ he h)
-        have hfexp (s : ℝ) : carryMaterialReducedResponse s = (s : ℂ)*A s := by
-          have h := sub_smul_dslope carryMaterialReducedResponse 0 s
+        have hfexp (s : ℝ) : f s = (s : ℂ)*A s := by
+          have h := sub_smul_dslope f 0 s
           simpa only [sub_zero, hz, Complex.real_smul, A] using h.symm
         rw [dslope_of_ne _ hsep]
         simp only [slope, Complex.real_smul, vsub_eq_sub]
@@ -268,6 +268,13 @@ theorem carryMaterialReduced_scaledSlope_continuous
           simpa only [zero_mul] using hA).comp' (f := fun e : ℝ => e*b) (x := 0) (continuousAt_id.mul_const b)
       exact ((continuousAt_const.mul hb).sub (continuousAt_const.mul ha)).div_const _
     exact hcont.congr (Filter.Eventually.of_forall (fun e => (he e).symm))
+
+theorem carryMaterialReduced_scaledSlope_continuous
+    (hz : carryMaterialReducedResponse 0 = 0)
+    (hf : DifferentiableAt ℝ carryMaterialReducedResponse 0)
+    (hd : ContinuousAt (deriv carryMaterialReducedResponse) 0) (a b : ℝ) :
+    ContinuousAt (fun e : ℝ => dslope carryMaterialReducedResponse (e*a) (e*b)) 0 :=
+  carryReal_scaledSlope_continuous carryMaterialReducedResponse hz hf hd a b
 
 theorem carryMaterialRescaledResidualEnergy_continuous
     (ha : ContinuousAt carryMaterialResponseAxis 0)

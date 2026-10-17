@@ -1,3 +1,5 @@
+import GeometryOfNumbers.Analysis.CarryMaterialSecondNullSector
+import CarrySelfAdjointOperator.NativeCompletedSourceThirdPositiveChannel
 import GeometryOfNumbers.Analysis.CarryMaterialResidualPositiveTransport
 import GeometryOfNumbers.Analysis.CarryMaterialCompanionGreenTransport
 import GeometryOfNumbers.Analysis.CarryMaterialCentralProjectionBounds
@@ -1380,3 +1382,405 @@ example : ∀ᶠ e : ℝ in nhds 0, e ≠ 0 →
   apply material_residual_fixed_family_positive ![1,-1] ![1,-1]
   norm_num [Fin.sum_univ_two]
 end CarryMaterialPositiveResidualComparison
+
+namespace CarryMaterialSecondNullComparison
+open GeometryOfNumbers.Analysis GeometryOfNumbers.Analysis.BaseTwoCompletion
+open CarrySelfAdjointOperator CarrySelfAdjointOperator.SourcePositiveReduction
+open CarryMaterialResponseComparison CarryMaterialResidualComparison CarryMaterialPositiveResidualComparison
+open Filter
+open scoped BigOperators Topology InnerProductSpace ComplexConjugate
+noncomputable section
+set_option autoImplicit false
+set_option backward.isDefEq.respectTransparency false
+set_option maxHeartbeats 1500000
+
+theorem material_second_axis_eventually_eq :
+    carryMaterialSecondAxis =ᶠ[nhds 0] fun t : ℝ => secondAxis (t : ℂ) :=
+  CarryMaterialResidualComparison.real_dslope_germ material_reduced_eventually_eq
+    reducedResponse_analyticAt_zero.differentiableAt
+
+theorem material_second_axis_zero :
+    carryMaterialSecondAxis 0 = (reducedSourceScale : ℂ) := by
+  have h := material_second_axis_eventually_eq.eq_of_nhds
+  simpa only [Complex.ofReal_zero, secondAxis_zero] using h
+
+theorem material_second_scale_eq : carryMaterialSecondScale = reducedSourceScale := by
+  rw [carryMaterialSecondScale, material_second_axis_zero, Complex.ofReal_re]
+
+theorem material_second_scale_pos : 0 < carryMaterialSecondScale := by
+  rw [material_second_scale_eq]
+  exact reducedSourceScale_pos
+
+theorem material_second_reduced_eventually_eq :
+    carryMaterialSecondReducedResponse =ᶠ[nhds 0] fun t : ℝ => secondReducedResponse (t : ℂ) := by
+  have hd := CarryMaterialResidualComparison.real_dslope_germ material_second_axis_eventually_eq
+    secondAxis_analyticAt_zero.differentiableAt
+  filter_upwards [hd, material_second_axis_eventually_eq] with t ht ha
+  simp only [carryMaterialSecondReducedResponse, secondReducedResponse, ht, ha,
+    material_second_scale_eq]
+
+theorem material_second_reduced_zero : carryMaterialSecondReducedResponse 0 = 0 := by
+  have h := material_second_reduced_eventually_eq.eq_of_nhds
+  simpa only [Complex.ofReal_zero, secondReducedResponse_zero] using h
+
+theorem material_second_reduced_hasDerivAt_zero :
+    HasDerivAt carryMaterialSecondReducedResponse
+      ((sourceScale*(sourceScale*canonicalCompletedNativeLogDerivativeMoment 2 -
+        canonicalCompletedNativeLogDerivativeMoment 1^2) /
+          canonicalCompletedNativeLogDerivativeMoment 1^2 : ℝ) : ℂ) 0 :=
+  secondReducedResponse_hasDerivAt_zero.comp_ofReal.congr_of_eventuallyEq
+    material_second_reduced_eventually_eq
+
+theorem material_second_reduced_deriv_continuous :
+    ContinuousAt (deriv carryMaterialSecondReducedResponse) 0 := by
+  have he := CarryMaterialResidualComparison.deriv_real_germ
+    material_second_reduced_eventually_eq secondReducedResponse_analyticAt_zero
+  have hco : ContinuousAt (fun t : ℝ => (t : ℂ)) 0 := Complex.continuous_ofReal.continuousAt
+  have hcd : ContinuousAt (deriv secondReducedResponse) ((0 : ℝ) : ℂ) := by
+    simpa only [Complex.ofReal_zero] using secondReducedResponse_analyticAt_zero.deriv.continuousAt
+  exact (hcd.comp' hco).congr he.symm
+
+theorem material_second_axis_conj (t : ℝ) : conj (carryMaterialSecondAxis t) = carryMaterialSecondAxis t :=
+  CarryMaterialPositiveResidualComparison.real_dslope_conj _ material_reduced_conj 0 t
+
+theorem material_second_reduced_conj (t : ℝ) :
+    conj (carryMaterialSecondReducedResponse t) = carryMaterialSecondReducedResponse t := by
+  have hd := CarryMaterialPositiveResidualComparison.real_dslope_conj _ material_second_axis_conj 0 t
+  simp only [carryMaterialSecondReducedResponse, map_div₀, map_mul, hd,
+    Complex.conj_ofReal, material_second_axis_conj]
+
+theorem material_second_axis_hasDerivAt_zero : HasDerivAt carryMaterialSecondAxis 0 0 := by
+  have h := secondAxis_analyticAt_zero.differentiableAt.hasDerivAt
+  rw [deriv_secondAxis_zero] at h
+  exact h.comp_ofReal.congr_of_eventuallyEq material_second_axis_eventually_eq
+
+theorem material_second_channelCore_hasDerivAt_zero : HasDerivAt carryMaterialSecondChannelCore 0 0 := by
+  have ha := sourceAxis_analyticAt_zero.differentiableAt.hasDerivAt
+  have hb := secondAxis_analyticAt_zero.differentiableAt.hasDerivAt
+  rw [deriv_sourceAxis_zero] at ha
+  rw [deriv_secondAxis_zero] at hb
+  have h := (ha.mul hb).div_const (Real.sqrt reducedSourceScale : ℂ)
+  have hh : HasDerivAt (fun z : ℂ => sourceAxis z*secondAxis z /
+      (Real.sqrt reducedSourceScale : ℂ)) 0 0 := by
+    simpa only [zero_mul, mul_zero, add_zero, zero_div, Pi.mul_apply] using h
+  have he : carryMaterialSecondChannelCore =ᶠ[nhds 0] fun t : ℝ =>
+      sourceAxis (t : ℂ)*secondAxis (t : ℂ)/(Real.sqrt reducedSourceScale : ℂ) := by
+    filter_upwards [material_axis_eventually_eq, material_second_axis_eventually_eq] with t ht hu
+    simp only [carryMaterialSecondChannelCore, carryMaterialSecondAmplitudeCore, ht, hu,
+      material_second_scale_eq]
+  exact hh.comp_ofReal.congr_of_eventuallyEq he
+
+theorem material_second_amplitude_continuous : ContinuousAt carryMaterialSecondAmplitudeCore 0 :=
+  material_axis_continuous.mul material_second_axis_hasDerivAt_zero.continuousAt
+
+private theorem second_positive_feature_germ :
+    (fun t : ℝ => carryMaterialSecondAxis t/(Real.sqrt carryMaterialSecondScale : ℂ)) =ᶠ[nhds 0]
+      fun t : ℝ => secondPositiveFeature (t : ℂ) := by
+  filter_upwards [material_second_axis_eventually_eq] with t ht
+  simp only [secondPositiveFeature, ht, material_second_scale_eq]
+
+/-- Same existing second source reduction, extended to every local real
+collision using only the scalar regularity supplied by the source. -/
+theorem material_second_real_kernel_split :
+    ∃ U : Set ℝ, IsOpen U ∧ (0 : ℝ) ∈ U ∧
+      ∀ t ∈ U, ∀ u ∈ U,
+        dslope carryMaterialReducedResponse t u =
+          inner ℂ (carryMaterialSecondAxis t/(Real.sqrt carryMaterialSecondScale : ℂ))
+            (carryMaterialSecondAxis u/(Real.sqrt carryMaterialSecondScale : ℂ)) +
+          conj (carryMaterialReducedResponse t)*carryMaterialReducedResponse u*
+            dslope carryMaterialSecondReducedResponse t u := by
+  have hphi : AnalyticAt ℂ secondPositiveFeature 0 :=
+    secondAxis_analyticAt_zero.div analyticAt_const
+      (by exact_mod_cast (Real.sqrt_pos.mpr reducedSourceScale_pos).ne')
+  have hr := CarryMaterialResidualComparison.real_regular_germ material_reduced_eventually_eq
+    reducedResponse_analyticAt_zero
+  have hs := CarryMaterialResidualComparison.real_regular_germ material_second_reduced_eventually_eq
+    secondReducedResponse_analyticAt_zero
+  have hp := CarryMaterialResidualComparison.real_regular_germ second_positive_feature_germ hphi
+  have hn : ∀ᶠ t : ℝ in nhds 0, secondAxis (t : ℂ) ≠ 0 := by
+    have hne : secondAxis (0 : ℂ) ≠ 0 := by
+      rw [secondAxis_zero]
+      exact Complex.ofReal_ne_zero.mpr reducedSourceScale_pos.ne'
+    have h := secondAxis_analyticAt_zero.continuousAt.eventually_ne hne
+    exact CarryMaterialResidualComparison.real_cast_tendsto.eventually h
+  have hall := material_reduced_eventually_eq.and (material_second_reduced_eventually_eq.and
+    (second_positive_feature_germ.and (hn.and (hr.and (hs.and hp)))))
+  rcases mem_nhds_iff.mp hall with ⟨U, hU, ho, hz⟩
+  have hoff (t : ℝ) (ht : t ∈ U) (u : ℝ) (hu : u ∈ U) (hne : u ≠ t) :
+      dslope carryMaterialReducedResponse t u =
+        inner ℂ (carryMaterialSecondAxis t/(Real.sqrt carryMaterialSecondScale : ℂ))
+          (carryMaterialSecondAxis u/(Real.sqrt carryMaterialSecondScale : ℂ)) +
+        conj (carryMaterialReducedResponse t)*carryMaterialReducedResponse u*
+          dslope carryMaterialSecondReducedResponse t u := by
+    have htq := hU ht
+    have huq := hU hu
+    have hsep : (u : ℂ) ≠ conj (t : ℂ) := by simpa using hne
+    have h := reducedKernel_split (t : ℂ) (u : ℂ) htq.2.2.2.1 huq.2.2.2.1 hsep
+    rw [CarryMaterialResidualComparison.real_dslope_offdiag _ hne,
+      CarryMaterialResidualComparison.real_dslope_offdiag _ hne]
+    have hrt : carryMaterialReducedResponse t = reducedResponse (t : ℂ) := htq.1
+    have hru : carryMaterialReducedResponse u = reducedResponse (u : ℂ) := huq.1
+    have hst : carryMaterialSecondReducedResponse t = secondReducedResponse (t : ℂ) := htq.2.1
+    have hsu : carryMaterialSecondReducedResponse u = secondReducedResponse (u : ℂ) := huq.2.1
+    have hpt : carryMaterialSecondAxis t/(Real.sqrt carryMaterialSecondScale : ℂ) =
+        secondPositiveFeature (t : ℂ) := htq.2.2.1
+    have hpu : carryMaterialSecondAxis u/(Real.sqrt carryMaterialSecondScale : ℂ) =
+        secondPositiveFeature (u : ℂ) := huq.2.2.1
+    rw [reducedKernel, secondReducedKernel, ← hrt, ← hru, ← hst, ← hsu, ← hpt, ← hpu,
+      material_reduced_conj, material_second_reduced_conj, Complex.conj_ofReal] at h
+    simpa only [material_reduced_conj] using h
+  refine ⟨U, ho, hz, ?_⟩
+  intro t ht u hu
+  by_cases hne : u ≠ t
+  · exact hoff t ht u hu hne
+  · have he : u = t := not_ne_iff.mp hne
+    subst u
+    have hreg := (hU ht).2.2.2.2
+    have hl : ContinuousAt (dslope carryMaterialReducedResponse t) t :=
+      continuousAt_dslope_same.mpr hreg.1.differentiableAt
+    have hd : ContinuousAt (dslope carryMaterialSecondReducedResponse t) t :=
+      continuousAt_dslope_same.mpr hreg.2.1.differentiableAt
+    have hph := hreg.2.2.continuousAt
+    have hc : ContinuousAt (fun u : ℝ =>
+        inner ℂ (carryMaterialSecondAxis t/(Real.sqrt carryMaterialSecondScale : ℂ))
+          (carryMaterialSecondAxis u/(Real.sqrt carryMaterialSecondScale : ℂ)) +
+        conj (carryMaterialReducedResponse t)*carryMaterialReducedResponse u*
+          dslope carryMaterialSecondReducedResponse t u) t := by
+      apply ContinuousAt.add
+      · have hh := hph.mul (show ContinuousAt (fun _ : ℝ =>
+          conj (carryMaterialSecondAxis t/(Real.sqrt carryMaterialSecondScale : ℂ))) t from continuousAt_const)
+        change ContinuousAt (fun u : ℝ =>
+          carryMaterialSecondAxis u/(Real.sqrt carryMaterialSecondScale : ℂ)*
+            conj (carryMaterialSecondAxis t/(Real.sqrt carryMaterialSecondScale : ℂ))) t at hh
+        simpa only [RCLike.inner_apply] using hh
+      · exact (continuousAt_const.mul hreg.1.continuousAt).mul hd
+    have heq : dslope carryMaterialReducedResponse t =ᶠ[nhdsWithin t {t}ᶜ]
+        (fun u => inner ℂ (carryMaterialSecondAxis t/(Real.sqrt carryMaterialSecondScale : ℂ))
+          (carryMaterialSecondAxis u/(Real.sqrt carryMaterialSecondScale : ℂ)) +
+        conj (carryMaterialReducedResponse t)*carryMaterialReducedResponse u*
+          dslope carryMaterialSecondReducedResponse t u) := by
+      have hm : ∀ᶠ u : ℝ in nhds t, u ∈ U := ho.mem_nhds ht
+      filter_upwards [self_mem_nhdsWithin, hm.filter_mono nhdsWithin_le_nhds] with u hne hu
+      exact hoff t ht u hu (by simpa using hne)
+    exact tendsto_nhds_unique ((hl.tendsto.mono_left nhdsWithin_le_nhds).congr' heq)
+      (hc.tendsto.mono_left nhdsWithin_le_nhds)
+
+/-- The same normalized residual as PR #8/#9, with the next extracted
+channel and the ENTIRE second reduced response, including all diagonals. -/
+theorem material_second_residual_split :
+    ∃ U : Set ℝ, IsOpen U ∧ (0 : ℝ) ∈ U ∧
+      ∀ t ∈ U, ∀ u ∈ U, carryMaterialRealResidual t u =
+        (conj (carryMaterialSecondPositiveChannel t)*carryMaterialSecondPositiveChannel u).re +
+          t^2*u^2*carryMaterialSecondResidualCore t u := by
+  rcases material_second_real_kernel_split with ⟨U, ho, hz, h⟩
+  refine ⟨U, ho, hz, ?_⟩
+  intro t ht u hu
+  have he : conj (carryMaterialNormalizedResponse t)*carryMaterialNormalizedResponse u*
+      dslope carryMaterialReducedResponse t u =
+      conj (carryMaterialSecondPositiveChannel t)*carryMaterialSecondPositiveChannel u +
+        ((t^2*u^2 : ℝ) : ℂ)*
+          (conj (carryMaterialSecondAmplitudeCore t)*carryMaterialSecondAmplitudeCore u*
+            dslope carryMaterialSecondReducedResponse t u) := by
+    rw [h t ht u hu]
+    have htamp := carryMaterialSecondAmplitude_factor material_normalized_response_zero material_reduced_zero t
+    have huamp := carryMaterialSecondAmplitude_factor material_normalized_response_zero material_reduced_zero u
+    have hh : conj (carryMaterialNormalizedResponse t*carryMaterialReducedResponse t)*
+        (carryMaterialNormalizedResponse u*carryMaterialReducedResponse u)*
+          dslope carryMaterialSecondReducedResponse t u =
+      ((t^2*u^2 : ℝ) : ℂ)*
+        (conj (carryMaterialSecondAmplitudeCore t)*carryMaterialSecondAmplitudeCore u*
+          dslope carryMaterialSecondReducedResponse t u) := by
+      rw [htamp, huamp]
+      simp only [map_mul, map_pow, Complex.conj_ofReal]
+      push_cast
+      ring
+    simp only [map_mul] at hh
+    simp only [carryMaterialSecondPositiveChannel, RCLike.inner_apply, map_div₀, map_mul]
+    linear_combination hh
+  have hr := congrArg Complex.re he
+  simpa only [carryMaterialRealResidual, carryMaterialSecondResidualCore, Complex.star_def,
+    Complex.add_re, Complex.mul_re, Complex.ofReal_re, Complex.ofReal_im,
+    zero_mul, mul_zero, sub_zero] using hr
+
+/-- The source discriminant, not an assigned positive metric. -/
+theorem material_second_residual_core_center :
+    carryMaterialSecondResidualCore 0 0 =
+      (canonicalCompletedNativeLogDerivativeMoment 0*canonicalCompletedNativeLogDerivativeMoment 2 -
+        canonicalCompletedNativeLogDerivativeMoment 1^2) /
+          canonicalCompletedNativeLogDerivativeMoment 0 := by
+  unfold carryMaterialSecondResidualCore carryMaterialSecondAmplitudeCore
+  rw [material_axis_zero, material_second_axis_zero, dslope_same,
+    material_second_reduced_hasDerivAt_zero.deriv, reducedSourceScale_eq, sourceScale_eq]
+  have h0 : (canonicalCompletedNativeLogDerivativeMoment 0 : ℂ) ≠ 0 :=
+    Complex.ofReal_ne_zero.mpr canonicalCompletedNativeLogDerivativeMoment_zero_pos.ne'
+  have h1 : (canonicalCompletedNativeLogDerivativeMoment 1 : ℂ) ≠ 0 := by
+    have hp : 0 < canonicalCompletedNativeLogDerivativeMoment 1 := by
+      simpa only [material_residual_core_center] using material_residual_core_center_pos
+    exact Complex.ofReal_ne_zero.mpr hp.ne'
+  have he :
+      conj ((canonicalCompletedNativeLogDerivativeMoment 0 : ℂ)*
+        ((canonicalCompletedNativeLogDerivativeMoment 1 /
+          canonicalCompletedNativeLogDerivativeMoment 0^2 : ℝ) : ℂ)) *
+      ((canonicalCompletedNativeLogDerivativeMoment 0 : ℂ)*
+        ((canonicalCompletedNativeLogDerivativeMoment 1 /
+          canonicalCompletedNativeLogDerivativeMoment 0^2 : ℝ) : ℂ)) *
+      ((canonicalCompletedNativeLogDerivativeMoment 0 *
+        (canonicalCompletedNativeLogDerivativeMoment 0*canonicalCompletedNativeLogDerivativeMoment 2 -
+          canonicalCompletedNativeLogDerivativeMoment 1^2) /
+          canonicalCompletedNativeLogDerivativeMoment 1^2 : ℝ) : ℂ) =
+      (((canonicalCompletedNativeLogDerivativeMoment 0*canonicalCompletedNativeLogDerivativeMoment 2 -
+        canonicalCompletedNativeLogDerivativeMoment 1^2) /
+          canonicalCompletedNativeLogDerivativeMoment 0 : ℝ) : ℂ) := by
+    simp only [map_mul, Complex.conj_ofReal]
+    push_cast
+    field_simp [h0, h1]
+  rw [he, Complex.ofReal_re]
+
+theorem material_second_residual_core_center_pos : 0 < carryMaterialSecondResidualCore 0 0 := by
+  have hd := nativeSourceMixedDiscriminants_pos.1
+  simp_rw [nativeSourceOddBoundaryCoefficient_eq_twice_primeDepthGeometricMoment,
+    primeDepthGeometricMoment_eq_canonical] at hd
+  have hdelta : 0 < canonicalCompletedNativeLogDerivativeMoment 0*canonicalCompletedNativeLogDerivativeMoment 2 -
+      canonicalCompletedNativeLogDerivativeMoment 1^2 := by nlinarith
+  rw [material_second_residual_core_center]
+  exact div_pos hdelta canonicalCompletedNativeLogDerivativeMoment_zero_pos
+
+/-- Exact fourth-order factorization for every fixed finite source family
+that cancels the first moment. No moment-two condition is needed here. -/
+theorem material_second_null_energy_factor {n : ℕ} (c a : Fin n → ℝ)
+    (hc : (∑ i, c i*a i) = 0) :
+    ∀ᶠ e : ℝ in nhds 0,
+      carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i) =
+        e^4*carryMaterialSecondNullEnergy c a e := by
+  rcases material_second_residual_split with ⟨U, ho, hz, h⟩
+  have hm : ∀ᶠ e : ℝ in nhds 0, ∀ i, e*a i ∈ U := by
+    apply Filter.eventually_all.mpr
+    intro i
+    have he : Tendsto (fun e : ℝ => e*a i) (nhds 0) (nhds 0) := by
+      simpa only [id_eq, zero_mul] using (continuousAt_id.mul_const (a i)).tendsto (x := (0 : ℝ))
+    exact he.eventually (ho.mem_nhds hz)
+  filter_upwards [hm] with e he
+  exact carryMaterialSecondNull_energy_factor h material_normalized_response_zero c a hc e he
+
+/-- All finite ordered crossings survive in the rescaled limit. -/
+theorem material_second_null_energy_limit {n : ℕ} (c a : Fin n → ℝ) :
+    Tendsto (carryMaterialSecondNullEnergy c a) (nhds 0)
+      (nhds (((canonicalCompletedNativeLogDerivativeMoment 0*canonicalCompletedNativeLogDerivativeMoment 2 -
+        canonicalCompletedNativeLogDerivativeMoment 1^2) /
+          canonicalCompletedNativeLogDerivativeMoment 0)*(∑ i, c i*(a i)^2)^2)) := by
+  have h := carryMaterialSecondNullEnergy_continuous material_second_amplitude_continuous
+    material_second_channelCore_hasDerivAt_zero.differentiableAt material_second_reduced_zero
+    material_second_reduced_hasDerivAt_zero.differentiableAt material_second_reduced_deriv_continuous c a
+  have ht := h.tendsto
+  rw [carryMaterialSecondNullEnergy_zero material_second_channelCore_hasDerivAt_zero.deriv,
+    material_second_residual_core_center] at ht
+  exact ht
+
+/-- Positive for any FIXED family with M1=0 and M2!=0, at sufficiently
+small nonzero scales. No uniform neighborhood over families is claimed. -/
+theorem material_second_null_fixed_family_positive {n : ℕ} (c a : Fin n → ℝ)
+    (hc : (∑ i, c i*a i) = 0) (hm : (∑ i, c i*(a i)^2) ≠ 0) :
+    ∀ᶠ e : ℝ in nhds 0, e ≠ 0 →
+      0 < carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i) := by
+  rcases material_second_residual_split with ⟨U, ho, hz, h⟩
+  exact carryMaterialSecondNull_fixed_family_pos (ho.mem_nhds hz) h
+    material_normalized_response_zero material_second_amplitude_continuous
+    material_second_channelCore_hasDerivAt_zero.differentiableAt
+    material_second_channelCore_hasDerivAt_zero.deriv material_second_reduced_zero
+    material_second_reduced_hasDerivAt_zero.differentiableAt material_second_reduced_deriv_continuous
+    material_second_residual_core_center_pos c a hc hm
+
+/-- Explicit local lower margin for the complete residual energy. The
+radius depends on the fixed family; the source coefficient is unchanged. -/
+theorem material_second_null_energy_lower_bound {n : ℕ} (c a : Fin n → ℝ)
+    (hc : (∑ i, c i*a i) = 0) (hm : (∑ i, c i*(a i)^2) ≠ 0) :
+    ∀ᶠ e : ℝ in nhds 0,
+      (((canonicalCompletedNativeLogDerivativeMoment 0*canonicalCompletedNativeLogDerivativeMoment 2 -
+        canonicalCompletedNativeLogDerivativeMoment 1^2) /
+          canonicalCompletedNativeLogDerivativeMoment 0)*(∑ i, c i*(a i)^2)^2)/2*e^4 ≤
+        carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i) := by
+  let C : ℝ := ((canonicalCompletedNativeLogDerivativeMoment 0*canonicalCompletedNativeLogDerivativeMoment 2 -
+      canonicalCompletedNativeLogDerivativeMoment 1^2) /
+        canonicalCompletedNativeLogDerivativeMoment 0)*(∑ i, c i*(a i)^2)^2
+  have hC : 0 < C := by
+    have hp := material_second_residual_core_center_pos
+    rw [material_second_residual_core_center] at hp
+    exact mul_pos hp (sq_pos_of_ne_zero hm)
+  have hlim : Tendsto (carryMaterialSecondNullEnergy c a) (nhds 0) (nhds C) :=
+    material_second_null_energy_limit c a
+  have hmargin : ∀ᶠ e : ℝ in nhds 0, C/2 < carryMaterialSecondNullEnergy c a e :=
+    (tendsto_order.1 hlim).1 (C/2) (by linarith)
+  filter_upwards [hmargin, material_second_null_energy_factor c a hc] with e he hfactor
+  change C/2*e^4 ≤ _
+  rw [hfactor, mul_comm (C/2)]
+  exact mul_le_mul_of_nonneg_left he.le (by positivity)
+
+end
+end CarryMaterialSecondNullComparison
+
+namespace CarryMaterialSecondNullComparison
+#assert_central_comparison_axioms material_second_axis_eventually_eq
+#print axioms material_second_axis_eventually_eq
+#assert_central_comparison_axioms material_second_axis_zero
+#print axioms material_second_axis_zero
+#assert_central_comparison_axioms material_second_scale_eq
+#print axioms material_second_scale_eq
+#assert_central_comparison_axioms material_second_scale_pos
+#print axioms material_second_scale_pos
+#assert_central_comparison_axioms material_second_reduced_eventually_eq
+#print axioms material_second_reduced_eventually_eq
+#assert_central_comparison_axioms material_second_reduced_zero
+#print axioms material_second_reduced_zero
+#assert_central_comparison_axioms material_second_reduced_hasDerivAt_zero
+#print axioms material_second_reduced_hasDerivAt_zero
+#assert_central_comparison_axioms material_second_reduced_deriv_continuous
+#print axioms material_second_reduced_deriv_continuous
+#assert_central_comparison_axioms material_second_axis_conj
+#print axioms material_second_axis_conj
+#assert_central_comparison_axioms material_second_reduced_conj
+#print axioms material_second_reduced_conj
+#assert_central_comparison_axioms material_second_axis_hasDerivAt_zero
+#print axioms material_second_axis_hasDerivAt_zero
+#assert_central_comparison_axioms material_second_channelCore_hasDerivAt_zero
+#print axioms material_second_channelCore_hasDerivAt_zero
+#assert_central_comparison_axioms material_second_amplitude_continuous
+#print axioms material_second_amplitude_continuous
+#assert_central_comparison_axioms material_second_real_kernel_split
+#print axioms material_second_real_kernel_split
+#assert_central_comparison_axioms material_second_residual_split
+#print axioms material_second_residual_split
+#assert_central_comparison_axioms material_second_residual_core_center
+#print axioms material_second_residual_core_center
+#assert_central_comparison_axioms material_second_residual_core_center_pos
+#print axioms material_second_residual_core_center_pos
+#assert_central_comparison_axioms material_second_null_energy_factor
+#print axioms material_second_null_energy_factor
+#assert_central_comparison_axioms material_second_null_energy_limit
+#print axioms material_second_null_energy_limit
+#assert_central_comparison_axioms material_second_null_fixed_family_positive
+#print axioms material_second_null_fixed_family_positive
+#assert_central_comparison_axioms material_second_null_energy_lower_bound
+#print axioms material_second_null_energy_lower_bound
+end CarryMaterialSecondNullComparison
+
+namespace CarryMaterialSecondNullComparison
+open GeometryOfNumbers.Analysis Filter
+open scoped BigOperators Topology
+set_option autoImplicit false
+-- This is exactly the reflection combination whose leading form vanished in PR #9.
+example : ∀ᶠ e : ℝ in nhds 0, e ≠ 0 →
+    0 < carryRealKernelEnergy carryMaterialRealResidual (![1,1] : Fin 2 → ℝ)
+      (fun i => e*(![1,-1] : Fin 2 → ℝ) i) := by
+  apply material_second_null_fixed_family_positive ![1,1] ![1,-1]
+  · norm_num [Fin.sum_univ_two]
+  · norm_num [Fin.sum_univ_two]
+
+-- A genuine three-reading double cancellation stays outside the new sign theorem.
+example : Tendsto (carryMaterialSecondNullEnergy (![3,-3,1] : Fin 3 → ℝ) ![1,2,3])
+    (nhds 0) (nhds 0) := by
+  have h := material_second_null_energy_limit (![3,-3,1] : Fin 3 → ℝ) ![1,2,3]
+  norm_num [Fin.sum_univ_three,
+    show (![3,-3,1] : Fin 3 → ℝ) 2 = 1 from rfl,
+    show (![1,2,3] : Fin 3 → ℝ) 2 = 3 from rfl] at h
+  exact h
+end CarryMaterialSecondNullComparison
