@@ -1,3 +1,4 @@
+import GeometryOfNumbers.Analysis.CarryMaterialThirdNullSector
 import GeometryOfNumbers.Analysis.CarryMaterialSecondNullSector
 import GeometryOfNumbers.Analysis.CarryMaterialResidualPositiveTransport
 import GeometryOfNumbers.Analysis.CarryMaterialCompanionGreenTransport

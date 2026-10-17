@@ -1,3 +1,5 @@
+import GeometryOfNumbers.Analysis.CarryMaterialThirdNullSector
+import CarrySelfAdjointOperator.NativeCompletedSourceFourthPositiveChannel
 import GeometryOfNumbers.Analysis.CarryMaterialSecondNullSector
 import CarrySelfAdjointOperator.NativeCompletedSourceThirdPositiveChannel
 import GeometryOfNumbers.Analysis.CarryMaterialResidualPositiveTransport
@@ -1784,3 +1786,313 @@ example : Tendsto (carryMaterialSecondNullEnergy (![3,-3,1] : Fin 3 → ℝ) ![1
     show (![1,2,3] : Fin 3 → ℝ) 2 = 3 from rfl] at h
   exact h
 end CarryMaterialSecondNullComparison
+
+namespace CarryMaterialThirdNullComparison
+open GeometryOfNumbers.Analysis Filter
+open CarrySelfAdjointOperator CarrySelfAdjointOperator.SourcePositiveReduction
+open CarryMaterialResponseComparison CarryMaterialResidualComparison
+open CarryMaterialPositiveResidualComparison
+open scoped BigOperators Topology ComplexConjugate InnerProductSpace
+noncomputable section
+set_option autoImplicit false
+set_option backward.isDefEq.respectTransparency false
+set_option maxHeartbeats 1500000
+
+private def nativeTaylorShift (n : ℕ) : ℂ → ℂ :=
+  (Function.swap dslope (0 : ℂ))^[n] sourceResponse
+
+private theorem nativeTaylorShift_analytic (n : ℕ) : AnalyticAt ℂ (nativeTaylorShift n) 0 := by
+  rcases sourceResponse_analyticAt_zero with ⟨p, hp⟩
+  exact (hp.has_fpower_series_iterate_dslope_fslope n).analyticAt
+
+private theorem source_series_coeff {p : FormalMultilinearSeries ℂ ℂ ℂ}
+    (hp : HasFPowerSeriesAt sourceResponse p 0) (n : ℕ) :
+    p.coeff n = completedNativeGreenResponseTaylorCoefficient n := by
+  have he : p.coeff n = completedGreenTaylorJet sourceResponse n := by
+    rcases hp with ⟨radius, hball⟩
+    have hd := hball.factorial_smul (1 : ℂ) n
+    rw [iteratedFDeriv_apply_eq_iteratedDeriv_mul_prod] at hd
+    simp only [FormalMultilinearSeries.apply_eq_prod_smul_coeff,
+      Finset.prod_const_one, one_smul] at hd
+    have h : (n.factorial : ℂ) • p.coeff n = iteratedDeriv n sourceResponse 0 := by
+      simpa only [Nat.cast_smul_eq_nsmul] using hd
+    rw [completedGreenTaylorJet, ← h, smul_smul,
+      inv_mul_cancel₀ (Nat.cast_ne_zero.mpr (Nat.factorial_ne_zero n)), one_smul]
+  exact he.trans (sourceResponse_taylor n)
+
+/-- Every material Taylor shift is a germ of the SAME analytic scalar source. -/
+theorem material_taylor_shift_germ (n : ℕ) :
+    carryMaterialTaylorShift n =ᶠ[nhds 0] fun t : ℝ => nativeTaylorShift n (t : ℂ) := by
+  induction n with
+  | zero => exact material_source_response_eventually_eq
+  | succ n ih =>
+    have h := CarryMaterialResidualComparison.real_dslope_germ ih
+      (nativeTaylorShift_analytic n).differentiableAt
+    simpa only [carryMaterialTaylorShift_succ, nativeTaylorShift,
+      Function.iterate_succ_apply'] using h
+
+theorem material_taylor_shift_center (n : ℕ) :
+    carryMaterialTaylorShift n 0 = completedNativeGreenResponseTaylorCoefficient n := by
+  rcases sourceResponse_analyticAt_zero with ⟨p, hp⟩
+  have hs := hp.has_fpower_series_iterate_dslope_fslope n
+  have hc : nativeTaylorShift n 0 = p.coeff n := by
+    have h := hs.coeff_zero 1
+    change (FormalMultilinearSeries.fslope^[n] p).coeff 0 = nativeTaylorShift n 0 at h
+    rw [FormalMultilinearSeries.coeff_iterate_fslope, zero_add] at h
+    exact h.symm
+  simpa only [Complex.ofReal_zero, hc, source_series_coeff hp] using
+    (material_taylor_shift_germ n).eq_of_nhds
+
+theorem material_taylor_shift_hasDerivAt_zero (n : ℕ) :
+    HasDerivAt (carryMaterialTaylorShift n)
+      (completedNativeGreenResponseTaylorCoefficient (n+1)) 0 := by
+  rcases sourceResponse_analyticAt_zero with ⟨p, hp⟩
+  have hs := hp.has_fpower_series_iterate_dslope_fslope n
+  have hd := hs.analyticAt.differentiableAt.hasDerivAt
+  rw [hs.deriv] at hd
+  change HasDerivAt (nativeTaylorShift n) ((FormalMultilinearSeries.fslope^[n] p).coeff 1) 0 at hd
+  rw [FormalMultilinearSeries.coeff_iterate_fslope, source_series_coeff hp] at hd
+  have he : HasDerivAt (nativeTaylorShift n)
+      (completedNativeGreenResponseTaylorCoefficient (n+1)) 0 := by
+    simpa only [Nat.add_comm] using hd
+  exact he.comp_ofReal.congr_of_eventuallyEq (material_taylor_shift_germ n)
+
+theorem material_taylor_shift_regular (n : ℕ) :
+    ∀ᶠ t : ℝ in nhds 0, DifferentiableAt ℝ (carryMaterialTaylorShift n) t := by
+  filter_upwards [CarryMaterialResidualComparison.real_regular_germ
+    (material_taylor_shift_germ n) (nativeTaylorShift_analytic n)] with t ht
+  exact ht.differentiableAt
+
+theorem material_taylor_shift_deriv_continuous (n : ℕ) :
+    ContinuousAt (deriv (carryMaterialTaylorShift n)) 0 := by
+  have he := CarryMaterialResidualComparison.deriv_real_germ
+    (material_taylor_shift_germ n) (nativeTaylorShift_analytic n)
+  have hco : ContinuousAt (fun t : ℝ => (t : ℂ)) 0 := Complex.continuous_ofReal.continuousAt
+  have hcd : ContinuousAt (deriv (nativeTaylorShift n)) ((0 : ℝ) : ℂ) := by
+    simpa only [Complex.ofReal_zero] using (nativeTaylorShift_analytic n).deriv.continuousAt
+  exact (hcd.comp' hco).congr he.symm
+
+theorem material_taylor_shift_conj (n : ℕ) (t : ℝ) :
+    conj (carryMaterialTaylorShift n t) = carryMaterialTaylorShift n t :=
+  carryMaterialTaylorShift_conj material_response_conj n t
+
+theorem material_second_taylor_shift_zero : carryMaterialTaylorShift 2 0 = 0 := by
+  rw [material_taylor_shift_center]
+  exact completedNativeGreenResponseTaylorCoefficient_even_eq_zero 1
+
+theorem material_fourth_taylor_shift_zero : carryMaterialTaylorShift 4 0 = 0 := by
+  rw [material_taylor_shift_center]
+  exact completedNativeGreenResponseTaylorCoefficient_even_eq_zero 2
+
+theorem material_sixth_taylor_shift_zero : carryMaterialTaylorShift 6 0 = 0 := by
+  rw [material_taylor_shift_center]
+  exact completedNativeGreenResponseTaylorCoefficient_even_eq_zero 3
+
+theorem material_sixth_taylor_shift_hasDerivAt_zero :
+    HasDerivAt (carryMaterialTaylorShift 6) (canonicalCompletedNativeLogDerivativeMoment 3 : ℂ) 0 := by
+  have h := material_taylor_shift_hasDerivAt_zero 6
+  rw [show 6+1=2*3+1 from rfl,
+    completedNativeGreenResponseTaylorCoefficient_odd_eq_canonical] at h
+  exact h
+
+theorem material_moment_three_pos : 0 < canonicalCompletedNativeLogDerivativeMoment 3 := by
+  have h1 := nativeMoment_one_pos
+  have hdelta := nativeMoment_shifted_discriminant_pos
+  by_contra h
+  have hn := mul_nonpos_of_nonneg_of_nonpos h1.le (le_of_not_gt h)
+  nlinarith [sq_nonneg (canonicalCompletedNativeLogDerivativeMoment 2)]
+
+/-- The already identified source split, with its literal central normalization. -/
+theorem material_residual_centered_kernel :
+    ∃ U : Set ℝ, IsOpen U ∧ (0 : ℝ) ∈ U ∧
+      ∀ t ∈ U, ∀ u ∈ U, (carryMaterialRealResidual t u : ℂ) =
+        dslope carryMaterialNormalizedResponse t u-
+          carryMaterialTaylorShift 1 t*carryMaterialTaylorShift 1 u /
+            (carryMaterialResponseScale : ℂ) := by
+  rcases CarryMaterialResidualComparison.material_real_kernel_split with ⟨U, ho, hz, hs⟩
+  have hphi (t u : ℝ) : inner ℂ (carryMaterialPositiveFeature t) (carryMaterialPositiveFeature u) =
+      carryMaterialTaylorShift 1 t*carryMaterialTaylorShift 1 u /
+        (carryMaterialResponseScale : ℂ) := by
+    have hsq : (Real.sqrt carryMaterialResponseScale : ℂ)^2 = (carryMaterialResponseScale : ℂ) := by
+      exact_mod_cast Real.sq_sqrt material_scale_pos.le
+    simp only [carryMaterialPositiveFeature, RCLike.inner_apply, map_div₀,
+      Complex.conj_ofReal, material_axis_conj]
+    rw [div_mul_div_comm, ← pow_two, hsq]
+    change carryMaterialResponseAxis u*carryMaterialResponseAxis t / _ = _
+    change _ = carryMaterialResponseAxis t*carryMaterialResponseAxis u / _
+    ring
+  refine ⟨U, ho, hz, ?_⟩
+  intro t ht u hu
+  have h := hs t ht u hu
+  rw [hphi] at h
+  rw [material_real_residual_coe]
+  linear_combination -h
+
+theorem material_third_null_energy_factor {n : ℕ} (c a : Fin n → ℝ)
+    (hM1 : (∑ i, c i*a i) = 0) (hM2 : (∑ i, c i*(a i)^2) = 0) :
+    ∀ᶠ e : ℝ in nhds 0,
+      carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i) =
+        e^6*carryMaterialThirdNullEnergy c a e := by
+  rcases material_residual_centered_kernel with ⟨U, ho, hz, hs⟩
+  have hscale : carryMaterialTaylorShift 1 0 = (carryMaterialResponseScale : ℂ) := by
+    change carryMaterialResponseAxis 0 = _
+    rw [material_axis_zero, material_scale_eq]
+  have hm : ∀ᶠ e : ℝ in nhds 0, ∀ i, e*a i ∈ U := by
+    apply Filter.eventually_all.mpr
+    intro i
+    have ht : Tendsto (fun e : ℝ => e*a i) (nhds 0) (nhds 0) := by
+      simpa only [id_eq, zero_mul] using (continuousAt_id.mul_const (a i)).tendsto (x := (0 : ℝ))
+    exact ht.eventually (ho.mem_nhds hz)
+  have hreg (j : ℕ) : ∀ᶠ e : ℝ in nhds 0, ∀ i,
+      DifferentiableAt ℝ (carryMaterialTaylorShift j) (e*a i) := by
+    apply Filter.eventually_all.mpr
+    intro i
+    have ht : Tendsto (fun e : ℝ => e*a i) (nhds 0) (nhds 0) := by
+      simpa only [id_eq, zero_mul] using (continuousAt_id.mul_const (a i)).tendsto (x := (0 : ℝ))
+    exact ht.eventually (material_taylor_shift_regular j)
+  filter_upwards [hm, hreg 2, hreg 4, hreg 6] with e he h2 h4 h6
+  exact carryMaterialThirdNull_energy_factor hs hscale material_scale_pos
+    material_second_taylor_shift_zero material_fourth_taylor_shift_zero
+    (material_taylor_shift_conj 5) c a hM1 hM2 e he h2 h4 h6
+
+theorem material_third_null_energy_continuous {n : ℕ} (c a : Fin n → ℝ) :
+    ContinuousAt (carryMaterialThirdNullEnergy c a) 0 :=
+  carryMaterialThirdNullEnergy_continuous
+    (material_taylor_shift_hasDerivAt_zero 5).continuousAt material_sixth_taylor_shift_zero
+    material_sixth_taylor_shift_hasDerivAt_zero.differentiableAt
+    (material_taylor_shift_deriv_continuous 6) c a
+
+/-- Central coefficient of the TOTAL residual, not only the newest channel. -/
+theorem material_third_null_energy_limit {n : ℕ} (c a : Fin n → ℝ) :
+    Tendsto (carryMaterialThirdNullEnergy c a) (nhds 0)
+      (nhds (canonicalCompletedNativeLogDerivativeMoment 3*(∑ i, c i*(a i)^3)^2)) := by
+  have h := (material_third_null_energy_continuous c a).tendsto
+  rw [carryMaterialThirdNullEnergy_zero, material_sixth_taylor_shift_hasDerivAt_zero.deriv,
+    Complex.ofReal_re] at h
+  exact h
+
+/-- The normalized quotient is used only on the punctured neighborhood. -/
+theorem material_third_null_scaled_energy_limit {n : ℕ} (c a : Fin n → ℝ)
+    (hM1 : (∑ i, c i*a i) = 0) (hM2 : (∑ i, c i*(a i)^2) = 0) :
+    Tendsto (fun e : ℝ => carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i)/e^6)
+      (nhdsWithin 0 {0}ᶜ)
+      (nhds (canonicalCompletedNativeLogDerivativeMoment 3*(∑ i, c i*(a i)^3)^2)) := by
+  have heq : (fun e : ℝ => carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i)/e^6)
+      =ᶠ[nhdsWithin 0 {0}ᶜ] carryMaterialThirdNullEnergy c a := by
+    filter_upwards [self_mem_nhdsWithin,
+      (material_third_null_energy_factor c a hM1 hM2).filter_mono nhdsWithin_le_nhds] with e hne hf
+    have he : e ≠ 0 := by simpa using hne
+    rw [hf]
+    exact mul_div_cancel_left₀ _ (pow_ne_zero _ he)
+  exact ((material_third_null_energy_limit c a).mono_left nhdsWithin_le_nhds).congr' heq.symm
+
+/-- Every FIXED family in the double-null sector with a nonzero third
+material moment has positive complete residual energy at small nonzero scale. -/
+theorem material_third_null_fixed_family_positive {n : ℕ} (c a : Fin n → ℝ)
+    (hM1 : (∑ i, c i*a i) = 0) (hM2 : (∑ i, c i*(a i)^2) = 0)
+    (hM3 : (∑ i, c i*(a i)^3) ≠ 0) :
+    ∀ᶠ e : ℝ in nhds 0, e ≠ 0 →
+      0 < carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i) := by
+  have hpos : 0 < canonicalCompletedNativeLogDerivativeMoment 3*(∑ i, c i*(a i)^3)^2 :=
+    mul_pos material_moment_three_pos (sq_pos_of_ne_zero hM3)
+  have hQ := (tendsto_order.1 (material_third_null_energy_limit c a)).1 0 hpos
+  filter_upwards [hQ, material_third_null_energy_factor c a hM1 hM2] with e he hf hne
+  rw [hf]
+  have hp : 0 < e^6 := by
+    simpa only [← pow_mul] using pow_pos (sq_pos_of_ne_zero hne) 3
+  exact mul_pos hp he
+
+/-- A local margin for the full energy, with no change of normalization. -/
+theorem material_third_null_energy_lower_bound {n : ℕ} (c a : Fin n → ℝ)
+    (hM1 : (∑ i, c i*a i) = 0) (hM2 : (∑ i, c i*(a i)^2) = 0)
+    (hM3 : (∑ i, c i*(a i)^3) ≠ 0) :
+    ∀ᶠ e : ℝ in nhds 0,
+      canonicalCompletedNativeLogDerivativeMoment 3*(∑ i, c i*(a i)^3)^2/2*e^6 ≤
+        carryRealKernelEnergy carryMaterialRealResidual c (fun i => e*a i) := by
+  let C : ℝ := canonicalCompletedNativeLogDerivativeMoment 3*(∑ i, c i*(a i)^3)^2
+  have hC : 0 < C := mul_pos material_moment_three_pos (sq_pos_of_ne_zero hM3)
+  have hlim : Tendsto (carryMaterialThirdNullEnergy c a) (nhds 0) (nhds C) :=
+    material_third_null_energy_limit c a
+  have hmargin : ∀ᶠ e : ℝ in nhds 0, C/2 < carryMaterialThirdNullEnergy c a e :=
+    (tendsto_order.1 hlim).1 (C/2) (by linarith)
+  filter_upwards [hmargin, material_third_null_energy_factor c a hM1 hM2] with e he hf
+  change C/2*e^6 ≤ _
+  rw [hf, mul_comm (C/2)]
+  exact mul_le_mul_of_nonneg_left he.le (by positivity)
+
+end
+end CarryMaterialThirdNullComparison
+
+namespace CarryMaterialThirdNullComparison
+#assert_central_comparison_axioms material_taylor_shift_germ
+#print axioms material_taylor_shift_germ
+#assert_central_comparison_axioms material_taylor_shift_center
+#print axioms material_taylor_shift_center
+#assert_central_comparison_axioms material_taylor_shift_hasDerivAt_zero
+#print axioms material_taylor_shift_hasDerivAt_zero
+#assert_central_comparison_axioms material_taylor_shift_regular
+#print axioms material_taylor_shift_regular
+#assert_central_comparison_axioms material_taylor_shift_deriv_continuous
+#print axioms material_taylor_shift_deriv_continuous
+#assert_central_comparison_axioms material_taylor_shift_conj
+#print axioms material_taylor_shift_conj
+#assert_central_comparison_axioms material_second_taylor_shift_zero
+#print axioms material_second_taylor_shift_zero
+#assert_central_comparison_axioms material_fourth_taylor_shift_zero
+#print axioms material_fourth_taylor_shift_zero
+#assert_central_comparison_axioms material_sixth_taylor_shift_zero
+#print axioms material_sixth_taylor_shift_zero
+#assert_central_comparison_axioms material_sixth_taylor_shift_hasDerivAt_zero
+#print axioms material_sixth_taylor_shift_hasDerivAt_zero
+#assert_central_comparison_axioms material_moment_three_pos
+#print axioms material_moment_three_pos
+#assert_central_comparison_axioms material_residual_centered_kernel
+#print axioms material_residual_centered_kernel
+#assert_central_comparison_axioms material_third_null_energy_factor
+#print axioms material_third_null_energy_factor
+#assert_central_comparison_axioms material_third_null_energy_continuous
+#print axioms material_third_null_energy_continuous
+#assert_central_comparison_axioms material_third_null_energy_limit
+#print axioms material_third_null_energy_limit
+#assert_central_comparison_axioms material_third_null_scaled_energy_limit
+#print axioms material_third_null_scaled_energy_limit
+#assert_central_comparison_axioms material_third_null_fixed_family_positive
+#print axioms material_third_null_fixed_family_positive
+#assert_central_comparison_axioms material_third_null_energy_lower_bound
+#print axioms material_third_null_energy_lower_bound
+end CarryMaterialThirdNullComparison
+
+namespace CarryMaterialThirdNullComparison
+open GeometryOfNumbers.Analysis Filter CarrySelfAdjointOperator
+open scoped BigOperators Topology
+
+-- The genuinely double-cancelling three-reading source from PR #10 now has a sign.
+example : ∀ᶠ e : ℝ in nhds 0, e ≠ 0 →
+    0 < carryRealKernelEnergy carryMaterialRealResidual (![3,-3,1] : Fin 3 → ℝ)
+      (fun i => e*(![1,2,3] : Fin 3 → ℝ) i) := by
+  apply material_third_null_fixed_family_positive ![3,-3,1] ![1,2,3]
+  · norm_num [Fin.sum_univ_three,
+      show (![3,-3,1] : Fin 3 → ℝ) 2 = 1 from rfl,
+      show (![1,2,3] : Fin 3 → ℝ) 2 = 3 from rfl]
+  · norm_num [Fin.sum_univ_three,
+      show (![3,-3,1] : Fin 3 → ℝ) 2 = 1 from rfl,
+      show (![1,2,3] : Fin 3 → ℝ) 2 = 3 from rfl]
+  · norm_num [Fin.sum_univ_three,
+      show (![3,-3,1] : Fin 3 → ℝ) 2 = 1 from rfl,
+      show (![1,2,3] : Fin 3 → ℝ) 2 = 3 from rfl]
+
+example : Tendsto (carryMaterialThirdNullEnergy (![3,-3,1] : Fin 3 → ℝ) ![1,2,3])
+    (nhds 0) (nhds (36*canonicalCompletedNativeLogDerivativeMoment 3)) := by
+  have h := material_third_null_energy_limit (![3,-3,1] : Fin 3 → ℝ) ![1,2,3]
+  norm_num [Fin.sum_univ_three,
+    show (![3,-3,1] : Fin 3 → ℝ) 2 = 1 from rfl,
+    show (![1,2,3] : Fin 3 → ℝ) 2 = 3 from rfl] at h
+  simpa only [mul_comm] using h
+
+-- Triple cancellation has zero sixth-order coefficient: no sign inferred.
+example {n : ℕ} (c a : Fin n → ℝ) (hM3 : (∑ i, c i*(a i)^3) = 0) :
+    Tendsto (carryMaterialThirdNullEnergy c a) (nhds 0) (nhds 0) := by
+  simpa only [hM3, zero_pow (by decide : 2 ≠ 0), mul_zero] using
+    material_third_null_energy_limit c a
+
+end CarryMaterialThirdNullComparison
