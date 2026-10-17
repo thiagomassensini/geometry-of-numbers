@@ -1,0 +1,16 @@
+{
+  "geometry_head": "d4f7c0da8149a35c0fe976abc847b57d1bcb8ca7",
+  "base": "d4f7c0da8149a35c0fe976abc847b57d1bcb8ca7",
+  "operator_head": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "lean_toolchain": "leanprover/lean4:v4.32.0",
+  "lean_sources": {
+    "AllOrderPattern.lean": "e490daaedad34b5534e4b436b049ec6efb24756ce7ed943fc42827a8e7a36acb",
+    "Audit.lean": "be953e6a87d9e4a5cac9ec9e6eb3682a5bbe880bd98cf2ca437cbcc0e1a422eb",
+    "FifthOddCertificate.lean": "904877593b059c4550d52c126780223001691897e4206668ebd9f7fb541ff6f8",
+    "GeneralTails.lean": "f4b5ded09ce73ca832f7fa4d38cbfd1799ed01f705e80be373b740462cb567eb",
+    "ModeSchedule.lean": "1039edba9fe21ae004142982d80b2db0eaf39b4ea7c0b298548501f4368a7972",
+    "Regression.lean": "7945aaf8ff020c60c6bccdb11477483d16297a6b50dadafb69a478d9acee0b46",
+    "TenSourceReturn.lean": "ef58dcabc1cceb7f2b1f31f9ee11609603c5953b923d3691572564394d5e3e7c",
+    "ThetaTwenty.lean": "48b3cdd7742d7ba58aaab710dcd7c770b550442edd325d094062b8842e26f55c"
+  }
+}
