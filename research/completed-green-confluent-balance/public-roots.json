@@ -1,0 +1,40 @@
+{
+  "library_theorems": [
+    "GeometryOfNumbers.Analysis.carryMaterialForcingVector_origin_ne_zero",
+    "GeometryOfNumbers.Analysis.carryMaterialForcingGreen_factor",
+    "GeometryOfNumbers.Analysis.carryMaterialForcingGreen_regular",
+    "GeometryOfNumbers.Analysis.carryMaterialForcingGreen_diagonal",
+    "GeometryOfNumbers.Analysis.carryMaterialForcingGreen_bilinear",
+    "GeometryOfNumbers.Analysis.carryMaterialForcingGreen_energy",
+    "GeometryOfNumbers.Analysis.carryMaterialForcingGreen_energy_nonpos",
+    "GeometryOfNumbers.Analysis.carryMaterialForcingGreen_origin_neg",
+    "GeometryOfNumbers.Analysis.carryMaterialForcingGreen_rank_one",
+    "GeometryOfNumbers.Analysis.carryMaterialForcingGreen_cross",
+    "GeometryOfNumbers.Analysis.carryMaterialForcingRemainder_ledger",
+    "GeometryOfNumbers.Analysis.carryMaterialForcingGreen_continuous"
+  ],
+  "library_definitions": [
+    "GeometryOfNumbers.Analysis.carryMaterialForcingVector",
+    "GeometryOfNumbers.Analysis.carryMaterialForcingGreenKernel",
+    "GeometryOfNumbers.Analysis.carryMaterialForcingRemainderGreen"
+  ],
+  "research_theorems": [
+    "CarryCompletedGreenBalance.physical_remainder_factor",
+    "CarryCompletedGreenBalance.physical_remainder_regular",
+    "CarryCompletedGreenBalance.source_forcing_energy",
+    "CarryCompletedGreenBalance.source_forcing_origin_neg",
+    "CarryCompletedGreenBalance.remainder_zero_left",
+    "CarryCompletedGreenBalance.remainder_zero_right",
+    "CarryCompletedGreenBalance.remainder_origin_pos",
+    "CarryCompletedGreenBalance.physical_remainder_zero_row",
+    "CarryCompletedGreenBalance.physical_remainder_origin_limit",
+    "CarryCompletedGreenBalance.physical_forcing_schur",
+    "CarryCompletedGreenBalance.physical_remainder_energy",
+    "CarryCompletedGreenBalance.completed_coefficient_bilinear",
+    "CarryCompletedGreenBalance.low_order_source_regression"
+  ],
+  "research_definitions": [
+    "CarryCompletedGreenBalance.completedCoefficient",
+    "CarryCompletedGreenBalance.remainderCoefficient"
+  ]
+}
