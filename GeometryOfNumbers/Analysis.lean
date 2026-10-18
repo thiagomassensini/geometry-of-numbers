@@ -1,3 +1,4 @@
+import GeometryOfNumbers.Analysis.MaterialClockKrylovGap
 import GeometryOfNumbers.Analysis.CarryMaterialFourthPivot
 import GeometryOfNumbers.Analysis.CarryMaterialSourceFactor
 import GeometryOfNumbers.Analysis.CarryMaterialMixedSchur

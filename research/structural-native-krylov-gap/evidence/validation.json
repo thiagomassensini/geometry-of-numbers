@@ -1,0 +1,133 @@
+{
+  "base": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "checks": [
+    {
+      "label": "source",
+      "command": [
+        "/usr/bin/python3",
+        "/home/thlinux/geometry-of-numbers/research/structural-native-krylov-gap/check_sources.py"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-18T20:54:05.132419+00:00",
+      "log": "source.log.gz",
+      "sha256": "19cd93ed3295721d423343492eb87af2b9eaebe2e33d1b7fc70377ebc6e43332",
+      "uncompressed_sha256": "5672b660d7ae5827b26252bcfd96bc241a2adeb6ae2cb224db5e3607742bdb04"
+    },
+    {
+      "label": "focused",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "GeometryOfNumbers.Analysis.MaterialClockKrylovGap",
+        "GeometryOfNumbers.Analysis.MaterialClockKrylovGapAudit"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-18T20:54:05.210351+00:00",
+      "log": "focused.log.gz",
+      "sha256": "f54189ccfe622e5b5ff23d3f4c0cb7d26496579ee44fd4d640522c9a433ec786",
+      "uncompressed_sha256": "769b694748e5297139fff0a85561c8b77a540c9562b4af56b6f31161be0154d5"
+    },
+    {
+      "label": "canonical",
+      "command": [
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/structural-native-krylov-gap/compile_module.sh",
+        "CanonicalClockGap"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-18T20:54:27.064922+00:00",
+      "log": "canonical.log.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "uncompressed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "regression",
+      "command": [
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/structural-native-krylov-gap/compile_module.sh",
+        "Regression"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-18T20:54:39.672722+00:00",
+      "log": "regression.log.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "uncompressed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "axioms",
+      "command": [
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/structural-native-krylov-gap/compile_module.sh",
+        "Audit"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-18T20:54:51.919851+00:00",
+      "log": "axioms.log.gz",
+      "sha256": "aea3619e19fde18f5d12357cca367da07831282e3b1341c1fac66130f788b6fa",
+      "uncompressed_sha256": "b80d0c0f56dac4f8d97507d9c0990ecd58529af001122234591b5cdd09682a32"
+    },
+    {
+      "label": "root",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-18T20:55:03.604995+00:00",
+      "log": "root.log.gz",
+      "sha256": "6091590cb583dddc9685c970de5bb0f90f205eca5c42a7be25115d7678b2e721",
+      "uncompressed_sha256": "e5016e3aa2dfe297b71486c8098fcd7879d75812a62f2e473ea6a62145a73fa1"
+    },
+    {
+      "label": "foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-18T20:55:44.470253+00:00",
+      "log": "foundation.log.gz",
+      "sha256": "56f2c2dd78c40171d308b683cddde7c07724c7bc0192ea9b1b429c03ba7188b2",
+      "uncompressed_sha256": "0cf345cc3bcedfa92250217b4e73bc37834671ac0b8a2b97f66d3c06551ce199"
+    },
+    {
+      "label": "geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-18T20:55:51.089993+00:00",
+      "log": "geometry.log.gz",
+      "sha256": "9a34276323f3cc0eaa89ccd25d43e1941b5e69ac3b7ef4c549d1ef0af49fea8d",
+      "uncompressed_sha256": "469cddc780755a2a401f4a2d437d4b65bccc9f3333dc598e645025f94caf4888"
+    },
+    {
+      "label": "analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-18T20:56:00.211057+00:00",
+      "log": "analysis.log.gz",
+      "sha256": "232376411671fa466a6220c561571dc6e72692f25db8874daed04e94451d0d9b",
+      "uncompressed_sha256": "0d0cb5164957c8b5e28c6260b063572465cfa62fb6cd7c513e329f8b43e2edd0"
+    },
+    {
+      "label": "diff",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-10-18T20:56:46.987672+00:00",
+      "log": "diff.log.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "uncompressed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

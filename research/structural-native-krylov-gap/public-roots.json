@@ -1,0 +1,28 @@
+{
+  "library": [
+    "GeometryOfNumbers.Analysis.MaterialClockKrylovGap.material_frequency_gap",
+    "GeometryOfNumbers.Analysis.MaterialClockKrylovGap.finite_clock_energy_gap",
+    "GeometryOfNumbers.Analysis.MaterialClockKrylovGap.finite_even_first_column_gap",
+    "GeometryOfNumbers.Analysis.MaterialClockKrylovGap.finite_normalized_jet_energy_gap",
+    "GeometryOfNumbers.Analysis.MaterialClockKrylovGap.infinite_clock_energy_gap",
+    "GeometryOfNumbers.Analysis.MaterialClockKrylovGap.infinite_clock_isometric_energy_gap",
+    "GeometryOfNumbers.Analysis.MaterialClockKrylovGap.green_clock_energy_gap",
+    "GeometryOfNumbers.Analysis.MaterialClockKrylovGap.parseval_clock_energy_gap",
+    "GeometryOfNumbers.Analysis.MaterialClockKrylovGap.infinite_clock_not_matching_two_diagonals"
+  ],
+  "research": [
+    "CarryStructuralKrylov.canonical_phi_eq_native",
+    "CarryStructuralKrylov.canonical_moments_eq_native",
+    "CarryStructuralKrylov.native_two_lt_one_quarter",
+    "CarryStructuralKrylov.canonical_two_lt_one_quarter",
+    "CarryStructuralKrylov.canonical_two_lt_one_sixteenth",
+    "CarryStructuralKrylov.finite_normalized_jets_not_canonical_diagonals",
+    "CarryStructuralKrylov.finite_clock_not_canonical_firstColumn",
+    "CarryStructuralKrylov.finite_clock_not_canonical_logDerivative_recurrence",
+    "CarryStructuralKrylov.finite_clock_not_canonical_parityGram",
+    "CarryStructuralKrylov.finite_clock_not_H6_K6",
+    "CarryStructuralKrylov.infinite_clock_not_canonical_diagonals",
+    "CarryStructuralKrylov.regression_H6_K6",
+    "CarryStructuralKrylov.regression_twelve_nested"
+  ]
+}
