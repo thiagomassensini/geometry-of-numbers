@@ -2,11 +2,11 @@
 
 ## Resultado
 
-**STOP da realização canônica pela família Krylov de paridade do clock material original.** A obstrução é nova em relação aos testes de massa e incidência: vale para **qualquer vetor fonte**, mesmo se sua massa central já tiver sido calibrada, e sobrevive ao transporte isométrico Green/Parseval. Falha já nas diagonais que representam `h₁` e `h₂`, antes de qualquer argumento de cauda ou independência all-order.
+**NO-GO específico da realização canônica pela família Krylov de paridade do clock material original.** A obstrução é nova em relação aos testes de massa e incidência: vale para **qualquer vetor fonte**, mesmo se sua massa central já tiver sido calibrada, e sobrevive ao transporte isométrico Green/Parseval. Falha já nas diagonais que representam `h₁` e `h₂`, antes de qualquer argumento de cauda ou independência all-order.
 
 **PARTIAL na identificação da fonte:** foi provada explicitamente, em toda ordem, a igualdade entre `BaseTwoCompletion.baseTwoCanonicalMomentSequence` e `canonicalCompletedNativeLogDerivativeMoment`, derivada da identidade do response completado e da unicidade da recorrência. Isso não é uma representação Gram.
 
-**A positividade canônica all-order permanece OPEN.** Não há `PASS_ALL_ORDER`, nem foi encontrado um mecanismo positivo novo para a síntese quiral completa. Os NO-GOs desta rodada não excluem outra realização legítima dos mesmos momentos, derivada dos bordos/retorno/completion originais.
+**A positividade canônica all-order permanece OPEN.** Não há `PASS_ALL_ORDER`, nem foi encontrado um mecanismo positivo novo para a síntese quiral completa. Os NO-GOs desta rodada não excluem outra realização legítima dos mesmos momentos, derivada dos bordos/retorno/completion originais. O encerramento desta rota não encerra a pesquisa nem demonstra falha da geometria original; a obstrução atinge a identificação dos momentos com as energias das potências deste clock e seus transportes isométricos.
 
 ## Base e escopo
 
@@ -125,6 +125,12 @@ As duas desigualdades de comparação são provadas separadamente a partir das c
 
 O diagnóstico separado, com `Fraction` dos decimais armazenados do checkpoint, dá `h₂/h₁ ≈ 0.00387850013647`. Seu CSV tem SHA256 `05734f8898aae995d77360c79e60521855181fede3f7f2a46c6b1bc8e1833`. Esse diagnóstico **não entra em nenhuma prova Lean**. Os intervalos usados na prova vêm dos integrais theta com as caudas já certificadas, e não desse CSV.
 
+### Origem e escopo das constantes
+
+O `1/4` do limite de energia vem da lacuna das frequências não nulas, `log 2 > 1/2`. Nos jets temporais normalizados, o fator `1/2!` em `j₂` divide sua energia por quatro, produzindo o limite `1/16`. Separadamente, a desigualdade canônica **relativa** `h₂ < h₁/16` vem das caixas theta, sem usar esse argumento do clock.
+
+A cota histórica **absoluta** `h₀ < 1/16`, já provada por `canonicalCompletedNativeLogDerivativeMoment_zero_lt_sixteenth` em `CompletedC3KernelMetricCalibration.lean`, trata de outro momento e de outra comparação. A repetição da constante não identifica essas duas obstruções nem demonstra uma relação histórica entre suas derivações.
+
 Consequências novas, para qualquer cutoff e fonte:
 
 - `finite_clock_not_canonical_firstColumn`: rejeita a primeira coluna `h_r = μ_(2r)`.
@@ -169,7 +175,7 @@ conserva as correções completas. Nem positividade do primeiro quadrado nem Par
 
 ## E. Próximo passo matemático mais curto
 
-Abandonar a identificação literal da primeira coluna com os momentos quadráticos do **mesmo clock material**. Ela agora está refutada sem depender da escolha da fonte, e não precisa de mais precisão ou regularidade.
+Encerrar a tentativa de identificação literal da primeira coluna com os momentos quadráticos do **mesmo clock material**. Ela agora está refutada sem depender da escolha da fonte, e não precisa de mais precisão ou regularidade.
 
 A frente que permanece legítima usa os objetos já construídos `Y`, seu companheiro, o retorno Cauchy e as correções de completion. O primeiro trabalho útil seria derivar uma identidade de energia para o **quociente completado** que explique como o termo de conexão e os termos de retorno alteram o ruler do clock. A identidade deve ser vetorial/polarizada antes do readout, com Gamma e cruzamentos presentes. Então confrontar suas diagonais e primeira coluna com as caixas e a família física de doze fontes existentes.
 
