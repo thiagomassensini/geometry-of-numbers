@@ -1,0 +1,40 @@
+{
+  "base_commit": "7e874fe8b6cfbec4463e5838a60cb359992b99b7",
+  "geometry_head_at_validation": "7e874fe8b6cfbec4463e5838a60cb359992b99b7",
+  "operator_head": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "lean_toolchain": "leanprover/lean4:v4.32.0",
+  "lean_sources": {
+    "Audit.lean": "4c49342d6670ebbeee7b57e86617a0800185bf3546eb07549053afb7c46f2ecd",
+    "Regression.lean": "f784e60c834c014d2ed4d3050a91e42a1dc70204006f5c645e09974c517a09bd",
+    "SixthEvenCertificate.lean": "2b032f05d922889cb04453f71a1beee8d80b5bfb6f2e09393c7ca527623545ed",
+    "SourceEnclosures.lean": "92c3a3c40060eccdd5a2b761e29cd65e5d7bd3641f62f2f74f33d625e5e3400f",
+    "ThetaCheck0.lean": "3412a3c923e64d00eefb211c6d814541a6b28c16e937185403d470784bbbcb44",
+    "ThetaCheck1.lean": "72ee9871f48d9989c8d0431249f87664c84339a8aeaa3390857f7e05ba10e7cd",
+    "ThetaCheck10.lean": "9b82c77a56d623c51592b38166a55d2a9e0cdbb50aa3368cc48231c2dbda4ce6",
+    "ThetaCheck11.lean": "bce0731970ab718253e39b1922703153102417523d8710b05cfff253dc27d7be",
+    "ThetaCheck2.lean": "821e9cc514adc68cb3201d5e1e9eba7746bc6388bbfa4a3069e878c253d73d0f",
+    "ThetaCheck3.lean": "a6ab08862f99acba18a4054d54b8070c60ec2fe8953f1f04ee43fd8e64b30fdd",
+    "ThetaCheck4.lean": "c375ba202d5d07dc3e6f74dc4b2fd3141f7102fa30fea69df895c1aa6c2de55b",
+    "ThetaCheck5.lean": "c1573cf6499601fd9dee2b857f8189a3699b1648a1023ec4ca3eba57f544364d",
+    "ThetaCheck6.lean": "d6396655ea627477a3bded88a45ed1b975975c6a25a7c47104b79f4eff649d01",
+    "ThetaCheck7.lean": "c4c46a9a157cf52c9e12e7f8ba3e5dba50797ebdce62edaccecded5c1841dd71",
+    "ThetaCheck8.lean": "b4ccda7449eee2ea0335e57206f4240e7ea8a8f08cf1d69a4511e254aa69d8f0",
+    "ThetaCheck9.lean": "ca5b85c7817a5576971f181e23294be5561bc3319368440fc7822d73c3eac222",
+    "ThetaInputs.lean": "b482511b13d29acc554cc2c6855823d15116a631a805244a8969093483f7aab2",
+    "ThetaTwentyTwo.lean": "85d1dd12387067c26ff0ad751f6c4679d28ea9be0d916562fdf774c780905ccd",
+    "VariationalSchur.lean": "8b08191da7c2687fe54ec1c010b020b7fffe4399bbdf726b21d45165f19318fc"
+  },
+  "scripts": {
+    "audit-sixth-even-source-schur.sh": "d80138c97d030da53be81ecec7600fbf09bb570cc1853def535b3fdeaee7d04a",
+    "check_public_roots.py": "1d2bf7d11a6c8e6dbfd39ab9cf41323a11e329d38ad4c58c745aeaa61642735b",
+    "checkpoint_rational_witness.py": "c8d203e09f08e84cc39f49983375ead6dac16293f662ff04e0e71f7c61b1def9",
+    "compile_module.sh": "458e4a51739b12a199c6cdee5ac237404195f86558fb56ef49fe7f83d0f93f5b",
+    "package_evidence.py": "fe73bf3cdda5652f425e33460328d07cde60b00e8f0f6f05008fe24930f3a123",
+    "preflight.py": "26567c3cdffedfec6a203734ea249e94a9d229de5dfa7b20b87935b9fbc1ad57",
+    "verify_provenance.py": "764ca9227b4324df8ca0f638e0122f0faed6f50382f63231a622fb5df9f8baa3"
+  },
+  "documentation": {
+    "REPORT.md": "05fda4b27a40d206ae37778f828bb2b02142c048d79c849d1bef8c7838ba4254",
+    "structural-note.md": "b202c98714a01c060ac51f65b9fe051229e6a6940025f6eaa9c21fa3d08622a2"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "input": "/home/thlinux/momentos/native_jet_exploration/auditoria_corrected_vs_canonical/stage_A/moments.csv",
+  "sha256": "05734f8898aae995d77360c79e60521855181fede3f7f2a46c6b1bc1bc8e1833",
+  "kind": "EXACT_RATIONAL_TEST_ON_DECIMAL_CHECKPOINT_NOT_THETA_CERTIFICATE",
+  "sector": 0,
+  "old_prefix_dimension": 5,
+  "new_moment_index": 10,
+  "trial_significant_digits": 20,
+  "rational_old_prefix_positive": true,
+  "trial_rational_vector": [
+    "40089278487875327039/100000000000000000000000000000000000",
+    "-47484802146927646351/5000000000000000000000000000000",
+    "27886349971338936531/1000000000000000000000000000",
+    "-13091320696461054999/500000000000000000000000",
+    "45991325193537665249/5000000000000000000000"
+  ],
+  "old_pivots_positive": true,
+  "old_min_pivot": "1.666281011782479803596e-26",
+  "q_trial": "4.12724164403434201784e-33",
+  "residual_norm_sq": "9.574267778185451709302e-68",
+  "inverse_inf_norm_upper_bound": "6.050256470986232245872e+25",
+  "certified_rational_lower_bound": "4.127241638241664459848e-33",
+  "rational_schur_exact": "4.12724164403434201784e-33",
+  "rational_lower_bound_positive": true,
+  "upper_correction_fraction": "1.40352275383853215557e-9",
+  "inequality_verified_by_exact_Fraction": true,
+  "is_certificate_for_original_theta_integrals": false,
+  "hypothetical_genuine_source_moment_interval_tests": [
+    {
+      "uniform_relative_radius": "1e-20",
+      "prefix_PD_control": false,
+      "rational_lower_bound": null,
+      "conditional_schur_positive": false
+    },
+    {
+      "uniform_relative_radius": "1e-24",
+      "prefix_PD_control": false,
+      "rational_lower_bound": null,
+      "conditional_schur_positive": false
+    },
+    {
+      "uniform_relative_radius": "1e-25",
+      "prefix_PD_control": true,
+      "rational_lower_bound": "4.127241637231898159073e-33",
+      "conditional_schur_positive": true
+    },
+    {
+      "uniform_relative_radius": "1e-26",
+      "prefix_PD_control": true,
+      "rational_lower_bound": "4.127241638101514414291e-33",
+      "conditional_schur_positive": true
+    },
+    {
+      "uniform_relative_radius": "1e-27",
+      "prefix_PD_control": true,
+      "rational_lower_bound": "4.127241638176404801366e-33",
+      "conditional_schur_positive": true
+    },
+    {
+      "uniform_relative_radius": "1e-28",
+      "prefix_PD_control": true,
+      "rational_lower_bound": "4.127241638183790014928e-33",
+      "conditional_schur_positive": true
+    },
+    {
+      "uniform_relative_radius": "1e-30",
+      "prefix_PD_control": true,
+      "rational_lower_bound": "4.127241638184601252095e-33",
+      "conditional_schur_positive": true
+    },
+    {
+      "uniform_relative_radius": "1e-35",
+      "prefix_PD_control": true,
+      "rational_lower_bound": "4.127241638184609445181e-33",
+      "conditional_schur_positive": true
+    },
+    {
+      "uniform_relative_radius": "1e-40",
+      "prefix_PD_control": true,
+      "rational_lower_bound": "4.127241638184609445262e-33",
+      "conditional_schur_positive": true
+    }
+  ],
+  "next_gate": "Replace decimal point inputs by rational intervals certified to enclose the original completed theta source, then propagate q and r bounds."
+}
