@@ -1,0 +1,25 @@
+{
+  "status": "pass",
+  "command": "bash research/all-order-polarized-tail/audit-all-order-polarized-tail.sh",
+  "public_roots": 41,
+  "modules": 7,
+  "root_build": "lake build --wfail",
+  "zones": [
+    "foundation",
+    "geometry",
+    "analysis"
+  ],
+  "logs": {
+    "Audit.log": "bfdabd6a3a58f787f9d44689f7a808f5c63f9e0678c72d4f11547997c26904a5",
+    "BoundaryControl.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "BudgetScale.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "CriticalScale.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Regression.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "SourceTail.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "UniformCutoff.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "analysis-audit.log.gz": "af2b5135c317d37f0e441fa7f0617331bdae2cd812c866458c73376564286476",
+    "foundation-audit.log.gz": "56f2c2dd78c40171d308b683cddde7c07724c7bc0192ea9b1b429c03ba7188b2",
+    "geometry-audit.log.gz": "9a34276323f3cc0eaa89ccd25d43e1941b5e69ac3b7ef4c549d1ef0af49fea8d",
+    "root-build.log.gz": "ae5fc1c953498512700798f224f4eeb8588e4c1660c037b2fb245276203b358d"
+  }
+}
