@@ -1,0 +1,260 @@
+{
+  "status": "pass",
+  "commands": [
+    {
+      "name": "provenance",
+      "command": [
+        "python3",
+        "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/verify_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 0.06427087599877268
+    },
+    {
+      "name": "public-inventory",
+      "command": [
+        "python3",
+        "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/check_public_roots.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 0.051548823015764356
+    },
+    {
+      "name": "OddSourceTwentyFour",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+        "OddSourceTwentyFour"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 69.95367039099801
+    },
+    {
+      "name": "OddSourceBoxes",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+        "OddSourceBoxes"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 14.500377258984372
+    },
+    {
+      "name": "OddTrialData",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+        "OddTrialData"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 14.785157947975677
+    },
+    {
+      "name": "OddTrialPositivity",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+        "OddTrialPositivity"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 12.977044865954667
+    },
+    {
+      "name": "OrderedKernelPositivity",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+        "OrderedKernelPositivity"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 12.26526194496546
+    },
+    {
+      "name": "OddOrderedCertificate",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+        "OddOrderedCertificate"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 11.619250371993985
+    },
+    {
+      "name": "OddPhysicalTwelve",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+        "OddPhysicalTwelve"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 12.522489390976261
+    },
+    {
+      "name": "OddPhysicalPolarization",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+        "OddPhysicalPolarization"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 13.941928962944075
+    },
+    {
+      "name": "ResidualObstructions",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+        "ResidualObstructions"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 12.650445848004892
+    },
+    {
+      "name": "Regression",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+        "Regression"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 12.22841967601562
+    },
+    {
+      "name": "Audit",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 11.636443411000073
+    },
+    {
+      "name": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 8.710627196996938
+    },
+    {
+      "name": "foundation-audit",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 7.102817561011761
+    },
+    {
+      "name": "geometry-audit",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 10.635382423992269
+    },
+    {
+      "name": "analysis-audit",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 46.35103296703892
+    },
+    {
+      "name": "final-provenance",
+      "command": [
+        "python3",
+        "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/verify_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 0.06774181500077248
+    }
+  ],
+  "public_roots": 78,
+  "historical_dependencies": "reused after manifests, pins and commit verification; not freshly rebuilt",
+  "kernel_checks": "decide +kernel; no custom axioms or native_decide; transitive type-and-body guards",
+  "logs": {
+    "Audit.log": "b1c7fe8dd478ed44547f123c7139fcc2e3d9a48b5ca9bd3010b32ecabcb587e0",
+    "OddOrderedCertificate.log": "e79ba2c9646dd6cbb5f7a0e0cc9fbb7054c248979df766ca6e9d108d837be50a",
+    "OddPhysicalPolarization.log": "2d616a94759013d3c2474560e326d3aa200102be3b541c3fa8dd736f21b858d9",
+    "OddPhysicalTwelve.log": "f59ee230936f5adc0051fbe8b644582fcd0141489d2659e1309bed85b7d12b53",
+    "OddSourceBoxes.log": "d000e429f0d114fb97f4f8d7aba54e039cf2e689296333794fc46600113a81bf",
+    "OddSourceTwentyFour.log": "e42ff083dfd156be4fdeb93a0e3b8fabfc6caf750e1a34279d74a53b1b2d8f35",
+    "OddTrialData.log": "1117c789b6019b6beb34472cd7f1cdb1cd1379dbd841d10b7ec321cc093d1519",
+    "OddTrialPositivity.log": "ecfa0585dda45cee588d3bbca3998891bf743c03392d7700a3d428f95d133c16",
+    "OrderedKernelPositivity.log": "0c05ee3f1b2b807023791311c56c6e1f813a4d6c7ee305cb8453a00f9d03991a",
+    "Regression.log": "2e343c3a2e760c31dba99532d0a569945389aa3d05c4187ce7ae942209cc7ec1",
+    "ResidualObstructions.log": "c71f573fbfb950f6aa931e14ef1f956b62df38292aecab195d587a4a9a68884c",
+    "analysis-audit.log.gz": "af2b5135c317d37f0e441fa7f0617331bdae2cd812c866458c73376564286476",
+    "final-provenance.log": "53d0d83d2caa84b229168420df691a35bbb62bf0a5c73043eff21b333869d8ac",
+    "foundation-audit.log.gz": "56f2c2dd78c40171d308b683cddde7c07724c7bc0192ea9b1b429c03ba7188b2",
+    "geometry-audit.log.gz": "9a34276323f3cc0eaa89ccd25d43e1941b5e69ac3b7ef4c549d1ef0af49fea8d",
+    "provenance.log": "53d0d83d2caa84b229168420df691a35bbb62bf0a5c73043eff21b333869d8ac",
+    "public-inventory.log": "5ea7f39a52489d58fb25d144d039de02686ee73b4c77c118ea5d4285f4f0d902",
+    "root-build.log.gz": "099ad6548f1216a229c56daffb49a1f080a81673ce99b36a6701706ff9399dff"
+  },
+  "data": {
+    "build-results.json": "36af05884c7a34cb1c89a813d8753f889f48fbbe73adc85c44234f2ff688853e",
+    "completion-audit.json": "0f1c99d31f1e2b4350e536d0e796fde4d49778a1fc4f6ef631be227538307e92",
+    "execution-provenance.json": "ed1eaad4790de01bca7ed372552ce409bf467ebf033c678c7cae15c66ec99578",
+    "issue-30.json": "adf398e4b45d866876df9dd4f7c36fd779c458b15e64b12f52ecc11779a95e99",
+    "preflight.json": "4c372746102021e3463732d87875773e1ac7f91c687d6e8ffbd1a226ae97ed80"
+  }
+}

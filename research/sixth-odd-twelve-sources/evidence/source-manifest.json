@@ -1,0 +1,33 @@
+{
+  "base_commit": "76fead5cbc40c350449966a5f5c89ff8ea47d234",
+  "geometry_head_at_validation": "76fead5cbc40c350449966a5f5c89ff8ea47d234",
+  "operator_head": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "momentos_head": "a54f267365d5d8c965376734b17b10ae89ed3f74",
+  "lean_toolchain": "leanprover/lean4:v4.32.0",
+  "lean_sources": {
+    "Audit.lean": "eb55dd333ab7a036611b89552c3865ef11d2abd387818346499f0374bb041e65",
+    "OddOrderedCertificate.lean": "1a5933d42310c64cbb1d74c92990fccb78ce73c3f9baef4f07f97e408dfc2bc2",
+    "OddPhysicalPolarization.lean": "843ab63c95f814cf65d47f2b5cd41c91330f3c813467c2f60d667a0f11928221",
+    "OddPhysicalTwelve.lean": "dc77ff8f6d0a1aae6ce3a47cb5f295b4f6fc84f0d67c24e92b558d6b22a62155",
+    "OddSourceBoxes.lean": "67f244b07f11682a24e30063ecfb6db41b48358476ca53cef368c1455b780cfa",
+    "OddSourceTwentyFour.lean": "dfdac1da1772135a23a1aad7323f3c3ef4337198cf169286d111695dcc4d7a2b",
+    "OddTrialData.lean": "f75503623020e736b996a9affc9ee3c67d27911a76752b6c6cd7bb52719e5981",
+    "OddTrialPositivity.lean": "0508d64d55ac9689670c89ffe2102ef67a9214dd5fc11526eb402820b9c6cabf",
+    "OrderedKernelPositivity.lean": "8bb1b4fb10d273ad458860288c3bbc4f93a582949a483e5ad7ffffb58d5a0139",
+    "Regression.lean": "4aea52ff08f1407bf8982bae1858e1558c73258f3923060f344ccc10bde1847c",
+    "ResidualObstructions.lean": "a27f74bfa5821e999d3a7a3836949bbcd8c56bc598657578ac818c585a03af73"
+  },
+  "scripts": {
+    "audit-sixth-odd-twelve-sources.sh": "f0b0c8650297cc87ce19585a369b935104c65681bea8ed76292fbd2d84186d81",
+    "check_public_roots.py": "1d2bf7d11a6c8e6dbfd39ab9cf41323a11e329d38ad4c58c745aeaa61642735b",
+    "compile_module.sh": "b229112eeb59b58c13b47d08228c29f7537d90d809d106abbe274d906500df11",
+    "package_evidence.py": "1192b7430d6b2aea5fea7f36c782863dec3ee9aba970413a8c209785d2881bcd",
+    "preflight.py": "e4807b2aac359a99108d662af970d1b504661bf0319aad7da9be1da1b087b27d",
+    "validate.py": "e12f72fccac5ad406c6f74b27bb37a033e6132c767e682e6ac7d4e194fdf36b6",
+    "verify_evidence.py": "a8ed5dc631822b6e954de2954ea9ed951a03eeeea56e08f67e498e2c9ad3279b",
+    "verify_provenance.py": "f812b7444a9db5f2edd4a854369888c9520a2487ed749b8558ed6c808faac5b7"
+  },
+  "documentation": {
+    "REPORT.md": "88b1a52322b4422df95ee1f3a1260a4d8cc448f7fb1841461cfafea32299c558"
+  }
+}
