@@ -1,0 +1,23 @@
+{
+  "base": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "new_files": {
+    "GeometryOfNumbers/Analysis/CarryMaterialForcingGreenEnergy.lean": "c77af50ea52c57d4f4f9d1727eac4a12748e944e717fe42400e489940b86f7e7",
+    "GeometryOfNumbers/Analysis/CarryMaterialForcingGreenEnergyAudit.lean": "40ad2cd1bf94f84892c300604cb667a8af4021d674ed46105f36045bf9d6d5cc",
+    "research/completed-green-confluent-balance/SourceBalance.lean": "0d259d3b822b033d243a24fa07942cd920562b3d38da6c886b483ead4d2a0e84",
+    "research/completed-green-confluent-balance/Audit.lean": "45151228d36056a7e6fab8e12dcc695f08ac0898dac50cb64b3e4b1e3e72dbb9"
+  },
+  "reused_sources": {
+    "GeometryOfNumbers/Analysis/CarryMaterialClockCentralCoupling.lean": "7c692e45c0e5257d1db535f516526d8d524fcfb70f452ca1684a0837da86bafd",
+    "GeometryOfNumbers/Analysis/CarryMaterialCompanionGreenTransport.lean": "f6ee3f33279eeaf5fcdc6708dc40044097379af71c43e8e44499a6f13bca8163",
+    "GeometryOfNumbers/Analysis/CarryMaterialNormalizedResponse.lean": "70616d69b433de03956bcf6bde6e736359641e36ad8cf724a634a9ec62e50e03",
+    "GeometryOfNumbers/Analysis/CarryMaterialResidualPositiveTransport.lean": "d953fc584f41dab0d0c806944f9018e042c87ff58cbe7088a1ad690a755da734",
+    "research/material-central-calibration/CanonicalComparison.lean": "dfea130c4627d1efc6b9a28052260d5b3c7963c42387cbc096563626fde15537"
+  },
+  "operator_files": {
+    "CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c",
+    "CarrySelfAdjointOperator/CompletedNativeChiralEvenBoundaryStieltjesGate.lean": "6dfaf1898ddec1abde6052a677e1a8af4d37a2fa0866e6755a2bf58cd63712f1",
+    "CarrySelfAdjointOperator/CompletedC3CompressedGammaGramCorrection.lean": "c27977b450acf38355a9ba61f9d1460e693256f291056efb7e0cafd232823a21"
+  }
+}
