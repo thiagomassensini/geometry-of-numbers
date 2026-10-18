@@ -1,0 +1,128 @@
+import Regression
+
+namespace CarrySourceTail
+
+#assert_central_comparison_axioms sourcePair_boundary
+#print axioms sourcePair_boundary
+
+#assert_central_comparison_axioms boundary_all_order_lower_bound
+#print axioms boundary_all_order_lower_bound
+
+#assert_central_comparison_axioms sourcePair_central
+#print axioms sourcePair_central
+
+#assert_central_comparison_axioms first_crossing_regression
+#print axioms first_crossing_regression
+
+#assert_central_comparison_axioms cutoffError_pos
+#print axioms cutoffError_pos
+
+#assert_central_comparison_axioms uniform_cutoff_accuracy
+#print axioms uniform_cutoff_accuracy
+
+#assert_central_comparison_axioms cutoff_budget_exceeds_last_native_diagonal
+#print axioms cutoff_budget_exceeds_last_native_diagonal
+
+#assert_central_comparison_axioms source_pivot_le_diagonal
+#print axioms source_pivot_le_diagonal
+
+#assert_central_comparison_axioms source_pivot_geometric_upper
+#print axioms source_pivot_geometric_upper
+
+#assert_central_comparison_axioms physical_critical_margin_upper
+#print axioms physical_critical_margin_upper
+
+#assert_central_comparison_axioms no_fixed_physical_critical_margin
+#print axioms no_fixed_physical_critical_margin
+
+#assert_central_comparison_axioms certified_five_cutoff_constants
+#print axioms certified_five_cutoff_constants
+
+#assert_central_comparison_axioms empty_tail_regression
+#print axioms empty_tail_regression
+
+#assert_central_comparison_axioms diagonal_imaginary_regression
+#print axioms diagonal_imaginary_regression
+
+#assert_central_comparison_axioms rate
+#print axioms rate
+
+#assert_central_comparison_axioms rate_pos
+#print axioms rate_pos
+
+#assert_central_comparison_axioms rate_lt_one
+#print axioms rate_lt_one
+
+#assert_central_comparison_axioms denominator_pos
+#print axioms denominator_pos
+
+#assert_central_comparison_axioms sourcePair
+#print axioms sourcePair
+
+#assert_central_comparison_axioms coefficientEnergy
+#print axioms coefficientEnergy
+
+#assert_central_comparison_axioms weightedSize
+#print axioms weightedSize
+
+#assert_central_comparison_axioms coefficientEnergy_nonneg
+#print axioms coefficientEnergy_nonneg
+
+#assert_central_comparison_axioms weightedSize_nonneg
+#print axioms weightedSize_nonneg
+
+#assert_central_comparison_axioms source_entry_bound
+#print axioms source_entry_bound
+
+#assert_central_comparison_axioms sourcePair_norm_le
+#print axioms sourcePair_norm_le
+
+#assert_central_comparison_axioms geometric_weight_sum
+#print axioms geometric_weight_sum
+
+#assert_central_comparison_axioms weightedSize_sq_le
+#print axioms weightedSize_sq_le
+
+#assert_central_comparison_axioms sourcePair_append
+#print axioms sourcePair_append
+
+#assert_central_comparison_axioms coefficientEnergy_append
+#print axioms coefficientEnergy_append
+
+#assert_central_comparison_axioms cutoffError
+#print axioms cutoffError
+
+#assert_central_comparison_axioms cutoffError_nonneg
+#print axioms cutoffError_nonneg
+
+#assert_central_comparison_axioms sourcePair_diagonal_cutoff_weighted
+#print axioms sourcePair_diagonal_cutoff_weighted
+
+#assert_central_comparison_axioms sourcePair_diagonal_cutoff_bound
+#print axioms sourcePair_diagonal_cutoff_bound
+
+#assert_central_comparison_axioms sourceRealPair
+#print axioms sourceRealPair
+
+#assert_central_comparison_axioms sourcePair_re
+#print axioms sourcePair_re
+
+#assert_central_comparison_axioms sourcePair_im
+#print axioms sourcePair_im
+
+#assert_central_comparison_axioms sourceRealPair_self
+#print axioms sourceRealPair_self
+
+#assert_central_comparison_axioms sourcePair_re_nonneg
+#print axioms sourcePair_re_nonneg
+
+#assert_central_comparison_axioms all_order_lower_bound_from_prefix
+#print axioms all_order_lower_bound_from_prefix
+
+#assert_central_comparison_axioms all_order_lower_bound_from_certified_five
+#print axioms all_order_lower_bound_from_certified_five
+
+#assert_central_comparison_axioms cutoffError_tendsto_zero
+#print axioms cutoffError_tendsto_zero
+
+end CarrySourceTail
