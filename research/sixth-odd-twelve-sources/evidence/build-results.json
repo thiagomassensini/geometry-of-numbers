@@ -1,0 +1,227 @@
+[
+  {
+    "name": "provenance",
+    "command": [
+      "python3",
+      "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/verify_provenance.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.06427087599877268
+  },
+  {
+    "name": "public-inventory",
+    "command": [
+      "python3",
+      "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/check_public_roots.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.051548823015764356
+  },
+  {
+    "name": "OddSourceTwentyFour",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+      "OddSourceTwentyFour"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 69.95367039099801
+  },
+  {
+    "name": "OddSourceBoxes",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+      "OddSourceBoxes"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.500377258984372
+  },
+  {
+    "name": "OddTrialData",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+      "OddTrialData"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.785157947975677
+  },
+  {
+    "name": "OddTrialPositivity",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+      "OddTrialPositivity"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 12.977044865954667
+  },
+  {
+    "name": "OrderedKernelPositivity",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+      "OrderedKernelPositivity"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 12.26526194496546
+  },
+  {
+    "name": "OddOrderedCertificate",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+      "OddOrderedCertificate"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 11.619250371993985
+  },
+  {
+    "name": "OddPhysicalTwelve",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+      "OddPhysicalTwelve"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 12.522489390976261
+  },
+  {
+    "name": "OddPhysicalPolarization",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+      "OddPhysicalPolarization"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.941928962944075
+  },
+  {
+    "name": "ResidualObstructions",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+      "ResidualObstructions"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 12.650445848004892
+  },
+  {
+    "name": "Regression",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 12.22841967601562
+  },
+  {
+    "name": "Audit",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/compile_module.sh",
+      "Audit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 11.636443411000073
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 8.710627196996938
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 7.102817561011761
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 10.635382423992269
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 46.35103296703892
+  },
+  {
+    "name": "final-provenance",
+    "command": [
+      "python3",
+      "/home/thlinux/geometry-of-numbers/research/sixth-odd-twelve-sources/verify_provenance.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.06774181500077248
+  }
+]

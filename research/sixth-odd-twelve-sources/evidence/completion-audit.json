@@ -1,0 +1,120 @@
+{
+  "A_exact_odd_gate": {
+    "status": "proved",
+    "roots": [
+      "sixth_odd_literal_theta_gate",
+      "sixth_odd_sourceThetaGap_pos",
+      "sixth_odd_pivot_pos"
+    ],
+    "evidence": [
+      "Regression.log",
+      "Audit.log"
+    ]
+  },
+  "A_canary_and_precision": {
+    "status": "numerical_only",
+    "evidence": [
+      "preflight.json"
+    ],
+    "precision_dps": [
+      40,
+      80,
+      160,
+      300
+    ],
+    "routes": [
+      "LU",
+      "QR"
+    ],
+    "no_checkpoint_premises": true
+  },
+  "B_I24_all_tails": {
+    "status": "proved",
+    "roots": [
+      "mem_tabledTheta_upto_twentyFour",
+      "mem_thetaTwentyFourBox"
+    ],
+    "evidence": [
+      "OddSourceTwentyFour.log",
+      "Audit.log"
+    ]
+  },
+  "B_c12_h11_original_recurrence": {
+    "status": "proved",
+    "roots": [
+      "mem_twelfthCoefficientBox",
+      "mem_eleventhMomentBox"
+    ],
+    "evidence": [
+      "OddSourceBoxes.log",
+      "Audit.log"
+    ]
+  },
+  "B_original_ordered_pivot_and_K6": {
+    "status": "proved",
+    "roots": [
+      "sixth_ordered_odd_pivot_pos",
+      "odd_source_six_posDef"
+    ],
+    "evidence": [
+      "OddOrderedCertificate.log",
+      "OddTrialPositivity.log",
+      "Audit.log"
+    ],
+    "interval_scope": "Only transformed ordered pivot has certified interval [1,22/10]; original ordered pivot and inverse-defined Schur have certified strict sign."
+  },
+  "C_twelve_sources": {
+    "status": "proved",
+    "roots": [
+      "twelve_boundary_margin",
+      "twelve_return_eventually_contractive",
+      "canonical_twelve_physical_realization",
+      "canonical_twelve_nested_realization",
+      "ten_to_twelve_residual_crossings"
+    ],
+    "evidence": [
+      "OddPhysicalTwelve.log",
+      "OddPhysicalPolarization.log",
+      "Audit.log"
+    ]
+  },
+  "C_signed_crosses": {
+    "status": "proved",
+    "roots": [
+      "twelve_jordan_signed_pairing",
+      "twelve_jordan_ports_eventually",
+      "twelve_complete_source_comparison",
+      "twelve_tfvd_synthesis_four_channels",
+      "twelve_block_calibration"
+    ],
+    "evidence": [
+      "OddPhysicalPolarization.log",
+      "Regression.log",
+      "Audit.log"
+    ],
+    "scope": "TFVD reconstruction identity remains upstream; no new intertwiner or metric identification is inferred."
+  },
+  "D_investigation": {
+    "status": "completed_with_open_all_order_source_gate",
+    "roots": [
+      "native_coercivity_upper_bound",
+      "no_uniform_native_coercivity",
+      "positive_trial_energy_negative_schur"
+    ],
+    "evidence": [
+      "ResidualObstructions.log",
+      "Audit.log"
+    ],
+    "remaining_gate": "Order-dependent source-derived coercivity alpha_n and trial z_n with residual squared < alpha_n * E_n; no global positivity or infinite operator result."
+  },
+  "E_engineering": {
+    "status": "commands_recorded_separately",
+    "base": "76fead5cbc40c350449966a5f5c89ff8ea47d234",
+    "evidence": [
+      "build-results.json",
+      "validation.json",
+      "source-manifest.json"
+    ],
+    "publication": "PR only, no automatic merge; final URL and commit in delivery."
+  }
+}

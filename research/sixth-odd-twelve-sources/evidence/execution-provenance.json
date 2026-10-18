@@ -1,0 +1,12 @@
+{
+  "geometry_base": "76fead5cbc40c350449966a5f5c89ff8ea47d234",
+  "initial_geometry_clean": true,
+  "operator_status": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "momentos_status": "?? investigations/",
+  "worktrees": "worktree /home/thlinux/geometry-of-numbers\nHEAD 76fead5cbc40c350449966a5f5c89ff8ea47d234\nbranch refs/heads/agent/sixth-odd-twelve-sources\n\nworktree /home/thlinux/geometry-of-numbers-all-order-tail\nHEAD 76fead5cbc40c350449966a5f5c89ff8ea47d234\nbranch refs/heads/agent/all-order-polarized-tail\n\nworktree /home/thlinux/geometry-of-numbers-phase-canary\nHEAD 93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f\nbranch refs/heads/canary-c2-global-odd-source\n\nworktree /home/thlinux/geometry-of-numbers-r2\nHEAD 93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f\nbranch refs/heads/r2-real-tfvd-green-valve\n\nworktree /home/thlinux/geometry-of-numbers-recovery\nHEAD d7cc54f5c485320f1fada33118e9e6101488819a\nbranch refs/heads/recovery/formalizations-2026-10-01-02",
+  "preflight_script_sha256": "e4807b2aac359a99108d662af970d1b504661bf0319aad7da9be1da1b087b27d",
+  "operator_user_files": {
+    "C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  }
+}
