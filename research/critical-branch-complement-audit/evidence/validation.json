@@ -1,0 +1,94 @@
+{
+  "repository": "geometry-of-numbers",
+  "checks": [
+    {
+      "label": "source-check",
+      "command": [
+        "/usr/bin/python3",
+        "/home/thlinux/geometry-of-numbers/research/critical-branch-complement-audit/check_sources.py"
+      ],
+      "started_utc": "2026-10-18T09:57:30.096939+00:00",
+      "exit_code": 0,
+      "log": "source-check.log.gz",
+      "sha256": "8dfceffacbe5fa156d569d7c20518fd091ec11e92a93c5d6c6252a57e84e4877",
+      "uncompressed_sha256": "4a411508b027ab4590445e829519df19e705369f2ed810b25a1b9cd5d316bfc6"
+    },
+    {
+      "label": "focused",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "GeometryOfNumbers.Analysis.CriticalBranchComplementTransport",
+        "GeometryOfNumbers.Analysis.CriticalBranchComplementAudit"
+      ],
+      "started_utc": "2026-10-18T09:57:30.165378+00:00",
+      "exit_code": 0,
+      "log": "focused.log.gz",
+      "sha256": "792821bd41ba709202132a4c2d987aedde07b7fdc437fa6f2c078177a0d0fcd7",
+      "uncompressed_sha256": "7f38bf5686f71f3b0b21bdaccabd1379a58ba0bc4a914b576777827467873c62"
+    },
+    {
+      "label": "root",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "started_utc": "2026-10-18T09:57:37.531662+00:00",
+      "exit_code": 0,
+      "log": "root.log.gz",
+      "sha256": "21a3f91a09e497ad0201caaa12b10d8bdc2ad573adb649b0e148a72709644c3e",
+      "uncompressed_sha256": "22f731343e4922e7ce77730b6d81cc76431b7d5697a892ae565dc82c7fe05dd1"
+    },
+    {
+      "label": "foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "started_utc": "2026-10-18T09:57:50.989650+00:00",
+      "exit_code": 0,
+      "log": "foundation.log.gz",
+      "sha256": "56f2c2dd78c40171d308b683cddde7c07724c7bc0192ea9b1b429c03ba7188b2",
+      "uncompressed_sha256": "0cf345cc3bcedfa92250217b4e73bc37834671ac0b8a2b97f66d3c06551ce199"
+    },
+    {
+      "label": "analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "started_utc": "2026-10-18T09:57:57.654989+00:00",
+      "exit_code": 0,
+      "log": "analysis.log.gz",
+      "sha256": "feccd45f7bdc145388b141ebfd06866466ad15a4e79c2a61a2d6951b4ff21566",
+      "uncompressed_sha256": "4ffc35e072e4b4aa3c988257b39b9e1f25f296f13ae4368ead23fbbb97371ca9"
+    },
+    {
+      "label": "geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "started_utc": "2026-10-18T09:58:43.093173+00:00",
+      "exit_code": 0,
+      "log": "geometry.log.gz",
+      "sha256": "9a34276323f3cc0eaa89ccd25d43e1941b5e69ac3b7ef4c549d1ef0af49fea8d",
+      "uncompressed_sha256": "469cddc780755a2a401f4a2d437d4b65bccc9f3333dc598e645025f94caf4888"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_utc": "2026-10-18T09:58:53.071394+00:00",
+      "exit_code": 0,
+      "log": "diff-check.log.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "uncompressed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}
