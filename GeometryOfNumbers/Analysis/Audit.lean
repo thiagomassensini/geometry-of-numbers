@@ -6863,3 +6863,32 @@ namespace GeometryOfNumbers.Analysis
 #assert_analysis_axioms carryMaterialFourthCritical_pairing
 #print axioms carryMaterialFourthCritical_pairing
 end GeometryOfNumbers.Analysis
+
+namespace GeometryOfNumbers.Analysis.CriticalBranchComplement
+#assert_analysis_axioms complement
+#print axioms complement
+#assert_analysis_axioms complement_apply
+#print axioms complement_apply
+#assert_analysis_axioms complement_pairing
+#print axioms complement_pairing
+#assert_analysis_axioms compression_energy
+#print axioms compression_energy
+#assert_analysis_axioms compression_energy_pos_iff
+#print axioms compression_energy_pos_iff
+#assert_analysis_axioms complement_synthesis_pairing
+#print axioms complement_synthesis_pairing
+#assert_analysis_axioms compression_energy_nonneg
+#print axioms compression_energy_nonneg
+#assert_analysis_axioms complement_isometric_transport
+#print axioms complement_isometric_transport
+#assert_analysis_axioms complement_isometric_pairing
+#print axioms complement_isometric_pairing
+#assert_analysis_axioms realParseval
+#print axioms realParseval
+#assert_analysis_axioms c2_clock_compression_energy
+#print axioms c2_clock_compression_energy
+#assert_analysis_axioms c2_clock_complement_parseval_pairing
+#print axioms c2_clock_complement_parseval_pairing
+#assert_analysis_axioms rawGreen_complement_pairing
+#print axioms rawGreen_complement_pairing
+end GeometryOfNumbers.Analysis.CriticalBranchComplement
