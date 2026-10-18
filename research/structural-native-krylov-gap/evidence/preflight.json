@@ -1,0 +1,14 @@
+{
+  "status": "FINITE STORED DECIMAL CHECK ONLY; NOT A LEAN INPUT",
+  "path": "/home/thlinux/momentos/native_jet_exploration/auditoria_corrected_vs_canonical/stage_A/moments.csv",
+  "sha256": "05734f8898aae995d77360c79e60521855181fede3f7f2a46c6b1bc1bc8e1833",
+  "rows_used": [
+    0,
+    1,
+    2
+  ],
+  "column": "canonical_h",
+  "two_over_one": "0.0038785001364729639424283506045011790924722849181650",
+  "quarter": "0.25",
+  "strict_inequality": true
+}

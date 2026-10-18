@@ -6863,3 +6863,24 @@ namespace GeometryOfNumbers.Analysis
 #assert_analysis_axioms carryMaterialFourthCritical_pairing
 #print axioms carryMaterialFourthCritical_pairing
 end GeometryOfNumbers.Analysis
+
+namespace GeometryOfNumbers.Analysis.MaterialClockKrylovGap
+#assert_analysis_axioms material_frequency_gap
+#print axioms material_frequency_gap
+#assert_analysis_axioms finite_clock_energy_gap
+#print axioms finite_clock_energy_gap
+#assert_analysis_axioms finite_even_first_column_gap
+#print axioms finite_even_first_column_gap
+#assert_analysis_axioms finite_normalized_jet_energy_gap
+#print axioms finite_normalized_jet_energy_gap
+#assert_analysis_axioms infinite_clock_energy_gap
+#print axioms infinite_clock_energy_gap
+#assert_analysis_axioms infinite_clock_isometric_energy_gap
+#print axioms infinite_clock_isometric_energy_gap
+#assert_analysis_axioms green_clock_energy_gap
+#print axioms green_clock_energy_gap
+#assert_analysis_axioms parseval_clock_energy_gap
+#print axioms parseval_clock_energy_gap
+#assert_analysis_axioms infinite_clock_not_matching_two_diagonals
+#print axioms infinite_clock_not_matching_two_diagonals
+end GeometryOfNumbers.Analysis.MaterialClockKrylovGap
