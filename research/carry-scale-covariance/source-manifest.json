@@ -1,0 +1,31 @@
+{
+  "base": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "new_files": {
+    "GeometryOfNumbers/Analysis/CarryScaleGeometry.lean": "56af1da0d36f5a4cb47c2a05a6b592754b571706d98cda37d8603c8f8adc3f4e",
+    "GeometryOfNumbers/Analysis/MomentScaleElimination.lean": "77e133dee0909c7f4bb062fc71ed1928ba5b3fac5a148ec27405b2b50ea523ba",
+    "GeometryOfNumbers/Analysis/MomentScaleHeight.lean": "536efdb7c5394956925282c6f4c97cf7c96b251012f010de1f71da538f74ab7e",
+    "GeometryOfNumbers/Analysis/LogDerivativeScale.lean": "957095681c44489fdbe4735dcc4f834faf6250749abdd83333ba527014d5f199",
+    "GeometryOfNumbers/Analysis/CarryScaleCovarianceAudit.lean": "a3557db2820157bc9b3375e44528e39c878eeabe93c05ce862e483f79d191c79",
+    "research/carry-scale-covariance/NativeScaleSeam.lean": "625ca3d68dffc5e3e6ff217b6834f56873ba7593caf1ed505e91c2e612c372fa",
+    "research/carry-scale-covariance/Audit.lean": "3a6f747007c1c08d66051f3411480ce8d9213973c7fa3d2baa6ddb6dd277ab5e",
+    "research/carry-scale-covariance/reference_test.py": "0df1d0035c3aa89db6ba8dd8b7dd30f80f33dbee946c0438b1112c41b91b53a1"
+  },
+  "reused_sources": {
+    "GeometryOfNumbers/Analysis/RealDepthMass.lean": "13c9dbb9841f7c858ec0c2dc230556b53a9bbfee75d45a620859684077c44183",
+    "GeometryOfNumbers/Analysis/RealQuadraticAmplitude.lean": "508ba03e1edf64cbc1b9738e20420a40e53a3062170c22a876d59201415b0215",
+    "GeometryOfNumbers/Analysis/FiniteClockHeightLedger.lean": "71306d8b7c5362c11567eddfd07c642665d0fc11287f2051f0e3d579c4b9c3a3",
+    "GeometryOfNumbers/Analysis/CarryMaterialSourceFactor.lean": "0e4aa41f0cc93366fbf285f60a1922d68bf2f4bc2c9957a09a0e3e4b02d2428e",
+    "GeometryOfNumbers/Analysis/FiniteHeightOperator.lean": "e7546cd44fa9310cd60e5ac310656614d7ffd8d65937678a160746ab76a9512d",
+    "GeometryOfNumbers/Analysis/FiniteJacobiTransport.lean": "dd48de6e7b4632b57f8d0e270971ac048a459d2f87d2a463eccf72a67e1ef61a",
+    "GeometryOfNumbers/Analysis/BaseTwoExactHeadTailCompletion.lean": "d356bace8371d7ba747f25c5ac1b8929774c9d326d841904543749d1abcc62fc"
+  },
+  "operator_files": {
+    "CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c",
+    "CarrySelfAdjointOperator/FiniteClockHeightLedger.lean": "950b56f3f54d65090ae18d6a1cd701c541c744bcc7bec597ca8b792d701f3b07",
+    "CarrySelfAdjointOperator/CompletedNativeCameraUniversality.lean": "9732e164c676fe5702d14cdc68290f169a967fd892f67edc30000e51b43efdad",
+    "CarrySelfAdjointOperator/CompletedNativeXiCosineMomentHerglotzGate.lean": "7db442dfc8c0900858d192e441ab162bcc33af461bca589deeb2676f54d8acd7",
+    "CarrySelfAdjointOperator/CompletedNativeRealWeylMoments.lean": "99b68c3237442760b391707dafa39c98ce8e27b5139966b0a6cc87a6dcfd1011"
+  }
+}
