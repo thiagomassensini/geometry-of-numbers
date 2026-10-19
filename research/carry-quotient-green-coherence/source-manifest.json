@@ -1,0 +1,82 @@
+{
+  "base": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "heads": {
+    "/home/thlinux/geometry-of-numbers": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+    "/home/thlinux/carry-self-adjoint-operator": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+    "/home/thlinux/carry-c2-source-raw-green/.lake/packages/NativeCarrySpectralWeyl": "298d83c9351e308a5213b9f5ac32e44087f98a9f"
+  },
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "0ecb79510597875f34c2323e71dacc43ada13e815bbe0ba96624485ec70045c3"
+    },
+    {
+      "path": "lakefile.toml",
+      "sha256": "2f034f906810f36cc55ff0bcdf98fa629fb91085b107f238e21cca93e136f9f8"
+    },
+    {
+      "path": "lake-manifest.json",
+      "sha256": "9868872bae98d0c7e22c597d8e27d38d247498161cf70cdcdc193e9ea0608602"
+    },
+    {
+      "path": "lean-toolchain",
+      "sha256": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialCompanionGreenTransport.lean",
+      "sha256": "f6ee3f33279eeaf5fcdc6708dc40044097379af71c43e8e44499a6f13bca8163"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CompletedBoundaryTransportedClock.lean",
+      "sha256": "28eefba01a772586334c47d9a058b9a9df0c95cce7443f72cdf3e3d3a997639d"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/BaseTwoCompletedBoundaryHilbert.lean",
+      "sha256": "cd95890c9c553bd7718412f06a8fcd75e9c6ba7484c65193889704a8db212ebe"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialCentralProjection.lean",
+      "sha256": "a02d65d31ed2e969549fe198c481b72fee784e3de7f5815bf65a6aa69da3e44c"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialCentralCalibration.lean",
+      "sha256": "08db3a92f68fe2a57c5cd8c9cf0a6b3273a230814ed9e18c92976efd847f4e0d"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialNormalizedResponse.lean",
+      "sha256": "70616d69b433de03956bcf6bde6e736359641e36ad8cf724a634a9ec62e50e03"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialResidualPositiveTransport.lean",
+      "sha256": "d953fc584f41dab0d0c806944f9018e042c87ff58cbe7088a1ad690a755da734"
+    },
+    {
+      "path": "../carry-self-adjoint-operator/CarrySelfAdjointOperator/CompletedNativeCameraUniversality.lean",
+      "sha256": "9732e164c676fe5702d14cdc68290f169a967fd892f67edc30000e51b43efdad"
+    },
+    {
+      "path": "../carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean",
+      "sha256": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0"
+    },
+    {
+      "path": "../carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+      "sha256": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+    },
+    {
+      "path": "../carry-self-adjoint-operator/.lake/packages/NativeCarrySpectralWeyl/NativeCarrySpectralWeyl/Camera/PeriodicProfiles.lean",
+      "sha256": "d53f9070b9fe97c2a2a14c2579a455cc3893fdc9da356599cff60fcd56d61b26"
+    },
+    {
+      "path": "../carry-self-adjoint-operator/.lake/packages/NativeCarrySpectralWeyl/NativeCarrySpectralWeyl/Finite/Gram.lean",
+      "sha256": "435d3ec85caf3d7cfc1ea9dafa753e97466dfe24ee39b04a4b637ff94ddf16a5"
+    },
+    {
+      "path": "../carry-self-adjoint-operator/.lake/packages/NativeCarrySpectralWeyl/NativeCarrySpectralWeyl/Infinite/GramKernel.lean",
+      "sha256": "86b089b3f12def82e88581a050ba175d9833c165deba5b172c932797bec26cb3"
+    },
+    {
+      "path": "../carry-self-adjoint-operator/.lake/packages/NativeCarrySpectralWeyl/NativeCarrySpectralWeyl/Infinite/CameraCompletion.lean",
+      "sha256": "749d6e8cc7a5678bfab987b0d3f23f272922ba739866d6a8b1796a1d04622aaf"
+    }
+  ]
+}
