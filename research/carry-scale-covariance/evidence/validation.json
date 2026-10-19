@@ -1,0 +1,110 @@
+{
+  "source_manifest_sha256": "2f854f7cc8e549afb477da9cef51a44564956166b6b19be3dcb6faa87ad92d0b",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "/home/thlinux/geometry-of-numbers/research/carry-scale-covariance/check_sources.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.069,
+      "log": "01.log.gz",
+      "sha256": "a13be5a604552cfbea1155d8e68ffd5cb03b4da34430f5622bef6a333b62259b",
+      "uncompressed_sha256": "e88be9bca75cd40b1b4e050c68ce8d129fe56439a54ebcb131f7953b71210f11"
+    },
+    {
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "GeometryOfNumbers.Analysis.CarryScaleCovarianceAudit"
+      ],
+      "exit_code": 0,
+      "seconds": 7.26,
+      "log": "02.log.gz",
+      "sha256": "336e8917e465a341aa51417ff2742c2bd27197cb5524b0d686584514bc66db1e",
+      "uncompressed_sha256": "06dd6fbdb0b460ed8e509d353a1b6b6ccea7562bf313866c9642ceddb89d569d"
+    },
+    {
+      "command": [
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/carry-scale-covariance/compile_module.sh",
+        "NativeScaleSeam"
+      ],
+      "exit_code": 0,
+      "seconds": 10.43,
+      "log": "03.log.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "uncompressed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/carry-scale-covariance/compile_module.sh",
+        "Audit"
+      ],
+      "exit_code": 0,
+      "seconds": 10.353,
+      "log": "04.log.gz",
+      "sha256": "a49e63b794ff7e3ead4480cd71d16d423c46ee21e3180054c820233e468c5b28",
+      "uncompressed_sha256": "816fa1eb7bd54bba395cbea67ec1545da9f7f582192be4691bcc9265fb560772"
+    },
+    {
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "exit_code": 0,
+      "seconds": 7.104,
+      "log": "05.log.gz",
+      "sha256": "bc522990015afda34513fb43514d8cc032eaa582d0f70d36c0bd88332d89cb95",
+      "uncompressed_sha256": "415511c49fa6f7a280e29a00e9258cf14a035cb14f27a4aa1c88ac506894cbc7"
+    },
+    {
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 6.873,
+      "log": "06.log.gz",
+      "sha256": "56f2c2dd78c40171d308b683cddde7c07724c7bc0192ea9b1b429c03ba7188b2",
+      "uncompressed_sha256": "0cf345cc3bcedfa92250217b4e73bc37834671ac0b8a2b97f66d3c06551ce199"
+    },
+    {
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 9.505,
+      "log": "07.log.gz",
+      "sha256": "9a34276323f3cc0eaa89ccd25d43e1941b5e69ac3b7ef4c549d1ef0af49fea8d",
+      "uncompressed_sha256": "469cddc780755a2a401f4a2d437d4b65bccc9f3333dc598e645025f94caf4888"
+    },
+    {
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 44.823,
+      "log": "08.log.gz",
+      "sha256": "b71132a013b0c64696b1bb578e3374e0a8bf24a29a8f82db978603ea5468b8e4",
+      "uncompressed_sha256": "92aab675d5f24c6b58c6df5680ae5b05d3f6c8f64040c7f67c8c27f24dc872f8"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.012,
+      "log": "09.log.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "uncompressed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

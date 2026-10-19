@@ -140,4 +140,9 @@ import GeometryOfNumbers.Analysis.CompleteVerticalObservationGram
 import GeometryOfNumbers.Analysis.SeparatedCenterObservation
 import GeometryOfNumbers.Analysis.SeparatedCenterClockObstruction
 
+import GeometryOfNumbers.Analysis.CarryScaleGeometry
+import GeometryOfNumbers.Analysis.MomentScaleElimination
+import GeometryOfNumbers.Analysis.MomentScaleHeight
+import GeometryOfNumbers.Analysis.LogDerivativeScale
+
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/

@@ -1,0 +1,21 @@
+import GeometryOfNumbers.Analysis.CarryScaleCovarianceAudit
+import NativeScaleSeam
+
+#print axioms CarryNativeScaleSeam.scaledMoment_native_eq
+#print axioms CarryNativeScaleSeam.native_jacobi_scale
+#print axioms CarryNativeScaleSeam.native_finite_height_scale
+#print axioms CarryNativeScaleSeam.native_log_moments_dilate
+#print axioms CarryNativeScaleSeam.native_log_moments_constant_amplitude
+#print axioms CarryNativeScaleSeam.native_camera_scale_rigid
+#print axioms CarryNativeScaleSeam.native_geometric_mass_not_response_dilation
+#print axioms CarryNativeScaleSeam.native_two_mass_actions_same_jacobi
+
+#audit_carry_scale
+  CarryNativeScaleSeam.scaledMoment_native_eq
+  CarryNativeScaleSeam.native_jacobi_scale
+  CarryNativeScaleSeam.native_finite_height_scale
+  CarryNativeScaleSeam.native_log_moments_dilate
+  CarryNativeScaleSeam.native_log_moments_constant_amplitude
+  CarryNativeScaleSeam.native_camera_scale_rigid
+  CarryNativeScaleSeam.native_geometric_mass_not_response_dilation
+  CarryNativeScaleSeam.native_two_mass_actions_same_jacobi
