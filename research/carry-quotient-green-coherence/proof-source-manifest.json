@@ -1,0 +1,32 @@
+{
+  "files": [
+    {
+      "path": "GeometryOfNumbers/Analysis.lean",
+      "sha256": "72f84dc7f408a60fcbeb6967f722f0ce1f3413eed1d98876dd0c29f63d97e0f4"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/Audit.lean",
+      "sha256": "89de248786f912f738b1bb3f4844bdde0392773850a6a9fd6d51231b21f500f9"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialReadoutQuotient.lean",
+      "sha256": "6fa51e032f3fe502d4063fb2b7dfc50cee6cc05ff8bd12045623e3dff6121615"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialReadoutQuotientAudit.lean",
+      "sha256": "f0c0cd0f79aafb951f0094564080a6d0d286fdc3f66524ba0b629929f03fbedc"
+    },
+    {
+      "path": "research/carry-quotient-green-coherence/Audit.lean",
+      "sha256": "b1f5e66663365655d28e2a881569c5281712f27ddcad685ce7663ce8a0047f43"
+    },
+    {
+      "path": "research/carry-quotient-green-coherence/MaterialCameraSeparation.lean",
+      "sha256": "a917f319d90a7ec12df45e24fd40ed0233f2fed4d014a04bc3cb31626384e792"
+    },
+    {
+      "path": "research/carry-quotient-green-coherence/CameraObservation.lean",
+      "sha256": "216e2f0dbb7e0fc1b86120e134c937161dde55e21c249a222c485446f2ef4fcc"
+    }
+  ]
+}
