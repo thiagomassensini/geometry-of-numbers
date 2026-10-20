@@ -1,0 +1,76 @@
+'CarryAllOrderCorrection.taylorCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.analytic_second_coefficient_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.response' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.rawAtom' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.rawGreenRay' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.response_ray_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.rawAtom_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.rawGreenRay_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.rawAtom_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.rawGreenRay_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.rawGreenRay_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.rawAtom_odd_quotient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.forwardWeight_eq_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.rawGreenRay_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.native_sample_eq_atom' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.raw_kernel_difference_eq_ray' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.phaseFactor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.parity_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.normalization_eq_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.projective_pairing_eventually_ray' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.raw_parity_below' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.combined_parity_sign' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.raw_parity_leading' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.raw_parity_next_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.raw_parity_second' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.phaseFactor_cancels' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.projective_pairing_second_correction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryAllOrderCorrection.synthesis_parity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.parityPairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.boundaryPairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.boundaryCorrection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.parityPairing_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.finite_polarized_second_correction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.storage_eq_twice_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.finite_balance_second_correction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.boundaryPairing_eq_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.critical_boundary_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.criticalCorrection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.critical_second_correction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.critical_nonlinear_second_correction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryAllOrderCorrection.critical_eventually_above_of_correction_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryAllOrderCorrection.critical_eventually_below_of_correction_neg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryAllOrderCorrection.criticalCoefficients_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.empty_prefix_isUnit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.first_even_correction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.first_odd_correction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.first_odd_second_correction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.source_h2_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.first_odd_correction_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.first_odd_eventually_below' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.even_two_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.odd_two_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.even_two_correction_matches' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.odd_two_correction_matches' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.even_two_law_from_general' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.odd_two_law_from_general' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAllOrderCorrection.odd_sector_opposite_corrections' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySelfAdjointOperator.completedNativeGreenResponseTaylorCoefficient_odd_eq_canonical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySelfAdjointOperator.projectiveChiralDifferenceJet_pairing_eventuallyEq_dslope' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.sourceMomentSchur_critical_direction_of_isUnit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+All-order correction audit roots: 60; type/body closure: 6091; foundational and finite-positivity guards passed
+Generic rate sign audit roots: 6; type/body closure: 5889; no listed finite source sign input
