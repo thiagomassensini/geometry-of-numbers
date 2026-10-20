@@ -1,0 +1,128 @@
+[
+  {
+    "name": "focused-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "GeometryOfNumbers.Analysis.LogarithmicMomentHankel",
+      "GeometryOfNumbers.Analysis.FiniteJacobiTransport",
+      "GeometryOfNumbers.Analysis.CanonicalLDLWhitening",
+      "GeometryOfNumbers.Analysis.CanonicalFiniteHeight",
+      "GeometryOfNumbers.Analysis.CarryMaterialSourceFactor"
+    ],
+    "exit_code": 0,
+    "seconds": 8.05
+  },
+  {
+    "name": "kernel-MomentFunctional",
+    "command": [
+      "bash",
+      "research/native-moment-orthogonalization-audit/compile_module.sh",
+      "MomentFunctional"
+    ],
+    "exit_code": 0,
+    "seconds": 10.952
+  },
+  {
+    "name": "kernel-JacobiLogic",
+    "command": [
+      "bash",
+      "research/native-moment-orthogonalization-audit/compile_module.sh",
+      "JacobiLogic"
+    ],
+    "exit_code": 0,
+    "seconds": 10.63
+  },
+  {
+    "name": "kernel-Controls",
+    "command": [
+      "bash",
+      "research/native-moment-orthogonalization-audit/compile_module.sh",
+      "Controls"
+    ],
+    "exit_code": 0,
+    "seconds": 11.794
+  },
+  {
+    "name": "kernel-NativeApplication",
+    "command": [
+      "bash",
+      "research/native-moment-orthogonalization-audit/compile_module.sh",
+      "NativeApplication"
+    ],
+    "exit_code": 0,
+    "seconds": 11.003
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "bash",
+      "research/native-moment-orthogonalization-audit/compile_module.sh",
+      "Audit"
+    ],
+    "exit_code": 0,
+    "seconds": 11.77
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "exit_code": 0,
+    "seconds": 41.532
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "exit_code": 0,
+    "seconds": 6.626
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "exit_code": 0,
+    "seconds": 9.247
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "exit_code": 0,
+    "seconds": 44.621
+  },
+  {
+    "name": "twelve-source-regression",
+    "command": [
+      "bash",
+      "research/sixth-odd-twelve-sources/compile_module.sh",
+      "Regression"
+    ],
+    "exit_code": 0,
+    "seconds": 12.249
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+      "--",
+      ".",
+      ":(exclude)research/native-moment-orthogonalization-audit"
+    ],
+    "exit_code": 0,
+    "seconds": 0.006
+  }
+]

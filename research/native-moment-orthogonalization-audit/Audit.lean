@@ -1,0 +1,231 @@
+import SchurLogic
+import PolynomialCoordinates
+import NativeApplication
+import Controls
+import CarrySelfAdjointOperator.NativeThetaCofactorSignGate
+import CarrySelfAdjointOperator.CompletedNativeChiralHankelDominance
+import CarrySelfAdjointOperator.CompletedNativeDslopeSamplePositivity
+import Lean
+
+open Lean Elab Command
+elab "#audit_native_orthogonalization " ids:ident+ : command => do
+  let env := (← getEnv).setExporting false
+  let allowed := #[`propext, `Classical.choice, `Quot.sound]
+  let mut todo : List Name := []
+  for id in ids do
+    let decl ← liftCoreM <| realizeGlobalConstNoOverloadWithInfo id
+    todo := decl :: todo
+    for name in (← collectAxioms decl) do
+      unless allowed.contains name do
+        throwError "Unexpected axiom in {decl}: {name}"
+  let mut seen : NameSet := {}
+  while !todo.isEmpty do
+    let name := todo.head!
+    todo := todo.tail!
+    if !seen.contains name then
+      seen := seen.insert name
+      if let some info := env.find? name then
+        match info with
+        | .axiomInfo _ =>
+          unless allowed.contains name do
+            throwError "Unverified dependency: {name}"
+        | _ => pure ()
+        todo := info.type.getUsedConstants.toList ++ todo
+        if let some value := info.value? then
+          todo := value.getUsedConstants.toList ++ todo
+  logInfo m!"Native moment audit roots: {ids.size}; type/body closure: {seen.size}; foundational guard passed"
+
+#print axioms NativeMomentOrthogonalization.momentFunctional
+#print axioms NativeMomentOrthogonalization.momentFunctional_X_pow
+#print axioms NativeMomentOrthogonalization.momentForm
+#print axioms NativeMomentOrthogonalization.momentForm_symm
+#print axioms NativeMomentOrthogonalization.momentForm_monomials
+#print axioms NativeMomentOrthogonalization.momentForm_sub_left
+#print axioms NativeMomentOrthogonalization.momentForm_sub_right
+#print axioms NativeMomentOrthogonalization.momentForm_smul_left
+#print axioms NativeMomentOrthogonalization.momentForm_smul_right
+#print axioms NativeMomentOrthogonalization.momentForm_multiply_X
+#print axioms NativeMomentOrthogonalization.coefficientPolynomial
+#print axioms NativeMomentOrthogonalization.momentForm_coefficients
+#print axioms NativeMomentOrthogonalization.hankelPairing
+#print axioms NativeMomentOrthogonalization.hankelPairing_symm
+#print axioms NativeMomentOrthogonalization.residualPolynomial
+#print axioms NativeMomentOrthogonalization.residualPolynomial_pairing
+#print axioms NativeMomentOrthogonalization.orthogonalPolynomial
+#print axioms NativeMomentOrthogonalization.orthogonalPolynomial_self
+#print axioms NativeMomentOrthogonalization.orthogonalPolynomial_residual_orthogonal
+#print axioms NativeMomentOrthogonalization.orthogonalPolynomial_orthogonal
+#print axioms NativeMomentOrthogonalization.orthogonalPolynomial_linearIndependent
+#print axioms NativeMomentOrthogonalization.residualPolynomial_monic_degree
+#print axioms NativeMomentOrthogonalization.momentPolynomialSequence
+#print axioms NativeMomentOrthogonalization.polynomial_coordinates_independent
+#print axioms NativeMomentOrthogonalization.momentPolynomialBasis
+#print axioms NativeMomentOrthogonalization.momentPolynomialBasis_apply
+#print axioms NativeMomentOrthogonalization.polynomial_from_coefficients
+#print axioms NativeMomentOrthogonalization.orthogonalPolynomial_from_coefficients
+#print axioms NativeMomentOrthogonalization.transport_isSymm_of_isSymm
+#print axioms NativeMomentOrthogonalization.shifted_transport_isSymm
+#print axioms NativeMomentOrthogonalization.finiteJacobiSection_isSymm_unconditional
+#print axioms NativeMomentOrthogonalization.whitening_isUnit
+#print axioms NativeMomentOrthogonalization.posDef_of_whitening
+#print axioms NativeMomentOrthogonalization.exists_whitening_iff_posDef
+#print axioms NativeMomentOrthogonalization.finiteJacobiSection_posDef_iff_shifted
+#print axioms NativeMomentOrthogonalization.canonicalSection_posDef_of_sections
+#print axioms NativeMomentOrthogonalization.canonicalHeightFromSections
+#print axioms NativeMomentOrthogonalization.canonicalHeightFromSections_eq_existing
+#print axioms NativeMomentOrthogonalization.controlPhi
+#print axioms NativeMomentOrthogonalization.controlLogMoments
+#print axioms NativeMomentOrthogonalization.controlLogMoments_relation
+#print axioms NativeMomentOrthogonalization.controlLogMoments_zero
+#print axioms NativeMomentOrthogonalization.controlLogMoments_one
+#print axioms NativeMomentOrthogonalization.controlLogMoments_two
+#print axioms NativeMomentOrthogonalization.controlLogMoments_negative_pivot
+#print axioms NativeMomentOrthogonalization.controlLogMoments_negative_residual
+#print axioms NativeMomentOrthogonalization.controlLogMoments_orthogonal
+#print axioms NativeMomentOrthogonalization.controlLogMoments_not_posSemidef
+#print axioms NativeMomentOrthogonalization.log_recurrence_does_not_imply_posSemidef
+#print axioms NativeMomentOrthogonalization.rotationMoments
+#print axioms NativeMomentOrthogonalization.signatureTwo
+#print axioms NativeMomentOrthogonalization.rotationOperator
+#print axioms NativeMomentOrthogonalization.rotation_gram
+#print axioms NativeMomentOrthogonalization.rotation_shift
+#print axioms NativeMomentOrthogonalization.rotation_form_operation
+#print axioms NativeMomentOrthogonalization.rotation_square
+#print axioms NativeMomentOrthogonalization.rotation_no_real_eigenvector
+#print axioms NativeMomentOrthogonalization.rotation_negative_self
+#print axioms NativeMomentOrthogonalization.futureCrossMoments
+#print axioms NativeMomentOrthogonalization.future_zero_self
+#print axioms NativeMomentOrthogonalization.future_nonzero_cross
+#print axioms NativeMomentOrthogonalization.future_zero_not_radical
+#print axioms NativeMomentOrthogonalization.future_failed_orthogonalization
+#print axioms NativeMomentOrthogonalization.future_prefix_posSemidef
+#print axioms NativeMomentOrthogonalization.future_prefix_not_whitenable
+#print axioms NativeMomentOrthogonalization.future_extension_not_posSemidef
+#print axioms NativeMomentOrthogonalization.constantMomentFunctional
+#print axioms NativeMomentOrthogonalization.constant_true_radical
+#print axioms NativeMomentOrthogonalization.radical_multiply_X
+#print axioms NativeMomentOrthogonalization.negativePointMoments
+#print axioms NativeMomentOrthogonalization.negativePoint_gram_one
+#print axioms NativeMomentOrthogonalization.negativePoint_shift_one
+#print axioms NativeMomentOrthogonalization.negativePoint_gram_posDef
+#print axioms NativeMomentOrthogonalization.negativePointWhitening
+#print axioms NativeMomentOrthogonalization.negativePoint_Jacobi
+#print axioms NativeMomentOrthogonalization.negativePoint_no_positive_height
+#print axioms NativeMomentOrthogonalization.complexMomentForm
+#print axioms NativeMomentOrthogonalization.complexMomentForm_crossings
+#print axioms NativeMomentOrthogonalization.native_boundary_polynomial_energy
+#print axioms NativeMomentOrthogonalization.native_residual_self
+#print axioms NativeMomentOrthogonalization.complexMomentForm_ofReal
+#print axioms NativeMomentOrthogonalization.complexMomentForm_zero
+#print axioms NativeMomentOrthogonalization.native_boundary_real_even
+#print axioms NativeMomentOrthogonalization.native_boundary_real_odd
+#print axioms NativeMomentOrthogonalization.nativeResidualBoundary
+#print axioms NativeMomentOrthogonalization.nativeResidualBoundary_energy
+#print axioms NativeMomentOrthogonalization.native_shifted_transport_isSymm
+#print axioms NativeMomentOrthogonalization.sourceMomentSchur_sewing_of_isUnit
+#print axioms NativeMomentOrthogonalization.sourceMomentSchur_critical_direction_of_isUnit
+#print axioms NativeMomentOrthogonalization.momentForm_eq_sourceMomentQuadratic
+#print axioms NativeMomentOrthogonalization.native_boundary_real_sector
+#print axioms NativeMomentOrthogonalization.native_inverseSchur_boundary_energy
+#print axioms CarrySelfAdjointOperator.nativeSourceEvenBoundary_positive_iff_stieltjes
+#print axioms CarrySelfAdjointOperator.nativeThetaCofactorSign_iff_stieltjes
+#print axioms CarrySelfAdjointOperator.canonicalCompletedC3ExpandedStructuralStrictChiralDominance_iff_stieltjesPositivity
+#print axioms CarrySelfAdjointOperator.canonicalCompletedNativeStieltjesPositivity_iff_posSemidefinite_and_nondegenerate
+
+#audit_native_orthogonalization
+  NativeMomentOrthogonalization.momentFunctional
+  NativeMomentOrthogonalization.momentFunctional_X_pow
+  NativeMomentOrthogonalization.momentForm
+  NativeMomentOrthogonalization.momentForm_symm
+  NativeMomentOrthogonalization.momentForm_monomials
+  NativeMomentOrthogonalization.momentForm_sub_left
+  NativeMomentOrthogonalization.momentForm_sub_right
+  NativeMomentOrthogonalization.momentForm_smul_left
+  NativeMomentOrthogonalization.momentForm_smul_right
+  NativeMomentOrthogonalization.momentForm_multiply_X
+  NativeMomentOrthogonalization.coefficientPolynomial
+  NativeMomentOrthogonalization.momentForm_coefficients
+  NativeMomentOrthogonalization.hankelPairing
+  NativeMomentOrthogonalization.hankelPairing_symm
+  NativeMomentOrthogonalization.residualPolynomial
+  NativeMomentOrthogonalization.residualPolynomial_pairing
+  NativeMomentOrthogonalization.orthogonalPolynomial
+  NativeMomentOrthogonalization.orthogonalPolynomial_self
+  NativeMomentOrthogonalization.orthogonalPolynomial_residual_orthogonal
+  NativeMomentOrthogonalization.orthogonalPolynomial_orthogonal
+  NativeMomentOrthogonalization.orthogonalPolynomial_linearIndependent
+  NativeMomentOrthogonalization.residualPolynomial_monic_degree
+  NativeMomentOrthogonalization.momentPolynomialSequence
+  NativeMomentOrthogonalization.polynomial_coordinates_independent
+  NativeMomentOrthogonalization.momentPolynomialBasis
+  NativeMomentOrthogonalization.momentPolynomialBasis_apply
+  NativeMomentOrthogonalization.polynomial_from_coefficients
+  NativeMomentOrthogonalization.orthogonalPolynomial_from_coefficients
+  NativeMomentOrthogonalization.transport_isSymm_of_isSymm
+  NativeMomentOrthogonalization.shifted_transport_isSymm
+  NativeMomentOrthogonalization.finiteJacobiSection_isSymm_unconditional
+  NativeMomentOrthogonalization.whitening_isUnit
+  NativeMomentOrthogonalization.posDef_of_whitening
+  NativeMomentOrthogonalization.exists_whitening_iff_posDef
+  NativeMomentOrthogonalization.finiteJacobiSection_posDef_iff_shifted
+  NativeMomentOrthogonalization.canonicalSection_posDef_of_sections
+  NativeMomentOrthogonalization.canonicalHeightFromSections
+  NativeMomentOrthogonalization.canonicalHeightFromSections_eq_existing
+  NativeMomentOrthogonalization.controlPhi
+  NativeMomentOrthogonalization.controlLogMoments
+  NativeMomentOrthogonalization.controlLogMoments_relation
+  NativeMomentOrthogonalization.controlLogMoments_zero
+  NativeMomentOrthogonalization.controlLogMoments_one
+  NativeMomentOrthogonalization.controlLogMoments_two
+  NativeMomentOrthogonalization.controlLogMoments_negative_pivot
+  NativeMomentOrthogonalization.controlLogMoments_negative_residual
+  NativeMomentOrthogonalization.controlLogMoments_orthogonal
+  NativeMomentOrthogonalization.controlLogMoments_not_posSemidef
+  NativeMomentOrthogonalization.log_recurrence_does_not_imply_posSemidef
+  NativeMomentOrthogonalization.rotationMoments
+  NativeMomentOrthogonalization.signatureTwo
+  NativeMomentOrthogonalization.rotationOperator
+  NativeMomentOrthogonalization.rotation_gram
+  NativeMomentOrthogonalization.rotation_shift
+  NativeMomentOrthogonalization.rotation_form_operation
+  NativeMomentOrthogonalization.rotation_square
+  NativeMomentOrthogonalization.rotation_no_real_eigenvector
+  NativeMomentOrthogonalization.rotation_negative_self
+  NativeMomentOrthogonalization.futureCrossMoments
+  NativeMomentOrthogonalization.future_zero_self
+  NativeMomentOrthogonalization.future_nonzero_cross
+  NativeMomentOrthogonalization.future_zero_not_radical
+  NativeMomentOrthogonalization.future_failed_orthogonalization
+  NativeMomentOrthogonalization.future_prefix_posSemidef
+  NativeMomentOrthogonalization.future_prefix_not_whitenable
+  NativeMomentOrthogonalization.future_extension_not_posSemidef
+  NativeMomentOrthogonalization.constantMomentFunctional
+  NativeMomentOrthogonalization.constant_true_radical
+  NativeMomentOrthogonalization.radical_multiply_X
+  NativeMomentOrthogonalization.negativePointMoments
+  NativeMomentOrthogonalization.negativePoint_gram_one
+  NativeMomentOrthogonalization.negativePoint_shift_one
+  NativeMomentOrthogonalization.negativePoint_gram_posDef
+  NativeMomentOrthogonalization.negativePointWhitening
+  NativeMomentOrthogonalization.negativePoint_Jacobi
+  NativeMomentOrthogonalization.negativePoint_no_positive_height
+  NativeMomentOrthogonalization.complexMomentForm
+  NativeMomentOrthogonalization.complexMomentForm_crossings
+  NativeMomentOrthogonalization.native_boundary_polynomial_energy
+  NativeMomentOrthogonalization.native_residual_self
+  NativeMomentOrthogonalization.complexMomentForm_ofReal
+  NativeMomentOrthogonalization.complexMomentForm_zero
+  NativeMomentOrthogonalization.native_boundary_real_even
+  NativeMomentOrthogonalization.native_boundary_real_odd
+  NativeMomentOrthogonalization.nativeResidualBoundary
+  NativeMomentOrthogonalization.nativeResidualBoundary_energy
+  NativeMomentOrthogonalization.native_shifted_transport_isSymm
+  NativeMomentOrthogonalization.sourceMomentSchur_sewing_of_isUnit
+  NativeMomentOrthogonalization.sourceMomentSchur_critical_direction_of_isUnit
+  NativeMomentOrthogonalization.momentForm_eq_sourceMomentQuadratic
+  NativeMomentOrthogonalization.native_boundary_real_sector
+  NativeMomentOrthogonalization.native_inverseSchur_boundary_energy
+  CarrySelfAdjointOperator.nativeSourceEvenBoundary_positive_iff_stieltjes
+  CarrySelfAdjointOperator.nativeThetaCofactorSign_iff_stieltjes
+  CarrySelfAdjointOperator.canonicalCompletedC3ExpandedStructuralStrictChiralDominance_iff_stieltjesPositivity
+  CarrySelfAdjointOperator.canonicalCompletedNativeStieltjesPositivity_iff_posSemidefinite_and_nondegenerate

@@ -1,0 +1,14 @@
+{
+  "base": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "branch": "agent/native-moment-orthogonalization-audit",
+  "head_before_commit": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "origin_main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_status": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "protected_untracked_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "toolchain": "leanprover/lean4:v4.32.0",
+  "manifest_sha256": "9868872bae98d0c7e22c597d8e27d38d247498161cf70cdcdc193e9ea0608602"
+}
