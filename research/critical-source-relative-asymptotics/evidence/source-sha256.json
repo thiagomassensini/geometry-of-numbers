@@ -1,0 +1,12 @@
+{
+  "Audit.lean": "7f08a9af7b55e805d7dbb05837efc935c66e7e06e20b5d6f91e127ae65a24273",
+  "CriticalRelative.lean": "38a334e7f4f053432e7591becb529c1a988beea56ca032e58edd5751999f6e97",
+  "InitialSource.lean": "9320001839bc0f2f65e1819714d5b243f74ae6c9666491ebfb0e8e541d65608b",
+  "PolarizedLimit.lean": "9bef66711d15e98a495e5fbc376850ab8d877f39beffe1b61b6663d139916bb0",
+  "RelativeDeficit.lean": "87f1b6f5b705fb202760f9fbd9602513c5d6aa1343cf52502f8410ff39400ac6",
+  "SourceLeading.lean": "e07a70dc15cea424ca83f987afbd470d0f9f2ed347f4a42d2b42af22bfd4c1f9",
+  "WholeSourceLimit.lean": "facd23f479aba81015b8219de833ae427df75e64996a4ab87b3fdfdf0a71c489",
+  "compile_module.sh": "29b75ac54cfb6a5928c38ba5b7e0b0932911a93432fa0c39d703065feff21488",
+  "generate_audit.py": "edad63faf2ec07d105a4abfa741de09e97dc6dfbd0e3434c65d658842fd6274f",
+  "validate.py": "a65ab265d055934f5db2e9fde168616c70ac484f4459c29df546f9cb7515e8f7"
+}
