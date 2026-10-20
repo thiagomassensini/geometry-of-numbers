@@ -1,0 +1,86 @@
+[
+  {
+    "name": "kernel-MomentFunctional",
+    "command": [
+      "bash",
+      "research/native-moment-orthogonalization-audit/compile_module.sh",
+      "MomentFunctional"
+    ],
+    "exit_code": 0,
+    "seconds": 9.719
+  },
+  {
+    "name": "kernel-PolynomialCoordinates",
+    "command": [
+      "bash",
+      "research/native-moment-orthogonalization-audit/compile_module.sh",
+      "PolynomialCoordinates"
+    ],
+    "exit_code": 0,
+    "seconds": 9.587
+  },
+  {
+    "name": "kernel-JacobiLogic",
+    "command": [
+      "bash",
+      "research/native-moment-orthogonalization-audit/compile_module.sh",
+      "JacobiLogic"
+    ],
+    "exit_code": 0,
+    "seconds": 9.345
+  },
+  {
+    "name": "kernel-Controls",
+    "command": [
+      "bash",
+      "research/native-moment-orthogonalization-audit/compile_module.sh",
+      "Controls"
+    ],
+    "exit_code": 0,
+    "seconds": 10.913
+  },
+  {
+    "name": "kernel-NativeApplication",
+    "command": [
+      "bash",
+      "research/native-moment-orthogonalization-audit/compile_module.sh",
+      "NativeApplication"
+    ],
+    "exit_code": 0,
+    "seconds": 10.858
+  },
+  {
+    "name": "kernel-SchurLogic",
+    "command": [
+      "bash",
+      "research/native-moment-orthogonalization-audit/compile_module.sh",
+      "SchurLogic"
+    ],
+    "exit_code": 0,
+    "seconds": 11.255
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "bash",
+      "research/native-moment-orthogonalization-audit/compile_module.sh",
+      "Audit"
+    ],
+    "exit_code": 0,
+    "seconds": 11.21
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+      "--",
+      ".",
+      ":(exclude)research/native-moment-orthogonalization-audit"
+    ],
+    "exit_code": 0,
+    "seconds": 0.006
+  }
+]

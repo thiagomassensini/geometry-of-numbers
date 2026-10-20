@@ -1,0 +1,151 @@
+'NativeMomentOrthogonalization.momentFunctional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.momentFunctional_X_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.momentForm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.momentForm_symm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.momentForm_monomials' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.momentForm_sub_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.momentForm_sub_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.momentForm_smul_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.momentForm_smul_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.momentForm_multiply_X' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.coefficientPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.momentForm_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.hankelPairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.hankelPairing_symm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.residualPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.residualPolynomial_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.orthogonalPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.orthogonalPolynomial_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.orthogonalPolynomial_residual_orthogonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.orthogonalPolynomial_orthogonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.orthogonalPolynomial_linearIndependent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.residualPolynomial_monic_degree' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.momentPolynomialSequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.polynomial_coordinates_independent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.momentPolynomialBasis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.momentPolynomialBasis_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.polynomial_from_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.orthogonalPolynomial_from_coefficients' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.transport_isSymm_of_isSymm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.shifted_transport_isSymm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.finiteJacobiSection_isSymm_unconditional' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.whitening_isUnit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.posDef_of_whitening' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.exists_whitening_iff_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.finiteJacobiSection_posDef_iff_shifted' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.canonicalSection_posDef_of_sections' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.canonicalHeightFromSections' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.canonicalHeightFromSections_eq_existing' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.controlPhi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.controlLogMoments' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.controlLogMoments_relation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.controlLogMoments_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.controlLogMoments_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.controlLogMoments_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.controlLogMoments_negative_pivot' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.controlLogMoments_negative_residual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.controlLogMoments_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.controlLogMoments_not_posSemidef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.log_recurrence_does_not_imply_posSemidef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.rotationMoments' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.signatureTwo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.rotationOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.rotation_gram' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.rotation_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.rotation_form_operation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.rotation_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.rotation_no_real_eigenvector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.rotation_negative_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.futureCrossMoments' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.future_zero_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.future_nonzero_cross' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.future_zero_not_radical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.future_failed_orthogonalization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.future_prefix_posSemidef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.future_prefix_not_whitenable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.future_extension_not_posSemidef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.constantMomentFunctional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.constant_true_radical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.radical_multiply_X' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.negativePointMoments' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.negativePoint_gram_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.negativePoint_shift_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.negativePoint_gram_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.negativePointWhitening' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.negativePoint_Jacobi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.negativePoint_no_positive_height' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.complexMomentForm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.complexMomentForm_crossings' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.native_boundary_polynomial_energy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.native_residual_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.complexMomentForm_ofReal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.complexMomentForm_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.native_boundary_real_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.native_boundary_real_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.nativeResidualBoundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.nativeResidualBoundary_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.native_shifted_transport_isSymm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.sourceMomentSchur_sewing_of_isUnit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.sourceMomentSchur_critical_direction_of_isUnit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.momentForm_eq_sourceMomentQuadratic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'NativeMomentOrthogonalization.native_boundary_real_sector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.native_inverseSchur_boundary_energy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySelfAdjointOperator.nativeSourceEvenBoundary_positive_iff_stieltjes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySelfAdjointOperator.nativeThetaCofactorSign_iff_stieltjes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySelfAdjointOperator.canonicalCompletedC3ExpandedStructuralStrictChiralDominance_iff_stieltjesPositivity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySelfAdjointOperator.canonicalCompletedNativeStieltjesPositivity_iff_posSemidefinite_and_nondegenerate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Native moment audit roots: 96; type/body closure: 7610; foundational guard passed
