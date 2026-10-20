@@ -1,0 +1,20 @@
+{
+  "files": [
+    {
+      "path": "research/carry-global-synthesis-kernels/Audit.lean",
+      "sha256": "6246dfd62b185de9e007d62176a7700788688ebd6c79c1d69c24fc1db1c62205"
+    },
+    {
+      "path": "research/carry-global-synthesis-kernels/CameraBudget.lean",
+      "sha256": "0ea6ad7579da59864eac34d1e790d3ba6fde3ae630adb382484145250776a275"
+    },
+    {
+      "path": "research/carry-global-synthesis-kernels/GreenSynthesis.lean",
+      "sha256": "54e76d9f7aa79db9d1a055f9cdb134673500ca7e87650fd87d4c11fea85c6484"
+    },
+    {
+      "path": "research/carry-global-synthesis-kernels/ScaleCompatibility.lean",
+      "sha256": "02220d838860de781cdce7034d3ac41891b35fab12765e6eed893368edd56a16"
+    }
+  ]
+}
