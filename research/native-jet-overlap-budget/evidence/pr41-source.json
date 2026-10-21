@@ -1,0 +1,12 @@
+{
+  "pr": 41,
+  "commit": "ee56930a2c30456cfbd214a29bb31b12d3977204",
+  "mode": "immutable git-object sources; no merge; no tracked source replacement",
+  "sha256": {
+    "research/native-moment-orthogonalization-audit/MomentFunctional.lean": "34fc626086d3a8204ae0f06cce0276a739a01f7bdac17b7a0eb2b20203db72a3",
+    "research/native-moment-orthogonalization-audit/PolynomialCoordinates.lean": "08dd0d3e0b4771f47fdb08c926396ea59795ebd2f482736d506d149306180d4f",
+    "research/native-moment-orthogonalization-audit/JacobiLogic.lean": "73bbd9e859eca465b254704c8c9f1ac1210e28b5d09faab9092081c6d3f00509",
+    "research/native-moment-orthogonalization-audit/NativeApplication.lean": "be0f50cdb6d192e39227b109df388eb8a326d68aca1d15c33b6c17ef2e165f3d",
+    "research/native-moment-orthogonalization-audit/SchurLogic.lean": "bd3d0d50f50b1f55664499ddf7e613d492584d203b222aeeb18c87ffe8ef1ddf"
+  }
+}
