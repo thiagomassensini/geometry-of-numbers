@@ -1,0 +1,18 @@
+{
+  ".gitignore": "2f54cb871ec9bc6cdb1a5ae2c0bf4fe324d627de1b1bdfccfb058bfb60907cce",
+  "Audit.lean": "fea389c7eb4b3569cbe11623fad86c4f2c94cd229ff5ffe633e2254f5f8e11c2",
+  "BoundaryFeedback.lean": "6df93b9626fe1460918bb809cc52691d8bc8add78f5d160f5dba768f5e9bc323",
+  "Controls.lean": "372089a0e09552feb4770b0da26a3b25fa56fbd3f18038349601c4d191386b22",
+  "ExactSeventh.lean": "75a17ca8821bf9ca93c4997ccd21e44c5fa7d518659083cf89ab375bb2b45790",
+  "JetBridge.lean": "a254f58af0a96f573fd94af6cba2c20d3dcf0938f130cf521012ba7282b56425",
+  "NativeDeflation.lean": "41f77d2cc7c20a96013fedb256b6df3ff6cdcea9c773a105d1d9715b5526fa11",
+  "REPORT.md": "95a1a68540f559f900fb0c522af9755554b15b284c110315ef8eb48a88489233",
+  "ResidualTest.lean": "3c3a2bdd6ed1f0ddeaf2483ddf404378f024657fa251d3cfed82e754b2a3a4b1",
+  "SchurLimit.lean": "884454dafdd3ad14b3e7006ed840d0ab916e9b26dce3ca833c1210a54ff1d871",
+  "compile_module.sh": "86518b1c489679229aeac001840db8291ff84cbebafb4a2936f1ea528cd0769f",
+  "data/user-N6.json": "f6a91ca07f8c91f7228f80823381457489d1851415a2acd271e4215c93ae4c5e",
+  "experiment.py": "9a9a3c25f4ad4d739bb785435a98dc4b078a7ba7f56995c1e57da8c15f5d109e",
+  "generate_audit.py": "7095f9b7ebd18db1e43adba9b76eb3cde9fd8d94348cb2091cbfb4bc83587d39",
+  "public-roots.json": "6c68b5cd8a217ddc62d0416abe9bd2167eb5595c3e7c44a76ff55fab8f118c00",
+  "validate.py": "8102e258afe3daa2d1d5d1816d0b3251a03d57d3eb4dc2a9968a32ec17cd4123"
+}
