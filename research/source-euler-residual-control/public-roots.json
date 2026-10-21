@@ -1,0 +1,36 @@
+{
+  "structural": [
+    "CarryResidualEuler.jetValues",
+    "CarryResidualEuler.nonlinearReadout",
+    "CarryResidualEuler.forward_weights_sum",
+    "CarryResidualEuler.jet_value_eq_sum",
+    "CarryResidualEuler.jet_values_sum",
+    "CarryResidualEuler.euler_scale_native",
+    "CarryResidualEuler.storage_jet_euler_exact",
+    "CarryResidualEuler.budget_euler_exact",
+    "CarryResidualEuler.nonlinear_tendsto",
+    "CarryResidualEuler.pr41_nonlinear_tendsto",
+    "CarryResidualEuler.pr41_even_euler_coefficient",
+    "CarryResidualEuler.pr41_odd_euler_coefficient",
+    "CarryResidualEuler.nonlinearPairing",
+    "CarryResidualEuler.nonlinearPairing_self_re",
+    "CarryResidualEuler.budget_slope_polarized",
+    "CarryResidualEuler.budget_euler_polarized"
+  ],
+  "central": [
+    "CarryResidualEuler.seventhTrialBoundary",
+    "CarryResidualEuler.seventh_trial_energy",
+    "CarryResidualEuler.seventh_trial_zero",
+    "CarryResidualEuler.trial_pairing_mem",
+    "CarryResidualEuler.seventhNonlinearMargin",
+    "CarryResidualEuler.seventhNonlinearBox",
+    "CarryResidualEuler.seventh_nonlinear_mem",
+    "CarryResidualEuler.seventh_nonlinear_checks",
+    "CarryResidualEuler.seventh_nonlinear_bounds",
+    "CarryResidualEuler.seventh_trial_positive_margin",
+    "CarryResidualEuler.seventh_nonlinear_tendsto",
+    "CarryResidualEuler.seventh_nonlinear_eventually_negative",
+    "CarryResidualEuler.seventh_trial_relative_budget",
+    "CarryResidualEuler.seventh_signed_compensation"
+  ]
+}
