@@ -1,0 +1,11 @@
+{
+  "Audit.lean": "2d8a8eca887879bdf3fc75a7f9a6eeac2f0769864670534168c885b850dff738",
+  "NativeTests.lean": "4e532bb249b0b407fa586699fa47f82617f9adb493d1181b0a1498dde528a5ce",
+  "ShiftBoundary.lean": "312bd145c6d97243b52369bc9d66bd52a906414da136ee1c131df446392c8275",
+  "ShiftMoments.lean": "ac5fc6f6a2b105333f1df0cec4060e3dd4c219d979fcf093c57519c80ddc51ff",
+  "SourceSquare.lean": "bc6268007bb0deeb3c5c9c7059fee83a1d48f230046579041188baeae38b229d",
+  "SquareEnergy.lean": "cdbf697ba06f6e9abf8053b7cf65742d22351866250515e991c600a5939755d5",
+  "compile_module.sh": "e386e1b374b1716efbb7939b77ac138054fed859ae7003f083427367df2113c4",
+  "generate_audit.py": "df80f8aa08ccdfe151aaaa4ae572f1c064b3b73a3346eb958bed0de5d6077245",
+  "validate.py": "95afdc7e93978fd1efec4d228dec30792afc8e9467ffe32b77b6976cac45b281"
+}
