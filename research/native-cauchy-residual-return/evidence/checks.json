@@ -1,0 +1,203 @@
+[
+  {
+    "name": "audit-generation",
+    "command": [
+      "python3",
+      "research/native-cauchy-residual-return/generate_audit.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.039
+  },
+  {
+    "name": "native-operator-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "CarrySelfAdjointOperator.CompletedNativeChiralReturnFiniteTransfer",
+      "CarrySelfAdjointOperator.CompletedNativeCentralChiralQuotientCurvature"
+    ],
+    "cwd": "/home/thlinux/carry-self-adjoint-operator",
+    "exit_code": 0,
+    "seconds": 8.643
+  },
+  {
+    "name": "kernel-CauchyFrame",
+    "command": [
+      "bash",
+      "research/native-cauchy-residual-return/compile_module.sh",
+      "CauchyFrame"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.269
+  },
+  {
+    "name": "kernel-ResidualReturn",
+    "command": [
+      "bash",
+      "research/native-cauchy-residual-return/compile_module.sh",
+      "ResidualReturn"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.161
+  },
+  {
+    "name": "kernel-NativeTangent",
+    "command": [
+      "bash",
+      "research/native-cauchy-residual-return/compile_module.sh",
+      "NativeTangent"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 11.75
+  },
+  {
+    "name": "kernel-ProjectionLoss",
+    "command": [
+      "bash",
+      "research/native-cauchy-residual-return/compile_module.sh",
+      "ProjectionLoss"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 12.89
+  },
+  {
+    "name": "kernel-CrossControls",
+    "command": [
+      "bash",
+      "research/native-cauchy-residual-return/compile_module.sh",
+      "CrossControls"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 11.594
+  },
+  {
+    "name": "kernel-JetResidual",
+    "command": [
+      "bash",
+      "research/native-cauchy-residual-return/compile_module.sh",
+      "JetResidual"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 10.907
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "bash",
+      "research/native-cauchy-residual-return/compile_module.sh",
+      "Audit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 11.421
+  },
+  {
+    "name": "exact-rational-controls",
+    "command": [
+      "python3",
+      "research/native-cauchy-residual-return/experiment.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.095
+  },
+  {
+    "name": "focused-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "GeometryOfNumbers.Analysis.CarryMaterialSourceFactor",
+      "GeometryOfNumbers.Analysis.CanonicalFiniteHeight"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 8.033
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 7.236
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 6.751
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.335
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 44.757
+  },
+  {
+    "name": "twelve-source-regression",
+    "command": [
+      "bash",
+      "research/sixth-odd-twelve-sources/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 11.345
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "fdb8f7e9ce1b8681d10f2647393ad83f05bfac12",
+      "--",
+      ".",
+      ":(exclude)research/native-cauchy-residual-return"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.005
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.005
+  }
+]
