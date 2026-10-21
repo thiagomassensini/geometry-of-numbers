@@ -1,0 +1,122 @@
+[
+  {
+    "name": "audit-generation",
+    "command": [
+      "python3",
+      "research/entrywise-moment-square/generate_audit.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.036
+  },
+  {
+    "name": "kernel-EntrywiseSquare",
+    "command": [
+      "bash",
+      "research/entrywise-moment-square/compile_module.sh",
+      "EntrywiseSquare"
+    ],
+    "exit_code": 0,
+    "seconds": 5.531
+  },
+  {
+    "name": "kernel-NativeWitness",
+    "command": [
+      "bash",
+      "research/entrywise-moment-square/compile_module.sh",
+      "NativeWitness"
+    ],
+    "exit_code": 0,
+    "seconds": 12.039
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "bash",
+      "research/entrywise-moment-square/compile_module.sh",
+      "Audit"
+    ],
+    "exit_code": 0,
+    "seconds": 10.52
+  },
+  {
+    "name": "experiment",
+    "command": [
+      "/home/thlinux/miniforge3/bin/python",
+      "research/entrywise-moment-square/experiment.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.238
+  },
+  {
+    "name": "focused-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "GeometryOfNumbers.Analysis.CanonicalFiniteHeight"
+    ],
+    "exit_code": 0,
+    "seconds": 2.223
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "exit_code": 0,
+    "seconds": 7.6
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "exit_code": 0,
+    "seconds": 6.698
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "exit_code": 0,
+    "seconds": 8.993
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "exit_code": 0,
+    "seconds": 44.448
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "a5ed1d73b643cc4b24549b3ee3cfe10a5b29a59b",
+      "--",
+      ".",
+      ":(exclude)research/entrywise-moment-square"
+    ],
+    "exit_code": 0,
+    "seconds": 0.006
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "seconds": 0.005
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "EntrywiseSquare": [
+    "CarryEntrywiseSquare.squaredMoments",
+    "CarryEntrywiseSquare.hankel_square",
+    "CarryEntrywiseSquare.shifted_square",
+    "CarryEntrywiseSquare.squared_psd_of_psd",
+    "CarryEntrywiseSquare.squared_shifted_psd_of_psd",
+    "CarryEntrywiseSquare.singletonEigenvalue",
+    "CarryEntrywiseSquare.singleton_congruence",
+    "CarryEntrywiseSquare.actual_singleton_section",
+    "CarryEntrywiseSquare.singleton_square",
+    "CarryEntrywiseSquare.inverse_sqrt_gt_one",
+    "CarryEntrywiseSquare.singleton_square_not_height",
+    "CarryEntrywiseSquare.singleton_squared_height",
+    "CarryEntrywiseSquare.singleton_mass_cancels",
+    "CarryEntrywiseSquare.square_changes_logarithmic_sequence",
+    "CarryEntrywiseSquare.finite_product_moments",
+    "CarryEntrywiseSquare.paired_feature",
+    "CarryEntrywiseSquare.badMoments",
+    "CarryEntrywiseSquare.squared_bad_quadratic",
+    "CarryEntrywiseSquare.squared_bad_not_psd",
+    "CarryEntrywiseSquare.maskedMoments",
+    "CarryEntrywiseSquare.masked_original_not_psd",
+    "CarryEntrywiseSquare.masked_square_psd"
+  ],
+  "NativeWitness": [
+    "CarryEntrywiseSquare.native_first_pair",
+    "CarryEntrywiseSquare.native_squared_eigenvalue_not_height",
+    "CarryEntrywiseSquare.native_squared_mass_changed"
+  ]
+}
