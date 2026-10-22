@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "arithmetic": "Fraction in both complex components",
+  "provenance": "Synthetic controls only; no canonical moment or zero inputs.",
+  "polarized_families": [
+    {
+      "N": 1,
+      "M": 1,
+      "regular_input": false
+    },
+    {
+      "N": 1,
+      "M": 1,
+      "regular_input": true
+    },
+    {
+      "N": 2,
+      "M": 3,
+      "regular_input": false
+    },
+    {
+      "N": 2,
+      "M": 3,
+      "regular_input": true
+    },
+    {
+      "N": 4,
+      "M": 2,
+      "regular_input": false
+    },
+    {
+      "N": 4,
+      "M": 2,
+      "regular_input": true
+    },
+    {
+      "N": 3,
+      "M": 5,
+      "regular_input": false
+    },
+    {
+      "N": 3,
+      "M": 5,
+      "regular_input": true
+    }
+  ],
+  "retained_leg_cases": 3
+}
