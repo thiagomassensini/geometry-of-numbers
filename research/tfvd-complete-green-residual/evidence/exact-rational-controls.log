@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "scope": "finite algebra only",
+  "controls": [
+    {
+      "eta": "1/2",
+      "plateau_curvature": "13/2",
+      "mixed": "-1/4"
+    },
+    {
+      "eta": "2/3",
+      "plateau_curvature": "5/6",
+      "mixed": "-4/9"
+    },
+    {
+      "eta": "3/4",
+      "plateau_curvature": "-7/12",
+      "mixed": "-9/16"
+    }
+  ],
+  "native_lower_square_gap": "1/578"
+}
