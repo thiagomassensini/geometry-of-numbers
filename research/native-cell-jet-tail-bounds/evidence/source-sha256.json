@@ -1,0 +1,18 @@
+{
+  ".gitignore": "046032151fe6113c18a8d7d9971c557e81129ca1ba244e5263d54b7e0e6f9643",
+  "Audit.lean": "d11d92e98a322abd6fb2ec34c4cc7aa23e1301df2d993aa5b8e473c85c782d70",
+  "CellCauchy.lean": "35a869eaaa5854fe78d1f0435a50975aa18c2d28c464b9699322c653c144d182",
+  "ClockTails.lean": "7f27ca4b526f3e95ea0f30388996106c2ff69ed32ee540ec6ac463856a4ad50d",
+  "CriticalTail.lean": "ec2b5d1a0c901124c9ad6b3f019238a0e066b8fb7c8a9931bf9598c89cbf2cfd",
+  "GreenTailBounds.lean": "3408e3360b7ce8f40e978e6bd3088a28b0100f7ad72ec6767c96a025012f888b",
+  "JetTails.lean": "9a2000f2e1848127870ed7d8e65e6c0f1de6ec886a5afc98cd3d263cf30ea7a7",
+  "NormalizedJets.lean": "31ee11e707be7a241bf93d5779bb264dab042c0ae78646cd1fe542179fc2ecd8",
+  "REPORT.md": "8871fa32543711989abe1aecae550795398923170271a45cc82d8e4d8c17a7bd",
+  "ResponseTails.lean": "c7c5fe1d1500f230767e2ad4f915413f3c046197440ec9f3a6c28932e6f60b70",
+  "TailAcceleration.lean": "dd91a8b8900e04e0dba44d9a8de1a57ec7ee3777b418fe3b5fd3c56198dc8b87",
+  "compile_module.sh": "0dee07b71ab7e82acd24500ba89858eca3b0ed68569eba31506ad4d4f29cf2a3",
+  "experiment.py": "8722c6c64771ed521fd4f3e844bd32aa692b57c0b31de071711ff6e31e4d7435",
+  "generate_audit.py": "5e225a9769b1bae3e1c271a24cff88aa137210fc2af88bc9b8ed13d56ed00bdd",
+  "public-roots.json": "4fac39089ec0dd2001bac424b4161b9a619ac1b58a2d17636791c2f1450ddaaa",
+  "validate.py": "e28fc3e3b74233c2b9e60780be49c194f1eea78325583564e1e10b531f1bd862"
+}

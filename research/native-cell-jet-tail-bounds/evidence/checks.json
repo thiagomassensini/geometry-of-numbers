@@ -1,0 +1,213 @@
+[
+  {
+    "name": "audit-generation",
+    "command": [
+      "python3",
+      "research/native-cell-jet-tail-bounds/generate_audit.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.04
+  },
+  {
+    "name": "kernel-CellCauchy",
+    "command": [
+      "bash",
+      "research/native-cell-jet-tail-bounds/compile_module.sh",
+      "CellCauchy"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.03
+  },
+  {
+    "name": "kernel-JetTails",
+    "command": [
+      "bash",
+      "research/native-cell-jet-tail-bounds/compile_module.sh",
+      "JetTails"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.759
+  },
+  {
+    "name": "kernel-ClockTails",
+    "command": [
+      "bash",
+      "research/native-cell-jet-tail-bounds/compile_module.sh",
+      "ClockTails"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.887
+  },
+  {
+    "name": "kernel-NormalizedJets",
+    "command": [
+      "bash",
+      "research/native-cell-jet-tail-bounds/compile_module.sh",
+      "NormalizedJets"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.946
+  },
+  {
+    "name": "kernel-ResponseTails",
+    "command": [
+      "bash",
+      "research/native-cell-jet-tail-bounds/compile_module.sh",
+      "ResponseTails"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.823
+  },
+  {
+    "name": "kernel-CriticalTail",
+    "command": [
+      "bash",
+      "research/native-cell-jet-tail-bounds/compile_module.sh",
+      "CriticalTail"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.806
+  },
+  {
+    "name": "kernel-GreenTailBounds",
+    "command": [
+      "bash",
+      "research/native-cell-jet-tail-bounds/compile_module.sh",
+      "GreenTailBounds"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.706
+  },
+  {
+    "name": "kernel-TailAcceleration",
+    "command": [
+      "bash",
+      "research/native-cell-jet-tail-bounds/compile_module.sh",
+      "TailAcceleration"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.738
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "bash",
+      "research/native-cell-jet-tail-bounds/compile_module.sh",
+      "Audit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.63
+  },
+  {
+    "name": "source-and-exact-controls",
+    "command": [
+      "/home/thlinux/miniforge3/bin/python3",
+      "research/native-cell-jet-tail-bounds/experiment.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.631
+  },
+  {
+    "name": "focused-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "GeometryOfNumbers.Analysis.CarryMaterialProjectiveReturnGreen",
+      "GeometryOfNumbers.Analysis.CarryMaterialCompanionGreenTransport",
+      "GeometryOfNumbers.Analysis.CanonicalFiniteHeight"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 8.834
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 8.029
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 6.831
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.394
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 45.598
+  },
+  {
+    "name": "twelve-source-regression",
+    "command": [
+      "bash",
+      "research/sixth-odd-twelve-sources/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 11.598
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "cfb407550c19f13d3f5525462bdd905db43f8378",
+      "--",
+      ".",
+      ":(exclude)research/native-cell-jet-tail-bounds"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.007
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.005
+  }
+]
