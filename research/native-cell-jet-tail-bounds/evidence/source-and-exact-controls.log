@@ -1,0 +1,119 @@
+{
+  "status": "PASS",
+  "exact_acceleration_checks": 36,
+  "native_cell_checks": 49,
+  "native_clock_checks": 49,
+  "max_observed_cell_to_bound_ratio": "0.110537391103126667",
+  "native_finite_windows": [
+    {
+      "order": 0,
+      "M": 16,
+      "N": 128,
+      "finite_window_norm": "0.0002240156432860288048567",
+      "infinite_tail_envelope": "0.007936507936507936507937"
+    },
+    {
+      "order": 1,
+      "M": 16,
+      "N": 128,
+      "finite_window_norm": "0.000471122373257603287669",
+      "infinite_tail_envelope": "0.01587301587301587301587"
+    },
+    {
+      "order": 3,
+      "M": 16,
+      "N": 128,
+      "finite_window_norm": "0.001255900480876185858263",
+      "infinite_tail_envelope": "0.06349206349206349206349"
+    },
+    {
+      "order": 5,
+      "M": 16,
+      "N": 128,
+      "finite_window_norm": "0.003031156974582744392871",
+      "infinite_tail_envelope": "0.253968253968253968254"
+    },
+    {
+      "order": 6,
+      "M": 16,
+      "N": 128,
+      "finite_window_norm": "0.00253135171014079930609",
+      "infinite_tail_envelope": "0.5079365079365079365079"
+    }
+  ],
+  "native_accelerated_windows": [
+    {
+      "order": 0,
+      "M": 16,
+      "N": 128,
+      "remainder_window_norm": "2.257019281948534263976e-7",
+      "source_window_norm": "0.0002240156432860288048567",
+      "scope": "finite native window; both endpoints retained"
+    },
+    {
+      "order": 1,
+      "M": 16,
+      "N": 128,
+      "remainder_window_norm": "2.600089159252170947928e-7",
+      "source_window_norm": "0.000471122373257603287669",
+      "scope": "finite native window; both endpoints retained"
+    },
+    {
+      "order": 3,
+      "M": 16,
+      "N": 128,
+      "remainder_window_norm": "0.00000117061285161953783051",
+      "source_window_norm": "0.001255900480876185858263",
+      "scope": "finite native window; both endpoints retained"
+    },
+    {
+      "order": 5,
+      "M": 16,
+      "N": 128,
+      "remainder_window_norm": "9.125853128576789604791e-7",
+      "source_window_norm": "0.003031156974582744392871",
+      "scope": "finite native window; both endpoints retained"
+    },
+    {
+      "order": 6,
+      "M": 16,
+      "N": 128,
+      "remainder_window_norm": "2.94601527207866557213e-7",
+      "source_window_norm": "0.00253135171014079930609",
+      "scope": "finite native window; both endpoints retained"
+    }
+  ],
+  "signed_critical_controls": [
+    {
+      "pivot": "-1",
+      "observed": "-1070083/1113121",
+      "budget": "43038/1113121"
+    },
+    {
+      "pivot": "0",
+      "observed": "43038/1113121",
+      "budget": "43038/1113121"
+    },
+    {
+      "pivot": "1",
+      "observed": "1156159/1113121",
+      "budget": "43038/1113121"
+    }
+  ],
+  "raw_bound_cost": [
+    {
+      "raw_ordinary_jet_order": 5,
+      "tolerance": "1/100000000",
+      "M_sufficient_for_this_envelope": 400000001,
+      "scope": "raw jet only; no native pivot sign or optimal cutoff"
+    },
+    {
+      "raw_ordinary_jet_order": 5,
+      "tolerance": "1/10000000000000000000000000",
+      "M_sufficient_for_this_envelope": 40000000000000000000000001,
+      "scope": "raw jet only; no native pivot sign or optimal cutoff"
+    }
+  ],
+  "native_pivot_sign_proved": false,
+  "infinite_accelerated_remainder_bound_proved": false
+}
