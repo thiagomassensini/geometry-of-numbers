@@ -1,0 +1,53 @@
+{
+  "mixed": [
+    "CarryMixedGreen.companionProbe",
+    "CarryMixedGreen.valueProbe",
+    "CarryMixedGreen.mixedForcingGreen",
+    "CarryMixedGreen.hiddenGreen",
+    "CarryMixedGreen.mixedHiddenGreen",
+    "CarryMixedGreen.mixed_forcing_exact",
+    "CarryMixedGreen.mixed_hidden_regular",
+    "CarryMixedGreen.valueRatio",
+    "CarryMixedGreen.retained_cross_ratio",
+    "CarryMixedGreen.retained_cross_phase_split",
+    "CarryMixedGreen.complete_mixed_hidden_factor",
+    "CarryMixedGreen.diagonal_compensation"
+  ],
+  "centered": [
+    "CarryMixedGreen.companionCoefficient",
+    "CarryMixedGreen.retainedCoefficient",
+    "CarryMixedGreen.mixed_regular_split",
+    "CarryMixedGreen.scalar_forcing_centered",
+    "CarryMixedGreen.companion_bilinear",
+    "CarryMixedGreen.companion_centered_bilinear",
+    "CarryMixedGreen.retained_centered_bilinear",
+    "CarryMixedGreen.centered_mixed_coefficient",
+    "CarryMixedGreen.retained_regular_ratio",
+    "CarryMixedGreen.mixed_regular_anchor"
+  ],
+  "slope": [
+    "CarryMixedGreen.value_probe_origin",
+    "CarryMixedGreen.compressed_value_origin_derivative",
+    "CarryMixedGreen.value_probe_origin_derivative",
+    "CarryMixedGreen.forcing_scalar_differentiable",
+    "CarryMixedGreen.value_ratio_origin",
+    "CarryMixedGreen.value_ratio_undressed",
+    "CarryMixedGreen.value_ratio_origin_derivative",
+    "CarryMixedGreen.forcing_slope_pos",
+    "CarryMixedGreen.forcing_slope_material_lower",
+    "CarryMixedGreen.value_ratio_slope_tendsto",
+    "CarryMixedGreen.value_ratio_positive_near",
+    "CarryMixedGreen.value_ratio_phase_first_order_zero",
+    "CarryMixedGreen.retained_two_ray_tendsto"
+  ],
+  "controls": [
+    "CarryMixedGreen.controlResponse",
+    "CarryMixedGreen.controlLoewner",
+    "CarryMixedGreen.control_regular",
+    "CarryMixedGreen.control_response_derivative",
+    "CarryMixedGreen.control_same_native_first_jet",
+    "CarryMixedGreen.control_quadratic",
+    "CarryMixedGreen.control_negative_direction",
+    "CarryMixedGreen.control_positive_diagonals"
+  ]
+}

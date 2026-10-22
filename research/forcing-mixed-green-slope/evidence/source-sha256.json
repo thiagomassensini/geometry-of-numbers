@@ -1,0 +1,14 @@
+{
+  ".gitignore": "046032151fe6113c18a8d7d9971c557e81129ca1ba244e5263d54b7e0e6f9643",
+  "Audit.lean": "ec0b8341ada4feafe0e64dfcf5d966f02cef90520c2418369aece1204ab5ab9d",
+  "CenteredMixed.lean": "c02011386d8351616a5f5952a014db462669308f3d0c1f6a3bf33eb983776f80",
+  "ForcingSlope.lean": "4ca11b8b0bc5a39edfbe4fc9cbef1b714ee1964de4ffd255950a24ee8b97faba",
+  "MixedLedger.lean": "ec50d8c999ee2ae1bd147aa6543d923f11e402d5f059281256bbbc6b6e0af159",
+  "REPORT.md": "6a953473bef5f2c3fd236820fdc714b89740592f8e66336c9c7a6762170931c1",
+  "SlopeControls.lean": "ee50048669ab5691a2fa286ef9bbf77fa580987ae93cccfd6018b2a2694dc27e",
+  "compile_module.sh": "ae0076c328e1cdf7a8b4e11c2e68995fc58963ecda4ac850d0178f9bea139cd3",
+  "experiment.py": "2cffe8144fe32976715610e92761cfee51d879e3842555d148305dc9b0f78d24",
+  "generate_audit.py": "8e0d8e60cb2b67d84a77075e10144a6a632aa86926269fdc4cfceeb6fb818b1b",
+  "public-roots.json": "b98e50f04e01fa0c9ae9fef0f4d3a9e982544ca80b6c0ea032e57e160aefd50b",
+  "validate.py": "b3393f5dafceece36078b4cb288a801154686270038d77f38253bd6ed1acc42f"
+}
