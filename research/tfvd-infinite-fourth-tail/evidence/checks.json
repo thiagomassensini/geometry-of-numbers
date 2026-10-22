@@ -1,0 +1,224 @@
+[
+  {
+    "name": "audit-generation",
+    "command": [
+      "python3",
+      "research/tfvd-infinite-fourth-tail/generate_audit.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.037
+  },
+  {
+    "name": "kernel-FourthDifference",
+    "command": [
+      "bash",
+      "research/tfvd-infinite-fourth-tail/compile_module.sh",
+      "FourthDifference"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.853
+  },
+  {
+    "name": "kernel-RemainderJets",
+    "command": [
+      "bash",
+      "research/tfvd-infinite-fourth-tail/compile_module.sh",
+      "RemainderJets"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.996
+  },
+  {
+    "name": "kernel-QuarticEnvelope",
+    "command": [
+      "bash",
+      "research/tfvd-infinite-fourth-tail/compile_module.sh",
+      "QuarticEnvelope"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.272
+  },
+  {
+    "name": "kernel-InfiniteOrdinary",
+    "command": [
+      "bash",
+      "research/tfvd-infinite-fourth-tail/compile_module.sh",
+      "InfiniteOrdinary"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.001
+  },
+  {
+    "name": "kernel-AcceleratedClock",
+    "command": [
+      "bash",
+      "research/tfvd-infinite-fourth-tail/compile_module.sh",
+      "AcceleratedClock"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.958
+  },
+  {
+    "name": "kernel-AcceleratedCritical",
+    "command": [
+      "bash",
+      "research/tfvd-infinite-fourth-tail/compile_module.sh",
+      "AcceleratedCritical"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.45
+  },
+  {
+    "name": "kernel-JetStencils",
+    "command": [
+      "bash",
+      "research/tfvd-infinite-fourth-tail/compile_module.sh",
+      "JetStencils"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.064
+  },
+  {
+    "name": "kernel-AcceleratedGreen",
+    "command": [
+      "bash",
+      "research/tfvd-infinite-fourth-tail/compile_module.sh",
+      "AcceleratedGreen"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.537
+  },
+  {
+    "name": "kernel-Canary",
+    "command": [
+      "bash",
+      "research/tfvd-infinite-fourth-tail/compile_module.sh",
+      "Canary"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.542
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "bash",
+      "research/tfvd-infinite-fourth-tail/compile_module.sh",
+      "Audit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.247
+  },
+  {
+    "name": "source-and-exact-controls",
+    "command": [
+      "/home/thlinux/miniforge3/bin/python3",
+      "research/tfvd-infinite-fourth-tail/experiment.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 1.664
+  },
+  {
+    "name": "focused-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "GeometryOfNumbers.Analysis.CarryMaterialProjectiveReturnGreen",
+      "GeometryOfNumbers.Analysis.CarryMaterialCompanionGreenTransport",
+      "GeometryOfNumbers.Analysis.CanonicalFiniteHeight"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 8.43
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 8.022
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 6.904
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.573
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 46.489
+  },
+  {
+    "name": "twelve-source-regression",
+    "command": [
+      "bash",
+      "research/sixth-odd-twelve-sources/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 11.594
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "a871f18cb90fe7e5ac9726ca78eab319c68525fb",
+      "--",
+      ".",
+      ":(exclude)research/tfvd-infinite-fourth-tail"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.008
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.005
+  }
+]
