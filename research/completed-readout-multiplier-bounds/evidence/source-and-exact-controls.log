@@ -1,0 +1,74 @@
+finite native jet prefix 512
+finite native jet prefix 4096
+finite native jet prefix 100000
+finite native jet prefix 101000
+{
+  "status": "PASS_FINITE_REGRESSION_ONLY",
+  "source": "original center-leg cells with the derived accelerated boundary",
+  "response_constants": [
+    16388,
+    163872,
+    1376432,
+    11141952,
+    89394752,
+    715668480
+  ],
+  "second_direction_envelope_rational": "74572014107/5333293333433333250",
+  "second_direction_envelope_decimal": 1.3982357512481675e-08,
+  "source_cutoffs": [
+    512,
+    4096,
+    100000,
+    101000
+  ],
+  "reference_note": "Finite 101000 reference estimates original multipliers. It is not the complete denominator or a Gamma interval certificate.",
+  "canonical_h_numerical_estimates": [
+    "0.0231049931154189701593656524689",
+    "0.00003717259928527665951731048823",
+    "0.000000144173931405986581565067558732"
+  ],
+  "critical_coefficient_numerical": "0.001608855674597442830656652",
+  "pivot_numerical_estimate": "8.436858410633238030101534e-8",
+  "multiplier_jet_numerical_estimates": {
+    "A": [
+      "(0.0 + 0.0157018242924645427j)",
+      "(0.0697289776333371463 + 0.0j)",
+      "(0.0 - 0.0400675475733893231j)",
+      "(-0.0212554454893642329 + 0.0j)",
+      "(0.0 + 0.00991018409219019178j)",
+      "(0.00472242286003427039 + 0.0j)"
+    ],
+    "B": [
+      "(0.0 + 0.484202141960001301j)",
+      "(0.0157018242924645428 + 0.0j)",
+      "(0.0 - 0.0236770016602116242j)",
+      "(-0.0131139888296785009 + 0.0j)",
+      "(0.0 + 0.00504933241826265757j)",
+      "(0.00186107084083686759 + 0.0j)"
+    ]
+  },
+  "observations": [
+    {
+      "M": 512,
+      "observation_numerical": "8.475994368526081008084146e-8",
+      "reference_minus_observation": "-3.9135957892843e-10",
+      "proved_envelope_evaluated_numerically": "0.104301398341227"
+    },
+    {
+      "M": 4096,
+      "observation_numerical": "8.4369292765702880550196e-8",
+      "reference_minus_observation": "-7.08659370500249e-13",
+      "proved_envelope_evaluated_numerically": "0.000203452656644923"
+    },
+    {
+      "M": 100000,
+      "observation_numerical": "8.436858410661984654568942e-8",
+      "reference_minus_observation": "-2.8746624467408e-19",
+      "proved_envelope_evaluated_numerically": "1.39787050745879e-8"
+    }
+  ],
+  "kernel_proves_multiplier_upper_bounds": true,
+  "kernel_proves_new_pivot_sign": false,
+  "all_order_positivity_proved": false,
+  "remaining_gate": "Enclose the same finite readout values by rational intervals, including Gamma derivatives and the complete reciprocal signal. Norm upper bounds do not certify these centers."
+}

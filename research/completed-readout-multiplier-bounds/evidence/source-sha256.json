@@ -1,0 +1,17 @@
+{
+  ".gitignore": "046032151fe6113c18a8d7d9971c557e81129ca1ba244e5263d54b7e0e6f9643",
+  "Audit.lean": "294678f74a0d71dbfd0f572d5bdb2625d67d260452a3acc3c9cfc2af791c1146",
+  "CameraBounds.lean": "37e9f63a25b4e81ab6bab7da2e92c0e00488f3807cf4842f4698c02469901c08",
+  "Canary.lean": "568f3fce4553cbaf955b3cdbd1fdb4390eb7fc64bd7fbec3fa00e87143b574a7",
+  "DressingBounds.lean": "650283c6c879d644b796347ae28cf2ef3bf4af2e7f9bcdc81a6a8fdd2a73b540",
+  "ExplicitBudgets.lean": "38b81fa7f2c39a3138ffede2b022c0c2dfdb7aed2f507b421c03408ae8745213",
+  "GammaBounds.lean": "6f11c0b61e5b8b22a91ff7f547cc131149a5a15f641232c2a9f77d4943bb92b5",
+  "MultiplierBounds.lean": "42cda4da726f81dd992987eab84194891da42272dc4bf09fb718faee9e73f788",
+  "REPORT.md": "c607a6e63785a9062ffcd368da9dee36da68698fa061650fabf2aad24c63426d",
+  "SignalBounds.lean": "a06060968d0635ebd90b1cbb36e0f19e7c18d7e3199ff0ed60d47ee4cefd49c2",
+  "compile_module.sh": "f747cf85c2070745d975e2e891525ab2d67fa808d87006a3675d25544ff10203",
+  "experiment.py": "81cd771673708ef42c47f723f5573c65c64c3582533c5fa3ab69abe15cfc6f14",
+  "generate_audit.py": "cffc6ab606f674d0605f4981ca7f195623b47b0589e868feb95fe599029f5069",
+  "public-roots.json": "d24178ced53eda605610442419bbf3b4a4fc088be20dc7784fd20b3949a9ee80",
+  "validate.py": "ca4a3334b94eec1e730b4a45298bbd1096f956812e7f9b437e66a0ab351e6488"
+}
