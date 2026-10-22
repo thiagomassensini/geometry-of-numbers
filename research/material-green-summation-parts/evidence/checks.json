@@ -1,0 +1,191 @@
+[
+  {
+    "name": "audit-generation",
+    "command": [
+      "python3",
+      "research/material-green-summation-parts/generate_audit.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.04
+  },
+  {
+    "name": "kernel-DiscreteParts",
+    "command": [
+      "bash",
+      "research/material-green-summation-parts/compile_module.sh",
+      "DiscreteParts"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.233
+  },
+  {
+    "name": "kernel-FullGreenParts",
+    "command": [
+      "bash",
+      "research/material-green-summation-parts/compile_module.sh",
+      "FullGreenParts"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.919
+  },
+  {
+    "name": "kernel-NativeGreenParts",
+    "command": [
+      "bash",
+      "research/material-green-summation-parts/compile_module.sh",
+      "NativeGreenParts"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.522
+  },
+  {
+    "name": "kernel-ReturnTailParts",
+    "command": [
+      "bash",
+      "research/material-green-summation-parts/compile_module.sh",
+      "ReturnTailParts"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.192
+  },
+  {
+    "name": "kernel-CellReturnJets",
+    "command": [
+      "bash",
+      "research/material-green-summation-parts/compile_module.sh",
+      "CellReturnJets"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.762
+  },
+  {
+    "name": "kernel-ClockReturnJets",
+    "command": [
+      "bash",
+      "research/material-green-summation-parts/compile_module.sh",
+      "ClockReturnJets"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.239
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "bash",
+      "research/material-green-summation-parts/compile_module.sh",
+      "Audit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.325
+  },
+  {
+    "name": "exact-rational-controls",
+    "command": [
+      "python3",
+      "research/material-green-summation-parts/experiment.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.044
+  },
+  {
+    "name": "focused-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "GeometryOfNumbers.Analysis.CarryMaterialProjectiveReturnGreen",
+      "GeometryOfNumbers.Analysis.CarryMaterialCompanionGreenTransport",
+      "GeometryOfNumbers.Analysis.CanonicalFiniteHeight"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 7.954
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 7.3
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 6.557
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 8.994
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 43.487
+  },
+  {
+    "name": "twelve-source-regression",
+    "command": [
+      "bash",
+      "research/sixth-odd-twelve-sources/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 11.485
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "9f1bf62c55b04dadc79e4f7438eab48d5ac7e558",
+      "--",
+      ".",
+      ":(exclude)research/material-green-summation-parts"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.007
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.005
+  }
+]
