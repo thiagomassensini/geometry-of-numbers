@@ -1,0 +1,30 @@
+{
+  "chart": [
+    "CarryNegativeDirection.incident_chart_eventually_bijective",
+    "CarryNegativeDirection.incident_jet_eventually_injective",
+    "CarryNegativeDirection.invisible_incidence_cannot_return"
+  ],
+  "singular": [
+    "CarryNegativeDirection.source_quadratic_smul",
+    "CarryNegativeDirection.nullCouplingWitness",
+    "CarryNegativeDirection.null_coupling_witness_energy",
+    "CarryNegativeDirection.null_coupling_witness_negative",
+    "CarryNegativeDirection.psd_extension_annihilates_old_null_crossings",
+    "CarryNegativeDirection.source_sewing_of_solution",
+    "CarryNegativeDirection.solution_witness_energy",
+    "CarryNegativeDirection.solution_residual_independent",
+    "CarryNegativeDirection.psd_extension_iff_solution_residual"
+  ],
+  "negative_transport": [
+    "CarryNegativeDirection.returnExcess",
+    "CarryNegativeDirection.returnExcess_tendsto",
+    "CarryNegativeDirection.negative_boundary_iff_persistent_excess",
+    "CarryNegativeDirection.returnExcess_eq_neg_storage",
+    "CarryNegativeDirection.finite_amplification_iff_jet_excess",
+    "CarryNegativeDirection.negative_boundary_eventually_amplifies",
+    "CarryNegativeDirection.negative_boundary_regular_witness",
+    "CarryNegativeDirection.negative_schur_iff_persistent_excess",
+    "CarryNegativeDirection.canonical_null_crossing_forces_persistent_return",
+    "CarryNegativeDirection.canonical_solution_residual_forces_persistent_return"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "status": "PASS_EXACT_STORED_DECIMALS_AND_LOGICAL_CONTROLS",
+  "reference_source_sha256": "f8e56b3de290feef2c878481035b92db0842677ad34006b665c3ea0184eb48bd",
+  "scope": "Stored decimals treated as exact rationals; not a theta/source interval certificate.",
+  "threshold": "3.10219999016692233119076046984374586922934819E-12",
+  "h4": "3.2136641506166012161021166E-12",
+  "pivot": "1.11464160449678884911356130156254130770651814E-13",
+  "critical_vector": [
+    "0.00000198041248379584983009502700164832634183737811",
+    "-0.00510944490987020918689875378228863731624998681",
+    "1"
+  ],
+  "exact_witness_energy_equals_pivot": true,
+  "pr41_control": {
+    "old_null_energy": "0",
+    "new_coupling": "1",
+    "explicit_witness": [
+      "0",
+      "-1/2",
+      "1"
+    ],
+    "new_energy": "-1",
+    "canonical_source": false
+  },
+  "moving_input_control": [
+    {
+      "k": 1,
+      "fixed_excess": "1/2",
+      "moving_squared_input_norm": 2,
+      "moving_excess": "1"
+    },
+    {
+      "k": 15,
+      "fixed_excess": "1/16",
+      "moving_squared_input_norm": 16,
+      "moving_excess": "1"
+    },
+    {
+      "k": 255,
+      "fixed_excess": "1/256",
+      "moving_squared_input_norm": 256,
+      "moving_excess": "1"
+    }
+  ],
+  "canonical_negative_direction_found": false
+}
