@@ -1,0 +1,15 @@
+{
+  ".gitignore": "046032151fe6113c18a8d7d9971c557e81129ca1ba244e5263d54b7e0e6f9643",
+  "Audit.lean": "5413b36c5ab58c2d5c90556d34cdb3c05b37e4338718885991b1b2e921a159d1",
+  "ConfluentKernel.lean": "d4cef3da3eb30399b33585179cac76ef76700f7986d661d64fde977484d39dad",
+  "PhaseCompensation.lean": "6ffcb59054f6b82fff42efb1822fabe9caa4bd4645411a1f3d3dc5ea6cdacb71",
+  "PhaseJet.lean": "704b838ec7573332d6912746699d2c39e1871dbac55f2d1a1c3f3471bda59dec",
+  "REPORT.md": "71f41a53f45beabd60cc7abee0cd09a430279203199f5c72173ca2ad65a675d0",
+  "StrongOrbit.lean": "e580018a7747949d2f785b2a2bb4a2fb75a504c11ef561016f9b9ac53f52b68e",
+  "compile_module.sh": "d148a1e5b1e28a7bfbc8704f0b412f283dbe27b8fe5bdb9491d63bca2856eee1",
+  "experiment.py": "bb36bcba2b8b832dbf7403926893a69acaa61c745a2e12bb85c89741dbcde313",
+  "generate_audit.py": "1b6578356404588c2100e1545a0506f67f63272339252617e4ff1cba9970c2cf",
+  "native_canary.py": "8d41bd687ce28a26375e22223870e504c43f079667a0f44db3cbc65418378ce4",
+  "public-roots.json": "e51b6322b08c8c45f81d691c9cb55699601dc31e43a72e0243ac4c02ab2f10fa",
+  "validate.py": "95d8f8dbc1ac1af000d18011d40b8c506a9ac05bd448d84b9f71c590f58dbbad"
+}

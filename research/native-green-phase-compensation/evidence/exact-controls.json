@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "arithmetic": "Fraction in both complex components",
+  "provenance": "Synthetic controls, distinct from the native source and numerical canary.",
+  "two_parameter_nodes": 16,
+  "includes_diagonal": true,
+  "nonzero_diagonal_phase_cases": 3,
+  "rectangular_families": [
+    {
+      "N": 1,
+      "M": 1,
+      "same_source_centering": true
+    },
+    {
+      "N": 2,
+      "M": 3,
+      "same_source_centering": true
+    },
+    {
+      "N": 4,
+      "M": 2,
+      "same_source_centering": true
+    },
+    {
+      "N": 3,
+      "M": 5,
+      "same_source_centering": true
+    }
+  ],
+  "no_native_sign_claim": true
+}
