@@ -1,0 +1,169 @@
+[
+  {
+    "name": "audit-generation",
+    "command": [
+      "python3",
+      "research/tfvd-complete-green-residual/generate_audit.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.037
+  },
+  {
+    "name": "kernel-CompleteTfvd",
+    "command": [
+      "bash",
+      "research/tfvd-complete-green-residual/compile_module.sh",
+      "CompleteTfvd"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 19.031
+  },
+  {
+    "name": "kernel-ObliqueTfvd",
+    "command": [
+      "bash",
+      "research/tfvd-complete-green-residual/compile_module.sh",
+      "ObliqueTfvd"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.954
+  },
+  {
+    "name": "kernel-DiscreteSign",
+    "command": [
+      "bash",
+      "research/tfvd-complete-green-residual/compile_module.sh",
+      "DiscreteSign"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.449
+  },
+  {
+    "name": "kernel-GreenTransport",
+    "command": [
+      "bash",
+      "research/tfvd-complete-green-residual/compile_module.sh",
+      "GreenTransport"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 12.477
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "bash",
+      "research/tfvd-complete-green-residual/compile_module.sh",
+      "Audit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.123
+  },
+  {
+    "name": "exact-rational-controls",
+    "command": [
+      "python3",
+      "research/tfvd-complete-green-residual/experiment.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.035
+  },
+  {
+    "name": "focused-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "GeometryOfNumbers.Analysis.RealCarryTfvd",
+      "GeometryOfNumbers.Analysis.CarryMaterialTfvdGreenReadout",
+      "GeometryOfNumbers.Analysis.CanonicalFiniteHeight"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 8.379
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 7.619
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 7.284
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.397
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 45.835
+  },
+  {
+    "name": "twelve-source-regression",
+    "command": [
+      "bash",
+      "research/sixth-odd-twelve-sources/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 11.737
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "6be076db618ee660aec81b73c00e7b754cc72eef",
+      "--",
+      ".",
+      ":(exclude)research/tfvd-complete-green-residual"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.006
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.005
+  }
+]

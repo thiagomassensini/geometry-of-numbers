@@ -1,0 +1,73 @@
+{
+  "base": "6be076db618ee660aec81b73c00e7b754cc72eef",
+  "branch": "agent/tfvd-complete-green-residual",
+  "head_before_commit": "6be076db618ee660aec81b73c00e7b754cc72eef",
+  "protected_refs": {
+    "main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+    "origin/main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+    "agent/native-moment-orthogonalization-audit": "ee56930a2c30456cfbd214a29bb31b12d3977204",
+    "agent/seventh-even-centered-source": "da58f044c1c75bd828951bfb41614a6e7b8b465e",
+    "agent/source-euler-residual-control": "aac80d6699009f15de138aa3932b21ab3572ff42",
+    "agent/native-positive-square-kernel": "a5ed1d73b643cc4b24549b3ee3cfe10a5b29a59b",
+    "agent/entrywise-moment-square": "5a72d8cd68c3db8819cfe1273d21ade0d2abcf00",
+    "agent/native-return-boundary-deflation": "fdb8f7e9ce1b8681d10f2647393ad83f05bfac12",
+    "agent/native-cauchy-residual-return": "845829bacd623f044ba779e23da0bb4c48d25c11",
+    "agent/completed-green-confluent-balance": "bf2ff244e363b110a4e54ba897e475b81552bbdb",
+    "agent/forcing-centered-native-residual": "fedca533a34d9d494641e848f9f7d3284a9af38a",
+    "agent/forcing-mixed-green-slope": "77e681de19ac690ec1187899941d275e7e931267",
+    "agent/native-green-phase-compensation": "6be076db618ee660aec81b73c00e7b754cc72eef"
+  },
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_status": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "protected_source_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "manifest_sha256": {
+    "/home/thlinux/geometry-of-numbers/lake-manifest.json": "9868872bae98d0c7e22c597d8e27d38d247498161cf70cdcdc193e9ea0608602",
+    "/home/thlinux/carry-self-adjoint-operator/lake-manifest.json": "822866313e377adcb9c6249680ed67ceb47682af1bb0cd3cc5203554786bcfeb"
+  },
+  "toolchain": "leanprover/lean4:v4.32.0",
+  "worktrees": "worktree /home/thlinux/geometry-of-numbers\nHEAD 6be076db618ee660aec81b73c00e7b754cc72eef\nbranch refs/heads/agent/tfvd-complete-green-residual\n\nworktree /home/thlinux/geometry-of-numbers-phase-canary\nHEAD 93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f\nbranch refs/heads/canary-c2-global-odd-source\n\nworktree /home/thlinux/geometry-of-numbers-r2\nHEAD 93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f\nbranch refs/heads/r2-real-tfvd-green-valve\n\nworktree /home/thlinux/geometry-of-numbers-recovery\nHEAD d7cc54f5c485320f1fada33118e9e6101488819a\nbranch refs/heads/recovery/formalizations-2026-10-01-02",
+  "preserved_pr51_files": {
+    ".cache/Audit.olean": "577f46a1431422c62d64e8a82a3c26e1a79101018f2fb02ed44ed8826286b87f",
+    ".cache/EntrywiseSquare.olean": "464955afb0a0d8527fda8b6ad317acc9cd5b44ac127a301bf26591f13231d866",
+    ".cache/NativeWitness.olean": "b40ec7d10c0807c1fbcb507e39b9680e85a339ffffa2686aa803bc274201e251"
+  },
+  "predecessor_source_sha256": {
+    "research/native-green-phase-compensation/.gitignore": "046032151fe6113c18a8d7d9971c557e81129ca1ba244e5263d54b7e0e6f9643",
+    "research/native-green-phase-compensation/Audit.lean": "5413b36c5ab58c2d5c90556d34cdb3c05b37e4338718885991b1b2e921a159d1",
+    "research/native-green-phase-compensation/ConfluentKernel.lean": "d4cef3da3eb30399b33585179cac76ef76700f7986d661d64fde977484d39dad",
+    "research/native-green-phase-compensation/PhaseCompensation.lean": "6ffcb59054f6b82fff42efb1822fabe9caa4bd4645411a1f3d3dc5ea6cdacb71",
+    "research/native-green-phase-compensation/PhaseJet.lean": "704b838ec7573332d6912746699d2c39e1871dbac55f2d1a1c3f3471bda59dec",
+    "research/native-green-phase-compensation/REPORT.md": "71f41a53f45beabd60cc7abee0cd09a430279203199f5c72173ca2ad65a675d0",
+    "research/native-green-phase-compensation/StrongOrbit.lean": "e580018a7747949d2f785b2a2bb4a2fb75a504c11ef561016f9b9ac53f52b68e",
+    "research/native-green-phase-compensation/compile_module.sh": "d148a1e5b1e28a7bfbc8704f0b412f283dbe27b8fe5bdb9491d63bca2856eee1",
+    "research/native-green-phase-compensation/evidence/analysis-audit.log.gz": "af2b5135c317d37f0e441fa7f0617331bdae2cd812c866458c73376564286476",
+    "research/native-green-phase-compensation/evidence/audit-generation.log": "8aee31696c6f7acecd32648385ee338f9389ded50a6d2bb36b30adf915add44a",
+    "research/native-green-phase-compensation/evidence/checks.json": "624925dbd2f53186c691912812871caa583c1dda31d595e621c6b78479d03c0e",
+    "research/native-green-phase-compensation/evidence/diff-check.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/native-green-phase-compensation/evidence/exact-controls.json": "2dce429ee5e5a8f3ebe2a62305a5bfd3cf43da7ed4b37e7d4a64b93d9e616e3d",
+    "research/native-green-phase-compensation/evidence/exact-rational-controls.log": "64efc12cd0ee0c4b865c7ee6a747c071141dc45d5aca00879ce96f9bdccfbbb5",
+    "research/native-green-phase-compensation/evidence/focused-build.log": "1b61dc16e6a472b9f303980eff639cb4f3fddbbf19b26483e101137a0e38bf5f",
+    "research/native-green-phase-compensation/evidence/foundation-audit.log": "0cf345cc3bcedfa92250217b4e73bc37834671ac0b8a2b97f66d3c06551ce199",
+    "research/native-green-phase-compensation/evidence/geometry-audit.log": "469cddc780755a2a401f4a2d437d4b65bccc9f3333dc598e645025f94caf4888",
+    "research/native-green-phase-compensation/evidence/historical-files-unchanged.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/native-green-phase-compensation/evidence/kernel-Audit.log": "9cf567c545696bf4949d91e84184bc67a88dfe4e816437c2a7d2cf448f36dff4",
+    "research/native-green-phase-compensation/evidence/kernel-ConfluentKernel.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/native-green-phase-compensation/evidence/kernel-PhaseCompensation.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/native-green-phase-compensation/evidence/kernel-PhaseJet.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/native-green-phase-compensation/evidence/kernel-StrongOrbit.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/native-green-phase-compensation/evidence/native-phase-canary.json": "43a3902c579bb4af028593e256bea96633fd7dafa02107cb67d75dedf5b66a36",
+    "research/native-green-phase-compensation/evidence/numeric-source-evaluation.log": "d9088ce8f2f87a2c825214c82edcb7a2fb6792ffb927d1cd60a4308f7b372af7",
+    "research/native-green-phase-compensation/evidence/preflight.json": "39869c78b96edcb52ecb717e82b24fe1e7e95be434e47331ccf324a17f319a58",
+    "research/native-green-phase-compensation/evidence/root-build.log.gz": "fa64c22d8047ed5e7225e39c409c883516e656f8c8b00267b2011d7987b9c7c2",
+    "research/native-green-phase-compensation/evidence/source-sha256.json": "ac030b32d5d2d74ab7a58093d48341bd923c21ec3b4f745816c8a65bb68257c3",
+    "research/native-green-phase-compensation/evidence/twelve-source-regression.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/native-green-phase-compensation/experiment.py": "bb36bcba2b8b832dbf7403926893a69acaa61c745a2e12bb85c89741dbcde313",
+    "research/native-green-phase-compensation/generate_audit.py": "1b6578356404588c2100e1545a0506f67f63272339252617e4ff1cba9970c2cf",
+    "research/native-green-phase-compensation/native_canary.py": "8d41bd687ce28a26375e22223870e504c43f079667a0f44db3cbc65418378ce4",
+    "research/native-green-phase-compensation/public-roots.json": "e51b6322b08c8c45f81d691c9cb55699601dc31e43a72e0243ac4c02ab2f10fa",
+    "research/native-green-phase-compensation/validate.py": "95d8f8dbc1ac1af000d18011d40b8c506a9ac05bd448d84b9f71c590f58dbbad"
+  }
+}

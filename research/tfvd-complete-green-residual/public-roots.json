@@ -1,0 +1,55 @@
+{
+  "coordinates": [
+    "CarryCompleteTfvd.MaterialTfvdData",
+    "CarryCompleteTfvd.materialAnalysis",
+    "CarryCompleteTfvd.materialAnalysis_injective",
+    "CarryCompleteTfvd.materialCoordinates",
+    "CarryCompleteTfvd.materialEncode",
+    "CarryCompleteTfvd.materialDecode",
+    "CarryCompleteTfvd.material_roundtrip",
+    "CarryCompleteTfvd.material_data_roundtrip",
+    "CarryCompleteTfvd.source_data",
+    "CarryCompleteTfvd.greenOnData",
+    "CarryCompleteTfvd.pairEncode",
+    "CarryCompleteTfvd.green_roundtrip",
+    "CarryCompleteTfvd.original_readout_roundtrip",
+    "CarryCompleteTfvd.original_pair_reduction_roundtrip"
+  ],
+  "oblique": [
+    "CarryCompleteTfvd.verticalGreen",
+    "CarryCompleteTfvd.verticalReturn",
+    "CarryCompleteTfvd.vertical_reconstruct",
+    "CarryCompleteTfvd.vertical_return_idempotent",
+    "CarryCompleteTfvd.vertical_green_return_zero",
+    "CarryCompleteTfvd.vertical_return_green_zero",
+    "CarryCompleteTfvd.vertical_green_idempotent",
+    "CarryCompleteTfvd.vertical_pairing",
+    "CarryCompleteTfvd.vertical_energy",
+    "CarryCompleteTfvd.vertical_green_single_two",
+    "CarryCompleteTfvd.vertical_mixed_witness",
+    "CarryCompleteTfvd.vertical_not_orthogonal",
+    "CarryCompleteTfvd.critical_two_mixed_witness"
+  ],
+  "discrete": [
+    "CarryCompleteTfvd.vertical_shift_norm",
+    "CarryCompleteTfvd.weighted_core_energy",
+    "CarryCompleteTfvd.plateauEighteen",
+    "CarryCompleteTfvd.plateau_apply",
+    "CarryCompleteTfvd.plateau_trace_zero",
+    "CarryCompleteTfvd.plateau_curvature_energy",
+    "CarryCompleteTfvd.critical_plateau_negative_laplacian",
+    "CarryCompleteTfvd.weighted_centered_energy",
+    "CarryCompleteTfvd.weighted_negative_bulk",
+    "CarryCompleteTfvd.critical_no_tracezero_laplacian_positive"
+  ],
+  "ledger": [
+    "CarryCompleteTfvd.tfvdCompensatedGreen",
+    "CarryCompleteTfvd.tfvd_compensated_exact",
+    "CarryCompleteTfvd.tfvd_compensated_confluence",
+    "CarryCompleteTfvd.tfvdMixedGreen",
+    "CarryCompleteTfvd.tfvd_mixed_exact",
+    "CarryCompleteTfvd.tfvdWholeGreen",
+    "CarryCompleteTfvd.tfvd_whole_factor",
+    "CarryCompleteTfvd.tfvd_native_residual_regular"
+  ]
+}
