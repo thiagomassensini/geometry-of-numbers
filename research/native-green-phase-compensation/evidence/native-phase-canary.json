@@ -1,0 +1,46 @@
+{
+  "status": "NUMERICAL_ONLY",
+  "certified_infinite_tail": false,
+  "source": "Y_m = (delta_m0, first differences of log(n)^m/sqrt(n), whole C2 cell return)",
+  "cell_addresses": "center 4(k+1), legs 4(k+1)-1 and 4(k+1)+1",
+  "finite_projectors_only": "kappa and forcing are computed for each full finite prefix; not exact infinite w.",
+  "formal_bridge": "PhaseJet.second_coefficient_physical; no numerical value is used in a Lean proof.",
+  "levels": [
+    {
+      "cells": 1000,
+      "edges": 4000,
+      "mass": 1.1174387024107284,
+      "kappa": -0.15101438653559388,
+      "forcing_norm_squared": 0.24211504025856512,
+      "chi_linear_coefficient": 0.48423008051713023,
+      "chi_t2_imaginary_coefficient_estimate": -0.2846664705458926
+    },
+    {
+      "cells": 5000,
+      "edges": 20000,
+      "mass": 1.117438739241032,
+      "kappa": -0.15101426935821188,
+      "forcing_norm_squared": 0.242115234477714,
+      "chi_linear_coefficient": 0.484230468955428,
+      "chi_t2_imaginary_coefficient_estimate": -0.2846679363735766
+    },
+    {
+      "cells": 20000,
+      "edges": 80000,
+      "mass": 1.117438742056882,
+      "kappa": -0.15101425925890274,
+      "forcing_norm_squared": 0.24211523813702024,
+      "chi_linear_coefficient": 0.4842304762740405,
+      "chi_t2_imaginary_coefficient_estimate": -0.2846680059322766
+    },
+    {
+      "cells": 100000,
+      "edges": 400000,
+      "mass": 1.1174387424038525,
+      "kappa": -0.15101425785849645,
+      "forcing_norm_squared": 0.24211523730054682,
+      "chi_linear_coefficient": 0.48423047460109364,
+      "chi_t2_imaginary_coefficient_estimate": -0.2846680061380561
+    }
+  ]
+}
