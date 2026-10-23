@@ -42,7 +42,7 @@ preflight = dict(base=base, branch=read("git", "branch", "--show-current"),
     manifest_sha256={str(p): sha(p) for p in manifests},
     worktrees=read("git", "worktree", "list", "--porcelain"),
     toolchain=(repo / "lean-toolchain").read_text().strip(),
-    environment="minimal original operator lake env; no main project library override")
+    environment="generic modules: minimal operator environment; NativeRepartition64, Regression and Audit: existing PR69 certificate import environment")
 prior = repo / "research/entrywise-moment-square"
 preflight["preserved_untracked"] = {str(p.relative_to(prior)): sha(p)
     for p in sorted(prior.rglob("*")) if p.is_file()}
@@ -55,9 +55,10 @@ read("git", "diff", "--exit-code", "HEAD", "--", cwd=operator)
 modules = ["SourceBezout", "SourceMap", "SourceNative", "SourceBlocks", "SchurTransport",
            "SourceSchur", "LiteralNativeTrace", "LiteralTfvd", "KernelBudget",
            "LiteralTailBounds", "LiteralBudgetLimit", "LiteralCompanion", "CompanionJets", "Repartition",
+           "TwoEvenSourceMargin", "NativeRepartition64",
            "Regression", "Audit"]
 checks = [("audit-generation", ["python3", relative + "/generate_audit.py"], repo)]
-checks += [("kernel-" + m, ["/usr/bin/time", "-v", "bash", relative + "/compile_module.sh", m], repo)
+checks += [("kernel-" + m, ["/usr/bin/time", "-v", "bash", relative + ("/compile_certified_module.sh" if m in ["NativeRepartition64", "Regression", "Audit"] else "/compile_module.sh"), m], repo)
            for m in modules]
 checks += [
     ("literal-diagnostic", [os.environ.get("CARRY_DIAGNOSTIC_PYTHON", "/home/thlinux/miniforge3/bin/python"), relative + "/diagnose_literal_terms.py"], repo),
@@ -84,7 +85,12 @@ for name, command, cwd in checks:
         module = name.removeprefix("kernel-")
         output_file = root / ".cache" / (module + ".olean")
         source_file = root / (module + ".lean")
-        if output_file.exists() and output_file.stat().st_mtime >= source_file.stat().st_mtime:
+        imported = re.findall(r"^(?:public )?import ([A-Za-z0-9_.]+)", source_file.read_text(), re.M)
+        dependency_files = [root / ".cache" / (name + ".olean") for name in imported
+                            if (root / (name + ".lean")).exists()]
+        newest_input = max([source_file.stat().st_mtime] +
+                           [p.stat().st_mtime for p in dependency_files if p.exists()])
+        if output_file.exists() and output_file.stat().st_mtime >= newest_input:
             results.append(old)
             print(name + ": PASS (unchanged compiled source)", flush=True)
             continue

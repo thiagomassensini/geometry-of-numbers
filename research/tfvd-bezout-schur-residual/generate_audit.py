@@ -6,7 +6,8 @@ import re
 root = Path(__file__).resolve().parent
 modules = ["SourceBezout", "SourceMap", "SourceNative", "SourceBlocks", "SchurTransport",
            "SourceSchur", "LiteralNativeTrace", "LiteralTfvd", "KernelBudget",
-           "LiteralTailBounds", "LiteralBudgetLimit", "LiteralCompanion", "CompanionJets", "Repartition"]
+           "LiteralTailBounds", "LiteralBudgetLimit", "LiteralCompanion", "CompanionJets", "Repartition",
+           "TwoEvenSourceMargin", "NativeRepartition64"]
 roots = {}
 for module in modules:
     namespace = "CarrySourceBezout.NativeTrace." if module == "LiteralNativeTrace" else "CarrySourceBezout."
@@ -32,6 +33,12 @@ elab "#audit_source_transport " mode:ident ids:ident+ : command => do
     `CarrySelfAdjointOperator.ChiralReturn.radialReturnEnergyDefect_nonneg,
     `CarryC3Boxes.canonical_two_even_determinant_pos_from_c3,
     `CarryTwoEvenJets.canonical_two_even_det_pos_of_four_jet_boxes]
+  let forbidden := if mode.getId == `NativeRepartition64 then forbidden ++ #[
+    `CarrySelfAdjointOperator.completedNativeRealEvenCharacteristicCoefficient_zero_ge_third,
+    `CarrySelfAdjointOperator.completedNativeRealEvenCharacteristicCoefficient_zero_eq_xiCosineMoment,
+    `CarrySelfAdjointOperator.completedNativeXiCosineMoment_zero_eq_thetaTailMoments,
+    `CarrySelfAdjointOperator.completedNativeThetaTailMoment_zero_le_calibration]
+    else forbidden
   let mut todo : List Name := []
   for id in ids do
     let decl ← liftCoreM <| realizeGlobalConstNoOverloadWithInfo id
@@ -58,7 +65,8 @@ elab "#audit_source_transport " mode:ident ids:ident+ : command => do
           todo := value.getUsedConstants.toList ++ todo
       else
         throwError "Missing dependency in imported environment: {name}"
-  logInfo m!"Source residual audit {mode.getId}: roots {ids.size}; type/body closure {seen.size}; standard axioms only; forbidden sign dependencies absent"
+  let extra := if mode.getId == `NativeRepartition64 then "; C3 split excludes theta calibration" else ""
+  logInfo m!"Source residual audit {mode.getId}: roots {ids.size}; type/body closure {seen.size}; standard axioms only; forbidden sign dependencies absent{extra}"
 
 '''
 body = "\n".join("#print axioms " + name for names in roots.values() for name in names)

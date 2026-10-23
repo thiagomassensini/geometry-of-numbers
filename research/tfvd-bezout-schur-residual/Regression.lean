@@ -4,6 +4,7 @@ import LiteralBudgetLimit
 import LiteralCompanion
 import CompanionJets
 import Repartition
+import NativeRepartition64
 
 open CarrySourceBezout CarrySelfAdjointOperator
 
@@ -29,3 +30,9 @@ example (b : Bool) (n : ℕ)
 
 #check literal_head_response_odd
 #check literal_tail_response_even_succ
+
+#check native_regrouped64_interval_margin
+#check native_regrouped64_total_lower
+#check native_second_even_balance_lower_from_original_split
+#check native_second_even_remainder_pos_from_original_split
+#check native_second_even_pivot_pos_from_original_split

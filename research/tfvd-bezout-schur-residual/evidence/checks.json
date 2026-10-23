@@ -7,7 +7,7 @@
     ],
     "cwd": "/home/thlinux/geometry-of-numbers",
     "exit_code": 0,
-    "seconds": 0.038
+    "seconds": 0.04
   },
   {
     "name": "kernel-SourceBezout",
@@ -206,18 +206,46 @@
     "maximum_rss_kbytes": 8067612
   },
   {
-    "name": "kernel-Regression",
+    "name": "kernel-TwoEvenSourceMargin",
     "command": [
       "/usr/bin/time",
       "-v",
       "bash",
       "research/tfvd-bezout-schur-residual/compile_module.sh",
+      "TwoEvenSourceMargin"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 12.824,
+    "maximum_rss_kbytes": 8130064
+  },
+  {
+    "name": "kernel-NativeRepartition64",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "bash",
+      "research/tfvd-bezout-schur-residual/compile_certified_module.sh",
+      "NativeRepartition64"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 16.479,
+    "maximum_rss_kbytes": 8644196
+  },
+  {
+    "name": "kernel-Regression",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "bash",
+      "research/tfvd-bezout-schur-residual/compile_certified_module.sh",
       "Regression"
     ],
     "cwd": "/home/thlinux/geometry-of-numbers",
     "exit_code": 0,
-    "seconds": 8.72,
-    "maximum_rss_kbytes": 8045648
+    "seconds": 14.59,
+    "maximum_rss_kbytes": 8536600
   },
   {
     "name": "kernel-Audit",
@@ -225,13 +253,13 @@
       "/usr/bin/time",
       "-v",
       "bash",
-      "research/tfvd-bezout-schur-residual/compile_module.sh",
+      "research/tfvd-bezout-schur-residual/compile_certified_module.sh",
       "Audit"
     ],
     "cwd": "/home/thlinux/geometry-of-numbers",
     "exit_code": 0,
-    "seconds": 11.875,
-    "maximum_rss_kbytes": 8351632
+    "seconds": 16.983,
+    "maximum_rss_kbytes": 8548488
   },
   {
     "name": "literal-diagnostic",
@@ -241,7 +269,7 @@
     ],
     "cwd": "/home/thlinux/geometry-of-numbers",
     "exit_code": 0,
-    "seconds": 1.943
+    "seconds": 1.972
   },
   {
     "name": "focused-build",
@@ -255,7 +283,7 @@
     ],
     "cwd": "/home/thlinux/geometry-of-numbers",
     "exit_code": 0,
-    "seconds": 20.718
+    "seconds": 8.269
   },
   {
     "name": "root-build",
@@ -266,7 +294,7 @@
     ],
     "cwd": "/home/thlinux/geometry-of-numbers",
     "exit_code": 0,
-    "seconds": 8.079
+    "seconds": 8.328
   },
   {
     "name": "foundation-audit",
@@ -276,7 +304,7 @@
     ],
     "cwd": "/home/thlinux/geometry-of-numbers",
     "exit_code": 0,
-    "seconds": 6.718
+    "seconds": 6.913
   },
   {
     "name": "geometry-audit",
@@ -286,7 +314,7 @@
     ],
     "cwd": "/home/thlinux/geometry-of-numbers",
     "exit_code": 0,
-    "seconds": 9.845
+    "seconds": 9.846
   },
   {
     "name": "analysis-audit",
@@ -296,7 +324,7 @@
     ],
     "cwd": "/home/thlinux/geometry-of-numbers",
     "exit_code": 0,
-    "seconds": 47.362
+    "seconds": 47.456
   },
   {
     "name": "twelve-source-regression",
@@ -307,7 +335,7 @@
     ],
     "cwd": "/home/thlinux/geometry-of-numbers",
     "exit_code": 0,
-    "seconds": 13.138
+    "seconds": 11.926
   },
   {
     "name": "historical-files-unchanged",
@@ -333,6 +361,6 @@
     ],
     "cwd": "/home/thlinux/geometry-of-numbers",
     "exit_code": 0,
-    "seconds": 0.005
+    "seconds": 0.013
   }
 ]

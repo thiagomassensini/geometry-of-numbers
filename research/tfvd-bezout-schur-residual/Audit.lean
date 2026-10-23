@@ -18,6 +18,12 @@ elab "#audit_source_transport " mode:ident ids:ident+ : command => do
     `CarrySelfAdjointOperator.ChiralReturn.radialReturnEnergyDefect_nonneg,
     `CarryC3Boxes.canonical_two_even_determinant_pos_from_c3,
     `CarryTwoEvenJets.canonical_two_even_det_pos_of_four_jet_boxes]
+  let forbidden := if mode.getId == `NativeRepartition64 then forbidden ++ #[
+    `CarrySelfAdjointOperator.completedNativeRealEvenCharacteristicCoefficient_zero_ge_third,
+    `CarrySelfAdjointOperator.completedNativeRealEvenCharacteristicCoefficient_zero_eq_xiCosineMoment,
+    `CarrySelfAdjointOperator.completedNativeXiCosineMoment_zero_eq_thetaTailMoments,
+    `CarrySelfAdjointOperator.completedNativeThetaTailMoment_zero_le_calibration]
+    else forbidden
   let mut todo : List Name := []
   for id in ids do
     let decl ← liftCoreM <| realizeGlobalConstNoOverloadWithInfo id
@@ -44,7 +50,8 @@ elab "#audit_source_transport " mode:ident ids:ident+ : command => do
           todo := value.getUsedConstants.toList ++ todo
       else
         throwError "Missing dependency in imported environment: {name}"
-  logInfo m!"Source residual audit {mode.getId}: roots {ids.size}; type/body closure {seen.size}; standard axioms only; forbidden sign dependencies absent"
+  let extra := if mode.getId == `NativeRepartition64 then "; C3 split excludes theta calibration" else ""
+  logInfo m!"Source residual audit {mode.getId}: roots {ids.size}; type/body closure {seen.size}; standard axioms only; forbidden sign dependencies absent{extra}"
 
 #print axioms CarrySourceBezout.BiSeries
 #print axioms CarrySourceBezout.left
@@ -217,6 +224,52 @@ elab "#audit_source_transport " mode:ident ids:ident+ : command => do
 #print axioms CarrySourceBezout.coefficientPair_four_terms
 #print axioms CarrySourceBezout.coefficientPair_boundary_repartition
 #print axioms CarrySourceBezout.native_residual_repartition
+#print axioms CarrySourceBezout.twoEvenReferenceReal
+#print axioms CarrySourceBezout.twoEvenReference
+#print axioms CarrySourceBezout.twoMonic
+#print axioms CarrySourceBezout.two_reference_norm
+#print axioms CarrySourceBezout.response_coefficient_small_bound
+#print axioms CarrySourceBezout.two_coefficient_budget_bound
+#print axioms CarrySourceBezout.two_directional_budget_bound
+#print axioms CarrySourceBezout.coefficientPair_add_left
+#print axioms CarrySourceBezout.coefficientPair_add_right
+#print axioms CarrySourceBezout.coefficientPair_difference
+#print axioms CarrySourceBezout.two_reference_monic_lower
+#print axioms CarrySourceBezout.two_source_head_margin
+#print axioms CarrySourceBezout.splitErrorBudget
+#print axioms CarrySourceBezout.split_error_bound
+#print axioms CarrySourceBezout.two_source_error_upper
+#print axioms CarrySourceBezout.two_source_split_margin
+#print axioms CarrySourceBezout.originalBoundaryJet
+#print axioms CarrySourceBezout.regroupedHead64
+#print axioms CarrySourceBezout.regroupedTail64
+#print axioms CarrySourceBezout.original_boundary_analytic
+#print axioms CarrySourceBezout.completed_head64_crosswalk
+#print axioms CarrySourceBezout.regrouped_head64_jet
+#print axioms CarrySourceBezout.regrouped_tail64_jet
+#print axioms CarrySourceBezout.regrouped_source
+#print axioms CarrySourceBezout.two_reference_original
+#print axioms CarrySourceBezout.native_four_reference_bounds
+#print axioms CarrySourceBezout.regrouped_tail64_four_bound
+#print axioms CarrySourceBezout.regrouped_head64_four_bound
+#print axioms CarrySourceBezout.native_regrouped64_interval_margin
+#print axioms CarrySourceBezout.native_regrouped64_head_lower
+#print axioms CarrySourceBezout.native_regrouped64_error_upper
+#print axioms CarrySourceBezout.native_regrouped64_total_lower
+#print axioms CarrySourceBezout.native_real_four_reference_bounds
+#print axioms CarrySourceBezout.native_source_c0_positive_from_boxes
+#print axioms CarrySourceBezout.native_source_c1_negative
+#print axioms CarrySourceBezout.native_source_c1_ne_zero
+#print axioms CarrySourceBezout.native_even_one_isUnit_from_source
+#print axioms CarrySourceBezout.native_source_c2_small
+#print axioms CarrySourceBezout.native_monic_two_coordinate_bound
+#print axioms CarrySourceBezout.native_monic_two_direction
+#print axioms CarrySourceBezout.native_critical_regrouped64_margin
+#print axioms CarrySourceBezout.native_second_even_remainder_pos_from_split
+#print axioms CarrySourceBezout.native_second_even_pivot_pos_from_split
+#print axioms CarrySourceBezout.native_second_even_balance_lower_from_original_split
+#print axioms CarrySourceBezout.native_second_even_remainder_pos_from_original_split
+#print axioms CarrySourceBezout.native_second_even_pivot_pos_from_original_split
 
 #audit_source_transport SourceBezout
   CarrySourceBezout.BiSeries
@@ -416,3 +469,53 @@ elab "#audit_source_transport " mode:ident ids:ident+ : command => do
   CarrySourceBezout.coefficientPair_four_terms
   CarrySourceBezout.coefficientPair_boundary_repartition
   CarrySourceBezout.native_residual_repartition
+
+#audit_source_transport TwoEvenSourceMargin
+  CarrySourceBezout.twoEvenReferenceReal
+  CarrySourceBezout.twoEvenReference
+  CarrySourceBezout.twoMonic
+  CarrySourceBezout.two_reference_norm
+  CarrySourceBezout.response_coefficient_small_bound
+  CarrySourceBezout.two_coefficient_budget_bound
+  CarrySourceBezout.two_directional_budget_bound
+  CarrySourceBezout.coefficientPair_add_left
+  CarrySourceBezout.coefficientPair_add_right
+  CarrySourceBezout.coefficientPair_difference
+  CarrySourceBezout.two_reference_monic_lower
+  CarrySourceBezout.two_source_head_margin
+  CarrySourceBezout.splitErrorBudget
+  CarrySourceBezout.split_error_bound
+  CarrySourceBezout.two_source_error_upper
+  CarrySourceBezout.two_source_split_margin
+
+#audit_source_transport NativeRepartition64
+  CarrySourceBezout.originalBoundaryJet
+  CarrySourceBezout.regroupedHead64
+  CarrySourceBezout.regroupedTail64
+  CarrySourceBezout.original_boundary_analytic
+  CarrySourceBezout.completed_head64_crosswalk
+  CarrySourceBezout.regrouped_head64_jet
+  CarrySourceBezout.regrouped_tail64_jet
+  CarrySourceBezout.regrouped_source
+  CarrySourceBezout.two_reference_original
+  CarrySourceBezout.native_four_reference_bounds
+  CarrySourceBezout.regrouped_tail64_four_bound
+  CarrySourceBezout.regrouped_head64_four_bound
+  CarrySourceBezout.native_regrouped64_interval_margin
+  CarrySourceBezout.native_regrouped64_head_lower
+  CarrySourceBezout.native_regrouped64_error_upper
+  CarrySourceBezout.native_regrouped64_total_lower
+  CarrySourceBezout.native_real_four_reference_bounds
+  CarrySourceBezout.native_source_c0_positive_from_boxes
+  CarrySourceBezout.native_source_c1_negative
+  CarrySourceBezout.native_source_c1_ne_zero
+  CarrySourceBezout.native_even_one_isUnit_from_source
+  CarrySourceBezout.native_source_c2_small
+  CarrySourceBezout.native_monic_two_coordinate_bound
+  CarrySourceBezout.native_monic_two_direction
+  CarrySourceBezout.native_critical_regrouped64_margin
+  CarrySourceBezout.native_second_even_remainder_pos_from_split
+  CarrySourceBezout.native_second_even_pivot_pos_from_split
+  CarrySourceBezout.native_second_even_balance_lower_from_original_split
+  CarrySourceBezout.native_second_even_remainder_pos_from_original_split
+  CarrySourceBezout.native_second_even_pivot_pos_from_original_split

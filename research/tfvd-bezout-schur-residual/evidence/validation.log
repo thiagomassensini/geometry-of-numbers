@@ -11,8 +11,10 @@ kernel-KernelBudget: PASS (unchanged compiled source)
 kernel-LiteralTailBounds: PASS (unchanged compiled source)
 kernel-LiteralBudgetLimit: PASS (unchanged compiled source)
 kernel-LiteralCompanion: PASS (unchanged compiled source)
-kernel-CompanionJets: PASS
+kernel-CompanionJets: PASS (unchanged compiled source)
 kernel-Repartition: PASS (unchanged compiled source)
+kernel-TwoEvenSourceMargin: PASS (unchanged compiled source)
+kernel-NativeRepartition64: PASS
 kernel-Regression: PASS
 kernel-Audit: PASS
 literal-diagnostic: PASS
@@ -24,4 +26,5 @@ analysis-audit: PASS
 twelve-source-regression: PASS
 historical-files-unchanged: PASS
 diff-check: PASS
-PASS: 26 checks; original source, pins, main, prior branch refs and untracked research preserved
+PASS: 28 checks; original source, pins, main, prior branch refs and untracked research preserved
+Stricter native-source audit rechecked: PASS; theta calibration excluded from NativeRepartition64 closure

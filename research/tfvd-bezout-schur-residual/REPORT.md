@@ -1,6 +1,6 @@
 # Residual de Schur na fonte Bézout e na decomposição TFVD literal
 
-**Classificação: PARTIAL.** O transporte algébrico e o controle da cauda foram demonstrados em toda ordem finita. A margem positiva no ledger com o bordo C3 reorganizado foi apenas testada numericamente; sua certificação específica e uma lei de sinal para toda ordem permanecem abertas.
+**Classificação: PARTIAL.** O transporte algébrico e o controle da cauda estão demonstrados em toda ordem finita. O teste de sinal do ledger com o bordo C3 original está agora certificado em Lean para a segunda direção par, com uma margem quantitativa e sem hipótese de positividade Hankel. A lei de sinal para toda ordem e uma Gram física positiva completa continuam abertas.
 
 Repositório: `thiagomassensini/geometry-of-numbers`. Branch: `agent/tfvd-bezout-schur-residual`. Base: `a236b218f3e68a8fbf714902de196f7234faeaf3`, da PR #69, preservada e não mesclada automaticamente. Operador consultado sem alterações: `bfeb10fd2425400fa38139903d12bf0599f02e53`. Não foram criadas worktrees.
 
@@ -141,11 +141,52 @@ A continuidade do **mesmo** multiplicador Xi/chart no disco compacto de raio `1/
 
 Nomes: `literal_error_bound`, `literal_tail_jet_envelope`, `literal_error_budget_tendsto_zero`. É controle genuíno da aproximação do kernel original. **Não** é estimativa uniforme na ordem, margem relativa crítica ou positividade.
 
-O lema `native_residual_pos_of_literal_margin` é somente uma regra suficiente de verificação: um valor finito de `HH.re` acima do orçamento provado implica sinal positivo. A desigualdade não foi declarada verdadeira para toda direção da fonte.
+O lema `native_residual_pos_of_literal_margin` é uma regra suficiente de verificação: um valor finito de `HH.re` acima do orçamento provado implica sinal positivo. A regra genérica não é anunciada como uma margem incondicional em toda ordem. A instância finita efetivamente descarregada está descrita abaixo.
 
 ### 5. Reorganização exata do bordo
 
-[Repartition.lean](Repartition.lean) prova que mover um bordo `U` da cauda para a cabeça em um argumento, e `V` no outro, preserva exatamente os quatro termos somados. O lema `native_residual_repartition` mantém o mesmo residual nativo e o mesmo vetor `z`. Ele vale para bordos arbitrários; sua instanciação formal com o stencil específico C3 da PR #69 é o próximo encaixe, ainda não concluído aqui.
+[Repartition.lean](Repartition.lean) prova que mover um bordo `U` da cauda para a cabeça em um argumento, e `V` no outro, preserva exatamente os quatro termos somados. O lema `native_residual_repartition` mantém o mesmo residual nativo e o mesmo vetor `z`. A instanciação com o bordo específico C3 da PR #69 foi concluída em [NativeRepartition64.lean](NativeRepartition64.lean). `originalBoundaryJet` usa diretamente o `c3Boundary` e o multiplicador completado originais. Os teoremas `regrouped_head64_jet`, `regrouped_tail64_jet` identificam exatamente as parcelas com `completedHead64` e `completedTailError` preexistentes; `regrouped_source` prova a recomposição da mesma fonte em todo índice.
+
+
+### 6. Propriedade independente da fonte, com margem efetivamente provada
+
+[TwoEvenSourceMargin.lean](TwoEvenSourceMargin.lean) prova uma estimativa explícita, sem momentos, pivôs, inversas ou whitening nas hipóteses: quatro coeficientes de `H` dentro de `2·10⁻¹²` dos centros racionais originais e quatro coeficientes de `T` de norma no máximo `10⁻¹⁵` implicam, para **toda** direção mônica `z=(t,1)` com `|t|≤1`,
+
+\[
+\Re HH(z,z)>10^{-8},\qquad
+E(z,z)\le10^{-13}.
+\]
+
+O primeiro limite é obtido por uma desigualdade racional exata para o polinômio quadrático de referência, seguida de um limite bilinear do erro de seus coeficientes. O segundo inclui separadamente HT, TH e TT. Esses centros são testemunhas de inclusão; não definem outra fonte. Não há hipótese de positividade disfarçada no lugar das inclusões já provadas.
+
+[NativeRepartition64.lean](NativeRepartition64.lean) descarrega essas inclusões na fonte original, reutilizando **`canonical_four_source_boxes`** e **`completed_tail_jet_error`** da PR #69. Não recalcula as quatro caixas. As duas conclusões são `native_regrouped64_head_lower` e `native_regrouped64_error_upper`.
+
+Portanto, `native_regrouped64_total_lower` prova a propriedade quantitativa da própria fonte:
+
+\[
+\Re(HH+HT+TH+TT)(z,z)>10^{-8}-10^{-13}
+\]
+
+em toda a faixa `|t|≤1`. O enunciado não contém momentos, pivôs ou inversas.
+
+Em seguida, prova-se que o vetor crítico **verdadeiro**, com a normalização mônica já transportada, é
+
+\[
+z=\left(-\frac{2c_2}{c_1},1\right),\qquad
+\left|\frac{2c_2}{c_1}\right|\le1.
+\]
+
+As caixas da fonte garantem `c₁<−1/100`, `|c₂|≤1/1000` e `c₀>0`. A recorrência original descarrega a inversibilidade do prefixo 1×1, sem recorrer a um teorema anterior de positividade de momentos. Nomes: `native_monic_two_direction`, `native_monic_two_coordinate_bound`, `native_even_one_isUnit_from_source`.
+
+A substituição desse mesmo vetor nos quatro termos fornece finalmente:
+
+\[
+\boxed{c_0\,\mathrm{nativeSourceSchurRemainder}(0,1)>10^{-8}-10^{-13}>0.}
+\]
+
+Teoremas finais: `native_second_even_balance_lower_from_original_split`, `native_second_even_remainder_pos_from_original_split`, `native_second_even_pivot_pos_from_original_split`.
+
+É um novo fechamento da **rota de prova pela fonte e pelo ledger literal** para um pivô que já era conhecido por outras rotas. Não se anuncia uma nova ordem de positividade, nem se extrapola essa margem para outros pivôs.
 
 ## C — O que foi refutado ou apenas testado
 
@@ -177,29 +218,23 @@ nas doze amostras de endereços 194 a 205, o mesmo diagnóstico deu:
 | TT | 3.4669513e-32 |
 | Orçamento dos três erros | 5.9996005e-16 |
 
-A soma reproduz o alvo diagnóstico. A margem passa numericamente após a reorganização exata; os pesos não foram ajustados ao sinal. **Esta tabela não é um certificado Lean nem um novo teorema de positividade finita.** A discrepância pequena inclui o arredondamento dos centros de referência.
+A soma reproduz o alvo diagnóstico. A margem passa numericamente após a reorganização exata; os pesos não foram ajustados ao sinal. **Os números desta tabela continuam sendo diagnósticos**, com erro devido também ao arredondamento das referências. A margem foi certificada independentemente pela estimativa racional conservadora da seção B.6, aplicada ao vetor verdadeiro; não pela validação destes números de ponto flutuante.
 
 ## D — O que permanece aberto
 
-1. Instanciar `native_residual_repartition` com o bordo C3 original já provado na PR #69.
-2. Reutilizar suas caixas e seu majorante de cauda para certificar a margem do ledger reorganizado no **vetor crítico verdadeiro**, não no vetor dos centros arredondados.
-3. Encontrar uma propriedade independente da fonte que forneça orientação de sinal para ordens arbitrárias. A convergência do orçamento e a identidade com o Schur não fornecem essa orientação.
-4. Identificar uma Gram positiva física completa com este kernel, se tal identificação existir. Nada aqui prova uma isometria desse tipo.
+1. Derivar uma orientação de sinal da fonte para direções críticas de ordem arbitrária. A convergência do orçamento para cada ordem fixa não fornece essa orientação.
+2. Obter margens críticas relativas que permaneçam controláveis quando a ordem aumenta. A estimativa `C·16ⁿ/(M+1)` não é coercividade uniforme.
+3. Identificar uma Gram positiva física completa com este kernel, se tal identificação existir. Não foi demonstrada uma isometria desse tipo.
 
-Não foram provados positividade Hankel all-order, contratividade física all-order, positividade de todos os resíduos ou construção incondicional do operador infinito de alturas. Os resultados finitos anteriores são preservados.
+Não foram provados positividade Hankel all-order, contratividade física all-order, positividade de todos os resíduos ou construção incondicional do operador infinito de alturas. Os resultados finitos anteriores são preservados. O teste `s=0,n=1,M=64`, antes numérico, está agora concluído formalmente.
 
 ## E — Próximo passo mínimo e reprodução
 
-O alvo mais curto é a margem de `s=0,n=1,M=64` com o bordo original. Sejam `U₆₄` os jets do multiplicador completado original vezes o `c3Boundary` original, `H*=H₆₄+U₆₄`, `T*=T₆₄-U₆₄`, e `z=sourceCritical nativeC false 1`. Provar:
+O encaixe mínimo com a PR #41 e o teste da margem original estão fechados. A continuação all-order precisa de uma propriedade adicional da síntese TFVD que produza um limite inferior independente para a parte finita e um controle relativo dos três termos restantes, na direção crítica variável. A relação `E→0`, sozinha, não fornece esse limite inferior.
 
-\[
-\mathrm{directionalBudget}(H^*,T^*)+
-\mathrm{directionalBudget}(T^*,H^*)+
-\mathrm{directionalBudget}(T^*,T^*)
-<\operatorname{Re}\,\mathrm{coefficientPair}(H^*,H^*;z,z).
-\]
+A obrigação concreta é obter tal controle da fonte antes de usar o sinal do pivô. Postular `∃M, HH.re>E` para cada ordem apenas transfere a obrigação: pela convergência já demonstrada, essa existência pode ser deduzida da própria positividade que estaria em questão. A certificação presente evita essa circularidade porque suas inclusões e seus limites racionais foram demonstrados separadamente, para a fonte original e para uma faixa inteira de direções.
 
-As caixas da PR #69 já existem: o trabalho útil é transportá-las para essa desigualdade e controlar a direção exata. Esse passo testará uma margem da síntese original, sem recalcular os quatro certificados ou usar uma positividade Hankel como entrada. Mesmo que passe, será um certificado nessa direção finita, sem extrapolação all-order.
+Não é preciso recalcular as quatro caixas nem aumentar cutoffs às cegas. O próximo avanço estrutural deve explicar como produzir a margem quando a ordem varia; a lei de sinal geral permanece uma obrigação matemática real.
 
 No host `llm`, a partir da raiz do repositório:
 
@@ -209,12 +244,12 @@ python3 research/tfvd-bezout-schur-residual/validate.py
 
 O script compila explicitamente os módulos novos com `-DwarningAsError=true`, imprime os axiomas de todas as declarações públicas e audita transitivamente tipos e corpos. Executa também `lake build --wfail`, builds focados, auditorias Foundation/Geometry/Analysis e a regressão de doze fontes. Os módulos de pesquisa são compilados pelo script; o build da raiz, sozinho, não os cobre.
 
-O ambiente das novas provas é o `lake env` mínimo do operador original, acrescido apenas do cache desta pesquisa. Não há novo pin, alteração em dependências ou substituição da biblioteca do operador pelo checkout maior de Geometry. O diagnóstico Python usa `/home/thlinux/miniforge3/bin/python`; pode-se especificar `CARRY_DIAGNOSTIC_PYTHON` para outro interpretador que já tenha `mpmath`.
+As provas algébricas e os majorantes genéricos usam o `lake env` mínimo do operador original, acrescido do cache desta pesquisa. A integração `NativeRepartition64`, a regressão e a auditoria usam `compile_certified_module.sh`, que carrega os certificados já compilados da PR #69 no ambiente histórico correspondente. Não há novo pin ou alteração das dependências. O carregador legado fica restrito aos módulos que consomem o certificado histórico da PR #69; os demais continuam no ambiente mínimo. O diagnóstico Python usa `/home/thlinux/miniforge3/bin/python`; pode-se especificar `CARRY_DIAGNOSTIC_PYTHON` para outro interpretador que já tenha `mpmath`.
 
-Validação executada: **26 checks passaram**, incluindo **171 declarações públicas auditadas** (127 teoremas e 44 definições/abreviações). Os únicos axiomas encontrados foram `propext`, `Classical.choice` e `Quot.sound`. A auditoria transitiva também rejeita dependências dos certificados posteriores de positividade enumerados no código. O maior RSS medido nas compilações novas foi aproximadamente **7,97 GiB**.
+Validação executada: **28 checks passaram**, incluindo **217 declarações públicas auditadas** (166 teoremas e 51 definições/abreviações). Os únicos axiomas encontrados foram `propext`, `Classical.choice` e `Quot.sound`. A auditoria transitiva rejeita dependências dos certificados posteriores de positividade enumerados no código. Na integração `NativeRepartition64`, rejeita também a calibração theta de `c₀≥1/3`: a positividade de `c₀` nessa prova é deduzida das próprias caixas C3. O maior RSS medido foi **8,25 GiB**, registrado por módulo em `evidence/checks.json`; a importação conjunta dos certificados cabe na RAM atual da VM.
 
-Os arquivos `evidence/checks.json`, `evidence/kernel-Audit.log`, `public-roots.json` e `evidence/source-sha256.json` registram comandos, resultados, inventário e hashes. O modo `--resume` reaproveita apenas compilações bem-sucedidas de fontes inalteradas; regenera e executa novamente a auditoria.
+Os arquivos `evidence/checks.json`, `evidence/kernel-Audit.log`, `public-roots.json` e `evidence/source-sha256.json` registram comandos, resultados, inventário e hashes. O modo `--resume` reaproveita apenas compilações bem-sucedidas cujas fontes e dependências locais diretas continuam anteriores ao artefato compilado; regenera e executa novamente a auditoria.
 
 A fonte, pesos, amplitudes, fases, métrica, completion, pins, `main`, PR #69 e os dois módulos não rastreados preexistentes do operador permanecem preservados. O swap temporário usado durante o diagnóstico de importações foi desativado e removido; nenhuma configuração persistente da VM foi alterada.
 
-**Fecho:** o residual da PR #41 agora tem transporte monicamente correto ao Schur da fonte e um ledger TFVD literal com erro convergente, em toda ordem finita. O novo teste de margem reorganizada ainda aguarda certificação; a orientação de sinal geral continua aberta.
+**Fecho:** o residual da PR #41 tem transporte monicamente correto ao Schur da fonte e um ledger TFVD literal com erro convergente, em toda ordem finita. A margem reorganizada na segunda direção par foi certificada a partir da fonte original, sem hipótese de positividade Hankel. A orientação de sinal geral continua aberta.
