@@ -1,0 +1,202 @@
+[
+  {
+    "name": "audit-generation",
+    "command": [
+      "python3",
+      "research/tfvd-two-even-jet-determinant/generate_audit.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.038
+  },
+  {
+    "name": "kernel-TwoJetInvariant",
+    "command": [
+      "bash",
+      "research/tfvd-two-even-jet-determinant/compile_module.sh",
+      "TwoJetInvariant"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.605
+  },
+  {
+    "name": "kernel-CompletedTraceJets",
+    "command": [
+      "bash",
+      "research/tfvd-two-even-jet-determinant/compile_module.sh",
+      "CompletedTraceJets"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.026
+  },
+  {
+    "name": "kernel-QuarticFlux",
+    "command": [
+      "bash",
+      "research/tfvd-two-even-jet-determinant/compile_module.sh",
+      "QuarticFlux"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.164
+  },
+  {
+    "name": "kernel-RealLedger",
+    "command": [
+      "bash",
+      "research/tfvd-two-even-jet-determinant/compile_module.sh",
+      "RealLedger"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.193
+  },
+  {
+    "name": "kernel-QuarticError",
+    "command": [
+      "bash",
+      "research/tfvd-two-even-jet-determinant/compile_module.sh",
+      "QuarticError"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.982
+  },
+  {
+    "name": "kernel-FourJetWitness",
+    "command": [
+      "bash",
+      "research/tfvd-two-even-jet-determinant/compile_module.sh",
+      "FourJetWitness"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.864
+  },
+  {
+    "name": "kernel-Regression",
+    "command": [
+      "bash",
+      "research/tfvd-two-even-jet-determinant/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.245
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "bash",
+      "research/tfvd-two-even-jet-determinant/compile_module.sh",
+      "Audit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.215
+  },
+  {
+    "name": "native-two-even-source-regression",
+    "command": [
+      "/home/thlinux/miniforge3/bin/python3",
+      "research/tfvd-two-even-jet-determinant/experiment.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 20.387
+  },
+  {
+    "name": "focused-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "GeometryOfNumbers.Analysis.CarryMaterialProjectiveReturnGreen",
+      "GeometryOfNumbers.Analysis.CarryMaterialCompanionGreenTransport",
+      "GeometryOfNumbers.Analysis.CanonicalFiniteHeight"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 8.447
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 7.38
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 6.736
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.128
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 44.902
+  },
+  {
+    "name": "twelve-source-regression",
+    "command": [
+      "bash",
+      "research/sixth-odd-twelve-sources/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 11.821
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "296ba5ed7c89eb610a9a7ccec7b5e57cc323e0b5",
+      "--",
+      ".",
+      ":(exclude)research/tfvd-two-even-jet-determinant"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.006
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.005
+  }
+]
