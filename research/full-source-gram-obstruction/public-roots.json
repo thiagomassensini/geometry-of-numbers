@@ -1,0 +1,86 @@
+{
+  "modules": {
+    "FullCarrierMass": [
+      "CarryFullSource.FullCarrier",
+      "CarryFullSource.originalNormalizedState",
+      "CarryFullSource.sourceNormalization",
+      "CarryFullSource.original_state_eq_scaled",
+      "CarryFullSource.original_state_zero",
+      "CarryFullSource.three_value_coordinates",
+      "CarryFullSource.forced_value_norm_sq",
+      "CarryFullSource.full_state_mass_exact",
+      "CarryFullSource.full_state_mass_lower",
+      "CarryFullSource.center_mass_lower",
+      "CarryFullSource.value_preserving_mass_lower"
+    ],
+    "NormalizedCrossing": [
+      "CarryFullSource.source_normalization_cancels_collision",
+      "CarryFullSource.normalizedNormal",
+      "CarryFullSource.normalizedPhysicalTangent",
+      "CarryFullSource.normalized_normal_eq_scaled",
+      "CarryFullSource.normalized_normal_norm",
+      "CarryFullSource.normalized_normal_mass_lower",
+      "CarryFullSource.normalized_normal_ne_zero",
+      "CarryFullSource.normalized_normal_tangent_pair",
+      "CarryFullSource.normalComponent",
+      "CarryFullSource.normalComponentEnergy",
+      "CarryFullSource.normal_component_orthogonal_remainder",
+      "CarryFullSource.normal_center_inner_zero",
+      "CarryFullSource.normal_component_invariant_along_center",
+      "CarryFullSource.normal_component_mem_normal_line",
+      "CarryFullSource.normal_component_energy_exact",
+      "CarryFullSource.normal_component_energy_upper"
+    ],
+    "NativeGaps": [
+      "CarryFullSource.full_state_native_mass_gap",
+      "CarryFullSource.normal_component_strict_small",
+      "CarryFullSource.normal_component_not_native_mass",
+      "CarryFullSource.isometric_transport_not_native_mass",
+      "CarryFullSource.value_preserving_operation_native_gap",
+      "CarryFullSource.orthogonal_extension_not_native_mass",
+      "CarryFullSource.native_mass_value_readout_gain"
+    ]
+  },
+  "audit_groups": {
+    "source": [
+      "CarryFullSource.FullCarrier",
+      "CarryFullSource.originalNormalizedState",
+      "CarryFullSource.sourceNormalization",
+      "CarryFullSource.original_state_eq_scaled",
+      "CarryFullSource.original_state_zero",
+      "CarryFullSource.three_value_coordinates",
+      "CarryFullSource.forced_value_norm_sq",
+      "CarryFullSource.full_state_mass_exact",
+      "CarryFullSource.full_state_mass_lower",
+      "CarryFullSource.center_mass_lower",
+      "CarryFullSource.value_preserving_mass_lower",
+      "CarryFullSource.source_normalization_cancels_collision",
+      "CarryFullSource.normalizedNormal",
+      "CarryFullSource.normalizedPhysicalTangent",
+      "CarryFullSource.normalized_normal_eq_scaled",
+      "CarryFullSource.normalized_normal_norm",
+      "CarryFullSource.normalized_normal_mass_lower",
+      "CarryFullSource.normalized_normal_ne_zero",
+      "CarryFullSource.normalComponent",
+      "CarryFullSource.normalComponentEnergy",
+      "CarryFullSource.normal_component_orthogonal_remainder",
+      "CarryFullSource.normal_center_inner_zero",
+      "CarryFullSource.normal_component_invariant_along_center",
+      "CarryFullSource.normal_component_mem_normal_line"
+    ],
+    "moments": [
+      "CarryFullSource.normalized_normal_tangent_pair",
+      "CarryFullSource.normal_component_energy_exact",
+      "CarryFullSource.normal_component_energy_upper"
+    ],
+    "canaries": [
+      "CarryFullSource.full_state_native_mass_gap",
+      "CarryFullSource.normal_component_strict_small",
+      "CarryFullSource.normal_component_not_native_mass",
+      "CarryFullSource.isometric_transport_not_native_mass",
+      "CarryFullSource.value_preserving_operation_native_gap",
+      "CarryFullSource.orthogonal_extension_not_native_mass",
+      "CarryFullSource.native_mass_value_readout_gain"
+    ]
+  }
+}
