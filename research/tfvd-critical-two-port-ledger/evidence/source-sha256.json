@@ -1,0 +1,16 @@
+{
+  ".gitignore": "046032151fe6113c18a8d7d9971c557e81129ca1ba244e5263d54b7e0e6f9643",
+  "Audit.lean": "422fcdfa2a0e50e5b746999048f388423fe094d15ecdf6ee3476f117c558a566",
+  "CriticalLedger.lean": "12828f4e900740c631ef9ebbe9714081c84b0c7fa5bcbd93189becd36dbac930",
+  "FixedSourceTfvd.lean": "1b6848a56414e30f517731aa8b4ce7e670d77397cff1af47a9d454a9624549f0",
+  "HeadCancellation.lean": "eb316a4fc7508aa6fcf38b40a9e191b1aa4e29aa68ca11fb4f5e78ed7eeeadaa",
+  "REPORT.md": "7b06cae7b96a56adad8f74e13898521c5dea11fbffaac58e6ff45e14f1439547",
+  "Regression.lean": "b2b7277141522854a839aca7d5ef7ed1001c724e3af2ebe8d14c01b6c88cb0f1",
+  "TwoPortCorrection.lean": "b227e133f25c1d86da662e1a7e9404b324ddf0b7b7842f99e2e3cd2f9c65577b",
+  "compile_module.sh": "0f0b95c088c161fccee3f0220553a8a3584a4eb2062579e5e72f5665095fc2d4",
+  "experiment.py": "457e0f8e1fd0ed25fce902ac21e5855e85de68f95103af186aed7bb6995d0840",
+  "generate_audit.py": "1a8a8caefb7e5b1f3b3a7148ee18eba1487ce3239b99b03dda5081c35a7f26fb",
+  "public-roots.json": "c249f65d17fc62003609f5ee4a5460466b03e84d8ae2b09777103a826dfecd32",
+  "reference-moments.json": "8f558196cd62e2d95aa47cdf5c308c98ea3681153a05176e5678f17c20c5f1e0",
+  "validate.py": "712170f3e1d2d25804ac3042b39699e30066b3bb3b0f94954d0094e858fb4b9e"
+}
