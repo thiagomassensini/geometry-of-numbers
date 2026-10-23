@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/thlinux/geometry-of-numbers/research/c3-fourteenth-tail/check_intervals.py", line 76, in <module>
+    heads = read_boxes(root/'HeadCoefficientBoxes.lean', 'headReferenceBox')
+  File "/home/thlinux/geometry-of-numbers/research/c3-fourteenth-tail/check_intervals.py", line 20, in read_boxes
+    assert match, name
+           ^^^^^
+AssertionError: headReferenceBox
