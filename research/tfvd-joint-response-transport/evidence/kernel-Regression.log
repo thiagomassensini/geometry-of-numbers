@@ -1,0 +1,19 @@
+CarryTfvdJoint.critical_jointKernel_tendsto (s : Fin 2) (n : ℕ)
+  (hA : IsUnit (sourceMomentMatrix CarryCriticalSource.h (↑s) n)) (cutoff : ℕ → ℕ) :
+  Filter.Tendsto
+    (fun k =>
+      (∑ i,
+          ∑ j,
+            (starRingEnd ℂ)
+                  (CarryTfvdCritical.fixedMaterial (n + 1) k (CarryCriticalSource.criticalCoordinates s n) i) *
+                CarryTfvdCritical.fixedMaterial (n + 1) k (CarryCriticalSource.criticalCoordinates s n) j *
+              jointKernel (cutoff k) (cutoff k) k ↑i ↑j).re)
+    Filter.atTop (nhds (sourceMomentSchur CarryCriticalSource.h (↑s) n))
+CarryTfvdJoint.Control.full_original_form_negative :
+  (canonicalCompletedNativeProjectiveChiralForm
+        (twoPortSynthesis 4 9 Control.material fun j =>
+          Control.response (canonicalCompletedC3RadialTiltPoint 9 ↑j) * Control.material j)
+        (twoPortSynthesis 4 9 Control.material fun j =>
+          Control.response (canonicalCompletedC3RadialTiltPoint 9 ↑j) * Control.material j)).re =
+    -6199 / 20000
+CarryTfvdJoint.Control.radial_diagonal_pos (y : ℝ) (hy : 0 < y) : 0 < (Control.response (Complex.I * ↑y)).im / (2 * y)

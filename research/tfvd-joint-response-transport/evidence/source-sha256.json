@@ -1,0 +1,16 @@
+{
+  ".gitignore": "046032151fe6113c18a8d7d9971c557e81129ca1ba244e5263d54b7e0e6f9643",
+  "Audit.lean": "0fd1f55822b8c2d78f839e5e36a6812be9a5e36d358af7cb57d22d3c4d1d9283",
+  "DiagonalControl.lean": "7f2d7326f44e6874a47a3688aa86437e510f93165ff6d6168b0b26fa3b67c8b9",
+  "JointExtraction.lean": "13916adc8624c76592cb5307d30922f517c439f323b46745b8085e5d8456812c",
+  "JointNumerator.lean": "b3dd91e27c594b1badde4937015ed395b0507326305c861273911007b4f9d093",
+  "PolarizedJoint.lean": "1a50db4782bd0efdb8355965b70fa8eae24827fbc166f94f0faa3d471b3e2696",
+  "REPORT.md": "11903030f4309b2f2898994db20f2eb3daa27ea5e528b08efad5fbc946c29c4c",
+  "Regression.lean": "274498d3916b3119577749f94cbf8412adb0cfe10292086cbae17dab9af0e133",
+  "SourceApplication.lean": "f0b6b9630327f4b3be82b3f037d13eafa3746d430990a5c7ed7b78b754d58ff5",
+  "compile_module.sh": "a48a331a5ab0ef544a2db9be50178b2242cc1c5e113e8edebd4477090e2dd607",
+  "experiment.py": "c8a11dbea273fa79ff2f5f18ea0a0fd73425bcf23e5c2c9a61a211d049eace31",
+  "generate_audit.py": "37001d104367a2d6f3bebe6f0e4d6f77a1567ad8bf896a7906614de75b7933dd",
+  "public-roots.json": "6bbf007e45b3b862af92ed81f755447aff25fc560ba4ecb1a0a528e8dce024fb",
+  "validate.py": "cc4d61007a364bfa80e9878db74d5eb5f97d83e118253b99ec92399ee989e188"
+}
