@@ -1,0 +1,338 @@
+[
+  {
+    "name": "audit-generation",
+    "command": [
+      "python3",
+      "research/tfvd-bezout-schur-residual/generate_audit.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.038
+  },
+  {
+    "name": "kernel-SourceBezout",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "bash",
+      "research/tfvd-bezout-schur-residual/compile_module.sh",
+      "SourceBezout"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 6.049,
+    "maximum_rss_kbytes": 1895500
+  },
+  {
+    "name": "kernel-SourceMap",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "bash",
+      "research/tfvd-bezout-schur-residual/compile_module.sh",
+      "SourceMap"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 4.867,
+    "maximum_rss_kbytes": 1854108
+  },
+  {
+    "name": "kernel-SourceNative",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "bash",
+      "research/tfvd-bezout-schur-residual/compile_module.sh",
+      "SourceNative"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.871,
+    "maximum_rss_kbytes": 8067640
+  },
+  {
+    "name": "kernel-SourceBlocks",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "bash",
+      "research/tfvd-bezout-schur-residual/compile_module.sh",
+      "SourceBlocks"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 10.608,
+    "maximum_rss_kbytes": 1916504
+  },
+  {
+    "name": "kernel-SchurTransport",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "bash",
+      "research/tfvd-bezout-schur-residual/compile_module.sh",
+      "SchurTransport"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 10.268,
+    "maximum_rss_kbytes": 8094988
+  },
+  {
+    "name": "kernel-SourceSchur",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "bash",
+      "research/tfvd-bezout-schur-residual/compile_module.sh",
+      "SourceSchur"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.812,
+    "maximum_rss_kbytes": 8089712
+  },
+  {
+    "name": "kernel-LiteralNativeTrace",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "bash",
+      "research/tfvd-bezout-schur-residual/compile_module.sh",
+      "LiteralNativeTrace"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 6.054,
+    "maximum_rss_kbytes": 3871132
+  },
+  {
+    "name": "kernel-LiteralTfvd",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "bash",
+      "research/tfvd-bezout-schur-residual/compile_module.sh",
+      "LiteralTfvd"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.646,
+    "maximum_rss_kbytes": 8067024
+  },
+  {
+    "name": "kernel-KernelBudget",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "bash",
+      "research/tfvd-bezout-schur-residual/compile_module.sh",
+      "KernelBudget"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 10.126,
+    "maximum_rss_kbytes": 8092260
+  },
+  {
+    "name": "kernel-LiteralTailBounds",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "bash",
+      "research/tfvd-bezout-schur-residual/compile_module.sh",
+      "LiteralTailBounds"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 10.563,
+    "maximum_rss_kbytes": 8128320
+  },
+  {
+    "name": "kernel-LiteralBudgetLimit",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "bash",
+      "research/tfvd-bezout-schur-residual/compile_module.sh",
+      "LiteralBudgetLimit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.611,
+    "maximum_rss_kbytes": 8103544
+  },
+  {
+    "name": "kernel-LiteralCompanion",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "bash",
+      "research/tfvd-bezout-schur-residual/compile_module.sh",
+      "LiteralCompanion"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.466,
+    "maximum_rss_kbytes": 8087288
+  },
+  {
+    "name": "kernel-CompanionJets",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "bash",
+      "research/tfvd-bezout-schur-residual/compile_module.sh",
+      "CompanionJets"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.927,
+    "maximum_rss_kbytes": 8096080
+  },
+  {
+    "name": "kernel-Repartition",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "bash",
+      "research/tfvd-bezout-schur-residual/compile_module.sh",
+      "Repartition"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.259,
+    "maximum_rss_kbytes": 8067612
+  },
+  {
+    "name": "kernel-Regression",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "bash",
+      "research/tfvd-bezout-schur-residual/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 8.72,
+    "maximum_rss_kbytes": 8045648
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "/usr/bin/time",
+      "-v",
+      "bash",
+      "research/tfvd-bezout-schur-residual/compile_module.sh",
+      "Audit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 11.875,
+    "maximum_rss_kbytes": 8351632
+  },
+  {
+    "name": "literal-diagnostic",
+    "command": [
+      "/home/thlinux/miniforge3/bin/python",
+      "research/tfvd-bezout-schur-residual/diagnose_literal_terms.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 1.943
+  },
+  {
+    "name": "focused-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "GeometryOfNumbers.Analysis.CarryMaterialProjectiveReturnGreen",
+      "GeometryOfNumbers.Analysis.CarryMaterialCompanionGreenTransport",
+      "GeometryOfNumbers.Analysis.CanonicalFiniteHeight"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 20.718
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 8.079
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 6.718
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.845
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 47.362
+  },
+  {
+    "name": "twelve-source-regression",
+    "command": [
+      "bash",
+      "research/sixth-odd-twelve-sources/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.138
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "a236b218f3e68a8fbf714902de196f7234faeaf3",
+      "--",
+      ".",
+      ":(exclude)research/tfvd-bezout-schur-residual"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.006
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.005
+  }
+]

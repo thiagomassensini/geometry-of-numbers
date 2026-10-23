@@ -1,0 +1,29 @@
+{
+  "base": "a236b218f3e68a8fbf714902de196f7234faeaf3",
+  "branch": "agent/tfvd-bezout-schur-residual",
+  "head_before_commit": "a236b218f3e68a8fbf714902de196f7234faeaf3",
+  "protected_refs": {
+    "main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+    "origin/main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+    "agent/c3-fourteenth-tail": "a236b218f3e68a8fbf714902de196f7234faeaf3",
+    "agent/native-moment-orthogonalization-audit": "ee56930a2c30456cfbd214a29bb31b12d3977204"
+  },
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_status": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "protected_source_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "manifest_sha256": {
+    "/home/thlinux/geometry-of-numbers/lake-manifest.json": "9868872bae98d0c7e22c597d8e27d38d247498161cf70cdcdc193e9ea0608602",
+    "/home/thlinux/carry-self-adjoint-operator/lake-manifest.json": "822866313e377adcb9c6249680ed67ceb47682af1bb0cd3cc5203554786bcfeb"
+  },
+  "worktrees": "worktree /home/thlinux/geometry-of-numbers\nHEAD a236b218f3e68a8fbf714902de196f7234faeaf3\nbranch refs/heads/agent/tfvd-bezout-schur-residual\n\nworktree /home/thlinux/geometry-of-numbers-phase-canary\nHEAD 93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f\nbranch refs/heads/canary-c2-global-odd-source\n\nworktree /home/thlinux/geometry-of-numbers-r2\nHEAD 93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f\nbranch refs/heads/r2-real-tfvd-green-valve\n\nworktree /home/thlinux/geometry-of-numbers-recovery\nHEAD d7cc54f5c485320f1fada33118e9e6101488819a\nbranch refs/heads/recovery/formalizations-2026-10-01-02",
+  "toolchain": "leanprover/lean4:v4.32.0",
+  "environment": "minimal original operator lake env; no main project library override",
+  "preserved_untracked": {
+    ".cache/Audit.olean": "577f46a1431422c62d64e8a82a3c26e1a79101018f2fb02ed44ed8826286b87f",
+    ".cache/EntrywiseSquare.olean": "464955afb0a0d8527fda8b6ad317acc9cd5b44ac127a301bf26591f13231d866",
+    ".cache/NativeWitness.olean": "b40ec7d10c0807c1fbcb507e39b9680e85a339ffffa2686aa803bc274201e251"
+  }
+}

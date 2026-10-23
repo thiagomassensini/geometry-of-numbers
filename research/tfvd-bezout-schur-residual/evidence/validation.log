@@ -1,0 +1,27 @@
+audit-generation: PASS
+kernel-SourceBezout: PASS (unchanged compiled source)
+kernel-SourceMap: PASS (unchanged compiled source)
+kernel-SourceNative: PASS (unchanged compiled source)
+kernel-SourceBlocks: PASS (unchanged compiled source)
+kernel-SchurTransport: PASS (unchanged compiled source)
+kernel-SourceSchur: PASS (unchanged compiled source)
+kernel-LiteralNativeTrace: PASS (unchanged compiled source)
+kernel-LiteralTfvd: PASS (unchanged compiled source)
+kernel-KernelBudget: PASS (unchanged compiled source)
+kernel-LiteralTailBounds: PASS (unchanged compiled source)
+kernel-LiteralBudgetLimit: PASS (unchanged compiled source)
+kernel-LiteralCompanion: PASS (unchanged compiled source)
+kernel-CompanionJets: PASS
+kernel-Repartition: PASS (unchanged compiled source)
+kernel-Regression: PASS
+kernel-Audit: PASS
+literal-diagnostic: PASS
+focused-build: PASS
+root-build: PASS
+foundation-audit: PASS
+geometry-audit: PASS
+analysis-audit: PASS
+twelve-source-regression: PASS
+historical-files-unchanged: PASS
+diff-check: PASS
+PASS: 26 checks; original source, pins, main, prior branch refs and untracked research preserved
