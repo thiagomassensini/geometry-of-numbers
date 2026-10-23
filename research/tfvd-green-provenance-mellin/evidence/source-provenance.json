@@ -1,0 +1,38 @@
+{
+  "created_utc": "2026-10-23T20:19:05.860614+00:00",
+  "geometry_base": "6b0926527be8e2c27bd3aac8297070292a880e89",
+  "geometry_origin_main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "geometry_branch": "agent/tfvd-green-provenance-mellin",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_status": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "operator_source_sha256": {
+    "CarrySelfAdjointOperator/CompletedC3MixedGreenWronskianDefect.lean": "6fbaf4b7ee9059f7a10ff49d566b3932cd4aa945657fff8c908e46840430e07a",
+    "CarrySelfAdjointOperator/CompletedNativePolarizedTfvdGreenMomentKernel.lean": "cb5b180b5785fa87107dbac10fe65b9f3ee8a7a03b8ef7b4ffde4a6d20d7a59a",
+    "CarrySelfAdjointOperator/CompletedC3BracketTfvdGreenFactorization.lean": "154e2e57de0201e43522519cd76e9125db11e5efead4afd6799e0c1fc37d9408",
+    "CarrySelfAdjointOperator/CompletedNativeTfvdWronskianMoments.lean": "3dd797895e8da20c202f3982fa89c0a64cd453273dd2374376493c6225a55567",
+    ".lake/packages/NativeCarryC3Crosswalk/NativeCarryC3Crosswalk/EnrichedTfvdPairTransport.lean": "ca5f167d3fd37ec3d86251db6974521346679e1770b6e11c92ce63aae9954368",
+    ".lake/packages/NativeCarryC3Crosswalk/NativeCarryC3Crosswalk/GenuineBracketGreenIdentity.lean": "ab6906347cb321d2d9c27bb1508639bf3805bb9005f097564e12ba13664adc17",
+    ".lake/packages/CPFormal/CPFormal/Analytic/CpFiniteSeededTfvdGreenIdentity.lean": "f32c3ea8a6acf59ea3ab950eedf2e06b15b6bdf2567174d8b19e922029bba11b",
+    ".lake/packages/CPFormal/CPFormal/Analytic/CpFiniteGreenRadial.lean": "dc3a33a9fc6e10c2c8920b5233c5c6309a9da1b50e5497cb7c3bdea3ca57f455"
+  },
+  "base_research_sha256": {
+    "research/material-theta-tfvd-port/NativePortCalibration.lean": "625fdbed7681c9d450bfdfc882be39ef9a4f6f6cd9f8dd8bf8209925a0b65115",
+    "research/native-camera-tail-mellin/NativeCompletion.lean": "131622ffaab1dcbe9d4554ce2fd039958675ede368b5bbeb714d198f5fc0136e",
+    "research/tfvd-four-leg-mellin/MixedLegs.lean": "e0bd4b04338b1e1cca0d63eca11a00a960bf12692aa178d6d6917f7e2de2369c",
+    "research/tfvd-four-leg-mellin/ReadoutResidual.lean": "4a42a5ca4f604923086db6d997a9d89c73f1e0036e320c66e91a5fab87f82442"
+  },
+  "packages": {
+    "CPFormal": {
+      "path": "/home/thlinux/carry-self-adjoint-operator/.lake/packages/CPFormal",
+      "head": "65d50f6db1208708e109982ba97e1d51d3039956"
+    },
+    "NativeCarryC3Crosswalk": {
+      "path": "/home/thlinux/carry-self-adjoint-operator/.lake/packages/NativeCarryC3Crosswalk",
+      "head": "150cfc7fb08da96bf8117f15869cc2b819d593c2"
+    },
+    "NativeCarrySpectralWeyl": {
+      "path": "/home/thlinux/carry-self-adjoint-operator/.lake/packages/NativeCarrySpectralWeyl",
+      "head": "298d83c9351e308a5213b9f5ac32e44087f98a9f"
+    }
+  }
+}
