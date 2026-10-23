@@ -1,0 +1,325 @@
+{
+  "created_utc": "2026-10-23T18:38:10.141779+00:00",
+  "geometry_main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "geometry_base": "a0b025507f709b00fbfe294dfdfcd6d0f1da4230",
+  "geometry_branch": "agent/native-camera-tail-mellin",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_origin_main": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "operator_status_preserved": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "operator_modules_sha256": {
+    "CarrySelfAdjointOperator/CompletedEnrichedTfvdBoundaryCompanion.lean": "3b1f466cbfd03c9e4f8ca51d80b19493875865e83c77c2cb9b3020d60618edeb",
+    "CarrySelfAdjointOperator/CompletedC3BracketTfvdGreenFactorization.lean": "154e2e57de0201e43522519cd76e9125db11e5efead4afd6799e0c1fc37d9408",
+    "CarrySelfAdjointOperator/CompletedC3MixedGreenWronskianDefect.lean": "6fbaf4b7ee9059f7a10ff49d566b3932cd4aa945657fff8c908e46840430e07a",
+    "CarrySelfAdjointOperator/CompletedNativeXiCosineTransform.lean": "43da985ffe64ebabf37654db0bc9060b05811b4cba84911d349b76b8bcd73dbd",
+    "CarrySelfAdjointOperator/CompletedOperatorCharacteristic.lean": "de21570ecf684ee42e8222ccbc598b6bb84c21404c8cd55f815504ab3ae093a2",
+    "CarrySelfAdjointOperator/CompletedNativePolarizedTfvdGreenMomentKernel.lean": "cb5b180b5785fa87107dbac10fe65b9f3ee8a7a03b8ef7b4ffde4a6d20d7a59a",
+    "CarrySelfAdjointOperator/CompletedTfvdGreenAllOrderIntertwining.lean": "7cef344db79abeed2dce5327c04c03b64911bd04b25f3ea637a583875debe223",
+    "CarrySelfAdjointOperator/CompletedNativeCausalGreenProvenance.lean": "a69c813550714d4ce840f90cfa9ddbd6eb7d02156a8bfc5d107eb834e745093d",
+    "CarrySelfAdjointOperator/CompletedNativeTfvdGreenMomentGramBridge.lean": "ef6d18ff99fd4df125cf91a3971d019caf5c0354cf7bac9def57c8f4745d3a2d",
+    "CarrySelfAdjointOperator/CompletedNativeTfvdWronskianMoments.lean": "3dd797895e8da20c202f3982fa89c0a64cd453273dd2374376493c6225a55567"
+  },
+  "protected_files_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "checks": [
+    {
+      "label": "base-AddressPort",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "AddressPort"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.459,
+      "log": "evidence/base-AddressPort.log"
+    },
+    {
+      "label": "base-PortTfvd",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PortTfvd"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.653,
+      "log": "evidence/base-PortTfvd.log"
+    },
+    {
+      "label": "base-MellinAtlas",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MellinAtlas"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.128,
+      "log": "evidence/base-MellinAtlas.log"
+    },
+    {
+      "label": "base-CompleteTheta",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CompleteTheta"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.437,
+      "log": "evidence/base-CompleteTheta.log"
+    },
+    {
+      "label": "base-CameraCompletion",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CameraCompletion"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.611,
+      "log": "evidence/base-CameraCompletion.log"
+    },
+    {
+      "label": "base-FluxComparison",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "FluxComparison"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.239,
+      "log": "evidence/base-FluxComparison.log"
+    },
+    {
+      "label": "base-GammaJets",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "GammaJets"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.526,
+      "log": "evidence/base-GammaJets.log"
+    },
+    {
+      "label": "base-NativePortCalibration",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "NativePortCalibration"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.807,
+      "log": "evidence/base-NativePortCalibration.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail/research/native-camera-tail-mellin",
+      "exit_code": 0,
+      "seconds": 0.055,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.CompletedNativeXiCosineTransform",
+        "CPFormal.Analytic.CpNativeCarryFiniteCameraAlgebra",
+        "CPFormal.Analytic.CpCarryWeightedVerticalTfvdFinite",
+        "NativeCarryC3Crosswalk.FinitePackaging",
+        "NativeCarrySpectralWeyl.Camera.ModalEnergy",
+        "CarrySelfAdjointOperator.CompletedC3BracketTfvdGreenFactorization"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 2.602,
+      "log": "evidence/operator-source-build.log"
+    },
+    {
+      "label": "lean-CameraHeatTail",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CameraHeatTail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail/research/native-camera-tail-mellin",
+      "exit_code": 0,
+      "seconds": 5.43,
+      "log": "evidence/lean-CameraHeatTail.log"
+    },
+    {
+      "label": "lean-MellinTail",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MellinTail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail/research/native-camera-tail-mellin",
+      "exit_code": 0,
+      "seconds": 5.492,
+      "log": "evidence/lean-MellinTail.log"
+    },
+    {
+      "label": "lean-TailJets",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "TailJets"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail/research/native-camera-tail-mellin",
+      "exit_code": 0,
+      "seconds": 5.925,
+      "log": "evidence/lean-TailJets.log"
+    },
+    {
+      "label": "lean-CompletedTrace",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CompletedTrace"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail/research/native-camera-tail-mellin",
+      "exit_code": 0,
+      "seconds": 5.627,
+      "log": "evidence/lean-CompletedTrace.log"
+    },
+    {
+      "label": "lean-TailControl",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "TailControl"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail/research/native-camera-tail-mellin",
+      "exit_code": 0,
+      "seconds": 5.506,
+      "log": "evidence/lean-TailControl.log"
+    },
+    {
+      "label": "lean-NativeCompletion",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "NativeCompletion"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail/research/native-camera-tail-mellin",
+      "exit_code": 0,
+      "seconds": 8.843,
+      "log": "evidence/lean-NativeCompletion.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail/research/native-camera-tail-mellin",
+      "exit_code": 0,
+      "seconds": 8.577,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail",
+      "exit_code": 0,
+      "seconds": 7.732,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail",
+      "exit_code": 0,
+      "seconds": 6.802,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail",
+      "exit_code": 0,
+      "seconds": 9.18,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail",
+      "exit_code": 0,
+      "seconds": 47.077,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "a0b025507f709b00fbfe294dfdfcd6d0f1da4230",
+        "--",
+        "GeometryOfNumbers",
+        "lakefile.lean",
+        "lakefile.toml",
+        "lake-manifest.json",
+        "lean-toolchain",
+        "research/material-theta-tfvd-port",
+        "research/theta-polarized-green"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail",
+      "exit_code": 0,
+      "seconds": 0.019,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-camera-tail",
+      "exit_code": 0,
+      "seconds": 0.049,
+      "log": "evidence/diff-check.log"
+    }
+  ],
+  "new_sources_sha256": {
+    "Audit.lean": "728baad4ad7d1f407a2b3159973d05adab3424e66a4eb32694572b3fa5841be8",
+    "CameraHeatTail.lean": "d32cb0d439179e12a58deaec3c50fe6527be6fd0152205b8a6c7d2d660962114",
+    "CompletedTrace.lean": "fc02a76bf3f0d6ebea861225a41a8903b33ca549f6c647b9b3289e7f685ebab9",
+    "MellinTail.lean": "56bde5bba3a4664c3f16e190f743860e1d7cf114f0f1ee254106b39a1c553b79",
+    "NativeCompletion.lean": "131622ffaab1dcbe9d4554ce2fd039958675ede368b5bbeb714d198f5fc0136e",
+    "TailControl.lean": "bb46f6961f69b2ad7808a019ea4b671d9234a9d704e04f8b589bf386893f3f0a",
+    "TailJets.lean": "2601f09ee91014aaf61c507c28e7a80fa1d4ca28d0d653e852a4b67e1d750820"
+  },
+  "trust_escape_scan": "PASS",
+  "operator_sources_and_preexisting_files": "PRESERVED"
+}
