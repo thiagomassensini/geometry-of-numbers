@@ -1,0 +1,91 @@
+'CarryCameraTail.heat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.cameraHeatBlock' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.cameraHeatTail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.cameraHeatPrefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.heat_antitone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.summable_heat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.summable_camera_blocks' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.camera_block_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.camera_prefix_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.camera_prefix_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.camera_tail_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.camera_prefix_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.camera_tail_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.heat_mellin_convergent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.camera_block_mellin_convergent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.camera_block_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.camera_prefix_mellin_convergent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.camera_prefix_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.mellin_heat_bound_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.camera_prefix_mellin_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.camera_tail_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.camera_tail_mellin_convergent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.bounded_heat_mellin_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.tail_log_mellin_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.tail_native_mellin_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.camera_tail_log_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.heatTailTrace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.heat_tail_trace_calibration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.original_stored_tail_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.cameraHeatHead' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.heatTrace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.nativeHeadTrace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.nativeTailTrace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.camera_head_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.camera_head_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.camera_head_mellin_convergent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.camera_head_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.camera_head_trace_calibration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.camera_heat_head_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.original_record_projections_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.gammaDress_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.completed_heat_trace_calibration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.completed_heat_green_four_crosses' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.completed_heat_green_gamma_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.camera_tail_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.tailErrorIntegrand' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.heatErrorMajorant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.heat_error_majorant_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.tail_error_integrand_eq_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.tail_error_integrand_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.weighted_camera_tail_error_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.gammaUndress' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.gammaUndress_gammaDress' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.gammaDress_gammaUndress' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.gammaUndress_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.native_head_from_heat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.native_tail_from_heat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.mellinCompletionDefect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.mellin_completion_eq_original_ledger' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.native_ledger_with_mellin_completion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.nativeCompletionTrace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.native_completed_trace_from_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.nativeCompletionTrace_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.completedHeatHead' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.completedHeatTail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.original_completed_trace_head_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCameraTail.completed_native_green_four_crosses' depends on axioms: [propext, Classical.choice, Quot.sound]
+Native camera tail Mellin audit: 67 public roots; 5225 type/body dependencies; standard axioms only; moment-derived constructions and sign consumers absent
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 5.96
+	System time (seconds): 4.97
+	Percent of CPU this job got: 127%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:08.57
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6930876
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 232219
+	Voluntary context switches: 9376
+	Involuntary context switches: 100
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 624
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
