@@ -1,0 +1,231 @@
+{
+  "created_utc": "2026-10-23T18:01:11.807053+00:00",
+  "geometry_main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "geometry_base": "b43fcfe133ad4560291542dd43cbaf4f213efa8e",
+  "geometry_branch": "agent/material-theta-tfvd-port",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_origin_main": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "operator_status_preserved": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "operator_modules_sha256": {
+    "CarrySelfAdjointOperator/CompletedNativeXiCosineTransform.lean": "43da985ffe64ebabf37654db0bc9060b05811b4cba84911d349b76b8bcd73dbd",
+    "CarrySelfAdjointOperator/CompletedOperatorCharacteristic.lean": "de21570ecf684ee42e8222ccbc598b6bb84c21404c8cd55f815504ab3ae093a2",
+    "CarrySelfAdjointOperator/CompletedNativePolarizedTfvdGreenMomentKernel.lean": "cb5b180b5785fa87107dbac10fe65b9f3ee8a7a03b8ef7b4ffde4a6d20d7a59a",
+    "CarrySelfAdjointOperator/CompletedTfvdGreenAllOrderIntertwining.lean": "7cef344db79abeed2dce5327c04c03b64911bd04b25f3ea637a583875debe223",
+    "CarrySelfAdjointOperator/CompletedNativeCausalGreenProvenance.lean": "a69c813550714d4ce840f90cfa9ddbd6eb7d02156a8bfc5d107eb834e745093d",
+    "CarrySelfAdjointOperator/CompletedNativeTfvdGreenMomentGramBridge.lean": "ef6d18ff99fd4df125cf91a3971d019caf5c0354cf7bac9def57c8f4745d3a2d",
+    "CarrySelfAdjointOperator/CompletedNativeTfvdWronskianMoments.lean": "3dd797895e8da20c202f3982fa89c0a64cd453273dd2374376493c6225a55567"
+  },
+  "protected_files_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "checks": [
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-material-theta/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 0.039,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.CompletedNativeXiCosineTransform",
+        "CPFormal.Analytic.CpNativeCarryFiniteCameraAlgebra",
+        "CPFormal.Analytic.CpCarryWeightedVerticalTfvdFinite",
+        "NativeCarryC3Crosswalk.FinitePackaging",
+        "NativeCarrySpectralWeyl.Camera.ModalEnergy",
+        "CarrySelfAdjointOperator.CompletedC3BracketTfvdGreenFactorization"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 2.765,
+      "log": "evidence/operator-source-build.log"
+    },
+    {
+      "label": "lean-AddressPort",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "AddressPort"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-material-theta/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.369,
+      "log": "evidence/lean-AddressPort.log"
+    },
+    {
+      "label": "lean-PortTfvd",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PortTfvd"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-material-theta/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.896,
+      "log": "evidence/lean-PortTfvd.log"
+    },
+    {
+      "label": "lean-MellinAtlas",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MellinAtlas"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-material-theta/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.682,
+      "log": "evidence/lean-MellinAtlas.log"
+    },
+    {
+      "label": "lean-CompleteTheta",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CompleteTheta"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-material-theta/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.273,
+      "log": "evidence/lean-CompleteTheta.log"
+    },
+    {
+      "label": "lean-CameraCompletion",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CameraCompletion"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-material-theta/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.742,
+      "log": "evidence/lean-CameraCompletion.log"
+    },
+    {
+      "label": "lean-FluxComparison",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "FluxComparison"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-material-theta/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.404,
+      "log": "evidence/lean-FluxComparison.log"
+    },
+    {
+      "label": "lean-GammaJets",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "GammaJets"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-material-theta/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.664,
+      "log": "evidence/lean-GammaJets.log"
+    },
+    {
+      "label": "lean-NativePortCalibration",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "NativePortCalibration"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-material-theta/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 6.017,
+      "log": "evidence/lean-NativePortCalibration.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-material-theta/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 6.003,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-material-theta",
+      "exit_code": 0,
+      "seconds": 7.724,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-material-theta",
+      "exit_code": 0,
+      "seconds": 6.623,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-material-theta",
+      "exit_code": 0,
+      "seconds": 9.391,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-material-theta",
+      "exit_code": 0,
+      "seconds": 44.878,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-material-theta",
+      "exit_code": 0,
+      "seconds": 0.007,
+      "log": "evidence/diff-check.log"
+    }
+  ],
+  "new_sources_sha256": {
+    "AddressPort.lean": "0bf6f1ef17498a78e6676b65b87aeebe3c879d3ec9d637d0b41659e6b7b7603e",
+    "Audit.lean": "0f35c16ff63d00105a7b48753d7d21879709f2c6d6e11a7e6dc6ff7398a65b4f",
+    "CameraCompletion.lean": "bb2d9c6154eba28bc51b2d978bbf2efefabe42945ca67660aa60f0961e3bae51",
+    "CompleteTheta.lean": "1496af6e61126baa26ac87a7f2ca97bb5095a1b516835f3d54e9bfeb4d8956ec",
+    "FluxComparison.lean": "48e1e4a9c0787e5e80e9351314e5a4b6cee9c43967e8c42e6aaeda050857c5a1",
+    "GammaJets.lean": "46a8bbc1c8a378ee1d68cc1f96c5a05474c581d0df54ec7e5409d662fc469c73",
+    "MellinAtlas.lean": "8e43bf13474c27baa9f0c1d9d0b04c8550dbf95f79d6eedeacb13142a54bdd05",
+    "NativePortCalibration.lean": "625fdbed7681c9d450bfdfc882be39ef9a4f6f6cd9f8dd8bf8209925a0b65115",
+    "PortTfvd.lean": "b7f431216166cc19988bb88571b6801b64e418d1b17f5dafaae1294c600fddcf"
+  },
+  "trust_escape_scan": "PASS",
+  "operator_sources_and_preexisting_files": "PRESERVED"
+}
