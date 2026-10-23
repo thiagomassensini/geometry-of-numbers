@@ -1,0 +1,50 @@
+{
+  "created_utc": "2026-10-23T23:22:25.732030+00:00",
+  "geometry_base": "5ed5f183753410c01f9b92af5a4cfc1d6a2aec11",
+  "geometry_origin_main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "geometry_branch": "agent/full-source-gram-obstruction",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_status": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "operator_source_sha256": {
+    "CarrySelfAdjointOperator/CompletedC3MixedGreenWronskianDefect.lean": "6fbaf4b7ee9059f7a10ff49d566b3932cd4aa945657fff8c908e46840430e07a",
+    "CarrySelfAdjointOperator/CompletedNativePolarizedTfvdGreenMomentKernel.lean": "cb5b180b5785fa87107dbac10fe65b9f3ee8a7a03b8ef7b4ffde4a6d20d7a59a",
+    "CarrySelfAdjointOperator/CompletedC3BracketTfvdGreenFactorization.lean": "154e2e57de0201e43522519cd76e9125db11e5efead4afd6799e0c1fc37d9408",
+    "CarrySelfAdjointOperator/CompletedNativeTfvdWronskianMoments.lean": "3dd797895e8da20c202f3982fa89c0a64cd453273dd2374376493c6225a55567",
+    "CarrySelfAdjointOperator/CompletedC3FNegFPrimeMixedKernel.lean": "22027595b182053239bbf8d95e74cbe30da30ca43aa10bd9d87a75c731372f87",
+    "CarrySelfAdjointOperator/CompletedGreenForwardDifferenceLimit.lean": "f8b7d7a77be78a23ae5a837180e5b6efe028dca1a1f78ba1d6a959a3cccea8bc",
+    "CarrySelfAdjointOperator/CompletedC3FullWronskianPolarization.lean": "9f07748f24424a517928f2bcd1f1d2b29cc0e024b4bb3b102912810dda7cb5fa",
+    "CarrySelfAdjointOperator/CompletedC3KernelMetricCalibration.lean": "b56f172daef156db2894ac6047fd028eb30b125f202a22ab2fc5e15518cba7b4",
+    "CarrySelfAdjointOperator/CompletedC3SymplecticCrossingNormalAudit.lean": "b4959adb34b6ac06aac0b8e8267392de8159e5456e52a9d5e543c8249c408ab5",
+    "CarrySelfAdjointOperator/CompletedC3SymplecticCrossingTangentAudit.lean": "8078a3ac9533b0b07a4be1a78192d030526229c632bbffa573f1882a5c0a91bc",
+    "CarrySelfAdjointOperator/CompletedC3FullWronskianCentralChiralEnergy.lean": "87b1b5f93059ee3df0ecbdef3c9744cfefd350d7f024dd277bb9fab054c59ac7",
+    "CarrySelfAdjointOperator/CompletedC3FullWronskianOperatorCarrier.lean": "a1381460abce7d769e71deffe9b008d7720924568a256a70d73dc9e28ec5783e",
+    ".lake/packages/NativeCarryC3Crosswalk/NativeCarryC3Crosswalk/EnrichedTfvdPairTransport.lean": "ca5f167d3fd37ec3d86251db6974521346679e1770b6e11c92ce63aae9954368",
+    ".lake/packages/NativeCarryC3Crosswalk/NativeCarryC3Crosswalk/GenuineBracketGreenIdentity.lean": "ab6906347cb321d2d9c27bb1508639bf3805bb9005f097564e12ba13664adc17",
+    ".lake/packages/CPFormal/CPFormal/Analytic/CpFiniteSeededTfvdGreenIdentity.lean": "f32c3ea8a6acf59ea3ab950eedf2e06b15b6bdf2567174d8b19e922029bba11b",
+    ".lake/packages/CPFormal/CPFormal/Analytic/CpFiniteGreenRadial.lean": "dc3a33a9fc6e10c2c8920b5233c5c6309a9da1b50e5497cb7c3bdea3ca57f455"
+  },
+  "base_research_sha256": {
+    "research/material-theta-tfvd-port/NativePortCalibration.lean": "625fdbed7681c9d450bfdfc882be39ef9a4f6f6cd9f8dd8bf8209925a0b65115",
+    "research/native-camera-tail-mellin/NativeCompletion.lean": "131622ffaab1dcbe9d4554ce2fd039958675ede368b5bbeb714d198f5fc0136e",
+    "research/tfvd-four-leg-mellin/MixedLegs.lean": "e0bd4b04338b1e1cca0d63eca11a00a960bf12692aa178d6d6917f7e2de2369c",
+    "research/tfvd-four-leg-mellin/ReadoutResidual.lean": "4a42a5ca4f604923086db6d997a9d89c73f1e0036e320c66e91a5fab87f82442",
+    "research/tfvd-four-leg-mellin/C2CellStep.lean": "7226165f14c548ec79bb327a615de5f015a5a4cd1573654f92b595e3e4aba08d",
+    "research/tfvd-green-provenance-mellin/CompleteLedger.lean": "0affc7ef28a8f014ea0e449476fb551832a82028a1a70ba11e35e9c639667b0e",
+    "research/native-completed-pairing/CompletedSource.lean": "fb8df3c68d8e19d0e38696417fa977269968ce066383d028eb0fdf6375fd5ec8",
+    "research/native-completed-pairing/SignedFrontier.lean": "acf50ffa52a665c5aa29865669d35d1aa1c08e09031db6f10bd01f6a9fc92eb6"
+  },
+  "packages": {
+    "CPFormal": {
+      "path": "/home/thlinux/carry-self-adjoint-operator/.lake/packages/CPFormal",
+      "head": "65d50f6db1208708e109982ba97e1d51d3039956"
+    },
+    "NativeCarryC3Crosswalk": {
+      "path": "/home/thlinux/carry-self-adjoint-operator/.lake/packages/NativeCarryC3Crosswalk",
+      "head": "150cfc7fb08da96bf8117f15869cc2b819d593c2"
+    },
+    "NativeCarrySpectralWeyl": {
+      "path": "/home/thlinux/carry-self-adjoint-operator/.lake/packages/NativeCarrySpectralWeyl",
+      "head": "298d83c9351e308a5213b9f5ac32e44087f98a9f"
+    }
+  }
+}
