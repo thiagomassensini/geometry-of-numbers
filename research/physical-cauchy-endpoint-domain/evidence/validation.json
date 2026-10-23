@@ -1,0 +1,216 @@
+{
+  "created_utc": "2026-10-23T23:51:29.229546+00:00",
+  "geometry_main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "geometry_base": "70a8c1f6ecfca3a173195d804789b588bd9f6f66",
+  "geometry_branch": "agent/physical-cauchy-endpoint-domain",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_origin_main": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "operator_status_preserved": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "operator_modules_sha256": {
+    "CarrySelfAdjointOperator/NativeCauchyLaguerreIsometry.lean": "2c083ac00ce128676524dd6941ef6780745976c241a82b4a26b7bf9af0c80076",
+    "CarrySelfAdjointOperator/NativeCauchyLaguerreHeadTail.lean": "8ba5cc0f0945c9482aa2748c34346eb752d636df45cc542916b0501b61ea18bd",
+    "CarrySelfAdjointOperator/NativeCauchyLaguerreColumns.lean": "fd89ce8288f8ecff1a0039d14e7bb161369e6ac7cef11f66aef1b677dc71fbf0",
+    "CarrySelfAdjointOperator/NativePhysicalEndpointEncoder.lean": "3ccc0608a9920a8ed21c65b9f9afd68258d20bc92841fe13ca95187772a169b1",
+    "CarrySelfAdjointOperator/CompletedNativeRadialChiralMultiplier.lean": "1ae47a75e6ec10f1f2be5b2133247ab2de92f2fe5be9996ca921c0611b67fa13",
+    "CarrySelfAdjointOperator/NativeIncidenceCauchyPorts.lean": "35af1faa17ff334b04b79ca5a34c878aa434557848d40340f313252a80d3169e"
+  },
+  "protected_files_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "checks": [
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-endpoint-readout/research/physical-cauchy-endpoint-domain",
+      "exit_code": 0,
+      "seconds": 0.039,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativeCauchyLaguerreHeadTail",
+        "CarrySelfAdjointOperator.NativePhysicalEndpointEncoder"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.282,
+      "log": "evidence/operator-source-build.log"
+    },
+    {
+      "label": "lean-EndpointCore",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "EndpointCore"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-endpoint-readout/research/physical-cauchy-endpoint-domain",
+      "exit_code": 0,
+      "seconds": 10.46,
+      "log": "evidence/lean-EndpointCore.log"
+    },
+    {
+      "label": "lean-EndpointGreen",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "EndpointGreen"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-endpoint-readout/research/physical-cauchy-endpoint-domain",
+      "exit_code": 0,
+      "seconds": 11.896,
+      "log": "evidence/lean-EndpointGreen.log"
+    },
+    {
+      "label": "lean-ColumnAsymptotics",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "ColumnAsymptotics"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-endpoint-readout/research/physical-cauchy-endpoint-domain",
+      "exit_code": 0,
+      "seconds": 11.356,
+      "log": "evidence/lean-ColumnAsymptotics.log"
+    },
+    {
+      "label": "lean-CriticalReadout",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CriticalReadout"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-endpoint-readout/research/physical-cauchy-endpoint-domain",
+      "exit_code": 0,
+      "seconds": 9.693,
+      "log": "evidence/lean-CriticalReadout.log"
+    },
+    {
+      "label": "lean-NativeEncoder",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "NativeEncoder"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-endpoint-readout/research/physical-cauchy-endpoint-domain",
+      "exit_code": 0,
+      "seconds": 9.385,
+      "log": "evidence/lean-NativeEncoder.log"
+    },
+    {
+      "label": "lean-OriginalSourceDomain",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "OriginalSourceDomain"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-endpoint-readout/research/physical-cauchy-endpoint-domain",
+      "exit_code": 0,
+      "seconds": 9.855,
+      "log": "evidence/lean-OriginalSourceDomain.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-endpoint-readout/research/physical-cauchy-endpoint-domain",
+      "exit_code": 0,
+      "seconds": 9.95,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-endpoint-readout",
+      "exit_code": 0,
+      "seconds": 8.234,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-endpoint-readout",
+      "exit_code": 0,
+      "seconds": 6.821,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-endpoint-readout",
+      "exit_code": 0,
+      "seconds": 9.224,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-endpoint-readout",
+      "exit_code": 0,
+      "seconds": 47.476,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "70a8c1f6ecfca3a173195d804789b588bd9f6f66",
+        "--",
+        ".",
+        ":(exclude)research/physical-cauchy-endpoint-domain/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-endpoint-readout",
+      "exit_code": 0,
+      "seconds": 0.012,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-endpoint-readout",
+      "exit_code": 0,
+      "seconds": 0.008,
+      "log": "evidence/diff-check.log"
+    }
+  ],
+  "new_sources_sha256": {
+    "Audit.lean": "631d7a2390f410fb485e39fb2d8a67e34c0049d595cdd2db61b0faa5b604c1a4",
+    "ColumnAsymptotics.lean": "90021e2ddcb41fb83404c3890b9ba5052a2fd371a0adc6f6feda21115e294c86",
+    "CriticalReadout.lean": "b2e882827e29bd517da6c5ba38ed75dcfdf818a4f20b098cf82500d57692baa7",
+    "EndpointCore.lean": "eed5ceae82d0f83a3547238d630d70dc0212e17bb103b4fb898840598e192cfb",
+    "EndpointGreen.lean": "65d91949eca23cf970ef78d311ec73e3ff44257064c49b5490f27726d35fb746",
+    "NativeEncoder.lean": "f7492008349ab531b2240c987f96533d047dcbcc0c7634e1de59281a72d3ee21",
+    "OriginalSourceDomain.lean": "1815ed695cc608f32294461f402330a9dcc4aecc000bf1f286cf36a36572b972"
+  },
+  "trust_escape_scan": "PASS",
+  "operator_sources_and_preexisting_files": "PRESERVED"
+}
