@@ -1,0 +1,53 @@
+{
+  "PolarizedGreen": [
+    "CarryThetaPolarized.green_product_defect",
+    "CarryThetaPolarized.green_flux_product",
+    "CarryThetaPolarized.green_product_integral",
+    "CarryThetaPolarized.thetaBilinearPolynomial",
+    "CarryThetaPolarized.thetaBilinearPolynomial_integral",
+    "CarryThetaPolarized.thetaBilinearPolynomial_center_traces",
+    "CarryThetaPolarized.native_bilinear_eq_green_integral"
+  ],
+  "PolynomialInformation": [
+    "CarryThetaPolarized.thetaInputPolynomial",
+    "CarryThetaPolarized.thetaInputPolynomial_succ",
+    "CarryThetaPolarized.moment_top_coefficient_ne_zero",
+    "CarryThetaPolarized.thetaInputPolynomial_coeff_last",
+    "CarryThetaPolarized.thetaInputPolynomial_zero_iff",
+    "CarryThetaPolarized.thetaInputPolynomial_injective",
+    "CarryThetaPolarized.greenPolynomial_zero_iff",
+    "CarryThetaPolarized.greenPolynomial_injective",
+    "CarryThetaPolarized.thetaGreenInput_injective"
+  ],
+  "ThetaCrossObstruction": [
+    "CarryThetaPolarized.moment_zero_eval",
+    "CarryThetaPolarized.moment_one_eval",
+    "CarryThetaPolarized.moment_two_eval",
+    "CarryThetaPolarized.thetaDensityDeterminant",
+    "CarryThetaPolarized.thetaDensityDeterminant_formula",
+    "CarryThetaPolarized.thetaDensityDeterminant_coeff_eight",
+    "CarryThetaPolarized.thetaDensityDeterminant_coeff_eight_neg",
+    "CarryThetaPolarized.thetaDensityDeterminant_natDegree",
+    "CarryThetaPolarized.thetaDensityDeterminant_tendsto_atBot",
+    "CarryThetaPolarized.thetaDensityDeterminant_eventually_neg",
+    "CarryThetaPolarized.thetaDensityDeterminant_not_ae_nonneg",
+    "CarryThetaPolarized.no_pointwise_theta_density_gram",
+    "CarryThetaPolarized.no_ae_weighted_theta_density_gram",
+    "CarryThetaPolarized.even_density_diagonals_pos_but_determinant_neg"
+  ],
+  "ProductResidual": [
+    "CarryThetaPolarized.momentPolynomial_center_traces",
+    "CarryThetaPolarized.thetaProductResidual",
+    "CarryThetaPolarized.thetaProductResidual_center_traces",
+    "CarryThetaPolarized.thetaProductResidual_green_formula",
+    "CarryThetaPolarized.canonical_pairing_eq_theta_product_add_green_residual",
+    "CarryThetaPolarized.theta_polynomial_square_integral_nonneg",
+    "CarryThetaPolarized.thetaProductResidual_flux_zero_at_center"
+  ],
+  "IntegratedNormTest": [
+    "CarryThetaPolarized.theta_first_polynomial_square_integral",
+    "CarryThetaPolarized.xi_fourth_moment_lt_twice_mass_second",
+    "CarryThetaPolarized.theta_first_polynomial_square_integral_lt_native",
+    "CarryThetaPolarized.theta_product_residual_zero_zero_integral_pos"
+  ]
+}
