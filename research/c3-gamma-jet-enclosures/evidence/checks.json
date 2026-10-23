@@ -1,0 +1,224 @@
+[
+  {
+    "name": "audit-generation",
+    "command": [
+      "python3",
+      "research/c3-gamma-jet-enclosures/generate_audit.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.037
+  },
+  {
+    "name": "kernel-EulerGamma",
+    "command": [
+      "bash",
+      "research/c3-gamma-jet-enclosures/compile_module.sh",
+      "EulerGamma"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 18.866
+  },
+  {
+    "name": "kernel-FiniteGamma",
+    "command": [
+      "bash",
+      "research/c3-gamma-jet-enclosures/compile_module.sh",
+      "FiniteGamma"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.618
+  },
+  {
+    "name": "kernel-NativeGammaJets",
+    "command": [
+      "bash",
+      "research/c3-gamma-jet-enclosures/compile_module.sh",
+      "NativeGammaJets"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.291
+  },
+  {
+    "name": "kernel-GammaCoefficients",
+    "command": [
+      "bash",
+      "research/c3-gamma-jet-enclosures/compile_module.sh",
+      "GammaCoefficients"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 16.28
+  },
+  {
+    "name": "kernel-RationalGammaData",
+    "command": [
+      "bash",
+      "research/c3-gamma-jet-enclosures/compile_module.sh",
+      "RationalGammaData"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 58.41
+  },
+  {
+    "name": "kernel-LogGammaData",
+    "command": [
+      "bash",
+      "research/c3-gamma-jet-enclosures/compile_module.sh",
+      "LogGammaData"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 16.38
+  },
+  {
+    "name": "kernel-GammaValueBoxes",
+    "command": [
+      "bash",
+      "research/c3-gamma-jet-enclosures/compile_module.sh",
+      "GammaValueBoxes"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 17.608
+  },
+  {
+    "name": "kernel-SourceProvenance",
+    "command": [
+      "bash",
+      "research/c3-gamma-jet-enclosures/compile_module.sh",
+      "SourceProvenance"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.935
+  },
+  {
+    "name": "kernel-Regression",
+    "command": [
+      "bash",
+      "research/c3-gamma-jet-enclosures/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.41
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "bash",
+      "research/c3-gamma-jet-enclosures/compile_module.sh",
+      "Audit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.633
+  },
+  {
+    "name": "exact-rational-gamma-regression",
+    "command": [
+      "python3",
+      "research/c3-gamma-jet-enclosures/check_rationals.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.575
+  },
+  {
+    "name": "focused-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "GeometryOfNumbers.Analysis.CarryMaterialProjectiveReturnGreen",
+      "GeometryOfNumbers.Analysis.CarryMaterialCompanionGreenTransport",
+      "GeometryOfNumbers.Analysis.CanonicalFiniteHeight"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 8.821
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 8.52
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 6.965
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.809
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 46.644
+  },
+  {
+    "name": "twelve-source-regression",
+    "command": [
+      "bash",
+      "research/sixth-odd-twelve-sources/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.019
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "d9801859b15ae0daf4723e8b3e3b4de556d34b4e",
+      "--",
+      ".",
+      ":(exclude)research/c3-gamma-jet-enclosures"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.007
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.005
+  }
+]

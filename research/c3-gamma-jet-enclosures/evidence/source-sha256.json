@@ -1,0 +1,19 @@
+{
+  ".gitignore": "046032151fe6113c18a8d7d9971c557e81129ca1ba244e5263d54b7e0e6f9643",
+  "Audit.lean": "b696b6df3e69f792cfce33768a4c4412f722884f42f61af70cfc6afd46628b66",
+  "EulerGamma.lean": "0d4237c29378b13aa44e6d4cef4444b89ce9bd097904a19c88565e8b57f778fb",
+  "FiniteGamma.lean": "e333cfcf48761c74b361abba8e922af783bfe6b1224600cb2a2305630e35c099",
+  "GammaCoefficients.lean": "666320663b6991866ddeaa3257da06a5154e4ebd20c659573402a9d52f8f2848",
+  "GammaValueBoxes.lean": "b531d165b8ffbcd3287f8cd1d94c020cd1e192747fc5bc96ed57b586aa471cea",
+  "LogGammaData.lean": "15795314a08e91b0ce6e7b7d21cbf3d29f9657ec8b810aa4213a57917f60e100",
+  "NativeGammaJets.lean": "cc81812991f496bbe6f611f83a1c81dc8c6f9cc275e050c973d08922d50550a8",
+  "REPORT.md": "b20d41dda18c36d0890a1e089c8e4df6e417bbea24310852ecd34c74f99193c9",
+  "RationalGammaData.lean": "50b733c3a74010a0d2c75490fbb39587863ac6056f98fe3c6ee9c109a6777e70",
+  "Regression.lean": "daeb7dff1b853576fc14c7ebfdd18089cddf7c37f9b6d939bb4b26c896f75b5a",
+  "SourceProvenance.lean": "e96725f7a32ce22600b878d9f122510ce1ab471038fa495341c74282eee7186a",
+  "check_rationals.py": "94358bbd0bbea08054064b46c2aa9aa2e9a961591f2acec7ff3847cc522a7ca5",
+  "compile_module.sh": "fea6c867317b09c9a2a2c078231ff762ff22be78379384379414e78d41c0425a",
+  "generate_audit.py": "1c7ecb9269d7a372d9264aebb526cee712dd06172878323b031b6bff62279edd",
+  "public-roots.json": "5b22e182d670a9028ffafee5d3c7ac25ac8518900b489a29a8ecef8621fb3fa8",
+  "validate.py": "0bead1918798be8ddf95fb06b83d5a6445d934adf5f387eef823df4f2e57aca6"
+}
