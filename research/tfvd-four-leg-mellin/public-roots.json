@@ -1,0 +1,72 @@
+{
+  "GradientMellin": [
+    "CarryFourLeg.heatEdge",
+    "CarryFourLeg.heat_edge_continuous",
+    "CarryFourLeg.heat_edge_norm_le",
+    "CarryFourLeg.heat_edge_mellin",
+    "CarryFourLeg.native_gradient_hasDerivAt",
+    "CarryFourLeg.heat_edge_trace_calibration",
+    "CarryFourLeg.materialEdgeTrace",
+    "CarryFourLeg.material_edge_trace_eq"
+  ],
+  "MixedLegs": [
+    "CarryFourLeg.mixed_value_decode",
+    "CarryFourLeg.mixed_log_decode",
+    "CarryFourLeg.addressedGradientLegs",
+    "CarryFourLeg.original_mixed_legs_addresses",
+    "CarryFourLeg.heatMixedLegs",
+    "CarryFourLeg.heat_mixed_legs_calibration",
+    "CarryFourLeg.original_four_legs_mellin",
+    "CarryFourLeg.middle_value_edge_shared",
+    "CarryFourLeg.middle_log_edge_shared"
+  ],
+  "ReadoutResidual": [
+    "CarryFourLeg.materialHeadTrace",
+    "CarryFourLeg.material_head_trace_eq",
+    "CarryFourLeg.heatReadoutResiduals",
+    "CarryFourLeg.originalReadoutResiduals",
+    "CarryFourLeg.four_readout_residuals_mellin",
+    "CarryFourLeg.heatReadoutCorrection",
+    "CarryFourLeg.heat_readout_eq_original_ledger",
+    "CarryFourLeg.heat_crosses_eq_original_ledger",
+    "CarryFourLeg.native_ledger_with_mellin_readout"
+  ],
+  "VariableTransport": [
+    "CarryFourLeg.bracket_variable_rotation_defect",
+    "CarryFourLeg.trace_variable_rotation_defect",
+    "CarryFourLeg.scalar_bracket_multiplier_defect",
+    "CarryFourLeg.scalar_trace_multiplier_defect",
+    "CarryFourLeg.multiplier_tfvd_reconstruction",
+    "CarryFourLeg.c2_material_wave_step",
+    "CarryFourLeg.c2_material_correction_norm",
+    "CarryFourLeg.c2_phase_correction_hasDerivAt",
+    "CarryFourLeg.c2_material_amplitude_factor"
+  ],
+  "OneBlock": [
+    "CarryFourLeg.one_block_value_legs",
+    "CarryFourLeg.one_block_log_legs",
+    "CarryFourLeg.one_block_right_residual",
+    "CarryFourLeg.nat_term_at_real",
+    "CarryFourLeg.one_block_right_residual_at_center",
+    "CarryFourLeg.one_block_right_residual_center_gt_one",
+    "CarryFourLeg.one_block_right_residual_center_ne_zero",
+    "CarryFourLeg.zero_time_leg_phase",
+    "CarryFourLeg.dilated_middle_addresses_distinct"
+  ],
+  "C2CellStep": [
+    "CarryFourLeg.c2LegLogIncrement",
+    "CarryFourLeg.c2LegWaveFactor",
+    "CarryFourLeg.c2LegJet",
+    "CarryFourLeg.c2LegTransfer",
+    "CarryFourLeg.c2_leg_jet_step",
+    "CarryFourLeg.c2_two_leg_green_defect",
+    "CarryFourLeg.nativePointJet",
+    "CarryFourLeg.nativeGradientJet",
+    "CarryFourLeg.native_gradient_jet_eq",
+    "CarryFourLeg.transportedC2Cell",
+    "CarryFourLeg.transported_c2_cell_eq",
+    "CarryFourLeg.one_block_c2_cells_before_step",
+    "CarryFourLeg.one_block_c2_cells_after_step",
+    "CarryFourLeg.one_block_middle_splits_at_one"
+  ]
+}

@@ -1,0 +1,245 @@
+PASS: discrete imports isolated (audit tooling excepted); no Analysis or Mathlib.
+ℹ [16/16] Replayed GeometryOfNumbers.Foundation.Audit
+info: GeometryOfNumbers/Foundation/Audit.lean:127:0: 'GeometryOfNumbers.Foundation.sameLocal_forces_extension_difference' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:128:0: 'GeometryOfNumbers.Foundation.faithfulRepresentation_comp' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:129:0: 'GeometryOfNumbers.Foundation.localRecurrence_forces_extension_difference' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:130:0: 'GeometryOfNumbers.Foundation.positiveLocalReturn_implies_periodic_readout' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:131:0: 'GeometryOfNumbers.Foundation.boundedLeastOrAbsent' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:132:0: 'GeometryOfNumbers.Foundation.finiteCodeCollision' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:133:0: 'GeometryOfNumbers.Foundation.unitTrajectory_forces_localRecurrence' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:134:0: 'GeometryOfNumbers.Foundation.autonomousLocalDynamics_has_positiveReturn' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:135:0: 'GeometryOfNumbers.Foundation.emergentLocalCapacity_unique' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:136:0: 'GeometryOfNumbers.Foundation.emergentLocalCapacity_gt_one_of_first_step_changes' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:137:0: 'GeometryOfNumbers.Foundation.exists_emergentLocalCapacity' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:138:0: 'GeometryOfNumbers.Foundation.existsUnique_emergentLocalCapacity' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:139:0: 'GeometryOfNumbers.Foundation.exists_emergentLocalCapacity_gt_one' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:140:0: 'GeometryOfNumbers.Foundation.cycleCoordinatesRec_spec' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:141:0: 'GeometryOfNumbers.Foundation.cycleDecomposition_unique' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:142:0: 'GeometryOfNumbers.Foundation.cycleDecomposition_eq_recursive' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:143:0: 'GeometryOfNumbers.Foundation.cycle_step_inside' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:144:0: 'GeometryOfNumbers.Foundation.cycle_step_at_boundary' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:145:0: 'GeometryOfNumbers.Foundation.cycle_step_dichotomy' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:146:0: 'GeometryOfNumbers.Foundation.firstSaturation_coordinates' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:147:0: 'GeometryOfNumbers.Foundation.cycleResidual_controls_localReadout' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:148:0: 'GeometryOfNumbers.Foundation.localReturn_iff_cycleResidual_zero' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:149:0: 'GeometryOfNumbers.Foundation.cycle_reset_forces_extension_difference' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:150:0: 'GeometryOfNumbers.Foundation.emergentResidualTower_bounded' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:151:0: 'GeometryOfNumbers.Foundation.emergentResidualTower_value' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:152:0: 'GeometryOfNumbers.Foundation.residualTower_unique' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:153:0: 'GeometryOfNumbers.Foundation.residualTower_eq_canonical' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:154:0: 'GeometryOfNumbers.Foundation.residualTowerValue_eq_prefix_add_scaled_tail' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:155:0: 'GeometryOfNumbers.Foundation.emergentResidualTower_expansion' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:156:0: 'GeometryOfNumbers.Foundation.emergentResidualTower_truncate' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:157:0: 'GeometryOfNumbers.Foundation.emergentResidualTower_first_residual_preserves_observation' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:158:0: 'GeometryOfNumbers.Foundation.residualPrefixTower_bounded' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:159:0: 'GeometryOfNumbers.Foundation.residualPrefixTower_tail_eq_zero' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:160:0: 'GeometryOfNumbers.Foundation.residualPrefix_value_lt_pow' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:161:0: 'GeometryOfNumbers.Foundation.residualTower_tail_eq_zero_of_lt_pow' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:162:0: 'GeometryOfNumbers.Foundation.residualPrefixTower_injective' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:163:0: 'GeometryOfNumbers.Foundation.residualPrefixDecode_toTower' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:164:0: 'GeometryOfNumbers.Foundation.residualPrefix_encode_decode' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:165:0: 'GeometryOfNumbers.Foundation.residualPrefix_decode_encode' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:166:0: 'GeometryOfNumbers.Foundation.residualPrefixEquivFin' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:167:0: 'GeometryOfNumbers.Foundation.residualPrefix_cardinality' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:168:0: 'GeometryOfNumbers.Foundation.existsUnique_residualPrefix_for_fin' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:169:0: 'GeometryOfNumbers.Foundation.finiteLabelTransposition' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:170:0: 'GeometryOfNumbers.Foundation.residualPrefixRelabeling' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:171:0: 'GeometryOfNumbers.Foundation.finiteLabel_relabelingInvariant_iff_constant' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:172:0: 'GeometryOfNumbers.Foundation.residualPrefix_relabelingInvariant_iff_constant' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:173:0: 'GeometryOfNumbers.Foundation.finiteLabelTotal_of_equal' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:174:0: 'GeometryOfNumbers.Foundation.finiteLabelTotal_unit' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:175:0: 'GeometryOfNumbers.Foundation.finiteCapacity_does_not_force_uniformity' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:176:0: 'GeometryOfNumbers.Foundation.finiteLabel_normalization_forces_unitShare' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:177:0: 'GeometryOfNumbers.Foundation.finiteLabel_normalizedShare_unique' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:178:0: 'GeometryOfNumbers.Foundation.canonicalResidualPrefixCountingShare' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:179:0: 'GeometryOfNumbers.Foundation.canonicalResidualPrefixCountingShare_invariant' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:180:0: 'GeometryOfNumbers.Foundation.canonicalResidualPrefixCountingShare_eq_unit_over_capacity' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:181:0: 'GeometryOfNumbers.Foundation.residualPrefix_normalizedShare_unique' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:182:0: 'GeometryOfNumbers.Foundation.truncateResidualPrefix' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:183:0: 'GeometryOfNumbers.Foundation.extendResidualPrefix' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:184:0: 'GeometryOfNumbers.Foundation.topResidual' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:185:0: 'GeometryOfNumbers.Foundation.ResidualPrefixRefinementFiber' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:186:0: 'GeometryOfNumbers.Foundation.residualPrefixRefinementChild' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:187:0: 'GeometryOfNumbers.Foundation.residualPrefixRefinementEquivFin' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:188:0: 'GeometryOfNumbers.Foundation.residualPrefixRefinementAggregateShare' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:189:0: 'GeometryOfNumbers.Foundation.repeatCountingShare' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:190:0: 'GeometryOfNumbers.Foundation.zeroRefinement_cannot_conserve_unit' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:191:0: 'GeometryOfNumbers.Foundation.canonicalResidualDepthMass' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:192:0: 'GeometryOfNumbers.Foundation.truncateResidualPrefix_extend' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:193:0: 'GeometryOfNumbers.Foundation.topResidual_extend' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:194:0: 'GeometryOfNumbers.Foundation.extendResidualPrefix_truncate_top' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:195:0: 'GeometryOfNumbers.Foundation.truncateResidualPrefix_of_canonicalTower' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:196:0: 'GeometryOfNumbers.Foundation.residualPrefixRefinementChild_top' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:197:0: 'GeometryOfNumbers.Foundation.residualPrefixRefinementChild_recovers' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:198:0: 'GeometryOfNumbers.Foundation.residualPrefixRefinementChild_injective' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:199:0: 'GeometryOfNumbers.Foundation.residualPrefixRefinement_fiber_cardinality' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:200:0: 'GeometryOfNumbers.Foundation.residualPrefixValue_extend' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:201:0: 'GeometryOfNumbers.Foundation.residualPrefixRefinementAggregateShare_common_denominator' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:202:0: 'GeometryOfNumbers.Foundation.residualPrefixRefinementAggregateShare_numerator' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:203:0: 'GeometryOfNumbers.Foundation.residualPrefix_refinement_conserves_share' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:204:0: 'GeometryOfNumbers.Foundation.canonicalResidualPrefixCountingShare_eq_depthMass' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:205:0: 'GeometryOfNumbers.Foundation.residualPrefixRefinementAggregateShare_eq_repeat_depthMass' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:206:0: 'GeometryOfNumbers.Foundation.canonicalResidualDepthMass_zero' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:207:0: 'GeometryOfNumbers.Foundation.canonicalResidualDepthMass_refinement' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:208:0: 'GeometryOfNumbers.Foundation.canonicalResidualDepthMass_eq_unit_over_capacity' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:209:0: 'GeometryOfNumbers.Foundation.quadraticExponentEquation_iff_half' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:210:0: 'GeometryOfNumbers.Foundation.quadraticCarryCompatibleAt_iff_half' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:211:0: 'GeometryOfNumbers.Foundation.quadratic_carry_exponent_iff_half' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:212:0: 'GeometryOfNumbers.Foundation.quadraticCarryCompatibleAt_zero' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:213:0: 'GeometryOfNumbers.Foundation.radixShare' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:214:0: 'GeometryOfNumbers.Foundation.multiplyCountingShares' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:215:0: 'GeometryOfNumbers.Foundation.powerCountingShare' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:216:0: 'GeometryOfNumbers.Foundation.QuadraticAmplitudeScaleCompatibleAt' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:217:0: 'GeometryOfNumbers.Foundation.powerCountingShare_zero' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:218:0: 'GeometryOfNumbers.Foundation.powerCountingShare_succ' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:219:0: 'GeometryOfNumbers.Foundation.canonicalResidualDepthMass_eq_radixShare' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:220:0: 'GeometryOfNumbers.Foundation.radixShare_multiply' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:221:0: 'GeometryOfNumbers.Foundation.canonicalResidualDepthMass_power_eq_radixShare' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:222:0: 'GeometryOfNumbers.Foundation.radixShare_same_iff_power_eq' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:223:0: 'GeometryOfNumbers.Foundation.radixShare_same_iff_exponent_eq' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:224:0: 'GeometryOfNumbers.Foundation.radixShare_one_same' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:225:0: 'GeometryOfNumbers.Foundation.quadraticAmplitudeScaleCompatibleAt_iff_scaleComparison' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:226:0: 'GeometryOfNumbers.Foundation.quadraticAmplitudeScaleCompatibleAt_iff_exponentEquation' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:227:0: 'GeometryOfNumbers.Foundation.quadraticAmplitudeScaleCompatibleAt_iff_carryCompatibleAt' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:228:0: 'GeometryOfNumbers.Foundation.canonicalResidualDepthMass_quadraticCompatibility_iff_half' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:229:0: 'GeometryOfNumbers.Foundation.canonicalResidualDepthMass_all_positive_quadraticCompatibility_iff_half' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:230:0: 'GeometryOfNumbers.Foundation.emergentResidualDepthMass_quadraticCompatibility_iff_half' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:231:0: 'GeometryOfNumbers.Foundation.quadraticAmplitudeScaleCompatibleAt_zero' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:232:0: 'GeometryOfNumbers.Foundation.quadraticAmplitudeScaleCompatibleAt_one' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:233:0: 'GeometryOfNumbers.Foundation.quadraticAmplitudeScaleCompatibleAt_denominator_zero' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:234:0: 'GeometryOfNumbers.Foundation.foundational_half_scaling_capstone' does not depend on any axioms
+info: GeometryOfNumbers/Foundation/Audit.lean:235:0: 'GeometryOfNumbers.Foundation.exists_foundational_half_scaling_capstone' does not depend on any axioms
+Build completed successfully (16 jobs).
+'GeometryOfNumbers.Foundation.sameLocal_forces_extension_difference' does not depend on any axioms
+'GeometryOfNumbers.Foundation.faithfulRepresentation_comp' does not depend on any axioms
+'GeometryOfNumbers.Foundation.localRecurrence_forces_extension_difference' does not depend on any axioms
+'GeometryOfNumbers.Foundation.positiveLocalReturn_implies_periodic_readout' does not depend on any axioms
+'GeometryOfNumbers.Foundation.boundedLeastOrAbsent' does not depend on any axioms
+'GeometryOfNumbers.Foundation.finiteCodeCollision' does not depend on any axioms
+'GeometryOfNumbers.Foundation.unitTrajectory_forces_localRecurrence' does not depend on any axioms
+'GeometryOfNumbers.Foundation.autonomousLocalDynamics_has_positiveReturn' does not depend on any axioms
+'GeometryOfNumbers.Foundation.emergentLocalCapacity_unique' does not depend on any axioms
+'GeometryOfNumbers.Foundation.emergentLocalCapacity_gt_one_of_first_step_changes' does not depend on any axioms
+'GeometryOfNumbers.Foundation.exists_emergentLocalCapacity' does not depend on any axioms
+'GeometryOfNumbers.Foundation.existsUnique_emergentLocalCapacity' does not depend on any axioms
+'GeometryOfNumbers.Foundation.exists_emergentLocalCapacity_gt_one' does not depend on any axioms
+'GeometryOfNumbers.Foundation.cycleCoordinatesRec_spec' does not depend on any axioms
+'GeometryOfNumbers.Foundation.cycleDecomposition_unique' does not depend on any axioms
+'GeometryOfNumbers.Foundation.cycleDecomposition_eq_recursive' does not depend on any axioms
+'GeometryOfNumbers.Foundation.cycle_step_inside' does not depend on any axioms
+'GeometryOfNumbers.Foundation.cycle_step_at_boundary' does not depend on any axioms
+'GeometryOfNumbers.Foundation.cycle_step_dichotomy' does not depend on any axioms
+'GeometryOfNumbers.Foundation.firstSaturation_coordinates' does not depend on any axioms
+'GeometryOfNumbers.Foundation.cycleResidual_controls_localReadout' does not depend on any axioms
+'GeometryOfNumbers.Foundation.localReturn_iff_cycleResidual_zero' does not depend on any axioms
+'GeometryOfNumbers.Foundation.cycle_reset_forces_extension_difference' does not depend on any axioms
+'GeometryOfNumbers.Foundation.emergentResidualTower_bounded' does not depend on any axioms
+'GeometryOfNumbers.Foundation.emergentResidualTower_value' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualTower_unique' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualTower_eq_canonical' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualTowerValue_eq_prefix_add_scaled_tail' does not depend on any axioms
+'GeometryOfNumbers.Foundation.emergentResidualTower_expansion' does not depend on any axioms
+'GeometryOfNumbers.Foundation.emergentResidualTower_truncate' does not depend on any axioms
+'GeometryOfNumbers.Foundation.emergentResidualTower_first_residual_preserves_observation' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefixTower_bounded' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefixTower_tail_eq_zero' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefix_value_lt_pow' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualTower_tail_eq_zero_of_lt_pow' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefixTower_injective' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefixDecode_toTower' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefix_encode_decode' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefix_decode_encode' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefixEquivFin' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefix_cardinality' does not depend on any axioms
+'GeometryOfNumbers.Foundation.existsUnique_residualPrefix_for_fin' does not depend on any axioms
+'GeometryOfNumbers.Foundation.finiteLabelTransposition' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefixRelabeling' does not depend on any axioms
+'GeometryOfNumbers.Foundation.finiteLabel_relabelingInvariant_iff_constant' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefix_relabelingInvariant_iff_constant' does not depend on any axioms
+'GeometryOfNumbers.Foundation.finiteLabelTotal_of_equal' does not depend on any axioms
+'GeometryOfNumbers.Foundation.finiteLabelTotal_unit' does not depend on any axioms
+'GeometryOfNumbers.Foundation.finiteCapacity_does_not_force_uniformity' does not depend on any axioms
+'GeometryOfNumbers.Foundation.finiteLabel_normalization_forces_unitShare' does not depend on any axioms
+'GeometryOfNumbers.Foundation.finiteLabel_normalizedShare_unique' does not depend on any axioms
+'GeometryOfNumbers.Foundation.canonicalResidualPrefixCountingShare' does not depend on any axioms
+'GeometryOfNumbers.Foundation.canonicalResidualPrefixCountingShare_invariant' does not depend on any axioms
+'GeometryOfNumbers.Foundation.canonicalResidualPrefixCountingShare_eq_unit_over_capacity' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefix_normalizedShare_unique' does not depend on any axioms
+'GeometryOfNumbers.Foundation.truncateResidualPrefix' does not depend on any axioms
+'GeometryOfNumbers.Foundation.extendResidualPrefix' does not depend on any axioms
+'GeometryOfNumbers.Foundation.topResidual' does not depend on any axioms
+'GeometryOfNumbers.Foundation.ResidualPrefixRefinementFiber' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefixRefinementChild' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefixRefinementEquivFin' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefixRefinementAggregateShare' does not depend on any axioms
+'GeometryOfNumbers.Foundation.repeatCountingShare' does not depend on any axioms
+'GeometryOfNumbers.Foundation.zeroRefinement_cannot_conserve_unit' does not depend on any axioms
+'GeometryOfNumbers.Foundation.canonicalResidualDepthMass' does not depend on any axioms
+'GeometryOfNumbers.Foundation.truncateResidualPrefix_extend' does not depend on any axioms
+'GeometryOfNumbers.Foundation.topResidual_extend' does not depend on any axioms
+'GeometryOfNumbers.Foundation.extendResidualPrefix_truncate_top' does not depend on any axioms
+'GeometryOfNumbers.Foundation.truncateResidualPrefix_of_canonicalTower' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefixRefinementChild_top' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefixRefinementChild_recovers' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefixRefinementChild_injective' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefixRefinement_fiber_cardinality' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefixValue_extend' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefixRefinementAggregateShare_common_denominator' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefixRefinementAggregateShare_numerator' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefix_refinement_conserves_share' does not depend on any axioms
+'GeometryOfNumbers.Foundation.canonicalResidualPrefixCountingShare_eq_depthMass' does not depend on any axioms
+'GeometryOfNumbers.Foundation.residualPrefixRefinementAggregateShare_eq_repeat_depthMass' does not depend on any axioms
+'GeometryOfNumbers.Foundation.canonicalResidualDepthMass_zero' does not depend on any axioms
+'GeometryOfNumbers.Foundation.canonicalResidualDepthMass_refinement' does not depend on any axioms
+'GeometryOfNumbers.Foundation.canonicalResidualDepthMass_eq_unit_over_capacity' does not depend on any axioms
+'GeometryOfNumbers.Foundation.quadraticExponentEquation_iff_half' does not depend on any axioms
+'GeometryOfNumbers.Foundation.quadraticCarryCompatibleAt_iff_half' does not depend on any axioms
+'GeometryOfNumbers.Foundation.quadratic_carry_exponent_iff_half' does not depend on any axioms
+'GeometryOfNumbers.Foundation.quadraticCarryCompatibleAt_zero' does not depend on any axioms
+'GeometryOfNumbers.Foundation.radixShare' does not depend on any axioms
+'GeometryOfNumbers.Foundation.multiplyCountingShares' does not depend on any axioms
+'GeometryOfNumbers.Foundation.powerCountingShare' does not depend on any axioms
+'GeometryOfNumbers.Foundation.QuadraticAmplitudeScaleCompatibleAt' does not depend on any axioms
+'GeometryOfNumbers.Foundation.powerCountingShare_zero' does not depend on any axioms
+'GeometryOfNumbers.Foundation.powerCountingShare_succ' does not depend on any axioms
+'GeometryOfNumbers.Foundation.canonicalResidualDepthMass_eq_radixShare' does not depend on any axioms
+'GeometryOfNumbers.Foundation.radixShare_multiply' does not depend on any axioms
+'GeometryOfNumbers.Foundation.canonicalResidualDepthMass_power_eq_radixShare' does not depend on any axioms
+'GeometryOfNumbers.Foundation.radixShare_same_iff_power_eq' does not depend on any axioms
+'GeometryOfNumbers.Foundation.radixShare_same_iff_exponent_eq' does not depend on any axioms
+'GeometryOfNumbers.Foundation.radixShare_one_same' does not depend on any axioms
+'GeometryOfNumbers.Foundation.quadraticAmplitudeScaleCompatibleAt_iff_scaleComparison' does not depend on any axioms
+'GeometryOfNumbers.Foundation.quadraticAmplitudeScaleCompatibleAt_iff_exponentEquation' does not depend on any axioms
+'GeometryOfNumbers.Foundation.quadraticAmplitudeScaleCompatibleAt_iff_carryCompatibleAt' does not depend on any axioms
+'GeometryOfNumbers.Foundation.canonicalResidualDepthMass_quadraticCompatibility_iff_half' does not depend on any axioms
+'GeometryOfNumbers.Foundation.canonicalResidualDepthMass_all_positive_quadraticCompatibility_iff_half' does not depend on any axioms
+'GeometryOfNumbers.Foundation.emergentResidualDepthMass_quadraticCompatibility_iff_half' does not depend on any axioms
+'GeometryOfNumbers.Foundation.quadraticAmplitudeScaleCompatibleAt_zero' does not depend on any axioms
+'GeometryOfNumbers.Foundation.quadraticAmplitudeScaleCompatibleAt_one' does not depend on any axioms
+'GeometryOfNumbers.Foundation.quadraticAmplitudeScaleCompatibleAt_denominator_zero' does not depend on any axioms
+'GeometryOfNumbers.Foundation.foundational_half_scaling_capstone' does not depend on any axioms
+'GeometryOfNumbers.Foundation.exists_foundational_half_scaling_capstone' does not depend on any axioms
+PASS: foundation build and empty-axiom audit.
+	Command being timed: "bash scripts/audit-foundation.sh"
+	User time (seconds): 4.83
+	System time (seconds): 2.58
+	Percent of CPU this job got: 104%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:07.10
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1535068
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 200512
+	Voluntary context switches: 5071
+	Involuntary context switches: 83
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 56
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

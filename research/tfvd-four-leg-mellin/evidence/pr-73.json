@@ -1,0 +1,10 @@
+{
+  "baseRefName": "agent/material-theta-tfvd-port",
+  "headRefName": "agent/native-camera-tail-mellin",
+  "headRefOid": "6c9ea4a4817ebb1befedd8bd9491cba2ef2de987",
+  "isDraft": true,
+  "mergedAt": null,
+  "number": 73,
+  "state": "OPEN",
+  "title": "Transportar as caudas nativas C3 com Mellin, jets Gamma e completion"
+}
