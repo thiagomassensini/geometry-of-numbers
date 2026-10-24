@@ -1,0 +1,78 @@
+{
+  "modules": {
+    "MixedRadialJets": [
+      "CarryMixedRadial.zeroJet",
+      "CarryMixedRadial.zeroPairing",
+      "CarryMixedRadial.differencePairing",
+      "CarryMixedRadial.zero_jet_original",
+      "CarryMixedRadial.zero_jet_boundary",
+      "CarryMixedRadial.original_zero_balance_eq_twice_pairing",
+      "CarryMixedRadial.zero_pairing_original",
+      "CarryMixedRadial.zero_pairing_factor_kernel",
+      "CarryMixedRadial.zero_pairing_conj",
+      "CarryMixedRadial.difference_pairing_four_crosses",
+      "CarryMixedRadial.doubled_zero_factor",
+      "CarryMixedRadial.doubled_zero_factor_gt_one"
+    ],
+    "MixedRadialLimits": [
+      "CarryMixedRadial.native_kernel_limit",
+      "CarryMixedRadial.zero_pairing_limit_of_factor",
+      "CarryMixedRadial.diagonal_zero_limit",
+      "CarryMixedRadial.doubled_index_tendsto",
+      "CarryMixedRadial.doubled_zero_limit",
+      "CarryMixedRadial.doubled_difference_limit"
+    ],
+    "ZeroJetObstruction": [
+      "CarryMixedRadial.doubled_limit_ne_diagonal",
+      "CarryMixedRadial.no_joint_zero_limit",
+      "CarryMixedRadial.doubled_difference_negative_eventually",
+      "CarryMixedRadial.no_hilbert_gram_for_raw_radial_union",
+      "CarryMixedRadial.doubled_factor_determinant"
+    ],
+    "PrimeTowerCanary": [
+      "CarryMixedRadial.native_two_lt_one_sixteenth",
+      "CarryMixedRadial.tower_closed_forms_gap",
+      "CarryMixedRadial.tower_closed_forms_not_native",
+      "CarryMixedRadial.prime_log_ge_half",
+      "CarryMixedRadial.prime_tower_closed_forms_not_native"
+    ]
+  },
+  "audit_groups": {
+    "source": [
+      "CarryMixedRadial.zeroJet",
+      "CarryMixedRadial.zeroPairing",
+      "CarryMixedRadial.differencePairing",
+      "CarryMixedRadial.zero_jet_original",
+      "CarryMixedRadial.zero_jet_boundary",
+      "CarryMixedRadial.original_zero_balance_eq_twice_pairing",
+      "CarryMixedRadial.zero_pairing_original",
+      "CarryMixedRadial.zero_pairing_factor_kernel",
+      "CarryMixedRadial.zero_pairing_conj",
+      "CarryMixedRadial.difference_pairing_four_crosses",
+      "CarryMixedRadial.doubled_zero_factor",
+      "CarryMixedRadial.doubled_zero_factor_gt_one"
+    ],
+    "identification": [
+      "CarryMixedRadial.native_kernel_limit",
+      "CarryMixedRadial.zero_pairing_limit_of_factor",
+      "CarryMixedRadial.diagonal_zero_limit",
+      "CarryMixedRadial.doubled_index_tendsto",
+      "CarryMixedRadial.doubled_zero_limit",
+      "CarryMixedRadial.doubled_difference_limit"
+    ],
+    "obstruction": [
+      "CarryMixedRadial.doubled_limit_ne_diagonal",
+      "CarryMixedRadial.no_joint_zero_limit",
+      "CarryMixedRadial.doubled_difference_negative_eventually",
+      "CarryMixedRadial.no_hilbert_gram_for_raw_radial_union",
+      "CarryMixedRadial.doubled_factor_determinant"
+    ],
+    "prime_canary": [
+      "CarryMixedRadial.native_two_lt_one_sixteenth",
+      "CarryMixedRadial.tower_closed_forms_gap",
+      "CarryMixedRadial.tower_closed_forms_not_native",
+      "CarryMixedRadial.prime_log_ge_half",
+      "CarryMixedRadial.prime_tower_closed_forms_not_native"
+    ]
+  }
+}
