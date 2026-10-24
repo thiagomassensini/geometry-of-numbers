@@ -1,0 +1,20 @@
+{
+  "created_utc": "2026-10-24T19:19:29.513617+00:00",
+  "classification": "PARTIAL",
+  "global_goal": "ACTIVE",
+  "validation_checks": 18,
+  "all_exit_zero": true,
+  "declarations": {
+    "theorem": 58,
+    "instance": 1,
+    "def": 19,
+    "abbrev": 1
+  },
+  "public_roots": 79,
+  "type_body_dependencies": 5943,
+  "report_lines": 349,
+  "report_footer_verified": true,
+  "report_sha256": "6a228bca00949fad3916f92d76d7d432c774e8d1af9cf35acc2cee99e4da671e",
+  "validated_lean_source_hashes_match": true,
+  "note_sha256": "1b4c78fb2f6e3c6d34a73146b37c070a1256aef9fcb6a0a73fc94c8da147b5cd"
+}
