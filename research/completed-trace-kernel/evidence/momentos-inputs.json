@@ -1,0 +1,10 @@
+{
+  "repository": "thiagomassensini/momentos",
+  "commit": "0d0dd0975a1558ced731e9246c14420c0e0720f4",
+  "source": "investigations/jacobi_polynomial_moments_20261024",
+  "sha256": {
+    "derivacao_jacobi_momentos_c2.md": "fdf74feb2bfea0a0d590860bf5c1a8324bee0792fd066d0bc77a7f1448b8bd9c",
+    "jacobi_polynomial_series.py": "1628b842406e350a4e7fc02ba8e54665fc05bfffaadfe25e24b182c9830d2652",
+    "c2_momentos_16_excerpt.csv": "2485addf2d0d470869db3ff393979624e60c16455ee4ec880feece3edfa7fcb8"
+  }
+}
