@@ -1,0 +1,13 @@
+{
+  "validation": "PASS",
+  "checks": 17,
+  "public_roots": 69,
+  "transitive_dependencies": 6238,
+  "new_theorems": 51,
+  "new_definitions": 17,
+  "new_abbreviations": 1,
+  "report_lines": 348,
+  "report_footer": "PRESENT",
+  "sources_match_validated_sha256": true,
+  "goal": "ACTIVE"
+}

@@ -1,0 +1,18 @@
+upstream-provenance: exit 0
+generate-audit: exit 0
+operator-source-build: exit 0
+lean-PowerRefinement: exit 0
+lean-RadialRefinement: exit 0
+lean-RefinementCoherence: exit 0
+lean-DomainCompatibility: exit 0
+lean-SourceCompatibility: exit 0
+lean-CommonKernel: exit 0
+lean-CommonJets: exit 0
+lean-Audit: exit 0
+root-build: exit 0
+audit-foundation: exit 0
+audit-geometry: exit 0
+audit-analysis: exit 0
+base-preserved: exit 0
+diff-check: exit 0
+PASS: 17 commands; no trusted escapes; source preservation verified

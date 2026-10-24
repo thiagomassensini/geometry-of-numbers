@@ -1,0 +1,76 @@
+{
+  "base": "0618317827981136657cb1b5bb728a8e93cea50d",
+  "main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "branch": "agent/radial-common-refinement",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_status": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "ancestors": {
+    "EndpointCore": {
+      "source": "research/physical-cauchy-endpoint-domain/EndpointCore.lean",
+      "sha256": "eed5ceae82d0f83a3547238d630d70dc0212e17bb103b4fb898840598e192cfb",
+      "olean_sha256": "f00df798a41314d71f1198f98986c262be6c61982fd28b1a5edf0fd0d8bb64f3"
+    },
+    "EndpointGreen": {
+      "source": "research/physical-cauchy-endpoint-domain/EndpointGreen.lean",
+      "sha256": "65d91949eca23cf970ef78d311ec73e3ff44257064c49b5490f27726d35fb746",
+      "olean_sha256": "41285bb6143e36ae549991c917b4839797b0a65fb99ce1170bba9c8264efab14"
+    },
+    "ColumnAsymptotics": {
+      "source": "research/physical-cauchy-endpoint-domain/ColumnAsymptotics.lean",
+      "sha256": "90021e2ddcb41fb83404c3890b9ba5052a2fd371a0adc6f6feda21115e294c86",
+      "olean_sha256": "e9c1c542e3a37f4eaae2c63545b56f26df9de612f1e1554920a1bcf3feca7238"
+    },
+    "CriticalReadout": {
+      "source": "research/physical-cauchy-endpoint-domain/CriticalReadout.lean",
+      "sha256": "b2e882827e29bd517da6c5ba38ed75dcfdf818a4f20b098cf82500d57692baa7",
+      "olean_sha256": "747d640495ec5eb6a353dd5a87e3ac52a9f0649e89ee4cba9cb20ecb027829ba"
+    },
+    "NativeEncoder": {
+      "source": "research/physical-cauchy-endpoint-domain/NativeEncoder.lean",
+      "sha256": "f7492008349ab531b2240c987f96533d047dcbcc0c7634e1de59281a72d3ee21",
+      "olean_sha256": "44cccb8869f98d1a01e64632f1e3d671974d0dca2fa51eaf9b90d0613294a6ac"
+    },
+    "OriginalSourceDomain": {
+      "source": "research/physical-cauchy-endpoint-domain/OriginalSourceDomain.lean",
+      "sha256": "1815ed695cc608f32294461f402330a9dcc4aecc000bf1f286cf36a36572b972",
+      "olean_sha256": "0a0f413cadbdb83a8d85428523479214a08695f162d8eda51ae2200ec2fe288c"
+    },
+    "SourceReadouts": {
+      "source": "research/completed-trace-kernel/SourceReadouts.lean",
+      "sha256": "d9725ac717777188a30dcf915459fdc9125a936496c599b89ce3f1a5873a4ea9",
+      "olean_sha256": "dbb50c00221152178ac47fa97632f26aee51acfb41638bdd7d0f85e0955d7702"
+    },
+    "CrossRadialGeometry": {
+      "source": "research/completed-trace-kernel/CrossRadialGeometry.lean",
+      "sha256": "63533b317a33fa59708ab74ddac3c1c45ac3bf402f302490d3595b2dcc8a3e9b",
+      "olean_sha256": "4be152f091b75d7f0949665a7c90fff3f9ce20abc6cabe7a3675dbefedff81de"
+    }
+  },
+  "operator_sources_sha256": {
+    "CompletedNativeProjectiveChiralCarrier": "1e9bb581d91f0b77fd52be947932e40ac7916430a8b994714ef6185865f58aaa",
+    "CompletedNativeProjectiveChiralForwardDifference": "cd403f6535a3c52a0080fea31eb66b71352b8a16c2aadc58d4c1b602452def6e",
+    "CompletedNativeChiralBoundaryJetTransport": "abd583e6784a54ed14a19163cd0ff60c7ebe7f11ee0e7aab39975123465f9283",
+    "CompletedNativeChiralJetStorageTransport": "0b1f94a53a706c8713d416200a6c476a7ffb3503ef9d82e87b2315609750c693",
+    "CompletedNativeRadialChiralMultiplier": "1ae47a75e6ec10f1f2be5b2133247ab2de92f2fe5be9996ca921c0611b67fa13",
+    "CompletedGreenForwardDifferenceVectorLimit": "f5e27f1658310c3ed3f0e6e1593a928e07d87b4e80b135b2b8978bf9bfa5f7c4",
+    "CompletedNativeRealWeylMoments": "99b68c3237442760b391707dafa39c98ce8e27b5139966b0a6cc87a6dcfd1011",
+    "CompletedNativeRadialTiltSamplePositivity": "382509e0dd89f3aded085bb0845459be450bc8c7798bc1fc114de9fb0fee3af6"
+  },
+  "packages": {
+    "CPFormal": "65d50f6db1208708e109982ba97e1d51d3039956",
+    "NativeCarryC3Crosswalk": "150cfc7fb08da96bf8117f15869cc2b819d593c2",
+    "NativeCarrySpectralWeyl": "298d83c9351e308a5213b9f5ac32e44087f98a9f"
+  },
+  "pr41": {
+    "baseRefName": "main",
+    "headRefOid": "ee56930a2c30456cfbd214a29bb31b12d3977204",
+    "isDraft": true,
+    "state": "OPEN"
+  },
+  "pr80": {
+    "baseRefName": "agent/completed-trace-kernel",
+    "headRefOid": "0618317827981136657cb1b5bb728a8e93cea50d",
+    "isDraft": true,
+    "state": "OPEN"
+  }
+}
