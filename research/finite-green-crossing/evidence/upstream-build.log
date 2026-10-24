@@ -1,0 +1,22 @@
+UPSTREAM PASS EndpointCore
+UPSTREAM PASS PowerRefinement
+UPSTREAM PASS EndpointGreen
+UPSTREAM PASS ColumnAsymptotics
+UPSTREAM PASS CriticalReadout
+UPSTREAM PASS NativeEncoder
+UPSTREAM PASS OriginalSourceDomain
+UPSTREAM PASS SourceReadouts
+UPSTREAM PASS CrossRadialGeometry
+UPSTREAM PASS RadialRefinement
+UPSTREAM PASS RestrictedAdvance
+UPSTREAM PASS GreenIntertwiner
+UPSTREAM PASS CommonKernel
+UPSTREAM PASS CommonJets
+UPSTREAM PASS CompletedTfvdTransport
+UPSTREAM PASS CanonicalGreenSectors
+UPSTREAM PASS ResidualCrossings
+UPSTREAM PASS MeanContrast
+UPSTREAM PASS AlignmentTest
+UPSTREAM PASS GreenBudget
+UPSTREAM PASS RefinementCoherence
+Compiled 21 ancestor modules.
