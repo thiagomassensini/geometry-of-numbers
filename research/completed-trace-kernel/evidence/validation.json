@@ -1,0 +1,203 @@
+{
+  "created_utc": "2026-10-24T00:17:04.599617+00:00",
+  "geometry_main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "geometry_base": "4f98f0343b596f3c133d42dfb1ea3055fa069664",
+  "geometry_branch": "agent/completed-trace-kernel",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_origin_main": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "operator_status_preserved": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "operator_modules_sha256": {
+    "CarrySelfAdjointOperator/NativeCauchyLaguerreSources.lean": "2a74b670544cadc5e08ef5f6df8064fd19a57d61eaba822dea62e5b2dc22f3b7",
+    "CarrySelfAdjointOperator/CompletedNativeChiralReturnSourceTrace.lean": "5ec3536aeb34699f79e5da8ba742d0f7ec91f16d7d0a9f9c47b8e6592fc33939",
+    "CarrySelfAdjointOperator/CompletedNativeChiralReturnCompletionSplit.lean": "7863304c000706fe427f796ce3ddada19d5b618c6f4767055d9937479ff6ed7f",
+    "CarrySelfAdjointOperator/NativeGammaCoupledCompletionObstruction.lean": "482f96a2a7ace52a9dcbccf315b88e8934f10fe985cbd61a358d19c1af3cd368",
+    "CarrySelfAdjointOperator/CompletedNativeRadialChiralMultiplier.lean": "1ae47a75e6ec10f1f2be5b2133247ab2de92f2fe5be9996ca921c0611b67fa13",
+    "CarrySelfAdjointOperator/CompletedNativeChiralReturnStorage.lean": "209faddb21a2a778011abe93ab1e2569a2c5a0a526a5819312c1d1e2555ea116",
+    "CarrySelfAdjointOperator/CompletedNativeCentralChiralQuotientCurvature.lean": "5b5763e4784177a52e14c50802ba622ed8ed79972505379bd6acd03be8bc349b",
+    "CarrySelfAdjointOperator/CompletedNativeChiralPickFactorization.lean": "1cd536b29d49e9fa83c30b24214caa5b541856d89fd613abe6f1c73eb7a0d0f4"
+  },
+  "protected_files_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "checks": [
+    {
+      "label": "upstream-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-trace-kernel/research/completed-trace-kernel",
+      "exit_code": 0,
+      "seconds": 0.19,
+      "log": "evidence/upstream-provenance.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-trace-kernel/research/completed-trace-kernel",
+      "exit_code": 0,
+      "seconds": 0.037,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativeCauchyLaguerreSources",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnStorage"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.852,
+      "log": "evidence/operator-source-build.log"
+    },
+    {
+      "label": "lean-SourceReadouts",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SourceReadouts"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-trace-kernel/research/completed-trace-kernel",
+      "exit_code": 0,
+      "seconds": 10.711,
+      "log": "evidence/lean-SourceReadouts.log"
+    },
+    {
+      "label": "lean-CrossRadialGeometry",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CrossRadialGeometry"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-trace-kernel/research/completed-trace-kernel",
+      "exit_code": 0,
+      "seconds": 10.826,
+      "log": "evidence/lean-CrossRadialGeometry.log"
+    },
+    {
+      "label": "lean-TracePairing",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "TracePairing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-trace-kernel/research/completed-trace-kernel",
+      "exit_code": 0,
+      "seconds": 11.011,
+      "log": "evidence/lean-TracePairing.log"
+    },
+    {
+      "label": "lean-NativeCanaries",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "NativeCanaries"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-trace-kernel/research/completed-trace-kernel",
+      "exit_code": 0,
+      "seconds": 10.894,
+      "log": "evidence/lean-NativeCanaries.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-trace-kernel/research/completed-trace-kernel",
+      "exit_code": 0,
+      "seconds": 10.314,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-trace-kernel",
+      "exit_code": 0,
+      "seconds": 8.754,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-trace-kernel",
+      "exit_code": 0,
+      "seconds": 6.993,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-trace-kernel",
+      "exit_code": 0,
+      "seconds": 9.923,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-trace-kernel",
+      "exit_code": 0,
+      "seconds": 49.418,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "4f98f0343b596f3c133d42dfb1ea3055fa069664",
+        "--",
+        ".",
+        ":(exclude)research/completed-trace-kernel/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-trace-kernel",
+      "exit_code": 0,
+      "seconds": 0.111,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-trace-kernel",
+      "exit_code": 0,
+      "seconds": 0.106,
+      "log": "evidence/diff-check.log"
+    }
+  ],
+  "new_sources_sha256": {
+    "Audit.lean": "27276dc8aa66af2966625c66413497bdb8593f4f63c94601262157c767d88eae",
+    "CrossRadialGeometry.lean": "63533b317a33fa59708ab74ddac3c1c45ac3bf402f302490d3595b2dcc8a3e9b",
+    "NativeCanaries.lean": "917e0338269c6a0bd4d812fe609f10f128a607b58587d46d50b865c182ce601a",
+    "SourceReadouts.lean": "d9725ac717777188a30dcf915459fdc9125a936496c599b89ce3f1a5873a4ea9",
+    "TracePairing.lean": "38d0f6e51ffa5d553037fee2307feec369a08c5d9ec9518bb8c9d3e126b826c1"
+  },
+  "trust_escape_scan": "PASS",
+  "operator_sources_and_preexisting_files": "PRESERVED"
+}
