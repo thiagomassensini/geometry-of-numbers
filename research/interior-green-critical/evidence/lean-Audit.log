@@ -1,0 +1,78 @@
+'CarryInteriorGreen.interior_bulk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.interior_numerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.greenColumn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.interiorPort' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.reconstructed_interior' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.finite_bulk_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.numerator_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.finite_bulk_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.numerator_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.numerator_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.residualMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.residual_map_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.bulk_eq_source_sub_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.bulkMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.bulk_map_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.residualFeature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.threeRegular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.three_residual_columns' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.three_residual_cross_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.three_ordered_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.secondScale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.criticalWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.criticalInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.critical_source_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.criticalBulk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.criticalResidual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.critical_residual_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.critical_bulk_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.critical_residual_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.critical_residual_self_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.critical_mixed_nine_crossings' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.critical_vector_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.critical_energy_three_sectors' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.prefixRegular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.residual_basis_all' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.input_basis_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.finiteResidualFeature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.finite_residual_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.finite_residual_cross_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.three_regular_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.finite_prefix_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.finite_residual_eventually_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.criticalPairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.form_smul_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.form_smul_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.critical_pairing_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.critical_pairing_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.critical_source_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.critical_green_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.first_source_schur_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.schur_green_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryInteriorGreen.critical_limit_complete_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+Interior critical Green audit tier 0: 39 public roots; 5895 type/body dependencies; standard axioms only
+Interior critical Green audit tier 1: 13 public roots; 6294 type/body dependencies; standard axioms only
+Interior critical Green audit tier 1: 52 public roots; 6343 type/body dependencies; standard axioms only
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 8.70
+	System time (seconds): 5.93
+	Percent of CPU this job got: 115%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.70
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8378436
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 58
+	Minor (reclaiming a frame) page faults: 292603
+	Voluntary context switches: 12213
+	Involuntary context switches: 157
+	Swaps: 0
+	File system inputs: 5272
+	File system outputs: 704
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
