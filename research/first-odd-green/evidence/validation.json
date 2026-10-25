@@ -1,0 +1,240 @@
+{
+  "created_utc": "2026-10-25T00:14:33.017323+00:00",
+  "geometry_main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "geometry_base": "365d91c60d49740a4c31153e90d620f424eec8fe",
+  "geometry_branch": "agent/first-odd-green",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_origin_main": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "operator_status_preserved": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "operator_modules_sha256": {
+    "CarrySelfAdjointOperator/NativeCauchyLaguerreSources.lean": "2a74b670544cadc5e08ef5f6df8064fd19a57d61eaba822dea62e5b2dc22f3b7",
+    "CarrySelfAdjointOperator/NativePhysicalGreenResolvent.lean": "e0228de1445e347971cc45d168f51bb113bfe582a448b3e75adc354cb8ce2204",
+    "CarrySelfAdjointOperator/CompletedC3FullWronskianCentralChiralEnergy.lean": "87b1b5f93059ee3df0ecbdef3c9744cfefd350d7f024dd277bb9fab054c59ac7",
+    "CarrySelfAdjointOperator/CompletedGreenDiagonalClosure.lean": "2c8dcc5f143a0cdd34ebb6c2aa8aef5ca15081e11dc39c281ecd1a247fb8891a",
+    "CarrySelfAdjointOperator/NativeIntervalMultiplier.lean": "c395b94e42c110c7724889a2a5df56dfbddefb536b1c385790955f8f12fa1f78",
+    "CarrySelfAdjointOperator/NativeCompletedFiniteGreenResidual.lean": "e5bbbe2618f4d788ca2116d475d9e92ed87b6e5f405a6984635ba9412df2c3a8",
+    "CarrySelfAdjointOperator/NativeIncidenceCauchyPorts.lean": "35af1faa17ff334b04b79ca5a34c878aa434557848d40340f313252a80d3169e",
+    "CarrySelfAdjointOperator/NativeScalarZetaIdentification.lean": "3db88552cc9be5f02f51ac8c84be6ac2470c425b15679b51893e1aa816155843",
+    "CarrySelfAdjointOperator/CompletedNativeChiralJetStorageTransport.lean": "0b1f94a53a706c8713d416200a6c476a7ffb3503ef9d82e87b2315609750c693",
+    "CarrySelfAdjointOperator/CompletedNativeProjectiveChiralCarrier.lean": "1e9bb581d91f0b77fd52be947932e40ac7916430a8b994714ef6185865f58aaa",
+    "CarrySelfAdjointOperator/CompletedNativeProjectiveChiralForwardDifference.lean": "cd403f6535a3c52a0080fea31eb66b71352b8a16c2aadc58d4c1b602452def6e",
+    "CarrySelfAdjointOperator/CompletedNativeCentralChiralVariation.lean": "6aa9f25f31c1f3dce8130f30cd26e1f82ce95f5d4ce674055999333283352caf",
+    "CarrySelfAdjointOperator/CompletedGreenForwardDifferenceVectorLimit.lean": "f5e27f1658310c3ed3f0e6e1593a928e07d87b4e80b135b2b8978bf9bfa5f7c4",
+    "CarrySelfAdjointOperator/CompletedNativeChiralReturnSourceTrace.lean": "5ec3536aeb34699f79e5da8ba742d0f7ec91f16d7d0a9f9c47b8e6592fc33939",
+    "CarrySelfAdjointOperator/CompletedNativeChiralReturnCompletionSplit.lean": "7863304c000706fe427f796ce3ddada19d5b618c6f4767055d9937479ff6ed7f",
+    "CarrySelfAdjointOperator/NativeGammaCoupledCompletionObstruction.lean": "482f96a2a7ace52a9dcbccf315b88e8934f10fe985cbd61a358d19c1af3cd368",
+    "CarrySelfAdjointOperator/CompletedNativeRadialChiralMultiplier.lean": "1ae47a75e6ec10f1f2be5b2133247ab2de92f2fe5be9996ca921c0611b67fa13",
+    "CarrySelfAdjointOperator/CompletedNativeChiralReturnStorage.lean": "209faddb21a2a778011abe93ab1e2569a2c5a0a526a5819312c1d1e2555ea116",
+    "CarrySelfAdjointOperator/CompletedNativeCentralChiralQuotientCurvature.lean": "5b5763e4784177a52e14c50802ba622ed8ed79972505379bd6acd03be8bc349b",
+    "CarrySelfAdjointOperator/CompletedNativeChiralPickFactorization.lean": "1cd536b29d49e9fa83c30b24214caa5b541856d89fd613abe6f1c73eb7a0d0f4"
+  },
+  "protected_files_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "checks": [
+    {
+      "label": "upstream-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-first-odd-green/research/first-odd-green",
+      "exit_code": 0,
+      "seconds": 2.325,
+      "log": "evidence/upstream-provenance.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-first-odd-green/research/first-odd-green",
+      "exit_code": 0,
+      "seconds": 0.042,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativeCauchyLaguerreSources",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 9.047,
+      "log": "evidence/operator-source-build.log"
+    },
+    {
+      "label": "lean-SuccessorPort",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SuccessorPort"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-first-odd-green/research/first-odd-green",
+      "exit_code": 0,
+      "seconds": 15.448,
+      "log": "evidence/lean-SuccessorPort.log"
+    },
+    {
+      "label": "lean-FirstOddJet",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "FirstOddJet"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-first-odd-green/research/first-odd-green",
+      "exit_code": 0,
+      "seconds": 16.254,
+      "log": "evidence/lean-FirstOddJet.log"
+    },
+    {
+      "label": "lean-OddPortOverlap",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "OddPortOverlap"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-first-odd-green/research/first-odd-green",
+      "exit_code": 0,
+      "seconds": 15.664,
+      "log": "evidence/lean-OddPortOverlap.log"
+    },
+    {
+      "label": "lean-OddAsymptotics",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "OddAsymptotics"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-first-odd-green/research/first-odd-green",
+      "exit_code": 0,
+      "seconds": 13.953,
+      "log": "evidence/lean-OddAsymptotics.log"
+    },
+    {
+      "label": "lean-OddSigns",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "OddSigns"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-first-odd-green/research/first-odd-green",
+      "exit_code": 0,
+      "seconds": 13.592,
+      "log": "evidence/lean-OddSigns.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-first-odd-green/research/first-odd-green",
+      "exit_code": 0,
+      "seconds": 14.66,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "first-odd-diagnostic",
+      "command": [
+        "/home/thlinux/miniforge3/bin/python",
+        "probe_first_odd.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-first-odd-green/research/first-odd-green",
+      "exit_code": 0,
+      "seconds": 7.539,
+      "log": "evidence/first-odd-diagnostic.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-first-odd-green",
+      "exit_code": 0,
+      "seconds": 8.096,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-first-odd-green",
+      "exit_code": 0,
+      "seconds": 8.482,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-first-odd-green",
+      "exit_code": 0,
+      "seconds": 11.563,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-first-odd-green",
+      "exit_code": 0,
+      "seconds": 49.847,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "365d91c60d49740a4c31153e90d620f424eec8fe",
+        "--",
+        ".",
+        ":(exclude)research/first-odd-green/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-first-odd-green",
+      "exit_code": 0,
+      "seconds": 0.184,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-first-odd-green",
+      "exit_code": 0,
+      "seconds": 0.149,
+      "log": "evidence/diff-check.log"
+    }
+  ],
+  "new_sources_sha256": {
+    "Audit.lean": "6a50e6b913e8c16fc5ab199b45d26f11e4d61427fca21e85ae10c5b59c8e6329",
+    "FirstOddJet.lean": "5c8c4c67f878c09ea268a369b8f7d03f77e0c4304e83f662c641b63a4a0041fc",
+    "OddAsymptotics.lean": "6053bd60f11610c74c6064b1ef0df221aa779be5b144b4d6a002a49e2796ba01",
+    "OddPortOverlap.lean": "a611765e8e2b6968b32e800c7d629207c487cc8ecd0db7c8f141e71f5fb93d3f",
+    "OddSigns.lean": "a536f6ba1fe0804e71b93c941062d66f8a15dcdb51701d4abea5f8a55d48c56b",
+    "SuccessorPort.lean": "4ac01b7cbaa9a006357cabed81b62950e3fed9baf470c167ed5ed1fb4b0917dd"
+  },
+  "trust_escape_scan": "PASS",
+  "operator_sources_and_preexisting_files": "PRESERVED"
+}
