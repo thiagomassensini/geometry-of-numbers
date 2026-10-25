@@ -1,0 +1,54 @@
+{
+  "SchurBound": [
+    "CarryVerticalSynthesis.cauchy_weight_step",
+    "CarryVerticalSynthesis.cauchy_weight_row_range",
+    "CarryVerticalSynthesis.cauchy_weight_row",
+    "CarryVerticalSynthesis.cauchy_quadratic_bound"
+  ],
+  "NativeSynthesis": [
+    "CarryVerticalSynthesis.finiteTower",
+    "CarryVerticalSynthesis.finiteSource",
+    "CarryVerticalSynthesis.finite_tower_apply",
+    "CarryVerticalSynthesis.finite_tower_norm_sq",
+    "CarryVerticalSynthesis.finite_source_pairing",
+    "CarryVerticalSynthesis.finite_source_bound",
+    "CarryVerticalSynthesis.finite_tower_dense",
+    "CarryVerticalSynthesis.nativeSynthesis",
+    "CarryVerticalSynthesis.native_synthesis_finite",
+    "CarryVerticalSynthesis.native_synthesis_bound",
+    "CarryVerticalSynthesis.native_synthesis_opNorm",
+    "CarryVerticalSynthesis.native_synthesis_column",
+    "CarryVerticalSynthesis.native_synthesis_hasSum",
+    "CarryVerticalSynthesis.native_synthesis_unique",
+    "CarryVerticalSynthesis.native_synthesis_mem_original_closure"
+  ],
+  "Quadratures": [
+    "CarryVerticalSynthesis.native_synthesis_inner_im",
+    "CarryVerticalSynthesis.quadratureSynthesis",
+    "CarryVerticalSynthesis.quadrature_synthesis_apply",
+    "CarryVerticalSynthesis.quadrature_synthesis_norm_sq",
+    "CarryVerticalSynthesis.quadrature_synthesis_bound",
+    "CarryVerticalSynthesis.quadrature_synthesis_hasSum",
+    "CarryVerticalSynthesis.quadrature_synthesis_pairing",
+    "CarryVerticalSynthesis.quadrature_synthesis_J",
+    "CarryVerticalSynthesis.finiteQuadratures",
+    "CarryVerticalSynthesis.finite_quadratures_fst",
+    "CarryVerticalSynthesis.finite_quadratures_snd",
+    "CarryVerticalSynthesis.quadrature_synthesis_finite",
+    "CarryVerticalSynthesis.finite_quadrature_synthesis_injective"
+  ],
+  "HeadTail": [
+    "CarryVerticalSynthesis.native_synthesis_difference_bound",
+    "CarryVerticalSynthesis.native_synthesis_pairing_head_tail",
+    "CarryVerticalSynthesis.native_synthesis_prefix_tendsto",
+    "CarryVerticalSynthesis.native_synthesis_prefix_pairing_tendsto"
+  ],
+  "CompletedTransport": [
+    "CarryVerticalSynthesis.radial_incident_vector",
+    "CarryVerticalSynthesis.radial_return_vector",
+    "CarryVerticalSynthesis.completed_native_tower_pairing",
+    "CarryVerticalSynthesis.native_center_energy",
+    "CarryVerticalSynthesis.native_synthesis_not_isometry",
+    "CarryVerticalSynthesis.equal_vertical_norm_negative_synthesized_balance"
+  ]
+}
