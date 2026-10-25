@@ -1,0 +1,8 @@
+K^0 h0*u0*v0 + h1*u0*v1 + h1*u1*v0 + h2*u0*v2 + h2*u1*v1 + h2*u2*v0 + h3*u1*v2 + h3*u2*v1 + h4*u2*v2
+K^-2 -h1*u0*v0 - 20*h2*u0*v1 - 20*h2*u1*v0 - 126*h3*u0*v2 - 14*h3*u1*v1 - 126*h3*u2*v0 - 75*h4*u1*v2 - 75*h4*u2*v1 - 55*h5*u2*v2
+K^-4 h2*u0*v0 + 231*h3*u0*v1 + 231*h3*u1*v0 + 6027*h4*u0*v2 + 147*h4*u1*v1 + 6027*h4*u2*v0 + 3102*h5*u1*v2 + 3102*h5*u2*v1 + 2002*h6*u2*v2
+K^-6 -h3*u0*v0 - 2290*h4*u0*v1 - 2290*h4*u1*v0 - 210232*h5*u0*v2 - 1408*h5*u1*v1 - 210232*h5*u2*v0 - 101530*h6*u1*v2 - 101530*h6*u2*v1
+K^-8 h4*u0*v0 + 21461*h5*u0*v1 + 21461*h5*u1*v0 + 6339333*h6*u0*v2 + 13013*h6*u1*v1 + 6339333*h6*u2*v0
+K^-10 -h5*u0*v0 - 196560*h6*u0*v1 - 196560*h6*u1*v0
+K^-12 h6*u0*v0
+NEXT-TARGET CANARY PASS: 25 finite rational weight identities; no moment inputs.

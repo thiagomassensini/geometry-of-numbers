@@ -1,0 +1,30 @@
+{
+  "commit": "ee56930a2c30456cfbd214a29bb31b12d3977204",
+  "modules": {
+    "MomentFunctional": {
+      "source": "research/native-moment-orthogonalization-audit/MomentFunctional.lean",
+      "source_sha256": "34fc626086d3a8204ae0f06cce0276a739a01f7bdac17b7a0eb2b20203db72a3",
+      "olean_sha256": "201fd7e4b29864af29bbd0c3d87e7365d72b93a355653dcbaf8ef08419fa1080"
+    },
+    "JacobiLogic": {
+      "source": "research/native-moment-orthogonalization-audit/JacobiLogic.lean",
+      "source_sha256": "73bbd9e859eca465b254704c8c9f1ac1210e28b5d09faab9092081c6d3f00509",
+      "olean_sha256": "90ba574b2867d80a3de26522463f40c8a7f13247216d75f61f6d244f7dc82969"
+    },
+    "PolynomialCoordinates": {
+      "source": "research/native-moment-orthogonalization-audit/PolynomialCoordinates.lean",
+      "source_sha256": "08dd0d3e0b4771f47fdb08c926396ea59795ebd2f482736d506d149306180d4f",
+      "olean_sha256": "b5eae9ff1f1c49acc115a9f41f681d72f4f3a7488e22fc634f6fcfa0d60da1e0"
+    },
+    "NativeApplication": {
+      "source": "research/native-moment-orthogonalization-audit/NativeApplication.lean",
+      "source_sha256": "be0f50cdb6d192e39227b109df388eb8a326d68aca1d15c33b6c17ef2e165f3d",
+      "olean_sha256": "552c9ac83a8419880c0d151dfc88e4ab0d974538fb0fce0cbe9811cffc4ee130"
+    },
+    "SchurLogic": {
+      "source": "research/native-moment-orthogonalization-audit/SchurLogic.lean",
+      "source_sha256": "bd3d0d50f50b1f55664499ddf7e613d492584d203b222aeeb18c87ffe8ef1ddf",
+      "olean_sha256": "da23b65e330c2bd2320964b8ef57c06f049e417aa0110a1edc5fb1aca3cc954c"
+    }
+  }
+}
