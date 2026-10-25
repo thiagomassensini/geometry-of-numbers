@@ -1,0 +1,40 @@
+{
+  "base": "d17aba9dfd0aa53a7b677cbb3da0e1e6213e0a54",
+  "branch": "agent/source-dependent-prime-readouts",
+  "main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_status": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "operator_source_sha256": {
+    "NativeRealComplementTransport": "ee9a4a2f70a0d84c6cdcfaf7d8be2838e25bb3435afdb9f79f491d21e3f11f21",
+    "NativePrimeCarryKernelCalibration": "d4a822870641831f11ec57332deee8b5c029c1988acc92f82e7aa6449a338b39",
+    "CompletedNativeCentralChiralQuotientCurvature": "5b5763e4784177a52e14c50802ba622ed8ed79972505379bd6acd03be8bc349b",
+    "CompletedNativeRadialChiralMultiplier": "1ae47a75e6ec10f1f2be5b2133247ab2de92f2fe5be9996ca921c0611b67fa13",
+    "CompletedNativePrimosProjectiveMassCrosswalkAudit": "ad54e22c5159f58d5adfbee95cefeb8d45487ecf6e72c1b1f45b4c7c1aa6a700",
+    "RealQuadratureDomainTransport": "bf87bbf180cece4f470852999c51f2df4e55912528b97d91c440270cac6d8853",
+    "NativeRealFirstQuadratureNaturality": "2954374e411b750d61c3bbb832a85e39835ea7ba71166a43ba3ba123880bc768",
+    "NativeCauchyLaguerreSources": "2a74b670544cadc5e08ef5f6df8064fd19a57d61eaba822dea62e5b2dc22f3b7"
+  },
+  "CPFormal_source_sha256": {
+    "CpNativeGprePrimeCarryContraction": "7b84519a6fd98403c9ca848dca5508c5930cdc7b99b78dffc2b5440b21ed495c",
+    "CpPrimeCarryDefectReadoutCrosswalk": "20dd0ef49f8a83f49955bdefed36eb5b024805d8089e604937d7674e998d484a",
+    "CpGenuinePrimeCarryDefectUniformBound": "db9984718ae9f83831734d8336244f3479020927d079308f55b2680d159aec60",
+    "CpNativeGpreTowerNorm": "78f5e26702a4ba06ba6b5c697a79fe5df7a007042e2d7217704bc3b312135aff",
+    "CpGpreTypes": "fbcf885c42fef94af47c28d06b074dfe4c7d3d81d82fc6cb9225e2938906c590"
+  },
+  "packages": {
+    "CPFormal": "65d50f6db1208708e109982ba97e1d51d3039956",
+    "NativeCarryC3Crosswalk": "150cfc7fb08da96bf8117f15869cc2b819d593c2",
+    "NativeCarrySpectralWeyl": "298d83c9351e308a5213b9f5ac32e44087f98a9f"
+  },
+  "momentos_head": "688bc4d61baab4cba4cbee86fbf3e270908123db",
+  "momentos_status": "M AUDITORIA_CORRECTED_MOMENTS_VS_CANONICAL_RECURRENCE.md",
+  "readme_url": "https://github.com/thiagomassensini/momentos/blob/main/native_jet_exploration/vm_campaign/README.md",
+  "readme_git_blob": "37c1b449a3ada8839cd9242aba4b9355a8f7ea87",
+  "readme_github_blob": "37c1b449a3ada8839cd9242aba4b9355a8f7ea87",
+  "pr89": {
+    "baseRefName": "agent/polarized-green-jet-four",
+    "headRefOid": "d17aba9dfd0aa53a7b677cbb3da0e1e6213e0a54",
+    "isDraft": true,
+    "state": "OPEN"
+  }
+}
