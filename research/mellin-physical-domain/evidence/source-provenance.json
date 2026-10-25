@@ -1,0 +1,54 @@
+{
+  "base": "457ea144d33d0b376a5c589b06ef1695e6d14adb",
+  "branch": "agent/mellin-physical-domain",
+  "main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "unchanged_upstream": {
+    "base": "457ea144d33d0b376a5c589b06ef1695e6d14adb",
+    "modules": {
+      "PrimeProjection": {
+        "source": "research/source-dependent-prime-readouts/PrimeProjection.lean",
+        "source_sha256": "06ff2787d6c334ca90629737f1f2c19632533505331db812e919602955776e7c",
+        "olean_sha256": "a4bfa52b816306503c6391bff8e3d92914aaccc365d081557b9392d9fa888947"
+      },
+      "PrimeAnalysis": {
+        "source": "research/source-dependent-prime-readouts/PrimeAnalysis.lean",
+        "source_sha256": "b3d999150390325f6e4298c74f4f221d635cb1106acdf20380ad8696b2f78007",
+        "olean_sha256": "fde90df97177a849d8214d8370c4f5f86cd505108ce2df7fe2e76ec6b9ae19d6"
+      },
+      "PrimeCanaries": {
+        "source": "research/source-dependent-prime-readouts/PrimeCanaries.lean",
+        "source_sha256": "ba0644c2d15279e9f2d0bd5f8147fc8b54795affaacdf8c3d5b05721e57edd47",
+        "olean_sha256": "e0f570b61fcf2ebba3a63ef749c60e907cefbc83cf28f3a02d09116368d82e8e"
+      },
+      "MellinPrimeReadout": {
+        "source": "research/source-dependent-prime-readouts/MellinPrimeReadout.lean",
+        "source_sha256": "986c379d4d4e1b681cc79627f9c4263b2446d1e581635336a898cc871605dc86",
+        "olean_sha256": "562559727357b91bacb1e6a87821bb0a3d081abf2ec9accf9978846effd0de46"
+      }
+    }
+  },
+  "geometry_vertical_sources_sha256": {
+    "GeometryOfNumbers/Analysis/C2BranchIsometryCanary.lean": "e6aaa0e9d0a541fe014745f7fd137c330939424771adbfb2ca40c350f47bdadc",
+    "GeometryOfNumbers/Analysis/C2GlobalPhysicalBranchCanary.lean": "264cb62f13fb8510d99817c5e251847c1e7cdf641f4828860fd04b9044a546ac",
+    "GeometryOfNumbers/Analysis/C2GlobalGreenBridge.lean": "7aac58aa576a3b0e877a728f5007efe15f207d74043ae6ce9967c75526f2c5fa"
+  },
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_status": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "operator_source_sha256": {
+    "CompletedNativeRadialChiralMultiplier": "1ae47a75e6ec10f1f2be5b2133247ab2de92f2fe5be9996ca921c0611b67fa13",
+    "NativePrimeCarryKernelCalibration": "d4a822870641831f11ec57332deee8b5c029c1988acc92f82e7aa6449a338b39",
+    "NativeRealComplementTransport": "ee9a4a2f70a0d84c6cdcfaf7d8be2838e25bb3435afdb9f79f491d21e3f11f21",
+    "NativeSourceThetaMomentPolynomials": "fd06a15ef76aef0777bb0d4d115df145aa2fd574e976485c9b9354742d494a59"
+  },
+  "packages": {
+    "CPFormal": "65d50f6db1208708e109982ba97e1d51d3039956",
+    "NativeCarryC3Crosswalk": "150cfc7fb08da96bf8117f15869cc2b819d593c2",
+    "NativeCarrySpectralWeyl": "298d83c9351e308a5213b9f5ac32e44087f98a9f"
+  },
+  "pr90": {
+    "baseRefName": "agent/all-order-binomial-green",
+    "headRefOid": "457ea144d33d0b376a5c589b06ef1695e6d14adb",
+    "isDraft": true,
+    "state": "OPEN"
+  }
+}
