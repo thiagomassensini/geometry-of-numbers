@@ -1,0 +1,27 @@
+PASS: 80/120 digits, nine ordered crosses, original critical direction, full balance.
+Second even pivot diagnostic: 0.0000000843685841013415182962157150838731410630694117
+First correction: -0.000000000100459789378745852131111812059687811897934506
+Fourth-order correction: -0.000000000020043881584942947178046272720224585151018843
+	Command being timed: "/home/thlinux/miniforge3/bin/python probe_finite_part.py"
+	User time (seconds): 114.13
+	System time (seconds): 0.06
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:54.27
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 40852
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 8400
+	Voluntary context switches: 16
+	Involuntary context switches: 1281
+	Swaps: 0
+	File system inputs: 120
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
