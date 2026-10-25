@@ -1,0 +1,20 @@
+{
+  "base": "c4bcc38389c592681cde11a2b379079d6abd0cc9",
+  "modules": {
+    "SchurBound": {
+      "source": "research/native-vertical-synthesis/SchurBound.lean",
+      "source_sha256": "5ffe578f8a1d06eae90d3606fe796050673e429a187674766bbd93bb08ab4797",
+      "olean_sha256": "d413b483e8432dcc3199c9b35496a409c9a2de63957800d961b97e863e54a7b7"
+    },
+    "NativeSynthesis": {
+      "source": "research/native-vertical-synthesis/NativeSynthesis.lean",
+      "source_sha256": "22a7e79ef48ebb7e8d937eaf067ce4175be9b9c56ec5c7b31dcaa721cad4eb65",
+      "olean_sha256": "d2060ec7bbfa4964f3c9f5b541658b02e4a68a7608d33203d5fc12d7d2c5f507"
+    },
+    "Quadratures": {
+      "source": "research/native-vertical-synthesis/Quadratures.lean",
+      "source_sha256": "ae6eb58c756e599a4d3690a10a108772560016ee00f5cb6bbd1834d8f3c418e6",
+      "olean_sha256": "c180f3c1c46b1124c6f71fbc8145f10688c688dae3c1a44135fb14f38742938b"
+    }
+  }
+}
