@@ -1,0 +1,190 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-stencil-boundary/research/native-all-order-stencil-boundary",
+      "exit_code": 0,
+      "seconds": 0.691,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-stencil-boundary/research/native-all-order-stencil-boundary",
+      "exit_code": 0,
+      "seconds": 379.173,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-stencil-boundary/research/native-all-order-stencil-boundary",
+      "exit_code": 0,
+      "seconds": 0.042,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 7.912,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "ad7863a78f513373a026bfa862b6d411c041cb9450ff883e7c2c6896b055be3b",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-Stencil",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Stencil"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-stencil-boundary/research/native-all-order-stencil-boundary",
+      "exit_code": 0,
+      "seconds": 14.736,
+      "log": "evidence/lean-Stencil.log"
+    },
+    {
+      "label": "lean-BoundaryOperator",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "BoundaryOperator"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-stencil-boundary/research/native-all-order-stencil-boundary",
+      "exit_code": 0,
+      "seconds": 15.198,
+      "log": "evidence/lean-BoundaryOperator.log"
+    },
+    {
+      "label": "lean-NativeBoundary",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "NativeBoundary"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-stencil-boundary/research/native-all-order-stencil-boundary",
+      "exit_code": 0,
+      "seconds": 14.55,
+      "log": "evidence/lean-NativeBoundary.log"
+    },
+    {
+      "label": "lean-Regression",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Regression"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-stencil-boundary/research/native-all-order-stencil-boundary",
+      "exit_code": 0,
+      "seconds": 12.62,
+      "log": "evidence/lean-Regression.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-stencil-boundary/research/native-all-order-stencil-boundary",
+      "exit_code": 0,
+      "seconds": 10.656,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-stencil-boundary",
+      "exit_code": 0,
+      "seconds": 8.016,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-stencil-boundary",
+      "exit_code": 0,
+      "seconds": 7.0,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-stencil-boundary",
+      "exit_code": 0,
+      "seconds": 9.492,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-stencil-boundary",
+      "exit_code": 0,
+      "seconds": 46.189,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "a020c1f0165cf5ff80100d5508ce42d7d5ab8f1d",
+        "--",
+        ".",
+        ":(exclude)research/native-all-order-stencil-boundary/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-stencil-boundary",
+      "exit_code": 0,
+      "seconds": 0.009,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-stencil-boundary",
+      "exit_code": 0,
+      "seconds": 0.008,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}
