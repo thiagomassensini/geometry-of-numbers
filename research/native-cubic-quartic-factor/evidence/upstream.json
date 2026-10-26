@@ -1,0 +1,180 @@
+{
+  "base": "6a3ab21c1c986b809c49f0d26ff1ede034ef425b",
+  "modules": {
+    "SchurBound": {
+      "source": "research/native-vertical-synthesis/SchurBound.lean",
+      "source_sha256": "5ffe578f8a1d06eae90d3606fe796050673e429a187674766bbd93bb08ab4797",
+      "olean_sha256": "d413b483e8432dcc3199c9b35496a409c9a2de63957800d961b97e863e54a7b7"
+    },
+    "NativeSynthesis": {
+      "source": "research/native-vertical-synthesis/NativeSynthesis.lean",
+      "source_sha256": "22a7e79ef48ebb7e8d937eaf067ce4175be9b9c56ec5c7b31dcaa721cad4eb65",
+      "olean_sha256": "d2060ec7bbfa4964f3c9f5b541658b02e4a68a7608d33203d5fc12d7d2c5f507"
+    },
+    "Quadratures": {
+      "source": "research/native-vertical-synthesis/Quadratures.lean",
+      "source_sha256": "ae6eb58c756e599a4d3690a10a108772560016ee00f5cb6bbd1834d8f3c418e6",
+      "olean_sha256": "c180f3c1c46b1124c6f71fbc8145f10688c688dae3c1a44135fb14f38742938b"
+    },
+    "ShiftTransport": {
+      "source": "research/native-tfvd-completed-transport/ShiftTransport.lean",
+      "source_sha256": "b56cf6af3872f0422e3e5fcd1d5ef0283051f9a241752d888d4a69d3625882b9",
+      "olean_sha256": "6b9c6fea329098ad88b4b39dea3ecd9110cdc7fa95d8256301584434c4f5ac9d"
+    },
+    "PhysicalTfvd": {
+      "source": "research/native-tfvd-completed-transport/PhysicalTfvd.lean",
+      "source_sha256": "4292d0d343cfb9a0fa216d566c1cd371d0e9221353be3866190fd532a8ca26cf",
+      "olean_sha256": "6235a6d5d2815f02a84b9a8d57e07e7c4a20f72576e8ff992439e10272ef2845"
+    },
+    "CoefficientPorts": {
+      "source": "research/native-tfvd-completed-transport/CoefficientPorts.lean",
+      "source_sha256": "7679b7d41fe4851b05432091dd15ed198542b405b456d550ba7c643879fc34e6",
+      "olean_sha256": "c6df0c1bdfe6584d7661abb771159b1238c8dd31b24e3dde5018abe5072fbefb"
+    },
+    "CompletionCommutator": {
+      "source": "research/native-tfvd-completed-transport/CompletionCommutator.lean",
+      "source_sha256": "2a73aa883a505fce2fa313fdfc4973551c28a151836874f8d1fa150c4207ebaa",
+      "olean_sha256": "f97c31a9bd550fcfe378f9c3b794c25ce20c9311b50b5c31d13d30f82d023f58"
+    },
+    "CompletedSourceBridge": {
+      "source": "research/native-tfvd-completed-transport/CompletedSourceBridge.lean",
+      "source_sha256": "c0f01fbdf9cfb86f0e7eb5cab4820b17620ace8f8a825655c4546705c579f8ad",
+      "olean_sha256": "523296404e388b3f6c69776916526535adf34f4a8d5fbe2c8985f1a85a6a7d25"
+    },
+    "NativeWeightLaw": {
+      "source": "research/native-commutator-mixed-control/NativeWeightLaw.lean",
+      "source_sha256": "6845a108d7b4148bea8720b8fc1782204e488931d522638b8cee7adf229442eb",
+      "olean_sha256": "196d94d88bb873e67d1c771771531a9d35e9248f15559ba0cb24b62cb2dcabb9"
+    },
+    "NullCommutator": {
+      "source": "research/native-commutator-mixed-control/NullCommutator.lean",
+      "source_sha256": "e1fe3a17b922b57b94943b42c08db13157d4d6478c7aa406749ac7bb00fbdc3b",
+      "olean_sha256": "a61ffa26e8c62dd8d9b5ab1437d39008cf7a25a7d289f961210825342b4dcddd"
+    },
+    "MixedReduction": {
+      "source": "research/native-commutator-mixed-control/MixedReduction.lean",
+      "source_sha256": "e40116227129c00ac0a19dd1658719a77eb3a9b3662b9fe96d075c0d722241c0",
+      "olean_sha256": "730a102bd768c18f053ba74600007cb7428729c0a97eda9b611640eb0e1d6f79"
+    },
+    "NativeJets": {
+      "source": "research/native-commutator-mixed-control/NativeJets.lean",
+      "source_sha256": "bcbbd31fa4d84529f5420094b5c7a5d0255ab3239fc35f6ebb1c48bb28b9afb9",
+      "olean_sha256": "d82d8dea350f97c90be44a526d0dc1c5f48940dac19bb4dec491960e5d2afe14"
+    },
+    "GreenSeed": {
+      "source": "research/native-commutator-mixed-control/GreenSeed.lean",
+      "source_sha256": "b47929b295f10d4b6ba7a8b9476b3534464f298468a67cf435d15af8151c7d27",
+      "olean_sha256": "6408a32c31d9d119552aee3abb78d668c8f1ccd786fe804d435c9f7f20f90a58"
+    },
+    "ResponseFlux": {
+      "source": "research/native-critical-tfvd-cancellation/ResponseFlux.lean",
+      "source_sha256": "b833b9e873b32c472a1a90affcb841fc5c608771742975494f9274294a661bf8",
+      "olean_sha256": "c047c263a6b74519e347db49a096b67e64c034b67d85d03b75548b2e3a1c8f6c"
+    },
+    "CriticalVectors": {
+      "source": "research/native-critical-tfvd-cancellation/CriticalVectors.lean",
+      "source_sha256": "a8df7c27502e621e3c8f1cc820b870c5e4ed24f6e759de46ac825f030f726547",
+      "olean_sha256": "257b7fa6d039f9a16a5f2a4127db15fe932bd623b19211a67ee0ac1077f4b3f3"
+    },
+    "ResponseTaylor": {
+      "source": "research/native-critical-tfvd-cancellation/ResponseTaylor.lean",
+      "source_sha256": "59effe60bbc169762468134100ff11653735611ad43b2c5b4986830f1f1d04b4",
+      "olean_sha256": "8acc5b32c9c621627a1c7a943f028a9d3fad140cd9a0a79a6326e123e2a3b0b2"
+    },
+    "PhysicalKernels": {
+      "source": "research/native-critical-tfvd-cancellation/PhysicalKernels.lean",
+      "source_sha256": "b15867b5f742e0508d8eb424ed5c337c9b6b4add450d32a3902cd82965714429",
+      "olean_sha256": "58dfdcd659baf31d43bd40ac1840f965dd50fb51bdaa2ec4e6726468736a5769"
+    },
+    "SectorExpansion": {
+      "source": "research/native-critical-tfvd-cancellation/SectorExpansion.lean",
+      "source_sha256": "913b32889c364f7e76341487ec6b44abef4e45e4014a4621da123432580db67c",
+      "olean_sha256": "bea629618e90766ca41092abb00799d5d643c6ae7df92bbce53f639fbdecd19b"
+    },
+    "Cancellation": {
+      "source": "research/native-critical-tfvd-cancellation/Cancellation.lean",
+      "source_sha256": "9b6f8e3ed23a9f76533b7b2149ae98e884b0a0abe30369aa41e9574eeb067e23",
+      "olean_sha256": "6ac206d3e5763f9c39b66ec24691bbf989ca26204eb03e52e6cb6156e88ab1fc"
+    },
+    "ComplementNorm": {
+      "source": "research/native-curvature-green-factor/ComplementNorm.lean",
+      "source_sha256": "2d338350064d393db7d0208c085d73f47ef2494b7e968ec2899e245fe12e43ac",
+      "olean_sha256": "2cd5fcec8a7c19d0d33b6a16f71dbc2926e21a0521e8961c758b3dc682e22d22"
+    },
+    "CurvatureKernel": {
+      "source": "research/native-curvature-green-factor/CurvatureKernel.lean",
+      "source_sha256": "a22a6ffc1d4504b51ad46576bc3b79cdb67ad02a9e72b17e2b263d9f6aeaad81",
+      "olean_sha256": "3e1f1405f38df36c014d91db48d439c6ef584f2e5f7df34e1e45fc11ce758939"
+    },
+    "NativeCoefficient": {
+      "source": "research/native-curvature-green-factor/NativeCoefficient.lean",
+      "source_sha256": "1bd63c4b3de17d63779d67bb7273a872d6d61e44ebdc022aebd9b7813844a5ce",
+      "olean_sha256": "098fbaf5936b62d4874e5b3f3365c3c35599301f643156ca7c620c2b0ffacb81"
+    },
+    "FourthBoundaryDefect": {
+      "source": "research/native-curvature-green-factor/FourthBoundaryDefect.lean",
+      "source_sha256": "14af03d0bd1e5c00383a6a1d08a0548fdbc858516a07520c81998069e1ef69a1",
+      "olean_sha256": "7177565d250bdbfbf20612a35b4f2de63c4be1bd987f095dc1ee5cd3714fbed5"
+    },
+    "FiniteTraces": {
+      "source": "research/native-linear-tfvd-traces/FiniteTraces.lean",
+      "source_sha256": "ea9c747c912073813334f2a9c0e41024f62c116d9a2dedb718a57656258e4055",
+      "olean_sha256": "0816e7cabb9d3d66375497fe6b955ac01d32cec27112ba49049de436ad00c45d"
+    },
+    "PhysicalNumerator": {
+      "source": "research/native-linear-tfvd-traces/PhysicalNumerator.lean",
+      "source_sha256": "6fa3b51818a3126cb4dd73f332b09d88148f425265eb480e2a9dcd4f611f6799",
+      "olean_sha256": "67b7486af31d5f4c5ab77ce292a37f25f039b795efe9fb48e18762e938d39c3f"
+    },
+    "GreenPairing": {
+      "source": "research/native-linear-tfvd-traces/GreenPairing.lean",
+      "source_sha256": "f0a66d790ac813f5a49fd9543773d3119787dc69fdc0e45d889497a269cb6bc0",
+      "olean_sha256": "8f33f91aae4063028f6a346b9f600660c5bbcf0719561a1cf57cd6217d80de7f"
+    },
+    "Stencil": {
+      "source": "research/native-all-order-stencil-boundary/Stencil.lean",
+      "source_sha256": "b92ada4be2cfe00d785e51c83b28ca254c93eee08a6450a8328e93af14a2aa4b",
+      "olean_sha256": "0e706529545c7f4507d98f70818007c275e4a9513bb4c7505643f3bdd91be34e"
+    },
+    "BoundaryPolynomial": {
+      "source": "research/native-quartic-boundary-sign/BoundaryPolynomial.lean",
+      "source_sha256": "0ec5b1e1035fd89e50e3f0a2612bc46fc9bca33bce890392dc0fd586dd07ca1b",
+      "olean_sha256": "17e15d6c6136cbc197fee4deae329038277874f3316c8b79d87cf2a19fb81800"
+    },
+    "BoundaryFactor": {
+      "source": "research/native-quartic-boundary-sign/BoundaryFactor.lean",
+      "source_sha256": "8008f32853b90b04103c0a27c2f67a48db50497336f83dc9b0c452f297a4f366",
+      "olean_sha256": "46f6ad9e8a146e3bc2573125f7b871ab005262661bf4b977447561117e8e5b7d"
+    },
+    "QuarticCoefficient": {
+      "source": "research/native-quartic-boundary-sign/QuarticCoefficient.lean",
+      "source_sha256": "72bff56acac4f7f5031c6a7190fd32963d3529f995f5a24d9e022f8e2af5fcb3",
+      "olean_sha256": "4323550d14c40f54c83923cfaa408e5dbb787108ab010e27036b1e3c81bef6c9"
+    },
+    "BoundaryOperator": {
+      "source": "research/native-all-order-stencil-boundary/BoundaryOperator.lean",
+      "source_sha256": "de4d5d8dcc0ae34996b17ecdf3f30a60c5bc0604f7c62265164e03b7e3abfd08",
+      "olean_sha256": "88a90c7826e20bed156f7d367180c0ba2ab0ac4c9cb3dd92ef2024bf66efbc6d"
+    },
+    "CubicNumerator": {
+      "source": "research/native-cubic-tfvd-numerator/CubicNumerator.lean",
+      "source_sha256": "b43b380be7ba478819569673648847195d4137d9a9be03cad93d22316ff4ffe8",
+      "olean_sha256": "b696fc1e5b06610d30b783646e21c9496fe895dc37d05efaec703be2a591f51d"
+    },
+    "CubicGreen": {
+      "source": "research/native-cubic-tfvd-numerator/CubicGreen.lean",
+      "source_sha256": "5690664a1ad460e3c7a4a44efb5f5b1eabcb4ebacb729886aabc672ea30ee36d",
+      "olean_sha256": "8111487ce9e2222ddb8dea35ed69d29480640ceed178a65445e874da5e4171bc"
+    },
+    "CriticalFamily": {
+      "source": "research/native-cubic-tfvd-numerator/CriticalFamily.lean",
+      "source_sha256": "4855794da081ce060aa1ce6ff76802341c075ff9256be50b479e285822d83c57",
+      "olean_sha256": "02a802d3a682d769d22136835bcead7f3be93b53723beaac2289f184648bc0de"
+    },
+    "QuadraticSign": {
+      "source": "research/native-cubic-tfvd-numerator/QuadraticSign.lean",
+      "source_sha256": "3720f894cff296d458910f326f7327fbecb125312041693df17f2ad04f949680",
+      "olean_sha256": "6d71e60f4e77ba6c15725192231e78c7b1e2e1cd5bd04b8eaadca040f4c406f9"
+    }
+  }
+}
