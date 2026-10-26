@@ -1,0 +1,26 @@
+{
+  "modules": {
+    "FiniteTraces": [
+      "CarryLinearTfvd.linear_commutator_succ",
+      "CarryLinearTfvd.linear_commutator_shift_numerator",
+      "CarryLinearTfvd.linear_commutator_tfvd_numerator"
+    ],
+    "PhysicalNumerator": [
+      "CarryLinearTfvd.synthesis_shift",
+      "CarryLinearTfvd.physicalTrace",
+      "CarryLinearTfvd.physical_linear_numerator",
+      "CarryLinearTfvd.physical_linear_tfvd_numerator"
+    ],
+    "GreenPairing": [
+      "CarryLinearTfvd.green_inner_right_numerator",
+      "CarryLinearTfvd.double_advance_pairing",
+      "CarryLinearTfvd.green_linear_polarized_factor",
+      "CarryLinearTfvd.green_linear_diagonal_factor",
+      "CarryLinearTfvd.advance_contracts",
+      "CarryLinearTfvd.green_linear_lower",
+      "CarryLinearTfvd.green_linear_zero_traces_lower",
+      "CarryLinearTfvd.green_linear_zero_traces_pos",
+      "CarryLinearTfvd.green_linear_seed_negative"
+    ]
+  }
+}

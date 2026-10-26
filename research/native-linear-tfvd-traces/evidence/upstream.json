@@ -1,0 +1,95 @@
+{
+  "base": "9e01b6a8f591046c3478e1faf80af692062a95d4",
+  "modules": {
+    "SchurBound": {
+      "source": "research/native-vertical-synthesis/SchurBound.lean",
+      "source_sha256": "5ffe578f8a1d06eae90d3606fe796050673e429a187674766bbd93bb08ab4797",
+      "olean_sha256": "d413b483e8432dcc3199c9b35496a409c9a2de63957800d961b97e863e54a7b7"
+    },
+    "NativeSynthesis": {
+      "source": "research/native-vertical-synthesis/NativeSynthesis.lean",
+      "source_sha256": "22a7e79ef48ebb7e8d937eaf067ce4175be9b9c56ec5c7b31dcaa721cad4eb65",
+      "olean_sha256": "d2060ec7bbfa4964f3c9f5b541658b02e4a68a7608d33203d5fc12d7d2c5f507"
+    },
+    "Quadratures": {
+      "source": "research/native-vertical-synthesis/Quadratures.lean",
+      "source_sha256": "ae6eb58c756e599a4d3690a10a108772560016ee00f5cb6bbd1834d8f3c418e6",
+      "olean_sha256": "c180f3c1c46b1124c6f71fbc8145f10688c688dae3c1a44135fb14f38742938b"
+    },
+    "ShiftTransport": {
+      "source": "research/native-tfvd-completed-transport/ShiftTransport.lean",
+      "source_sha256": "b56cf6af3872f0422e3e5fcd1d5ef0283051f9a241752d888d4a69d3625882b9",
+      "olean_sha256": "6b9c6fea329098ad88b4b39dea3ecd9110cdc7fa95d8256301584434c4f5ac9d"
+    },
+    "PhysicalTfvd": {
+      "source": "research/native-tfvd-completed-transport/PhysicalTfvd.lean",
+      "source_sha256": "4292d0d343cfb9a0fa216d566c1cd371d0e9221353be3866190fd532a8ca26cf",
+      "olean_sha256": "6235a6d5d2815f02a84b9a8d57e07e7c4a20f72576e8ff992439e10272ef2845"
+    },
+    "CoefficientPorts": {
+      "source": "research/native-tfvd-completed-transport/CoefficientPorts.lean",
+      "source_sha256": "7679b7d41fe4851b05432091dd15ed198542b405b456d550ba7c643879fc34e6",
+      "olean_sha256": "c6df0c1bdfe6584d7661abb771159b1238c8dd31b24e3dde5018abe5072fbefb"
+    },
+    "CompletionCommutator": {
+      "source": "research/native-tfvd-completed-transport/CompletionCommutator.lean",
+      "source_sha256": "2a73aa883a505fce2fa313fdfc4973551c28a151836874f8d1fa150c4207ebaa",
+      "olean_sha256": "f97c31a9bd550fcfe378f9c3b794c25ce20c9311b50b5c31d13d30f82d023f58"
+    },
+    "CompletedSourceBridge": {
+      "source": "research/native-tfvd-completed-transport/CompletedSourceBridge.lean",
+      "source_sha256": "c0f01fbdf9cfb86f0e7eb5cab4820b17620ace8f8a825655c4546705c579f8ad",
+      "olean_sha256": "523296404e388b3f6c69776916526535adf34f4a8d5fbe2c8985f1a85a6a7d25"
+    },
+    "NativeWeightLaw": {
+      "source": "research/native-commutator-mixed-control/NativeWeightLaw.lean",
+      "source_sha256": "6845a108d7b4148bea8720b8fc1782204e488931d522638b8cee7adf229442eb",
+      "olean_sha256": "196d94d88bb873e67d1c771771531a9d35e9248f15559ba0cb24b62cb2dcabb9"
+    },
+    "NullCommutator": {
+      "source": "research/native-commutator-mixed-control/NullCommutator.lean",
+      "source_sha256": "e1fe3a17b922b57b94943b42c08db13157d4d6478c7aa406749ac7bb00fbdc3b",
+      "olean_sha256": "a61ffa26e8c62dd8d9b5ab1437d39008cf7a25a7d289f961210825342b4dcddd"
+    },
+    "MixedReduction": {
+      "source": "research/native-commutator-mixed-control/MixedReduction.lean",
+      "source_sha256": "e40116227129c00ac0a19dd1658719a77eb3a9b3662b9fe96d075c0d722241c0",
+      "olean_sha256": "730a102bd768c18f053ba74600007cb7428729c0a97eda9b611640eb0e1d6f79"
+    },
+    "NativeJets": {
+      "source": "research/native-commutator-mixed-control/NativeJets.lean",
+      "source_sha256": "bcbbd31fa4d84529f5420094b5c7a5d0255ab3239fc35f6ebb1c48bb28b9afb9",
+      "olean_sha256": "d82d8dea350f97c90be44a526d0dc1c5f48940dac19bb4dec491960e5d2afe14"
+    },
+    "GreenSeed": {
+      "source": "research/native-commutator-mixed-control/GreenSeed.lean",
+      "source_sha256": "b47929b295f10d4b6ba7a8b9476b3534464f298468a67cf435d15af8151c7d27",
+      "olean_sha256": "6408a32c31d9d119552aee3abb78d668c8f1ccd786fe804d435c9f7f20f90a58"
+    },
+    "ResponseFlux": {
+      "source": "research/native-critical-tfvd-cancellation/ResponseFlux.lean",
+      "source_sha256": "b833b9e873b32c472a1a90affcb841fc5c608771742975494f9274294a661bf8",
+      "olean_sha256": "c047c263a6b74519e347db49a096b67e64c034b67d85d03b75548b2e3a1c8f6c"
+    },
+    "CriticalVectors": {
+      "source": "research/native-critical-tfvd-cancellation/CriticalVectors.lean",
+      "source_sha256": "a8df7c27502e621e3c8f1cc820b870c5e4ed24f6e759de46ac825f030f726547",
+      "olean_sha256": "257b7fa6d039f9a16a5f2a4127db15fe932bd623b19211a67ee0ac1077f4b3f3"
+    },
+    "ResponseTaylor": {
+      "source": "research/native-critical-tfvd-cancellation/ResponseTaylor.lean",
+      "source_sha256": "59effe60bbc169762468134100ff11653735611ad43b2c5b4986830f1f1d04b4",
+      "olean_sha256": "8acc5b32c9c621627a1c7a943f028a9d3fad140cd9a0a79a6326e123e2a3b0b2"
+    },
+    "ComplementNorm": {
+      "source": "research/native-curvature-green-factor/ComplementNorm.lean",
+      "source_sha256": "2d338350064d393db7d0208c085d73f47ef2494b7e968ec2899e245fe12e43ac",
+      "olean_sha256": "2cd5fcec8a7c19d0d33b6a16f71dbc2926e21a0521e8961c758b3dc682e22d22"
+    },
+    "CurvatureKernel": {
+      "source": "research/native-curvature-green-factor/CurvatureKernel.lean",
+      "source_sha256": "a22a6ffc1d4504b51ad46576bc3b79cdb67ad02a9e72b17e2b263d9f6aeaad81",
+      "olean_sha256": "3e1f1405f38df36c014d91db48d439c6ef584f2e5f7df34e1e45fc11ce758939"
+    }
+  }
+}
