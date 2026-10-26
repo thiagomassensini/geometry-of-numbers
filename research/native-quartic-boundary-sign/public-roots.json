@@ -1,0 +1,46 @@
+{
+  "modules": {
+    "BoundaryPolynomial": [
+      "CarryQuarticBoundary.boundaryPolynomial",
+      "CarryQuarticBoundary.boundary_polynomial_identity",
+      "CarryQuarticBoundary.boundary_polynomial_nonnegative",
+      "CarryQuarticBoundary.boundary_polynomial_lower",
+      "CarryQuarticBoundary.boundary_polynomial_two",
+      "CarryQuarticBoundary.boundary_polynomial_in_native_coordinate"
+    ],
+    "BoundaryFactor": [
+      "CarryQuarticBoundary.quarticVector",
+      "CarryQuarticBoundary.boundaryVector",
+      "CarryQuarticBoundary.quarticGradient",
+      "CarryQuarticBoundary.resolvent_advance_complement",
+      "CarryQuarticBoundary.quartic_gradient_as_complement",
+      "CarryQuarticBoundary.quartic_resolvent_advance",
+      "CarryQuarticBoundary.boundary_resolvent",
+      "CarryQuarticBoundary.complement_twice_pairing",
+      "CarryQuarticBoundary.quartic_base_pairing",
+      "CarryQuarticBoundary.quartic_advance_pairing",
+      "CarryQuarticBoundary.quartic_boundary_polarized_factor",
+      "CarryQuarticBoundary.quartic_boundary_diagonal_factor",
+      "CarryQuarticBoundary.advance_inner_upper",
+      "CarryQuarticBoundary.quartic_boundary_lower"
+    ],
+    "QuarticCoefficient": [
+      "CarryQuarticBoundary.nativeBoundaryVector",
+      "CarryQuarticBoundary.nativeBoundaryPair",
+      "CarryQuarticBoundary.nativeQuarticCoefficient",
+      "CarryQuarticBoundary.native_quartic_vector",
+      "CarryQuarticBoundary.native_boundary_vector",
+      "CarryQuarticBoundary.native_quartic_gradient",
+      "CarryQuarticBoundary.fourth_lift_gradient",
+      "CarryQuarticBoundary.native_boundary_pair_factor",
+      "CarryQuarticBoundary.native_quartic_seed_norm_square",
+      "CarryQuarticBoundary.native_quartic_gradient_lower",
+      "CarryQuarticBoundary.native_boundary_pair_lower",
+      "CarryQuarticBoundary.native_boundary_pair_pos",
+      "CarryQuarticBoundary.native_quartic_coefficient_split",
+      "CarryQuarticBoundary.native_quartic_coefficient_factor",
+      "CarryQuarticBoundary.native_quartic_coefficient_lower",
+      "CarryQuarticBoundary.native_quartic_coefficient_pos"
+    ]
+  }
+}
