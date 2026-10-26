@@ -1,0 +1,96 @@
+{
+  "modules": {
+    "CubicNumerator": [
+      "CarryCubicTfvd.cubicForwardWeight",
+      "CarryCubicTfvd.cubicBackwardWeight",
+      "CarryCubicTfvd.cubicTrace",
+      "CarryCubicTfvd.cubic_commutator_succ",
+      "CarryCubicTfvd.cubic_shift_numerator",
+      "CarryCubicTfvd.cubic_physical_numerator"
+    ],
+    "CubicGreen": [
+      "CarryCubicTfvd.cubicKernel",
+      "CarryCubicTfvd.cubic_kernel_original",
+      "CarryCubicTfvd.cubic_green_polarized",
+      "CarryCubicTfvd.cubic_green_diagonal",
+      "CarryCubicTfvd.cubic_seed_negative"
+    ],
+    "CriticalFamily": [
+      "CarryCubicTfvd.criticalFamily",
+      "CarryCubicTfvd.critical_family_original_source",
+      "CarryCubicTfvd.critical_family_synthesis",
+      "CarryCubicTfvd.critical_family_two_traces",
+      "CarryCubicTfvd.critical_family_cubic_trace",
+      "CarryCubicTfvd.critical_family_explicit",
+      "CarryCubicTfvd.critical_family_support",
+      "CarryCubicTfvd.critical_cubic_commutator_support",
+      "CarryCubicTfvd.cubic_three_input_expansion",
+      "CarryCubicTfvd.critical_cubic_expansion"
+    ],
+    "QuadraticSign": [
+      "CarryCubicTfvd.cubicQuadraticMultiplier",
+      "CarryCubicTfvd.cubicTangent",
+      "CarryCubicTfvd.nativeU3",
+      "CarryCubicTfvd.cubic_native_tangent",
+      "CarryCubicTfvd.cubic_multiplier_advance",
+      "CarryCubicTfvd.cubic_multiplier_complement",
+      "CarryCubicTfvd.resolvent_cubic_multiplier",
+      "CarryCubicTfvd.cubic_tangent_resolvent",
+      "CarryCubicTfvd.cubic_multiplier_gradient_pairing",
+      "CarryCubicTfvd.cubic_curvature_polarized",
+      "CarryCubicTfvd.cubic_curvature_diagonal",
+      "CarryCubicTfvd.cubic_multiplier_upper_positive",
+      "CarryCubicTfvd.cubic_multiplier_inner_upper",
+      "CarryCubicTfvd.cubic_curvature_lower",
+      "CarryCubicTfvd.native_cubic_identification",
+      "CarryCubicTfvd.native_cubic_lower_bound",
+      "CarryCubicTfvd.native_cubic_uniform_lower",
+      "CarryCubicTfvd.native_cubic_pos"
+    ]
+  },
+  "groups": {
+    "spatial": [
+      "CarryCubicTfvd.cubicForwardWeight",
+      "CarryCubicTfvd.cubicBackwardWeight",
+      "CarryCubicTfvd.cubicTrace",
+      "CarryCubicTfvd.cubic_commutator_succ",
+      "CarryCubicTfvd.cubic_shift_numerator",
+      "CarryCubicTfvd.cubic_physical_numerator",
+      "CarryCubicTfvd.cubicKernel",
+      "CarryCubicTfvd.cubic_kernel_original",
+      "CarryCubicTfvd.cubic_green_polarized",
+      "CarryCubicTfvd.cubic_green_diagonal",
+      "CarryCubicTfvd.cubic_seed_negative",
+      "CarryCubicTfvd.criticalFamily",
+      "CarryCubicTfvd.critical_family_synthesis",
+      "CarryCubicTfvd.critical_family_two_traces",
+      "CarryCubicTfvd.critical_family_cubic_trace",
+      "CarryCubicTfvd.critical_family_explicit",
+      "CarryCubicTfvd.critical_family_support",
+      "CarryCubicTfvd.critical_cubic_commutator_support",
+      "CarryCubicTfvd.cubic_three_input_expansion",
+      "CarryCubicTfvd.critical_cubic_expansion",
+      "CarryCubicTfvd.cubicQuadraticMultiplier",
+      "CarryCubicTfvd.cubicTangent",
+      "CarryCubicTfvd.nativeU3",
+      "CarryCubicTfvd.cubic_native_tangent",
+      "CarryCubicTfvd.cubic_multiplier_advance",
+      "CarryCubicTfvd.cubic_multiplier_complement",
+      "CarryCubicTfvd.resolvent_cubic_multiplier",
+      "CarryCubicTfvd.cubic_tangent_resolvent",
+      "CarryCubicTfvd.cubic_multiplier_gradient_pairing",
+      "CarryCubicTfvd.cubic_curvature_polarized",
+      "CarryCubicTfvd.cubic_curvature_diagonal",
+      "CarryCubicTfvd.cubic_multiplier_upper_positive",
+      "CarryCubicTfvd.cubic_multiplier_inner_upper",
+      "CarryCubicTfvd.cubic_curvature_lower",
+      "CarryCubicTfvd.native_cubic_identification",
+      "CarryCubicTfvd.native_cubic_lower_bound",
+      "CarryCubicTfvd.native_cubic_uniform_lower",
+      "CarryCubicTfvd.native_cubic_pos"
+    ],
+    "provenance": [
+      "CarryCubicTfvd.critical_family_original_source"
+    ]
+  }
+}
