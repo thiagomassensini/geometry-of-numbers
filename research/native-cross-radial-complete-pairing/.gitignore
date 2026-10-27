@@ -1,0 +1,6 @@
+.cache/
+__pycache__/
+evidence/*-focus.log
+evidence/bootstrap-initial.log
+
+evidence/dev-*.log
