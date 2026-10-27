@@ -1,0 +1,11 @@
+{
+  "command": [
+    "python3",
+    "build_upstream.py"
+  ],
+  "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-first-correction/research/native-quartic-first-correction",
+  "exit_code": 0,
+  "upstream_modules": 34,
+  "log": "evidence/bootstrap.log",
+  "note": "All unchanged ancestors compiled in the new task worktree; final validation verifies these source and olean hashes."
+}

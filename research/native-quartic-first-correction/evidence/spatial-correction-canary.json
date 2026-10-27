@@ -1,0 +1,385 @@
+{
+  "status": "PASS_FINITE_RATIONAL_ONLY",
+  "range": "0 <= r,s <= 4",
+  "pairs": 25,
+  "metric": "1/(i+j+2), the original Cauchy feature pairing",
+  "source": "(-1)^(r+j) choose(2r,j)/(2r)!",
+  "all_order_candidate_proved_in_Lean": false,
+  "canonical_positivity_claim": false,
+  "rows": [
+    {
+      "r": 0,
+      "s": 0,
+      "canceled_odd_weights": [],
+      "leading_sum": "1",
+      "first_correction_weight": 3,
+      "ordered_forward": "1/2",
+      "ordered_reverse": "1/2",
+      "candidate_ordered_sum": "1"
+    },
+    {
+      "r": 0,
+      "s": 1,
+      "canceled_odd_weights": [
+        1
+      ],
+      "leading_sum": "-1",
+      "first_correction_weight": 5,
+      "ordered_forward": "-479/24",
+      "ordered_reverse": "-1/24",
+      "candidate_ordered_sum": "-20"
+    },
+    {
+      "r": 0,
+      "s": 2,
+      "canceled_odd_weights": [
+        1,
+        3
+      ],
+      "leading_sum": "1",
+      "first_correction_weight": 7,
+      "ordered_forward": "90719/720",
+      "ordered_reverse": "1/720",
+      "candidate_ordered_sum": "126"
+    },
+    {
+      "r": 0,
+      "s": 3,
+      "canceled_odd_weights": [
+        1,
+        3,
+        5
+      ],
+      "leading_sum": "-1",
+      "first_correction_weight": 9,
+      "ordered_forward": "-17539199/40320",
+      "ordered_reverse": "-1/40320",
+      "candidate_ordered_sum": "-435"
+    },
+    {
+      "r": 0,
+      "s": 4,
+      "canceled_odd_weights": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "leading_sum": "1",
+      "first_correction_weight": 11,
+      "ordered_forward": "4031596799/3628800",
+      "ordered_reverse": "1/3628800",
+      "candidate_ordered_sum": "1111"
+    },
+    {
+      "r": 1,
+      "s": 0,
+      "canceled_odd_weights": [
+        1
+      ],
+      "leading_sum": "-1",
+      "first_correction_weight": 5,
+      "ordered_forward": "-1/24",
+      "ordered_reverse": "-479/24",
+      "candidate_ordered_sum": "-20"
+    },
+    {
+      "r": 1,
+      "s": 1,
+      "canceled_odd_weights": [
+        1,
+        3
+      ],
+      "leading_sum": "1",
+      "first_correction_weight": 7,
+      "ordered_forward": "7",
+      "ordered_reverse": "7",
+      "candidate_ordered_sum": "14"
+    },
+    {
+      "r": 1,
+      "s": 2,
+      "canceled_odd_weights": [
+        1,
+        3,
+        5
+      ],
+      "leading_sum": "-1",
+      "first_correction_weight": 9,
+      "ordered_forward": "-594623/8064",
+      "ordered_reverse": "-10177/8064",
+      "candidate_ordered_sum": "-75"
+    },
+    {
+      "r": 1,
+      "s": 3,
+      "canceled_odd_weights": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "leading_sum": "1",
+      "first_correction_weight": 11,
+      "ordered_forward": "578548337/1814400",
+      "ordered_reverse": "245263/1814400",
+      "candidate_ordered_sum": "319"
+    },
+    {
+      "r": 1,
+      "s": 4,
+      "canceled_odd_weights": [
+        1,
+        3,
+        5,
+        7,
+        9
+      ],
+      "leading_sum": "-1",
+      "first_correction_weight": 13,
+      "ordered_forward": "-48431874397/53222400",
+      "ordered_reverse": "-509603/53222400",
+      "candidate_ordered_sum": "-910"
+    },
+    {
+      "r": 2,
+      "s": 0,
+      "canceled_odd_weights": [
+        1,
+        3
+      ],
+      "leading_sum": "1",
+      "first_correction_weight": 7,
+      "ordered_forward": "1/720",
+      "ordered_reverse": "90719/720",
+      "candidate_ordered_sum": "126"
+    },
+    {
+      "r": 2,
+      "s": 1,
+      "canceled_odd_weights": [
+        1,
+        3,
+        5
+      ],
+      "leading_sum": "-1",
+      "first_correction_weight": 9,
+      "ordered_forward": "-10177/8064",
+      "ordered_reverse": "-594623/8064",
+      "candidate_ordered_sum": "-75"
+    },
+    {
+      "r": 2,
+      "s": 2,
+      "canceled_odd_weights": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "leading_sum": "1",
+      "first_correction_weight": 11,
+      "ordered_forward": "55/2",
+      "ordered_reverse": "55/2",
+      "candidate_ordered_sum": "55"
+    },
+    {
+      "r": 2,
+      "s": 3,
+      "canceled_odd_weights": [
+        1,
+        3,
+        5,
+        7,
+        9
+      ],
+      "leading_sum": "-1",
+      "first_correction_weight": 13,
+      "ordered_forward": "-1999617359/11404800",
+      "ordered_reverse": "-76056241/11404800",
+      "candidate_ordered_sum": "-182"
+    },
+    {
+      "r": 2,
+      "s": 4,
+      "canceled_odd_weights": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11
+      ],
+      "leading_sum": "1",
+      "first_correction_weight": 15,
+      "ordered_forward": "17984729599337/29059430400",
+      "ordered_reverse": "32117248663/29059430400",
+      "candidate_ordered_sum": "620"
+    },
+    {
+      "r": 3,
+      "s": 0,
+      "canceled_odd_weights": [
+        1,
+        3,
+        5
+      ],
+      "leading_sum": "-1",
+      "first_correction_weight": 9,
+      "ordered_forward": "-1/40320",
+      "ordered_reverse": "-17539199/40320",
+      "candidate_ordered_sum": "-435"
+    },
+    {
+      "r": 3,
+      "s": 1,
+      "canceled_odd_weights": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "leading_sum": "1",
+      "first_correction_weight": 11,
+      "ordered_forward": "245263/1814400",
+      "ordered_reverse": "578548337/1814400",
+      "candidate_ordered_sum": "319"
+    },
+    {
+      "r": 3,
+      "s": 2,
+      "canceled_odd_weights": [
+        1,
+        3,
+        5,
+        7,
+        9
+      ],
+      "leading_sum": "-1",
+      "first_correction_weight": 13,
+      "ordered_forward": "-76056241/11404800",
+      "ordered_reverse": "-1999617359/11404800",
+      "candidate_ordered_sum": "-182"
+    },
+    {
+      "r": 3,
+      "s": 3,
+      "canceled_odd_weights": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11
+      ],
+      "leading_sum": "1",
+      "first_correction_weight": 15,
+      "ordered_forward": "70",
+      "ordered_reverse": "70",
+      "candidate_ordered_sum": "140"
+    },
+    {
+      "r": 3,
+      "s": 4,
+      "canceled_odd_weights": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "leading_sum": "-1",
+      "first_correction_weight": 17,
+      "ordered_forward": "-2348665657881457/6974263296000",
+      "ordered_reverse": "-141146338790543/6974263296000",
+      "candidate_ordered_sum": "-357"
+    },
+    {
+      "r": 4,
+      "s": 0,
+      "canceled_odd_weights": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "leading_sum": "1",
+      "first_correction_weight": 11,
+      "ordered_forward": "1/3628800",
+      "ordered_reverse": "4031596799/3628800",
+      "candidate_ordered_sum": "1111"
+    },
+    {
+      "r": 4,
+      "s": 1,
+      "canceled_odd_weights": [
+        1,
+        3,
+        5,
+        7,
+        9
+      ],
+      "leading_sum": "-1",
+      "first_correction_weight": 13,
+      "ordered_forward": "-509603/53222400",
+      "ordered_reverse": "-48431874397/53222400",
+      "candidate_ordered_sum": "-910"
+    },
+    {
+      "r": 4,
+      "s": 2,
+      "canceled_odd_weights": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11
+      ],
+      "leading_sum": "1",
+      "first_correction_weight": 15,
+      "ordered_forward": "32117248663/29059430400",
+      "ordered_reverse": "17984729599337/29059430400",
+      "candidate_ordered_sum": "620"
+    },
+    {
+      "r": 4,
+      "s": 3,
+      "canceled_odd_weights": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "leading_sum": "-1",
+      "first_correction_weight": 17,
+      "ordered_forward": "-141146338790543/6974263296000",
+      "ordered_reverse": "-2348665657881457/6974263296000",
+      "candidate_ordered_sum": "-357"
+    },
+    {
+      "r": 4,
+      "s": 4,
+      "canceled_odd_weights": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15
+      ],
+      "leading_sum": "1",
+      "first_correction_weight": 19,
+      "ordered_forward": "285/2",
+      "ordered_reverse": "285/2",
+      "candidate_ordered_sum": "285"
+    }
+  ]
+}
