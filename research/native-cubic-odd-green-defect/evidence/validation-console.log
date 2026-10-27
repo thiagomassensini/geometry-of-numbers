@@ -1,0 +1,17 @@
+source-provenance: exit 0
+verified-cache: exit 0
+upstream-synthesis-build: exit 0
+generate-audit: exit 0
+operator-source-build: exit 0
+lean-OddWeights: exit 0
+lean-CubicOddVectors: exit 0
+lean-CriticalOddGreen: exit 0
+lean-CriticalOddDefect: exit 0
+lean-Audit: exit 0
+root-build: exit 0
+audit-foundation: exit 0
+audit-geometry: exit 0
+audit-analysis: exit 0
+base-preserved: exit 0
+diff-check: exit 0
+PASS: 16 checks, native sources and old work preserved.
