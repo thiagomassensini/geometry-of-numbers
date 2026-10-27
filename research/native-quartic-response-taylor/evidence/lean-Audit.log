@@ -1,0 +1,66 @@
+'CarryQuarticTaylor.response_eleventh_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.remainderWeight11' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.taylorWeight9' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.response_weight_taylor11_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.response_weight_taylor11_six' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.remainder_weight11_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.five' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.quarticProfile' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.profile_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.weight_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.profile_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.commutator_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.full_five_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.kernel_three_input_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.full_profile_weights' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.quarticQuadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.quarticPolynomialError' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.full_weight_cancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.radial_leading_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.radial_leading_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.critical_family_profile' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.kernel_scale_both' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.field_congr_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.response_field_kernel_taylor11' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.remainder_five_field_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.remainder_profile_field_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.remainder_profile_kernel_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.remainder_profile_second_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.canonicalQuarticQuadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.quarticFullError' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.quarticLeadingFlux' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.kernel_taylor9_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.full_profile_taylor_cancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.quartic_sector_taylor_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.quartic_full_flux_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.quartic_full_error_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.quartic_complete_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.quartic_full_energy_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.quartic_full_second_order_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.full_energy_norm_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticTaylor.quartic_norm_difference_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+Quartic Taylor spatial: 16 public roots; 5083 type/body dependencies; standard axioms only; canonical moments and characteristic forbidden=true
+Quartic Taylor provenance: 25 public roots; 5748 type/body dependencies; standard axioms only; canonical moments and characteristic forbidden=false
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 7.62
+	System time (seconds): 4.98
+	Percent of CPU this job got: 109%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:11.47
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8369672
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 280133
+	Voluntary context switches: 7649
+	Involuntary context switches: 134
+	Swaps: 0
+	File system inputs: 32
+	File system outputs: 704
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
