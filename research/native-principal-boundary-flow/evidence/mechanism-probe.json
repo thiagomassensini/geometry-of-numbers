@@ -1,0 +1,7 @@
+{
+  "PASS": true,
+  "exact_gaussian_fraction_checks": 235,
+  "both_complex_quadratures": true,
+  "canonical_moments_used": false,
+  "scope": "finite regression of original source algebra; negative monomial layer is not a negative full-native response"
+}
