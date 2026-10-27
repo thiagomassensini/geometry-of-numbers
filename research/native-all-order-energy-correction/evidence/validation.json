@@ -1,0 +1,194 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-energy-correction/research/native-all-order-energy-correction",
+      "exit_code": 0,
+      "seconds": 0.615,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-energy-correction/research/native-all-order-energy-correction",
+      "exit_code": 0,
+      "seconds": 0.232,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-energy-correction/research/native-all-order-energy-correction",
+      "exit_code": 0,
+      "seconds": 0.038,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.564,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "c8bce8d8636a393d79330839f903cdd8d12c2058c0efac4453dd0e859240c85f",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-ResponseExpansion",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "ResponseExpansion"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-energy-correction/research/native-all-order-energy-correction",
+      "exit_code": 0,
+      "seconds": 11.935,
+      "log": "evidence/lean-ResponseExpansion.log"
+    },
+    {
+      "label": "lean-PairExpansion",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PairExpansion"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-energy-correction/research/native-all-order-energy-correction",
+      "exit_code": 0,
+      "seconds": 12.82,
+      "log": "evidence/lean-PairExpansion.log"
+    },
+    {
+      "label": "lean-FiniteEnergy",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "FiniteEnergy"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-energy-correction/research/native-all-order-energy-correction",
+      "exit_code": 0,
+      "seconds": 11.941,
+      "log": "evidence/lean-FiniteEnergy.log"
+    },
+    {
+      "label": "lean-RegressionEnergy",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "RegressionEnergy"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-energy-correction/research/native-all-order-energy-correction",
+      "exit_code": 0,
+      "seconds": 14.22,
+      "log": "evidence/lean-RegressionEnergy.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-energy-correction/research/native-all-order-energy-correction",
+      "exit_code": 0,
+      "seconds": 11.362,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-energy-correction",
+      "exit_code": 0,
+      "seconds": 7.128,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-energy-correction",
+      "exit_code": 0,
+      "seconds": 7.22,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-energy-correction",
+      "exit_code": 0,
+      "seconds": 9.796,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-energy-correction",
+      "exit_code": 0,
+      "seconds": 45.059,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "7cbbe245b912325aa4f651aa460010fc1623d3c8",
+        "--",
+        ".",
+        ":(exclude)research/native-all-order-energy-correction/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-energy-correction",
+      "exit_code": 0,
+      "seconds": 0.276,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-energy-correction",
+      "exit_code": 0,
+      "seconds": 0.274,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}
