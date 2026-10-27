@@ -1,0 +1,195 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-mixed-imaginary-law/research/native-mixed-imaginary-law",
+      "exit_code": 0,
+      "seconds": 0.645,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-mixed-imaginary-law/research/native-mixed-imaginary-law",
+      "exit_code": 0,
+      "seconds": 0.322,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-mixed-imaginary-law/research/native-mixed-imaginary-law",
+      "exit_code": 0,
+      "seconds": 0.037,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 7.921,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "44927e8037c6976c147a62b3f4d5961cf8c9aa2910467bd4847f32724db4ed29",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-MixedSpatialLeading",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MixedSpatialLeading"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-mixed-imaginary-law/research/native-mixed-imaginary-law",
+      "exit_code": 0,
+      "seconds": 11.47,
+      "log": "evidence/lean-MixedSpatialLeading.log"
+    },
+    {
+      "label": "lean-MixedRayLeading",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MixedRayLeading"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-mixed-imaginary-law/research/native-mixed-imaginary-law",
+      "exit_code": 0,
+      "seconds": 11.63,
+      "log": "evidence/lean-MixedRayLeading.log"
+    },
+    {
+      "label": "lean-FiniteImaginaryLaw",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "FiniteImaginaryLaw"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-mixed-imaginary-law/research/native-mixed-imaginary-law",
+      "exit_code": 0,
+      "seconds": 12.395,
+      "log": "evidence/lean-FiniteImaginaryLaw.log"
+    },
+    {
+      "label": "lean-ImaginaryRegression",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "ImaginaryRegression"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-mixed-imaginary-law/research/native-mixed-imaginary-law",
+      "exit_code": 0,
+      "seconds": 12.05,
+      "log": "evidence/lean-ImaginaryRegression.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-mixed-imaginary-law/research/native-mixed-imaginary-law",
+      "exit_code": 0,
+      "seconds": 11.691,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-mixed-imaginary-law",
+      "exit_code": 0,
+      "seconds": 7.634,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-mixed-imaginary-law",
+      "exit_code": 0,
+      "seconds": 7.075,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-mixed-imaginary-law",
+      "exit_code": 0,
+      "seconds": 9.389,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-mixed-imaginary-law",
+      "exit_code": 0,
+      "seconds": 45.4,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "34bae07275d4426c0ad5f20f909ed16ab372bfec",
+        "--",
+        ".",
+        ":(exclude)research/native-mixed-imaginary-law/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-mixed-imaginary-law",
+      "exit_code": 0,
+      "seconds": 0.009,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-mixed-imaginary-law",
+      "exit_code": 0,
+      "seconds": 0.01,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}
