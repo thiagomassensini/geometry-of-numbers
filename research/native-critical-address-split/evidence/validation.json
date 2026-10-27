@@ -1,0 +1,219 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-address-split/research/native-critical-address-split",
+      "exit_code": 0,
+      "seconds": 0.759,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "verified-cache",
+      "command": [
+        "python3",
+        "restore_verified_cache.py",
+        "--verify-only"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-address-split/research/native-critical-address-split",
+      "exit_code": 0,
+      "seconds": 1.13,
+      "log": "evidence/verified-cache.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-address-split/research/native-critical-address-split",
+      "exit_code": 0,
+      "seconds": 0.586,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "mechanism-probe",
+      "command": [
+        "python3",
+        "mechanism_probe.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-address-split/research/native-critical-address-split",
+      "exit_code": 0,
+      "seconds": 0.106,
+      "log": "evidence/mechanism-probe.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-address-split/research/native-critical-address-split",
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 7.981,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "1b053649e7a9f2aa91bec3f0d80b9398855bcbe681088ea93feffee190517e94",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-AddressGreen",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "AddressGreen"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-address-split/research/native-critical-address-split",
+      "exit_code": 0,
+      "seconds": 13.616,
+      "log": "evidence/lean-AddressGreen.log"
+    },
+    {
+      "label": "lean-OddAddressLowering",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "OddAddressLowering"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-address-split/research/native-critical-address-split",
+      "exit_code": 0,
+      "seconds": 14.115,
+      "log": "evidence/lean-OddAddressLowering.log"
+    },
+    {
+      "label": "lean-CriticalAddressSplit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CriticalAddressSplit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-address-split/research/native-critical-address-split",
+      "exit_code": 0,
+      "seconds": 12.708,
+      "log": "evidence/lean-CriticalAddressSplit.log"
+    },
+    {
+      "label": "lean-PhysicalPrincipalSplit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PhysicalPrincipalSplit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-address-split/research/native-critical-address-split",
+      "exit_code": 0,
+      "seconds": 14.588,
+      "log": "evidence/lean-PhysicalPrincipalSplit.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-address-split/research/native-critical-address-split",
+      "exit_code": 0,
+      "seconds": 12.97,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-address-split",
+      "exit_code": 0,
+      "seconds": 7.972,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-address-split",
+      "exit_code": 0,
+      "seconds": 7.305,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-address-split",
+      "exit_code": 0,
+      "seconds": 9.711,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-address-split",
+      "exit_code": 0,
+      "seconds": 46.245,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "9682d8a10fe64f03a8522445b6bd34f9df2fb8d6",
+        "--",
+        ".",
+        ":(exclude)research/native-critical-address-split/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-address-split",
+      "exit_code": 0,
+      "seconds": 0.01,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-address-split",
+      "exit_code": 0,
+      "seconds": 0.008,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}
