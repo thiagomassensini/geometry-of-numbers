@@ -1,0 +1,303 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget/research/native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 0.806,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "verified-cache",
+      "command": [
+        "python3",
+        "restore_verified_cache.py",
+        "--verify-only"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget/research/native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 3.427,
+      "log": "evidence/verified-cache.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget/research/native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 1.657,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "mechanism-probe",
+      "command": [
+        "python3",
+        "mechanism_probe.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget/research/native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 0.136,
+      "log": "evidence/mechanism-probe.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget/research/native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 0.042,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.CompletedNativeLogCoefficientMajorant",
+        "CarrySelfAdjointOperator.CompletedNativeEvenCoordinateResolventBridge",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnSeventhSourceJet",
+        "CarrySelfAdjointOperator.CompletedNativeChiralPickFactorization",
+        "CarrySelfAdjointOperator.CompletedGreenForwardDifferenceLimit",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnArbitraryOrder",
+        "CarrySelfAdjointOperator.CompletedNativeChiralEvenBoundaryEnergy",
+        "CarrySelfAdjointOperator.CompletedNativeChiralEvenBoundarySplit",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFiniteTransfer",
+        "CarrySelfAdjointOperator.NativePhysicalFiniteSewing",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFourSampleStorage",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnEnergyPort"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 9.324,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "2efb087379bdf701bbbae72dbb07d97e7fd5fea35e73324298ca5f78a11ec632",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-SourceSeries",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SourceSeries"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget/research/native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 15.851,
+      "log": "evidence/lean-SourceSeries.log"
+    },
+    {
+      "label": "lean-SourceDisc",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SourceDisc"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget/research/native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 16.732,
+      "log": "evidence/lean-SourceDisc.log"
+    },
+    {
+      "label": "lean-ExplicitSourceTail",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "ExplicitSourceTail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget/research/native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 16.73,
+      "log": "evidence/lean-ExplicitSourceTail.log"
+    },
+    {
+      "label": "lean-NormalizedRemainder",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "NormalizedRemainder"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget/research/native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 19.179,
+      "log": "evidence/lean-NormalizedRemainder.log"
+    },
+    {
+      "label": "lean-SixEffectiveRemainder",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SixEffectiveRemainder"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget/research/native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 33.193,
+      "log": "evidence/lean-SixEffectiveRemainder.log"
+    },
+    {
+      "label": "lean-FiniteNormBudget",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "FiniteNormBudget"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget/research/native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 22.62,
+      "log": "evidence/lean-FiniteNormBudget.log"
+    },
+    {
+      "label": "lean-RadialRegularity",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "RadialRegularity"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget/research/native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 15.905,
+      "log": "evidence/lean-RadialRegularity.log"
+    },
+    {
+      "label": "lean-SquaredStepBudget",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SquaredStepBudget"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget/research/native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 15.738,
+      "log": "evidence/lean-SquaredStepBudget.log"
+    },
+    {
+      "label": "lean-CriticalBudgetData",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CriticalBudgetData"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget/research/native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 17.094,
+      "log": "evidence/lean-CriticalBudgetData.log"
+    },
+    {
+      "label": "lean-EffectiveSixBudget",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "EffectiveSixBudget"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget/research/native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 18.372,
+      "log": "evidence/lean-EffectiveSixBudget.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget/research/native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 30.31,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 7.846,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 6.956,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 10.109,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 47.598,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "7d50d6f43660769728b5cdfb04a0f9c78ec03402",
+        "--",
+        ".",
+        ":(exclude)research/native-effective-radial-budget/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 0.009,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 0.008,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}
