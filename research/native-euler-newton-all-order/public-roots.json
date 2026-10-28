@@ -1,0 +1,76 @@
+{
+  "modules": {
+    "ShiftedFalling": [
+      "CarryEulerNewtonAll.shiftedFalling",
+      "CarryEulerNewtonAll.shifted_falling_degree",
+      "CarryEulerNewtonAll.shifted_falling_monic",
+      "CarryEulerNewtonAll.shifted_falling_diagonal",
+      "CarryEulerNewtonAll.shifted_falling_above",
+      "CarryEulerNewtonAll.shifted_falling_address",
+      "CarryEulerNewtonAll.shifted_falling_scaled_eval"
+    ],
+    "EulerNewtonMatrix": [
+      "CarryEulerNewtonAll.eulerChart",
+      "CarryEulerNewtonAll.eulerNewtonMatrix",
+      "CarryEulerNewtonAll.eulerNewton",
+      "CarryEulerNewtonAll.euler_newton_above",
+      "CarryEulerNewtonAll.euler_newton_address",
+      "CarryEulerNewtonAll.euler_newton_raw_exact",
+      "CarryEulerNewtonAll.euler_newton_at_zero"
+    ],
+    "NativeEulerTransport": [
+      "CarryEulerNewtonAll.physicalEulerChart",
+      "CarryEulerNewtonAll.physical_euler_eq",
+      "CarryEulerNewtonAll.source_euler_newton_all_order",
+      "CarryEulerNewtonAll.source_euler_newton_eventually_all_order",
+      "CarryEulerNewtonAll.physical_source_euler_all_order",
+      "CarryEulerNewtonAll.physical_pair_euler_all_order"
+    ],
+    "MovingEulerLimit": [
+      "CarryEulerNewtonAll.euler_newton_continuous",
+      "CarryEulerNewtonAll.euler_newton_path_tendsto",
+      "CarryEulerNewtonAll.source_newton_path_tendsto",
+      "CarryEulerNewtonAll.source_newton_path_eventually_bounded"
+    ],
+    "MatrixCoherence": [
+      "CarryEulerNewtonAll.euler_newton_matrix_prefix",
+      "CarryEulerNewtonAll.euler_newton_diagonal",
+      "CarryEulerNewtonAll.euler_newton_diagonal_ne_zero",
+      "CarryEulerNewtonAll.euler_newton_det_ne_zero",
+      "CarryEulerNewtonAll.euler_newton_four_regression"
+    ]
+  },
+  "groups": {
+    "construction": [
+      "CarryEulerNewtonAll.shiftedFalling",
+      "CarryEulerNewtonAll.shifted_falling_degree",
+      "CarryEulerNewtonAll.shifted_falling_monic",
+      "CarryEulerNewtonAll.shifted_falling_diagonal",
+      "CarryEulerNewtonAll.shifted_falling_above",
+      "CarryEulerNewtonAll.shifted_falling_address",
+      "CarryEulerNewtonAll.shifted_falling_scaled_eval",
+      "CarryEulerNewtonAll.eulerChart",
+      "CarryEulerNewtonAll.eulerNewtonMatrix",
+      "CarryEulerNewtonAll.eulerNewton",
+      "CarryEulerNewtonAll.euler_newton_above",
+      "CarryEulerNewtonAll.euler_newton_address",
+      "CarryEulerNewtonAll.euler_newton_raw_exact",
+      "CarryEulerNewtonAll.euler_newton_at_zero",
+      "CarryEulerNewtonAll.physicalEulerChart",
+      "CarryEulerNewtonAll.physical_euler_eq",
+      "CarryEulerNewtonAll.source_euler_newton_all_order",
+      "CarryEulerNewtonAll.source_euler_newton_eventually_all_order",
+      "CarryEulerNewtonAll.physical_source_euler_all_order",
+      "CarryEulerNewtonAll.physical_pair_euler_all_order",
+      "CarryEulerNewtonAll.euler_newton_continuous",
+      "CarryEulerNewtonAll.euler_newton_path_tendsto",
+      "CarryEulerNewtonAll.source_newton_path_tendsto",
+      "CarryEulerNewtonAll.source_newton_path_eventually_bounded",
+      "CarryEulerNewtonAll.euler_newton_matrix_prefix",
+      "CarryEulerNewtonAll.euler_newton_diagonal",
+      "CarryEulerNewtonAll.euler_newton_diagonal_ne_zero",
+      "CarryEulerNewtonAll.euler_newton_det_ne_zero",
+      "CarryEulerNewtonAll.euler_newton_four_regression"
+    ]
+  }
+}

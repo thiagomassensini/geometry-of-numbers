@@ -1,0 +1,21 @@
+{
+  "PASS": true,
+  "public_roots": 29,
+  "theorems": 24,
+  "definitions": 5,
+  "construction_roots": 29,
+  "construction_dependencies": 60826,
+  "theorem_and_opaque_bodies_traversed": true,
+  "moment_and_energy_readout_forbidden_in_all_new_roots": true,
+  "native_energy_control_consumer_forbidden_in_all_new_roots": true,
+  "finite_positivity_and_coercivity_certificates_forbidden_in_all_groups": true,
+  "actual_finite_sign_roots_used": [],
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "auditor_sha256": "3e291daee9848bdecf1783feab06803e32d333bee15a328486e3ae5032f55c0a",
+  "audit_source_sha256": "6d088d273d84fefd9d71ac61062f8330a648d402c5bfca96e31edbb0772b36a2",
+  "audit_log_sha256": "68e7b3771424505d5ce8bca30234022ee0e43930c0337ff6fcf6d30317bb5370"
+}

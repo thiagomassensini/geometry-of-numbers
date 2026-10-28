@@ -1,0 +1,26 @@
+{
+  "PASS": true,
+  "exact_gaussian_fraction_checks": 1181,
+  "tested_dimensions": [
+    0,
+    1,
+    2,
+    4,
+    6,
+    8,
+    12,
+    16
+  ],
+  "canonical_moments_used": false,
+  "zero_or_height_inputs": false,
+  "sqrt2_factored_out_exactly": true,
+  "zero_step_negative_step_and_original_radial_steps": true,
+  "independent_euler_vs_newton_source": true,
+  "prefix_matrix_coherence": true,
+  "both_finite_inverse_directions_checked": true,
+  "moving_linear_path_constant_term_checked": true,
+  "both_legs_and_all_complex_cauchy_crossings": true,
+  "four_source_map_regression": true,
+  "amplitudes_and_return_samples_scope": "generic algebra regressions only, not evaluations of completed functions or evidence of positivity",
+  "lean_scope": "all dimensions and every convergent moving vector path are proved in Lean; finite checks are regressions only"
+}
