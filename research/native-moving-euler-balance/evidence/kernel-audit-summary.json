@@ -1,0 +1,35 @@
+{
+  "PASS": true,
+  "public_roots": 14,
+  "theorems": 13,
+  "definitions": 1,
+  "groups": {
+    "algebra": {
+      "roots": 1,
+      "dependencies": 9304
+    },
+    "energy": {
+      "roots": 4,
+      "dependencies": 62167
+    },
+    "polarized": {
+      "roots": 9,
+      "dependencies": 62494
+    }
+  },
+  "theorem_and_opaque_bodies_traversed": true,
+  "moment_and_energy_readout_forbidden_in_algebra": true,
+  "required_native_uniform_control_and_vector_bound_verified": true,
+  "required_native_polarized_kernel_and_full_state_sewing_verified": true,
+  "native_boundary_continuity_reused": true,
+  "finite_positivity_and_coercivity_certificates_forbidden_in_all_groups": true,
+  "actual_finite_sign_roots_used": [],
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "auditor_sha256": "b5a337bbed33d0c90e6ff7536bda0ea69a202c49eebcafff11d64375c8356511",
+  "audit_source_sha256": "3462b6f9de6775daacd97657d5788a6f6abe47056b2c34a1f0968af094ed2b58",
+  "audit_log_sha256": "be1adca3f3b403c640ad0323a4ecd6ef31192947a0f3e4787336135b398ddc3f"
+}

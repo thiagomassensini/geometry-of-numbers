@@ -1,0 +1,24 @@
+{
+  "PASS": true,
+  "exact_gaussian_fraction_checks": 627,
+  "tested_orders": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6,
+    8
+  ],
+  "canonical_moments_used": false,
+  "zero_or_height_inputs": false,
+  "sqrt2_factored_out_exactly": true,
+  "independent_coefficient_and_phased_boundary_formulas": true,
+  "two_independent_complex_arguments": true,
+  "all_same_parity_crosses_retained": true,
+  "factor_2_and_factor_4_verified": true,
+  "positive_negative_and_zero_signed_controls": true,
+  "source_scope": "free signed rational kernel coefficients for algebra regressions only, not canonical moment inputs or native source evaluations",
+  "sign_scope": "negative controls refute only inferring sign from transport/normalization; no negative canonical moment claim",
+  "limit_scope": "Lean proves the limits; finite tests check exact identities and normalizations only"
+}
