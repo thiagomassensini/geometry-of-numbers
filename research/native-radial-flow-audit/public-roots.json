@@ -1,0 +1,134 @@
+{
+  "modules": {
+    "SourceJets": [
+      "CarryRadialFlow.tc",
+      "CarryRadialFlow.tc_mul",
+      "CarryRadialFlow.tc_add",
+      "CarryRadialFlow.tc_deriv",
+      "CarryRadialFlow.tc_id",
+      "CarryRadialFlow.source_normalized_response",
+      "CarryRadialFlow.source_tc_odd",
+      "CarryRadialFlow.source_tc_even",
+      "CarryRadialFlow.flowResponse",
+      "CarryRadialFlow.source_zero",
+      "CarryRadialFlow.flow_analytic",
+      "CarryRadialFlow.flow_equation",
+      "CarryRadialFlow.flow_tc_recurrence"
+    ],
+    "FlowJets": [
+      "CarryRadialFlow.flowJetPolynomial",
+      "CarryRadialFlow.flow_first_eight"
+    ],
+    "CayleyFlow": [
+      "CarryRadialFlow.cayleyResponse",
+      "CarryRadialFlow.original_quotient_analytic",
+      "CarryRadialFlow.original_quotient_eq_cayley",
+      "CarryRadialFlow.cayley_flow_equation",
+      "CarryRadialFlow.original_quotient_flow_equation"
+    ],
+    "RadialReality": [
+      "CarryRadialFlow.original_rotated_response",
+      "CarryRadialFlow.original_quotient_radial_real"
+    ],
+    "KernelTaylor": [
+      "CarryRadialFlow.mu",
+      "CarryRadialFlow.flowJetWitness",
+      "CarryRadialFlow.radialWeight",
+      "CarryRadialFlow.address",
+      "CarryRadialFlow.fourFlowKernel",
+      "CarryRadialFlow.nodeWeight",
+      "CarryRadialFlow.fourFlowKernel_reduction",
+      "CarryRadialFlow.flow_taylor_polynomial",
+      "CarryRadialFlow.fourFlowKernel_exact_remainder",
+      "CarryRadialFlow.fourFlowKernel_normalized_tendsto"
+    ],
+    "RadialDefect": [
+      "CarryRadialFlow.radialQuotient",
+      "CarryRadialFlow.radialDefectEntry",
+      "CarryRadialFlow.address_sum_ne_zero",
+      "CarryRadialFlow.radial_defect_flow"
+    ],
+    "FlowInterval": [
+      "CarryRadialFlow.flowWitness",
+      "CarryRadialFlow.slopeBox",
+      "CarryRadialFlow.firstFlowBox",
+      "CarryRadialFlow.secondFlowBox",
+      "CarryRadialFlow.thirdFlowBox",
+      "CarryRadialFlow.flowWitnessBox",
+      "CarryRadialFlow.flowWitnessBox_negative",
+      "CarryRadialFlow.source_flow_witness_neg",
+      "CarryRadialFlow.actual_flow_jet_witness_neg"
+    ],
+    "KernelSign": [
+      "CarryRadialFlow.flowJetWitness_re_neg",
+      "CarryRadialFlow.fourFlowKernel_normalized_eventually_neg",
+      "CarryRadialFlow.fourFlowKernel_eventually_neg",
+      "CarryRadialFlow.radialWeightReal",
+      "CarryRadialFlow.radialWeight_ofReal",
+      "CarryRadialFlow.realFlowMatrix",
+      "CarryRadialFlow.fourFlowKernel_real_form",
+      "CarryRadialFlow.fourFlowMatrix_eventually_not_nonnegative"
+    ]
+  },
+  "groups": {
+    "algebra": [
+      "CarryRadialFlow.tc",
+      "CarryRadialFlow.tc_mul",
+      "CarryRadialFlow.tc_add",
+      "CarryRadialFlow.tc_deriv",
+      "CarryRadialFlow.tc_id",
+      "CarryRadialFlow.flowJetPolynomial",
+      "CarryRadialFlow.radialWeight",
+      "CarryRadialFlow.address",
+      "CarryRadialFlow.nodeWeight",
+      "CarryRadialFlow.flowWitness",
+      "CarryRadialFlow.radialWeightReal"
+    ],
+    "source": [
+      "CarryRadialFlow.source_normalized_response",
+      "CarryRadialFlow.source_tc_odd",
+      "CarryRadialFlow.source_tc_even",
+      "CarryRadialFlow.flowResponse",
+      "CarryRadialFlow.source_zero",
+      "CarryRadialFlow.flow_analytic",
+      "CarryRadialFlow.flow_equation",
+      "CarryRadialFlow.flow_tc_recurrence",
+      "CarryRadialFlow.flow_first_eight",
+      "CarryRadialFlow.cayleyResponse",
+      "CarryRadialFlow.original_quotient_analytic",
+      "CarryRadialFlow.original_quotient_eq_cayley",
+      "CarryRadialFlow.cayley_flow_equation",
+      "CarryRadialFlow.original_quotient_flow_equation",
+      "CarryRadialFlow.original_rotated_response",
+      "CarryRadialFlow.original_quotient_radial_real",
+      "CarryRadialFlow.mu",
+      "CarryRadialFlow.flowJetWitness",
+      "CarryRadialFlow.fourFlowKernel",
+      "CarryRadialFlow.fourFlowKernel_reduction",
+      "CarryRadialFlow.flow_taylor_polynomial",
+      "CarryRadialFlow.fourFlowKernel_exact_remainder",
+      "CarryRadialFlow.fourFlowKernel_normalized_tendsto",
+      "CarryRadialFlow.radialQuotient",
+      "CarryRadialFlow.radialDefectEntry",
+      "CarryRadialFlow.address_sum_ne_zero",
+      "CarryRadialFlow.radial_defect_flow"
+    ],
+    "certificate": [
+      "CarryRadialFlow.slopeBox",
+      "CarryRadialFlow.firstFlowBox",
+      "CarryRadialFlow.secondFlowBox",
+      "CarryRadialFlow.thirdFlowBox",
+      "CarryRadialFlow.flowWitnessBox",
+      "CarryRadialFlow.flowWitnessBox_negative",
+      "CarryRadialFlow.source_flow_witness_neg",
+      "CarryRadialFlow.actual_flow_jet_witness_neg",
+      "CarryRadialFlow.flowJetWitness_re_neg",
+      "CarryRadialFlow.fourFlowKernel_normalized_eventually_neg",
+      "CarryRadialFlow.fourFlowKernel_eventually_neg",
+      "CarryRadialFlow.radialWeight_ofReal",
+      "CarryRadialFlow.realFlowMatrix",
+      "CarryRadialFlow.fourFlowKernel_real_form",
+      "CarryRadialFlow.fourFlowMatrix_eventually_not_nonnegative"
+    ]
+  }
+}

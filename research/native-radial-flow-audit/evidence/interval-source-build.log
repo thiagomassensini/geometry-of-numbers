@@ -1,0 +1,72 @@
+1/48 IntervalHelpers
+2/48 FixedInterval
+3/48 ExponentialEnclosures
+4/48 ThetaDerivatives
+5/48 CoefficientData
+6/48 SourceComputation
+7/48 WeightedQuadrature
+8/48 ThetaRetainedTail
+9/48 CoefficientSupport
+10/48 CoefficientStep0
+11/48 CoefficientStep1
+12/48 CoefficientStep2
+13/48 CoefficientStep3A
+14/48 CoefficientStep3B
+15/48 CoefficientStep3
+16/48 CoefficientCode
+17/48 CodeBounds
+18/48 SourceBoxes
+19/48 ExactGridWeights
+20/48 NodeCacheData
+21/48 CachedSourceProgram
+22/48 ExactSourceProgram
+23/48 TaylorNodeComputation
+24/48 QuadratureCacheData
+25/48 TabledSourceProgram
+26/48 CanonicalComparison
+27/48 CanonicalPivotCertificate
+28/48 SourceIntegral
+29/48 PivotFromIntegral
+30/48 CachedIntegralCheck0
+31/48 CachedIntegralCheck1
+32/48 CachedIntegralCheck2
+33/48 CachedIntegralCheck3
+34/48 CachedIntegralChecks
+35/48 QuadratureNodeCheck0
+36/48 QuadratureNodeCheck1
+37/48 QuadratureNodeCheck2
+38/48 QuadratureNodeCheck3
+39/48 QuadratureNodeChecks
+40/48 FullSourceBoxes
+41/48 ArgNodeChecks
+42/48 ModeNodeChecks
+43/48 NodeCacheEquivalence
+44/48 ExactSourceProof
+45/48 TabledSourceEquivalence
+46/48 IntegralInputChecks
+47/48 NumericalPivotCheck
+48/48 IntegralCertificate
+PASS: 48 unchanged interval-source ancestors verified against recorded hashes.
+	Command being timed: "python3 build_extra.py --verify-existing"
+	User time (seconds): 0.32
+	System time (seconds): 0.19
+	Percent of CPU this job got: 94%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.55
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 48324
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 25489
+	Voluntary context switches: 304
+	Involuntary context switches: 4
+	Swaps: 0
+	File system inputs: 76208
+	File system outputs: 896
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

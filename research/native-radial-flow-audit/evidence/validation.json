@@ -1,0 +1,289 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-radial-flow-audit/research/native-radial-flow-audit",
+      "exit_code": 0,
+      "seconds": 1.036,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "verified-cache",
+      "command": [
+        "python3",
+        "restore_verified_cache.py",
+        "--verify-only"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-radial-flow-audit/research/native-radial-flow-audit",
+      "exit_code": 0,
+      "seconds": 1.735,
+      "log": "evidence/verified-cache.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-radial-flow-audit/research/native-radial-flow-audit",
+      "exit_code": 0,
+      "seconds": 0.859,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "interval-source-build",
+      "command": [
+        "python3",
+        "build_extra.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-radial-flow-audit/research/native-radial-flow-audit",
+      "exit_code": 0,
+      "seconds": 0.559,
+      "log": "evidence/interval-source-build.log"
+    },
+    {
+      "label": "mechanism-probe",
+      "command": [
+        "python3",
+        "mechanism_probe.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-radial-flow-audit/research/native-radial-flow-audit",
+      "exit_code": 0,
+      "seconds": 0.066,
+      "log": "evidence/mechanism-probe.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-radial-flow-audit/research/native-radial-flow-audit",
+      "exit_code": 0,
+      "seconds": 0.043,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnSeventhSourceJet",
+        "CarrySelfAdjointOperator.CompletedNativeChiralPickFactorization",
+        "CarrySelfAdjointOperator.CompletedGreenForwardDifferenceLimit",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnArbitraryOrder",
+        "CarrySelfAdjointOperator.CompletedNativeChiralEvenBoundaryEnergy",
+        "CarrySelfAdjointOperator.CompletedNativeChiralEvenBoundarySplit",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFiniteTransfer",
+        "CarrySelfAdjointOperator.NativePhysicalFiniteSewing",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFourSampleStorage",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnEnergyPort"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.981,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "7f1c5c0f1def68953b15ba28d0d2a2d9ac0c4f85255854ffb162e734440eecc3",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-SourceJets",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SourceJets"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-radial-flow-audit/research/native-radial-flow-audit",
+      "exit_code": 0,
+      "seconds": 13.99,
+      "log": "evidence/lean-SourceJets.log"
+    },
+    {
+      "label": "lean-FlowJets",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "FlowJets"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-radial-flow-audit/research/native-radial-flow-audit",
+      "exit_code": 0,
+      "seconds": 21.566,
+      "log": "evidence/lean-FlowJets.log"
+    },
+    {
+      "label": "lean-CayleyFlow",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CayleyFlow"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-radial-flow-audit/research/native-radial-flow-audit",
+      "exit_code": 0,
+      "seconds": 13.845,
+      "log": "evidence/lean-CayleyFlow.log"
+    },
+    {
+      "label": "lean-RadialReality",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "RadialReality"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-radial-flow-audit/research/native-radial-flow-audit",
+      "exit_code": 0,
+      "seconds": 14.075,
+      "log": "evidence/lean-RadialReality.log"
+    },
+    {
+      "label": "lean-KernelTaylor",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "KernelTaylor"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-radial-flow-audit/research/native-radial-flow-audit",
+      "exit_code": 0,
+      "seconds": 17.514,
+      "log": "evidence/lean-KernelTaylor.log"
+    },
+    {
+      "label": "lean-RadialDefect",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "RadialDefect"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-radial-flow-audit/research/native-radial-flow-audit",
+      "exit_code": 0,
+      "seconds": 13.882,
+      "log": "evidence/lean-RadialDefect.log"
+    },
+    {
+      "label": "lean-FlowInterval",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "FlowInterval"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-radial-flow-audit/research/native-radial-flow-audit",
+      "exit_code": 0,
+      "seconds": 15.228,
+      "log": "evidence/lean-FlowInterval.log"
+    },
+    {
+      "label": "lean-KernelSign",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "KernelSign"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-radial-flow-audit/research/native-radial-flow-audit",
+      "exit_code": 0,
+      "seconds": 15.914,
+      "log": "evidence/lean-KernelSign.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-radial-flow-audit/research/native-radial-flow-audit",
+      "exit_code": 0,
+      "seconds": 31.599,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-radial-flow-audit",
+      "exit_code": 0,
+      "seconds": 8.152,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-radial-flow-audit",
+      "exit_code": 0,
+      "seconds": 6.939,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-radial-flow-audit",
+      "exit_code": 0,
+      "seconds": 10.109,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-radial-flow-audit",
+      "exit_code": 0,
+      "seconds": 47.456,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "83d035b5714c2cbadcd7f24bb50dd507b1fafe30",
+        "--",
+        ".",
+        ":(exclude)research/native-radial-flow-audit/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-radial-flow-audit",
+      "exit_code": 0,
+      "seconds": 0.01,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-radial-flow-audit",
+      "exit_code": 0,
+      "seconds": 0.008,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}
