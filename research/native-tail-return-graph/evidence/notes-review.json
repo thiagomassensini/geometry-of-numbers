@@ -1,0 +1,29 @@
+{
+  "MAPA_UNIFICADO_GEOMETRIA_LOGARITMICA_QUADRATICA_GREEN_2026-10-27.md": {
+    "sha256": "f72e803e57c184c1d5806098ccaefc49f789b3901a5fae19b32b968bb67ee0dd",
+    "bytes": 22166
+  },
+  "DOSSIE_GEOMETRIA_QUADRATICA_MULTIBASE_MOMENTOS_2026-10-27.md": {
+    "sha256": "5a852561efe4a9e36147c289a1d52b847ddef43c9e4da704a93385c959cbbb67",
+    "bytes": 49043
+  },
+  "DOSSIE_GEOMETRIA_QUADRATICA_MOMENTOS_PACOTE_2026-10-27.zip": {
+    "sha256": "2e4b5fb03fbb85e856274408797af6c18b367b6b48ed094e352e96015c018cf0",
+    "bytes": 263905
+  },
+  "zip_manifest_verified_files": 10,
+  "dossier_equal_after_math_delimiters_reference_format_and_line_edge_whitespace": false,
+  "used_as_mathematical_context_not_executable_instructions": true,
+  "finite_return_target": "Updated by user: direct FOUR-source certificate, no four-to-seven padding; Map §§12 and16 still provide context.",
+  "sign_scope": "D diagonal positivity in coefficient coordinates does not establish Cauchy-metric positivity; 80 numerical 2x2 determinants do not prove larger Hankel orders",
+  "MAPA_INVERSAO_CIRCULO_CAMERAS_CENTRO_PERNAS_2026-10-27.md": {
+    "sha256": "191e5df8872844e9bedf9acdba4ee88144dbf39c853a6519ace50a4f1a17d45f",
+    "bytes": 7223
+  },
+  "certificado_quatro_enderecos.py": {
+    "sha256": "c391df85a48eb8d19177c4c51ec0c14b486bc2ab2c53b778fe6ee1c9cfaa125a",
+    "bytes": 1573
+  },
+  "symbolic_user_script": "Inspected and executed successfully locally; universal coefficient identity also formalized in FourSourceBridge.lean.",
+  "inversion_map_scope": "Algebraic coordinate context, no identified isometry or native TFVD/Green/clock transport."
+}

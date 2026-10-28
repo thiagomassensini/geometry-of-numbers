@@ -1,0 +1,75 @@
+'CarryTailReturn.returnWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.weightedIncident' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.window_reconstruct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.weighted_window_reconstruct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.finite_weighted_synthesis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.weighted_incident_coe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.weighted_incident_return' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.weighted_return_synthesis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.sourceIncident' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.original_first_leg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.original_return_leg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.original_source_graph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.tailIncident' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.principal_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.tail_first_leg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.headIncident' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.head_first_leg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.tailReturnDefect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.weighted_return_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.tail_return_defect_synthesis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.tail_graph_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.head_graph_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.native_quotient_ne_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.native_return_response_relation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.native_return_cayley_coordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.weighted_cayley_vector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.native_return_fixed_iff_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.tail_in_graph_iff_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.tail_in_graph_eventually_iff_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.returnGraphDefect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.graph_defect_polarized_balance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.diagonal_pair_return_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.original_source_energy_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.original_source_port_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.signed_diagonal_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.original_source_storage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.tail_energy_defect_cancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.weighted_coordinates_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.address_zero_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.principal_coefficient_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.principal_coefficients_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.principal_coefficients_completed_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.principal_coefficients_sq_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.principal_input_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.four_original_physical_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.four_original_port_gram' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.principal_four_port_gram' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTailReturn.principal_four_eventually_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+Actual finite sign roots used: []
+Native tail return graph construction: 44 public roots; 6151 type/body dependencies; standard axioms only; canonical moments forbidden=true; finite source-sign roots excluded from construction; scalar-asymptotic shortcuts forbidden
+Actual finite sign roots used: []
+Native tail return graph finite_control: 4 public roots; 6117 type/body dependencies; standard axioms only; canonical moments forbidden=false; finite source-sign roots excluded from construction; scalar-asymptotic shortcuts forbidden
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 9.06
+	System time (seconds): 6.22
+	Percent of CPU this job got: 111%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:13.70
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8401192
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 3
+	Minor (reclaiming a frame) page faults: 300028
+	Voluntary context switches: 12307
+	Involuntary context switches: 149
+	Swaps: 0
+	File system inputs: 368
+	File system outputs: 968
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

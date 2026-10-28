@@ -1,0 +1,10 @@
+{
+  "PASS": true,
+  "exact_gaussian_fraction_checks": 391,
+  "both_complex_quadratures": true,
+  "canonical_moments_used": false,
+  "scope": "finite algebra regressions; Lean supplies the universal identities and the OLD four-source sign certificate",
+  "native_function_replaced_for_proof": false,
+  "rational_response_samples_scope": "identity tests only; no inference that these samples equal the native completed response",
+  "euclidean_coefficient_norm_is_physical_energy": false
+}
