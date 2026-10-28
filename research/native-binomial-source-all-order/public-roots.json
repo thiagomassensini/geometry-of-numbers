@@ -1,0 +1,64 @@
+{
+  "modules": {
+    "BinomialInverse": [
+      "CarryNativeBinomial.inverse_binomial_kernel",
+      "CarryNativeBinomial.binomialMatrix",
+      "CarryNativeBinomial.signedBinomialMatrix",
+      "CarryNativeBinomial.signed_binomial_mul",
+      "CarryNativeBinomial.binomial_signed_mul"
+    ],
+    "NativeNewtonInput": [
+      "CarryNativeBinomial.binomial_stencil_exact",
+      "CarryNativeBinomial.newtonCoordinates",
+      "CarryNativeBinomial.native_phase_self_inverse",
+      "CarryNativeBinomial.newton_input_term",
+      "CarryNativeBinomial.newton_input_exact"
+    ],
+    "CoordinateCoherence": [
+      "CarryNativeBinomial.sourceNewtonCoefficient",
+      "CarryNativeBinomial.newton_coordinates_of_support",
+      "CarryNativeBinomial.newton_coordinates_prefix_coherent",
+      "CarryNativeBinomial.source_newton_above_support",
+      "CarryNativeBinomial.newton_coordinates_above_support"
+    ],
+    "FullSourceTransport": [
+      "CarryNativeBinomial.physical_source_newton_all_order",
+      "CarryNativeBinomial.native_synthesis_prefix_coherent",
+      "CarryNativeBinomial.physical_pair_newton_all_order",
+      "CarryNativeBinomial.newton_coordinates_unique",
+      "CarryNativeBinomial.four_coordinates_regression",
+      "CarryNativeBinomial.critical_coordinates_regression"
+    ],
+    "AllOrderEnergyControl": [
+      "CarryNativeBinomial.source_explicit_energy_control_all_order"
+    ]
+  },
+  "groups": {
+    "construction": [
+      "CarryNativeBinomial.inverse_binomial_kernel",
+      "CarryNativeBinomial.binomialMatrix",
+      "CarryNativeBinomial.signedBinomialMatrix",
+      "CarryNativeBinomial.signed_binomial_mul",
+      "CarryNativeBinomial.binomial_signed_mul",
+      "CarryNativeBinomial.binomial_stencil_exact",
+      "CarryNativeBinomial.newtonCoordinates",
+      "CarryNativeBinomial.native_phase_self_inverse",
+      "CarryNativeBinomial.newton_input_term",
+      "CarryNativeBinomial.newton_input_exact",
+      "CarryNativeBinomial.sourceNewtonCoefficient",
+      "CarryNativeBinomial.newton_coordinates_of_support",
+      "CarryNativeBinomial.newton_coordinates_prefix_coherent",
+      "CarryNativeBinomial.source_newton_above_support",
+      "CarryNativeBinomial.newton_coordinates_above_support",
+      "CarryNativeBinomial.physical_source_newton_all_order",
+      "CarryNativeBinomial.native_synthesis_prefix_coherent",
+      "CarryNativeBinomial.physical_pair_newton_all_order",
+      "CarryNativeBinomial.newton_coordinates_unique",
+      "CarryNativeBinomial.four_coordinates_regression",
+      "CarryNativeBinomial.critical_coordinates_regression"
+    ],
+    "transported_control": [
+      "CarryNativeBinomial.source_explicit_energy_control_all_order"
+    ]
+  }
+}
