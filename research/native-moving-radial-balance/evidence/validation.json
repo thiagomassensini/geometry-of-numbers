@@ -1,0 +1,289 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-radial-balance/research/native-moving-radial-balance",
+      "exit_code": 0,
+      "seconds": 0.727,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "verified-cache",
+      "command": [
+        "python3",
+        "restore_verified_cache.py",
+        "--verify-only"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-radial-balance/research/native-moving-radial-balance",
+      "exit_code": 0,
+      "seconds": 2.9,
+      "log": "evidence/verified-cache.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-radial-balance/research/native-moving-radial-balance",
+      "exit_code": 0,
+      "seconds": 1.483,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "mechanism-probe",
+      "command": [
+        "python3",
+        "mechanism_probe.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-radial-balance/research/native-moving-radial-balance",
+      "exit_code": 0,
+      "seconds": 0.082,
+      "log": "evidence/mechanism-probe.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-radial-balance/research/native-moving-radial-balance",
+      "exit_code": 0,
+      "seconds": 0.039,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnSeventhSourceJet",
+        "CarrySelfAdjointOperator.CompletedNativeChiralPickFactorization",
+        "CarrySelfAdjointOperator.CompletedGreenForwardDifferenceLimit",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnArbitraryOrder",
+        "CarrySelfAdjointOperator.CompletedNativeChiralEvenBoundaryEnergy",
+        "CarrySelfAdjointOperator.CompletedNativeChiralEvenBoundarySplit",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFiniteTransfer",
+        "CarrySelfAdjointOperator.NativePhysicalFiniteSewing",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFourSampleStorage",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnEnergyPort"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.334,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "1c3b2eed778fa3cecc3095d47ea101d72a301cece470368710755b5eae41f583",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-OriginalCurve",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "OriginalCurve"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-radial-balance/research/native-moving-radial-balance",
+      "exit_code": 0,
+      "seconds": 15.154,
+      "log": "evidence/lean-OriginalCurve.log"
+    },
+    {
+      "label": "lean-CurvePairing",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CurvePairing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-radial-balance/research/native-moving-radial-balance",
+      "exit_code": 0,
+      "seconds": 14.038,
+      "log": "evidence/lean-CurvePairing.log"
+    },
+    {
+      "label": "lean-CompletionCancellation",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CompletionCancellation"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-radial-balance/research/native-moving-radial-balance",
+      "exit_code": 0,
+      "seconds": 14.319,
+      "log": "evidence/lean-CompletionCancellation.log"
+    },
+    {
+      "label": "lean-MovingDerivative",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MovingDerivative"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-radial-balance/research/native-moving-radial-balance",
+      "exit_code": 0,
+      "seconds": 15.059,
+      "log": "evidence/lean-MovingDerivative.log"
+    },
+    {
+      "label": "lean-CurveRegularity",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CurveRegularity"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-radial-balance/research/native-moving-radial-balance",
+      "exit_code": 0,
+      "seconds": 14.678,
+      "log": "evidence/lean-CurveRegularity.log"
+    },
+    {
+      "label": "lean-CriticalOddTaylor",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CriticalOddTaylor"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-radial-balance/research/native-moving-radial-balance",
+      "exit_code": 0,
+      "seconds": 22.201,
+      "log": "evidence/lean-CriticalOddTaylor.log"
+    },
+    {
+      "label": "lean-CriticalPhysicalBridge",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CriticalPhysicalBridge"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-radial-balance/research/native-moving-radial-balance",
+      "exit_code": 0,
+      "seconds": 15.555,
+      "log": "evidence/lean-CriticalPhysicalBridge.log"
+    },
+    {
+      "label": "lean-CriticalOddSign",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CriticalOddSign"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-radial-balance/research/native-moving-radial-balance",
+      "exit_code": 0,
+      "seconds": 14.747,
+      "log": "evidence/lean-CriticalOddSign.log"
+    },
+    {
+      "label": "lean-CriticalEnergyTransport",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CriticalEnergyTransport"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-radial-balance/research/native-moving-radial-balance",
+      "exit_code": 0,
+      "seconds": 16.267,
+      "log": "evidence/lean-CriticalEnergyTransport.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-radial-balance/research/native-moving-radial-balance",
+      "exit_code": 0,
+      "seconds": 32.857,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-radial-balance",
+      "exit_code": 0,
+      "seconds": 8.088,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-radial-balance",
+      "exit_code": 0,
+      "seconds": 6.988,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-radial-balance",
+      "exit_code": 0,
+      "seconds": 10.287,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-radial-balance",
+      "exit_code": 0,
+      "seconds": 47.489,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "562e8f8302a84f9ffdb2021384ea7a21f2edb14b",
+        "--",
+        ".",
+        ":(exclude)research/native-moving-radial-balance/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-radial-balance",
+      "exit_code": 0,
+      "seconds": 0.155,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-radial-balance",
+      "exit_code": 0,
+      "seconds": 0.147,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}
