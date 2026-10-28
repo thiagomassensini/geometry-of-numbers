@@ -1,0 +1,91 @@
+'CarryMaterialVariation.materialPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.materialVariation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.materialPair_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.materialPair_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.scaled_material_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.rho_differentiable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.source_regular_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.rawVelocity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.rhoVelocity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.physical_material_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.radialJetVector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.radial_jet_vector_at_grid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.radial_jet_prefix_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.radial_jet_curve_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.radial_jet_curve_complete_jet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.radial_jet_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.materialPair_scale_inputs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.materialPair_linear_readout' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.jet_material_variation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.jet_kernel_monomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.canonical_layer_annihilated' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.physical_jet_material_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.sixInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.sixWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.sixRaw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.six_input_outside' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.six_input_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.six_raw_at_grid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.six_curve_eq_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.six_raw_differentiable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.six_closed_material_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.sixNodeWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.sixKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.sixEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.sixLimit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.sixCorrection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.six_kernel_reduction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.source_taylor_fourteen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.six_exact_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.six_correction_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.prefixDelta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.uNumerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.vNumerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.sixU' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.sixV' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.deltaBox' depends on axioms: [propext]
+'CarryMaterialVariation.uNumeratorBox' depends on axioms: [propext]
+'CarryMaterialVariation.vNumeratorBox' depends on axioms: [propext]
+'CarryMaterialVariation.sixUBox' depends on axioms: [propext]
+'CarryMaterialVariation.sixVBox' depends on axioms: [propext]
+'CarryMaterialVariation.sixCorrectionBox' depends on axioms: [propext]
+'CarryMaterialVariation.delta_box_positive' depends on axioms: [propext]
+'CarryMaterialVariation.six_correction_box_positive' depends on axioms: [propext]
+'CarryMaterialVariation.source_box_membership' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.prefix_delta_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.six_critical_old_rows' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.six_critical_limit_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.six_critical_correction_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.six_energy_eventually_above' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.six_weight_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.six_raw_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.six_response_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.six_physical_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.six_original_eventually_above' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialVariation.six_original_correction_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+Material variation audit algebra: 24 public roots; 23508 type/body dependencies; standard axioms only; finite canonical positivity forbidden; opaque bodies traversed
+Material variation audit source: 26 public roots; 57544 type/body dependencies; standard axioms only; finite canonical positivity forbidden; opaque bodies traversed
+Material variation audit certificate: 15 public roots; 58591 type/body dependencies; standard axioms only; finite canonical positivity forbidden; opaque bodies traversed
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 25.14
+	System time (seconds): 8.98
+	Percent of CPU this job got: 109%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:31.25
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8318932
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 429930
+	Voluntary context switches: 14828
+	Involuntary context switches: 388
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 944
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
