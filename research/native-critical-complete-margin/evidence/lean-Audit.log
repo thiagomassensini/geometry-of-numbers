@@ -1,0 +1,67 @@
+'CarryCriticalComplete.sourceBoundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.criticalBoundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.defectBoundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.physical_values_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.source_boundary_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.physical_values_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.source_boundary_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.critical_boundary_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.critical_four_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.defect_coefficient_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.critical_coefficient_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.criticalTemplate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.defectTemplate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.critical_boundary_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.defect_boundary_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.boundary_eventually_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.critical_boundary_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.defect_boundary_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.critical_template_norm_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.critical_boundary_uniform_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.physical_boundary_regularized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.four_source_path_energy_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.regular_imaginary_pair_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.critical_input_imaginary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.critical_split_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.defect_input_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.defect_pair_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.defect_energy_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.defect_pair_re_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.defectRateTemplate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.defect_scaled_boundary_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.defect_scaled_energy_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.defect_uniform_quadratic_rate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.defect_uniform_relative_small' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.critical_principal_uniform_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.critical_uniform_physical_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalComplete.critical_native_energy_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+Actual finite sign roots used: []
+Native critical complete margin construction: 36 public roots; 62530 type/body dependencies; standard axioms only; canonical moments forbidden=true; finite source-sign roots excluded from construction; scalar-asymptotic shortcuts forbidden
+Actual finite sign roots used: [CarryBoundaryMargin.principal_uniform_physical_margin,
+ CarrySelfAdjointOperator.nativeSourceFourBoundaryEnergy_pos,
+ CarrySelfAdjointOperator.storage_one_fourSample_eventually_boundary_coercive,
+ CarrySelfAdjointOperator.radialFourRegularizedStorage_eventually_unit_margin]
+Native critical complete margin finite_margin: 1 public roots; 67204 type/body dependencies; standard axioms only; canonical moments forbidden=true; finite source-sign roots excluded from construction; scalar-asymptotic shortcuts forbidden
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 26.55
+	System time (seconds): 6.22
+	Percent of CPU this job got: 102%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:31.87
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 9014732
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 387998
+	Voluntary context switches: 10657
+	Involuntary context switches: 329
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 1080
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
