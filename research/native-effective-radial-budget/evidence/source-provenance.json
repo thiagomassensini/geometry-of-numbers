@@ -1,0 +1,68 @@
+{
+  "base": "7d50d6f43660769728b5cdfb04a0f9c78ec03402",
+  "branch": "agent/native-effective-radial-budget",
+  "main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "origin_main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_status": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "momentos_status": "M AUDITORIA_CORRECTED_MOMENTS_VS_CANONICAL_RECURRENCE.md",
+  "source_sha256": {
+    "CarrySelfAdjointOperator/CompletedNativeLogCoefficientMajorant.lean": "753bdaa7db8978f124f31e812e9c9e4e15e629bc1d25a577cf08a4a59ae58cd3",
+    "CarrySelfAdjointOperator/CompletedNativeAllOrderMomentUpperBound.lean": "7c9e4e62883ec0ea1c101420655a9df4eb0f793452d600865b08d661f48449d0",
+    "CarrySelfAdjointOperator/CompletedNativeEvenCoordinateResolventBridge.lean": "23fbf4f835b6c92babd367f6a615570d9432db47d51c0bbb3e7a127b2eb9ad6f",
+    "CarrySelfAdjointOperator/CompletedNativeAnalyticMomentGrowth.lean": "6da06de7740a8c314612197de78d9f9a189837a6461c2f1ce7dad4db10154e09",
+    "CarrySelfAdjointOperator/CompletedNativeChiralReturnSeventhSourceJet.lean": "716aaf10ace71d3588c7edeea64b9787405326ff0e268c94093a281b86cb8cc3",
+    "CarrySelfAdjointOperator/CompletedNativeChiralPickFactorization.lean": "1cd536b29d49e9fa83c30b24214caa5b541856d89fd613abe6f1c73eb7a0d0f4",
+    "CarrySelfAdjointOperator/CompletedNativeLogDerivativePoles.lean": "b5fb4056f235f168d9ded90a12299cdadef4b85ede19073882e22a8ac8ac4a44",
+    "CarrySelfAdjointOperator/CompletedNativeHermiteBiehlerChiralTrace.lean": "0f8f326c6c5765a4998f520d2c2a2562e4b73bae3608d6fec7b40a0899baa980",
+    "CarrySelfAdjointOperator/NativePhysicalGreenResolvent.lean": "e0228de1445e347971cc45d168f51bb113bfe582a448b3e75adc354cb8ce2204",
+    "CarrySelfAdjointOperator/NativeIntervalMultiplier.lean": "c395b94e42c110c7724889a2a5df56dfbddefb536b1c385790955f8f12fa1f78",
+    "CarrySelfAdjointOperator/NativeGeometricLogClock.lean": "625b58eed2e42932fb15e4e559381659a866bd4e4ee7a364b926302b71698dd4",
+    "CarrySelfAdjointOperator/CompletedNativeProjectiveChiralForwardDifference.lean": "cd403f6535a3c52a0080fea31eb66b71352b8a16c2aadc58d4c1b602452def6e",
+    "CarrySelfAdjointOperator/CompletedGreenForwardDifferenceLimit.lean": "f8b7d7a77be78a23ae5a837180e5b6efe028dca1a1f78ba1d6a959a3cccea8bc",
+    "CarrySelfAdjointOperator/NativeCompletedFiniteGreenResidual.lean": "e5bbbe2618f4d788ca2116d475d9e92ed87b6e5f405a6984635ba9412df2c3a8",
+    "CarrySelfAdjointOperator/NativeIncidenceCauchyPorts.lean": "35af1faa17ff334b04b79ca5a34c878aa434557848d40340f313252a80d3169e",
+    "CarrySelfAdjointOperator/CompletedNativeProjectiveChiralCarrier.lean": "1e9bb581d91f0b77fd52be947932e40ac7916430a8b994714ef6185865f58aaa",
+    "CarrySelfAdjointOperator/CompletedNativeRadialChiralMultiplier.lean": "1ae47a75e6ec10f1f2be5b2133247ab2de92f2fe5be9996ca921c0611b67fa13",
+    "CarrySelfAdjointOperator/CompletedNativeChiralJetStorageTransport.lean": "0b1f94a53a706c8713d416200a6c476a7ffb3503ef9d82e87b2315609750c693",
+    "CarrySelfAdjointOperator/CompletedNativeChiralReturnArbitraryOrder.lean": "fc106babafaca59c9c71c5bb28cead9e981f385b3777014f7eacc77309e456bd",
+    "CarrySelfAdjointOperator/CompletedNativeChiralEvenBoundaryEnergy.lean": "7e13c85db8a89cd34713f5f2c5a3cb31f62e4a11c4572e4b4c2121b47488f272",
+    "CarrySelfAdjointOperator/CompletedNativeChiralEvenBoundarySplit.lean": "169bc545c4c17795f2332e47d1cd2ff7e44a303012e4d9299a4690cb88d8f21c",
+    "CarrySelfAdjointOperator/CompletedNativeCentralProductDressingAudit.lean": "a5b3b310632c67aa79b7c74d1d5e2ac2c55572648d3608d5d3a1f0908e834f7d",
+    "CarrySelfAdjointOperator/CompletedNativeTfvdWronskianMoments.lean": "3dd797895e8da20c202f3982fa89c0a64cd453273dd2374376493c6225a55567",
+    "CarrySelfAdjointOperator/CompletedNativeChiralBoundaryJetTransport.lean": "abd583e6784a54ed14a19163cd0ff60c7ebe7f11ee0e7aab39975123465f9283",
+    "CarrySelfAdjointOperator/CompletedNativeChiralJetEnergyControl.lean": "1d9963917a08eacdfa843c31e9e9858e244477fbd299e8579a402636b740ac5b",
+    "CarrySelfAdjointOperator/NewtonStirlingTransport.lean": "59258cf7da8488e4669047ab1b23c62931a6a27de1b4dc95724ce72796d2173c",
+    "CarrySelfAdjointOperator/NativeCompletedCenteredReflection.lean": "fe3c95a915bbcbabc33fa29af1c9c3034557af5438667324701f1d54b1801cfc",
+    "CarrySelfAdjointOperator/NativeScalarDirectSchwarzReflection.lean": "1f7874171b9210d7efcc9b16b704f3be010d0df08fbd19629a924c8db2a2c1dd",
+    "CarrySelfAdjointOperator/CompletedC3FullWronskianCentralChiralEnergy.lean": "87b1b5f93059ee3df0ecbdef3c9744cfefd350d7f024dd277bb9fab054c59ac7",
+    "CarrySelfAdjointOperator/CompletedNativeChiralReturnFiniteTransfer.lean": "c9c4344f6d03fac75917dac664ada38626234eb623fbeb48253bc4aa0f0d9b86",
+    "CarrySelfAdjointOperator/CompletedNativeChiralReturnFourSampleStorage.lean": "5f3132f1f2c79a475c528c26422715107bc625890497466fdb000dadc3585be9",
+    "CarrySelfAdjointOperator/CompletedNativeChiralReturnSevenSampleStorage.lean": "ccc0b700323648c07fae2714bc466feae2aebc8e70c44a8d991f052ae852b87a",
+    "CarrySelfAdjointOperator/CompletedNativeChiralReturnEnergyPort.lean": "a0abd45843c3fdb81dc1107f68f5c4fb3a3e6f4b22172a2dee74defee8e67141",
+    "CarrySelfAdjointOperator/NativePhysicalFiniteSewing.lean": "a712cca3034da9fe3106673942f513a952212b10a6b9916cef872414cc21a89f"
+  },
+  "protected_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c",
+    "/home/thlinux/momentos/AUDITORIA_CORRECTED_MOMENTS_VS_CANONICAL_RECURRENCE.md": "b8b5e643abe941a1ecebcce9f39e47fca39da766aad530aec2886258045b1c6b"
+  },
+  "pins": {
+    "CPFormal": "65d50f6db1208708e109982ba97e1d51d3039956",
+    "NativeCarryC3Crosswalk": "150cfc7fb08da96bf8117f15869cc2b819d593c2",
+    "NativeCarrySpectralWeyl": "298d83c9351e308a5213b9f5ac32e44087f98a9f"
+  },
+  "native_tower_source_sha256": "78f5e26702a4ba06ba6b5c697a79fe5df7a007042e2d7217704bc3b312135aff",
+  "pr129": {
+    "baseRefName": "agent/native-material-variation-six",
+    "headRefOid": "7d50d6f43660769728b5cdfb04a0f9c78ec03402",
+    "isDraft": true,
+    "state": "OPEN"
+  },
+  "geometry_tfvd_sources_sha256": {
+    "GeometryOfNumbers/Analysis/RealCarryTfvd.lean": "40f40703c5085c94cdb72dbd90002e57c365a16568b320febb1cef01978ba6bb",
+    "GeometryOfNumbers/Analysis/RealCarryL2.lean": "9553bce9e2a73d5c8518089640f049569bebfba0817998186d1a01503091b391",
+    "GeometryOfNumbers/Analysis/RealCarryWeightedValve.lean": "0b74255cd5136043281dcb6193532c55143d2d1652077d5d82d142f66c1726f2",
+    "GeometryOfNumbers/Analysis/RealCarryGreenKernel.lean": "94938b30a9091a696b190b101aeb153511a46b74608c54ec22b5eda55348f905"
+  }
+}

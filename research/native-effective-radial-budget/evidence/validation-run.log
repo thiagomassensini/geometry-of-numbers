@@ -1,0 +1,24 @@
+source-provenance: exit 0
+verified-cache: exit 0
+upstream-synthesis-build: exit 0
+mechanism-probe: exit 0
+generate-audit: exit 0
+operator-source-build: exit 0
+lean-SourceSeries: exit 0
+lean-SourceDisc: exit 0
+lean-ExplicitSourceTail: exit 0
+lean-NormalizedRemainder: exit 0
+lean-SixEffectiveRemainder: exit 0
+lean-FiniteNormBudget: exit 0
+lean-RadialRegularity: exit 0
+lean-SquaredStepBudget: exit 0
+lean-CriticalBudgetData: exit 0
+lean-EffectiveSixBudget: exit 0
+lean-Audit: exit 0
+root-build: exit 0
+audit-foundation: exit 0
+audit-geometry: exit 0
+audit-analysis: exit 0
+base-preserved: exit 0
+diff-check: exit 0
+PASS: 23 checks, native sources and old work preserved.
