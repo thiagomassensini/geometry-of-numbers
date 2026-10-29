@@ -1,0 +1,226 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-complete-margin/research/native-critical-complete-margin",
+      "exit_code": 0,
+      "seconds": 0.697,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "verified-cache",
+      "command": [
+        "python3",
+        "restore_verified_cache.py",
+        "--verify-only"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-complete-margin/research/native-critical-complete-margin",
+      "exit_code": 0,
+      "seconds": 1.345,
+      "log": "evidence/verified-cache.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-complete-margin/research/native-critical-complete-margin",
+      "exit_code": 0,
+      "seconds": 0.691,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "mechanism-probe",
+      "command": [
+        "python3",
+        "mechanism_probe.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-complete-margin/research/native-critical-complete-margin",
+      "exit_code": 0,
+      "seconds": 0.172,
+      "log": "evidence/mechanism-probe.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-complete-margin/research/native-critical-complete-margin",
+      "exit_code": 0,
+      "seconds": 0.039,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFiniteTransfer",
+        "CarrySelfAdjointOperator.NativePhysicalFiniteSewing",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFourSampleStorage",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnEnergyPort"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 7.936,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "c7cb28bad4d61c9d9839dcd4a9fa852d1d807fd677b8c6bc239e05718618d949",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-CriticalBoundaryTransport",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CriticalBoundaryTransport"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-complete-margin/research/native-critical-complete-margin",
+      "exit_code": 0,
+      "seconds": 17.012,
+      "log": "evidence/lean-CriticalBoundaryTransport.log",
+      "raw_log": "evidence/lean-CriticalBoundaryTransport.raw.log.gz",
+      "raw_log_sha256": "c009e773e97521901d33cf0259db0d43271c57061068e156ea3f1eb92463897a",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-FourSourcePathLimit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "FourSourcePathLimit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-complete-margin/research/native-critical-complete-margin",
+      "exit_code": 0,
+      "seconds": 12.434,
+      "log": "evidence/lean-FourSourcePathLimit.log"
+    },
+    {
+      "label": "lean-DefectUniformControl",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "DefectUniformControl"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-complete-margin/research/native-critical-complete-margin",
+      "exit_code": 0,
+      "seconds": 14.165,
+      "log": "evidence/lean-DefectUniformControl.log"
+    },
+    {
+      "label": "lean-CriticalCompleteMargin",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CriticalCompleteMargin"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-complete-margin/research/native-critical-complete-margin",
+      "exit_code": 0,
+      "seconds": 12.633,
+      "log": "evidence/lean-CriticalCompleteMargin.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-complete-margin/research/native-critical-complete-margin",
+      "exit_code": 0,
+      "seconds": 31.88,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-complete-margin",
+      "exit_code": 0,
+      "seconds": 6.727,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-complete-margin",
+      "exit_code": 0,
+      "seconds": 7.009,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-complete-margin",
+      "exit_code": 0,
+      "seconds": 9.883,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-complete-margin",
+      "exit_code": 0,
+      "seconds": 44.166,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "be8927f6a43580e25a5776e4794ae5afc6f77166",
+        "--",
+        ".",
+        ":(exclude)research/native-critical-complete-margin/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-complete-margin",
+      "exit_code": 0,
+      "seconds": 0.369,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-complete-margin",
+      "exit_code": 0,
+      "seconds": 0.367,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}

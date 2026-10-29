@@ -1,0 +1,11 @@
+{
+  "PASS": true,
+  "exact_gaussian_fraction_checks": 434,
+  "canonical_moments_used": false,
+  "zero_or_height_inputs": false,
+  "both_complex_quadratures": true,
+  "all_16_cauchy_crossings_retained": true,
+  "projective_and_radial_amplitude_inserted_once": true,
+  "rational_response_scope": "algebra tests only; no identification of samples with native F or inference of positivity/analytic rates",
+  "native_analytic_remainder_and_rate": "proved in Lean from the existing completed source"
+}
