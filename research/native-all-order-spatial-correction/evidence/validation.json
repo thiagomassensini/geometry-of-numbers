@@ -1,0 +1,194 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-spatial-correction/research/native-all-order-spatial-correction",
+      "exit_code": 0,
+      "seconds": 0.607,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-spatial-correction/research/native-all-order-spatial-correction",
+      "exit_code": 0,
+      "seconds": 0.215,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-spatial-correction/research/native-all-order-spatial-correction",
+      "exit_code": 0,
+      "seconds": 0.038,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 7.877,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "7b7597c3ee59e0efe0e71e5b69357142be982a1229da7ca24b809ce2da509508",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-DifferencePowers",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "DifferencePowers"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-spatial-correction/research/native-all-order-spatial-correction",
+      "exit_code": 0,
+      "seconds": 9.736,
+      "log": "evidence/lean-DifferencePowers.log"
+    },
+    {
+      "label": "lean-DividedKernel",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "DividedKernel"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-spatial-correction/research/native-all-order-spatial-correction",
+      "exit_code": 0,
+      "seconds": 9.947,
+      "log": "evidence/lean-DividedKernel.log"
+    },
+    {
+      "label": "lean-NativeSpatialLaw",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "NativeSpatialLaw"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-spatial-correction/research/native-all-order-spatial-correction",
+      "exit_code": 0,
+      "seconds": 11.83,
+      "log": "evidence/lean-NativeSpatialLaw.log"
+    },
+    {
+      "label": "lean-Regression",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Regression"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-spatial-correction/research/native-all-order-spatial-correction",
+      "exit_code": 0,
+      "seconds": 13.505,
+      "log": "evidence/lean-Regression.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-spatial-correction/research/native-all-order-spatial-correction",
+      "exit_code": 0,
+      "seconds": 12.251,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-spatial-correction",
+      "exit_code": 0,
+      "seconds": 7.047,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-spatial-correction",
+      "exit_code": 0,
+      "seconds": 6.671,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-spatial-correction",
+      "exit_code": 0,
+      "seconds": 8.942,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-spatial-correction",
+      "exit_code": 0,
+      "seconds": 45.028,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "c2c24e90b313ef090cb7e45be4f01111c7e7c650",
+        "--",
+        ".",
+        ":(exclude)research/native-all-order-spatial-correction/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-spatial-correction",
+      "exit_code": 0,
+      "seconds": 0.008,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-all-order-spatial-correction",
+      "exit_code": 0,
+      "seconds": 0.007,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}

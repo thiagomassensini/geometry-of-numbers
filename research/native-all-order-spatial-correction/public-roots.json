@@ -1,0 +1,91 @@
+{
+  "modules": {
+    "DifferencePowers": [
+      "CarrySpatialCorrection.differencePower",
+      "CarrySpatialCorrection.choose_difference_zero",
+      "CarrySpatialCorrection.choose_difference_one",
+      "CarrySpatialCorrection.power_newton_expansion",
+      "CarrySpatialCorrection.difference_power_stirling",
+      "CarrySpatialCorrection.difference_power_below",
+      "CarrySpatialCorrection.difference_power_diagonal",
+      "CarrySpatialCorrection.difference_power_sum",
+      "CarrySpatialCorrection.slope",
+      "CarrySpatialCorrection.curvature",
+      "CarrySpatialCorrection.difference_power_one_above",
+      "CarrySpatialCorrection.stirling_two_above",
+      "CarrySpatialCorrection.difference_power_two_above"
+    ],
+    "DividedKernel": [
+      "CarrySpatialCorrection.odd_divided_power",
+      "CarrySpatialCorrection.dividedCoefficient",
+      "CarrySpatialCorrection.divided_below",
+      "CarrySpatialCorrection.divided_leading",
+      "CarrySpatialCorrection.spatialCorrection",
+      "CarrySpatialCorrection.divided_first_correction",
+      "CarrySpatialCorrection.spatial_correction_diagonal"
+    ],
+    "NativeSpatialLaw": [
+      "CarrySpatialCorrection.nativeEvenProfile",
+      "CarrySpatialCorrection.weight_finite_stencil",
+      "CarrySpatialCorrection.raw_kernel_sum",
+      "CarrySpatialCorrection.static_kernel_sum",
+      "CarrySpatialCorrection.static_odd_divided",
+      "CarrySpatialCorrection.native_odd_divided",
+      "CarrySpatialCorrection.native_odd_stirling",
+      "CarrySpatialCorrection.native_below",
+      "CarrySpatialCorrection.native_first_correction",
+      "CarrySpatialCorrection.native_leading"
+    ],
+    "Regression": [
+      "CarrySpatialCorrection.native_profile_zero",
+      "CarrySpatialCorrection.native_profile_one",
+      "CarrySpatialCorrection.native_profile_two",
+      "CarrySpatialCorrection.radial_even_calibration",
+      "CarrySpatialCorrection.quartic_weight11_regression",
+      "CarrySpatialCorrection.correction_table",
+      "CarrySpatialCorrection.correction_table_negative_direction"
+    ]
+  },
+  "groups": {
+    "spatial": [
+      "CarrySpatialCorrection.differencePower",
+      "CarrySpatialCorrection.choose_difference_zero",
+      "CarrySpatialCorrection.choose_difference_one",
+      "CarrySpatialCorrection.power_newton_expansion",
+      "CarrySpatialCorrection.difference_power_stirling",
+      "CarrySpatialCorrection.difference_power_below",
+      "CarrySpatialCorrection.difference_power_diagonal",
+      "CarrySpatialCorrection.difference_power_sum",
+      "CarrySpatialCorrection.slope",
+      "CarrySpatialCorrection.curvature",
+      "CarrySpatialCorrection.difference_power_one_above",
+      "CarrySpatialCorrection.stirling_two_above",
+      "CarrySpatialCorrection.difference_power_two_above",
+      "CarrySpatialCorrection.odd_divided_power",
+      "CarrySpatialCorrection.dividedCoefficient",
+      "CarrySpatialCorrection.divided_below",
+      "CarrySpatialCorrection.divided_leading",
+      "CarrySpatialCorrection.spatialCorrection",
+      "CarrySpatialCorrection.divided_first_correction",
+      "CarrySpatialCorrection.spatial_correction_diagonal",
+      "CarrySpatialCorrection.nativeEvenProfile",
+      "CarrySpatialCorrection.weight_finite_stencil",
+      "CarrySpatialCorrection.raw_kernel_sum",
+      "CarrySpatialCorrection.static_kernel_sum",
+      "CarrySpatialCorrection.static_odd_divided",
+      "CarrySpatialCorrection.native_odd_divided",
+      "CarrySpatialCorrection.native_odd_stirling",
+      "CarrySpatialCorrection.native_below",
+      "CarrySpatialCorrection.native_first_correction",
+      "CarrySpatialCorrection.native_leading",
+      "CarrySpatialCorrection.native_profile_zero",
+      "CarrySpatialCorrection.native_profile_one",
+      "CarrySpatialCorrection.native_profile_two",
+      "CarrySpatialCorrection.radial_even_calibration",
+      "CarrySpatialCorrection.quartic_weight11_regression",
+      "CarrySpatialCorrection.correction_table",
+      "CarrySpatialCorrection.correction_table_negative_direction"
+    ],
+    "provenance": []
+  }
+}
