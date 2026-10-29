@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-10-24T22:45:32.288330+00:00",
+  "classification": "PARTIAL",
+  "global_goal": "ACTIVE",
+  "checks_passed": 14,
+  "declarations": {
+    "def": 5,
+    "theorem": 24,
+    "abbrev": 1
+  },
+  "public_roots": 30,
+  "type_body_dependencies": 5765,
+  "report_complete": true,
+  "report_lines": 261,
+  "report_sha256": "18ea0c214a61a49157efe1a6293b9f9d5788de6ec2e138eeb4561dc4283dc533",
+  "lean_hashes_match_validated_sources": true,
+  "user_input_hashes_preserved": true,
+  "symmetry_no_go_scope": "conditional on distinct imaginary-axis response values; original finite radial ports; not an unconditional no-go for a jet-only or limiting domain"
+}

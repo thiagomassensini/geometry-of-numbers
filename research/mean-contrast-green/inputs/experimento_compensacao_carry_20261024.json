@@ -1,0 +1,295 @@
+{
+  "method": "Exact finite rationals for odd-camera Gram; high-precision diagnostic for jet-zero Green",
+  "camera": {
+    "bases": [
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21
+    ],
+    "periodic_determinant": "955514880",
+    "level_determinant": "35450857833431040000",
+    "periodic": [
+      {
+        "base": 3,
+        "total": "2",
+        "inherited": "0",
+        "new_schur": "2",
+        "phi": 2,
+        "inherited_percent": 0.0,
+        "new_divisor_lower_bound": "6"
+      },
+      {
+        "base": 5,
+        "total": "4",
+        "inherited": "0",
+        "new_schur": "4",
+        "phi": 4,
+        "inherited_percent": 0.0,
+        "new_divisor_lower_bound": "20"
+      },
+      {
+        "base": 7,
+        "total": "6",
+        "inherited": "0",
+        "new_schur": "6",
+        "phi": 6,
+        "inherited_percent": 0.0,
+        "new_divisor_lower_bound": "42"
+      },
+      {
+        "base": 9,
+        "total": "8",
+        "inherited": "2",
+        "new_schur": "6",
+        "phi": 6,
+        "inherited_percent": 25.0,
+        "new_divisor_lower_bound": "54"
+      },
+      {
+        "base": 11,
+        "total": "10",
+        "inherited": "0",
+        "new_schur": "10",
+        "phi": 10,
+        "inherited_percent": 0.0,
+        "new_divisor_lower_bound": "110"
+      },
+      {
+        "base": 13,
+        "total": "12",
+        "inherited": "0",
+        "new_schur": "12",
+        "phi": 12,
+        "inherited_percent": 0.0,
+        "new_divisor_lower_bound": "156"
+      },
+      {
+        "base": 15,
+        "total": "14",
+        "inherited": "6",
+        "new_schur": "8",
+        "phi": 8,
+        "inherited_percent": 42.857142857142854,
+        "new_divisor_lower_bound": "120"
+      },
+      {
+        "base": 17,
+        "total": "16",
+        "inherited": "0",
+        "new_schur": "16",
+        "phi": 16,
+        "inherited_percent": 0.0,
+        "new_divisor_lower_bound": "272"
+      },
+      {
+        "base": 19,
+        "total": "18",
+        "inherited": "0",
+        "new_schur": "18",
+        "phi": 18,
+        "inherited_percent": 0.0,
+        "new_divisor_lower_bound": "342"
+      },
+      {
+        "base": 21,
+        "total": "20",
+        "inherited": "8",
+        "new_schur": "12",
+        "phi": 12,
+        "inherited_percent": 40.0,
+        "new_divisor_lower_bound": "252"
+      }
+    ],
+    "level": [
+      {
+        "base": 3,
+        "total": "6",
+        "inherited": "0",
+        "new_schur": "6",
+        "phi": 2,
+        "inherited_percent": 0.0,
+        "new_divisor_lower_bound": "6"
+      },
+      {
+        "base": 5,
+        "total": "20",
+        "inherited": "0",
+        "new_schur": "20",
+        "phi": 4,
+        "inherited_percent": 0.0,
+        "new_divisor_lower_bound": "20"
+      },
+      {
+        "base": 7,
+        "total": "42",
+        "inherited": "0",
+        "new_schur": "42",
+        "phi": 6,
+        "inherited_percent": 0.0,
+        "new_divisor_lower_bound": "42"
+      },
+      {
+        "base": 9,
+        "total": "72",
+        "inherited": "6",
+        "new_schur": "66",
+        "phi": 6,
+        "inherited_percent": 8.333333333333334,
+        "new_divisor_lower_bound": "54"
+      },
+      {
+        "base": 11,
+        "total": "110",
+        "inherited": "0",
+        "new_schur": "110",
+        "phi": 10,
+        "inherited_percent": 0.0,
+        "new_divisor_lower_bound": "110"
+      },
+      {
+        "base": 13,
+        "total": "156",
+        "inherited": "0",
+        "new_schur": "156",
+        "phi": 12,
+        "inherited_percent": 0.0,
+        "new_divisor_lower_bound": "156"
+      },
+      {
+        "base": 15,
+        "total": "210",
+        "inherited": "310/11",
+        "new_schur": "2000/11",
+        "phi": 8,
+        "inherited_percent": 13.41991341991342,
+        "new_divisor_lower_bound": "120"
+      },
+      {
+        "base": 17,
+        "total": "272",
+        "inherited": "0",
+        "new_schur": "272",
+        "phi": 16,
+        "inherited_percent": 0.0,
+        "new_divisor_lower_bound": "272"
+      },
+      {
+        "base": 19,
+        "total": "342",
+        "inherited": "0",
+        "new_schur": "342",
+        "phi": 18,
+        "inherited_percent": 0.0,
+        "new_divisor_lower_bound": "342"
+      },
+      {
+        "base": 21,
+        "total": "420",
+        "inherited": "264/5",
+        "new_schur": "1836/5",
+        "phi": 12,
+        "inherited_percent": 12.571428571428571,
+        "new_divisor_lower_bound": "252"
+      }
+    ]
+  },
+  "green": {
+    "h0": "0.02310499311541897078893381043033901",
+    "critical_eta": "0.7071067811865475244008444",
+    "J_threshold": "0.4122499892756287440970634",
+    "eta_sweep": [
+      {
+        "eta": "0.25",
+        "J": "0.23042017410483849431",
+        "bulk_over_h0_limit": "0.5391596517903230114",
+        "mixed_over_h0_limit": "0.4608403482096769886",
+        "sum": "1.0"
+      },
+      {
+        "eta": "0.4",
+        "J": "0.47400651812922489663",
+        "bulk_over_h0_limit": "0.05198696374155020674",
+        "mixed_over_h0_limit": "0.9480130362584497933",
+        "sum": "1.0"
+      },
+      {
+        "eta": "0.5",
+        "J": "0.72741127776021876233",
+        "bulk_over_h0_limit": "-0.4548225555204375247",
+        "mixed_over_h0_limit": "1.454822555520437525",
+        "sum": "1.0"
+      },
+      {
+        "eta": "0.707106781186547524",
+        "J": "1.8725327701471587377",
+        "bulk_over_h0_limit": "-2.745065540294317475",
+        "mixed_over_h0_limit": "3.745065540294317475",
+        "sum": "1.0"
+      },
+      {
+        "eta": "0.8",
+        "J": "3.2352532618217181647",
+        "bulk_over_h0_limit": "-5.470506523643436329",
+        "mixed_over_h0_limit": "6.470506523643436329",
+        "sum": "1.0"
+      }
+    ],
+    "kappa_sweep": [
+      {
+        "kappa": 10,
+        "total": "0.0231046214038428482",
+        "bulk": "-0.0634153488275075922",
+        "mixed": "0.0865199702313504404",
+        "bulk_over_total": "-2.744704088376021",
+        "mixed_over_total": "3.744704088376021",
+        "error_from_h0": "-3.7171157612256e-7"
+      },
+      {
+        "kappa": 100,
+        "total": "0.023104989398160484",
+        "bulk": "-0.0634246266776254922",
+        "mixed": "0.0865296160757859762",
+        "bulk_over_total": "-2.745061925138779",
+        "mixed_over_total": "3.745061925138779",
+        "error_from_h0": "-3.7172584867883e-9"
+      },
+      {
+        "kappa": 1000,
+        "total": "0.0231049930782463716",
+        "bulk": "-0.0634247194725499341",
+        "mixed": "0.0865297125507963058",
+        "bulk_over_total": "-2.745065504142698",
+        "mixed_over_total": "3.745065504142698",
+        "error_from_h0": "-3.7172599141096e-11"
+      }
+    ],
+    "direct_integral_error": "1.43378272e-56"
+  },
+  "logclock": [
+    {
+      "order": 2,
+      "mixed_fraction": "0.488078779606491324"
+    },
+    {
+      "order": 4,
+      "mixed_fraction": "0.857047111661901682"
+    },
+    {
+      "order": 6,
+      "mixed_fraction": "0.957306965779166922"
+    }
+  ],
+  "limits": [
+    "Periodic camera Gram != moment Hankel",
+    "Varying eta is parameter stress-test, not physical multibase certificate",
+    "Green scalar diagnostic reuses completed xi identity, not raw material re-synthesis",
+    "BB+mixed conservation in finite probe follows algebraically from B=X-E and equal residual legs"
+  ]
+}
