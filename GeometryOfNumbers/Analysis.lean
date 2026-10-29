@@ -1,4 +1,4 @@
-import GeometryOfNumbers.Analysis.MaterialClockKrylovGap
+import GeometryOfNumbers.Analysis.CriticalBranchComplementTransport
 import GeometryOfNumbers.Analysis.CarryMaterialFourthPivot
 import GeometryOfNumbers.Analysis.CarryMaterialSourceFactor
 import GeometryOfNumbers.Analysis.CarryMaterialMixedSchur
@@ -140,5 +140,7 @@ import GeometryOfNumbers.Analysis.NaivePhysicalCenterBlock
 import GeometryOfNumbers.Analysis.CompleteVerticalObservationGram
 import GeometryOfNumbers.Analysis.SeparatedCenterObservation
 import GeometryOfNumbers.Analysis.SeparatedCenterClockObstruction
+
+import GeometryOfNumbers.Analysis.MaterialClockKrylovGap
 
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/
