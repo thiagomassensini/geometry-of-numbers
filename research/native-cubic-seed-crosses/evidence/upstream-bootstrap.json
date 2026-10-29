@@ -1,0 +1,11 @@
+{
+  "command": [
+    "python3",
+    "build_upstream.py"
+  ],
+  "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-seed-crosses/research/native-cubic-seed-crosses",
+  "exit_code": 0,
+  "upstream_modules": 39,
+  "log": "evidence/bootstrap.log",
+  "note": "Build executed before new modules; final reuse verifies these exact source and olean hashes."
+}

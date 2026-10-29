@@ -1,0 +1,179 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-seed-crosses/research/native-cubic-seed-crosses",
+      "exit_code": 0,
+      "seconds": 0.671,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-seed-crosses/research/native-cubic-seed-crosses",
+      "exit_code": 0,
+      "seconds": 0.297,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-seed-crosses/research/native-cubic-seed-crosses",
+      "exit_code": 0,
+      "seconds": 0.038,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.678,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "5d7e12bc18b4141baa806210b2e491288ede16ffbb75fc79c8bc28f90793f896",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-SeedFactors",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SeedFactors"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-seed-crosses/research/native-cubic-seed-crosses",
+      "exit_code": 0,
+      "seconds": 15.652,
+      "log": "evidence/lean-SeedFactors.log"
+    },
+    {
+      "label": "lean-SeedSigns",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SeedSigns"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-seed-crosses/research/native-cubic-seed-crosses",
+      "exit_code": 0,
+      "seconds": 13.673,
+      "log": "evidence/lean-SeedSigns.log"
+    },
+    {
+      "label": "lean-SeedFamily",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SeedFamily"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-seed-crosses/research/native-cubic-seed-crosses",
+      "exit_code": 0,
+      "seconds": 13.851,
+      "log": "evidence/lean-SeedFamily.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-seed-crosses/research/native-cubic-seed-crosses",
+      "exit_code": 0,
+      "seconds": 11.084,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-seed-crosses",
+      "exit_code": 0,
+      "seconds": 8.188,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-seed-crosses",
+      "exit_code": 0,
+      "seconds": 6.801,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-seed-crosses",
+      "exit_code": 0,
+      "seconds": 9.341,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-seed-crosses",
+      "exit_code": 0,
+      "seconds": 44.25,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "02c14efb8f5b3bc7197293e6beafb29853b26813",
+        "--",
+        ".",
+        ":(exclude)research/native-cubic-seed-crosses/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-seed-crosses",
+      "exit_code": 0,
+      "seconds": 0.25,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-seed-crosses",
+      "exit_code": 0,
+      "seconds": 0.245,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}
