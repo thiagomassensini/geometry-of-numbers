@@ -1,0 +1,76 @@
+'CarryEnergyCorrection.oddTaylor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.response_taylor_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.response_odd_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.nativeRemainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.native_remainder_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.native_response_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.responseSamples' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.taylorSamples' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.remainderSamples' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.response_samples_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.pairKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.kernel_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.kernel_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.kernel_sum_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.native_profile_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.response_synthesis_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.pair_taylor_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.pair_below' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.pair_leading' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.pair_correction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.pair_taylor_cancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.pair_response_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.weighted_synthesis_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.weighted_synthesis_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.pair_remainder_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.normalizedPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.normalized_pair_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.normalized_pair_correction_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.finiteJetSource' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.finite_source_profile' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.finite_source_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.finite_source_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.weight_sum_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.kernel_sum_inputs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.kernel_scale_inputs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.double_sum_symmetrize' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.finite_source_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.finite_energy_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.finite_source_green_recomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.canonicalForm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.canonicalCorrection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.finite_energy_correction_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.finite_green_correction_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.quarticCoefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.finite_quartic_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.finite_quartic_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.finite_quartic_correction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.quartic_correction_regression' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.original_norm_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEnergyCorrection.finite_norm_difference_correction' depends on axioms: [propext, Classical.choice, Quot.sound]
+All-order energy correction spatial: 15 public roots; 5082 type/body dependencies; standard axioms only; canonical moments and characteristic forbidden=true
+All-order energy correction provenance: 36 public roots; 5762 type/body dependencies; standard axioms only; canonical moments and characteristic forbidden=false
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 7.49
+	System time (seconds): 5.55
+	Percent of CPU this job got: 114%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:11.35
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8370156
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 281490
+	Voluntary context switches: 9825
+	Involuntary context switches: 122
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 704
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
