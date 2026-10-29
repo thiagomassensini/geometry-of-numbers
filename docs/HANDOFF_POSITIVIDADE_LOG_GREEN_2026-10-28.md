@@ -26,6 +26,15 @@ O termo da perna é um defeito físico real, não uma fase que se possa apagar. 
 
 **Operador, Parseval, Green e evolução.** [NativeMaterialLogClock.lean](../GeometryOfNumbers/Analysis/NativeMaterialLogClock.lean) contém o multiplicador maximal autoadjunto `L e_n = log(n+1)e_n` (índice `n∈ℕ`). No [operador Green transportado](https://github.com/thiagomassensini/carry-self-adjoint-operator/blob/main/CarrySelfAdjointOperator/GreenParsevalMaterialLogOperator.lean), a análise Parseval `P` satisfaz `P*P=I` e o gerador `H` satisfaz `HP=PL` em seu domínio. A [evolução unitária](https://github.com/thiagomassensini/carry-self-adjoint-operator/blob/main/CarrySelfAdjointOperator/GreenParsevalMaterialEvolution.lean) satisfaz `U_H(t)P=P U_L(t)` para todo vetor Hilbert; a derivada forte exige o domínio logarítmico. [VariableNormSigma.lean](https://github.com/thiagomassensini/green-frame-theorem/blob/main/GreenFrame/Analysis/VariableNormSigma.lean) formaliza `∂_σψ=-(log n)ψ` e `∂_tψ=i∂_σψ`, inclusive para stencils finitos. **Não confundir:** o gerador `log n` material, a profundidade `k log b`, o operador Euler do endereço `j+1` e o operador de alturas são objetos distintos, ligados somente pelos crosswalks explicitados.
 
+
+### Triangulação logarítmica e possível costura de normas (IDENTIDADE / ABERTO)
+
+Para `N,C,D>0`, a identidade de relógios é `log(D/N)=log(C/N)+log(D/C)`. Se `D≠N`, a divisão por `log(D/N)` dá `log(C/N)/log(D/N)+log(D/C)/log(D/N)=1`. Ela é independente da base usada para escrever os logaritmos; **não** é, por si, uma identidade de energia entre os carriers.
+
+Para `n=b^k m+ε>0`, escreva `X=k log b`, `Y=log m` e `Z=log(1+ε/(b^k m))`. Então `log n=X+Y+Z` e a energia quadrática do multiplicador contém `X²+Y²+Z²+2XY+2XZ+2YZ`. Os termos mistos são candidatos geométricos a comparar com os cruzamentos físicos Green, **não** foram identificados com eles por teorema. A pergunta correta é construir o transporte tipado que conserve estado, stencil, métrica, bordos e retornos.
+
+Para uma família de profundidades com pesos positivos e somabilidade adequada, o defeito radial `Σ_k w_k |exp(-δ x_k)-1|²`, `x_k=k log b`, é não negativo e se anula apenas em `δ=0` quando há uma escala ativa `x_k>0`. Sua expansão local começa por `δ² Σ_k w_k x_k²` quando os momentos logarítmicos justificam a troca com a soma. Essa positividade da deformação de norma **não é** a positividade da forma Hankel canônica; o NO-GO da #36 impede a identificação direta com o clock material.
+
 ## 3. Geometria relacional e quiral
 
 Nas notas de 27/10, para três amostras positivas `y0,y1,y2`, o invariante `K=log(y0*y2/y1²)` é preservado por `y_j -> A q^j y_j`; a identidade é algébrica. Para estados de pernas complexas, distância, área e curvatura angular contêm informação complementar, mas não são automaticamente a Gram canônica dos momentos.
