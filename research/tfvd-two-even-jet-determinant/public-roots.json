@@ -1,0 +1,70 @@
+{
+  "invariant": [
+    "CarryTwoEvenJets.polarizedQuartic",
+    "CarryTwoEvenJets.quartic",
+    "CarryTwoEvenJets.nativeEvenJets",
+    "CarryTwoEvenJets.native_three_convolutions",
+    "CarryTwoEvenJets.determinant_clear_of_convolutions",
+    "CarryTwoEvenJets.native_two_even_determinant_clear",
+    "CarryTwoEvenJets.response_two_even_determinant"
+  ],
+  "complete_trace": [
+    "CarryTwoEvenJets.tracePiece",
+    "CarryTwoEvenJets.headTrace",
+    "CarryTwoEvenJets.tailTrace",
+    "CarryTwoEvenJets.tracePiece_add",
+    "CarryTwoEvenJets.stateTrace_head_tail",
+    "CarryTwoEvenJets.completedTrace_head_tail",
+    "CarryTwoEvenJets.valueMultiplier",
+    "CarryTwoEvenJets.completedCell",
+    "CarryTwoEvenJets.head_value_formula",
+    "CarryTwoEvenJets.head_value_seed_cells",
+    "CarryTwoEvenJets.head_value_succ",
+    "CarryTwoEvenJets.valueMultiplier_analytic",
+    "CarryTwoEvenJets.head_value_analytic",
+    "CarryTwoEvenJets.completedCell_analytic",
+    "CarryTwoEvenJets.full_value_eventually_head_tail",
+    "CarryTwoEvenJets.tail_value_analytic",
+    "CarryTwoEvenJets.sourceJet",
+    "CarryTwoEvenJets.headEvenJets",
+    "CarryTwoEvenJets.tailEvenJets",
+    "CarryTwoEvenJets.cellEvenJets",
+    "CarryTwoEvenJets.sourceJet_add",
+    "CarryTwoEvenJets.full_even_jets_head_tail",
+    "CarryTwoEvenJets.odd_jets_head_tail_cancel",
+    "CarryTwoEvenJets.head_even_jets_succ"
+  ],
+  "cutoff_flux": [
+    "CarryTwoEvenJets.polarizedQuartic_add_four",
+    "CarryTwoEvenJets.quarticFlux",
+    "CarryTwoEvenJets.quartic_add_flux",
+    "CarryTwoEvenJets.quartic_prefix_flux",
+    "CarryTwoEvenJets.determinantTail",
+    "CarryTwoEvenJets.native_prefix_flux",
+    "CarryTwoEvenJets.native_two_even_tfvd_ledger",
+    "CarryTwoEvenJets.determinantTail_step",
+    "CarryTwoEvenJets.native_two_even_residual",
+    "CarryTwoEvenJets.native_two_even_critical_residual"
+  ],
+  "real_ledger": [
+    "CarryTwoEvenJets.native_center_real",
+    "CarryTwoEvenJets.native_center_eq_ofReal",
+    "CarryTwoEvenJets.native_center_re_ne_zero",
+    "CarryTwoEvenJets.native_center_fourth_pos",
+    "CarryTwoEvenJets.native_real_determinant",
+    "CarryTwoEvenJets.native_real_tfvd_ledger"
+  ],
+  "error": [
+    "CarryTwoEvenJets.polarizedQuartic_norm_le",
+    "CarryTwoEvenJets.quartic_difference",
+    "CarryTwoEvenJets.quartic_unit_error"
+  ],
+  "rational_sufficiency": [
+    "CarryTwoEvenJets.reference",
+    "CarryTwoEvenJets.fourJetTolerance",
+    "CarryTwoEvenJets.reference_norm",
+    "CarryTwoEvenJets.reference_quartic_lower",
+    "CarryTwoEvenJets.four_jet_error_suffices",
+    "CarryTwoEvenJets.canonical_two_even_det_pos_of_four_jet_boxes"
+  ]
+}

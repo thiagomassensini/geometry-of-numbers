@@ -1,0 +1,8 @@
+C3 source prefix 64 PASS finite joint diagnostics
+C3 source prefix 128 PASS finite joint diagnostics
+{
+  "quartic_reference": "14881416381715826732512817813931917559516156243483/125000000000000000000000000000000000000000000000000000000000",
+  "conditional_tolerance": "1/1000000000000",
+  "native_quartic_diagnostic": "0.0000000001190513342793716058899777282545890168411",
+  "source_boxes_kernel_certified": false
+}
