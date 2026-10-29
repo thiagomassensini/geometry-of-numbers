@@ -1,0 +1,10 @@
+{
+  "PASS": true,
+  "archive_sha256": "8975647fbd15772003f9043f453a051da72dfb917ab1386eef4c005dbe17d3c8",
+  "source_commit": "9682d8a10fe64f03a8522445b6bd34f9df2fb8d6",
+  "objects": 77,
+  "actual_source_and_object_hashes_verified": true,
+  "core_toolchain_manifest_native_and_package_fingerprints_verified": true,
+  "old_objects_reused_not_recompiled_this_run": true,
+  "new_modules_require_fresh_build_and_axiom_audit": true
+}

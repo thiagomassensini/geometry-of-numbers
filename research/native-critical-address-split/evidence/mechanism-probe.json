@@ -1,0 +1,7 @@
+{
+  "PASS": true,
+  "exact_fraction_checks": 205,
+  "input": "original factorial stencils; arbitrary independent rational a,b and weights",
+  "canonical_moments_used": false,
+  "scope": "finite algebraic regression; no native sign or all-order positivity claim"
+}
