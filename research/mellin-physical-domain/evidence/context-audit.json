@@ -1,0 +1,11 @@
+{
+  "jacobi_doc_url": "https://github.com/thiagomassensini/momentos/blob/main/investigations/jacobi_polynomial_moments_20261024/derivacao_jacobi_momentos_c2.md",
+  "github_blob": "a5656494cf1c926efbbece7ea245c7fa34950264",
+  "sha256": "fdf74feb2bfea0a0d590860bf5c1a8324bee0792fd066d0bc77a7f1448b8bd9c",
+  "bytes": 8594,
+  "local_checkout_has_doc": false,
+  "inspection": "Finite Jacobi identities; positive real off-diagonal choice requires positive pivots. Not an upstream source-norm transport.",
+  "theta_polynomial_theorem": "CarrySelfAdjointOperator.nativeThetaMomentPolynomial_integral",
+  "theta_use": "Existing identity rechecked separately; not a premise of the new domain theorems",
+  "index_warning": "Jacobi level is not vertical carry depth or radial regularization index"
+}

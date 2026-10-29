@@ -1,0 +1,25 @@
+{
+  "base": "457ea144d33d0b376a5c589b06ef1695e6d14adb",
+  "modules": {
+    "PrimeProjection": {
+      "source": "research/source-dependent-prime-readouts/PrimeProjection.lean",
+      "source_sha256": "06ff2787d6c334ca90629737f1f2c19632533505331db812e919602955776e7c",
+      "olean_sha256": "a4bfa52b816306503c6391bff8e3d92914aaccc365d081557b9392d9fa888947"
+    },
+    "PrimeAnalysis": {
+      "source": "research/source-dependent-prime-readouts/PrimeAnalysis.lean",
+      "source_sha256": "b3d999150390325f6e4298c74f4f221d635cb1106acdf20380ad8696b2f78007",
+      "olean_sha256": "fde90df97177a849d8214d8370c4f5f86cd505108ce2df7fe2e76ec6b9ae19d6"
+    },
+    "PrimeCanaries": {
+      "source": "research/source-dependent-prime-readouts/PrimeCanaries.lean",
+      "source_sha256": "ba0644c2d15279e9f2d0bd5f8147fc8b54795affaacdf8c3d5b05721e57edd47",
+      "olean_sha256": "e0f570b61fcf2ebba3a63ef749c60e907cefbc83cf28f3a02d09116368d82e8e"
+    },
+    "MellinPrimeReadout": {
+      "source": "research/source-dependent-prime-readouts/MellinPrimeReadout.lean",
+      "source_sha256": "986c379d4d4e1b681cc79627f9c4263b2446d1e581635336a898cc871605dc86",
+      "olean_sha256": "562559727357b91bacb1e6a87821bb0a3d081abf2ec9accf9978846effd0de46"
+    }
+  }
+}

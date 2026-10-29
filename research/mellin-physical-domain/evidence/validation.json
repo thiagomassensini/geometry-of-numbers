@@ -1,0 +1,239 @@
+{
+  "created_utc": "2026-10-25T13:59:58.360224+00:00",
+  "geometry_main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "geometry_base": "457ea144d33d0b376a5c589b06ef1695e6d14adb",
+  "geometry_branch": "agent/mellin-physical-domain",
+  "momentos_status_preserved": "M AUDITORIA_CORRECTED_MOMENTS_VS_CANONICAL_RECURRENCE.md",
+  "momentos_modified_audit_sha256": "b8b5e643abe941a1ecebcce9f39e47fca39da766aad530aec2886258045b1c6b",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_origin_main": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "operator_status_preserved": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "operator_modules_sha256": {
+    "CarrySelfAdjointOperator/CompletedNativeRadialChiralMultiplier.lean": "1ae47a75e6ec10f1f2be5b2133247ab2de92f2fe5be9996ca921c0611b67fa13",
+    "CarrySelfAdjointOperator/NativePrimeCarryKernelCalibration.lean": "d4a822870641831f11ec57332deee8b5c029c1988acc92f82e7aa6449a338b39",
+    "CarrySelfAdjointOperator/NativeRealComplementTransport.lean": "ee9a4a2f70a0d84c6cdcfaf7d8be2838e25bb3435afdb9f79f491d21e3f11f21",
+    "CarrySelfAdjointOperator/NativeSourceThetaMomentPolynomials.lean": "fd06a15ef76aef0777bb0d4d115df145aa2fd574e976485c9b9354742d494a59"
+  },
+  "protected_files_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "checks": [
+    {
+      "label": "upstream-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-mellin-physical-domain/research/mellin-physical-domain",
+      "exit_code": 0,
+      "seconds": 0.582,
+      "log": "evidence/upstream-provenance.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-mellin-physical-domain/research/mellin-physical-domain",
+      "exit_code": 0,
+      "seconds": 0.047,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativeRealComplementTransport",
+        "CarrySelfAdjointOperator.CompletedNativeRadialChiralMultiplier",
+        "CarrySelfAdjointOperator.NativeSourceThetaMomentPolynomials"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.437,
+      "log": "evidence/operator-source-build.log"
+    },
+    {
+      "label": "lean-BoundaryFamily",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "BoundaryFamily"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-mellin-physical-domain/research/mellin-physical-domain",
+      "exit_code": 0,
+      "seconds": 10.429,
+      "log": "evidence/lean-BoundaryFamily.log"
+    },
+    {
+      "label": "lean-PolynomialIntegrals",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PolynomialIntegrals"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-mellin-physical-domain/research/mellin-physical-domain",
+      "exit_code": 0,
+      "seconds": 6.065,
+      "log": "evidence/lean-PolynomialIntegrals.log"
+    },
+    {
+      "label": "lean-FamilyEnergy",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "FamilyEnergy"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-mellin-physical-domain/research/mellin-physical-domain",
+      "exit_code": 0,
+      "seconds": 10.542,
+      "log": "evidence/lean-FamilyEnergy.log"
+    },
+    {
+      "label": "lean-MellinLimits",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MellinLimits"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-mellin-physical-domain/research/mellin-physical-domain",
+      "exit_code": 0,
+      "seconds": 10.244,
+      "log": "evidence/lean-MellinLimits.log"
+    },
+    {
+      "label": "lean-Nonclosability",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Nonclosability"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-mellin-physical-domain/research/mellin-physical-domain",
+      "exit_code": 0,
+      "seconds": 12.525,
+      "log": "evidence/lean-Nonclosability.log"
+    },
+    {
+      "label": "lean-VerticalControl",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "VerticalControl"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-mellin-physical-domain/research/mellin-physical-domain",
+      "exit_code": 0,
+      "seconds": 12.04,
+      "log": "evidence/lean-VerticalControl.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-mellin-physical-domain/research/mellin-physical-domain",
+      "exit_code": 0,
+      "seconds": 10.288,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "context-source-audit",
+      "command": [
+        "python3",
+        "audit_context.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-mellin-physical-domain/research/mellin-physical-domain",
+      "exit_code": 0,
+      "seconds": 0.45,
+      "log": "evidence/context-source-audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-mellin-physical-domain",
+      "exit_code": 0,
+      "seconds": 8.208,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-mellin-physical-domain",
+      "exit_code": 0,
+      "seconds": 6.858,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-mellin-physical-domain",
+      "exit_code": 0,
+      "seconds": 9.595,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-mellin-physical-domain",
+      "exit_code": 0,
+      "seconds": 47.735,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "457ea144d33d0b376a5c589b06ef1695e6d14adb",
+        "--",
+        ".",
+        ":(exclude)research/mellin-physical-domain/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-mellin-physical-domain",
+      "exit_code": 0,
+      "seconds": 0.008,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-mellin-physical-domain",
+      "exit_code": 0,
+      "seconds": 0.007,
+      "log": "evidence/diff-check.log"
+    }
+  ],
+  "new_sources_sha256": {
+    "Audit.lean": "fd7f9fe4eabf411b198ea05060d02d83b785563571c07cf57069737593f98751",
+    "BoundaryFamily.lean": "cebc4a473ed765fd592d3b387d740f57b8345bd2019e7cae11dc45552b95eb50",
+    "FamilyEnergy.lean": "46b7ae75b634938961781f67df29bcf57fbe946ddac3b79886771aafddf772ef",
+    "MellinLimits.lean": "5852d3d0151891d84f8b9ac6772ea41ca379b04aaec3892f9a1c885a123773da",
+    "Nonclosability.lean": "1834a8caf6a3e4d8c2c1862da655de79d8883903cbf85f00425b9a9237f9f24d",
+    "PolynomialIntegrals.lean": "83135546215da8f40d3f6198ebf17f6b2d45551fe69cfb41bb9f144d7b640e05",
+    "VerticalControl.lean": "b078ee1220e934093aec5872361689f117cb7d7baf5e2e3de9e2d342d30eae1a"
+  },
+  "trust_escape_scan": "PASS",
+  "operator_sources_and_preexisting_files": "PRESERVED"
+}
