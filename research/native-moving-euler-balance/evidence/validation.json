@@ -1,0 +1,226 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-euler-balance/research/native-moving-euler-balance",
+      "exit_code": 0,
+      "seconds": 0.675,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "verified-cache",
+      "command": [
+        "python3",
+        "restore_verified_cache.py",
+        "--verify-only"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-euler-balance/research/native-moving-euler-balance",
+      "exit_code": 0,
+      "seconds": 1.478,
+      "log": "evidence/verified-cache.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-euler-balance/research/native-moving-euler-balance",
+      "exit_code": 0,
+      "seconds": 0.82,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "mechanism-probe",
+      "command": [
+        "python3",
+        "mechanism_probe.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-euler-balance/research/native-moving-euler-balance",
+      "exit_code": 0,
+      "seconds": 0.477,
+      "log": "evidence/mechanism-probe.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-euler-balance/research/native-moving-euler-balance",
+      "exit_code": 0,
+      "seconds": 0.037,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnArbitraryOrder",
+        "CarrySelfAdjointOperator.CompletedNativeChiralEvenBoundaryEnergy",
+        "CarrySelfAdjointOperator.CompletedNativeChiralEvenBoundarySplit",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFiniteTransfer",
+        "CarrySelfAdjointOperator.NativePhysicalFiniteSewing",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFourSampleStorage",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnEnergyPort"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.182,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "78fad397ec5e17062167943f8a5d05c5999e03a40fbb5b9c4d8acff6c479d66b",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-UniformMovingError",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "UniformMovingError"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-euler-balance/research/native-moving-euler-balance",
+      "exit_code": 0,
+      "seconds": 13.684,
+      "log": "evidence/lean-UniformMovingError.log"
+    },
+    {
+      "label": "lean-MovingBalanceLimit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MovingBalanceLimit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-euler-balance/research/native-moving-euler-balance",
+      "exit_code": 0,
+      "seconds": 13.394,
+      "log": "evidence/lean-MovingBalanceLimit.log"
+    },
+    {
+      "label": "lean-PolarizedBoundaryReadout",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PolarizedBoundaryReadout"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-euler-balance/research/native-moving-euler-balance",
+      "exit_code": 0,
+      "seconds": 14.165,
+      "log": "evidence/lean-PolarizedBoundaryReadout.log"
+    },
+    {
+      "label": "lean-MovingPolarizedPair",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MovingPolarizedPair"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-euler-balance/research/native-moving-euler-balance",
+      "exit_code": 0,
+      "seconds": 13.31,
+      "log": "evidence/lean-MovingPolarizedPair.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-euler-balance/research/native-moving-euler-balance",
+      "exit_code": 0,
+      "seconds": 27.006,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-euler-balance",
+      "exit_code": 0,
+      "seconds": 7.49,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-euler-balance",
+      "exit_code": 0,
+      "seconds": 7.668,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-euler-balance",
+      "exit_code": 0,
+      "seconds": 9.922,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-euler-balance",
+      "exit_code": 0,
+      "seconds": 45.433,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "d75ee311ab5def510be07ac7dc65d866a59af728",
+        "--",
+        ".",
+        ":(exclude)research/native-moving-euler-balance/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-euler-balance",
+      "exit_code": 0,
+      "seconds": 0.398,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-moving-euler-balance",
+      "exit_code": 0,
+      "seconds": 0.392,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}
