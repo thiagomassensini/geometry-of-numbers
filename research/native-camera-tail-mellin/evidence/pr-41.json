@@ -1,0 +1,10 @@
+{
+  "baseRefName": "main",
+  "headRefName": "agent/native-moment-orthogonalization-audit",
+  "headRefOid": "ee56930a2c30456cfbd214a29bb31b12d3977204",
+  "isDraft": true,
+  "mergedAt": null,
+  "number": 41,
+  "state": "OPEN",
+  "title": "Auditar ortogonaliza\u00e7\u00e3o nativa e separar coordenadas, sinal e alturas"
+}

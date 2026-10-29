@@ -1,0 +1,81 @@
+{
+  "CameraHeatTail": [
+    "CarryCameraTail.heat",
+    "CarryCameraTail.cameraHeatBlock",
+    "CarryCameraTail.cameraHeatTail",
+    "CarryCameraTail.cameraHeatPrefix",
+    "CarryCameraTail.heat_antitone",
+    "CarryCameraTail.summable_heat",
+    "CarryCameraTail.summable_camera_blocks",
+    "CarryCameraTail.camera_block_norm_le",
+    "CarryCameraTail.camera_prefix_norm_le",
+    "CarryCameraTail.camera_prefix_tendsto",
+    "CarryCameraTail.camera_tail_norm_le",
+    "CarryCameraTail.camera_prefix_continuous",
+    "CarryCameraTail.camera_tail_measurable"
+  ],
+  "MellinTail": [
+    "CarryCameraTail.heat_mellin_convergent",
+    "CarryCameraTail.camera_block_mellin_convergent",
+    "CarryCameraTail.camera_block_mellin",
+    "CarryCameraTail.camera_prefix_mellin_convergent",
+    "CarryCameraTail.camera_prefix_mellin",
+    "CarryCameraTail.mellin_heat_bound_integrable",
+    "CarryCameraTail.camera_prefix_mellin_tendsto",
+    "CarryCameraTail.camera_tail_mellin",
+    "CarryCameraTail.camera_tail_mellin_convergent"
+  ],
+  "TailJets": [
+    "CarryCameraTail.bounded_heat_mellin_hasDerivAt",
+    "CarryCameraTail.tail_log_mellin_hasDerivAt",
+    "CarryCameraTail.tail_native_mellin_hasDerivAt",
+    "CarryCameraTail.camera_tail_log_mellin",
+    "CarryCameraTail.heatTailTrace",
+    "CarryCameraTail.heat_tail_trace_calibration",
+    "CarryCameraTail.original_stored_tail_trace"
+  ],
+  "CompletedTrace": [
+    "CarryCameraTail.cameraHeatHead",
+    "CarryCameraTail.heatTrace",
+    "CarryCameraTail.nativeHeadTrace",
+    "CarryCameraTail.nativeTailTrace",
+    "CarryCameraTail.camera_head_norm_le",
+    "CarryCameraTail.camera_head_continuous",
+    "CarryCameraTail.camera_head_mellin_convergent",
+    "CarryCameraTail.camera_head_mellin",
+    "CarryCameraTail.camera_head_trace_calibration",
+    "CarryCameraTail.camera_heat_head_tail",
+    "CarryCameraTail.original_record_projections_mellin",
+    "CarryCameraTail.gammaDress_add",
+    "CarryCameraTail.completed_heat_trace_calibration",
+    "CarryCameraTail.completed_heat_green_four_crosses",
+    "CarryCameraTail.completed_heat_green_gamma_defect"
+  ],
+  "TailControl": [
+    "CarryCameraTail.camera_tail_tendsto_zero",
+    "CarryCameraTail.tailErrorIntegrand",
+    "CarryCameraTail.heatErrorMajorant",
+    "CarryCameraTail.heat_error_majorant_integrable",
+    "CarryCameraTail.tail_error_integrand_eq_weight",
+    "CarryCameraTail.tail_error_integrand_le",
+    "CarryCameraTail.weighted_camera_tail_error_tendsto_zero"
+  ],
+  "NativeCompletion": [
+    "CarryCameraTail.gammaUndress",
+    "CarryCameraTail.gammaUndress_gammaDress",
+    "CarryCameraTail.gammaDress_gammaUndress",
+    "CarryCameraTail.gammaUndress_add",
+    "CarryCameraTail.native_head_from_heat",
+    "CarryCameraTail.native_tail_from_heat",
+    "CarryCameraTail.mellinCompletionDefect",
+    "CarryCameraTail.mellin_completion_eq_original_ledger",
+    "CarryCameraTail.native_ledger_with_mellin_completion",
+    "CarryCameraTail.nativeCompletionTrace",
+    "CarryCameraTail.native_completed_trace_from_mellin",
+    "CarryCameraTail.nativeCompletionTrace_add",
+    "CarryCameraTail.completedHeatHead",
+    "CarryCameraTail.completedHeatTail",
+    "CarryCameraTail.original_completed_trace_head_tail",
+    "CarryCameraTail.completed_native_green_four_crosses"
+  ]
+}

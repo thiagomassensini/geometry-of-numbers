@@ -1,0 +1,20 @@
+{
+  "geometry_base": "a0b025507f709b00fbfe294dfdfcd6d0f1da4230",
+  "geometry_origin_main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_status": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "sources": {
+    "CarrySelfAdjointOperator/CompletedC3BracketTfvdGreenFactorization.lean": "154e2e57de0201e43522519cd76e9125db11e5efead4afd6799e0c1fc37d9408",
+    "CarrySelfAdjointOperator/CompletedEnrichedTfvdBoundaryCompanion.lean": "3b1f466cbfd03c9e4f8ca51d80b19493875865e83c77c2cb9b3020d60618edeb",
+    "CarrySelfAdjointOperator/CompletedC3MixedGreenWronskianDefect.lean": "6fbaf4b7ee9059f7a10ff49d566b3932cd4aa945657fff8c908e46840430e07a",
+    "CarrySelfAdjointOperator/CompletedNativePolarizedTfvdGreenMomentKernel.lean": "cb5b180b5785fa87107dbac10fe65b9f3ee8a7a03b8ef7b4ffde4a6d20d7a59a",
+    ".lake/packages/CPFormal/CPFormal/Analytic/CpGenuineFirstCutoffTail.lean": "3b3a57bed0e6c600bde81ff8b02d996416b14f829e5ee8ef01db95e61db52493",
+    ".lake/packages/CPFormal/CPFormal/Analytic/CpBracketConvergence.lean": "0fc00de73a4acecda90397fc773882e7680f4534fed4dae9c75f6ba2a9016215",
+    ".lake/packages/CPFormal/CPFormal/Analytic/CpAngularPort.lean": "5156ab2a4e56225d0076123c974285ae17beda650cd72431a923c50b412e1e5c"
+  },
+  "packages": {
+    "CPFormal": "65d50f6db1208708e109982ba97e1d51d3039956",
+    "NativeCarryC3Crosswalk": "150cfc7fb08da96bf8117f15869cc2b819d593c2",
+    "NativeCarrySpectralWeyl": "298d83c9351e308a5213b9f5ac32e44087f98a9f"
+  }
+}
