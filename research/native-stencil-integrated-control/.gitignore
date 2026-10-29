@@ -1,0 +1,4 @@
+.cache/
+*-dev.log
+Check.lean
+evidence/*.log

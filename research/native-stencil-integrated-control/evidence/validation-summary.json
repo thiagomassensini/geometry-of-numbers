@@ -1,0 +1,136 @@
+{
+  "PASS": true,
+  "base": "9425c30b975b6a7135c111a7f5e05a0c85b5826c",
+  "new_modules": 10,
+  "new_theorems": 45,
+  "transitive_roots": 55,
+  "transitive_dependencies": 58488,
+  "upstream_objects_reused": 200,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "checks": {
+    "upstream-AllOrderTail": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "upstream-AtomicCorrectionControl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "upstream-VariationBudget": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "upstream-RemainderVelocity": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "upstream-FiniteVelocityBudget": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "upstream-RadialExtrapolation": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "lean-StirlingBoundary": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "lean-CauchyBeta": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "lean-CenteredDifference": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "lean-StencilPair": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "lean-ReindexFactor": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "lean-SumReindex": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "lean-OddPairBridge": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "lean-OriginalSourceTransport": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "lean-IntegratedControl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "lean-BudgetContinuity": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "final-Audit": {
+      "sha256": "d81fdfdc180eea5c059c83553f5af727491679d47d59a05b0405d419d03e4276",
+      "bytes": 5098,
+      "exit_code": 0
+    },
+    "final-TransitiveAudit": {
+      "sha256": "bd9392615559362436da396af52168dfe59996bc1ac4635eb36533a95b82cd67",
+      "bytes": 115,
+      "exit_code": 0
+    },
+    "root-build": {
+      "sha256": "191d4202213185d28b14b0541b07181ae5fc669b592fb5524279d05338e6e4e3",
+      "bytes": 470101,
+      "exit_code": 0
+    },
+    "audit-foundation": {
+      "sha256": "0cf345cc3bcedfa92250217b4e73bc37834671ac0b8a2b97f66d3c06551ce199",
+      "bytes": 26945,
+      "exit_code": 0
+    },
+    "audit-geometry": {
+      "sha256": "469cddc780755a2a401f4a2d437d4b65bccc9f3333dc598e645025f94caf4888",
+      "bytes": 25625,
+      "exit_code": 0
+    },
+    "audit-analysis": {
+      "sha256": "41638147d4cbad3e7727185f00c6ec49b0bd2f5b43446412c29f07d81b11cbee",
+      "bytes": 753822,
+      "exit_code": 0
+    },
+    "validate": {
+      "sha256": "5c090f82304245805a5f4be115dd9f47e1bbe36476ecdc241a30ffa9be212193",
+      "bytes": 269,
+      "exit_code": 0
+    },
+    "probe": {
+      "sha256": "0a23db521a7e2f6b3259f4691db6e958366bafc292cb67f7313c6acd677d22ff",
+      "bytes": 189,
+      "exit_code": 0
+    }
+  }
+}
