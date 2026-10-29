@@ -1,0 +1,147 @@
+{
+  "base": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "branch": "agent/structural-native-krylov-gap",
+  "new_files": {
+    "GeometryOfNumbers/Analysis/MaterialClockKrylovGap.lean": {
+      "sha256": "313e2c4e3b3b6281c9e70afb38418a0debda15dd2c3513e1954e418fc068e7ec",
+      "public": [
+        {
+          "name": "material_frequency_gap",
+          "line": 20
+        },
+        {
+          "name": "finite_clock_energy_gap",
+          "line": 49
+        },
+        {
+          "name": "finite_even_first_column_gap",
+          "line": 59
+        },
+        {
+          "name": "finite_normalized_jet_energy_gap",
+          "line": 74
+        },
+        {
+          "name": "infinite_clock_energy_gap",
+          "line": 88
+        },
+        {
+          "name": "infinite_clock_isometric_energy_gap",
+          "line": 104
+        },
+        {
+          "name": "green_clock_energy_gap",
+          "line": 114
+        },
+        {
+          "name": "parseval_clock_energy_gap",
+          "line": 134
+        },
+        {
+          "name": "infinite_clock_not_matching_two_diagonals",
+          "line": 144
+        }
+      ]
+    },
+    "GeometryOfNumbers/Analysis/MaterialClockKrylovGapAudit.lean": {
+      "sha256": "2185ea66dee8b3e054f5bc5e0e0565aa61c95d57dc8a843470c7a919dc22edda",
+      "public": []
+    },
+    "research/structural-native-krylov-gap/CanonicalClockGap.lean": {
+      "sha256": "354795d1bff2fcd9ebccaea95e78fd73ae0bbd925a88cf0e38a5d86e0d6222f9",
+      "public": [
+        {
+          "name": "canonical_phi_eq_native",
+          "line": 19
+        },
+        {
+          "name": "canonical_moments_eq_native",
+          "line": 29
+        },
+        {
+          "name": "native_two_lt_one_quarter",
+          "line": 39
+        },
+        {
+          "name": "canonical_two_lt_one_quarter",
+          "line": 47
+        },
+        {
+          "name": "canonical_two_lt_one_sixteenth",
+          "line": 54
+        },
+        {
+          "name": "finite_normalized_jets_not_canonical_diagonals",
+          "line": 64
+        },
+        {
+          "name": "finite_clock_not_canonical_firstColumn",
+          "line": 77
+        },
+        {
+          "name": "finite_clock_not_canonical_logDerivative_recurrence",
+          "line": 88
+        },
+        {
+          "name": "finite_clock_not_canonical_parityGram",
+          "line": 99
+        },
+        {
+          "name": "finite_clock_not_H6_K6",
+          "line": 113
+        },
+        {
+          "name": "infinite_clock_not_canonical_diagonals",
+          "line": 136
+        }
+      ]
+    },
+    "research/structural-native-krylov-gap/Regression.lean": {
+      "sha256": "d5c21fc302976f24f367394eab2e9e0235b9bec7d640cc79c4fef9a6f58df228",
+      "public": [
+        {
+          "name": "regression_H6_K6",
+          "line": 13
+        },
+        {
+          "name": "regression_twelve_nested",
+          "line": 27
+        }
+      ]
+    },
+    "research/structural-native-krylov-gap/Audit.lean": {
+      "sha256": "a24595b4b58ddf2c27d0211bbded531117c5df4c54ee1bdea6d23b3a1d8ffdb9",
+      "public": []
+    }
+  },
+  "reused_sources": {
+    "GeometryOfNumbers/Analysis/SymmetricKrylovHankel.lean": {
+      "sha256": "f4bfab5e1a2fe228071a7bca444266cdb4809c2c285dfa0274ced7a168441559"
+    },
+    "GeometryOfNumbers/Analysis/FiniteClockKrylovHankel.lean": {
+      "sha256": "59c33d4436241061a3aa1b7357f3ec9bbae0027f900a4da7c71f8a11fd7991a3"
+    },
+    "GeometryOfNumbers/Analysis/CarryMaterialNormalizedResponse.lean": {
+      "sha256": "70616d69b433de03956bcf6bde6e736359641e36ad8cf724a634a9ec62e50e03"
+    },
+    "GeometryOfNumbers/Analysis/CompletedClockCandidateObstructions.lean": {
+      "sha256": "b8bed988accca93d534768e149e07e3c521b6a93bc2545973aa10f7aeacc7d76"
+    },
+    "research/material-central-calibration/CanonicalComparison.lean": {
+      "sha256": "dfea130c4627d1efc6b9a28052260d5b3c7963c42387cbc096563626fde15537"
+    },
+    "research/sixth-odd-twelve-sources/OddSourceBoxes.lean": {
+      "sha256": "67f244b07f11682a24e30063ecfb6db41b48358476ca53cef368c1455b780cfa"
+    },
+    "research/sixth-odd-twelve-sources/OddPhysicalTwelve.lean": {
+      "sha256": "dc77ff8f6d0a1aae6ce3a47cb5f295b4f6fc84f0d67c24e92b558d6b22a62155"
+    }
+  },
+  "consulted_repositories": {
+    "operator_checkout": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+    "operator_main": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+    "quantity_main": "66f9ab46c6fa2622c5e6d9f5ed2c497040c62374",
+    "carry_geometry_checkout": "1f85b8c3ab5ded27a0782956e1ada0dd8a1b6fd4",
+    "momentos": "a54f267365d5d8c965376734b17b10ae89ed3f74"
+  }
+}
