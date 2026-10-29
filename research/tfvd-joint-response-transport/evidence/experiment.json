@@ -1,0 +1,58 @@
+{
+  "status": "PASS_FINITE_REGRESSIONS",
+  "formal_sign_certificate": false,
+  "all_order_positivity_proved": false,
+  "source_evaluator_sha256": "457e0f8e1fd0ed25fce902ac21e5855e85de68f95103af186aed7bb6995d0840",
+  "uses_zeta_theta_zeros_heights_or_moments_as_producer_input": false,
+  "tail_scope": "Taylor/EM diagnostic, not certified interval",
+  "native_runs": [
+    {
+      "tail_prefix_J": 64,
+      "composition_error": "1.8071795840528503997787991050685194e-72",
+      "quotient_error": "1.0971565344010121834868812526690427e-72",
+      "polarized_error": "5.3060619602500267778373745845045655e-74",
+      "physical_pairing_error": "1.9101823056900096400214548504216436e-72",
+      "central_samples": [
+        {
+          "K": 32,
+          "joint_normalized_over_2z": "(0.02310495681418997562573489111858367 + 0.0j)"
+        },
+        {
+          "K": 128,
+          "joint_normalized_over_2z": "(0.023104990846584102283457375223060584 + 0.0j)"
+        },
+        {
+          "K": 512,
+          "joint_normalized_over_2z": "(0.023104992973616760037248500358211588 + 0.0j)"
+        }
+      ]
+    },
+    {
+      "tail_prefix_J": 128,
+      "composition_error": "2.4824709519671086239982588017260874e-73",
+      "quotient_error": "3.9071579953683911077212370646874178e-73",
+      "polarized_error": "1.7690410221806855071522327131528059e-72",
+      "physical_pairing_error": "2.6884047265266802341042697894823132e-72",
+      "central_samples": [
+        {
+          "K": 32,
+          "joint_normalized_over_2z": "(0.023104956814189975625734891118583583 + 0.0j)"
+        },
+        {
+          "K": 128,
+          "joint_normalized_over_2z": "(0.023104990846584102283457375223060502 + 0.0j)"
+        },
+        {
+          "K": 512,
+          "joint_normalized_over_2z": "(0.023104992973616760037248500358211507 + 0.0j)"
+        }
+      ]
+    }
+  ],
+  "auxiliary_control": {
+    "is_native_Carry_source": false,
+    "exact_negative_flux": "-6199/20000",
+    "response": "2*z+2*z^3+z^5",
+    "characteristic": "exp(-z^2-z^4/2-z^6/6)"
+  }
+}

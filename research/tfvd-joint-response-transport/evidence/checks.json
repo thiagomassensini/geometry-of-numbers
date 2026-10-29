@@ -1,0 +1,191 @@
+[
+  {
+    "name": "audit-generation",
+    "command": [
+      "python3",
+      "research/tfvd-joint-response-transport/generate_audit.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.037
+  },
+  {
+    "name": "kernel-JointNumerator",
+    "command": [
+      "bash",
+      "research/tfvd-joint-response-transport/compile_module.sh",
+      "JointNumerator"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.025
+  },
+  {
+    "name": "kernel-JointExtraction",
+    "command": [
+      "bash",
+      "research/tfvd-joint-response-transport/compile_module.sh",
+      "JointExtraction"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.704
+  },
+  {
+    "name": "kernel-PolarizedJoint",
+    "command": [
+      "bash",
+      "research/tfvd-joint-response-transport/compile_module.sh",
+      "PolarizedJoint"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.756
+  },
+  {
+    "name": "kernel-SourceApplication",
+    "command": [
+      "bash",
+      "research/tfvd-joint-response-transport/compile_module.sh",
+      "SourceApplication"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.717
+  },
+  {
+    "name": "kernel-DiagonalControl",
+    "command": [
+      "bash",
+      "research/tfvd-joint-response-transport/compile_module.sh",
+      "DiagonalControl"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 17.663
+  },
+  {
+    "name": "kernel-Regression",
+    "command": [
+      "bash",
+      "research/tfvd-joint-response-transport/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.848
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "bash",
+      "research/tfvd-joint-response-transport/compile_module.sh",
+      "Audit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.656
+  },
+  {
+    "name": "joint-native-source-regression",
+    "command": [
+      "/home/thlinux/miniforge3/bin/python3",
+      "research/tfvd-joint-response-transport/experiment.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 2.089
+  },
+  {
+    "name": "focused-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "GeometryOfNumbers.Analysis.CarryMaterialProjectiveReturnGreen",
+      "GeometryOfNumbers.Analysis.CarryMaterialCompanionGreenTransport",
+      "GeometryOfNumbers.Analysis.CanonicalFiniteHeight"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 8.378
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 8.138
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 6.981
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.43
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 47.483
+  },
+  {
+    "name": "twelve-source-regression",
+    "command": [
+      "bash",
+      "research/sixth-odd-twelve-sources/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 12.745
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "008e77c6a052d3b561370f3d6f5667e3067b94e2",
+      "--",
+      ".",
+      ":(exclude)research/tfvd-joint-response-transport"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.006
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.005
+  }
+]

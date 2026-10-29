@@ -1,0 +1,66 @@
+{
+  "joint_transport": [
+    "CarryTfvdJoint.value",
+    "CarryTfvdJoint.logJet",
+    "CarryTfvdJoint.completionResponse",
+    "CarryTfvdJoint.jointNumerator",
+    "CarryTfvdJoint.numerator",
+    "CarryTfvdJoint.jointNumerator_cocycle",
+    "CarryTfvdJoint.jointNumerator_self",
+    "CarryTfvdJoint.jointNumerator_swap",
+    "CarryTfvdJoint.jointNumerator_quotient",
+    "CarryTfvdJoint.full_response",
+    "CarryTfvdJoint.numerator_eq_full_difference",
+    "CarryTfvdJoint.readouts_cutoff_independent",
+    "CarryTfvdJoint.numerator_cutoff_independent",
+    "CarryTfvdJoint.numerator_transport"
+  ],
+  "joint_extraction": [
+    "CarryTfvdJoint.value_hasDerivAt_zero",
+    "CarryTfvdJoint.value_zero_ne",
+    "CarryTfvdJoint.full_response_zero",
+    "CarryTfvdJoint.centered_numerator_eventuallyEq",
+    "CarryTfvdJoint.centered_numerator_hasDerivAt",
+    "CarryTfvdJoint.centered_numerator_coefficient",
+    "CarryTfvdJoint.centered_numerator_coefficient_cutoff",
+    "CarryTfvdJoint.normalizedCenteredNumerator",
+    "CarryTfvdJoint.normalizedCenteredNumerator_eventuallyEq",
+    "CarryTfvdJoint.normalizedCenteredNumerator_odd_coefficient"
+  ],
+  "polarized": [
+    "CarryTfvdJoint.polarizedNumerator",
+    "CarryTfvdJoint.polarizedNumerator_quotient",
+    "CarryTfvdJoint.basisSource",
+    "CarryTfvdJoint.basisSource_pairing",
+    "CarryTfvdJoint.radial_cauchy_denominator",
+    "CarryTfvdJoint.physical_polarized_numerator",
+    "CarryTfvdJoint.graph_pairing_sum",
+    "CarryTfvdJoint.physical_basis_quotient",
+    "CarryTfvdJoint.centeredPolarizedReadout",
+    "CarryTfvdJoint.centeredPolarizedReadout_eventuallyEq",
+    "CarryTfvdJoint.centeredPolarizedReadout_odd_coefficient"
+  ],
+  "source_application": [
+    "CarryTfvdJoint.jointKernel",
+    "CarryTfvdJoint.fullSource_eventually_graph",
+    "CarryTfvdJoint.fullSources_eventually_jointKernel",
+    "CarryTfvdJoint.critical_jointKernel_tendsto"
+  ],
+  "auxiliary_control": [
+    "CarryTfvdJoint.Control.response",
+    "CarryTfvdJoint.Control.characteristic",
+    "CarryTfvdJoint.Control.characteristic_ne_zero",
+    "CarryTfvdJoint.Control.characteristic_even",
+    "CarryTfvdJoint.Control.response_eq_logDerivative",
+    "CarryTfvdJoint.Control.response_odd",
+    "CarryTfvdJoint.Control.response_radial",
+    "CarryTfvdJoint.Control.radial_diagonal_pos",
+    "CarryTfvdJoint.Control.normalized_response",
+    "CarryTfvdJoint.Control.second_residual_negative",
+    "CarryTfvdJoint.Control.material",
+    "CarryTfvdJoint.Control.material_endpoint",
+    "CarryTfvdJoint.Control.sampled_response",
+    "CarryTfvdJoint.Control.full_original_form_negative",
+    "CarryTfvdJoint.Control.composition_still_holds"
+  ]
+}
