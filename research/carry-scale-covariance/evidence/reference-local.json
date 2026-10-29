@@ -1,0 +1,14 @@
+{
+  "host": "local desktop",
+  "command": [
+    "/usr/bin/python3",
+    "/home/thlinux/Downloads/teste_lei_escala_carry_cholesky.py"
+  ],
+  "python": "3.13.5",
+  "sympy": "1.14.0",
+  "script_sha256": "0df1d0035c3aa89db6ba8dd8b7dd30f80f33dbee946c0438b1112c41b91b53a1",
+  "exit_code": 0,
+  "log": "reference-local.log.gz",
+  "sha256": "a8dc0291cc8a6631308ff8f6d6ffddfed7526b31281a5384fd5ca87bfdda93e3",
+  "uncompressed_sha256": "912cf447eed1c2a1d852e85ae7043c1727b5b023f0ab6a57312fbd413f9a6e33"
+}

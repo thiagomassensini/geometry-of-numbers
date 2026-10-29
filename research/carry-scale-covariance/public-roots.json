@@ -1,0 +1,53 @@
+{
+  "library_theorems": [
+    "GeometryOfNumbers.Analysis.CarryScale.inverse_sqrt_mul",
+    "GeometryOfNumbers.Analysis.CarryScale.centered_inverse_sqrt_dilate",
+    "GeometryOfNumbers.Analysis.CarryScale.centered_relative_defect_dilate",
+    "GeometryOfNumbers.Analysis.CarryScale.centered_relative_defect_shape",
+    "GeometryOfNumbers.Analysis.CarryScale.amplitude_eq_inverse_sqrt_depth",
+    "GeometryOfNumbers.Analysis.CarryScale.material_sample_dilate",
+    "GeometryOfNumbers.Analysis.CarryScale.material_three_addresses_dilate",
+    "GeometryOfNumbers.Analysis.CarryScale.scaled_hankel",
+    "GeometryOfNumbers.Analysis.CarryScale.scaled_shifted",
+    "GeometryOfNumbers.Analysis.CarryScale.elimination_scale",
+    "GeometryOfNumbers.Analysis.CarryScale.pivot_scale",
+    "GeometryOfNumbers.Analysis.CarryScale.column_scale",
+    "GeometryOfNumbers.Analysis.CarryScale.cholesky_scale",
+    "GeometryOfNumbers.Analysis.CarryScale.hankel_pivot_scale",
+    "GeometryOfNumbers.Analysis.CarryScale.hankel_cholesky_scale",
+    "GeometryOfNumbers.Analysis.CarryScale.pivot_ratio_invariant",
+    "GeometryOfNumbers.Analysis.CarryScale.sector_pivot_scale",
+    "GeometryOfNumbers.Analysis.CarryScale.hankel_pivot_sign",
+    "GeometryOfNumbers.Analysis.CarryScale.fixed_moment_scale_rigid",
+    "GeometryOfNumbers.Analysis.CarryScale.scaled_whitening",
+    "GeometryOfNumbers.Analysis.CarryScale.jacobi_scale",
+    "GeometryOfNumbers.Analysis.CarryScale.jacobi_section_scale",
+    "GeometryOfNumbers.Analysis.CarryScale.jacobi_mass_blind",
+    "GeometryOfNumbers.Analysis.CarryScale.cholesky_inverse_scale",
+    "GeometryOfNumbers.Analysis.CarryScale.cholesky_jacobi_scale",
+    "GeometryOfNumbers.Analysis.CarryScale.finite_height_scale",
+    "GeometryOfNumbers.Analysis.CarryScale.finite_height_depth_scale",
+    "GeometryOfNumbers.Analysis.CarryScale.log_sequence_dilate",
+    "GeometryOfNumbers.Analysis.CarryScale.log_moments_dilate",
+    "GeometryOfNumbers.Analysis.CarryScale.log_moments_constant_amplitude",
+    "GeometryOfNumbers.Analysis.CarryScale.response_dilation_mass",
+    "GeometryOfNumbers.Analysis.CarryScale.geometric_mass_not_response_dilation",
+    "GeometryOfNumbers.Analysis.CarryScale.log_response_phase"
+  ],
+  "library_definitions": [
+    "GeometryOfNumbers.Analysis.CarryScale.massScaledMoment",
+    "GeometryOfNumbers.Analysis.CarryScale.diagonalScale",
+    "GeometryOfNumbers.Analysis.CarryScale.scaledInverseFactor",
+    "GeometryOfNumbers.Analysis.CarryScale.scaledWhitening"
+  ],
+  "research_theorems": [
+    "CarryNativeScaleSeam.scaledMoment_native_eq",
+    "CarryNativeScaleSeam.native_jacobi_scale",
+    "CarryNativeScaleSeam.native_finite_height_scale",
+    "CarryNativeScaleSeam.native_log_moments_dilate",
+    "CarryNativeScaleSeam.native_log_moments_constant_amplitude",
+    "CarryNativeScaleSeam.native_camera_scale_rigid",
+    "CarryNativeScaleSeam.native_geometric_mass_not_response_dilation",
+    "CarryNativeScaleSeam.native_two_mass_actions_same_jacobi"
+  ]
+}

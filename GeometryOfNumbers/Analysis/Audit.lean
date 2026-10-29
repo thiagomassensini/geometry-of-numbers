@@ -6946,3 +6946,80 @@ namespace GeometryOfNumbers.Analysis
 #assert_analysis_axioms carryMaterialForcingGreen_continuous
 #print axioms carryMaterialForcingGreen_continuous
 end GeometryOfNumbers.Analysis
+
+namespace GeometryOfNumbers.Analysis.CarryScale
+#assert_analysis_axioms massScaledMoment
+#print axioms massScaledMoment
+#assert_analysis_axioms diagonalScale
+#print axioms diagonalScale
+#assert_analysis_axioms scaledInverseFactor
+#print axioms scaledInverseFactor
+#assert_analysis_axioms scaledWhitening
+#print axioms scaledWhitening
+#assert_analysis_axioms inverse_sqrt_mul
+#print axioms inverse_sqrt_mul
+#assert_analysis_axioms centered_inverse_sqrt_dilate
+#print axioms centered_inverse_sqrt_dilate
+#assert_analysis_axioms centered_relative_defect_dilate
+#print axioms centered_relative_defect_dilate
+#assert_analysis_axioms centered_relative_defect_shape
+#print axioms centered_relative_defect_shape
+#assert_analysis_axioms amplitude_eq_inverse_sqrt_depth
+#print axioms amplitude_eq_inverse_sqrt_depth
+#assert_analysis_axioms material_sample_dilate
+#print axioms material_sample_dilate
+#assert_analysis_axioms material_three_addresses_dilate
+#print axioms material_three_addresses_dilate
+#assert_analysis_axioms scaled_hankel
+#print axioms scaled_hankel
+#assert_analysis_axioms scaled_shifted
+#print axioms scaled_shifted
+#assert_analysis_axioms elimination_scale
+#print axioms elimination_scale
+#assert_analysis_axioms pivot_scale
+#print axioms pivot_scale
+#assert_analysis_axioms column_scale
+#print axioms column_scale
+#assert_analysis_axioms cholesky_scale
+#print axioms cholesky_scale
+#assert_analysis_axioms hankel_pivot_scale
+#print axioms hankel_pivot_scale
+#assert_analysis_axioms hankel_cholesky_scale
+#print axioms hankel_cholesky_scale
+#assert_analysis_axioms pivot_ratio_invariant
+#print axioms pivot_ratio_invariant
+#assert_analysis_axioms sector_pivot_scale
+#print axioms sector_pivot_scale
+#assert_analysis_axioms hankel_pivot_sign
+#print axioms hankel_pivot_sign
+#assert_analysis_axioms fixed_moment_scale_rigid
+#print axioms fixed_moment_scale_rigid
+#assert_analysis_axioms scaled_whitening
+#print axioms scaled_whitening
+#assert_analysis_axioms jacobi_scale
+#print axioms jacobi_scale
+#assert_analysis_axioms jacobi_section_scale
+#print axioms jacobi_section_scale
+#assert_analysis_axioms jacobi_mass_blind
+#print axioms jacobi_mass_blind
+#assert_analysis_axioms cholesky_inverse_scale
+#print axioms cholesky_inverse_scale
+#assert_analysis_axioms cholesky_jacobi_scale
+#print axioms cholesky_jacobi_scale
+#assert_analysis_axioms finite_height_scale
+#print axioms finite_height_scale
+#assert_analysis_axioms finite_height_depth_scale
+#print axioms finite_height_depth_scale
+#assert_analysis_axioms log_sequence_dilate
+#print axioms log_sequence_dilate
+#assert_analysis_axioms log_moments_dilate
+#print axioms log_moments_dilate
+#assert_analysis_axioms log_moments_constant_amplitude
+#print axioms log_moments_constant_amplitude
+#assert_analysis_axioms response_dilation_mass
+#print axioms response_dilation_mass
+#assert_analysis_axioms geometric_mass_not_response_dilation
+#print axioms geometric_mass_not_response_dilation
+#assert_analysis_axioms log_response_phase
+#print axioms log_response_phase
+end GeometryOfNumbers.Analysis.CarryScale

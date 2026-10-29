@@ -145,4 +145,12 @@ import GeometryOfNumbers.Analysis.MaterialClockKrylovGap
 
 import GeometryOfNumbers.Analysis.CarryMaterialForcingGreenEnergy
 
+import GeometryOfNumbers.Analysis.CarryScaleGeometry
+
+import GeometryOfNumbers.Analysis.MomentScaleElimination
+
+import GeometryOfNumbers.Analysis.MomentScaleHeight
+
+import GeometryOfNumbers.Analysis.LogDerivativeScale
+
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/
