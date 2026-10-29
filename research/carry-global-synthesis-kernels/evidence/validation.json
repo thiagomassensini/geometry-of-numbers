@@ -1,0 +1,167 @@
+{
+  "source_manifest_sha256": "147c25de6c4b0446402b003a95e506d3f05de199a615230ffd23a7625dc27452",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "/home/thlinux/geometry-of-numbers/research/carry-global-synthesis-kernels/check_sources.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.087,
+      "log": "01.log.gz",
+      "sha256": "5ccc6ae6f5a04762d0ce516c3de2885fff0270d10a370c804d61e45d31decc7d",
+      "uncompressed_sha256": "3acf5f18f1ecfe178a9cb50a8b857fff5c2e53c15541cb6e6f9388e849668bc8"
+    },
+    {
+      "command": [
+        "python3",
+        "/home/thlinux/geometry-of-numbers/research/carry-quotient-green-coherence/verify_evidence.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.108,
+      "log": "02.log.gz",
+      "sha256": "4d341e2a0b26d4b7b19da3f2e00d418c2647151b766e5690041da2976dba3bec",
+      "uncompressed_sha256": "b5b359fdb881a0577113352a50aab24e70920e2c49657e0e0a260078a9e03739"
+    },
+    {
+      "command": [
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/carry-quotient-green-coherence/compile_module.sh",
+        "MaterialCameraSeparation"
+      ],
+      "exit_code": 0,
+      "seconds": 7.214,
+      "log": "03.log.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "uncompressed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/carry-quotient-green-coherence/compile_module.sh",
+        "CameraObservation"
+      ],
+      "exit_code": 0,
+      "seconds": 8.202,
+      "log": "04.log.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "uncompressed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/carry-global-synthesis-kernels/prepare_pr38.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 47.009,
+      "log": "05.log.gz",
+      "sha256": "d2cce24b5982effa31ca2c545293ba4980ac760f2065e67222fa925b13ce0098",
+      "uncompressed_sha256": "6b78b26260b91a5549c3aef3f9c008f4d1ba29c2c2c517b1fe727490ce55f10e"
+    },
+    {
+      "command": [
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/carry-global-synthesis-kernels/compile_module.sh",
+        "GreenSynthesis"
+      ],
+      "exit_code": 0,
+      "seconds": 30.424,
+      "log": "06.log.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "uncompressed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/carry-global-synthesis-kernels/compile_module.sh",
+        "CameraBudget"
+      ],
+      "exit_code": 0,
+      "seconds": 10.092,
+      "log": "07.log.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "uncompressed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/carry-global-synthesis-kernels/compile_module.sh",
+        "ScaleCompatibility"
+      ],
+      "exit_code": 0,
+      "seconds": 13.249,
+      "log": "08.log.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "uncompressed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/carry-global-synthesis-kernels/compile_module.sh",
+        "Audit"
+      ],
+      "exit_code": 0,
+      "seconds": 10.302,
+      "log": "09.log.gz",
+      "sha256": "7a68810bd239b707f7694b0bcb4b3738c9fc8e8e5009bb3b6cb975ef8c6d17bc",
+      "uncompressed_sha256": "d632e3f39164942db33f20afd6c685bbcd09615715046fca7fed49ee3ea2065c"
+    },
+    {
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "exit_code": 0,
+      "seconds": 8.724,
+      "log": "10.log.gz",
+      "sha256": "2547c06f93abe95066a0e9f8d9d44c2101aa26cb2358cac85174ffc6d437dc10",
+      "uncompressed_sha256": "d1229445aa2562b853ab1c7a6ea0276bbfaecb3dec06e9b202537a3c68a99384"
+    },
+    {
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 6.39,
+      "log": "11.log.gz",
+      "sha256": "56f2c2dd78c40171d308b683cddde7c07724c7bc0192ea9b1b429c03ba7188b2",
+      "uncompressed_sha256": "0cf345cc3bcedfa92250217b4e73bc37834671ac0b8a2b97f66d3c06551ce199"
+    },
+    {
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 9.525,
+      "log": "12.log.gz",
+      "sha256": "9a34276323f3cc0eaa89ccd25d43e1941b5e69ac3b7ef4c549d1ef0af49fea8d",
+      "uncompressed_sha256": "469cddc780755a2a401f4a2d437d4b65bccc9f3333dc598e645025f94caf4888"
+    },
+    {
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 48.39,
+      "log": "13.log.gz",
+      "sha256": "437a1a0c46d696817b690e78d4aedc7d41fdfe7f20b6d97a1c7a34d2f2eca24d",
+      "uncompressed_sha256": "57f0a8fa11a5768e0d2a12ae734759c40370f763771977f71bd399137018ecb6"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.006,
+      "log": "14.log.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "uncompressed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "base": "349740eaff8f154c444c918757b608e6efb210a4",
+  "main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "pr38_commit": "16de0ef478afb1c95c16edfe8153ac80dc035b71",
+  "operator_commit": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "0ecb79510597875f34c2323e71dacc43ada13e815bbe0ba96624485ec70045c3"
+    },
+    {
+      "path": "lakefile.toml",
+      "sha256": "2f034f906810f36cc55ff0bcdf98fa629fb91085b107f238e21cca93e136f9f8"
+    },
+    {
+      "path": "lake-manifest.json",
+      "sha256": "9868872bae98d0c7e22c597d8e27d38d247498161cf70cdcdc193e9ea0608602"
+    },
+    {
+      "path": "lean-toolchain",
+      "sha256": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis.lean",
+      "sha256": "72f84dc7f408a60fcbeb6967f722f0ce1f3413eed1d98876dd0c29f63d97e0f4"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/Audit.lean",
+      "sha256": "89de248786f912f738b1bb3f4844bdde0392773850a6a9fd6d51231b21f500f9"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/C2GlobalGreenBridge.lean",
+      "sha256": "7aac58aa576a3b0e877a728f5007efe15f207d74043ae6ce9967c75526f2c5fa"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/C2GreenWhiteningGenealogy.lean",
+      "sha256": "805f010466b3a3274fa8701defd560f9889fc33263a21a02d24aa11aeb1cb5dc"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/GreenParsevalMaterialLogOperator.lean",
+      "sha256": "801eb60f6115fe869a0eddd2ec7e87b7ffbb51bc0bbf554b23914bc72b402508"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/GreenStateMaterialLogGenerator.lean",
+      "sha256": "ae90975d65e2eae2ca1118438383c447f3471072082dee4c739cf008355ce3f1"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialSourceRealization.lean",
+      "sha256": "35602e706455ea9596c547d32f4cdd334b78b468b730a3a460d1c9a9bc8a3090"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialCameraTransport.lean",
+      "sha256": "000ec049376c0d96b5748b1b1e6aab1209b18e385bbc8d0842bcfb9cbf4f4fdf"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialGeneralTransport.lean",
+      "sha256": "1d952723a1e8143a13c82afbd3411663ecd6bfe6818a1dd516894eca21223232"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialCompanionGreenTransport.lean",
+      "sha256": "f6ee3f33279eeaf5fcdc6708dc40044097379af71c43e8e44499a6f13bca8163"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialReadoutQuotient.lean",
+      "sha256": "6fa51e032f3fe502d4063fb2b7dfc50cee6cc05ff8bd12045623e3dff6121615"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryMaterialResidualPositiveTransport.lean",
+      "sha256": "d953fc584f41dab0d0c806944f9018e042c87ff58cbe7088a1ad690a755da734"
+    },
+    {
+      "path": "research/carry-quotient-green-coherence/MaterialCameraSeparation.lean",
+      "sha256": "a917f319d90a7ec12df45e24fd40ed0233f2fed4d014a04bc3cb31626384e792"
+    },
+    {
+      "path": "research/carry-quotient-green-coherence/CameraObservation.lean",
+      "sha256": "216e2f0dbb7e0fc1b86120e134c937161dde55e21c249a222c485446f2ef4fcc"
+    },
+    {
+      "path": "research/carry-quotient-green-coherence/proof-source-manifest.json",
+      "sha256": "8282d2ea361433b23b8ee369426be46f425f26dd5377c976f3ad5594a60b0007"
+    },
+    {
+      "path": "research/carry-quotient-green-coherence/source-manifest.json",
+      "sha256": "2144d5bdeef42492724ff298f4153521aa851627261bfe8206a48e233fafb2b5"
+    },
+    {
+      "path": "research/material-central-calibration/CanonicalComparison.lean",
+      "sha256": "dfea130c4627d1efc6b9a28052260d5b3c7963c42387cbc096563626fde15537"
+    },
+    {
+      "path": "../carry-self-adjoint-operator/CarrySelfAdjointOperator/CompletedNativeCameraResolvedFixedAtlasPairwise.lean",
+      "sha256": "bc84446cf39ee8ba000f0c2fb1221a91564d4c60420458c35214a7b3ed5da7c1"
+    },
+    {
+      "path": "../carry-self-adjoint-operator/CarrySelfAdjointOperator/CompletedNativeCameraResolvedSixSourceGreenPorts.lean",
+      "sha256": "cc4b6a71872cba08736bd0f5c9f5a255f8f9533fd323785a97172fc8bd25276c"
+    },
+    {
+      "path": "../carry-self-adjoint-operator/CarrySelfAdjointOperator/CompletedNativeCameraUniversality.lean",
+      "sha256": "9732e164c676fe5702d14cdc68290f169a967fd892f67edc30000e51b43efdad"
+    },
+    {
+      "path": "../carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean",
+      "sha256": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0"
+    },
+    {
+      "path": "../carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+      "sha256": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+    }
+  ],
+  "pr38_sources": [
+    {
+      "path": "GeometryOfNumbers/Analysis/CarryScaleGeometry.lean",
+      "sha256": "56af1da0d36f5a4cb47c2a05a6b592754b571706d98cda37d8603c8f8adc3f4e"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/MomentScaleElimination.lean",
+      "sha256": "77e133dee0909c7f4bb062fc71ed1928ba5b3fac5a148ec27405b2b50ea523ba"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/MomentScaleHeight.lean",
+      "sha256": "536efdb7c5394956925282c6f4c97cf7c96b251012f010de1f71da538f74ab7e"
+    },
+    {
+      "path": "GeometryOfNumbers/Analysis/LogDerivativeScale.lean",
+      "sha256": "957095681c44489fdbe4735dcc4f834faf6250749abdd83333ba527014d5f199"
+    },
+    {
+      "path": "research/carry-scale-covariance/NativeScaleSeam.lean",
+      "sha256": "625ca3d68dffc5e3e6ff217b6834f56873ba7593caf1ed505e91c2e612c372fa"
+    }
+  ]
+}

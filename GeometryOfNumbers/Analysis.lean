@@ -153,4 +153,6 @@ import GeometryOfNumbers.Analysis.MomentScaleHeight
 
 import GeometryOfNumbers.Analysis.LogDerivativeScale
 
+import GeometryOfNumbers.Analysis.CarryMaterialReadoutQuotient
+
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/
