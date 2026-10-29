@@ -1,0 +1,582 @@
+{
+  "created_utc": "2026-10-23T23:01:13.097610+00:00",
+  "geometry_main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "geometry_base": "2b4c3decbaa53c2940acf1fb929c5de37d8c4b11",
+  "geometry_branch": "agent/native-completed-pairing",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_origin_main": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "operator_status_preserved": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "operator_modules_sha256": {
+    "CarrySelfAdjointOperator/EnrichedTfvdBoundaryEdgeFlattening.lean": "6078dd0e874843151bdd8c35658a83fd0262d71c8c26992e18e4de6d79001c09",
+    "CarrySelfAdjointOperator/CanonicalEnrichedBoundaryResidualIdentity.lean": "b03b43248201c910b3d168fd32ec7e5b50e16d44d0bd3fc53ef75d45d695218d",
+    "CarrySelfAdjointOperator/ReflectedScalarBoundaryTrace.lean": "3146da35920700f86ec7caf5ed7880d43fc286a1b49f0d5fc872867110a7b70f",
+    "CarrySelfAdjointOperator/CompletedEnrichedTfvdBoundaryCompanion.lean": "3b1f466cbfd03c9e4f8ca51d80b19493875865e83c77c2cb9b3020d60618edeb",
+    "CarrySelfAdjointOperator/CompletedC3BracketTfvdGreenFactorization.lean": "154e2e57de0201e43522519cd76e9125db11e5efead4afd6799e0c1fc37d9408",
+    "CarrySelfAdjointOperator/CompletedC3MixedGreenWronskianDefect.lean": "6fbaf4b7ee9059f7a10ff49d566b3932cd4aa945657fff8c908e46840430e07a",
+    "CarrySelfAdjointOperator/CompletedNativeXiCosineTransform.lean": "43da985ffe64ebabf37654db0bc9060b05811b4cba84911d349b76b8bcd73dbd",
+    "CarrySelfAdjointOperator/CompletedOperatorCharacteristic.lean": "de21570ecf684ee42e8222ccbc598b6bb84c21404c8cd55f815504ab3ae093a2",
+    "CarrySelfAdjointOperator/CompletedNativePolarizedTfvdGreenMomentKernel.lean": "cb5b180b5785fa87107dbac10fe65b9f3ee8a7a03b8ef7b4ffde4a6d20d7a59a",
+    "CarrySelfAdjointOperator/CompletedTfvdGreenAllOrderIntertwining.lean": "7cef344db79abeed2dce5327c04c03b64911bd04b25f3ea637a583875debe223",
+    "CarrySelfAdjointOperator/CompletedNativeCausalGreenProvenance.lean": "a69c813550714d4ce840f90cfa9ddbd6eb7d02156a8bfc5d107eb834e745093d",
+    "CarrySelfAdjointOperator/CompletedNativeTfvdGreenMomentGramBridge.lean": "ef6d18ff99fd4df125cf91a3971d019caf5c0354cf7bac9def57c8f4745d3a2d",
+    "CarrySelfAdjointOperator/CompletedNativeTfvdWronskianMoments.lean": "3dd797895e8da20c202f3982fa89c0a64cd453273dd2374376493c6225a55567"
+  },
+  "protected_files_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "checks": [
+    {
+      "label": "base-AddressPort",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "AddressPort"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.559,
+      "log": "evidence/base-AddressPort.log"
+    },
+    {
+      "label": "base-PortTfvd",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PortTfvd"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.951,
+      "log": "evidence/base-PortTfvd.log"
+    },
+    {
+      "label": "base-MellinAtlas",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MellinAtlas"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.679,
+      "log": "evidence/base-MellinAtlas.log"
+    },
+    {
+      "label": "base-CompleteTheta",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CompleteTheta"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 6.005,
+      "log": "evidence/base-CompleteTheta.log"
+    },
+    {
+      "label": "base-CameraCompletion",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CameraCompletion"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.764,
+      "log": "evidence/base-CameraCompletion.log"
+    },
+    {
+      "label": "base-FluxComparison",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "FluxComparison"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.439,
+      "log": "evidence/base-FluxComparison.log"
+    },
+    {
+      "label": "base-GammaJets",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "GammaJets"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.664,
+      "log": "evidence/base-GammaJets.log"
+    },
+    {
+      "label": "base-NativePortCalibration",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "NativePortCalibration"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 6.096,
+      "log": "evidence/base-NativePortCalibration.log"
+    },
+    {
+      "label": "base-CameraHeatTail",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CameraHeatTail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/native-camera-tail-mellin",
+      "exit_code": 0,
+      "seconds": 6.063,
+      "log": "evidence/base-CameraHeatTail.log"
+    },
+    {
+      "label": "base-MellinTail",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MellinTail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/native-camera-tail-mellin",
+      "exit_code": 0,
+      "seconds": 6.349,
+      "log": "evidence/base-MellinTail.log"
+    },
+    {
+      "label": "base-TailJets",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "TailJets"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/native-camera-tail-mellin",
+      "exit_code": 0,
+      "seconds": 6.216,
+      "log": "evidence/base-TailJets.log"
+    },
+    {
+      "label": "base-CompletedTrace",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CompletedTrace"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/native-camera-tail-mellin",
+      "exit_code": 0,
+      "seconds": 5.759,
+      "log": "evidence/base-CompletedTrace.log"
+    },
+    {
+      "label": "base-TailControl",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "TailControl"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/native-camera-tail-mellin",
+      "exit_code": 0,
+      "seconds": 5.875,
+      "log": "evidence/base-TailControl.log"
+    },
+    {
+      "label": "base-NativeCompletion",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "NativeCompletion"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/native-camera-tail-mellin",
+      "exit_code": 0,
+      "seconds": 9.16,
+      "log": "evidence/base-NativeCompletion.log"
+    },
+    {
+      "label": "base-GradientMellin",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "GradientMellin"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/tfvd-four-leg-mellin",
+      "exit_code": 0,
+      "seconds": 9.004,
+      "log": "evidence/base-GradientMellin.log"
+    },
+    {
+      "label": "base-MixedLegs",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MixedLegs"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/tfvd-four-leg-mellin",
+      "exit_code": 0,
+      "seconds": 8.846,
+      "log": "evidence/base-MixedLegs.log"
+    },
+    {
+      "label": "base-ReadoutResidual",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "ReadoutResidual"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/tfvd-four-leg-mellin",
+      "exit_code": 0,
+      "seconds": 8.782,
+      "log": "evidence/base-ReadoutResidual.log"
+    },
+    {
+      "label": "base-VariableTransport",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "VariableTransport"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/tfvd-four-leg-mellin",
+      "exit_code": 0,
+      "seconds": 9.015,
+      "log": "evidence/base-VariableTransport.log"
+    },
+    {
+      "label": "base-OneBlock",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "OneBlock"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/tfvd-four-leg-mellin",
+      "exit_code": 0,
+      "seconds": 10.081,
+      "log": "evidence/base-OneBlock.log"
+    },
+    {
+      "label": "base-C2CellStep",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "C2CellStep"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/tfvd-four-leg-mellin",
+      "exit_code": 0,
+      "seconds": 9.678,
+      "log": "evidence/base-C2CellStep.log"
+    },
+    {
+      "label": "base-GreenPortCalibration",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "GreenPortCalibration"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/tfvd-green-provenance-mellin",
+      "exit_code": 0,
+      "seconds": 9.215,
+      "log": "evidence/base-GreenPortCalibration.log"
+    },
+    {
+      "label": "base-BlockProvenance",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "BlockProvenance"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/tfvd-green-provenance-mellin",
+      "exit_code": 0,
+      "seconds": 9.131,
+      "log": "evidence/base-BlockProvenance.log"
+    },
+    {
+      "label": "base-CompleteLedger",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CompleteLedger"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/tfvd-green-provenance-mellin",
+      "exit_code": 0,
+      "seconds": 9.176,
+      "log": "evidence/base-CompleteLedger.log"
+    },
+    {
+      "label": "base-RadialCompensation",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "RadialCompensation"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/tfvd-green-provenance-mellin",
+      "exit_code": 0,
+      "seconds": 8.873,
+      "log": "evidence/base-RadialCompensation.log"
+    },
+    {
+      "label": "base-CutoffResidual",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CutoffResidual"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/tfvd-green-provenance-mellin",
+      "exit_code": 0,
+      "seconds": 8.602,
+      "log": "evidence/base-CutoffResidual.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/native-completed-pairing",
+      "exit_code": 0,
+      "seconds": 0.042,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.CompletedNativeXiCosineTransform",
+        "CPFormal.Analytic.CpNativeCarryFiniteCameraAlgebra",
+        "CPFormal.Analytic.CpCarryWeightedVerticalTfvdFinite",
+        "NativeCarryC3Crosswalk.FinitePackaging",
+        "NativeCarrySpectralWeyl.Camera.ModalEnergy",
+        "NativeCarryC3Crosswalk.EnrichedTfvdPairTransport",
+        "CarrySelfAdjointOperator.CompletedC3MixedGreenWronskianDefect",
+        "CarrySelfAdjointOperator.CompletedC3FNegFPrimeMixedKernel",
+        "CarrySelfAdjointOperator.CompletedGreenForwardDifferenceLimit",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianPolarization",
+        "CarrySelfAdjointOperator.CompletedC3KernelMetricCalibration",
+        "CarrySelfAdjointOperator.CompletedNativeTaylorResidualNoGo",
+        "CarrySelfAdjointOperator.CompletedC3BracketTfvdGreenFactorization"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.213,
+      "log": "evidence/operator-source-build.log"
+    },
+    {
+      "label": "geometry-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "GeometryOfNumbers.Analysis.C2FiberRealDynamics",
+        "GeometryOfNumbers.Analysis.MaterialLogTfvdCanary"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing",
+      "exit_code": 0,
+      "seconds": 2.113,
+      "log": "evidence/geometry-source-build.log"
+    },
+    {
+      "label": "lean-CompletionAction",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CompletionAction"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/native-completed-pairing",
+      "exit_code": 0,
+      "seconds": 9.43,
+      "log": "evidence/lean-CompletionAction.log"
+    },
+    {
+      "label": "lean-CompletedSource",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CompletedSource"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/native-completed-pairing",
+      "exit_code": 0,
+      "seconds": 9.382,
+      "log": "evidence/lean-CompletedSource.log"
+    },
+    {
+      "label": "lean-CompletedChannels",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CompletedChannels"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/native-completed-pairing",
+      "exit_code": 0,
+      "seconds": 9.1,
+      "log": "evidence/lean-CompletedChannels.log"
+    },
+    {
+      "label": "lean-MomentKernelJets",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MomentKernelJets"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/native-completed-pairing",
+      "exit_code": 0,
+      "seconds": 9.321,
+      "log": "evidence/lean-MomentKernelJets.log"
+    },
+    {
+      "label": "lean-CompletionControls",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CompletionControls"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/native-completed-pairing",
+      "exit_code": 0,
+      "seconds": 8.758,
+      "log": "evidence/lean-CompletionControls.log"
+    },
+    {
+      "label": "lean-SignedFrontier",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SignedFrontier"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/native-completed-pairing",
+      "exit_code": 0,
+      "seconds": 9.241,
+      "log": "evidence/lean-SignedFrontier.log"
+    },
+    {
+      "label": "lean-ProjectionControl",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "ProjectionControl"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/native-completed-pairing",
+      "exit_code": 0,
+      "seconds": 9.517,
+      "log": "evidence/lean-ProjectionControl.log"
+    },
+    {
+      "label": "lean-LowOrderControls",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "LowOrderControls"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/native-completed-pairing",
+      "exit_code": 0,
+      "seconds": 9.091,
+      "log": "evidence/lean-LowOrderControls.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing/research/native-completed-pairing",
+      "exit_code": 0,
+      "seconds": 10.121,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing",
+      "exit_code": 0,
+      "seconds": 8.457,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing",
+      "exit_code": 0,
+      "seconds": 7.267,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing",
+      "exit_code": 0,
+      "seconds": 9.885,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing",
+      "exit_code": 0,
+      "seconds": 48.853,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "2b4c3decbaa53c2940acf1fb929c5de37d8c4b11",
+        "--",
+        "GeometryOfNumbers",
+        "lakefile.lean",
+        "lakefile.toml",
+        "lake-manifest.json",
+        "lean-toolchain",
+        "research/material-theta-tfvd-port",
+        "research/native-camera-tail-mellin",
+        "research/tfvd-four-leg-mellin",
+        "research/tfvd-green-provenance-mellin",
+        "research/theta-polarized-green"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing",
+      "exit_code": 0,
+      "seconds": 0.008,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-completed-pairing",
+      "exit_code": 0,
+      "seconds": 0.007,
+      "log": "evidence/diff-check.log"
+    }
+  ],
+  "new_sources_sha256": {
+    "Audit.lean": "6e70a5607a67307f9cbcc6931d2a2dd8e8d2f21693a72a8c3bc13c4e9913b10d",
+    "CompletedChannels.lean": "e2cc1e1e94049a5fc1488552ba437edf83d115572c1e381a820d7de8eb851b98",
+    "CompletedSource.lean": "fb8df3c68d8e19d0e38696417fa977269968ce066383d028eb0fdf6375fd5ec8",
+    "CompletionAction.lean": "a4919be609b56835d52a3de335e91d915c97647fd1919c525fcfe0ea8b10969b",
+    "CompletionControls.lean": "2d2d1efe4f1b9f6017c1700e433d4aa9112458fa10d65d3a260126d9fcbb8a62",
+    "LowOrderControls.lean": "406f95b54bf702550d73518c4eea28a1459b315d90b6506ef677de783926bc6e",
+    "MomentKernelJets.lean": "0f3859f0062ddb4f8dd841353b9ecc43b65107dfdd9e78082d6f9890f9a6f3c7",
+    "ProjectionControl.lean": "2744d9f10773e94be3e9170b3a65fa0714afc80419dc39d1e592fbca720dbb87",
+    "SignedFrontier.lean": "acf50ffa52a665c5aa29865669d35d1aa1c08e09031db6f10bd01f6a9fc92eb6"
+  },
+  "trust_escape_scan": "PASS",
+  "operator_sources_and_preexisting_files": "PRESERVED"
+}

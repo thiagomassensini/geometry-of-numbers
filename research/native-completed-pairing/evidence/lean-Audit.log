@@ -1,0 +1,106 @@
+'CarryCompletedPairing.valueGain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.jetGain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.companionShear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.native_completion_matrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.jet_gain_height_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.integral_completion_matrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.CompletionPairingChannels' does not depend on any axioms
+'CarryCompletedPairing.CompletionPairingChannels.mk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.CompletionPairingChannels.jetTransport' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCompletedPairing.CompletionPairingChannels.companionTransport' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCompletedPairing.CompletionPairingChannels.total' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.completionPairingChannels' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.native_completion_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.completion_jet_transport_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.native_completion_pairing_expanded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.completedIntegralCells' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.completedNativeCells' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.completed_cells_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.completed_cells_two_inputs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.completed_cell_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.integralMaterialTrace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.integral_material_trace_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.integral_material_trace_eq_raw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.completedIntegralTrace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.completed_trace_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.completedIntegralPairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.completed_pairing_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.completed_pairing_eq_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.integralHeightReadout' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.height_readout_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.integralHeightTail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.height_tail_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.integralArchimedeanChannel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.archimedean_channel_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.integralCompletedChannels' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.completed_channels_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.completed_channels_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.mellinResponse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.mellin_response_eventuallyEq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.mellin_response_analyticAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.mellinMomentKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.completed_pairing_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.mellin_response_on_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.moment_kernel_from_completed_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.mellin_mixed_jets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.mellin_even_jets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.mellin_shifted_jets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.mellin_even_odd_jets_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.mellin_jet_00' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.mellin_jet_01' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.mellin_jet_11' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.value_gain_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.completion_preserves_value_distinction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCompletedPairing.completion_basis_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.completion_basis_defect_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.height_readout_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.integral_height_readout_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.integral_pairing_full_operator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.integral_pairing_chiral_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.mellin_response_signed_germ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.normalizedScalarTrace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.normalized_scalar_trace_germ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.projectedEvenJet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.projected_even_jet_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.projected_even_gram_00' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.projected_even_gram_01' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.projected_even_gram_11' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.projected_gram_three_defects' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.projected_gram_zero_ne_canonical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.projected_gram_cross_ne_canonical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedPairing.not_projected_even_gram_representation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Completed pairing audit tier 0: 47 public roots; 5545 type/body dependencies; standard axioms only
+Completed pairing audit tier 1: 21 public roots; 6136 type/body dependencies; standard axioms only
+Completed pairing audit tier 2: 3 public roots; 5180 type/body dependencies; standard axioms only
+Completed pairing audit tier 3: 71 public roots; 6352 type/body dependencies; standard axioms only
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 7.34
+	System time (seconds): 5.73
+	Percent of CPU this job got: 129%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.11
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6968372
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 250376
+	Voluntary context switches: 14347
+	Involuntary context switches: 124
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 704
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
