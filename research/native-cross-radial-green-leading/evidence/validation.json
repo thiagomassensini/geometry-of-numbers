@@ -1,0 +1,196 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-leading/research/native-cross-radial-green-leading",
+      "exit_code": 0,
+      "seconds": 0.622,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-leading/research/native-cross-radial-green-leading",
+      "exit_code": 0,
+      "seconds": 0.387,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-leading/research/native-cross-radial-green-leading",
+      "exit_code": 0,
+      "seconds": 0.038,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 7.897,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "236bc437119cdad20a3ac59ac83a9d7a724391727c80c2c9c9ac3935ceb0890c",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-PartVectors",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PartVectors"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-leading/research/native-cross-radial-green-leading",
+      "exit_code": 0,
+      "seconds": 14.835,
+      "log": "evidence/lean-PartVectors.log"
+    },
+    {
+      "label": "lean-RadialPartExpansion",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "RadialPartExpansion"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-leading/research/native-cross-radial-green-leading",
+      "exit_code": 0,
+      "seconds": 14.12,
+      "log": "evidence/lean-RadialPartExpansion.log"
+    },
+    {
+      "label": "lean-LeadingCrossings",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "LeadingCrossings"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-leading/research/native-cross-radial-green-leading",
+      "exit_code": 0,
+      "seconds": 12.692,
+      "log": "evidence/lean-LeadingCrossings.log"
+    },
+    {
+      "label": "lean-GreenRegression",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "GreenRegression"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-leading/research/native-cross-radial-green-leading",
+      "exit_code": 0,
+      "seconds": 14.998,
+      "log": "evidence/lean-GreenRegression.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-leading/research/native-cross-radial-green-leading",
+      "exit_code": 0,
+      "seconds": 12.37,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-leading",
+      "exit_code": 0,
+      "seconds": 7.565,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-leading",
+      "exit_code": 0,
+      "seconds": 7.41,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-leading",
+      "exit_code": 0,
+      "seconds": 9.976,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-leading",
+      "exit_code": 0,
+      "seconds": 45.041,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "996c9baaab86292d9994d009f5ce3364ca1087c5",
+        "--",
+        ".",
+        ":(exclude)research/native-cross-radial-green-leading/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-leading",
+      "exit_code": 0,
+      "seconds": 0.303,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-leading",
+      "exit_code": 0,
+      "seconds": 0.304,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}

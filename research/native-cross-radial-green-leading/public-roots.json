@@ -1,0 +1,92 @@
+{
+  "modules": {
+    "PartVectors": [
+      "CarryGreenLeading.partField",
+      "CarryGreenLeading.part_field_reconstruction",
+      "CarryGreenLeading.part_field_add_weight",
+      "CarryGreenLeading.part_field_scale_weight",
+      "CarryGreenLeading.part_field_scale_input",
+      "CarryGreenLeading.part_field_finite_locality",
+      "CarryGreenLeading.completed_part_as_fields",
+      "CarryGreenLeading.completed_part_scale_input",
+      "CarryGreenLeading.part_constant_residual_zero"
+    ],
+    "RadialPartExpansion": [
+      "CarryGreenLeading.constantPart",
+      "CarryGreenLeading.linearPart",
+      "CarryGreenLeading.native_part_coordinates",
+      "CarryGreenLeading.native_part_contrast_mean",
+      "CarryGreenLeading.part_response_expansion",
+      "CarryGreenLeading.part_field_continuous",
+      "CarryGreenLeading.part_remainder_continuous",
+      "CarryGreenLeading.normalizedPart",
+      "CarryGreenLeading.normalized_part_expansion",
+      "CarryGreenLeading.normalized_part_tendsto"
+    ],
+    "LeadingCrossings": [
+      "CarryGreenLeading.chiral_difference_square",
+      "CarryGreenLeading.native_parts_pair",
+      "CarryGreenLeading.partCross",
+      "CarryGreenLeading.part_cross_exact",
+      "CarryGreenLeading.part_cross_scaled_identity",
+      "CarryGreenLeading.leadingCoefficient",
+      "CarryGreenLeading.part_cross_scaled_tendsto"
+    ],
+    "GreenRegression": [
+      "CarryGreenLeading.double_inner_sum",
+      "CarryGreenLeading.sum_cross_coefficients",
+      "CarryGreenLeading.sum_leading_eq",
+      "CarryGreenLeading.part_cross_sum",
+      "CarryGreenLeading.recomposed_leading_tendsto",
+      "CarryGreenLeading.leading_residual_residual_zero",
+      "CarryGreenLeading.leading_residual_row",
+      "CarryGreenLeading.leading_residual_column",
+      "CarryGreenLeading.linear_even_residual",
+      "CarryGreenLeading.even_vector_compensation",
+      "CarryGreenLeading.linear_even_residual_ne_zero"
+    ]
+  },
+  "groups": {
+    "construction": [
+      "CarryGreenLeading.partField",
+      "CarryGreenLeading.part_field_reconstruction",
+      "CarryGreenLeading.part_field_add_weight",
+      "CarryGreenLeading.part_field_scale_weight",
+      "CarryGreenLeading.part_field_scale_input",
+      "CarryGreenLeading.part_field_finite_locality",
+      "CarryGreenLeading.completed_part_as_fields",
+      "CarryGreenLeading.completed_part_scale_input",
+      "CarryGreenLeading.part_constant_residual_zero",
+      "CarryGreenLeading.constantPart",
+      "CarryGreenLeading.linearPart",
+      "CarryGreenLeading.native_part_coordinates",
+      "CarryGreenLeading.native_part_contrast_mean",
+      "CarryGreenLeading.part_field_continuous",
+      "CarryGreenLeading.normalizedPart",
+      "CarryGreenLeading.chiral_difference_square",
+      "CarryGreenLeading.native_parts_pair",
+      "CarryGreenLeading.partCross",
+      "CarryGreenLeading.part_cross_exact",
+      "CarryGreenLeading.part_cross_scaled_identity",
+      "CarryGreenLeading.double_inner_sum",
+      "CarryGreenLeading.sum_cross_coefficients",
+      "CarryGreenLeading.part_cross_sum",
+      "CarryGreenLeading.linear_even_residual",
+      "CarryGreenLeading.linear_even_residual_ne_zero",
+      "CarryGreenLeading.even_vector_compensation"
+    ],
+    "provenance": [
+      "CarryGreenLeading.part_response_expansion",
+      "CarryGreenLeading.part_remainder_continuous",
+      "CarryGreenLeading.normalized_part_expansion",
+      "CarryGreenLeading.normalized_part_tendsto",
+      "CarryGreenLeading.leadingCoefficient",
+      "CarryGreenLeading.part_cross_scaled_tendsto",
+      "CarryGreenLeading.sum_leading_eq",
+      "CarryGreenLeading.recomposed_leading_tendsto",
+      "CarryGreenLeading.leading_residual_residual_zero",
+      "CarryGreenLeading.leading_residual_row",
+      "CarryGreenLeading.leading_residual_column"
+    ]
+  }
+}
