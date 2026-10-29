@@ -1,0 +1,33 @@
+{
+  "base": "5eb9b1a09a407636af44e1915c8d7026543a635d",
+  "branch": "agent/native-vertical-synthesis",
+  "main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "origin_main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_status": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "momentos_status": "M AUDITORIA_CORRECTED_MOMENTS_VS_CANONICAL_RECURRENCE.md",
+  "source_sha256": {
+    "CarrySelfAdjointOperator/NativeCauchyLaguerreColumns.lean": "fd89ce8288f8ecff1a0039d14e7bb161369e6ac7cef11f66aef1b677dc71fbf0",
+    "CarrySelfAdjointOperator/NativeCauchyLaguerreIsometry.lean": "2c083ac00ce128676524dd6941ef6780745976c241a82b4a26b7bf9af0c80076",
+    "CarrySelfAdjointOperator/CompletedNativeRadialChiralMultiplier.lean": "1ae47a75e6ec10f1f2be5b2133247ab2de92f2fe5be9996ca921c0611b67fa13",
+    "CarrySelfAdjointOperator/CompletedNativeRadialTiltSamplePositivity.lean": "382509e0dd89f3aded085bb0845459be450bc8c7798bc1fc114de9fb0fee3af6",
+    "CarrySelfAdjointOperator/RealQuadratureDomainTransport.lean": "bf87bbf180cece4f470852999c51f2df4e55912528b97d91c440270cac6d8853"
+  },
+  "protected_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c",
+    "/home/thlinux/momentos/AUDITORIA_CORRECTED_MOMENTS_VS_CANONICAL_RECURRENCE.md": "b8b5e643abe941a1ecebcce9f39e47fca39da766aad530aec2886258045b1c6b"
+  },
+  "pins": {
+    "CPFormal": "65d50f6db1208708e109982ba97e1d51d3039956",
+    "NativeCarryC3Crosswalk": "150cfc7fb08da96bf8117f15869cc2b819d593c2",
+    "NativeCarrySpectralWeyl": "298d83c9351e308a5213b9f5ac32e44087f98a9f"
+  },
+  "native_tower_source_sha256": "78f5e26702a4ba06ba6b5c697a79fe5df7a007042e2d7217704bc3b312135aff",
+  "pr91": {
+    "baseRefName": "agent/source-dependent-prime-readouts",
+    "headRefOid": "5eb9b1a09a407636af44e1915c8d7026543a635d",
+    "isDraft": true,
+    "state": "OPEN"
+  }
+}
