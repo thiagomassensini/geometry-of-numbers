@@ -1,0 +1,79 @@
+tail prefix 128 radial K 32
+tail prefix 128 radial K 128
+tail prefix 128 radial K 512
+tail prefix 128 radial K 2048
+tail prefix 256 radial K 32
+tail prefix 256 radial K 128
+tail prefix 256 radial K 512
+tail prefix 256 radial K 2048
+{
+  "status": "PASS_ALGEBRA_AND_FINITE_DIAGNOSTICS",
+  "center_heads": [
+    {
+      "M": 0,
+      "head_response_imaginary_at_center": "0.08674712571432228824402923",
+      "formal_sign_certificate": false
+    },
+    {
+      "M": 1,
+      "head_response_imaginary_at_center": "0.005702425073443737825631028",
+      "formal_sign_certificate": false
+    },
+    {
+      "M": 2,
+      "head_response_imaginary_at_center": "-0.0009082180825736096063571974",
+      "formal_sign_certificate": false
+    },
+    {
+      "M": 4,
+      "head_response_imaginary_at_center": "-0.002180523112075107688575766",
+      "formal_sign_certificate": false
+    },
+    {
+      "M": 16,
+      "head_response_imaginary_at_center": "-0.0008904705656962324542858381",
+      "formal_sign_certificate": false
+    },
+    {
+      "M": 64,
+      "head_response_imaginary_at_center": "-0.0001941562982548196471498241",
+      "formal_sign_certificate": false
+    }
+  ],
+  "max_complete_flux_gap": "1.918208e-26",
+  "K2048_M2": [
+    {
+      "K": 2048,
+      "M": 2,
+      "sector": "first_even",
+      "native_full_flux": "0.02310499310655633249402339",
+      "head_flux": "-0.8924794417580208578095562",
+      "correction_flux": "0.9155844348645771903035795",
+      "head_over_radial_growth": "-0.0004357809774209086219773223",
+      "expected_head_scaled_coefficient": "-0.0004541090412868048031785987",
+      "moment_reference_limit": "0.02310499311541897078893381"
+    },
+    {
+      "K": 2048,
+      "M": 2,
+      "sector": "first_odd",
+      "native_full_flux": "0.00003717259911340096761580403",
+      "head_flux": "-650149.9483696475627921073",
+      "correction_flux": "650149.9484068201619055082",
+      "head_over_radial_growth": "-0.00007568741547521757460107413",
+      "expected_head_scaled_coefficient": "-0.00007568484021446746719643312",
+      "moment_reference_limit": "0.00003717259928526968616486626"
+    },
+    {
+      "K": 2048,
+      "M": 2,
+      "sector": "second_even",
+      "native_full_flux": "8.436858407739003691633011e-8",
+      "head_flux": "-272688007027.58746224945",
+      "correction_flux": "272688007027.5874623338186",
+      "head_over_radial_growth": "-0.000007568612598529352371286293",
+      "expected_head_scaled_coefficient": "-0.000007568484021446746719643312",
+      "moment_reference_limit": "8.436858410134151829621572e-8"
+    }
+  ]
+}

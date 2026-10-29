@@ -1,0 +1,13 @@
+{
+  "original_file": "/home/thlinux/Downloads/operador_finito_canonico_N4.json",
+  "sha256": "f8e56b3de290feef2c878481035b92db0842677ad34006b665c3ea0184eb48bd",
+  "precision_decimal": 105,
+  "scope": "Stored decimals treated as exact rationals; not a theta/source interval certificate.",
+  "moments": [
+    "0.02310499311541897078893381043",
+    "0.00003717259928526968616486626247",
+    "0.0000001441739314009732796953815561",
+    "6.63031680252990869873272082e-10",
+    "3.2136641506166012161021166e-12"
+  ]
+}
