@@ -1,0 +1,259 @@
+{
+  "status": "pass",
+  "commands": [
+    {
+      "name": "provenance",
+      "command": [
+        "python3",
+        "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/verify_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 0.06793189805466682
+    },
+    {
+      "name": "public-inventory",
+      "command": [
+        "python3",
+        "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/check_public_roots.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 0.07193052500952035
+    },
+    {
+      "name": "SourceTwentySix",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+        "SourceTwentySix"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 75.22859158099163
+    },
+    {
+      "name": "SourceCoefficients",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+        "SourceCoefficients"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 13.354474491032306
+    },
+    {
+      "name": "CenteredLogRecurrence",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+        "CenteredLogRecurrence"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 12.50670337001793
+    },
+    {
+      "name": "CenteredReferenceData",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+        "CenteredReferenceData"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 16.199050294002518
+    },
+    {
+      "name": "CenteredEvaluation",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+        "CenteredEvaluation"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 14.000171939027496
+    },
+    {
+      "name": "CenteredMomentBoxes",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+        "CenteredMomentBoxes"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 13.697510192985646
+    },
+    {
+      "name": "EvenTrialData",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+        "EvenTrialData"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 15.721014482027385
+    },
+    {
+      "name": "EvenSeventhCertificate",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+        "EvenSeventhCertificate"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 13.667044970032293
+    },
+    {
+      "name": "RelativeResidual",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+        "RelativeResidual"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 12.20337505103089
+    },
+    {
+      "name": "Regression",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+        "Regression"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 11.687190241995268
+    },
+    {
+      "name": "Audit",
+      "command": [
+        "/usr/bin/time",
+        "-f",
+        "elapsed=%e maxrss_kb=%M",
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 11.49325423099799
+    },
+    {
+      "name": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 7.9383966969908215
+    },
+    {
+      "name": "foundation-audit",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 6.648889923992101
+    },
+    {
+      "name": "geometry-audit",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 9.568151342042256
+    },
+    {
+      "name": "analysis-audit",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 47.38506433501607
+    },
+    {
+      "name": "final-provenance",
+      "command": [
+        "python3",
+        "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/verify_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 0.0698255019960925
+    }
+  ],
+  "public_roots": 81,
+  "historical_dependencies": "reused after manifests, pins and commit verification; not freshly rebuilt",
+  "kernel_checks": "decide +kernel; no custom axioms or native_decide; transitive type-and-body guards",
+  "logs": {
+    "Audit.log": "06f9fa4412eaff7f278684562172a96ad6816fe3c80847b8fd8dd314ffd2834c",
+    "CenteredEvaluation.log": "a85efba2b76bb9214ea99c4882f777ec49c5f5f23f9fd843717f4e1be6909d25",
+    "CenteredLogRecurrence.log": "57d9c029e830f79dc27d4ca4569b5ebef029d6a4ef6d5d02019b3f9683089e7f",
+    "CenteredMomentBoxes.log": "cbaf8fa3f23d6096fd03ae670d4d26791145f44d65cac79819ac4253ff973e68",
+    "CenteredReferenceData.log": "9cb9571090708f0c19bae10294c0980e7fa2066b2a935d82d0bd600de27416bf",
+    "EvenSeventhCertificate.log": "0bc6fec4d68a2c6dfe2f67c29a1b84c7d485df8c6f77b86d61f70c5cff3c0e98",
+    "EvenTrialData.log": "fa111256924a2877f4fcb31e0f673988d4c672c2dbe95a6ba4232999afdab734",
+    "Regression.log": "25abb33d145b6f86fc3b234b98fbfa866d35dcf5b724b0fbdc8da9492d339d94",
+    "RelativeResidual.log": "30e98f263dafe904aefed6d53d79c00bd7d35383ab01777f81906cf90c42f3d9",
+    "SourceCoefficients.log": "886d2de6f48e9676ebbc3292933fddab0a456c52a028caeeebec4173d3459e2a",
+    "SourceTwentySix.log": "8e1fb7dfe6cfae380fa725da457395eec13144ddc5b56ab2c5502a79bc09f88f",
+    "analysis-audit.log.gz": "af2b5135c317d37f0e441fa7f0617331bdae2cd812c866458c73376564286476",
+    "final-provenance.log": "53d0d83d2caa84b229168420df691a35bbb62bf0a5c73043eff21b333869d8ac",
+    "foundation-audit.log.gz": "56f2c2dd78c40171d308b683cddde7c07724c7bc0192ea9b1b429c03ba7188b2",
+    "geometry-audit.log.gz": "9a34276323f3cc0eaa89ccd25d43e1941b5e69ac3b7ef4c549d1ef0af49fea8d",
+    "provenance.log": "53d0d83d2caa84b229168420df691a35bbb62bf0a5c73043eff21b333869d8ac",
+    "public-inventory.log": "9e828cd859df813be73da916d5265774dd60b823e73563ba4c6962f1562aaf1d",
+    "root-build.log.gz": "d7ef535d0004f2cf5c1c4aaf7835642e62cfde950b6e9aaba2e257df37e0c593"
+  },
+  "data": {
+    "build-results.json": "fd76cc999544eef9f876a6328bdc0c5b7b746a6ce401f57addf79d3f7e47e36b",
+    "issue32.json": "6ecedb3d4d57de51e8b2adea34468b152dc4c14dbc12b4bfbdd25ee3bd09dd3f",
+    "normalized-coefficients.json": "31f798dba064ef790e1bd66d06e879fdee6f5345b0b53a6265bd9673ac1327df",
+    "preflight.json": "7defc97227a2f1e1437128398f0d23b7678566c9e025be49864a3bdb65d28801"
+  }
+}

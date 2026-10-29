@@ -1,0 +1,34 @@
+{
+  "base_commit": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "geometry_head_at_validation": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "operator_head": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "momentos_head": "a54f267365d5d8c965376734b17b10ae89ed3f74",
+  "lean_toolchain": "leanprover/lean4:v4.32.0",
+  "lean_sources": {
+    "Audit.lean": "bd56624596271caaba72389ee443f3c8c84de81f6ccafa6e175f40d2cb8543d9",
+    "CenteredEvaluation.lean": "ee995c2a7f080c0bcbd69bdfa5efa65127614cd48f2658b6f314e090b2c6dff8",
+    "CenteredLogRecurrence.lean": "d5263a742c1e2aaa87fa080d702023dddf6719b0c9e2beb9d3547299e3dbde3f",
+    "CenteredMomentBoxes.lean": "e776f51c17631a6622673a4b71c3a44146d72fcc6f306efce4d0819be0b9113f",
+    "CenteredReferenceData.lean": "8ce7c6e7f5e516571bbc9f8c667ab98a4652b3f9bba268883106ed7f9a3b3d93",
+    "EvenSeventhCertificate.lean": "9da95cbb15e4eedfa9fdbc5377c4c15a2052d871ad903af86f54fcb806fa3c00",
+    "EvenTrialData.lean": "e64482a4928430e808139405122dffa27f6bd030f79869468e8f10d5e67e2790",
+    "Regression.lean": "de1d7bc7e4c59d04d6d20bc0a92831987e11ff51b3bbe9cb47abd7d1c8ad6987",
+    "RelativeResidual.lean": "cc7239abf567114d3fbba3c1db2392f8df461367e2451b5122f03339f44179b5",
+    "SourceCoefficients.lean": "3be76b45207350baabe3b1d9cafb92cc682ab4b6ff7629bf493677ba85e10412",
+    "SourceTwentySix.lean": "2744eee287f9285c0fab480c76d32d1d236c64875ebf0f17ee710b93f6497aba"
+  },
+  "scripts": {
+    "audit-seventh-even-centered-source.sh": "f0b0c8650297cc87ce19585a369b935104c65681bea8ed76292fbd2d84186d81",
+    "check_public_roots.py": "1d2bf7d11a6c8e6dbfd39ab9cf41323a11e329d38ad4c58c745aeaa61642735b",
+    "compile_module.sh": "f9bf33586dbad0bf964b88e7c8a94a64b0c7a952f47efce7eacf9804bf50dd86",
+    "package_evidence.py": "2564cddd6035aa906cd61811d7817db467c19562781d99b3945fe7ade1b552f1",
+    "preflight.py": "dbeafc45d66e91dde519e34a44c14d2210496675c59ae48ada0d30660add9066",
+    "validate.py": "901b73819a7ba0182672ce73f7f72044d9690795846a66d9c90c5609f7bcf3ae",
+    "verify_evidence.py": "3a233c7ac0fd5f40197d1d11f4504ea50389ef3347bc04c1564a0b53cd0203e1",
+    "verify_provenance.py": "dc0f07b47f813d6872fd707ae76222bcdd592c3f9a6fa206d387a1c9ff6f9b05"
+  },
+  "documentation": {
+    "REPORT.md": "025d630dca55e9992503930ca2c4719ec80aad80b438a4af992b9c1517630df1",
+    "public-roots.txt": "17ef66a207905bd27e12122468fdbba98b966514fd10dc00082d8b9a79b3476d"
+  }
+}

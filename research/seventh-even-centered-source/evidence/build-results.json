@@ -1,0 +1,227 @@
+[
+  {
+    "name": "provenance",
+    "command": [
+      "python3",
+      "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/verify_provenance.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.06793189805466682
+  },
+  {
+    "name": "public-inventory",
+    "command": [
+      "python3",
+      "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/check_public_roots.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.07193052500952035
+  },
+  {
+    "name": "SourceTwentySix",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+      "SourceTwentySix"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 75.22859158099163
+  },
+  {
+    "name": "SourceCoefficients",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+      "SourceCoefficients"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.354474491032306
+  },
+  {
+    "name": "CenteredLogRecurrence",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+      "CenteredLogRecurrence"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 12.50670337001793
+  },
+  {
+    "name": "CenteredReferenceData",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+      "CenteredReferenceData"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 16.199050294002518
+  },
+  {
+    "name": "CenteredEvaluation",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+      "CenteredEvaluation"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.000171939027496
+  },
+  {
+    "name": "CenteredMomentBoxes",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+      "CenteredMomentBoxes"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.697510192985646
+  },
+  {
+    "name": "EvenTrialData",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+      "EvenTrialData"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.721014482027385
+  },
+  {
+    "name": "EvenSeventhCertificate",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+      "EvenSeventhCertificate"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.667044970032293
+  },
+  {
+    "name": "RelativeResidual",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+      "RelativeResidual"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 12.20337505103089
+  },
+  {
+    "name": "Regression",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 11.687190241995268
+  },
+  {
+    "name": "Audit",
+    "command": [
+      "/usr/bin/time",
+      "-f",
+      "elapsed=%e maxrss_kb=%M",
+      "bash",
+      "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/compile_module.sh",
+      "Audit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 11.49325423099799
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 7.9383966969908215
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 6.648889923992101
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.568151342042256
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 47.38506433501607
+  },
+  {
+    "name": "final-provenance",
+    "command": [
+      "python3",
+      "/home/thlinux/geometry-of-numbers/research/seventh-even-centered-source/verify_provenance.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.0698255019960925
+  }
+]
