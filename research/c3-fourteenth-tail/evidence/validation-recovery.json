@@ -1,0 +1,246 @@
+{
+  "reason": "auxiliary Python regression still looked for headReferenceBox in the old module before the split",
+  "fix": "read HeadEvaluatorData.lean instead of HeadCoefficientBoxes.lean",
+  "unchanged_Lean_sources": {
+    "FourNativeBoxes.lean": "fc45cb254a1ecc83dff6e0ac44ea285d4f784f8c2688c07d5df1f125bdf45687",
+    "HeadCoefficientBoxes.lean": "2ae8acf694c7b4dbf941b2d0afac71f94eb8fd5eedf7eb605fa5554ef02e4d30",
+    "RationalBoxes.lean": "4341f13f52fa429e2dcf386d2ab31a453753688a89a8683aebdf8dd8dfd9bcd9",
+    "Audit.lean": "e16ca97bb1cf104666455d88d24293c48000fd0aa5a442f762f37c1c190edf39",
+    "HeadEvaluatorData.lean": "ae4e9484a74135b335158f96fd0316c663dc1ceb58dc4b338bb0bc6e86e71814",
+    "DifferenceBounds.lean": "6830ba9eb3f0ecf48f2cd6dc9421f34f091db708cf68a5721173a2713cc99c53",
+    "FiniteEvaluationError.lean": "59241eabb26dfd446571f4c4f28c6fc9d092117f726a104df6f3a8e822944071",
+    "C3Difference.lean": "6cd0985ba440fa638600501422d564e072dec97393fc089b6959aa7d943ae81d",
+    "CompletionPrimitiveBoxes.lean": "3cb00364d938a7969ec203751eb117752fcbed3b2b08a4951a9674d0a7bed605",
+    "ElementaryBoxes.lean": "6833ce81e01437e28ad7ef8546c3be94fb0859823e7f0d758ba5887131644223",
+    "Regression.lean": "571a429fdb4d0b899d6b67639f7b684854c677d593cdd9343fe3930174593856",
+    "C3PowerTail.lean": "cb825a26a0e2a6c2e1799fa4f1dafeec6d507a3463d191bc332f1ccbeeaa9d5c",
+    "InfiniteC3Tail.lean": "45d93a5e82d056c5627a62d9dfde4cea897df5888ea76bee2ef6290d0aa08b56",
+    "SamplePrimitiveBoxes.lean": "44cc45796353a691c496a59b7d6372311d9379e2362a011e5fe303942bb6e024",
+    "C3CompletionBounds.lean": "b9cd74f7fcf15423a92998c92fcf9783795e7c195a9f809dc6b9c6b734530641",
+    "ElementaryJetFormula.lean": "5f2e6d3491cc5ae69e04702d9ea70cd9403408a57d5d1fec4546b24f00f4fbe8",
+    "C3FiniteCoefficients.lean": "d586a54e3c11ce74e3b15d5fed6b5415a0a84324185dc32f074180d2943187e2",
+    "FiniteCoefficientBoxes.lean": "451947d82a921d7fe8d1c26a0f30894ec9f67e9ecbaed2ac735c28272d8e3334"
+  },
+  "retained_passing_checks": [
+    {
+      "name": "audit-generation",
+      "command": [
+        "python3",
+        "research/c3-fourteenth-tail/generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 0.044
+    },
+    {
+      "name": "kernel-C3Difference",
+      "command": [
+        "bash",
+        "research/c3-fourteenth-tail/compile_module.sh",
+        "C3Difference"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 15.192
+    },
+    {
+      "name": "kernel-DifferenceBounds",
+      "command": [
+        "bash",
+        "research/c3-fourteenth-tail/compile_module.sh",
+        "DifferenceBounds"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 16.127
+    },
+    {
+      "name": "kernel-C3PowerTail",
+      "command": [
+        "bash",
+        "research/c3-fourteenth-tail/compile_module.sh",
+        "C3PowerTail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 28.924
+    },
+    {
+      "name": "kernel-InfiniteC3Tail",
+      "command": [
+        "bash",
+        "research/c3-fourteenth-tail/compile_module.sh",
+        "InfiniteC3Tail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 15.146
+    },
+    {
+      "name": "kernel-RationalBoxes",
+      "command": [
+        "bash",
+        "research/c3-fourteenth-tail/compile_module.sh",
+        "RationalBoxes"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 14.86
+    },
+    {
+      "name": "kernel-ElementaryBoxes",
+      "command": [
+        "bash",
+        "research/c3-fourteenth-tail/compile_module.sh",
+        "ElementaryBoxes"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 17.478
+    },
+    {
+      "name": "kernel-C3CompletionBounds",
+      "command": [
+        "bash",
+        "research/c3-fourteenth-tail/compile_module.sh",
+        "C3CompletionBounds"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 17.126
+    },
+    {
+      "name": "kernel-C3FiniteCoefficients",
+      "command": [
+        "bash",
+        "research/c3-fourteenth-tail/compile_module.sh",
+        "C3FiniteCoefficients"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 22.653
+    },
+    {
+      "name": "kernel-SamplePrimitiveBoxes",
+      "command": [
+        "bash",
+        "research/c3-fourteenth-tail/compile_module.sh",
+        "SamplePrimitiveBoxes"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 337.736
+    },
+    {
+      "name": "kernel-CompletionPrimitiveBoxes",
+      "command": [
+        "bash",
+        "research/c3-fourteenth-tail/compile_module.sh",
+        "CompletionPrimitiveBoxes"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 17.163
+    },
+    {
+      "name": "kernel-FiniteEvaluationError",
+      "command": [
+        "bash",
+        "research/c3-fourteenth-tail/compile_module.sh",
+        "FiniteEvaluationError"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 15.416
+    },
+    {
+      "name": "kernel-ElementaryJetFormula",
+      "command": [
+        "bash",
+        "research/c3-fourteenth-tail/compile_module.sh",
+        "ElementaryJetFormula"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 14.929
+    },
+    {
+      "name": "kernel-FiniteCoefficientBoxes",
+      "command": [
+        "bash",
+        "research/c3-fourteenth-tail/compile_module.sh",
+        "FiniteCoefficientBoxes"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 14.808
+    },
+    {
+      "name": "kernel-HeadEvaluatorData",
+      "command": [
+        "bash",
+        "research/c3-fourteenth-tail/compile_module.sh",
+        "HeadEvaluatorData"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 159.897
+    },
+    {
+      "name": "kernel-HeadCoefficientBoxes",
+      "command": [
+        "bash",
+        "research/c3-fourteenth-tail/compile_module.sh",
+        "HeadCoefficientBoxes"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 14.622
+    },
+    {
+      "name": "kernel-FourNativeBoxes",
+      "command": [
+        "bash",
+        "research/c3-fourteenth-tail/compile_module.sh",
+        "FourNativeBoxes"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 23.746
+    },
+    {
+      "name": "kernel-Regression",
+      "command": [
+        "bash",
+        "research/c3-fourteenth-tail/compile_module.sh",
+        "Regression"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 14.237
+    },
+    {
+      "name": "kernel-Audit",
+      "command": [
+        "bash",
+        "research/c3-fourteenth-tail/compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers",
+      "exit_code": 0,
+      "seconds": 15.643
+    }
+  ],
+  "failed_attempt": {
+    "name": "exact-rational-source-regression",
+    "command": [
+      "python3",
+      "research/c3-fourteenth-tail/check_intervals.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 1,
+    "seconds": 10.666
+  },
+  "resume_at": 19,
+  "scope": "all 18 Lean modules and Audit already compiled; no Lean source changed for this Python path correction"
+}
