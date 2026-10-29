@@ -30,7 +30,7 @@ B(S,c)\le16\cdot10^9,\qquad
 \qquad D_K>9\cdot10^{-24}.
 $$
 
-Logo $D_K>B(S,c)/(K+1)^2$. O corte mínimo geral da PR #134 é 32 para esta família; a âncora escolhida é posterior. O índice K pertence à regularização radial e não é a profundidade vertical do Carry. O limite físico tem sinal positivo via finite_odd_boundary_positive_of_anchor.
+Logo $D_K>B(S,c)/(K+1)^2$. O corte explícito garantido pela PR #134 é 32 para esta família; a âncora escolhida é posterior. O índice K pertence à regularização radial e não é a profundidade vertical do Carry. O limite físico tem sinal positivo via finite_odd_boundary_positive_of_anchor.
 
 [EightSchurCore.lean](EightSchurCore.lean) identifica o vetor de Cramer com $-A^{-1}b$ e a forma com sourceMomentSchur da sequência original, setor deslocado 1, índice 3. [EightSign.lean](EightSign.lean) aplica a cauda e [EightNative.lean](EightNative.lean) aplica a costura da PR #41 e transporta ao estado de bordo ímpar de oito fontes, com o fator quatro original.
 
