@@ -1,0 +1,874 @@
+1/48 IntervalHelpers
+2/48 FixedInterval
+3/48 ExponentialEnclosures
+4/48 ThetaDerivatives
+Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+5/48 CoefficientData
+6/48 SourceComputation
+7/48 WeightedQuadrature
+8/48 ThetaRetainedTail
+Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+9/48 CoefficientSupport
+10/48 CoefficientStep0
+11/48 CoefficientStep1
+12/48 CoefficientStep2
+13/48 CoefficientStep3A
+14/48 CoefficientStep3B
+15/48 CoefficientStep3
+16/48 CoefficientCode
+17/48 CodeBounds
+18/48 SourceBoxes
+19/48 ExactGridWeights
+20/48 NodeCacheData
+21/48 CachedSourceProgram
+22/48 ExactSourceProgram
+23/48 TaylorNodeComputation
+24/48 QuadratureCacheData
+25/48 TabledSourceProgram
+26/48 CanonicalComparison
+'CarryMaterialCanonicalComparison.height_parameter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialCanonicalComparison.native_line_parameter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialCanonicalComparison.material_sample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialCanonicalComparison.material_cell' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialCanonicalComparison.material_signal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialCanonicalComparison.material_gradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialCanonicalComparison.material_camera_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialCanonicalComparison.material_completion_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialCanonicalComparison.material_response' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialCanonicalComparison.material_canonical_central_mass_gt_quarter' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialCanonicalComparison.material_canonical_central_defect_gt_three_sixteenths' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialCanonicalComparison.material_canonical_central_defect_exact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialCanonicalComparison.material_canonical_central_defect_physical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialCanonicalComparison.canonical_kernel_at_origin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialCanonicalComparison.normalized_jet_order_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialCanonicalComparison.ambient_curvature_defect_eq_negative_normalized_gap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialCanonicalComparison.no_normalized_kernel_with_literal_material_origin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResponseComparison.material_characteristic_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResponseComparison.material_companion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialResponseComparison.material_boundary_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialResponseComparison.material_normalized_response' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResponseComparison.material_normalized_response_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResponseComparison.material_normalized_response_hasDerivAt_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResponseComparison.material_source_response_eventually_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResponseComparison.material_axis_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialResponseComparison.material_axis_eventually_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialResponseComparison.material_scale_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialResponseComparison.material_scale_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialResponseComparison.material_feature_eventually_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResponseComparison.material_feature_center_energy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResponseComparison.material_feature_center_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialResponseComparison.material_feature_pairing_local' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResponseComparison.material_kernel_numerator_split_local' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResponseComparison.material_kernel_split_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialResidualComparison.material_reduced_eventually_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResidualComparison.material_reduced_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialResidualComparison.material_reduced_hasDerivAt_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResidualComparison.material_reduced_deriv_real_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResidualComparison.material_reduced_not_zero_germ' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResidualComparison.material_response_conj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialResidualComparison.material_axis_conj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialResidualComparison.material_reduced_conj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialResidualComparison.material_weighted_residual_center' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResidualComparison.material_real_kernel_split_offdiag' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResidualComparison.material_real_kernel_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialResidualComparison.material_real_finite_energy_split' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResidualComparison.material_reduced_deriv_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResidualComparison.material_weighted_residual_diagonal_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResidualComparison.material_weighted_residual_not_zero_germ' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResidualComparison.material_second_channel_hasDerivAt_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResidualComparison.material_second_channel_firstJet_energy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResidualComparison.material_weighted_residual_not_physical_edge_energy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialResidualComparison.material_real_energy_on_positive_nullspace' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialCentralProjectionComparison.canonical_first_shifted_moment_lt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialCentralProjectionComparison.material_centered_firstJet_gap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialCentralProjectionComparison.material_centered_firstJet_ne_canonical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialCentralProjectionComparison.material_centered_residual_firstJet_necessary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialCentralProjectionComparison.material_centered_not_residual_diagonal_germ' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialGreenPairComparison.material_pair_green_eq_existing' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialGreenPairComparison.material_pair_readout_native' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialGreenPairComparison.material_pair_corrected_green' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialGreenPairComparison.material_companion_center_readout_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialGreenPairComparison.material_companion_hidden_center' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialGreenPairComparison.material_reduced_pair_center_invisible_nonzero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialGreenPairComparison.material_reduced_centering_readout' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialGreenPairComparison.material_reduced_pair_homogeneous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialGreenPairComparison.material_reduced_pair_denominator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialGreenPairComparison.material_reduced_pair_green_dslope' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialGreenPairComparison.material_reduced_pair_canonical_residual_numerator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPositiveResidualComparison.material_real_kernel_coe' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPositiveResidualComparison.material_real_residual_coe' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPositiveResidualComparison.material_real_feature_coe' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPositiveResidualComparison.material_real_feature_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPositiveResidualComparison.material_real_feature_zero_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPositiveResidualComparison.material_real_residual_zero_left' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPositiveResidualComparison.material_real_residual_zero_right' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPositiveResidualComparison.material_real_kernel_split' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPositiveResidualComparison.material_centered_test_energy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPositiveResidualComparison.material_full_residual_nonnegative_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPositiveResidualComparison.material_extract_residual_of_full_realization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPositiveResidualComparison.material_lift_full_of_residual_realization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPositiveResidualComparison.material_residual_realization_center_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPositiveResidualComparison.material_residual_not_raw_reduced_pair_energy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPositiveResidualComparison.material_axis_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPositiveResidualComparison.material_residual_core_center' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPositiveResidualComparison.material_residual_core_center_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPositiveResidualComparison.material_residual_fixed_family_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPositiveResidualComparison.material_residual_rescaled_energy_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSecondNullComparison.material_second_axis_eventually_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSecondNullComparison.material_second_axis_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialSecondNullComparison.material_second_scale_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialSecondNullComparison.material_second_scale_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialSecondNullComparison.material_second_reduced_eventually_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSecondNullComparison.material_second_reduced_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSecondNullComparison.material_second_reduced_hasDerivAt_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSecondNullComparison.material_second_reduced_deriv_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSecondNullComparison.material_second_axis_conj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialSecondNullComparison.material_second_reduced_conj' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSecondNullComparison.material_second_axis_hasDerivAt_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSecondNullComparison.material_second_channelCore_hasDerivAt_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSecondNullComparison.material_second_amplitude_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSecondNullComparison.material_second_real_kernel_split' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSecondNullComparison.material_second_residual_split' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSecondNullComparison.material_second_residual_core_center' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSecondNullComparison.material_second_residual_core_center_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSecondNullComparison.material_second_null_energy_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSecondNullComparison.material_second_null_energy_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSecondNullComparison.material_second_null_fixed_family_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSecondNullComparison.material_second_null_energy_lower_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThirdNullComparison.material_taylor_shift_germ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialThirdNullComparison.material_taylor_shift_center' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThirdNullComparison.material_taylor_shift_hasDerivAt_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThirdNullComparison.material_taylor_shift_regular' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThirdNullComparison.material_taylor_shift_deriv_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThirdNullComparison.material_taylor_shift_conj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialThirdNullComparison.material_second_taylor_shift_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThirdNullComparison.material_fourth_taylor_shift_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThirdNullComparison.material_sixth_taylor_shift_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThirdNullComparison.material_sixth_taylor_shift_hasDerivAt_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThirdNullComparison.material_moment_three_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialThirdNullComparison.material_residual_centered_kernel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThirdNullComparison.material_third_null_energy_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThirdNullComparison.material_third_null_energy_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThirdNullComparison.material_third_null_energy_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThirdNullComparison.material_third_null_scaled_energy_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThirdNullComparison.material_third_null_fixed_family_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThirdNullComparison.material_third_null_energy_lower_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialNullHierarchyComparison.material_even_taylor_shift_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialNullHierarchyComparison.material_even_taylor_shift_hasDerivAt_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialNullHierarchyComparison.material_null_coefficient_source' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialNullHierarchyComparison.material_null_coefficient_even' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialNullHierarchyComparison.material_null_coefficient_odd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialNullHierarchyComparison.material_null_energy_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialNullHierarchyComparison.material_null_energy_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialNullHierarchyComparison.material_null_energy_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialNullHierarchyComparison.material_null_scaled_energy_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialNullHierarchyComparison.material_null_fixed_family_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialNullHierarchyComparison.material_null_energy_lower_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialNullHierarchyComparison.material_source_five_even_specialization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialNullHierarchyComparison.material_fourth_null_coefficient_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialNullHierarchyComparison.material_fourth_null_energy_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialNullHierarchyComparison.material_fourth_null_energy_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialNullHierarchyComparison.material_fourth_null_scaled_energy_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialNullHierarchyComparison.material_fourth_null_fixed_family_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialNullHierarchyComparison.material_fourth_null_energy_lower_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.carryMaterialNullThetaPolynomial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_null_theta_even' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_null_theta_odd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_null_theta_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_null_theta_coeff_below_two' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_null_theta_center_traces' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_null_coefficient_thetaGreen' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_null_coefficient_theta_masses' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_null_coefficient_pos_iff_theta_dominance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_hierarchy_pos_iff_theta_dominance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_null_theta_odd_top_negative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_null_theta_odd_density_eventually_negative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_source_six_odd_specialization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_fifth_null_coefficient_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_source_seven_even_specialization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_sixth_null_coefficient_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_null_fixed_family_positive_of_theta_dominance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_fifth_null_fixed_family_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_sixth_null_fixed_family_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_null_coefficient_pos_through_six' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_null_fixed_family_positive_through_six' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_null_coefficient_decay_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_null_coefficients_tendsto_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialHierarchySignComparison.material_no_uniform_positive_coefficient_floor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPoleDominanceComparison.material_moment_zero_ge_one_fiftieth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPoleDominanceComparison.material_moment_one_le_nineteen_five_hundred_thousand' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPoleDominanceComparison.carryMaterialPoleRemainder' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPoleDominanceComparison.material_pole_remainder_eq_quotient_jet' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPoleDominanceComparison.material_elementary_factor_valve' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPoleDominanceComparison.material_source_formal_deflation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPoleDominanceComparison.material_even_null_pole_ledger' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPoleDominanceComparison.material_pole_parameter_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPoleDominanceComparison.material_pole_square_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPoleDominanceComparison.material_reciprocal_squared_strip_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPoleDominanceComparison.material_null_coefficient_lower_of_pole_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPoleDominanceComparison.material_theta_dominance_all_of_pole_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPoleDominanceComparison.material_theta_dominance_all_of_quotient_jet_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPoleDominanceComparison.material_pole_tail_of_complex_readout' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPoleDominanceComparison.material_hierarchy_positive_of_complex_pole_readout' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPoleDominanceComparison.material_theta_dominance_all_of_complex_pole_readout' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPoleDominanceComparison.material_first_pole_interval_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPoleDominanceComparison.material_theta_dominance_all_of_separated_readout' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_theta_mode_gaussian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_theta_mode_geometric' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.materialThetaTailBudget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialThetaTailComparison.material_theta_first_mode_le_full' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_theta_prefix_defect' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_theta_prefix_between' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_theta_prefix_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_theta_prefix_integrable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.materialThetaPrefixIntegral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.materialThetaAbsoluteMass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialThetaTailComparison.material_theta_absolute_mass_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_theta_prefix_exact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_theta_prefix_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_theta_tail_budget_tendsto_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_theta_prefix_integral_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_theta_positive_iff_finite_margin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.materialThetaCoefficientBudget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_theta_absolute_mass_le_coefficient_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_theta_coefficient_budget_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_theta_prefix_coefficient_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_theta_source_interval' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_theta_positive_iff_coefficient_margin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_theta_quadratic_prefix_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_null_theta_prefix_exact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_null_theta_prefix_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_null_theta_adaptive_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_null_theta_prefix_interval' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_null_theta_prefix_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_null_positive_iff_prefix_margin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_hierarchy_positive_iff_prefix_margin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialThetaTailComparison.material_null_fixed_family_positive_of_prefix_margin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialClockCouplingComparison.material_clock_canonical_residual_ledger' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialClockCouplingComparison.material_clock_first_row_hidden_balance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialClockCouplingComparison.material_clock_real_residual_numerator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialValveGlobalReturnComparison.material_valve_return_green_wronskian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialValveGlobalReturnComparison.material_valve_global_residual_numerator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialValveGlobalReturnComparison.material_valve_global_central_row' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialValveGlobalReturnComparison.material_valve_prefix_residual_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialMixedSchurComparison.material_response_real_analytic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialMixedSchurComparison.material_residual_complex_jet_source' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialMixedSchurComparison.material_residual_jet_source' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialMixedSchurComparison.material_residual_complex_jet_even_even' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialMixedSchurComparison.material_residual_jet_even_even' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialMixedSchurComparison.material_residual_jet_odd_odd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialMixedSchurComparison.material_residual_jet_even_odd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialMixedSchurComparison.material_residual_jet_odd_even' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialMixedSchurComparison.material_mixed_entries' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialMixedSchurComparison.material_mixed_first_pivot_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialMixedSchurComparison.material_mixed_pivot_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialMixedSchurComparison.material_third_schur_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialMixedSchurComparison.material_mixed_pivot_eq_schur' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialMixedSchurComparison.material_mixed_pivot_theta' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialMixedSchurComparison.material_third_schur_ratio' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialMixedSchurComparison.material_mixed_pivot_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialMixedSchurComparison.material_mixed_cross_dominance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialMixedSchurComparison.material_mixed_block_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialMixedSchurComparison.material_valve_confluent_row_germ' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialMixedSchurComparison.material_valve_confluent_jet' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialMixedSchurComparison.material_valve_mixed_block' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialMixedSchurComparison.material_valve_mixed_critical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialMixedSchurComparison.material_valve_mixed_block_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSourceFactorComparison.material_even_pairing_source' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSourceFactorComparison.material_even_pairing_symm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSourceFactorComparison.material_odd_pairing_source' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSourceFactorComparison.material_even_pivot_zero_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSourceFactorComparison.material_even_pivot_one_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSourceFactorComparison.material_even_pivot_one_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSourceFactorComparison.material_even_pivot_two_ratio' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSourceFactorComparison.material_even_pivot_two_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSourceFactorComparison.material_even_pivots_three_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSourceFactorComparison.material_even_cholesky_three' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSourceFactorComparison.material_even_cholesky_three_det_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSourceFactorComparison.material_even_bilinear_three' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSourceFactorComparison.material_hankel_cholesky_four' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSourceFactorComparison.material_hankel_cholesky_four_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSourceFactorComparison.material_hankel_cholesky_four_det_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSourceFactorComparison.material_even_signed_prefix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSourceFactorComparison.material_even_real_factor_defect' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSourceFactorComparison.material_even_three_posDef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSourceFactorComparison.material_even_energy_three_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSourceFactorComparison.material_complex_even_factor_three' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialSourceFactorComparison.material_valve_even_factor_three' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialFourthPivotComparison.material_fourth_threshold_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialFourthPivotComparison.material_fourth_pivot_source' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialFourthPivotComparison.material_fourth_old_coupling_squares' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialFourthPivotComparison.material_fourth_old_coupling_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialFourthPivotComparison.material_fourth_pivot_characteristic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialFourthPivotComparison.material_fourth_characteristic_ceiling' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialFourthPivotComparison.material_fourth_pivot_pos_iff_characteristic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialFourthPivotComparison.material_fourth_c9_theta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialFourthPivotComparison.material_fourth_pivot_pos_iff_theta_balance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialFourthPivotComparison.material_fourth_theta_balance_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialFourthPivotComparison.material_fourth_pivot_pos_iff_theta_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialFourthPivotComparison.material_fourth_bilinear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialFourthPivotComparison.material_fourth_critical_pairing' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialFourthPivotComparison.material_fourth_critical_energy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialFourthPivotComparison.material_fourth_block_posDef_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialFourthPivotComparison.material_fourth_block_posDef_iff_theta_balance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialFourthPivotComparison.material_fourth_cholesky_of_source_estimate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+27/48 CanonicalPivotCertificate
+'CarryMaterialThetaCertificate.theta_certificate_exp_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialThetaCertificate.theta_certificate_exp_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialThetaCertificate.theta_certificate_exp_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialThetaCertificate.theta_mode_after_three_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialThetaCertificate.theta_tail_after_three_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialThetaCertificate.theta_three_mode_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialPivotCertificate.enclose_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialPivotCertificate.enclose_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialPivotCertificate.enclose_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialPivotCertificate.enclose_inv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialPivotCertificate.material_fourth_theta_box_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPivotCertificate.material_fourth_theta_box_upper' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPivotCertificate.material_fourth_theta_box' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMaterialPivotCertificate.material_fourth_bounds_of_theta_box' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPivotCertificate.material_fourth_critical_margin_of_theta_box' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPivotCertificate.material_fourth_posDef_of_theta_box' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMaterialPivotCertificate.material_fourth_cholesky_of_theta_box' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+28/48 SourceIntegral
+29/48 PivotFromIntegral
+30/48 CachedIntegralCheck0
+31/48 CachedIntegralCheck1
+32/48 CachedIntegralCheck2
+33/48 CachedIntegralCheck3
+34/48 CachedIntegralChecks
+35/48 QuadratureNodeCheck0
+36/48 QuadratureNodeCheck1
+37/48 QuadratureNodeCheck2
+38/48 QuadratureNodeCheck3
+39/48 QuadratureNodeChecks
+40/48 FullSourceBoxes
+41/48 ArgNodeChecks
+42/48 ModeNodeChecks
+43/48 NodeCacheEquivalence
+44/48 ExactSourceProof
+45/48 TabledSourceEquivalence
+46/48 IntegralInputChecks
+47/48 NumericalPivotCheck
+48/48 IntegralCertificate
+PASS: 48 unchanged interval-source ancestors freshly compiled.

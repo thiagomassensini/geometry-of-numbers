@@ -1,0 +1,23 @@
+source-provenance: exit 0
+verified-cache: exit 0
+upstream-synthesis-build: exit 0
+interval-source-build: exit 0
+mechanism-probe: exit 0
+generate-audit: exit 0
+operator-source-build: exit 0
+lean-SourceJets: exit 0
+lean-FlowJets: exit 0
+lean-CayleyFlow: exit 0
+lean-RadialReality: exit 0
+lean-KernelTaylor: exit 0
+lean-RadialDefect: exit 0
+lean-FlowInterval: exit 0
+lean-KernelSign: exit 0
+lean-Audit: exit 0
+root-build: exit 0
+audit-foundation: exit 0
+audit-geometry: exit 0
+audit-analysis: exit 0
+base-preserved: exit 0
+diff-check: exit 0
+PASS: 22 checks, native sources and old work preserved.
