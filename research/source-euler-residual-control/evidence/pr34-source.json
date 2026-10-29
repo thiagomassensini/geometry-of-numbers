@@ -1,0 +1,33 @@
+{
+  "revision": "da58f044c1c75bd828951bfb41614a6e7b8b465e",
+  "modules": {
+    "SourceTwentySix": {
+      "sha256": "2744eee287f9285c0fab480c76d32d1d236c64875ebf0f17ee710b93f6497aba",
+      "bytes": 2516
+    },
+    "SourceCoefficients": {
+      "sha256": "3be76b45207350baabe3b1d9cafb92cc682ab4b6ff7629bf493677ba85e10412",
+      "bytes": 1750
+    },
+    "CenteredLogRecurrence": {
+      "sha256": "d5263a742c1e2aaa87fa080d702023dddf6719b0c9e2beb9d3547299e3dbde3f",
+      "bytes": 1128
+    },
+    "CenteredReferenceData": {
+      "sha256": "8ce7c6e7f5e516571bbc9f8c667ab98a4652b3f9bba268883106ed7f9a3b3d93",
+      "bytes": 82008
+    },
+    "CenteredEvaluation": {
+      "sha256": "ee995c2a7f080c0bcbd69bdfa5efa65127614cd48f2658b6f314e090b2c6dff8",
+      "bytes": 7458
+    },
+    "CenteredMomentBoxes": {
+      "sha256": "e776f51c17631a6622673a4b71c3a44146d72fcc6f306efce4d0819be0b9113f",
+      "bytes": 2273
+    },
+    "EvenTrialData": {
+      "sha256": "e64482a4928430e808139405122dffa27f6bd030f79869468e8f10d5e67e2790",
+      "bytes": 9739
+    }
+  }
+}
