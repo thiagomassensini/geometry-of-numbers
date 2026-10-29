@@ -1,0 +1,70 @@
+{
+  "base": "9f1bf62c55b04dadc79e4f7438eab48d5ac7e558",
+  "branch": "agent/material-green-summation-parts",
+  "head_before_commit": "9f1bf62c55b04dadc79e4f7438eab48d5ac7e558",
+  "protected_refs": {
+    "main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+    "origin/main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+    "agent/native-moment-orthogonalization-audit": "ee56930a2c30456cfbd214a29bb31b12d3977204",
+    "agent/seventh-even-centered-source": "da58f044c1c75bd828951bfb41614a6e7b8b465e",
+    "agent/source-euler-residual-control": "aac80d6699009f15de138aa3932b21ab3572ff42",
+    "agent/native-positive-square-kernel": "a5ed1d73b643cc4b24549b3ee3cfe10a5b29a59b",
+    "agent/entrywise-moment-square": "5a72d8cd68c3db8819cfe1273d21ade0d2abcf00",
+    "agent/native-return-boundary-deflation": "fdb8f7e9ce1b8681d10f2647393ad83f05bfac12",
+    "agent/native-cauchy-residual-return": "845829bacd623f044ba779e23da0bb4c48d25c11",
+    "agent/completed-green-confluent-balance": "bf2ff244e363b110a4e54ba897e475b81552bbdb",
+    "agent/forcing-centered-native-residual": "fedca533a34d9d494641e848f9f7d3284a9af38a",
+    "agent/forcing-mixed-green-slope": "77e681de19ac690ec1187899941d275e7e931267",
+    "agent/native-green-phase-compensation": "6be076db618ee660aec81b73c00e7b754cc72eef",
+    "agent/tfvd-complete-green-residual": "9f1bf62c55b04dadc79e4f7438eab48d5ac7e558"
+  },
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_status": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "protected_source_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "manifest_sha256": {
+    "/home/thlinux/geometry-of-numbers/lake-manifest.json": "9868872bae98d0c7e22c597d8e27d38d247498161cf70cdcdc193e9ea0608602",
+    "/home/thlinux/carry-self-adjoint-operator/lake-manifest.json": "822866313e377adcb9c6249680ed67ceb47682af1bb0cd3cc5203554786bcfeb"
+  },
+  "toolchain": "leanprover/lean4:v4.32.0",
+  "worktrees": "worktree /home/thlinux/geometry-of-numbers\nHEAD 9f1bf62c55b04dadc79e4f7438eab48d5ac7e558\nbranch refs/heads/agent/material-green-summation-parts\n\nworktree /home/thlinux/geometry-of-numbers-phase-canary\nHEAD 93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f\nbranch refs/heads/canary-c2-global-odd-source\n\nworktree /home/thlinux/geometry-of-numbers-r2\nHEAD 93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f\nbranch refs/heads/r2-real-tfvd-green-valve\n\nworktree /home/thlinux/geometry-of-numbers-recovery\nHEAD d7cc54f5c485320f1fada33118e9e6101488819a\nbranch refs/heads/recovery/formalizations-2026-10-01-02",
+  "preserved_pr51_files": {
+    ".cache/Audit.olean": "577f46a1431422c62d64e8a82a3c26e1a79101018f2fb02ed44ed8826286b87f",
+    ".cache/EntrywiseSquare.olean": "464955afb0a0d8527fda8b6ad317acc9cd5b44ac127a301bf26591f13231d866",
+    ".cache/NativeWitness.olean": "b40ec7d10c0807c1fbcb507e39b9680e85a339ffffa2686aa803bc274201e251"
+  },
+  "predecessor_source_sha256": {
+    "research/tfvd-complete-green-residual/.gitignore": "046032151fe6113c18a8d7d9971c557e81129ca1ba244e5263d54b7e0e6f9643",
+    "research/tfvd-complete-green-residual/Audit.lean": "8b60c4c18382ee4615c5b6d00ea5b6c9f4a1e7e03861758313edf7eeabdc876d",
+    "research/tfvd-complete-green-residual/CompleteTfvd.lean": "05f1ad1b7d39e673d5b48f8f707ad732894cac1afb7aa11974a8564dc1e685db",
+    "research/tfvd-complete-green-residual/DiscreteSign.lean": "56b429d8747f97065cb9fe3b7563e72a64780d7e0a48ffd4a6154a93bf0e391a",
+    "research/tfvd-complete-green-residual/GreenTransport.lean": "c08432eea7cad1b2da2a4c49fa5485d685b423d7207111cde8e9d6d6fb9780a5",
+    "research/tfvd-complete-green-residual/ObliqueTfvd.lean": "1e6971896dce2f6a188a7a2c3fd8aab7e5761e6a4d3dc26a2f7ae74d03a957b1",
+    "research/tfvd-complete-green-residual/REPORT.md": "727a45a651abe6bb5a50125913984b578495e1be15ac0bbafe836806603f1889",
+    "research/tfvd-complete-green-residual/compile_module.sh": "bbfd446a3da694f61ab45eebe0ef72db7d4a3e90e061adfad8fffc821ff1984f",
+    "research/tfvd-complete-green-residual/evidence/analysis-audit.log.gz": "af2b5135c317d37f0e441fa7f0617331bdae2cd812c866458c73376564286476",
+    "research/tfvd-complete-green-residual/evidence/audit-generation.log": "add4152cfb8cebb44624e58a9b78badc8bfeedeb45836e561ee537b340160796",
+    "research/tfvd-complete-green-residual/evidence/checks.json": "b95ec318c8b081e1f4e524ebbb33b6121eb9fa10945798ac4d44e6bfd1c55131",
+    "research/tfvd-complete-green-residual/evidence/diff-check.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/tfvd-complete-green-residual/evidence/exact-rational-controls.log": "882f28c0472417d3f691e68b1e2610a4c4d86bfa1ab9dbb590f9ff59789cf670",
+    "research/tfvd-complete-green-residual/evidence/focused-build.log": "3766b453ec420d935ad74aa3e8095dbd7373231ed7e73c91c8aa53e9ff27893a",
+    "research/tfvd-complete-green-residual/evidence/foundation-audit.log": "0cf345cc3bcedfa92250217b4e73bc37834671ac0b8a2b97f66d3c06551ce199",
+    "research/tfvd-complete-green-residual/evidence/geometry-audit.log": "469cddc780755a2a401f4a2d437d4b65bccc9f3333dc598e645025f94caf4888",
+    "research/tfvd-complete-green-residual/evidence/historical-files-unchanged.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/tfvd-complete-green-residual/evidence/kernel-Audit.log": "56e8ccca907e9e5c10b56ba8ba996d03c18dc1ffde190dd908d75df6cc4f2f93",
+    "research/tfvd-complete-green-residual/evidence/kernel-CompleteTfvd.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/tfvd-complete-green-residual/evidence/kernel-DiscreteSign.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/tfvd-complete-green-residual/evidence/kernel-GreenTransport.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/tfvd-complete-green-residual/evidence/kernel-ObliqueTfvd.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/tfvd-complete-green-residual/evidence/preflight.json": "c357c9614f88251ce4929fbb33dfe9fb00f3c9c6ba34964d3a5645e6f40d50e7",
+    "research/tfvd-complete-green-residual/evidence/root-build.log.gz": "55b985fb2201f5305271849736ffcc37fdd151b4c1122441666858f1659c3dca",
+    "research/tfvd-complete-green-residual/evidence/source-sha256.json": "eabc5fccd34116c39136c0ca5bfec86c44bae7133621a00b1f79d598fdc73fc3",
+    "research/tfvd-complete-green-residual/evidence/twelve-source-regression.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/tfvd-complete-green-residual/experiment.py": "a8450fea769fc5712ceb2d1c8c4aeb07dedf6a3eee1714101fa2907fd648df07",
+    "research/tfvd-complete-green-residual/generate_audit.py": "f3483286247266590b242f2c1d9533a8a4dafe4f8bbaf15c9b534db56bb4fa5c",
+    "research/tfvd-complete-green-residual/public-roots.json": "280301e57ec1fa01681c69935fef2c8ca90b3d0c4ba919df5b761d35704f16dd",
+    "research/tfvd-complete-green-residual/validate.py": "540308c8d178901fa3d3e87c7bcdde116c107848131b5334e09fa1a3b01fdc82"
+  }
+}
