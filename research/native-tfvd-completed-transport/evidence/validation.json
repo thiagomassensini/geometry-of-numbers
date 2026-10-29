@@ -1,0 +1,200 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tfvd-completed-transport/research/native-tfvd-completed-transport",
+      "exit_code": 0,
+      "seconds": 0.621,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tfvd-completed-transport/research/native-tfvd-completed-transport",
+      "exit_code": 0,
+      "seconds": 45.823,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tfvd-completed-transport/research/native-tfvd-completed-transport",
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeCompletedFiniteGreenResidual",
+        "CarrySelfAdjointOperator.CompletedNativeProjectiveChiralCarrier"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.688,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "fbe676a2154c2b0da1210467fafbe9c57f41ce8b154f647c6b705fc40410d2ba",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-ShiftTransport",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "ShiftTransport"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tfvd-completed-transport/research/native-tfvd-completed-transport",
+      "exit_code": 0,
+      "seconds": 16.685,
+      "log": "evidence/lean-ShiftTransport.log"
+    },
+    {
+      "label": "lean-PhysicalTfvd",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PhysicalTfvd"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tfvd-completed-transport/research/native-tfvd-completed-transport",
+      "exit_code": 0,
+      "seconds": 14.396,
+      "log": "evidence/lean-PhysicalTfvd.log"
+    },
+    {
+      "label": "lean-CoefficientPorts",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CoefficientPorts"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tfvd-completed-transport/research/native-tfvd-completed-transport",
+      "exit_code": 0,
+      "seconds": 12.012,
+      "log": "evidence/lean-CoefficientPorts.log"
+    },
+    {
+      "label": "lean-CompletionCommutator",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CompletionCommutator"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tfvd-completed-transport/research/native-tfvd-completed-transport",
+      "exit_code": 0,
+      "seconds": 9.834,
+      "log": "evidence/lean-CompletionCommutator.log"
+    },
+    {
+      "label": "lean-CompletedSourceBridge",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CompletedSourceBridge"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tfvd-completed-transport/research/native-tfvd-completed-transport",
+      "exit_code": 0,
+      "seconds": 12.188,
+      "log": "evidence/lean-CompletedSourceBridge.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tfvd-completed-transport/research/native-tfvd-completed-transport",
+      "exit_code": 0,
+      "seconds": 10.08,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tfvd-completed-transport",
+      "exit_code": 0,
+      "seconds": 7.361,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tfvd-completed-transport",
+      "exit_code": 0,
+      "seconds": 7.399,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tfvd-completed-transport",
+      "exit_code": 0,
+      "seconds": 9.524,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tfvd-completed-transport",
+      "exit_code": 0,
+      "seconds": 45.812,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "c4bcc38389c592681cde11a2b379079d6abd0cc9",
+        "--",
+        ".",
+        ":(exclude)research/native-tfvd-completed-transport/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tfvd-completed-transport",
+      "exit_code": 0,
+      "seconds": 0.19,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tfvd-completed-transport",
+      "exit_code": 0,
+      "seconds": 0.183,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}
