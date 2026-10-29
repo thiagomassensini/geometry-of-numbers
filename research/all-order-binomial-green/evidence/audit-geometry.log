@@ -1,0 +1,236 @@
+PASS: discrete imports isolated (audit tooling excepted); no Analysis or Mathlib.
+PASS: Geometry imports only Init/Foundation/Geometry (audit tooling excepted).
+ℹ [25/25] Replayed GeometryOfNumbers.Geometry.Audit
+info: GeometryOfNumbers/Geometry/Audit.lean:34:0: 'GeometryOfNumbers.Geometry.oddCameraPair_straddles_center' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:35:0: 'GeometryOfNumbers.Geometry.oddCameraPair_injective' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:66:0: 'GeometryOfNumbers.Geometry.sumPositiveRadii_int_add' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:67:0: 'GeometryOfNumbers.Geometry.sumPositiveRadii_int_sub' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:68:0: 'GeometryOfNumbers.Geometry.sumPositiveRadii_int_constant' depends on axioms: [propext]
+info: GeometryOfNumbers/Geometry/Audit.lean:69:0: 'GeometryOfNumbers.Geometry.oddCameraBracket_eq_saturatedSecondDifference' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:70:0: 'GeometryOfNumbers.Geometry.oddCameraBracket_zero' depends on axioms: [propext]
+info: GeometryOfNumbers/Geometry/Audit.lean:71:0: 'GeometryOfNumbers.Geometry.oddCameraBracket_C3' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:72:0: 'GeometryOfNumbers.Geometry.oddCameraBracket_two_pairs' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:73:0: 'GeometryOfNumbers.Geometry.oddCameraBracket_identity' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:74:0: 'GeometryOfNumbers.Geometry.sumPositiveRadii_zero' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:75:0: 'GeometryOfNumbers.Geometry.sumPositiveRadii_succ' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:76:0: 'GeometryOfNumbers.Geometry.sumPositiveRadii_congr' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:77:0: 'GeometryOfNumbers.Geometry.positiveCameraRadius_bounds' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:78:0: 'GeometryOfNumbers.Geometry.positiveCameraRadius_exists' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:79:0: 'GeometryOfNumbers.Geometry.positiveCameraRadius_injective' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:80:0: 'GeometryOfNumbers.Geometry.oddCameraPair_reflection' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:81:0: 'GeometryOfNumbers.Geometry.oddCameraCapacity_isOdd' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:82:0: 'GeometryOfNumbers.Geometry.oddCameraCapacity_pos' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:83:0: 'GeometryOfNumbers.Geometry.oddCameraHalf_unique' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:84:0: 'GeometryOfNumbers.Geometry.oddCapacity_exists_cameraHalf' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:85:0: 'GeometryOfNumbers.Geometry.oddCameraLegCount_eq_twice_half' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:86:0: 'GeometryOfNumbers.Geometry.oddCameraLegCount_eq_capacity_sub_one' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:120:0: 'GeometryOfNumbers.Geometry.hasCarryDepthAtLeast_zero' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:121:0: 'GeometryOfNumbers.Geometry.hasCarryDepthAtLeast_succ' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:122:0: 'GeometryOfNumbers.Geometry.residualTowerZeroPrefix_iff_prefixValue_zero' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:123:0: 'GeometryOfNumbers.Geometry.hasCarryDepthAtLeast_iff_prefixValue_zero' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:124:0: 'GeometryOfNumbers.Geometry.hasCarryDepthAtLeast_eq_scaled_tail' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:125:0: 'GeometryOfNumbers.Geometry.hasCarryDepthAtLeast_iff_dvd_pow' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:126:0: 'GeometryOfNumbers.Geometry.hasCarryDepthAtLeast_zero_quantity' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:127:0: 'GeometryOfNumbers.Geometry.hasCarryDepthAtLeast_capacity_one' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:128:0: 'GeometryOfNumbers.Geometry.zeroCapacity_depth_does_not_characterize_divisibility' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:129:0: 'GeometryOfNumbers.Geometry.hasIntegerCarryDepthAtLeast_natCast_iff' depends on axioms: [propext]
+info: GeometryOfNumbers/Geometry/Audit.lean:130:0: 'GeometryOfNumbers.Geometry.hasIntegerCarryDepthAtLeast_zero_quantity' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:131:0: 'GeometryOfNumbers.Geometry.balancedCarry_sub_offset_eq_center' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:132:0: 'GeometryOfNumbers.Geometry.balancedCarry_canonical_offset_depth_iff' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:133:0: 'GeometryOfNumbers.Geometry.balancedCarry_offset_unique_of_dvd' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:134:0: 'GeometryOfNumbers.Geometry.capacity_dvd_power_of_positive' depends on axioms: [propext]
+info: GeometryOfNumbers/Geometry/Audit.lean:135:0: 'GeometryOfNumbers.Geometry.balancedCarry_positive_depth_iff' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:136:0: 'GeometryOfNumbers.Geometry.balancedCarry_offset_unique_of_positive_depth' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:137:0: 'GeometryOfNumbers.Geometry.balancedCarry_exists_depth_iff_center_depth' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:138:0: 'GeometryOfNumbers.Geometry.balancedCarry_unique_depth_witness' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:139:0: 'GeometryOfNumbers.Geometry.balancedCarry_depth_and_mass_at_same_index' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:170:0: 'GeometryOfNumbers.Geometry.oddCapacity_pos' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:171:0: 'GeometryOfNumbers.Geometry.oddCapacity_no_antipodal' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:172:0: 'GeometryOfNumbers.Geometry.oddCapacity_residual_side' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:173:0: 'GeometryOfNumbers.Geometry.balancedCarry_reconstruction' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:174:0: 'GeometryOfNumbers.Geometry.balancedCarry_center_aligned' depends on axioms: [propext]
+info: GeometryOfNumbers/Geometry/Audit.lean:175:0: 'GeometryOfNumbers.Geometry.balancedCarry_offset_balanced' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:176:0: 'GeometryOfNumbers.Geometry.balancedOffset_iff_natAbs' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:177:0: 'GeometryOfNumbers.Geometry.balancedCarry_offset_natAbs_bound' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:178:0: 'GeometryOfNumbers.Geometry.balancedCenterOffset_unique' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:179:0: 'GeometryOfNumbers.Geometry.balancedCarry_unique' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:180:0: 'GeometryOfNumbers.Geometry.balancedCarry_zero_residual' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:181:0: 'GeometryOfNumbers.Geometry.balancedCarry_nonzero_residual' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:182:0: 'GeometryOfNumbers.Geometry.antipodal_two_no_strict_decomposition' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:183:0: 'GeometryOfNumbers.Geometry.antipodal_two_boundary_nonunique' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:184:0: 'GeometryOfNumbers.Geometry.balancedCarry_spec' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:185:0: 'GeometryOfNumbers.Geometry.balancedCarry_rightLeg' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:186:0: 'GeometryOfNumbers.Geometry.balancedCarry_reflect_eq_leftLeg' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:187:0: 'GeometryOfNumbers.Geometry.balancedCarry_reflect_eq_center_sub_offset' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:188:0: 'GeometryOfNumbers.Geometry.balancedCarry_centerDefect_zero' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:189:0: 'GeometryOfNumbers.Geometry.balancedCarry_centerDefect_shift' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:190:0: 'GeometryOfNumbers.Geometry.balancedCarry_secondDifference_identity_shift' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:191:0: 'GeometryOfNumbers.Geometry.balancedCarry_zero_residual_reflect' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:192:0: 'GeometryOfNumbers.Geometry.emergentCapacity_balancedCarry_spec' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:224:0: 'GeometryOfNumbers.Geometry.leftLeg_add_rightLeg' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:225:0: 'GeometryOfNumbers.Geometry.reflect_center' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:226:0: 'GeometryOfNumbers.Geometry.reflect_leftLeg' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:227:0: 'GeometryOfNumbers.Geometry.reflect_rightLeg' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:228:0: 'GeometryOfNumbers.Geometry.reflect_involutive' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:229:0: 'GeometryOfNumbers.Geometry.leftLeg_neg_radius' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:230:0: 'GeometryOfNumbers.Geometry.rightLeg_neg_radius' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:231:0: 'GeometryOfNumbers.Geometry.isCenterOf_iff_sum' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:232:0: 'GeometryOfNumbers.Geometry.constructed_legs_have_center' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:233:0: 'GeometryOfNumbers.Geometry.constructed_center_unique' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:234:0: 'GeometryOfNumbers.Geometry.centerDefect_eq_zero_iff_isCenterOf' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:235:0: 'GeometryOfNumbers.Geometry.centerDefect_constructed' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:236:0: 'GeometryOfNumbers.Geometry.centerDefect_fixed_legs_shift' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:237:0: 'GeometryOfNumbers.Geometry.centerDefect_fixed_legs_shift_neg' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:238:0: 'GeometryOfNumbers.Geometry.centerDefect_recentered' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:239:0: 'GeometryOfNumbers.Geometry.secondDifferenceAt_identity' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:240:0: 'GeometryOfNumbers.Geometry.centeredSecondDifference_identity' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:241:0: 'GeometryOfNumbers.Geometry.secondDifferenceAt_identity_fixed_legs_shift' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:242:0: 'GeometryOfNumbers.Geometry.centeredSecondDifference_neg_radius' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:243:0: 'GeometryOfNumbers.Geometry.centeredSecondDifference_zero_radius' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:244:0: 'GeometryOfNumbers.Geometry.centeredSecondDifference_square' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:397:0: 'GeometryOfNumbers.Geometry.IntegerCameraCell' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:399:0: 'GeometryOfNumbers.Geometry.IntegerCellRole' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:401:0: 'GeometryOfNumbers.Geometry.integerCameraRadius' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:403:0: 'GeometryOfNumbers.Geometry.integerCameraCenter' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:405:0: 'GeometryOfNumbers.Geometry.integerCameraPoint' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:407:0: 'GeometryOfNumbers.Geometry.IntegerCameraIncidence' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:409:0: 'GeometryOfNumbers.Geometry.integerCameraTowerCell' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:411:0: 'GeometryOfNumbers.Geometry.integerCameraTowerCell_reconstruction' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:413:0: 'GeometryOfNumbers.Geometry.integerCameraTowerCell_center' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:415:0: 'GeometryOfNumbers.Geometry.integerCamera_common_integer' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:417:0: 'GeometryOfNumbers.Geometry.integerCamera_point_reflection' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:419:0: 'GeometryOfNumbers.Geometry.integerCamera_same_center_leg_displacement' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:421:0: 'GeometryOfNumbers.Geometry.integerCamera_same_center_overlap' depends on axioms: [propext, Quot.sound]
+info: GeometryOfNumbers/Geometry/Audit.lean:423:0: 'GeometryOfNumbers.Geometry.integerCamera72Two' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:425:0: 'GeometryOfNumbers.Geometry.integerCamera72Three' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:427:0: 'GeometryOfNumbers.Geometry.integerCamera72_positions' does not depend on any axioms
+info: GeometryOfNumbers/Geometry/Audit.lean:429:0: 'GeometryOfNumbers.Geometry.integerCamera72_only_shared_center' depends on axioms: [propext, Quot.sound]
+Build completed successfully (25 jobs).
+'GeometryOfNumbers.Geometry.oddCameraPair_straddles_center' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.oddCameraPair_injective' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.sumPositiveRadii_int_add' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.sumPositiveRadii_int_sub' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.sumPositiveRadii_int_constant' depends on axioms: [propext]
+'GeometryOfNumbers.Geometry.oddCameraBracket_eq_saturatedSecondDifference' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.oddCameraBracket_zero' depends on axioms: [propext]
+'GeometryOfNumbers.Geometry.oddCameraBracket_C3' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.oddCameraBracket_two_pairs' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.oddCameraBracket_identity' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.sumPositiveRadii_zero' does not depend on any axioms
+'GeometryOfNumbers.Geometry.sumPositiveRadii_succ' does not depend on any axioms
+'GeometryOfNumbers.Geometry.sumPositiveRadii_congr' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.positiveCameraRadius_bounds' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.positiveCameraRadius_exists' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.positiveCameraRadius_injective' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.oddCameraPair_reflection' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.oddCameraCapacity_isOdd' does not depend on any axioms
+'GeometryOfNumbers.Geometry.oddCameraCapacity_pos' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.oddCameraHalf_unique' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.oddCapacity_exists_cameraHalf' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.oddCameraLegCount_eq_twice_half' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.oddCameraLegCount_eq_capacity_sub_one' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.hasCarryDepthAtLeast_zero' does not depend on any axioms
+'GeometryOfNumbers.Geometry.hasCarryDepthAtLeast_succ' does not depend on any axioms
+'GeometryOfNumbers.Geometry.residualTowerZeroPrefix_iff_prefixValue_zero' does not depend on any axioms
+'GeometryOfNumbers.Geometry.hasCarryDepthAtLeast_iff_prefixValue_zero' does not depend on any axioms
+'GeometryOfNumbers.Geometry.hasCarryDepthAtLeast_eq_scaled_tail' does not depend on any axioms
+'GeometryOfNumbers.Geometry.hasCarryDepthAtLeast_iff_dvd_pow' does not depend on any axioms
+'GeometryOfNumbers.Geometry.hasCarryDepthAtLeast_zero_quantity' does not depend on any axioms
+'GeometryOfNumbers.Geometry.hasCarryDepthAtLeast_capacity_one' does not depend on any axioms
+'GeometryOfNumbers.Geometry.zeroCapacity_depth_does_not_characterize_divisibility' does not depend on any axioms
+'GeometryOfNumbers.Geometry.hasIntegerCarryDepthAtLeast_natCast_iff' depends on axioms: [propext]
+'GeometryOfNumbers.Geometry.hasIntegerCarryDepthAtLeast_zero_quantity' does not depend on any axioms
+'GeometryOfNumbers.Geometry.balancedCarry_sub_offset_eq_center' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.balancedCarry_canonical_offset_depth_iff' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.balancedCarry_offset_unique_of_dvd' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.capacity_dvd_power_of_positive' depends on axioms: [propext]
+'GeometryOfNumbers.Geometry.balancedCarry_positive_depth_iff' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.balancedCarry_offset_unique_of_positive_depth' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.balancedCarry_exists_depth_iff_center_depth' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.balancedCarry_unique_depth_witness' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.balancedCarry_depth_and_mass_at_same_index' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.oddCapacity_pos' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.oddCapacity_no_antipodal' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.oddCapacity_residual_side' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.balancedCarry_reconstruction' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.balancedCarry_center_aligned' depends on axioms: [propext]
+'GeometryOfNumbers.Geometry.balancedCarry_offset_balanced' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.balancedOffset_iff_natAbs' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.balancedCarry_offset_natAbs_bound' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.balancedCenterOffset_unique' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.balancedCarry_unique' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.balancedCarry_zero_residual' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.balancedCarry_nonzero_residual' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.antipodal_two_no_strict_decomposition' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.antipodal_two_boundary_nonunique' does not depend on any axioms
+'GeometryOfNumbers.Geometry.balancedCarry_spec' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.balancedCarry_rightLeg' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.balancedCarry_reflect_eq_leftLeg' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.balancedCarry_reflect_eq_center_sub_offset' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.balancedCarry_centerDefect_zero' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.balancedCarry_centerDefect_shift' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.balancedCarry_secondDifference_identity_shift' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.balancedCarry_zero_residual_reflect' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.emergentCapacity_balancedCarry_spec' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.leftLeg_add_rightLeg' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.reflect_center' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.reflect_leftLeg' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.reflect_rightLeg' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.reflect_involutive' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.leftLeg_neg_radius' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.rightLeg_neg_radius' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.isCenterOf_iff_sum' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.constructed_legs_have_center' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.constructed_center_unique' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.centerDefect_eq_zero_iff_isCenterOf' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.centerDefect_constructed' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.centerDefect_fixed_legs_shift' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.centerDefect_fixed_legs_shift_neg' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.centerDefect_recentered' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.secondDifferenceAt_identity' does not depend on any axioms
+'GeometryOfNumbers.Geometry.centeredSecondDifference_identity' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.secondDifferenceAt_identity_fixed_legs_shift' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.centeredSecondDifference_neg_radius' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.centeredSecondDifference_zero_radius' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.centeredSecondDifference_square' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.IntegerCameraCell' does not depend on any axioms
+'GeometryOfNumbers.Geometry.IntegerCellRole' does not depend on any axioms
+'GeometryOfNumbers.Geometry.integerCameraRadius' does not depend on any axioms
+'GeometryOfNumbers.Geometry.integerCameraCenter' does not depend on any axioms
+'GeometryOfNumbers.Geometry.integerCameraPoint' does not depend on any axioms
+'GeometryOfNumbers.Geometry.IntegerCameraIncidence' does not depend on any axioms
+'GeometryOfNumbers.Geometry.integerCameraTowerCell' does not depend on any axioms
+'GeometryOfNumbers.Geometry.integerCameraTowerCell_reconstruction' does not depend on any axioms
+'GeometryOfNumbers.Geometry.integerCameraTowerCell_center' does not depend on any axioms
+'GeometryOfNumbers.Geometry.integerCamera_common_integer' does not depend on any axioms
+'GeometryOfNumbers.Geometry.integerCamera_point_reflection' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.integerCamera_same_center_leg_displacement' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.integerCamera_same_center_overlap' depends on axioms: [propext, Quot.sound]
+'GeometryOfNumbers.Geometry.integerCamera72Two' does not depend on any axioms
+'GeometryOfNumbers.Geometry.integerCamera72Three' does not depend on any axioms
+'GeometryOfNumbers.Geometry.integerCamera72_positions' does not depend on any axioms
+'GeometryOfNumbers.Geometry.integerCamera72_only_shared_center' depends on axioms: [propext, Quot.sound]
+PASS: tower-depth relation has empty footprint; other discrete geometry permits only propext/Quot.sound.
+	Command being timed: "bash scripts/audit-geometry.sh"
+	User time (seconds): 6.69
+	System time (seconds): 3.84
+	Percent of CPU this job got: 103%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.18
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1542420
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 307412
+	Voluntary context switches: 4910
+	Involuntary context switches: 121
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 56
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

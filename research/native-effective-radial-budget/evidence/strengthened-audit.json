@@ -1,0 +1,30 @@
+{
+  "checks": [
+    {
+      "label": "strengthened-generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget/research/native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 0.039,
+      "log": "evidence/generate-audit.log",
+      "log_sha256": "3324a0b3c285c3fcd97be0ee44027cd3ecd0ea32e591bc6621ba341d0ea854d3"
+    },
+    {
+      "label": "strengthened-lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-effective-radial-budget/research/native-effective-radial-budget",
+      "exit_code": 0,
+      "seconds": 30.254,
+      "log": "evidence/lean-Audit.log",
+      "log_sha256": "eca399b9a202e10cd18bb4737659ef7badf85ed81bc8f3f7ae0097e7e8bc4a7b"
+    }
+  ],
+  "reason": "Final guards additionally reject the earlier correction sign, eventual orientation, unknown-cutoff monotonicity and old accumulated-tail theorems. Math modules are unchanged; only the dependency audit was strengthened."
+}

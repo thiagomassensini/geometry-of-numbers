@@ -1,0 +1,193 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-response-taylor/research/native-quartic-response-taylor",
+      "exit_code": 0,
+      "seconds": 0.616,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-response-taylor/research/native-quartic-response-taylor",
+      "exit_code": 0,
+      "seconds": 0.236,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-response-taylor/research/native-quartic-response-taylor",
+      "exit_code": 0,
+      "seconds": 0.041,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 7.251,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "fcc7f5a93c9aee54f837df76727f3f931e68382c41e82777dd0eebceedf5dbde",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-Taylor11",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Taylor11"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-response-taylor/research/native-quartic-response-taylor",
+      "exit_code": 0,
+      "seconds": 10.791,
+      "log": "evidence/lean-Taylor11.log"
+    },
+    {
+      "label": "lean-QuarticKernel",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "QuarticKernel"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-response-taylor/research/native-quartic-response-taylor",
+      "exit_code": 0,
+      "seconds": 27.316,
+      "log": "evidence/lean-QuarticKernel.log"
+    },
+    {
+      "label": "lean-QuarticRemainder",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "QuarticRemainder"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-response-taylor/research/native-quartic-response-taylor",
+      "exit_code": 0,
+      "seconds": 14.054,
+      "log": "evidence/lean-QuarticRemainder.log"
+    },
+    {
+      "label": "lean-QuarticFlux",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "QuarticFlux"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-response-taylor/research/native-quartic-response-taylor",
+      "exit_code": 0,
+      "seconds": 12.59,
+      "log": "evidence/lean-QuarticFlux.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-response-taylor/research/native-quartic-response-taylor",
+      "exit_code": 0,
+      "seconds": 11.474,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-response-taylor",
+      "exit_code": 0,
+      "seconds": 8.451,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-response-taylor",
+      "exit_code": 0,
+      "seconds": 7.133,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-response-taylor",
+      "exit_code": 0,
+      "seconds": 10.169,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-response-taylor",
+      "exit_code": 0,
+      "seconds": 46.655,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "114c220b4e187f80e6645f354fd0de7e08444768",
+        "--",
+        ".",
+        ":(exclude)research/native-quartic-response-taylor/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-response-taylor",
+      "exit_code": 0,
+      "seconds": 0.251,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-response-taylor",
+      "exit_code": 0,
+      "seconds": 0.251,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "created_utc": "2026-10-23T16:53:08.717125+00:00",
+  "geometry_base": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "geometry_branch": "agent/theta-polarized-green-transport",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_origin_main": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "operator_status_preserved": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "operator_modules_sha256": {
+    "CarrySelfAdjointOperator/NativeSourceThetaMomentPolynomials.lean": "fd06a15ef76aef0777bb0d4d115df145aa2fd574e976485c9b9354742d494a59",
+    "CarrySelfAdjointOperator/NativeSourceSchurThetaIntegral.lean": "1661dc1f356f5aa8e9fd134ef322e28c4ce0b0fa5acec2cc22c9e8ba33823a86",
+    "CarrySelfAdjointOperator/NativeSourceThetaGreenTransport.lean": "60e91af322bb4f43a06504e806106bd38cafb0dee26e898d6c541b0d3d82217b",
+    "CarrySelfAdjointOperator/CompletedNativeXiCosineTransform.lean": "43da985ffe64ebabf37654db0bc9060b05811b4cba84911d349b76b8bcd73dbd",
+    "CarrySelfAdjointOperator/CompletedNativePolarizedTfvdGreenMomentKernel.lean": "cb5b180b5785fa87107dbac10fe65b9f3ee8a7a03b8ef7b4ffde4a6d20d7a59a",
+    "CarrySelfAdjointOperator/CompletedTfvdGreenAllOrderIntertwining.lean": "7cef344db79abeed2dce5327c04c03b64911bd04b25f3ea637a583875debe223",
+    "CarrySelfAdjointOperator/CompletedNativeCausalGreenProvenance.lean": "a69c813550714d4ce840f90cfa9ddbd6eb7d02156a8bfc5d107eb834e745093d",
+    "CarrySelfAdjointOperator/CompletedNativeTfvdGreenMomentGramBridge.lean": "ef6d18ff99fd4df125cf91a3971d019caf5c0354cf7bac9def57c8f4745d3a2d",
+    "CarrySelfAdjointOperator/CompletedNativeTfvdWronskianMoments.lean": "3dd797895e8da20c202f3982fa89c0a64cd453273dd2374376493c6225a55567"
+  },
+  "protected_files_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "checks": [
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-theta-polarized/research/theta-polarized-green",
+      "exit_code": 0,
+      "seconds": 0.039,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativeSourceThetaGreenTransport",
+        "CarrySelfAdjointOperator.CompletedNativeXiCosineTransform",
+        "CarrySelfAdjointOperator.NativeSourceThetaMomentPolynomials"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 7.433,
+      "log": "evidence/operator-source-build.log"
+    },
+    {
+      "label": "lean-PolarizedGreen",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PolarizedGreen"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-theta-polarized/research/theta-polarized-green",
+      "exit_code": 0,
+      "seconds": 9.321,
+      "log": "evidence/lean-PolarizedGreen.log"
+    },
+    {
+      "label": "lean-PolynomialInformation",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PolynomialInformation"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-theta-polarized/research/theta-polarized-green",
+      "exit_code": 0,
+      "seconds": 9.323,
+      "log": "evidence/lean-PolynomialInformation.log"
+    },
+    {
+      "label": "lean-ThetaCrossObstruction",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "ThetaCrossObstruction"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-theta-polarized/research/theta-polarized-green",
+      "exit_code": 0,
+      "seconds": 10.531,
+      "log": "evidence/lean-ThetaCrossObstruction.log"
+    },
+    {
+      "label": "lean-ProductResidual",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "ProductResidual"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-theta-polarized/research/theta-polarized-green",
+      "exit_code": 0,
+      "seconds": 9.267,
+      "log": "evidence/lean-ProductResidual.log"
+    },
+    {
+      "label": "lean-IntegratedNormTest",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "IntegratedNormTest"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-theta-polarized/research/theta-polarized-green",
+      "exit_code": 0,
+      "seconds": 9.811,
+      "log": "evidence/lean-IntegratedNormTest.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-theta-polarized/research/theta-polarized-green",
+      "exit_code": 0,
+      "seconds": 9.377,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-theta-polarized",
+      "exit_code": 0,
+      "seconds": 7.131,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-theta-polarized",
+      "exit_code": 0,
+      "seconds": 6.462,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-theta-polarized",
+      "exit_code": 0,
+      "seconds": 9.704,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-theta-polarized",
+      "exit_code": 0,
+      "seconds": 46.559,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-theta-polarized",
+      "exit_code": 0,
+      "seconds": 0.008,
+      "log": "evidence/diff-check.log"
+    }
+  ],
+  "new_sources_sha256": {
+    "Audit.lean": "a25c6e8dcf52ffbb1e185ecc55c06191930ec8e4601353b61b169014e8b5a332",
+    "IntegratedNormTest.lean": "55a609f63be94570a7c25f881b2d28c25a979e0df46b2da237cb9af4507ffd5a",
+    "PolarizedGreen.lean": "4343d22cc096cf415d48d13e7053619ff3a1ce0339c434ccf125d2223344ed2e",
+    "PolynomialInformation.lean": "eeeaf1a36fddb14db9c0b6dc550cafe531218758d772f5e7f9d5138d5875164b",
+    "ProductResidual.lean": "62603f063a7e12fa851a70a63de52841044840409e0778afa2742e2947ba6713",
+    "ThetaCrossObstruction.lean": "a078e6a6a4bb36e388ea93bb6919a991fc6a432c4bc68812f3e5bceac4113720"
+  },
+  "trust_escape_scan": "PASS",
+  "operator_sources_and_preexisting_files": "PRESERVED"
+}

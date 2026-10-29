@@ -1,0 +1,73 @@
+'CarryMellinDomain.boundaryCoefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.boundaryContinuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.concentratingCoefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.concentratingContinuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.physicalConcentration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.boundary_trace_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.concentrating_trace_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.boundary_tail_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.boundary_source_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.concentrating_source_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.physical_concentration_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.concentrating_tail_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.cubic_one_sub_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.one_sub_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.physical_concentration_energy_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.physical_concentration_norm_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.physical_concentration_norm_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.concentrationReadout' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.concentration_readout_native' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.concentration_readout_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.physical_concentration_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.concentration_readout_tendsto_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.finiteZeroTraceGraph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.concentration_mem_graph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.zero_mem_finite_graph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.zero_one_mem_graph_closure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.closure_not_single_valued' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.mellin_readout_no_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.no_continuous_mellin_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.no_closed_mellin_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.no_continuous_mellin_extension_with_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.no_closed_mellin_extension_with_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.verticalReadout' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.vertical_readout_finite_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.vertical_readout_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.finite_tower_coordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.concentrating_vertical_coordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.concentrating_vertical_norm_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMellinDomain.no_continuous_vertical_recovery' depends on axioms: [propext, Classical.choice, Quot.sound]
+Physical Mellin domain audit tier 0: 39 public roots; 5624 type/body dependencies; standard axioms only
+'GeometryOfNumbers.Analysis.realCriticalBranchIsometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometryOfNumbers.Analysis.globalCriticalPhysicalBranchIsometry_norm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.C2GlobalGreenBridge.c2GlobalGreenInput_norm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySelfAdjointOperator.nativeThetaMomentPolynomial_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 6.92
+	System time (seconds): 4.44
+	Percent of CPU this job got: 110%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.28
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8362488
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 273984
+	Voluntary context switches: 9506
+	Involuntary context switches: 105
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 736
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

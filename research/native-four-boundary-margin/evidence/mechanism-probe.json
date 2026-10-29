@@ -1,0 +1,11 @@
+{
+  "PASS": true,
+  "exact_fraction_checks": 216,
+  "both_complex_quadratures": true,
+  "canonical_moments_used": false,
+  "zero_or_height_inputs": false,
+  "physical_metric_modified": false,
+  "sqrt2_factored_out_exactly": true,
+  "scope": "coefficient and complete four-jet algebra regressions; no numerical source-sign inference",
+  "finite_native_coercivity": "reused and audited in Lean, not inferred from rational samples"
+}

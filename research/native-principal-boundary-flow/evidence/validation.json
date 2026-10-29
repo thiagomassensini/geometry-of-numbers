@@ -1,0 +1,222 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-principal-boundary-flow/research/native-principal-boundary-flow",
+      "exit_code": 0,
+      "seconds": 0.629,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "verified-cache",
+      "command": [
+        "python3",
+        "restore_verified_cache.py",
+        "--verify-only"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-principal-boundary-flow/research/native-principal-boundary-flow",
+      "exit_code": 0,
+      "seconds": 1.175,
+      "log": "evidence/verified-cache.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-principal-boundary-flow/research/native-principal-boundary-flow",
+      "exit_code": 0,
+      "seconds": 0.595,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "mechanism-probe",
+      "command": [
+        "python3",
+        "mechanism_probe.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-principal-boundary-flow/research/native-principal-boundary-flow",
+      "exit_code": 0,
+      "seconds": 0.152,
+      "log": "evidence/mechanism-probe.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-principal-boundary-flow/research/native-principal-boundary-flow",
+      "exit_code": 0,
+      "seconds": 0.038,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.578,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "27a887d73fb148d7f47f530258f42295c346df51580a90d8ca7d3f0067647ce3",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-EndpointFlux",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "EndpointFlux"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-principal-boundary-flow/research/native-principal-boundary-flow",
+      "exit_code": 0,
+      "seconds": 12.956,
+      "log": "evidence/lean-EndpointFlux.log"
+    },
+    {
+      "label": "lean-PrincipalFlux",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PrincipalFlux"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-principal-boundary-flow/research/native-principal-boundary-flow",
+      "exit_code": 0,
+      "seconds": 14.503,
+      "log": "evidence/lean-PrincipalFlux.log"
+    },
+    {
+      "label": "lean-NativePrincipalFlux",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "NativePrincipalFlux"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-principal-boundary-flow/research/native-principal-boundary-flow",
+      "exit_code": 0,
+      "seconds": 14.768,
+      "log": "evidence/lean-NativePrincipalFlux.log",
+      "raw_log": "evidence/lean-NativePrincipalFlux.raw.log.gz",
+      "raw_log_sha256": "0276692b89c00f3b1c844b0a51234595190538d37c619acf448fe4522e1c1820",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-FluxObstruction",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "FluxObstruction"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-principal-boundary-flow/research/native-principal-boundary-flow",
+      "exit_code": 0,
+      "seconds": 11.888,
+      "log": "evidence/lean-FluxObstruction.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-principal-boundary-flow/research/native-principal-boundary-flow",
+      "exit_code": 0,
+      "seconds": 12.286,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-principal-boundary-flow",
+      "exit_code": 0,
+      "seconds": 8.096,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-principal-boundary-flow",
+      "exit_code": 0,
+      "seconds": 6.676,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-principal-boundary-flow",
+      "exit_code": 0,
+      "seconds": 10.087,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-principal-boundary-flow",
+      "exit_code": 0,
+      "seconds": 49.123,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "47a0afdefd8694722d2ff8cbe0b0f5afc1e39cf3",
+        "--",
+        ".",
+        ":(exclude)research/native-principal-boundary-flow/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-principal-boundary-flow",
+      "exit_code": 0,
+      "seconds": 0.362,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-principal-boundary-flow",
+      "exit_code": 0,
+      "seconds": 0.356,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "modules": {
+    "ExplicitNewtonInput": [
+      "CarryEulerNewton.fourNewtonCoordinates",
+      "CarryEulerNewton.four_newton_input_exact",
+      "CarryEulerNewton.four_newton_coordinates_unique"
+    ],
+    "EulerNewtonBridge": [
+      "CarryEulerNewton.eulerToNewton",
+      "CarryEulerNewton.newtonToEuler",
+      "CarryEulerNewton.newton_euler_inverse",
+      "CarryEulerNewton.euler_newton_inverse",
+      "CarryEulerNewton.source_euler_newton_exact",
+      "CarryEulerNewton.euler_newton_eventually_exact",
+      "CarryEulerNewton.euler_to_newton_path_tendsto"
+    ],
+    "CriticalJetTransport": [
+      "CarryEulerNewton.physical_source_newton",
+      "CarryEulerNewton.physical_source_euler",
+      "CarryEulerNewton.physical_pair_newton",
+      "CarryEulerNewton.criticalJet",
+      "CarryEulerNewton.critical_newton_coordinates",
+      "CarryEulerNewton.critical_source_fixed_jet",
+      "CarryEulerNewton.critical_jet_from_euler",
+      "CarryEulerNewton.critical_pair_fixed_jet"
+    ],
+    "TransportedEnergyControl": [
+      "CarryEulerNewton.four_source_explicit_energy_control",
+      "CarryEulerNewton.critical_jet_norm_sq_le",
+      "CarryEulerNewton.critical_uniform_energy_control",
+      "CarryEulerNewton.critical_boundary_energy_dictionary"
+    ]
+  },
+  "groups": {
+    "construction": [
+      "CarryEulerNewton.fourNewtonCoordinates",
+      "CarryEulerNewton.four_newton_input_exact",
+      "CarryEulerNewton.four_newton_coordinates_unique",
+      "CarryEulerNewton.eulerToNewton",
+      "CarryEulerNewton.newtonToEuler",
+      "CarryEulerNewton.newton_euler_inverse",
+      "CarryEulerNewton.euler_newton_inverse",
+      "CarryEulerNewton.source_euler_newton_exact",
+      "CarryEulerNewton.euler_newton_eventually_exact",
+      "CarryEulerNewton.euler_to_newton_path_tendsto",
+      "CarryEulerNewton.physical_source_newton",
+      "CarryEulerNewton.physical_source_euler",
+      "CarryEulerNewton.physical_pair_newton",
+      "CarryEulerNewton.criticalJet",
+      "CarryEulerNewton.critical_newton_coordinates",
+      "CarryEulerNewton.critical_source_fixed_jet",
+      "CarryEulerNewton.critical_jet_from_euler",
+      "CarryEulerNewton.critical_pair_fixed_jet",
+      "CarryEulerNewton.critical_jet_norm_sq_le"
+    ],
+    "transported_control": [
+      "CarryEulerNewton.four_source_explicit_energy_control",
+      "CarryEulerNewton.critical_uniform_energy_control",
+      "CarryEulerNewton.critical_boundary_energy_dictionary"
+    ]
+  }
+}

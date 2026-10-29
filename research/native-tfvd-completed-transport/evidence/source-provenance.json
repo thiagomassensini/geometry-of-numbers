@@ -1,0 +1,40 @@
+{
+  "base": "c4bcc38389c592681cde11a2b379079d6abd0cc9",
+  "branch": "agent/native-tfvd-completed-transport",
+  "main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "origin_main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_status": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "momentos_status": "M AUDITORIA_CORRECTED_MOMENTS_VS_CANONICAL_RECURRENCE.md",
+  "source_sha256": {
+    "CarrySelfAdjointOperator/NativePhysicalGreenResolvent.lean": "e0228de1445e347971cc45d168f51bb113bfe582a448b3e75adc354cb8ce2204",
+    "CarrySelfAdjointOperator/NativeIntervalMultiplier.lean": "c395b94e42c110c7724889a2a5df56dfbddefb536b1c385790955f8f12fa1f78",
+    "CarrySelfAdjointOperator/NativeCompletedFiniteGreenResidual.lean": "e5bbbe2618f4d788ca2116d475d9e92ed87b6e5f405a6984635ba9412df2c3a8",
+    "CarrySelfAdjointOperator/NativeIncidenceCauchyPorts.lean": "35af1faa17ff334b04b79ca5a34c878aa434557848d40340f313252a80d3169e",
+    "CarrySelfAdjointOperator/CompletedNativeProjectiveChiralCarrier.lean": "1e9bb581d91f0b77fd52be947932e40ac7916430a8b994714ef6185865f58aaa",
+    "CarrySelfAdjointOperator/CompletedNativeRadialChiralMultiplier.lean": "1ae47a75e6ec10f1f2be5b2133247ab2de92f2fe5be9996ca921c0611b67fa13"
+  },
+  "protected_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c",
+    "/home/thlinux/momentos/AUDITORIA_CORRECTED_MOMENTS_VS_CANONICAL_RECURRENCE.md": "b8b5e643abe941a1ecebcce9f39e47fca39da766aad530aec2886258045b1c6b"
+  },
+  "pins": {
+    "CPFormal": "65d50f6db1208708e109982ba97e1d51d3039956",
+    "NativeCarryC3Crosswalk": "150cfc7fb08da96bf8117f15869cc2b819d593c2",
+    "NativeCarrySpectralWeyl": "298d83c9351e308a5213b9f5ac32e44087f98a9f"
+  },
+  "native_tower_source_sha256": "78f5e26702a4ba06ba6b5c697a79fe5df7a007042e2d7217704bc3b312135aff",
+  "pr92": {
+    "baseRefName": "agent/mellin-physical-domain",
+    "headRefOid": "c4bcc38389c592681cde11a2b379079d6abd0cc9",
+    "isDraft": true,
+    "state": "OPEN"
+  },
+  "geometry_tfvd_sources_sha256": {
+    "GeometryOfNumbers/Analysis/RealCarryTfvd.lean": "40f40703c5085c94cdb72dbd90002e57c365a16568b320febb1cef01978ba6bb",
+    "GeometryOfNumbers/Analysis/RealCarryL2.lean": "9553bce9e2a73d5c8518089640f049569bebfba0817998186d1a01503091b391",
+    "GeometryOfNumbers/Analysis/RealCarryWeightedValve.lean": "0b74255cd5136043281dcb6193532c55143d2d1652077d5d82d142f66c1726f2",
+    "GeometryOfNumbers/Analysis/RealCarryGreenKernel.lean": "94938b30a9091a696b190b101aeb153511a46b74608c54ec22b5eda55348f905"
+  }
+}

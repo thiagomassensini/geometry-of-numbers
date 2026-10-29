@@ -1,0 +1,196 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-complete-pairing/research/native-cross-radial-complete-pairing",
+      "exit_code": 0,
+      "seconds": 0.711,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-complete-pairing/research/native-cross-radial-complete-pairing",
+      "exit_code": 0,
+      "seconds": 0.347,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-complete-pairing/research/native-cross-radial-complete-pairing",
+      "exit_code": 0,
+      "seconds": 0.038,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.964,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "2d9af97d3e0115a57bf2a67ab394ddda2d3727b63dbf431565fb349061f2f3c8",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-CrossRadialPairing",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CrossRadialPairing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-complete-pairing/research/native-cross-radial-complete-pairing",
+      "exit_code": 0,
+      "seconds": 13.159,
+      "log": "evidence/lean-CrossRadialPairing.log"
+    },
+    {
+      "label": "lean-CrossRadialGreen",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CrossRadialGreen"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-complete-pairing/research/native-cross-radial-complete-pairing",
+      "exit_code": 0,
+      "seconds": 11.735,
+      "log": "evidence/lean-CrossRadialGreen.log"
+    },
+    {
+      "label": "lean-DoubledMixedExpansion",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "DoubledMixedExpansion"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-complete-pairing/research/native-cross-radial-complete-pairing",
+      "exit_code": 0,
+      "seconds": 13.34,
+      "log": "evidence/lean-DoubledMixedExpansion.log"
+    },
+    {
+      "label": "lean-RadialRegression",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "RadialRegression"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-complete-pairing/research/native-cross-radial-complete-pairing",
+      "exit_code": 0,
+      "seconds": 12.073,
+      "log": "evidence/lean-RadialRegression.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-complete-pairing/research/native-cross-radial-complete-pairing",
+      "exit_code": 0,
+      "seconds": 12.711,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-complete-pairing",
+      "exit_code": 0,
+      "seconds": 8.436,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-complete-pairing",
+      "exit_code": 0,
+      "seconds": 6.489,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-complete-pairing",
+      "exit_code": 0,
+      "seconds": 9.592,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-complete-pairing",
+      "exit_code": 0,
+      "seconds": 47.299,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "c7bf5781dee8edf5c4fcfc4c4c1153697d0f2a0b",
+        "--",
+        ".",
+        ":(exclude)research/native-cross-radial-complete-pairing/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-complete-pairing",
+      "exit_code": 0,
+      "seconds": 0.01,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-complete-pairing",
+      "exit_code": 0,
+      "seconds": 0.008,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}

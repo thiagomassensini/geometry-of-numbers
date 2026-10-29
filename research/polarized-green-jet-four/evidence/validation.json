@@ -1,0 +1,257 @@
+{
+  "created_utc": "2026-10-25T04:51:42.517986+00:00",
+  "geometry_main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "geometry_base": "16caee18d2667dc54ab6fdb37750c136b2366b06",
+  "geometry_branch": "agent/polarized-green-jet-four",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_origin_main": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "operator_status_preserved": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "operator_modules_sha256": {
+    "CarrySelfAdjointOperator/NativeSourceAllOrderSchur.lean": "d7abc44bc54da0227e4ac46076d10cc49a98c0e9ff31f28346ff8aa05b7d3e03",
+    "CarrySelfAdjointOperator/CompletedNativeTfvdWronskianMoments.lean": "3dd797895e8da20c202f3982fa89c0a64cd453273dd2374376493c6225a55567",
+    "CarrySelfAdjointOperator/NativeCauchyLaguerreSources.lean": "2a74b670544cadc5e08ef5f6df8064fd19a57d61eaba822dea62e5b2dc22f3b7",
+    "CarrySelfAdjointOperator/NativePhysicalGreenResolvent.lean": "e0228de1445e347971cc45d168f51bb113bfe582a448b3e75adc354cb8ce2204",
+    "CarrySelfAdjointOperator/CompletedC3FullWronskianCentralChiralEnergy.lean": "87b1b5f93059ee3df0ecbdef3c9744cfefd350d7f024dd277bb9fab054c59ac7",
+    "CarrySelfAdjointOperator/CompletedGreenDiagonalClosure.lean": "2c8dcc5f143a0cdd34ebb6c2aa8aef5ca15081e11dc39c281ecd1a247fb8891a",
+    "CarrySelfAdjointOperator/NativeIntervalMultiplier.lean": "c395b94e42c110c7724889a2a5df56dfbddefb536b1c385790955f8f12fa1f78",
+    "CarrySelfAdjointOperator/NativeCompletedFiniteGreenResidual.lean": "e5bbbe2618f4d788ca2116d475d9e92ed87b6e5f405a6984635ba9412df2c3a8",
+    "CarrySelfAdjointOperator/NativeIncidenceCauchyPorts.lean": "35af1faa17ff334b04b79ca5a34c878aa434557848d40340f313252a80d3169e",
+    "CarrySelfAdjointOperator/NativeScalarZetaIdentification.lean": "3db88552cc9be5f02f51ac8c84be6ac2470c425b15679b51893e1aa816155843",
+    "CarrySelfAdjointOperator/CompletedNativeChiralJetStorageTransport.lean": "0b1f94a53a706c8713d416200a6c476a7ffb3503ef9d82e87b2315609750c693",
+    "CarrySelfAdjointOperator/CompletedNativeProjectiveChiralCarrier.lean": "1e9bb581d91f0b77fd52be947932e40ac7916430a8b994714ef6185865f58aaa",
+    "CarrySelfAdjointOperator/CompletedNativeProjectiveChiralForwardDifference.lean": "cd403f6535a3c52a0080fea31eb66b71352b8a16c2aadc58d4c1b602452def6e",
+    "CarrySelfAdjointOperator/CompletedNativeCentralChiralVariation.lean": "6aa9f25f31c1f3dce8130f30cd26e1f82ce95f5d4ce674055999333283352caf",
+    "CarrySelfAdjointOperator/CompletedGreenForwardDifferenceVectorLimit.lean": "f5e27f1658310c3ed3f0e6e1593a928e07d87b4e80b135b2b8978bf9bfa5f7c4",
+    "CarrySelfAdjointOperator/CompletedNativeChiralReturnSourceTrace.lean": "5ec3536aeb34699f79e5da8ba742d0f7ec91f16d7d0a9f9c47b8e6592fc33939",
+    "CarrySelfAdjointOperator/CompletedNativeChiralReturnCompletionSplit.lean": "7863304c000706fe427f796ce3ddada19d5b618c6f4767055d9937479ff6ed7f",
+    "CarrySelfAdjointOperator/NativeGammaCoupledCompletionObstruction.lean": "482f96a2a7ace52a9dcbccf315b88e8934f10fe985cbd61a358d19c1af3cd368",
+    "CarrySelfAdjointOperator/CompletedNativeRadialChiralMultiplier.lean": "1ae47a75e6ec10f1f2be5b2133247ab2de92f2fe5be9996ca921c0611b67fa13",
+    "CarrySelfAdjointOperator/CompletedNativeChiralReturnStorage.lean": "209faddb21a2a778011abe93ab1e2569a2c5a0a526a5819312c1d1e2555ea116",
+    "CarrySelfAdjointOperator/CompletedNativeCentralChiralQuotientCurvature.lean": "5b5763e4784177a52e14c50802ba622ed8ed79972505379bd6acd03be8bc349b",
+    "CarrySelfAdjointOperator/CompletedNativeChiralPickFactorization.lean": "1cd536b29d49e9fa83c30b24214caa5b541856d89fd613abe6f1c73eb7a0d0f4"
+  },
+  "protected_files_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "checks": [
+    {
+      "label": "upstream-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-polarized-green-jet-four/research/polarized-green-jet-four",
+      "exit_code": 0,
+      "seconds": 4.005,
+      "log": "evidence/upstream-provenance.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-polarized-green-jet-four/research/polarized-green-jet-four",
+      "exit_code": 0,
+      "seconds": 0.043,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativeCauchyLaguerreSources",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy",
+        "CarrySelfAdjointOperator.NativeSourceAllOrderSchur",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.273,
+      "log": "evidence/operator-source-build.log"
+    },
+    {
+      "label": "lean-JetFourSource",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "JetFourSource"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-polarized-green-jet-four/research/polarized-green-jet-four",
+      "exit_code": 0,
+      "seconds": 16.739,
+      "log": "evidence/lean-JetFourSource.log"
+    },
+    {
+      "label": "lean-FiveKernel",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "FiveKernel"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-polarized-green-jet-four/research/polarized-green-jet-four",
+      "exit_code": 0,
+      "seconds": 23.265,
+      "log": "evidence/lean-FiveKernel.log"
+    },
+    {
+      "label": "lean-QuarticExpansion",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "QuarticExpansion"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-polarized-green-jet-four/research/polarized-green-jet-four",
+      "exit_code": 0,
+      "seconds": 24.11,
+      "log": "evidence/lean-QuarticExpansion.log"
+    },
+    {
+      "label": "lean-QuarticLimits",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "QuarticLimits"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-polarized-green-jet-four/research/polarized-green-jet-four",
+      "exit_code": 0,
+      "seconds": 13.537,
+      "log": "evidence/lean-QuarticLimits.log"
+    },
+    {
+      "label": "lean-SchurTransport",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SchurTransport"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-polarized-green-jet-four/research/polarized-green-jet-four",
+      "exit_code": 0,
+      "seconds": 13.518,
+      "log": "evidence/lean-SchurTransport.log"
+    },
+    {
+      "label": "lean-PrefixRegression",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PrefixRegression"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-polarized-green-jet-four/research/polarized-green-jet-four",
+      "exit_code": 0,
+      "seconds": 14.183,
+      "log": "evidence/lean-PrefixRegression.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-polarized-green-jet-four/research/polarized-green-jet-four",
+      "exit_code": 0,
+      "seconds": 13.839,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "polarized-four-diagnostic",
+      "command": [
+        "/home/thlinux/miniforge3/bin/python",
+        "probe_polarized_four.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-polarized-green-jet-four/research/polarized-green-jet-four",
+      "exit_code": 0,
+      "seconds": 56.287,
+      "log": "evidence/polarized-four-diagnostic.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-polarized-green-jet-four",
+      "exit_code": 0,
+      "seconds": 8.376,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-polarized-green-jet-four",
+      "exit_code": 0,
+      "seconds": 7.047,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-polarized-green-jet-four",
+      "exit_code": 0,
+      "seconds": 10.077,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-polarized-green-jet-four",
+      "exit_code": 0,
+      "seconds": 45.598,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "16caee18d2667dc54ab6fdb37750c136b2366b06",
+        "--",
+        ".",
+        ":(exclude)research/polarized-green-jet-four/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-polarized-green-jet-four",
+      "exit_code": 0,
+      "seconds": 0.164,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-polarized-green-jet-four",
+      "exit_code": 0,
+      "seconds": 0.166,
+      "log": "evidence/diff-check.log"
+    }
+  ],
+  "new_sources_sha256": {
+    "Audit.lean": "a6d38f7bb6146ad18166d04946d41e6b2f658e100deda0278f78c7adfd1b589f",
+    "FiveKernel.lean": "ce8aa1cb2e7a7ae5cdbf2cab99aa9d2fc4dbd831a4a06d7c6d2eebe0d60b5701",
+    "JetFourSource.lean": "a20ef0aab662a6b7df9dfee25d07156e55d883e573f2d1f36af1176d5f5e44ee",
+    "PrefixRegression.lean": "759d7ea5c723f0a518e28486cef054e3ff6bdf2c972b3e7c5b2e9d98062e8078",
+    "QuarticExpansion.lean": "223355c3032db1093eac59d576c6f47c551ee54f49b5ee2f7bc8a6f741a36afb",
+    "QuarticLimits.lean": "1295d6db9211bb36656e2ec3a7b558c81f6d2d0dfefd36a768497b258cd39f26",
+    "SchurTransport.lean": "65b469853e5b8b02db37e26dc3e0d18654f7d28edb89a0cfb38ed0bb17c5945c"
+  },
+  "trust_escape_scan": "PASS",
+  "operator_sources_and_preexisting_files": "PRESERVED"
+}

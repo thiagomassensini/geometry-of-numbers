@@ -1,0 +1,204 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-first-correction/research/native-quartic-first-correction",
+      "exit_code": 0,
+      "seconds": 0.65,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-first-correction/research/native-quartic-first-correction",
+      "exit_code": 0,
+      "seconds": 0.295,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-first-correction/research/native-quartic-first-correction",
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "spatial-canary",
+      "command": [
+        "python3",
+        "spatial_correction_canary.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-first-correction/research/native-quartic-first-correction",
+      "exit_code": 0,
+      "seconds": 0.085,
+      "log": "evidence/spatial-canary.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.755,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "a053d4ebe4073dc920aa91bc2a4df0525a490db34fd863bdafb3c51c7d567018",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-RemainderValue",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "RemainderValue"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-first-correction/research/native-quartic-first-correction",
+      "exit_code": 0,
+      "seconds": 11.477,
+      "log": "evidence/lean-RemainderValue.log"
+    },
+    {
+      "label": "lean-WeightEleven",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "WeightEleven"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-first-correction/research/native-quartic-first-correction",
+      "exit_code": 0,
+      "seconds": 11.22,
+      "log": "evidence/lean-WeightEleven.log"
+    },
+    {
+      "label": "lean-CompleteCorrection",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CompleteCorrection"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-first-correction/research/native-quartic-first-correction",
+      "exit_code": 0,
+      "seconds": 11.765,
+      "log": "evidence/lean-CompleteCorrection.log"
+    },
+    {
+      "label": "lean-CriticalSchur",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CriticalSchur"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-first-correction/research/native-quartic-first-correction",
+      "exit_code": 0,
+      "seconds": 11.816,
+      "log": "evidence/lean-CriticalSchur.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-first-correction/research/native-quartic-first-correction",
+      "exit_code": 0,
+      "seconds": 11.884,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-first-correction",
+      "exit_code": 0,
+      "seconds": 8.19,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-first-correction",
+      "exit_code": 0,
+      "seconds": 7.4,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-first-correction",
+      "exit_code": 0,
+      "seconds": 10.731,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-first-correction",
+      "exit_code": 0,
+      "seconds": 49.529,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "78d74b06b06ad9250fbf2718f580b3beb030a568",
+        "--",
+        ".",
+        ":(exclude)research/native-quartic-first-correction/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-first-correction",
+      "exit_code": 0,
+      "seconds": 0.265,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-first-correction",
+      "exit_code": 0,
+      "seconds": 0.278,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}

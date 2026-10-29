@@ -1,0 +1,105 @@
+'CarryEffectiveRadial.sourceSeries' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.source_coefficient_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.source_series_radius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.source_series_positive_radius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.source_series_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.source_series_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.source_series_hasSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.source_series_local_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.sourceResponse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.source_response_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.source_response_local_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.quarter_disc_in_domain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.source_response_product_on_disc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.source_response_eq_native' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.native_response_hasSum_on_disc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.imaginary_characteristic_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.source_tail_term' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.source_tail_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.native_response_prefix_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.shiftedSeries' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.shifted_coefficient_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.shifted_series_radius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.shifted_series_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.shifted_series_hasSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.sourceRemainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.native_response_exact_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.source_remainder_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.source_remainder_norm_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.source_remainder_deriv_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.sixHigherPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.sixEffectiveRemainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.radial_node_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.six_effective_remainder_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.canonical_moment_norm_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.six_expansion_on_disc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.finite_norm_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.nodeMonomials' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.nodeCoefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.node_coefficients_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.six_node_weight_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.higherMonomials' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.higherCoefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.six_higher_polynomial_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.six_effective_remainder_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.six_effective_remainder_deriv_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.native_response_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.native_positive_coordinate_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.imaginary_radial_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.six_radial_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.six_physical_at_explicit_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.squared_step_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.radial_budget_hasSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.budgetStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.budgetIndex' depends on axioms: [propext]
+'CarryEffectiveRadial.budget_step_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.budget_step_small' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.unitBox' depends on axioms: [propext]
+'CarryEffectiveRadial.smallCorrectionBox' depends on axioms: [propext]
+'CarryEffectiveRadial.critical_sizes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.sixLimitBox' depends on axioms: [propext]
+'CarryEffectiveRadial.stepBox' depends on axioms: [propext]
+'CarryEffectiveRadial.anchorHeadBox' depends on axioms: [propext]
+'CarryEffectiveRadial.anchor_head_membership' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.anchor_head_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.criticalCurve' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.critical_curve_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.critical_curve_derivative_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.critical_curve_grid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.step_at_budget_index' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.step_after_budget_index' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.six_effective_increment_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.six_effective_anchor_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.six_boundary_positive_from_effective_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryEffectiveRadial.six_effective_absolute_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryEffectiveRadial.third_odd_residual_pos_via_effective_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Effective budget audit algebra: 17 public roots; 19444 type/body dependencies; standard axioms only; finite canonical positivity forbidden; opaque bodies traversed
+Effective budget audit source: 47 public roots; 57727 type/body dependencies; standard axioms only; finite canonical positivity forbidden; opaque bodies traversed
+Effective budget audit certificate: 11 public roots; 58935 type/body dependencies; standard axioms only; finite canonical positivity forbidden; opaque bodies traversed
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 24.72
+	System time (seconds): 9.13
+	Percent of CPU this job got: 111%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:30.30
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8330188
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 10
+	Minor (reclaiming a frame) page faults: 369426
+	Voluntary context switches: 16593
+	Involuntary context switches: 336
+	Swaps: 0
+	File system inputs: 1648
+	File system outputs: 1016
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

@@ -1,0 +1,51 @@
+'CarryNativeBinomial.inverse_binomial_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNativeBinomial.binomialMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNativeBinomial.signedBinomialMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNativeBinomial.signed_binomial_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNativeBinomial.binomial_signed_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNativeBinomial.binomial_stencil_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNativeBinomial.newtonCoordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNativeBinomial.native_phase_self_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNativeBinomial.newton_input_term' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNativeBinomial.newton_input_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNativeBinomial.sourceNewtonCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNativeBinomial.newton_coordinates_of_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNativeBinomial.newton_coordinates_prefix_coherent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNativeBinomial.source_newton_above_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNativeBinomial.newton_coordinates_above_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNativeBinomial.physical_source_newton_all_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNativeBinomial.native_synthesis_prefix_coherent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNativeBinomial.physical_pair_newton_all_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNativeBinomial.newton_coordinates_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNativeBinomial.four_coordinates_regression' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNativeBinomial.critical_coordinates_regression' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNativeBinomial.source_explicit_energy_control_all_order' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Actual finite sign roots used: []
+Native explicit binomial all-finite-order transport construction: 21 public roots; 50326 type/body dependencies; standard axioms only; moment readout forbidden=true; finite positivity/coercivity roots forbidden globally; scalar-asymptotic shortcuts forbidden
+Actual finite sign roots used: []
+Native explicit binomial all-finite-order transport transported_control: 1 public roots; 62093 type/body dependencies; standard axioms only; moment readout forbidden=false; finite positivity/coercivity roots forbidden globally; scalar-asymptotic shortcuts forbidden
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 19.77
+	System time (seconds): 5.65
+	Percent of CPU this job got: 101%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:25.03
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8496132
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 6
+	Minor (reclaiming a frame) page faults: 344749
+	Voluntary context switches: 7022
+	Involuntary context switches: 262
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 1104
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

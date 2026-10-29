@@ -1,0 +1,92 @@
+{
+  "modules": {
+    "CriticalBoundaryTransport": [
+      "CarryCriticalComplete.sourceBoundary",
+      "CarryCriticalComplete.criticalBoundary",
+      "CarryCriticalComplete.defectBoundary",
+      "CarryCriticalComplete.physical_values_sub",
+      "CarryCriticalComplete.source_boundary_sub",
+      "CarryCriticalComplete.physical_values_smul",
+      "CarryCriticalComplete.source_boundary_smul",
+      "CarryCriticalComplete.critical_boundary_split",
+      "CarryCriticalComplete.critical_four_support",
+      "CarryCriticalComplete.defect_coefficient_formula",
+      "CarryCriticalComplete.critical_coefficient_formula",
+      "CarryCriticalComplete.criticalTemplate",
+      "CarryCriticalComplete.defectTemplate",
+      "CarryCriticalComplete.critical_boundary_exact",
+      "CarryCriticalComplete.defect_boundary_exact",
+      "CarryCriticalComplete.boundary_eventually_exact",
+      "CarryCriticalComplete.critical_boundary_tendsto",
+      "CarryCriticalComplete.defect_boundary_tendsto_zero",
+      "CarryCriticalComplete.critical_template_norm_sq",
+      "CarryCriticalComplete.critical_boundary_uniform_lower"
+    ],
+    "FourSourcePathLimit": [
+      "CarryCriticalComplete.physical_boundary_regularized",
+      "CarryCriticalComplete.four_source_path_energy_tendsto"
+    ],
+    "DefectUniformControl": [
+      "CarryCriticalComplete.regular_imaginary_pair_exact",
+      "CarryCriticalComplete.critical_input_imaginary",
+      "CarryCriticalComplete.critical_split_uniform",
+      "CarryCriticalComplete.defect_input_scale",
+      "CarryCriticalComplete.defect_pair_factor",
+      "CarryCriticalComplete.defect_energy_tendsto_zero",
+      "CarryCriticalComplete.defect_pair_re_factor",
+      "CarryCriticalComplete.defectRateTemplate",
+      "CarryCriticalComplete.defect_scaled_boundary_tendsto",
+      "CarryCriticalComplete.defect_scaled_energy_limit",
+      "CarryCriticalComplete.defect_uniform_quadratic_rate",
+      "CarryCriticalComplete.defect_uniform_relative_small",
+      "CarryCriticalComplete.critical_principal_uniform_close"
+    ],
+    "CriticalCompleteMargin": [
+      "CarryCriticalComplete.critical_uniform_physical_margin",
+      "CarryCriticalComplete.critical_native_energy_limit"
+    ]
+  },
+  "groups": {
+    "construction": [
+      "CarryCriticalComplete.sourceBoundary",
+      "CarryCriticalComplete.criticalBoundary",
+      "CarryCriticalComplete.defectBoundary",
+      "CarryCriticalComplete.physical_values_sub",
+      "CarryCriticalComplete.source_boundary_sub",
+      "CarryCriticalComplete.physical_values_smul",
+      "CarryCriticalComplete.source_boundary_smul",
+      "CarryCriticalComplete.critical_boundary_split",
+      "CarryCriticalComplete.critical_four_support",
+      "CarryCriticalComplete.defect_coefficient_formula",
+      "CarryCriticalComplete.critical_coefficient_formula",
+      "CarryCriticalComplete.criticalTemplate",
+      "CarryCriticalComplete.defectTemplate",
+      "CarryCriticalComplete.critical_boundary_exact",
+      "CarryCriticalComplete.defect_boundary_exact",
+      "CarryCriticalComplete.boundary_eventually_exact",
+      "CarryCriticalComplete.critical_boundary_tendsto",
+      "CarryCriticalComplete.defect_boundary_tendsto_zero",
+      "CarryCriticalComplete.critical_template_norm_sq",
+      "CarryCriticalComplete.critical_boundary_uniform_lower",
+      "CarryCriticalComplete.physical_boundary_regularized",
+      "CarryCriticalComplete.four_source_path_energy_tendsto",
+      "CarryCriticalComplete.regular_imaginary_pair_exact",
+      "CarryCriticalComplete.critical_input_imaginary",
+      "CarryCriticalComplete.critical_split_uniform",
+      "CarryCriticalComplete.defect_input_scale",
+      "CarryCriticalComplete.defect_pair_factor",
+      "CarryCriticalComplete.defect_energy_tendsto_zero",
+      "CarryCriticalComplete.defect_pair_re_factor",
+      "CarryCriticalComplete.defectRateTemplate",
+      "CarryCriticalComplete.defect_scaled_boundary_tendsto",
+      "CarryCriticalComplete.defect_scaled_energy_limit",
+      "CarryCriticalComplete.defect_uniform_quadratic_rate",
+      "CarryCriticalComplete.defect_uniform_relative_small",
+      "CarryCriticalComplete.critical_principal_uniform_close",
+      "CarryCriticalComplete.critical_native_energy_limit"
+    ],
+    "finite_margin": [
+      "CarryCriticalComplete.critical_uniform_physical_margin"
+    ]
+  }
+}

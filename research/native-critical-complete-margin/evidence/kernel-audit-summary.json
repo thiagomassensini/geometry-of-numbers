@@ -1,0 +1,22 @@
+{
+  "PASS": true,
+  "public_roots": 37,
+  "theorems": 31,
+  "definitions": 6,
+  "construction_roots": 36,
+  "construction_dependencies": 62530,
+  "finite_margin_roots": 1,
+  "finite_margin_dependencies": 67204,
+  "theorem_and_opaque_bodies_traversed": true,
+  "canonical_moments_forbidden_in_all_groups": true,
+  "old_moment_based_defect_limits_forbidden": true,
+  "seven_source_sign_certificates_forbidden": true,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "auditor_sha256": "7dad10bcad8851b783e30623aa3eeec7e810695c1165793ddea5d743f1a69a85",
+  "audit_source_sha256": "43eab2e139047c0307e4a2e4733bdb491abf3633099e46a7eddad017522a3e44",
+  "audit_log_sha256": "af08d2ae98b1b75ba4bfe97ec453dbd8d5872e972813e4551ba36d596df16953"
+}

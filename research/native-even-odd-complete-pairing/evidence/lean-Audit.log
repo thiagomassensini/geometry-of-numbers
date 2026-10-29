@@ -1,0 +1,68 @@
+'CarryMixedParity.rotatedCharacteristic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.rotated_characteristic_reflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.rotated_derivative_reflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.response_rotated_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.response_reflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.response_real_ray' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.response_samples_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.static_stencil_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.even_coefficients_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.odd_coefficients_imaginary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.kernel_smul_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.kernel_smul_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.kernel_double_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.kernel_real_imaginary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.kernel_imaginary_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.signedPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.signed_mean_contrast' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.source_mean_and_contrast' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.contrast_mean_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.complete_complex_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.mixedPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.mixed_pair_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.mixed_pair_conjugate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.mixed_pair_real_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.mixed_pair_green_recomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.native_source_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.signed_form_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.full_energy_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.jointJetSource' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.joint_source_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.joint_energy_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.joint_energy_correction_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.joint_source_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.joint_green_recomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.joint_green_correction_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.joint_norm_difference_correction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.firstMixedPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.first_mixed_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.firstMixedError' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.first_mixed_error_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.first_mixed_scaled_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.first_mixed_scaled_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMixedParity.complex_orthogonality_would_force_h1_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+Complete even-odd pairing spatial: 11 public roots; 5077 type/body dependencies; standard axioms only; canonical moments and characteristic forbidden=true
+Complete even-odd pairing provenance: 32 public roots; 5780 type/body dependencies; standard axioms only; canonical moments and characteristic forbidden=false
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 8.33
+	System time (seconds): 5.36
+	Percent of CPU this job got: 111%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.30
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8377152
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 292923
+	Voluntary context switches: 8931
+	Involuntary context switches: 141
+	Swaps: 0
+	File system inputs: 1152
+	File system outputs: 704
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

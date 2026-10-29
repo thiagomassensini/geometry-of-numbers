@@ -1,0 +1,213 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-tfvd-cancellation/research/native-critical-tfvd-cancellation",
+      "exit_code": 0,
+      "seconds": 0.639,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-tfvd-cancellation/research/native-critical-tfvd-cancellation",
+      "exit_code": 0,
+      "seconds": 171.267,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-tfvd-cancellation/research/native-critical-tfvd-cancellation",
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.674,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "bed0e12538480a284771d0146339df3186523a35f1ebb6984e6fd567b7c88021",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-ResponseFlux",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "ResponseFlux"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-tfvd-cancellation/research/native-critical-tfvd-cancellation",
+      "exit_code": 0,
+      "seconds": 12.956,
+      "log": "evidence/lean-ResponseFlux.log"
+    },
+    {
+      "label": "lean-CriticalVectors",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CriticalVectors"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-tfvd-cancellation/research/native-critical-tfvd-cancellation",
+      "exit_code": 0,
+      "seconds": 14.156,
+      "log": "evidence/lean-CriticalVectors.log"
+    },
+    {
+      "label": "lean-ResponseTaylor",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "ResponseTaylor"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-tfvd-cancellation/research/native-critical-tfvd-cancellation",
+      "exit_code": 0,
+      "seconds": 10.174,
+      "log": "evidence/lean-ResponseTaylor.log"
+    },
+    {
+      "label": "lean-PhysicalKernels",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PhysicalKernels"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-tfvd-cancellation/research/native-critical-tfvd-cancellation",
+      "exit_code": 0,
+      "seconds": 16.926,
+      "log": "evidence/lean-PhysicalKernels.log"
+    },
+    {
+      "label": "lean-SectorExpansion",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SectorExpansion"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-tfvd-cancellation/research/native-critical-tfvd-cancellation",
+      "exit_code": 0,
+      "seconds": 11.618,
+      "log": "evidence/lean-SectorExpansion.log"
+    },
+    {
+      "label": "lean-Cancellation",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Cancellation"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-tfvd-cancellation/research/native-critical-tfvd-cancellation",
+      "exit_code": 0,
+      "seconds": 12.274,
+      "log": "evidence/lean-Cancellation.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-tfvd-cancellation/research/native-critical-tfvd-cancellation",
+      "exit_code": 0,
+      "seconds": 11.193,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-tfvd-cancellation",
+      "exit_code": 0,
+      "seconds": 8.017,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-tfvd-cancellation",
+      "exit_code": 0,
+      "seconds": 7.181,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-tfvd-cancellation",
+      "exit_code": 0,
+      "seconds": 10.308,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-tfvd-cancellation",
+      "exit_code": 0,
+      "seconds": 45.648,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "35a1035eee70ebb2961b689a71b6d72ff46a41b3",
+        "--",
+        ".",
+        ":(exclude)research/native-critical-tfvd-cancellation/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-tfvd-cancellation",
+      "exit_code": 0,
+      "seconds": 0.21,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-tfvd-cancellation",
+      "exit_code": 0,
+      "seconds": 0.206,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}

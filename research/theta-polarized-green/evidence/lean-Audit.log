@@ -1,0 +1,75 @@
+'CarryThetaPolarized.green_product_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.green_flux_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.green_product_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.thetaBilinearPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.thetaBilinearPolynomial_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.thetaBilinearPolynomial_center_traces' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.native_bilinear_eq_green_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.thetaInputPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.thetaInputPolynomial_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.moment_top_coefficient_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.thetaInputPolynomial_coeff_last' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.thetaInputPolynomial_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.thetaInputPolynomial_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.greenPolynomial_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.greenPolynomial_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.thetaGreenInput_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.moment_zero_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.moment_one_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.moment_two_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.thetaDensityDeterminant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.thetaDensityDeterminant_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.thetaDensityDeterminant_coeff_eight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.thetaDensityDeterminant_coeff_eight_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.thetaDensityDeterminant_natDegree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.thetaDensityDeterminant_tendsto_atBot' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.thetaDensityDeterminant_eventually_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.thetaDensityDeterminant_not_ae_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.no_pointwise_theta_density_gram' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.no_ae_weighted_theta_density_gram' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.even_density_diagonals_pos_but_determinant_neg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryThetaPolarized.momentPolynomial_center_traces' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.thetaProductResidual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.thetaProductResidual_center_traces' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.thetaProductResidual_green_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.canonical_pairing_eq_theta_product_add_green_residual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryThetaPolarized.theta_polynomial_square_integral_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.thetaProductResidual_flux_zero_at_center' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryThetaPolarized.theta_first_polynomial_square_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.xi_fourth_moment_lt_twice_mass_second' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryThetaPolarized.theta_first_polynomial_square_integral_lt_native' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryThetaPolarized.theta_product_residual_zero_zero_integral_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Theta transport audit: 41 public roots; 5405 type/body dependencies; standard axioms only; canonical-sign consumers absent
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 6.41
+	System time (seconds): 4.15
+	Percent of CPU this job got: 112%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:09.37
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8352164
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1
+	Minor (reclaiming a frame) page faults: 262440
+	Voluntary context switches: 8502
+	Involuntary context switches: 108
+	Swaps: 0
+	File system inputs: 336
+	File system outputs: 584
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

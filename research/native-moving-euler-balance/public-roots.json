@@ -1,0 +1,48 @@
+{
+  "modules": {
+    "UniformMovingError": [
+      "CarryMovingEulerBalance.uniform_quadratic_error_tendsto_zero",
+      "CarryMovingEulerBalance.physical_balance_error_tendsto_zero"
+    ],
+    "MovingBalanceLimit": [
+      "CarryMovingEulerBalance.physical_balance_tendsto",
+      "CarryMovingEulerBalance.physical_channel_balance_tendsto"
+    ],
+    "PolarizedBoundaryReadout": [
+      "CarryMovingEulerBalance.originalBoundaryPair",
+      "CarryMovingEulerBalance.original_boundary_pair_continuous",
+      "CarryMovingEulerBalance.original_boundary_pair_diagonal",
+      "CarryMovingEulerBalance.original_boundary_pair_euler_zero",
+      "CarryMovingEulerBalance.boundary_energy_euler_zero",
+      "CarryMovingEulerBalance.physical_euler_channel_balance_tendsto"
+    ],
+    "MovingPolarizedPair": [
+      "CarryMovingEulerBalance.native_moving_pairing_tendsto",
+      "CarryMovingEulerBalance.physical_moving_pairing_tendsto",
+      "CarryMovingEulerBalance.physical_green_pairing_tendsto",
+      "CarryMovingEulerBalance.physical_green_pairing_euler_tendsto"
+    ]
+  },
+  "groups": {
+    "algebra": [
+      "CarryMovingEulerBalance.uniform_quadratic_error_tendsto_zero"
+    ],
+    "energy": [
+      "CarryMovingEulerBalance.physical_balance_error_tendsto_zero",
+      "CarryMovingEulerBalance.physical_balance_tendsto",
+      "CarryMovingEulerBalance.physical_channel_balance_tendsto",
+      "CarryMovingEulerBalance.physical_euler_channel_balance_tendsto"
+    ],
+    "polarized": [
+      "CarryMovingEulerBalance.originalBoundaryPair",
+      "CarryMovingEulerBalance.original_boundary_pair_continuous",
+      "CarryMovingEulerBalance.original_boundary_pair_diagonal",
+      "CarryMovingEulerBalance.original_boundary_pair_euler_zero",
+      "CarryMovingEulerBalance.boundary_energy_euler_zero",
+      "CarryMovingEulerBalance.native_moving_pairing_tendsto",
+      "CarryMovingEulerBalance.physical_moving_pairing_tendsto",
+      "CarryMovingEulerBalance.physical_green_pairing_tendsto",
+      "CarryMovingEulerBalance.physical_green_pairing_euler_tendsto"
+    ]
+  }
+}

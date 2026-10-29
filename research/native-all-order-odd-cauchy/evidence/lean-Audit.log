@@ -1,0 +1,65 @@
+'CarryOddCauchy.complementRow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.complement_vector_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.complement_row_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.complement_row_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.factorial_row_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.factorial_row_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.complement_row_factorial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.nativeOddBeta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.odd_exponent_sign' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.odd_stencil_sign' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.native_odd_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.native_odd_vector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.native_odd_cauchy_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.native_odd_atoms' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.native_odd_cauchy_reverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.oddFilterMagnitude' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.oddFilterCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.oddFilter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.weighted_native_odd_vector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.native_odd_kernel_filter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.odd_filter_coefficient_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.odd_filter_magnitude_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.odd_filter_even_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.odd_filter_odd_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.odd_filter_outside_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.native_odd_kernel_forward_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.native_odd_ordered_filters' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.completed_odd_part_calibration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.completed_odd_source_calibration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.native_odd_nine_field_reconstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.native_odd_nine_fields_filter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.normalized_odd_filter_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.radial_odd_signed_filter_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.completed_odd_green_filter_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.finite_odd_signed_filters_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.finite_odd_green_filters_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.completed_odd_filter_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.completed_odd_green_filter_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.native_odd_row_regressions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddCauchy.odd_filter_regressions' depends on axioms: [propext, Classical.choice, Quot.sound]
+All-order original odd Cauchy filter construction: 38 public roots; 5561 type/body dependencies; standard axioms only; canonical moments forbidden=true; preexisting moment-sign and scalar-asymptotic shortcuts forbidden
+All-order original odd Cauchy filter provenance: 2 public roots; 5596 type/body dependencies; standard axioms only; canonical moments forbidden=false; preexisting moment-sign and scalar-asymptotic shortcuts forbidden
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 8.89
+	System time (seconds): 5.71
+	Percent of CPU this job got: 108%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:13.48
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8390264
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 300920
+	Voluntary context switches: 10373
+	Involuntary context switches: 153
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 816
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

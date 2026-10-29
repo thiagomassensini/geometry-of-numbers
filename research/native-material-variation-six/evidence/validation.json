@@ -1,0 +1,265 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-material-variation-six/research/native-material-variation-six",
+      "exit_code": 0,
+      "seconds": 0.737,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "verified-cache",
+      "command": [
+        "python3",
+        "restore_verified_cache.py",
+        "--verify-only"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-material-variation-six/research/native-material-variation-six",
+      "exit_code": 0,
+      "seconds": 2.97,
+      "log": "evidence/verified-cache.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-material-variation-six/research/native-material-variation-six",
+      "exit_code": 0,
+      "seconds": 1.564,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "mechanism-probe",
+      "command": [
+        "python3",
+        "mechanism_probe.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-material-variation-six/research/native-material-variation-six",
+      "exit_code": 0,
+      "seconds": 0.54,
+      "log": "evidence/mechanism-probe.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-material-variation-six/research/native-material-variation-six",
+      "exit_code": 0,
+      "seconds": 0.041,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnSeventhSourceJet",
+        "CarrySelfAdjointOperator.CompletedNativeChiralPickFactorization",
+        "CarrySelfAdjointOperator.CompletedGreenForwardDifferenceLimit",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnArbitraryOrder",
+        "CarrySelfAdjointOperator.CompletedNativeChiralEvenBoundaryEnergy",
+        "CarrySelfAdjointOperator.CompletedNativeChiralEvenBoundarySplit",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFiniteTransfer",
+        "CarrySelfAdjointOperator.NativePhysicalFiniteSewing",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFourSampleStorage",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnEnergyPort"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.596,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "c5f445178d5bcf1e18061b4939b5e92d6b53c46e31e8187a789d32cc9b9501be",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-MaterialVariation",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MaterialVariation"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-material-variation-six/research/native-material-variation-six",
+      "exit_code": 0,
+      "seconds": 15.711,
+      "log": "evidence/lean-MaterialVariation.log"
+    },
+    {
+      "label": "lean-PhysicalMaterialVariation",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PhysicalMaterialVariation"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-material-variation-six/research/native-material-variation-six",
+      "exit_code": 0,
+      "seconds": 15.092,
+      "log": "evidence/lean-PhysicalMaterialVariation.log"
+    },
+    {
+      "label": "lean-JetEulerVariation",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "JetEulerVariation"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-material-variation-six/research/native-material-variation-six",
+      "exit_code": 0,
+      "seconds": 15.381,
+      "log": "evidence/lean-JetEulerVariation.log"
+    },
+    {
+      "label": "lean-SixSource",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SixSource"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-material-variation-six/research/native-material-variation-six",
+      "exit_code": 0,
+      "seconds": 24.069,
+      "log": "evidence/lean-SixSource.log"
+    },
+    {
+      "label": "lean-SixTaylor",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SixTaylor"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-material-variation-six/research/native-material-variation-six",
+      "exit_code": 0,
+      "seconds": 33.521,
+      "log": "evidence/lean-SixTaylor.log"
+    },
+    {
+      "label": "lean-SixSign",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SixSign"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-material-variation-six/research/native-material-variation-six",
+      "exit_code": 0,
+      "seconds": 16.075,
+      "log": "evidence/lean-SixSign.log"
+    },
+    {
+      "label": "lean-SixEnergyTransport",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SixEnergyTransport"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-material-variation-six/research/native-material-variation-six",
+      "exit_code": 0,
+      "seconds": 16.629,
+      "log": "evidence/lean-SixEnergyTransport.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-material-variation-six/research/native-material-variation-six",
+      "exit_code": 0,
+      "seconds": 31.261,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-material-variation-six",
+      "exit_code": 0,
+      "seconds": 8.621,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-material-variation-six",
+      "exit_code": 0,
+      "seconds": 6.949,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-material-variation-six",
+      "exit_code": 0,
+      "seconds": 10.195,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-material-variation-six",
+      "exit_code": 0,
+      "seconds": 49.382,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "914bb03ba4d05a577b3c57406821be637af119bb",
+        "--",
+        ".",
+        ":(exclude)research/native-material-variation-six/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-material-variation-six",
+      "exit_code": 0,
+      "seconds": 0.012,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-material-variation-six",
+      "exit_code": 0,
+      "seconds": 0.007,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}

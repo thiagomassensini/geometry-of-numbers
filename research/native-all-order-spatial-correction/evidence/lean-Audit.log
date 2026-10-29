@@ -1,0 +1,61 @@
+'CarrySpatialCorrection.differencePower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.choose_difference_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.choose_difference_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.power_newton_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.difference_power_stirling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.difference_power_below' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.difference_power_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.difference_power_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.slope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.curvature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.difference_power_one_above' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.stirling_two_above' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.difference_power_two_above' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.odd_divided_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.dividedCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.divided_below' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.divided_leading' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.spatialCorrection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.divided_first_correction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.spatial_correction_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.nativeEvenProfile' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.weight_finite_stencil' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.raw_kernel_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.static_kernel_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.static_odd_divided' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.native_odd_divided' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.native_odd_stirling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.native_below' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.native_first_correction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.native_leading' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.native_profile_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.native_profile_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.native_profile_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.radial_even_calibration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.quartic_weight11_regression' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.correction_table' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySpatialCorrection.correction_table_negative_direction' depends on axioms: [propext, Classical.choice, Quot.sound]
+All-order spatial correction spatial: 37 public roots; 5109 type/body dependencies; standard axioms only; canonical moments and characteristic forbidden=true
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 7.94
+	System time (seconds): 5.23
+	Percent of CPU this job got: 107%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.24
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8368504
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 291863
+	Voluntary context switches: 7302
+	Involuntary context switches: 146
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 696
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

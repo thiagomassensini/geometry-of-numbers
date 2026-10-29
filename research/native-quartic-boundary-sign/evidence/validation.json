@@ -1,0 +1,177 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-boundary-sign/research/native-quartic-boundary-sign",
+      "exit_code": 0,
+      "seconds": 0.616,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-boundary-sign/research/native-quartic-boundary-sign",
+      "exit_code": 0,
+      "seconds": 296.417,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-boundary-sign/research/native-quartic-boundary-sign",
+      "exit_code": 0,
+      "seconds": 0.037,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.418,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "486c0b65eebdb0bb3c87bc422bcea738274068fa7cdde4ce1f3392f10b0e9d4a",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-BoundaryPolynomial",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "BoundaryPolynomial"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-boundary-sign/research/native-quartic-boundary-sign",
+      "exit_code": 0,
+      "seconds": 9.666,
+      "log": "evidence/lean-BoundaryPolynomial.log"
+    },
+    {
+      "label": "lean-BoundaryFactor",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "BoundaryFactor"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-boundary-sign/research/native-quartic-boundary-sign",
+      "exit_code": 0,
+      "seconds": 13.104,
+      "log": "evidence/lean-BoundaryFactor.log"
+    },
+    {
+      "label": "lean-QuarticCoefficient",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "QuarticCoefficient"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-boundary-sign/research/native-quartic-boundary-sign",
+      "exit_code": 0,
+      "seconds": 15.354,
+      "log": "evidence/lean-QuarticCoefficient.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-boundary-sign/research/native-quartic-boundary-sign",
+      "exit_code": 0,
+      "seconds": 10.378,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-boundary-sign",
+      "exit_code": 0,
+      "seconds": 7.501,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-boundary-sign",
+      "exit_code": 0,
+      "seconds": 6.861,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-boundary-sign",
+      "exit_code": 0,
+      "seconds": 9.854,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-boundary-sign",
+      "exit_code": 0,
+      "seconds": 45.21,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "c585b8267dcd31eb810256ac94212403f1e0fd7a",
+        "--",
+        ".",
+        ":(exclude)research/native-quartic-boundary-sign/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-boundary-sign",
+      "exit_code": 0,
+      "seconds": 0.404,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-boundary-sign",
+      "exit_code": 0,
+      "seconds": 0.226,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}

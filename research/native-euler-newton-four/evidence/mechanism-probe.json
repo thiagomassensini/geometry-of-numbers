@@ -1,0 +1,13 @@
+{
+  "PASS": true,
+  "exact_gaussian_fraction_checks": 161,
+  "canonical_moments_used": false,
+  "zero_or_height_inputs": false,
+  "sqrt2_factored_out_exactly": true,
+  "both_complex_quadratures": true,
+  "both_inverse_directions_checked": true,
+  "all_16_cauchy_crossings_retained": true,
+  "wrong_global_phase_detected": true,
+  "amplitudes_and_return_samples_scope": "generic algebra identity tests only; no native function evaluation or sign inference",
+  "native_uniform_energy_control": "reused by exact vector/coefficient identities in Lean, not numerically presumed"
+}

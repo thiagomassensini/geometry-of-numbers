@@ -1,0 +1,190 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-tfvd-numerator/research/native-cubic-tfvd-numerator",
+      "exit_code": 0,
+      "seconds": 0.632,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-tfvd-numerator/research/native-cubic-tfvd-numerator",
+      "exit_code": 0,
+      "seconds": 338.645,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-tfvd-numerator/research/native-cubic-tfvd-numerator",
+      "exit_code": 0,
+      "seconds": 0.039,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.28,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "b31d688989df10f31309f27666271f5cca17ce8fc9f603de6caa728f8551f761",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-CubicNumerator",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CubicNumerator"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-tfvd-numerator/research/native-cubic-tfvd-numerator",
+      "exit_code": 0,
+      "seconds": 12.229,
+      "log": "evidence/lean-CubicNumerator.log"
+    },
+    {
+      "label": "lean-CubicGreen",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CubicGreen"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-tfvd-numerator/research/native-cubic-tfvd-numerator",
+      "exit_code": 0,
+      "seconds": 12.213,
+      "log": "evidence/lean-CubicGreen.log"
+    },
+    {
+      "label": "lean-CriticalFamily",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CriticalFamily"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-tfvd-numerator/research/native-cubic-tfvd-numerator",
+      "exit_code": 0,
+      "seconds": 20.432,
+      "log": "evidence/lean-CriticalFamily.log"
+    },
+    {
+      "label": "lean-QuadraticSign",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "QuadraticSign"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-tfvd-numerator/research/native-cubic-tfvd-numerator",
+      "exit_code": 0,
+      "seconds": 16.996,
+      "log": "evidence/lean-QuadraticSign.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-tfvd-numerator/research/native-cubic-tfvd-numerator",
+      "exit_code": 0,
+      "seconds": 10.929,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-tfvd-numerator",
+      "exit_code": 0,
+      "seconds": 7.55,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-tfvd-numerator",
+      "exit_code": 0,
+      "seconds": 6.671,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-tfvd-numerator",
+      "exit_code": 0,
+      "seconds": 9.631,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-tfvd-numerator",
+      "exit_code": 0,
+      "seconds": 46.439,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "ed761167d7dcb47949d510dd6d5a9cc97d27a75d",
+        "--",
+        ".",
+        ":(exclude)research/native-cubic-tfvd-numerator/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-tfvd-numerator",
+      "exit_code": 0,
+      "seconds": 0.008,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-tfvd-numerator",
+      "exit_code": 0,
+      "seconds": 0.007,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}

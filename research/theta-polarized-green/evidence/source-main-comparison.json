@@ -1,0 +1,47 @@
+{
+  "CarrySelfAdjointOperator/NativeSourceThetaMomentPolynomials.lean": {
+    "checkout_sha256": "fd06a15ef76aef0777bb0d4d115df145aa2fd574e976485c9b9354742d494a59",
+    "origin_main_sha256": "fd06a15ef76aef0777bb0d4d115df145aa2fd574e976485c9b9354742d494a59",
+    "equal": true
+  },
+  "CarrySelfAdjointOperator/NativeSourceSchurThetaIntegral.lean": {
+    "checkout_sha256": "1661dc1f356f5aa8e9fd134ef322e28c4ce0b0fa5acec2cc22c9e8ba33823a86",
+    "origin_main_sha256": "1661dc1f356f5aa8e9fd134ef322e28c4ce0b0fa5acec2cc22c9e8ba33823a86",
+    "equal": true
+  },
+  "CarrySelfAdjointOperator/NativeSourceThetaGreenTransport.lean": {
+    "checkout_sha256": "60e91af322bb4f43a06504e806106bd38cafb0dee26e898d6c541b0d3d82217b",
+    "origin_main_sha256": "60e91af322bb4f43a06504e806106bd38cafb0dee26e898d6c541b0d3d82217b",
+    "equal": true
+  },
+  "CarrySelfAdjointOperator/CompletedNativeXiCosineTransform.lean": {
+    "checkout_sha256": "43da985ffe64ebabf37654db0bc9060b05811b4cba84911d349b76b8bcd73dbd",
+    "origin_main_sha256": "43da985ffe64ebabf37654db0bc9060b05811b4cba84911d349b76b8bcd73dbd",
+    "equal": true
+  },
+  "CarrySelfAdjointOperator/CompletedNativePolarizedTfvdGreenMomentKernel.lean": {
+    "checkout_sha256": "cb5b180b5785fa87107dbac10fe65b9f3ee8a7a03b8ef7b4ffde4a6d20d7a59a",
+    "origin_main_sha256": "cb5b180b5785fa87107dbac10fe65b9f3ee8a7a03b8ef7b4ffde4a6d20d7a59a",
+    "equal": true
+  },
+  "CarrySelfAdjointOperator/CompletedTfvdGreenAllOrderIntertwining.lean": {
+    "checkout_sha256": "7cef344db79abeed2dce5327c04c03b64911bd04b25f3ea637a583875debe223",
+    "origin_main_sha256": "7cef344db79abeed2dce5327c04c03b64911bd04b25f3ea637a583875debe223",
+    "equal": true
+  },
+  "CarrySelfAdjointOperator/CompletedNativeCausalGreenProvenance.lean": {
+    "checkout_sha256": "a69c813550714d4ce840f90cfa9ddbd6eb7d02156a8bfc5d107eb834e745093d",
+    "origin_main_sha256": "a69c813550714d4ce840f90cfa9ddbd6eb7d02156a8bfc5d107eb834e745093d",
+    "equal": true
+  },
+  "CarrySelfAdjointOperator/CompletedNativeTfvdGreenMomentGramBridge.lean": {
+    "checkout_sha256": "ef6d18ff99fd4df125cf91a3971d019caf5c0354cf7bac9def57c8f4745d3a2d",
+    "origin_main_sha256": "ef6d18ff99fd4df125cf91a3971d019caf5c0354cf7bac9def57c8f4745d3a2d",
+    "equal": true
+  },
+  "CarrySelfAdjointOperator/CompletedNativeTfvdWronskianMoments.lean": {
+    "checkout_sha256": "3dd797895e8da20c202f3982fa89c0a64cd453273dd2374376493c6225a55567",
+    "origin_main_sha256": "3dd797895e8da20c202f3982fa89c0a64cd453273dd2374376493c6225a55567",
+    "equal": true
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "created_utc": "2026-10-25T08:51:41.542030+00:00",
+  "geometry_main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "geometry_base": "d17aba9dfd0aa53a7b677cbb3da0e1e6213e0a54",
+  "geometry_branch": "agent/source-dependent-prime-readouts",
+  "momentos_status_preserved": "M AUDITORIA_CORRECTED_MOMENTS_VS_CANONICAL_RECURRENCE.md",
+  "momentos_modified_audit_sha256": "b8b5e643abe941a1ecebcce9f39e47fca39da766aad530aec2886258045b1c6b",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_origin_main": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "operator_status_preserved": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "operator_modules_sha256": {
+    "CarrySelfAdjointOperator/NativeRealComplementTransport.lean": "ee9a4a2f70a0d84c6cdcfaf7d8be2838e25bb3435afdb9f79f491d21e3f11f21",
+    "CarrySelfAdjointOperator/NativePrimeCarryKernelCalibration.lean": "d4a822870641831f11ec57332deee8b5c029c1988acc92f82e7aa6449a338b39",
+    "CarrySelfAdjointOperator/CompletedNativeCentralChiralQuotientCurvature.lean": "5b5763e4784177a52e14c50802ba622ed8ed79972505379bd6acd03be8bc349b",
+    "CarrySelfAdjointOperator/CompletedNativeRadialChiralMultiplier.lean": "1ae47a75e6ec10f1f2be5b2133247ab2de92f2fe5be9996ca921c0611b67fa13",
+    "CarrySelfAdjointOperator/CompletedNativePrimosProjectiveMassCrosswalkAudit.lean": "ad54e22c5159f58d5adfbee95cefeb8d45487ecf6e72c1b1f45b4c7c1aa6a700",
+    "CarrySelfAdjointOperator/RealQuadratureDomainTransport.lean": "bf87bbf180cece4f470852999c51f2df4e55912528b97d91c440270cac6d8853",
+    "CarrySelfAdjointOperator/NativeRealFirstQuadratureNaturality.lean": "2954374e411b750d61c3bbb832a85e39835ea7ba71166a43ba3ba123880bc768",
+    "CarrySelfAdjointOperator/NativeCauchyLaguerreSources.lean": "2a74b670544cadc5e08ef5f6df8064fd19a57d61eaba822dea62e5b2dc22f3b7"
+  },
+  "protected_files_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "checks": [
+    {
+      "label": "upstream-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-source-dependent-prime-readouts/research/source-dependent-prime-readouts",
+      "exit_code": 0,
+      "seconds": 0.929,
+      "log": "evidence/upstream-provenance.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-source-dependent-prime-readouts/research/source-dependent-prime-readouts",
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativeRealComplementTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralChiralQuotientCurvature",
+        "CarrySelfAdjointOperator.CompletedNativeRadialChiralMultiplier"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.591,
+      "log": "evidence/operator-source-build.log"
+    },
+    {
+      "label": "lean-PrimeProjection",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PrimeProjection"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-source-dependent-prime-readouts/research/source-dependent-prime-readouts",
+      "exit_code": 0,
+      "seconds": 8.737,
+      "log": "evidence/lean-PrimeProjection.log"
+    },
+    {
+      "label": "lean-PrimeAnalysis",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PrimeAnalysis"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-source-dependent-prime-readouts/research/source-dependent-prime-readouts",
+      "exit_code": 0,
+      "seconds": 14.176,
+      "log": "evidence/lean-PrimeAnalysis.log"
+    },
+    {
+      "label": "lean-PrimeCanaries",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PrimeCanaries"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-source-dependent-prime-readouts/research/source-dependent-prime-readouts",
+      "exit_code": 0,
+      "seconds": 10.847,
+      "log": "evidence/lean-PrimeCanaries.log"
+    },
+    {
+      "label": "lean-SignedReadoutSplit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SignedReadoutSplit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-source-dependent-prime-readouts/research/source-dependent-prime-readouts",
+      "exit_code": 0,
+      "seconds": 12.105,
+      "log": "evidence/lean-SignedReadoutSplit.log"
+    },
+    {
+      "label": "lean-PrimeReturnObstruction",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PrimeReturnObstruction"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-source-dependent-prime-readouts/research/source-dependent-prime-readouts",
+      "exit_code": 0,
+      "seconds": 10.844,
+      "log": "evidence/lean-PrimeReturnObstruction.log"
+    },
+    {
+      "label": "lean-MellinKernelDefect",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MellinKernelDefect"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-source-dependent-prime-readouts/research/source-dependent-prime-readouts",
+      "exit_code": 0,
+      "seconds": 10.57,
+      "log": "evidence/lean-MellinKernelDefect.log"
+    },
+    {
+      "label": "lean-MellinPrimeReadout",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MellinPrimeReadout"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-source-dependent-prime-readouts/research/source-dependent-prime-readouts",
+      "exit_code": 0,
+      "seconds": 12.553,
+      "log": "evidence/lean-MellinPrimeReadout.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-source-dependent-prime-readouts/research/source-dependent-prime-readouts",
+      "exit_code": 0,
+      "seconds": 10.338,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "saved-vm-campaign",
+      "command": [
+        "python3",
+        "audit_vm_campaign.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-source-dependent-prime-readouts/research/source-dependent-prime-readouts",
+      "exit_code": 0,
+      "seconds": 0.109,
+      "log": "evidence/saved-vm-campaign.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-source-dependent-prime-readouts",
+      "exit_code": 0,
+      "seconds": 8.024,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-source-dependent-prime-readouts",
+      "exit_code": 0,
+      "seconds": 7.464,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-source-dependent-prime-readouts",
+      "exit_code": 0,
+      "seconds": 10.197,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-source-dependent-prime-readouts",
+      "exit_code": 0,
+      "seconds": 48.505,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "d17aba9dfd0aa53a7b677cbb3da0e1e6213e0a54",
+        "--",
+        ".",
+        ":(exclude)research/source-dependent-prime-readouts/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-source-dependent-prime-readouts",
+      "exit_code": 0,
+      "seconds": 0.009,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-source-dependent-prime-readouts",
+      "exit_code": 0,
+      "seconds": 0.007,
+      "log": "evidence/diff-check.log"
+    }
+  ],
+  "new_sources_sha256": {
+    "Audit.lean": "2a441b4ae018d104184201087e8a0c76fe98b813e5e858d7f81351931a666533",
+    "MellinKernelDefect.lean": "141d1f9f987a226660e27b66a2dbf60d577ec6fa66f83d97c0eef940ca997e82",
+    "MellinPrimeReadout.lean": "986c379d4d4e1b681cc79627f9c4263b2446d1e581635336a898cc871605dc86",
+    "PrimeAnalysis.lean": "b3d999150390325f6e4298c74f4f221d635cb1106acdf20380ad8696b2f78007",
+    "PrimeCanaries.lean": "ba0644c2d15279e9f2d0bd5f8147fc8b54795affaacdf8c3d5b05721e57edd47",
+    "PrimeProjection.lean": "06ff2787d6c334ca90629737f1f2c19632533505331db812e919602955776e7c",
+    "PrimeReturnObstruction.lean": "21a8d654a2f8049c49be154583c18e99bf2766079f71b69b72364f73dd37a832",
+    "SignedReadoutSplit.lean": "4ab6b7cdf525524dc6f8769b709746460c74b11cdeba4e92549fcb322fcabd1e"
+  },
+  "trust_escape_scan": "PASS",
+  "operator_sources_and_preexisting_files": "PRESERVED"
+}

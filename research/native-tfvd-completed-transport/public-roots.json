@@ -1,0 +1,48 @@
+{
+  "ShiftTransport": [
+    "CarryNativeTfvd.vertical_shift_basis",
+    "CarryNativeTfvd.native_synthesis_shift",
+    "CarryNativeTfvd.vertical_shift_backward_trace",
+    "CarryNativeTfvd.native_backward_numerator",
+    "CarryNativeTfvd.vertical_numerator_two_traces"
+  ],
+  "PhysicalTfvd": [
+    "CarryNativeTfvd.synthesized_tfvd",
+    "CarryNativeTfvd.physical_numerator_two_traces",
+    "CarryNativeTfvd.physical_resolvent_commutes_advance",
+    "CarryNativeTfvd.physical_resolvent_solve",
+    "CarryNativeTfvd.physical_tfvd_reconstruction",
+    "CarryNativeTfvd.physical_boundary_return",
+    "CarryNativeTfvd.physical_green_on_bracket"
+  ],
+  "CoefficientPorts": [
+    "CarryNativeTfvd.coefficientQuadratures",
+    "CarryNativeTfvd.coefficient_quadratures_fst",
+    "CarryNativeTfvd.coefficient_quadratures_snd",
+    "CarryNativeTfvd.coefficient_tower_synthesis",
+    "CarryNativeTfvd.coefficient_real_bracket",
+    "CarryNativeTfvd.coefficient_imag_bracket",
+    "CarryNativeTfvd.physical_finite_reconstruction"
+  ],
+  "CompletionCommutator": [
+    "CarryNativeTfvd.coefficientWeight",
+    "CarryNativeTfvd.coefficient_weight_apply",
+    "CarryNativeTfvd.completionCommutator",
+    "CarryNativeTfvd.completion_commutator_zero",
+    "CarryNativeTfvd.completion_commutator_succ",
+    "CarryNativeTfvd.completion_bulk_split",
+    "CarryNativeTfvd.completion_commutator_constant",
+    "CarryNativeTfvd.completion_commutator_product",
+    "CarryNativeTfvd.completion_commutator_vanishes_iff"
+  ],
+  "CompletedSourceBridge": [
+    "CarryNativeTfvd.weighted_physical_reconstruction",
+    "CarryNativeTfvd.weighted_source_sum",
+    "CarryNativeTfvd.incidentWeight",
+    "CarryNativeTfvd.returnedWeight",
+    "CarryNativeTfvd.completed_source_weighted_identity",
+    "CarryNativeTfvd.completedSourceParts",
+    "CarryNativeTfvd.completed_source_three_parts",
+    "CarryNativeTfvd.completed_source_nine_pairings"
+  ]
+}

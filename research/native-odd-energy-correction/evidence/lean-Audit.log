@@ -1,0 +1,67 @@
+'CarryOddEnergy.nativeOddProfile' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.oddPairKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.shifted_power_complex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.divided_coefficient_native' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.divided_leading_native' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.divided_first_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.radial_odd_calibration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.odd_profile_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.odd_pair_static' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.odd_pair_divided' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.odd_pair_below' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.odd_pair_leading' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.odd_pair_correction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.odd_pair_taylor_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.odd_pair_taylor_cancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.odd_pair_response_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.odd_pair_remainder_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.normalizedOddPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.normalized_odd_pair_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.normalized_odd_pair_correction_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.finiteOddJetSource' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.finite_odd_source_profile' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.finite_odd_source_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.finite_odd_source_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.finite_odd_source_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.finite_odd_energy_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.finite_odd_green_recomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.oddCanonicalForm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.oddCanonicalCorrection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.finite_odd_energy_correction_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.finite_odd_green_correction_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.odd_profile_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.odd_profile_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.odd_coefficient_regression' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.odd_coefficient_minor_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.first_odd_correction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.cubicOddCoefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.odd_cubic_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.odd_cubic_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.odd_cubic_correction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.odd_cubic_correction_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddEnergy.finite_odd_norm_difference_correction' depends on axioms: [propext, Classical.choice, Quot.sound]
+All-order odd energy spatial: 21 public roots; 5106 type/body dependencies; standard axioms only; canonical moments and characteristic forbidden=true
+All-order odd energy provenance: 21 public roots; 5752 type/body dependencies; standard axioms only; canonical moments and characteristic forbidden=false
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 7.49
+	System time (seconds): 5.12
+	Percent of CPU this job got: 111%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:11.35
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8374876
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 285445
+	Voluntary context switches: 8683
+	Involuntary context switches: 126
+	Swaps: 0
+	File system inputs: 736
+	File system outputs: 704
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

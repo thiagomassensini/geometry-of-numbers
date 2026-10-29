@@ -1,0 +1,18 @@
+upstream-provenance: exit 0
+generate-audit: exit 0
+operator-source-build: exit 0
+lean-GreenPort: exit 0
+lean-ZeroResidual: exit 0
+lean-MixedEnergy: exit 0
+lean-IncrementLimit: exit 0
+lean-C2Compensation: exit 0
+lean-Audit: exit 0
+center-leg-context: exit 0
+finite-green-diagnostic: exit 0
+root-build: exit 0
+audit-foundation: exit 0
+audit-geometry: exit 0
+audit-analysis: exit 0
+base-preserved: exit 0
+diff-check: exit 0
+PASS: 17 commands; no trusted escapes; source preservation verified

@@ -1,0 +1,102 @@
+{
+  "modules": {
+    "OddProfiles": [
+      "CarryOddEnergy.nativeOddProfile",
+      "CarryOddEnergy.oddPairKernel",
+      "CarryOddEnergy.shifted_power_complex",
+      "CarryOddEnergy.divided_coefficient_native",
+      "CarryOddEnergy.divided_leading_native",
+      "CarryOddEnergy.divided_first_odd",
+      "CarryOddEnergy.radial_odd_calibration",
+      "CarryOddEnergy.odd_profile_support",
+      "CarryOddEnergy.odd_pair_static",
+      "CarryOddEnergy.odd_pair_divided",
+      "CarryOddEnergy.odd_pair_below",
+      "CarryOddEnergy.odd_pair_leading",
+      "CarryOddEnergy.odd_pair_correction"
+    ],
+    "OddPairExpansion": [
+      "CarryOddEnergy.odd_pair_taylor_sum",
+      "CarryOddEnergy.odd_pair_taylor_cancellation",
+      "CarryOddEnergy.odd_pair_response_expansion",
+      "CarryOddEnergy.odd_pair_remainder_continuous",
+      "CarryOddEnergy.normalizedOddPair",
+      "CarryOddEnergy.normalized_odd_pair_expansion",
+      "CarryOddEnergy.normalized_odd_pair_correction_tendsto"
+    ],
+    "OddFiniteEnergy": [
+      "CarryOddEnergy.finiteOddJetSource",
+      "CarryOddEnergy.finite_odd_source_profile",
+      "CarryOddEnergy.finite_odd_source_original",
+      "CarryOddEnergy.finite_odd_source_support",
+      "CarryOddEnergy.finite_odd_source_pairing",
+      "CarryOddEnergy.finite_odd_energy_pairing",
+      "CarryOddEnergy.finite_odd_green_recomposition",
+      "CarryOddEnergy.oddCanonicalForm",
+      "CarryOddEnergy.oddCanonicalCorrection",
+      "CarryOddEnergy.finite_odd_energy_correction_tendsto",
+      "CarryOddEnergy.finite_odd_green_correction_tendsto"
+    ],
+    "OddRegression": [
+      "CarryOddEnergy.odd_profile_zero",
+      "CarryOddEnergy.odd_profile_one",
+      "CarryOddEnergy.odd_coefficient_regression",
+      "CarryOddEnergy.odd_coefficient_minor_negative",
+      "CarryOddEnergy.first_odd_correction",
+      "CarryOddEnergy.cubicOddCoefficients",
+      "CarryOddEnergy.odd_cubic_source",
+      "CarryOddEnergy.odd_cubic_form",
+      "CarryOddEnergy.odd_cubic_correction",
+      "CarryOddEnergy.odd_cubic_correction_tendsto",
+      "CarryOddEnergy.finite_odd_norm_difference_correction"
+    ]
+  },
+  "groups": {
+    "spatial": [
+      "CarryOddEnergy.nativeOddProfile",
+      "CarryOddEnergy.oddPairKernel",
+      "CarryOddEnergy.shifted_power_complex",
+      "CarryOddEnergy.divided_coefficient_native",
+      "CarryOddEnergy.divided_leading_native",
+      "CarryOddEnergy.divided_first_odd",
+      "CarryOddEnergy.radial_odd_calibration",
+      "CarryOddEnergy.odd_profile_support",
+      "CarryOddEnergy.odd_pair_static",
+      "CarryOddEnergy.odd_pair_divided",
+      "CarryOddEnergy.odd_pair_below",
+      "CarryOddEnergy.odd_pair_leading",
+      "CarryOddEnergy.odd_pair_correction",
+      "CarryOddEnergy.finiteOddJetSource",
+      "CarryOddEnergy.finite_odd_source_profile",
+      "CarryOddEnergy.finite_odd_source_support",
+      "CarryOddEnergy.odd_profile_zero",
+      "CarryOddEnergy.odd_profile_one",
+      "CarryOddEnergy.odd_coefficient_regression",
+      "CarryOddEnergy.odd_coefficient_minor_negative",
+      "CarryOddEnergy.cubicOddCoefficients"
+    ],
+    "provenance": [
+      "CarryOddEnergy.odd_pair_taylor_sum",
+      "CarryOddEnergy.odd_pair_taylor_cancellation",
+      "CarryOddEnergy.odd_pair_response_expansion",
+      "CarryOddEnergy.odd_pair_remainder_continuous",
+      "CarryOddEnergy.normalizedOddPair",
+      "CarryOddEnergy.normalized_odd_pair_expansion",
+      "CarryOddEnergy.normalized_odd_pair_correction_tendsto",
+      "CarryOddEnergy.finite_odd_source_original",
+      "CarryOddEnergy.finite_odd_source_pairing",
+      "CarryOddEnergy.finite_odd_energy_pairing",
+      "CarryOddEnergy.finite_odd_green_recomposition",
+      "CarryOddEnergy.oddCanonicalForm",
+      "CarryOddEnergy.oddCanonicalCorrection",
+      "CarryOddEnergy.finite_odd_energy_correction_tendsto",
+      "CarryOddEnergy.finite_odd_green_correction_tendsto",
+      "CarryOddEnergy.first_odd_correction",
+      "CarryOddEnergy.odd_cubic_source",
+      "CarryOddEnergy.odd_cubic_form",
+      "CarryOddEnergy.odd_cubic_correction",
+      "CarryOddEnergy.odd_cubic_correction_tendsto",
+      "CarryOddEnergy.finite_odd_norm_difference_correction"
+    ]
+  }
+}

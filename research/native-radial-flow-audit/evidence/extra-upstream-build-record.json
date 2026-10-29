@@ -1,0 +1,8 @@
+{
+  "exit_code": 0,
+  "modules": 48,
+  "all_sources_match_base": true,
+  "trailing_whitespace_only": true,
+  "raw_sha256": "6a8543046f0fa0c56e1fae6b80726ed495757dfa3c9b6a7f7149a3bc7a95686a",
+  "normalized_sha256": "d2e6007d913f0369ea407d90e573e7d8127e6a386aa73785ef71dac227c1f5fe"
+}

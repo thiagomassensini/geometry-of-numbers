@@ -1,0 +1,177 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-linear-tfvd-traces/research/native-linear-tfvd-traces",
+      "exit_code": 0,
+      "seconds": 0.577,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-linear-tfvd-traces/research/native-linear-tfvd-traces",
+      "exit_code": 0,
+      "seconds": 230.522,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-linear-tfvd-traces/research/native-linear-tfvd-traces",
+      "exit_code": 0,
+      "seconds": 0.039,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.208,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "90057da8e9b1b780c08d7a13ab10d7f4eb114179200dafb1c8e5d8701a1bbcab",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-FiniteTraces",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "FiniteTraces"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-linear-tfvd-traces/research/native-linear-tfvd-traces",
+      "exit_code": 0,
+      "seconds": 12.926,
+      "log": "evidence/lean-FiniteTraces.log"
+    },
+    {
+      "label": "lean-PhysicalNumerator",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PhysicalNumerator"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-linear-tfvd-traces/research/native-linear-tfvd-traces",
+      "exit_code": 0,
+      "seconds": 11.747,
+      "log": "evidence/lean-PhysicalNumerator.log"
+    },
+    {
+      "label": "lean-GreenPairing",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "GreenPairing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-linear-tfvd-traces/research/native-linear-tfvd-traces",
+      "exit_code": 0,
+      "seconds": 12.308,
+      "log": "evidence/lean-GreenPairing.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-linear-tfvd-traces/research/native-linear-tfvd-traces",
+      "exit_code": 0,
+      "seconds": 10.449,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-linear-tfvd-traces",
+      "exit_code": 0,
+      "seconds": 6.983,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-linear-tfvd-traces",
+      "exit_code": 0,
+      "seconds": 6.551,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-linear-tfvd-traces",
+      "exit_code": 0,
+      "seconds": 9.917,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-linear-tfvd-traces",
+      "exit_code": 0,
+      "seconds": 46.596,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "9e01b6a8f591046c3478e1faf80af692062a95d4",
+        "--",
+        ".",
+        ":(exclude)research/native-linear-tfvd-traces/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-linear-tfvd-traces",
+      "exit_code": 0,
+      "seconds": 0.01,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-linear-tfvd-traces",
+      "exit_code": 0,
+      "seconds": 0.007,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}

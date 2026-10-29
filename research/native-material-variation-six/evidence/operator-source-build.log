@@ -1,0 +1,367 @@
+ℹ [3764/3804] Replayed NativeCarrySpectralWeyl.Finite.StepDensity
+info: NativeCarrySpectralWeyl/Finite/StepDensity.lean:68:4: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [3781/3804] Replayed CPFormal.Analytic.CpGenuineSecondDifferenceIdentity
+info: CPFormal/Analytic/CpGenuineSecondDifferenceIdentity.lean:114:2: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [3782/3804] Replayed CPFormal.Analytic.CpGenuineTiltProductRule
+info: CPFormal/Analytic/CpGenuineTiltProductRule.lean:285:2: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [3822/4051] Replayed CPFormal.Analytic.CpFiniteScalarSynthesis
+info: CPFormal/Analytic/CpFiniteScalarSynthesis.lean:133:2: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [3859/4051] Replayed CPFormal.Analytic.CpGenuineGprePrimeAmplitudeUpgrade
+info: CPFormal/Analytic/CpGenuineGprePrimeAmplitudeUpgrade.lean:46:14: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CPFormal/Analytic/CpGenuineGprePrimeAmplitudeUpgrade.lean:46:14: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [3932/4051] Replayed NativeCarrySpectralWeyl.Infinite.WeylUnbounded
+info: NativeCarrySpectralWeyl/Infinite/WeylUnbounded.lean:649:14: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: NativeCarrySpectralWeyl/Infinite/WeylUnbounded.lean:693:14: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: NativeCarrySpectralWeyl/Infinite/WeylUnbounded.lean:701:16: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [3944/4051] Replayed CPFormal.Analytic.CpNativeGpreTfvdCommutatorTowerSource
+info: CPFormal/Analytic/CpNativeGpreTfvdCommutatorTowerSource.lean:135:2: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9019/9095] Replayed CarrySelfAdjointOperator.CompletedNativeDslopeSamplePositivity
+info: CarrySelfAdjointOperator/CompletedNativeDslopeSamplePositivity.lean:208:2: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9026/9268] Replayed CarrySelfAdjointOperator.CompletedNativeXiThetaCosineRepresentation
+info: CarrySelfAdjointOperator/CompletedNativeXiThetaCosineRepresentation.lean:79:2: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeXiThetaCosineRepresentation.lean:250:8: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9030/9268] Replayed CarrySelfAdjointOperator.CompletedNativeXiThetaMomentBounds
+info: CarrySelfAdjointOperator/CompletedNativeXiThetaMomentBounds.lean:252:12: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeXiThetaMomentBounds.lean:579:4: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeXiThetaMomentBounds.lean:646:18: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9037/9268] Replayed CPFormal.Analytic.CpNativeGpreTfvdGenuineCompression
+info: CPFormal/Analytic/CpNativeGpreTfvdGenuineCompression.lean:311:4: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CPFormal/Analytic/CpNativeGpreTfvdGenuineCompression.lean:328:2: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9145/9393] Replayed CarrySelfAdjointOperator.ExactCutoffCameraGram
+info: CarrySelfAdjointOperator/ExactCutoffCameraGram.lean:283:0: 'NativeCarryC3Crosswalk.literalFiniteCameraGram_eq_linear_add_residue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: CarrySelfAdjointOperator/ExactCutoffCameraGram.lean:284:0: 'NativeCarryC3Crosswalk.normalizedLiteralFiniteCameraGram_eq_periodicGram_add_residue_div' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: CarrySelfAdjointOperator/ExactCutoffCameraGram.lean:285:0: 'NativeCarryC3Crosswalk.tendsto_normalizedLiteralFiniteCameraGram' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: CarrySelfAdjointOperator/ExactCutoffCameraGram.lean:286:0: 'NativeCarryC3Crosswalk.tendsto_normalizedLiteralSixCameraGram' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [9643/9901] Replayed CarrySelfAdjointOperator.CompletedNativeTfvdCoefficientJets
+info: CarrySelfAdjointOperator/CompletedNativeTfvdCoefficientJets.lean:495:4: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9676/9901] Replayed CarrySelfAdjointOperator.CompletedNativeChiralPickHankel
+info: CarrySelfAdjointOperator/CompletedNativeChiralPickHankel.lean:232:2: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9690/9901] Replayed CarrySelfAdjointOperator.CompletedNativeCentralFiniteGreenVariation
+info: CarrySelfAdjointOperator/CompletedNativeCentralFiniteGreenVariation.lean:241:4: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9697/9901] Replayed CarrySelfAdjointOperator.CompletedNativeCentralCoisometricDefectFlatness
+info: CarrySelfAdjointOperator/CompletedNativeCentralCoisometricDefectFlatness.lean:373:6: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9701/9901] Replayed CarrySelfAdjointOperator.CompletedNativeTfvdCoefficientJetHPCarrier
+info: CarrySelfAdjointOperator/CompletedNativeTfvdCoefficientJetHPCarrier.lean:284:8: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeTfvdCoefficientJetHPCarrier.lean:306:8: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9750/9901] Replayed CarrySelfAdjointOperator.CompletedNativeChiralReturnStorage
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnStorage.lean:169:2: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9856/9901] Replayed CarrySelfAdjointOperator.CompletedNativeChiralReturnBoundaryCoefficientProvenance
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnBoundaryCoefficientProvenance.lean:82:2: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9864/9901] Replayed CarrySelfAdjointOperator.CompletedNativeChiralReturnTenthSourceIntegral
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnTenthSourceIntegral.lean:39:2: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9866/9901] Replayed CarrySelfAdjointOperator.CompletedNativeChiralReturnSixBoundaryReconstruction
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnSixBoundaryReconstruction.lean:33:67: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnSixBoundaryReconstruction.lean:33:67: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnSixBoundaryReconstruction.lean:33:67: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnSixBoundaryReconstruction.lean:33:67: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnSixBoundaryReconstruction.lean:42:67: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnSixBoundaryReconstruction.lean:42:67: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnSixBoundaryReconstruction.lean:42:67: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnSixBoundaryReconstruction.lean:42:67: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9868/9901] Replayed CarrySelfAdjointOperator.CompletedNativeChiralReturnTwelfthSourceIntegral
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnTwelfthSourceIntegral.lean:45:2: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9871/9901] Replayed CarrySelfAdjointOperator.CompletedNativeChiralReturnFourBoundaryReconstruction
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnFourBoundaryReconstruction.lean:29:68: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnFourBoundaryReconstruction.lean:29:68: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnFourBoundaryReconstruction.lean:38:68: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnFourBoundaryReconstruction.lean:38:68: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9889/9901] Replayed CarrySelfAdjointOperator.CompletedNativeChiralReturnSevenBoundaryReconstruction
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnSevenBoundaryReconstruction.lean:34:69: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnSevenBoundaryReconstruction.lean:34:69: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnSevenBoundaryReconstruction.lean:34:69: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnSevenBoundaryReconstruction.lean:34:69: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnSevenBoundaryReconstruction.lean:34:69: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnSevenBoundaryReconstruction.lean:43:69: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnSevenBoundaryReconstruction.lean:43:69: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnSevenBoundaryReconstruction.lean:43:69: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnSevenBoundaryReconstruction.lean:43:69: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnSevenBoundaryReconstruction.lean:43:69: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [9895/9901] Replayed CarrySelfAdjointOperator.CompletedNativeChiralReturnFourteenthSourceIntegral
+info: CarrySelfAdjointOperator/CompletedNativeChiralReturnFourteenthSourceIntegral.lean:39:12: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Build completed successfully (9901 jobs).
+	Command being timed: "lake build --wfail CarrySelfAdjointOperator.CompletedNativeChiralReturnSeventhSourceJet CarrySelfAdjointOperator.CompletedNativeChiralPickFactorization CarrySelfAdjointOperator.CompletedGreenForwardDifferenceLimit CarrySelfAdjointOperator.NativePhysicalGreenResolvent CarrySelfAdjointOperator.NativeGeometricLogClock CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport CarrySelfAdjointOperator.CompletedNativeChiralReturnArbitraryOrder CarrySelfAdjointOperator.CompletedNativeChiralEvenBoundaryEnergy CarrySelfAdjointOperator.CompletedNativeChiralEvenBoundarySplit CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl CarrySelfAdjointOperator.NewtonStirlingTransport CarrySelfAdjointOperator.NativeCompletedCenteredReflection CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy CarrySelfAdjointOperator.CompletedNativeChiralReturnFiniteTransfer CarrySelfAdjointOperator.NativePhysicalFiniteSewing CarrySelfAdjointOperator.CompletedNativeChiralReturnFourSampleStorage CarrySelfAdjointOperator.CompletedNativeChiralReturnEnergyPort"
+	User time (seconds): 11.35
+	System time (seconds): 3.29
+	Percent of CPU this job got: 170%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:08.59
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 941192
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 109225
+	Voluntary context switches: 78068
+	Involuntary context switches: 64
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 48
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

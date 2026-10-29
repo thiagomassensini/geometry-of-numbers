@@ -1,0 +1,108 @@
+'CarryCriticalTfvd.mixedEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.fullEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.bulkBoundaryEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.full_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.commutator_response_field' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.mixed_response_flux' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.incident_response_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.source_mean_response' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.full_response_flux' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.triple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.triple_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.curvatureInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.seedInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.criticalInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.critical_input_triple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.critical_input_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.synthesis_triple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.commutator_triple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.source_triple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.second_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.critical_source_jets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.h' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.responseReadout' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.responseCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.response_readout_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.response_coefficient_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.response_coefficient_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.response_coefficient_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.response_seventh_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.radialStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.monomialWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.remainderWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.radial_step_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.response_radial_readout' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.response_weight_taylor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.coefficientStencil' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.sectorField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.sectorKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.stencil_add_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.stencil_scale_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.stencil_add_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.stencil_scale_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.stencil_congr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.field_add_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.field_scale_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.field_add_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.field_scale_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.kernel_add_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.kernel_scale_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.kernel_four_weights' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.spatialU' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.spatialV' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.spatialW' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.kernel_critical_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.weight_triple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.remainder_field_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.remainder_kernel_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.sectorFlux' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.full_original_flux' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.mixed_original_flux' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.poleFour' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.poleTwo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.finitePart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.sectorError' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.kernel_congr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.sector_flux_exact_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.sector_error_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.sector_finite_part_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.sector_second_order_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.full_kernel_triple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.full_spatial_constants' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.canonicalQuadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.full_poles_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.full_finite_part' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.complete_tfvd_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.full_critical_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.mixed_renormalized_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.bulk_boundary_renormalized_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.criticalParameter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.canonical_quadratic_schur' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.critical_tfvd_schur_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.first_schur_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalTfvd.critical_tfvd_named_schur_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+Critical TFVD audit tier 0: 43 public roots; 5536 type/body dependencies; standard axioms only
+Critical TFVD audit tier 1: 40 public roots; 5967 type/body dependencies; standard axioms only
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 7.91
+	System time (seconds): 6.77
+	Percent of CPU this job got: 131%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:11.19
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8362840
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 283750
+	Voluntary context switches: 13747
+	Involuntary context switches: 179
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 768
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

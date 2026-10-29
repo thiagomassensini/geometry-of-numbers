@@ -1,0 +1,189 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-vertical-synthesis/research/native-vertical-synthesis",
+      "exit_code": 0,
+      "seconds": 0.562,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-vertical-synthesis/research/native-vertical-synthesis",
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativeCauchyLaguerreIsometry",
+        "CarrySelfAdjointOperator.CompletedNativeRadialChiralMultiplier",
+        "CarrySelfAdjointOperator.RealQuadratureDomainTransport"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.641,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "e31ca49c819696e641ac0233400f208e72b592afe6adbbc83ab76ea74637b935",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-SchurBound",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SchurBound"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-vertical-synthesis/research/native-vertical-synthesis",
+      "exit_code": 0,
+      "seconds": 13.695,
+      "log": "evidence/lean-SchurBound.log"
+    },
+    {
+      "label": "lean-NativeSynthesis",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "NativeSynthesis"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-vertical-synthesis/research/native-vertical-synthesis",
+      "exit_code": 0,
+      "seconds": 15.029,
+      "log": "evidence/lean-NativeSynthesis.log"
+    },
+    {
+      "label": "lean-Quadratures",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Quadratures"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-vertical-synthesis/research/native-vertical-synthesis",
+      "exit_code": 0,
+      "seconds": 17.768,
+      "log": "evidence/lean-Quadratures.log"
+    },
+    {
+      "label": "lean-HeadTail",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "HeadTail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-vertical-synthesis/research/native-vertical-synthesis",
+      "exit_code": 0,
+      "seconds": 9.93,
+      "log": "evidence/lean-HeadTail.log"
+    },
+    {
+      "label": "lean-CompletedTransport",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CompletedTransport"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-vertical-synthesis/research/native-vertical-synthesis",
+      "exit_code": 0,
+      "seconds": 10.768,
+      "log": "evidence/lean-CompletedTransport.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-vertical-synthesis/research/native-vertical-synthesis",
+      "exit_code": 0,
+      "seconds": 9.0,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-vertical-synthesis",
+      "exit_code": 0,
+      "seconds": 7.881,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-vertical-synthesis",
+      "exit_code": 0,
+      "seconds": 6.991,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-vertical-synthesis",
+      "exit_code": 0,
+      "seconds": 9.387,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-vertical-synthesis",
+      "exit_code": 0,
+      "seconds": 46.786,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "5eb9b1a09a407636af44e1915c8d7026543a635d",
+        "--",
+        ".",
+        ":(exclude)research/native-vertical-synthesis/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-vertical-synthesis",
+      "exit_code": 0,
+      "seconds": 0.008,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-vertical-synthesis",
+      "exit_code": 0,
+      "seconds": 0.008,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}

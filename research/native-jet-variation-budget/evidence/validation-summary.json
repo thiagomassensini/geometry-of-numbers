@@ -1,0 +1,85 @@
+{
+  "PASS": true,
+  "base": "527c15baa36c6b6d3b301f8b2378b4a9c8920004",
+  "theorems_print_axioms": 23,
+  "transitive_roots": 32,
+  "transitive_dependencies": 57625,
+  "upstream_objects_reused": 200,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "checks": {
+    "upstream-AllOrderTail": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "lean-AtomicCorrectionControl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "lean-VariationBudget": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "lean-RemainderVelocity": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "lean-FiniteVelocityBudget": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "lean-RadialExtrapolation": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "lean-Audit": {
+      "sha256": "c3be889364b8ad918c0144c2fd1348cc771527458e1e810f47aa2458b44eddaf",
+      "bytes": 2566,
+      "exit_code": 0
+    },
+    "transitive-audit": {
+      "sha256": "6896f776661fd5fe066ecb2bbcfa8136b6fb476f6943bb6cd7cbcb354b16810c",
+      "bytes": 115,
+      "exit_code": 0
+    },
+    "root-build": {
+      "sha256": "62ded57ded1fcdb1613c5a883c32cd99b2cf26595cd21dbdaa7d5085dce509e1",
+      "bytes": 470101,
+      "exit_code": 0
+    },
+    "audit-foundation": {
+      "sha256": "0cf345cc3bcedfa92250217b4e73bc37834671ac0b8a2b97f66d3c06551ce199",
+      "bytes": 26945,
+      "exit_code": 0
+    },
+    "audit-geometry": {
+      "sha256": "469cddc780755a2a401f4a2d437d4b65bccc9f3333dc598e645025f94caf4888",
+      "bytes": 25625,
+      "exit_code": 0
+    },
+    "audit-analysis": {
+      "sha256": "41638147d4cbad3e7727185f00c6ec49b0bd2f5b43446412c29f07d81b11cbee",
+      "bytes": 753822,
+      "exit_code": 0
+    },
+    "validate": {
+      "sha256": "6e6c11c158ee82f59a7ae17649e1b0535b6b0e8ac5ce18a7433a8a1f60082e82",
+      "bytes": 245,
+      "exit_code": 0
+    },
+    "check-note": {
+      "sha256": "48eeaefacfa04cafcd1ed90f15c85ac158288247deef2fceef0a9175f296fd6d",
+      "bytes": 186,
+      "exit_code": 0
+    }
+  }
+}

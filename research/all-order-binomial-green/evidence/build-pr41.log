@@ -1,0 +1,6 @@
+PR41 PASS MomentFunctional
+PR41 PASS JacobiLogic
+PR41 PASS PolynomialCoordinates
+PR41 PASS NativeApplication
+PR41 PASS SchurLogic
+Compiled 5 unchanged PR41 modules.

@@ -1,0 +1,100 @@
+{
+  "modules": {
+    "BoundaryFamily": [
+      "CarryMellinDomain.boundaryCoefficients",
+      "CarryMellinDomain.boundaryContinuous",
+      "CarryMellinDomain.concentratingCoefficients",
+      "CarryMellinDomain.concentratingContinuous",
+      "CarryMellinDomain.physicalConcentration",
+      "CarryMellinDomain.boundary_trace_zero",
+      "CarryMellinDomain.concentrating_trace_zero",
+      "CarryMellinDomain.boundary_tail_polynomial",
+      "CarryMellinDomain.boundary_source_original",
+      "CarryMellinDomain.concentrating_source_original",
+      "CarryMellinDomain.physical_concentration_original",
+      "CarryMellinDomain.concentrating_tail_polynomial"
+    ],
+    "PolynomialIntegrals": [
+      "CarryMellinDomain.cubic_one_sub_integral",
+      "CarryMellinDomain.one_sub_integral"
+    ],
+    "FamilyEnergy": [
+      "CarryMellinDomain.physical_concentration_energy_integral",
+      "CarryMellinDomain.physical_concentration_norm_sq",
+      "CarryMellinDomain.physical_concentration_norm_sq_le"
+    ],
+    "MellinLimits": [
+      "CarryMellinDomain.concentrationReadout",
+      "CarryMellinDomain.concentration_readout_native",
+      "CarryMellinDomain.concentration_readout_formula",
+      "CarryMellinDomain.physical_concentration_tendsto_zero",
+      "CarryMellinDomain.concentration_readout_tendsto_one"
+    ],
+    "Nonclosability": [
+      "CarryMellinDomain.finiteZeroTraceGraph",
+      "CarryMellinDomain.concentration_mem_graph",
+      "CarryMellinDomain.zero_mem_finite_graph",
+      "CarryMellinDomain.zero_one_mem_graph_closure",
+      "CarryMellinDomain.closure_not_single_valued",
+      "CarryMellinDomain.mellin_readout_no_norm_bound",
+      "CarryMellinDomain.no_continuous_mellin_extension",
+      "CarryMellinDomain.no_closed_mellin_extension",
+      "CarryMellinDomain.no_continuous_mellin_extension_with_trace",
+      "CarryMellinDomain.no_closed_mellin_extension_with_trace"
+    ],
+    "VerticalControl": [
+      "CarryMellinDomain.verticalReadout",
+      "CarryMellinDomain.vertical_readout_finite_source",
+      "CarryMellinDomain.vertical_readout_norm_bound",
+      "CarryMellinDomain.finite_tower_coordinate",
+      "CarryMellinDomain.concentrating_vertical_coordinate",
+      "CarryMellinDomain.concentrating_vertical_norm_ge",
+      "CarryMellinDomain.no_continuous_vertical_recovery"
+    ]
+  },
+  "audit_groups": {
+    "source": [
+      "CarryMellinDomain.boundaryCoefficients",
+      "CarryMellinDomain.boundaryContinuous",
+      "CarryMellinDomain.concentratingCoefficients",
+      "CarryMellinDomain.concentratingContinuous",
+      "CarryMellinDomain.physicalConcentration",
+      "CarryMellinDomain.boundary_trace_zero",
+      "CarryMellinDomain.concentrating_trace_zero",
+      "CarryMellinDomain.boundary_tail_polynomial",
+      "CarryMellinDomain.boundary_source_original",
+      "CarryMellinDomain.concentrating_source_original",
+      "CarryMellinDomain.physical_concentration_original",
+      "CarryMellinDomain.concentrating_tail_polynomial",
+      "CarryMellinDomain.cubic_one_sub_integral",
+      "CarryMellinDomain.one_sub_integral",
+      "CarryMellinDomain.physical_concentration_energy_integral",
+      "CarryMellinDomain.physical_concentration_norm_sq",
+      "CarryMellinDomain.physical_concentration_norm_sq_le",
+      "CarryMellinDomain.concentrationReadout",
+      "CarryMellinDomain.concentration_readout_native",
+      "CarryMellinDomain.concentration_readout_formula",
+      "CarryMellinDomain.physical_concentration_tendsto_zero",
+      "CarryMellinDomain.concentration_readout_tendsto_one",
+      "CarryMellinDomain.finiteZeroTraceGraph",
+      "CarryMellinDomain.concentration_mem_graph",
+      "CarryMellinDomain.zero_mem_finite_graph",
+      "CarryMellinDomain.zero_one_mem_graph_closure",
+      "CarryMellinDomain.closure_not_single_valued",
+      "CarryMellinDomain.mellin_readout_no_norm_bound",
+      "CarryMellinDomain.no_continuous_mellin_extension",
+      "CarryMellinDomain.no_closed_mellin_extension",
+      "CarryMellinDomain.no_continuous_mellin_extension_with_trace",
+      "CarryMellinDomain.no_closed_mellin_extension_with_trace",
+      "CarryMellinDomain.verticalReadout",
+      "CarryMellinDomain.vertical_readout_finite_source",
+      "CarryMellinDomain.vertical_readout_norm_bound",
+      "CarryMellinDomain.finite_tower_coordinate",
+      "CarryMellinDomain.concentrating_vertical_coordinate",
+      "CarryMellinDomain.concentrating_vertical_norm_ge",
+      "CarryMellinDomain.no_continuous_vertical_recovery"
+    ],
+    "identification": [],
+    "signs": []
+  }
+}

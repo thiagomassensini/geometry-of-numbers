@@ -1,0 +1,2 @@
+# Preserve the compiler's verbatim log formatting.
+evidence/*.log -whitespace

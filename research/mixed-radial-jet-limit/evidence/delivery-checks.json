@@ -1,0 +1,10 @@
+{
+  "validation": "PASS",
+  "checks": 15,
+  "new_theorems": 25,
+  "public_roots": 28,
+  "report_lines": 293,
+  "primos_status_preserved": "M CPFormal.lean\n?? CPFormal/Analytic/CpCarryCriticalDressingCrosswalk.lean",
+  "report_footer": "PRESENT",
+  "new_sources_match_validated_sha256": true
+}

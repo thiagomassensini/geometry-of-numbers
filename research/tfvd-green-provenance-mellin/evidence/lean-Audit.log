@@ -1,0 +1,62 @@
+'CarryGreenProvenance.materialGreenPort' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.material_green_port_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.reflected_re_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.mixed_direct_green_port' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.reflected_green_port' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.direct_port_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.reflected_port_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.green_edge_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.green_form_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.heatCellProvenance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.heatBlockProvenance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.originalBlockProvenance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.heat_cell_address_calibration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.block_provenance_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.visible_legs_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.dormant_legs_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.dormant_compensation_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.heatGreenProvenance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.heat_green_eq_original_ledger' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.heatLedger' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.full_ledger_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.native_wronskian_full_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.material_port_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.green_edge_radial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.dormant_compensation_radial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.critical_port_legs_equal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.critical_green_edge_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.critical_green_form_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.critical_dormant_compensation_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.critical_wronskian_in_ledger' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.heatLedgerTotal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.heat_ledger_total_eq_native_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.heat_ledger_total_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.heat_completion_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.critical_ledger_total_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenProvenance.critical_ledger_total_cutoff_independent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+TFVD Green provenance Mellin audit: 36 public roots; 5307 type/body dependencies; standard axioms only; moment-derived constructions and sign consumers absent
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 6.05
+	System time (seconds): 3.67
+	Percent of CPU this job got: 110%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:08.83
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6935816
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 239328
+	Voluntary context switches: 5972
+	Involuntary context switches: 89
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 616
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

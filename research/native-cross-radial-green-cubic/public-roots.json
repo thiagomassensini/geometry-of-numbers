@@ -1,0 +1,60 @@
+{
+  "modules": {
+    "PartTaylor": [
+      "CarryGreenCubic.part_field_sum_weight",
+      "CarryGreenCubic.part_full_taylor_expansion",
+      "CarryGreenCubic.part_full_remainder_continuous",
+      "CarryGreenCubic.cubicProfile",
+      "CarryGreenCubic.seed_address_compensation"
+    ],
+    "CubicVectors": [
+      "CarryGreenCubic.seed_cubic_compensation",
+      "CarryGreenCubic.seed_cubic_residual_ne_zero",
+      "CarryGreenCubic.cubicPart",
+      "CarryGreenCubic.cubic_part_expansion",
+      "CarryGreenCubic.cubic_part_tendsto",
+      "CarryGreenCubic.doubled_cubic_vector_identity"
+    ],
+    "CubicCrossings": [
+      "CarryGreenCubic.cubic_crossing_identity",
+      "CarryGreenCubic.cubicCoefficient",
+      "CarryGreenCubic.cubic_crossing_tendsto",
+      "CarryGreenCubic.cubic_residual_residual_zero",
+      "CarryGreenCubic.cubic_residual_row",
+      "CarryGreenCubic.cubic_residual_column"
+    ],
+    "CubicRecomposition": [
+      "CarryGreenCubic.sum_cubic_pairings",
+      "CarryGreenCubic.sum_cubic_eq",
+      "CarryGreenCubic.recomposed_cubic_tendsto",
+      "CarryGreenCubic.recomposed_green_cubic_tendsto"
+    ]
+  },
+  "groups": {
+    "construction": [
+      "CarryGreenCubic.part_field_sum_weight",
+      "CarryGreenCubic.seed_address_compensation",
+      "CarryGreenCubic.cubicProfile",
+      "CarryGreenCubic.seed_cubic_compensation",
+      "CarryGreenCubic.seed_cubic_residual_ne_zero",
+      "CarryGreenCubic.sum_cubic_pairings"
+    ],
+    "provenance": [
+      "CarryGreenCubic.part_full_taylor_expansion",
+      "CarryGreenCubic.part_full_remainder_continuous",
+      "CarryGreenCubic.cubicPart",
+      "CarryGreenCubic.cubic_part_expansion",
+      "CarryGreenCubic.cubic_part_tendsto",
+      "CarryGreenCubic.doubled_cubic_vector_identity",
+      "CarryGreenCubic.cubic_crossing_identity",
+      "CarryGreenCubic.cubicCoefficient",
+      "CarryGreenCubic.cubic_crossing_tendsto",
+      "CarryGreenCubic.cubic_residual_residual_zero",
+      "CarryGreenCubic.cubic_residual_row",
+      "CarryGreenCubic.cubic_residual_column",
+      "CarryGreenCubic.sum_cubic_eq",
+      "CarryGreenCubic.recomposed_cubic_tendsto",
+      "CarryGreenCubic.recomposed_green_cubic_tendsto"
+    ]
+  }
+}

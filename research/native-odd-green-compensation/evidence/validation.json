@@ -1,0 +1,208 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-green-compensation/research/native-odd-green-compensation",
+      "exit_code": 0,
+      "seconds": 1.019,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "verified-cache",
+      "command": [
+        "python3",
+        "restore_verified_cache.py",
+        "--verify-only"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-green-compensation/research/native-odd-green-compensation",
+      "exit_code": 0,
+      "seconds": 0.837,
+      "log": "evidence/verified-cache.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-green-compensation/research/native-odd-green-compensation",
+      "exit_code": 0,
+      "seconds": 0.444,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-green-compensation/research/native-odd-green-compensation",
+      "exit_code": 0,
+      "seconds": 0.041,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.388,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "5950a00af92f5653df023ed9c347b6826bbb0029e2591b1fc7851e25d848ac7e",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-OddVectors",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "OddVectors"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-green-compensation/research/native-odd-green-compensation",
+      "exit_code": 0,
+      "seconds": 14.387,
+      "log": "evidence/lean-OddVectors.log"
+    },
+    {
+      "label": "lean-OddCompensation",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "OddCompensation"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-green-compensation/research/native-odd-green-compensation",
+      "exit_code": 0,
+      "seconds": 13.344,
+      "log": "evidence/lean-OddCompensation.log"
+    },
+    {
+      "label": "lean-OddHankelTransport",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "OddHankelTransport"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-green-compensation/research/native-odd-green-compensation",
+      "exit_code": 0,
+      "seconds": 12.364,
+      "log": "evidence/lean-OddHankelTransport.log"
+    },
+    {
+      "label": "lean-OddRegressions",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "OddRegressions"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-green-compensation/research/native-odd-green-compensation",
+      "exit_code": 0,
+      "seconds": 13.419,
+      "log": "evidence/lean-OddRegressions.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-green-compensation/research/native-odd-green-compensation",
+      "exit_code": 0,
+      "seconds": 12.795,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-green-compensation",
+      "exit_code": 0,
+      "seconds": 8.499,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-green-compensation",
+      "exit_code": 0,
+      "seconds": 6.789,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-green-compensation",
+      "exit_code": 0,
+      "seconds": 9.945,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-green-compensation",
+      "exit_code": 0,
+      "seconds": 46.675,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "608ada10b07d33d6b691e4685b062bcc59a8a7a4",
+        "--",
+        ".",
+        ":(exclude)research/native-odd-green-compensation/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-green-compensation",
+      "exit_code": 0,
+      "seconds": 0.121,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-green-compensation",
+      "exit_code": 0,
+      "seconds": 0.121,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}

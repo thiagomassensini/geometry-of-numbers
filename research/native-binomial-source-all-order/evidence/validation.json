@@ -1,0 +1,235 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-binomial-source-all-order/research/native-binomial-source-all-order",
+      "exit_code": 0,
+      "seconds": 0.609,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "verified-cache",
+      "command": [
+        "python3",
+        "restore_verified_cache.py",
+        "--verify-only"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-binomial-source-all-order/research/native-binomial-source-all-order",
+      "exit_code": 0,
+      "seconds": 1.429,
+      "log": "evidence/verified-cache.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-binomial-source-all-order/research/native-binomial-source-all-order",
+      "exit_code": 0,
+      "seconds": 0.728,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "mechanism-probe",
+      "command": [
+        "python3",
+        "mechanism_probe.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-binomial-source-all-order/research/native-binomial-source-all-order",
+      "exit_code": 0,
+      "seconds": 1.052,
+      "log": "evidence/mechanism-probe.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-binomial-source-all-order/research/native-binomial-source-all-order",
+      "exit_code": 0,
+      "seconds": 0.039,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFiniteTransfer",
+        "CarrySelfAdjointOperator.NativePhysicalFiniteSewing",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFourSampleStorage",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnEnergyPort"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 7.899,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "060a190094296410cf655f2899bde788e02ff5a641c2f6a0b931276867485a78",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-BinomialInverse",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "BinomialInverse"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-binomial-source-all-order/research/native-binomial-source-all-order",
+      "exit_code": 0,
+      "seconds": 14.437,
+      "log": "evidence/lean-BinomialInverse.log"
+    },
+    {
+      "label": "lean-NativeNewtonInput",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "NativeNewtonInput"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-binomial-source-all-order/research/native-binomial-source-all-order",
+      "exit_code": 0,
+      "seconds": 14.04,
+      "log": "evidence/lean-NativeNewtonInput.log"
+    },
+    {
+      "label": "lean-CoordinateCoherence",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CoordinateCoherence"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-binomial-source-all-order/research/native-binomial-source-all-order",
+      "exit_code": 0,
+      "seconds": 13.897,
+      "log": "evidence/lean-CoordinateCoherence.log"
+    },
+    {
+      "label": "lean-FullSourceTransport",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "FullSourceTransport"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-binomial-source-all-order/research/native-binomial-source-all-order",
+      "exit_code": 0,
+      "seconds": 13.07,
+      "log": "evidence/lean-FullSourceTransport.log"
+    },
+    {
+      "label": "lean-AllOrderEnergyControl",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "AllOrderEnergyControl"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-binomial-source-all-order/research/native-binomial-source-all-order",
+      "exit_code": 0,
+      "seconds": 13.44,
+      "log": "evidence/lean-AllOrderEnergyControl.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-binomial-source-all-order/research/native-binomial-source-all-order",
+      "exit_code": 0,
+      "seconds": 25.033,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-binomial-source-all-order",
+      "exit_code": 0,
+      "seconds": 6.957,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-binomial-source-all-order",
+      "exit_code": 0,
+      "seconds": 6.637,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-binomial-source-all-order",
+      "exit_code": 0,
+      "seconds": 9.331,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-binomial-source-all-order",
+      "exit_code": 0,
+      "seconds": 48.471,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "85ac7e9d76954e7e9188b6088b056e25ec9d3bd0",
+        "--",
+        ".",
+        ":(exclude)research/native-binomial-source-all-order/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-binomial-source-all-order",
+      "exit_code": 0,
+      "seconds": 0.009,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-binomial-source-all-order",
+      "exit_code": 0,
+      "seconds": 0.008,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "modules": {
+    "ComplementRows": [
+      "CarryOddCauchy.complementRow",
+      "CarryOddCauchy.complement_vector_succ",
+      "CarryOddCauchy.complement_row_succ",
+      "CarryOddCauchy.complement_row_zero",
+      "CarryOddCauchy.factorial_row_zero",
+      "CarryOddCauchy.factorial_row_difference",
+      "CarryOddCauchy.complement_row_factorial"
+    ],
+    "OddCauchyRows": [
+      "CarryOddCauchy.nativeOddBeta",
+      "CarryOddCauchy.odd_exponent_sign",
+      "CarryOddCauchy.odd_stencil_sign",
+      "CarryOddCauchy.native_odd_coefficient",
+      "CarryOddCauchy.native_odd_vector",
+      "CarryOddCauchy.native_odd_cauchy_row",
+      "CarryOddCauchy.native_odd_atoms",
+      "CarryOddCauchy.native_odd_cauchy_reverse"
+    ],
+    "OddKernelFilters": [
+      "CarryOddCauchy.oddFilterMagnitude",
+      "CarryOddCauchy.oddFilterCoefficient",
+      "CarryOddCauchy.oddFilter",
+      "CarryOddCauchy.weighted_native_odd_vector",
+      "CarryOddCauchy.native_odd_kernel_filter",
+      "CarryOddCauchy.odd_filter_coefficient_factorization",
+      "CarryOddCauchy.odd_filter_magnitude_pos",
+      "CarryOddCauchy.odd_filter_even_pos",
+      "CarryOddCauchy.odd_filter_odd_neg",
+      "CarryOddCauchy.odd_filter_outside_support",
+      "CarryOddCauchy.native_odd_kernel_forward_difference",
+      "CarryOddCauchy.native_odd_ordered_filters"
+    ],
+    "AllOrderGreenFilters": [
+      "CarryOddCauchy.completed_odd_part_calibration",
+      "CarryOddCauchy.completed_odd_source_calibration",
+      "CarryOddCauchy.native_odd_nine_field_reconstruction",
+      "CarryOddCauchy.native_odd_nine_fields_filter",
+      "CarryOddCauchy.normalized_odd_filter_exact",
+      "CarryOddCauchy.radial_odd_signed_filter_exact",
+      "CarryOddCauchy.completed_odd_green_filter_exact",
+      "CarryOddCauchy.finite_odd_signed_filters_exact",
+      "CarryOddCauchy.finite_odd_green_filters_exact",
+      "CarryOddCauchy.completed_odd_filter_tendsto",
+      "CarryOddCauchy.completed_odd_green_filter_tendsto",
+      "CarryOddCauchy.native_odd_row_regressions",
+      "CarryOddCauchy.odd_filter_regressions"
+    ]
+  },
+  "groups": {
+    "construction": [
+      "CarryOddCauchy.complementRow",
+      "CarryOddCauchy.complement_vector_succ",
+      "CarryOddCauchy.complement_row_succ",
+      "CarryOddCauchy.complement_row_zero",
+      "CarryOddCauchy.factorial_row_zero",
+      "CarryOddCauchy.factorial_row_difference",
+      "CarryOddCauchy.complement_row_factorial",
+      "CarryOddCauchy.nativeOddBeta",
+      "CarryOddCauchy.odd_exponent_sign",
+      "CarryOddCauchy.odd_stencil_sign",
+      "CarryOddCauchy.native_odd_coefficient",
+      "CarryOddCauchy.native_odd_vector",
+      "CarryOddCauchy.native_odd_cauchy_row",
+      "CarryOddCauchy.native_odd_atoms",
+      "CarryOddCauchy.native_odd_cauchy_reverse",
+      "CarryOddCauchy.oddFilterMagnitude",
+      "CarryOddCauchy.oddFilterCoefficient",
+      "CarryOddCauchy.oddFilter",
+      "CarryOddCauchy.weighted_native_odd_vector",
+      "CarryOddCauchy.native_odd_kernel_filter",
+      "CarryOddCauchy.odd_filter_coefficient_factorization",
+      "CarryOddCauchy.odd_filter_magnitude_pos",
+      "CarryOddCauchy.odd_filter_even_pos",
+      "CarryOddCauchy.odd_filter_odd_neg",
+      "CarryOddCauchy.odd_filter_outside_support",
+      "CarryOddCauchy.native_odd_kernel_forward_difference",
+      "CarryOddCauchy.native_odd_ordered_filters",
+      "CarryOddCauchy.completed_odd_part_calibration",
+      "CarryOddCauchy.completed_odd_source_calibration",
+      "CarryOddCauchy.native_odd_nine_field_reconstruction",
+      "CarryOddCauchy.native_odd_nine_fields_filter",
+      "CarryOddCauchy.normalized_odd_filter_exact",
+      "CarryOddCauchy.radial_odd_signed_filter_exact",
+      "CarryOddCauchy.completed_odd_green_filter_exact",
+      "CarryOddCauchy.finite_odd_signed_filters_exact",
+      "CarryOddCauchy.finite_odd_green_filters_exact",
+      "CarryOddCauchy.native_odd_row_regressions",
+      "CarryOddCauchy.odd_filter_regressions"
+    ],
+    "provenance": [
+      "CarryOddCauchy.completed_odd_filter_tendsto",
+      "CarryOddCauchy.completed_odd_green_filter_tendsto"
+    ]
+  }
+}

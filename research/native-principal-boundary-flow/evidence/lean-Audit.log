@@ -1,0 +1,83 @@
+'CarryPrincipalFlow.bareKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.bare_kernel_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.bare_kernel_conj' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.boundaryFlux' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.boundary_flux_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.source_green_all_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.monomial_kernel_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.monomial_kernel_reverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.odd_monomial_flux' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.principal_boundary_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.principal_trace_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.principal_trace_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.principal_trace_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.principal_trace_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.principal_flux_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.principal_flux_cubic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.principal_flux_quintic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.principal_monomial_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.principal_monomial_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.principal_monomial_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.responseHead' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.responseTail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.full_response_head_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.original_field_head_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.original_vector_head_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.sym_add_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.sym_scale_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.principal_head_flux' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.principalTailFlux' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.response_head_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.response_tail_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.principal_tail_flux_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.principal_native_response' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.principal_physical_flow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.tailComponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.headComponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.tailPartComponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.tail_parts_reconstruct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.complete_state_head_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.tail_pairing_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.head_preserves_contrast' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.tail_scale_calibration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.tail_mixed_physical_flux' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.signed_sub_isotropic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.head_physical_flow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.nativePrincipalTail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.native_principal_flow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.critical_tail_budget_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.native_tail_samples' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.native_tail_field_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.native_principal_tail_fields' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.native_principal_tail_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.oriented_cubic_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.oriented_cubic_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.oriented_quintic_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.oriented_quintic_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.raw_quintic_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPrincipalFlow.positive_weight_not_sufficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+Native principal boundary flow construction: 51 public roots; 5558 type/body dependencies; standard axioms only; canonical moments forbidden=true; preexisting moment-sign and scalar-asymptotic shortcuts forbidden
+Native principal boundary flow provenance: 7 public roots; 5635 type/body dependencies; standard axioms only; canonical moments forbidden=false; preexisting moment-sign and scalar-asymptotic shortcuts forbidden
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 7.87
+	System time (seconds): 6.88
+	Percent of CPU this job got: 120%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.28
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8392992
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 291796
+	Voluntary context switches: 14881
+	Involuntary context switches: 133
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 856
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

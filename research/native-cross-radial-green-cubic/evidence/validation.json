@@ -1,0 +1,196 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-cubic/research/native-cross-radial-green-cubic",
+      "exit_code": 0,
+      "seconds": 0.678,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-cubic/research/native-cross-radial-green-cubic",
+      "exit_code": 0,
+      "seconds": 0.395,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-cubic/research/native-cross-radial-green-cubic",
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.737,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "595970a37c038e9c077cc7a9ed818c46315d60071b31509ee6214504066fa10b",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-PartTaylor",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PartTaylor"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-cubic/research/native-cross-radial-green-cubic",
+      "exit_code": 0,
+      "seconds": 16.57,
+      "log": "evidence/lean-PartTaylor.log"
+    },
+    {
+      "label": "lean-CubicVectors",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CubicVectors"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-cubic/research/native-cross-radial-green-cubic",
+      "exit_code": 0,
+      "seconds": 14.304,
+      "log": "evidence/lean-CubicVectors.log"
+    },
+    {
+      "label": "lean-CubicCrossings",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CubicCrossings"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-cubic/research/native-cross-radial-green-cubic",
+      "exit_code": 0,
+      "seconds": 12.633,
+      "log": "evidence/lean-CubicCrossings.log"
+    },
+    {
+      "label": "lean-CubicRecomposition",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CubicRecomposition"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-cubic/research/native-cross-radial-green-cubic",
+      "exit_code": 0,
+      "seconds": 13.343,
+      "log": "evidence/lean-CubicRecomposition.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-cubic/research/native-cross-radial-green-cubic",
+      "exit_code": 0,
+      "seconds": 13.296,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-cubic",
+      "exit_code": 0,
+      "seconds": 7.861,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-cubic",
+      "exit_code": 0,
+      "seconds": 7.002,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-cubic",
+      "exit_code": 0,
+      "seconds": 9.786,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-cubic",
+      "exit_code": 0,
+      "seconds": 48.367,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "6df09aefae04dc1923bad144c9230da7b407d349",
+        "--",
+        ".",
+        ":(exclude)research/native-cross-radial-green-cubic/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-cubic",
+      "exit_code": 0,
+      "seconds": 0.053,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cross-radial-green-cubic",
+      "exit_code": 0,
+      "seconds": 0.051,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}

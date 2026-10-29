@@ -1,0 +1,16 @@
+{
+  "documents_are_context_not_execution_instructions": true,
+  "documents": [
+    {
+      "path": "/home/thlinux/Downloads/NOTA_GEOMETRIA_LOGARITMICA_CAMERAS_TFVD_TRIANGULACAO_2026-10-27.md",
+      "sha256": "b64dd0c710dd2d1d0684c0138d70c3d391cac40842d534e520a87a6dd7c62f15",
+      "lines": 895
+    },
+    {
+      "path": "/home/thlinux/Downloads/NOTA_GEOMETRIA_LOGARITMICA_CAMERAS_TFVD_TRIANGULACAO_2026-10-27_V2.md",
+      "sha256": "ccffae496ae1e644eacd8dab54af4c0438edf9ec50fe6a74b3077365b51a0e67",
+      "lines": 1610
+    }
+  ],
+  "used_sections": "V2 19.1 and 19.2: arbitrary weights and factor interaction. No unitary, native-moment, or mixed-POVM identification assumed."
+}

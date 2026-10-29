@@ -1,0 +1,18 @@
+upstream-provenance: exit 0
+generate-audit: exit 0
+operator-source-build: exit 0
+lean-BoundaryFamily: exit 0
+lean-PolynomialIntegrals: exit 0
+lean-FamilyEnergy: exit 0
+lean-MellinLimits: exit 0
+lean-Nonclosability: exit 0
+lean-VerticalControl: exit 0
+lean-Audit: exit 0
+context-source-audit: exit 0
+root-build: exit 0
+audit-foundation: exit 0
+audit-geometry: exit 0
+audit-analysis: exit 0
+base-preserved: exit 0
+diff-check: exit 0
+PASS: 17 commands; no trusted escapes; source preservation verified

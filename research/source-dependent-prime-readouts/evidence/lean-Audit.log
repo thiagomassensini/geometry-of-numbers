@@ -1,0 +1,108 @@
+'CarrySourcePrime.primeReadout' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.primeProjection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_projection_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_projection_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_projection_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_projection_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_readout_projection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_projection_idempotent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_dual_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_projection_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_projection_self_adjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_projection_projected_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_projection_residual_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_residual_projection_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_projection_polarized_pythagoras' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_projection_norm_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_projection_norm_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_projection_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_projection_nested' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_projection_nested_reverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.primeAnalysis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_contraction_readout_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_analysis_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_analysis_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_analysis_readout' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_analysis_coordinate_mask' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_analysis_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_analysis_norm_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_analysis_nested' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_analysis_synthesis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_analysis_all_crosses' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_analysis_three_term_polarization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_projection_recovers_fixed_realization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySourcePrime.towerBasis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.primeTwo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.tower_basis_profile' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.tower_basis_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_contraction_zero_level' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_analysis_zero_level' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_contraction_not_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.zero_level_complement_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.two_level_active_gram' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.quadratureProjection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.quadrature_projection_rotation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.quadrature_projection_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.quadrature_projection_rotation_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.quadrature_projection_complex_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.complete_signed_readout_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.native_return_ratio_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.native_incident_energy_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.native_return_exceeds_fixed_fraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.no_eventual_isometric_prime_return' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.no_eventual_isometric_finite_prime_return' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.primeColumnKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.cauchyPrimeDefect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_column_kernel_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.cauchy_prime_pairing_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.complete_chiral_kernel_prime_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.prime_column_zero_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.cauchy_prime_defect_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.cauchy_prime_defect_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.no_cauchy_prime_positive_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.no_original_cauchy_positive_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.complete_chiral_first_source_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.originalContinuousSynthesis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.mellinTailPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.finiteTowerSynthesis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.finite_polynomial_with_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.original_continuous_with_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.original_continuous_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.mellin_tail_from_original_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.original_continuous_toLp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.mellin_tail_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.mellin_integral_native_profile' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.mellin_integral_prime_readout' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.originalComplexContinuousSynthesis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.original_complex_two_quadratures' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.original_complex_with_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourcePrime.original_complex_toLp' depends on axioms: [propext, Classical.choice, Quot.sound]
+Source-dependent prime audit tier 0: 79 public roots; 5731 type/body dependencies; standard axioms only
+'CarrySelfAdjointOperator.RealFirstNative.primeContractionLinear' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 7.29
+	System time (seconds): 5.85
+	Percent of CPU this job got: 127%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.33
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8359584
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 267570
+	Voluntary context switches: 16453
+	Involuntary context switches: 127
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 744
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

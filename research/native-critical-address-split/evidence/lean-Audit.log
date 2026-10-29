@@ -1,0 +1,86 @@
+'CarryAddressSplit.addressPower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.sourceEndpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.source_endpoint_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.source_endpoint_single' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.source_endpoint_physical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.address_power_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.address_power_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.address_power_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.address_power_comp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.address_power_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.address_power_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.address_power_single' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.address_power_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.kernel_address_green' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.symKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.sym_kernel_swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.sym_address_self_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.sym_second_first_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.kernel_source_add_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.kernel_source_add_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.kernel_source_neg_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.kernel_source_neg_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.sym_sub_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.kernel_address_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.static_address_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.static_address_two_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.odd_address_lowering' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.endpoint_static_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.endpoint_odd_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.endpoint_odd_power_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.endpoint_odd_first_survives' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.endpoint_odd_first_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.address_even_odd_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.native_odd_address_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.principalInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.defectInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.critical_input_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.principal_defect_kernel_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.defect_principal_kernel_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.completed_parts_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.complete_physical_source_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.weighted_odd_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.principal_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.defect_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.weighted_odd_imaginary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.principal_imaginary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.defect_imaginary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.imaginary_families_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.principal_defect_green_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.defect_principal_green_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.critical_kernel_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.cubic_kernel_grid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.defect_kernel_grid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.principalGrid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.defect_physical_grid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.critical_physical_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.principal_physical_grid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.defect_physical_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.defect_physical_scaled_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.principal_physical_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryAddressSplit.principal_physical_schur_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+Native physical address split construction: 57 public roots; 5575 type/body dependencies; standard axioms only; canonical moments forbidden=true; preexisting moment-sign and scalar-asymptotic shortcuts forbidden
+Native physical address split provenance: 4 public roots; 5596 type/body dependencies; standard axioms only; canonical moments forbidden=false; preexisting moment-sign and scalar-asymptotic shortcuts forbidden
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 8.48
+	System time (seconds): 6.93
+	Percent of CPU this job got: 118%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.96
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8386916
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 298031
+	Voluntary context switches: 14665
+	Involuntary context switches: 169
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 808
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

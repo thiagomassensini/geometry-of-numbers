@@ -1,0 +1,62 @@
+'CarryGreenLeading.partField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.part_field_reconstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.part_field_add_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.part_field_scale_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.part_field_scale_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.part_field_finite_locality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.completed_part_as_fields' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.completed_part_scale_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.part_constant_residual_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.constantPart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.linearPart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.native_part_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.native_part_contrast_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.part_response_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.part_field_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.part_remainder_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.normalizedPart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.normalized_part_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.normalized_part_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.chiral_difference_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.native_parts_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.partCross' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.part_cross_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.part_cross_scaled_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.leadingCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.part_cross_scaled_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.double_inner_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.sum_cross_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.sum_leading_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.part_cross_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.recomposed_leading_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.leading_residual_residual_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.leading_residual_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.leading_residual_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.linear_even_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.even_vector_compensation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenLeading.linear_even_residual_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+Vector Green leading coefficient construction: 26 public roots; 5519 type/body dependencies; standard axioms only; canonical moments forbidden=true; preexisting moment-sign and scalar-asymptotic shortcuts forbidden
+Vector Green leading coefficient provenance: 11 public roots; 5733 type/body dependencies; standard axioms only; canonical moments forbidden=false; preexisting moment-sign and scalar-asymptotic shortcuts forbidden
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 7.88
+	System time (seconds): 5.43
+	Percent of CPU this job got: 107%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.36
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8380492
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 295270
+	Voluntary context switches: 7527
+	Involuntary context switches: 128
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 728
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

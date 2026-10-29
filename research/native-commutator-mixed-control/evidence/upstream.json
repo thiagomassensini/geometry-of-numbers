@@ -1,0 +1,45 @@
+{
+  "base": "655e63b4d78aaefe3a442dabf945c2df698d2a59",
+  "modules": {
+    "SchurBound": {
+      "source": "research/native-vertical-synthesis/SchurBound.lean",
+      "source_sha256": "5ffe578f8a1d06eae90d3606fe796050673e429a187674766bbd93bb08ab4797",
+      "olean_sha256": "d413b483e8432dcc3199c9b35496a409c9a2de63957800d961b97e863e54a7b7"
+    },
+    "NativeSynthesis": {
+      "source": "research/native-vertical-synthesis/NativeSynthesis.lean",
+      "source_sha256": "22a7e79ef48ebb7e8d937eaf067ce4175be9b9c56ec5c7b31dcaa721cad4eb65",
+      "olean_sha256": "d2060ec7bbfa4964f3c9f5b541658b02e4a68a7608d33203d5fc12d7d2c5f507"
+    },
+    "Quadratures": {
+      "source": "research/native-vertical-synthesis/Quadratures.lean",
+      "source_sha256": "ae6eb58c756e599a4d3690a10a108772560016ee00f5cb6bbd1834d8f3c418e6",
+      "olean_sha256": "c180f3c1c46b1124c6f71fbc8145f10688c688dae3c1a44135fb14f38742938b"
+    },
+    "ShiftTransport": {
+      "source": "research/native-tfvd-completed-transport/ShiftTransport.lean",
+      "source_sha256": "b56cf6af3872f0422e3e5fcd1d5ef0283051f9a241752d888d4a69d3625882b9",
+      "olean_sha256": "6b9c6fea329098ad88b4b39dea3ecd9110cdc7fa95d8256301584434c4f5ac9d"
+    },
+    "PhysicalTfvd": {
+      "source": "research/native-tfvd-completed-transport/PhysicalTfvd.lean",
+      "source_sha256": "4292d0d343cfb9a0fa216d566c1cd371d0e9221353be3866190fd532a8ca26cf",
+      "olean_sha256": "6235a6d5d2815f02a84b9a8d57e07e7c4a20f72576e8ff992439e10272ef2845"
+    },
+    "CoefficientPorts": {
+      "source": "research/native-tfvd-completed-transport/CoefficientPorts.lean",
+      "source_sha256": "7679b7d41fe4851b05432091dd15ed198542b405b456d550ba7c643879fc34e6",
+      "olean_sha256": "c6df0c1bdfe6584d7661abb771159b1238c8dd31b24e3dde5018abe5072fbefb"
+    },
+    "CompletionCommutator": {
+      "source": "research/native-tfvd-completed-transport/CompletionCommutator.lean",
+      "source_sha256": "2a73aa883a505fce2fa313fdfc4973551c28a151836874f8d1fa150c4207ebaa",
+      "olean_sha256": "f97c31a9bd550fcfe378f9c3b794c25ce20c9311b50b5c31d13d30f82d023f58"
+    },
+    "CompletedSourceBridge": {
+      "source": "research/native-tfvd-completed-transport/CompletedSourceBridge.lean",
+      "source_sha256": "c0f01fbdf9cfb86f0e7eb5cab4820b17620ace8f8a825655c4546705c579f8ad",
+      "olean_sha256": "523296404e388b3f6c69776916526535adf34f4a8d5fbe2c8985f1a85a6a7d25"
+    }
+  }
+}

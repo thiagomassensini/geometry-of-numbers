@@ -1,0 +1,211 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-four-boundary-margin/research/native-four-boundary-margin",
+      "exit_code": 0,
+      "seconds": 0.71,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "verified-cache",
+      "command": [
+        "python3",
+        "restore_verified_cache.py",
+        "--verify-only"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-four-boundary-margin/research/native-four-boundary-margin",
+      "exit_code": 0,
+      "seconds": 1.316,
+      "log": "evidence/verified-cache.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-four-boundary-margin/research/native-four-boundary-margin",
+      "exit_code": 0,
+      "seconds": 0.641,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "mechanism-probe",
+      "command": [
+        "python3",
+        "mechanism_probe.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-four-boundary-margin/research/native-four-boundary-margin",
+      "exit_code": 0,
+      "seconds": 0.063,
+      "log": "evidence/mechanism-probe.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-four-boundary-margin/research/native-four-boundary-margin",
+      "exit_code": 0,
+      "seconds": 0.043,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFiniteTransfer",
+        "CarrySelfAdjointOperator.NativePhysicalFiniteSewing",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFourSampleStorage",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnEnergyPort"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 9.041,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "9724aa5048549f1f1d27be872f8666c5f8a0724127781e469b7a0eaa7d0e3049",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-PhysicalBoundaryCoordinates",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PhysicalBoundaryCoordinates"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-four-boundary-margin/research/native-four-boundary-margin",
+      "exit_code": 0,
+      "seconds": 13.047,
+      "log": "evidence/lean-PhysicalBoundaryCoordinates.log"
+    },
+    {
+      "label": "lean-PrincipalBoundaryLimit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PrincipalBoundaryLimit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-four-boundary-margin/research/native-four-boundary-margin",
+      "exit_code": 0,
+      "seconds": 18.241,
+      "log": "evidence/lean-PrincipalBoundaryLimit.log"
+    },
+    {
+      "label": "lean-CoercivePhysicalMargin",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CoercivePhysicalMargin"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-four-boundary-margin/research/native-four-boundary-margin",
+      "exit_code": 0,
+      "seconds": 13.368,
+      "log": "evidence/lean-CoercivePhysicalMargin.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-four-boundary-margin/research/native-four-boundary-margin",
+      "exit_code": 0,
+      "seconds": 44.187,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-four-boundary-margin",
+      "exit_code": 0,
+      "seconds": 7.421,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-four-boundary-margin",
+      "exit_code": 0,
+      "seconds": 7.025,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-four-boundary-margin",
+      "exit_code": 0,
+      "seconds": 10.733,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-four-boundary-margin",
+      "exit_code": 0,
+      "seconds": 47.243,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "ec12e668413422b6b930e0b891ed6500365e3967",
+        "--",
+        ".",
+        ":(exclude)research/native-four-boundary-margin/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-four-boundary-margin",
+      "exit_code": 0,
+      "seconds": 0.009,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-four-boundary-margin",
+      "exit_code": 0,
+      "seconds": 0.008,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}

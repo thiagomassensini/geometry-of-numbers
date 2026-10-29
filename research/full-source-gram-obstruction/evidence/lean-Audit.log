@@ -1,0 +1,61 @@
+'CarryFullSource.FullCarrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.originalNormalizedState' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.sourceNormalization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.original_state_eq_scaled' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.original_state_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.three_value_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.forced_value_norm_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.full_state_mass_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.full_state_mass_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.center_mass_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.value_preserving_mass_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.source_normalization_cancels_collision' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.normalizedNormal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.normalizedPhysicalTangent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.normalized_normal_eq_scaled' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.normalized_normal_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.normalized_normal_mass_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.normalized_normal_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.normalized_normal_tangent_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.normalComponent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.normalComponentEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.normal_component_orthogonal_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.normal_center_inner_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.normal_component_invariant_along_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.normal_component_mem_normal_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.normal_component_energy_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.normal_component_energy_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.full_state_native_mass_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.normal_component_strict_small' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.normal_component_not_native_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.isometric_transport_not_native_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.value_preserving_operation_native_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.orthogonal_extension_not_native_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFullSource.native_mass_value_readout_gain' depends on axioms: [propext, Classical.choice, Quot.sound]
+Full source norm audit tier 0: 24 public roots; 6139 type/body dependencies; standard axioms only
+Full source norm audit tier 1: 3 public roots; 6049 type/body dependencies; standard axioms only
+Full source norm audit tier 2: 7 public roots; 6053 type/body dependencies; standard axioms only
+Full source norm audit tier 3: 34 public roots; 6353 type/body dependencies; standard axioms only
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 6.56
+	System time (seconds): 3.65
+	Percent of CPU this job got: 109%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:09.37
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6963244
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1
+	Minor (reclaiming a frame) page faults: 237785
+	Voluntary context switches: 7696
+	Involuntary context switches: 101
+	Swaps: 0
+	File system inputs: 56
+	File system outputs: 696
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

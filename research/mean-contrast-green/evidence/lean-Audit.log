@@ -1,0 +1,55 @@
+'CarryMeanContrast.meanPort' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.contrastPort' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.mean_contrast_reconstruct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.signed_form_mean_contrast' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.signed_energy_mean_contrast' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.equal_legs_contrast' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.equal_legs_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.completed_equal_legs_mean_contrast' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.mean_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.contrast_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.symmetric_alignment_necessary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.corrected_kernel_mean_contrast' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.nativeResponse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.normalized_chiral_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.projective_mean_response' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.projective_contrast_response' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.alignmentDefect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.alignment_defect_common_refinement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.weighted_alignment_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.no_symmetric_alignment_of_nonzero_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.no_symmetric_alignment_weighted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.radial_cross_real_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.no_symmetric_two_original_ports' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.greenDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.greenBudget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.green_density_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.green_density_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.green_density_continuousOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.green_budget_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMeanContrast.c2_green_budget_gt_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+Native mean/contrast audit tier 0: 30 public roots; 5765 type/body dependencies; standard axioms only
+Native mean/contrast audit tier 0: 30 public roots; 5765 type/body dependencies; standard axioms only
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 7.94
+	System time (seconds): 4.68
+	Percent of CPU this job got: 105%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:11.93
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7972604
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 274808
+	Voluntary context switches: 7019
+	Involuntary context switches: 126
+	Swaps: 0
+	File system inputs: 16
+	File system outputs: 696
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

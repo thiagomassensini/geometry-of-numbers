@@ -1,0 +1,222 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-squared-grid/research/native-critical-squared-grid",
+      "exit_code": 0,
+      "seconds": 0.714,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "verified-cache",
+      "command": [
+        "python3",
+        "restore_verified_cache.py",
+        "--verify-only"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-squared-grid/research/native-critical-squared-grid",
+      "exit_code": 0,
+      "seconds": 0.962,
+      "log": "evidence/verified-cache.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-squared-grid/research/native-critical-squared-grid",
+      "exit_code": 0,
+      "seconds": 0.535,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "mechanism-probe",
+      "command": [
+        "python3",
+        "mechanism_probe.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-squared-grid/research/native-critical-squared-grid",
+      "exit_code": 0,
+      "seconds": 0.046,
+      "log": "evidence/mechanism-probe.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-squared-grid/research/native-critical-squared-grid",
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 9.009,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "5363e85e1810ae44959c0322492b6a706fa3386b8adc1c71df66c0f590e0f240",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-SquaredGrid",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SquaredGrid"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-squared-grid/research/native-critical-squared-grid",
+      "exit_code": 0,
+      "seconds": 13.959,
+      "log": "evidence/lean-SquaredGrid.log"
+    },
+    {
+      "label": "lean-CriticalGridPolynomial",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CriticalGridPolynomial"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-squared-grid/research/native-critical-squared-grid",
+      "exit_code": 0,
+      "seconds": 13.573,
+      "log": "evidence/lean-CriticalGridPolynomial.log"
+    },
+    {
+      "label": "lean-NativeCriticalGrid",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "NativeCriticalGrid"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-squared-grid/research/native-critical-squared-grid",
+      "exit_code": 0,
+      "seconds": 20.517,
+      "log": "evidence/lean-NativeCriticalGrid.log",
+      "raw_log": "evidence/lean-NativeCriticalGrid.raw.log.gz",
+      "raw_log_sha256": "c3331f6e8ddb7fce426ca148c4b5332fe4c62189af0c3ddb5cabb268fb9aef7e",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-GridSignObstruction",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "GridSignObstruction"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-squared-grid/research/native-critical-squared-grid",
+      "exit_code": 0,
+      "seconds": 12.273,
+      "log": "evidence/lean-GridSignObstruction.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-squared-grid/research/native-critical-squared-grid",
+      "exit_code": 0,
+      "seconds": 12.175,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-squared-grid",
+      "exit_code": 0,
+      "seconds": 8.47,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-squared-grid",
+      "exit_code": 0,
+      "seconds": 7.458,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-squared-grid",
+      "exit_code": 0,
+      "seconds": 10.794,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-squared-grid",
+      "exit_code": 0,
+      "seconds": 47.672,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "24741f75b8f2ebd72ccd53a1e7211d476014afd0",
+        "--",
+        ".",
+        ":(exclude)research/native-critical-squared-grid/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-squared-grid",
+      "exit_code": 0,
+      "seconds": 0.314,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-critical-squared-grid",
+      "exit_code": 0,
+      "seconds": 0.257,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}

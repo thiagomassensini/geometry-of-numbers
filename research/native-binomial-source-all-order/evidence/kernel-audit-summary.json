@@ -1,0 +1,22 @@
+{
+  "PASS": true,
+  "public_roots": 22,
+  "theorems": 18,
+  "definitions": 4,
+  "construction_roots": 21,
+  "construction_dependencies": 50326,
+  "transported_control_roots": 1,
+  "transported_control_dependencies": 62093,
+  "theorem_and_opaque_bodies_traversed": true,
+  "moment_readout_forbidden_before_vector_transport": true,
+  "finite_positivity_and_coercivity_certificates_forbidden_in_all_groups": true,
+  "actual_finite_sign_roots_used": [],
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "auditor_sha256": "b205c36f0e8f9d5a1643443da282de64331c647d8f81de58aaae61d288eee678",
+  "audit_source_sha256": "86a4c0ce2487c4765c54d916a3abd23c467199991eeee2798fcf9d203a5ad43a",
+  "audit_log_sha256": "21144a60109f57f4ff49a2551f17fcde37e8f1d95282382d6bb670132bde56ee"
+}

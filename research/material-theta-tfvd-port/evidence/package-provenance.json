@@ -1,0 +1,28 @@
+{
+  "CPFormal": {
+    "head": "65d50f6db1208708e109982ba97e1d51d3039956",
+    "status": "",
+    "sources_sha256": {
+      "CPFormal/Analytic/CpNativeCarryFiniteCameraAlgebra.lean": "3ede272eb7548760083b84a8dc3259de3386047be60fc89678aba3d704e05a1b",
+      "CPFormal/Analytic/CpCarryWeightedVerticalTfvdFinite.lean": "90a03f53afd54b774ea7d9a126832506b694f5496dc6b5b820174e35819dac81",
+      "CPFormal/Analytic/CpCarryAmplitudeIdentification.lean": "804fcd6096c921e18cea143ca29a0165bf0b0d20efc60c271cc0d26a1b436f55"
+    }
+  },
+  "NativeCarryC3Crosswalk": {
+    "head": "150cfc7fb08da96bf8117f15869cc2b819d593c2",
+    "status": "",
+    "sources_sha256": {
+      "NativeCarryC3Crosswalk/FinitePackaging.lean": "37ee32805e03d2174e9cb68425c1d5775f33e87492b6baf5fff9cd2951a98b34",
+      "NativeCarryC3Crosswalk/GenuineBracketGreenIdentity.lean": "ab6906347cb321d2d9c27bb1508639bf3805bb9005f097564e12ba13664adc17"
+    }
+  },
+  "NativeCarrySpectralWeyl": {
+    "head": "298d83c9351e308a5213b9f5ac32e44087f98a9f",
+    "status": "",
+    "sources_sha256": {
+      "NativeCarrySpectralWeyl/Camera/DerivativeTail.lean": "46e0ed7cf5bb250e17beb0f19d7cc8c36c893118cdf765d58a390eaa769a9134",
+      "NativeCarrySpectralWeyl/Boundary/GreenRelation.lean": "fa73ac9e60fcf40ffe2fd509b5a35ed3f16c71b280b83642472eb112b6a9da24",
+      "NativeCarrySpectralWeyl/Camera/ModalEnergy.lean": "a36246e28a0919cdc3f4de9cd27eaa48291034d1d8b070dbbe6c400145cb2393"
+    }
+  }
+}

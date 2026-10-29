@@ -1,0 +1,211 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-odd-green-defect/research/native-cubic-odd-green-defect",
+      "exit_code": 0,
+      "seconds": 0.782,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "verified-cache",
+      "command": [
+        "python3",
+        "restore_verified_cache.py",
+        "--verify-only"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-odd-green-defect/research/native-cubic-odd-green-defect",
+      "exit_code": 0,
+      "seconds": 0.851,
+      "log": "evidence/verified-cache.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-odd-green-defect/research/native-cubic-odd-green-defect",
+      "exit_code": 0,
+      "seconds": 0.471,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-odd-green-defect/research/native-cubic-odd-green-defect",
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.86,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "9f1a53d51d2ccaea5c5b5f6545e50160e52e6d8ff96501a26553b05efef6e935",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-OddWeights",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "OddWeights"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-odd-green-defect/research/native-cubic-odd-green-defect",
+      "exit_code": 0,
+      "seconds": 14.068,
+      "log": "evidence/lean-OddWeights.log"
+    },
+    {
+      "label": "lean-CubicOddVectors",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CubicOddVectors"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-odd-green-defect/research/native-cubic-odd-green-defect",
+      "exit_code": 0,
+      "seconds": 18.097,
+      "log": "evidence/lean-CubicOddVectors.log",
+      "raw_log": "evidence/lean-CubicOddVectors.raw.log.gz",
+      "raw_log_sha256": "23f9b1417b5a852bf024ed2bf4797166eb3337354c0d1429b9061a1036d6f9f3",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-CriticalOddGreen",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CriticalOddGreen"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-odd-green-defect/research/native-cubic-odd-green-defect",
+      "exit_code": 0,
+      "seconds": 13.215,
+      "log": "evidence/lean-CriticalOddGreen.log"
+    },
+    {
+      "label": "lean-CriticalOddDefect",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CriticalOddDefect"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-odd-green-defect/research/native-cubic-odd-green-defect",
+      "exit_code": 0,
+      "seconds": 16.235,
+      "log": "evidence/lean-CriticalOddDefect.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-odd-green-defect/research/native-cubic-odd-green-defect",
+      "exit_code": 0,
+      "seconds": 12.35,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-odd-green-defect",
+      "exit_code": 0,
+      "seconds": 8.273,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-odd-green-defect",
+      "exit_code": 0,
+      "seconds": 7.349,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-odd-green-defect",
+      "exit_code": 0,
+      "seconds": 10.255,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-odd-green-defect",
+      "exit_code": 0,
+      "seconds": 48.092,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "1e90ca7d4f41a2cecc89999f23ef139935d0a556",
+        "--",
+        ".",
+        ":(exclude)research/native-cubic-odd-green-defect/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-odd-green-defect",
+      "exit_code": 0,
+      "seconds": 0.009,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-odd-green-defect",
+      "exit_code": 0,
+      "seconds": 0.007,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}

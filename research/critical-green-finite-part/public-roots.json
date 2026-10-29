@@ -1,0 +1,102 @@
+{
+  "modules": {
+    "NativeRemainder": [
+      "CarryGreenFinitePart.imaginaryReadout",
+      "CarryGreenFinitePart.readoutCoefficient",
+      "CarryGreenFinitePart.readout_analytic",
+      "CarryGreenFinitePart.readout_coefficient_derivative",
+      "CarryGreenFinitePart.readout_coefficient_even",
+      "CarryGreenFinitePart.readout_coefficient_odd",
+      "CarryGreenFinitePart.readout_exact_remainder",
+      "CarryGreenFinitePart.readout_real",
+      "CarryGreenFinitePart.radialStep",
+      "CarryGreenFinitePart.radial_step_limit",
+      "CarryGreenFinitePart.radial_node_readout"
+    ],
+    "ExactBalance": [
+      "CarryGreenFinitePart.greenBalance",
+      "CarryGreenFinitePart.green_balance_source",
+      "CarryGreenFinitePart.basis_mean",
+      "CarryGreenFinitePart.source_basis_real",
+      "CarryGreenFinitePart.second_scale_real",
+      "CarryGreenFinitePart.realWeight",
+      "CarryGreenFinitePart.critical_weight_real",
+      "CarryGreenFinitePart.real_weighted_form",
+      "CarryGreenFinitePart.source_energy_three_samples",
+      "CarryGreenFinitePart.green_balance_three_samples"
+    ],
+    "FiniteExpansion": [
+      "CarryGreenFinitePart.finiteTerm",
+      "CarryGreenFinitePart.correctionTerm",
+      "CarryGreenFinitePart.fourthPolynomial",
+      "CarryGreenFinitePart.remainderReadout",
+      "CarryGreenFinitePart.errorReadout",
+      "CarryGreenFinitePart.green_balance_exact_expansion",
+      "CarryGreenFinitePart.criticalParameter",
+      "CarryGreenFinitePart.finite_term_critical",
+      "CarryGreenFinitePart.critical_correction_formula"
+    ],
+    "RemainderControl": [
+      "CarryGreenFinitePart.error_readout_continuousAt",
+      "CarryGreenFinitePart.radial_mass_step",
+      "CarryGreenFinitePart.green_finite_term_limit",
+      "CarryGreenFinitePart.green_correction_limit",
+      "CarryGreenFinitePart.green_fourth_correction_limit",
+      "CarryGreenFinitePart.green_sixth_order_error_bound"
+    ],
+    "CertifiedDirection": [
+      "CarryGreenFinitePart.critical_correction_negative",
+      "CarryGreenFinitePart.critical_finite_term_positive",
+      "CarryGreenFinitePart.critical_green_scaled_correction",
+      "CarryGreenFinitePart.critical_green_eventually_between"
+    ]
+  },
+  "audit_groups": {
+    "source": [
+      "CarryGreenFinitePart.greenBalance",
+      "CarryGreenFinitePart.green_balance_source",
+      "CarryGreenFinitePart.basis_mean",
+      "CarryGreenFinitePart.source_basis_real",
+      "CarryGreenFinitePart.second_scale_real",
+      "CarryGreenFinitePart.realWeight",
+      "CarryGreenFinitePart.critical_weight_real",
+      "CarryGreenFinitePart.real_weighted_form",
+      "CarryGreenFinitePart.source_energy_three_samples",
+      "CarryGreenFinitePart.green_balance_three_samples"
+    ],
+    "identification": [
+      "CarryGreenFinitePart.imaginaryReadout",
+      "CarryGreenFinitePart.readoutCoefficient",
+      "CarryGreenFinitePart.readout_analytic",
+      "CarryGreenFinitePart.readout_coefficient_derivative",
+      "CarryGreenFinitePart.readout_coefficient_even",
+      "CarryGreenFinitePart.readout_coefficient_odd",
+      "CarryGreenFinitePart.readout_exact_remainder",
+      "CarryGreenFinitePart.readout_real",
+      "CarryGreenFinitePart.radialStep",
+      "CarryGreenFinitePart.radial_step_limit",
+      "CarryGreenFinitePart.radial_node_readout",
+      "CarryGreenFinitePart.finiteTerm",
+      "CarryGreenFinitePart.correctionTerm",
+      "CarryGreenFinitePart.fourthPolynomial",
+      "CarryGreenFinitePart.remainderReadout",
+      "CarryGreenFinitePart.errorReadout",
+      "CarryGreenFinitePart.green_balance_exact_expansion",
+      "CarryGreenFinitePart.criticalParameter",
+      "CarryGreenFinitePart.finite_term_critical",
+      "CarryGreenFinitePart.critical_correction_formula",
+      "CarryGreenFinitePart.error_readout_continuousAt",
+      "CarryGreenFinitePart.radial_mass_step",
+      "CarryGreenFinitePart.green_finite_term_limit",
+      "CarryGreenFinitePart.green_correction_limit",
+      "CarryGreenFinitePart.green_fourth_correction_limit",
+      "CarryGreenFinitePart.green_sixth_order_error_bound"
+    ],
+    "signs": [
+      "CarryGreenFinitePart.critical_correction_negative",
+      "CarryGreenFinitePart.critical_finite_term_positive",
+      "CarryGreenFinitePart.critical_green_scaled_correction",
+      "CarryGreenFinitePart.critical_green_eventually_between"
+    ]
+  }
+}

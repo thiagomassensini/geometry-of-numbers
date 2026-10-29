@@ -1,0 +1,212 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-commutator-mixed-control/research/native-commutator-mixed-control",
+      "exit_code": 0,
+      "seconds": 0.596,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-commutator-mixed-control/research/native-commutator-mixed-control",
+      "exit_code": 0,
+      "seconds": 106.677,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-commutator-mixed-control/research/native-commutator-mixed-control",
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.568,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "c69dd89a921bfd1c38afd8d1361df31c59ebc015211a6613cb4a0ed1f5af032a",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-NativeWeightLaw",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "NativeWeightLaw"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-commutator-mixed-control/research/native-commutator-mixed-control",
+      "exit_code": 0,
+      "seconds": 10.062,
+      "log": "evidence/lean-NativeWeightLaw.log"
+    },
+    {
+      "label": "lean-NullCommutator",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "NullCommutator"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-commutator-mixed-control/research/native-commutator-mixed-control",
+      "exit_code": 0,
+      "seconds": 10.154,
+      "log": "evidence/lean-NullCommutator.log"
+    },
+    {
+      "label": "lean-MixedReduction",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MixedReduction"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-commutator-mixed-control/research/native-commutator-mixed-control",
+      "exit_code": 0,
+      "seconds": 10.511,
+      "log": "evidence/lean-MixedReduction.log"
+    },
+    {
+      "label": "lean-NativeJets",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "NativeJets"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-commutator-mixed-control/research/native-commutator-mixed-control",
+      "exit_code": 0,
+      "seconds": 10.789,
+      "log": "evidence/lean-NativeJets.log"
+    },
+    {
+      "label": "lean-GreenSeed",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "GreenSeed"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-commutator-mixed-control/research/native-commutator-mixed-control",
+      "exit_code": 0,
+      "seconds": 10.98,
+      "log": "evidence/lean-GreenSeed.log"
+    },
+    {
+      "label": "lean-SeedMixedLimit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SeedMixedLimit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-commutator-mixed-control/research/native-commutator-mixed-control",
+      "exit_code": 0,
+      "seconds": 10.42,
+      "log": "evidence/lean-SeedMixedLimit.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-commutator-mixed-control/research/native-commutator-mixed-control",
+      "exit_code": 0,
+      "seconds": 10.363,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-commutator-mixed-control",
+      "exit_code": 0,
+      "seconds": 8.245,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-commutator-mixed-control",
+      "exit_code": 0,
+      "seconds": 6.581,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-commutator-mixed-control",
+      "exit_code": 0,
+      "seconds": 9.374,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-commutator-mixed-control",
+      "exit_code": 0,
+      "seconds": 48.351,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "655e63b4d78aaefe3a442dabf945c2df698d2a59",
+        "--",
+        ".",
+        ":(exclude)research/native-commutator-mixed-control/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-commutator-mixed-control",
+      "exit_code": 0,
+      "seconds": 0.008,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-commutator-mixed-control",
+      "exit_code": 0,
+      "seconds": 0.007,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-all-order/research/native-euler-newton-all-order",
+      "exit_code": 0,
+      "seconds": 0.65,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "verified-cache",
+      "command": [
+        "python3",
+        "restore_verified_cache.py",
+        "--verify-only"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-all-order/research/native-euler-newton-all-order",
+      "exit_code": 0,
+      "seconds": 1.46,
+      "log": "evidence/verified-cache.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-all-order/research/native-euler-newton-all-order",
+      "exit_code": 0,
+      "seconds": 0.784,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "mechanism-probe",
+      "command": [
+        "python3",
+        "mechanism_probe.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-all-order/research/native-euler-newton-all-order",
+      "exit_code": 0,
+      "seconds": 5.01,
+      "log": "evidence/mechanism-probe.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-all-order/research/native-euler-newton-all-order",
+      "exit_code": 0,
+      "seconds": 0.042,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFiniteTransfer",
+        "CarrySelfAdjointOperator.NativePhysicalFiniteSewing",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFourSampleStorage",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnEnergyPort"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.901,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "54609a7fcf4d2569beb229eacc4b85f3bc20e33f50caa565d1dcf8fd258185b8",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-ShiftedFalling",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "ShiftedFalling"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-all-order/research/native-euler-newton-all-order",
+      "exit_code": 0,
+      "seconds": 14.246,
+      "log": "evidence/lean-ShiftedFalling.log"
+    },
+    {
+      "label": "lean-EulerNewtonMatrix",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "EulerNewtonMatrix"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-all-order/research/native-euler-newton-all-order",
+      "exit_code": 0,
+      "seconds": 17.507,
+      "log": "evidence/lean-EulerNewtonMatrix.log"
+    },
+    {
+      "label": "lean-NativeEulerTransport",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "NativeEulerTransport"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-all-order/research/native-euler-newton-all-order",
+      "exit_code": 0,
+      "seconds": 14.674,
+      "log": "evidence/lean-NativeEulerTransport.log"
+    },
+    {
+      "label": "lean-MovingEulerLimit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MovingEulerLimit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-all-order/research/native-euler-newton-all-order",
+      "exit_code": 0,
+      "seconds": 14.29,
+      "log": "evidence/lean-MovingEulerLimit.log"
+    },
+    {
+      "label": "lean-MatrixCoherence",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MatrixCoherence"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-all-order/research/native-euler-newton-all-order",
+      "exit_code": 0,
+      "seconds": 17.506,
+      "log": "evidence/lean-MatrixCoherence.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-all-order/research/native-euler-newton-all-order",
+      "exit_code": 0,
+      "seconds": 20.927,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-all-order",
+      "exit_code": 0,
+      "seconds": 7.962,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-all-order",
+      "exit_code": 0,
+      "seconds": 6.999,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-all-order",
+      "exit_code": 0,
+      "seconds": 9.792,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-all-order",
+      "exit_code": 0,
+      "seconds": 46.63,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "0c80f0d3c00bb03d7852a59faffa9adca80a4d3f",
+        "--",
+        ".",
+        ":(exclude)research/native-euler-newton-all-order/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-all-order",
+      "exit_code": 0,
+      "seconds": 0.118,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-all-order",
+      "exit_code": 0,
+      "seconds": 0.114,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}

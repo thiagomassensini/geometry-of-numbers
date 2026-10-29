@@ -1,0 +1,79 @@
+'CarryRadialFlow.tc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.tc_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.tc_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.tc_deriv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.tc_id' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.source_normalized_response' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.source_tc_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.source_tc_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.flowResponse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.source_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.flow_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.flow_equation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.flow_tc_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.flowJetPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.flow_first_eight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.cayleyResponse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.original_quotient_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.original_quotient_eq_cayley' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.cayley_flow_equation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.original_quotient_flow_equation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.original_rotated_response' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.original_quotient_radial_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.mu' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.flowJetWitness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.radialWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.address' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.fourFlowKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.nodeWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.fourFlowKernel_reduction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.flow_taylor_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.fourFlowKernel_exact_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.fourFlowKernel_normalized_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.radialQuotient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.radialDefectEntry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.address_sum_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.radial_defect_flow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.flowWitness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.slopeBox' depends on axioms: [propext]
+'CarryRadialFlow.firstFlowBox' depends on axioms: [propext]
+'CarryRadialFlow.secondFlowBox' depends on axioms: [propext]
+'CarryRadialFlow.thirdFlowBox' depends on axioms: [propext]
+'CarryRadialFlow.flowWitnessBox' depends on axioms: [propext]
+'CarryRadialFlow.flowWitnessBox_negative' depends on axioms: [propext]
+'CarryRadialFlow.source_flow_witness_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.actual_flow_jet_witness_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.flowJetWitness_re_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.fourFlowKernel_normalized_eventually_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.fourFlowKernel_eventually_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.radialWeightReal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.radialWeight_ofReal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.realFlowMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.fourFlowKernel_real_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialFlow.fourFlowMatrix_eventually_not_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+Radial flow audit algebra: 11 public roots; 27245 type/body dependencies; standard axioms only; finite canonical positivity forbidden; opaque bodies traversed
+Radial flow audit source: 27 public roots; 57235 type/body dependencies; standard axioms only; finite canonical positivity forbidden; opaque bodies traversed
+Radial flow audit certificate: 15 public roots; 58278 type/body dependencies; standard axioms only; finite canonical positivity forbidden; opaque bodies traversed
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 25.03
+	System time (seconds): 8.39
+	Percent of CPU this job got: 105%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:31.59
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8276892
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 78
+	Minor (reclaiming a frame) page faults: 440301
+	Voluntary context switches: 12675
+	Involuntary context switches: 347
+	Swaps: 0
+	File system inputs: 3688
+	File system outputs: 944
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

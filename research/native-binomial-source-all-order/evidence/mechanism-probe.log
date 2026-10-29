@@ -1,0 +1,24 @@
+{"PASS": true, "exact_gaussian_fraction_checks": 1587, "tested_dimensions": [0, 2, 4, 6, 8, 10, 12, 16], "canonical_moments_used": false, "zero_or_height_inputs": false, "both_binomial_matrix_inverses_checked": true, "both_native_chart_directions_tested": true, "prefix_coherence_and_zero_extension": true, "independent_complex_arguments_and_radial_indices": true, "full_two_legs_and_all_cauchy_crossings": true, "wrong_global_phase_detected": true, "amplitudes_and_return_samples_scope": "generic algebra identity regressions only; not evaluations of the native completed functions or positivity evidence", "lean_scope": "all finite n is proved in Lean; these finite rational cases are regressions only"}
+	Command being timed: "python3 mechanism_probe.py"
+	User time (seconds): 1.03
+	System time (seconds): 0.01
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.04
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 12584
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1624
+	Voluntary context switches: 1
+	Involuntary context switches: 10
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

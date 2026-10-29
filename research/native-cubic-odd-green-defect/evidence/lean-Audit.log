@@ -1,0 +1,71 @@
+'CarryCubicOdd.odd_weighted_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.odd_weight_commutator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.odd_weight_bulk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.odd_weight_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.odd_weight_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.odd_weight_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.odd_weight_two_defects' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.cubic_odd_profile' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.cubic_bulk_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.cubic_weighted_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.cubic_commutator_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.cubic_bulk_vector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.cubic_boundary_vector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.cubic_residual_vector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.cubic_bulk_residual_cancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.cubic_complete_vector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.part_field_add_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.completed_part_add_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.criticalOddSource' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.trialCoeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.critical_source_as_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.critical_source_profiles' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.critical_field_vectors' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.critical_completed_parts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.critical_bilinear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.critical_green_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.critical_signed_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.critical_old_cross_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.critical_old_cross_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.critical_schur_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.criticalBeta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.critical_source_atoms' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.kernel_four_atoms' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.criticalSampleReadout' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.critical_kernel_readout' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.critical_signed_readout_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.critical_green_readout_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.cubic_halo_fields' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.critical_cauchy_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.criticalRho' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.critical_readout_four_samples' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.critical_rho_alternating' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.critical_diagonal_four_samples_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.positive_address_weight_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.positive_address_weight_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicOdd.no_sign_from_nonnegative_address_weights' depends on axioms: [propext, Classical.choice, Quot.sound]
+Cubic odd physical Green defect construction: 40 public roots; 5550 type/body dependencies; standard axioms only; canonical moments forbidden=true; preexisting moment-sign and scalar-asymptotic shortcuts forbidden
+Cubic odd physical Green defect provenance: 6 public roots; 5694 type/body dependencies; standard axioms only; canonical moments forbidden=false; preexisting moment-sign and scalar-asymptotic shortcuts forbidden
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 8.02
+	System time (seconds): 5.95
+	Percent of CPU this job got: 113%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.34
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8386184
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 290009
+	Voluntary context switches: 11139
+	Involuntary context switches: 143
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 776
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
