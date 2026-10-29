@@ -37,7 +37,7 @@ A_{rs}=|\operatorname{spatialCorrection}(2r+1,2s+1)|
 B(S,c)=\sum_{r,s\in S}|c_rc_s|A_{rs}.
 $$
 
-Esses são exatamente oddFilterBudget, pairConstant e familyConstant; os coeficientes dos filtros e spatialCorrection são expressões racionais dos índices, e os coeficientes c são os dados fixos da família. A magnitude do momento na correção foi limitada pelo teorema anterior de decaimento, não por hipótese de sinal. O orçamento é conservador; sua utilidade não requer que seja uma margem positiva. family_constant_nonneg certifica sua não negatividade. Como teste exato, first_pair_constant_value prova A₀₀ = 209/3; six_grid_cutoff_value prova K₀ = 24 para S={0,1,2}.
+Esses são exatamente oddFilterBudget, pairConstant e familyConstant; os coeficientes dos filtros e spatialCorrection são expressões racionais dos índices, e os coeficientes c são os dados fixos da família. A fórmula é efetivamente calculável quando esses coeficientes são dados de modo efetivo, por exemplo racionais. O teorema Lean aceita funções c arbitrárias em ℝ e não afirma que qualquer real abstrato tenha uma representação computável. A magnitude do momento na correção foi limitada pelo teorema anterior de decaimento, não por hipótese de sinal. O orçamento é conservador; sua utilidade não requer que seja uma margem positiva. family_constant_nonneg certifica sua não negatividade. Como teste exato, first_pair_constant_value prova A₀₀ = 209/3; six_grid_cutoff_value prova K₀ = 24 para S={0,1,2}.
 
 Os passos formais são:
 
