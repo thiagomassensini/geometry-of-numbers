@@ -1,0 +1,226 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-four/research/native-euler-newton-four",
+      "exit_code": 0,
+      "seconds": 0.623,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "verified-cache",
+      "command": [
+        "python3",
+        "restore_verified_cache.py",
+        "--verify-only"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-four/research/native-euler-newton-four",
+      "exit_code": 0,
+      "seconds": 1.402,
+      "log": "evidence/verified-cache.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-four/research/native-euler-newton-four",
+      "exit_code": 0,
+      "seconds": 0.747,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "mechanism-probe",
+      "command": [
+        "python3",
+        "mechanism_probe.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-four/research/native-euler-newton-four",
+      "exit_code": 0,
+      "seconds": 0.094,
+      "log": "evidence/mechanism-probe.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-four/research/native-euler-newton-four",
+      "exit_code": 0,
+      "seconds": 0.038,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFiniteTransfer",
+        "CarrySelfAdjointOperator.NativePhysicalFiniteSewing",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFourSampleStorage",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnEnergyPort"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.588,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "05969b5bcba7c01ad9768c77777ee3dc7794fc0a39b41a07c21ed83b6fc7ca58",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-ExplicitNewtonInput",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "ExplicitNewtonInput"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-four/research/native-euler-newton-four",
+      "exit_code": 0,
+      "seconds": 21.693,
+      "log": "evidence/lean-ExplicitNewtonInput.log"
+    },
+    {
+      "label": "lean-EulerNewtonBridge",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "EulerNewtonBridge"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-four/research/native-euler-newton-four",
+      "exit_code": 0,
+      "seconds": 21.84,
+      "log": "evidence/lean-EulerNewtonBridge.log"
+    },
+    {
+      "label": "lean-CriticalJetTransport",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CriticalJetTransport"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-four/research/native-euler-newton-four",
+      "exit_code": 0,
+      "seconds": 16.207,
+      "log": "evidence/lean-CriticalJetTransport.log"
+    },
+    {
+      "label": "lean-TransportedEnergyControl",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "TransportedEnergyControl"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-four/research/native-euler-newton-four",
+      "exit_code": 0,
+      "seconds": 14.885,
+      "log": "evidence/lean-TransportedEnergyControl.log",
+      "raw_log": "evidence/lean-TransportedEnergyControl.raw.log.gz",
+      "raw_log_sha256": "0c9e34d831adc3056140cf85ac067b95fd83d220fa37e2aa4d18909570d913db",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-four/research/native-euler-newton-four",
+      "exit_code": 0,
+      "seconds": 28.949,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-four",
+      "exit_code": 0,
+      "seconds": 9.044,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-four",
+      "exit_code": 0,
+      "seconds": 7.54,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-four",
+      "exit_code": 0,
+      "seconds": 10.03,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-four",
+      "exit_code": 0,
+      "seconds": 46.465,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "0d19a0bbea119bb93ea38b638a8cb81aad1d0da6",
+        "--",
+        ".",
+        ":(exclude)research/native-euler-newton-four/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-four",
+      "exit_code": 0,
+      "seconds": 0.009,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-euler-newton-four",
+      "exit_code": 0,
+      "seconds": 0.008,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}
