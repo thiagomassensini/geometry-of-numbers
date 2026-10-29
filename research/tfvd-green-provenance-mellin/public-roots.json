@@ -1,0 +1,48 @@
+{
+  "GreenPortCalibration": [
+    "CarryGreenProvenance.materialGreenPort",
+    "CarryGreenProvenance.material_green_port_eq",
+    "CarryGreenProvenance.reflected_re_pos",
+    "CarryGreenProvenance.mixed_direct_green_port",
+    "CarryGreenProvenance.reflected_green_port",
+    "CarryGreenProvenance.direct_port_mellin",
+    "CarryGreenProvenance.reflected_port_mellin",
+    "CarryGreenProvenance.green_edge_mellin",
+    "CarryGreenProvenance.green_form_mellin"
+  ],
+  "BlockProvenance": [
+    "CarryGreenProvenance.heatCellProvenance",
+    "CarryGreenProvenance.heatBlockProvenance",
+    "CarryGreenProvenance.originalBlockProvenance",
+    "CarryGreenProvenance.heat_cell_address_calibration",
+    "CarryGreenProvenance.block_provenance_mellin",
+    "CarryGreenProvenance.visible_legs_mellin",
+    "CarryGreenProvenance.dormant_legs_mellin",
+    "CarryGreenProvenance.dormant_compensation_mellin",
+    "CarryGreenProvenance.heatGreenProvenance",
+    "CarryGreenProvenance.heat_green_eq_original_ledger"
+  ],
+  "CompleteLedger": [
+    "CarryGreenProvenance.heatLedger",
+    "CarryGreenProvenance.full_ledger_mellin",
+    "CarryGreenProvenance.native_wronskian_full_mellin"
+  ],
+  "RadialCompensation": [
+    "CarryGreenProvenance.material_port_coordinates",
+    "CarryGreenProvenance.green_edge_radial",
+    "CarryGreenProvenance.dormant_compensation_radial",
+    "CarryGreenProvenance.critical_port_legs_equal",
+    "CarryGreenProvenance.critical_green_edge_zero",
+    "CarryGreenProvenance.critical_green_form_zero",
+    "CarryGreenProvenance.critical_dormant_compensation_zero",
+    "CarryGreenProvenance.critical_wronskian_in_ledger"
+  ],
+  "CutoffResidual": [
+    "CarryGreenProvenance.heatLedgerTotal",
+    "CarryGreenProvenance.heat_ledger_total_eq_native_defect",
+    "CarryGreenProvenance.heat_ledger_total_tendsto",
+    "CarryGreenProvenance.heat_completion_tendsto_zero",
+    "CarryGreenProvenance.critical_ledger_total_eq",
+    "CarryGreenProvenance.critical_ledger_total_cutoff_independent"
+  ]
+}
