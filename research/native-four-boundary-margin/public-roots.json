@@ -1,0 +1,58 @@
+{
+  "modules": {
+    "PhysicalBoundaryCoordinates": [
+      "CarryBoundaryMargin.physicalCoefficients",
+      "CarryBoundaryMargin.physicalValues",
+      "CarryBoundaryMargin.physical_values_eq",
+      "CarryBoundaryMargin.physical_values_recover",
+      "CarryBoundaryMargin.principalBoundary"
+    ],
+    "PrincipalBoundaryLimit": [
+      "CarryBoundaryMargin.boundaryTemplate",
+      "CarryBoundaryMargin.boundaryLimit",
+      "CarryBoundaryMargin.principal_boundary_exact",
+      "CarryBoundaryMargin.principal_boundary_eventually_exact",
+      "CarryBoundaryMargin.boundary_template_continuous",
+      "CarryBoundaryMargin.principal_boundary_tendsto",
+      "CarryBoundaryMargin.boundary_template_norm_sq",
+      "CarryBoundaryMargin.boundary_limit_norm_sq",
+      "CarryBoundaryMargin.boundary_limit_ne_zero",
+      "CarryBoundaryMargin.boundary_shear_lower",
+      "CarryBoundaryMargin.principal_boundary_eventually_lower"
+    ],
+    "CoercivePhysicalMargin": [
+      "CarryBoundaryMargin.physical_four_boundary_coercive",
+      "CarryBoundaryMargin.principal_uniform_physical_margin",
+      "CarryBoundaryMargin.canonical_uniform_quadratic_margin",
+      "CarryBoundaryMargin.canonical_second_shifted_schur_margin"
+    ]
+  },
+  "groups": {
+    "construction": [
+      "CarryBoundaryMargin.physicalCoefficients",
+      "CarryBoundaryMargin.physicalValues",
+      "CarryBoundaryMargin.physical_values_eq",
+      "CarryBoundaryMargin.physical_values_recover",
+      "CarryBoundaryMargin.principalBoundary",
+      "CarryBoundaryMargin.boundaryTemplate",
+      "CarryBoundaryMargin.boundaryLimit",
+      "CarryBoundaryMargin.principal_boundary_exact",
+      "CarryBoundaryMargin.principal_boundary_eventually_exact",
+      "CarryBoundaryMargin.boundary_template_continuous",
+      "CarryBoundaryMargin.principal_boundary_tendsto",
+      "CarryBoundaryMargin.boundary_template_norm_sq",
+      "CarryBoundaryMargin.boundary_limit_norm_sq",
+      "CarryBoundaryMargin.boundary_limit_ne_zero",
+      "CarryBoundaryMargin.boundary_shear_lower",
+      "CarryBoundaryMargin.principal_boundary_eventually_lower"
+    ],
+    "finite_margin": [
+      "CarryBoundaryMargin.physical_four_boundary_coercive",
+      "CarryBoundaryMargin.principal_uniform_physical_margin"
+    ],
+    "canonical_limit": [
+      "CarryBoundaryMargin.canonical_uniform_quadratic_margin",
+      "CarryBoundaryMargin.canonical_second_shifted_schur_margin"
+    ]
+  }
+}
