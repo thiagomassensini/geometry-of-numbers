@@ -1,0 +1,67 @@
+'CarryCubicQuartic.quarticForward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.quarticBackward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.quartic_forward_in_advance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.quartic_backward_in_advance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.forward_advance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.backward_advance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.forward_complement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.backward_complement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.resolvent_forward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.resolvent_backward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.forward_as_multiplier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.backward_as_multiplier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.quarticCubicTangent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.nativeQuarticU3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.quartic_cubic_commutator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.quartic_cubic_halo_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.quartic_cubic_tangent_native' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.quartic_cubic_tangent_resolvent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.quartic_forward_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.quartic_backward_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.quartic_cubic_polarized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.quartic_cubic_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.native_quartic_cubic_identification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.native_quartic_cubic_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.quartic_backward_upper_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.quartic_margin_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.quartic_margin_inner_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.quartic_cubic_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.native_quartic_cubic_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.native_quartic_cubic_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.mixedQuarticQuadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.mixedQuadraticQuartic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.quartic_quadratic_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.quartic_quadratic_polarized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.forward_gradient_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.backward_gradient_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.quadratic_quartic_polarized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.native_quadratic_quartic_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.native_quartic_quadratic_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.native_ordered_crosses_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.two_jet_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.two_jet_cone_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicQuartic.two_jet_cone_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+Cubic quartic spatial: 43 public roots; 5233 type/body dependencies; standard axioms only; no canonical moments; characteristic forbidden=true
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 7.19
+	System time (seconds): 5.03
+	Percent of CPU this job got: 112%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.89
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8370272
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 282534
+	Voluntary context switches: 9399
+	Involuntary context switches: 119
+	Swaps: 0
+	File system inputs: 48
+	File system outputs: 704
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

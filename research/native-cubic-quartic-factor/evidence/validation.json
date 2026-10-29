@@ -1,0 +1,190 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-quartic-factor/research/native-cubic-quartic-factor",
+      "exit_code": 0,
+      "seconds": 0.598,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-quartic-factor/research/native-cubic-quartic-factor",
+      "exit_code": 0,
+      "seconds": 472.883,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-quartic-factor/research/native-cubic-quartic-factor",
+      "exit_code": 0,
+      "seconds": 0.039,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.811,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "fbd303744ae6553b9c071163b0f424a8902fb6b7d9edd31b65fa88295fd912cd",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-QuarticPolynomials",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "QuarticPolynomials"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-quartic-factor/research/native-cubic-quartic-factor",
+      "exit_code": 0,
+      "seconds": 16.321,
+      "log": "evidence/lean-QuarticPolynomials.log"
+    },
+    {
+      "label": "lean-QuarticFactor",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "QuarticFactor"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-quartic-factor/research/native-cubic-quartic-factor",
+      "exit_code": 0,
+      "seconds": 14.981,
+      "log": "evidence/lean-QuarticFactor.log"
+    },
+    {
+      "label": "lean-QuarticBound",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "QuarticBound"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-quartic-factor/research/native-cubic-quartic-factor",
+      "exit_code": 0,
+      "seconds": 13.888,
+      "log": "evidence/lean-QuarticBound.log"
+    },
+    {
+      "label": "lean-MixedFactors",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MixedFactors"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-quartic-factor/research/native-cubic-quartic-factor",
+      "exit_code": 0,
+      "seconds": 13.412,
+      "log": "evidence/lean-MixedFactors.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-quartic-factor/research/native-cubic-quartic-factor",
+      "exit_code": 0,
+      "seconds": 10.902,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-quartic-factor",
+      "exit_code": 0,
+      "seconds": 7.28,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-quartic-factor",
+      "exit_code": 0,
+      "seconds": 7.257,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-quartic-factor",
+      "exit_code": 0,
+      "seconds": 9.844,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-quartic-factor",
+      "exit_code": 0,
+      "seconds": 49.245,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "6a3ab21c1c986b809c49f0d26ff1ede034ef425b",
+        "--",
+        ".",
+        ":(exclude)research/native-cubic-quartic-factor/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-quartic-factor",
+      "exit_code": 0,
+      "seconds": 0.009,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-cubic-quartic-factor",
+      "exit_code": 0,
+      "seconds": 0.008,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}
