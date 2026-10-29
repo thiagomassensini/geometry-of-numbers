@@ -1,0 +1,118 @@
+{
+  "modules": {
+    "ComplementNorm": [
+      "CarryCurvatureGreen.PhysicalSpace",
+      "CarryCurvatureGreen.physicalComplement",
+      "CarryCurvatureGreen.physical_valve_norm_le_one",
+      "CarryCurvatureGreen.physical_complement_norm_le_one",
+      "CarryCurvatureGreen.physical_complement_contracts",
+      "CarryCurvatureGreen.physical_complement_selfAdjoint",
+      "CarryCurvatureGreen.resolvent_norm_lower"
+    ],
+    "CurvatureKernel": [
+      "CarryCurvatureGreen.physicalCurvature",
+      "CarryCurvatureGreen.physicalTangent",
+      "CarryCurvatureGreen.baseGradient",
+      "CarryCurvatureGreen.transportedGradient",
+      "CarryCurvatureGreen.advance_complement",
+      "CarryCurvatureGreen.resolvent_advance",
+      "CarryCurvatureGreen.resolvent_complement",
+      "CarryCurvatureGreen.gradient_as_complement",
+      "CarryCurvatureGreen.curvature_resolvent_advance",
+      "CarryCurvatureGreen.tangent_resolvent",
+      "CarryCurvatureGreen.green_inner_transport",
+      "CarryCurvatureGreen.gradient_pairing",
+      "CarryCurvatureGreen.curvature_green_polarized_factor",
+      "CarryCurvatureGreen.curvature_green_diagonal_factor",
+      "CarryCurvatureGreen.curvature_green_lower_bound",
+      "CarryCurvatureGreen.curvature_green_nonnegative"
+    ],
+    "NativeCoefficient": [
+      "CarryCurvatureGreen.nativeU1",
+      "CarryCurvatureGreen.native_curvature",
+      "CarryCurvatureGreen.native_tangent",
+      "CarryCurvatureGreen.native_transported_gradient",
+      "CarryCurvatureGreen.native_u1_identification",
+      "CarryCurvatureGreen.native_u1_factor",
+      "CarryCurvatureGreen.native_difference_norm_square",
+      "CarryCurvatureGreen.native_gradient_norm_lower",
+      "CarryCurvatureGreen.native_u1_lower_bound",
+      "CarryCurvatureGreen.native_u1_pos"
+    ],
+    "FourthBoundaryDefect": [
+      "CarryCurvatureGreen.fourthShape",
+      "CarryCurvatureGreen.liftedFourthSeed",
+      "CarryCurvatureGreen.fourth_shape_explicit",
+      "CarryCurvatureGreen.fourth_shape_synthesis",
+      "CarryCurvatureGreen.fourth_native_curvature",
+      "CarryCurvatureGreen.fourth_commutator",
+      "CarryCurvatureGreen.fourth_tangent_defect",
+      "CarryCurvatureGreen.fourth_tangent_not_direct_lift"
+    ],
+    "CriticalSectorSign": [
+      "CarryCurvatureGreen.leading_coefficient_formula",
+      "CarryCurvatureGreen.mixed_scaled_limit",
+      "CarryCurvatureGreen.bulk_boundary_scaled_limit",
+      "CarryCurvatureGreen.leading_coefficient_pos",
+      "CarryCurvatureGreen.leading_coefficient_lower_bound",
+      "CarryCurvatureGreen.mixed_eventually_positive",
+      "CarryCurvatureGreen.bulk_boundary_eventually_negative"
+    ]
+  },
+  "groups": {
+    "source": [
+      "CarryCurvatureGreen.PhysicalSpace",
+      "CarryCurvatureGreen.physicalComplement",
+      "CarryCurvatureGreen.physical_valve_norm_le_one",
+      "CarryCurvatureGreen.physical_complement_norm_le_one",
+      "CarryCurvatureGreen.physical_complement_contracts",
+      "CarryCurvatureGreen.physical_complement_selfAdjoint",
+      "CarryCurvatureGreen.resolvent_norm_lower",
+      "CarryCurvatureGreen.physicalCurvature",
+      "CarryCurvatureGreen.physicalTangent",
+      "CarryCurvatureGreen.baseGradient",
+      "CarryCurvatureGreen.transportedGradient",
+      "CarryCurvatureGreen.advance_complement",
+      "CarryCurvatureGreen.resolvent_advance",
+      "CarryCurvatureGreen.resolvent_complement",
+      "CarryCurvatureGreen.gradient_as_complement",
+      "CarryCurvatureGreen.curvature_resolvent_advance",
+      "CarryCurvatureGreen.tangent_resolvent",
+      "CarryCurvatureGreen.green_inner_transport",
+      "CarryCurvatureGreen.gradient_pairing",
+      "CarryCurvatureGreen.curvature_green_polarized_factor",
+      "CarryCurvatureGreen.curvature_green_diagonal_factor",
+      "CarryCurvatureGreen.curvature_green_lower_bound",
+      "CarryCurvatureGreen.curvature_green_nonnegative",
+      "CarryCurvatureGreen.nativeU1",
+      "CarryCurvatureGreen.native_curvature",
+      "CarryCurvatureGreen.native_tangent",
+      "CarryCurvatureGreen.native_transported_gradient",
+      "CarryCurvatureGreen.native_u1_identification",
+      "CarryCurvatureGreen.native_u1_factor",
+      "CarryCurvatureGreen.native_difference_norm_square",
+      "CarryCurvatureGreen.native_gradient_norm_lower",
+      "CarryCurvatureGreen.native_u1_lower_bound",
+      "CarryCurvatureGreen.native_u1_pos",
+      "CarryCurvatureGreen.fourthShape",
+      "CarryCurvatureGreen.liftedFourthSeed",
+      "CarryCurvatureGreen.fourth_shape_explicit",
+      "CarryCurvatureGreen.fourth_shape_synthesis",
+      "CarryCurvatureGreen.fourth_native_curvature",
+      "CarryCurvatureGreen.fourth_commutator",
+      "CarryCurvatureGreen.fourth_tangent_defect",
+      "CarryCurvatureGreen.fourth_tangent_not_direct_lift"
+    ],
+    "identification": [
+      "CarryCurvatureGreen.leading_coefficient_formula",
+      "CarryCurvatureGreen.mixed_scaled_limit",
+      "CarryCurvatureGreen.bulk_boundary_scaled_limit"
+    ],
+    "finite_sign": [
+      "CarryCurvatureGreen.leading_coefficient_pos",
+      "CarryCurvatureGreen.leading_coefficient_lower_bound",
+      "CarryCurvatureGreen.mixed_eventually_positive",
+      "CarryCurvatureGreen.bulk_boundary_eventually_negative"
+    ]
+  }
+}

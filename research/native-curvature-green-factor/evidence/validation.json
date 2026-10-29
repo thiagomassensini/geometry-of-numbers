@@ -1,0 +1,201 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-curvature-green-factor/research/native-curvature-green-factor",
+      "exit_code": 0,
+      "seconds": 0.626,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-curvature-green-factor/research/native-curvature-green-factor",
+      "exit_code": 0,
+      "seconds": 243.781,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-curvature-green-factor/research/native-curvature-green-factor",
+      "exit_code": 0,
+      "seconds": 0.041,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.394,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "dd150f2fe241fac6148e166c502eb96c717e5a5c813932547c4ecfd1a74020ee",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-ComplementNorm",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "ComplementNorm"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-curvature-green-factor/research/native-curvature-green-factor",
+      "exit_code": 0,
+      "seconds": 11.339,
+      "log": "evidence/lean-ComplementNorm.log"
+    },
+    {
+      "label": "lean-CurvatureKernel",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CurvatureKernel"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-curvature-green-factor/research/native-curvature-green-factor",
+      "exit_code": 0,
+      "seconds": 14.795,
+      "log": "evidence/lean-CurvatureKernel.log"
+    },
+    {
+      "label": "lean-NativeCoefficient",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "NativeCoefficient"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-curvature-green-factor/research/native-curvature-green-factor",
+      "exit_code": 0,
+      "seconds": 12.368,
+      "log": "evidence/lean-NativeCoefficient.log"
+    },
+    {
+      "label": "lean-FourthBoundaryDefect",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "FourthBoundaryDefect"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-curvature-green-factor/research/native-curvature-green-factor",
+      "exit_code": 0,
+      "seconds": 14.708,
+      "log": "evidence/lean-FourthBoundaryDefect.log"
+    },
+    {
+      "label": "lean-CriticalSectorSign",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CriticalSectorSign"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-curvature-green-factor/research/native-curvature-green-factor",
+      "exit_code": 0,
+      "seconds": 11.385,
+      "log": "evidence/lean-CriticalSectorSign.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-curvature-green-factor/research/native-curvature-green-factor",
+      "exit_code": 0,
+      "seconds": 11.221,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-curvature-green-factor",
+      "exit_code": 0,
+      "seconds": 8.694,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-curvature-green-factor",
+      "exit_code": 0,
+      "seconds": 7.375,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-curvature-green-factor",
+      "exit_code": 0,
+      "seconds": 10.152,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-curvature-green-factor",
+      "exit_code": 0,
+      "seconds": 48.553,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "31a5315801742946b2e293b1cbfa83f58df3b7d5",
+        "--",
+        ".",
+        ":(exclude)research/native-curvature-green-factor/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-curvature-green-factor",
+      "exit_code": 0,
+      "seconds": 0.224,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-curvature-green-factor",
+      "exit_code": 0,
+      "seconds": 0.216,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}
