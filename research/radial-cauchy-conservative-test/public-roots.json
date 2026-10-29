@@ -1,0 +1,62 @@
+{
+  "conservative": [
+    "CarryRadialConservative.radialSymbol",
+    "CarryRadialConservative.radialPortCoefficient",
+    "CarryRadialConservative.radial_den_pos",
+    "CarryRadialConservative.radial_symbol_shift",
+    "CarryRadialConservative.radial_symbol_scaled_address",
+    "CarryRadialConservative.scalar_conservation",
+    "CarryRadialConservative.conservativeSynthesis",
+    "CarryRadialConservative.conservativePort",
+    "CarryRadialConservative.polarized_conservation",
+    "CarryRadialConservative.conservative_energy",
+    "CarryRadialConservative.conservativeTransfer",
+    "CarryRadialConservative.conservativeTransfer_exact",
+    "CarryRadialConservative.conservativeTransfer_contractive",
+    "CarryRadialConservative.conservativeSynthesis_snoc_zero",
+    "CarryRadialConservative.conservativePort_snoc_zero"
+  ],
+  "native": [
+    "CarryRadialConservative.nativeDefect",
+    "CarryRadialConservative.native_defect_columns",
+    "CarryRadialConservative.native_polarized_ledger",
+    "CarryRadialConservative.native_energy_ledger",
+    "CarryRadialConservative.jetCoefficients",
+    "CarryRadialConservative.exact_native_transfer_jet",
+    "CarryRadialConservative.finite_eventually_admissible"
+  ],
+  "radial_limits": [
+    "CarryRadialConservative.realRadialStep",
+    "CarryRadialConservative.real_radial_step_tendsto",
+    "CarryRadialConservative.radial_symbol_in_step",
+    "CarryRadialConservative.radial_port_in_step",
+    "CarryRadialConservative.radial_symbol_tendsto",
+    "CarryRadialConservative.radial_port_tendsto",
+    "CarryRadialConservative.radial_symbol_tangent",
+    "CarryRadialConservative.native_symbol_tangent",
+    "CarryRadialConservative.native_symbol_defect_tangent",
+    "CarryRadialConservative.scaled_comparator_tendsto",
+    "CarryRadialConservative.scaled_native_defect_tendsto_zero",
+    "CarryRadialConservative.cayley_difference",
+    "CarryRadialConservative.radial_symbol_cayley",
+    "CarryRadialConservative.native_response_defect_on_grid"
+  ],
+  "even_jet": [
+    "CarryRadialConservative.first_even_coefficients",
+    "CarryRadialConservative.first_odd_coefficients",
+    "CarryRadialConservative.first_odd_scaled_defect_tendsto_zero",
+    "CarryRadialConservative.first_even_port",
+    "CarryRadialConservative.first_even_defect",
+    "CarryRadialConservative.first_even_port_energy_tendsto",
+    "CarryRadialConservative.first_even_balance_tendsto",
+    "CarryRadialConservative.inverse_radial_sqrt_tendsto",
+    "CarryRadialConservative.first_even_defect_factor",
+    "CarryRadialConservative.first_even_defect_tendsto_zero",
+    "CarryRadialConservative.first_even_mixed_cross_tendsto"
+  ],
+  "orientation": [
+    "CarryRadialConservative.first_even_mixed_cross_eventually_pos",
+    "CarryRadialConservative.native_symbol_defect_tangent_ne",
+    "CarryRadialConservative.native_symbol_eventually_ne"
+  ]
+}
