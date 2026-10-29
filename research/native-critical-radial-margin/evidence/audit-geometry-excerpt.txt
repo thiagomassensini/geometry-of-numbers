@@ -1,0 +1,4 @@
+'GeometryOfNumbers.Geometry.integerCamera72Three' does not depend on any axioms
+'GeometryOfNumbers.Geometry.integerCamera72_positions' does not depend on any axioms
+'GeometryOfNumbers.Geometry.integerCamera72_only_shared_center' depends on axioms: [propext, Quot.sound]
+PASS: tower-depth relation has empty footprint; other discrete geometry permits only propext/Quot.sound.
