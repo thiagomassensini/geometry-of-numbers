@@ -1,0 +1,188 @@
+[
+  {
+    "name": "focused-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "GeometryOfNumbers.Analysis.LogarithmicMomentHankel",
+      "GeometryOfNumbers.Analysis.FiniteJacobiTransport",
+      "GeometryOfNumbers.Analysis.CanonicalLDLWhitening",
+      "GeometryOfNumbers.Analysis.CanonicalFiniteHeight",
+      "GeometryOfNumbers.Analysis.CarryMaterialSourceFactor"
+    ],
+    "exit_code": 0,
+    "seconds": 7.279
+  },
+  {
+    "name": "inherited-critical-relative",
+    "command": [
+      "bash",
+      "research/critical-source-relative-asymptotics/compile_module.sh",
+      "RelativeDeficit"
+    ],
+    "exit_code": 0,
+    "seconds": 12.596
+  },
+  {
+    "name": "kernel-SourceTaylor",
+    "command": [
+      "bash",
+      "research/critical-source-coefficient-law/compile_module.sh",
+      "SourceTaylor"
+    ],
+    "exit_code": 0,
+    "seconds": 10.991
+  },
+  {
+    "name": "kernel-GeneralExtraction",
+    "command": [
+      "bash",
+      "research/critical-source-coefficient-law/compile_module.sh",
+      "GeneralExtraction"
+    ],
+    "exit_code": 0,
+    "seconds": 12.086
+  },
+  {
+    "name": "kernel-StencilCoefficients",
+    "command": [
+      "bash",
+      "research/critical-source-coefficient-law/compile_module.sh",
+      "StencilCoefficients"
+    ],
+    "exit_code": 0,
+    "seconds": 13.634
+  },
+  {
+    "name": "kernel-OddReadout",
+    "command": [
+      "bash",
+      "research/critical-source-coefficient-law/compile_module.sh",
+      "OddReadout"
+    ],
+    "exit_code": 0,
+    "seconds": 18.029
+  },
+  {
+    "name": "kernel-OddLimit",
+    "command": [
+      "bash",
+      "research/critical-source-coefficient-law/compile_module.sh",
+      "OddLimit"
+    ],
+    "exit_code": 0,
+    "seconds": 13.428
+  },
+  {
+    "name": "kernel-SourceSigns",
+    "command": [
+      "bash",
+      "research/critical-source-coefficient-law/compile_module.sh",
+      "SourceSigns"
+    ],
+    "exit_code": 0,
+    "seconds": 11.509
+  },
+  {
+    "name": "kernel-OddCritical",
+    "command": [
+      "bash",
+      "research/critical-source-coefficient-law/compile_module.sh",
+      "OddCritical"
+    ],
+    "exit_code": 0,
+    "seconds": 12.443
+  },
+  {
+    "name": "kernel-KernelCoefficient",
+    "command": [
+      "bash",
+      "research/critical-source-coefficient-law/compile_module.sh",
+      "KernelCoefficient"
+    ],
+    "exit_code": 0,
+    "seconds": 11.116
+  },
+  {
+    "name": "kernel-AllOrderEuler",
+    "command": [
+      "bash",
+      "research/critical-source-coefficient-law/compile_module.sh",
+      "AllOrderEuler"
+    ],
+    "exit_code": 0,
+    "seconds": 12.19
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "bash",
+      "research/critical-source-coefficient-law/compile_module.sh",
+      "Audit"
+    ],
+    "exit_code": 0,
+    "seconds": 11.133
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "exit_code": 0,
+    "seconds": 7.342
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "exit_code": 0,
+    "seconds": 6.32
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "exit_code": 0,
+    "seconds": 8.871
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "exit_code": 0,
+    "seconds": 43.914
+  },
+  {
+    "name": "twelve-source-regression",
+    "command": [
+      "bash",
+      "research/sixth-odd-twelve-sources/compile_module.sh",
+      "Regression"
+    ],
+    "exit_code": 0,
+    "seconds": 11.526
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "bc7f36f1bd29d0d09fc23778e9e074c2be82123d",
+      "--",
+      ".",
+      ":(exclude)research/critical-source-coefficient-law"
+    ],
+    "exit_code": 0,
+    "seconds": 0.006
+  }
+]
