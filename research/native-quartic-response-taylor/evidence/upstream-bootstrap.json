@@ -1,0 +1,12 @@
+{
+  "command": [
+    "python3",
+    "build_upstream.py",
+    "--resume-bootstrap"
+  ],
+  "cwd": "/home/thlinux/geometry-of-numbers-native-quartic-response-taylor/research/native-quartic-response-taylor",
+  "exit_code": 0,
+  "upstream_modules": 30,
+  "log": "evidence/bootstrap.log",
+  "note": "Fresh task-owned cache. The shortened first schedule needed two existing transitive imports; SectorExpansion and Cancellation were explicitly compiled, then bootstrap resumed and recorded all original source/olean hashes. Reproduction without flags compiles all 30."
+}
