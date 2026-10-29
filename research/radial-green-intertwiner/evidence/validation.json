@@ -1,0 +1,263 @@
+{
+  "created_utc": "2026-10-24T19:14:01.832664+00:00",
+  "geometry_main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "geometry_base": "ee6301bf05e59a246d3d8f7e1d4d1bb482a4f57d",
+  "geometry_branch": "agent/radial-green-intertwiner",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_origin_main": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "operator_status_preserved": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "operator_modules_sha256": {
+    "CarrySelfAdjointOperator/NativeCauchyLaguerreSources.lean": "2a74b670544cadc5e08ef5f6df8064fd19a57d61eaba822dea62e5b2dc22f3b7",
+    "CarrySelfAdjointOperator/NativePhysicalGreenResolvent.lean": "e0228de1445e347971cc45d168f51bb113bfe582a448b3e75adc354cb8ce2204",
+    "CarrySelfAdjointOperator/NativeIntervalMultiplier.lean": "c395b94e42c110c7724889a2a5df56dfbddefb536b1c385790955f8f12fa1f78",
+    "CarrySelfAdjointOperator/NativeCompletedFiniteGreenResidual.lean": "e5bbbe2618f4d788ca2116d475d9e92ed87b6e5f405a6984635ba9412df2c3a8",
+    "CarrySelfAdjointOperator/NativeIncidenceCauchyPorts.lean": "35af1faa17ff334b04b79ca5a34c878aa434557848d40340f313252a80d3169e",
+    "CarrySelfAdjointOperator/NativeScalarZetaIdentification.lean": "3db88552cc9be5f02f51ac8c84be6ac2470c425b15679b51893e1aa816155843",
+    "CarrySelfAdjointOperator/CompletedNativeChiralJetStorageTransport.lean": "0b1f94a53a706c8713d416200a6c476a7ffb3503ef9d82e87b2315609750c693",
+    "CarrySelfAdjointOperator/CompletedNativeProjectiveChiralCarrier.lean": "1e9bb581d91f0b77fd52be947932e40ac7916430a8b994714ef6185865f58aaa",
+    "CarrySelfAdjointOperator/CompletedNativeProjectiveChiralForwardDifference.lean": "cd403f6535a3c52a0080fea31eb66b71352b8a16c2aadc58d4c1b602452def6e",
+    "CarrySelfAdjointOperator/CompletedNativeCentralChiralVariation.lean": "6aa9f25f31c1f3dce8130f30cd26e1f82ce95f5d4ce674055999333283352caf",
+    "CarrySelfAdjointOperator/CompletedGreenForwardDifferenceVectorLimit.lean": "f5e27f1658310c3ed3f0e6e1593a928e07d87b4e80b135b2b8978bf9bfa5f7c4",
+    "CarrySelfAdjointOperator/CompletedNativeChiralReturnSourceTrace.lean": "5ec3536aeb34699f79e5da8ba742d0f7ec91f16d7d0a9f9c47b8e6592fc33939",
+    "CarrySelfAdjointOperator/CompletedNativeChiralReturnCompletionSplit.lean": "7863304c000706fe427f796ce3ddada19d5b618c6f4767055d9937479ff6ed7f",
+    "CarrySelfAdjointOperator/NativeGammaCoupledCompletionObstruction.lean": "482f96a2a7ace52a9dcbccf315b88e8934f10fe985cbd61a358d19c1af3cd368",
+    "CarrySelfAdjointOperator/CompletedNativeRadialChiralMultiplier.lean": "1ae47a75e6ec10f1f2be5b2133247ab2de92f2fe5be9996ca921c0611b67fa13",
+    "CarrySelfAdjointOperator/CompletedNativeChiralReturnStorage.lean": "209faddb21a2a778011abe93ab1e2569a2c5a0a526a5819312c1d1e2555ea116",
+    "CarrySelfAdjointOperator/CompletedNativeCentralChiralQuotientCurvature.lean": "5b5763e4784177a52e14c50802ba622ed8ed79972505379bd6acd03be8bc349b",
+    "CarrySelfAdjointOperator/CompletedNativeChiralPickFactorization.lean": "1cd536b29d49e9fa83c30b24214caa5b541856d89fd613abe6f1c73eb7a0d0f4"
+  },
+  "protected_files_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "checks": [
+    {
+      "label": "upstream-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-radial-green-intertwiner/research/radial-green-intertwiner",
+      "exit_code": 0,
+      "seconds": 1.035,
+      "log": "evidence/upstream-provenance.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-radial-green-intertwiner/research/radial-green-intertwiner",
+      "exit_code": 0,
+      "seconds": 0.041,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativeCauchyLaguerreSources",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.398,
+      "log": "evidence/operator-source-build.log"
+    },
+    {
+      "label": "lean-RestrictedAdvance",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "RestrictedAdvance"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-radial-green-intertwiner/research/radial-green-intertwiner",
+      "exit_code": 0,
+      "seconds": 15.654,
+      "log": "evidence/lean-RestrictedAdvance.log"
+    },
+    {
+      "label": "lean-GreenIntertwiner",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "GreenIntertwiner"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-radial-green-intertwiner/research/radial-green-intertwiner",
+      "exit_code": 0,
+      "seconds": 15.593,
+      "log": "evidence/lean-GreenIntertwiner.log"
+    },
+    {
+      "label": "lean-CompletedTfvdTransport",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CompletedTfvdTransport"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-radial-green-intertwiner/research/radial-green-intertwiner",
+      "exit_code": 0,
+      "seconds": 17.069,
+      "log": "evidence/lean-CompletedTfvdTransport.log"
+    },
+    {
+      "label": "lean-CanonicalGreenSectors",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CanonicalGreenSectors"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-radial-green-intertwiner/research/radial-green-intertwiner",
+      "exit_code": 0,
+      "seconds": 12.865,
+      "log": "evidence/lean-CanonicalGreenSectors.log"
+    },
+    {
+      "label": "lean-WholeSourceReadout",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "WholeSourceReadout"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-radial-green-intertwiner/research/radial-green-intertwiner",
+      "exit_code": 0,
+      "seconds": 14.258,
+      "log": "evidence/lean-WholeSourceReadout.log"
+    },
+    {
+      "label": "lean-ResolventDomain",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "ResolventDomain"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-radial-green-intertwiner/research/radial-green-intertwiner",
+      "exit_code": 0,
+      "seconds": 13.775,
+      "log": "evidence/lean-ResolventDomain.log"
+    },
+    {
+      "label": "lean-ResidualCrossings",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "ResidualCrossings"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-radial-green-intertwiner/research/radial-green-intertwiner",
+      "exit_code": 0,
+      "seconds": 12.221,
+      "log": "evidence/lean-ResidualCrossings.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-radial-green-intertwiner/research/radial-green-intertwiner",
+      "exit_code": 0,
+      "seconds": 12.289,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "green-sector-diagnostic",
+      "command": [
+        "/home/thlinux/miniforge3/bin/python",
+        "probe_green_sectors.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-radial-green-intertwiner/research/radial-green-intertwiner",
+      "exit_code": 0,
+      "seconds": 1.531,
+      "log": "evidence/green-sector-diagnostic.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-radial-green-intertwiner",
+      "exit_code": 0,
+      "seconds": 8.027,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-radial-green-intertwiner",
+      "exit_code": 0,
+      "seconds": 7.064,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-radial-green-intertwiner",
+      "exit_code": 0,
+      "seconds": 10.331,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-radial-green-intertwiner",
+      "exit_code": 0,
+      "seconds": 45.687,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "ee6301bf05e59a246d3d8f7e1d4d1bb482a4f57d",
+        "--",
+        ".",
+        ":(exclude)research/radial-green-intertwiner/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-radial-green-intertwiner",
+      "exit_code": 0,
+      "seconds": 0.125,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-radial-green-intertwiner",
+      "exit_code": 0,
+      "seconds": 0.123,
+      "log": "evidence/diff-check.log"
+    }
+  ],
+  "new_sources_sha256": {
+    "Audit.lean": "e252961419a6624fbcb046dbe4a7a7bd3c3045cd5e94e8850a58a32ca2ebb343",
+    "CanonicalGreenSectors.lean": "f1cefdf7472269fc5e1042b6c666566f3e79ef69955975afab68d0a336e25e05",
+    "CompletedTfvdTransport.lean": "50327b3d3427db3a49b66d7f784505a989d10777b4d51089a1fd65367cfef56e",
+    "GreenIntertwiner.lean": "34077c8d5cd5696db5800260656e185198253bd3ebff057dd93c8d2a2f215a36",
+    "ResidualCrossings.lean": "73841e073cc6dde384a541747a684ffc0f5309be0f7f93420d92e659c59650ce",
+    "ResolventDomain.lean": "d35c127948893ab778c48950bcf808559694642fbbb51004f10d438bfcce027c",
+    "RestrictedAdvance.lean": "910ee20086017cd2ac3c03e86550db0ddc3c7e3649504bce8657d75a16dabf72",
+    "WholeSourceReadout.lean": "e5a9707c6ad65dcf70767aea4b9eb7c8af2a0cfbaee777ea6c5b3a8c73c1ea96"
+  },
+  "trust_escape_scan": "PASS",
+  "operator_sources_and_preexisting_files": "PRESERVED"
+}

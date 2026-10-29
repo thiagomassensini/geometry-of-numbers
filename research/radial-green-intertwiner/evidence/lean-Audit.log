@@ -1,0 +1,104 @@
+'CarryRadialGreen.physical_feature_zero_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.physicalSpaceNontrivial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.advance_preserves_closure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.nativeAdvance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.native_advance_coe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.native_advance_feature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.native_advance_pow_feature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.native_advance_norm_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.native_advance_isPositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.power_advance_feature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.power_advance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.greenDenominator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.greenResolvent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.green_denominator_isUnit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.green_left_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.green_right_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.green_resolvent_denominator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.green_denominator_resolvent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.power_green_denominator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.power_green_resolvent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.power_green_resolvent_squared' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.native_advance_pow_coe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.green_denominator_coe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.green_resolvent_one_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.pairAdvance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.pairResolvent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.ambient_pair_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.ambient_pair_advance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.ambient_pair_resolvent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.ambient_pair_resolvent_squared' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.completedSource' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.completed_source_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.completedResidual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.completed_residual_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.bulkBoundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.residualNumerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.bulk_boundary_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.residual_numerator_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.completed_numerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.completed_reconstruct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.pair_power_resolvent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.pair_power_resolvent_squared' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.refined_completed_reconstruct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.physical_form_four_sectors' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.refined_completed_four_sectors' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.reconstructedBulk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.reconstructedResidual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.correctedGreenPairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.corrected_green_pairing_is_common' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.corrected_green_pairing_is_canonical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.corrected_green_weight_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.CorePair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.corePairEmbedding' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.projectiveCore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.projective_core_coe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.completedCoreSource' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.completed_core_source_coe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.pairCorePower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.pair_core_power_coe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.materialPairReadout' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.material_readout_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.whole_green_material_readout' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.core_pair_embedding_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.whole_green_core_witness_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.advance_embedding_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.resolvent_first_column_not_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.sourceRegular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.numeratorRegular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.completed_residual_equal_legs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.residual_numerator_equal_legs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.reconstructed_residual_equal_legs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.reconstructed_residual_pairing_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.source_regular_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.numerator_regular_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.residual_pairing_eventually_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.corrected_green_three_sectors' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.refined_source_green_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.physical_form_re_symm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialGreen.signed_energy_bulk_plus_mixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+Native Green intertwiner audit tier 0: 79 public roots; 5943 type/body dependencies; standard axioms only
+Native Green intertwiner audit tier 0: 79 public roots; 5943 type/body dependencies; standard axioms only
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 8.40
+	System time (seconds): 7.03
+	Percent of CPU this job got: 125%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.28
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7975172
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 276425
+	Voluntary context switches: 14041
+	Involuntary context switches: 186
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 712
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

@@ -1,0 +1,19 @@
+upstream-provenance: exit 0
+generate-audit: exit 0
+operator-source-build: exit 0
+lean-RestrictedAdvance: exit 0
+lean-GreenIntertwiner: exit 0
+lean-CompletedTfvdTransport: exit 0
+lean-CanonicalGreenSectors: exit 0
+lean-WholeSourceReadout: exit 0
+lean-ResolventDomain: exit 0
+lean-ResidualCrossings: exit 0
+lean-Audit: exit 0
+green-sector-diagnostic: exit 0
+root-build: exit 0
+audit-foundation: exit 0
+audit-geometry: exit 0
+audit-analysis: exit 0
+base-preserved: exit 0
+diff-check: exit 0
+PASS: 18 commands; no trusted escapes; source preservation verified
