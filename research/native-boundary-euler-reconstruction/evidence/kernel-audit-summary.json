@@ -1,0 +1,32 @@
+{
+  "PASS": true,
+  "public_roots": 22,
+  "theorems": 19,
+  "definitions": 3,
+  "groups": {
+    "algebra": {
+      "roots": 14,
+      "dependencies": 33705
+    },
+    "source": {
+      "roots": 5,
+      "dependencies": 58459
+    },
+    "certificate": {
+      "roots": 3,
+      "dependencies": 64095
+    }
+  },
+  "type_and_opaque_body_audit": true,
+  "actual_source_taylor_and_full_remainder_required": true,
+  "primitive_integral_enclosures_required_in_certificate_group": true,
+  "finite_canonical_positivity_certificates_forbidden": true,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "auditor_sha256": "56cc31a7c4d0dbf588a6cfd30ca4335582a99dd27ab7f9ce5f6a667dc4ffa706",
+  "audit_source_sha256": "416c2e3f863ae31ad5a4ca9033c63030c9faaa22d92933efca3a5509a53c6747",
+  "audit_log_sha256": "cc208f7d8e8d76e16c11922cc859c2a4aa8049ee82ea8c33f1bdd84a89b3dce7"
+}

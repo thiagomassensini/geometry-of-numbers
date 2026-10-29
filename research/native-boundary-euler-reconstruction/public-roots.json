@@ -1,0 +1,64 @@
+{
+  "modules": {
+    "RadialReconstruction": [
+      "CarryBoundaryReconstruction.radial_partial_sum",
+      "CarryBoundaryReconstruction.radial_partial_sum_tendsto",
+      "CarryBoundaryReconstruction.radial_drop_hasSum",
+      "CarryBoundaryReconstruction.completePair",
+      "CarryBoundaryReconstruction.complete_pair_boundary_reconstruction"
+    ],
+    "AnalyticRadialTail": [
+      "CarryBoundaryReconstruction.quadraticExtension",
+      "CarryBoundaryReconstruction.quadratic_extension_derivative",
+      "CarryBoundaryReconstruction.quadratic_extension_strictMono",
+      "CarryBoundaryReconstruction.quadratic_extension_tendsto"
+    ],
+    "SixBoundaryReconstruction": [
+      "CarryBoundaryReconstruction.sixPhysical",
+      "CarryBoundaryReconstruction.radial_step_positive",
+      "CarryBoundaryReconstruction.radial_step_decreasing",
+      "CarryBoundaryReconstruction.radial_step_tendsto",
+      "CarryBoundaryReconstruction.six_physical_analytic_extension",
+      "CarryBoundaryReconstruction.six_physical_tendsto",
+      "CarryBoundaryReconstruction.six_physical_eventually_decreasing",
+      "CarryBoundaryReconstruction.six_boundary_tail",
+      "CarryBoundaryReconstruction.six_accumulated_tail_scale"
+    ],
+    "TailControls": [
+      "CarryBoundaryReconstruction.boundary_error_of_increment_budget",
+      "CarryBoundaryReconstruction.positive_boundary_of_increment_budget",
+      "CarryBoundaryReconstruction.increments_ignore_constant",
+      "CarryBoundaryReconstruction.positive_decreasing_zero_boundary"
+    ]
+  },
+  "groups": {
+    "algebra": [
+      "CarryBoundaryReconstruction.radial_partial_sum",
+      "CarryBoundaryReconstruction.radial_partial_sum_tendsto",
+      "CarryBoundaryReconstruction.radial_drop_hasSum",
+      "CarryBoundaryReconstruction.quadraticExtension",
+      "CarryBoundaryReconstruction.quadratic_extension_derivative",
+      "CarryBoundaryReconstruction.quadratic_extension_strictMono",
+      "CarryBoundaryReconstruction.quadratic_extension_tendsto",
+      "CarryBoundaryReconstruction.radial_step_positive",
+      "CarryBoundaryReconstruction.radial_step_decreasing",
+      "CarryBoundaryReconstruction.radial_step_tendsto",
+      "CarryBoundaryReconstruction.boundary_error_of_increment_budget",
+      "CarryBoundaryReconstruction.positive_boundary_of_increment_budget",
+      "CarryBoundaryReconstruction.increments_ignore_constant",
+      "CarryBoundaryReconstruction.positive_decreasing_zero_boundary"
+    ],
+    "source": [
+      "CarryBoundaryReconstruction.completePair",
+      "CarryBoundaryReconstruction.complete_pair_boundary_reconstruction",
+      "CarryBoundaryReconstruction.sixPhysical",
+      "CarryBoundaryReconstruction.six_physical_analytic_extension",
+      "CarryBoundaryReconstruction.six_physical_tendsto"
+    ],
+    "certificate": [
+      "CarryBoundaryReconstruction.six_physical_eventually_decreasing",
+      "CarryBoundaryReconstruction.six_boundary_tail",
+      "CarryBoundaryReconstruction.six_accumulated_tail_scale"
+    ]
+  }
+}

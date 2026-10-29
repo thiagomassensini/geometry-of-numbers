@@ -1,0 +1,229 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-boundary-euler-reconstruction/research/native-boundary-euler-reconstruction",
+      "exit_code": 0,
+      "seconds": 0.748,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "verified-cache",
+      "command": [
+        "python3",
+        "restore_verified_cache.py",
+        "--verify-only"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-boundary-euler-reconstruction/research/native-boundary-euler-reconstruction",
+      "exit_code": 0,
+      "seconds": 3.199,
+      "log": "evidence/verified-cache.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-boundary-euler-reconstruction/research/native-boundary-euler-reconstruction",
+      "exit_code": 0,
+      "seconds": 1.627,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "mechanism-probe",
+      "command": [
+        "python3",
+        "mechanism_probe.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-boundary-euler-reconstruction/research/native-boundary-euler-reconstruction",
+      "exit_code": 0,
+      "seconds": 2.066,
+      "log": "evidence/mechanism-probe.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-boundary-euler-reconstruction/research/native-boundary-euler-reconstruction",
+      "exit_code": 0,
+      "seconds": 0.041,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnSeventhSourceJet",
+        "CarrySelfAdjointOperator.CompletedNativeChiralPickFactorization",
+        "CarrySelfAdjointOperator.CompletedGreenForwardDifferenceLimit",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnArbitraryOrder",
+        "CarrySelfAdjointOperator.CompletedNativeChiralEvenBoundaryEnergy",
+        "CarrySelfAdjointOperator.CompletedNativeChiralEvenBoundarySplit",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFiniteTransfer",
+        "CarrySelfAdjointOperator.NativePhysicalFiniteSewing",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFourSampleStorage",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnEnergyPort"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 7.993,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "5f80ed4d3d268402c97ac74f4b097634e4ce4ce2e9a9e2999caa361a527f083e",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-RadialReconstruction",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "RadialReconstruction"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-boundary-euler-reconstruction/research/native-boundary-euler-reconstruction",
+      "exit_code": 0,
+      "seconds": 16.06,
+      "log": "evidence/lean-RadialReconstruction.log"
+    },
+    {
+      "label": "lean-AnalyticRadialTail",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "AnalyticRadialTail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-boundary-euler-reconstruction/research/native-boundary-euler-reconstruction",
+      "exit_code": 0,
+      "seconds": 14.927,
+      "log": "evidence/lean-AnalyticRadialTail.log"
+    },
+    {
+      "label": "lean-SixBoundaryReconstruction",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "SixBoundaryReconstruction"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-boundary-euler-reconstruction/research/native-boundary-euler-reconstruction",
+      "exit_code": 0,
+      "seconds": 15.115,
+      "log": "evidence/lean-SixBoundaryReconstruction.log"
+    },
+    {
+      "label": "lean-TailControls",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "TailControls"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-boundary-euler-reconstruction/research/native-boundary-euler-reconstruction",
+      "exit_code": 0,
+      "seconds": 15.005,
+      "log": "evidence/lean-TailControls.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-boundary-euler-reconstruction/research/native-boundary-euler-reconstruction",
+      "exit_code": 0,
+      "seconds": 34.054,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-boundary-euler-reconstruction",
+      "exit_code": 0,
+      "seconds": 8.538,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-boundary-euler-reconstruction",
+      "exit_code": 0,
+      "seconds": 8.108,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-boundary-euler-reconstruction",
+      "exit_code": 0,
+      "seconds": 10.872,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-boundary-euler-reconstruction",
+      "exit_code": 0,
+      "seconds": 50.109,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "489a06ec9d4c61a7cfb68bd2288e5e23c2682692",
+        "--",
+        ".",
+        ":(exclude)research/native-boundary-euler-reconstruction/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-boundary-euler-reconstruction",
+      "exit_code": 0,
+      "seconds": 0.426,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-boundary-euler-reconstruction",
+      "exit_code": 0,
+      "seconds": 0.425,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}
