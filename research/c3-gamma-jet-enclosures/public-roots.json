@@ -1,0 +1,66 @@
+{
+  "euler_integral": [
+    "CarryC3Gamma.expHead",
+    "CarryC3Gamma.gammaHeadIntegral",
+    "CarryC3Gamma.exp_head_error",
+    "CarryC3Gamma.gamma_tail_bound",
+    "CarryC3Gamma.gamma_compact_error",
+    "CarryC3Gamma.gamma_integral_approx_error"
+  ],
+  "finite_evaluator": [
+    "CarryC3Gamma.gammaFinite",
+    "CarryC3Gamma.euler_term",
+    "CarryC3Gamma.gamma_head_integral_formula",
+    "CarryC3Gamma.gamma_finite_error"
+  ],
+  "native_jets": [
+    "CarryC3Gamma.exp_neg_eighty_one_bound",
+    "CarryC3Gamma.gamma_finite_512_error",
+    "CarryC3Gamma.nativeGamma",
+    "CarryC3Gamma.finiteNativeGamma",
+    "CarryC3Gamma.native_gamma_argument",
+    "CarryC3Gamma.native_gamma_uniform_error",
+    "CarryC3Gamma.finite_gamma_analytic",
+    "CarryC3Gamma.native_gamma_analytic",
+    "CarryC3Gamma.native_gamma_jet_error"
+  ],
+  "coefficient_formula": [
+    "CarryC3Gamma.jet_mul",
+    "CarryC3Gamma.jet_inv_affine",
+    "CarryC3Gamma.jet_exp_linear",
+    "CarryC3Gamma.jet_sum",
+    "CarryC3Gamma.jet_const_mul",
+    "CarryC3Gamma.native_gamma_power_formula",
+    "CarryC3Gamma.rationalCoefficient",
+    "CarryC3Gamma.gammaCoefficient",
+    "CarryC3Gamma.finite_native_gamma_formula",
+    "CarryC3Gamma.finite_native_gamma_coefficient"
+  ],
+  "exact_rational_sums": [
+    "CarryC3Gamma.coefficientReference",
+    "CarryC3Gamma.rational_coefficient_boxes"
+  ],
+  "log_and_references": [
+    "CarryC3Gamma.logApprox",
+    "CarryC3Gamma.logReference",
+    "CarryC3Gamma.log_rational_box",
+    "CarryC3Gamma.rat_abs_cast_le",
+    "CarryC3Gamma.log_three_box",
+    "CarryC3Gamma.gammaRealReference",
+    "CarryC3Gamma.gammaRationalPolynomial",
+    "CarryC3Gamma.gamma_rational_boxes",
+    "CarryC3Gamma.coefficient_reference_bound"
+  ],
+  "seven_value_boxes": [
+    "CarryC3Gamma.realGammaPolynomial",
+    "CarryC3Gamma.real_gamma_polynomial_error",
+    "CarryC3Gamma.gammaReference",
+    "CarryC3Gamma.gamma_coefficient_real",
+    "CarryC3Gamma.native_gamma_seven_boxes"
+  ],
+  "original_source": [
+    "CarryC3Gamma.xiBeforeGamma",
+    "CarryC3Gamma.native_xi_gamma_factorization",
+    "CarryC3Gamma.c3_value_multiplier_gamma_factorization"
+  ]
+}
