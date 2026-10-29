@@ -1,0 +1,206 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-even-odd-complete-pairing/research/native-even-odd-complete-pairing",
+      "exit_code": 0,
+      "seconds": 0.626,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-even-odd-complete-pairing/research/native-even-odd-complete-pairing",
+      "exit_code": 0,
+      "seconds": 0.295,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-even-odd-complete-pairing/research/native-even-odd-complete-pairing",
+      "exit_code": 0,
+      "seconds": 0.039,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.328,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "4eb38fbfc068daf648b4ba7375b9a00bbb41459d358a34a52ce925c566f4f256",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-ResponseReality",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "ResponseReality"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-even-odd-complete-pairing/research/native-even-odd-complete-pairing",
+      "exit_code": 0,
+      "seconds": 11.872,
+      "log": "evidence/lean-ResponseReality.log"
+    },
+    {
+      "label": "lean-MixedPairing",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MixedPairing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-even-odd-complete-pairing/research/native-even-odd-complete-pairing",
+      "exit_code": 0,
+      "seconds": 13.908,
+      "log": "evidence/lean-MixedPairing.log"
+    },
+    {
+      "label": "lean-JointEnergy",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "JointEnergy"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-even-odd-complete-pairing/research/native-even-odd-complete-pairing",
+      "exit_code": 0,
+      "seconds": 14.106,
+      "log": "evidence/lean-JointEnergy.log"
+    },
+    {
+      "label": "lean-MixedRegression",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MixedRegression"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-even-odd-complete-pairing/research/native-even-odd-complete-pairing",
+      "exit_code": 0,
+      "seconds": 12.817,
+      "log": "evidence/lean-MixedRegression.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-even-odd-complete-pairing/research/native-even-odd-complete-pairing",
+      "exit_code": 0,
+      "seconds": 12.309,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "mixed-rate-canary",
+      "command": [
+        "python3",
+        "mixed_rate_canary.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-even-odd-complete-pairing/research/native-even-odd-complete-pairing",
+      "exit_code": 0,
+      "seconds": 0.105,
+      "log": "evidence/mixed-rate-canary.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-even-odd-complete-pairing",
+      "exit_code": 0,
+      "seconds": 8.28,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-even-odd-complete-pairing",
+      "exit_code": 0,
+      "seconds": 7.049,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-even-odd-complete-pairing",
+      "exit_code": 0,
+      "seconds": 10.195,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-even-odd-complete-pairing",
+      "exit_code": 0,
+      "seconds": 48.31,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "2a81eaf5008cb8e2fb90ec202038399ab575f251",
+        "--",
+        ".",
+        ":(exclude)research/native-even-odd-complete-pairing/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-even-odd-complete-pairing",
+      "exit_code": 0,
+      "seconds": 0.317,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-even-odd-complete-pairing",
+      "exit_code": 0,
+      "seconds": 0.295,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}
