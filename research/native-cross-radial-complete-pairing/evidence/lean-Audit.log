@@ -1,0 +1,66 @@
+'CarryCrossRadial.crossScale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.cross_scale_symm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.cross_scale_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.cross_scale_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.crossSignedPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.cross_pair_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.cross_contrast_mean_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.complete_cross_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.crossMixedPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.cross_mixed_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.cross_mixed_conjugate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.cross_mixed_real_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.cross_source_reconstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.cross_source_nine_pairings' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.crossGreenPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.cross_green_eq_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.cross_green_four_blocks' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.firstCrossPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.first_cross_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.doubled_index_tendsto' depends on axioms: [propext, Quot.sound]
+'CarryCrossRadial.doubled_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.doubled_cross_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.doubledFirstPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.doubled_first_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.doubledLeading' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.doubledNext' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.doubledRemainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.doubled_remainder_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.doubled_scaled_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.doubled_unscaled_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.doubled_scaled_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.doubled_next_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.doubled_green_scaled_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.first_cross_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.first_cross_diagonal_scaled_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.doubled_leading_eq_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.doubled_finite_limit_forces_h0_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.doubled_no_finite_limit_of_h0_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.doubled_no_finite_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCrossRadial.doubled_imaginary_scaled_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+Complete cross-radial pairing construction: 25 public roots; 5513 type/body dependencies; standard axioms only; canonical moments forbidden=true; preexisting h0-sign allowed=false
+Complete cross-radial pairing provenance: 14 public roots; 5718 type/body dependencies; standard axioms only; canonical moments forbidden=false; preexisting h0-sign allowed=false
+Complete cross-radial pairing sign_canary: 1 public roots; 5260 type/body dependencies; standard axioms only; canonical moments forbidden=false; preexisting h0-sign allowed=true
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 8.27
+	System time (seconds): 5.62
+	Percent of CPU this job got: 109%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.70
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8381496
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 291970
+	Voluntary context switches: 8513
+	Involuntary context switches: 134
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 720
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
