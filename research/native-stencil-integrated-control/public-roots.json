@@ -1,0 +1,77 @@
+{
+  "StirlingBoundary": [
+    "CarryCenteredStirling.stirling_second_diagonal_two",
+    "CarryCenteredStirling.centered_coefficient_polynomial",
+    "CarryCenteredStirling.stirling_coefficient_eq_lambda"
+  ],
+  "CauchyBeta": [
+    "CarryCenteredStirling.physical_stencil_cauchy_beta"
+  ],
+  "CenteredDifference": [
+    "CarryCenteredStirling.centeredDifference",
+    "CarryCenteredStirling.centered_difference_sum",
+    "CarryCenteredStirling.centered_difference_stirling",
+    "CarryCenteredStirling.centered_difference_two_above",
+    "CarryCenteredStirling.centered_difference_two_above_closed",
+    "CarryCenteredStirling.centered_correction_eq_lambda"
+  ],
+  "StencilPair": [
+    "CarryCenteredStirling.stencilPair",
+    "CarryCenteredStirling.stencil_pair_physical_reduction"
+  ],
+  "ReindexFactor": [
+    "CarryCenteredStirling.shifted_factorial_binomial"
+  ],
+  "SumReindex": [
+    "CarryCenteredStirling.centered_sum_split_generic",
+    "CarryCenteredStirling.centered_odd_split"
+  ],
+  "OddPairBridge": [
+    "CarryCenteredStirling.odd_beta_term_to_centered",
+    "CarryCenteredStirling.odd_stencil_pair_eq_centered",
+    "CarryCenteredStirling.odd_stencil_correction_all_order"
+  ],
+  "OriginalSourceTransport": [
+    "CarryCenteredStirling.lambdaCoefficient",
+    "CarryCenteredStirling.existing_spatial_coefficient_eq_lambda",
+    "CarryCenteredStirling.original_odd_pair_expansion_lambda",
+    "CarryCenteredStirling.original_finite_odd_energy_correction_lambda",
+    "CarryCenteredStirling.original_stencil_coefficient_eq_lambda",
+    "CarryCenteredStirling.lambdaReal",
+    "CarryCenteredStirling.lambda_real_positive",
+    "CarryCenteredStirling.lambda_complex_eq_real",
+    "CarryCenteredStirling.lambda_crossing_negative"
+  ],
+  "IntegratedControl": [
+    "CarryIntegratedControl.physicalCurve",
+    "CarryIntegratedControl.prefixCurve",
+    "CarryIntegratedControl.pointBudget",
+    "CarryIntegratedControl.physical_curve_hasDerivAt",
+    "CarryIntegratedControl.prefix_curve_hasDerivAt",
+    "CarryIntegratedControl.source_error_hasDerivAt_and_bound",
+    "CarryIntegratedControl.integrated_source_error",
+    "CarryIntegratedControl.jetCombination",
+    "CarryIntegratedControl.jet_combination_differentiable",
+    "CarryIntegratedControl.integrated_original_jet_combinations",
+    "CarryIntegratedControl.physical_curve_exact_prefix_and_tail",
+    "CarryIntegratedControl.integrated_source_error_integral",
+    "CarryIntegratedControl.integrated_original_jets_integral",
+    "CarryIntegratedControl.integrated_native_grid_jets"
+  ],
+  "BudgetContinuity": [
+    "CarryIntegratedControl.jetCombinationVelocity",
+    "CarryIntegratedControl.jet_combination_velocity",
+    "CarryIntegratedControl.jet_combination_continuous",
+    "CarryIntegratedControl.jet_velocity_continuous",
+    "CarryIntegratedControl.address_budget_continuous",
+    "CarryIntegratedControl.family_budget_continuous",
+    "CarryIntegratedControl.velocity_budget_continuous",
+    "CarryIntegratedControl.size_continuous",
+    "CarryIntegratedControl.explicitJetBudget",
+    "CarryIntegratedControl.explicit_jet_budget_eq",
+    "CarryIntegratedControl.explicit_jet_budget_continuous",
+    "CarryIntegratedControl.point_jet_budget_continuous",
+    "CarryIntegratedControl.native_jet_budget_interval_integrable",
+    "CarryIntegratedControl.integrated_native_grid_jets_unconditional"
+  ]
+}
