@@ -1,4 +1,6 @@
 import GeometryOfNumbers.Analysis.MomentGramPositivity
+import GeometryOfNumbers.Analysis.FiniteNativeMaterialClock
+import GeometryOfNumbers.Analysis.RealCarryTfvd
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.SpecialFunctions.Sqrt
@@ -19,8 +21,10 @@ the weighted power system of the first `M` integers,
 
   `integerFeature k = (n ↦ √(wₙ)·xₙ^k) ∈ EuclideanSpace ℝ (Fin M)`,
 
-with the integer vertical norms `wₙ = (n+1)⁻¹ = (n+1)^(−2σ)` at the scale-compatible half
-`σ = ½` and the integer log-frequencies `xₙ = log(n+1)` (the phases of the native states).
+with the native critical vertical amplitude `criticalVerticalAmplitudeRatio (n+1) = (n+1)^(−1/2)`
+at the scale-compatible half `σ = ½` (its square is the vertical norm
+`wₙ = (n+1)⁻¹ = (n+1)^(−2σ)`) and the native log-clock frequencies
+`xₙ = finiteRealSpectralFrequency n = log(n+1)` (the self-adjoint diagonal generator `L_N`).
 Its Gram reproduces the integer moment kernel
 
   `integerMoments (i+j) = ⟪integerFeature i, integerFeature j⟫`,
@@ -43,11 +47,15 @@ noncomputable section
 
 variable (M : ℕ)
 
-/-- Integer log-frequency node `log(n+1)`: the phase of the native state `ψ(n)`. -/
-def integerNode (n : Fin M) : ℝ := Real.log (((n : ℕ) : ℝ) + 1)
+/-- Integer log-frequency node: the native material log-clock frequency
+`finiteRealSpectralFrequency n = log(n+1)` (the self-adjoint diagonal generator `L_N`). -/
+def integerNode (n : Fin M) : ℝ := NativeMaterialClock.finiteRealSpectralFrequency n
 
-/-- Integer vertical-norm weight `(n+1)⁻¹ = (n+1)^(−2σ)` at the scale-compatible half `σ=½`. -/
-def integerWeight (n : Fin M) : ℝ := (((n : ℕ) : ℝ) + 1)⁻¹
+/-- Integer vertical-norm weight: the square of the native critical vertical amplitude
+`criticalVerticalAmplitudeRatio (n+1) = (n+1)^(−1/2)` at the scale-compatible half `σ=½`,
+so `wₙ = (n+1)⁻¹ = (n+1)^(−2σ)` is the resolved norm of the integer vertical tower. -/
+def integerWeight (n : Fin M) : ℝ :=
+  criticalVerticalAmplitudeRatio ((n : ℕ) + 1) (Nat.succ_pos _) ^ 2
 
 /-- The integer moment sequence `mₖ = Σ_{n<M} wₙ·xₙ^k` (a finite, genuine moment readout). -/
 def integerMoments (k : ℕ) : ℝ := ∑ n : Fin M, integerWeight M n * integerNode M n ^ k
@@ -57,17 +65,19 @@ def integerFeature (k : ℕ) : EuclideanSpace ℝ (Fin M) :=
   WithLp.toLp 2 fun n => Real.sqrt (integerWeight M n) * integerNode M n ^ k
 
 theorem integerWeight_pos (n : Fin M) : 0 < integerWeight M n := by
-  have h : (0 : ℝ) < ((n : ℕ) : ℝ) + 1 := by positivity
-  simpa only [integerWeight] using inv_pos.mpr h
+  simp only [integerWeight]
+  exact pow_pos (criticalVerticalAmplitudeRatio_pos ((n : ℕ) + 1) (Nat.succ_pos _)) 2
 
 theorem integerNode_injective : Function.Injective (integerNode M) := by
   intro a b hab
-  simp only [integerNode] at hab
-  have ha : ((a : ℕ) : ℝ) + 1 ∈ Set.Ioi (0 : ℝ) := by simp only [Set.mem_Ioi]; positivity
-  have hb : ((b : ℕ) : ℝ) + 1 ∈ Set.Ioi (0 : ℝ) := by simp only [Set.mem_Ioi]; positivity
-  have heq : ((a : ℕ) : ℝ) + 1 = ((b : ℕ) : ℝ) + 1 := Real.log_injOn_pos ha hb hab
-  have hcast : ((a : ℕ) : ℝ) = ((b : ℕ) : ℝ) := by linarith
-  exact Fin.ext (Nat.cast_injective hcast)
+  simp only [integerNode, NativeMaterialClock.finiteRealSpectralFrequency] at hab
+  have ha : ((a.1 + 1 : ℕ) : ℝ) ∈ Set.Ioi (0 : ℝ) :=
+    Set.mem_Ioi.mpr (by exact_mod_cast Nat.succ_pos a.1)
+  have hb : ((b.1 + 1 : ℕ) : ℝ) ∈ Set.Ioi (0 : ℝ) :=
+    Set.mem_Ioi.mpr (by exact_mod_cast Nat.succ_pos b.1)
+  have heq : ((a.1 + 1 : ℕ) : ℝ) = ((b.1 + 1 : ℕ) : ℝ) := Real.log_injOn_pos ha hb hab
+  have hnat : (a.1 + 1 : ℕ) = (b.1 + 1 : ℕ) := Nat.cast_injective heq
+  exact Fin.ext (by omega)
 
 /-- **The integer feature Gram reproduces the integer moment kernel.**  This is the exact input
 the repository's positivity channel expects: an independently established moment readout
