@@ -1,0 +1,263 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tail-return-graph/research/native-tail-return-graph",
+      "exit_code": 0,
+      "seconds": 0.722,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "verified-cache",
+      "command": [
+        "python3",
+        "restore_verified_cache.py",
+        "--verify-only"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tail-return-graph/research/native-tail-return-graph",
+      "exit_code": 0,
+      "seconds": 1.293,
+      "log": "evidence/verified-cache.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tail-return-graph/research/native-tail-return-graph",
+      "exit_code": 0,
+      "seconds": 0.668,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "mechanism-probe",
+      "command": [
+        "python3",
+        "mechanism_probe.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tail-return-graph/research/native-tail-return-graph",
+      "exit_code": 0,
+      "seconds": 0.289,
+      "log": "evidence/mechanism-probe.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tail-return-graph/research/native-tail-return-graph",
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport",
+        "CarrySelfAdjointOperator.NativeCompletedCenteredReflection",
+        "CarrySelfAdjointOperator.CompletedC3FullWronskianCentralChiralEnergy",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFiniteTransfer",
+        "CarrySelfAdjointOperator.NativePhysicalFiniteSewing",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnFourSampleStorage",
+        "CarrySelfAdjointOperator.CompletedNativeChiralReturnEnergyPort"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 9.542,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "a80122eead4cf848e102996754a97e82d1afb126517d0e3a0d25d4a445e59026",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-FiniteReturnDomain",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "FiniteReturnDomain"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tail-return-graph/research/native-tail-return-graph",
+      "exit_code": 0,
+      "seconds": 14.431,
+      "log": "evidence/lean-FiniteReturnDomain.log"
+    },
+    {
+      "label": "lean-TailReturnGraph",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "TailReturnGraph"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tail-return-graph/research/native-tail-return-graph",
+      "exit_code": 0,
+      "seconds": 16.072,
+      "log": "evidence/lean-TailReturnGraph.log"
+    },
+    {
+      "label": "lean-PolarizedReturnDefect",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PolarizedReturnDefect"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tail-return-graph/research/native-tail-return-graph",
+      "exit_code": 0,
+      "seconds": 15.075,
+      "log": "evidence/lean-PolarizedReturnDefect.log",
+      "raw_log": "evidence/lean-PolarizedReturnDefect.raw.log.gz",
+      "raw_log_sha256": "2300afa48e27fae76cfb083a93ae2f4b2df44de42e062ce136e120f65c96af07",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-FourSourceBridge",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "FourSourceBridge"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tail-return-graph/research/native-tail-return-graph",
+      "exit_code": 0,
+      "seconds": 15.583,
+      "log": "evidence/lean-FourSourceBridge.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tail-return-graph/research/native-tail-return-graph",
+      "exit_code": 0,
+      "seconds": 13.71,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tail-return-graph",
+      "exit_code": 0,
+      "seconds": 7.245,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tail-return-graph",
+      "exit_code": 0,
+      "seconds": 6.78,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tail-return-graph",
+      "exit_code": 0,
+      "seconds": 9.696,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tail-return-graph",
+      "exit_code": 0,
+      "seconds": 49.736,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "d823e590d4fd3b11c908fe10399b1091f4b2abe3",
+        "--",
+        ".",
+        ":(exclude)research/native-tail-return-graph/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tail-return-graph",
+      "exit_code": 0,
+      "seconds": 0.011,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-tail-return-graph",
+      "exit_code": 0,
+      "seconds": 0.008,
+      "log": "evidence/diff-check.log"
+    }
+  ],
+  "focused_rechecks": [
+    {
+      "PASS": true,
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "exit_code": 0,
+      "log": "evidence/full-body-audit.log",
+      "log_sha256": "0c8b6df380cdba28bb5a8f5ea6b939de0636d7843eb4eb33ba316df73d06ff6e",
+      "raw_log_sha256": "0c8b6df380cdba28bb5a8f5ea6b939de0636d7843eb4eb33ba316df73d06ff6e",
+      "auditor_sha256": "ce76d051c273a4971557c19c4e7ed3d222397b60902b5e6c05bcf990360514d7",
+      "audit_source_sha256": "3255e5f3fca090e3ba9707fc7a900e0953fda06c04afd468bfa2064732761fea",
+      "correction": "Lean 4.32 ConstantInfo.value? defaults to allowOpaque=false; the final audit explicitly uses allowOpaque=true and traverses theorem/opaque bodies, as well as all types and definition bodies.",
+      "construction": {
+        "public_roots": 44,
+        "type_and_body_dependencies": 63893,
+        "finite_sign_roots_used": []
+      },
+      "finite_control": {
+        "public_roots": 4,
+        "type_and_body_dependencies": 70367,
+        "four_source_sign_roots_used": [
+          "storage_one_original_fourSample_eventually_pos",
+          "storage_one_fourSample_eventually_pos",
+          "radialReturnTransfer_four_eventually_norm_le_one"
+        ]
+      },
+      "seven_source_sign_roots_forbidden_globally": true,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ]
+}
