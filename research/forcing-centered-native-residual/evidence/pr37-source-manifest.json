@@ -1,0 +1,16 @@
+{
+  "Forcing37": {
+    "commit": "bf2ff244e363b110a4e54ba897e475b81552bbdb",
+    "path": "GeometryOfNumbers/Analysis/CarryMaterialForcingGreenEnergy.lean",
+    "original_sha256": "c77af50ea52c57d4f4f9d1727eac4a12748e944e717fe42400e489940b86f7e7",
+    "recovered_sha256": "c77af50ea52c57d4f4f9d1727eac4a12748e944e717fe42400e489940b86f7e7",
+    "change": "byte-identical"
+  },
+  "SourceBalance37": {
+    "commit": "bf2ff244e363b110a4e54ba897e475b81552bbdb",
+    "path": "research/completed-green-confluent-balance/SourceBalance.lean",
+    "original_sha256": "0d259d3b822b033d243a24fa07942cd920562b3d38da6c886b483ead4d2a0e84",
+    "recovered_sha256": "64d3719253d42f27591557cae47a19b71f9efb10cf2463e765826dffce02aa12",
+    "change": "import name only"
+  }
+}
