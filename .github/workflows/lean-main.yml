@@ -1,0 +1,47 @@
+name: Lean 4 — main validation
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lean-main-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lean-core:
+    name: Lake build and kernel audits
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Lean and Lake
+        uses: leanprover/lean-action@v1
+        with:
+          build: false
+          test: false
+          lint: false
+
+      - name: Restore pinned Mathlib cache
+        run: lake exe cache get
+
+      - name: Build default targets with warnings as errors
+        run: lake build --wfail
+
+      - name: Build formal audit targets
+        run: |
+          lake build --wfail GeometryOfNumbers.Foundation.Audit
+          lake build --wfail GeometryOfNumbers.Geometry.Audit
+          lake build --wfail GeometryOfNumbers.Analysis.Audit
+
+      - name: Report pinned toolchain and dependencies
+        if: always()
+        run: |
+          cat lean-toolchain
+          cat lakefile.toml
