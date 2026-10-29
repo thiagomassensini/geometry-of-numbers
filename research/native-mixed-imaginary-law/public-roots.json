@@ -1,0 +1,86 @@
+{
+  "modules": {
+    "MixedSpatialLeading": [
+      "CarryMixedImaginary.divided_one_above",
+      "CarryMixedImaginary.mixedSlope",
+      "CarryMixedImaginary.mixedStaticPair",
+      "CarryMixedImaginary.mixed_static_divided",
+      "CarryMixedImaginary.mixed_static_below",
+      "CarryMixedImaginary.mixed_static_leading",
+      "CarryMixedImaginary.mixed_profile_phase",
+      "CarryMixedImaginary.mixedOrderWeight",
+      "CarryMixedImaginary.mixed_slope_eq_weight",
+      "CarryMixedImaginary.mixed_weight_pos",
+      "CarryMixedImaginary.mixed_weight_neg"
+    ],
+    "MixedRayLeading": [
+      "CarryMixedImaginary.mixed_taylor_sum",
+      "CarryMixedImaginary.mixed_taylor_cancellation",
+      "CarryMixedImaginary.mixed_response_expansion",
+      "CarryMixedImaginary.remainder_samples_continuous",
+      "CarryMixedImaginary.mixed_remainder_continuous",
+      "CarryMixedImaginary.normalizedMixedRay",
+      "CarryMixedImaginary.mixed_phase_leading",
+      "CarryMixedImaginary.normalized_mixed_expansion",
+      "CarryMixedImaginary.normalized_mixed_tendsto"
+    ],
+    "FiniteImaginaryLaw": [
+      "CarryMixedImaginary.finite_mixed_kernel_pairing",
+      "CarryMixedImaginary.finite_mixed_pairing",
+      "CarryMixedImaginary.imaginaryCoefficient",
+      "CarryMixedImaginary.finite_mixed_scaled_tendsto",
+      "CarryMixedImaginary.finite_mixed_imaginary_tendsto",
+      "CarryMixedImaginary.mixedGreenPair",
+      "CarryMixedImaginary.finite_mixed_green_scaled_tendsto"
+    ],
+    "ImaginaryRegression": [
+      "CarryMixedImaginary.mixed_weights_low_order",
+      "CarryMixedImaginary.mixed_weight_ne_zero",
+      "CarryMixedImaginary.not_all_mixed_weights_nonnegative",
+      "CarryMixedImaginary.first_mixed_from_all_order",
+      "CarryMixedImaginary.mixed_jet_scaled_tendsto",
+      "CarryMixedImaginary.imaginary_coefficient_two_ordered_terms",
+      "CarryMixedImaginary.mixed_orthogonality_forces_coefficient_zero"
+    ]
+  },
+  "groups": {
+    "spatial": [
+      "CarryMixedImaginary.divided_one_above",
+      "CarryMixedImaginary.mixedSlope",
+      "CarryMixedImaginary.mixedStaticPair",
+      "CarryMixedImaginary.mixed_static_divided",
+      "CarryMixedImaginary.mixed_static_below",
+      "CarryMixedImaginary.mixed_static_leading",
+      "CarryMixedImaginary.mixed_profile_phase",
+      "CarryMixedImaginary.mixedOrderWeight",
+      "CarryMixedImaginary.mixed_slope_eq_weight",
+      "CarryMixedImaginary.mixed_weight_pos",
+      "CarryMixedImaginary.mixed_weight_neg",
+      "CarryMixedImaginary.mixed_weights_low_order",
+      "CarryMixedImaginary.mixed_weight_ne_zero",
+      "CarryMixedImaginary.not_all_mixed_weights_nonnegative"
+    ],
+    "provenance": [
+      "CarryMixedImaginary.mixed_taylor_sum",
+      "CarryMixedImaginary.mixed_taylor_cancellation",
+      "CarryMixedImaginary.mixed_response_expansion",
+      "CarryMixedImaginary.remainder_samples_continuous",
+      "CarryMixedImaginary.mixed_remainder_continuous",
+      "CarryMixedImaginary.normalizedMixedRay",
+      "CarryMixedImaginary.mixed_phase_leading",
+      "CarryMixedImaginary.normalized_mixed_expansion",
+      "CarryMixedImaginary.normalized_mixed_tendsto",
+      "CarryMixedImaginary.finite_mixed_kernel_pairing",
+      "CarryMixedImaginary.finite_mixed_pairing",
+      "CarryMixedImaginary.imaginaryCoefficient",
+      "CarryMixedImaginary.finite_mixed_scaled_tendsto",
+      "CarryMixedImaginary.finite_mixed_imaginary_tendsto",
+      "CarryMixedImaginary.mixedGreenPair",
+      "CarryMixedImaginary.finite_mixed_green_scaled_tendsto",
+      "CarryMixedImaginary.first_mixed_from_all_order",
+      "CarryMixedImaginary.mixed_jet_scaled_tendsto",
+      "CarryMixedImaginary.imaginary_coefficient_two_ordered_terms",
+      "CarryMixedImaginary.mixed_orthogonality_forces_coefficient_zero"
+    ]
+  }
+}
