@@ -1,0 +1,30 @@
+{
+  "commit": "bc7f36f1bd29d0d09fc23778e9e074c2be82123d",
+  "modules": {
+    "SourceLeading": {
+      "source": "research/critical-source-relative-asymptotics/SourceLeading.lean",
+      "source_sha256": "e07a70dc15cea424ca83f987afbd470d0f9f2ed347f4a42d2b42af22bfd4c1f9",
+      "olean_sha256": "a802c6699aa30618ef4119a51a4a8a9a24a8cb84c4d77a200dba186c137dd3a4"
+    },
+    "WholeSourceLimit": {
+      "source": "research/critical-source-relative-asymptotics/WholeSourceLimit.lean",
+      "source_sha256": "facd23f479aba81015b8219de833ae427df75e64996a4ab87b3fdfdf0a71c489",
+      "olean_sha256": "71083ce032d35466c4eab2e08a90597232e2c9a2fccb0b25dc4fa24c5523392d"
+    },
+    "CriticalRelative": {
+      "source": "research/critical-source-relative-asymptotics/CriticalRelative.lean",
+      "source_sha256": "38a334e7f4f053432e7591becb529c1a988beea56ca032e58edd5751999f6e97",
+      "olean_sha256": "329195a631cef454051731f50203d99e60552bed54628941d212b665f871435d"
+    },
+    "SourceCoordinates": {
+      "source": "research/critical-source-mixed-readout/SourceCoordinates.lean",
+      "source_sha256": "af63b995c4e413d860b2e236239e58d4357a3fade97b4ce0087ff2d952887b3c",
+      "olean_sha256": "0ab1c9532b1bdf687e45e703c32db08a59bcc17980ae912d9ea926623c2edb3f"
+    },
+    "IntegralOrientation": {
+      "source": "research/critical-source-mixed-readout/IntegralOrientation.lean",
+      "source_sha256": "6de79ac5c656ac4bfa98edadc69375c7143c4bc310b6e4ac62b926920ad9255b",
+      "olean_sha256": "a3c89264f8a5d3fa92ca192c3daf58d420ae50247cc3b9eb59862e13b8410665"
+    }
+  }
+}
