@@ -1,0 +1,19 @@
+source-provenance: exit 0
+verified-cache: exit 0
+upstream-synthesis-build: exit 0
+mechanism-probe: exit 0
+generate-audit: exit 0
+operator-source-build: exit 0
+lean-ShiftedFalling: exit 0
+lean-EulerNewtonMatrix: exit 0
+lean-NativeEulerTransport: exit 0
+lean-MovingEulerLimit: exit 0
+lean-MatrixCoherence: exit 0
+lean-Audit: exit 0
+root-build: exit 0
+audit-foundation: exit 0
+audit-geometry: exit 0
+audit-analysis: exit 0
+base-preserved: exit 0
+diff-check: exit 0
+PASS: 18 checks, native sources and old work preserved.
