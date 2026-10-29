@@ -1,0 +1,46 @@
+'CarryGreenCubic.part_field_sum_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenCubic.part_full_taylor_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenCubic.part_full_remainder_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenCubic.cubicProfile' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenCubic.seed_address_compensation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenCubic.seed_cubic_compensation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenCubic.seed_cubic_residual_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenCubic.cubicPart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenCubic.cubic_part_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenCubic.cubic_part_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenCubic.doubled_cubic_vector_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenCubic.cubic_crossing_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenCubic.cubicCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenCubic.cubic_crossing_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenCubic.cubic_residual_residual_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenCubic.cubic_residual_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenCubic.cubic_residual_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenCubic.sum_cubic_pairings' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenCubic.sum_cubic_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenCubic.recomposed_cubic_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryGreenCubic.recomposed_green_cubic_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+Vector Green cubic coefficient construction: 6 public roots; 5138 type/body dependencies; standard axioms only; canonical moments forbidden=true; preexisting moment-sign and scalar-asymptotic shortcuts forbidden
+Vector Green cubic coefficient provenance: 15 public roots; 5750 type/body dependencies; standard axioms only; canonical moments forbidden=false; preexisting moment-sign and scalar-asymptotic shortcuts forbidden
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 8.78
+	System time (seconds): 4.90
+	Percent of CPU this job got: 102%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:13.29
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8381864
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 299075
+	Voluntary context switches: 5097
+	Involuntary context switches: 135
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 736
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
