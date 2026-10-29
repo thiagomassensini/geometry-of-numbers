@@ -1,0 +1,220 @@
+{
+  "status": "PASS",
+  "exact_quartic_envelope_and_gain_checks": 80,
+  "native_fourth_boundary_clock_checks": 63,
+  "native_finite_identity_checks": 12,
+  "finite_observation_comparisons": [
+    {
+      "m": 0,
+      "M": 4,
+      "reference_M": 2048,
+      "finite_observation_difference": "0.000016253228134300669658",
+      "proved_envelope_sum": "0.0007407407452898799908"
+    },
+    {
+      "m": 0,
+      "M": 16,
+      "reference_M": 2048,
+      "finite_observation_difference": "2.2582661149962047976e-7",
+      "proved_envelope_sum": "9.9981249025128158298e-6"
+    },
+    {
+      "m": 0,
+      "M": 64,
+      "reference_M": 2048,
+      "finite_observation_difference": "2.0673874400161631618e-9",
+      "proved_envelope_sum": "1.5077612266677718016e-7"
+    },
+    {
+      "m": 0,
+      "M": 256,
+      "reference_M": 2048,
+      "finite_observation_difference": "1.6810107651402540966e-11",
+      "proved_envelope_sum": "2.3396901304441995484e-9"
+    },
+    {
+      "m": 0,
+      "M": 501,
+      "reference_M": 2048,
+      "finite_observation_difference": "1.6032646694687147598e-12",
+      "proved_envelope_sum": "3.1564709747686586106e-10"
+    },
+    {
+      "m": 1,
+      "M": 4,
+      "reference_M": 2048,
+      "finite_observation_difference": "1.0913413694878237089e-6",
+      "proved_envelope_sum": "0.0014814814905797599816"
+    },
+    {
+      "m": 1,
+      "M": 16,
+      "reference_M": 2048,
+      "finite_observation_difference": "2.6041988662271937057e-7",
+      "proved_envelope_sum": "0.00001999624980502563166"
+    },
+    {
+      "m": 1,
+      "M": 64,
+      "reference_M": 2048,
+      "finite_observation_difference": "5.1561035632672427194e-9",
+      "proved_envelope_sum": "3.0155224533355436033e-7"
+    },
+    {
+      "m": 1,
+      "M": 256,
+      "reference_M": 2048,
+      "finite_observation_difference": "6.5008947499117081812e-11",
+      "proved_envelope_sum": "4.6793802608883990967e-9"
+    },
+    {
+      "m": 1,
+      "M": 501,
+      "reference_M": 2048,
+      "finite_observation_difference": "7.2594466363397207954e-12",
+      "proved_envelope_sum": "6.3129419495373172212e-10"
+    },
+    {
+      "m": 3,
+      "M": 4,
+      "reference_M": 2048,
+      "finite_observation_difference": "0.000042781887610697779077",
+      "proved_envelope_sum": "0.0059259259623190399264"
+    },
+    {
+      "m": 3,
+      "M": 16,
+      "reference_M": 2048,
+      "finite_observation_difference": "1.1711624759211949417e-6",
+      "proved_envelope_sum": "0.000079984999220102526638"
+    },
+    {
+      "m": 3,
+      "M": 64,
+      "reference_M": 2048,
+      "finite_observation_difference": "1.2286817269189961527e-8",
+      "proved_envelope_sum": "1.2062089813342174413e-6"
+    },
+    {
+      "m": 3,
+      "M": 256,
+      "reference_M": 2048,
+      "finite_observation_difference": "3.4584647022122958766e-11",
+      "proved_envelope_sum": "1.8717521043553596387e-8"
+    },
+    {
+      "m": 3,
+      "M": 501,
+      "reference_M": 2048,
+      "finite_observation_difference": "3.566159626306810053e-12",
+      "proved_envelope_sum": "2.5251767798149268885e-9"
+    },
+    {
+      "m": 5,
+      "M": 4,
+      "reference_M": 2048,
+      "finite_observation_difference": "1.247560186260011885e-6",
+      "proved_envelope_sum": "0.023703703849276159706"
+    },
+    {
+      "m": 5,
+      "M": 16,
+      "reference_M": 2048,
+      "finite_observation_difference": "9.1636106207995849321e-7",
+      "proved_envelope_sum": "0.00031993999688041010655"
+    },
+    {
+      "m": 5,
+      "M": 64,
+      "reference_M": 2048,
+      "finite_observation_difference": "3.583541062616716473e-8",
+      "proved_envelope_sum": "4.8248359253368697652e-6"
+    },
+    {
+      "m": 5,
+      "M": 256,
+      "reference_M": 2048,
+      "finite_observation_difference": "6.9386058907099378262e-10",
+      "proved_envelope_sum": "7.4870084174214385548e-8"
+    },
+    {
+      "m": 5,
+      "M": 501,
+      "reference_M": 2048,
+      "finite_observation_difference": "8.7785311666438595706e-11",
+      "proved_envelope_sum": "1.0100707119259707554e-8"
+    },
+    {
+      "m": 6,
+      "M": 4,
+      "reference_M": 2048,
+      "finite_observation_difference": "8.1756842836418131702e-6",
+      "proved_envelope_sum": "0.047407407698552319411"
+    },
+    {
+      "m": 6,
+      "M": 16,
+      "reference_M": 2048,
+      "finite_observation_difference": "2.9875853482669281305e-7",
+      "proved_envelope_sum": "0.0006398799937608202131"
+    },
+    {
+      "m": 6,
+      "M": 64,
+      "reference_M": 2048,
+      "finite_observation_difference": "2.9936405975063448747e-8",
+      "proved_envelope_sum": "9.6496718506737395305e-6"
+    },
+    {
+      "m": 6,
+      "M": 256,
+      "reference_M": 2048,
+      "finite_observation_difference": "9.0270097398452733623e-10",
+      "proved_envelope_sum": "1.497401683484287711e-7"
+    },
+    {
+      "m": 6,
+      "M": 501,
+      "reference_M": 2048,
+      "finite_observation_difference": "1.3676302359551949338e-10",
+      "proved_envelope_sum": "2.0201414238519415108e-8"
+    }
+  ],
+  "cutoff_costs": [
+    {
+      "jet_order": 5,
+      "channel": "ordinary",
+      "tolerance": "1/100000000",
+      "old_envelope_M": 400000001,
+      "accelerated_envelope_M": 501,
+      "scope": "one raw jet error; no completed multiplier or critical pivot margin"
+    },
+    {
+      "jet_order": 5,
+      "channel": "clock",
+      "tolerance": "1/100000000",
+      "old_envelope_M": 4800000001,
+      "accelerated_envelope_M": 1145,
+      "scope": "one raw jet error; no completed multiplier or critical pivot margin"
+    },
+    {
+      "jet_order": 5,
+      "channel": "ordinary",
+      "tolerance": "1/10000000000000000000000000",
+      "old_envelope_M": 40000000000000000000000001,
+      "accelerated_envelope_M": 232079442,
+      "scope": "one raw jet error; no completed multiplier or critical pivot margin"
+    },
+    {
+      "jet_order": 5,
+      "channel": "clock",
+      "tolerance": "1/10000000000000000000000000",
+      "old_envelope_M": 480000000000000000000000001,
+      "accelerated_envelope_M": 531329285,
+      "scope": "one raw jet error; no completed multiplier or critical pivot margin"
+    }
+  ],
+  "native_pivot_sign_proved": false,
+  "all_order_Hankel_positivity_proved": false,
+  "note": "Infinite bounds are proved by Lean; mpmath is a finite regression, not an interval certificate."
+}
