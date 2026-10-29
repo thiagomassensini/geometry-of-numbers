@@ -137,6 +137,7 @@ import GeometryOfNumbers.Analysis.BaseTwoCenterSectorAdjointMismatch
 
 import GeometryOfNumbers.Analysis.NaivePhysicalCenterBlock
 import GeometryOfNumbers.Analysis.CompleteVerticalObservationGram
+import GeometryOfNumbers.Analysis.IntegerMomentGramPositivity
 import GeometryOfNumbers.Analysis.SeparatedCenterObservation
 import GeometryOfNumbers.Analysis.SeparatedCenterClockObstruction
 
