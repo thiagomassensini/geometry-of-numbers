@@ -1,0 +1,95 @@
+'CarryRadialRefinement.refinedAddress' does not depend on any axioms
+'CarryRadialRefinement.refined_address_succ' depends on axioms: [propext]
+'CarryRadialRefinement.powerColumn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.power_column_function' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.power_column_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.powerSynthesis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.power_synthesis_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.power_synthesis_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.powerExtension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.power_extension_synthesis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.power_extension_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.powerIsometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.power_isometry_feature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.power_isometry_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.radialVector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.radial_vector_feature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.refined_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.refined_point' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.power_isometry_radial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.power_isometry_finite_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.projectiveLegs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.projective_legs_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.pairPower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.pair_power_refines_projective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.commonGrade' does not depend on any axioms
+'CarryRadialRefinement.common_grade_comm' depends on axioms: [propext]
+'CarryRadialRefinement.refined_address_comp' depends on axioms: [propext]
+'CarryRadialRefinement.commonPairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.common_pairing_same_grade' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.further_refinement_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.power_composition_feature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.power_composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.power_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.equal_radial_point_common_states' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.powerCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.power_coefficient_single' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.embedding_power_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.powerCore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.power_core_coe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.coefficient_euler_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.euler_power_core' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.endpoint_power_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.positive_value_refined' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.dirichlet_power_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.critical_dirichlet_factor_norm_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.originalFields' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.six_fields_common_isometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.original_source_legs_refined' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.refined_complete_balance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.refined_head_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.sample_form_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.common_radial_gram' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.common_pairing_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.PhysicalPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.physicalForm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.physicalJet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.commonJetPairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.physical_form_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.physical_form_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.ambientPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.ambient_projective_legs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.physical_jet_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.common_jet_pairing_weighted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.common_jet_pairing_dslope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.common_jet_pairing_eventually_dslope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.common_jet_pairing_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.common_even_jets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.common_odd_jets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryRadialRefinement.common_even_odd_jets' depends on axioms: [propext, Classical.choice, Quot.sound]
+Physical radial refinement audit tier 0: 65 public roots; 6012 type/body dependencies; standard axioms only
+Physical radial refinement audit tier 1: 4 public roots; 5816 type/body dependencies; standard axioms only
+Physical radial refinement audit tier 1: 69 public roots; 6238 type/body dependencies; standard axioms only
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 8.32
+	System time (seconds): 6.65
+	Percent of CPU this job got: 124%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7974236
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 273011
+	Voluntary context switches: 13207
+	Involuntary context switches: 167
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 704
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
