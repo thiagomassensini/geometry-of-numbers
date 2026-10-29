@@ -1,0 +1,80 @@
+{
+  "modules": {
+    "OddVectors": [
+      "CarryOddGreen.greenColumn",
+      "CarryOddGreen.traceColumn",
+      "CarryOddGreen.odd_profile_radial_jet",
+      "CarryOddGreen.odd_bulk_coefficients",
+      "CarryOddGreen.odd_weighted_coefficients",
+      "CarryOddGreen.odd_commutator_coefficients",
+      "CarryOddGreen.odd_bulk_vector",
+      "CarryOddGreen.odd_boundary_vector",
+      "CarryOddGreen.odd_residual_vector"
+    ],
+    "OddCompensation": [
+      "CarryOddGreen.odd_bulk_residual_cancellation",
+      "CarryOddGreen.odd_complete_vector_reconstruction",
+      "CarryOddGreen.odd_three_vector_identity",
+      "CarryOddGreen.odd_physical_jet_calibration"
+    ],
+    "OddHankelTransport": [
+      "CarryOddGreen.kernel_imaginary_imaginary",
+      "CarryOddGreen.oddPairing",
+      "CarryOddGreen.odd_ordered_kernel_sum",
+      "CarryOddGreen.odd_pairing_exact",
+      "CarryOddGreen.normalized_odd_pair_tendsto",
+      "CarryOddGreen.oddBilinear",
+      "CarryOddGreen.odd_pairing_tendsto",
+      "CarryOddGreen.odd_green_pairing_tendsto"
+    ],
+    "OddRegressions": [
+      "CarryOddGreen.odd_linear_residual",
+      "CarryOddGreen.odd_cubic_residual",
+      "CarryOddGreen.shifted_hankel_eq_source",
+      "CarryOddGreen.odd_matrix_entry_tendsto",
+      "CarryOddGreen.odd_matrix_green_entry_tendsto",
+      "CarryOddGreen.odd_matrix_entry_real_tendsto",
+      "CarryOddGreen.odd_bilinear_eq_matrix",
+      "CarryOddGreen.odd_matrix_bilinear_tendsto",
+      "CarryOddGreen.odd_matrix_green_bilinear_tendsto",
+      "CarryOddGreen.odd_bilinear_diagonal_eq"
+    ]
+  },
+  "groups": {
+    "construction": [
+      "CarryOddGreen.greenColumn",
+      "CarryOddGreen.traceColumn",
+      "CarryOddGreen.odd_profile_radial_jet",
+      "CarryOddGreen.odd_bulk_coefficients",
+      "CarryOddGreen.odd_weighted_coefficients",
+      "CarryOddGreen.odd_commutator_coefficients",
+      "CarryOddGreen.odd_bulk_vector",
+      "CarryOddGreen.odd_boundary_vector",
+      "CarryOddGreen.odd_residual_vector",
+      "CarryOddGreen.odd_bulk_residual_cancellation",
+      "CarryOddGreen.odd_complete_vector_reconstruction",
+      "CarryOddGreen.odd_three_vector_identity",
+      "CarryOddGreen.odd_physical_jet_calibration",
+      "CarryOddGreen.kernel_imaginary_imaginary",
+      "CarryOddGreen.oddPairing",
+      "CarryOddGreen.odd_ordered_kernel_sum",
+      "CarryOddGreen.odd_pairing_exact",
+      "CarryOddGreen.odd_linear_residual",
+      "CarryOddGreen.odd_cubic_residual"
+    ],
+    "provenance": [
+      "CarryOddGreen.normalized_odd_pair_tendsto",
+      "CarryOddGreen.oddBilinear",
+      "CarryOddGreen.odd_pairing_tendsto",
+      "CarryOddGreen.odd_green_pairing_tendsto",
+      "CarryOddGreen.shifted_hankel_eq_source",
+      "CarryOddGreen.odd_matrix_entry_tendsto",
+      "CarryOddGreen.odd_matrix_green_entry_tendsto",
+      "CarryOddGreen.odd_matrix_entry_real_tendsto",
+      "CarryOddGreen.odd_bilinear_eq_matrix",
+      "CarryOddGreen.odd_matrix_bilinear_tendsto",
+      "CarryOddGreen.odd_matrix_green_bilinear_tendsto",
+      "CarryOddGreen.odd_bilinear_diagonal_eq"
+    ]
+  }
+}
