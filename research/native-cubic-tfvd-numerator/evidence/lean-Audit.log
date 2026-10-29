@@ -1,0 +1,64 @@
+'CarryCubicTfvd.cubicForwardWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubicBackwardWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubicTrace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubic_commutator_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubic_shift_numerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubic_physical_numerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubicKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubic_kernel_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubic_green_polarized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubic_green_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubic_seed_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.criticalFamily' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.critical_family_original_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.critical_family_synthesis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.critical_family_two_traces' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.critical_family_cubic_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.critical_family_explicit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.critical_family_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.critical_cubic_commutator_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubic_three_input_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.critical_cubic_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubicQuadraticMultiplier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubicTangent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.nativeU3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubic_native_tangent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubic_multiplier_advance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubic_multiplier_complement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.resolvent_cubic_multiplier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubic_tangent_resolvent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubic_multiplier_gradient_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubic_curvature_polarized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubic_curvature_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubic_multiplier_upper_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubic_multiplier_inner_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.cubic_curvature_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.native_cubic_identification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.native_cubic_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.native_cubic_uniform_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCubicTfvd.native_cubic_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+Cubic TFVD spatial: 38 public roots; 5149 type/body dependencies; standard axioms only; no canonical moments; characteristic forbidden=true
+Cubic TFVD provenance: 1 public roots; 5274 type/body dependencies; standard axioms only; no canonical moments; characteristic forbidden=false
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 7.23
+	System time (seconds): 4.84
+	Percent of CPU this job got: 110%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.92
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8365312
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 284661
+	Voluntary context switches: 8610
+	Involuntary context switches: 133
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 704
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
