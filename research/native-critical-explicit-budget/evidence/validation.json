@@ -1,0 +1,31 @@
+{
+  "base_commit": "330588425269895c55389eec067885ec4d75d05c",
+  "operator_commit": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "lean_toolchain": "leanprover/lean4:v4.32.0",
+  "results": {
+    "research_modules": 6,
+    "lake_build_wfail_jobs": 8849,
+    "transitive_roots": 6,
+    "transitive_dependencies": 84167,
+    "reused_artifacts_compared": 245,
+    "reused_artifact_mismatches": 0,
+    "forbidden_shortcuts": "none",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "files_sha256": {
+    "research/native-critical-explicit-budget/Audit.lean": "3561232ba74f98a22f6404686c9e0e89734d35ebc168520850f236aff6541640",
+    "research/native-critical-explicit-budget/CriticalCoefficient.lean": "1ec9b2ea77b9ae506fb4177ff0cb02ad48cf1a75500714f2ee2705120a3c4df7",
+    "research/native-critical-explicit-budget/GeneralBudget.lean": "d71bbe2293eb9f8a87d01ee356f6e7896db41b46e75c9ab8110d80837730413a",
+    "research/native-critical-explicit-budget/NumericCutoff.lean": "dcd509786808b1c6a952b4c1200ea6554b3e8478c5932f33f52f60ae4093f70a",
+    "research/native-critical-explicit-budget/RelativeCertificate.lean": "c11a9ac9014019f2465b7bc5af6acf1fc28876bb2aa360297572ffa1c7fb5cdc",
+    "research/native-critical-explicit-budget/RelativeGate.lean": "52997d87997c7320c1d943c261009a8acc95c5bfdc1f908ba1dc9c3ba2bbd32f",
+    "research/native-critical-explicit-budget/compile_module.sh": "d81922bc20eabc86edb49e0e786c97cda82fd9363437727c74f7ca3913da40e1",
+    "research/native-critical-explicit-budget/validate.sh": "9ca76c5fadb8f41520672fc64e78a29917bf9c6aa56e7aa3ce0fafdb66db2887",
+    "research/native-critical-explicit-budget/REPORT.md": "edb6882688cebf33bf31525c3c22aeeaebfc424a4908aaa907071ea0566b36bd"
+  },
+  "historical_artifacts": "reused-cache-manifest.json records hashes of reused .olean files, not a clean historical rebuild"
+}
