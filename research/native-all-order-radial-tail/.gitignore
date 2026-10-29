@@ -1,0 +1,7 @@
+.cache/
+evidence-dev.log
+Check.lean
+evidence/root-build.log
+evidence/audit-*.log
+evidence/lean-AllOrderTail.log
+evidence/validate.log

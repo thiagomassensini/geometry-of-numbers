@@ -1,0 +1,13 @@
+import AllOrderTail
+
+#print axioms CarryAllOrderTail.cross_error_bound
+#print axioms CarryAllOrderTail.material_pair_uniform_error
+#print axioms CarryAllOrderTail.native_address_prefix_error
+#print axioms CarryAllOrderTail.native_family_prefix_error
+#print axioms CarryAllOrderTail.finite_radial_regular
+#print axioms CarryAllOrderTail.address_budget_nonneg
+#print axioms CarryAllOrderTail.finite_grid_radius
+#print axioms CarryAllOrderTail.native_finite_grid_budget
+#print axioms CarryAllOrderTail.full_physical_grid_budget
+#print axioms CarryAllOrderTail.address_budget_tendsto_zero
+#print axioms CarryAllOrderTail.family_budget_tendsto_zero

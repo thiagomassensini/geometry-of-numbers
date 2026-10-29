@@ -1,0 +1,48 @@
+{
+  "PASS": true,
+  "base": "2ff2c743472463b20a99e1384d78be7c20840d5a",
+  "new_theorem_roots": 11,
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "upstream_objects_reused": 200,
+  "checks": {
+    "root-build": {
+      "sha256": "6bd021d5e6f8924d278bbb2e914c1a9ba8b7b0f3a51aee862d94809f7fc790ab",
+      "bytes": 470101,
+      "exit_code": 0
+    },
+    "audit-foundation": {
+      "sha256": "0cf345cc3bcedfa92250217b4e73bc37834671ac0b8a2b97f66d3c06551ce199",
+      "bytes": 26945,
+      "exit_code": 0
+    },
+    "audit-geometry": {
+      "sha256": "469cddc780755a2a401f4a2d437d4b65bccc9f3333dc598e645025f94caf4888",
+      "bytes": 25625,
+      "exit_code": 0
+    },
+    "audit-analysis": {
+      "sha256": "41638147d4cbad3e7727185f00c6ec49b0bd2f5b43446412c29f07d81b11cbee",
+      "bytes": 753822,
+      "exit_code": 0
+    },
+    "lean-AllOrderTail": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exit_code": 0
+    },
+    "lean-axioms": {
+      "sha256": "933c57e8db4eab9bc4e5d93fabc1613cbf576256121628de4c05ddccb4167720",
+      "bytes": 1140,
+      "exit_code": 0
+    },
+    "validate": {
+      "sha256": "8ab3d5d4791772b0137d449b8b7483710d1f472b417f4bccf20b0c7c919f2c56",
+      "bytes": 204,
+      "exit_code": 0
+    }
+  }
+}
