@@ -1,0 +1,20 @@
+upstream-provenance: exit 0
+generate-audit: exit 0
+operator-source-build: exit 0
+lean-ShiftedDifferences: exit 0
+lean-BinomialCoefficient: exit 0
+lean-StencilTransport: exit 0
+lean-PhysicalAllOrder: exit 0
+lean-CanonicalExtraction: exit 0
+lean-PhysicalRay: exit 0
+lean-MomentSeparation: exit 0
+lean-GeneralCorrectionForm: exit 0
+lean-AffineFrameObstruction: exit 0
+lean-Audit: exit 0
+root-build: exit 0
+audit-foundation: exit 0
+audit-geometry: exit 0
+audit-analysis: exit 0
+base-preserved: exit 0
+diff-check: exit 0
+PASS: 19 commands; no trusted escapes; source preservation verified
