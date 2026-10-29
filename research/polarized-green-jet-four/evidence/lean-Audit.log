@@ -1,0 +1,87 @@
+'CarryPolarizedFour.jetInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.jet_input_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.evenPolynomialInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.even_polynomial_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quarticInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quartic_source_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.fourthScale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.fourth_scale_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.fiveWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quartic_input_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.fiveRegular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.five_regular_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.five_basis_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quarticBulk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quarticResidual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quartic_bulk_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quartic_residual_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quartic_vector_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quartic_full_green' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quartic_residual_cross_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quartic_mixed_twenty_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.crosses' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.sampleMass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quarticBalance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quartic_balance_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quartic_balance_twenty_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quartic_balance_five_samples' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.momentPairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.finiteTerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.correctionTerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.fourthTerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.higherPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.normalizedMass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.errorReadout' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.readout_fifteenth_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quartic_exact_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.error_readout_continuousAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quartic_finite_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quartic_correction_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quartic_fourth_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quartic_sixth_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.moment_pairing_original_functional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.moment_pairing_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.inverseCoefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.criticalPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.critical_polynomial_snoc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.critical_coefficients_solve' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.critical_moment_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.critical_old_pairing_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.inverse_schur_source_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.critical_green_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.critical_green_old_limit_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.critical_green_correction_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quartic_prefix_input' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quartic_prefix_balance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quartic_prefix_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quartic_prefix_correction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryPolarizedFour.quartic_prefix_fourth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NativeMomentOrthogonalization.sourceMomentSchur_critical_direction_of_isUnit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Polarized jet-four audit tier 0: 27 public roots; 5919 type/body dependencies; standard axioms only
+Polarized jet-four audit tier 1: 31 public roots; 6579 type/body dependencies; standard axioms only
+Polarized jet-four audit tier 1: 58 public roots; 6645 type/body dependencies; standard axioms only
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 9.26
+	System time (seconds): 7.06
+	Percent of CPU this job got: 118%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:13.83
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8417928
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 301420
+	Voluntary context switches: 13615
+	Involuntary context switches: 152
+	Swaps: 0
+	File system inputs: 6952
+	File system outputs: 728
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
