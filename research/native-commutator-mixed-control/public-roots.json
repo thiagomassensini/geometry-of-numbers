@@ -1,0 +1,104 @@
+{
+  "modules": {
+    "NativeWeightLaw": [
+      "CarryCommutatorControl.chiralDifference",
+      "CarryCommutatorControl.responseWeight",
+      "CarryCommutatorControl.chiral_difference_ne_zero",
+      "CarryCommutatorControl.chiral_weight_difference",
+      "CarryCommutatorControl.incident_amplitude_response",
+      "CarryCommutatorControl.radial_weight_difference",
+      "CarryCommutatorControl.radial_weight_difference_eventually"
+    ],
+    "NullCommutator": [
+      "CarryCommutatorControl.coefficient_outside_prefix",
+      "CarryCommutatorControl.commutator_weight_scale",
+      "CarryCommutatorControl.commutator_equal_of_constant_difference",
+      "CarryCommutatorControl.native_commutator_response",
+      "CarryCommutatorControl.completed_commutator_equal_legs",
+      "CarryCommutatorControl.completed_commutator_pairing_zero",
+      "CarryCommutatorControl.completed_commutator_eventually_null"
+    ],
+    "MixedReduction": [
+      "CarryCommutatorControl.coefficient_weight_difference",
+      "CarryCommutatorControl.completed_source_contrast",
+      "CarryCommutatorControl.completed_commutator_mixed_pairing",
+      "CarryCommutatorControl.completed_kernel_mixed_reduction"
+    ],
+    "NativeJets": [
+      "CarryCommutatorControl.finiteEmbedding",
+      "CarryCommutatorControl.finite_embedding_apply",
+      "CarryCommutatorControl.finite_embedding_support",
+      "CarryCommutatorControl.finite_embedding_weight",
+      "CarryCommutatorControl.finite_embedding_synthesis",
+      "CarryCommutatorControl.rawJetCoefficients",
+      "CarryCommutatorControl.original_jet_input_factor",
+      "CarryCommutatorControl.raw_jet_original_source",
+      "CarryCommutatorControl.native_jet_commutator_eventually_null"
+    ],
+    "GreenSeed": [
+      "CarryCommutatorControl.seed_is_native_zero_jet",
+      "CarryCommutatorControl.commutator_seed",
+      "CarryCommutatorControl.physical_commutator_seed",
+      "CarryCommutatorControl.physical_resolvent_selfAdjoint",
+      "CarryCommutatorControl.green_seed_cross",
+      "CarryCommutatorControl.green_seed_cross_re_pos",
+      "CarryCommutatorControl.seedMixed",
+      "CarryCommutatorControl.seed_mixed_exact"
+    ],
+    "SeedMixedLimit": [
+      "CarryCommutatorControl.incident_amplitude_hasDerivAt_h0",
+      "CarryCommutatorControl.incident_amplitude_step_tendsto",
+      "CarryCommutatorControl.seed_mixed_tendsto",
+      "CarryCommutatorControl.seed_mixed_eventually_negative",
+      "CarryCommutatorControl.seed_commutator_eventually_nonzero"
+    ]
+  },
+  "groups": {
+    "source": [
+      "CarryCommutatorControl.chiralDifference",
+      "CarryCommutatorControl.responseWeight",
+      "CarryCommutatorControl.chiral_difference_ne_zero",
+      "CarryCommutatorControl.chiral_weight_difference",
+      "CarryCommutatorControl.incident_amplitude_response",
+      "CarryCommutatorControl.radial_weight_difference",
+      "CarryCommutatorControl.radial_weight_difference_eventually",
+      "CarryCommutatorControl.coefficient_outside_prefix",
+      "CarryCommutatorControl.commutator_weight_scale",
+      "CarryCommutatorControl.commutator_equal_of_constant_difference",
+      "CarryCommutatorControl.native_commutator_response",
+      "CarryCommutatorControl.completed_commutator_equal_legs",
+      "CarryCommutatorControl.completed_commutator_pairing_zero",
+      "CarryCommutatorControl.completed_commutator_eventually_null",
+      "CarryCommutatorControl.coefficient_weight_difference",
+      "CarryCommutatorControl.completed_source_contrast",
+      "CarryCommutatorControl.completed_commutator_mixed_pairing",
+      "CarryCommutatorControl.completed_kernel_mixed_reduction",
+      "CarryCommutatorControl.finiteEmbedding",
+      "CarryCommutatorControl.finite_embedding_apply",
+      "CarryCommutatorControl.finite_embedding_support",
+      "CarryCommutatorControl.finite_embedding_weight",
+      "CarryCommutatorControl.finite_embedding_synthesis",
+      "CarryCommutatorControl.rawJetCoefficients",
+      "CarryCommutatorControl.original_jet_input_factor",
+      "CarryCommutatorControl.raw_jet_original_source",
+      "CarryCommutatorControl.native_jet_commutator_eventually_null",
+      "CarryCommutatorControl.seed_is_native_zero_jet",
+      "CarryCommutatorControl.commutator_seed",
+      "CarryCommutatorControl.physical_commutator_seed",
+      "CarryCommutatorControl.physical_resolvent_selfAdjoint",
+      "CarryCommutatorControl.green_seed_cross",
+      "CarryCommutatorControl.green_seed_cross_re_pos",
+      "CarryCommutatorControl.seedMixed",
+      "CarryCommutatorControl.seed_mixed_exact"
+    ],
+    "identification": [
+      "CarryCommutatorControl.incident_amplitude_hasDerivAt_h0",
+      "CarryCommutatorControl.incident_amplitude_step_tendsto",
+      "CarryCommutatorControl.seed_mixed_tendsto"
+    ],
+    "finite_sign": [
+      "CarryCommutatorControl.seed_mixed_eventually_negative",
+      "CarryCommutatorControl.seed_commutator_eventually_nonzero"
+    ]
+  }
+}
