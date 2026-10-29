@@ -1,0 +1,4 @@
+'GeometryOfNumbers.Analysis.carryMaterialReadoutProjection_not_isometric_domain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+PASS: real analysis build and standard-axiom audit (NOT axiom-free).
