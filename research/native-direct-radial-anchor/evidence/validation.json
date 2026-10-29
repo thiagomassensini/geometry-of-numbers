@@ -1,0 +1,36 @@
+{
+  "base_commit": "202dba8a60591159fa0d6da058f146719516ffc1",
+  "operator_commit": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "lean_toolchain": "leanprover/lean4:v4.32.0",
+  "results": {
+    "research_modules": 13,
+    "lake_build_wfail_jobs": 8849,
+    "transitive_roots": 4,
+    "transitive_dependencies": 84142,
+    "forbidden_shortcuts": "none",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "files_sha256": {
+    "research/native-direct-radial-anchor/Audit.lean": "61e7306eecf6387a5aca88a468d2b4aad8d39f83df2fff665b8fcf1cfaf84ed8",
+    "research/native-direct-radial-anchor/DirectBound.lean": "8ef95172672a661181ebd0a1ac7e77f8da3544301da48a6199cef65b4c98295e",
+    "research/native-direct-radial-anchor/ScaledResidual.lean": "4ab75b2001c5d8aee62f3bef0e43867215782eccdd5be23f365dce8338b99882",
+    "research/native-direct-radial-anchor/TenCriticalTransfer.lean": "a4b7f756cde716b899cf345e9df84f72da0d111809a40c884a98b0faa32e76f0",
+    "research/native-direct-radial-anchor/TenDirectAnchor.lean": "f88e409da58659b83e496f309e6e15928f2711ec62b35bbf5799835e86497d7b",
+    "research/native-direct-radial-anchor/TenExplicitCutoff.lean": "3a95a93433b01b22a22d3417b218f7c30c9a1302ee4cb86fcf28c87fc6fd09d5",
+    "research/native-direct-radial-anchor/TenNativeBoundary.lean": "9af29902b734d3bc22dbc4e8a03f8e7b5278b9d2a58b0913a57d3ff1ff542674",
+    "research/native-direct-radial-anchor/TenResidualCertificate.lean": "161bb756f7c0664f9ac11b37d3a8dcbb58396ab3eb170f42077347245ec59d49",
+    "research/native-direct-radial-anchor/TenScaledBoxes.lean": "0635fe365551b73a1f617d20d770980f131f2dd2efb4388c83de65fb277bcb36",
+    "research/native-direct-radial-anchor/TenSourceInputs.lean": "b358584e62f063fef3b54ab032cd73e1850f83e664a8ebe7b90326cc03a0381a",
+    "research/native-direct-radial-anchor/TenTrial.lean": "8d787d75f11984c69be7044eb6d235f1e6853376e152de94f74e33301ffbef9f",
+    "research/native-direct-radial-anchor/TenTrialEverywhere.lean": "d7c2715678e51e43b0e2dbd116c13d6d505c450acfc27de03c49a429cd612e1b",
+    "research/native-direct-radial-anchor/VariationalTransport.lean": "653ac49dad11bdf3f17242183b202093c722be32b42467cfcc2e4f4a27c34303",
+    "research/native-direct-radial-anchor/compile_module.sh": "d7b482e8f5728454a2b63b548a7ddc6673d177bc17f83a10d82247971e595c88",
+    "research/native-direct-radial-anchor/validate.sh": "024340bd06e9d9fe8782c537c1dca23041caab40f6f4800eb10fbff557a77ce9",
+    "research/native-direct-radial-anchor/REPORT.md": "7c1326bd7f6bec9bc09f0d42d31b307734df7adec13b94fdf1a4b2247f1f0f27"
+  },
+  "historical_artifacts": "historical-manifest.txt records hashes of reused sources and .olean files, not a clean rebuild"
+}
