@@ -1,0 +1,95 @@
+'CarryFirstOddGreen.basisInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.increment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.basis_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.source_basis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.residual_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.successor_bulk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.successor_residual_numerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.basis_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.residual_basis_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.successorPort' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.reconstructed_successor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.basis_contrast' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.nodeRegular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.basisPort' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.residual_two_ports' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.residual_ordered_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.form_add_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.form_sub_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.ordered_mixed_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.oddInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.oddBulk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.oddResidual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.bulk_smul_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.residual_smul_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.numerator_smul_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_residual_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_source_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.first_odd_jet_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_vector_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_bulk_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_residual_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_residual_self_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.inverse_step_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_mixed_four_crossings' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.portOverlap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_mixed_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_energy_three_sectors' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.successorProfile' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.successor_port_toLp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.successor_profile_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.oddDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.oddCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_port_overlap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.overlap_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_density_continuousOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_density_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_coefficient_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_coefficient_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.node_regular_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.adjacent_increment_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.scaled_increment_basis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.increment_basis_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_mixed_scaled_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_mixed_scaled_complex_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.complex_real_div' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_mixed_scaled_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.form_same_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_source_complex_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_source_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.inverse_radial_mass_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_source_scaled_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_bulk_scaled_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_eventual_mixed_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_eventual_bulk_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_mixed_no_finite_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_bulk_no_finite_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.odd_eventual_compensation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFirstOddGreen.canonical_odd_channel_signs' depends on axioms: [propext, Classical.choice, Quot.sound]
+First odd Green audit tier 0: 48 public roots; 5833 type/body dependencies; standard axioms only
+First odd Green audit tier 1: 14 public roots; 6024 type/body dependencies; standard axioms only
+First odd Green audit tier 2: 6 public roots; 5959 type/body dependencies; standard axioms only
+First odd Green audit tier 2: 68 public roots; 6104 type/body dependencies; standard axioms only
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 10.28
+	System time (seconds): 7.59
+	Percent of CPU this job got: 121%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:14.65
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7981364
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 289358
+	Voluntary context switches: 13297
+	Involuntary context switches: 196
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 704
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
