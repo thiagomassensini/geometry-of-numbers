@@ -1,0 +1,7 @@
+PASS stored decimals: source N=4, section N=1
+PASS stored decimals: source N=4, section N=2
+PASS stored decimals: source N=4, section N=4
+PASS stored decimals: source N=6, section N=1
+PASS stored decimals: source N=6, section N=2
+PASS stored decimals: source N=6, section N=6
+PASS: exact stored-decimal pivots, singleton identity, spectral precision checks, controls
