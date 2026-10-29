@@ -1,0 +1,18 @@
+{
+  "base": "6e47f8908408aa268edfecc1d9769c6be346d067",
+  "branch": "agent/native-fiber-transport",
+  "head_before_commit": "6e47f8908408aa268edfecc1d9769c6be346d067",
+  "origin_main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_status": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "operator_tracked_diff": "",
+  "protected_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "manifest_sha256": "9868872bae98d0c7e22c597d8e27d38d247498161cf70cdcdc193e9ea0608602",
+  "operator_manifest_sha256": "822866313e377adcb9c6249680ed67ceb47682af1bb0cd3cc5203554786bcfeb",
+  "toolchain": "leanprover/lean4:v4.32.0",
+  "operator_toolchain": "leanprover/lean4:v4.32.0",
+  "worktrees": "worktree /home/thlinux/geometry-of-numbers\nHEAD 6e47f8908408aa268edfecc1d9769c6be346d067\nbranch refs/heads/agent/native-fiber-transport\n\nworktree /home/thlinux/geometry-of-numbers-phase-canary\nHEAD 93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f\nbranch refs/heads/canary-c2-global-odd-source\n\nworktree /home/thlinux/geometry-of-numbers-r2\nHEAD 93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f\nbranch refs/heads/r2-real-tfvd-green-valve\n\nworktree /home/thlinux/geometry-of-numbers-recovery\nHEAD d7cc54f5c485320f1fada33118e9e6101488819a\nbranch refs/heads/recovery/formalizations-2026-10-01-02"
+}

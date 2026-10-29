@@ -1,0 +1,331 @@
+[
+  {
+    "name": "audit-generation",
+    "command": [
+      "python3",
+      "research/native-jet-overlap-budget/generate_audit.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.036
+  },
+  {
+    "name": "native-source-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "CarrySelfAdjointOperator.CompletedC3FullWronskianOperatorCarrier",
+      "CarrySelfAdjointOperator.NativeCompletedDividedVectorResponse",
+      "CarrySelfAdjointOperator.CanonicalCompletedC3GammaLedgerNumerator",
+      "CarrySelfAdjointOperator.CompletedC3CoisometricAmbientStrictPositivity",
+      "CarrySelfAdjointOperator.CompletedNativeSourceThreeSectorSewing",
+      "CarrySelfAdjointOperator.CompletedNativeChiralReturnEnergyPort",
+      "CarrySelfAdjointOperator.CompletedNativeAmbientRadialIntertwiningNoGo"
+    ],
+    "cwd": "/home/thlinux/carry-self-adjoint-operator",
+    "exit_code": 0,
+    "seconds": 7.698
+  },
+  {
+    "name": "pr41-geometry-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "GeometryOfNumbers.Analysis.CarryMaterialSourceFactor",
+      "GeometryOfNumbers.Analysis.LogarithmicMomentHankel",
+      "GeometryOfNumbers.Analysis.CanonicalFiniteHeight"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 6.687
+  },
+  {
+    "name": "pr41-source-build",
+    "command": [
+      "python3",
+      "research/native-jet-overlap-budget/prepare_pr41.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 37.451
+  },
+  {
+    "name": "inherited-TraceFiber",
+    "command": [
+      "bash",
+      "research/physical-trace-fiber/compile_module.sh",
+      "TraceFiber"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.644
+  },
+  {
+    "name": "inherited-NativeCompletion",
+    "command": [
+      "bash",
+      "research/physical-trace-fiber/compile_module.sh",
+      "NativeCompletion"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 12.287
+  },
+  {
+    "name": "inherited-ReadoutTransport",
+    "command": [
+      "bash",
+      "research/physical-trace-fiber/compile_module.sh",
+      "ReadoutTransport"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 8.598
+  },
+  {
+    "name": "inherited-native-CoherentSplit",
+    "command": [
+      "bash",
+      "research/native-fiber-transport/compile_module.sh",
+      "CoherentSplit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 10.39
+  },
+  {
+    "name": "inherited-native-TransportBudget",
+    "command": [
+      "bash",
+      "research/native-fiber-transport/compile_module.sh",
+      "TransportBudget"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.008
+  },
+  {
+    "name": "inherited-native-SourceSpan",
+    "command": [
+      "bash",
+      "research/native-fiber-transport/compile_module.sh",
+      "SourceSpan"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.151
+  },
+  {
+    "name": "inherited-native-KernelBudget",
+    "command": [
+      "bash",
+      "research/native-fiber-transport/compile_module.sh",
+      "KernelBudget"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.516
+  },
+  {
+    "name": "inherited-native-SeparationCorrection",
+    "command": [
+      "bash",
+      "research/native-fiber-transport/compile_module.sh",
+      "SeparationCorrection"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 10.605
+  },
+  {
+    "name": "inherited-native-NativeCauchyOverlap",
+    "command": [
+      "bash",
+      "research/native-fiber-transport/compile_module.sh",
+      "NativeCauchyOverlap"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 10.095
+  },
+  {
+    "name": "kernel-OverlapGeometry",
+    "command": [
+      "bash",
+      "research/native-jet-overlap-budget/compile_module.sh",
+      "OverlapGeometry"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 10.55
+  },
+  {
+    "name": "kernel-JetBudget",
+    "command": [
+      "bash",
+      "research/native-jet-overlap-budget/compile_module.sh",
+      "JetBudget"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 10.536
+  },
+  {
+    "name": "kernel-DampedCamera",
+    "command": [
+      "bash",
+      "research/native-jet-overlap-budget/compile_module.sh",
+      "DampedCamera"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.854
+  },
+  {
+    "name": "kernel-StencilObstruction",
+    "command": [
+      "bash",
+      "research/native-jet-overlap-budget/compile_module.sh",
+      "StencilObstruction"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 10.849
+  },
+  {
+    "name": "kernel-CentralResidual",
+    "command": [
+      "bash",
+      "research/native-jet-overlap-budget/compile_module.sh",
+      "CentralResidual"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.938
+  },
+  {
+    "name": "kernel-PR41Bridge",
+    "command": [
+      "bash",
+      "research/native-jet-overlap-budget/compile_module.sh",
+      "PR41Bridge"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.438
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "bash",
+      "research/native-jet-overlap-budget/compile_module.sh",
+      "Audit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 10.697
+  },
+  {
+    "name": "finite-regression",
+    "command": [
+      "/home/thlinux/miniforge3/bin/python3",
+      "research/native-jet-overlap-budget/check_finite_regression.py",
+      "--reproduce-source"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 5.156
+  },
+  {
+    "name": "focused-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "GeometryOfNumbers.Analysis.MomentGramPositivity"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 2.874
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.699
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 6.993
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.365
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 44.956
+  },
+  {
+    "name": "twelve-source-regression",
+    "command": [
+      "bash",
+      "research/sixth-odd-twelve-sources/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 10.86
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "cbedeeff67ffa8ec453ef7e28b7b799be4642dce",
+      "--",
+      ".",
+      ":(exclude)research/native-jet-overlap-budget"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.006
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.01
+  }
+]

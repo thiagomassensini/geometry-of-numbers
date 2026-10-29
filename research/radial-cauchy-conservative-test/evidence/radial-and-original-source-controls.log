@@ -1,0 +1,22 @@
+finite original-source cells 2048
+finite original-source cells 4096
+{
+  "status": "EXACT_CONTROLS_AND_FINITE_DIAGNOSTICS",
+  "exact_controls": 125,
+  "last_even": {
+    "k": 255,
+    "sector": "even",
+    "native_balance": "0.046210017677721266941",
+    "candidate_port_energy": "1.9698247663727291953",
+    "defect_energy": "0.014681033549241188263",
+    "mixed_cross": "1.9089337151457667401"
+  },
+  "last_odd": {
+    "k": 255,
+    "sector": "odd",
+    "native_balance": "0.000074329684667833269308",
+    "candidate_port_energy": "7.2851494528094759713",
+    "defect_energy": "310.95918757624885855",
+    "mixed_cross": "-303.67411245312405041"
+  }
+}

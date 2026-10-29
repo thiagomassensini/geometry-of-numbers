@@ -1,0 +1,96 @@
+{
+  "status": "PASS",
+  "arithmetic": "fractions.Fraction in both complex components",
+  "provenance": "Synthetic quotient controls; original exact Cauchy kernel. No native moment inputs.",
+  "families": [
+    {
+      "k": 0,
+      "tail_dimension": 1,
+      "matrix_entries": 1
+    },
+    {
+      "k": 0,
+      "tail_dimension": 2,
+      "matrix_entries": 4
+    },
+    {
+      "k": 0,
+      "tail_dimension": 3,
+      "matrix_entries": 9
+    },
+    {
+      "k": 0,
+      "tail_dimension": 4,
+      "matrix_entries": 16
+    },
+    {
+      "k": 0,
+      "tail_dimension": 5,
+      "matrix_entries": 25
+    },
+    {
+      "k": 2,
+      "tail_dimension": 1,
+      "matrix_entries": 1
+    },
+    {
+      "k": 2,
+      "tail_dimension": 2,
+      "matrix_entries": 4
+    },
+    {
+      "k": 2,
+      "tail_dimension": 3,
+      "matrix_entries": 9
+    },
+    {
+      "k": 2,
+      "tail_dimension": 4,
+      "matrix_entries": 16
+    },
+    {
+      "k": 2,
+      "tail_dimension": 5,
+      "matrix_entries": 25
+    },
+    {
+      "k": 17,
+      "tail_dimension": 1,
+      "matrix_entries": 1
+    },
+    {
+      "k": 17,
+      "tail_dimension": 2,
+      "matrix_entries": 4
+    },
+    {
+      "k": 17,
+      "tail_dimension": 3,
+      "matrix_entries": 9
+    },
+    {
+      "k": 17,
+      "tail_dimension": 4,
+      "matrix_entries": 16
+    },
+    {
+      "k": 17,
+      "tail_dimension": 5,
+      "matrix_entries": 25
+    }
+  ],
+  "matrix_entries_checked": 165,
+  "cross_control": {
+    "diagonals": [
+      "3/16",
+      "1/8"
+    ],
+    "cross": "1/4",
+    "quadratic": "-3/16",
+    "synthetic_original_return": [
+      "1/2",
+      "8/13",
+      "2/7"
+    ]
+  }
+}

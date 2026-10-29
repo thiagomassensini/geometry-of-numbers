@@ -1,0 +1,94 @@
+{
+  "status": "PASS_FINITE_FOUR_SOURCE_BOXES",
+  "objective": "All four original completed F coefficients f0 f2 f4 f6 within the fixed PR67 centers at absolute tolerance 1e-12",
+  "requirements": [
+    {
+      "requirement": "same original source and normalized coefficients",
+      "evidence": [
+        "FourNativeBoxes.canonical_four_source_boxes",
+        "CarryC3Tail.characteristic_c3_formula",
+        "CarryTwoEvenJets.sourceJet"
+      ],
+      "status": "proved"
+    },
+    {
+      "requirement": "all four boxes without interval or positivity hypotheses",
+      "evidence": [
+        "CarryC3Boxes.canonical_four_source_boxes",
+        "kernel-FourNativeBoxes.log",
+        "kernel-Audit.log"
+      ],
+      "status": "proved"
+    },
+    {
+      "requirement": "original Gamma jets 0 through 6",
+      "evidence": [
+        "PR68 commit 383c4b5a58d009062233bc588ff60670f64e2839",
+        "CarryC3Gamma.native_gamma_seven_boxes",
+        "CarryC3Tail.gamma_jet_replacement_error"
+      ],
+      "status": "proved and reused"
+    },
+    {
+      "requirement": "original Xi/chart jets and interval values",
+      "evidence": [
+        "CompletionPrimitiveBoxes.lean",
+        "ElementaryJetFormula.lean",
+        "FiniteCoefficientBoxes.lean"
+      ],
+      "status": "proved"
+    },
+    {
+      "requirement": "literal C3 bracket, exact addresses and infinite accelerated remainder",
+      "evidence": [
+        "native_c3_cell_fd",
+        "native_c3_tail_acceleration",
+        "native_c3_seven_jet_error_at64"
+      ],
+      "status": "proved"
+    },
+    {
+      "requirement": "complete head plus tail before moment readout",
+      "evidence": [
+        "native_c3_head_tail",
+        "completed_head_tail",
+        "completed_jet_evaluator_error"
+      ],
+      "status": "proved"
+    },
+    {
+      "requirement": "no mpmath values treated as intervals or silent base-two tail transfer",
+      "evidence": [
+        "ElementaryBoxes.lean",
+        "SamplePrimitiveBoxes.lean",
+        "four_finite_evaluator_checks",
+        "native_c3_cell_fd",
+        "c3_sample_eq_generic_power"
+      ],
+      "status": "proved via explicit evaluators and crosswalks"
+    },
+    {
+      "requirement": "all-order limit stated honestly",
+      "evidence": [
+        "REPORT.md sections C and E"
+      ],
+      "status": "explicitly open; not a claimed conclusion"
+    },
+    {
+      "requirement": "focused Lean, --wfail builds, audits, existing regression and preserved source",
+      "evidence": [
+        "checks.json",
+        "kernel-Audit.log",
+        "historical-files-unchanged.log",
+        "twelve-source-regression.log"
+      ],
+      "status": "28 final checks passed"
+    }
+  ],
+  "all_order_positivity_proved": false,
+  "source_files_unchanged_after_kernel_validation": true,
+  "public_mathematical_roots": 209,
+  "new_worktrees": 0,
+  "automatic_merge": false,
+  "validation_recovery": "Auxiliary Python table path fixed after module split; unchanged 18 Lean builds retained with source hashes; failed attempt preserved separately"
+}

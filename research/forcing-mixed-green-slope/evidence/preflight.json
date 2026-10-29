@@ -1,0 +1,72 @@
+{
+  "base": "fedca533a34d9d494641e848f9f7d3284a9af38a",
+  "branch": "agent/forcing-mixed-green-slope",
+  "head_before_commit": "fedca533a34d9d494641e848f9f7d3284a9af38a",
+  "protected_refs": {
+    "main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+    "origin/main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+    "agent/native-moment-orthogonalization-audit": "ee56930a2c30456cfbd214a29bb31b12d3977204",
+    "agent/seventh-even-centered-source": "da58f044c1c75bd828951bfb41614a6e7b8b465e",
+    "agent/source-euler-residual-control": "aac80d6699009f15de138aa3932b21ab3572ff42",
+    "agent/native-positive-square-kernel": "a5ed1d73b643cc4b24549b3ee3cfe10a5b29a59b",
+    "agent/entrywise-moment-square": "5a72d8cd68c3db8819cfe1273d21ade0d2abcf00",
+    "agent/native-return-boundary-deflation": "fdb8f7e9ce1b8681d10f2647393ad83f05bfac12",
+    "agent/native-cauchy-residual-return": "845829bacd623f044ba779e23da0bb4c48d25c11",
+    "agent/completed-green-confluent-balance": "bf2ff244e363b110a4e54ba897e475b81552bbdb",
+    "agent/forcing-centered-native-residual": "fedca533a34d9d494641e848f9f7d3284a9af38a"
+  },
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_status": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "protected_source_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "manifest_sha256": {
+    "/home/thlinux/geometry-of-numbers/lake-manifest.json": "9868872bae98d0c7e22c597d8e27d38d247498161cf70cdcdc193e9ea0608602",
+    "/home/thlinux/carry-self-adjoint-operator/lake-manifest.json": "822866313e377adcb9c6249680ed67ceb47682af1bb0cd3cc5203554786bcfeb"
+  },
+  "toolchain": "leanprover/lean4:v4.32.0",
+  "worktrees": "worktree /home/thlinux/geometry-of-numbers\nHEAD fedca533a34d9d494641e848f9f7d3284a9af38a\nbranch refs/heads/agent/forcing-mixed-green-slope\n\nworktree /home/thlinux/geometry-of-numbers-phase-canary\nHEAD 93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f\nbranch refs/heads/canary-c2-global-odd-source\n\nworktree /home/thlinux/geometry-of-numbers-r2\nHEAD 93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f\nbranch refs/heads/r2-real-tfvd-green-valve\n\nworktree /home/thlinux/geometry-of-numbers-recovery\nHEAD d7cc54f5c485320f1fada33118e9e6101488819a\nbranch refs/heads/recovery/formalizations-2026-10-01-02",
+  "preserved_pr51_files": {
+    ".cache/Audit.olean": "577f46a1431422c62d64e8a82a3c26e1a79101018f2fb02ed44ed8826286b87f",
+    ".cache/EntrywiseSquare.olean": "464955afb0a0d8527fda8b6ad317acc9cd5b44ac127a301bf26591f13231d866",
+    ".cache/NativeWitness.olean": "b40ec7d10c0807c1fbcb507e39b9680e85a339ffffa2686aa803bc274201e251"
+  },
+  "predecessor_source_sha256": {
+    "research/forcing-centered-native-residual/.gitignore": "046032151fe6113c18a8d7d9971c557e81129ca1ba244e5263d54b7e0e6f9643",
+    "research/forcing-centered-native-residual/Audit.lean": "2266fc41a32547bb59791de6edb5d80f42bbc44cdf0b615b396974390c8044e4",
+    "research/forcing-centered-native-residual/CriticalGreen.lean": "14869cc4af1a9bb0a24331b2601ce15e32766e91f32c37398bb5e9af9900ffca",
+    "research/forcing-centered-native-residual/ForcingCenter.lean": "4e812ac507d69756e273578966a3212deddaeedc98ff1f69a49a7ac883f63126",
+    "research/forcing-centered-native-residual/REPORT.md": "920c38fc6ba94093a3de5e8f0ba4407b7aa312dc84184b8693d15fe02b529e11",
+    "research/forcing-centered-native-residual/RetainedLeg.lean": "bad4074d665225d176e712be39c53313d0615ad394eb4ce1048c498ae0eb11ed",
+    "research/forcing-centered-native-residual/compile_module.sh": "29a40d6818c2d69e71ec76405f9d076843261e08e86c8918a48d6b402fee609b",
+    "research/forcing-centered-native-residual/evidence/analysis-audit.log.gz": "af2b5135c317d37f0e441fa7f0617331bdae2cd812c866458c73376564286476",
+    "research/forcing-centered-native-residual/evidence/audit-generation.log": "01e4497a419f332fe66898da7155f35641c2a075bb7eed1e9b68ff5244d50e8b",
+    "research/forcing-centered-native-residual/evidence/checks.json": "1c0ae5bb342e6c01e118edfd6f07dae5b4a9f646e56bd8ba830d5d57f9feaab8",
+    "research/forcing-centered-native-residual/evidence/diff-check.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/forcing-centered-native-residual/evidence/exact-controls.json": "2c000ae386e2a744d45d6dfe63c70a5482cf1209c9102584639c8651f3611bfa",
+    "research/forcing-centered-native-residual/evidence/exact-rational-controls.log": "a55e115291be32a7a7ed579e12d1a39cc29ba432468a5f803fa21e28167d54a3",
+    "research/forcing-centered-native-residual/evidence/focused-build.log": "1b61dc16e6a472b9f303980eff639cb4f3fddbbf19b26483e101137a0e38bf5f",
+    "research/forcing-centered-native-residual/evidence/foundation-audit.log": "0cf345cc3bcedfa92250217b4e73bc37834671ac0b8a2b97f66d3c06551ce199",
+    "research/forcing-centered-native-residual/evidence/geometry-audit.log": "469cddc780755a2a401f4a2d437d4b65bccc9f3333dc598e645025f94caf4888",
+    "research/forcing-centered-native-residual/evidence/historical-files-unchanged.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/forcing-centered-native-residual/evidence/kernel-Audit.log": "b0765cb2ac1b73c4a9fd58392cb7182b5cd6b2f6c2c7f7bda8d4a4d84d6aba86",
+    "research/forcing-centered-native-residual/evidence/kernel-CriticalGreen.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/forcing-centered-native-residual/evidence/kernel-Forcing37.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/forcing-centered-native-residual/evidence/kernel-ForcingCenter.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/forcing-centered-native-residual/evidence/kernel-RetainedLeg.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/forcing-centered-native-residual/evidence/kernel-SourceBalance37.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/forcing-centered-native-residual/evidence/native-operator-build.log": "823f7f3a2ab4c4234342e233868a2a7e896bbe91650739b5076f04aa549cf4c5",
+    "research/forcing-centered-native-residual/evidence/pr37-source-manifest.json": "4c4e88469bf005abbf9376b37345260646dba5486ed2120e21f403c0c3688bb6",
+    "research/forcing-centered-native-residual/evidence/preflight.json": "693ed04a8dbbead92e748f3cedf340c99100ca41f3e6b4dd917db7f08c1e2a28",
+    "research/forcing-centered-native-residual/evidence/recover-pr37.log": "da104d8f9b8a200c742cd582708d9aa7129a8c186c660c7bf3f980b653547ebf",
+    "research/forcing-centered-native-residual/evidence/root-build.log.gz": "d7ef535d0004f2cf5c1c4aaf7835642e62cfde950b6e9aaba2e257df37e0c593",
+    "research/forcing-centered-native-residual/evidence/source-sha256.json": "c16b776869beca19a556cc6b72df083dc963daac448752f4da8586af1559b0ae",
+    "research/forcing-centered-native-residual/evidence/twelve-source-regression.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "research/forcing-centered-native-residual/experiment.py": "cb1d8a53de511889af6fb55d6fed95ff66d3f773190f729c0dfe29985f2cd3b7",
+    "research/forcing-centered-native-residual/generate_audit.py": "ca89762d58b75a9dd47b5ca13afea804e0b8bc6bcdc69c21ab8f2b0d11e1fc65",
+    "research/forcing-centered-native-residual/prepare_pr37.py": "19a40ef2077c38097847c4e7d982609f84757f7ca2e856db745f160c80bf1552",
+    "research/forcing-centered-native-residual/public-roots.json": "3324d17b0f4a109a1f31a7827d5eb2e25b2ff1adea31d2bdda8687f15484eb60",
+    "research/forcing-centered-native-residual/validate.py": "d09f267c28c8ccda624dd9e3b19c096e8060d6680791bdc61682cc162e651733"
+  }
+}

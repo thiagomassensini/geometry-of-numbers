@@ -1,0 +1,214 @@
+[
+  {
+    "name": "audit-generation",
+    "command": [
+      "python3",
+      "research/native-return-boundary-deflation/generate_audit.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.037
+  },
+  {
+    "name": "native-operator-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "CarrySelfAdjointOperator.CompletedNativeChiralReturnPolarizedGreen",
+      "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport"
+    ],
+    "cwd": "/home/thlinux/carry-self-adjoint-operator",
+    "exit_code": 0,
+    "seconds": 8.062
+  },
+  {
+    "name": "kernel-BoundaryFeedback",
+    "command": [
+      "bash",
+      "research/native-return-boundary-deflation/compile_module.sh",
+      "BoundaryFeedback"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 7.304
+  },
+  {
+    "name": "kernel-NativeDeflation",
+    "command": [
+      "bash",
+      "research/native-return-boundary-deflation/compile_module.sh",
+      "NativeDeflation"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 16.266
+  },
+  {
+    "name": "kernel-JetBridge",
+    "command": [
+      "bash",
+      "research/native-return-boundary-deflation/compile_module.sh",
+      "JetBridge"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 11.722
+  },
+  {
+    "name": "kernel-SchurLimit",
+    "command": [
+      "bash",
+      "research/native-return-boundary-deflation/compile_module.sh",
+      "SchurLimit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 11.985
+  },
+  {
+    "name": "kernel-ResidualTest",
+    "command": [
+      "bash",
+      "research/native-return-boundary-deflation/compile_module.sh",
+      "ResidualTest"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 11.596
+  },
+  {
+    "name": "kernel-ExactSeventh",
+    "command": [
+      "bash",
+      "research/native-return-boundary-deflation/compile_module.sh",
+      "ExactSeventh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 12.352
+  },
+  {
+    "name": "kernel-Controls",
+    "command": [
+      "bash",
+      "research/native-return-boundary-deflation/compile_module.sh",
+      "Controls"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 5.71
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "bash",
+      "research/native-return-boundary-deflation/compile_module.sh",
+      "Audit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 12.896
+  },
+  {
+    "name": "exact-rational-controls",
+    "command": [
+      "python3",
+      "research/native-return-boundary-deflation/experiment.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.135
+  },
+  {
+    "name": "focused-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "GeometryOfNumbers.Analysis.CarryMaterialSourceFactor",
+      "GeometryOfNumbers.Analysis.CanonicalFiniteHeight"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 7.227
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 7.051
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 6.343
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.062
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 47.293
+  },
+  {
+    "name": "twelve-source-regression",
+    "command": [
+      "bash",
+      "research/sixth-odd-twelve-sources/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 11.502
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "a5ed1d73b643cc4b24549b3ee3cfe10a5b29a59b",
+      "--",
+      ".",
+      ":(exclude)research/native-return-boundary-deflation"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.006
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.005
+  }
+]

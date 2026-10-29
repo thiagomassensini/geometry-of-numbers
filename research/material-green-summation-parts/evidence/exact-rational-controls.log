@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "scope": "synthetic exact algebra",
+  "polarized_parts_checks": 45,
+  "reduced_tail_crosses_nonzero": 3,
+  "native_moment_sign_proved": false
+}

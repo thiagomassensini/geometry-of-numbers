@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "arithmetic": "Fraction in both complex components",
+  "provenance": "Synthetic controls; no canonical moment, zero, height or theta input.",
+  "polarized_families": [
+    {
+      "N": 1,
+      "M": 1,
+      "original_pair_crosses": true,
+      "hidden_both_orientations": true
+    },
+    {
+      "N": 2,
+      "M": 3,
+      "original_pair_crosses": true,
+      "hidden_both_orientations": true
+    },
+    {
+      "N": 4,
+      "M": 2,
+      "original_pair_crosses": true,
+      "hidden_both_orientations": true
+    },
+    {
+      "N": 3,
+      "M": 5,
+      "original_pair_crosses": true,
+      "hidden_both_orientations": true
+    }
+  ],
+  "same_positive_jet_controls": [
+    {
+      "C": "1/8",
+      "s": "1/90",
+      "negative_form": "-1/8100"
+    },
+    {
+      "C": "1",
+      "s": "1/20",
+      "negative_form": "-1/400"
+    },
+    {
+      "C": "16",
+      "s": "8/85",
+      "negative_form": "-64/7225"
+    }
+  ],
+  "diagonal_convention": "Isolated total division is not a physical confluent extension."
+}

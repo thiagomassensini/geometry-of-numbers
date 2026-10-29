@@ -1,0 +1,191 @@
+[
+  {
+    "name": "audit-generation",
+    "command": [
+      "python3",
+      "research/radial-cauchy-conservative-test/generate_audit.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.037
+  },
+  {
+    "name": "kernel-RadialConservative",
+    "command": [
+      "bash",
+      "research/radial-cauchy-conservative-test/compile_module.sh",
+      "RadialConservative"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 16.74
+  },
+  {
+    "name": "kernel-NativeDefect",
+    "command": [
+      "bash",
+      "research/radial-cauchy-conservative-test/compile_module.sh",
+      "NativeDefect"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.571
+  },
+  {
+    "name": "kernel-RadialLimits",
+    "command": [
+      "bash",
+      "research/radial-cauchy-conservative-test/compile_module.sh",
+      "RadialLimits"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.651
+  },
+  {
+    "name": "kernel-ResponseDefect",
+    "command": [
+      "bash",
+      "research/radial-cauchy-conservative-test/compile_module.sh",
+      "ResponseDefect"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.647
+  },
+  {
+    "name": "kernel-FirstJet",
+    "command": [
+      "bash",
+      "research/radial-cauchy-conservative-test/compile_module.sh",
+      "FirstJet"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 16.05
+  },
+  {
+    "name": "kernel-Orientation",
+    "command": [
+      "bash",
+      "research/radial-cauchy-conservative-test/compile_module.sh",
+      "Orientation"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.286
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "bash",
+      "research/radial-cauchy-conservative-test/compile_module.sh",
+      "Audit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.116
+  },
+  {
+    "name": "radial-and-original-source-controls",
+    "command": [
+      "/home/thlinux/miniforge3/bin/python3",
+      "research/radial-cauchy-conservative-test/experiment.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 6.287
+  },
+  {
+    "name": "focused-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "GeometryOfNumbers.Analysis.CarryMaterialProjectiveReturnGreen",
+      "GeometryOfNumbers.Analysis.CarryMaterialCompanionGreenTransport",
+      "GeometryOfNumbers.Analysis.CanonicalFiniteHeight"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 8.423
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 7.535
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 6.822
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.417
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 47.221
+  },
+  {
+    "name": "twelve-source-regression",
+    "command": [
+      "bash",
+      "research/sixth-odd-twelve-sources/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 12.444
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "1470fdb0665d5b8d192433e674efde18cab5ceb8",
+      "--",
+      ".",
+      ":(exclude)research/radial-cauchy-conservative-test"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.007
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.005
+  }
+]

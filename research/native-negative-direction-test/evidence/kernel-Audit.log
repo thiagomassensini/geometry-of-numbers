@@ -1,0 +1,35 @@
+'CarryNegativeDirection.incident_chart_eventually_bijective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNegativeDirection.incident_jet_eventually_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNegativeDirection.invisible_incidence_cannot_return' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNegativeDirection.source_quadratic_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNegativeDirection.nullCouplingWitness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNegativeDirection.null_coupling_witness_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNegativeDirection.null_coupling_witness_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNegativeDirection.psd_extension_annihilates_old_null_crossings' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryNegativeDirection.source_sewing_of_solution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNegativeDirection.solution_witness_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNegativeDirection.solution_residual_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNegativeDirection.psd_extension_iff_solution_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNegativeDirection.returnExcess' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNegativeDirection.returnExcess_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNegativeDirection.negative_boundary_iff_persistent_excess' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryNegativeDirection.returnExcess_eq_neg_storage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNegativeDirection.finite_amplification_iff_jet_excess' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNegativeDirection.negative_boundary_eventually_amplifies' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryNegativeDirection.negative_boundary_regular_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNegativeDirection.negative_schur_iff_persistent_excess' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryNegativeDirection.canonical_null_crossing_forces_persistent_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryNegativeDirection.canonical_solution_residual_forces_persistent_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Native negative direction audit chart: roots 3; type/body closure 5266; allowed foundations passed
+Native negative direction audit singular: roots 9; type/body closure 1231; allowed foundations passed
+Native negative direction audit negative_transport: roots 10; type/body closure 5865; allowed foundations passed

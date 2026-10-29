@@ -1,0 +1,34 @@
+{
+  "base": "845829bacd623f044ba779e23da0bb4c48d25c11",
+  "branch": "agent/forcing-centered-native-residual",
+  "head_before_commit": "845829bacd623f044ba779e23da0bb4c48d25c11",
+  "protected_refs": {
+    "main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+    "origin/main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+    "agent/native-moment-orthogonalization-audit": "ee56930a2c30456cfbd214a29bb31b12d3977204",
+    "agent/seventh-even-centered-source": "da58f044c1c75bd828951bfb41614a6e7b8b465e",
+    "agent/source-euler-residual-control": "aac80d6699009f15de138aa3932b21ab3572ff42",
+    "agent/native-positive-square-kernel": "a5ed1d73b643cc4b24549b3ee3cfe10a5b29a59b",
+    "agent/entrywise-moment-square": "5a72d8cd68c3db8819cfe1273d21ade0d2abcf00",
+    "agent/native-return-boundary-deflation": "fdb8f7e9ce1b8681d10f2647393ad83f05bfac12",
+    "agent/native-cauchy-residual-return": "845829bacd623f044ba779e23da0bb4c48d25c11",
+    "agent/completed-green-confluent-balance": "bf2ff244e363b110a4e54ba897e475b81552bbdb"
+  },
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_status": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "protected_source_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "manifest_sha256": {
+    "/home/thlinux/geometry-of-numbers/lake-manifest.json": "9868872bae98d0c7e22c597d8e27d38d247498161cf70cdcdc193e9ea0608602",
+    "/home/thlinux/carry-self-adjoint-operator/lake-manifest.json": "822866313e377adcb9c6249680ed67ceb47682af1bb0cd3cc5203554786bcfeb"
+  },
+  "toolchain": "leanprover/lean4:v4.32.0",
+  "worktrees": "worktree /home/thlinux/geometry-of-numbers\nHEAD 845829bacd623f044ba779e23da0bb4c48d25c11\nbranch refs/heads/agent/forcing-centered-native-residual\n\nworktree /home/thlinux/geometry-of-numbers-phase-canary\nHEAD 93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f\nbranch refs/heads/canary-c2-global-odd-source\n\nworktree /home/thlinux/geometry-of-numbers-r2\nHEAD 93c96c0952bceacaf3fd2b9b0bb5eb03cce7fc0f\nbranch refs/heads/r2-real-tfvd-green-valve\n\nworktree /home/thlinux/geometry-of-numbers-recovery\nHEAD d7cc54f5c485320f1fada33118e9e6101488819a\nbranch refs/heads/recovery/formalizations-2026-10-01-02",
+  "preserved_pr51_files": {
+    ".cache/Audit.olean": "577f46a1431422c62d64e8a82a3c26e1a79101018f2fb02ed44ed8826286b87f",
+    ".cache/EntrywiseSquare.olean": "464955afb0a0d8527fda8b6ad317acc9cd5b44ac127a301bf26591f13231d866",
+    ".cache/NativeWitness.olean": "b40ec7d10c0807c1fbcb507e39b9680e85a339ffffa2686aa803bc274201e251"
+  }
+}

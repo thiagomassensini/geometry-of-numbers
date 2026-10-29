@@ -1,0 +1,183 @@
+{
+  "status": "EXACT_CONTROLS_AND_FINITE_DIAGNOSTICS",
+  "exact_rank_one_controls": 125,
+  "source": "original center-leg cells, accelerated boundary, Gamma dressing and native chiral quotient",
+  "interval_certificate": false,
+  "all_order_canonical_positivity": false,
+  "tables": [
+    {
+      "finite_cells": 2048,
+      "h0_from_finite_source_curvature": "0.02310499311524127092557279",
+      "predicted_even_cross_limit": "1.953790013769517458148854",
+      "rows": [
+        {
+          "k": 15,
+          "sector": "even",
+          "native_balance": "0.046218037758102612592",
+          "candidate_port_energy": "1.5896748576642293615",
+          "defect_energy": "0.18854250194417466969",
+          "mixed_cross": "1.3549143179619520792"
+        },
+        {
+          "k": 15,
+          "sector": "odd",
+          "native_balance": "0.000075180278358014104041",
+          "candidate_port_energy": "3.8420046920727791681",
+          "defect_energy": "10.629716667434309705",
+          "mixed_cross": "-6.7877871556398885511"
+        },
+        {
+          "k": 31,
+          "sector": "even",
+          "native_balance": "0.046211998983225696872",
+          "candidate_port_energy": "1.7768268414878969755",
+          "defect_energy": "0.10567385379206696215",
+          "mixed_cross": "1.6249409887126043165"
+        },
+        {
+          "k": 31,
+          "sector": "odd",
+          "native_balance": "0.000074553551778550555587",
+          "candidate_port_energy": "5.3310889793049559369",
+          "defect_energy": "28.730114659305034782",
+          "mixed_cross": "-23.399100233551857396"
+        },
+        {
+          "k": 63,
+          "sector": "even",
+          "native_balance": "0.046210489406900087203",
+          "candidate_port_energy": "1.8833623913072245962",
+          "defect_energy": "0.056085782255985402979",
+          "mixed_cross": "1.781066119644339106"
+        },
+        {
+          "k": 63,
+          "sector": "odd",
+          "native_balance": "0.000074394415080780631353",
+          "candidate_port_energy": "6.3519566907638188529",
+          "defect_energy": "67.968918781242271673",
+          "mixed_cross": "-61.617036484893533601"
+        },
+        {
+          "k": 127,
+          "sector": "even",
+          "native_balance": "0.04621011201646624324",
+          "candidate_port_energy": "1.9403406075850598391",
+          "defect_energy": "0.028912141649149781839",
+          "mixed_cross": "1.865218353919443814"
+        },
+        {
+          "k": 127,
+          "sector": "odd",
+          "native_balance": "0.00007433448681903835425",
+          "candidate_port_energy": "6.9558082514537919845",
+          "defect_energy": "148.54922371516031902",
+          "mixed_cross": "-141.59348979819334607"
+        },
+        {
+          "k": 255,
+          "sector": "even",
+          "native_balance": "0.046210017661704012047",
+          "candidate_port_energy": "1.9698247663724817934",
+          "defect_energy": "0.014681033549481892146",
+          "mixed_cross": "1.9089337151612958892"
+        },
+        {
+          "k": 255,
+          "sector": "odd",
+          "native_balance": "0.000074158248257056680948",
+          "candidate_port_energy": "7.285149452811432794",
+          "defect_energy": "310.95918757635172564",
+          "mixed_cross": "-303.6741122817885499"
+        }
+      ]
+    },
+    {
+      "finite_cells": 4096,
+      "h0_from_finite_source_curvature": "0.02310499311539883806245219",
+      "predicted_even_cross_limit": "1.953790013769202323875096",
+      "rows": [
+        {
+          "k": 15,
+          "sector": "even",
+          "native_balance": "0.046218037759432740022",
+          "candidate_port_energy": "1.5896748576645070627",
+          "defect_energy": "0.18854250194391977328",
+          "mixed_cross": "1.3549143179611545494"
+        },
+        {
+          "k": 15,
+          "sector": "odd",
+          "native_balance": "0.000075180318323274248396",
+          "candidate_port_energy": "3.8420046920713009971",
+          "defect_energy": "10.629716667429915934",
+          "mixed_cross": "-6.7877871556769382109"
+        },
+        {
+          "k": 31,
+          "sector": "even",
+          "native_balance": "0.046211998985520876417",
+          "candidate_port_energy": "1.7768268414881588362",
+          "defect_energy": "0.10567385379181915598",
+          "mixed_cross": "1.6249409887108188038"
+        },
+        {
+          "k": 31,
+          "sector": "odd",
+          "native_balance": "0.000074553881276107861071",
+          "candidate_port_energy": "5.3310889793031970392",
+          "defect_energy": "28.730114659294063103",
+          "mixed_cross": "-23.399100233872142172"
+        },
+        {
+          "k": 63,
+          "sector": "even",
+          "native_balance": "0.046210489411149082983",
+          "candidate_port_energy": "1.8833623913074782395",
+          "defect_energy": "0.056085782255741578318",
+          "mixed_cross": "1.7810661196405875782"
+        },
+        {
+          "k": 63,
+          "sector": "odd",
+          "native_balance": "0.000074397082843088312332",
+          "candidate_port_energy": "6.3519566907619437631",
+          "defect_energy": "67.968918781218186072",
+          "mixed_cross": "-61.617036487539085398"
+        },
+        {
+          "k": 127,
+          "sector": "even",
+          "native_balance": "0.046210112024635785539",
+          "candidate_port_energy": "1.9403406075853093274",
+          "defect_energy": "0.02891214164890802671",
+          "mixed_cross": "1.8652183539117655151"
+        },
+        {
+          "k": 127,
+          "sector": "odd",
+          "native_balance": "0.000074355898502314423641",
+          "candidate_port_energy": "6.9558082514518620794",
+          "defect_energy": "148.54922371510998124",
+          "mixed_cross": "-141.59348981955662147"
+        },
+        {
+          "k": 255,
+          "sector": "even",
+          "native_balance": "0.046210017677721266941",
+          "candidate_port_energy": "1.9698247663727291953",
+          "defect_energy": "0.014681033549241188263",
+          "mixed_cross": "1.9089337151457667401"
+        },
+        {
+          "k": 255,
+          "sector": "odd",
+          "native_balance": "0.000074329684667833269308",
+          "candidate_port_energy": "7.2851494528094759713",
+          "defect_energy": "310.95918757624885855",
+          "mixed_cross": "-303.67411245312405041"
+        }
+      ]
+    }
+  ]
+}

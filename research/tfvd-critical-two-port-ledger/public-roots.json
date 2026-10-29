@@ -1,0 +1,47 @@
+{
+  "two_port": [
+    "CarryTfvdCritical.cauchy_pairing_swap",
+    "CarryTfvdCritical.secondPort_pairing_change",
+    "CarryTfvdCritical.portFlux",
+    "CarryTfvdCritical.twoPort_real_self",
+    "CarryTfvdCritical.portFlux_add",
+    "CarryTfvdCritical.twoPort_real_change",
+    "CarryTfvdCritical.tfvd_head_cross_residual"
+  ],
+  "producer": [
+    "CarryTfvdCritical.fixedMaterial",
+    "CarryTfvdCritical.canonicalStates",
+    "CarryTfvdCritical.fullSecond",
+    "CarryTfvdCritical.headSecond",
+    "CarryTfvdCritical.errorSecond",
+    "CarryTfvdCritical.fullSource",
+    "CarryTfvdCritical.headSource",
+    "CarryTfvdCritical.headFlux",
+    "CarryTfvdCritical.correctionFlux",
+    "CarryTfvdCritical.head_plus_error",
+    "CarryTfvdCritical.fullSource_eq_original",
+    "CarryTfvdCritical.fullSource_eventually_eq_original",
+    "CarryTfvdCritical.full_head_polarized_ledger",
+    "CarryTfvdCritical.full_head_real_ledger",
+    "CarryTfvdCritical.errorSecond_determinant",
+    "CarryTfvdCritical.exact_ratio_denominators_eventually"
+  ],
+  "critical": [
+    "CarryTfvdCritical.jet_form_re_eq_excess",
+    "CarryTfvdCritical.original_flux_ledger_eventually",
+    "CarryTfvdCritical.total_flux_tendsto",
+    "CarryTfvdCritical.critical_total_flux_tendsto",
+    "CarryTfvdCritical.correctionFlux_abs_bound"
+  ],
+  "cancellation": [
+    "CarryTfvdCritical.canonicalHeadResponse",
+    "CarryTfvdCritical.first_even_material",
+    "CarryTfvdCritical.first_even_head_formula",
+    "CarryTfvdCritical.first_even_head_normalized",
+    "CarryTfvdCritical.first_even_head_scaled_tendsto",
+    "CarryTfvdCritical.convergent_div_radial_scale",
+    "CarryTfvdCritical.first_even_correction_scaled_tendsto",
+    "CarryTfvdCritical.fixed_head_no_finite_limit",
+    "CarryTfvdCritical.fixed_correction_no_finite_limit"
+  ]
+}

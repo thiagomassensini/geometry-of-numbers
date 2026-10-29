@@ -1,0 +1,79 @@
+{
+  "conservative": [
+    "CarryConservativeIntertwiner.conservativeReturn",
+    "CarryConservativeIntertwiner.conservativeHead",
+    "CarryConservativeIntertwiner.conservative_pairing",
+    "CarryConservativeIntertwiner.conservative_energy",
+    "CarryConservativeIntertwiner.transportDefect",
+    "CarryConservativeIntertwiner.polarized_defect_ledger",
+    "CarryConservativeIntertwiner.energy_defect_ledger"
+  ],
+  "source": [
+    "CarryConservativeIntertwiner.physicalIncident",
+    "CarryConservativeIntertwiner.physicalReturned",
+    "CarryConservativeIntertwiner.physicalIncident_coe",
+    "CarryConservativeIntertwiner.physicalReturned_coe",
+    "CarryConservativeIntertwiner.physicalLeading",
+    "CarryConservativeIntertwiner.physicalLeading_coe",
+    "CarryConservativeIntertwiner.physicalLeading_ne",
+    "CarryConservativeIntertwiner.physical_scaled_incident_tendsto",
+    "CarryConservativeIntertwiner.physical_scaled_returned_tendsto",
+    "CarryConservativeIntertwiner.physical_source_defect_pairing",
+    "CarryConservativeIntertwiner.physical_signed_energy_tendsto",
+    "CarryConservativeIntertwiner.original_incident_columns",
+    "CarryConservativeIntertwiner.original_returned_columns",
+    "CarryConservativeIntertwiner.original_transport_defect_columns",
+    "CarryConservativeIntertwiner.material_address_from_shift",
+    "CarryConservativeIntertwiner.radial_argument_from_shift"
+  ],
+  "leading": [
+    "CarryConservativeIntertwiner.physical_shift_fixed_eq_zero",
+    "CarryConservativeIntertwiner.leadingTransportDefect",
+    "CarryConservativeIntertwiner.leadingTransportDefect_ne",
+    "CarryConservativeIntertwiner.scaled_transport_defect_tendsto",
+    "CarryConservativeIntertwiner.conservative_return_not_eventually_source",
+    "CarryConservativeIntertwiner.leading_conservative_cancellation"
+  ],
+  "pr41": [
+    "CarryConservativeIntertwiner.pr41Incident",
+    "CarryConservativeIntertwiner.pr41Returned",
+    "CarryConservativeIntertwiner.pr41TransportCorrection",
+    "CarryConservativeIntertwiner.pr41_conservative_ledger",
+    "CarryConservativeIntertwiner.pr41_conservative_ledger_tendsto",
+    "CarryConservativeIntertwiner.pr41Order",
+    "CarryConservativeIntertwiner.pr41Order_lt",
+    "CarryConservativeIntertwiner.pr41Boundary_above",
+    "CarryConservativeIntertwiner.pr41_monic_top",
+    "CarryConservativeIntertwiner.pr41Boundary_top",
+    "CarryConservativeIntertwiner.pr41Boundary_top_ne",
+    "CarryConservativeIntertwiner.pr41_conservative_return_fails"
+  ],
+  "canaries": [
+    "CarryConservativeIntertwiner.firstEvenBoundary",
+    "CarryConservativeIntertwiner.firstOddBoundary",
+    "CarryConservativeIntertwiner.first_even_is_pr41",
+    "CarryConservativeIntertwiner.first_odd_is_pr41",
+    "CarryConservativeIntertwiner.evenLeading",
+    "CarryConservativeIntertwiner.oddLeading",
+    "CarryConservativeIntertwiner.even_leading_exact",
+    "CarryConservativeIntertwiner.odd_leading_exact",
+    "CarryConservativeIntertwiner.even_support",
+    "CarryConservativeIntertwiner.first_incident_ray",
+    "CarryConservativeIntertwiner.central_amp_norm",
+    "CarryConservativeIntertwiner.physical_feature_inner",
+    "CarryConservativeIntertwiner.evenLeading_norm",
+    "CarryConservativeIntertwiner.even_leading_defect_energy",
+    "CarryConservativeIntertwiner.even_leading_head_energy",
+    "CarryConservativeIntertwiner.even_leading_cross",
+    "CarryConservativeIntertwiner.two_column_energy",
+    "CarryConservativeIntertwiner.oddLeading_norm",
+    "CarryConservativeIntertwiner.odd_leading_defect_energy",
+    "CarryConservativeIntertwiner.odd_leading_head_energy",
+    "CarryConservativeIntertwiner.odd_leading_cross"
+  ],
+  "stationary": [
+    "CarryConservativeIntertwiner.first_even_boundary_energy",
+    "CarryConservativeIntertwiner.stationary_action_on_first_feature",
+    "CarryConservativeIntertwiner.no_stationary_completed_return"
+  ]
+}

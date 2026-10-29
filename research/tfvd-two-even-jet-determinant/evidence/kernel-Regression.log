@@ -1,0 +1,17 @@
+CarryTwoEvenJets.native_real_tfvd_ledger (M : ℕ) :
+  (nativeEvenJets 0).re ^ 4 *
+      (canonicalCompletedNativeLogDerivativeMoment 0 * canonicalCompletedNativeLogDerivativeMoment 2 -
+        canonicalCompletedNativeLogDerivativeMoment 1 ^ 2) =
+    (quartic (headEvenJets 0) + ∑ m ∈ Finset.range M, quarticFlux (headEvenJets m) (cellEvenJets m) +
+        determinantTail M).re
+CarryTwoEvenJets.canonical_two_even_det_pos_of_four_jet_boxes
+  (herr : ∀ (j : Fin 4), ‖nativeEvenJets j - reference j‖ ≤ fourJetTolerance) :
+  0 <
+    canonicalCompletedNativeLogDerivativeMoment 0 * canonicalCompletedNativeLogDerivativeMoment 2 -
+      canonicalCompletedNativeLogDerivativeMoment 1 ^ 2
+CarryTwoEvenJets.native_two_even_critical_residual (hne : canonicalCompletedNativeLogDerivativeMoment 0 ≠ 0) :
+  quartic nativeEvenJets =
+    nativeEvenJets 0 ^ 4 *
+      ↑(canonicalCompletedNativeLogDerivativeMoment 0 *
+          (canonicalCompletedNativeLogDerivativeMoment 2 -
+            canonicalCompletedNativeLogDerivativeMoment 1 ^ 2 / canonicalCompletedNativeLogDerivativeMoment 0))

@@ -1,0 +1,180 @@
+[
+  {
+    "name": "audit-generation",
+    "command": [
+      "python3",
+      "research/tfvd-critical-two-port-ledger/generate_audit.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.044
+  },
+  {
+    "name": "kernel-TwoPortCorrection",
+    "command": [
+      "bash",
+      "research/tfvd-critical-two-port-ledger/compile_module.sh",
+      "TwoPortCorrection"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.377
+  },
+  {
+    "name": "kernel-FixedSourceTfvd",
+    "command": [
+      "bash",
+      "research/tfvd-critical-two-port-ledger/compile_module.sh",
+      "FixedSourceTfvd"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.334
+  },
+  {
+    "name": "kernel-CriticalLedger",
+    "command": [
+      "bash",
+      "research/tfvd-critical-two-port-ledger/compile_module.sh",
+      "CriticalLedger"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 16.51
+  },
+  {
+    "name": "kernel-HeadCancellation",
+    "command": [
+      "bash",
+      "research/tfvd-critical-two-port-ledger/compile_module.sh",
+      "HeadCancellation"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.477
+  },
+  {
+    "name": "kernel-Regression",
+    "command": [
+      "bash",
+      "research/tfvd-critical-two-port-ledger/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 17.685
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "bash",
+      "research/tfvd-critical-two-port-ledger/compile_module.sh",
+      "Audit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.672
+  },
+  {
+    "name": "tfvd-head-tail-source-diagnostics",
+    "command": [
+      "/home/thlinux/miniforge3/bin/python3",
+      "research/tfvd-critical-two-port-ledger/experiment.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 2.013
+  },
+  {
+    "name": "focused-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "GeometryOfNumbers.Analysis.CarryMaterialProjectiveReturnGreen",
+      "GeometryOfNumbers.Analysis.CarryMaterialCompanionGreenTransport",
+      "GeometryOfNumbers.Analysis.CanonicalFiniteHeight"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 7.757
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 7.984
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 6.44
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.356
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 46.656
+  },
+  {
+    "name": "twelve-source-regression",
+    "command": [
+      "bash",
+      "research/sixth-odd-twelve-sources/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 11.986
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "adb6fdce56d626b9ecf22b013530c8027c3240c1",
+      "--",
+      ".",
+      ":(exclude)research/tfvd-critical-two-port-ledger"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.005
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.004
+  }
+]

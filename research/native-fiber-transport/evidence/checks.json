@@ -1,0 +1,228 @@
+[
+  {
+    "name": "audit-generation",
+    "command": [
+      "python3",
+      "research/native-fiber-transport/generate_audit.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.036
+  },
+  {
+    "name": "native-source-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "CarrySelfAdjointOperator.CompletedC3FullWronskianOperatorCarrier",
+      "CarrySelfAdjointOperator.NativeCompletedDividedVectorResponse",
+      "CarrySelfAdjointOperator.CanonicalCompletedC3GammaLedgerNumerator",
+      "CarrySelfAdjointOperator.CompletedC3CoisometricAmbientStrictPositivity",
+      "CarrySelfAdjointOperator.CompletedNativeSourceThreeSectorSewing"
+    ],
+    "cwd": "/home/thlinux/carry-self-adjoint-operator",
+    "exit_code": 0,
+    "seconds": 7.708
+  },
+  {
+    "name": "inherited-TraceFiber",
+    "command": [
+      "bash",
+      "research/physical-trace-fiber/compile_module.sh",
+      "TraceFiber"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.583
+  },
+  {
+    "name": "inherited-NativeCompletion",
+    "command": [
+      "bash",
+      "research/physical-trace-fiber/compile_module.sh",
+      "NativeCompletion"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 12.279
+  },
+  {
+    "name": "inherited-ReadoutTransport",
+    "command": [
+      "bash",
+      "research/physical-trace-fiber/compile_module.sh",
+      "ReadoutTransport"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 8.959
+  },
+  {
+    "name": "kernel-CoherentSplit",
+    "command": [
+      "bash",
+      "research/native-fiber-transport/compile_module.sh",
+      "CoherentSplit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 10.712
+  },
+  {
+    "name": "kernel-TransportBudget",
+    "command": [
+      "bash",
+      "research/native-fiber-transport/compile_module.sh",
+      "TransportBudget"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 12.757
+  },
+  {
+    "name": "kernel-SourceSpan",
+    "command": [
+      "bash",
+      "research/native-fiber-transport/compile_module.sh",
+      "SourceSpan"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.964
+  },
+  {
+    "name": "kernel-KernelBudget",
+    "command": [
+      "bash",
+      "research/native-fiber-transport/compile_module.sh",
+      "KernelBudget"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.59
+  },
+  {
+    "name": "kernel-SeparationCorrection",
+    "command": [
+      "bash",
+      "research/native-fiber-transport/compile_module.sh",
+      "SeparationCorrection"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 11.187
+  },
+  {
+    "name": "kernel-NativeCauchyOverlap",
+    "command": [
+      "bash",
+      "research/native-fiber-transport/compile_module.sh",
+      "NativeCauchyOverlap"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 10.451
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "bash",
+      "research/native-fiber-transport/compile_module.sh",
+      "Audit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.577
+  },
+  {
+    "name": "focused-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "GeometryOfNumbers.Analysis.MomentGramPositivity"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 2.207
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 7.091
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 6.4
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 8.949
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 44.018
+  },
+  {
+    "name": "twelve-source-regression",
+    "command": [
+      "bash",
+      "research/sixth-odd-twelve-sources/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 12.042
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "6e47f8908408aa268edfecc1d9769c6be346d067",
+      "--",
+      ".",
+      ":(exclude)research/native-fiber-transport"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.005
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.004
+  }
+]

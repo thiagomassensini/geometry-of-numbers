@@ -1,0 +1,202 @@
+[
+  {
+    "name": "recover-pr37",
+    "command": [
+      "python3",
+      "research/forcing-centered-native-residual/prepare_pr37.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.051
+  },
+  {
+    "name": "audit-generation",
+    "command": [
+      "python3",
+      "research/forcing-centered-native-residual/generate_audit.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.038
+  },
+  {
+    "name": "native-operator-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "CarrySelfAdjointOperator.CompletedNativeChiralReturnFiniteTransfer",
+      "CarrySelfAdjointOperator.CompletedNativeCentralChiralQuotientCurvature"
+    ],
+    "cwd": "/home/thlinux/carry-self-adjoint-operator",
+    "exit_code": 0,
+    "seconds": 7.623
+  },
+  {
+    "name": "kernel-Forcing37",
+    "command": [
+      "bash",
+      "research/forcing-centered-native-residual/compile_module.sh",
+      "Forcing37"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.297
+  },
+  {
+    "name": "kernel-SourceBalance37",
+    "command": [
+      "bash",
+      "research/forcing-centered-native-residual/compile_module.sh",
+      "SourceBalance37"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.863
+  },
+  {
+    "name": "kernel-ForcingCenter",
+    "command": [
+      "bash",
+      "research/forcing-centered-native-residual/compile_module.sh",
+      "ForcingCenter"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.833
+  },
+  {
+    "name": "kernel-RetainedLeg",
+    "command": [
+      "bash",
+      "research/forcing-centered-native-residual/compile_module.sh",
+      "RetainedLeg"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 17.309
+  },
+  {
+    "name": "kernel-CriticalGreen",
+    "command": [
+      "bash",
+      "research/forcing-centered-native-residual/compile_module.sh",
+      "CriticalGreen"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 12.416
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "bash",
+      "research/forcing-centered-native-residual/compile_module.sh",
+      "Audit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 11.964
+  },
+  {
+    "name": "exact-rational-controls",
+    "command": [
+      "python3",
+      "research/forcing-centered-native-residual/experiment.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.059
+  },
+  {
+    "name": "focused-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "GeometryOfNumbers.Analysis.CarryMaterialSourceFactor",
+      "GeometryOfNumbers.Analysis.CanonicalFiniteHeight"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 7.874
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 7.055
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 6.708
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.773
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 47.174
+  },
+  {
+    "name": "twelve-source-regression",
+    "command": [
+      "bash",
+      "research/sixth-odd-twelve-sources/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 12.463
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "845829bacd623f044ba779e23da0bb4c48d25c11",
+      "--",
+      ".",
+      ":(exclude)research/forcing-centered-native-residual"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.007
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.005
+  }
+]

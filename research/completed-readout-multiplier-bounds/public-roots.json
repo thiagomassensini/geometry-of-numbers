@@ -1,0 +1,86 @@
+{
+  "gamma": [
+    "CarryReadoutBounds.real_gamma_le_inverse",
+    "CarryReadoutBounds.complex_gamma_norm_le_real",
+    "CarryReadoutBounds.complex_gamma_norm_le",
+    "CarryReadoutBounds.complex_sin_norm_le_exp",
+    "CarryReadoutBounds.exp_two_le_nine",
+    "CarryReadoutBounds.gammaFactor",
+    "CarryReadoutBounds.gamma_argument_bounds",
+    "CarryReadoutBounds.gamma_factor_bound",
+    "CarryReadoutBounds.inverse_gamma_factor_bound"
+  ],
+  "signal": [
+    "CarryReadoutBounds.complexSignal",
+    "CarryReadoutBounds.reciprocal_cells_summable",
+    "CarryReadoutBounds.reciprocal_cells_bound",
+    "CarryReadoutBounds.signal_deviation_bound",
+    "CarryReadoutBounds.signal_norm_lower",
+    "CarryReadoutBounds.signal_nonzero",
+    "CarryReadoutBounds.inverse_signal_bound",
+    "CarryReadoutBounds.complex_signal_differentiableOn",
+    "CarryReadoutBounds.complex_signal_real",
+    "CarryReadoutBounds.normalized_cauchy"
+  ],
+  "camera": [
+    "CarryReadoutBounds.log_two_bounds",
+    "CarryReadoutBounds.power_two_lower",
+    "CarryReadoutBounds.camera_power_bounds",
+    "CarryReadoutBounds.camera_inverse_factors",
+    "CarryReadoutBounds.camera_complex_nonzero",
+    "CarryReadoutBounds.camera_complex_bound",
+    "CarryReadoutBounds.camera_complex_inverse_bound"
+  ],
+  "dressing": [
+    "CarryReadoutBounds.polynomialFactor",
+    "CarryReadoutBounds.exponentialFactor",
+    "CarryReadoutBounds.complexDressing",
+    "CarryReadoutBounds.parameter_analytic",
+    "CarryReadoutBounds.polynomial_analytic",
+    "CarryReadoutBounds.exponential_analytic",
+    "CarryReadoutBounds.gamma_factor_analytic",
+    "CarryReadoutBounds.polynomial_factor_bounds",
+    "CarryReadoutBounds.log_pi_bounds",
+    "CarryReadoutBounds.exponential_factor_bounds",
+    "CarryReadoutBounds.derivative_eighth_bound",
+    "CarryReadoutBounds.complex_dressing_formula",
+    "CarryReadoutBounds.complex_dressing_analytic",
+    "CarryReadoutBounds.complex_dressing_nonzero",
+    "CarryReadoutBounds.dressing_log_split",
+    "CarryReadoutBounds.dressing_log_bound"
+  ],
+  "multipliers": [
+    "CarryReadoutBounds.complexOrdinaryMultiplier",
+    "CarryReadoutBounds.complexClockMultiplier",
+    "CarryReadoutBounds.complex_signal_analytic",
+    "CarryReadoutBounds.complex_ordinary_multiplier_analytic",
+    "CarryReadoutBounds.complex_clock_multiplier_analytic",
+    "CarryReadoutBounds.complex_ordinary_multiplier_bound",
+    "CarryReadoutBounds.complex_clock_multiplier_bound",
+    "CarryReadoutBounds.complex_dressing_real",
+    "CarryReadoutBounds.dressing_deriv_real",
+    "CarryReadoutBounds.clock_multiplier_real",
+    "CarryReadoutBounds.ordinary_multiplier_real",
+    "CarryReadoutBounds.ordinary_multiplier_jet_bound",
+    "CarryReadoutBounds.clock_multiplier_jet_bound"
+  ],
+  "budgets": [
+    "CarryReadoutBounds.explicitResponseConstant",
+    "CarryReadoutBounds.response_constant_le",
+    "CarryReadoutBounds.explicit_moment_error",
+    "CarryReadoutBounds.explicitBilinearConstant",
+    "CarryReadoutBounds.bilinear_constant_le",
+    "CarryReadoutBounds.explicit_bilinear_error",
+    "CarryReadoutBounds.explicit_critical_error",
+    "CarryReadoutBounds.secondEvenResidual",
+    "CarryReadoutBounds.secondEvenObservation",
+    "CarryReadoutBounds.second_even_residual_error"
+  ],
+  "canary": [
+    "CarryReadoutBounds.response_constants_odd",
+    "CarryReadoutBounds.second_even_error_at_100000",
+    "CarryReadoutBounds.first_six_multiplier_bounds",
+    "CarryReadoutBounds.second_even_residual_eq_pivot",
+    "CarryReadoutBounds.second_even_critical_error_at_100000"
+  ]
+}

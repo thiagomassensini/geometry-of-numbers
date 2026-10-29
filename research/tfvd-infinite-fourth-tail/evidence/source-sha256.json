@@ -1,0 +1,19 @@
+{
+  ".gitignore": "046032151fe6113c18a8d7d9971c557e81129ca1ba244e5263d54b7e0e6f9643",
+  "AcceleratedClock.lean": "1866dd0113f4868adc4be9855404ddb3759ffdce9b4716de9571d76a3bda417d",
+  "AcceleratedCritical.lean": "8038dcb4e26ec6f8eddf3e22967d9192a545a736d981d8b7468fba3da9be7a62",
+  "AcceleratedGreen.lean": "c45d2c59f44ddf61f47961de315dba1b8cc0f19ab6b8e0a3072007131c32fec1",
+  "Audit.lean": "2f73e0b25359e17d2d086999e94008697d8e3e69cdc9a5959ff53c74fdbf2a67",
+  "Canary.lean": "e740478fb897ccfed68a21d727b77a170affe24d47d9dd1067b7df623ffb0a28",
+  "FourthDifference.lean": "6534eca7a8d15b6eeda7758accc5695cadbfa25da76f01334d58969a625b4093",
+  "InfiniteOrdinary.lean": "b7814704e986435f45591510a2794ec19b5373f8a7a3680397f2c460b5e4ab1b",
+  "JetStencils.lean": "4715264f951fa1150bdb78481cf2c15dab468c36d8b04b0f8b52774dfcd4f9e7",
+  "QuarticEnvelope.lean": "d787840b91818f1a89890ad00223bb94161bc6658811ada0aa32dbbae2132829",
+  "REPORT.md": "61b4eda6638b0f6b17fcc18f58512366fae2b044ff23b194a926ecc0d6156128",
+  "RemainderJets.lean": "f505eef82219e7bdb84fff47cec2d20a782503e1ad8a02183bd894b5a0401f72",
+  "compile_module.sh": "5306c0b5b8b270e0fc09da742863c0e0f1cc331032d3394b0c553a9969f59a9a",
+  "experiment.py": "d0f6605eb8538454a9f06a28fc261dac47063db6eea6d53a2a5b971894c34d9e",
+  "generate_audit.py": "18cf8df1435aadbe34f6c459df1eb0e76d6ba9a1c05b033f93fb5a77a68c47a5",
+  "public-roots.json": "c8766e7ac54fce52c73fcbbe19330abe8666cf791b2958715ab322d3a0ebb9bb",
+  "validate.py": "99cb0b7b127304f91a9bb343b98c12a04cf5b6e0968d6ba5b5b0d8fcdc2ceab8"
+}
