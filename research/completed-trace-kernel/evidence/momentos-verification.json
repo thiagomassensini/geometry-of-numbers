@@ -1,0 +1,38 @@
+{
+  "repository": "thiagomassensini/momentos",
+  "commit": "0d0dd0975a1558ced731e9246c14420c0e0720f4",
+  "source": "investigations/jacobi_polynomial_moments_20261024",
+  "input_sha256": {
+    "derivacao_jacobi_momentos_c2.md": "fdf74feb2bfea0a0d590860bf5c1a8324bee0792fd066d0bc77a7f1448b8bd9c",
+    "jacobi_polynomial_series.py": "1628b842406e350a4e7fc02ba8e54665fc05bfffaadfe25e24b182c9830d2652",
+    "c2_momentos_16_excerpt.csv": "2485addf2d0d470869db3ff393979624e60c16455ee4ec880feece3edfa7fcb8"
+  },
+  "numerical_command": [
+    "/home/thlinux/miniforge3/bin/python",
+    "jacobi_polynomial_series.py",
+    "--order",
+    "8",
+    "--digits",
+    "100"
+  ],
+  "exact_arithmetic": "fractions.Fraction; stored decimals treated as exact rationals",
+  "polynomials_from": "direct Hankel solves, independently of the three-term recurrence",
+  "positive_reference_pivots": 8,
+  "exact_reconstruction_equalities": 72,
+  "exact_even_first_missing_equalities": 7,
+  "exact_odd_first_missing_equalities": 7,
+  "exact_three_term_equalities": 8,
+  "pivot_fraction_sha256": [
+    "1621a782dddec639663e98fb812d3d00d23cbb02b541924685eabb5f0867c705",
+    "0e07360e525a115e1f93985ca165db7630da32f4dc9d97aaeadac45d561425bc",
+    "8ecca055aba8de4320ad174cdb4e78fd604b1566c8003ea2b95fbac09ed95912",
+    "709b5f103073aee1f0257c903ad7149ed9b77d53fe4b8ac90b61ef77ec2c8f6a",
+    "17d7d2e84735b96f7494f916bc9bba2977a25cade905c5fd20ea83ea4a82dbe4",
+    "0fde2aa3792f85e8dba186315240c8397d5877985033c4af82dc14eff0b66f2d",
+    "3c54fa2f89803c64d4d018eb4579ba1d65f4b604b9477f6e9559e9a5dc93bf01",
+    "31272d8aae3ca56800360d2f00faea4e25ba6273e064b4fd4e904c7c3ed5cded"
+  ],
+  "canonical_integral_certification": false,
+  "all_order_positivity": false,
+  "source_geometry_or_metric_modified": false
+}

@@ -1,0 +1,83 @@
+'CarryCompletedTrace.valueCore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.companionCore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.nativeCore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.completionCore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.incidentCore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.returnedCore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.sourceWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.radial_core_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.value_core_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.companion_core_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.native_core_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.completion_core_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.incident_core_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.returned_core_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.companion_core_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.companion_trace_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.traceWedge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.eulerWedge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.euler_wedge_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.mixed_wedge_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.mixed_wedge_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.completed_trace_pairing_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.completed_euler_pairing_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.physicalMixedPairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.physical_mixed_pairing_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.boundary_minus_bulk_mellin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.completed_trace_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.radialMass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.radialCrossGram' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.crossRadialFactor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.crossRadialDefect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.radial_cross_gram' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.mixed_radial_separation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.mixed_radial_separation_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.cross_factor_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.radial_cross_gram_eq_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.cross_defect_eq_factor_pick' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.cross_defect_is_original_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.native_kernel_cross_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.cross_factor_same_radial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.doubled_radial_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.doubled_radial_sqrt_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.doubled_radial_same_point' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.cross_factor_same_point' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.same_point_factor_lt_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.radial_column_norm_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.same_parameter_state_difference_norm_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.same_parameter_states_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.same_parameter_return_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.cross_defect_same_point_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.endpointBalance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.endpoint_balance_is_native_flux' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.endpoint_balance_opposite_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.radial_pick_first_re_pos_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCompletedTrace.cross_radial_residual_re_negative_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Completed trace kernel audit tier 0: 52 public roots; 5589 type/body dependencies; standard axioms only
+Completed trace kernel audit tier 2: 3 public roots; 5263 type/body dependencies; standard axioms only
+Completed trace kernel audit tier 3: 55 public roots; 5622 type/body dependencies; standard axioms only
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 7.23
+	System time (seconds): 4.93
+	Percent of CPU this job got: 118%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.31
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7979240
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 262809
+	Voluntary context switches: 11148
+	Involuntary context switches: 106
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 704
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

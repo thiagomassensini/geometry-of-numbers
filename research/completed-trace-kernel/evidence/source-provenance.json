@@ -1,0 +1,211 @@
+{
+  "created_utc": "2026-10-24T00:14:46.478808+00:00",
+  "geometry_base": "4f98f0343b596f3c133d42dfb1ea3055fa069664",
+  "geometry_origin_main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "geometry_branch": "agent/completed-trace-kernel",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_status": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "operator_source_sha256": {
+    "CarrySelfAdjointOperator/NativeCauchyLaguerreIsometry.lean": "2c083ac00ce128676524dd6941ef6780745976c241a82b4a26b7bf9af0c80076",
+    "CarrySelfAdjointOperator/NativeCauchyLaguerreHeadTail.lean": "8ba5cc0f0945c9482aa2748c34346eb752d636df45cc542916b0501b61ea18bd",
+    "CarrySelfAdjointOperator/NativeCauchyLaguerreSources.lean": "2a74b670544cadc5e08ef5f6df8064fd19a57d61eaba822dea62e5b2dc22f3b7",
+    "CarrySelfAdjointOperator/NativePhysicalEndpointEncoder.lean": "3ccc0608a9920a8ed21c65b9f9afd68258d20bc92841fe13ca95187772a169b1",
+    "CarrySelfAdjointOperator/NativeIncidenceCauchyPorts.lean": "35af1faa17ff334b04b79ca5a34c878aa434557848d40340f313252a80d3169e",
+    "CarrySelfAdjointOperator/CompletedNativeRadialChiralMultiplier.lean": "1ae47a75e6ec10f1f2be5b2133247ab2de92f2fe5be9996ca921c0611b67fa13",
+    ".lake/packages/CPFormal/CPFormal/Analytic/CpFiniteGreenPositivity.lean": "3a4b623d1b76246e4f41a736ab93a099d748232b9ebcf376708641f2174a5341",
+    "CarrySelfAdjointOperator/CompletedNativePolarizedTfvdGreenMomentKernel.lean": "cb5b180b5785fa87107dbac10fe65b9f3ee8a7a03b8ef7b4ffde4a6d20d7a59a",
+    "CarrySelfAdjointOperator/CompletedC3BracketTfvdGreenFactorization.lean": "154e2e57de0201e43522519cd76e9125db11e5efead4afd6799e0c1fc37d9408",
+    "CarrySelfAdjointOperator/CompletedNativeTfvdWronskianMoments.lean": "3dd797895e8da20c202f3982fa89c0a64cd453273dd2374376493c6225a55567",
+    "CarrySelfAdjointOperator/CompletedC3FNegFPrimeMixedKernel.lean": "22027595b182053239bbf8d95e74cbe30da30ca43aa10bd9d87a75c731372f87",
+    "CarrySelfAdjointOperator/CompletedGreenForwardDifferenceLimit.lean": "f8b7d7a77be78a23ae5a837180e5b6efe028dca1a1f78ba1d6a959a3cccea8bc",
+    "CarrySelfAdjointOperator/CompletedC3FullWronskianPolarization.lean": "9f07748f24424a517928f2bcd1f1d2b29cc0e024b4bb3b102912810dda7cb5fa",
+    "CarrySelfAdjointOperator/CompletedC3KernelMetricCalibration.lean": "b56f172daef156db2894ac6047fd028eb30b125f202a22ab2fc5e15518cba7b4",
+    "CarrySelfAdjointOperator/CompletedC3SymplecticCrossingNormalAudit.lean": "b4959adb34b6ac06aac0b8e8267392de8159e5456e52a9d5e543c8249c408ab5",
+    "CarrySelfAdjointOperator/CompletedC3SymplecticCrossingTangentAudit.lean": "8078a3ac9533b0b07a4be1a78192d030526229c632bbffa573f1882a5c0a91bc",
+    "CarrySelfAdjointOperator/CompletedC3FullWronskianCentralChiralEnergy.lean": "87b1b5f93059ee3df0ecbdef3c9744cfefd350d7f024dd277bb9fab054c59ac7",
+    "CarrySelfAdjointOperator/CompletedC3FullWronskianOperatorCarrier.lean": "a1381460abce7d769e71deffe9b008d7720924568a256a70d73dc9e28ec5783e",
+    ".lake/packages/NativeCarryC3Crosswalk/NativeCarryC3Crosswalk/EnrichedTfvdPairTransport.lean": "ca5f167d3fd37ec3d86251db6974521346679e1770b6e11c92ce63aae9954368",
+    ".lake/packages/NativeCarryC3Crosswalk/NativeCarryC3Crosswalk/GenuineBracketGreenIdentity.lean": "ab6906347cb321d2d9c27bb1508639bf3805bb9005f097564e12ba13664adc17",
+    ".lake/packages/CPFormal/CPFormal/Analytic/CpFiniteSeededTfvdGreenIdentity.lean": "f32c3ea8a6acf59ea3ab950eedf2e06b15b6bdf2567174d8b19e922029bba11b",
+    ".lake/packages/CPFormal/CPFormal/Analytic/CpFiniteGreenRadial.lean": "dc3a33a9fc6e10c2c8920b5233c5c6309a9da1b50e5497cb7c3bdea3ca57f455"
+  },
+  "base_research_sha256": {
+    "research/material-theta-tfvd-port/NativePortCalibration.lean": "625fdbed7681c9d450bfdfc882be39ef9a4f6f6cd9f8dd8bf8209925a0b65115",
+    "research/native-camera-tail-mellin/NativeCompletion.lean": "131622ffaab1dcbe9d4554ce2fd039958675ede368b5bbeb714d198f5fc0136e",
+    "research/tfvd-four-leg-mellin/MixedLegs.lean": "e0bd4b04338b1e1cca0d63eca11a00a960bf12692aa178d6d6917f7e2de2369c",
+    "research/tfvd-four-leg-mellin/ReadoutResidual.lean": "4a42a5ca4f604923086db6d997a9d89c73f1e0036e320c66e91a5fab87f82442",
+    "research/tfvd-four-leg-mellin/C2CellStep.lean": "7226165f14c548ec79bb327a615de5f015a5a4cd1573654f92b595e3e4aba08d",
+    "research/tfvd-green-provenance-mellin/CompleteLedger.lean": "0affc7ef28a8f014ea0e449476fb551832a82028a1a70ba11e35e9c639667b0e",
+    "research/full-source-gram-obstruction/FullCarrierMass.lean": "f8eed9e384dc9d6374a99bc569e18717a1136707f4dfbed9f712125d380ecbd0",
+    "research/full-source-gram-obstruction/NormalizedCrossing.lean": "f3919954510d7be773a4450fc2054fb1cb508e4fc2f23aff440c01e732c8fc5a",
+    "research/full-source-gram-obstruction/NativeGaps.lean": "0407e3c46c5431429265ef22a7fdd65d094c5c5c2a21dc0040f696fca79da8eb",
+    "research/native-completed-pairing/CompletedSource.lean": "fb8df3c68d8e19d0e38696417fa977269968ce066383d028eb0fdf6375fd5ec8",
+    "research/native-completed-pairing/SignedFrontier.lean": "acf50ffa52a665c5aa29865669d35d1aa1c08e09031db6f10bd01f6a9fc92eb6"
+  },
+  "packages": {
+    "CPFormal": {
+      "path": "/home/thlinux/carry-self-adjoint-operator/.lake/packages/CPFormal",
+      "head": "65d50f6db1208708e109982ba97e1d51d3039956"
+    },
+    "NativeCarryC3Crosswalk": {
+      "path": "/home/thlinux/carry-self-adjoint-operator/.lake/packages/NativeCarryC3Crosswalk",
+      "head": "150cfc7fb08da96bf8117f15869cc2b819d593c2"
+    },
+    "NativeCarrySpectralWeyl": {
+      "path": "/home/thlinux/carry-self-adjoint-operator/.lake/packages/NativeCarrySpectralWeyl",
+      "head": "298d83c9351e308a5213b9f5ac32e44087f98a9f"
+    }
+  },
+  "compiled_ancestor_modules": {
+    "EndpointCore": {
+      "source": "research/physical-cauchy-endpoint-domain/EndpointCore.lean",
+      "source_sha256": "eed5ceae82d0f83a3547238d630d70dc0212e17bb103b4fb898840598e192cfb",
+      "olean_sha256": "f00df798a41314d71f1198f98986c262be6c61982fd28b1a5edf0fd0d8bb64f3"
+    },
+    "EndpointGreen": {
+      "source": "research/physical-cauchy-endpoint-domain/EndpointGreen.lean",
+      "source_sha256": "65d91949eca23cf970ef78d311ec73e3ff44257064c49b5490f27726d35fb746",
+      "olean_sha256": "41285bb6143e36ae549991c917b4839797b0a65fb99ce1170bba9c8264efab14"
+    },
+    "ColumnAsymptotics": {
+      "source": "research/physical-cauchy-endpoint-domain/ColumnAsymptotics.lean",
+      "source_sha256": "90021e2ddcb41fb83404c3890b9ba5052a2fd371a0adc6f6feda21115e294c86",
+      "olean_sha256": "e9c1c542e3a37f4eaae2c63545b56f26df9de612f1e1554920a1bcf3feca7238"
+    },
+    "CriticalReadout": {
+      "source": "research/physical-cauchy-endpoint-domain/CriticalReadout.lean",
+      "source_sha256": "b2e882827e29bd517da6c5ba38ed75dcfdf818a4f20b098cf82500d57692baa7",
+      "olean_sha256": "747d640495ec5eb6a353dd5a87e3ac52a9f0649e89ee4cba9cb20ecb027829ba"
+    },
+    "NativeEncoder": {
+      "source": "research/physical-cauchy-endpoint-domain/NativeEncoder.lean",
+      "source_sha256": "f7492008349ab531b2240c987f96533d047dcbcc0c7634e1de59281a72d3ee21",
+      "olean_sha256": "44cccb8869f98d1a01e64632f1e3d671974d0dca2fa51eaf9b90d0613294a6ac"
+    },
+    "OriginalSourceDomain": {
+      "source": "research/physical-cauchy-endpoint-domain/OriginalSourceDomain.lean",
+      "source_sha256": "1815ed695cc608f32294461f402330a9dcc4aecc000bf1f286cf36a36572b972",
+      "olean_sha256": "0a0f413cadbdb83a8d85428523479214a08695f162d8eda51ae2200ec2fe288c"
+    },
+    "AddressPort": {
+      "source": "research/material-theta-tfvd-port/AddressPort.lean",
+      "source_sha256": "0bf6f1ef17498a78e6676b65b87aeebe3c879d3ec9d637d0b41659e6b7b7603e",
+      "olean_sha256": "77e2a39a4d51e5d2d5e581bd7c73de0dab20f06b085a49b0fb026f681c665c53"
+    },
+    "PortTfvd": {
+      "source": "research/material-theta-tfvd-port/PortTfvd.lean",
+      "source_sha256": "b7f431216166cc19988bb88571b6801b64e418d1b17f5dafaae1294c600fddcf",
+      "olean_sha256": "2f8ce0e3202524291f77c17a41f16fc444c4b93f3ec7d90e220cd04a2d2f9159"
+    },
+    "MellinAtlas": {
+      "source": "research/material-theta-tfvd-port/MellinAtlas.lean",
+      "source_sha256": "8e43bf13474c27baa9f0c1d9d0b04c8550dbf95f79d6eedeacb13142a54bdd05",
+      "olean_sha256": "12164f0702f536606fb412664327f10e5704ea74297eb87cbce08d0b7655aa67"
+    },
+    "CompleteTheta": {
+      "source": "research/material-theta-tfvd-port/CompleteTheta.lean",
+      "source_sha256": "1496af6e61126baa26ac87a7f2ca97bb5095a1b516835f3d54e9bfeb4d8956ec",
+      "olean_sha256": "36b9b749ec6fea56d7df860d094b629c5e9bf911eea25d149bf6b3fdf169f6af"
+    },
+    "CameraCompletion": {
+      "source": "research/material-theta-tfvd-port/CameraCompletion.lean",
+      "source_sha256": "bb2d9c6154eba28bc51b2d978bbf2efefabe42945ca67660aa60f0961e3bae51",
+      "olean_sha256": "ca6e91b18803623c9a590ef7a2022593fc0d372cf4b93999eae3681c1ce5ec4d"
+    },
+    "FluxComparison": {
+      "source": "research/material-theta-tfvd-port/FluxComparison.lean",
+      "source_sha256": "48e1e4a9c0787e5e80e9351314e5a4b6cee9c43967e8c42e6aaeda050857c5a1",
+      "olean_sha256": "d0171fa3ca795dce8db0b8230e19550f649eb44a0f8966c3665628cbc0f7d932"
+    },
+    "GammaJets": {
+      "source": "research/material-theta-tfvd-port/GammaJets.lean",
+      "source_sha256": "46a8bbc1c8a378ee1d68cc1f96c5a05474c581d0df54ec7e5409d662fc469c73",
+      "olean_sha256": "31869209e5dfe5ab0b1e06af6792cba3ec43e6803e380424606462eb0a4e2132"
+    },
+    "NativePortCalibration": {
+      "source": "research/material-theta-tfvd-port/NativePortCalibration.lean",
+      "source_sha256": "625fdbed7681c9d450bfdfc882be39ef9a4f6f6cd9f8dd8bf8209925a0b65115",
+      "olean_sha256": "e90b180322ed8755d29314fbabb0ebfcdeb1b7c7f6b9a57e695001ce775b04ec"
+    },
+    "CameraHeatTail": {
+      "source": "research/native-camera-tail-mellin/CameraHeatTail.lean",
+      "source_sha256": "d32cb0d439179e12a58deaec3c50fe6527be6fd0152205b8a6c7d2d660962114",
+      "olean_sha256": "06cc9ba2bf7c51d309d04c2984d616b5e3d35d7f15bebe62f4a6bdffd6283b16"
+    },
+    "MellinTail": {
+      "source": "research/native-camera-tail-mellin/MellinTail.lean",
+      "source_sha256": "56bde5bba3a4664c3f16e190f743860e1d7cf114f0f1ee254106b39a1c553b79",
+      "olean_sha256": "e0add6c6119c167297a7199faaae7d9e5b261dc87ba8e03739ba3490ec23887a"
+    },
+    "TailJets": {
+      "source": "research/native-camera-tail-mellin/TailJets.lean",
+      "source_sha256": "2601f09ee91014aaf61c507c28e7a80fa1d4ca28d0d653e852a4b67e1d750820",
+      "olean_sha256": "658845b4f3938b29b4fa68113d464d042b8d5189d27d6475dbc07a09e49e0faa"
+    },
+    "CompletedTrace": {
+      "source": "research/native-camera-tail-mellin/CompletedTrace.lean",
+      "source_sha256": "fc02a76bf3f0d6ebea861225a41a8903b33ca549f6c647b9b3289e7f685ebab9",
+      "olean_sha256": "347efcde704c15b83f26b7c9572d25f64084d77c07713acc2d73beb42941e52b"
+    },
+    "TailControl": {
+      "source": "research/native-camera-tail-mellin/TailControl.lean",
+      "source_sha256": "bb46f6961f69b2ad7808a019ea4b671d9234a9d704e04f8b589bf386893f3f0a",
+      "olean_sha256": "6ae979659de5183c517e2327b11d63fb35409fa97745005f5cf45d10def629ad"
+    },
+    "NativeCompletion": {
+      "source": "research/native-camera-tail-mellin/NativeCompletion.lean",
+      "source_sha256": "131622ffaab1dcbe9d4554ce2fd039958675ede368b5bbeb714d198f5fc0136e",
+      "olean_sha256": "647d9370c21678295debb4ccb0d4d045486c5ec23c46893494118728bbc9cacb"
+    },
+    "GradientMellin": {
+      "source": "research/tfvd-four-leg-mellin/GradientMellin.lean",
+      "source_sha256": "06be3496ee5291b14cb5dca967476a6279157481267954e9b0271b4153c2abe2",
+      "olean_sha256": "a4b2f6a5bde060e9e59db0f1479b229fb7feb7a310bb62e38fb9e1bc0b696a63"
+    },
+    "MixedLegs": {
+      "source": "research/tfvd-four-leg-mellin/MixedLegs.lean",
+      "source_sha256": "e0bd4b04338b1e1cca0d63eca11a00a960bf12692aa178d6d6917f7e2de2369c",
+      "olean_sha256": "1591cc85f8b152373f6857cb1e872aba68c88d735f0a769ca130c96b8f1d565c"
+    },
+    "ReadoutResidual": {
+      "source": "research/tfvd-four-leg-mellin/ReadoutResidual.lean",
+      "source_sha256": "4a42a5ca4f604923086db6d997a9d89c73f1e0036e320c66e91a5fab87f82442",
+      "olean_sha256": "ed1f5157b45fece259a5b71f9b8a354b213a3dd1883b7ffb8b9f66912ae8d820"
+    },
+    "GreenPortCalibration": {
+      "source": "research/tfvd-green-provenance-mellin/GreenPortCalibration.lean",
+      "source_sha256": "6d0180634b7a94ae7389637a512a91ac165f6d8dc5595b4162fee3431750a161",
+      "olean_sha256": "076e4f2d8ca64345f0cd39246c1556acda7089091f400b86bc4ac2aa814f3897"
+    },
+    "BlockProvenance": {
+      "source": "research/tfvd-green-provenance-mellin/BlockProvenance.lean",
+      "source_sha256": "5b08ba1477daf3195243517f78b7577c48bccfa0e2bca1a57fd5375f2250c54d",
+      "olean_sha256": "74ef9d178ea7f21d7acb4b5331b1d1c9fd5bf11dd5ee8f5e67bc18a37aae95cd"
+    },
+    "CompleteLedger": {
+      "source": "research/tfvd-green-provenance-mellin/CompleteLedger.lean",
+      "source_sha256": "0affc7ef28a8f014ea0e449476fb551832a82028a1a70ba11e35e9c639667b0e",
+      "olean_sha256": "0b472167c4d788f86f593578d244a0137cf8ec30996888f21bfb49299a5d3f6d"
+    },
+    "RadialCompensation": {
+      "source": "research/tfvd-green-provenance-mellin/RadialCompensation.lean",
+      "source_sha256": "eda547a461ccdbc09ea381dc8347c30b567210b8f7c4a595ebff20b338f967cb",
+      "olean_sha256": "325586c17240105dcc02c715fd7a39457a72a3a44c30801c58c6d7985c88aafd"
+    },
+    "CutoffResidual": {
+      "source": "research/tfvd-green-provenance-mellin/CutoffResidual.lean",
+      "source_sha256": "40a9413b4ab2be295f2cc5c93c34990acfdc76fa700163929e330b5ad79f3e7c",
+      "olean_sha256": "7af3c26d55a7efcfbfc6b588b64f428cf5710bc40df8e8fb0617420b40468896"
+    },
+    "CompletionAction": {
+      "source": "research/native-completed-pairing/CompletionAction.lean",
+      "source_sha256": "a4919be609b56835d52a3de335e91d915c97647fd1919c525fcfe0ea8b10969b",
+      "olean_sha256": "e8507c1faf12d81eedd18b78b77a4f1ff04814c7d9154f882d77c2a349d90e76"
+    },
+    "CompletedSource": {
+      "source": "research/native-completed-pairing/CompletedSource.lean",
+      "source_sha256": "fb8df3c68d8e19d0e38696417fa977269968ce066383d028eb0fdf6375fd5ec8",
+      "olean_sha256": "5d43804b28ba15c9b24603e96673874a345ca7a7c97de95759eda17da4d2e548"
+    }
+  }
+}
