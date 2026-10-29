@@ -1,0 +1,99 @@
+{
+  "checks": [
+    {
+      "kappa": 2,
+      "a": "0",
+      "b": "0",
+      "all_four_routes_equal": true,
+      "balance": "188/4225"
+    },
+    {
+      "kappa": 2,
+      "a": "1",
+      "b": "2",
+      "all_four_routes_equal": true,
+      "balance": "6022/4225"
+    },
+    {
+      "kappa": 2,
+      "a": "3/2",
+      "b": "3/2",
+      "all_four_routes_equal": true,
+      "balance": "5257/3380"
+    },
+    {
+      "kappa": 2,
+      "a": "-1",
+      "b": "2",
+      "all_four_routes_equal": true,
+      "balance": "-3726/4225"
+    },
+    {
+      "kappa": 3,
+      "a": "0",
+      "b": "0",
+      "all_four_routes_equal": true,
+      "balance": "581013/2112500"
+    },
+    {
+      "kappa": 3,
+      "a": "1",
+      "b": "2",
+      "all_four_routes_equal": true,
+      "balance": "6064551/2112500"
+    },
+    {
+      "kappa": 3,
+      "a": "3/2",
+      "b": "3/2",
+      "all_four_routes_equal": true,
+      "balance": "26354079/8450000"
+    },
+    {
+      "kappa": 3,
+      "a": "-1",
+      "b": "2",
+      "all_four_routes_equal": true,
+      "balance": "-3180141/2112500"
+    },
+    {
+      "kappa": 32,
+      "a": "0",
+      "b": "0",
+      "all_four_routes_equal": true,
+      "balance": "241337253061646614528/62570745502766028125"
+    },
+    {
+      "kappa": 32,
+      "a": "1",
+      "b": "2",
+      "all_four_routes_equal": true,
+      "balance": "-43407032192434438144/62570745502766028125"
+    },
+    {
+      "kappa": 32,
+      "a": "3/2",
+      "b": "3/2",
+      "all_four_routes_equal": true,
+      "balance": "-12349553402974306304/62570745502766028125"
+    },
+    {
+      "kappa": 32,
+      "a": "-1",
+      "b": "2",
+      "all_four_routes_equal": true,
+      "balance": "-184857282443955142656/62570745502766028125"
+    }
+  ],
+  "witness": {
+    "kappa": 32,
+    "epsilon": "1/1024",
+    "first": "-137774497792/69392730625",
+    "second": "218146474205118464/74048219529900625",
+    "third": "-241337253061646614528/62570745502766028125",
+    "mixed_entry": "177734705189920702464/62570745502766028125",
+    "critical_negative": "-12349553402974306304/62570745502766028125",
+    "is_native_response": false
+  },
+  "purpose": "diagnostic of scalar sign sufficiency, not a canonical-source counterexample"
+}

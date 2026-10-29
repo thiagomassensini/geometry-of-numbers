@@ -1,0 +1,75 @@
+'CarryCriticalGrid.squaredNode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.gridFirst' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.gridSecond' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.gridSecondRight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.gridThird' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.grid_third_barycentric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.squared_grid_reconstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.squared_grid_data_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.grid_third_mul_node' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.grid_third_top_factors' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.grid_constant_cancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.criticalGridPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.critical_polynomial_limit_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.critical_polynomial_shifted_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.gridBalance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.critical_grid_curvatures' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.grid_mixed_from_pairs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.grid_first_from_pairs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.critical_grid_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.critical_grid_product_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.squaredScale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.normalizedFourSamples' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.nativeFourSamples' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.squared_scale_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.squared_scale_real_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.native_four_samples_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.normalized_four_samples_recover' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.critical_readout_squared_grid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.native_critical_grid_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.native_critical_curvatures_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.native_critical_product_defect_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.native_critical_grid_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.native_critical_grid_schur_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.squared_scale_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.native_grid_third_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.native_grid_mixed_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.native_grid_first_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.native_grid_second_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.native_grid_node_third_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.nativeGridDefect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.native_grid_defect_scaled_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.native_grid_defect_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.native_four_sample_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.native_newton_data_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.diagnosticSamples' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.diagnostic_samples_positive_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.diagnostic_three_curvature_signs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.diagnostic_positive_entries' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.diagnostic_critical_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalGrid.no_sign_from_three_curvatures' depends on axioms: [propext, Classical.choice, Quot.sound]
+Native critical squared-grid mechanism construction: 39 public roots; 5433 type/body dependencies; standard axioms only; canonical moments forbidden=true; preexisting moment-sign and scalar-asymptotic shortcuts forbidden
+Native critical squared-grid mechanism provenance: 11 public roots; 5165 type/body dependencies; standard axioms only; canonical moments forbidden=false; preexisting moment-sign and scalar-asymptotic shortcuts forbidden
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 8.00
+	System time (seconds): 5.92
+	Percent of CPU this job got: 114%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.17
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8392756
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 289041
+	Voluntary context switches: 12467
+	Involuntary context switches: 144
+	Swaps: 0
+	File system inputs: 176
+	File system outputs: 808
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
