@@ -1,0 +1,106 @@
+[
+  {
+    "name": "inherited-schur-logic",
+    "command": [
+      "bash",
+      "research/native-moment-orthogonalization-audit/compile_module.sh",
+      "SchurLogic"
+    ],
+    "exit_code": 0,
+    "seconds": 11.302
+  },
+  {
+    "name": "inherited-critical-source",
+    "command": [
+      "bash",
+      "research/critical-source-return/compile_module.sh",
+      "CriticalSource"
+    ],
+    "exit_code": 0,
+    "seconds": 13.842
+  },
+  {
+    "name": "kernel-SourceLeading",
+    "command": [
+      "bash",
+      "research/critical-source-relative-asymptotics/compile_module.sh",
+      "SourceLeading"
+    ],
+    "exit_code": 0,
+    "seconds": 12.26
+  },
+  {
+    "name": "kernel-WholeSourceLimit",
+    "command": [
+      "bash",
+      "research/critical-source-relative-asymptotics/compile_module.sh",
+      "WholeSourceLimit"
+    ],
+    "exit_code": 0,
+    "seconds": 13.836
+  },
+  {
+    "name": "kernel-CriticalRelative",
+    "command": [
+      "bash",
+      "research/critical-source-relative-asymptotics/compile_module.sh",
+      "CriticalRelative"
+    ],
+    "exit_code": 0,
+    "seconds": 12.913
+  },
+  {
+    "name": "kernel-RelativeDeficit",
+    "command": [
+      "bash",
+      "research/critical-source-relative-asymptotics/compile_module.sh",
+      "RelativeDeficit"
+    ],
+    "exit_code": 0,
+    "seconds": 13.889
+  },
+  {
+    "name": "kernel-InitialSource",
+    "command": [
+      "bash",
+      "research/critical-source-relative-asymptotics/compile_module.sh",
+      "InitialSource"
+    ],
+    "exit_code": 0,
+    "seconds": 13.485
+  },
+  {
+    "name": "kernel-PolarizedLimit",
+    "command": [
+      "bash",
+      "research/critical-source-relative-asymptotics/compile_module.sh",
+      "PolarizedLimit"
+    ],
+    "exit_code": 0,
+    "seconds": 13.03
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "bash",
+      "research/critical-source-relative-asymptotics/compile_module.sh",
+      "Audit"
+    ],
+    "exit_code": 0,
+    "seconds": 12.581
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "ee56930a2c30456cfbd214a29bb31b12d3977204",
+      "--",
+      ".",
+      ":(exclude)research/critical-source-relative-asymptotics"
+    ],
+    "exit_code": 0,
+    "seconds": 0.006
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "number": 36,
+    "state": "open",
+    "merged": false,
+    "draft": true,
+    "base": "main",
+    "base_sha": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+    "head": "agent/structural-native-krylov-gap",
+    "head_sha": "8da373522add9b9423c4ecb04e271f096d405165",
+    "url": "https://github.com/thiagomassensini/geometry-of-numbers/pull/36"
+  },
+  {
+    "number": 37,
+    "state": "open",
+    "merged": false,
+    "draft": true,
+    "base": "main",
+    "base_sha": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+    "head": "agent/completed-green-confluent-balance",
+    "head_sha": "bf2ff244e363b110a4e54ba897e475b81552bbdb",
+    "url": "https://github.com/thiagomassensini/geometry-of-numbers/pull/37"
+  },
+  {
+    "number": 38,
+    "state": "open",
+    "merged": false,
+    "draft": true,
+    "base": "main",
+    "base_sha": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+    "head": "agent/carry-scale-covariance",
+    "head_sha": "16de0ef478afb1c95c16edfe8153ac80dc035b71",
+    "url": "https://github.com/thiagomassensini/geometry-of-numbers/pull/38"
+  },
+  {
+    "number": 39,
+    "state": "open",
+    "merged": false,
+    "draft": true,
+    "base": "main",
+    "base_sha": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+    "head": "agent/carry-quotient-green-coherence",
+    "head_sha": "349740eaff8f154c444c918757b608e6efb210a4",
+    "url": "https://github.com/thiagomassensini/geometry-of-numbers/pull/39"
+  },
+  {
+    "number": 40,
+    "state": "open",
+    "merged": false,
+    "draft": true,
+    "base": "agent/carry-quotient-green-coherence",
+    "base_sha": "349740eaff8f154c444c918757b608e6efb210a4",
+    "head": "agent/carry-global-synthesis-kernels",
+    "head_sha": "6c8570f73b4c2dea1b797816d07381289653624b",
+    "url": "https://github.com/thiagomassensini/geometry-of-numbers/pull/40"
+  }
+]
