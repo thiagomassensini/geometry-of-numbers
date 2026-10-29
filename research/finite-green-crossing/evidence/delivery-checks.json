@@ -1,0 +1,23 @@
+{
+  "created_utc": "2026-10-24T23:32:28.195065+00:00",
+  "classification": "PARTIAL",
+  "finite_pr83_target": "PROVED",
+  "global_mathematical_goal": "OPEN",
+  "checks_passed": 17,
+  "declarations": {
+    "def": 6,
+    "theorem": 48
+  },
+  "public_roots": 54,
+  "type_body_dependencies": 6079,
+  "audit_groups": {
+    "source": 34,
+    "identification": 12,
+    "old_h0_sign": 8
+  },
+  "report_complete": true,
+  "report_lines": 298,
+  "report_sha256": "e8d4f29a25d1aff9a28521c3ec595a8b3689f58f7ff6f723e42c46c1bd92136a",
+  "validated_lean_hashes_match": true,
+  "h0_sign_provenance": "Pre-existing low-order theta/cosine certificate; not a new assumption or an all-order sign law"
+}

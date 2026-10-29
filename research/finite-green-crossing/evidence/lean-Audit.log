@@ -1,0 +1,81 @@
+'CarryFiniteGreen.greenPort' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.greenPortProfile' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.green_port_toLp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.green_port_profile_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.green_port_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.initialInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.initial_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.initial_bulk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.completed_residual_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.residual_numerator_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.native_advance_radial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.normalized_positive_response' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.responseIncrement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.residualScale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.initial_regular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.residual_initial_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.residual_initial_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.pair_power_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.reconstructed_residual_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.chiralRadialScale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.residual_scale_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.chiral_scale_norm_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.chiral_scaled_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.initial_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.initial_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.initial_contrast' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.initial_source_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.physical_form_equal_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.initial_green_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.initial_residual_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.initial_source_residual_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.initial_mixed_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.initial_mixed_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.initial_bulk_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.adjacent_points_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.radial_point_scaled' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.scaled_increment_dslope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.scaled_response_dslope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.native_derivative_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.scaled_increment_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.scaled_response_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.increment_ruler_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.incident_ruler_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.mixed_energy_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.bulk_energy_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.source_energy_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.c2_weight_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.c2_weight_lt_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.c2_mixed_limit_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.c2_bulk_limit_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.c2_eventually_mixed_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.c2_eventually_bulk_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.c2_eventually_compensates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryFiniteGreen.c2_canonical_eventually_compensates' depends on axioms: [propext, Classical.choice, Quot.sound]
+Native finite Green audit tier 0: 34 public roots; 5800 type/body dependencies; standard axioms only
+Native finite Green audit tier 1: 12 public roots; 5995 type/body dependencies; standard axioms only
+Native finite Green audit tier 2: 8 public roots; 5959 type/body dependencies; standard axioms only
+Native finite Green audit tier 2: 54 public roots; 6079 type/body dependencies; standard axioms only
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 8.39
+	System time (seconds): 6.07
+	Percent of CPU this job got: 115%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.51
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7976936
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 276656
+	Voluntary context switches: 11536
+	Involuntary context switches: 137
+	Swaps: 0
+	File system inputs: 32
+	File system outputs: 704
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
