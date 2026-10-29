@@ -1,0 +1,234 @@
+[
+  {
+    "name": "ancestor-recovery",
+    "command": [
+      "python3",
+      "research/native-conservative-intertwiner/prepare_pr42.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.054
+  },
+  {
+    "name": "audit-generation",
+    "command": [
+      "python3",
+      "research/native-conservative-intertwiner/generate_audit.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.036
+  },
+  {
+    "name": "kernel-SourceLeading",
+    "command": [
+      "bash",
+      "research/native-conservative-intertwiner/compile_module.sh",
+      "SourceLeading"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.449
+  },
+  {
+    "name": "kernel-WholeSourceLimit",
+    "command": [
+      "bash",
+      "research/native-conservative-intertwiner/compile_module.sh",
+      "WholeSourceLimit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.238
+  },
+  {
+    "name": "kernel-ConservativeDefect",
+    "command": [
+      "bash",
+      "research/native-conservative-intertwiner/compile_module.sh",
+      "ConservativeDefect"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 13.754
+  },
+  {
+    "name": "kernel-PhysicalJets",
+    "command": [
+      "bash",
+      "research/native-conservative-intertwiner/compile_module.sh",
+      "PhysicalJets"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.9
+  },
+  {
+    "name": "kernel-PhysicalCoordinates",
+    "command": [
+      "bash",
+      "research/native-conservative-intertwiner/compile_module.sh",
+      "PhysicalCoordinates"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.8
+  },
+  {
+    "name": "kernel-LeadingObstruction",
+    "command": [
+      "bash",
+      "research/native-conservative-intertwiner/compile_module.sh",
+      "LeadingObstruction"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 16.323
+  },
+  {
+    "name": "kernel-PR41Transport",
+    "command": [
+      "bash",
+      "research/native-conservative-intertwiner/compile_module.sh",
+      "PR41Transport"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 14.624
+  },
+  {
+    "name": "kernel-LowOrder",
+    "command": [
+      "bash",
+      "research/native-conservative-intertwiner/compile_module.sh",
+      "LowOrder"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 19.178
+  },
+  {
+    "name": "kernel-StationaryObstruction",
+    "command": [
+      "bash",
+      "research/native-conservative-intertwiner/compile_module.sh",
+      "StationaryObstruction"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 16.45
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "bash",
+      "research/native-conservative-intertwiner/compile_module.sh",
+      "Audit"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 15.032
+  },
+  {
+    "name": "exact-leading-and-polarized-controls",
+    "command": [
+      "/home/thlinux/miniforge3/bin/python3",
+      "research/native-conservative-intertwiner/experiment.py"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.051
+  },
+  {
+    "name": "focused-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "GeometryOfNumbers.Analysis.CarryMaterialProjectiveReturnGreen",
+      "GeometryOfNumbers.Analysis.CarryMaterialCompanionGreenTransport",
+      "GeometryOfNumbers.Analysis.CanonicalFiniteHeight"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 8.303
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 7.489
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 6.911
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 9.762
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 47.596
+  },
+  {
+    "name": "twelve-source-regression",
+    "command": [
+      "bash",
+      "research/sixth-odd-twelve-sources/compile_module.sh",
+      "Regression"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 12.691
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "f2987f171914c978ed6affe7500b9d534f0e18f7",
+      "--",
+      ".",
+      ":(exclude)research/native-conservative-intertwiner"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.006
+  },
+  {
+    "name": "diff-check",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/home/thlinux/geometry-of-numbers",
+    "exit_code": 0,
+    "seconds": 0.006
+  }
+]

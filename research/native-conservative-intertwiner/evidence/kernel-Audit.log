@@ -1,0 +1,87 @@
+'CarryConservativeIntertwiner.conservativeReturn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.conservativeHead' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.conservative_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.conservative_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.transportDefect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.polarized_defect_ledger' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.energy_defect_ledger' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.physicalIncident' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.physicalReturned' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.physicalIncident_coe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.physicalReturned_coe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.physicalLeading' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.physicalLeading_coe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.physicalLeading_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.physical_scaled_incident_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryConservativeIntertwiner.physical_scaled_returned_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryConservativeIntertwiner.physical_source_defect_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.physical_signed_energy_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.original_incident_columns' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.original_returned_columns' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.original_transport_defect_columns' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryConservativeIntertwiner.material_address_from_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.radial_argument_from_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.physical_shift_fixed_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.leadingTransportDefect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.leadingTransportDefect_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.scaled_transport_defect_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryConservativeIntertwiner.conservative_return_not_eventually_source' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryConservativeIntertwiner.leading_conservative_cancellation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryConservativeIntertwiner.pr41Incident' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.pr41Returned' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.pr41TransportCorrection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.pr41_conservative_ledger' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.pr41_conservative_ledger_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryConservativeIntertwiner.pr41Order' does not depend on any axioms
+'CarryConservativeIntertwiner.pr41Order_lt' depends on axioms: [propext, Quot.sound]
+'CarryConservativeIntertwiner.pr41Boundary_above' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.pr41_monic_top' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.pr41Boundary_top' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.pr41Boundary_top_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.pr41_conservative_return_fails' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.firstEvenBoundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.firstOddBoundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.first_even_is_pr41' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.first_odd_is_pr41' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.evenLeading' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.oddLeading' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.even_leading_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.odd_leading_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.even_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.first_incident_ray' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.central_amp_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.physical_feature_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.evenLeading_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.even_leading_defect_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.even_leading_head_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.even_leading_cross' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.two_column_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.oddLeading_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.odd_leading_defect_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.odd_leading_head_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.odd_leading_cross' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.first_even_boundary_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryConservativeIntertwiner.stationary_action_on_first_feature' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryConservativeIntertwiner.no_stationary_completed_return' depends on axioms: [propext, Classical.choice, Quot.sound]
+Conservative native transport audit conservative: roots 7; type/body closure 5425; allowed foundations passed
+Conservative native transport audit source: roots 16; type/body closure 5965; allowed foundations passed
+Conservative native transport audit leading: roots 6; type/body closure 5674; allowed foundations passed
+Conservative native transport audit pr41: roots 12; type/body closure 6096; allowed foundations passed
+Conservative native transport audit canaries: roots 21; type/body closure 6140; allowed foundations passed
+Conservative native transport audit stationary: roots 3; type/body closure 5472; allowed foundations passed

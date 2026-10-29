@@ -1,0 +1,16 @@
+{
+  "even": {
+    "energy": "1/4",
+    "head_energy": "2/9",
+    "defect_energy": "1/9",
+    "mixed_cross": "1/9"
+  },
+  "odd": {
+    "energy": "1/24",
+    "head_energy": "8/225",
+    "defect_energy": "19/450",
+    "mixed_cross": "-1/150"
+  },
+  "independent_complex_polarized_controls": 3,
+  "scope": "Exact finite regression of the proven metric and leading states; not all-order positivity."
+}
