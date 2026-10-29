@@ -1,0 +1,24 @@
+{
+  "PASS": true,
+  "exact_gaussian_fraction_checks": 1587,
+  "tested_dimensions": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    16
+  ],
+  "canonical_moments_used": false,
+  "zero_or_height_inputs": false,
+  "both_binomial_matrix_inverses_checked": true,
+  "both_native_chart_directions_tested": true,
+  "prefix_coherence_and_zero_extension": true,
+  "independent_complex_arguments_and_radial_indices": true,
+  "full_two_legs_and_all_cauchy_crossings": true,
+  "wrong_global_phase_detected": true,
+  "amplitudes_and_return_samples_scope": "generic algebra identity regressions only; not evaluations of the native completed functions or positivity evidence",
+  "lean_scope": "all finite n is proved in Lean; these finite rational cases are regressions only"
+}
