@@ -1,0 +1,27 @@
+{
+  "geometry_base": "6c9ea4a4817ebb1befedd8bd9491cba2ef2de987",
+  "geometry_origin_main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_status": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "operator_source_sha256": {
+    "CarrySelfAdjointOperator/EnrichedTfvdBoundaryEdgeFlattening.lean": "6078dd0e874843151bdd8c35658a83fd0262d71c8c26992e18e4de6d79001c09",
+    "CarrySelfAdjointOperator/CanonicalEnrichedBoundaryResidualIdentity.lean": "b03b43248201c910b3d168fd32ec7e5b50e16d44d0bd3fc53ef75d45d695218d",
+    "CarrySelfAdjointOperator/CompletedC3MixedGreenWronskianDefect.lean": "6fbaf4b7ee9059f7a10ff49d566b3932cd4aa945657fff8c908e46840430e07a",
+    "CarrySelfAdjointOperator/CompletedNativePolarizedTfvdGreenMomentKernel.lean": "cb5b180b5785fa87107dbac10fe65b9f3ee8a7a03b8ef7b4ffde4a6d20d7a59a",
+    ".lake/packages/CPFormal/CPFormal/Analytic/CpSeededTfvdSameSBoundary.lean": "7cfc2e452b4937ab6259b8c437582e81b71f5ee710244dcd862f14b8f1ffe14c",
+    ".lake/packages/CPFormal/CPFormal/Analytic/CpFiniteTfvdAngularGreenIntertwiner.lean": "3abbd230d675e7900b747f0190545a1c281606e60f44d5ebf05c27b8ce8c65c9",
+    ".lake/packages/NativeCarryC3Crosswalk/NativeCarryC3Crosswalk/EnrichedTfvdPairTransport.lean": "ca5f167d3fd37ec3d86251db6974521346679e1770b6e11c92ce63aae9954368"
+  },
+  "geometry_source_sha256": {
+    "GeometryOfNumbers/Analysis/C2FiberRealDynamics.lean": "60abcd61a664c1b8f0180a03bab92e4382e93dc417505fb76216901c7a270233",
+    "GeometryOfNumbers/Analysis/RealCarryWeightedValve.lean": "0b74255cd5136043281dcb6193532c55143d2d1652077d5d82d142f66c1726f2",
+    "GeometryOfNumbers/Analysis/RealCarryTfvd.lean": "40f40703c5085c94cdb72dbd90002e57c365a16568b320febb1cef01978ba6bb",
+    "GeometryOfNumbers/Analysis/RealQuadraticAmplitude.lean": "508ba03e1edf64cbc1b9738e20420a40e53a3062170c22a876d59201415b0215",
+    "GeometryOfNumbers/Analysis/MaterialLogTfvdCanary.lean": "d353d14a402e29df040f8f7134c4d992d5ca8612feb4716f7b3797be13a2bd96"
+  },
+  "packages": {
+    "CPFormal": "65d50f6db1208708e109982ba97e1d51d3039956",
+    "NativeCarryC3Crosswalk": "150cfc7fb08da96bf8117f15869cc2b819d593c2",
+    "NativeCarrySpectralWeyl": "298d83c9351e308a5213b9f5ac32e44087f98a9f"
+  }
+}

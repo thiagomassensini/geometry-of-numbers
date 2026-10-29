@@ -1,0 +1,415 @@
+{
+  "created_utc": "2026-10-23T19:41:40.156072+00:00",
+  "geometry_main": "59e53d863f4ef0ad998b0eb19fd3891c9839cc35",
+  "geometry_base": "6c9ea4a4817ebb1befedd8bd9491cba2ef2de987",
+  "geometry_branch": "agent/tfvd-four-leg-mellin",
+  "operator_head": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "operator_origin_main": "045369f6dedcb2e75e9aefed1d12c9f73b9a2532",
+  "operator_status_preserved": "?? CarrySelfAdjointOperator/C2OddTfvdTransport.lean\n?? CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean",
+  "operator_modules_sha256": {
+    "CarrySelfAdjointOperator/EnrichedTfvdBoundaryEdgeFlattening.lean": "6078dd0e874843151bdd8c35658a83fd0262d71c8c26992e18e4de6d79001c09",
+    "CarrySelfAdjointOperator/CanonicalEnrichedBoundaryResidualIdentity.lean": "b03b43248201c910b3d168fd32ec7e5b50e16d44d0bd3fc53ef75d45d695218d",
+    "CarrySelfAdjointOperator/ReflectedScalarBoundaryTrace.lean": "3146da35920700f86ec7caf5ed7880d43fc286a1b49f0d5fc872867110a7b70f",
+    "CarrySelfAdjointOperator/CompletedEnrichedTfvdBoundaryCompanion.lean": "3b1f466cbfd03c9e4f8ca51d80b19493875865e83c77c2cb9b3020d60618edeb",
+    "CarrySelfAdjointOperator/CompletedC3BracketTfvdGreenFactorization.lean": "154e2e57de0201e43522519cd76e9125db11e5efead4afd6799e0c1fc37d9408",
+    "CarrySelfAdjointOperator/CompletedC3MixedGreenWronskianDefect.lean": "6fbaf4b7ee9059f7a10ff49d566b3932cd4aa945657fff8c908e46840430e07a",
+    "CarrySelfAdjointOperator/CompletedNativeXiCosineTransform.lean": "43da985ffe64ebabf37654db0bc9060b05811b4cba84911d349b76b8bcd73dbd",
+    "CarrySelfAdjointOperator/CompletedOperatorCharacteristic.lean": "de21570ecf684ee42e8222ccbc598b6bb84c21404c8cd55f815504ab3ae093a2",
+    "CarrySelfAdjointOperator/CompletedNativePolarizedTfvdGreenMomentKernel.lean": "cb5b180b5785fa87107dbac10fe65b9f3ee8a7a03b8ef7b4ffde4a6d20d7a59a",
+    "CarrySelfAdjointOperator/CompletedTfvdGreenAllOrderIntertwining.lean": "7cef344db79abeed2dce5327c04c03b64911bd04b25f3ea637a583875debe223",
+    "CarrySelfAdjointOperator/CompletedNativeCausalGreenProvenance.lean": "a69c813550714d4ce840f90cfa9ddbd6eb7d02156a8bfc5d107eb834e745093d",
+    "CarrySelfAdjointOperator/CompletedNativeTfvdGreenMomentGramBridge.lean": "ef6d18ff99fd4df125cf91a3971d019caf5c0354cf7bac9def57c8f4745d3a2d",
+    "CarrySelfAdjointOperator/CompletedNativeTfvdWronskianMoments.lean": "3dd797895e8da20c202f3982fa89c0a64cd453273dd2374376493c6225a55567"
+  },
+  "protected_files_sha256": {
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransport.lean": "5bfe06e8d15432c4d6cab6719dc22a0376019243f3e896329ea9ab9dd7458cb0",
+    "/home/thlinux/carry-self-adjoint-operator/CarrySelfAdjointOperator/C2OddTfvdTransportAudit.lean": "b6f05d0241058885da362b5cb20d3968d704a667da3ffc443714a69f3564623c"
+  },
+  "checks": [
+    {
+      "label": "base-AddressPort",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "AddressPort"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.477,
+      "log": "evidence/base-AddressPort.log"
+    },
+    {
+      "label": "base-PortTfvd",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "PortTfvd"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.703,
+      "log": "evidence/base-PortTfvd.log"
+    },
+    {
+      "label": "base-MellinAtlas",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MellinAtlas"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.467,
+      "log": "evidence/base-MellinAtlas.log"
+    },
+    {
+      "label": "base-CompleteTheta",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CompleteTheta"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.533,
+      "log": "evidence/base-CompleteTheta.log"
+    },
+    {
+      "label": "base-CameraCompletion",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CameraCompletion"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.746,
+      "log": "evidence/base-CameraCompletion.log"
+    },
+    {
+      "label": "base-FluxComparison",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "FluxComparison"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.457,
+      "log": "evidence/base-FluxComparison.log"
+    },
+    {
+      "label": "base-GammaJets",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "GammaJets"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.794,
+      "log": "evidence/base-GammaJets.log"
+    },
+    {
+      "label": "base-NativePortCalibration",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "NativePortCalibration"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/material-theta-tfvd-port",
+      "exit_code": 0,
+      "seconds": 5.986,
+      "log": "evidence/base-NativePortCalibration.log"
+    },
+    {
+      "label": "base-CameraHeatTail",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CameraHeatTail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/native-camera-tail-mellin",
+      "exit_code": 0,
+      "seconds": 5.641,
+      "log": "evidence/base-CameraHeatTail.log"
+    },
+    {
+      "label": "base-MellinTail",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MellinTail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/native-camera-tail-mellin",
+      "exit_code": 0,
+      "seconds": 5.316,
+      "log": "evidence/base-MellinTail.log"
+    },
+    {
+      "label": "base-TailJets",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "TailJets"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/native-camera-tail-mellin",
+      "exit_code": 0,
+      "seconds": 5.858,
+      "log": "evidence/base-TailJets.log"
+    },
+    {
+      "label": "base-CompletedTrace",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "CompletedTrace"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/native-camera-tail-mellin",
+      "exit_code": 0,
+      "seconds": 5.306,
+      "log": "evidence/base-CompletedTrace.log"
+    },
+    {
+      "label": "base-TailControl",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "TailControl"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/native-camera-tail-mellin",
+      "exit_code": 0,
+      "seconds": 5.762,
+      "log": "evidence/base-TailControl.log"
+    },
+    {
+      "label": "base-NativeCompletion",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "NativeCompletion"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/native-camera-tail-mellin",
+      "exit_code": 0,
+      "seconds": 8.49,
+      "log": "evidence/base-NativeCompletion.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/tfvd-four-leg-mellin",
+      "exit_code": 0,
+      "seconds": 0.039,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.CompletedNativeXiCosineTransform",
+        "CPFormal.Analytic.CpNativeCarryFiniteCameraAlgebra",
+        "CPFormal.Analytic.CpCarryWeightedVerticalTfvdFinite",
+        "NativeCarryC3Crosswalk.FinitePackaging",
+        "NativeCarrySpectralWeyl.Camera.ModalEnergy",
+        "CarrySelfAdjointOperator.CompletedC3BracketTfvdGreenFactorization"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 2.735,
+      "log": "evidence/operator-source-build.log"
+    },
+    {
+      "label": "geometry-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "GeometryOfNumbers.Analysis.C2FiberRealDynamics",
+        "GeometryOfNumbers.Analysis.MaterialLogTfvdCanary"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs",
+      "exit_code": 0,
+      "seconds": 2.082,
+      "log": "evidence/geometry-source-build.log"
+    },
+    {
+      "label": "lean-GradientMellin",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "GradientMellin"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/tfvd-four-leg-mellin",
+      "exit_code": 0,
+      "seconds": 9.077,
+      "log": "evidence/lean-GradientMellin.log"
+    },
+    {
+      "label": "lean-MixedLegs",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "MixedLegs"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/tfvd-four-leg-mellin",
+      "exit_code": 0,
+      "seconds": 8.815,
+      "log": "evidence/lean-MixedLegs.log"
+    },
+    {
+      "label": "lean-ReadoutResidual",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "ReadoutResidual"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/tfvd-four-leg-mellin",
+      "exit_code": 0,
+      "seconds": 8.248,
+      "log": "evidence/lean-ReadoutResidual.log"
+    },
+    {
+      "label": "lean-VariableTransport",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "VariableTransport"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/tfvd-four-leg-mellin",
+      "exit_code": 0,
+      "seconds": 8.877,
+      "log": "evidence/lean-VariableTransport.log"
+    },
+    {
+      "label": "lean-OneBlock",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "OneBlock"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/tfvd-four-leg-mellin",
+      "exit_code": 0,
+      "seconds": 9.328,
+      "log": "evidence/lean-OneBlock.log"
+    },
+    {
+      "label": "lean-C2CellStep",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "C2CellStep"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/tfvd-four-leg-mellin",
+      "exit_code": 0,
+      "seconds": 9.541,
+      "log": "evidence/lean-C2CellStep.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs/research/tfvd-four-leg-mellin",
+      "exit_code": 0,
+      "seconds": 9.741,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs",
+      "exit_code": 0,
+      "seconds": 7.922,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs",
+      "exit_code": 0,
+      "seconds": 7.103,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs",
+      "exit_code": 0,
+      "seconds": 9.773,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs",
+      "exit_code": 0,
+      "seconds": 47.14,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "6c9ea4a4817ebb1befedd8bd9491cba2ef2de987",
+        "--",
+        "GeometryOfNumbers",
+        "lakefile.lean",
+        "lakefile.toml",
+        "lake-manifest.json",
+        "lean-toolchain",
+        "research/material-theta-tfvd-port",
+        "research/native-camera-tail-mellin",
+        "research/theta-polarized-green"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs",
+      "exit_code": 0,
+      "seconds": 0.034,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-four-legs",
+      "exit_code": 0,
+      "seconds": 0.073,
+      "log": "evidence/diff-check.log"
+    }
+  ],
+  "new_sources_sha256": {
+    "Audit.lean": "4396e2ec8c7b76869d65799f1b7647b7e9e4ac4894066068017e3ed920496798",
+    "C2CellStep.lean": "7226165f14c548ec79bb327a615de5f015a5a4cd1573654f92b595e3e4aba08d",
+    "GradientMellin.lean": "06be3496ee5291b14cb5dca967476a6279157481267954e9b0271b4153c2abe2",
+    "MixedLegs.lean": "e0bd4b04338b1e1cca0d63eca11a00a960bf12692aa178d6d6917f7e2de2369c",
+    "OneBlock.lean": "282ea1ca30158c54087e35aebc475343b7a93ea836a8c48037cdb8e41f8ecafb",
+    "ReadoutResidual.lean": "4a42a5ca4f604923086db6d997a9d89c73f1e0036e320c66e91a5fab87f82442",
+    "VariableTransport.lean": "3cb159bcf946aedf9cf0ca302fdd9fcfaad83f792a3ce4b192d4ee60ebae502f"
+  },
+  "trust_escape_scan": "PASS",
+  "operator_sources_and_preexisting_files": "PRESERVED"
+}
