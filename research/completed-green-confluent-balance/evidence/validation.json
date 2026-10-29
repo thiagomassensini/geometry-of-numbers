@@ -1,0 +1,111 @@
+{
+  "source_manifest_sha256": "28870e6c9bb3f14919cee95e3c794cc3609fe58a24eff44ee735189df14045b4",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "/home/thlinux/geometry-of-numbers/research/completed-green-confluent-balance/check_sources.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.071,
+      "log": "01.log.gz",
+      "sha256": "a13be5a604552cfbea1155d8e68ffd5cb03b4da34430f5622bef6a333b62259b",
+      "uncompressed_sha256": "e88be9bca75cd40b1b4e050c68ce8d129fe56439a54ebcb131f7953b71210f11"
+    },
+    {
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "GeometryOfNumbers.Analysis.CarryMaterialForcingGreenEnergy",
+        "GeometryOfNumbers.Analysis.CarryMaterialForcingGreenEnergyAudit"
+      ],
+      "exit_code": 0,
+      "seconds": 8.371,
+      "log": "02.log.gz",
+      "sha256": "5f066016a2745c5da8fb090267ab5aca42b8c1ca37d65055b3fcabad0b5df31f",
+      "uncompressed_sha256": "bfa79da440b007a0a23ad84c729ab55a9e6284ec67c5d73921b095ffdaf4ac2b"
+    },
+    {
+      "command": [
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/completed-green-confluent-balance/compile_module.sh",
+        "SourceBalance"
+      ],
+      "exit_code": 0,
+      "seconds": 13.52,
+      "log": "03.log.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "uncompressed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "bash",
+        "/home/thlinux/geometry-of-numbers/research/completed-green-confluent-balance/compile_module.sh",
+        "Audit"
+      ],
+      "exit_code": 0,
+      "seconds": 11.277,
+      "log": "04.log.gz",
+      "sha256": "036ff72e8880d690a9f57c8c6fb04b89b952a63ddd4a18e41d1a3553a3890432",
+      "uncompressed_sha256": "814c9a9a9fa0dec49d0a13ff710691db760f8174a90fb9427f8383bfc09b9055"
+    },
+    {
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "exit_code": 0,
+      "seconds": 40.503,
+      "log": "05.log.gz",
+      "sha256": "873ada37956a8ca0dba0ae05d4297ced1621c97a5b6d623f9ade7340ea04ec56",
+      "uncompressed_sha256": "e21389b735d5bd9f81d96024cf6c7b453f7bff2ef4741a01e035b007a329a95a"
+    },
+    {
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 7.38,
+      "log": "06.log.gz",
+      "sha256": "56f2c2dd78c40171d308b683cddde7c07724c7bc0192ea9b1b429c03ba7188b2",
+      "uncompressed_sha256": "0cf345cc3bcedfa92250217b4e73bc37834671ac0b8a2b97f66d3c06551ce199"
+    },
+    {
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 10.948,
+      "log": "07.log.gz",
+      "sha256": "9a34276323f3cc0eaa89ccd25d43e1941b5e69ac3b7ef4c549d1ef0af49fea8d",
+      "uncompressed_sha256": "469cddc780755a2a401f4a2d437d4b65bccc9f3333dc598e645025f94caf4888"
+    },
+    {
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 45.699,
+      "log": "08.log.gz",
+      "sha256": "fa6b26ffe1b4d53c4b859c3e5344fd12f76b3064a466586c05e0c3cbe6f31f05",
+      "uncompressed_sha256": "a22038642247285ffbf01477a42b09bb2dd45289bd2b241ae6bf19c5144f6fd4"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.01,
+      "log": "09.log.gz",
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "uncompressed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

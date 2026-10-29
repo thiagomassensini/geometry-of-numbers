@@ -143,4 +143,6 @@ import GeometryOfNumbers.Analysis.SeparatedCenterClockObstruction
 
 import GeometryOfNumbers.Analysis.MaterialClockKrylovGap
 
+import GeometryOfNumbers.Analysis.CarryMaterialForcingGreenEnergy
+
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/
