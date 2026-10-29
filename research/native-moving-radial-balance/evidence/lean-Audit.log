@@ -1,0 +1,96 @@
+'CarryMovingRadial.point' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.curveState' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.point_at_grid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.scale_at_grid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.curve_at_grid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.curve_eq_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.finite_coefficients_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.curve_euler_newton' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.fixedSynthesis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.curveCoefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.curveQuotient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.curve_legs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.original_amplitude' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.original_returned_amplitude' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.fullPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.fixedSynthesis_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.curve_full_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.curve_norm_balance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.original_norm_balance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.amplitude_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.rho' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.rho_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.radial_amplitude_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.scale_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.responsePair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.fullPair_eq_response' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.physical_response_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.returnVariation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.fullPair_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.fullPair_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.amplitude_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.quotient_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.radial_differentiable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.scale_differentiable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.curve_differentiable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.coefficientVelocity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.returnVelocity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.physical_moving_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.criticalWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.criticalNodeWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.criticalKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.criticalEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.criticalLimit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.criticalCorrection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.critical_kernel_reduction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.source_taylor_ten' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.critical_exact_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.critical_correction_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.criticalRaw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.critical_raw_at_grid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.finite_coefficients_restrict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.critical_curve_eq_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.critical_raw_differentiable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.curve_regular_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.critical_physical_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.orientationPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.orientationBox' depends on axioms: [propext]
+'CarryMovingRadial.orientation_box_positive' depends on axioms: [propext]
+'CarryMovingRadial.h1_box_positive' depends on axioms: [propext]
+'CarryMovingRadial.source_orientation_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.criticalParameter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.critical_correction_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.critical_energy_eventually_above' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.critical_weight_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.critical_raw_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.critical_response_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.critical_physical_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.critical_original_eventually_above' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMovingRadial.critical_original_correction_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+Moving radial audit algebra: 19 public roots; 42683 type/body dependencies; standard axioms only; finite canonical positivity forbidden; opaque bodies traversed
+Moving radial audit source: 44 public roots; 62198 type/body dependencies; standard axioms only; finite canonical positivity forbidden; opaque bodies traversed
+Moving radial audit certificate: 7 public roots; 58494 type/body dependencies; standard axioms only; finite canonical positivity forbidden; opaque bodies traversed
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 26.61
+	System time (seconds): 9.22
+	Percent of CPU this job got: 109%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:32.85
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8323820
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 221
+	Minor (reclaiming a frame) page faults: 456177
+	Voluntary context switches: 16857
+	Involuntary context switches: 347
+	Swaps: 0
+	File system inputs: 23952
+	File system outputs: 944
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
