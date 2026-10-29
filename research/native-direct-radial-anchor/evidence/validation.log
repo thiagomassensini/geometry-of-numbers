@@ -1,0 +1,28 @@
+BUILD DirectBound
+PASS DirectBound
+BUILD TenSourceInputs
+PASS TenSourceInputs
+BUILD TenTrial
+PASS TenTrial
+BUILD TenDirectAnchor
+PASS TenDirectAnchor
+BUILD TenTrialEverywhere
+PASS TenTrialEverywhere
+BUILD VariationalTransport
+PASS VariationalTransport
+BUILD ScaledResidual
+PASS ScaledResidual
+BUILD TenScaledBoxes
+PASS TenScaledBoxes
+BUILD TenResidualCertificate
+PASS TenResidualCertificate
+BUILD TenCriticalTransfer
+PASS TenCriticalTransfer
+BUILD TenExplicitCutoff
+PASS TenExplicitCutoff
+BUILD TenNativeBoundary
+PASS TenNativeBoundary
+BUILD Audit
+PASS Audit
+PASS lake build --wfail
+PASS no forbidden shortcuts or axioms
