@@ -1,0 +1,72 @@
+{
+  "modules": {
+    "RemainderValue": [
+      "CarryQuarticCorrection.response_remainder11_with_value",
+      "CarryQuarticCorrection.nativeRemainder11",
+      "CarryQuarticCorrection.native_remainder_analytic",
+      "CarryQuarticCorrection.native_remainder_value",
+      "CarryQuarticCorrection.native_response_taylor11",
+      "CarryQuarticCorrection.native_response_weight_prefix",
+      "CarryQuarticCorrection.remainder_value_of_response_identity"
+    ],
+    "WeightEleven": [
+      "CarryQuarticCorrection.full_quartic_weight11_complex",
+      "CarryQuarticCorrection.full_quartic_weight11_real",
+      "CarryQuarticCorrection.zero_remainder_kernel"
+    ],
+    "CompleteCorrection": [
+      "CarryQuarticCorrection.quarticCorrection",
+      "CarryQuarticCorrection.native_response_field_kernel_prefix",
+      "CarryQuarticCorrection.native_sector_expansion",
+      "CarryQuarticCorrection.native_complete_expansion",
+      "CarryQuarticCorrection.native_full_error_zero",
+      "CarryQuarticCorrection.native_scaled_error_limit",
+      "CarryQuarticCorrection.native_scaled_norm_difference_limit",
+      "CarryQuarticCorrection.native_eventually_below",
+      "CarryQuarticCorrection.native_eventually_above"
+    ],
+    "CriticalSchur": [
+      "CarryQuarticCorrection.oldBlockSolution",
+      "CarryQuarticCorrection.quartic_schur_identity",
+      "CarryQuarticCorrection.criticalQuarticA",
+      "CarryQuarticCorrection.criticalQuarticB",
+      "CarryQuarticCorrection.critical_quartic_schur",
+      "CarryQuarticCorrection.critical_scaled_error_limit",
+      "CarryQuarticCorrection.critical_scaled_norm_difference_limit",
+      "CarryQuarticCorrection.critical_full_energy_limit"
+    ]
+  },
+  "groups": {
+    "spatial": [
+      "CarryQuarticCorrection.full_quartic_weight11_complex",
+      "CarryQuarticCorrection.full_quartic_weight11_real",
+      "CarryQuarticCorrection.zero_remainder_kernel",
+      "CarryQuarticCorrection.oldBlockSolution",
+      "CarryQuarticCorrection.quartic_schur_identity"
+    ],
+    "provenance": [
+      "CarryQuarticCorrection.response_remainder11_with_value",
+      "CarryQuarticCorrection.nativeRemainder11",
+      "CarryQuarticCorrection.native_remainder_analytic",
+      "CarryQuarticCorrection.native_remainder_value",
+      "CarryQuarticCorrection.native_response_taylor11",
+      "CarryQuarticCorrection.native_response_weight_prefix",
+      "CarryQuarticCorrection.remainder_value_of_response_identity",
+      "CarryQuarticCorrection.quarticCorrection",
+      "CarryQuarticCorrection.native_response_field_kernel_prefix",
+      "CarryQuarticCorrection.native_sector_expansion",
+      "CarryQuarticCorrection.native_complete_expansion",
+      "CarryQuarticCorrection.native_full_error_zero",
+      "CarryQuarticCorrection.native_scaled_error_limit",
+      "CarryQuarticCorrection.native_scaled_norm_difference_limit",
+      "CarryQuarticCorrection.native_eventually_below",
+      "CarryQuarticCorrection.native_eventually_above",
+      "CarryQuarticCorrection.criticalQuarticA",
+      "CarryQuarticCorrection.criticalQuarticB",
+      "CarryQuarticCorrection.critical_quartic_schur",
+      "CarryQuarticCorrection.critical_scaled_error_limit",
+      "CarryQuarticCorrection.critical_scaled_norm_difference_limit",
+      "CarryQuarticCorrection.critical_full_energy_limit"
+    ]
+  }
+}

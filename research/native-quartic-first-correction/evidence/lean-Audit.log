@@ -1,0 +1,54 @@
+'CarryQuarticCorrection.response_remainder11_with_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.nativeRemainder11' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.native_remainder_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.native_remainder_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.native_response_taylor11' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.native_response_weight_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.remainder_value_of_response_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.full_quartic_weight11_complex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.full_quartic_weight11_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.zero_remainder_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.quarticCorrection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.native_response_field_kernel_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.native_sector_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.native_complete_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.native_full_error_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.native_scaled_error_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.native_scaled_norm_difference_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.native_eventually_below' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.native_eventually_above' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.oldBlockSolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.quartic_schur_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.criticalQuarticA' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.criticalQuarticB' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.critical_quartic_schur' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.critical_scaled_error_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryQuarticCorrection.critical_scaled_norm_difference_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryQuarticCorrection.critical_full_energy_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+Quartic correction spatial: 5 public roots; 5483 type/body dependencies; standard axioms only; canonical moments and characteristic forbidden=true
+Quartic correction provenance: 22 public roots; 6030 type/body dependencies; standard axioms only; canonical moments and characteristic forbidden=false
+	Command being timed: "bash compile_module.sh Audit"
+	User time (seconds): 7.71
+	System time (seconds): 4.75
+	Percent of CPU this job got: 104%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:11.88
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8373168
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 286856
+	Voluntary context switches: 5788
+	Involuntary context switches: 150
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 696
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
