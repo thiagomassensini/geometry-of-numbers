@@ -1,0 +1,194 @@
+{
+  "checks": [
+    {
+      "label": "source-provenance",
+      "command": [
+        "python3",
+        "record_provenance.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-energy-correction/research/native-odd-energy-correction",
+      "exit_code": 0,
+      "seconds": 0.643,
+      "log": "evidence/source-provenance.log"
+    },
+    {
+      "label": "upstream-synthesis-build",
+      "command": [
+        "python3",
+        "build_upstream.py",
+        "--verify-existing"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-energy-correction/research/native-odd-energy-correction",
+      "exit_code": 0,
+      "seconds": 0.27,
+      "log": "evidence/upstream-synthesis-build.log"
+    },
+    {
+      "label": "generate-audit",
+      "command": [
+        "python3",
+        "generate_audit.py"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-energy-correction/research/native-odd-energy-correction",
+      "exit_code": 0,
+      "seconds": 0.038,
+      "log": "evidence/generate-audit.log"
+    },
+    {
+      "label": "operator-source-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail",
+        "CarrySelfAdjointOperator.NativePhysicalGreenResolvent",
+        "CarrySelfAdjointOperator.NativeGeometricLogClock",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetStorageTransport",
+        "CarrySelfAdjointOperator.CompletedNativeCentralProductDressingAudit",
+        "CarrySelfAdjointOperator.CompletedNativeTfvdWronskianMoments",
+        "CarrySelfAdjointOperator.CompletedNativeChiralBoundaryJetTransport",
+        "CarrySelfAdjointOperator.CompletedNativeChiralJetEnergyControl",
+        "CarrySelfAdjointOperator.NewtonStirlingTransport"
+      ],
+      "cwd": "/home/thlinux/carry-self-adjoint-operator",
+      "exit_code": 0,
+      "seconds": 8.156,
+      "log": "evidence/operator-source-build.log",
+      "raw_log": "evidence/operator-source-build.raw.log.gz",
+      "raw_log_sha256": "9a68c0da135adb5dc4e992f7d76ad2df72c4dd759e021e9223196122e2773bf8",
+      "text_normalization": "trailing whitespace only"
+    },
+    {
+      "label": "lean-OddProfiles",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "OddProfiles"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-energy-correction/research/native-odd-energy-correction",
+      "exit_code": 0,
+      "seconds": 12.081,
+      "log": "evidence/lean-OddProfiles.log"
+    },
+    {
+      "label": "lean-OddPairExpansion",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "OddPairExpansion"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-energy-correction/research/native-odd-energy-correction",
+      "exit_code": 0,
+      "seconds": 11.746,
+      "log": "evidence/lean-OddPairExpansion.log"
+    },
+    {
+      "label": "lean-OddFiniteEnergy",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "OddFiniteEnergy"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-energy-correction/research/native-odd-energy-correction",
+      "exit_code": 0,
+      "seconds": 12.032,
+      "log": "evidence/lean-OddFiniteEnergy.log"
+    },
+    {
+      "label": "lean-OddRegression",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "OddRegression"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-energy-correction/research/native-odd-energy-correction",
+      "exit_code": 0,
+      "seconds": 12.732,
+      "log": "evidence/lean-OddRegression.log"
+    },
+    {
+      "label": "lean-Audit",
+      "command": [
+        "bash",
+        "compile_module.sh",
+        "Audit"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-energy-correction/research/native-odd-energy-correction",
+      "exit_code": 0,
+      "seconds": 11.358,
+      "log": "evidence/lean-Audit.log"
+    },
+    {
+      "label": "root-build",
+      "command": [
+        "lake",
+        "build",
+        "--wfail"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-energy-correction",
+      "exit_code": 0,
+      "seconds": 6.818,
+      "log": "evidence/root-build.log"
+    },
+    {
+      "label": "audit-foundation",
+      "command": [
+        "bash",
+        "scripts/audit-foundation.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-energy-correction",
+      "exit_code": 0,
+      "seconds": 6.753,
+      "log": "evidence/audit-foundation.log"
+    },
+    {
+      "label": "audit-geometry",
+      "command": [
+        "bash",
+        "scripts/audit-geometry.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-energy-correction",
+      "exit_code": 0,
+      "seconds": 9.37,
+      "log": "evidence/audit-geometry.log"
+    },
+    {
+      "label": "audit-analysis",
+      "command": [
+        "bash",
+        "scripts/audit-analysis.sh"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-energy-correction",
+      "exit_code": 0,
+      "seconds": 45.701,
+      "log": "evidence/audit-analysis.log"
+    },
+    {
+      "label": "base-preserved",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "277b981d09750be7ab72a7bb0072c948875ded24",
+        "--",
+        ".",
+        ":(exclude)research/native-odd-energy-correction/**"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-energy-correction",
+      "exit_code": 0,
+      "seconds": 0.008,
+      "log": "evidence/base-preserved.log"
+    },
+    {
+      "label": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/home/thlinux/geometry-of-numbers-native-odd-energy-correction",
+      "exit_code": 0,
+      "seconds": 0.007,
+      "log": "evidence/diff-check.log"
+    }
+  ]
+}
