@@ -1,0 +1,158 @@
+[
+  {
+    "name": "focused-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail",
+      "GeometryOfNumbers.Analysis.LogarithmicMomentHankel",
+      "GeometryOfNumbers.Analysis.FiniteJacobiTransport",
+      "GeometryOfNumbers.Analysis.CanonicalLDLWhitening",
+      "GeometryOfNumbers.Analysis.CanonicalFiniteHeight",
+      "GeometryOfNumbers.Analysis.CarryMaterialSourceFactor"
+    ],
+    "exit_code": 0,
+    "seconds": 7.969
+  },
+  {
+    "name": "inherited-critical-source",
+    "command": [
+      "bash",
+      "research/critical-source-return/compile_module.sh",
+      "CriticalSource"
+    ],
+    "exit_code": 0,
+    "seconds": 13.549
+  },
+  {
+    "name": "kernel-SourceLeading",
+    "command": [
+      "bash",
+      "research/critical-source-relative-asymptotics/compile_module.sh",
+      "SourceLeading"
+    ],
+    "exit_code": 0,
+    "seconds": 12.999
+  },
+  {
+    "name": "kernel-WholeSourceLimit",
+    "command": [
+      "bash",
+      "research/critical-source-relative-asymptotics/compile_module.sh",
+      "WholeSourceLimit"
+    ],
+    "exit_code": 0,
+    "seconds": 14.481
+  },
+  {
+    "name": "kernel-CriticalRelative",
+    "command": [
+      "bash",
+      "research/critical-source-relative-asymptotics/compile_module.sh",
+      "CriticalRelative"
+    ],
+    "exit_code": 0,
+    "seconds": 13.466
+  },
+  {
+    "name": "kernel-RelativeDeficit",
+    "command": [
+      "bash",
+      "research/critical-source-relative-asymptotics/compile_module.sh",
+      "RelativeDeficit"
+    ],
+    "exit_code": 0,
+    "seconds": 14.588
+  },
+  {
+    "name": "kernel-InitialSource",
+    "command": [
+      "bash",
+      "research/critical-source-relative-asymptotics/compile_module.sh",
+      "InitialSource"
+    ],
+    "exit_code": 0,
+    "seconds": 13.938
+  },
+  {
+    "name": "kernel-PolarizedLimit",
+    "command": [
+      "bash",
+      "research/critical-source-relative-asymptotics/compile_module.sh",
+      "PolarizedLimit"
+    ],
+    "exit_code": 0,
+    "seconds": 12.887
+  },
+  {
+    "name": "kernel-Audit",
+    "command": [
+      "bash",
+      "research/critical-source-relative-asymptotics/compile_module.sh",
+      "Audit"
+    ],
+    "exit_code": 0,
+    "seconds": 11.953
+  },
+  {
+    "name": "root-build",
+    "command": [
+      "lake",
+      "build",
+      "--wfail"
+    ],
+    "exit_code": 0,
+    "seconds": 8.07
+  },
+  {
+    "name": "foundation-audit",
+    "command": [
+      "bash",
+      "scripts/audit-foundation.sh"
+    ],
+    "exit_code": 0,
+    "seconds": 6.552
+  },
+  {
+    "name": "geometry-audit",
+    "command": [
+      "bash",
+      "scripts/audit-geometry.sh"
+    ],
+    "exit_code": 0,
+    "seconds": 9.433
+  },
+  {
+    "name": "analysis-audit",
+    "command": [
+      "bash",
+      "scripts/audit-analysis.sh"
+    ],
+    "exit_code": 0,
+    "seconds": 46.02
+  },
+  {
+    "name": "twelve-source-regression",
+    "command": [
+      "bash",
+      "research/sixth-odd-twelve-sources/compile_module.sh",
+      "Regression"
+    ],
+    "exit_code": 0,
+    "seconds": 12.62
+  },
+  {
+    "name": "historical-files-unchanged",
+    "command": [
+      "git",
+      "diff",
+      "--exit-code",
+      "ee56930a2c30456cfbd214a29bb31b12d3977204",
+      "--",
+      ".",
+      ":(exclude)research/critical-source-relative-asymptotics"
+    ],
+    "exit_code": 0,
+    "seconds": 0.006
+  }
+]
