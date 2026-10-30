@@ -1,0 +1,1053 @@
+{
+  "base_worktree": "/home/thlinux/geometry-of-numbers-native-sixth-odd-relative-anchor",
+  "checked_worktree": "/home/thlinux/geometry-of-numbers-native-sixth-explicit-sigma",
+  "compared_compiled_modules": 261,
+  "mismatches": [],
+  "warning": "Byte identity to prior worktree only; this is not a clean recompilation of historical sources.",
+  "artifacts": [
+    {
+      "file": "research/all-order-binomial-green/.cache/BinomialCoefficient.olean",
+      "sha256": "a24e975565c025d126a812565da2971bac2a5169827af4cde31a1c16d94ed60a"
+    },
+    {
+      "file": "research/all-order-binomial-green/.cache/ShiftedDifferences.olean",
+      "sha256": "1f4543bd0e8b20389c2d81ef6cbfafc51d6401da7fe4aeaf1efe6e5c3fd80bc3"
+    },
+    {
+      "file": "research/material-central-calibration/.cache/CanonicalComparison.olean",
+      "sha256": "606b9c00be1d2dd173a0755ffcf78c6865466c777047c25c0198323b3160b6bb"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/ArgNodeChecks.olean",
+      "sha256": "d9df59b00e19dd3539f2db8565d7331917d5e69b08387897fd9ac1eeb00509ba"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/CachedIntegralCheck0.olean",
+      "sha256": "7df56d5d77a38b8ef4f87061a74e03633292e1eb73533ef1c17b0916f1b757da"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/CachedIntegralCheck1.olean",
+      "sha256": "c302e77a3918c4324f03e915061122108ba6b782e302a793e52c2a2588312293"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/CachedIntegralCheck2.olean",
+      "sha256": "9bb5ec51c9ee823ea240b40341757a285f2d276d763d2763f2586fdbf1fad4fc"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/CachedIntegralCheck3.olean",
+      "sha256": "f6ff9756487f10002debdfa6bf036c8d63bee3314094720322bf89b73a0da8a2"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/CachedIntegralChecks.olean",
+      "sha256": "220774443f14cf141b4521d73c0ea7c465213ad94fa3c6c5ba619a2652cea514"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/CachedSourceProgram.olean",
+      "sha256": "df1a366d3968bbb9d9bfa7727253b8a82bc5340e04c87da163328fa6ee6bb3bd"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/CodeBounds.olean",
+      "sha256": "12143056bec80151f8fc99c2fc3ad6c19920de32e9b0d3ae42e7b48414082d79"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/CoefficientCode.olean",
+      "sha256": "15343d7312866219b305dee887b839ea76bdbb2d8485bfa7dd59c9da0a5ba5b2"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/CoefficientData.olean",
+      "sha256": "0d591520fe1b16329025d41c1db32869af674baaabef20203f86d6578a9ca5e5"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/CoefficientStep0.olean",
+      "sha256": "4214845f2d02917037685ba9baf7a6105883b3368bd58c52525c24c9122c425b"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/CoefficientStep1.olean",
+      "sha256": "b8ed6d78b04d740f21dda9157fc13dd029faeeba5a3ecd2d5c281ad660c1beed"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/CoefficientStep2.olean",
+      "sha256": "7d6f55924fff3a6a2b79856a486cbd989903cb30046bf1ab70dd281f16329447"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/CoefficientStep3.olean",
+      "sha256": "0150e4d64dd6c9e4c3f61496f1d180590a713bea7280e5bd5689f7dc019ed23f"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/CoefficientStep3A.olean",
+      "sha256": "cb32df3cf32c015d24949a76ee9c33885751635848261a295c124abd00eb3bf4"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/CoefficientStep3B.olean",
+      "sha256": "8cda1624c24bae5276a62cd4f0f0bd99906ba7c08d731992f3478a078d81725e"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/CoefficientSupport.olean",
+      "sha256": "7645c1642fd439ad89ff2edcdbe2f1e7b7f504ee84c035771ae50ef97b7e000a"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/ExactGridWeights.olean",
+      "sha256": "64b1486eb3fe20c8850b6de17e87d45fedaf1c2c3702db03fac2fde7a4865d23"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/ExactSourceProgram.olean",
+      "sha256": "7f5e9a4bd7c1c7917bdb82ba68f0b8b63814a518491b1e786039db354731ba2d"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/ExactSourceProof.olean",
+      "sha256": "918b054301b066ff53b68f0423a25b36bfb2146d8738c1df0877a2911dbc35a4"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/ExponentialEnclosures.olean",
+      "sha256": "d602eb809144f16c2ed9ce19b01f14f500b240561660b682133c8f3ef9a979c7"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/FixedInterval.olean",
+      "sha256": "e4084c02bfdde7bb6a66c3f804ec44275dd3f8eac3b2c4d673d7c4607e57e274"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/FullSourceBoxes.olean",
+      "sha256": "4b03beff46436920c66d6dc0c30bb61eefe6868f0299898965242203afae28da"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/IntegralCertificate.olean",
+      "sha256": "43843338bb7ce4b057c93f59d757d652140713080a208a6a4a0116eb12a839fd"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/IntegralInputChecks.olean",
+      "sha256": "210b3c5db4507b0270c608629f52614624de6c3da982be389e6eeeecee8f1d14"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/ModeNodeChecks.olean",
+      "sha256": "3abdc97b9938ea996fead5dc1fc6a3d9612ef1aec8365b88c22046de55c863e2"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/NodeCacheData.olean",
+      "sha256": "5b3f9128625d9d38848a120d9fd3ae8000fd14a777ca782547a2bf5edb9d98bf"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/NodeCacheEquivalence.olean",
+      "sha256": "37d531f90312e2bcc662bd6ba448745db2759cc68768e6cfd2a83b2028c0736e"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/NumericalPivotCheck.olean",
+      "sha256": "6a5d39d4997a27face1b770c39a581cd8cad056d84aef79c2cfa41532c355625"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/PivotFromIntegral.olean",
+      "sha256": "ac7893693988271d75285348e6409df730d3b6ca60cffd1bc5573ca75fc463c1"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/QuadratureCacheData.olean",
+      "sha256": "110dd45362b01df930846ef02356cfe73395e7849d7c65e4d16e7f9bce9b73a5"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/QuadratureNodeCheck0.olean",
+      "sha256": "d38f47eb690049385851f7ade2395885e479e497a3bafe6f2d2bdf2119efe106"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/QuadratureNodeCheck1.olean",
+      "sha256": "a8efdc60c9e6c6048e4ffce15b1bca759dc4b6e4ee9fc03f7311f631c3e553c3"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/QuadratureNodeCheck2.olean",
+      "sha256": "77eaa99412976a2e48c0ee3df229d71e195fdaf9bb6dd540f54fc10688626e5a"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/QuadratureNodeCheck3.olean",
+      "sha256": "70286a56522142f21f784f3e1773ea6d392f3f4284af659d35c85373ff572788"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/QuadratureNodeChecks.olean",
+      "sha256": "853ce427715d5ecd6c6518c712d333fddfcdc0664ed9418191fbc74ad5e84285"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/SourceBoxes.olean",
+      "sha256": "0d5ae8c456aeb9cc95969d8a017692ed4fd1f4e0d4a42c9e1ea62b8c96a973e7"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/SourceComputation.olean",
+      "sha256": "322378f39174cb0ef7399065d83e1309779c6938028e5de8eb5b4b0e4b6b19e6"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/SourceIntegral.olean",
+      "sha256": "4eabbf1cb07d64923c6da940654e563dc3333587721a5f0217404b7692ab92aa"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/TabledSourceEquivalence.olean",
+      "sha256": "8c8c0cd40450eb29518bdc647058b1819af05954e3a61be28c9665332f712a95"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/TabledSourceProgram.olean",
+      "sha256": "f41896be3b074f0ace1a44f40b5bdc014d0a840fa3a08061cc1c98cf4cc87047"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/TaylorNodeComputation.olean",
+      "sha256": "275304851697854bfe75d6771034bb9798b9bb8b13dcc09eebecb252210cdf46"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/ThetaDerivatives.olean",
+      "sha256": "307eacb6bd6a06e298ccd471fe5ca60d0ce0571d2a8b1cb73f9d260d67ce2302"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/ThetaRetainedTail.olean",
+      "sha256": "94f7bc7b9a6b9b600da1aa0514d844800fc32ba6c76b3a0e5e2d449c008b5b88"
+    },
+    {
+      "file": "research/material-integral-certificate/.cache/WeightedQuadrature.olean",
+      "sha256": "42d8cccb3108e39fb1ab6808e4c128b8e66aafee4cd0cfb30949dbb5cbc901f7"
+    },
+    {
+      "file": "research/material-pivot-certificate/.cache/CanonicalPivotCertificate.olean",
+      "sha256": "0f7ed7983e3e322bf276508589f7d24a58e4d16657e944410d400f9d00b55332"
+    },
+    {
+      "file": "research/material-pivot-certificate/.cache/IntervalHelpers.olean",
+      "sha256": "95e3370f516c31ea719393c2857e8eb544a121e58f2ee5f31e0996649a877f5b"
+    },
+    {
+      "file": "research/native-all-order-energy-correction/.cache/FiniteEnergy.olean",
+      "sha256": "49f59a6be10cf6518099c264c6b0d04a7726d3d282316c4e2133d4a0d9b83468"
+    },
+    {
+      "file": "research/native-all-order-energy-correction/.cache/PairExpansion.olean",
+      "sha256": "61b50922d7ccb587346cba129dbe6ddfbeed0a993cf6535852ae585ea5be909e"
+    },
+    {
+      "file": "research/native-all-order-energy-correction/.cache/RegressionEnergy.olean",
+      "sha256": "ecc827a748ed5777647bf5285a450c7dfb48d1c3790b6017b8e2cfd9e204130a"
+    },
+    {
+      "file": "research/native-all-order-energy-correction/.cache/ResponseExpansion.olean",
+      "sha256": "890162dadcd6fc5e6c7d803117b0475a1a88463031104409cc225683951c6e3c"
+    },
+    {
+      "file": "research/native-all-order-odd-cauchy/.cache/AllOrderGreenFilters.olean",
+      "sha256": "4c674bd35ca31952f947932b92f129084f7a86f5b6178cc9234d1bbe8e7a2cbc"
+    },
+    {
+      "file": "research/native-all-order-odd-cauchy/.cache/ComplementRows.olean",
+      "sha256": "4737dce65e0c4a156df989fa9b7209ad49c8fdf0b0373f759405bfbb8a7007bb"
+    },
+    {
+      "file": "research/native-all-order-odd-cauchy/.cache/OddCauchyRows.olean",
+      "sha256": "4224ada93860a8a4ec3faf8b358dc1de17eb7d3362b6e9e554eb091ca36bab6b"
+    },
+    {
+      "file": "research/native-all-order-odd-cauchy/.cache/OddKernelFilters.olean",
+      "sha256": "11dbe4c6465ebce58f414e9e688a16ae311118b12146b2c55d28ee915eeb3528"
+    },
+    {
+      "file": "research/native-all-order-radial-tail/.cache/AllOrderTail.olean",
+      "sha256": "2d2d336aaaa11f67355772ebb68a0bff638f4d51e11a1ddc8a1f8da5c0a62618"
+    },
+    {
+      "file": "research/native-all-order-spatial-correction/.cache/DifferencePowers.olean",
+      "sha256": "bbe9efe9bfe4ec3bae356ef7432e2e643c4a9edb25ed47b689e2e1c04d1cfbb0"
+    },
+    {
+      "file": "research/native-all-order-spatial-correction/.cache/DividedKernel.olean",
+      "sha256": "6e605ff6e9d700cffa27b4a0b69cf249ef90432901e4fe708ba633b1f674dccc"
+    },
+    {
+      "file": "research/native-all-order-spatial-correction/.cache/NativeSpatialLaw.olean",
+      "sha256": "442a6dfd72ec5d99b83df9d50e4621a43afad162a35525ef7fa01f234b88effb"
+    },
+    {
+      "file": "research/native-all-order-spatial-correction/.cache/Regression.olean",
+      "sha256": "83a113c6733b9f4549c1034098ba1a79f01ad07178fbf8f95f63691dbaaa7d37"
+    },
+    {
+      "file": "research/native-all-order-stencil-boundary/.cache/Stencil.olean",
+      "sha256": "0e706529545c7f4507d98f70818007c275e4a9513bb4c7505643f3bdd91be34e"
+    },
+    {
+      "file": "research/native-binomial-source-all-order/.cache/AllOrderEnergyControl.olean",
+      "sha256": "1aa08e7418fef7714e3ccbe281509f94e8cb9c3308c1359053cf5aef568c0c93"
+    },
+    {
+      "file": "research/native-binomial-source-all-order/.cache/BinomialInverse.olean",
+      "sha256": "a0233ae61c7b2c05e01278a595dc5dc483b0d784f938eff15da3bcb45a62c1e1"
+    },
+    {
+      "file": "research/native-binomial-source-all-order/.cache/CoordinateCoherence.olean",
+      "sha256": "f0fd893c4130a30641058ed2df9a88adac9af459d581ad1f16230203dd1c2f98"
+    },
+    {
+      "file": "research/native-binomial-source-all-order/.cache/FullSourceTransport.olean",
+      "sha256": "3f3f63237175dab6e793b4b309f39f5984c553d0932a09723d0fa6b63709c68e"
+    },
+    {
+      "file": "research/native-binomial-source-all-order/.cache/NativeNewtonInput.olean",
+      "sha256": "bb79e1d0884dfeda8c3010b0f8f5f7f79631f9d83c135b33b6d8dfa590dce13f"
+    },
+    {
+      "file": "research/native-boundary-euler-reconstruction/.cache/AnalyticRadialTail.olean",
+      "sha256": "4115b26238514b32393ebd2ed93c908a74059a393c621934d5fbe3022d365f0d"
+    },
+    {
+      "file": "research/native-boundary-euler-reconstruction/.cache/RadialReconstruction.olean",
+      "sha256": "277482fafb618ce33e524cf10fb1413280a2f4d74e60e1e3c7e4c4bf084ce9b6"
+    },
+    {
+      "file": "research/native-boundary-euler-reconstruction/.cache/SixBoundaryReconstruction.olean",
+      "sha256": "2b47db1717ced29311ebd6cafb52a566513714a583643ce44a48418a630fc1ed"
+    },
+    {
+      "file": "research/native-boundary-euler-reconstruction/.cache/TailControls.olean",
+      "sha256": "eeafe33dbc2ba9d04651d08a1cbe0996673245e3484126e4a02a12a7c43246b7"
+    },
+    {
+      "file": "research/native-commutator-mixed-control/.cache/GreenSeed.olean",
+      "sha256": "6408a32c31d9d119552aee3abb78d668c8f1ccd786fe804d435c9f7f20f90a58"
+    },
+    {
+      "file": "research/native-commutator-mixed-control/.cache/MixedReduction.olean",
+      "sha256": "730a102bd768c18f053ba74600007cb7428729c0a97eda9b611640eb0e1d6f79"
+    },
+    {
+      "file": "research/native-commutator-mixed-control/.cache/NativeJets.olean",
+      "sha256": "d82d8dea350f97c90be44a526d0dc1c5f48940dac19bb4dec491960e5d2afe14"
+    },
+    {
+      "file": "research/native-commutator-mixed-control/.cache/NativeWeightLaw.olean",
+      "sha256": "196d94d88bb873e67d1c771771531a9d35e9248f15559ba0cb24b62cb2dcabb9"
+    },
+    {
+      "file": "research/native-commutator-mixed-control/.cache/NullCommutator.olean",
+      "sha256": "a61ffa26e8c62dd8d9b5ab1437d39008cf7a25a7d289f961210825342b4dcddd"
+    },
+    {
+      "file": "research/native-critical-address-split/.cache/AddressGreen.olean",
+      "sha256": "384101aeee492817265e235533d714012f17626aed82e55f5837549f386e8db7"
+    },
+    {
+      "file": "research/native-critical-address-split/.cache/CriticalAddressSplit.olean",
+      "sha256": "9b0c2c5e44543c68321039c0981c7c9b43f8b2f5606b84584022e32d3fd6e11d"
+    },
+    {
+      "file": "research/native-critical-address-split/.cache/OddAddressLowering.olean",
+      "sha256": "2770bed3163c97eccb534dc3c38e34f905a9f4b8498a231d634d2bda291f3eb9"
+    },
+    {
+      "file": "research/native-critical-address-split/.cache/PhysicalPrincipalSplit.olean",
+      "sha256": "e011e35b51762c3983a765f492e3a309baec6518ff7344636e8bd2b44d6bfab6"
+    },
+    {
+      "file": "research/native-critical-complete-margin/.cache/CriticalBoundaryTransport.olean",
+      "sha256": "93c1615a897c58b116d6f8d259f87ba318823cce5e4b672a66d2f2d332489749"
+    },
+    {
+      "file": "research/native-critical-complete-margin/.cache/CriticalCompleteMargin.olean",
+      "sha256": "a1fda7b20a23c5f75e5403823327ae190f7b60a558ba73b2266cbe6f33f941d0"
+    },
+    {
+      "file": "research/native-critical-complete-margin/.cache/DefectUniformControl.olean",
+      "sha256": "8d2d418f83834495eb7ff4e49430f463c3a0acfb7074ac577de5293a98c75178"
+    },
+    {
+      "file": "research/native-critical-complete-margin/.cache/FourSourcePathLimit.olean",
+      "sha256": "d5adced77cc1646168bb80065885d3125c52df919813f117f18129af248032b9"
+    },
+    {
+      "file": "research/native-critical-explicit-budget/.cache/Audit.olean",
+      "sha256": "c35441e9363b1af5dd704df802d69eaa8f0cfd28fae4de7a302a0119260a3d56"
+    },
+    {
+      "file": "research/native-critical-explicit-budget/.cache/CriticalCoefficient.olean",
+      "sha256": "0b7fb6ceca7bbd31f3fb50d46685131b197717d77062a25891c759f6f56bb16f"
+    },
+    {
+      "file": "research/native-critical-explicit-budget/.cache/GeneralBudget.olean",
+      "sha256": "dcfe558567936f1796380c70895f0ce91b888d4453ced5425e139f7203df94f2"
+    },
+    {
+      "file": "research/native-critical-explicit-budget/.cache/NumericCutoff.olean",
+      "sha256": "f72eb8d9048344a6f8e66752075e3cc8fe32d7a107ed5c9ae13aa7ea49624e84"
+    },
+    {
+      "file": "research/native-critical-explicit-budget/.cache/RelativeCertificate.olean",
+      "sha256": "826d84ee2ee09f3a8285487b37682b2462de11d20aecce8e548cde6d32cb0d24"
+    },
+    {
+      "file": "research/native-critical-explicit-budget/.cache/RelativeGate.olean",
+      "sha256": "a6e34de6bbe11ac232c82d8dd6ec5deab89ffea2c26275efdba660794e40a588"
+    },
+    {
+      "file": "research/native-critical-radial-margin/.cache/Audit.olean",
+      "sha256": "f7efbbcbea35bd476e61e6aa41a7ba4a00aee5a98eaa194ee944c50d8d94294c"
+    },
+    {
+      "file": "research/native-critical-radial-margin/.cache/EightCritical.olean",
+      "sha256": "3c6bf49ed17588dc048265490a95472d47250449bfcfbd69268d446103a97aa2"
+    },
+    {
+      "file": "research/native-critical-radial-margin/.cache/EightHead.olean",
+      "sha256": "6014460bb5ab5c507593782ab4c2a6b97dc8a3818946d58e8915667383cc0c8e"
+    },
+    {
+      "file": "research/native-critical-radial-margin/.cache/EightInputs.olean",
+      "sha256": "b1454b211be93612e90e8c5e0b2fcac303b24fbc757fdb441dc6e1a2f5b5e4ef"
+    },
+    {
+      "file": "research/native-critical-radial-margin/.cache/EightMargin.olean",
+      "sha256": "5dc06ce1f7522a8fca3d62c45a4384575b38bb64085fb086ce43bd7ad1db468f"
+    },
+    {
+      "file": "research/native-critical-radial-margin/.cache/EightNative.olean",
+      "sha256": "aca68fe71643140357bcc2f8c2b8f2247105c4784ea75a39853ccd6e427b1d89"
+    },
+    {
+      "file": "research/native-critical-radial-margin/.cache/EightQuantitative.olean",
+      "sha256": "31d4f42ad3d7786bdb187defdf9d6573f39b656b417cbafa8f2801ba066ce1e4"
+    },
+    {
+      "file": "research/native-critical-radial-margin/.cache/EightSchurCore.olean",
+      "sha256": "00ddb8fb0063c23e4e322ed037acbf1da7d089878e863d2d6f2f015fee91fb10"
+    },
+    {
+      "file": "research/native-critical-radial-margin/.cache/EightSign.olean",
+      "sha256": "73b5343a7d1b46264c9f62915eaa0ed3f07b04f8a9dda1aef375692d56ec00a4"
+    },
+    {
+      "file": "research/native-critical-radial-margin/.cache/SixBoundary.olean",
+      "sha256": "e750e366536493d3491e0a37eb1b10a86206f23cb4e347ae15baf589b3e91773"
+    },
+    {
+      "file": "research/native-critical-radial-margin/.cache/SixMargin.olean",
+      "sha256": "7d04611b3b8565f925de1f1a8f277f0334c2b08ea0bbed4f664c661e842cd3a3"
+    },
+    {
+      "file": "research/native-critical-squared-grid/.cache/CriticalGridPolynomial.olean",
+      "sha256": "a65e0dff3280b6382fe50b652c3f89c4ab0f5582535bdc634bf7c86c9cee28ca"
+    },
+    {
+      "file": "research/native-critical-squared-grid/.cache/GridSignObstruction.olean",
+      "sha256": "6a143fd4cfdce705eea827a246b577193eefc6f6d84e37e946d9a3f92bb1ac36"
+    },
+    {
+      "file": "research/native-critical-squared-grid/.cache/NativeCriticalGrid.olean",
+      "sha256": "d04bcd18388dbfb16c60944e95416d9545fefcbfa3f73e21c18d85f5b1b5ae45"
+    },
+    {
+      "file": "research/native-critical-squared-grid/.cache/SquaredGrid.olean",
+      "sha256": "38b75fc6cc94ab8896bcf23531959c0cccfab6b82d4ca01e94e35c2191162c21"
+    },
+    {
+      "file": "research/native-critical-tfvd-cancellation/.cache/Cancellation.olean",
+      "sha256": "6ac206d3e5763f9c39b66ec24691bbf989ca26204eb03e52e6cb6156e88ab1fc"
+    },
+    {
+      "file": "research/native-critical-tfvd-cancellation/.cache/CriticalVectors.olean",
+      "sha256": "257b7fa6d039f9a16a5f2a4127db15fe932bd623b19211a67ee0ac1077f4b3f3"
+    },
+    {
+      "file": "research/native-critical-tfvd-cancellation/.cache/PhysicalKernels.olean",
+      "sha256": "58dfdcd659baf31d43bd40ac1840f965dd50fb51bdaa2ec4e6726468736a5769"
+    },
+    {
+      "file": "research/native-critical-tfvd-cancellation/.cache/ResponseFlux.olean",
+      "sha256": "c047c263a6b74519e347db49a096b67e64c034b67d85d03b75548b2e3a1c8f6c"
+    },
+    {
+      "file": "research/native-critical-tfvd-cancellation/.cache/ResponseTaylor.olean",
+      "sha256": "8acc5b32c9c621627a1c7a943f028a9d3fad140cd9a0a79a6326e123e2a3b0b2"
+    },
+    {
+      "file": "research/native-critical-tfvd-cancellation/.cache/SectorExpansion.olean",
+      "sha256": "bea629618e90766ca41092abb00799d5d643c6ae7df92bbce53f639fbdecd19b"
+    },
+    {
+      "file": "research/native-cross-radial-complete-pairing/.cache/CrossRadialGreen.olean",
+      "sha256": "ce17db54e628eb15a8ddd5081d7e1864b476edd3d50b651952c71b46773bdc40"
+    },
+    {
+      "file": "research/native-cross-radial-complete-pairing/.cache/CrossRadialPairing.olean",
+      "sha256": "42f4d9506d735dd816e9bc2287c875aa68b19a0928cbeb3ce1fa68420bf36bc0"
+    },
+    {
+      "file": "research/native-cross-radial-complete-pairing/.cache/DoubledMixedExpansion.olean",
+      "sha256": "90dde8a4f7ec910ec371f686522289485172c3fb0c0c18be29a2ca6f701fa622"
+    },
+    {
+      "file": "research/native-cross-radial-complete-pairing/.cache/RadialRegression.olean",
+      "sha256": "3454f928c6a7325cf87a425c16bad9934885db426ac6e9aad1aacb49e1a72edf"
+    },
+    {
+      "file": "research/native-cross-radial-green-cubic/.cache/CubicCrossings.olean",
+      "sha256": "d438ca4f3f80787f496a340d8c49e4aa1c4fd89df63afc477184c92210124323"
+    },
+    {
+      "file": "research/native-cross-radial-green-cubic/.cache/CubicRecomposition.olean",
+      "sha256": "5b5144b2a7f4290abfee90fdcecad860e0f786803f753cfc7a69af67e248cd5c"
+    },
+    {
+      "file": "research/native-cross-radial-green-cubic/.cache/CubicVectors.olean",
+      "sha256": "e4fff019521c569ebda0cc4baaaaef7b12a5cbdaf13c66dcbdfa56d8fea87f44"
+    },
+    {
+      "file": "research/native-cross-radial-green-cubic/.cache/PartTaylor.olean",
+      "sha256": "27406e13c9a225918add53ee3f6c98d6ceadb8d81bf8d0ef5113d5ec8b3dc2cb"
+    },
+    {
+      "file": "research/native-cross-radial-green-leading/.cache/GreenRegression.olean",
+      "sha256": "9c0eff7ea69a4087f8324c568e91917d39efe0a95673b9c4c3341cd8b5528dff"
+    },
+    {
+      "file": "research/native-cross-radial-green-leading/.cache/LeadingCrossings.olean",
+      "sha256": "cf58d0d66e504d6ca332e2df9fccad023f52d17911627ed099848b4428b757a7"
+    },
+    {
+      "file": "research/native-cross-radial-green-leading/.cache/PartVectors.olean",
+      "sha256": "edb644d971ae8361017dd5ed4ca93052d39a87dcb97bca45db837dab19c2de01"
+    },
+    {
+      "file": "research/native-cross-radial-green-leading/.cache/RadialPartExpansion.olean",
+      "sha256": "bfe7f540f75a5c5f99ad500ab914f6403b7c6622de0f87cbf17c1d9beaf3988e"
+    },
+    {
+      "file": "research/native-cubic-odd-green-defect/.cache/CriticalOddDefect.olean",
+      "sha256": "d5df0368542c923453a35be1c6df532d27c3635f01ad0a3e24dd2d2bcf701b11"
+    },
+    {
+      "file": "research/native-cubic-odd-green-defect/.cache/CriticalOddGreen.olean",
+      "sha256": "0e186ae73cd41b29ca719aefafa324152af98d93b7c2d42ac469cc00caf9147c"
+    },
+    {
+      "file": "research/native-cubic-odd-green-defect/.cache/CubicOddVectors.olean",
+      "sha256": "8ba7a479407a1e54fa525566b35fcb00af3b69d001bfb44d27eccdefd311c78f"
+    },
+    {
+      "file": "research/native-cubic-odd-green-defect/.cache/OddWeights.olean",
+      "sha256": "9266cc6694848b535007c514a0e9404b74525c010c0192f8950bc58cb2e4ab1b"
+    },
+    {
+      "file": "research/native-curvature-green-factor/.cache/ComplementNorm.olean",
+      "sha256": "2cd5fcec8a7c19d0d33b6a16f71dbc2926e21a0521e8961c758b3dc682e22d22"
+    },
+    {
+      "file": "research/native-curvature-green-factor/.cache/CurvatureKernel.olean",
+      "sha256": "3e1f1405f38df36c014d91db48d439c6ef584f2e5f7df34e1e45fc11ce758939"
+    },
+    {
+      "file": "research/native-curvature-green-factor/.cache/FourthBoundaryDefect.olean",
+      "sha256": "7177565d250bdbfbf20612a35b4f2de63c4be1bd987f095dc1ee5cd3714fbed5"
+    },
+    {
+      "file": "research/native-curvature-green-factor/.cache/NativeCoefficient.olean",
+      "sha256": "098fbaf5936b62d4874e5b3f3365c3c35599301f643156ca7c620c2b0ffacb81"
+    },
+    {
+      "file": "research/native-direct-radial-anchor/.cache/Audit.olean",
+      "sha256": "c92877bddfaa4092e0bb7f81ca2e74973ccb48b7a875d8268eb26eeff3378541"
+    },
+    {
+      "file": "research/native-direct-radial-anchor/.cache/CeilProbe.olean",
+      "sha256": "d5d5708d5834c7c173945e887611299756cc29c16bac338e09dad1a5d272ac39"
+    },
+    {
+      "file": "research/native-direct-radial-anchor/.cache/DirectBound.olean",
+      "sha256": "b5e49c4dca728516b95d821c9ebb055d428b195d1a73e540cc67e0ec6012a57c"
+    },
+    {
+      "file": "research/native-direct-radial-anchor/.cache/Probe2.olean",
+      "sha256": "46ca549358af0636f21282109534d80ef62f9a8d0340c85c52e5cf9762f21dee"
+    },
+    {
+      "file": "research/native-direct-radial-anchor/.cache/ScaledResidual.olean",
+      "sha256": "50fafc7cb5371e691a6b014dc62c6f6332b4e30f2322439a0bd2eca073c18690"
+    },
+    {
+      "file": "research/native-direct-radial-anchor/.cache/TenCriticalTransfer.olean",
+      "sha256": "ae9803837a15f124e744a69a17abd892918cdeee0e71ae10620168c455c7ab67"
+    },
+    {
+      "file": "research/native-direct-radial-anchor/.cache/TenDirectAnchor.olean",
+      "sha256": "6bb4360ecb3c2d17f9914e34bc308b632cb99af03f4516fda993ce87ca1f06af"
+    },
+    {
+      "file": "research/native-direct-radial-anchor/.cache/TenExplicitCutoff.olean",
+      "sha256": "011ecdb51a93929d097cfbc7c94e392da9ffa40a9cdef24189e82e35761164bf"
+    },
+    {
+      "file": "research/native-direct-radial-anchor/.cache/TenNativeBoundary.olean",
+      "sha256": "d4801716eb947b5c8a819863a93a799f97940ba94f8c91d364138eca995e2146"
+    },
+    {
+      "file": "research/native-direct-radial-anchor/.cache/TenResidualCertificate.olean",
+      "sha256": "a0d7074682912d7b615872807907329f0a091204d94977433358456b7797cbe8"
+    },
+    {
+      "file": "research/native-direct-radial-anchor/.cache/TenScaledBoxes.olean",
+      "sha256": "3275261084631322eca7029b346a1c0726cc84c643f6025a4d80979e95e2b3a0"
+    },
+    {
+      "file": "research/native-direct-radial-anchor/.cache/TenSourceInputs.olean",
+      "sha256": "84b33969c3465fb74c930164915ea61d4c766041432a1dafb8208d2bef93a601"
+    },
+    {
+      "file": "research/native-direct-radial-anchor/.cache/TenTrial.olean",
+      "sha256": "1811018a9e14522ebd1654cbb472d73c5d1e8b319246152709f4667ce3927dfc"
+    },
+    {
+      "file": "research/native-direct-radial-anchor/.cache/TenTrialEverywhere.olean",
+      "sha256": "7ad1fe02e2042887e6591be396e088009638b47367622287a85f30bcdbd9e597"
+    },
+    {
+      "file": "research/native-direct-radial-anchor/.cache/VariationalTransport.olean",
+      "sha256": "9cd93d6030af36887732a1fb3149fa83cf3f5617e59380461bf7a984502008a6"
+    },
+    {
+      "file": "research/native-effective-radial-budget/.cache/CriticalBudgetData.olean",
+      "sha256": "1e6fce3c7f2079f57774353f54e78b9a9aafc5a32e542a2bd0c8bd0ba9fa185c"
+    },
+    {
+      "file": "research/native-effective-radial-budget/.cache/EffectiveSixBudget.olean",
+      "sha256": "b128a852b535a6ad0726ea74f8d3c1da2f751073c78fd1e730cb445430ddf535"
+    },
+    {
+      "file": "research/native-effective-radial-budget/.cache/ExplicitSourceTail.olean",
+      "sha256": "2f2844086e5b0a3e00a89bd8adc440807bfaee8a04ad8d1b20706e7ff2388337"
+    },
+    {
+      "file": "research/native-effective-radial-budget/.cache/FiniteNormBudget.olean",
+      "sha256": "e4f637d3cc221aaa4acedfb4e4f714dc7e9bcf7e48374a7396690fce8f740ae1"
+    },
+    {
+      "file": "research/native-effective-radial-budget/.cache/NormalizedRemainder.olean",
+      "sha256": "38205de52b74e545026642839048e46788b72fb1f5b10a33e25d2bd4a0aaadaa"
+    },
+    {
+      "file": "research/native-effective-radial-budget/.cache/RadialRegularity.olean",
+      "sha256": "9cbe8552ef54b604bf6e2707808408510c6bf0be3bcd4e133b6d7c930bbd85df"
+    },
+    {
+      "file": "research/native-effective-radial-budget/.cache/SixEffectiveRemainder.olean",
+      "sha256": "7dfe7cf5855d0d5dabcb5e7b1f56980c699537b240a6f70d7b91181202044075"
+    },
+    {
+      "file": "research/native-effective-radial-budget/.cache/SourceDisc.olean",
+      "sha256": "6ad8545c8546db1454969eba6c6a323955a3f70c38cdd06e8eb5035a53fec7df"
+    },
+    {
+      "file": "research/native-effective-radial-budget/.cache/SourceSeries.olean",
+      "sha256": "a162f662ea1819f68a5988971632471948110e520a2d964d19ecf670fe935b19"
+    },
+    {
+      "file": "research/native-effective-radial-budget/.cache/SquaredStepBudget.olean",
+      "sha256": "36bef7c492795f17f3bc9c8f493faf2a9a3ce0ec20eb6e3cceb5a4ab28e4ad8f"
+    },
+    {
+      "file": "research/native-euler-newton-all-order/.cache/EulerNewtonMatrix.olean",
+      "sha256": "bc4f43c13303815ac8d9efc360e864bc663f3f7d63f2ef4b3064146ab9b85252"
+    },
+    {
+      "file": "research/native-euler-newton-all-order/.cache/MatrixCoherence.olean",
+      "sha256": "0e8b0d457ecf87ab726a074cd03e28b4f8930d5ee59027f9152614999c6a9f72"
+    },
+    {
+      "file": "research/native-euler-newton-all-order/.cache/MovingEulerLimit.olean",
+      "sha256": "a368fad12e1a94554a382fa4cfdb9297fa12b3445953841c57fee3b94ef20a01"
+    },
+    {
+      "file": "research/native-euler-newton-all-order/.cache/NativeEulerTransport.olean",
+      "sha256": "f273d4228809e51680f1f81fd4f782b7796ffd6775b6abc3e1dc93a84e977c51"
+    },
+    {
+      "file": "research/native-euler-newton-all-order/.cache/ShiftedFalling.olean",
+      "sha256": "55e6aa36cbb9af1ba2a6f07672a4ebd4808e4858d3e9a13952ad8921298868e2"
+    },
+    {
+      "file": "research/native-euler-newton-four/.cache/CriticalJetTransport.olean",
+      "sha256": "3a0afeda02633ac4e2db5a4db446c6f88d7743d71a17920ef61e81279d9e64f9"
+    },
+    {
+      "file": "research/native-euler-newton-four/.cache/EulerNewtonBridge.olean",
+      "sha256": "238f9321175c21d942d6c55df47abe7ba868f6c461a7287e586f3aaca90c0e98"
+    },
+    {
+      "file": "research/native-euler-newton-four/.cache/ExplicitNewtonInput.olean",
+      "sha256": "6f7cf3f376d569c4bd4b9e702bfb969204bec6b6752d5b9f5f3e8c5e551e755a"
+    },
+    {
+      "file": "research/native-euler-newton-four/.cache/TransportedEnergyControl.olean",
+      "sha256": "918f46cbb9ba5879484952aa1177f29204105e71ffb15e39c6cf2e317fc38efc"
+    },
+    {
+      "file": "research/native-even-odd-complete-pairing/.cache/JointEnergy.olean",
+      "sha256": "9264a9357b4c7025937c3c2d9ee08381904d6231c90a3d353f8f369d403c0a83"
+    },
+    {
+      "file": "research/native-even-odd-complete-pairing/.cache/MixedPairing.olean",
+      "sha256": "c3dc9e3843f2cbc1139e381ed60331cc273d500f712daee9b2313584a1929df3"
+    },
+    {
+      "file": "research/native-even-odd-complete-pairing/.cache/MixedRegression.olean",
+      "sha256": "7bde21e7d00fa2f3f0817e7c701e944bcc73a23733bc95ff1f879dd62fb7208a"
+    },
+    {
+      "file": "research/native-even-odd-complete-pairing/.cache/ResponseReality.olean",
+      "sha256": "077a3dff68764152f37d58fbc0d805f588675ae6f1b0c929105fbfb44cae6534"
+    },
+    {
+      "file": "research/native-four-boundary-margin/.cache/CoercivePhysicalMargin.olean",
+      "sha256": "00f9eaaa01e6b64bdff5665c519c36801d8bd043cd666266b7c9764c24021637"
+    },
+    {
+      "file": "research/native-four-boundary-margin/.cache/PhysicalBoundaryCoordinates.olean",
+      "sha256": "1ec9c7e06509f7a3d911ae501f401e62ee4874d816785252b5d4a5209f1feb69"
+    },
+    {
+      "file": "research/native-four-boundary-margin/.cache/PrincipalBoundaryLimit.olean",
+      "sha256": "d8bd98d1c78dfa823c4542ba583a64c6e8690bd31ccd2ab79b394fb39c93df06"
+    },
+    {
+      "file": "research/native-jet-variation-budget/.cache/FiniteVelocityBudget.olean",
+      "sha256": "757b802804c9f5394fef609282405832794656bb16176dbecabbeb8293e72100"
+    },
+    {
+      "file": "research/native-jet-variation-budget/.cache/RemainderVelocity.olean",
+      "sha256": "92a59ad4d8641b9d09e1548dc6137196528ca8b0e576c55e3c2c9a5b28b3e65e"
+    },
+    {
+      "file": "research/native-jet-variation-budget/.cache/VariationBudget.olean",
+      "sha256": "c311c583a4a200eff97c6ed743d3381606ffe9ef958b9d925a7f5c7e1c14b107"
+    },
+    {
+      "file": "research/native-linear-tfvd-traces/.cache/FiniteTraces.olean",
+      "sha256": "0816e7cabb9d3d66375497fe6b955ac01d32cec27112ba49049de436ad00c45d"
+    },
+    {
+      "file": "research/native-linear-tfvd-traces/.cache/GreenPairing.olean",
+      "sha256": "8f33f91aae4063028f6a346b9f600660c5bbcf0719561a1cf57cd6217d80de7f"
+    },
+    {
+      "file": "research/native-linear-tfvd-traces/.cache/PhysicalNumerator.olean",
+      "sha256": "67b7486af31d5f4c5ab77ce292a37f25f039b795efe9fb48e18762e938d39c3f"
+    },
+    {
+      "file": "research/native-material-variation-six/.cache/JetEulerVariation.olean",
+      "sha256": "837db19fb6c73ca889fd2b31f34aa7ded3577927c40b974f7a5a2f0631adbe0a"
+    },
+    {
+      "file": "research/native-material-variation-six/.cache/MaterialVariation.olean",
+      "sha256": "2de2be0931b63cd99cb8a1ac41401c64ec1a238471b7e349acf45f9291bc9527"
+    },
+    {
+      "file": "research/native-material-variation-six/.cache/PhysicalMaterialVariation.olean",
+      "sha256": "13afb723386f76e2825666eef3a84c3be7f54f958b8a0a9e01bf1a3c4b251a23"
+    },
+    {
+      "file": "research/native-material-variation-six/.cache/SixEnergyTransport.olean",
+      "sha256": "0351e60f4ec7607972b95033196637ed926118e9f053e942bb0a201c2af9504c"
+    },
+    {
+      "file": "research/native-material-variation-six/.cache/SixSign.olean",
+      "sha256": "803c6ff68440b8a9512308a62fe9c2df2b3eb3d5a08713ff224d71d5b1b9a97c"
+    },
+    {
+      "file": "research/native-material-variation-six/.cache/SixSource.olean",
+      "sha256": "e93122457820e928a0e4272ae945dee8cf68fc7bef2a76dcfe32ab235d229ae4"
+    },
+    {
+      "file": "research/native-material-variation-six/.cache/SixTaylor.olean",
+      "sha256": "ec94fb684f5f410e15d1ad990e1c5289cfc97ec783192e8ddc6c082da9e4ad44"
+    },
+    {
+      "file": "research/native-mixed-imaginary-law/.cache/FiniteImaginaryLaw.olean",
+      "sha256": "6457b63e4de5adb0ec0a7176502412a19cff6afdb8b42606f51ed914c464282c"
+    },
+    {
+      "file": "research/native-mixed-imaginary-law/.cache/ImaginaryRegression.olean",
+      "sha256": "01c7d035e617364e6fa158625e547a7a9cac4acae7b01ee07108fe1bde3ce3e6"
+    },
+    {
+      "file": "research/native-mixed-imaginary-law/.cache/MixedRayLeading.olean",
+      "sha256": "074f9049c3e4b273f4dbf40a5fed42f477097767efef7fe775ce3c5bbba56dd9"
+    },
+    {
+      "file": "research/native-mixed-imaginary-law/.cache/MixedSpatialLeading.olean",
+      "sha256": "74ec9e0ab67d83cb34d7cac1ea092df84709a0a87531bbfd768ccdbf0af5439e"
+    },
+    {
+      "file": "research/native-moving-euler-balance/.cache/MovingBalanceLimit.olean",
+      "sha256": "2ca7ddff29b90641c6ae0253aeb064d466d9ad3215a7eb0e4a07f1aed1db6d1e"
+    },
+    {
+      "file": "research/native-moving-euler-balance/.cache/MovingPolarizedPair.olean",
+      "sha256": "b62bb844c4eb0a0afb7714ebc1e22ceef05b559d1fa5942286c441400f2f0270"
+    },
+    {
+      "file": "research/native-moving-euler-balance/.cache/PolarizedBoundaryReadout.olean",
+      "sha256": "7c3769fb4f36a74fc2243b72b3dd26c529f4d27480c8f615d83696cb22222fab"
+    },
+    {
+      "file": "research/native-moving-euler-balance/.cache/UniformMovingError.olean",
+      "sha256": "d3f058ed96e5101c77fd16cf9dab3950090ce1ab4a6e4a34900ab698615d7c5e"
+    },
+    {
+      "file": "research/native-moving-radial-balance/.cache/CompletionCancellation.olean",
+      "sha256": "f4aad6c60d9767d3366b1dc22a861b00cc78cf61474de0827e021791cff2761e"
+    },
+    {
+      "file": "research/native-moving-radial-balance/.cache/CriticalEnergyTransport.olean",
+      "sha256": "f92443e037ce2a80fd31b0d755fc9561d7b7a4bd7352adfd50a84cb1e7923e86"
+    },
+    {
+      "file": "research/native-moving-radial-balance/.cache/CriticalOddSign.olean",
+      "sha256": "26adc600b57f48e3a27f077a55939b7e5f952cc9d7c3d83a0a66f510f0fdd468"
+    },
+    {
+      "file": "research/native-moving-radial-balance/.cache/CriticalOddTaylor.olean",
+      "sha256": "4f880da83f5627d9cccc19ca088ec628f454a80a2488aeed13324f3d4a0108a9"
+    },
+    {
+      "file": "research/native-moving-radial-balance/.cache/CriticalPhysicalBridge.olean",
+      "sha256": "3b066b606250a5ae6fc6969a152c38c98c2fe7dd05b2b97808fec6ad204b3f2a"
+    },
+    {
+      "file": "research/native-moving-radial-balance/.cache/CurvePairing.olean",
+      "sha256": "7138ba1c726934c45e676f1b60e82219bdff7a978b59a6bf8621d5dc320faa89"
+    },
+    {
+      "file": "research/native-moving-radial-balance/.cache/CurveRegularity.olean",
+      "sha256": "995aba69ec65a7e421a0f17abcf0d37b85bd7b591d9c33a41c57e52da3804f0e"
+    },
+    {
+      "file": "research/native-moving-radial-balance/.cache/MovingDerivative.olean",
+      "sha256": "1d3b91cb0f78a7fd1c5c8ddf95ef42ffff0d08e8d0a1c0136f07514cf9f1b0e5"
+    },
+    {
+      "file": "research/native-moving-radial-balance/.cache/OriginalCurve.olean",
+      "sha256": "c47bc3e12ed6a34d420c1f7f89c2031421572c7e4fa08fa2d8aafa0258c6b9a0"
+    },
+    {
+      "file": "research/native-odd-energy-correction/.cache/OddFiniteEnergy.olean",
+      "sha256": "0c3b8d655479b058a86f4a1a0d6669c0c16515f816d611b60db8ab67ee9eaac4"
+    },
+    {
+      "file": "research/native-odd-energy-correction/.cache/OddPairExpansion.olean",
+      "sha256": "0b0c6bdcb701cbb15cd8a464d649ca32555b465d0189e3c3b101fbbe7c8a3360"
+    },
+    {
+      "file": "research/native-odd-energy-correction/.cache/OddProfiles.olean",
+      "sha256": "e9ac5b83a8c1207276cedc11f49baf4d693fe1528304a9c8125ce86b259dde5d"
+    },
+    {
+      "file": "research/native-odd-energy-correction/.cache/OddRegression.olean",
+      "sha256": "0190ee50ea93ebdce72ff2df334a233a187dc4753e56f64b8c5c83cd64d9204e"
+    },
+    {
+      "file": "research/native-odd-green-compensation/.cache/OddCompensation.olean",
+      "sha256": "7f1317e66f88f7baf536a30c8f276541bb575bf76b02b4328f32386e31824558"
+    },
+    {
+      "file": "research/native-odd-green-compensation/.cache/OddHankelTransport.olean",
+      "sha256": "e8e7d4d720934da7544aab5516839f767cb9e7e21198b48905500e2c94a2a31e"
+    },
+    {
+      "file": "research/native-odd-green-compensation/.cache/OddRegressions.olean",
+      "sha256": "4c08e0e2247c37318742292be62f5d89f5bd8e53bf79a571db00ff073e8c072a"
+    },
+    {
+      "file": "research/native-odd-green-compensation/.cache/OddVectors.olean",
+      "sha256": "26f7bcc6f0674b4c6e82291bf0a4bf97448976fee01e02b2611119a8c5b2f2ae"
+    },
+    {
+      "file": "research/native-principal-boundary-flow/.cache/EndpointFlux.olean",
+      "sha256": "73081bfe9447c86b9b7d2875aced70a70198097ed521205aadfa53dc87f2a9b4"
+    },
+    {
+      "file": "research/native-principal-boundary-flow/.cache/FluxObstruction.olean",
+      "sha256": "f459d4ee3474478a2b5364128ae3aaa864e936f771e6a10ce3ca073453be5d0a"
+    },
+    {
+      "file": "research/native-principal-boundary-flow/.cache/NativePrincipalFlux.olean",
+      "sha256": "08301c5de0920e31b73846163072c75d7fa3c7058f68e81e6173bbb05d29f0d9"
+    },
+    {
+      "file": "research/native-principal-boundary-flow/.cache/PrincipalFlux.olean",
+      "sha256": "af481facb2f812639ff11521dbd64e231dc0d86f747273b83f2b47c78b9f113f"
+    },
+    {
+      "file": "research/native-radial-flow-audit/.cache/CayleyFlow.olean",
+      "sha256": "9e5ad4b52705e29398a66f01e3bfe9544415874e123df48263d0507ec5d8b2ca"
+    },
+    {
+      "file": "research/native-radial-flow-audit/.cache/FlowInterval.olean",
+      "sha256": "7e2ed20ebd802567e7b2f807a5c492f22bbfb6c0915b5c04b173e256d48b215d"
+    },
+    {
+      "file": "research/native-radial-flow-audit/.cache/FlowJets.olean",
+      "sha256": "15a847239ee0406b9fbfd587f110d53d4b11f68f11440f21481ab34f613703ce"
+    },
+    {
+      "file": "research/native-radial-flow-audit/.cache/KernelSign.olean",
+      "sha256": "e963e0983a322cd4efdd29b26c2705de6ec282b6d8c2465e42b1a7928fa59395"
+    },
+    {
+      "file": "research/native-radial-flow-audit/.cache/KernelTaylor.olean",
+      "sha256": "6548cda64565c2918ef987ad6abe75fc1b562b471d548ac009bfd462083c61fb"
+    },
+    {
+      "file": "research/native-radial-flow-audit/.cache/RadialDefect.olean",
+      "sha256": "7e5efc914594559624976ae512e68f6ce6673637270e21468f5fcb539d4ef4e0"
+    },
+    {
+      "file": "research/native-radial-flow-audit/.cache/RadialReality.olean",
+      "sha256": "3fd3b5c7b6c19c32bb382e5f78de724bb16ffdec5fc730ee524fbe0465cafaeb"
+    },
+    {
+      "file": "research/native-radial-flow-audit/.cache/SourceJets.olean",
+      "sha256": "5f9e4995fd22b19faa83e446f777995166bbd558273f546f22b83a78e7bc36a5"
+    },
+    {
+      "file": "research/native-sixth-odd-relative-anchor/.cache/Audit.olean",
+      "sha256": "1a1fcc242f4565d3d7661df607968cd7e7bbcd409bdd9806fecc40e82063ec07"
+    },
+    {
+      "file": "research/native-sixth-odd-relative-anchor/.cache/TwelveBridge.olean",
+      "sha256": "27aac62a824b27ed56ec469a1a4e0f98e2b5ae09534fcba9949448f0278179ee"
+    },
+    {
+      "file": "research/native-sixth-odd-relative-anchor/.cache/TwelveCoercive.olean",
+      "sha256": "e983190f8492b0ed98692df4e98eb5ad82bbd6112d7a17b25cfb5aaa49653ccd"
+    },
+    {
+      "file": "research/native-sixth-odd-relative-anchor/.cache/TwelveCoordinates.olean",
+      "sha256": "734ba34e5a77bc60b2f6c94f74578ee372e4aa8d222028f42ee1a1e52909f43f"
+    },
+    {
+      "file": "research/native-sixth-odd-relative-anchor/.cache/TwelveCorrection.olean",
+      "sha256": "e8714494b5923bc8d358e887f104eaa20ff63f3b0339b9fc00f672574c693c54"
+    },
+    {
+      "file": "research/native-sixth-odd-relative-anchor/.cache/TwelveNative.olean",
+      "sha256": "c72b7e3e1b364f1167ac162b20bcc4931c10fd19b76a436c0631fb64553c9e56"
+    },
+    {
+      "file": "research/native-sixth-odd-relative-anchor/.cache/TwelveResidual.olean",
+      "sha256": "bf2af098db4966686a41eef0ec736ea583064a327c1baa51f2e8e653655da6ca"
+    },
+    {
+      "file": "research/native-sixth-odd-relative-anchor/.cache/TwelveTrial.olean",
+      "sha256": "fb00cf23dbd2669ebe06d01f795f7caddf85fefa71d0f2832c49ea640923e82b"
+    },
+    {
+      "file": "research/native-stencil-integrated-control/.cache/BudgetContinuity.olean",
+      "sha256": "b918f352ed32acc88621362f4fd75b6f1ef10b544eb81cd904afaeec6a9edd8b"
+    },
+    {
+      "file": "research/native-stencil-integrated-control/.cache/IntegratedControl.olean",
+      "sha256": "49c0c963366c16a6b259ff5d63c79872037cdf2d89695fadf7245b770b85eb72"
+    },
+    {
+      "file": "research/native-summable-radial-tail/.cache/Audit.olean",
+      "sha256": "1c4b33a58f93840842eb628244630b603a116af0104452cbe18cc5021e7e7539"
+    },
+    {
+      "file": "research/native-summable-radial-tail/.cache/EffectiveOddPair.olean",
+      "sha256": "6ee86894dbb6dc49bcef9a5e4ccbef5b457106b6a1b3818059e6dc91d9417683"
+    },
+    {
+      "file": "research/native-summable-radial-tail/.cache/EffectivePairBounds.olean",
+      "sha256": "9128b7cf832a6e676ea8c55f2ac656229ddf059608955c35de1f5c01d4ff8edc"
+    },
+    {
+      "file": "research/native-summable-radial-tail/.cache/EffectiveResponse.olean",
+      "sha256": "6bb6d5830052451d433b24cf1f292b159e153e010b768b3b10c0ec6dfda9946d"
+    },
+    {
+      "file": "research/native-summable-radial-tail/.cache/Examples.olean",
+      "sha256": "a574f1686ee70b4f1926519eaeb58fa7df6ac637cefd9288490e179b468846c8"
+    },
+    {
+      "file": "research/native-summable-radial-tail/.cache/ExplicitFinitePairing.olean",
+      "sha256": "2f5be9a380f113bf15f5228244e5b093b985e58cc1cf778811f8fdb7557e8ee7"
+    },
+    {
+      "file": "research/native-summable-radial-tail/.cache/FamilyCurve.olean",
+      "sha256": "3833c219c57d110a50ab463a0a6d271724fc49589cddf715ec277f03b187e937"
+    },
+    {
+      "file": "research/native-summable-radial-tail/.cache/PairCurve.olean",
+      "sha256": "b58062e64e47db023e2728c4f2171c76b57adce5c50e2081b2de1acaf261d947"
+    },
+    {
+      "file": "research/native-summable-radial-tail/.cache/ScaledStep.olean",
+      "sha256": "2008447f151ed08356307084db01d6616f800a07298ffa6e52bb945b859344cb"
+    },
+    {
+      "file": "research/native-summable-radial-tail/.cache/SixRegression.olean",
+      "sha256": "e2345250dfac4b5ca8ec1d3c091c3c1942cc590a92a3b6408c6a576bca1bc9d7"
+    },
+    {
+      "file": "research/native-summable-radial-tail/.cache/SummableFamily.olean",
+      "sha256": "9b0926092230065bb023a15307118315da07bcf3eaf3d1241eccec634dc2aaec"
+    },
+    {
+      "file": "research/native-tail-return-graph/.cache/FiniteReturnDomain.olean",
+      "sha256": "1bce5d91310ef15eca163339ecb32f782d2a350471db0ea6f5015d2cc7fe2860"
+    },
+    {
+      "file": "research/native-tail-return-graph/.cache/FourSourceBridge.olean",
+      "sha256": "153397cbf87d23b41b8f3fc0e68fddaa643260d042e50c7f365f30ad5513cc3a"
+    },
+    {
+      "file": "research/native-tail-return-graph/.cache/PolarizedReturnDefect.olean",
+      "sha256": "9a2f5f0194b11179d16768c6ecf4608e1b1668796503e43da1c1cbb58efbb88b"
+    },
+    {
+      "file": "research/native-tail-return-graph/.cache/TailReturnGraph.olean",
+      "sha256": "a690155e175d1548b01e30b0c34768b6675438ad83d256d735c89f810191b747"
+    },
+    {
+      "file": "research/native-tfvd-completed-transport/.cache/CoefficientPorts.olean",
+      "sha256": "c6df0c1bdfe6584d7661abb771159b1238c8dd31b24e3dde5018abe5072fbefb"
+    },
+    {
+      "file": "research/native-tfvd-completed-transport/.cache/CompletedSourceBridge.olean",
+      "sha256": "523296404e388b3f6c69776916526535adf34f4a8d5fbe2c8985f1a85a6a7d25"
+    },
+    {
+      "file": "research/native-tfvd-completed-transport/.cache/CompletionCommutator.olean",
+      "sha256": "f97c31a9bd550fcfe378f9c3b794c25ce20c9311b50b5c31d13d30f82d023f58"
+    },
+    {
+      "file": "research/native-tfvd-completed-transport/.cache/PhysicalTfvd.olean",
+      "sha256": "6235a6d5d2815f02a84b9a8d57e07e7c4a20f72576e8ff992439e10272ef2845"
+    },
+    {
+      "file": "research/native-tfvd-completed-transport/.cache/ShiftTransport.olean",
+      "sha256": "6b9c6fea329098ad88b4b39dea3ecd9110cdc7fa95d8256301584434c4f5ac9d"
+    },
+    {
+      "file": "research/native-vertical-synthesis/.cache/NativeSynthesis.olean",
+      "sha256": "d2060ec7bbfa4964f3c9f5b541658b02e4a68a7608d33203d5fc12d7d2c5f507"
+    },
+    {
+      "file": "research/native-vertical-synthesis/.cache/Quadratures.olean",
+      "sha256": "c180f3c1c46b1124c6f71fbc8145f10688c688dae3c1a44135fb14f38742938b"
+    },
+    {
+      "file": "research/native-vertical-synthesis/.cache/SchurBound.olean",
+      "sha256": "d413b483e8432dcc3199c9b35496a409c9a2de63957800d961b97e863e54a7b7"
+    },
+    {
+      "file": ".lake/build/research/sixth-odd-twelve-sources/OddSourceBoxes.olean",
+      "sha256": "4c75f6de2407f2080c2b52343e9e47f8b3ab517ad43bd97141d2180ea0145771"
+    },
+    {
+      "file": ".lake/build/research/sixth-odd-twelve-sources/OddTrialData.olean",
+      "sha256": "278efbcc30f5f0ef0180c63d302dae58db592789e7f79c1adf3838e4f37f3cfb"
+    },
+    {
+      "file": ".lake/build/research/sixth-odd-twelve-sources/OddTrialPositivity.olean",
+      "sha256": "e1e62447a9ebe1fd8577f1a122d4c04bf25d2ecde9da04ed366c62fb9f7942f3"
+    },
+    {
+      "file": ".lake/build/research/theta-fifth-odd-pattern/FifthOddCertificate.olean",
+      "sha256": "986cd4aabe61d8005c90002831cd671a151086a27ff6c89de8bf962848a81fd9"
+    }
+  ]
+}

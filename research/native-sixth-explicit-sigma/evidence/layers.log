@@ -1,0 +1,7 @@
+PASS research source scan
+Audit foundation
+PASS: foundation build and empty-axiom audit.
+Audit geometry
+PASS: tower-depth relation has empty footprint; other discrete geometry permits only propext/Quot.sound.
+Audit analysis
+PASS: real analysis build and standard-axiom audit (NOT axiom-free).
