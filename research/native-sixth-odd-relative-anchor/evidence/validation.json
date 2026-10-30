@@ -1,0 +1,33 @@
+{
+  "base_commit": "86fd2191a601672e8a96cea5dffd889a7dd41c57",
+  "operator_commit": "bfeb10fd2425400fa38139903d12bf0599f02e53",
+  "lean_toolchain": "leanprover/lean4:v4.32.0",
+  "results": {
+    "research_modules": 8,
+    "lake_build_wfail_jobs": 8849,
+    "transitive_roots": 7,
+    "transitive_dependencies": 65468,
+    "reused_artifacts_compared": 253,
+    "reused_artifact_mismatches": 0,
+    "forbidden_shortcuts": "none",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "files_sha256": {
+    "research/native-sixth-odd-relative-anchor/Audit.lean": "85375cbec12cb18b111a457ff0a3cfda5181bf6fb886b0932479b3538756cdea",
+    "research/native-sixth-odd-relative-anchor/TwelveBridge.lean": "5d9f82b0db6a21e57511023c0ff99cc7e2e910705950509c66a663642e132165",
+    "research/native-sixth-odd-relative-anchor/TwelveCoercive.lean": "30f8fee3b07d17dfcd0a3cbb055be9195f0dae2497ae06f5593a3d4b5862a668",
+    "research/native-sixth-odd-relative-anchor/TwelveCoordinates.lean": "d148fa8013086d10d8d306f5cb6c9e47ae7deb3c7e7bb374eedb56c0e717d7f7",
+    "research/native-sixth-odd-relative-anchor/TwelveCorrection.lean": "c27a3978f023e29673dbac00dd928de43b2a0cdfbf1b443e5223f4210d9a4950",
+    "research/native-sixth-odd-relative-anchor/TwelveNative.lean": "60f4719a5e5556d281c586e7bc4f22eb96fb5e0f2a743a76e3472ab720835261",
+    "research/native-sixth-odd-relative-anchor/TwelveResidual.lean": "244421d3a09f848f832310803c1de4073f5d51b046042237cd38f1abb2934923",
+    "research/native-sixth-odd-relative-anchor/TwelveTrial.lean": "7f6e14e4ca8dafd187d900f3a2e27daab6484d526d284f61d4dd9dedc59c49e9",
+    "research/native-sixth-odd-relative-anchor/compile_module.sh": "a73353b49b5ac5942ae1117ca86bf8e72c2a0aa0a156981a21d37114aab009bd",
+    "research/native-sixth-odd-relative-anchor/validate.sh": "059545bed2edbc7a51ad939803a6b5cf5b4ad186febee80baa7dd38c3708d802",
+    "research/native-sixth-odd-relative-anchor/REPORT.md": "d467bd562daa82cd4032bbe495e14bae944bcc0e2367fa5c901d26fb3b97f87b"
+  },
+  "historical_artifacts": "reused-cache-manifest.json records hashes of reused .olean files, not a clean historical rebuild"
+}

@@ -1,0 +1,41 @@
+'CarrySixthRelative.twelve_coeff_last' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.twelve_old_isUnit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.twelve_trialFin_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.twelve_pairing_eq_original_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.twelve_pairing_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.twelve_trial_form_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.oldCoordinate_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.oldCoordinate_isUnit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.oldCoordinate_mulVec_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.transformedOld_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.old_trial_last_row_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.trialPairing_old_truncated' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.transformedOld_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.transformed_diag_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.transformed_offdiag_abs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.mixed_entry_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.transformed_old_coercive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.congruence_inverse_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.twelve_residual_component' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.twelve_trial_cross_expand' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.transformed_residual_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.trial_cross_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.transformed_residual_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.transformed_residual_square_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.original_inverse_correction_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.twelve_trial_form_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.twelve_trial_physical_eventually_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.twelve_relative_budget_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.twelve_critical_anchor_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.twelve_critical_anchor_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.twelve_critical_anchor_exists_after_grid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySixthRelative.twelve_critical_form_positive_from_anchor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySixthRelative.sixth_odd_schur_positive_via_relative_source' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySixthRelative.twelve_original_boundary_positive_via_relative_source' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Transitive source audit: 7 roots; 65468 type/body dependencies; standard axioms only; sixth-pivot positivity forbidden, old prefix allowed
