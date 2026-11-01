@@ -181,3 +181,84 @@ During directed compile setup, transitive path gaps surfaced and were resolved w
 - missing package/cache entries such as `CPFormal`, `NativeCarryC3Crosswalk`, and operator-side `CarrySelfAdjointOperator` path exposure
 - stale geometry package object path in operator cache (`CarryMaterialFourthPivot.olean`) avoided by prioritizing geometry root build cache
 - matrix notation elaboration (`⬝ᵥ`) required opening `Matrix` notation scope in the bridge file
+
+## Mission 7 update: exact K7 gate and viability scan
+
+### 1. Exact gate equivalence formalized (kernel-checked)
+
+In `research/seventh-odd-canonical-source/K7PivotBridge.lean`, the gate was specialized to the exact requested inequality:
+
+- `sourceThetaIntegral13_eq_theta26_theta28`
+- `k7_pos_iff_theta26_theta28_gate`
+- `k7_matrix_posDef_iff_theta26_theta28_gate`
+
+These combine:
+
+- `k7_matrix_posDef_iff_pivot`
+- `k7_pos_iff_theta_gate`
+- `sourceThetaIntegral_moments` at `d = 13`
+
+and produce the exact statement:
+
+`(sourceMomentMatrix h 1 7).PosDef ↔ 3024 * completedNativeThetaTailMoment 26 - completedNativeThetaTailMoment 28 < 4 * (Nat.factorial 28 : ℝ) * sourceCeiling 1 6`.
+
+Audit (`research/seventh-odd-canonical-source/Audit.lean`) compiles and prints axioms for all new declarations; all remain `[propext, Classical.choice, Quot.sound]`.
+
+### 2. Reuse of SourceTwentySix and T26 certified box
+
+In `research/seventh-odd-canonical-source/K7ThetaBounds.lean`:
+
+- `mem_thetaTwentySixBox_available` reuses `CarrySeventhEven.mem_thetaTwentySixBox`
+
+So the certified T26 interval is reused without rebuilding certificates.
+
+### 3. Extension check toward T28 (without heavy campaign)
+
+The same tabled-theta method was tested directly at order 28:
+
+- `mem_tabledTheta_upto_twentyEight (p ≤ 28)`
+- `mem_tabledTheta_28`
+
+Both compile. Therefore, at this stage, there is no immediate formal obstruction in the generic tabled method itself for `p = 28`.
+
+What is still missing is a narrow explicit containment theorem analogous to `thetaTwentySixBox` for `T28`; the existing work reused tabled machinery but did not yet derive a dedicated tight `thetaTwentyEightBox` interval in this mission.
+
+### 4. Lightweight numerical viability scan (exploratory only)
+
+Using existing evidence JSON artifacts (no new theta campaign), a high-precision exploratory scan produced:
+
+- `T26` certified interval (from `theta_boxes[26]`):
+  - low `3.922763626395069796941801296419297318e-10`
+  - high `3.922763626395118953651952950919634060e-10`
+  - width `4.915671015165450033674148274165191060e-24`
+
+- midpoint estimate for `sourceCeiling 1 6` from canonical reference moments/coefficients in preflight:
+  - `sourceCeiling(1,6) ≈ 9.724693482688938608979912230170599603e-37`
+
+- corresponding gate RHS midpoint:
+  - `4*(28!)*sourceCeiling(1,6) ≈ 1.185978279117341180839606186106650877e-6`
+
+- required `T28` threshold implied by the gate:
+  - `T28 > 3024*T26 - RHS`
+  - midpoint-T26 threshold `≈ 2.654415045353582501694560909955477307e-10`
+
+- Schur-coupling stability proxy at midpoint moments (`A = sourceMomentMatrix h 1 6`):
+  - `cond_2(A) ≈ 2.363501e+31`
+  - `b^T A^{-1} b ≈ 6.193843423170420394387972292562674898e-33`
+
+Interpretation: the gate appears numerically plausible with large apparent slack at midpoint values, but the Schur complement path is extremely ill-conditioned.
+
+### 5. First real mathematical obstacle
+
+The first decisive obstacle is not writing the exact equivalence (now done), but obtaining a rigorous sign-certified inequality under tight error control for:
+
+- `sourceCeiling 1 6` (which depends on an ill-conditioned Schur coupling with inverse of the 6x6 odd prefix), and
+- `T28` with a certified interval tight enough to preserve sign after coupling with the ceiling term.
+
+Because of the conditioning level (`~1e31`), independent interval bounds for ingredients are likely too conservative; preserving correlation structure (as in centered evaluation workflows) is expected to be necessary for a robust formal closure.
+
+### 6. Practical recommendation for next proof step
+
+1. Produce a dedicated certified `thetaTwentyEightBox` (tight interval, same source and tails).
+2. Build a correlated enclosure for `sourceCeiling 1 6` that tracks coupled errors through the Schur solve, instead of independent box propagation.
+3. Only then attempt the final strict gate proof and derive `(sourceMomentMatrix h 1 7).PosDef`.

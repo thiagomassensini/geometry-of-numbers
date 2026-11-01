@@ -36,5 +36,23 @@ theorem k7_matrix_posDef_iff_pivot :
     (sourceMomentMatrix h 1 7).PosDef ↔ 0 < sourceMomentSchur h 1 6 := by
   exact sourceMomentMatrix_succ_posDef_iff h 1 6 odd_source_six_posDef
 
+theorem sourceThetaIntegral13_eq_theta26_theta28 :
+    sourceThetaIntegral 13 =
+      3024 * completedNativeThetaTailMoment 26 - completedNativeThetaTailMoment 28 := by
+  rw [sourceThetaIntegral_moments]
+  norm_num
+
+theorem k7_pos_iff_theta26_theta28_gate :
+    0 < sourceMomentSchur h 1 6 ↔
+      3024 * completedNativeThetaTailMoment 26 - completedNativeThetaTailMoment 28 <
+        4 * (Nat.factorial 28 : ℝ) * sourceCeiling 1 6 := by
+  rw [k7_pos_iff_theta_gate, sourceThetaIntegral13_eq_theta26_theta28]
+
+theorem k7_matrix_posDef_iff_theta26_theta28_gate :
+    (sourceMomentMatrix h 1 7).PosDef ↔
+      3024 * completedNativeThetaTailMoment 26 - completedNativeThetaTailMoment 28 <
+        4 * (Nat.factorial 28 : ℝ) * sourceCeiling 1 6 := by
+  rw [k7_matrix_posDef_iff_pivot, k7_pos_iff_theta26_theta28_gate]
+
 end
 end CarrySeventhOddCanonical
