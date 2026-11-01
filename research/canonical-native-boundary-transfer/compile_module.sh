@@ -46,6 +46,7 @@ required_olean=(
 )
 
 if [[ "$check_only" == true ]]; then
+  missing_any=false
   echo "geometry_root=$geometry_root"
   echo "operator_root=$operator_root"
   echo "output_cache=$output_cache"
@@ -54,6 +55,7 @@ if [[ "$check_only" == true ]]; then
       echo "DEPENDENCY_DIR_OK=$dep"
     else
       echo "DEPENDENCY_DIR_MISSING=$dep"
+      missing_any=true
     fi
   done
   for dep in "${required_olean[@]}"; do
@@ -61,8 +63,12 @@ if [[ "$check_only" == true ]]; then
       echo "OLEAN_OK=$dep"
     else
       echo "OLEAN_MISSING=$dep"
+      missing_any=true
     fi
   done
+  if [[ "$missing_any" == true ]]; then
+    exit 2
+  fi
   exit 0
 fi
 
@@ -83,6 +89,6 @@ done
 cd -- "$operator_root"
 lean_executable="$(lake env sh -c 'command -v lean')"
 operator_lpath="$(lake env printenv LEAN_PATH)"
-LEAN_PATH="$(IFS=:; echo "${geometry_dirs[*]}:$operator_lpath")" \
+LEAN_PATH="$output_cache:$(IFS=:; echo "${geometry_dirs[*]}"):$operator_lpath" \
   "$lean_executable" -DwarningAsError=true --root="$research_dir" \
   -o "$output_cache/$module_name.olean" "$research_dir/$module_name.lean"
