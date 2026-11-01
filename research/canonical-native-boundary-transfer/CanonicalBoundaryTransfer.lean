@@ -55,8 +55,8 @@ private theorem crossQuadratic_pos {n : ℕ} {M : Matrix (Fin n) (Fin n) ℝ}
 /-- Fixed-order transfer: canonical Hankel positivity at size `n` implies
 strict positivity of the original native boundary energy at size `2*n`. -/
 theorem boundary_energy_pos_of_canonical_pair_posDef (n : ℕ)
-    (hEven : (hankelGram canonicalCompletedNativeLogDerivativeMoment n).PosDef)
-    (hOdd : (shiftedHankel canonicalCompletedNativeLogDerivativeMoment n).PosDef) :
+  (hEven : (GeometryOfNumbers.Analysis.hankelGram canonicalCompletedNativeLogDerivativeMoment n).PosDef)
+  (hOdd : (GeometryOfNumbers.Analysis.shiftedHankel canonicalCompletedNativeLogDerivativeMoment n).PosDef) :
     ∀ x : Fin (2 * n) → ℂ, x ≠ 0 → 0 < nativeSourceFiniteBoundaryEnergy (2 * n) x := by
   intro x hx
   rw [nativeSourceFiniteBoundaryEnergy_even_split]
@@ -71,8 +71,8 @@ theorem boundary_energy_pos_of_canonical_pair_posDef (n : ℕ)
       (crossQuadratic_nonneg hEven _) (crossQuadratic_pos hOdd _ ho))
 
 private theorem canonical_h6k6_posDef_native :
-    (hankelGram canonicalCompletedNativeLogDerivativeMoment 6).PosDef ∧
-      (shiftedHankel canonicalCompletedNativeLogDerivativeMoment 6).PosDef := by
+    (GeometryOfNumbers.Analysis.hankelGram canonicalCompletedNativeLogDerivativeMoment 6).PosDef ∧
+      (GeometryOfNumbers.Analysis.shiftedHankel canonicalCompletedNativeLogDerivativeMoment 6).PosDef := by
   simpa [canonical_moments_eq_native] using regression_H6_K6
 
 /-- Capstone target E12: strict positivity of the original native boundary
@@ -87,23 +87,23 @@ private def fin4to6 : Fin 4 → Fin 6 := Fin.castLE (by decide : 4 ≤ 6)
 
 private theorem fin4to6_injective : Function.Injective fin4to6 := by
   intro a b h
-  exact Fin.ext (by simpa using congrArg Fin.val h)
+  exact Fin.ext (by simpa [fin4to6] using congrArg Fin.val h)
 
 private theorem hankel4_posDef_native :
-    (hankelGram canonicalCompletedNativeLogDerivativeMoment 4).PosDef := by
+  (GeometryOfNumbers.Analysis.hankelGram canonicalCompletedNativeLogDerivativeMoment 4).PosDef := by
   have h6 := canonical_h6k6_posDef_native
   have hsub := Matrix.PosDef.submatrix h6.1 fin4to6_injective
   convert hsub using 1
   ext i j
-  simp [fin4to6, hankelGram]
+  simp [fin4to6]
 
 private theorem shifted4_posDef_native :
-    (shiftedHankel canonicalCompletedNativeLogDerivativeMoment 4).PosDef := by
+  (GeometryOfNumbers.Analysis.shiftedHankel canonicalCompletedNativeLogDerivativeMoment 4).PosDef := by
   have h6 := canonical_h6k6_posDef_native
   have hsub := Matrix.PosDef.submatrix h6.2 fin4to6_injective
   convert hsub using 1
   ext i j
-  simp [fin4to6, shiftedHankel]
+  simp [fin4to6]
 
 /-- Capstone target E8: strict positivity of the original native boundary
 energy, obtained by principal-section inheritance from the canonical 6x6 pair. -/
@@ -112,4 +112,5 @@ theorem nativeSourceFiniteBoundaryEnergy_pos_8 :
   simpa [Nat.mul_comm] using
     boundary_energy_pos_of_canonical_pair_posDef 4 hankel4_posDef_native shifted4_posDef_native
 
+end
 end CanonicalNativeBoundaryTransfer

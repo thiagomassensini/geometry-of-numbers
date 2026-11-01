@@ -239,3 +239,73 @@ Validated in the current session without starting a new heavy build:
 - The script now reports the effective dependency directories and whether the corresponding `.olean` files are present or missing.
 
 This is the exact current compile status: static environment auditing passed, and the script prevents a fresh heavy build while the operator cache state is incomplete or the Aggregator is still active.
+
+## Mission 5 definitive validation (post-Aggregator)
+
+### Aggregator terminal state before capstone run
+
+The active `ThetaSixteenthFloorCertificateData.Aggregator` process eventually exited with failure (it was not interrupted). The final log tail reported:
+
+- heartbeat timeouts in `Aggregator.lean`
+- parser/type errors near line `2359`
+- unresolved goals in the `hsumNat` step
+- final `error: build failed`
+
+This failure was in the operator-side Aggregator target and is independent from the capstone theorems in this worktree.
+
+### First capstone compile attempt after Aggregator exit
+
+`CanonicalBoundaryTransfer.lean` first failed before theorem checking because of a transitive object gap in the operator package cache:
+
+- missing module object:
+  - `/home/thlinux/carry-self-adjoint-operator/.lake/packages/geometry-of-numbers/.lake/build/lib/lean/GeometryOfNumbers/Analysis/CarryMaterialFourthPivot.olean`
+
+The object exists in geometry-root cache and was incorporated by extending the compile script search path with:
+
+- `/home/thlinux/geometry-of-numbers/.lake/build/lib/lean`
+
+And by adding explicit transitive checks for:
+
+- `GeometryOfNumbers/Analysis/MaterialClockKrylovGap.olean`
+- `GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.olean`
+- `GeometryOfNumbers/Analysis/CarryMaterialFourthPivot.olean`
+- `OddSourceBoxes.olean`
+- `OddPhysicalTwelve.olean`
+
+### Lean fixes applied in capstone source (no theorem target changes)
+
+Only compile-level repairs were applied in `CanonicalBoundaryTransfer.lean`:
+
+- fully qualified `GeometryOfNumbers.Analysis.hankelGram` and `GeometryOfNumbers.Analysis.shiftedHankel` in local theorem signatures to match imported theorem types
+- injectivity lemma for `fin4to6` adjusted to simplify value equality under `Fin.castLE`
+- explicit closure of unnamed `section` before namespace end
+- removed unused `simp` arguments (`hankelGram`, `shiftedHankel`) required by `-DwarningAsError=true`
+
+No `sorry`, `admit`, or new axioms were introduced, and theorem statements for E8/E12 were preserved.
+
+### Directed compile evidence
+
+Executed sequentially:
+
+1. `bash research/canonical-native-boundary-transfer/compile_module.sh --check CanonicalBoundaryTransfer /home/thlinux/carry-self-adjoint-operator`
+2. `bash research/canonical-native-boundary-transfer/compile_module.sh CanonicalBoundaryTransfer /home/thlinux/carry-self-adjoint-operator`
+3. `bash research/canonical-native-boundary-transfer/compile_module.sh Audit /home/thlinux/carry-self-adjoint-operator`
+
+Result: all three commands completed successfully after the fixes.
+
+`Audit.lean` printed:
+
+- `CanonicalNativeBoundaryTransfer.boundary_energy_pos_of_canonical_pair_posDef`
+- `CanonicalNativeBoundaryTransfer.nativeSourceFiniteBoundaryEnergy_pos_12`
+- `CanonicalNativeBoundaryTransfer.nativeSourceFiniteBoundaryEnergy_pos_8`
+
+and `#print axioms` output for each theorem:
+
+- `[propext, Classical.choice, Quot.sound]`
+
+### Mission-5 theorem status
+
+Kernel status is now established:
+
+- `nativeSourceFiniteBoundaryEnergy_pos_12`: passes
+- `nativeSourceFiniteBoundaryEnergy_pos_8`: passes

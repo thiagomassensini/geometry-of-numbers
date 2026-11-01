@@ -29,6 +29,7 @@ output_cache="$operator_root/.lake/build/research/canonical-native-boundary-tran
 mkdir -p -- "$output_cache"
 
 geometry_dirs=(
+  "$geometry_root/.lake/build/lib/lean"
   "$geometry_root/.lake/build/research/structural-native-krylov-gap"
   "$geometry_root/.lake/build/research/material-integral-certificate"
   "$geometry_root/.lake/build/research/material-pivot-certificate"
@@ -44,8 +45,13 @@ geometry_dirs=(
 )
 
 required_olean=(
+  "$geometry_root/.lake/build/lib/lean/GeometryOfNumbers/Analysis/MaterialClockKrylovGap.olean"
+  "$geometry_root/.lake/build/lib/lean/GeometryOfNumbers/Analysis/BaseTwoCanonicalDressingMoments.olean"
+  "$geometry_root/.lake/build/lib/lean/GeometryOfNumbers/Analysis/CarryMaterialFourthPivot.olean"
   "$geometry_root/.lake/build/research/structural-native-krylov-gap/CanonicalClockGap.olean"
   "$geometry_root/.lake/build/research/structural-native-krylov-gap/Regression.olean"
+  "$geometry_root/.lake/build/research/sixth-odd-twelve-sources/OddSourceBoxes.olean"
+  "$geometry_root/.lake/build/research/sixth-odd-twelve-sources/OddPhysicalTwelve.olean"
   "$geometry_root/.lake/build/research/material-integral-certificate/IntegralCertificate.olean"
   "$geometry_root/.lake/build/research/material-pivot-certificate/CanonicalPivotCertificate.olean"
   "$geometry_root/.lake/build/research/prime-camera-schur/PrimeClockSchur.olean"
