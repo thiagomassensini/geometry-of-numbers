@@ -138,3 +138,46 @@ Therefore, H7 has certified even progress; K7 remains the explicit missing chann
 - The canonical identification and H6/K6 positivity chain are present and explicit.
 - A focused transport module is still required to conclude strict positivity statements for `E12` (and then `E8`) in the exact boundary-energy form.
 - H7 even channel is certified; K7 channel is the precise missing extension point.
+
+## Stage-2 implementation (transport module authored)
+
+New files added in this stage:
+
+- `research/canonical-native-boundary-transfer/CanonicalBoundaryTransfer.lean`
+- `research/canonical-native-boundary-transfer/Audit.lean`
+- `research/canonical-native-boundary-transfer/compile_module.sh`
+
+### Implemented theorems
+
+In `CanonicalBoundaryTransfer.lean`:
+
+- `boundary_energy_pos_of_canonical_pair_posDef`
+  - Fixed-order transfer theorem:
+    - assumptions:
+      - `(hankelGram canonicalCompletedNativeLogDerivativeMoment n).PosDef`
+      - `(shiftedHankel canonicalCompletedNativeLogDerivativeMoment n).PosDef`
+    - conclusion:
+      - `∀ x : Fin (2*n) → ℂ, x ≠ 0 → 0 < nativeSourceFiniteBoundaryEnergy (2*n) x`.
+
+- `nativeSourceFiniteBoundaryEnergy_pos_12`
+  - Reuses `regression_H6_K6` (via `canonical_h6k6_posDef_native`) to instantiate the transfer at `n = 6`.
+
+- `nativeSourceFiniteBoundaryEnergy_pos_8`
+  - Derives the canonical `4×4` pair from the canonical `6×6` pair using principal submatrix inheritance:
+    - `Matrix.PosDef.submatrix`
+    - embedding `Fin.castLE : Fin 4 → Fin 6`.
+  - Then instantiates the same transfer at `n = 4`.
+
+### Audit anchors
+
+In `Audit.lean`:
+
+- `#check` anchors for the three public theorems.
+- `#print axioms` anchors for kernel-level dependency tracking.
+
+### Compile status
+
+- Stage-2 code authoring completed.
+- Fresh directed compile of `CanonicalBoundaryTransfer.lean` remains pending in this stage due the active Aggregator process policy (no competing heavy build while operator Aggregator is running).
+- Helper script `compile_module.sh` is prepared with default operator root:
+  - `/home/thlinux/carry-self-adjoint-operator`
