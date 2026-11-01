@@ -1,0 +1,11 @@
+import K7PivotBridge
+
+#check CarrySeventhOddCanonical.k7_pivot_formula
+#check CarrySeventhOddCanonical.k7_pos_iff_margin
+#check CarrySeventhOddCanonical.k7_pos_iff_theta_gate
+#check CarrySeventhOddCanonical.k7_matrix_posDef_iff_pivot
+
+#print axioms CarrySeventhOddCanonical.k7_pivot_formula
+#print axioms CarrySeventhOddCanonical.k7_pos_iff_margin
+#print axioms CarrySeventhOddCanonical.k7_pos_iff_theta_gate
+#print axioms CarrySeventhOddCanonical.k7_matrix_posDef_iff_pivot
