@@ -191,3 +191,16 @@ In `Audit.lean`:
 - Fresh directed compile of `CanonicalBoundaryTransfer.lean` remains pending in this stage due the active Aggregator process policy (no competing heavy build while operator Aggregator is running).
 - Helper script `compile_module.sh` is prepared with default operator root:
   - `/home/thlinux/carry-self-adjoint-operator`
+- The worktree root `/home/thlinux/worktrees/geometry-of-numbers-canonical-capstone` has no local `.lake` directory; the active Lean toolchain cache is in `/home/thlinux/carry-self-adjoint-operator/.lake`.
+- The actual `.olean` target directory `/home/thlinux/carry-self-adjoint-operator/.lake/build/research/canonical-native-boundary-transfer` is absent at runtime, so the script exits early without reconstructing unrelated caches.
+
+### Static validation executed
+
+Validated in the current session without starting a new heavy build:
+
+- `bash -n research/canonical-native-boundary-transfer/compile_module.sh` → exit `0`
+- `git diff --check` → exit `0`
+- `bash research/canonical-native-boundary-transfer/compile_module.sh CanonicalBoundaryTransfer /home/thlinux/carry-self-adjoint-operator` → exit `2` with explicit message:
+  - `ERROR: missing dependency cache /home/thlinux/carry-self-adjoint-operator/.lake/build/research/canonical-native-boundary-transfer; capstone compile aborted without reconstructing the full environment.`
+
+This is the exact current compile status: static verification passed, and the script correctly refuses to start a fresh heavy build while the operator cache state is incomplete.
