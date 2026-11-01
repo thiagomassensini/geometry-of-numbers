@@ -30,6 +30,10 @@ mkdir -p -- "$output_cache"
 
 geometry_dirs=(
   "$geometry_root/.lake/build/research/structural-native-krylov-gap"
+  "$geometry_root/.lake/build/research/material-integral-certificate"
+  "$geometry_root/.lake/build/research/material-pivot-certificate"
+  "$geometry_root/.lake/build/research/prime-camera-schur"
+  "$geometry_root/.lake/build/research/corrected-green-source-ports"
   "$geometry_root/.lake/build/research/sixth-odd-twelve-sources"
   "$geometry_root/.lake/build/research/sixth-even-source-schur"
   "$geometry_root/.lake/build/research/critical-source-return"
@@ -42,6 +46,10 @@ geometry_dirs=(
 required_olean=(
   "$geometry_root/.lake/build/research/structural-native-krylov-gap/CanonicalClockGap.olean"
   "$geometry_root/.lake/build/research/structural-native-krylov-gap/Regression.olean"
+  "$geometry_root/.lake/build/research/material-integral-certificate/IntegralCertificate.olean"
+  "$geometry_root/.lake/build/research/material-pivot-certificate/CanonicalPivotCertificate.olean"
+  "$geometry_root/.lake/build/research/prime-camera-schur/PrimeClockSchur.olean"
+  "$geometry_root/.lake/build/research/corrected-green-source-ports/PositivePorts.olean"
   "$operator_root/.lake/build/lib/lean/CarrySelfAdjointOperator/CompletedNativeChiralBoundaryParityCoordinates.olean"
 )
 

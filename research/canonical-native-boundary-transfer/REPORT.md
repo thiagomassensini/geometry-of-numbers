@@ -127,11 +127,34 @@ Therefore, H7 has certified even progress; K7 remains the explicit missing chann
 ## Kernel-compilation evidence status in this stage
 
 - Source declarations and namespaces were verified directly in Lean files.
+- Fresh compile attempts in this stage failed before theorem checking due to module resolution, not due to mathematical rejection of the target theorems. The observed error was:
+  - `unknown module prefix 'IntegralCertificate'`
+- The failure was caused by missing geometry-cache entries in the compiler search path, specifically the transitive directories:
+  - `material-integral-certificate`
+  - `material-pivot-certificate`
+  - `prime-camera-schur`
+  - `corrected-green-source-ports`
 - Existing evidence logs were found for key certificate files:
   - `research/sixth-even-source-schur/evidence/SixthEvenCertificate.log`
   - `research/sixth-odd-twelve-sources/evidence/OddTrialPositivity.log`
   - `research/seventh-even-centered-source/evidence/EvenSeventhCertificate.log`
 - Because Aggregator is currently active, this stage did not run fresh heavy recompilation.
+
+## Import-resolution fix for the transitive certificate chain
+
+The compiler search path now includes the missing geometry-side directories together with the existing canonical dependency chain, preserving `output_cache` at the front of `LEAN_PATH`:
+
+- `/home/thlinux/geometry-of-numbers/.lake/build/research/material-integral-certificate`
+- `/home/thlinux/geometry-of-numbers/.lake/build/research/material-pivot-certificate`
+- `/home/thlinux/geometry-of-numbers/.lake/build/research/prime-camera-schur`
+- `/home/thlinux/geometry-of-numbers/.lake/build/research/corrected-green-source-ports`
+
+The static audit also checks the real `.olean` artifacts in those locations, including:
+
+- `/home/thlinux/geometry-of-numbers/.lake/build/research/material-integral-certificate/IntegralCertificate.olean`
+- `/home/thlinux/geometry-of-numbers/.lake/build/research/material-pivot-certificate/CanonicalPivotCertificate.olean`
+- `/home/thlinux/geometry-of-numbers/.lake/build/research/prime-camera-schur/PrimeClockSchur.olean`
+- `/home/thlinux/geometry-of-numbers/.lake/build/research/corrected-green-source-ports/PositivePorts.olean`
 
 ## Stage-1 deliverable conclusion
 
