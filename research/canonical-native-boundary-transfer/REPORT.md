@@ -147,6 +147,16 @@ New files added in this stage:
 - `research/canonical-native-boundary-transfer/Audit.lean`
 - `research/canonical-native-boundary-transfer/compile_module.sh`
 
+### Source provenance status
+
+- GitHub branch `research/boundary-energy-e8-theta16` in the operator repo contains the parity file:
+  - `CarrySelfAdjointOperator/CompletedNativeChiralBoundaryParityCoordinates.lean`
+- Local checkout at `/home/thlinux/carry-self-adjoint-operator` does contain this file and it declares:
+  - `nativeSourceBoundaryPhase_nonzero`
+- The capstone module was updated to import this file explicitly.
+- The worktree root `/home/thlinux/worktrees/geometry-of-numbers-canonical-capstone` does not contain a local `.lake` directory; the active Lean environment is the operator checkout at `/home/thlinux/carry-self-adjoint-operator/.lake`.
+- The compile helper was hardened to fail early when `.lake` or dependency caches are missing, rather than guessing or reconstructing the environment.
+
 ### Implemented theorems
 
 In `CanonicalBoundaryTransfer.lean`:
