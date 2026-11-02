@@ -1,0 +1,4 @@
+'CarryUniformSource.c3_second_scaled_margin_via_uniform_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryUniformSource.c3_second_pivot_pos_via_uniform_budget' depends on axioms: [propext, Classical.choice, Quot.sound]

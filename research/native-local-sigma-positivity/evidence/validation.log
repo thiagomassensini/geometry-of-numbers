@@ -1,0 +1,15 @@
+BUILD LocalPositivity
+PASS LocalPositivity
+BUILD FiniteNeighborhood
+PASS FiniteNeighborhood
+BUILD ThetaCurvatureBridge
+PASS ThetaCurvatureBridge
+BUILD Axioms
+PASS Axioms
+BUILD Audit
+PASS Audit
+PASS lake build --wfail
+PASS audit foundation
+PASS audit geometry
+PASS audit analysis
+PASS source scan

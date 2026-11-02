@@ -1,0 +1,32 @@
+
+--- MixedInfinite ---
+'CarryTiltSlice.tiltOrderBound_summable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.iteratedDeriv_tsum_mixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.infinite_mixed_tilt_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.infinite_mixed_tilt_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.infinite_mixed_prime_depth_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.finite_jets_tendsto_infinite_jet' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- MixedTransverse ---
+'CarryTiltSlice.hasDerivAt_cpTilt_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- MixedInfiniteAudit ---
+Tilt and prime-depth audit: roots 18; closure 60104; standard axioms only; specified theta/sign consumers absent; source, C3 tail, prime-depth, transverse sensitivity and Schur transport present
+
+--- OfflineObstruction ---
+'CarryTiltSlice.even_pivot_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.odd_pivot_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.even_superceiling_pivot_nonpos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.native_even_offline_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.native_odd_offline_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- CriticalConcavity ---
+'CarryTiltSlice.even_pivot_shift_strict_anti' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.even_shift_forces_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.even_shift_obstructs_genuine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.hasDerivAt_cpTiltThreeDeriv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.cpTiltThreeSecondDeriv_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- OfflineObstructionAudit ---
+Tilt and prime-depth audit: roots 31; closure 60079; standard axioms only; specified theta/sign consumers absent; source, C3 tail, prime-depth, transverse sensitivity and Schur transport present
+OK: MixedInfinite e MixedInfiniteAudit compilam; sem sorry/admit/axiom/native_decide.

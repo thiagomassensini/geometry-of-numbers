@@ -1,0 +1,27 @@
+PASS: 200 cached Lean objects checked against actual sources, hashes and dependency fingerprints; verified in place.
+building PR #41 MomentFunctional
+building PR #41 PolynomialCoordinates
+building PR #41 JacobiLogic
+building PR #41 NativeApplication
+building PR #41 SchurLogic
+building PR #134 ExplicitFinitePairing
+building PR #134 EffectiveResponse
+building PR #134 EffectiveOddPair
+building PR #134 EffectivePairBounds
+building PR #134 PairCurve
+building PR #134 FamilyCurve
+building PR #134 ScaledStep
+building PR #134 SummableFamily
+building PR #134 SixRegression
+building SixMargin
+building SixBoundary
+building EightInputs
+building EightCritical
+building EightHead
+building EightMargin
+building EightSchurCore
+building EightSign
+building EightNative
+building EightQuantitative
+building Audit
+PASS: focused Lean modules, 46 axioms, provenance audit and rational diagnostic (--focused)

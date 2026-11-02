@@ -1,0 +1,3 @@
+Transitive source audit (general): 2 roots; 57485 type/body dependencies; standard axioms only; sixth-order certificates forbidden; old prefix allowed
+Transitive source audit (finite-source): 1 roots; 59099 type/body dependencies; standard axioms only; sixth-order certificates forbidden; old prefix allowed
+Transitive source audit (finite-certified): 2 roots; 58854 type/body dependencies; standard axioms only; sixth-order certificates explicitly required

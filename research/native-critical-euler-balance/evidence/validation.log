@@ -1,0 +1,19 @@
+BUILD EulerPair
+PASS EulerPair
+BUILD CriticalReduction
+PASS CriticalReduction
+BUILD CanonicalBalance
+PASS CanonicalBalance
+BUILD NativeBoundaryBalance
+PASS NativeBoundaryBalance
+BUILD SourceSignRegression
+PASS SourceSignRegression
+BUILD SignControl
+PASS SignControl
+BUILD Audit
+PASS Audit
+PASS lake build --wfail
+PASS audit foundation
+PASS audit geometry
+PASS audit analysis
+PASS source scan

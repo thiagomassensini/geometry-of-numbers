@@ -1,0 +1,46 @@
+{
+  "focused": {
+    "status": "PASS",
+    "log_sha256": "e84629033a8aec75b154cf90c93d1c04f10633f9e451a00388a9a1faf160bfac",
+    "marker": "PASS: focused Lean modules, 46 axioms, provenance audit and rational diagnostic (--focused)"
+  },
+  "root": {
+    "status": "PASS",
+    "log_sha256": "f5104b3a8198f0f9924847da18f6f35b6004081838de71868ee97621f35eddf0",
+    "marker": "Build completed successfully (8849 jobs)."
+  },
+  "foundation": {
+    "status": "PASS",
+    "log_sha256": "0cf345cc3bcedfa92250217b4e73bc37834671ac0b8a2b97f66d3c06551ce199",
+    "marker": "PASS:"
+  },
+  "geometry": {
+    "status": "PASS",
+    "log_sha256": "469cddc780755a2a401f4a2d437d4b65bccc9f3333dc598e645025f94caf4888",
+    "marker": "PASS:"
+  },
+  "analysis": {
+    "status": "PASS",
+    "log_sha256": "10f8d9c0908ad8fe2aacd2b6a3fc4c62c729cf12a84bdff357e0a28f3d7f1f77",
+    "marker": "PASS:"
+  },
+  "axioms": {
+    "status": "PASS",
+    "log_sha256": "8212d3fe248bc4d3089f23c98a1faf831fcabee6b5d7ecc430a91f79338262b2",
+    "marker": "Transitive source audit: 4 roots; 59495 type/body dependencies; standard axioms only; finite positivity forbidden",
+    "theorems": 46
+  },
+  "diagnostic": {
+    "status": "PASS",
+    "log_sha256": "be4eb4026b00f7fca0409c03c9eaf6a5f61ba4a01f113074ecf8185886a60697",
+    "marker": "rounded coeff energy"
+  },
+  "source_base": "ccd69cc7410c46ce9068d08852524df35cdc991f",
+  "historical_cache": {
+    "archive_sha256": "d374041b5b017e2541039b6993ed3f53b244f20a1dd8c2e7bb851ba09eca288a",
+    "reused_historical_objects": 200,
+    "rebuilt_historical_objects": false,
+    "pr41_modules_rebuilt": 5,
+    "pr134_modules_rebuilt": 9
+  }
+}

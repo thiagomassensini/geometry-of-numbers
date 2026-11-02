@@ -1,0 +1,8 @@
+f930c50c0545b2e11ec18ab875d7158b8a586c67e0bd199bdbe0642fc6254767  .lake/build/research/theta-fifth-odd-pattern/ThetaTwenty.olean
+f930c50c0545b2e11ec18ab875d7158b8a586c67e0bd199bdbe0642fc6254767  /home/thlinux/geometry-of-numbers-native-critical-radial-margin/.lake/build/research/theta-fifth-odd-pattern/ThetaTwenty.olean
+eafcc47494262e928d8a8e22e1b42db37052a295930f094ad18ca0501cc3276c  .lake/build/research/sixth-even-source-schur/VariationalSchur.olean
+eafcc47494262e928d8a8e22e1b42db37052a295930f094ad18ca0501cc3276c  /home/thlinux/geometry-of-numbers-native-critical-radial-margin/.lake/build/research/sixth-even-source-schur/VariationalSchur.olean
+48b3cdd7742d7ba58aaab710dcd7c770b550442edd325d094062b8842e26f55c  research/theta-fifth-odd-pattern/ThetaTwenty.lean
+48b3cdd7742d7ba58aaab710dcd7c770b550442edd325d094062b8842e26f55c  /home/thlinux/geometry-of-numbers-native-critical-radial-margin/research/theta-fifth-odd-pattern/ThetaTwenty.lean
+8b08191da7c2687fe54ec1c010b020b7fffe4399bbdf726b21d45165f19318fc  research/sixth-even-source-schur/VariationalSchur.lean
+8b08191da7c2687fe54ec1c010b020b7fffe4399bbdf726b21d45165f19318fc  /home/thlinux/geometry-of-numbers-native-critical-radial-margin/research/sixth-even-source-schur/VariationalSchur.lean
