@@ -20,6 +20,13 @@ Tilt and prime-depth audit: roots 18; closure 60104; standard axioms only; speci
 'CarryTiltSlice.native_even_offline_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarryTiltSlice.native_odd_offline_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
 
+--- CriticalConcavity ---
+'CarryTiltSlice.even_pivot_shift_strict_anti' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.even_shift_forces_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.even_shift_obstructs_genuine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.hasDerivAt_cpTiltThreeDeriv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.cpTiltThreeSecondDeriv_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+
 --- OfflineObstructionAudit ---
-Tilt and prime-depth audit: roots 21; closure 60049; standard axioms only; specified theta/sign consumers absent; source, C3 tail, prime-depth, transverse sensitivity and Schur transport present
+Tilt and prime-depth audit: roots 31; closure 60079; standard axioms only; specified theta/sign consumers absent; source, C3 tail, prime-depth, transverse sensitivity and Schur transport present
 OK: MixedInfinite e MixedInfiniteAudit compilam; sem sorry/admit/axiom/native_decide.
