@@ -1,0 +1,72 @@
+
+--- CriticalTiltSlice ---
+'CarryTiltSlice.weighted_tilt_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.cross_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.bracket_line_eq_carrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.finite_tilt_vertical_jets_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.finite_bracket_vertical_jets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.transverse_sensitivity_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySelfAdjointOperator.canonicalCompletedNativeLogDerivativeMoment_eq_primeDepthResponse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+--- MixedTilt ---
+'CarryTiltSlice.tilt_cell_transverse_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- MixedPhase ---
+'CarryTiltSlice.critical_carrier_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.mixed_tilt_wave_of_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- MixedPhaseJets ---
+'CarryTiltSlice.mixed_tilt_iterated' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.signed_even_mixed_tilt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.signed_even_mixed_tilt_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- MixedFinite ---
+'CarryTiltSlice.finite_tilt_transverse_wave' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.finite_mixed_tilt_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.finite_mixed_tilt_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- MixedTail ---
+'CarryTiltSlice.mixedTiltTerm_summable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.mixedTiltTerm_tsum_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.finite_mixed_tilt_tendsto_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- MixedPrime ---
+'CarryTiltSlice.center_log_eq_prime_depth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.primeDepthMixedTiltTerm_summable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.primeDepthMixedTiltTerm_tsum_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.finite_mixed_prime_depth_tendsto_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- CriticalTiltBridge ---
+'CarryTiltSlice.chart_line_eq_seed_carrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.physical_head_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.complete_c3_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.physical_head_vertical_jets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.completed_characteristic_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.completed_characteristic_vertical_jets' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- NativeTiltJets ---
+'CarryTiltSlice.native_even_coefficient_carrier_boundary_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+--- PrimeRecurrence ---
+'CarryTiltSlice.prime_depth_coefficient_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- TiltSourceGate ---
+'CarryTiltSlice.carrier_coefficient_zero_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.carrier_coefficient_one_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.carrierCoefficient_eq_native' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.even_pivot_gate_carrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.odd_pivot_gate_carrier' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- PrimeCarryGate ---
+'CarryTiltSlice.prime_depth_carrier_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- TransverseLedger ---
+'CarryTiltSlice.height_jets_zero_transverse_sensitivity_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.transverse_global_ledger' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- TiltAudit ---
+Tilt and prime-depth audit: roots 13; closure 60041; standard axioms only; specified theta/sign consumers absent; source, C3 tail, prime-depth, transverse sensitivity and Schur transport present

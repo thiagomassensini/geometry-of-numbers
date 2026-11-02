@@ -4,12 +4,12 @@ here=$(cd "$(dirname "$0")" && pwd)
 cd "$here/../.."
 export PATH="$HOME/.elan/bin:$PATH"
 mkdir -p "$here/evidence"
-for module in UniformBudget RepartitionBudget OrderBound SourceRate Audit; do
+for module in UniformBudget RepartitionBudget OrderBound SourceRate SourceProductRule Audit; do
   printf "BUILD %s\n" "$module"
   bash "$here/compile.sh" "$module" > "$here/evidence/$module.log" 2>&1 || { cat "$here/evidence/$module.log"; exit 1; }
   printf "PASS %s\n" "$module"
 done
-for module in C3UniformRegression C3OrderRate AuditC3 Axioms; do
+for module in C3UniformRegression C3OrderRate C3MultiplicativeSecondEven ProductRuleAudit AuditC3 Axioms; do
   printf "BUILD %s\n" "$module"
   bash "$here/compile-certified.sh" "$module" > "$here/evidence/$module.log" 2>&1 || { cat "$here/evidence/$module.log"; exit 1; }
   printf "PASS %s\n" "$module"
