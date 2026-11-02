@@ -71,6 +71,13 @@ Try this:
 'CarryTiltSlice.odd_pivot_neg_iff_ratio_gt_one' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarryTiltSlice.odd_exists_deficit_flips_pivot' depends on axioms: [propext, Classical.choice, Quot.sound]
 
+--- TiltCurvatureBridge ---
+'CarryTiltSlice.cpTilt_three_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.cpTiltThreeDeriv_zero_eq_sensitivity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.tiltCellQuadModel_eq_slope_mul_one_sub_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.canonicalCenter_tiltCellQuadModel_neg_after' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.canonicalCenter_tiltCellQuadModel_pos_before' depends on axioms: [propext, Classical.choice, Quot.sound]
+
 --- OfflineObstructionAudit ---
-Tilt and prime-depth audit: roots 57; closure 65737; standard axioms only; specified theta/sign consumers absent; source, C3 tail, prime-depth, transverse sensitivity and Schur transport present
+Tilt and prime-depth audit: roots 64; closure 65751; standard axioms only; specified theta/sign consumers absent; source, C3 tail, prime-depth, transverse sensitivity and Schur transport present
 OK: MixedInfinite e MixedInfiniteAudit compilam; sem sorry/admit/axiom/native_decide.
