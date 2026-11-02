@@ -78,6 +78,14 @@ Try this:
 'CarryTiltSlice.canonicalCenter_tiltCellQuadModel_neg_after' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarryTiltSlice.canonicalCenter_tiltCellQuadModel_pos_before' depends on axioms: [propext, Classical.choice, Quot.sound]
 
+--- TiltLogDerivative ---
+'CarryTiltSlice.curvature_eq_sensitivity_deriv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.tiltCellRatio_eq_neg_half_logDeriv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.canonicalCenter_tiltSensitivityLogDeriv_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.canonicalCenter_tiltCellCrossover_eq_neg_two_div_logDeriv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
 --- OfflineObstructionAudit ---
-Tilt and prime-depth audit: roots 64; closure 65751; standard axioms only; specified theta/sign consumers absent; source, C3 tail, prime-depth, transverse sensitivity and Schur transport present
+Tilt and prime-depth audit: roots 69; closure 65759; standard axioms only; specified theta/sign consumers absent; source, C3 tail, prime-depth, transverse sensitivity and Schur transport present
 OK: MixedInfinite e MixedInfiniteAudit compilam; sem sorry/admit/axiom/native_decide.
