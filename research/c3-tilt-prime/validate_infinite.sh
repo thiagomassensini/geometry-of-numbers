@@ -3,12 +3,12 @@
 # anteriores: apenas compila as raízes novas sobre os .cache existentes.
 set -euo pipefail
 here=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
-for module in MixedInfinite MixedInfiniteAudit; do
+for module in MixedInfinite MixedTransverse MixedInfiniteAudit; do
   printf '\n--- %s ---\n' "$module"
   bash "$here/compile.sh" "$module"
 done
 if grep -nE '(^|[^[:alnum:]_])(sorry|admit|native_decide)([^[:alnum:]_]|$)|^[[:space:]]*axiom([[:space:]]|$)' \
-    "$here/MixedInfinite.lean" "$here/MixedInfiniteAudit.lean"; then
+    "$here/MixedInfinite.lean" "$here/MixedTransverse.lean" "$here/MixedInfiniteAudit.lean"; then
   echo "PROIBIDO: sorry/admit/axiom/native_decide encontrado" >&2
   exit 1
 fi
