@@ -1,0 +1,5 @@
+'CarryUniformSource.repartition_critical_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryUniformSource.critical_positive_of_repartition_head' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryUniformSource.repartition_original_four_terms' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryUniformSource.repartition_relative_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryUniformSource.repNormalizedError_zero_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]

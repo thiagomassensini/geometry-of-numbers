@@ -1,0 +1,31 @@
+Compile CriticalCoefficient
+PASS CriticalCoefficient
+Compile RadialPairs
+PASS RadialPairs
+Compile RadialCutoff
+PASS RadialCutoff
+Compile SigmaParity
+PASS SigmaParity
+Compile SigmaCenterZero
+PASS SigmaCenterZero
+Compile SigmaCenterAll
+PASS SigmaCenterAll
+Compile SigmaGreenCurvature
+PASS SigmaGreenCurvature
+Compile SigmaOffcenter
+PASS SigmaOffcenter
+Compile SigmaOffcenterBridge
+PASS SigmaOffcenterBridge
+Compile SigmaCurvature
+PASS SigmaCurvature
+Compile SigmaQuadratic
+PASS SigmaQuadratic
+Compile Audit
+PASS Audit
+Root lake build --wfail
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/Audit.lean:7063:0: 'GeometryOfNumbers.Analysis.carryMaterialReadoutProjection_not_isometric_domain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Build completed successfully (8849 jobs).
+PASS root build --wfail
