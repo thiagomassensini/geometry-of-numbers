@@ -38,6 +38,19 @@ Tilt and prime-depth audit: roots 18; closure 60104; standard axioms only; speci
 'CarryTiltSlice.tilt_jet_normSq_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarryTiltSlice.cpTiltThreeSecondDeriv_eq_logSq_secondDiff' depends on axioms: [propext, Classical.choice, Quot.sound]
 
+--- NativeLogOperatorBridge ---
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+'CarryTiltSlice.center_log_eq_nativeFrequency' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.nativeLogGenerator_cell_eigenvalue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.cpTiltThreeSecondDeriv_eq_nativeFrequencySq_secondDiff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
 --- OfflineObstructionAudit ---
-Tilt and prime-depth audit: roots 37; closure 65640; standard axioms only; specified theta/sign consumers absent; source, C3 tail, prime-depth, transverse sensitivity and Schur transport present
+Tilt and prime-depth audit: roots 40; closure 65670; standard axioms only; specified theta/sign consumers absent; source, C3 tail, prime-depth, transverse sensitivity and Schur transport present
 OK: MixedInfinite e MixedInfiniteAudit compilam; sem sorry/admit/axiom/native_decide.
