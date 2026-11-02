@@ -1,0 +1,3 @@
+'CarryUniformSource.repartition_explicit_order_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryUniformSource.directionalBudget_bound_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryUniformSource.coefficientBudget_bound_order' depends on axioms: [propext, Classical.choice, Quot.sound]

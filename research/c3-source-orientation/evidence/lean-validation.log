@@ -1,0 +1,31 @@
+
+--- SourceDependency ---
+'CarrySourceDimensionThree.even_last_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceDimensionThree.odd_last_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceDimensionThree.even_source_data_insufficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceDimensionThree.odd_source_data_insufficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- SourceGate ---
+'CarrySourceDimensionThree.even_source_schur_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceDimensionThree.odd_source_schur_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceDimensionThree.even_source_sign_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceDimensionThree.odd_source_sign_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceDimensionThree.native_even_gate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceDimensionThree.native_odd_gate' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- SourceSchurShift ---
+'CarrySourceDimensionThree.even_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceDimensionThree.odd_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceDimensionThree.even_schur_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceDimensionThree.odd_schur_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceDimensionThree.even_schur_data_insufficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceDimensionThree.odd_schur_data_insufficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- SourceGateIndependence ---
+'CarrySourceDimensionThree.even_critical_unchanged' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceDimensionThree.odd_critical_unchanged' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceDimensionThree.even_ceiling_unchanged' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceDimensionThree.odd_ceiling_unchanged' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- SourceAudit ---
+Source orientation audit: roots 6; closure 59440; standard axioms only; specified theta-box and sign dependencies absent; PR #70 source boxes and Schur transport present

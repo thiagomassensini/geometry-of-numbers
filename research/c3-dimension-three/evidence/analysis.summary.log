@@ -1,0 +1,40 @@
+'GeometryOfNumbers.Analysis.carryMaterialReadout_minimum_eq_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.carryMaterialReadout_unique_minimum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.carryMaterialReadout_complete_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.carryMaterialReadout_finite_energy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.carryMaterialReadoutProjection_cells' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.carryMaterialReadoutProjection_boundary_defect' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.carryMaterialReadoutProjection_mem_domain_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.carryMaterialReadoutComplement_cells' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.carryMaterialReadoutComplement_boundary_defect' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.carryMaterialReadoutComplement_mem_domain_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.carryMaterialReadout_physical_strict' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.carryMaterialReadout_source_projection_not_physical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.carryMaterialReadoutProjection_not_isometric_domain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+PASS: real analysis build and standard-axiom audit (NOT axiom-free).

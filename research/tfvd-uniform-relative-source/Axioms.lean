@@ -1,0 +1,54 @@
+import C3UniformRegression
+import SourceRate
+import C3OrderRate
+
+#print axioms CarryUniformSource.coordMass
+#print axioms CarryUniformSource.coordMass_nonneg
+#print axioms CarryUniformSource.abs_le_coordMass
+#print axioms CarryUniformSource.directionalBudget_normed
+#print axioms CarryUniformSource.normalizedError
+#print axioms CarryUniformSource.normalizedError_nonneg
+#print axioms CarryUniformSource.literalErrorBudget_normed
+#print axioms CarryUniformSource.normalizedError_tendsto_zero
+#print axioms CarryUniformSource.original_kernel_relative_bound
+#print axioms CarryUniformSource.original_kernel_uniform_approx
+#print axioms CarryUniformSource.critical_source_error_bound
+#print axioms CarryUniformSource.critical_source_uniform_cutoff
+#print axioms CarryUniformSource.critical_positive_of_uniform_head
+#print axioms CarryUniformSource.repHead
+#print axioms CarryUniformSource.repTail
+#print axioms CarryUniformSource.repError
+#print axioms CarryUniformSource.repNormalizedError
+#print axioms CarryUniformSource.repartition_original_four_terms
+#print axioms CarryUniformSource.repError_normed
+#print axioms CarryUniformSource.repartition_relative_bound
+#print axioms CarryUniformSource.repNormalizedError_zero_boundary
+#print axioms CarryUniformSource.repNormalizedError_zero_tendsto
+#print axioms CarryUniformSource.repNormalizedError_nonneg
+#print axioms CarryUniformSource.repartition_critical_error_bound
+#print axioms CarryUniformSource.critical_positive_of_repartition_head
+#print axioms CarryUniformSource.responseCoefficient_bound_order
+#print axioms CarryUniformSource.coefficientBudget_bound_order
+#print axioms CarryUniformSource.directionalBudget_bound_order
+#print axioms CarryUniformSource.repartition_explicit_order_bound
+#print axioms CarryUniformSource.sourceCoefficientMass
+#print axioms CarryUniformSource.sourceCoefficientMass_nonneg
+#print axioms CarryUniformSource.sourceCoefficient_le_mass
+#print axioms CarryUniformSource.sourceTailRadius
+#print axioms CarryUniformSource.tail_bound_all_coefficients
+#print axioms CarryUniformSource.head_bound_all_coefficients
+#print axioms CarryUniformSource.original_source_explicit_order_rate
+#print axioms CarryUniformSource.critical_source_explicit_order_rate
+#print axioms CarryUniformSource.c3_repartition_head
+#print axioms CarryUniformSource.c3_repartition_tail
+#print axioms CarryUniformSource.c3_normalized_error_upper
+#print axioms CarryUniformSource.c3_critical_mass_bound
+#print axioms CarryUniformSource.c3_uniform_head_bound
+#print axioms CarryUniformSource.c3_second_pivot_pos_via_uniform_budget
+#print axioms CarryUniformSource.c3_second_scaled_margin_via_uniform_budget
+#print axioms CarryUniformSource.c3TailRadius
+#print axioms CarryUniformSource.c3TailRadius_nonneg
+#print axioms CarryUniformSource.c3_regrouped_tail_bound_order
+#print axioms CarryUniformSource.c3_regrouped_head_bound_order
+#print axioms CarryUniformSource.c3_original_boundary_explicit_order_rate
+#print axioms CarryUniformSource.c3_critical_explicit_order_rate
