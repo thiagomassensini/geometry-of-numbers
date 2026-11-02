@@ -1,0 +1,7 @@
+'CarryLocalPositivity.second_even_center_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivity.second_even_eventually_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivity.second_even_positive_local_max' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivity.sigmaSchur_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivity.sigmaSchur_differentiable_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivity.sigmaSchur_deriv_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivity.second_even_localMax' depends on axioms: [propext, Classical.choice, Quot.sound]

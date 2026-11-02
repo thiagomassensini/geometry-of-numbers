@@ -1,0 +1,7 @@
+setor=0 indice=5 coeficiente=(-1.461602576011096086241186e-11 + 0.0j)
+limiar=(-1.460494353007439056815623e-11 + 0.0j) diferenca=(1.1082230036570294256e-14 + 0.0j)
+schur_cabeca=(2.7546034099208667086e-14 + 0.0j)
+setor=1 indice=6 coeficiente=(4.274540045536844957664122e-14 + 0.0j)
+limiar=(4.27520964866271350935209e-14 + 0.0j) diferenca=(6.6960312586855168797e-18 + 0.0j)
+schur_cabeca=(1.997241762054612345e-17 + 0.0j)
+status=diagnostico_nao_intervalar; cabeca_finita_nao_e_a_fonte_completa

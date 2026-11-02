@@ -1,0 +1,14 @@
+BUILD GeneralBudget
+PASS GeneralBudget
+BUILD CriticalCoefficient
+PASS CriticalCoefficient
+BUILD NumericCutoff
+PASS NumericCutoff
+BUILD RelativeGate
+PASS RelativeGate
+BUILD RelativeCertificate
+PASS RelativeCertificate
+BUILD Audit
+PASS Audit
+PASS lake build --wfail
+PASS no forbidden shortcuts or axioms

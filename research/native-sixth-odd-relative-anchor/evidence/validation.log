@@ -1,0 +1,18 @@
+BUILD TwelveTrial
+PASS TwelveTrial
+BUILD TwelveCoordinates
+PASS TwelveCoordinates
+BUILD TwelveCoercive
+PASS TwelveCoercive
+BUILD TwelveResidual
+PASS TwelveResidual
+BUILD TwelveCorrection
+PASS TwelveCorrection
+BUILD TwelveBridge
+PASS TwelveBridge
+BUILD TwelveNative
+PASS TwelveNative
+BUILD Audit
+PASS Audit
+PASS lake build --wfail
+PASS no forbidden shortcuts or axioms

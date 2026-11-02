@@ -1,0 +1,19 @@
+
+--- NativeBudgetRate ---
+'CarrySourceBezout.literal_full_budget_explicit_order_rate' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- NativeFiniteHeadMargin ---
+'CarrySourceBezout.c3_original_pair_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceBezout.c3_literal_monic_margin_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceBezout.c3_literal_critical_product_margin_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+--- NativeExplicitHeadMargin ---
+'CarrySourceBezout.literal_head_ne_of_tail_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceBezout.c3_monic_margin_of_explicit_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceBezout.c3_explicit_source_cutoff_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- NativeHeadMarginAudit ---
+Tilt and prime-depth audit: roots 51; closure 60661; standard axioms only; specified theta/sign consumers absent; source, C3 tail, prime-depth, transverse sensitivity and Schur transport present
+PASS: margem finita, taxa explícita e auditoria.
