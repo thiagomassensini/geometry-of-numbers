@@ -1,5 +1,10 @@
 
 --- ThirdSourcePrefix ---
+'CarrySourceDimensionThree.third_odd_gate_of_c4_source_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceDimensionThree.odd_prefix_det_pos_iff_c4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceDimensionThree.third_odd_prefix_isUnit_of_c4_source_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
 'CarrySourceDimensionThree.third_odd_prefix_first_entry_pos_from_c3' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
@@ -13,5 +18,5 @@
  Quot.sound]
 
 --- ThirdSourcePrefixAudit ---
-Source orientation audit: roots 11; closure 59512; standard axioms only; specified theta-box and sign dependencies absent; PR #70 source boxes and Schur transport present
+Source orientation audit: roots 14; closure 59522; standard axioms only; specified theta-box and sign dependencies absent; PR #70 source boxes and Schur transport present
 PASS: prefixos da terceira direção e auditoria.

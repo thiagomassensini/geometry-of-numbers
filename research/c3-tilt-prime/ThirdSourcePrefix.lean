@@ -70,6 +70,43 @@ theorem third_odd_prefix_four_coefficients_insufficient :
     field_simp
     ring
 
+/-- The odd old-block determinant threshold, written in source coefficients. -/
+def oddPrefixC4Ceiling (c : ℕ → ℝ) : ℝ :=
+  ((c 1^2-2*c 0*c 2)*(2*c 2^2-2*c 1*c 3) -
+      (c 1*c 2-3*c 0*c 3)^2) / (4*c 0*(c 1^2-2*c 0*c 2))
+
+theorem odd_prefix_det_pos_iff_c4 (c : ℕ → ℝ) (hc0 : 0 < c 0)
+    (ha : 0 < c 1^2-2*c 0*c 2) :
+    0 < (coefficientBlock (sourceKernel c true) 2).det ↔ c 4 < oddPrefixC4Ceiling c := by
+  unfold oddPrefixC4Ceiling
+  rw [lt_div_iff₀ (by positivity : 0 < 4*c 0*(c 1^2-2*c 0*c 2))]
+  rw [source_odd_two, Matrix.det_fin_two]
+  norm_num
+  constructor <;> intro h <;> nlinarith
+
+theorem third_odd_prefix_isUnit_of_c4_source_bound
+    (hc4 : nativeC 4 < oddPrefixC4Ceiling nativeC) :
+    IsUnit (sourceMomentMatrix nativeH 1 2) := by
+  have hp := (odd_prefix_det_pos_iff_c4 nativeC native_source_c0_positive_from_boxes
+    third_odd_prefix_first_entry_pos_from_c3).mpr hc4
+  have he : (coefficientBlock (sourceKernel nativeC true) 2).det =
+      nativeC 0 ^ 4 * (sourceMomentMatrix nativeH 1 2).det := by
+    simpa using native_source_bezout_det true 2
+  have hc : 0 < nativeC 0 ^ 4 := pow_pos native_source_c0_positive_from_boxes _
+  have hm : 0 < (sourceMomentMatrix nativeH 1 2).det := by
+    rw [he] at hp
+    exact (mul_pos_iff_of_pos_left hc).mp hp
+  exact (Matrix.isUnit_iff_isUnit_det _).mpr (isUnit_iff_ne_zero.mpr hm.ne')
+
+/-- One concrete source inequality replaces the odd-prefix invertibility gate. -/
+theorem third_odd_gate_of_c4_source_bound (hc4 : nativeC 4 < oddPrefixC4Ceiling nativeC) :
+    0 < sourceMomentSchur nativeH 1 2 ↔
+      nativeC 6 < oddSourceCeiling nativeC / (6*nativeC 0) :=
+  native_odd_gate (third_odd_prefix_isUnit_of_c4_source_bound hc4)
+
+#print axioms third_odd_gate_of_c4_source_bound
+#print axioms odd_prefix_det_pos_iff_c4
+#print axioms third_odd_prefix_isUnit_of_c4_source_bound
 #print axioms third_odd_prefix_first_entry_pos_from_c3
 #print axioms odd_prefix_det_shift
 #print axioms third_odd_prefix_four_coefficients_insufficient

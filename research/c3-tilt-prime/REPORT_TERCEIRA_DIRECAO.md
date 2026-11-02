@@ -25,11 +25,20 @@ O termo de Schur mantém todos os cruzamentos do prefixo. A equivalência identi
  -4c_0(c_1^2-2c_0c_2)d.
 \]
 
+Também isolamos a desigualdade concreta que resolveria a invertibilidade ímpar. Definindo
+
+\[
+a=c_1^2-2c_0c_2,\quad b=c_1c_2-3c_0c_3,\quad
+L_4=\frac{a(2c_2^2-2c_1c_3)-b^2}{4c_0a},
+\]
+
+`odd_prefix_det_pos_iff_c4` prova, para `c₀>0` e `a>0`, que o determinante do prefixo ímpar é positivo se e somente se `c₄<L₄`. Ambas as condições laterais já estão descarregadas das caixas C3 originais. `third_odd_prefix_isUnit_of_c4_source_bound` demonstra que essa desigualdade de fonte é suficiente para a invertibilidade do prefixo de momentos, e `third_odd_gate_of_c4_source_bound` a usa para liberar a equivalência da #145 envolvendo `c₆`. A desigualdade `c₄<L₄` permanece hipótese: não se usa a aproximação numérica como certificado.
+
 `third_odd_prefix_four_coefficients_insufficient` usa `c₀>0` e a entrada positiva para construir uma sequência de controle com os mesmos `c₀,…,c₃` da fonte e determinante ímpar nulo. É um contraexemplo **à suficiência dessas informações algébricas isoladas**; não é outra fonte física Carry nem prova que o prefixo físico seja singular. Relações adicionais da fonte podem excluir a perturbação. A rota C3 ímpar precisa de informação adicional, começando por `c₄`, para controlar o prefixo; para a terceira margem completa a #145 identifica a dependência até `c₆`.
 
 ## Auditoria e continuidade
 
-`ThirdSourcePrefixAudit.lean` audita cinco raízes novas junto das raízes originais da #145, exige as caixas C3 e a recorrência/transporte Schur e bloqueia os consumidores theta/de sinal nomeados. A auditoria dos tipos e corpos não demonstra ausência semântica de toda equivalência possível. `#print axioms` mostra somente `propext`, `Classical.choice` e `Quot.sound`.
+`ThirdSourcePrefixAudit.lean` audita oito raízes novas junto das raízes originais da #145, exige as caixas C3 e a recorrência/transporte Schur e bloqueia os consumidores theta/de sinal nomeados. A auditoria dos tipos e corpos não demonstra ausência semântica de toda equivalência possível. `#print axioms` mostra somente `propext`, `Classical.choice` e `Quot.sound`.
 
 ```bash
 bash research/c3-tilt-prime/validate_third_source_prefix.sh
