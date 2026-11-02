@@ -1,15 +1,17 @@
 # Geometry of Numbers — teoria real do carry
 
 
-## Estado atual e ponto de entrada — 28/10/2026
+## Estado atual e ponto de entrada — 02/11/2026
 
-**Consolidação de pesquisa:** os 100 PRs **#34–#133** foram integrados ao `main`, preservando o histórico de cada stack e os registros de auditoria nos agregadores Lean. Não há PRs abertos após a consolidação. Os relatórios antigos que dizem “main não alterado”, “PR draft” ou “sem merge” descrevem **seus checkpoints históricos**, não o estado atual do repositório.
+**Consolidação de pesquisa:** esta revisão reúne os resultados dos PRs **#34–#146**, preservando os registros de prova e auditoria de cada etapa. Os relatórios que dizem “main não alterado”, “PR draft” ou “sem merge” descrevem **seus checkpoints históricos**; confira os PRs atuais antes de iniciar uma nova integração.
 
 **Comece por estes documentos, antes de abrir uma nova investigação:**
 
 1. [Handoff — relógio logarítmico, Green e positividade](docs/HANDOFF_POSITIVIDADE_LOG_GREEN_2026-10-28.md): o que já é teorema Lean, o que é identidade algébrica, os NO-GOs relevantes e a lacuna matemática exata.
-2. [Prompt focado para o próximo Codex](docs/CODEX_NEXT_STEP_NATIVE_RADIAL_TAIL_2026-10-28.md): fechar uma **cota explícita somável de incrementos radiais para cada família finita de jets ímpares**, sem presumir positividade.
+2. [Terceira direção C3: resultados e próximos coeficientes](research/c3-tilt-prime/REPORT_TERCEIRA_DIRECAO.md): prefixo par descarregado pela fonte, controle de insuficiência no ímpar e caixas C3 que ainda faltam para demonstrar uma margem independente das caixas theta. O [prompt radial de 28/10](docs/CODEX_NEXT_STEP_NATIVE_RADIAL_TAIL_2026-10-28.md) é um checkpoint histórico, cuja primeira obrigação finita foi tratada pela #134.
 3. [PR #36 — NO-GO do Krylov material](research/structural-native-krylov-gap/REPORT.md), [PR #41 — Schur e sinal](research/native-moment-orthogonalization-audit/REPORT.md), [PR #83 — média–contraste](research/mean-contrast-green/REPORT.md), [PR #130 — saldo e cauda de seis fontes](research/native-effective-radial-budget/REPORT.md) e [PR #133 — coeficiente `Lambda` e integração](research/native-stencil-integrated-control/REPORT.md).
+
+**Atualização C3 e caudas:** a cadeia #134–#146 certifica controle radial finito, orçamento TFVD com cruzamentos, e separa o tilt da contribuição completada. A margem da terceira direção em ambos os setores foi certificada na #144 com caixas theta; a busca de uma explicação a partir da cabeça geométrica permanece aberta. O prefixo anterior par é invertível pelas caixas C3 originais; no ímpar, os quatro primeiros coeficientes isolados não determinam a invertibilidade. A lei all-order continua aberta. Veja [o relatório da terceira direção](research/c3-tilt-prime/REPORT_TERCEIRA_DIRECAO.md) e [o orçamento da fonte](research/tfvd-uniform-relative-source/REPORT.md).
 
 **Mapa estrutural:** a massa quadrática da torre seleciona `σ=1/2` com métrica canônica fixa; a decomposição do centro e das pernas possui defeitos logarítmicos exatos; o operador material `log n` é autoadjunto e seu transporte unitário/Parseval para Green já está formalizado. **Não** se conclui daí a positividade da Hankel canônica. O NO-GO da #36 exclui sua identificação direta com a família Krylov do clock material original. A forma quiral física é assinada e inclui retorno, bordos e cruzamentos. A positividade Hankel **em toda ordem permanece aberta**.
 
