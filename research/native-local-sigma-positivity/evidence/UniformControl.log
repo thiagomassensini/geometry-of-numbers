@@ -1,0 +1,3 @@
+'CarryLocalPositivityControl.shrinkingFamily_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivityControl.each_order_eventually_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivityControl.no_common_positive_neighborhood' depends on axioms: [propext, Classical.choice, Quot.sound]

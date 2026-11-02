@@ -1,0 +1,32 @@
+
+--- C3Tail256 ---
+'CarryC3DimensionThree.native_source_coeff_abs_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryC3DimensionThree.c3Head256_six_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryC3DimensionThree.c3Tail_original_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryC3DimensionThree.c3Tail256_six_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- C3Budget256 ---
+'CarryC3DimensionThree.c3_256_three_uniform_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryC3DimensionThree.c3_256_critical_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryC3DimensionThree.c3_256_critical_positive_of_head' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- CriticalCoordinates ---
+'CarryC3DimensionThree.critical_vector_explicit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryC3DimensionThree.critical_source_explicit' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- CriticalBoxes ---
+'CarryC3DimensionThree.oldMatrix_isUnit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryC3DimensionThree.critical_coordMass_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- C3Critical256 ---
+'CarryC3DimensionThree.c3_256_critical_error_unconditional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryC3DimensionThree.c3_256_positive_from_head' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- PivotBoxes ---
+'CarryC3DimensionThree.pivot_expression' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryC3DimensionThree.sourcePair_gt_six' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryC3DimensionThree.sourceHead_gt_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryC3DimensionThree.pivot_positive_from_certified_boxes' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- C3Audit ---
+C3 dimension three audit: roots 5; type/body closure 60503; standard axioms only; specified sign dependencies absent; original tail and theta boxes present

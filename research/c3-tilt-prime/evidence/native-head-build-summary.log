@@ -1,0 +1,4 @@
+lake build --wfail: PASS (8849 jobs)
+audit-foundation.sh: PASS
+audit-geometry.sh: PASS
+audit-analysis.sh: PASS (standard axioms)

@@ -1,0 +1,8 @@
+'CarrySourceBezout.sourceKernelSeries_product_rule' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceBezout.coefficientBlock_second_even_multiplicative_rule' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySourceBezout.secondEvenSourceEnergy_eq_c0_sq_schur' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceBezout.secondEvenSourceEnergy_re_pos_of_multiplicativeDeviation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
