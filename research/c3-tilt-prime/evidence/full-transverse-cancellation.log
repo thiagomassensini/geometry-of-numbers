@@ -1,0 +1,15 @@
+
+--- FullTransverseCancellation ---
+'CarryTiltSlice.center_exact_cancellation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.center_completionRemainder_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.fullTransverseResponse_even_jet_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.fullTransverseResponse_eq_channels' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.full_channels_even_jet_cancel' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- FullTfvdTransverse ---
+'CarryTiltSlice.fullTransverse_eq_normalizedGreen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.fullTransverse_eq_tfvdWronskian_near' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- FullTransverseCancellationAudit ---
+Tilt and prime-depth audit: roots 32; closure 60298; standard axioms only; specified theta/sign consumers absent; source, C3 tail, prime-depth, transverse sensitivity and Schur transport present
+PASS: pesquisa transversal, auditoria e busca de atalhos proibidos.
