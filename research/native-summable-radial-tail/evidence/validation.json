@@ -1,0 +1,39 @@
+{
+  "focused-validation": {
+    "status": "PASS",
+    "log_sha256": "bd381ecc038df4bf705963d8c5105451632a05dd9bb78c944a3915adea2116cd",
+    "marker": "PASS: focused native modules, axioms, transitive general audit (--focused)"
+  },
+  "root-build": {
+    "status": "PASS",
+    "log_sha256": "9273b2078d29072bcde727a3ce90c1a07c5d01335d2f2c8c1806666b83a2c24d",
+    "marker": "Build completed successfully (8849 jobs)."
+  },
+  "foundation": {
+    "status": "PASS",
+    "log_sha256": "0cf345cc3bcedfa92250217b4e73bc37834671ac0b8a2b97f66d3c06551ce199",
+    "marker": "PASS:"
+  },
+  "geometry": {
+    "status": "PASS",
+    "log_sha256": "469cddc780755a2a401f4a2d437d4b65bccc9f3333dc598e645025f94caf4888",
+    "marker": "PASS:"
+  },
+  "analysis": {
+    "status": "PASS",
+    "log_sha256": "10f8d9c0908ad8fe2aacd2b6a3fc4c62c729cf12a84bdff357e0a28f3d7f1f77",
+    "marker": "PASS:"
+  },
+  "new-axioms": {
+    "status": "PASS",
+    "log_sha256": "4b740517b886e1035f452cc76bd6db1b5d1173a540d20600004345e813e49452",
+    "marker": "Transitive source audit: 2 roots; 57971 type/body dependencies; standard axioms only; finite positivity forbidden",
+    "declarations_printed": 39
+  },
+  "cache": {
+    "archive_sha256": "d374041b5b017e2541039b6993ed3f53b244f20a1dd8c2e7bb851ba09eca288a",
+    "historical_oleans_reused": 200,
+    "historical_oleans_rebuilt_this_run": false
+  },
+  "base": "c66638f05ee432b6bd7d33e4d53737bd9c3d52f6"
+}

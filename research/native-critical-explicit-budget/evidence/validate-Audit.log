@@ -1,0 +1,23 @@
+'CarryExplicitBudget.finite_family_budget_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryExplicitBudget.finite_family_direct_budget_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryExplicitBudget.scaled_inverse_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryExplicitBudget.correction_numerator_box_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryExplicitBudget.correction_box_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryExplicitBudget.correction_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryExplicitBudget.critical_old_coefficient_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryExplicitBudget.critical_coefficient_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryExplicitBudget.critical_family_budget_rational' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryExplicitBudget.critical_error_at_numeric_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryExplicitBudget.critical_anchor_after_numeric_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryExplicitBudget.critical_energy_lower_after_numeric_cutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryExplicitBudget.critical_anchor_at_numeric_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryExplicitBudget.finite_odd_critical_anchor_of_relative_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryExplicitBudget.ten_relative_budget_after_numeric_cutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryExplicitBudget.ten_anchor_via_relative_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+Transitive source audit: 6 roots; 84167 type/body dependencies; standard axioms only; finite positivity forbidden

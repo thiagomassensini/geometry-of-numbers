@@ -1,0 +1,59 @@
+'CarryCriticalRadialMargin.det3_box_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.old_det_box_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.old_det_box_positive' depends on axioms: [propext]
+'CarryCriticalRadialMargin.old_det_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.num0_box_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.num1_box_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.num2_box_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.critical0_box_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.critical1_box_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.critical2_box_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.eight_critical_old_rows' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.eight_coeff_box_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.eight_moment_box_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.eight_head_box_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.eight_head_strict_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.moment_box_1_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.moment_box_2_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.moment_box_3_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.moment_box_4_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.moment_box_5_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.moment_box_6_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.moment_box_7_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.eight_pair_constants_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.eight_coefficient_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.eight_family_constant_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.eight_anchor_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.eight_anchor_beats_general_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.fourth_odd_original_boundary_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCriticalRadialMargin.eight_general_tail_explicit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.eight_anchor_explicit_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.eight_old_matrix_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.eight_old_matrix_isUnit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.eight_critical_vector_equation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.eight_critical_vector_eq_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.eight_form_eq_source_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.eight_form_eq_original_schur' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.eight_boundary_positive_via_general_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCriticalRadialMargin.fourth_odd_schur_positive_via_source_anchor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCriticalRadialMargin.finite_odd_boundary_positive_of_anchor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCriticalRadialMargin.six_boundary_positive_via_general_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCriticalRadialMargin.six_canonical_form_eq_half_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.six_residual_positive_via_general_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCriticalRadialMargin.six_pair_constants_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.six_coefficient_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.six_family_constant_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCriticalRadialMargin.six_anchor_beats_general_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+Transitive source audit: 4 roots; 59495 type/body dependencies; standard axioms only; finite positivity forbidden

@@ -1,0 +1,13 @@
+PASS: 200 cached Lean objects checked against actual sources, hashes and dependency fingerprints; restored only into task-owned caches.
+building ExplicitFinitePairing
+building EffectiveResponse
+building EffectiveOddPair
+building EffectivePairBounds
+building PairCurve
+building FamilyCurve
+building ScaledStep
+building SummableFamily
+building SixRegression
+building Examples
+building Audit
+PASS: focused native modules, axioms, transitive general audit (--focused)

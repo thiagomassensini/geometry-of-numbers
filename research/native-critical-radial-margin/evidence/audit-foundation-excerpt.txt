@@ -1,0 +1,4 @@
+'GeometryOfNumbers.Foundation.quadraticAmplitudeScaleCompatibleAt_denominator_zero' does not depend on any axioms
+'GeometryOfNumbers.Foundation.foundational_half_scaling_capstone' does not depend on any axioms
+'GeometryOfNumbers.Foundation.exists_foundational_half_scaling_capstone' does not depend on any axioms
+PASS: foundation build and empty-axiom audit.

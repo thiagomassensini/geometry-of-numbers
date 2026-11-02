@@ -1,0 +1,4 @@
+info: GeometryOfNumbers/Analysis/Audit.lean:7063:0: 'GeometryOfNumbers.Analysis.carryMaterialReadoutProjection_not_isometric_domain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Build completed successfully (8849 jobs).
