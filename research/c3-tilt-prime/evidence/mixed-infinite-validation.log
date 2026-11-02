@@ -86,6 +86,20 @@ Try this:
  Classical.choice,
  Quot.sound]
 
+--- CompletedFirstVariation ---
+'CarryTiltSlice.completed_firstVariation_eq_budget_sub_deficit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryTiltSlice.completed_firstVariation_eq_budget_mul_one_sub_ratio' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryTiltSlice.completed_firstVariation_pos_iff_ratio_lt_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryTiltSlice.completed_firstVariation_neg_iff_ratio_gt_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
 --- OfflineObstructionAudit ---
-Tilt and prime-depth audit: roots 69; closure 65759; standard axioms only; specified theta/sign consumers absent; source, C3 tail, prime-depth, transverse sensitivity and Schur transport present
+Tilt and prime-depth audit: roots 75; closure 65772; standard axioms only; specified theta/sign consumers absent; source, C3 tail, prime-depth, transverse sensitivity and Schur transport present
 OK: MixedInfinite e MixedInfiniteAudit compilam; sem sorry/admit/axiom/native_decide.
