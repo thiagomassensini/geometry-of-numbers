@@ -2,16 +2,12 @@ import MixedInfinite
 import Mathlib.Analysis.Calculus.MeanValue
 
 /-!
-# Troca transversal: identificar G com ∂_δ do objeto infinito (Seção 1, perna δ)
+# Derivada transversal do tilt C3 em deslocamento arbitrário
 
-Fecha a segunda troca de ordem: `∂_δ (∑' k block_k)|_0 = ∑' k ∂_δ block_k|_0 = G`.
-Usa `hasDerivAt_tsum_of_isPreconnected` numa vizinhança `δ ∈ (-1/4,1/4)`. A
-convergência em `δ=0` é imediata porque cada célula se anula lá (`cpTilt 3 0 c = 0`).
-A única obrigação analítica é a cota uniforme da derivada-δ da célula, obtida pela
-decomposição em duas primeiras diferenças de `g(x)=log x · x^{-δ}` (cancelamento que
-dá decaimento `c^{-3/4}`; com o carrier `c^{-1/2}` a soma é `c^{-5/4}`, somável).
-
-NÃO modifica os módulos anteriores.
+Este módulo demonstra a derivada célula a célula em qualquer deslocamento.
+A troca da derivada com a soma infinita não decorre apenas deste teorema; a
+continuação em `TransverseSwap.lean` prova essa troca por convergência dominada,
+com cota somável uniforme dos quocientes de diferença.
 -/
 
 namespace CarryTiltSlice

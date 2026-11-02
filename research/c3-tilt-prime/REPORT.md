@@ -1,6 +1,6 @@
 # Tilt, bracket e reconstrução por profundidades primas na linha crítica
 
-**Resultado: PARTIAL.** Há uma lei de sinal para os jets mistos do canal de tilt em toda ordem; a soma dos jets de cada ordem converge a um valor estritamente positivo. O tilt e a PR #47 de `primos` ajudam a localizar a estrutura: a coordenada é reconstruída pelas câmeras primas, e a primeira sensibilidade transversal do tilt é positiva. Nesta investigação, o Lean liga a decomposição exata do bracket aos mesmos coeficientes e limiares da PR #145, conservando completion, bordo e cauda. Isso não demonstra uma lei geométrica que imponha positividade dos pivôs nem exclui que ela possa vir de derivadas mistas.
+**Resultado: PARTIAL.** Há uma lei de sinal para os jets mistos do canal de tilt em toda ordem; as derivações transversal e em altura foram transportadas à soma infinita, cujo valor é estritamente positivo em cada ordem. O tilt e a PR #47 de `primos` ajudam a localizar a estrutura: a coordenada é reconstruída pelas câmeras primas, e a primeira sensibilidade transversal do tilt é positiva. Nesta investigação, o Lean liga a decomposição exata do bracket aos mesmos coeficientes e limiares da PR #145, conservando completion, bordo e cauda. Isso não demonstra uma lei geométrica que imponha positividade dos pivôs nem exclui que ela possa vir de derivadas mistas.
 
 Base: `02404256008b8f9be9c49ec695a82b8f8f1930b7`, PR #145, empilhada sobre #144. Não se modificaram as branches anteriores nem os checkouts com alterações locais do operador e de `primos`. A PR #47 foi inspecionada pelo commit mergeado `298a54f7be6111b6f83c4fee4de3bf3fed9f4a95` de `thiagomassensini/primos`.
 
@@ -54,7 +54,7 @@ Esta é uma lei de sinal em todas as ordens para **esse canal misto do tilt, em 
 
 A ponte prima fica explícita em `center_log_eq_prime_depth`: para cada centro `C_k=3(k+1)`, `log C_k` coincide com `primeDepthLogLedger (3*(k+1))`, o adaptador de profundidades primas do operador. `primeDepthMixedTiltTerm_summable`, `primeDepthMixedTiltTerm_tsum_pos` e `finite_mixed_prime_depth_tendsto_positive` transportam a mesma soma positiva, com todas as câmeras primas ativas no endereço, sem trocar a fonte. Isso é a mesma reconstrução logarítmica inspecionada na #47, mas a prova usa o adaptador do pin do operador, não importa a #47 diretamente.
 
-A ordem dos limites é essencial: primeiro são calculadas as derivadas mistas de **cada prefixo finito**; depois toma-se seu limite. Esta prova não demonstra que esse limite seja a derivada mista do tilt infinito já sintetizado. Para essa identificação é preciso uma justificativa separada de derivação sob o limite. Além disso, a soma positiva pertence somente ao canal de tilt: não controla automaticamente o sinal dos canais carrier/cruzados, bordo, cauda da fonte completada e completion, nem os pivôs.
+A continuação em `REPORT_TRANSVERSE_SWAP.md` demonstra que, para esse canal, a derivada transversal passa pela soma e a derivada em altura passa pela série resultante. O limite dos jets de prefixo coincide assim com o jet do tilt infinito, mantendo essa ordem de derivação. A soma positiva ainda pertence somente ao canal de tilt: não controla automaticamente os canais carrier/cruzados, bordo, cauda da fonte completada, completion ou pivôs.
 
 ## C — O que foi descartado e o que não foi
 
@@ -76,6 +76,8 @@ No host `llm`, da raiz desta worktree:
 
 ```bash
 bash research/c3-tilt-prime/validate.sh
+bash research/c3-tilt-prime/validate_infinite.sh
+bash research/c3-tilt-prime/validate_transverse_swap.sh
 lake build --wfail
 bash scripts/audit-foundation.sh
 bash scripts/audit-geometry.sh

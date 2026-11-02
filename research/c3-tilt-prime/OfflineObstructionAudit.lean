@@ -3,7 +3,7 @@ import OfflineObstruction
 import CriticalConcavity
 
 /-!
-Auditoria da Fase A (obstrução de positividade fora da linha), empilhada sobre as
+Auditoria dos controles condicionais de limiar e perturbação algébrica, empilhada sobre as
 raízes originais de `TiltAudit`. Verifica axiomas padrão apenas e ausência das
 caixas theta/sinal proibidas no fecho das novas raízes.
 -/

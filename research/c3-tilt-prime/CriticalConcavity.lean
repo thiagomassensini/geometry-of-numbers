@@ -3,24 +3,17 @@ import OfflineObstruction
 import SourceSchurShift
 
 /-!
-# Fase B (perna local) — concavidade do pivô na linha autodual
+# Variação algébrica de um coeficiente e curvatura local do tilt
 
-Backbone algébrico da negatividade local, sobre o modelo de deformação já existente
-`even_schur_shift : sourceSchur (perturb c 5 d) false 2 = sourceSchur c false 2 − 5·c₀·d`.
+Os teoremas usam `perturb` para variar um único coeficiente de uma sequência
+abstrata. Os nomes históricos `*_at_line` usam "linha" como rótulo do caso
+`d=0` dessa perturbação; não identificam a perturbação com um deslocamento da
+abscissa σ na fonte física. Não se prova aqui máximo ou concavidade do pivô
+físico como função de σ. A função real da fonte pode mover vários coeficientes,
+o prefixo, os cruzamentos e o próprio vetor crítico.
 
-O pivô é **linear** no deslocamento `d` do quinto coeficiente, com inclinação `−5c₀ < 0`.
-Logo:
-* o pivô é estritamente **antitônico** em `d` (a alavanca);
-* a configuração da linha (`d=0`) é o **máximo estrito** do pivô se `c₅` tem mínimo
-  estrito na linha (`d>0` fora dela);
-* um deslocamento `d` que cruza o limiar `pivô₀/(5c₀)` força o pivô `≤ 0` (resp. `< 0`),
-  obstruindo a positividade genuína (liga-se à Fase A).
-
-Também registra a **curvatura do tilt** `∂²_δ cpTilt 3 δ c` (a segunda diferença de
-`(log x)²`), o mecanismo físico que deve produzir o mínimo estrito de `c₅` na linha.
-O sinal físico completo (com peso do carrier e jato de altura) é a obrigação restante.
-
-Não modifica nenhum módulo anterior.
+Os lemas da derivada do tilt são exatos, mas a ligação de seu sinal com o
+pivô físico e a comparação de todos os canais permanecem obrigações abertas.
 -/
 
 namespace CarryTiltSlice
@@ -41,8 +34,7 @@ theorem odd_pivot_shift_strict_anti (c : ℕ → ℝ) (hc0 : 0 < c 0) {d₁ d₂
     sourceSchur (perturb c 6 d₂) true 2 < sourceSchur (perturb c 6 d₁) true 2 := by
   rw [odd_schur_shift, odd_schur_shift]; nlinarith
 
-/-- A configuração da linha maximiza estritamente o pivô par: qualquer deslocamento
-positivo de `c₅` (mínimo estrito na linha) baixa o pivô. -/
+/-- Nesta perturbação algébrica, aumentar apenas `c₅` baixa o pivô par. -/
 theorem even_pivot_strict_max_at_line (c : ℕ → ℝ) (hc0 : 0 < c 0) {d : ℝ} (hd : 0 < d) :
     sourceSchur (perturb c 5 d) false 2 < sourceSchur c false 2 := by
   rw [even_schur_shift]; nlinarith
@@ -60,7 +52,7 @@ theorem even_shift_forces_nonpos (c : ℕ → ℝ) {d : ℝ}
     sourceSchur (perturb c 5 d) false 2 ≤ 0 := by
   rw [even_schur_shift]; linarith
 
-/-- Deslocamento estrito acima do limiar: pivô `< 0` (negatividade estrita fora da linha). -/
+/-- Deslocamento algébrico estrito acima do limiar implica pivô negativo. -/
 theorem even_shift_forces_neg (c : ℕ → ℝ) {d : ℝ}
     (hd : sourceSchur c false 2 < 5 * c 0 * d) :
     sourceSchur (perturb c 5 d) false 2 < 0 := by
