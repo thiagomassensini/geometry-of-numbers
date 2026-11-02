@@ -51,6 +51,10 @@ Try this:
  Classical.choice,
  Quot.sound]
 
+--- LpNormBridge ---
+'CarryTiltSlice.tilt_jet_eq_lp_normSq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.tiltLpVector_normSq_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+
 --- OfflineObstructionAudit ---
-Tilt and prime-depth audit: roots 40; closure 65670; standard axioms only; specified theta/sign consumers absent; source, C3 tail, prime-depth, transverse sensitivity and Schur transport present
+Tilt and prime-depth audit: roots 42; closure 65687; standard axioms only; specified theta/sign consumers absent; source, C3 tail, prime-depth, transverse sensitivity and Schur transport present
 OK: MixedInfinite e MixedInfiniteAudit compilam; sem sorry/admit/axiom/native_decide.
