@@ -1,0 +1,38 @@
+[
+  {
+    "file": "vendor/MomentosHankel/PivotLocalTransport.lean",
+    "source_repo": "thiagomassensini/momentos",
+    "source_commit": "05c9314d59306383baa55ed3be80ab950e799e97",
+    "source_file": "lean/MomentosHankel/PivotLocalTransport.lean",
+    "sha256": "87411671ca9d2d2a4f896075fbf93133e772a199775a83ea5ba1f3e468154913",
+    "source_sha256": "87411671ca9d2d2a4f896075fbf93133e772a199775a83ea5ba1f3e468154913",
+    "normalization": "none"
+  },
+  {
+    "file": "vendor/MomentosHankel/PivotSecondDerivative.lean",
+    "source_repo": "thiagomassensini/momentos",
+    "source_commit": "05c9314d59306383baa55ed3be80ab950e799e97",
+    "source_file": "lean/MomentosHankel/PivotSecondDerivative.lean",
+    "sha256": "be8a7e8d6e06b06abe86896386f64670d56676749f81f32c40a1eb84b65edc41",
+    "source_sha256": "be8a7e8d6e06b06abe86896386f64670d56676749f81f32c40a1eb84b65edc41",
+    "normalization": "none"
+  },
+  {
+    "file": "vendor/MomentosHankel/SchurPivotCurvature.lean",
+    "source_repo": "thiagomassensini/momentos",
+    "source_commit": "05c9314d59306383baa55ed3be80ab950e799e97",
+    "source_file": "lean/MomentosHankel/SchurPivotCurvature.lean",
+    "sha256": "2c26ae99d7e188f662a1186fd5555ab8281a0b5191fbb1cf45cf742baa4313cb",
+    "source_sha256": "97acf98c0f9457000d7352cbce3796359eeaae2a4d1a90ee7906e8b1ade779f4",
+    "normalization": "remove extra trailing blank line"
+  },
+  {
+    "file": "vendor/MomentosHankel/SchurVectorSmoothness.lean",
+    "source_repo": "thiagomassensini/momentos",
+    "source_commit": "05c9314d59306383baa55ed3be80ab950e799e97",
+    "source_file": "lean/MomentosHankel/SchurVectorSmoothness.lean",
+    "sha256": "b55f35f0b0f1547e3752ac8b0c4cf6498ab118e80fcb882eb4c1ab97bd89f44c",
+    "source_sha256": "b55f35f0b0f1547e3752ac8b0c4cf6498ab118e80fcb882eb4c1ab97bd89f44c",
+    "normalization": "none"
+  }
+]

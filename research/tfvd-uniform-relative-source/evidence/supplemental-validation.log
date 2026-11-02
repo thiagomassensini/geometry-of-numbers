@@ -1,0 +1,5 @@
+PASS compile-certified.sh C3OrderRate (warningAsError)
+PASS compile-certified.sh AuditC3 (updated roots; warningAsError)
+PASS compile-certified.sh Axioms (updated public roots; warningAsError)
+PASS final source scan
+PASS numerical diagnostic (not interval-certified)

@@ -1,0 +1,5 @@
+'CarryUniformSource.critical_positive_of_uniform_head' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryUniformSource.critical_source_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryUniformSource.critical_source_uniform_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryUniformSource.original_kernel_relative_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryUniformSource.original_kernel_uniform_approx' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,23 @@
+BUILD MomentosHankel.SchurPivotCurvature
+PASS MomentosHankel.SchurPivotCurvature
+BUILD MomentosHankel.PivotSecondDerivative
+PASS MomentosHankel.PivotSecondDerivative
+BUILD MomentosHankel.SchurVectorSmoothness
+PASS MomentosHankel.SchurVectorSmoothness
+BUILD MomentosHankel.PivotLocalTransport
+PASS MomentosHankel.PivotLocalTransport
+BUILD MatrixJetCalculus
+PASS MatrixJetCalculus
+BUILD SigmaNeighborhood
+PASS SigmaNeighborhood
+BUILD MovingSchur
+PASS MovingSchur
+BUILD SectorRegression
+PASS SectorRegression
+BUILD Audit
+PASS Audit
+PASS lake build --wfail
+PASS audit foundation
+PASS audit geometry
+PASS audit analysis
+PASS source scan
