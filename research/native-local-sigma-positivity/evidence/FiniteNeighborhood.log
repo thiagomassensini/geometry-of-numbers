@@ -1,0 +1,8 @@
+'CarryLocalPositivity.exists_positive_noncentral_six_sections' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryLocalPositivity.sigmaSchur_finite_eventually_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivity.sigmaMatrix_finite_eventually_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivity.both_six_sigmaMatrices_eventually_posDef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

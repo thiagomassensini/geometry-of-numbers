@@ -1,0 +1,29 @@
+'CarryLocalPositivity.sigmaSchur_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivity.sigmaSchur_differentiable_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivity.sigmaSchur_deriv_center' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivity.sigmaSchur_localMax_of_negative_curvature' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryLocalPositivity.second_even_localMax' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivity.second_even_center_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivity.second_even_eventually_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivity.second_even_positive_local_max' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivity.sourceMomentMatrix_prefix_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivity.sigmaSchur_eventually_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivity.sigmaSchur_finite_eventually_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivity.sourceMomentMatrix_posDef_of_pivots' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivity.sigmaMatrix_finite_eventually_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivity.both_six_sigmaMatrices_eventually_posDef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryTiltAudit.thetaCurvaturePolynomial_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltAudit.sigmaCurvature_eq_thetaIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltAudit.sigmaCurvature_negative_iff_thetaDominance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltAudit.normalizedThetaFourthExpression_eq_h1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltAudit.normalizedThetaFourthExpression_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivity.exists_positive_noncentral_six_sections' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryLocalPositivityControl.shrinkingFamily_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivityControl.each_order_eventually_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryLocalPositivityControl.no_common_positive_neighborhood' depends on axioms: [propext, Classical.choice, Quot.sound]

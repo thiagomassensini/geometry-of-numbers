@@ -1,0 +1,18 @@
+
+--- NativeProductFactor ---
+'CarrySourceBezout.literal_head_constant_eventually_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceBezout.literal_product_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceBezout.literalCorrection_zero_tendsto_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceBezout.literalCorrection_constant_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- NativeProductTransport ---
+'CarrySourceBezout.literal_product_blocks' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceBezout.literal_product_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceBezout.literal_product_critical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceBezout.literal_product_difference_eq_mixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceBezout.literal_product_difference_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySourceBezout.literal_product_difference_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- NativeProductTransportAudit ---
+Tilt and prime-depth audit: roots 44; closure 60576; standard axioms only; specified theta/sign consumers absent; source, C3 tail, prime-depth, transverse sensitivity and Schur transport present
+PASS: produto literal, cruzamentos, cauda e auditoria.

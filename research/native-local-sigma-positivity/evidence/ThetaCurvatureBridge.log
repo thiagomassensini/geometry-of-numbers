@@ -1,0 +1,5 @@
+'CarryTiltAudit.normalizedThetaFourthExpression_eq_h1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltAudit.normalizedThetaFourthExpression_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltAudit.thetaCurvaturePolynomial_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltAudit.sigmaCurvature_eq_thetaIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltAudit.sigmaCurvature_negative_iff_thetaDominance' depends on axioms: [propext, Classical.choice, Quot.sound]
