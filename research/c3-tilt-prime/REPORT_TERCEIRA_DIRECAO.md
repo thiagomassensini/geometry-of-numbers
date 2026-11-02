@@ -46,4 +46,4 @@ bash research/c3-tilt-prime/validate_third_source_prefix.sh
 
 O build geral e as auditorias de Foundation/Geometry/Analysis são executados separadamente na integração com `main`. Dependências anteriores são reutilizadas dos caches já construídos. Nenhum arquivo histórico, fonte, pin ou métrica foi modificado.
 
-Próximo passo matemático mínimo: construir caixas verificadas da **cabeça C3 original e cauda**, incluindo Gamma/chart, para os jets até ordem 10 e 12, e confrontar respectivamente `c₅` e `c₆` com os limiares completos da #145. A generalização all-order exige uma propriedade de margem por ordem e setor; não decorre do prefixo par ou da positividade finita já conhecida.
+Próximo passo matemático mínimo: construir uma caixa verificada de `c₄` a partir da **cabeça C3 original e cauda**, incluindo Gamma/chart, e confrontá-la com `L₄` para liberar o prefixo ímpar. Depois estender as caixas até os jets de ordem 10 e 12 e confrontar `c₅` e `c₆` com os limiares completos da #145. A generalização all-order exige uma propriedade de margem por ordem e setor; não decorre do prefixo par ou da positividade finita já conhecida.
