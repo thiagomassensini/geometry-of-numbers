@@ -1,0 +1,5 @@
+
+--- MixedTail ---
+'CarryTiltSlice.mixedTiltTerm_summable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.mixedTiltTerm_tsum_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.finite_mixed_tilt_tendsto_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
