@@ -1,0 +1,6 @@
+tail_coeff_abs ['1.833955e-26', '3.6026532e-26', '8.3168742e-26', '5.4598148e-27', '1.2103294e-26', '3.3522987e-27', '3.2688761e-28']
+sector 0 HH 2.754603409920079e-14 full 2.754603409920867e-14 budget 9.91582371664e-27 coarse 1.62440838478e-11 coarse_over_target 589.70680822 E_one_times_mass2 2.86096527991e-25 HH_gt_budget True HH_gt_uniform True HH_gt_coarse False
+crosscheck_abs 4.5893e-81 mass 1.01816498158
+sector 1 HH 1.997241762139608e-17 full 1.997241762054612e-17 budget 1.53497849413e-27 coarse 1.62091971133e-11 coarse_over_target 811579.119829 E_one_times_mass2 2.04735922667e-25 HH_gt_budget True HH_gt_uniform True HH_gt_coarse False
+crosscheck_abs 4.9787e-83 mass 1.01707105891
+status numerical_diagnostic_not_interval_certified

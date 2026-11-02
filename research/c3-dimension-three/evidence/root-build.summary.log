@@ -1,0 +1,40 @@
+info: GeometryOfNumbers/Analysis/Audit.lean:7039:0: 'GeometryOfNumbers.Analysis.carryMaterialReadout_minimum_eq_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/Audit.lean:7041:0: 'GeometryOfNumbers.Analysis.carryMaterialReadout_unique_minimum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/Audit.lean:7043:0: 'GeometryOfNumbers.Analysis.carryMaterialReadout_complete_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/Audit.lean:7045:0: 'GeometryOfNumbers.Analysis.carryMaterialReadout_finite_energy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/Audit.lean:7047:0: 'GeometryOfNumbers.Analysis.carryMaterialReadoutProjection_cells' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/Audit.lean:7049:0: 'GeometryOfNumbers.Analysis.carryMaterialReadoutProjection_boundary_defect' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/Audit.lean:7051:0: 'GeometryOfNumbers.Analysis.carryMaterialReadoutProjection_mem_domain_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/Audit.lean:7053:0: 'GeometryOfNumbers.Analysis.carryMaterialReadoutComplement_cells' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/Audit.lean:7055:0: 'GeometryOfNumbers.Analysis.carryMaterialReadoutComplement_boundary_defect' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/Audit.lean:7057:0: 'GeometryOfNumbers.Analysis.carryMaterialReadoutComplement_mem_domain_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/Audit.lean:7059:0: 'GeometryOfNumbers.Analysis.carryMaterialReadout_physical_strict' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/Audit.lean:7061:0: 'GeometryOfNumbers.Analysis.carryMaterialReadout_source_projection_not_physical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/Audit.lean:7063:0: 'GeometryOfNumbers.Analysis.carryMaterialReadoutProjection_not_isometric_domain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Build completed successfully (8849 jobs).

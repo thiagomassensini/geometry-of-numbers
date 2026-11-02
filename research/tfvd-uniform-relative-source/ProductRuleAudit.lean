@@ -1,0 +1,5 @@
+import C3MultiplicativeSecondEven
+#print axioms CarrySourceBezout.sourceKernelSeries_product_rule
+#print axioms CarrySourceBezout.coefficientBlock_second_even_multiplicative_rule
+#print axioms CarrySourceBezout.secondEvenSourceEnergy_eq_c0_sq_schur
+#print axioms CarrySourceBezout.secondEvenSourceEnergy_re_pos_of_multiplicativeDeviation
