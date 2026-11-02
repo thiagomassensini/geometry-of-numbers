@@ -1,0 +1,6 @@
+
+--- MixedPrime ---
+'CarryTiltSlice.center_log_eq_prime_depth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.primeDepthMixedTiltTerm_summable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.primeDepthMixedTiltTerm_tsum_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.finite_mixed_prime_depth_tendsto_positive' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,4 @@
+lake build --wfail: PASS
+audit-foundation.sh: PASS
+audit-geometry.sh: PASS
+audit-analysis.sh: PASS (standard axioms)

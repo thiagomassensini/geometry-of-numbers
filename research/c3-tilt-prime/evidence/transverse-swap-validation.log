@@ -1,0 +1,32 @@
+
+--- TiltPhase ---
+
+--- TiltQuant ---
+
+--- TiltBounds ---
+
+--- TransverseBound ---
+'CarryTiltSlice.transverseSlope_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- TransverseSwap ---
+'CarryTiltSlice.transverseSlope_tsum_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.hasDerivAt_infiniteTransverseTilt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.infiniteTransverseTilt_summable' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- SwapCapstone ---
+'CarryTiltSlice.infinite_tilt_mixed_prime_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.infinite_tilt_mixed_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.finite_jets_tendsto_infinite_mixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- InfiniteTiltLedger ---
+'CarryTiltSlice.infiniteCarrierRemainder_summable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.infinite_c3_tilt_carrier_ledger' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.completed_parameter_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- DerivativeLedger ---
+'CarryTiltSlice.material_chart_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.infiniteCarrierRemainder_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryTiltSlice.infinite_material_transverse_ledger' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+--- TransverseSwapAudit ---
+Tilt and prime-depth audit: roots 25; closure 60222; standard axioms only; specified theta/sign consumers absent; source, C3 tail, prime-depth, transverse sensitivity and Schur transport present
