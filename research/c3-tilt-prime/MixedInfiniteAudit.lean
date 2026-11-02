@@ -1,0 +1,10 @@
+import TiltAudit
+import MixedInfinite
+
+/-!
+Auditoria do canal de derivação sob o limite (MixedInfinite), empilhada sobre as
+raízes originais de `TiltAudit`. Mantém a proveniência exigida e verifica que as
+novas raízes usam apenas axiomas padrão e não tocam as caixas theta/sinal proibidas.
+-/
+
+#audit_tilt_source CarryTiltSlice.finite_tilt_vertical_jets_zero CarryTiltSlice.transverse_sensitivity_positive CarryTiltSlice.native_even_coefficient_carrier_boundary_tail CarryTiltSlice.even_pivot_gate_carrier CarryTiltSlice.odd_pivot_gate_carrier CarryTiltSlice.prime_depth_carrier_recurrence CarryTiltSlice.height_jets_zero_transverse_sensitivity_pos CarryTiltSlice.transverse_global_ledger CarryTiltSlice.finite_mixed_tilt_identity CarryTiltSlice.finite_mixed_tilt_positive CarryTiltSlice.mixedTiltTerm_summable CarryTiltSlice.primeDepthMixedTiltTerm_tsum_pos CarryTiltSlice.finite_mixed_prime_depth_tendsto_positive CarryTiltSlice.iteratedDeriv_tsum_mixed CarryTiltSlice.infinite_mixed_tilt_identity CarryTiltSlice.infinite_mixed_tilt_positive CarryTiltSlice.infinite_mixed_prime_depth_identity CarryTiltSlice.finite_jets_tendsto_infinite_jet
