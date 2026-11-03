@@ -50,6 +50,9 @@
 'CarrySigmaObstruction.completedSigmaLogJet_joint_representation_near_center' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJetGeneratingFunction_transverse_pde_at_center' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
 'CarrySigmaObstruction.completedSigmaLogJetGeneratingFunction_transverse_pde_near_center' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]

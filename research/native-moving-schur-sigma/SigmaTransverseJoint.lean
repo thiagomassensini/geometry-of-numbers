@@ -632,6 +632,37 @@ theorem completedSigmaLogJetGeneratingSeries_radius_uniform_near_center :
   rw [hcoe] at hradius
   exact hradius
 
+/-- The generating-function PDE also holds at the center `u = 0`. Here its radial
+term vanishes, while the value and first derivative of the convergent series are its
+first two original sigma jets. The remaining equation is the `n = 0` curvature
+identity, so this is a functional center statement, not only a formal coefficient claim. -/
+theorem completedSigmaLogJetGeneratingFunction_transverse_pde_at_center (d : ℝ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < 1 / 2) :
+    iteratedDeriv 2
+        (fun y : ℝ => completedSigmaLogJetGeneratingFunction y 0) d +
+      (6 : ℝ) * deriv
+        (fun u : ℝ => completedSigmaLogJetGeneratingFunction d u) 0 +
+      (4 : ℝ) * 0 ^ 2 * iteratedDeriv 2
+        (fun u : ℝ => completedSigmaLogJetGeneratingFunction d u) 0 = 0 := by
+  have hvalue : (fun y : ℝ => completedSigmaLogJetGeneratingFunction y 0) =
+      (fun y : ℝ => completedSigmaLogJet y 0) := by
+    funext y
+    simp only [completedSigmaLogJetGeneratingFunction,
+      completedSigmaLogJetGeneratingSeries, FormalMultilinearSeries.sum,
+      FormalMultilinearSeries.ofScalars_apply_eq]
+    rw [tsum_eq_single 0]
+    · simp
+    · intro n hn
+      simp [hn]
+  have hseries := completedSigmaLogJetGeneratingFunction_hasFPowerSeriesAt d hd₁ hd₂
+  have hderiv : deriv (completedSigmaLogJetGeneratingFunction d) 0 =
+        completedSigmaLogJet d 1 := by
+    simpa [completedSigmaLogJetGeneratingSeries] using hseries.deriv
+  have hcoeff := sigma_log_jet_transverse_pde_coefficient d 0 hd₁ hd₂
+  rw [hvalue]
+  rw [hderiv]
+  simpa using hcoeff
+
 /-- The original sigma generating function represents the transverse mean on one common
 rectangle around the origin. The longitudinal radius is chosen inside a single disc of
 analyticity of the original logarithmic response and inside the uniform convergence radius

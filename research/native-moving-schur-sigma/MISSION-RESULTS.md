@@ -210,9 +210,11 @@ no intervalo.
 ∂²_d G_d(t²) + 6 ∂_u G_d(t²) + 4 t² ∂²_u G_d(t²) = 0.
 ```
 
-As derivadas são as derivadas iteradas reais das funções geradoras originais. Como `u=t²>0`,
-isso cobre a equação funcional em uma vizinhança perfurada de `u=0`; a identidade coeficiente
-a coeficiente no centro continua disponível. `#print axioms` mostra apenas `[propext,
+As derivadas são as derivadas iteradas reais das funções geradoras originais. O teorema
+`completedSigmaLogJetGeneratingFunction_transverse_pde_at_center` cobre funcionalmente o
+ponto `u=0`: a série convergente identifica `G_d(0)=h₀(d)` e `∂ᵤG_d(0)=h₁(d)`, e a equação
+reduz à curvatura de `h₀`. Junto ao resultado para `t ≠ 0`, isso prova a PDE funcional no
+centro e numa vizinhança perfurada de `u=0`. `#print axioms` mostra apenas `[propext,
 Classical.choice, Quot.sound]` para os teoremas novos. O stencil de raio imaginário segue
 sendo uma média analítica, sem identificação com o bracket aritmético `C2`.
 
