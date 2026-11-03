@@ -258,8 +258,44 @@ de série convergente com os momentos originais, não apenas uma identidade form
 teoremas novos também passam `#print axioms` com somente `propext`, `Classical.choice` e
 `Quot.sound`.
 
-**ABERTO:** relacionar o ball de convergência do operador à região explícita `‖u‖ * R < 1` de
-H2, provando `‖T‖ ≤ R`; obter a estimativa de Cauchy e instanciar H2 com os jets sigma; propagar
-a EDO até o zero deslocado e extrair a direção negativa da `sigmaMatrix` original. Uma tentativa
-local do limite de norma da extensão pela densidade não compilou dentro do limite de redução
-prático do Lean e foi retirada; nenhuma hipótese ou resultado foi acrescentado a partir dela.
+O multiplicador de Hilbert agora é definido pela conclusão direta do multiplicador limitado no
+quociente. `momentHilbertMulX_norm_le` transporta a cota para a conclusão usando a igualdade de
+norma de `NormedAddGroupHom.completion`; `complexifyMomentOperator_norm_le` transporta a mesma
+cota para a complexificação. Ambos passam `#print axioms` com apenas os axiomas padrão.
+`momentComplexMulX_mem_neumannBall` prova que `‖u‖ * R < 1` coloca `u` no ball de Neumann,
+incluindo o caso degenerado de operador nulo. Assim,
+`momentResolventCoefficient_hasSum_moments_of_radius` prova a igualdade convergente
+
+\[
+G_T(u)=\sum_{n\ge0}h_nu^n\qquad(\|u\|R<1).
+\]
+
+**ABERTO:** obter a cota exponencial H2 para os jets sigma em uma declaração reutilizável e
+instanciar com `completedSigmaLogJet`; propagar a EDO até o zero deslocado e extrair a direção
+negativa da `sigmaMatrix` original. A prova do limite de norma pela redução da extensão densa
+foi substituída pela construção direta por conclusão, que compila.
+
+## Atualização — estimativa H2 e instância da matriz sigma original
+
+**PROVADO:** `completedSigmaLogJet_exponential_bound` em `SigmaZeroObstruction.lean` fornece
+constantes `C ≥ 0` e `R > 0` com
+`|completedSigmaLogJet d n| ≤ C * R^n` para todo `n`, quando `|d| < 1/2`. A prova deriva a
+cota da série de Taylor analítica do log-density, usa a normalização exata dos jets da fonte
+original e absorve o fator linear em `n` por uma potência geométrica. Não troca os jets por
+outra sequência.
+
+Também está provada a igualdade definicional
+`sigmaMatrix d 0 N = hankelMatrix (completedSigmaLogJet d) N`. Assim, a hipótese all-order
+`∀ N, (sigmaMatrix d 0 N).PosSemidef` alimenta exatamente H1 para os mesmos jets. O teorema
+`completedSigmaLogJet_resolvent_hasSum_of_sigmaMatrix_psd` aplica o resultado geral de D e
+mostra que, sob essa hipótese e H2, a compressão da resolvente soma a série complexa original
+em todo o disco explícito `‖u‖ * R < 1`.
+
+Os novos teoremas de sigma passaram `#print axioms` com somente `propext`, `Classical.choice`
+e `Quot.sound`; os módulos `MomentLogConvexity` e `SigmaZeroObstruction` compilaram com
+`-DwarningAsError=true`.
+
+**ABERTO:** identificar a função resolvente com a geradora analítica complexa numa vizinhança
+de zero e propagar a EDO até o zero deslocado. Em seguida ainda é necessário extrair uma ordem
+finita e uma direção negativa para a `sigmaMatrix` original; a obstrução all-order não está
+provada.

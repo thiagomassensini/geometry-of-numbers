@@ -5,6 +5,8 @@ import Mathlib.Analysis.InnerProductSpace.Basic
 import Mathlib.Analysis.InnerProductSpace.Completion
 import Mathlib.Analysis.InnerProductSpace.Adjoint
 import Mathlib.Analysis.Normed.Operator.Extend
+import Mathlib.Topology.Algebra.LinearMapCompletion
+import Mathlib.Analysis.Normed.Group.HomCompletion
 import Mathlib.Analysis.CStarAlgebra.ContinuousLinearMap
 import Mathlib.Analysis.CStarAlgebra.Spectrum
 import Mathlib.Analysis.Normed.Algebra.GelfandFormula
@@ -831,12 +833,8 @@ noncomputable def momentHilbertMulX {h : ℕ → ℝ}
     (hH : ∀ N, (hankelMatrix h N).PosSemidef)
     {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
     (hbound : ∀ k, |h k| ≤ C * R ^ k) :
-    momentHilbert h hH →L[ℝ] momentHilbert h hH := by
-  let Q := Polynomial ℝ ⧸ momentNullSubmodule h hH
-  let H := momentHilbert h hH
-  let e : Q →L[ℝ] H := momentQuotientEmbedding hH
-  let f : Q →L[ℝ] H := e.comp (quotientMulXContinuous hH hC hR hbound)
-  exact ContinuousLinearMap.extend f e
+    momentHilbert h hH →L[ℝ] momentHilbert h hH :=
+  (quotientMulXContinuous hH hC hR hbound).completion
 
 /-- The completed multiplier agrees with `X` on every polynomial class. -/
 theorem momentHilbertMulX_on_quotient {h : ℕ → ℝ}
@@ -847,25 +845,48 @@ theorem momentHilbertMulX_on_quotient {h : ℕ → ℝ}
         (momentQuotientEmbedding hH (Submodule.Quotient.mk p)) =
       momentQuotientEmbedding hH (Submodule.Quotient.mk (Polynomial.X * p)) := by
   let Q := Polynomial ℝ ⧸ momentNullSubmodule h hH
-  let e : Q →L[ℝ] momentHilbert h hH := momentQuotientEmbedding hH
-  have hdense : DenseRange (e : Q → momentHilbert h hH) := by
-    change DenseRange (UniformSpace.Completion.coe' : Q → UniformSpace.Completion Q)
-    exact UniformSpace.Completion.denseRange_coe
-  have hunif : IsUniformInducing (e : Q → momentHilbert h hH) := by
-    change IsUniformInducing (UniformSpace.Completion.coe' : Q → UniformSpace.Completion Q)
-    exact UniformSpace.Completion.isUniformInducing_coe Q
-  change (ContinuousLinearMap.extend
-      (e.comp (quotientMulXContinuous hH hC hR hbound)) e)
-      (e (Submodule.Quotient.mk p)) = _
-  rw [ContinuousLinearMap.extend_eq
-    (e.comp (quotientMulXContinuous hH hC hR hbound)) hdense hunif]
-  change e (quotientMulX hH hC hR hbound (Submodule.Quotient.mk p)) =
-    e (Submodule.Quotient.mk (Polynomial.X * p))
+  change (quotientMulXContinuous hH hC hR hbound).completion
+      ((Submodule.Quotient.mk p : Q) : UniformSpace.Completion Q) = _
+  rw [ContinuousLinearMap.completion_apply_coe]
+  change momentQuotientEmbedding hH
+      (quotientMulX hH hC hR hbound (Submodule.Quotient.mk p)) = _
   rw [quotientMulX_mk]
 
 #print axioms momentHilbertMulX_on_quotient
 
 #print axioms momentHilbertMulX
+
+/-- H2's multiplier bound persists on the completed Hilbert space. -/
+theorem momentHilbertMulX_norm_le {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) :
+    ‖momentHilbertMulX hH hC hR hbound‖ ≤ R := by
+  let Q := Polynomial ℝ ⧸ momentNullSubmodule h hH
+  let f : Q →L[ℝ] Q := quotientMulXContinuous hH hC hR hbound
+  let g : NormedAddGroupHom Q Q :=
+    NormedAddGroupHom.ofLipschitz f.toLinearMap.toAddMonoidHom f.lipschitz
+  have hg : ‖g‖ ≤ R := by
+    apply g.opNorm_le_bound hR.le
+    intro q
+    change ‖quotientMulX hH hC hR hbound q‖ ≤ R * ‖q‖
+    exact quotientMulX_norm_bound hH hC hR hbound q
+  have hnorm : ‖g.completion‖ ≤ R := by
+    rw [NormedAddGroupHom.norm_completion]
+    exact hg
+  have hfun : (f.completion : UniformSpace.Completion Q → UniformSpace.Completion Q) =
+      g.completion := by
+    funext x
+    change UniformSpace.Completion.map (⇑f) x = UniformSpace.Completion.map (⇑g) x
+    congr 1
+  apply ContinuousLinearMap.opNorm_le_bound f.completion hR.le
+  intro x
+  rw [hfun]
+  calc
+    ‖g.completion x‖ ≤ ‖g.completion‖ * ‖x‖ := g.completion.le_opNorm x
+    _ ≤ R * ‖x‖ := mul_le_mul_of_nonneg_right hnorm (norm_nonneg x)
+
+#print axioms momentHilbertMulX_norm_le
 
 /-- The extended multiplier intertwines the completion embedding with the quotient map. -/
 theorem momentHilbertMulX_coe {h : ℕ → ℝ}
@@ -1063,6 +1084,39 @@ theorem complexifyMomentOperator_apply {E : Type*}
 
 #print axioms complexifyMomentOperator_apply
 
+/-- Complexification preserves the operator-norm upper bound. -/
+theorem complexifyMomentOperator_norm_le {E : Type*}
+    [NormedAddCommGroup E] [InnerProductSpace ℝ E]
+    (T : E →L[ℝ] E) :
+    ‖complexifyMomentOperator T‖ ≤ ‖T‖ := by
+  apply ContinuousLinearMap.opNorm_le_bound _ (norm_nonneg T)
+  intro x
+  have hx : ‖x‖ ^ 2 = ‖RealHilbertComplexification.re x‖ ^ 2 +
+      ‖RealHilbertComplexification.im x‖ ^ 2 :=
+    WithLp.prod_norm_sq_eq_of_L2 x
+  have hfx : ‖complexifyMomentOperator T x‖ ^ 2 =
+      ‖T (RealHilbertComplexification.re x)‖ ^ 2 +
+      ‖T (RealHilbertComplexification.im x)‖ ^ 2 := by
+    rw [complexifyMomentOperator_apply]
+    exact WithLp.prod_norm_sq_eq_of_L2 _
+  have hre := T.le_opNorm (RealHilbertComplexification.re x)
+  have him := T.le_opNorm (RealHilbertComplexification.im x)
+  have hsq : ‖complexifyMomentOperator T x‖ ^ 2 ≤
+      (‖T‖ * ‖x‖) ^ 2 := by
+    rw [hfx, mul_pow, hx]
+    have hnT := norm_nonneg T
+    have hnr := norm_nonneg (RealHilbertComplexification.re x)
+    have hni := norm_nonneg (RealHilbertComplexification.im x)
+    have hnTr := norm_nonneg (T (RealHilbertComplexification.re x))
+    have hnTi := norm_nonneg (T (RealHilbertComplexification.im x))
+    nlinarith [sq_nonneg (‖T‖ * ‖RealHilbertComplexification.re x‖ -
+        ‖T (RealHilbertComplexification.re x)‖),
+      sq_nonneg (‖T‖ * ‖RealHilbertComplexification.im x‖ -
+        ‖T (RealHilbertComplexification.im x)‖)]
+  exact (sq_le_sq₀ (norm_nonneg _) (mul_nonneg (norm_nonneg T) (norm_nonneg x))).mp hsq
+
+#print axioms complexifyMomentOperator_norm_le
+
 /-- Complexification preserves symmetry of a real bounded operator. -/
 theorem complexifyMomentOperator_symmetric {E : Type*}
     [NormedAddCommGroup E] [InnerProductSpace ℝ E] [CompleteSpace E]
@@ -1114,6 +1168,20 @@ theorem momentComplexMulX_isSelfAdjoint {h : ℕ → ℝ}
   exact momentHilbertMulX_isSelfAdjoint hH hC hR hbound
 
 #print axioms momentComplexMulX_isSelfAdjoint
+
+/-- H2 bounds the complexified multiplier by the same radius. -/
+theorem momentComplexMulX_norm_le {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) :
+    ‖momentComplexMulX hH hC hR hbound‖ ≤ R := by
+  calc
+    ‖momentComplexMulX hH hC hR hbound‖ ≤
+        ‖momentHilbertMulX hH hC hR hbound‖ :=
+      complexifyMomentOperator_norm_le _
+    _ ≤ R := momentHilbertMulX_norm_le hH hC hR hbound
+
+#print axioms momentComplexMulX_norm_le
 
 /-- A nonreal complex number lies in the resolvent set of the complexified
 self-adjoint moment multiplier. -/
@@ -1312,5 +1380,51 @@ theorem momentResolventCoefficient_hasSum_moments {h : ℕ → ℝ}
 #print axioms momentResolventReadout_pow_eq_moment
 #print axioms momentResolventReadout_neumann_term
 #print axioms momentResolventCoefficient_hasSum_moments
+
+/-- The H2 disk lies inside the Neumann disk for the constructed multiplier. -/
+theorem momentComplexMulX_mem_neumannBall {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) {u : ℂ}
+    (hu : ‖u‖ * R < 1) :
+    u ∈ Metric.eball (0 : ℂ)
+      (ENNReal.ofNNReal ‖momentComplexMulX hH hC hR hbound‖₊)⁻¹ := by
+  let A := momentComplexMulX hH hC hR hbound
+  have hA : ‖A‖ ≤ R := momentComplexMulX_norm_le hH hC hR hbound
+  have hA_nn : ‖A‖₊ ≤ R.toNNReal := by
+    exact (NNReal.coe_le_coe).mp (by
+      simpa [Real.coe_toNNReal R hR.le] using hA)
+  have hu_nn : ‖u‖₊ * R.toNNReal < 1 := by
+    exact (NNReal.coe_lt_coe).mp (by
+      simpa [Real.coe_toNNReal R hR.le] using hu)
+  by_cases hA0 : ‖A‖₊ = 0
+  · rw [mem_eball_zero_iff, enorm_eq_nnnorm]
+    change ‖u‖ₑ < (ENNReal.ofNNReal ‖A‖₊)⁻¹
+    rw [hA0]
+    simp
+  · have hprod : ‖u‖₊ * ‖A‖₊ < 1 := by
+      calc
+        ‖u‖₊ * ‖A‖₊ ≤ ‖u‖₊ * R.toNNReal :=
+          mul_le_mul_of_nonneg_left hA_nn (by positivity)
+        _ < 1 := hu_nn
+    have hu_inv : ‖u‖₊ < ‖A‖₊⁻¹ :=
+      (NNReal.lt_inv_iff_mul_lt hA0).2 hprod
+    rw [mem_eball_zero_iff, enorm_eq_nnnorm]
+    rw [← ENNReal.coe_inv hA0]
+    exact ENNReal.coe_lt_coe.mpr hu_inv
+
+/-- For `‖u‖ R < 1`, the scalar resolvent sums the original moment series. -/
+theorem momentResolventCoefficient_hasSum_moments_of_radius {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) {u : ℂ}
+    (hu : ‖u‖ * R < 1) :
+    HasSum (fun n : ℕ => (h n : ℂ) * u ^ n)
+      (momentResolventCoefficient hH hC hR hbound (momentComplexUnit hH) u) :=
+  momentResolventCoefficient_hasSum_moments hH hC hR hbound
+    (momentComplexMulX_mem_neumannBall hH hC hR hbound hu)
+
+#print axioms momentComplexMulX_mem_neumannBall
+#print axioms momentResolventCoefficient_hasSum_moments_of_radius
 
 end CarryMomentLogConvex

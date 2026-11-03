@@ -7,6 +7,7 @@ import Mathlib.LinearAlgebra.Matrix.PosDef
 import CarrySelfAdjointOperator.NativeBoundaryArchimedeanDressingSeparation
 import CarrySelfAdjointOperator.NativeScalarGenuineIdentification
 import CPFormal.Analytic.CpGenuineRealAxisPositivity
+import MomentLogConvexity
 
 /-!
 # Obstrução off-critical: auditoria, correção e isolamento da obrigação analítica
@@ -65,7 +66,8 @@ força a falha de PSD em ordem finita. O teorema usa apenas o fato PROVADO da n�
 -/
 
 namespace CarrySigmaObstruction
-open CarrySelfAdjointOperator CarrySigmaSource CarryMovingSigma CPFormal.Analytic.Cp
+open CarrySelfAdjointOperator CarrySigmaSource CarryMovingSigma CarryMomentLogConvex
+  CPFormal.Analytic.Cp
 open scoped BigOperators Matrix Topology
 noncomputable section
 set_option autoImplicit false
@@ -497,6 +499,127 @@ private theorem nat_succ_le_two_pow (n : ℕ) : n + 1 ≤ 2 ^ n := by
         n + 1 + 1 ≤ 2 * (n + 1) := by omega
         _ ≤ 2 * 2 ^ n := Nat.mul_le_mul_left 2 ih
         _ = 2 ^ (n + 1) := by rw [pow_succ]; ring
+
+/-- The original sigma jets satisfy the exponential coefficient bound H2.  This is
+obtained from the analytic Taylor coefficients of the log-density and the exact
+normalization of `completedSigmaLogJet`; no auxiliary moment sequence is used. -/
+theorem completedSigmaLogJet_exponential_bound (d : ℝ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    ∃ C R : ℝ, 0 ≤ C ∧ 0 < R ∧
+      ∀ n, |completedSigmaLogJet d n| ≤ C * R ^ n := by
+  let L : ℝ → ℝ := fun t => Real.log (completedSigmaDensity d t)
+  let S := completedSigmaLogDensityTaylorSeries d
+  have hL : AnalyticAt ℝ L 0 :=
+    completedSigmaLogDensity_analyticAt_origin d hd₁ hd₂
+  have hrS : 0 < S.radius := hL.hasFPowerSeriesAt.radius_pos
+  obtain ⟨C, r, hC, hr, hbound⟩ := S.le_mul_pow_of_radius_pos hrS
+  have hcoeff (n : ℕ) : completedSigmaLogJet d n =
+      -(((n + 1 : ℕ) : ℝ) / 2) * (S (2 * n + 2) (fun _ => 1)) := by
+    rw [completedSigmaLogJet_quarter_normalization]
+    simp only [S, completedSigmaLogDensityTaylorSeries,
+      FormalMultilinearSeries.ofScalars_apply_eq]
+    have hfact : ((2 * n + 2).factorial : ℝ) =
+        ((2 * n + 2 : ℕ) : ℝ) * ((2 * n + 1).factorial : ℝ) := by
+      have hn : 2 * n + 2 = (2 * n + 1) + 1 := by omega
+      rw [hn, Nat.factorial_succ]
+      push_cast
+      rfl
+    rw [hfact]
+    push_cast
+    have hnum : (2 : ℝ) * (n : ℝ) + 2 = 2 * ((n : ℝ) + 1) := by ring
+    rw [hnum]
+    simp only [smul_eq_mul, one_pow]
+    field_simp [show ((2 * n + 1).factorial : ℝ) ≠ 0 by positivity]
+    ring
+  let A : ℝ := C * r ^ 2
+  let q : ℝ := 2 * r ^ 2
+  have hA : 0 < A := by positivity
+  have hq : 0 < q := by positivity
+  have hboundJet : ∀ n, ‖completedSigmaLogJet d n‖ ≤ A * q ^ n := by
+    intro n
+    rw [hcoeff n]
+    have hTaylor := hbound (2 * n + 2)
+    change ‖S (2 * n + 2)‖ ≤ C * r ^ (2 * n + 2) at hTaylor
+    have hTaylorCoeff : ‖S (2 * n + 2) (fun _ => 1)‖ ≤
+        C * r ^ (2 * n + 2) := by
+      have heq : ‖S (2 * n + 2)‖ = ‖S (2 * n + 2) (fun _ => 1)‖ := by
+        simp [S, completedSigmaLogDensityTaylorSeries]
+      rw [← heq]
+      exact hTaylor
+    have hnreal : ((n + 1 : ℕ) : ℝ) ≤ (2 : ℝ) ^ n := by
+      exact_mod_cast nat_succ_le_two_pow n
+    have hfactor : 0 ≤ ((n + 1 : ℕ) : ℝ) / 2 := by positivity
+    calc
+      ‖-(((n + 1 : ℕ) : ℝ) / 2) * S (2 * n + 2) (fun _ => 1)‖
+          = (((n + 1 : ℕ) : ℝ) / 2) * ‖S (2 * n + 2) (fun _ => 1)‖ := by
+              rw [norm_mul, Real.norm_eq_abs, abs_neg, abs_of_nonneg hfactor]
+      _ ≤ (((n + 1 : ℕ) : ℝ) / 2) * (C * r ^ (2 * n + 2)) :=
+            mul_le_mul_of_nonneg_left hTaylorCoeff hfactor
+      _ ≤ (2 : ℝ) ^ n * (C * r ^ 2 * (r ^ 2) ^ n) := by
+            have hpow : r ^ (2 * n + 2) = r ^ 2 * (r ^ 2) ^ n := by
+              calc
+                r ^ (2 * n + 2) = r ^ (2 * n) * r ^ 2 := by
+                  rw [show 2 * n + 2 = 2 * n + 2 by omega, pow_add]
+                _ = (r ^ 2) ^ n * r ^ 2 := by rw [pow_mul]
+                _ = r ^ 2 * (r ^ 2) ^ n := by ring
+            rw [hpow]
+            have hfac : (((n + 1 : ℕ) : ℝ) / 2) ≤ (2 : ℝ) ^ n := by
+              linarith
+            have hcommon : 0 ≤ C * r ^ 2 * (r ^ 2) ^ n := by positivity
+            have heq : (((n + 1 : ℕ) : ℝ) / 2) *
+                (C * (r ^ 2 * (r ^ 2) ^ n)) =
+                (((n + 1 : ℕ) : ℝ) / 2) * (C * r ^ 2 * (r ^ 2) ^ n) := by ring
+            rw [heq]
+            exact mul_le_mul_of_nonneg_right hfac hcommon
+      _ = A * q ^ n := by
+            simp only [A, q]
+            rw [mul_pow]
+            ring
+  refine ⟨A, q, le_of_lt hA, hq, ?_⟩
+  intro n
+  simpa [Real.norm_eq_abs] using hboundJet n
+
+#print axioms completedSigmaLogJet_exponential_bound
+
+/-- At shift zero the original sigma matrix is exactly the Hankel matrix of the
+original sigma jets. -/
+theorem completedSigmaLogJet_sigmaMatrix_eq_hankel (d : ℝ) (N : ℕ) :
+    sigmaMatrix d 0 N = hankelMatrix (completedSigmaLogJet d) N := by
+  ext i j
+  simp [sigmaMatrix, sourceMomentMatrix, hankelMatrix]
+
+#print axioms completedSigmaLogJet_sigmaMatrix_eq_hankel
+
+/-- The assumed all-order positivity of the original sigma matrices is precisely
+H1 for the same, unmodified sequence of sigma jets. -/
+theorem completedSigmaLogJet_hankel_psd_of_sigmaMatrix_psd (d : ℝ)
+    (hσ : ∀ N, (sigmaMatrix d 0 N).PosSemidef) :
+    ∀ N, (hankelMatrix (completedSigmaLogJet d) N).PosSemidef := by
+  intro N
+  rw [← completedSigmaLogJet_sigmaMatrix_eq_hankel d N]
+  exact hσ N
+
+#print axioms completedSigmaLogJet_hankel_psd_of_sigmaMatrix_psd
+
+/-- Under the hypothetical all-order sigma positivity and the Cauchy bound H2,
+the complex resolvent sums the original sigma-jet series throughout its explicit
+Neumann disk. -/
+theorem completedSigmaLogJet_resolvent_hasSum_of_sigmaMatrix_psd (d : ℝ)
+    (hσ : ∀ N, (sigmaMatrix d 0 N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ n, |completedSigmaLogJet d n| ≤ C * R ^ n)
+    {u : ℂ} (hu : ‖u‖ * R < 1) :
+    HasSum (fun n : ℕ => (completedSigmaLogJet d n : ℂ) * u ^ n)
+      (momentResolventCoefficient
+        (completedSigmaLogJet_hankel_psd_of_sigmaMatrix_psd d hσ)
+        hC hR hbound
+        (momentComplexUnit
+          (completedSigmaLogJet_hankel_psd_of_sigmaMatrix_psd d hσ)) u) := by
+  exact momentResolventCoefficient_hasSum_moments_of_radius
+    (completedSigmaLogJet_hankel_psd_of_sigmaMatrix_psd d hσ)
+    hC hR hbound hu
+
+#print axioms completedSigmaLogJet_resolvent_hasSum_of_sigmaMatrix_psd
 
 /-- **Raio positivo da geradora dos jets sigma originais.** O bound geométrico dos
 coeficientes da série Taylor analítica do log-density é transferido aos jets por
