@@ -1,0 +1,3 @@
+'CarryOddHeadSource.rational_coefficient_boxes9' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddHeadSource.gamma_rational_boxes9' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddHeadSource.log_three_box_tight' depends on axioms: [propext, Classical.choice, Quot.sound]
