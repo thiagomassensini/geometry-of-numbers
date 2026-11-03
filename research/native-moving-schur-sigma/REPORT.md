@@ -98,7 +98,14 @@ O módulo compila com `-DwarningAsError=true`; `#print axioms` permite somente
 `propext`, `Classical.choice` e `Quot.sound`. A validação inclui agora esse módulo e
 `SigmaZeroObstruction` na lista explícita de compilação.
 
-Isso **não fecha** o Checkpoint B: ainda falta construir o funcional em `Polynomial ℝ`,
+Foi iniciado o Checkpoint B em `MomentLogConvexity.lean`. O funcional
+`momentFunctional h p = ∑ k, p.coeff k * h k` está definido diretamente da sequência
+original. Provamos sua aditividade, sua ação nos monômios e a expansão finita
+`momentFunctional_mul_eq_double_sum`, que escreve `L(pq)` como a soma dos coeficientes
+`p_i q_j h_{i+j}` nos graus efetivos de `p` e `q`. Essa ponte compila com
+`-DwarningAsError=true` e usa somente os axiomas padrão do Lean.
+
+Isso **não fecha** o Checkpoint B: ainda falta provar `L(p²)≥0` a partir de H1,
 derivar Cauchy–Schwarz e as sequências `a_n=L(X^{2n}p²)` das hipóteses H1/H2, provar
 log-convexidade e crescimento controlado dessas sequências, e só então aplicar a cota de
 razão para obter `L(X²p²)≤R²L(p²)`.

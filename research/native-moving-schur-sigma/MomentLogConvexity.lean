@@ -1,4 +1,5 @@
 import Mathlib.Analysis.SpecificLimits.Basic
+import Mathlib.Algebra.Polynomial.BigOperators
 import Mathlib.LinearAlgebra.Matrix.PosDef
 
 /-!
@@ -25,6 +26,74 @@ set_option autoImplicit false
 /-- The finite Hankel matrix associated with a real sequence. -/
 def hankelMatrix (h : ℕ → ℝ) (N : ℕ) : Matrix (Fin N) (Fin N) ℝ :=
   fun i j => h (i.val + j.val)
+
+/-- The moment functional on real polynomials, defined from the original sequence. -/
+def momentFunctional (h : ℕ → ℝ) (p : Polynomial ℝ) : ℝ :=
+  p.sum fun n a => a * h n
+
+/-- The functional is additive. -/
+theorem momentFunctional_add (h : ℕ → ℝ) (p q : Polynomial ℝ) :
+    momentFunctional h (p + q) = momentFunctional h p + momentFunctional h q := by
+  unfold momentFunctional
+  apply Polynomial.sum_add_index
+  · intro n
+    simp
+  · intro n a b
+    simp only [add_mul]
+
+/-- Monomials are sent to the corresponding moments. -/
+theorem momentFunctional_C_mul_X_pow (h : ℕ → ℝ) (a : ℝ) (n : ℕ) :
+    momentFunctional h (Polynomial.C a * Polynomial.X ^ n) = a * h n := by
+  rw [Polynomial.C_mul_X_pow_eq_monomial]
+  simp [momentFunctional, Polynomial.sum_monomial_index]
+
+/-- The moment functional commutes with finite sums of polynomials. -/
+theorem momentFunctional_sum {α : Type*} [DecidableEq α] (h : ℕ → ℝ)
+    (s : Finset α) (p : α → Polynomial ℝ) :
+    momentFunctional h (∑ i ∈ s, p i) = ∑ i ∈ s, momentFunctional h (p i) := by
+  induction s using Finset.induction_on with
+  | empty => simp [momentFunctional]
+  | @insert a s ha ih =>
+      rw [Finset.sum_insert ha, Finset.sum_insert ha, momentFunctional_add, ih]
+
+/-- Applying the functional to a product expands into the finite Hankel quadratic kernel.
+The cutoffs are the original polynomial degrees; no auxiliary moment sequence is used. -/
+theorem momentFunctional_mul_eq_double_sum (h : ℕ → ℝ) (p q : Polynomial ℝ) :
+    momentFunctional h (p * q) =
+      ∑ i ∈ Finset.range (p.natDegree + 1),
+        ∑ j ∈ Finset.range (q.natDegree + 1),
+          p.coeff i * q.coeff j * h (i + j) := by
+  have hp := p.as_sum_range_C_mul_X_pow
+  have hq := q.as_sum_range_C_mul_X_pow
+  calc
+    momentFunctional h (p * q) = momentFunctional h
+        ((∑ i ∈ Finset.range (p.natDegree + 1),
+          Polynomial.C (p.coeff i) * Polynomial.X ^ i) *
+          (∑ j ∈ Finset.range (q.natDegree + 1),
+          Polynomial.C (q.coeff j) * Polynomial.X ^ j)) := by rw [← hp, ← hq]
+    _ = ∑ i ∈ Finset.range (p.natDegree + 1),
+          ∑ j ∈ Finset.range (q.natDegree + 1),
+            p.coeff i * q.coeff j * h (i + j) := by
+      rw [Finset.sum_mul]
+      simp_rw [Finset.mul_sum]
+      rw [momentFunctional_sum]
+      simp_rw [momentFunctional_sum]
+      apply Finset.sum_congr rfl
+      intro i hi
+      apply Finset.sum_congr rfl
+      intro j hj
+      have hmono :
+          (Polynomial.C (p.coeff i) * Polynomial.X ^ i) *
+              (Polynomial.C (q.coeff j) * Polynomial.X ^ j) =
+            Polynomial.C (p.coeff i * q.coeff j) * Polynomial.X ^ (i + j) := by
+        calc
+          _ = (Polynomial.C (p.coeff i) * Polynomial.C (q.coeff j)) *
+              (Polynomial.X ^ i * Polynomial.X ^ j) := by ac_rfl
+          _ = Polynomial.C (p.coeff i * q.coeff j) * Polynomial.X ^ (i + j) := by
+            simp only [map_mul, pow_add]
+      rw [hmono, momentFunctional_C_mul_X_pow]
+
+#print axioms momentFunctional_mul_eq_double_sum
 
 /-- A positive semidefinite Hankel matrix makes every finite polynomial-square
 quadratic form nonnegative. This is the coefficient-vector form of H1 and does
