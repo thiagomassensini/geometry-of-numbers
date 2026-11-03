@@ -529,4 +529,50 @@ theorem momentQ_X_mul_le {h : ℕ → ℝ}
 
 #print axioms momentQ_X_mul_le
 
+/-- Quadratic expansion for the Hankel form. -/
+theorem momentQ_add (h : ℕ → ℝ) (p q : Polynomial ℝ) :
+    momentQ h (p + q) = momentQ h p + 2 * momentB h p q + momentQ h q := by
+  have hpoly : (p + q) ^ 2 = p ^ 2 + Polynomial.C (2 : ℝ) * (p * q) + q ^ 2 := by
+    rw [pow_two]
+    simp only [map_ofNat]
+    ring
+  unfold momentQ momentB
+  rw [hpoly, momentFunctional_add, momentFunctional_add, momentFunctional_C_mul]
+
+/-- Scaling a polynomial scales its quadratic form by the square of the scalar. -/
+theorem momentQ_C_mul (h : ℕ → ℝ) (a : ℝ) (p : Polynomial ℝ) :
+    momentQ h (Polynomial.C a * p) = a ^ 2 * momentQ h p := by
+  have hpoly : (Polynomial.C a * p) ^ 2 = Polynomial.C (a ^ 2) * p ^ 2 := by
+    rw [pow_two]
+    calc
+      _ = (Polynomial.C a * Polynomial.C a) * (p * p) := by ring
+      _ = Polynomial.C (a ^ 2) * p ^ 2 := by
+        rw [← map_mul]
+        simp only [pow_two]
+  unfold momentQ
+  rw [hpoly, momentFunctional_C_mul]
+
+/-- The zero-norm polynomials form a submodule, by Cauchy--Schwarz. -/
+def momentNullSubmodule (h : ℕ → ℝ)
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef) : Submodule ℝ (Polynomial ℝ) where
+  carrier := {p | momentQ h p = 0}
+  zero_mem' := by simp [momentQ, momentFunctional]
+  add_mem' := by
+    intro p q hp hq
+    have hpQ : momentQ h p = 0 := hp
+    have hqQ : momentQ h q = 0 := hq
+    have horth := momentB_eq_zero_of_momentQ_eq_zero
+      (hH := hH) (p := p) (q := q) hpQ
+    change momentQ h (p + q) = 0
+    rw [momentQ_add, hpQ, hqQ, horth]
+    ring
+  smul_mem' := by
+    intro a p hp
+    change momentQ h (a • p) = 0
+    rw [Polynomial.smul_eq_C_mul]
+    rw [momentQ_C_mul, hp]
+    ring
+
+#print axioms momentNullSubmodule
+
 end CarryMomentLogConvex

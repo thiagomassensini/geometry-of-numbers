@@ -134,6 +134,12 @@ ainda está aberta.
 
 Isso fecha somente o lema universal de multiplicação limitada; não fecha a missão global.
 
+**Início do Checkpoint C:** `momentQ_add` e `momentQ_C_mul` dão as identidades de soma e
+escala da forma quadrática. Com `momentB_eq_zero_of_momentQ_eq_zero`, isso prova que
+`momentNullSubmodule` — o conjunto dos polinômios com `Q(p)=0` — é um submódulo de
+`Polynomial ℝ`. O quociente ainda não recebeu o produto interno induzido; sua construção,
+completamento e extensão da multiplicação continuam pendentes.
+
 No Checkpoint A, `SigmaZeroObstruction.lean` agora prova que
 `t ↦ log(completedSigmaDensity d t)` é analítica na origem. A partir do raio positivo de sua
 série de Taylor e da normalização já provada dos jets, `completedSigmaLogJetGeneratingSeries_radius_pos`
