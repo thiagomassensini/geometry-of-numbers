@@ -119,13 +119,20 @@ padrão. A construção do operador ainda não começou.
 Foi definida a sequência deslocada `shiftedMomentQ h p n = Q(X^n p)`. H1 fornece sua
 não negatividade (`shiftedMomentQ_nonneg`) e Cauchy–Schwarz dá sua log-convexidade
 (`shiftedMomentQ_logConvex`), em ambos os casos sem exigir positividade estrita dos termos.
-O próximo passo pendente dentro do Checkpoint B é obter, de H2, a cota exponencial uniforme
-em `n` para essa sequência.
+`shiftedMomentQ_eq_double_sum` expande cada termo em uma soma finita dos momentos originais
+`h_{2n+i+j}`. A hipótese H2 então produz `shiftedMomentQ_expBounded`, com constante `K_p`
+não negativa e independente de `n`. Por fim, `momentQ_X_mul_le` aplica
+`logConvex_expBounded_ratio` e prova
 
-Isso **não fecha** o Checkpoint B: ainda falta derivar e majorar as sequências
-`a_n=L(X^{2n}p²)` das hipóteses H1/H2, provar
-log-convexidade e crescimento controlado dessas sequências, e só então aplicar a cota de
-razão para obter `L(X²p²)≤R²L(p²)`.
+\[
+Q(Xp)\le R^2Q(p)
+\]
+
+usando apenas H1 e H2 (com `C≥0`, `R>0` e `|h_k|≤CR^k`). Este é o Checkpoint B. O resultado
+passa `#print axioms` com apenas os axiomas padrão. A construção do quociente e do operador
+ainda está aberta.
+
+Isso fecha somente o lema universal de multiplicação limitada; não fecha a missão global.
 
 No Checkpoint A, `SigmaZeroObstruction.lean` agora prova que
 `t ↦ log(completedSigmaDensity d t)` é analítica na origem. A partir do raio positivo de sua

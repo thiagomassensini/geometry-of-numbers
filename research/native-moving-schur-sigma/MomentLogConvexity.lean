@@ -135,6 +135,59 @@ theorem momentFunctional_mul_eq_double_sum (h : ℕ → ℝ) (p q : Polynomial �
 
 #print axioms momentFunctional_mul_eq_double_sum
 
+/-- Shifted product expansion, retaining the original moments `h (m+i+j)`. -/
+theorem momentFunctional_X_pow_mul_eq_double_sum (h : ℕ → ℝ) (m : ℕ)
+    (p q : Polynomial ℝ) :
+    momentFunctional h (Polynomial.X ^ m * (p * q)) =
+      ∑ i ∈ Finset.range (p.natDegree + 1),
+        ∑ j ∈ Finset.range (q.natDegree + 1),
+          p.coeff i * q.coeff j * h (m + i + j) := by
+  have hp := p.as_sum_range_C_mul_X_pow
+  have hq := q.as_sum_range_C_mul_X_pow
+  have hexpand :
+      Polynomial.X ^ m *
+          ((∑ i ∈ Finset.range (p.natDegree + 1),
+              Polynomial.C (p.coeff i) * Polynomial.X ^ i) *
+            ∑ j ∈ Finset.range (q.natDegree + 1),
+              Polynomial.C (q.coeff j) * Polynomial.X ^ j) =
+        ∑ i ∈ Finset.range (p.natDegree + 1),
+          ∑ j ∈ Finset.range (q.natDegree + 1),
+            Polynomial.X ^ m *
+              ((Polynomial.C (p.coeff i) * Polynomial.X ^ i) *
+                (Polynomial.C (q.coeff j) * Polynomial.X ^ j)) := by
+    rw [Finset.sum_mul, Finset.mul_sum]
+    simp_rw [Finset.mul_sum]
+  calc
+    momentFunctional h (Polynomial.X ^ m * (p * q)) = momentFunctional h
+        (Polynomial.X ^ m *
+          ((∑ i ∈ Finset.range (p.natDegree + 1),
+              Polynomial.C (p.coeff i) * Polynomial.X ^ i) *
+            ∑ j ∈ Finset.range (q.natDegree + 1),
+              Polynomial.C (q.coeff j) * Polynomial.X ^ j)) := by rw [← hp, ← hq]
+    _ = ∑ i ∈ Finset.range (p.natDegree + 1),
+          ∑ j ∈ Finset.range (q.natDegree + 1),
+            p.coeff i * q.coeff j * h (m + i + j) := by
+      rw [hexpand, momentFunctional_sum]
+      simp_rw [momentFunctional_sum]
+      apply Finset.sum_congr rfl
+      intro i hi
+      apply Finset.sum_congr rfl
+      intro j hj
+      have hmono :
+          Polynomial.X ^ m *
+              ((Polynomial.C (p.coeff i) * Polynomial.X ^ i) *
+                (Polynomial.C (q.coeff j) * Polynomial.X ^ j)) =
+            Polynomial.C (p.coeff i * q.coeff j) * Polynomial.X ^ (m + i + j) := by
+        calc
+          _ = (Polynomial.C (p.coeff i) * Polynomial.C (q.coeff j)) *
+              (Polynomial.X ^ m * Polynomial.X ^ i * Polynomial.X ^ j) := by ac_rfl
+          _ = Polynomial.C (p.coeff i * q.coeff j) *
+              Polynomial.X ^ (m + i + j) := by
+            rw [map_mul, ← pow_add, ← pow_add]
+      rw [hmono, momentFunctional_C_mul_X_pow]
+
+#print axioms momentFunctional_X_pow_mul_eq_double_sum
+
 /-- A positive semidefinite Hankel matrix makes every finite polynomial-square
 quadratic form nonnegative. This is the coefficient-vector form of H1 and does
 not assume a measure or an operator representation. -/
@@ -288,6 +341,100 @@ theorem shiftedMomentQ_logConvex {h : ℕ → ℝ}
 
 #print axioms shiftedMomentQ_logConvex
 
+/-- Finite coefficient formula for the shifted quadratic sequence. -/
+theorem shiftedMomentQ_eq_double_sum (h : ℕ → ℝ) (p : Polynomial ℝ) (n : ℕ) :
+    shiftedMomentQ h p n =
+      ∑ i ∈ Finset.range (p.natDegree + 1),
+        ∑ j ∈ Finset.range (p.natDegree + 1),
+          p.coeff i * p.coeff j * h (2 * n + i + j) := by
+  have hpoly :
+      (Polynomial.X ^ n * p) ^ 2 = Polynomial.X ^ (2 * n) * (p * p) := by
+    calc
+      _ = (Polynomial.X ^ n * Polynomial.X ^ n) * (p * p) := by rw [pow_two]; ring
+      _ = Polynomial.X ^ (2 * n) * (p * p) := by
+        rw [← pow_add]
+        congr 1
+        rw [two_mul]
+  calc
+    shiftedMomentQ h p n = momentFunctional h ((Polynomial.X ^ n * p) ^ 2) := rfl
+    _ = momentFunctional h (Polynomial.X ^ (2 * n) * (p * p)) := by rw [hpoly]
+    _ = _ := momentFunctional_X_pow_mul_eq_double_sum h (2 * n) p p
+
+#print axioms shiftedMomentQ_eq_double_sum
+
+/-- H2 gives an exponential bound on the shifted quadratic sequence, with a
+constant depending only on the fixed polynomial. -/
+theorem shiftedMomentQ_expBounded {h : ℕ → ℝ} (p : Polynomial ℝ)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) :
+    ∃ K : ℝ, 0 ≤ K ∧ ∀ n, shiftedMomentQ h p n ≤ K * (R ^ 2) ^ n := by
+  let K : ℝ :=
+    ∑ i ∈ Finset.range (p.natDegree + 1),
+      ∑ j ∈ Finset.range (p.natDegree + 1),
+        |p.coeff i| * |p.coeff j| * (C * R ^ (i + j))
+  have hK : 0 ≤ K := by
+    apply Finset.sum_nonneg
+    intro i hi
+    apply Finset.sum_nonneg
+    intro j hj
+    positivity
+  refine ⟨K, hK, ?_⟩
+  intro n
+  have hterm (i j : ℕ) :
+      |p.coeff i * p.coeff j * h (2 * n + i + j)| ≤
+        (|p.coeff i| * |p.coeff j| * (C * R ^ (i + j))) * R ^ (2 * n) := by
+    have hh := hbound (2 * n + i + j)
+    have hcoef : 0 ≤ |p.coeff i| * |p.coeff j| := mul_nonneg (abs_nonneg _) (abs_nonneg _)
+    calc
+      _ = |p.coeff i| * |p.coeff j| * |h (2 * n + i + j)| := by
+        rw [abs_mul, abs_mul]
+      _ ≤ |p.coeff i| * |p.coeff j| * (C * R ^ (2 * n + i + j)) :=
+        mul_le_mul_of_nonneg_left hh hcoef
+      _ = (|p.coeff i| * |p.coeff j| * (C * R ^ (i + j))) * R ^ (2 * n) := by
+        rw [show 2 * n + i + j = 2 * n + (i + j) by omega, pow_add]
+        ring
+  have htri :
+      |∑ i ∈ Finset.range (p.natDegree + 1),
+          ∑ j ∈ Finset.range (p.natDegree + 1),
+            p.coeff i * p.coeff j * h (2 * n + i + j)| ≤
+        ∑ i ∈ Finset.range (p.natDegree + 1),
+          ∑ j ∈ Finset.range (p.natDegree + 1),
+            |p.coeff i * p.coeff j * h (2 * n + i + j)| := by
+    calc
+      _ ≤ ∑ i ∈ Finset.range (p.natDegree + 1),
+          |∑ j ∈ Finset.range (p.natDegree + 1),
+            p.coeff i * p.coeff j * h (2 * n + i + j)| :=
+        Finset.abs_sum_le_sum_abs _ _
+      _ ≤ _ := by
+        apply Finset.sum_le_sum
+        intro i hi
+        exact Finset.abs_sum_le_sum_abs _ _
+  have hsum := calc
+      (∑ i ∈ Finset.range (p.natDegree + 1),
+          ∑ j ∈ Finset.range (p.natDegree + 1),
+            |p.coeff i * p.coeff j * h (2 * n + i + j)|) ≤
+        ∑ i ∈ Finset.range (p.natDegree + 1),
+          ∑ j ∈ Finset.range (p.natDegree + 1),
+            (|p.coeff i| * |p.coeff j| * (C * R ^ (i + j))) * R ^ (2 * n) := by
+        apply Finset.sum_le_sum
+        intro i hi
+        apply Finset.sum_le_sum
+        intro j hj
+        exact hterm i j
+      _ = K * R ^ (2 * n) := by
+        simp_rw [← Finset.sum_mul]
+        rfl
+  have ha := shiftedMomentQ_eq_double_sum h p n
+  have habs : shiftedMomentQ h p n ≤ |shiftedMomentQ h p n| := le_abs_self _
+  calc
+    shiftedMomentQ h p n ≤ |shiftedMomentQ h p n| := habs
+    _ ≤ K * R ^ (2 * n) := by
+      rw [ha]
+      exact le_trans htri hsum
+    _ = K * (R ^ 2) ^ n := by rw [pow_mul]
+
+#print axioms shiftedMomentQ_expBounded
+
 /-- **Cota de razão por log-convexidade (núcleo do Checkpoint B).** Uma sequência
 não-negativa log-convexa com crescimento exponencial limitado satisfaz `a₁ ≤ R²·a₀`.
 Sem hipótese de positividade estrita dos termos. -/
@@ -363,5 +510,23 @@ theorem logConvex_expBounded_ratio {a : ℕ → ℝ} {C R : ℝ}
     exact absurd (hb n) (not_le.mpr hn)
 
 #print axioms logConvex_expBounded_ratio
+
+/-- The H1 and H2 moment hypotheses force multiplication by `X` to be bounded
+on the polynomial pre-Hilbert space. This is Checkpoint B. -/
+theorem momentQ_X_mul_le {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) (p : Polynomial ℝ) :
+    momentQ h (Polynomial.X * p) ≤ R ^ 2 * momentQ h p := by
+  obtain ⟨K, hK, hKbound⟩ := shiftedMomentQ_expBounded p hC hR hbound
+  have hratio := logConvex_expBounded_ratio
+    (a := shiftedMomentQ h p) (C := K) (R := R)
+    (fun n => shiftedMomentQ_nonneg hH p n)
+    (fun n => shiftedMomentQ_logConvex hH p n)
+    hR
+    hKbound
+  simpa [shiftedMomentQ, momentQ] using hratio
+
+#print axioms momentQ_X_mul_le
 
 end CarryMomentLogConvex
