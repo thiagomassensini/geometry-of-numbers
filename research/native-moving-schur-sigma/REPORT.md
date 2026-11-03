@@ -250,5 +250,16 @@ Mathlib (conjugado-linear no primeiro argumento) e manter a dependência holomor
 complemento do eixo real, por composição com a inversão em álgebra de Banach. Os quatro
 resultados passam `#print axioms` com somente `propext`, `Classical.choice` e `Quot.sound`.
 
-**ABERTO:** expansão local em série com os coeficientes recuperados `h_n`; estimativa que
-relaciona o raio da série ao `R` de H2; instanciação sigma e propagação da EDO.
+`momentComplexMulX_pow_unit` e `momentResolventReadout_pow_eq_moment` identificam cada potência
+do operador com o momento original. `momentResolventReadout_neumann_term` calcula cada termo da
+série operador-valuada, e `momentResolventCoefficient_hasSum_moments` prova que a compressão
+escalar soma a série `∑ (h n) u^n` em todo o ball de convergência de Neumann. Isso é uma igualdade
+de série convergente com os momentos originais, não apenas uma identidade formal. Os quatro
+teoremas novos também passam `#print axioms` com somente `propext`, `Classical.choice` e
+`Quot.sound`.
+
+**ABERTO:** relacionar o ball de convergência do operador à região explícita `‖u‖ * R < 1` de
+H2, provando `‖T‖ ≤ R`; obter a estimativa de Cauchy e instanciar H2 com os jets sigma; propagar
+a EDO até o zero deslocado e extrair a direção negativa da `sigmaMatrix` original. Uma tentativa
+local do limite de norma da extensão pela densidade não compilou dentro do limite de redução
+prático do Lean e foi retirada; nenhuma hipótese ou resultado foi acrescentado a partir dela.

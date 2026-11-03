@@ -1226,5 +1226,91 @@ theorem momentResolventCoefficient_differentiableOn {h : ℕ → ℝ}
 #print axioms momentResolventCoefficient_differentiableAt
 #print axioms momentResolventCoefficient_differentiableOn
 
+/-- Cyclic vector in the complexification, obtained from the original real
+constant polynomial class. -/
+noncomputable def momentComplexUnit {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef) :
+    momentComplexHilbert hH :=
+  RealHilbertComplexification.mk (momentHilbertUnit hH) 0
+
+/-- Powers of the complexified multiplier preserve the real cyclic subspace. -/
+theorem momentComplexMulX_pow_unit {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) (n : ℕ) :
+    (momentComplexMulX hH hC hR hbound ^ n) (momentComplexUnit hH) =
+      RealHilbertComplexification.mk
+        ((momentHilbertMulX hH hC hR hbound ^ n) (momentHilbertUnit hH)) 0 := by
+  induction n with
+  | zero => simp [momentComplexUnit]
+  | succ n ih =>
+    rw [pow_succ']
+    rw [mul_apply_eq_comp, ih]
+    rw [complexifyMomentOperator_apply]
+    rw [pow_succ', mul_apply_eq_comp]
+    simp
+
+/-- Readout of the `n`th complex operator coefficient is the original moment. -/
+theorem momentResolventReadout_pow_eq_moment {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) (n : ℕ) :
+    momentResolventReadout (momentComplexUnit hH)
+        (momentComplexMulX hH hC hR hbound ^ n) = (h n : ℂ) := by
+  change inner ℂ (momentComplexUnit hH)
+    ((momentComplexMulX hH hC hR hbound ^ n) (momentComplexUnit hH)) = _
+  rw [momentComplexMulX_pow_unit]
+  simp [momentComplexUnit, RealHilbertComplexification.inner_apply,
+    RealHilbertComplexification.complexInner]
+  have hrec := momentHilbert_recovers_moment hH hC hR hbound n
+  have hrec' : inner ℝ (momentHilbertUnit hH)
+      ((momentHilbertMulX hH hC hR hbound ^ n) (momentHilbertUnit hH)) = h n := by
+    rw [real_inner_comm]
+    exact hrec
+  exact_mod_cast hrec'
+
+/-- Each term of the operator-valued Neumann series reads out as `hₙ uⁿ`. -/
+theorem momentResolventReadout_neumann_term {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) (n : ℕ) (u : ℂ) :
+    momentResolventReadout (momentComplexUnit hH)
+      ((ContinuousMultilinearMap.mkPiRing ℂ (Fin n)
+        (momentComplexMulX hH hC hR hbound ^ n)) (fun _ => u)) =
+      (h n : ℂ) * u ^ n := by
+  rw [ContinuousMultilinearMap.mkPiRing_apply]
+  rw [map_smul]
+  rw [momentResolventReadout_pow_eq_moment hH hC hR hbound n]
+  simp [Finset.prod_const, smul_eq_mul, mul_comm]
+
+/-- On the convergence ball of the Banach-algebra Neumann series, the scalar
+resolvent recovers the original moments term by term. -/
+theorem momentResolventCoefficient_hasSum_moments {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k)
+    {u : ℂ}
+    (hu : u ∈ Metric.eball (0 : ℂ)
+      (ENNReal.ofNNReal ‖momentComplexMulX hH hC hR hbound‖₊)⁻¹) :
+    HasSum (fun n : ℕ => (h n : ℂ) * u ^ n)
+      (momentResolventCoefficient hH hC hR hbound (momentComplexUnit hH) u) := by
+  let A := momentComplexMulX hH hC hR hbound
+  let e := momentComplexUnit hH
+  let hseries := spectrum.hasFPowerSeriesOnBall_inverse_one_sub_smul ℂ A
+  have hsum := hseries.hasSum hu
+  have hread := (momentResolventReadout e).hasSum hsum
+  have hterms : (fun n : ℕ => (h n : ℂ) * u ^ n) =
+      fun n => momentResolventReadout e
+        ((ContinuousMultilinearMap.mkPiRing ℂ (Fin n) (A ^ n)) (fun _ => u)) := by
+    funext n
+    exact (momentResolventReadout_neumann_term hH hC hR hbound n u).symm
+  rw [hterms]
+  simpa [momentResolventCoefficient, momentResolventReadout, A, e,
+    ContinuousLinearMap.comp_apply, ContinuousLinearMap.apply_apply] using hread
+
+#print axioms momentComplexMulX_pow_unit
+#print axioms momentResolventReadout_pow_eq_moment
+#print axioms momentResolventReadout_neumann_term
+#print axioms momentResolventCoefficient_hasSum_moments
 
 end CarryMomentLogConvex
