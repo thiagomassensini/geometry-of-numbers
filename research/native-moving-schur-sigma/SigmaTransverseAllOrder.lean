@@ -326,6 +326,116 @@ theorem sigma_transverse_mean_harmonic (Q : ℂ → ℂ) (t d : ℝ)
   rw [hminusT₂, hplusT₂, hminusD₂, hplusD₂]
   ring
 
+/-- Chain-rule reduction from a harmonic representation `S(t,d)=t*G(d,t^2)` to the
+transverse PDE for `G`. The hypotheses are only local equalities in the two coordinate
+sections at the point, plus analyticity of those sections. This isolates the calculus step;
+it does not assert that the source generating function has the required joint local
+representation. -/
+theorem harmonic_radial_generating_pde_at_nonzero
+    (S : ℝ → ℝ → ℂ) (G : ℝ → ℝ → ℂ) (t d : ℝ) (ht : t ≠ 0)
+    (hrepresentation_t : (fun x : ℝ => S x d) =ᶠ[𝓝 t]
+      (fun x : ℝ => (x : ℂ) * G d (x ^ 2)))
+    (hrepresentation_d : (fun y : ℝ => S t y) =ᶠ[𝓝 d]
+      (fun y : ℝ => (t : ℂ) * G y (t ^ 2)))
+    (hharmonic : iteratedDeriv 2 (fun x : ℝ => S x d) t +
+      iteratedDeriv 2 (fun y : ℝ => S t y) d = 0)
+    (hGu : AnalyticAt ℝ (fun u : ℝ => G d u) (t ^ 2)) :
+    iteratedDeriv 2 (fun y : ℝ => G y (t ^ 2)) d +
+      (6 : ℂ) * deriv (fun u : ℝ => G d u) (t ^ 2) +
+      (4 : ℂ) * (t : ℂ) ^ 2 *
+        iteratedDeriv 2 (fun u : ℝ => G d u) (t ^ 2) = 0 := by
+  let g : ℝ → ℂ := fun u => G d u
+  let sq : ℝ → ℝ := fun x => x ^ 2
+  let comp : ℝ → ℂ := fun x => g (sq x)
+  let idC : ℝ → ℂ := fun x => (x : ℂ)
+  let path : ℝ → ℂ := fun x => idC x * comp x
+  have hsq : AnalyticAt ℝ sq t := by
+    dsimp [sq]
+    fun_prop
+  have hcomp : AnalyticAt ℝ comp t := by
+    dsimp [comp, g, sq]
+    exact AnalyticAt.comp hGu (by fun_prop)
+  have hidC : AnalyticAt ℝ idC t := by
+    dsimp [idC]
+    exact Complex.ofRealCLM.analyticAt t
+  have hpath : AnalyticAt ℝ path t := by
+    dsimp [path]
+    exact hidC.mul hcomp
+  have hidD : deriv idC t = 1 := by
+    have h := sigma_affine_path_deriv (fun z : ℂ => z) 0 1 t (by fun_prop)
+    simpa [idC] using h
+  have hidD₂ : iteratedDeriv 2 idC t = 0 := by
+    have h := sigma_affine_path_second_deriv (fun z : ℂ => z) 0 1 t (by fun_prop)
+    have hzero : iteratedDeriv 2 (fun z : ℂ => z) (t : ℂ) = 0 := by
+      simp [iteratedDeriv_succ, iteratedDeriv_zero]
+    simp only [zero_add, one_mul] at h
+    rw [hzero] at h
+    simpa [idC] using h
+  have hcompD : deriv comp t =
+      deriv g (t ^ 2) * (2 * t) := by
+    change deriv (g ∘ sq) t = _
+    have h := deriv.scomp (𝕜 := ℝ) (𝕜' := ℝ) (F := ℂ)
+      (h := sq) (g₁ := g) t hGu.differentiableAt hsq.differentiableAt
+    have hsqd : deriv sq t = 2 * t := by simp [sq]
+    rw [hsqd] at h
+    calc
+      deriv (g ∘ sq) t = ((2 * t : ℝ) : ℂ) * deriv g ((sq t)) := h
+      _ = (2 * (t : ℂ)) * deriv g (t ^ 2) := by simp [sq]
+      _ = deriv g (t ^ 2) * (2 * t) := by ring
+  have hcompD₂ : iteratedDeriv 2 comp t =
+      iteratedDeriv 2 g (t ^ 2) * (2 * t) ^ 2 + deriv g (t ^ 2) * 2 := by
+    change iteratedDeriv 2 (g ∘ sq) t = _
+    have hg2 : ContDiffAt ℝ 2 g (t ^ 2) :=
+      hGu.contDiffAt.of_le le_top
+    have hsq2 : ContDiffAt ℝ 2 sq t := hsq.contDiffAt.of_le le_top
+    have h := iteratedDeriv_scomp_two (g := g) (f := sq) (x := t) hg2 hsq2
+    calc
+      iteratedDeriv 2 comp t = iteratedDeriv 2 (g ∘ sq) t := rfl
+      _ = (2 * (t : ℂ)) ^ 2 * iteratedDeriv 2 g (t ^ 2) +
+          2 * deriv g (t ^ 2) := by
+        simpa [sq] using h
+      _ = iteratedDeriv 2 g (t ^ 2) * (2 * t) ^ 2 +
+          deriv g (t ^ 2) * 2 := by ring
+  have hpath₂ : iteratedDeriv 2 path t =
+      2 * deriv comp t + (t : ℂ) * iteratedDeriv 2 comp t := by
+    have hid0 : iteratedDeriv 0 idC t = (t : ℂ) := by simp [idC]
+    have hid1 : iteratedDeriv 1 idC t = 1 := by
+      rw [iteratedDeriv_succ', iteratedDeriv_zero]
+      exact hidD
+    calc
+      iteratedDeriv 2 path t = iteratedDeriv 2 (idC * comp) t := rfl
+      _ = 2 * deriv comp t + (t : ℂ) * iteratedDeriv 2 comp t := by
+        rw [iteratedDeriv_mul (n := 2) hidC.contDiffAt hcomp.contDiffAt]
+        rw [Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ]
+        simp only [Finset.sum_range_zero, Nat.choose_zero_right, Nat.choose_one_right,
+          Nat.choose_self, hid0, hid1, hidD₂]
+        simp only [iteratedDeriv_succ', iteratedDeriv_zero]
+        ring
+  have hrepT : iteratedDeriv 2 (fun x : ℝ => S x d) t =
+      iteratedDeriv 2 path t := by
+    have h := Filter.EventuallyEq.iteratedDeriv_eq 2 hrepresentation_t
+    simpa [path, idC, comp, g, sq] using h
+  have hrepD : iteratedDeriv 2 (fun y : ℝ => S t y) d =
+      (t : ℂ) * iteratedDeriv 2 (fun y : ℝ => G y (t ^ 2)) d := by
+    have h := Filter.EventuallyEq.iteratedDeriv_eq 2 hrepresentation_d
+    rw [iteratedDeriv_const_mul_field] at h
+    exact h
+  rw [hrepT, hrepD] at hharmonic
+  rw [hpath₂, hcompD, hcompD₂] at hharmonic
+  have htC : (t : ℂ) ≠ 0 := by exact_mod_cast ht
+  have hfactor : (t : ℂ) *
+      (iteratedDeriv 2 (fun y : ℝ => G y (t ^ 2)) d +
+        (6 : ℂ) * deriv g (t ^ 2) +
+        (4 : ℂ) * (t : ℂ) ^ 2 * iteratedDeriv 2 g (t ^ 2)) = 0 := by
+    calc
+      _ = (2 * (deriv g (t ^ 2) * (2 * t)) +
+            (t : ℂ) *
+              (iteratedDeriv 2 g (t ^ 2) * (2 * t) ^ 2 + deriv g (t ^ 2) * 2)) +
+            (t : ℂ) * iteratedDeriv 2 (fun y : ℝ => G y (t ^ 2)) d := by ring
+      _ = 0 := hharmonic
+  have hcancel := (mul_eq_zero.mp hfactor).resolve_left htC
+  simpa [g] using hcancel
+
 /-- Forma da identidade de partida em termos do stencil transversal analítico. -/
 theorem completedSigmaLogJet_centeredDifference_eventually (d : ℝ)
     (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
@@ -683,6 +793,7 @@ theorem sigma_log_jet_second_and_fourth_deriv_check (n : ℕ) :
 #print axioms completedSigmaLogJet_transverse_mean_eventually
 #print axioms completedSigmaLogJet_centeredDifference_eventually
 #print axioms sigma_transverse_mean_harmonic
+#print axioms harmonic_radial_generating_pde_at_nonzero
 #print axioms sigma_log_jet_even_deriv_all_order
 #print axioms sigma_log_jet_odd_deriv_center
 #print axioms sigma_log_jet_transverse_hasFPowerSeriesAt

@@ -17,6 +17,9 @@ Try this:
  Classical.choice,
  Quot.sound]
 'CarrySigmaObstruction.sigma_transverse_mean_harmonic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.harmonic_radial_generating_pde_at_nonzero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
 'CarrySigmaObstruction.sigma_log_jet_even_deriv_all_order' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarrySigmaObstruction.sigma_log_jet_odd_deriv_center' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarrySigmaObstruction.sigma_log_jet_transverse_hasFPowerSeriesAt' depends on axioms: [propext,
