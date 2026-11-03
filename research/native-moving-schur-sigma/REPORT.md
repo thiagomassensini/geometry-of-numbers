@@ -101,7 +101,17 @@ O módulo compila com `-DwarningAsError=true`; `#print axioms` permite somente
 Isso **não fecha** o Checkpoint B: ainda falta construir o funcional em `Polynomial ℝ`,
 derivar Cauchy–Schwarz e as sequências `a_n=L(X^{2n}p²)` das hipóteses H1/H2, provar
 log-convexidade e crescimento controlado dessas sequências, e só então aplicar a cota de
-razão para obter `L(X²p²)≤R²L(p²)`. Também **não fecha** o Checkpoint A: não há ainda uma
-série convergente dos `completedSigmaLogJet` com a identidade diferencial local exigida.
-Assim, nenhum passo da realização GNS ou da obstrução all-order foi iniciado como se esses
-gates estivessem provados.
+razão para obter `L(X²p²)≤R²L(p²)`.
+
+No Checkpoint A, `SigmaZeroObstruction.lean` agora prova que
+`t ↦ log(completedSigmaDensity d t)` é analítica na origem. A partir do raio positivo de sua
+série de Taylor e da normalização já provada dos jets, `completedSigmaLogJetGeneratingSeries_radius_pos`
+prova raio positivo para a série em `u` com coeficientes exatamente
+`completedSigmaLogJet d n`. `completedSigmaLogJetGeneratingFunction_hasFPowerSeriesAt`
+certifica que a soma dessa série é uma geradora analítica local. Ambos os teoremas passam
+`#print axioms` com apenas `propext`, `Classical.choice` e `Quot.sound`.
+
+O Checkpoint A **continua aberto**: ainda não foi provada a identidade local
+`D_d'(t)+4tG_d(t²)D_d(t)=0`, nem formalizada a versão complexa da geradora necessária para
+propagá-la pelo domínio. Nenhum passo da realização GNS ou da obstrução all-order foi iniciado
+como se esses gates estivessem provados.

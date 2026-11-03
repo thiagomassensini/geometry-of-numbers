@@ -1,0 +1,36 @@
+'CarrySigmaObstruction.finite_partial_sum_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.infinite_geometric_series' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.cauchy_kernel_denominator_zero_nonreal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJet_quarter_normalization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJet_eq_logDisplacedProduct' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogDensity_analyticAt_origin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.displacedProductC_even_ofReal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.completedSigmaDensity_zero_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.displacedProductC_zero_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.displacedProductC_analyticAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.displacedProductC_analyticAt_origin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.displacedProductC_ne_zero_nhds_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogDensity_analyticAt_origin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJetGeneratingSeries_radius_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJetGeneratingFunction_hasFPowerSeriesAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.displacedProductC_ofReal_eq_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.displacedProductC_vanishes_at_shifted_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.shifted_zero_u_im' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.pair_negative_direction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.offcritical_not_posSemidef_of_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

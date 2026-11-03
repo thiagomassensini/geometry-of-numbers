@@ -2,6 +2,7 @@ import SigmaNeighborhood
 import SigmaQuadratic
 import Mathlib.Algebra.Field.GeomSum
 import Mathlib.Analysis.SpecificLimits.Normed
+import Mathlib.Analysis.Analytic.OfScalars
 import Mathlib.LinearAlgebra.Matrix.PosDef
 import CarrySelfAdjointOperator.NativeBoundaryArchimedeanDressingSeparation
 import CarrySelfAdjointOperator.NativeScalarGenuineIdentification
@@ -364,6 +365,166 @@ theorem displacedProductC_ne_zero_nhds_zero (d : ℝ)
     rwa [Complex.ofReal_zero] at h
   exact ((displacedProductC_analyticAt_origin d hd₁ hd₂).continuousAt).eventually_ne h0
 
+/-- **O germe real do log sigma é analítico na origem.** Isto liga a analiticidade
+complexa do produto deslocado à função real cujas derivadas definem os jets sigma.
+Em particular, a sequência completa dessas derivadas possui uma série de Taylor com
+raio positivo; a identificação dos coeficientes pares com a geradora e a EDO local
+permanecem gates separados. -/
+theorem completedSigmaLogDensity_analyticAt_origin (d : ℝ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    AnalyticAt ℝ (fun t : ℝ => Real.log (completedSigmaDensity d t)) 0 := by
+  have hreal : AnalyticAt ℝ
+      (fun t : ℝ => (displacedProductC d (t : ℂ)).re) 0 :=
+    (displacedProductC_analyticAt_origin d hd₁ hd₂).re_ofReal
+  have hvalue : displacedProductC d (0 : ℂ) =
+      (completedSigmaDensity d 0 : ℂ) := by
+    simpa using displacedProductC_ofReal_eq_density d 0 hd₁ hd₂
+  have hpositive : 0 < (displacedProductC d (0 : ℂ)).re := by
+    rw [hvalue, Complex.ofReal_re]
+    exact completedSigmaDensity_zero_pos d hd₁ hd₂
+  have hlog := hreal.log hpositive
+  have heq : (fun t : ℝ => Real.log (completedSigmaDensity d t)) =
+      (fun t : ℝ => Real.log (displacedProductC d (t : ℂ)).re) := by
+    funext t
+    rw [displacedProductC_ofReal_eq_density d t hd₁ hd₂, Complex.ofReal_re]
+  rw [heq]
+  exact hlog
+
+/-- Ordinary Taylor series of the analytic real log-density germ. -/
+def completedSigmaLogDensityTaylorSeries (d : ℝ) :
+    FormalMultilinearSeries ℝ ℝ ℝ :=
+  FormalMultilinearSeries.ofScalars ℝ (fun n =>
+    iteratedDeriv n (fun t : ℝ => Real.log (completedSigmaDensity d t)) 0 /
+      (n.factorial : ℝ))
+
+/-- The Taylor series of the original sigma jets in the reduced variable `u`. -/
+def completedSigmaLogJetGeneratingSeries (d : ℝ) :
+    FormalMultilinearSeries ℝ ℝ ℝ :=
+  FormalMultilinearSeries.ofScalars ℝ (completedSigmaLogJet d)
+
+/-- Sum of the convergent Taylor series whose coefficients are the original sigma jets. -/
+def completedSigmaLogJetGeneratingFunction (d u : ℝ) : ℝ :=
+  (completedSigmaLogJetGeneratingSeries d).sum u
+
+private theorem nat_succ_le_two_pow (n : ℕ) : n + 1 ≤ 2 ^ n := by
+  induction n with
+  | zero => norm_num
+  | succ n ih =>
+      calc
+        n + 1 + 1 ≤ 2 * (n + 1) := by omega
+        _ ≤ 2 * 2 ^ n := Nat.mul_le_mul_left 2 ih
+        _ = 2 ^ (n + 1) := by rw [pow_succ]; ring
+
+/-- **Raio positivo da geradora dos jets sigma originais.** O bound geométrico dos
+coeficientes da série Taylor analítica do log-density é transferido aos jets por
+`h_n = -(n+1)/2 · [t^(2n+2)] log D_d`; o fator linear é absorvido por `2^n`.
+Isto prova convergência real positiva da série definida com `completedSigmaLogJet`;
+a identidade diferencial ainda será derivada separadamente. -/
+theorem completedSigmaLogJetGeneratingSeries_radius_pos (d : ℝ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    0 < (completedSigmaLogJetGeneratingSeries d).radius := by
+  let L : ℝ → ℝ := fun t => Real.log (completedSigmaDensity d t)
+  let S := completedSigmaLogDensityTaylorSeries d
+  have hL : AnalyticAt ℝ L 0 := by
+    exact completedSigmaLogDensity_analyticAt_origin d hd₁ hd₂
+  have hrS : 0 < S.radius := by
+    exact hL.hasFPowerSeriesAt.radius_pos
+  obtain ⟨C, r, hC, hr, hbound⟩ := S.le_mul_pow_of_radius_pos hrS
+  have hcoeff (n : ℕ) : completedSigmaLogJet d n =
+      -(((n + 1 : ℕ) : ℝ) / 2) * (S (2 * n + 2) (fun _ => 1)) := by
+    rw [completedSigmaLogJet_quarter_normalization]
+    simp only [S, completedSigmaLogDensityTaylorSeries,
+      FormalMultilinearSeries.ofScalars_apply_eq]
+    have hfact : ((2 * n + 2).factorial : ℝ) =
+        ((2 * n + 2 : ℕ) : ℝ) * ((2 * n + 1).factorial : ℝ) := by
+      have hn : 2 * n + 2 = (2 * n + 1) + 1 := by omega
+      rw [hn, Nat.factorial_succ]
+      push_cast
+      rfl
+    rw [hfact]
+    push_cast
+    have hnum : (2 : ℝ) * (n : ℝ) + 2 = 2 * ((n : ℝ) + 1) := by ring
+    rw [hnum]
+    simp only [smul_eq_mul, one_pow]
+    field_simp [show ((2 * n + 1).factorial : ℝ) ≠ 0 by positivity]
+    ring
+  let A : ℝ := C * r ^ 2
+  let q : ℝ := 2 * r ^ 2
+  have hA : 0 < A := by positivity
+  have hq : 0 < q := by positivity
+  have hboundJet : ∀ n, ‖completedSigmaLogJet d n‖ ≤ A * q ^ n := by
+    intro n
+    rw [hcoeff n]
+    have hTaylor := hbound (2 * n + 2)
+    change ‖S (2 * n + 2)‖ ≤ C * r ^ (2 * n + 2) at hTaylor
+    have hTaylorCoeff : ‖S (2 * n + 2) (fun _ => 1)‖ ≤
+        C * r ^ (2 * n + 2) := by
+      have heq : ‖S (2 * n + 2)‖ = ‖S (2 * n + 2) (fun _ => 1)‖ := by
+        simp [S, completedSigmaLogDensityTaylorSeries]
+      rw [← heq]
+      exact hTaylor
+    have hnreal : ((n + 1 : ℕ) : ℝ) ≤ (2 : ℝ) ^ n := by
+      exact_mod_cast nat_succ_le_two_pow n
+    have hfactor : 0 ≤ ((n + 1 : ℕ) : ℝ) / 2 := by positivity
+    calc
+      ‖-(((n + 1 : ℕ) : ℝ) / 2) * S (2 * n + 2) (fun _ => 1)‖
+          = (((n + 1 : ℕ) : ℝ) / 2) * ‖S (2 * n + 2) (fun _ => 1)‖ := by
+              rw [norm_mul, Real.norm_eq_abs, abs_neg, abs_of_nonneg hfactor]
+      _ ≤ (((n + 1 : ℕ) : ℝ) / 2) * (C * r ^ (2 * n + 2)) :=
+            mul_le_mul_of_nonneg_left hTaylorCoeff hfactor
+      _ ≤ (2 : ℝ) ^ n * (C * r ^ 2 * (r ^ 2) ^ n) := by
+            have hpow : r ^ (2 * n + 2) = r ^ 2 * (r ^ 2) ^ n := by
+              calc
+                r ^ (2 * n + 2) = r ^ (2 * n) * r ^ 2 := by
+                  rw [show 2 * n + 2 = 2 * n + 2 by omega, pow_add]
+                _ = (r ^ 2) ^ n * r ^ 2 := by
+                  rw [pow_mul]
+                _ = r ^ 2 * (r ^ 2) ^ n := by ring
+            rw [hpow]
+            have hfac : (((n + 1 : ℕ) : ℝ) / 2) ≤ (2 : ℝ) ^ n := by
+              linarith
+            have hcommon : 0 ≤ C * r ^ 2 * (r ^ 2) ^ n := by positivity
+            have heq : (((n + 1 : ℕ) : ℝ) / 2) *
+                (C * (r ^ 2 * (r ^ 2) ^ n)) =
+                (((n + 1 : ℕ) : ℝ) / 2) * (C * r ^ 2 * (r ^ 2) ^ n) := by ring
+            rw [heq]
+            exact mul_le_mul_of_nonneg_right hfac hcommon
+      _ = A * q ^ n := by
+            simp only [A, q]
+            rw [mul_pow]
+            ring
+  let ρ : NNReal := ⟨1 / (2 * q), by positivity⟩
+  have hradius : (ρ : ENNReal) ≤
+      (completedSigmaLogJetGeneratingSeries d).radius := by
+    apply (completedSigmaLogJetGeneratingSeries d).le_radius_of_bound A
+    intro n
+    change ‖FormalMultilinearSeries.ofScalars ℝ (completedSigmaLogJet d) n‖ *
+        (1 / (2 * q) : ℝ) ^ n ≤ A
+    rw [FormalMultilinearSeries.ofScalars_norm]
+    calc
+      ‖completedSigmaLogJet d n‖ * (1 / (2 * q) : ℝ) ^ n ≤
+          (A * q ^ n) * (1 / (2 * q) : ℝ) ^ n :=
+            mul_le_mul_of_nonneg_right (hboundJet n) (by positivity)
+      _ = A * (1 / 2 : ℝ) ^ n := by
+            rw [mul_assoc, ← mul_pow]
+            congr 2
+            field_simp [ne_of_gt hq]
+      _ ≤ A := by
+            exact mul_le_of_le_one_right hA.le
+              (pow_le_one₀ (by norm_num) (by norm_num))
+  have hposNN : 0 < ρ := by
+    change 0 < 1 / (2 * q)
+    positivity
+  exact lt_of_lt_of_le (by exact_mod_cast hposNN) hradius
+
+/-- The jet series converges to its sum on a neighborhood of the origin. -/
+theorem completedSigmaLogJetGeneratingFunction_hasFPowerSeriesAt (d : ℝ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    HasFPowerSeriesAt (completedSigmaLogJetGeneratingFunction d)
+      (completedSigmaLogJetGeneratingSeries d) 0 := by
+  exact ((completedSigmaLogJetGeneratingSeries d).hasFPowerSeriesOnBall
+    (completedSigmaLogJetGeneratingSeries_radius_pos d hd₁ hd₂)).hasFPowerSeriesAt
+
 /-! ### OBRIGAÇÃO ANALÍTICA RESTANTE (primeira seta ainda ABERTA)
 
 Estado atual (todos PROVADOS, axiomas padrão): para `|d|<1/4`, `D_d` é **holomorfa** em
@@ -428,12 +589,16 @@ theorem offcritical_not_posSemidef_of_zero
 #print axioms cauchy_kernel_denominator_zero_nonreal
 #print axioms completedSigmaLogJet_quarter_normalization
 #print axioms completedSigmaLogJet_eq_logDisplacedProduct
+#print axioms completedSigmaLogDensity_analyticAt_origin
 #print axioms displacedProductC_even_ofReal
 #print axioms completedSigmaDensity_zero_pos
 #print axioms displacedProductC_zero_ne_zero
 #print axioms displacedProductC_analyticAt
 #print axioms displacedProductC_analyticAt_origin
 #print axioms displacedProductC_ne_zero_nhds_zero
+#print axioms completedSigmaLogDensity_analyticAt_origin
+#print axioms completedSigmaLogJetGeneratingSeries_radius_pos
+#print axioms completedSigmaLogJetGeneratingFunction_hasFPowerSeriesAt
 #print axioms displacedProductC_ofReal_eq_density
 #print axioms displacedProductC_vanishes_at_shifted_zero
 #print axioms shifted_zero_u_im
