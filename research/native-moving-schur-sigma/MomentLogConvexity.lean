@@ -246,6 +246,48 @@ theorem momentB_eq_zero_of_momentQ_eq_zero {h : ℕ → ℝ}
 
 #print axioms momentB_eq_zero_of_momentQ_eq_zero
 
+/-- Shift the polynomial by `X^n` inside the Hankel quadratic form. -/
+noncomputable def shiftedMomentQ (h : ℕ → ℝ) (p : Polynomial ℝ) (n : ℕ) : ℝ :=
+  momentQ h (Polynomial.X ^ n * p)
+
+/-- Every term of the shifted quadratic sequence is nonnegative. -/
+theorem shiftedMomentQ_nonneg {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef) (p : Polynomial ℝ) (n : ℕ) :
+    0 ≤ shiftedMomentQ h p n := by
+  exact momentFunctional_square_nonneg hH (Polynomial.X ^ n * p)
+
+#print axioms shiftedMomentQ_nonneg
+
+/-- The shifted quadratic sequence is log-convex, by Cauchy--Schwarz. -/
+theorem shiftedMomentQ_logConvex {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef) (p : Polynomial ℝ) (n : ℕ) :
+    shiftedMomentQ h p (n + 1) ^ 2 ≤
+      shiftedMomentQ h p n * shiftedMomentQ h p (n + 2) := by
+  have hcs := momentB_sq_le_momentQ_mul hH
+      (Polynomial.X ^ n * p) (Polynomial.X ^ (n + 2) * p)
+  have hprod :
+      (Polynomial.X ^ n * p) * (Polynomial.X ^ (n + 2) * p) =
+        (Polynomial.X ^ (n + 1) * p) ^ 2 := by
+    have hx : (Polynomial.X : Polynomial ℝ) ^ n * Polynomial.X ^ (n + 2) =
+        Polynomial.X ^ (n + 1) * Polynomial.X ^ (n + 1) := by
+      rw [← pow_add, ← pow_add]
+      congr 1
+      omega
+    calc
+      _ = (Polynomial.X ^ n * Polynomial.X ^ (n + 2)) * (p * p) := by ring
+      _ = (Polynomial.X ^ (n + 1) * Polynomial.X ^ (n + 1)) * (p * p) := by rw [hx]
+      _ = (Polynomial.X ^ (n + 1) * p) ^ 2 := by rw [pow_two]; ring
+  have hleft : momentB h (Polynomial.X ^ n * p) (Polynomial.X ^ (n + 2) * p) =
+      shiftedMomentQ h p (n + 1) := by
+    change momentFunctional h _ = momentFunctional h _
+    rw [hprod]
+  have hright : momentQ h (Polynomial.X ^ n * p) = shiftedMomentQ h p n := rfl
+  have hlast : momentQ h (Polynomial.X ^ (n + 2) * p) = shiftedMomentQ h p (n + 2) := rfl
+  rw [hleft, hright, hlast] at hcs
+  exact hcs
+
+#print axioms shiftedMomentQ_logConvex
+
 /-- **Cota de razão por log-convexidade (núcleo do Checkpoint B).** Uma sequência
 não-negativa log-convexa com crescimento exponencial limitado satisfaz `a₁ ≤ R²·a₀`.
 Sem hipótese de positividade estrita dos termos. -/

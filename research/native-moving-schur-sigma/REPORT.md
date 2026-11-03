@@ -116,6 +116,12 @@ Cauchy–Schwarz `momentB_sq_le_momentQ_mul`, incluindo o caso degenerado `Q(q)=
 todos os polinômios. Ambos são kernel-checked e passam `#print axioms` com apenas os axiomas
 padrão. A construção do operador ainda não começou.
 
+Foi definida a sequência deslocada `shiftedMomentQ h p n = Q(X^n p)`. H1 fornece sua
+não negatividade (`shiftedMomentQ_nonneg`) e Cauchy–Schwarz dá sua log-convexidade
+(`shiftedMomentQ_logConvex`), em ambos os casos sem exigir positividade estrita dos termos.
+O próximo passo pendente dentro do Checkpoint B é obter, de H2, a cota exponencial uniforme
+em `n` para essa sequência.
+
 Isso **não fecha** o Checkpoint B: ainda falta derivar e majorar as sequências
 `a_n=L(X^{2n}p²)` das hipóteses H1/H2, provar
 log-convexidade e crescimento controlado dessas sequências, e só então aplicar a cota de
