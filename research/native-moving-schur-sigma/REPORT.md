@@ -84,3 +84,24 @@ A ponte fixa–móvel está fechada sob a inversibilidade central do prefixo. O 
 Mesmo demonstrar curvatura negativa em todas as ordens não provaria, isoladamente, positividade dos valores centrais dos pivôs. A investigação de positividade canônica all-order continua exigindo uma desigualdade da síntese original que determine esses valores ou uma representação positiva integralmente identificada. Não se deve transferir automaticamente o sinal de uma Gram inteira auxiliar ou de uma soma de energias isoladas.
 
 O próximo alvo curto é derivar uma identidade da fonte para o somatório ponderado, preservando o retorno e os cruzamentos, e confrontá-la com as desigualdades finitas já certificadas. As margens radiais e caudas da #139 permanecem disponíveis para a passagem física, mas esta rodada não produz uma nova margem radial all-order nem novos sinais de pivôs.
+
+## F — Rota hipotética do operador: progresso inicial e lacunas
+
+`MomentLogConvexity.lean` formaliza dois lemas gerais, sem importar a sequência sigma:
+
+- `hankel_quadratic_nonneg`: uma matriz de Hankel PSD torna não negativa a forma
+  quadrática de qualquer vetor finito de coeficientes;
+- `logConvex_expBounded_ratio`: uma sequência não negativa, log-convexa e com cota
+  exponencial satisfaz a cota de razão, inclusive quando algum termo é zero.
+
+O módulo compila com `-DwarningAsError=true`; `#print axioms` permite somente
+`propext`, `Classical.choice` e `Quot.sound`. A validação inclui agora esse módulo e
+`SigmaZeroObstruction` na lista explícita de compilação.
+
+Isso **não fecha** o Checkpoint B: ainda falta construir o funcional em `Polynomial ℝ`,
+derivar Cauchy–Schwarz e as sequências `a_n=L(X^{2n}p²)` das hipóteses H1/H2, provar
+log-convexidade e crescimento controlado dessas sequências, e só então aplicar a cota de
+razão para obter `L(X²p²)≤R²L(p²)`. Também **não fecha** o Checkpoint A: não há ainda uma
+série convergente dos `completedSigmaLogJet` com a identidade diferencial local exigida.
+Assim, nenhum passo da realização GNS ou da obstrução all-order foi iniciado como se esses
+gates estivessem provados.

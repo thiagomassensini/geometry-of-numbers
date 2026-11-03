@@ -1,0 +1,2 @@
+'CarryMomentLogConvex.hankel_quadratic_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.logConvex_expBounded_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
