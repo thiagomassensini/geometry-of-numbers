@@ -95,6 +95,22 @@ Bézout, não uma igualdade demonstrada entre a forma física Green/TFVD complet
 Hankel nas mesmas coordenadas. A PR #70 também certifica o sinal para a segunda direção par,
 mas declara aberta a orientação all-order e não reivindica uma Gram física positiva.
 
+Há, contudo, um transporte exato da direção crítica para a **face limite bruta**, já provado
+na auditoria material da PR #41 ([NativeApplication.lean](../native-moment-orthogonalization-audit/NativeApplication.lean)
+e [SchurLogic.lean](../native-moment-orthogonalization-audit/SchurLogic.lean)).
+`native_boundary_real_sector` e
+`momentForm_eq_sourceMomentQuadratic` identificam, em cada setor de paridade e para todo vetor
+real de coeficientes, essa energia com quatro vezes a forma quadrática da sequência central
+original. `sourceMomentSchur_critical_direction_of_isUnit` lê o residual no vetor
+`(-A⁻¹b,1)` quando o prefixo antigo é `IsUnit`, sem hipótese de sinal; então
+`native_inverseSchur_boundary_energy` prova que a energia física de bordo nesse mesmo vetor
+paritário é exatamente quatro vezes o residual de Schur, isto é, quatro vezes a avaliação da
+Hankel central na direção crítica. `nativeResidualBoundary_energy` dá também a identidade
+assinada para o polinômio residual em ambos os setores e toda ordem, sem hipótese de sinal.
+Esses teoremas usam os momentos canônicos originais, identificados com `completedSigmaLogJet 0`;
+eles fecham o transporte crítico para a face limite, mas não para todos os canais do ledger
+Green/TFVD completo.
+
 O menor objeto material efetivamente definido aqui é `nativeSourceFiniteBoundaryEnergy`, a
 expressão alternada bruta de bordo limite. Seu lema de divisão par prova a identidade exata
 acima, mas o próprio módulo declara que essa energia não é o armazenamento em passo finito e
@@ -106,11 +122,12 @@ para esse ledger completo identifica sua primeira variação com `h₀`, não ca
 bilinear com a Hankel central. A obrigação precisa que falta é uma identidade que leve todos
 esses canais do ledger físico, no mesmo vetor de coeficientes, à forma Hankel original.
 
-Classificação: para a face limite bruta, **Caso 1** (identidade exata em dois canais, sem sinal
-deduzido); para a proposta de identificar a forma física Green/TFVD completa com uma única
-Hankel central, **Caso 3 / ABERTO** (a congruência algébrica da PR #70 é um resultado mais fraco,
-em outras coordenadas). Não foi encontrado um controle all-order do defeito que produzisse o
-**Caso 2**.
+Classificação: para a face limite bruta, **Caso 1** (identidade exata em dois canais e na
+direção crítica, sem sinal all-order deduzido); para a proposta de identificar a forma física
+Green/TFVD completa com uma única Hankel central, **Caso 3 / ABERTO** (a congruência algébrica
+da PR #70 e a avaliação crítica da face limite são resultados exatos, mas não preservam ainda
+todos os canais do ledger completo numa identidade bilinear Hankel). Não foi encontrado um
+controle all-order do defeito que produzisse o **Caso 2**.
 
 `displacedProductC_transverse_deriv_center` também prova
 `∂_d D_d(t)|_(d=0) = 0` para todo `t` real, por cancelamento das duas derivadas de cadeia
