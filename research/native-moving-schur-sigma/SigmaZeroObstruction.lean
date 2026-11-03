@@ -65,7 +65,7 @@ força a falha de PSD em ordem finita. O teorema usa apenas o fato PROVADO da n�
 
 namespace CarrySigmaObstruction
 open CarrySelfAdjointOperator CarrySigmaSource CarryMovingSigma CPFormal.Analytic.Cp
-open scoped BigOperators Matrix
+open scoped BigOperators Matrix Topology
 noncomputable section
 set_option autoImplicit false
 set_option maxHeartbeats 4000000
@@ -323,27 +323,80 @@ theorem displacedProductC_analyticAt (d γ : ℝ)
   unfold displacedProductC
   exact hF1.mul hF2
 
+/-- **Holomorfia de `D_d` na origem para `|d|<1/2`.** Ambos os fatores `F(∓id)` têm
+`Im=∓d`, dentro da faixa `|Im z|<1/2`. -/
+theorem displacedProductC_analyticAt_origin (d : ℝ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    AnalyticAt ℂ (displacedProductC d) 0 := by
+  have hdom1 : ((0 : ℂ) - Complex.I * (d : ℂ)) ∈ completedNativeHeightDomain := by
+    show operatorHeightParameter ((0 : ℂ) - Complex.I * (d : ℂ)) ∈ genuineCriticalStrip
+    have e : (0 : ℂ) - Complex.I * (d : ℂ) = displacedHeight d 0 := by
+      simp only [displacedHeight]; push_cast; ring
+    rw [e]; exact displacedHeight_strip d 0 hd₁ hd₂
+  have hdom2 : ((0 : ℂ) + Complex.I * (d : ℂ)) ∈ completedNativeHeightDomain := by
+    show operatorHeightParameter ((0 : ℂ) + Complex.I * (d : ℂ)) ∈ genuineCriticalStrip
+    have e : (0 : ℂ) + Complex.I * (d : ℂ) = displacedHeight (-d) 0 := by
+      simp only [displacedHeight]; push_cast; ring
+    rw [e]; exact displacedHeight_strip (-d) 0 (by linarith) (by linarith)
+  have hg1 : AnalyticAt ℂ (fun τ : ℂ => τ - Complex.I * (d : ℂ)) 0 :=
+    analyticAt_id.sub analyticAt_const
+  have hg2 : AnalyticAt ℂ (fun τ : ℂ => τ + Complex.I * (d : ℂ)) 0 :=
+    analyticAt_id.add analyticAt_const
+  have hF1 : AnalyticAt ℂ
+      (fun τ : ℂ => completedNativeOperatorCharacteristic (τ - Complex.I * (d : ℂ))) 0 :=
+    AnalyticAt.comp (f := fun τ : ℂ => τ - Complex.I * (d : ℂ))
+      (completedNativeOperatorCharacteristic_analyticAt hdom1) hg1
+  have hF2 : AnalyticAt ℂ
+      (fun τ : ℂ => completedNativeOperatorCharacteristic (τ + Complex.I * (d : ℂ))) 0 :=
+    AnalyticAt.comp (f := fun τ : ℂ => τ + Complex.I * (d : ℂ))
+      (completedNativeOperatorCharacteristic_analyticAt hdom2) hg2
+  unfold displacedProductC
+  exact hF1.mul hF2
+
+/-- **Vizinhança de não-anulação da origem (Etapa A.2).** Para `|d|<1/2`, `D_d` não se anula
+numa vizinhança complexa da origem — pré-requisito para um ramo holomorfo local de `log D_d`
+e da derivada logarítmica `D_d'/D_d`. -/
+theorem displacedProductC_ne_zero_nhds_zero (d : ℝ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    ∀ᶠ z : ℂ in 𝓝 0, displacedProductC d z ≠ 0 := by
+  have h0 : displacedProductC d 0 ≠ 0 := by
+    have h := displacedProductC_zero_ne_zero d hd₁ hd₂
+    rwa [Complex.ofReal_zero] at h
+  exact ((displacedProductC_analyticAt_origin d hd₁ hd₂).continuousAt).eventually_ne h0
+
 /-! ### OBRIGAÇÃO ANALÍTICA RESTANTE (primeira seta ainda ABERTA)
 
 Estado atual (todos PROVADOS, axiomas padrão): para `|d|<1/4`, `D_d` é **holomorfa** em
 `t₀=γ+id` (`displacedProductC_analyticAt`), **anula** aí quando `F(γ)=0`
 (`displacedProductC_vanishes_at_shifted_zero`), e é **não identicamente nula** no componente
-(pois `D_d(0)>0`, `completedSigmaDensity_zero_pos`). O nó transportado é **não-real**
-(`shifted_zero_u_im`: `Im((γ+id)²)=2γd≠0`). A normalização `1/4` e a identidade de
-coeficientes `hₙ = −L^{(2n+2)}(0)/(4(2n+1)!)` estão provadas
+(pois `D_d(0)>0`, `completedSigmaDensity_zero_pos`; e `D_d≠0` numa vizinhança da origem,
+`displacedProductC_ne_zero_nhds_zero`, para `|d|<1/2`). O nó transportado é **não-real**
+(`shifted_zero_u_im`). A normalização `1/4` e a identidade de coeficientes
+`hₙ = −L^{(2n+2)}(0)/(4(2n+1)!)` estão provadas
 (`completedSigmaLogJet_quarter_normalization`, `completedSigmaLogJet_eq_logDisplacedProduct`).
 
-Falta estritamente **um** passo analítico, sem suporte direto no Mathlib deste pin
-(não há lema de ordem meromorfa de `logDeriv`): de `AnalyticAt D_d t₀`, `D_d t₀ = 0` e `D_d`
-não-identicamente-nula, concluir que `logDeriv D_d = D_d'/D_d` é **meromorfa** em `t₀` com
-**polo** (ordem `−1`, resíduo = multiplicidade do zero). Isso exige construir a fatoração
-local `D_d = (τ−t₀)^m · g`, `g(t₀)≠0` (via `AnalyticAt.order`/`Analysis.Analytic.IsolatedZeros`),
-e daí `logDeriv D_d = m/(τ−t₀) + logDeriv g`. Transportando por `u=τ²` (derivada `2t₀≠0`,
-inversa holomorfa local), o germe da geradora `G_d` tem polo não-removível em `u₀=(γ+id)²`.
+**Duas rotas, ambas bloqueadas por infraestrutura ausente no Mathlib (pin 81a5d257):**
 
-**DOMÍNIO:** o polo acima só é acessível para `0<|d|<1/4` com a analiticidade conhecida de
-`F` na faixa `|Im z|<1/2`; para `1/4≤|d|<1/2` faltaria continuação meromorfa mais ampla de
-`F`. Nenhuma das obrigações é hipótese de sinal. -/
+(1) *Rota do polo.* De `AnalyticAt D_d t₀`, `D_d t₀=0`, `D_d` não-id.-nula, concluir que
+`logDeriv D_d` é meromorfa em `t₀` com polo. Não há lema de ordem meromorfa de `logDeriv`;
+exigiria a fatoração local via `AnalyticAt.order`/`IsolatedZeros`.
+
+(2) *Rota da EDO + momentos (Hamburger).* A identidade `D_d'(t)+4t·G_d(t²)·D_d(t)=0` e a
+cadeia `all-order PSD ⇒ medida positiva ⇒ transformada de Cauchy holomorfa fora de ℝ ⇒ EDO
+sem zeros ⇒ contradição`. **Bloqueador decisivo:** o teorema de **Hamburger** (Hankel PSD em
+toda ordem ⇒ existe medida de Borel positiva `μ` com `hₙ=∫ xⁿ dμ`) **não existe no Mathlib**
+(verificado: sem `Hamburger`/`momentProblem`/Haviland). Assinatura mínima que faltaria:
+
+  `(∀ N, (sourceMomentMatrix h 0 N).PosSemidef) →
+    ∃ μ : MeasureTheory.Measure ℝ, IsFiniteMeasure μ ∧ ∀ n, h n = ∫ x, x^n ∂μ`
+
+Lemas auxiliares da rota EDO que são autocontidos e reutilizáveis (não formalizados aqui por
+orçamento): suporte compacto de `μ` a partir de `∫ x^{2n} dμ ≤ C·R^{2n}` (`supp μ ⊆ [−R,R]`);
+holomorfia da transformada de Cauchy `∫ (1−xu)⁻¹ dμ` fora de ℝ; unicidade de EDO linear
+holomorfa de 1ª ordem (solução não-nula sem zeros). Nenhuma é hipótese de sinal.
+
+**DOMÍNIO:** holomorfia/anulação de `D_d` em `t₀` para `0<|d|<1/4`; não-anulação/densidade
+na origem para `|d|<1/2`. Não se reivindica a conclusão para `|d|<1/2`. -/
 
 /-! ## Parte 4 — teorema condicional honesto: isolamento da obrigação analítica -/
 
@@ -379,6 +432,8 @@ theorem offcritical_not_posSemidef_of_zero
 #print axioms completedSigmaDensity_zero_pos
 #print axioms displacedProductC_zero_ne_zero
 #print axioms displacedProductC_analyticAt
+#print axioms displacedProductC_analyticAt_origin
+#print axioms displacedProductC_ne_zero_nhds_zero
 #print axioms displacedProductC_ofReal_eq_density
 #print axioms displacedProductC_vanishes_at_shifted_zero
 #print axioms shifted_zero_u_im
