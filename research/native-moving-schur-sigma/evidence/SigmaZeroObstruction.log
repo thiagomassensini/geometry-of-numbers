@@ -1,3 +1,44 @@
+'CarrySigmaObstruction.completedSigmaLogJet_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJet_exponential_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJet_sigmaMatrix_eq_hankel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJet_hankel_psd_of_sigmaMatrix_psd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJet_resolvent_hasSum_of_sigmaMatrix_psd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJetComplexGeneratingFunction_eq_resolvent_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.displacedProductC_local_resolventDifferentialEquation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.positiveDisplacementDomain_isOpen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.positiveDisplacementDomain_convex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.positiveDisplacementDomain_sq_im_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.displacedProductC_analyticOnNhd_positiveDomain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.displacedProductC_resolventDifferentialEquation_on_positiveDomain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.zero_mem_closure_positiveDisplacementDomain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaMatrix_not_all_psd_of_positive_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaMatrix_not_all_psd_of_negative_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.exists_sigmaMatrix_negative_direction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.exists_sigmaMatrix_negative_direction_of_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
 'CarrySigmaObstruction.finite_partial_sum_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarrySigmaObstruction.infinite_geometric_series' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarrySigmaObstruction.cauchy_kernel_denominator_zero_nonreal' depends on axioms: [propext,
@@ -26,6 +67,33 @@
  Classical.choice,
  Quot.sound]
 'CarrySigmaObstruction.completedSigmaLogJetGeneratingSeries_radius_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJetGeneratingFunction_hasFPowerSeriesAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogDensityDerivativeTaylorSeries_hasFPowerSeriesAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogDensity_derivative_eq_generatingFunction_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJetComplexGeneratingFunction_hasFPowerSeriesAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.displacedProductC_deriv_ofReal_eq_density_deriv_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaDensity_deriv_eq_generatingFunction_mul_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJetComplexGeneratingFunction_ofReal_eq_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.displacedProductC_differentialExpression_ofReal_eq_zero_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.displacedProductC_local_differentialEquation' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
 'CarrySigmaObstruction.completedSigmaLogJetGeneratingFunction_hasFPowerSeriesAt' depends on axioms: [propext,

@@ -1,2 +1,60 @@
+'CarryMomentLogConvex.momentFunctional_C_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentFunctional_mul_eq_double_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentFunctional_X_pow_mul_eq_double_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
 'CarryMomentLogConvex.hankel_quadratic_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentFunctional_square_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentB_sq_le_momentQ_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentB_eq_zero_of_momentQ_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.shiftedMomentQ_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.shiftedMomentQ_logConvex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.shiftedMomentQ_eq_double_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.shiftedMomentQ_expBounded' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarryMomentLogConvex.logConvex_expBounded_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentQ_X_mul_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentNullSubmodule' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.quotientMomentInner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.quotientMomentInnerProductCore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentHilbert' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentHilbert_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.quotientMulX' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.quotientMulX_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.quotientMulXContinuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentHilbertMulX_on_quotient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentHilbertMulX' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentHilbertMulX_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentHilbertMulX_coe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.quotientMulX_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentHilbertMulX_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentHilbertMulX_isSelfAdjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentHilbertMulX_pow_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentHilbert_recovers_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.complexifyMomentOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.complexifyMomentOperator_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.complexifyMomentOperator_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.complexifyMomentOperator_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.complexifyMomentOperator_isSelfAdjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentComplexMulX_isSelfAdjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentComplexMulX_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentResolventCoefficient_differentiableAt_of_radius' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMomentLogConvex.momentComplexMulX_mem_resolventSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentComplexMulX_one_sub_smul_isUnit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentResolventCoefficient_differentiableAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMomentLogConvex.momentResolventCoefficient_differentiableOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMomentLogConvex.momentComplexMulX_pow_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentResolventReadout_pow_eq_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentResolventReadout_neumann_term' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentResolventCoefficient_hasSum_moments' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMomentLogConvex.momentComplexMulX_mem_neumannBall' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentResolventCoefficient_hasSum_moments_of_radius' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

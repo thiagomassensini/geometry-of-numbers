@@ -1,0 +1,8 @@
+'FiniteHankelFailure.kernel_crossing_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiniteHankelFailure.block_failure_classification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiniteHankelFailure.generalized_residual_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiniteHankelFailure.block_nonneg_iff_generalized_residual_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiniteHankelFailure.exists_least_bad_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiniteHankelFailure.exists_first_hankel_failure' depends on axioms: [propext, Classical.choice, Quot.sound]

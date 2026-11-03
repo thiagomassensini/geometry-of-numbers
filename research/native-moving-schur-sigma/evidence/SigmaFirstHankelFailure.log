@@ -1,0 +1,12 @@
+'CarrySigmaObstruction.exists_first_sigma_hankel_failure_of_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sourceMoment_succ_failure_classification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sourceMoment_size_one_failure_neg_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.first_sigma_failure_classification_of_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
