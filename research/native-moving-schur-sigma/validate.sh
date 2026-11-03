@@ -4,7 +4,7 @@ here=$(cd "$(dirname "$0")" && pwd)
 cd "$here/../.."
 export PATH="$HOME/.elan/bin:$PATH"
 mkdir -p "$here/evidence"
-for module in MomentosHankel.SchurPivotCurvature MomentosHankel.PivotSecondDerivative MomentosHankel.SchurVectorSmoothness MomentosHankel.PivotLocalTransport MatrixJetCalculus SigmaNeighborhood MovingSchur SectorRegression MomentLogConvexity SigmaZeroObstruction SigmaTransverseAllOrder FiniteHankelFailure SigmaFirstHankelFailure MaterialSchurSeam Audit; do
+for module in MomentosHankel.SchurPivotCurvature MomentosHankel.PivotSecondDerivative MomentosHankel.SchurVectorSmoothness MomentosHankel.PivotLocalTransport MatrixJetCalculus SigmaNeighborhood MovingSchur SectorRegression MomentLogConvexity SigmaZeroObstruction SigmaTransverseAllOrder SigmaTransverseJoint FiniteHankelFailure SigmaFirstHankelFailure MaterialSchurSeam Audit; do
   printf 'BUILD %s\n' "$module"
   bash "$here/compile_module.sh" "$module" > "$here/evidence/$module.log" 2>&1 || { cat "$here/evidence/$module.log"; exit 1; }
   sed -i 's/[[:blank:]]*$//' "$here/evidence/$module.log"

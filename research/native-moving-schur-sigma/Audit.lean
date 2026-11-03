@@ -1,4 +1,5 @@
 import SectorRegression
+import SigmaTransverseJoint
 import Lean
 open Lean Elab Command
 elab "#audit_flow " ids:ident+ : command => do
@@ -116,6 +117,13 @@ elab "#audit_flow " ids:ident+ : command => do
 #print axioms CarryMovingSigma.odd_moving_schur_curvature
 #print axioms CarryMovingSigma.first_even_pivot_curvature
 #print axioms CarryMovingSigma.first_odd_pivot_curvature
+#print axioms CarrySigmaObstruction.completedNativeLogResponse_analyticAt_imaginary
+#print axioms CarrySigmaObstruction.completedSigmaLogJet_eq_transverseMeanTDerivative
+#print axioms CarrySigmaObstruction.completedSigmaLogJet_analyticAt_displacement
+#print axioms CarrySigmaObstruction.completedSigmaLogJet_uniform_exponential_bound_near_center
+#print axioms CarrySigmaObstruction.completedSigmaLogJetGeneratingSeries_radius_uniform_near_center
+#print axioms CarrySigmaObstruction.completedSigmaLogJet_joint_representation_near_center
+#print axioms CarrySigmaObstruction.completedSigmaLogJetGeneratingFunction_transverse_pde_near_center
 
 #audit_flow
   CarryMovingSigma.moving_schur_curvature_expanded

@@ -114,23 +114,27 @@ não foi tentada, pois exige justamente positividade definida central all-order 
 bash research/native-moving-schur-sigma/validate.sh
 ```
 
-Resultado: todos os módulos listados passaram com `-DwarningAsError=true`, inclusive os quatro
-novos módulos e as dependências vendorizadas; `lake build --wfail`, as auditorias `foundation`,
-`geometry` e `analysis`, e a busca de fontes por `sorry`, `admit`, `unsafe`, `native_decide`,
-`sorryAx`, `implemented_by` e declarações `axiom` também passaram. Os `#print axioms` dos
-novos teoremas mostram somente `[propext, Classical.choice, Quot.sound]`.
+Execução final desta atualização: todos os módulos do validador passaram com
+`-DwarningAsError=true`, incluindo `SigmaTransverseJoint` e `Audit`; `lake build --wfail`, as
+auditorias `foundation`, `geometry` e `analysis`, e a busca de fontes por `sorry`, `admit`,
+`unsafe`, `native_decide`, `sorryAx`, `implemented_by` e declarações `axiom` também passaram.
+Exit code: `0`. Os `#print axioms` dos novos teoremas mostram somente
+`[propext, Classical.choice, Quot.sound]`.
 
-O trabalho parte da branch `agent/native-moving-schur-sigma`, cujo HEAD inicial era o commit
-auditado `671bd23b5ec3a486668f74ebbf756ad1dce269f6`. Os três commits por resultado são:
+O trabalho parte da branch `agent/native-moving-schur-sigma`, cujo HEAD no começo desta missão
+era `671bd23b5ec3a486668f74ebbf756ad1dce269f6`. Os commits por resultado anteriores a esta
+atualização foram:
 
 - A, recorrência e série: `c9bf34d`.
 - B, primeira falha: `b93d0d4`.
 - C, costura material: `01119cd`.
 - Redução radial da PDE e normalização dos logs de validação: `242b55b`.
 - Relatório e integração inicial do validador: `d1d5307`.
+- Atualização do relatório com a redução radial: `3a49688`.
 
-Esta atualização do relatório registra o limite exato da nova redução: falta estabelecer a
-seção local em `d` da representação para a geradora sigma original.
+Esta atualização registra também o fechamento da seção local uniforme e da PDE funcional para
+a geradora sigma original, com axiomas padrão e sem alterar a sequência dos jets. O resultado
+está formalizado em `SigmaTransverseJoint.lean` e integrado ao validador e à auditoria.
 
 ## Proveniência e limites da cadeia
 
@@ -138,7 +142,7 @@ seção local em `d` da representação para a geradora sigma original.
 característica completada original F
   → resposta logarítmica Q = -F'/(2F)
   → identidade local com a função geradora dos jets sigma originais
-  → recorrência transversal, coeficientes e série local
+  → recorrência transversal, coeficientes, série local e PDE funcional local
   → Hankel original e classificação singular-safe da primeira falha
   → identidade material da face limite como soma dos dois canais sigma centrais
 ```
@@ -150,15 +154,27 @@ profundidade prima e momentos canônicos, e entre os jets centrais e esses momen
 transversal e a síntese material permanecem objetos distintos, exceto pelas identidades
 formalmente provadas acima.
 
-**PASSO DE REGRA DA CADEIA PROVADO; PDE DA FONTE AINDA ABERTA.** O lema
-`harmonic_radial_generating_pde_at_nonzero` formaliza que, se `S` é harmônica e as duas
-seções locais da representação `S(t,d)=t*G(d,t²)` valem perto do ponto, então para `t ≠ 0`
-vale a PDE de `G` em `u=t²>0`. A hipótese de seção em `t` corresponde ao resultado já
-provado para cada deslocamento fixo. Ainda falta provar a seção em `d` para o gerador sigma
-original, em uma vizinhança do deslocamento; equivalentemente, falta a representação
-local-uniforme nas duas variáveis que permita derivar a soma geradora em `d`. Portanto, a PDE
-funcional da fonte não é reivindicada como formalizada. Em `u=0`, a identidade
-coeficiente a coeficiente já está provada.
+**PDE FUNCIONAL DA FONTE PROVADA LOCALMENTE.**
+`completedSigmaLogJet_joint_representation_near_center` estabelece um único `δ > 0` tal que a
+média transversal original satisfaz `S(t,d) = t * G_d(t²)` para todo `|d|, |t| < δ`. A prova
+usa um único disco de analiticidade de `Q = -F'/(2F)` em torno de zero e o raio positivo comum
+da série original para todos os deslocamentos suficientemente pequenos. A igualdade inicial
+perto de `t=0` é estendida em cada seção longitudinal por unicidade de funções analíticas reais
+no intervalo.
+
+`completedSigmaLogJetGeneratingFunction_transverse_pde_near_center` aplica então
+`harmonic_radial_generating_pde_at_nonzero` e prova, para algum `η > 0`, `|d|, |t| < η` e
+`t ≠ 0`,
+
+```text
+∂²_d G_d(t²) + 6 ∂_u G_d(t²) + 4 t² ∂²_u G_d(t²) = 0.
+```
+
+As derivadas são as derivadas iteradas reais das funções geradoras originais. Como `u=t²>0`,
+isso cobre a equação funcional em uma vizinhança perfurada de `u=0`; a identidade coeficiente
+a coeficiente no centro continua disponível. `#print axioms` mostra apenas `[propext,
+Classical.choice, Quot.sound]` para os teoremas novos. O stencil de raio imaginário segue
+sendo uma média analítica, sem identificação com o bracket aritmético `C2`.
 
 **DERIVADO MATEMATICAMENTE:** quando `u=r²`, o operador radial vira
 `∂²_r + (2/r)∂_r`; isso descreve uma interpretação harmônica auxiliar em quatro dimensões,

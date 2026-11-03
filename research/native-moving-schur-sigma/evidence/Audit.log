@@ -32,4 +32,25 @@
 'CarryMovingSigma.odd_moving_schur_curvature' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarryMovingSigma.first_even_pivot_curvature' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarryMovingSigma.first_odd_pivot_curvature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.completedNativeLogResponse_analyticAt_imaginary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJet_eq_transverseMeanTDerivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJet_analyticAt_displacement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJet_uniform_exponential_bound_near_center' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJetGeneratingSeries_radius_uniform_near_center' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJet_joint_representation_near_center' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJetGeneratingFunction_transverse_pde_near_center' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
 Transitive source audit: 6 roots; 57504 type/body dependencies; standard axioms only; sixth-pivot positivity forbidden, old prefix allowed
