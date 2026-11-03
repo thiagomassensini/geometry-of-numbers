@@ -115,9 +115,24 @@ Também foi provado que `completedSigmaDensity d` e seu log são pares na variá
 `completedSigmaLogDensity_odd_iteratedDeriv_eq_zero` registra o anulamento de todas as
 derivadas ímpares na origem. Isso fecha a paridade necessária para reduzir `t` a `t²`.
 
-O Checkpoint A **continua aberto**: ainda não foi provada a identidade local
-`D_d'(t)+4tG_d(t²)D_d(t)=0`, nem formalizada a versão complexa da geradora necessária para
-propagá-la pelo domínio. Em particular, falta ainda provar a igualdade entre a soma da
-geradora reduzida e o quociente log-derivativo, a partir das somas convergentes, antes de
-propagar a EDO. Nenhum passo da realização GNS ou da obstrução all-order foi iniciado como se
-esses gates estivessem provados.
+Foi fechada uma etapa intermediária importante do Checkpoint A:
+`completedSigmaLogDensity_derivative_eq_generatingFunction_eventually` prova, em uma
+vizinhança real de zero, que
+
+\[
+\frac{d}{dt}\log(\texttt{completedSigmaDensity}\ d\ t)
+=-4t\,G_d(t^2),
+\]
+
+onde `G_d` é a soma convergente da série com coeficientes exatamente
+`completedSigmaLogJet d n`. A prova usa as séries de Taylor convergentes, anula os
+coeficientes pares pela paridade, reindexa os ímpares e fatoriza a soma; não é somente uma
+igualdade formal de coeficientes. O novo teorema também passa `#print axioms` com apenas
+`propext`, `Classical.choice` e `Quot.sound`.
+
+O Checkpoint A permanece aberto no escopo exigido: falta transportar essa identidade para a
+equação complexa local
+`D_d'(t)+4tG_d(t²)D_d(t)=0` para `D_d=displacedProductC d`, incluindo a construção da
+geradora complexa analítica. A existência do raio positivo e a identidade real para a
+log-derivada já estão kernel-checked; ainda não foi provada a EDO complexa necessária para a
+propagação. Nenhum passo da realização GNS ou da obstrução all-order é tratado como provado.

@@ -441,6 +441,45 @@ def completedSigmaLogDensityTaylorSeries (d : ℝ) :
     iteratedDeriv n (fun t : ℝ => Real.log (completedSigmaDensity d t)) 0 /
       (n.factorial : ℝ))
 
+/-- Taylor coefficient sequence of the derivative of the real log-density. -/
+def completedSigmaLogDensityDerivativeTaylorCoefficient (d : ℝ) (n : ℕ) : ℝ :=
+  iteratedDeriv n (deriv (fun t : ℝ => Real.log (completedSigmaDensity d t))) 0 /
+    (n.factorial : ℝ)
+
+/-- Taylor series of the derivative of the real log-density. -/
+def completedSigmaLogDensityDerivativeTaylorSeries (d : ℝ) :
+    FormalMultilinearSeries ℝ ℝ ℝ :=
+  FormalMultilinearSeries.ofScalars ℝ
+    (completedSigmaLogDensityDerivativeTaylorCoefficient d)
+
+/-- The derivative Taylor series converges to the actual derivative near the origin. -/
+theorem completedSigmaLogDensityDerivativeTaylorSeries_hasFPowerSeriesAt (d : ℝ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    HasFPowerSeriesAt (deriv (fun t : ℝ => Real.log (completedSigmaDensity d t)))
+      (completedSigmaLogDensityDerivativeTaylorSeries d) 0 := by
+  exact (completedSigmaLogDensity_analyticAt_origin d hd₁ hd₂).deriv.hasFPowerSeriesAt
+
+/-- Even powers in the Taylor series of the log-density derivative vanish. -/
+theorem completedSigmaLogDensityDerivativeTaylorCoefficient_even_eq_zero
+    (d : ℝ) (n : ℕ) (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    completedSigmaLogDensityDerivativeTaylorCoefficient d (2 * n) = 0 := by
+  unfold completedSigmaLogDensityDerivativeTaylorCoefficient
+  rw [← iteratedDeriv_succ']
+  rw [completedSigmaLogDensity_odd_iteratedDeriv_eq_zero d n hd₁ hd₂]
+  simp
+
+/-- Odd Taylor coefficients of the log-density derivative are exactly `-4` times the
+original sigma jets. This is the coefficient identity behind `L'(t)=-4tG_d(t²)`. -/
+theorem completedSigmaLogDensityDerivativeTaylorCoefficient_odd_eq_jet
+    (d : ℝ) (n : ℕ) :
+    completedSigmaLogDensityDerivativeTaylorCoefficient d (2 * n + 1) =
+      -4 * completedSigmaLogJet d n := by
+  unfold completedSigmaLogDensityDerivativeTaylorCoefficient
+  rw [← iteratedDeriv_succ', completedSigmaLogJet_quarter_normalization]
+  have hf : ((2 * n + 1).factorial : ℝ) ≠ 0 := by
+    exact_mod_cast (Nat.factorial_pos (2 * n + 1)).ne'
+  field_simp [hf]
+
 /-- The Taylor series of the original sigma jets in the reduced variable `u`. -/
 def completedSigmaLogJetGeneratingSeries (d : ℝ) :
     FormalMultilinearSeries ℝ ℝ ℝ :=
@@ -569,6 +608,93 @@ theorem completedSigmaLogJetGeneratingFunction_hasFPowerSeriesAt (d : ℝ)
   exact ((completedSigmaLogJetGeneratingSeries d).hasFPowerSeriesOnBall
     (completedSigmaLogJetGeneratingSeries_radius_pos d hd₁ hd₂)).hasFPowerSeriesAt
 
+private def oddIndexEquiv : ℕ ≃ {k : ℕ // k % 2 = 1} where
+  toFun n := ⟨2 * n + 1, by omega⟩
+  invFun k := k.1 / 2
+  left_inv n := by
+    simp [Nat.mul_add_div]
+  right_inv k := by
+    rcases k with ⟨k, hk⟩
+    apply Subtype.ext
+    change 2 * (k / 2) + 1 = k
+    have hmod := Nat.mod_add_div k 2
+    rw [hk] at hmod
+    omega
+
+/-- The Taylor series identities above imply the real local differential equation
+for the log-density and the original sigma-jet generating function. The proof splits
+the convergent derivative series into even and odd indices, kills the even terms by
+parity, and reindexes the odd terms by `k=2n+1`. -/
+theorem completedSigmaLogDensity_derivative_eq_generatingFunction_eventually
+    (d : ℝ) (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    ∀ᶠ t : ℝ in 𝓝 0,
+      deriv (fun x : ℝ => Real.log (completedSigmaDensity d x)) t =
+        -4 * t * completedSigmaLogJetGeneratingFunction d (t ^ 2) := by
+  let L : ℝ → ℝ := fun t => Real.log (completedSigmaDensity d t)
+  let c := completedSigmaLogDensityDerivativeTaylorCoefficient d
+  let O : Set ℕ := {k | k % 2 = 1}
+  have hDerivSeries := completedSigmaLogDensityDerivativeTaylorSeries_hasFPowerSeriesAt
+    d hd₁ hd₂
+  have hGenSeries := completedSigmaLogJetGeneratingFunction_hasFPowerSeriesAt d hd₁ hd₂
+  have hSquare : Filter.Tendsto (fun t : ℝ => t ^ 2) (𝓝 0) (𝓝 0) := by
+    have hc : Continuous (fun t : ℝ => t ^ 2) := by fun_prop
+    simpa using (hc.continuousAt : ContinuousAt (fun t : ℝ => t ^ 2) 0).tendsto
+  have hDerivEventually := hDerivSeries.eventually_hasSum
+  have hGenEventually := hSquare.eventually hGenSeries.eventually_hasSum
+  filter_upwards [hDerivEventually, hGenEventually] with t hDerivHasSum hGenHasSum
+  have hDerivSum : HasSum (fun k : ℕ => c k * t ^ k) (deriv L t) := by
+    simpa [L, completedSigmaLogDensityDerivativeTaylorSeries,
+      FormalMultilinearSeries.ofScalars_apply_eq, mul_comm] using hDerivHasSum
+  have hGenSum : HasSum (fun n : ℕ => completedSigmaLogJet d n * (t ^ 2) ^ n)
+      (completedSigmaLogJetGeneratingFunction d (t ^ 2)) := by
+    simpa [completedSigmaLogJetGeneratingSeries, completedSigmaLogJetGeneratingFunction,
+      FormalMultilinearSeries.ofScalars_apply_eq, mul_comm] using hGenHasSum
+  let f : ℕ → ℝ := fun k => c k * t ^ k
+  have hEvenCoeff : ∀ k, k % 2 = 0 → c k = 0 := by
+    intro k hk
+    have hk' : k = 2 * (k / 2) := by omega
+    rw [hk']
+    exact completedSigmaLogDensityDerivativeTaylorCoefficient_even_eq_zero
+      d (k / 2) hd₁ hd₂
+  have hDecomp := hDerivSum.summable.tsum_subtype_add_tsum_subtype_compl O
+  have hComplementZero : ∑' k : (Oᶜ : Set ℕ), f k = 0 := by
+    have hall : ∀ k : (Oᶜ : Set ℕ), f k = 0 := by
+      intro k
+      have hkO : ¬ k.val % 2 = 1 := by
+        intro heq
+        apply k.property
+        change k.val % 2 = 1
+        exact heq
+      have hk : k.val % 2 = 0 := by
+        have hm := Nat.mod_lt k.val (by norm_num : 0 < 2)
+        omega
+      simp [f, hEvenCoeff k.val hk]
+    simp [hall]
+  have hDerivOdd : deriv L t = ∑' k : (O : Set ℕ), f k := by
+    calc
+      deriv L t = ∑' k : ℕ, f k := hDerivSum.tsum_eq.symm
+      _ = (∑' k : (O : Set ℕ), f k) + ∑' k : (Oᶜ : Set ℕ), f k := by
+        simpa [f] using hDecomp.symm
+      _ = ∑' k : (O : Set ℕ), f k := by rw [hComplementZero, add_zero]
+  have hReindex : (∑' k : (O : Set ℕ), f k) = ∑' n : ℕ, f (2 * n + 1) := by
+    calc
+      (∑' k : (O : Set ℕ), f k) =
+          ∑' k : {k : ℕ // k % 2 = 1}, f k := rfl
+      _ = ∑' n : ℕ, f (2 * n + 1) :=
+          (Equiv.tsum_eq oddIndexEquiv (fun k : {k : ℕ // k % 2 = 1} => f k.val)).symm
+  have hOddTerms : (∑' n : ℕ, f (2 * n + 1)) =
+      ∑' n : ℕ, (-4 * t) * (completedSigmaLogJet d n * (t ^ 2) ^ n) := by
+    apply tsum_congr
+    intro n
+    simp only [f, c, completedSigmaLogDensityDerivativeTaylorCoefficient_odd_eq_jet]
+    rw [pow_succ]
+    ring
+  have hFactor : (∑' n : ℕ,
+      (-4 * t) * (completedSigmaLogJet d n * (t ^ 2) ^ n)) =
+      -4 * t * completedSigmaLogJetGeneratingFunction d (t ^ 2) := by
+    rw [tsum_mul_left, hGenSum.tsum_eq]
+  rw [hDerivOdd, hReindex, hOddTerms, hFactor]
+
 /-! ### OBRIGAÇÃO ANALÍTICA RESTANTE (primeira seta ainda ABERTA)
 
 Estado atual (todos PROVADOS, axiomas padrão): para `|d|<1/4`, `D_d` é **holomorfa** em
@@ -644,6 +770,9 @@ theorem offcritical_not_posSemidef_of_zero
 #print axioms displacedProductC_ne_zero_nhds_zero
 #print axioms completedSigmaLogDensity_analyticAt_origin
 #print axioms completedSigmaLogJetGeneratingSeries_radius_pos
+#print axioms completedSigmaLogJetGeneratingFunction_hasFPowerSeriesAt
+#print axioms completedSigmaLogDensityDerivativeTaylorSeries_hasFPowerSeriesAt
+#print axioms completedSigmaLogDensity_derivative_eq_generatingFunction_eventually
 #print axioms completedSigmaLogJetGeneratingFunction_hasFPowerSeriesAt
 #print axioms displacedProductC_ofReal_eq_density
 #print axioms displacedProductC_vanishes_at_shifted_zero
