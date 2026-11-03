@@ -149,7 +149,7 @@ demonstra.
 bash research/native-moving-schur-sigma/validate.sh
 ```
 
-O resultado será registrado no commit desta atualização. Todos os módulos listados passaram com
+O resultado foi registrado em `8435f79`. Todos os módulos listados passaram com
 `-DwarningAsError=true`, incluindo `SigmaTransverseJoint`, `SigmaFailureOrder` e `Audit`;
 `lake build --wfail`, as auditorias `foundation`, `geometry` e `analysis`, e a busca de fontes
 por `sorry`, `admit`, `unsafe`, `native_decide`, `sorryAx`, `implemented_by` e declarações
@@ -166,7 +166,7 @@ era `671bd23b5ec3a486668f74ebbf756ad1dce269f6`. Os commits por resultado são:
 - Relatório e integração inicial do validador: `d1d5307`.
 - Atualização do relatório com a redução radial: `3a49688`.
 - Representação conjunta e PDE funcional local, com validação: `b2eca71`.
-- Estabilidade de prefixos e divergência condicional de `N_*(d)`: registrada no commit desta atualização.
+- Estabilidade de prefixos e divergência condicional de `N_*(d)`: `8435f79`.
 
 Esta atualização registra o fechamento da seção local uniforme e da PDE funcional para a
 geradora sigma original e a divergência condicional da primeira ordem ruim. Os resultados estão
@@ -222,6 +222,6 @@ sem identificar `ℝ⁴` com o espaço material `C2/C3`.
 
 - [Commit-base 671bd23](https://github.com/thiagomassensini/geometry-of-numbers/tree/671bd23b5ec3a486668f74ebbf756ad1dce269f6)
 - [PR #41](https://github.com/thiagomassensini/geometry-of-numbers/pull/41), sobre a identidade entre ortogonalização algébrica e energia material de bordo, sem concluir sinal all-order.
-- [PR #70](https://github.com/thiagomassensini/geometry-of-numbers/pull/70), sobre transporte exato e ledger TFVD bilinear, sem Gram material positivo nem orientação all-order.
+- [PR #70](https://github.com/thiagomassensini/geometry-of-numbers/pull/70), cuja prova de transporte foi mesclada à branch `agent/c3-fourteenth-tail`: o kernel de coeficientes é congruente à Hankel e os quatro termos literais são preservados, mas não há Gram física positiva nem orientação all-order.
 - [FullTransverseCancellation.lean](https://github.com/thiagomassensini/geometry-of-numbers/blob/main/research/c3-tilt-prime/FullTransverseCancellation.lean)
 - [FullTfvdTransverse.lean](https://github.com/thiagomassensini/geometry-of-numbers/blob/main/research/c3-tilt-prime/FullTfvdTransverse.lean)
