@@ -221,3 +221,15 @@ O resultado de negatividade all-order não está concluído.
 **COMPILAÇÃO:** `bash research/native-moving-schur-sigma/compile_module.sh MomentLogConvexity`
 concluiu com `-DwarningAsError=true`; todos os resultados listados passaram `#print axioms`.
 `git diff --check` passou e não há `sorry` ou `admit` no módulo.
+
+## Continuação do Checkpoint D — espaço de Hilbert complexo
+
+Foi criado `MomentComplexification.lean`, que realiza o espaço complexo como duas quadraturas
+reais `H × H` com a norma `L²`, ação escalar complexa e produto interno complexo construído
+explicitamente a partir do produto interno real. A instância de `InnerProductSpace ℂ` compila;
+`#print axioms` para `RealHilbertComplexification.inner_apply` lista somente os axiomas padrão.
+
+Esse módulo fornece a estrutura de base para estender o multiplicador real e formar sua
+resolvente complexa. Ainda falta construir e validar essa extensão do operador, provar a
+inversibilidade fora do eixo real, a holomorfia e a expansão local. Nenhum teorema de resolvente
+ou propagação foi adicionado nesta etapa.
