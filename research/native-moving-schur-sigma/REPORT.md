@@ -141,11 +141,6 @@ A prova usa analiticidade local de `D_d`, sua restrição real e a igualdade já
 `D_d(t)` e a densidade. Isso fornece a ponte de derivadas necessária para transportar a EDO
 real à expressão complexa.
 
-O Checkpoint A permanece aberto no escopo exigido: falta transportar essa identidade para a
-equação complexa local
-`D_d'(t)+4tG_d(t²)D_d(t)=0` para `D_d=displacedProductC d`, incluindo a construção da
-identidade entre a restrição real da expressão complexa e a identidade real, seguida pelo
-princípio de identidade analítico. A existência do raio positivo e as geradoras real e
-complexa, além da identidade real para a log-derivada, já estão kernel-checked; ainda não foi
-provada a EDO complexa necessária para a propagação. Nenhum passo da realização GNS ou da
-obstrução all-order é tratado como provado.
+O Checkpoint A está agora fechado. `completedSigmaDensity_deriv_eq_generatingFunction_mul_eventually` deriva a equação diferencial real para a densidade a partir da identidade da log-derivada. `completedSigmaLogJetComplexGeneratingFunction_ofReal_eq_eventually` identifica as somas real e complexa na reta. Com `displacedProductC_deriv_ofReal_eq_density_deriv_eventually`, isso prova que a expressão da EDO complexa zera numa vizinhança real. A expressão é analítica em zero; `displacedProductC_local_differentialEquation` usa o princípio de zeros isolados para obter a identidade complexa numa vizinhança complexa de zero. Assim, o resultado envolve a série convergente dos `completedSigmaLogJet` originais e não uma série formal ou postulada.
+
+A propagação da EDO até o zero deslocado continua aberta. Também continuam abertos o lema universal de multiplicação limitada (Checkpoint B), a construção GNS (C), a resolvente (D) e a conclusão efetiva de negatividade para a `sigmaMatrix` original. Nenhuma dessas etapas é tratada como provada.

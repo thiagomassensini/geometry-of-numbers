@@ -763,39 +763,174 @@ theorem displacedProductC_deriv_ofReal_eq_density_deriv_eventually (d : ℝ)
   have hDcomp' := hDcomp.congr_of_eventuallyEq hEq
   exact hDcomp'.deriv.symm.trans hρcomp.deriv
 
-/-! ### OBRIGAÇÃO ANALÍTICA RESTANTE (primeira seta ainda ABERTA)
+/-- The convergent jet identity gives the differential equation for the real density itself. -/
+theorem completedSigmaDensity_deriv_eq_generatingFunction_mul_eventually (d : ℝ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    ∀ᶠ t : ℝ in 𝓝 0,
+      deriv (completedSigmaDensity d) t =
+        -4 * t * completedSigmaLogJetGeneratingFunction d (t ^ 2) *
+          completedSigmaDensity d t := by
+  have hD := displacedProductC_analyticAt_origin d hd₁ hd₂
+  have hρ : AnalyticAt ℝ (completedSigmaDensity d) 0 := by
+    have hreal : AnalyticAt ℝ (fun t : ℝ => (displacedProductC d (t : ℂ)).re) 0 :=
+      hD.re_ofReal
+    have heq : (completedSigmaDensity d) =
+        (fun t : ℝ => (displacedProductC d (t : ℂ)).re) := by
+      funext t
+      rw [displacedProductC_ofReal_eq_density d t hd₁ hd₂, Complex.ofReal_re]
+    rw [heq]
+    exact hreal
+  have hzero : completedSigmaDensity d 0 ≠ 0 :=
+    (completedSigmaDensity_zero_pos d hd₁ hd₂).ne'
+  have hnonzero : ∀ᶠ t : ℝ in 𝓝 0, completedSigmaDensity d t ≠ 0 :=
+    hρ.continuousAt.eventually_ne hzero
+  have hlog := completedSigmaLogDensity_derivative_eq_generatingFunction_eventually
+    d hd₁ hd₂
+  filter_upwards [hlog, hρ.eventually_analyticAt, hnonzero] with t hlogt hρt hnt
+  have hlogDeriv := (hρt.differentiableAt.hasDerivAt.log hnt).deriv
+  rw [hlogDeriv] at hlogt
+  have hmul := congrArg (fun x : ℝ => x * completedSigmaDensity d t) hlogt
+  rw [div_mul_cancel₀ _ hnt] at hmul
+  calc
+    deriv (completedSigmaDensity d) t =
+        (-4 * t * completedSigmaLogJetGeneratingFunction d (t ^ 2)) *
+          completedSigmaDensity d t := hmul
+    _ = -4 * t * completedSigmaLogJetGeneratingFunction d (t ^ 2) *
+          completedSigmaDensity d t := by ring
 
-Estado atual (todos PROVADOS, axiomas padrão): para `|d|<1/4`, `D_d` é **holomorfa** em
-`t₀=γ+id` (`displacedProductC_analyticAt`), **anula** aí quando `F(γ)=0`
-(`displacedProductC_vanishes_at_shifted_zero`), e é **não identicamente nula** no componente
-(pois `D_d(0)>0`, `completedSigmaDensity_zero_pos`; e `D_d≠0` numa vizinhança da origem,
-`displacedProductC_ne_zero_nhds_zero`, para `|d|<1/2`). O nó transportado é **não-real**
-(`shifted_zero_u_im`). A normalização `1/4` e a identidade de coeficientes
-`hₙ = −L^{(2n+2)}(0)/(4(2n+1)!)` estão provadas
-(`completedSigmaLogJet_quarter_normalization`, `completedSigmaLogJet_eq_logDisplacedProduct`).
+/-- On the real axis the complexified convergent series has the same value as the real series. -/
+theorem completedSigmaLogJetComplexGeneratingFunction_ofReal_eq_eventually (d : ℝ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    ∀ᶠ t : ℝ in 𝓝 0,
+      completedSigmaLogJetComplexGeneratingFunction d ((t : ℂ) ^ 2) =
+        (completedSigmaLogJetGeneratingFunction d (t ^ 2) : ℂ) := by
+  have hRealSeries := completedSigmaLogJetGeneratingFunction_hasFPowerSeriesAt d hd₁ hd₂
+  have hComplexSeries := completedSigmaLogJetComplexGeneratingFunction_hasFPowerSeriesAt
+    d hd₁ hd₂
+  have hRealSq : Filter.Tendsto (fun t : ℝ => t ^ 2) (𝓝 0) (𝓝 0) := by
+    have hc : Continuous (fun t : ℝ => t ^ 2) := by fun_prop
+    simpa using (hc.continuousAt : ContinuousAt (fun t : ℝ => t ^ 2) 0).tendsto
+  have hComplexSq : Filter.Tendsto (fun t : ℝ => (t : ℂ) ^ 2) (𝓝 0) (𝓝 0) := by
+    have hc : Continuous (fun t : ℝ => (t : ℂ) ^ 2) := by fun_prop
+    simpa using (hc.continuousAt : ContinuousAt (fun t : ℝ => (t : ℂ) ^ 2) 0).tendsto
+  have hRealEventually := hRealSq.eventually hRealSeries.eventually_hasSum
+  have hComplexEventually := hComplexSq.eventually hComplexSeries.eventually_hasSum
+  filter_upwards [hRealEventually, hComplexEventually] with t hRSum hCSum
+  have hRSum' : HasSum (fun n : ℕ => completedSigmaLogJet d n * (t ^ 2) ^ n)
+      (completedSigmaLogJetGeneratingFunction d (t ^ 2)) := by
+    simpa [completedSigmaLogJetGeneratingSeries, completedSigmaLogJetGeneratingFunction,
+      FormalMultilinearSeries.ofScalars_apply_eq, mul_comm] using hRSum
+  have hCSum' : HasSum
+      (fun n : ℕ => (completedSigmaLogJet d n : ℂ) * ((t : ℂ) ^ 2) ^ n)
+      (completedSigmaLogJetComplexGeneratingFunction d ((t : ℂ) ^ 2)) := by
+    simpa [completedSigmaLogJetComplexSeries, completedSigmaLogJetComplexGeneratingFunction,
+      FormalMultilinearSeries.ofScalars_apply_eq, mul_comm] using hCSum
+  have hMap := hRSum'.mapL Complex.ofRealCLM
+  have hMap' : HasSum
+      (fun n : ℕ => (completedSigmaLogJet d n : ℂ) * ((t : ℂ) ^ 2) ^ n)
+      (completedSigmaLogJetGeneratingFunction d (t ^ 2) : ℂ) := by
+    simpa [Complex.ofReal_mul, Complex.ofReal_pow] using hMap
+  have hsum := hCSum'.unique hMap'
+  exact hsum
 
-**Duas rotas, ambas bloqueadas por infraestrutura ausente no Mathlib (pin 81a5d257):**
+/-- The complex differential expression vanishes on a real neighborhood of the origin. -/
+theorem displacedProductC_differentialExpression_ofReal_eq_zero_eventually (d : ℝ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    ∀ᶠ t : ℝ in 𝓝 0,
+      deriv (displacedProductC d) (t : ℂ) +
+        4 * (t : ℂ) *
+          completedSigmaLogJetComplexGeneratingFunction d ((t : ℂ) ^ 2) *
+          displacedProductC d (t : ℂ) = 0 := by
+  have hDderiv := displacedProductC_deriv_ofReal_eq_density_deriv_eventually d hd₁ hd₂
+  have hρderiv := completedSigmaDensity_deriv_eq_generatingFunction_mul_eventually
+    d hd₁ hd₂
+  have hG := completedSigmaLogJetComplexGeneratingFunction_ofReal_eq_eventually d hd₁ hd₂
+  filter_upwards [hDderiv, hρderiv, hG] with t hDt hρt hGt
+  have hDvalue := displacedProductC_ofReal_eq_density d t hd₁ hd₂
+  have hρcomplex := congrArg (fun x : ℝ => (x : ℂ)) hρt
+  rw [hDt, hGt, hDvalue]
+  push_cast at hρcomplex ⊢
+  rw [hρcomplex]
+  ring
 
-(1) *Rota do polo.* De `AnalyticAt D_d t₀`, `D_d t₀=0`, `D_d` não-id.-nula, concluir que
-`logDeriv D_d` é meromorfa em `t₀` com polo. Não há lema de ordem meromorfa de `logDeriv`;
-exigiria a fatoração local via `AnalyticAt.order`/`IsolatedZeros`.
+/-- **Local complex differential equation.** The analytic complex expression vanishes on a
+neighborhood of the origin because it vanishes on a real neighborhood accumulating there. -/
+theorem displacedProductC_local_differentialEquation (d : ℝ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    ∀ᶠ z : ℂ in 𝓝 0,
+      deriv (displacedProductC d) z +
+        4 * z * completedSigmaLogJetComplexGeneratingFunction d (z ^ 2) *
+          displacedProductC d z = 0 := by
+  let E : ℂ → ℂ := fun z => deriv (displacedProductC d) z +
+    (4 * z) * (completedSigmaLogJetComplexGeneratingFunction d (z ^ 2) *
+      displacedProductC d z)
+  have hD := displacedProductC_analyticAt_origin d hd₁ hd₂
+  have hG := (completedSigmaLogJetComplexGeneratingFunction_hasFPowerSeriesAt
+    d hd₁ hd₂).analyticAt
+  change AnalyticAt ℂ (completedSigmaLogJetComplexGeneratingFunction d) (0 : ℂ) at hG
+  have hsq : AnalyticAt ℂ (fun z : ℂ => z ^ 2) (0 : ℂ) := by fun_prop
+  have hGsq : AnalyticAt ℂ
+      (fun z : ℂ => completedSigmaLogJetComplexGeneratingFunction d (z ^ 2)) (0 : ℂ) := by
+    exact AnalyticAt.comp_of_eq (g := completedSigmaLogJetComplexGeneratingFunction d)
+      (f := fun z : ℂ => z ^ 2) (y := (0 : ℂ)) (x := (0 : ℂ)) hG hsq (by simp)
+  have hE : AnalyticAt ℂ E 0 := by
+    dsimp [E]
+    fun_prop
+  have hline := displacedProductC_differentialExpression_ofReal_eq_zero_eventually
+    d hd₁ hd₂
+  have hcast : Filter.Tendsto (fun t : ℝ => (t : ℂ)) (𝓝 0) (𝓝 0) := by
+    convert Complex.continuous_ofReal.continuousAt.tendsto using 1
+    simp
+  have hcastP : Filter.Tendsto (fun t : ℝ => (t : ℂ))
+      (𝓝[≠] (0 : ℝ)) (𝓝[≠] (0 : ℂ)) := by
+    rw [tendsto_nhdsWithin_iff]
+    refine ⟨hcast.mono_left nhdsWithin_le_nhds, ?_⟩
+    filter_upwards [eventually_mem_nhdsWithin] with t ht
+    simpa using (Complex.ofReal_ne_zero.mpr ht)
+  have hacc : (0 : ℝ) ∈ closure {t : ℝ | t ≠ 0} := by
+    rw [Metric.mem_closure_iff]
+    intro ε hε
+    refine ⟨ε / 2, ne_of_gt (half_pos hε), ?_⟩
+    simpa [Real.dist_eq, abs_of_pos (half_pos hε)] using half_lt_self hε
+  haveI : Filter.NeBot (𝓝[≠] (0 : ℝ)) := by
+    apply (mem_closure_iff_nhdsWithin_neBot).mp
+    exact hacc
+  have hlineP : ∀ᶠ t : ℝ in 𝓝[≠] (0 : ℝ), E (t : ℂ) = 0 := by
+    have hline' := hline.filter_mono (nhdsWithin_le_nhds (s := {t : ℝ | t ≠ 0}))
+    filter_upwards [hline'] with t ht
+    dsimp [E]
+    convert ht using 1
+    ring
+  have hfrequent : ∃ᶠ z : ℂ in 𝓝[≠] (0 : ℂ), E z = 0 := by
+    by_contra hnot
+    have hne : ∀ᶠ z : ℂ in 𝓝[≠] (0 : ℂ), E z ≠ 0 := by
+      have hdouble : ¬¬(∀ᶠ z : ℂ in 𝓝[≠] (0 : ℂ), E z ≠ 0) := by
+        simpa only [Filter.Frequently] using hnot
+      exact not_not.mp hdouble
+    have hneR := hcastP.eventually hne
+    obtain ⟨t, hzero, hnonzero⟩ := (hlineP.and hneR).exists
+    exact hnonzero hzero
+  have hEzero := hE.frequently_zero_iff_eventually_zero.mp hfrequent
+  simpa [E, mul_assoc] using hEzero
 
-(2) *Rota da EDO + momentos (Hamburger).* A identidade `D_d'(t)+4t·G_d(t²)·D_d(t)=0` e a
-cadeia `all-order PSD ⇒ medida positiva ⇒ transformada de Cauchy holomorfa fora de ℝ ⇒ EDO
-sem zeros ⇒ contradição`. **Bloqueador decisivo:** o teorema de **Hamburger** (Hankel PSD em
-toda ordem ⇒ existe medida de Borel positiva `μ` com `hₙ=∫ xⁿ dμ`) **não existe no Mathlib**
-(verificado: sem `Hamburger`/`momentProblem`/Haviland). Assinatura mínima que faltaria:
+/-! ### CHECKPOINT A — identidade diferencial local (FECHADO)
 
-  `(∀ N, (sourceMomentMatrix h 0 N).PosSemidef) →
-    ∃ μ : MeasureTheory.Measure ℝ, IsFiniteMeasure μ ∧ ∀ n, h n = ∫ x, x^n ∂μ`
+Para todo `|d|<1/2`, `completedSigmaLogJetGeneratingSeries_radius_pos` fornece raio positivo
+para a série dos jets originais; sua soma real e sua extensão complexa analítica estão
+formalizadas. A igualdade de somas convergentes, a paridade dos coeficientes e a normalização
+`1/4` provam a identidade real da log-derivada. A restrição real de `displacedProductC` tem a
+derivada da densidade real, e a diferenciação de `log` produz a equação para a densidade.
 
-Lemas auxiliares da rota EDO que são autocontidos e reutilizáveis (não formalizados aqui por
-orçamento): suporte compacto de `μ` a partir de `∫ x^{2n} dμ ≤ C·R^{2n}` (`supp μ ⊆ [−R,R]`);
-holomorfia da transformada de Cauchy `∫ (1−xu)⁻¹ dμ` fora de ℝ; unicidade de EDO linear
-holomorfa de 1ª ordem (solução não-nula sem zeros). Nenhuma é hipótese de sinal.
+`displacedProductC_differentialExpression_ofReal_eq_zero_eventually` mostra que a expressão
+complexa da EDO zera na reta real perto da origem. Ela é analítica complexa no ponto; zeros
+reais que acumulam na origem e o princípio de zeros isolados dão
+`displacedProductC_local_differentialEquation`, que prova a EDO complexa numa vizinhança de
+zero. Portanto, a obrigação local está fechada sem medida de Hamburger.
 
-**DOMÍNIO:** holomorfia/anulação de `D_d` em `t₀` para `0<|d|<1/4`; não-anulação/densidade
-na origem para `|d|<1/2`. Não se reivindica a conclusão para `|d|<1/2`. -/
+Isso ainda não propaga a EDO até o zero deslocado. As hipóteses de zero positivo, a propagação
+no domínio e a construção do operador limitado permanecem obrigações posteriores da missão.
+O domínio já provado para a anulação em `γ+id` é `0<|d|<1/4`; a identidade local e a
+não-anulação na origem valem para `|d|<1/2`. -/
 
 /-! ## Parte 4 — teorema condicional honesto: isolamento da obrigação analítica -/
 
@@ -843,6 +978,10 @@ theorem offcritical_not_posSemidef_of_zero
 #print axioms completedSigmaLogDensity_derivative_eq_generatingFunction_eventually
 #print axioms completedSigmaLogJetComplexGeneratingFunction_hasFPowerSeriesAt
 #print axioms displacedProductC_deriv_ofReal_eq_density_deriv_eventually
+#print axioms completedSigmaDensity_deriv_eq_generatingFunction_mul_eventually
+#print axioms completedSigmaLogJetComplexGeneratingFunction_ofReal_eq_eventually
+#print axioms displacedProductC_differentialExpression_ofReal_eq_zero_eventually
+#print axioms displacedProductC_local_differentialEquation
 #print axioms completedSigmaLogJetGeneratingFunction_hasFPowerSeriesAt
 #print axioms displacedProductC_ofReal_eq_density
 #print axioms displacedProductC_vanishes_at_shifted_zero
