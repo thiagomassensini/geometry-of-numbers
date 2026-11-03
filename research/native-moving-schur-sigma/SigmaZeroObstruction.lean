@@ -608,6 +608,35 @@ theorem completedSigmaLogJetGeneratingFunction_hasFPowerSeriesAt (d : ℝ)
   exact ((completedSigmaLogJetGeneratingSeries d).hasFPowerSeriesOnBall
     (completedSigmaLogJetGeneratingSeries_radius_pos d hd₁ hd₂)).hasFPowerSeriesAt
 
+/-- Complex coefficient series obtained by scalar extension from the original real sigma jets. -/
+def completedSigmaLogJetComplexSeries (d : ℝ) :
+    FormalMultilinearSeries ℂ ℂ ℂ :=
+  FormalMultilinearSeries.ofScalars ℂ (fun n => (completedSigmaLogJet d n : ℂ))
+
+/-- Complex analytic sum of the same original sigma-jet sequence. -/
+def completedSigmaLogJetComplexGeneratingFunction (d : ℝ) (u : ℂ) : ℂ :=
+  (completedSigmaLogJetComplexSeries d).sum u
+
+/-- Scalar extension preserves the convergence radius because `‖(x : ℂ)‖ = ‖x‖`. -/
+theorem completedSigmaLogJetComplexSeries_radius_pos (d : ℝ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    0 < (completedSigmaLogJetComplexSeries d).radius := by
+  have hr : (completedSigmaLogJetComplexSeries d).radius =
+      (completedSigmaLogJetGeneratingSeries d).radius := by
+    simp [completedSigmaLogJetComplexSeries, completedSigmaLogJetGeneratingSeries,
+      FormalMultilinearSeries.radius]
+  rw [hr]
+  exact completedSigmaLogJetGeneratingSeries_radius_pos d hd₁ hd₂
+
+/-- The complex generating function is analytic near zero and has precisely the original jets
+as its Taylor coefficients. -/
+theorem completedSigmaLogJetComplexGeneratingFunction_hasFPowerSeriesAt (d : ℝ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    HasFPowerSeriesAt (completedSigmaLogJetComplexGeneratingFunction d)
+      (completedSigmaLogJetComplexSeries d) 0 := by
+  exact ((completedSigmaLogJetComplexSeries d).hasFPowerSeriesOnBall
+    (completedSigmaLogJetComplexSeries_radius_pos d hd₁ hd₂)).hasFPowerSeriesAt
+
 private def oddIndexEquiv : ℕ ≃ {k : ℕ // k % 2 = 1} where
   toFun n := ⟨2 * n + 1, by omega⟩
   invFun k := k.1 / 2
@@ -773,6 +802,7 @@ theorem offcritical_not_posSemidef_of_zero
 #print axioms completedSigmaLogJetGeneratingFunction_hasFPowerSeriesAt
 #print axioms completedSigmaLogDensityDerivativeTaylorSeries_hasFPowerSeriesAt
 #print axioms completedSigmaLogDensity_derivative_eq_generatingFunction_eventually
+#print axioms completedSigmaLogJetComplexGeneratingFunction_hasFPowerSeriesAt
 #print axioms completedSigmaLogJetGeneratingFunction_hasFPowerSeriesAt
 #print axioms displacedProductC_ofReal_eq_density
 #print axioms displacedProductC_vanishes_at_shifted_zero

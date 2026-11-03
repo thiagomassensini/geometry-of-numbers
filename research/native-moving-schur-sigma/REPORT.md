@@ -130,9 +130,16 @@ coeficientes pares pela paridade, reindexa os ímpares e fatoriza a soma; não �
 igualdade formal de coeficientes. O novo teorema também passa `#print axioms` com apenas
 `propext`, `Classical.choice` e `Quot.sound`.
 
+A mesma série foi agora complexificada coeficiente a coeficiente em
+`completedSigmaLogJetComplexSeries`; provou-se que a extensão escalar preserva o raio e que
+`completedSigmaLogJetComplexGeneratingFunction` possui `HasFPowerSeriesAt` em zero. Portanto,
+a geradora analítica complexa com os jets originais está disponível.
+
 O Checkpoint A permanece aberto no escopo exigido: falta transportar essa identidade para a
 equação complexa local
 `D_d'(t)+4tG_d(t²)D_d(t)=0` para `D_d=displacedProductC d`, incluindo a construção da
-geradora complexa analítica. A existência do raio positivo e a identidade real para a
-log-derivada já estão kernel-checked; ainda não foi provada a EDO complexa necessária para a
-propagação. Nenhum passo da realização GNS ou da obstrução all-order é tratado como provado.
+identidade entre a restrição real da expressão complexa e a identidade real, seguida pelo
+princípio de identidade analítico. A existência do raio positivo e as geradoras real e
+complexa, além da identidade real para a log-derivada, já estão kernel-checked; ainda não foi
+provada a EDO complexa necessária para a propagação. Nenhum passo da realização GNS ou da
+obstrução all-order é tratado como provado.
