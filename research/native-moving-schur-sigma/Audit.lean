@@ -1,5 +1,6 @@
 import SectorRegression
 import SigmaTransverseJoint
+import SigmaFailureOrder
 import Lean
 open Lean Elab Command
 elab "#audit_flow " ids:ident+ : command => do
@@ -124,6 +125,11 @@ elab "#audit_flow " ids:ident+ : command => do
 #print axioms CarrySigmaObstruction.completedSigmaLogJetGeneratingSeries_radius_uniform_near_center
 #print axioms CarrySigmaObstruction.completedSigmaLogJet_joint_representation_near_center
 #print axioms CarrySigmaObstruction.completedSigmaLogJetGeneratingFunction_transverse_pde_near_center
+#print axioms CarrySigmaObstruction.sigmaSchur_continuous_center_of_posDef
+#print axioms CarrySigmaObstruction.sigmaSchur_finite_eventually_positive
+#print axioms CarrySigmaObstruction.sigmaMatrix_finite_eventually_posDef
+#print axioms CarrySigmaObstruction.sigmaFirstFailureOrder_spec
+#print axioms CarrySigmaObstruction.sigmaFirstFailureOrder_tends_to_infty_of_center_posDef
 
 #audit_flow
   CarryMovingSigma.moving_schur_curvature_expanded

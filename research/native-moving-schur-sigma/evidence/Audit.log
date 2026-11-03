@@ -53,4 +53,13 @@
 'CarrySigmaObstruction.completedSigmaLogJetGeneratingFunction_transverse_pde_near_center' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'CarrySigmaObstruction.sigmaSchur_continuous_center_of_posDef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaSchur_finite_eventually_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.sigmaMatrix_finite_eventually_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.sigmaFirstFailureOrder_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.sigmaFirstFailureOrder_tends_to_infty_of_center_posDef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
 Transitive source audit: 6 roots; 57504 type/body dependencies; standard axioms only; sixth-pivot positivity forbidden, old prefix allowed

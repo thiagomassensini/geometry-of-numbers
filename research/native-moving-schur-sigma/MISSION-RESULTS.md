@@ -85,40 +85,75 @@ aplicado à fase de paridade que a fonte original define.
 Essa identidade preserva os dois canais e as fases de origem. Não é uma igualdade com uma
 única forma `B_N^mat(x,y) = ∑ x_i y_j h_(i+j)(0)`, nem identifica a face limite com energia de
 armazenamento em passo finito. A igualdade do ledger bilinear TFVD completo com uma forma
-Hankel central ainda não foi demonstrada; continuam necessários todos os cruzamentos,
-retornos e defeitos assinados do ledger. Para a face limite bruta, o resultado corresponde ao
-**Caso 1**: há identidade exata, mas nenhuma desigualdade de sinal decorre dela. Para a
-identificação do ledger TFVD completo como uma única forma Hankel, o ponto permanece no
-**Caso 3 / ABERTO**.
+Hankel central ainda não foi demonstrada para a energia física completa. A auditoria distinguiu
+essa lacuna de uma identidade algébrica já existente na PR #70: `source_bezout_to_hankel_congruence`
+identifica o bloco do kernel de coeficientes da fonte com `C * H * Cᵀ`, e
+`native_residual_literal_four_terms` preserva os quatro termos ordenados HH, HT, TH e TT na
+direção crítica mônica; `literal_product_critical` dá a soma exata com o termo corretivo para
+essa direção, sob `IsUnit` do prefixo. Essa é uma congruência de coordenadas do kernel de
+Bézout, não uma igualdade demonstrada entre a forma física Green/TFVD completa e a forma
+Hankel nas mesmas coordenadas. A PR #70 também certifica o sinal para a segunda direção par,
+mas declara aberta a orientação all-order e não reivindica uma Gram física positiva.
+
+O menor objeto material efetivamente definido aqui é `nativeSourceFiniteBoundaryEnergy`, a
+expressão alternada bruta de bordo limite. Seu lema de divisão par prova a identidade exata
+acima, mas o próprio módulo declara que essa energia não é o armazenamento em passo finito e
+não remove os cruzamentos de coordenadas superiores nem o resto analítico. Do lado C3/TFVD,
+`CanonicalC3FiniteGreenGramTransportLedger` mantém separados os canais radial, fora da
+diagonal, seam, proveniência e completion; `canonicalCompletedC3FixedCenterFourCornerLedger`
+mantém o peso Hermitiano externo, o denominador e os canais corretivos. O resultado disponível
+para esse ledger completo identifica sua primeira variação com `h₀`, não cada coeficiente
+bilinear com a Hankel central. A obrigação precisa que falta é uma identidade que leve todos
+esses canais do ledger físico, no mesmo vetor de coeficientes, à forma Hankel original.
+
+Classificação: para a face limite bruta, **Caso 1** (identidade exata em dois canais, sem sinal
+deduzido); para a proposta de identificar a forma física Green/TFVD completa com uma única
+Hankel central, **Caso 3 / ABERTO** (a congruência algébrica da PR #70 é um resultado mais fraco,
+em outras coordenadas). Não foi encontrado um controle all-order do defeito que produzisse o
+**Caso 2**.
 
 `displacedProductC_transverse_deriv_center` também prova
 `∂_d D_d(t)|_(d=0) = 0` para todo `t` real, por cancelamento das duas derivadas de cadeia
-opostas. Isso é um cancelamento do produto deslocado. Ele não identifica seus termos com o
-cancelamento entre canais de tilt e completion em `FullTransverseCancellation.lean`.
-Os resultados existentes em `FullTfvdTransverse.lean` ligam a resposta TFVD normalizada à
-resposta Green/logarítmica; eles não fornecem essa identificação de canais nem um Gram
-material positivo.
+opostas. Há, porém, um diagrama escalar demonstrável através da resposta logarítmica original:
+`fullTransverseResponse_eq_channels` identifica a soma dos canais tilt e completion com a
+derivada transversal completa de `F`; `fullTransverse_eq_normalizedGreen`, onde `F(t) ≠ 0`,
+identifica essa resposta com `2 i F(t) Q(t)`, pois a resposta Green normalizada é
+`Q = -F'/(2F)`; e `completedSigmaLogJet_transverse_mean_eventually` usa os valores deslocados
+desse mesmo `Q` para gerar `t G_d(t²)`. O diagrama fecha para o readout escalar total. Ele não
+identifica cada canal separadamente com os termos deslocados de `Q`, nem transforma o
+cancelamento entre canais na prova do cancelamento do produto. O primeiro é uma compensação
+não trivial da decomposição tilt/completion; o segundo decorre das duas regras da cadeia
+opostas em `F(t-id)F(t+id)`. A relação entre eles é a resposta total compartilhada, não uma
+identidade termo a termo nem uma Gram física positiva.
 
 ### 6. Positividade central all-order
 
 **ABERTO.** Não foi demonstrado que todos os `sigmaMatrix 0 0 N` são positivos definidos ou
 semidefinidos. Recorrências, identidades de curvatura, a expansão transversal e a igualdade da
-face material não provam essa positividade. A divergência condicional de `N_*(d)` da Parte D
-não foi tentada, pois exige justamente positividade definida central all-order como hipótese.
+face material não provam essa positividade.
+
+**PARTE D PROVADA CONDICIONALMENTE.** `sigmaFirstFailureOrder_tends_to_infty_of_center_posDef`
+assume explicitamente que todo `sourceMomentMatrix` central original é positivo definido, além
+da hipótese original de um zero em altura positiva. Define `sigmaFirstFailureOrder` pelo
+primeiro tamanho ruim extraído de `exists_first_sigma_hankel_failure_of_zero` e prova que, para
+cada `M`, existe `ε > 0` tal que `0 < |d| < min(ε, 1/4)` implica `M < N_*(d)`. A prova estabiliza
+cada prefixo finito pela positividade dos pivôs de Schur, usando a continuidade dos jets e da
+inversa do prefixo. A hipótese central all-order permanece uma hipótese; o teorema não a
+demonstra.
 
 ### 7. Compilação, axiomas e Git
 
-**PROVADO / VALIDAÇÃO.** Foi executado:
+**PROVADO / VALIDAÇÃO.** Foi executado novamente após integrar `SigmaFailureOrder`:
 
 ```text
 bash research/native-moving-schur-sigma/validate.sh
 ```
 
-Execução final desta atualização: todos os módulos do validador passaram com
-`-DwarningAsError=true`, incluindo `SigmaTransverseJoint` e `Audit`; `lake build --wfail`, as
-auditorias `foundation`, `geometry` e `analysis`, e a busca de fontes por `sorry`, `admit`,
-`unsafe`, `native_decide`, `sorryAx`, `implemented_by` e declarações `axiom` também passaram.
-Exit code: `0`. Os `#print axioms` dos novos teoremas mostram somente
+O resultado será registrado no commit desta atualização. Todos os módulos listados passaram com
+`-DwarningAsError=true`, incluindo `SigmaTransverseJoint`, `SigmaFailureOrder` e `Audit`;
+`lake build --wfail`, as auditorias `foundation`, `geometry` e `analysis`, e a busca de fontes
+por `sorry`, `admit`, `unsafe`, `native_decide`, `sorryAx`, `implemented_by` e declarações
+`axiom` também passaram. Exit code: `0`. Os `#print axioms` dos novos teoremas mostram somente
 `[propext, Classical.choice, Quot.sound]`.
 
 O trabalho parte da branch `agent/native-moving-schur-sigma`, cujo HEAD no começo desta missão
@@ -131,10 +166,12 @@ era `671bd23b5ec3a486668f74ebbf756ad1dce269f6`. Os commits por resultado são:
 - Relatório e integração inicial do validador: `d1d5307`.
 - Atualização do relatório com a redução radial: `3a49688`.
 - Representação conjunta e PDE funcional local, com validação: `b2eca71`.
+- Estabilidade de prefixos e divergência condicional de `N_*(d)`: registrada no commit desta atualização.
 
-Esta atualização registra também o fechamento da seção local uniforme e da PDE funcional para
-a geradora sigma original, com axiomas padrão e sem alterar a sequência dos jets. O resultado
-está formalizado em `SigmaTransverseJoint.lean` e integrado ao validador e à auditoria.
+Esta atualização registra o fechamento da seção local uniforme e da PDE funcional para a
+geradora sigma original e a divergência condicional da primeira ordem ruim. Os resultados estão
+formalizados em `SigmaTransverseJoint.lean` e `SigmaFailureOrder.lean`, integrados ao validador
+e à auditoria, com axiomas padrão e sem alterar a sequência dos jets.
 
 ## Proveniência e limites da cadeia
 
@@ -145,6 +182,7 @@ característica completada original F
   → recorrência transversal, coeficientes, série local e PDE funcional local
   → Hankel original e classificação singular-safe da primeira falha
   → identidade material da face limite como soma dos dois canais sigma centrais
+  → congruência algébrica Bézout–Hankel da fonte TFVD, com quatro termos literais preservados
 ```
 
 O vínculo de `Q` com `F` é definicional. Os jets permanecem `completedSigmaLogJet`; a matriz
