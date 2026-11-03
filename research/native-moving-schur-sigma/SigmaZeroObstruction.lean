@@ -3,6 +3,9 @@ import SigmaQuadratic
 import Mathlib.Algebra.Field.GeomSum
 import Mathlib.Analysis.SpecificLimits.Normed
 import Mathlib.LinearAlgebra.Matrix.PosDef
+import CarrySelfAdjointOperator.NativeBoundaryArchimedeanDressingSeparation
+import CarrySelfAdjointOperator.NativeScalarGenuineIdentification
+import CPFormal.Analytic.CpGenuineRealAxisPositivity
 
 /-!
 # Obstrução off-critical: auditoria, correção e isolamento da obrigação analítica
@@ -246,6 +249,38 @@ theorem displacedProductC_even_ofReal (d t : ℝ)
     rw [e, completedNativeOperatorCharacteristic_neg hsm]
   rw [h1, h2, mul_comm]
 
+/-! ## Parte 3c — não-anulação na origem: `D_d(0) > 0` (incondicional, admissível)
+
+Descarrega a obrigação "`D_d` não identicamente nula / `D_d(0) ≠ 0`" usando apenas o
+não-anulamento já formalizado da característica original: `F = ξ-factor · heightScalar`,
+o fator arquimediano não anula na faixa, e o escalar nativo em `−id` é
+`genuineContinuation(1/2+d)`, não-nulo em `(0,1)`. -/
+
+/-- **`D_d(0) > 0` para `|d| < 1/2`.** A densidade completada na origem é estritamente
+positiva, logo `D_d` não é identicamente nula no componente que contém a origem. Sem
+hipótese de não-anulação adicional. -/
+theorem completedSigmaDensity_zero_pos (d : ℝ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    0 < completedSigmaDensity d 0 := by
+  have hresp : completedSigmaResponse d 0 ≠ 0 := by
+    show completedNativeOperatorCharacteristic (displacedHeight d 0) ≠ 0
+    rw [completedNativeOperatorCharacteristic_eq_nativeXiCompletionFactor_mul_nativeHeightScalar]
+    refine mul_ne_zero
+      (nativeXiCompletionFactor_ne_zero (displacedHeight_strip d 0 hd₁ hd₂)) ?_
+    unfold nativeHeightScalar
+    rw [nativeScalar_eq_genuineContinuation_unconditional, displacedHeight_parameter]
+    simp only [Complex.ofReal_zero, mul_zero, add_zero]
+    exact genuineContinuation_ofReal_ne_zero (by linarith) (by linarith)
+  unfold completedSigmaDensity
+  exact pow_pos (norm_pos_iff.mpr hresp) 2
+
+/-- `D_d(0) ≠ 0` (versão complexa na origem), via a identidade no eixo real. -/
+theorem displacedProductC_zero_ne_zero (d : ℝ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    displacedProductC d ((0 : ℝ) : ℂ) ≠ 0 := by
+  rw [displacedProductC_ofReal_eq_density d 0 hd₁ hd₂, ne_eq, Complex.ofReal_eq_zero]
+  exact (completedSigmaDensity_zero_pos d hd₁ hd₂).ne'
+
 /-! ### OBRIGAÇÃO ANALÍTICA RESTANTE (primeira seta ainda ABERTA)
 
 Falta exatamente **um** passo analítico, enunciado aqui com precisão e **não** introduzido
@@ -297,6 +332,8 @@ theorem offcritical_not_posSemidef_of_zero
 #print axioms completedSigmaLogJet_quarter_normalization
 #print axioms completedSigmaLogJet_eq_logDisplacedProduct
 #print axioms displacedProductC_even_ofReal
+#print axioms completedSigmaDensity_zero_pos
+#print axioms displacedProductC_zero_ne_zero
 #print axioms displacedProductC_ofReal_eq_density
 #print axioms displacedProductC_vanishes_at_shifted_zero
 #print axioms shifted_zero_u_im
