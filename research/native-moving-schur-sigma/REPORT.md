@@ -137,8 +137,13 @@ Isso fecha somente o lema universal de multiplicação limitada; não fecha a mi
 **Início do Checkpoint C:** `momentQ_add` e `momentQ_C_mul` dão as identidades de soma e
 escala da forma quadrática. Com `momentB_eq_zero_of_momentQ_eq_zero`, isso prova que
 `momentNullSubmodule` — o conjunto dos polinômios com `Q(p)=0` — é um submódulo de
-`Polynomial ℝ`. O quociente ainda não recebeu o produto interno induzido; sua construção,
-completamento e extensão da multiplicação continuam pendentes.
+`Polynomial ℝ`. O produto interno induzido `quotientMomentInner` está agora definido no
+quociente e provado independente dos representantes. `quotientMomentInnerProductCore`
+fornece a estrutura positiva definida; as instâncias de Mathlib dão ao quociente a estrutura
+de espaço interno. `momentHilbert` é a conclusão uniforme desse quociente, e
+`momentHilbert_complete` verifica sua completude. Esses teoremas passam `#print axioms` com
+apenas os axiomas padrão. Ainda falta definir a multiplicação por `X` no quociente, estendê-la
+à conclusão e provar a simetria e auto-adjunticidade do operador resultante.
 
 No Checkpoint A, `SigmaZeroObstruction.lean` agora prova que
 `t ↦ log(completedSigmaDensity d t)` é analítica na origem. A partir do raio positivo de sua

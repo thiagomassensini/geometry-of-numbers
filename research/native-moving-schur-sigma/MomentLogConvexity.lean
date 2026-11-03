@@ -1,6 +1,8 @@
 import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Algebra.Polynomial.BigOperators
 import Mathlib.LinearAlgebra.Matrix.PosDef
+import Mathlib.Analysis.InnerProductSpace.Basic
+import Mathlib.Analysis.InnerProductSpace.Completion
 
 /-!
 # Núcleo analítico do Checkpoint B: cota de razão por log-convexidade
@@ -574,5 +576,141 @@ def momentNullSubmodule (h : ℕ → ℝ)
     ring
 
 #print axioms momentNullSubmodule
+
+theorem momentB_add_left (h : ℕ → ℝ) (p q r : Polynomial ℝ) :
+    momentB h (p + q) r = momentB h p r + momentB h q r := by
+  unfold momentB
+  rw [add_mul, momentFunctional_add]
+
+theorem momentB_add_right (h : ℕ → ℝ) (p q r : Polynomial ℝ) :
+    momentB h p (q + r) = momentB h p q + momentB h p r := by
+  unfold momentB
+  rw [mul_add, momentFunctional_add]
+
+theorem momentB_comm (h : ℕ → ℝ) (p q : Polynomial ℝ) :
+    momentB h p q = momentB h q p := by
+  unfold momentB
+  rw [mul_comm]
+
+theorem momentB_C_mul_left (h : ℕ → ℝ) (a : ℝ) (p q : Polynomial ℝ) :
+    momentB h (Polynomial.C a * p) q = a * momentB h p q := by
+  unfold momentB
+  calc
+    momentFunctional h ((Polynomial.C a * p) * q) =
+        momentFunctional h (Polynomial.C a * (p * q)) := by congr 1; ring
+    _ = a * momentFunctional h (p * q) := momentFunctional_C_mul h a (p * q)
+
+/-- The Hankel bilinear form descends to the quotient by its null submodule. -/
+noncomputable def quotientMomentInner {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    (x y : Polynomial ℝ ⧸ momentNullSubmodule h hH) : ℝ :=
+  Quotient.liftOn₂ x y (fun p q => momentB h p q) (by
+    intro p q p' q' hp hq
+    have hpMem := (QuotientAddGroup.leftRel_apply).mp hp
+    have hqMem := (QuotientAddGroup.leftRel_apply).mp hq
+    change -p + p' ∈ momentNullSubmodule h hH at hpMem
+    change -q + q' ∈ momentNullSubmodule h hH at hqMem
+    change momentQ h (-p + p') = 0 at hpMem
+    change momentQ h (-q + q') = 0 at hqMem
+    have hp0 : momentQ h (-p + p') = 0 := hpMem
+    have hq0 : momentQ h (-q + q') = 0 := hqMem
+    have hleft := momentB_eq_zero_of_momentQ_eq_zero
+      (hH := hH) (p := -p + p') (q := q) hp0
+    have hright := momentB_eq_zero_of_momentQ_eq_zero
+      (hH := hH) (p := -q + q') (q := p') hq0
+    have hright' : momentB h p' (-q + q') = 0 := by
+      rw [momentB_comm]
+      exact hright
+    have hpdecomp : p' = p + (-p + p') := by ring
+    have hqdecomp : q' = q + (-q + q') := by ring
+    calc
+      momentB h p q = momentB h p' q := by
+        rw [hpdecomp, momentB_add_left, hleft, add_zero]
+      _ = momentB h p' q' := by
+        rw [hqdecomp, momentB_add_right, hright', add_zero])
+
+#print axioms quotientMomentInner
+
+@[simp] theorem quotientMomentInner_mk {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef) (p q : Polynomial ℝ) :
+    quotientMomentInner hH (Submodule.Quotient.mk p) (Submodule.Quotient.mk q) =
+      momentB h p q := rfl
+
+/-- The quotient carries the induced positive definite real inner product core. -/
+noncomputable instance quotientMomentInnerProductCore {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef) :
+    InnerProductSpace.Core ℝ (Polynomial ℝ ⧸ momentNullSubmodule h hH) where
+  inner := quotientMomentInner hH
+  conj_inner_symm := by
+    intro x y
+    induction x using Submodule.Quotient.induction_on with
+    | _ p =>
+      induction y using Submodule.Quotient.induction_on with
+      | _ q => simp [quotientMomentInner_mk, momentB_comm]
+  re_inner_nonneg := by
+    intro x
+    induction x using Submodule.Quotient.induction_on with
+    | _ p =>
+      have hp := momentFunctional_square_nonneg hH p
+      simpa [quotientMomentInner_mk, momentB, momentQ, pow_two] using hp
+  add_left := by
+    intro x y z
+    induction x using Submodule.Quotient.induction_on with
+    | _ p =>
+      induction y using Submodule.Quotient.induction_on with
+      | _ q =>
+        induction z using Submodule.Quotient.induction_on with
+        | _ r =>
+          simp only [← Submodule.Quotient.mk_add, quotientMomentInner_mk, momentB_add_left]
+  smul_left := by
+    intro x y a
+    induction x using Submodule.Quotient.induction_on with
+    | _ p =>
+      induction y using Submodule.Quotient.induction_on with
+      | _ q =>
+        rw [← Submodule.Quotient.mk_smul (momentNullSubmodule h hH) a p]
+        simp [quotientMomentInner_mk, Polynomial.smul_eq_C_mul, momentB_C_mul_left]
+  definite := by
+    intro x hx
+    induction x using Submodule.Quotient.induction_on with
+    | _ p =>
+      have hp : momentQ h p = 0 := by
+        simpa [quotientMomentInner_mk, momentB, momentQ, pow_two] using hx
+      change Submodule.Quotient.mk p = Submodule.Quotient.mk 0
+      apply (Submodule.Quotient.eq (momentNullSubmodule h hH)).2
+      change momentQ h (p - 0) = 0
+      simpa using hp
+
+#print axioms quotientMomentInnerProductCore
+
+noncomputable instance quotientMomentSeminormedAddCommGroup {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef) :
+    SeminormedAddCommGroup (Polynomial ℝ ⧸ momentNullSubmodule h hH) := by
+  letI : PreInnerProductSpace.Core ℝ (Polynomial ℝ ⧸ momentNullSubmodule h hH) :=
+    (quotientMomentInnerProductCore hH).toCore
+  exact InnerProductSpace.Core.toSeminormedAddCommGroup (𝕜 := ℝ)
+    (F := Polynomial ℝ ⧸ momentNullSubmodule h hH)
+
+noncomputable instance quotientMomentInnerProductSpace {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef) :
+    InnerProductSpace ℝ (Polynomial ℝ ⧸ momentNullSubmodule h hH) := by
+  letI : PreInnerProductSpace.Core ℝ (Polynomial ℝ ⧸ momentNullSubmodule h hH) :=
+    (quotientMomentInnerProductCore hH).toCore
+  exact InnerProductSpace.ofCore (𝕜 := ℝ)
+    (F := Polynomial ℝ ⧸ momentNullSubmodule h hH)
+    (quotientMomentInnerProductCore hH).toCore
+
+/-- Complete Hilbert space obtained from the Hankel polynomial quotient. -/
+noncomputable abbrev momentHilbert (h : ℕ → ℝ)
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef) :=
+  UniformSpace.Completion (Polynomial ℝ ⧸ momentNullSubmodule h hH)
+
+#print axioms momentHilbert
+
+theorem momentHilbert_complete (h : ℕ → ℝ)
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef) :
+    CompleteSpace (momentHilbert h hH) := inferInstance
+
+#print axioms momentHilbert_complete
 
 end CarryMomentLogConvex
