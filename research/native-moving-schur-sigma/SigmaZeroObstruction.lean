@@ -724,6 +724,45 @@ theorem completedSigmaLogDensity_derivative_eq_generatingFunction_eventually
     rw [tsum_mul_left, hGenSum.tsum_eq]
   rw [hDerivOdd, hReindex, hOddTerms, hFactor]
 
+/-- The complex derivative of the displaced product, restricted to the real axis, agrees
+locally with the derivative of the original real density. -/
+theorem displacedProductC_deriv_ofReal_eq_density_deriv_eventually (d : ℝ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    ∀ᶠ t : ℝ in 𝓝 0,
+      deriv (displacedProductC d) (t : ℂ) =
+        ((deriv (fun x : ℝ => completedSigmaDensity d x) t : ℝ) : ℂ) := by
+  have hD := displacedProductC_analyticAt_origin d hd₁ hd₂
+  have hρ : AnalyticAt ℝ (completedSigmaDensity d) 0 := by
+    have hreal : AnalyticAt ℝ (fun t : ℝ => (displacedProductC d (t : ℂ)).re) 0 :=
+      hD.re_ofReal
+    have heq : (completedSigmaDensity d) =
+        (fun t : ℝ => (displacedProductC d (t : ℂ)).re) := by
+      funext t
+      rw [displacedProductC_ofReal_eq_density d t hd₁ hd₂, Complex.ofReal_re]
+    rw [heq]
+    exact hreal
+  have hcast : Filter.Tendsto (fun t : ℝ => (t : ℂ)) (𝓝 0) (𝓝 0) :=
+    by convert Complex.continuous_ofReal.continuousAt.tendsto using 1; simp
+  have hDreal := hcast.eventually hD.eventually_analyticAt
+  filter_upwards [hDreal, hρ.eventually_analyticAt] with t hDt hρt
+  have hDcomp : HasDerivAt (fun x : ℝ => displacedProductC d (x : ℂ))
+      (deriv (displacedProductC d) (t : ℂ)) t := by
+    simpa using (hDt.differentiableAt.hasDerivAt.comp_ofReal :
+      HasDerivAt (fun x : ℝ => displacedProductC d (x : ℂ))
+        (deriv (displacedProductC d) (t : ℂ)) t)
+  have hρcomp : HasDerivAt (fun x : ℝ => (completedSigmaDensity d x : ℂ))
+      ((deriv (fun x : ℝ => completedSigmaDensity d x) t : ℝ) : ℂ) t := by
+    simpa using (hρt.differentiableAt.hasDerivAt.ofReal_comp :
+      HasDerivAt (fun x : ℝ => (completedSigmaDensity d x : ℂ))
+        ((deriv (fun x : ℝ => completedSigmaDensity d x) t : ℝ) : ℂ) t)
+  have hEq : (fun x : ℝ => (completedSigmaDensity d x : ℂ)) =ᶠ[𝓝 t]
+      (fun x : ℝ => displacedProductC d (x : ℂ)) := by
+    filter_upwards [] with x
+    symm
+    exact displacedProductC_ofReal_eq_density d x hd₁ hd₂
+  have hDcomp' := hDcomp.congr_of_eventuallyEq hEq
+  exact hDcomp'.deriv.symm.trans hρcomp.deriv
+
 /-! ### OBRIGAÇÃO ANALÍTICA RESTANTE (primeira seta ainda ABERTA)
 
 Estado atual (todos PROVADOS, axiomas padrão): para `|d|<1/4`, `D_d` é **holomorfa** em
@@ -803,6 +842,7 @@ theorem offcritical_not_posSemidef_of_zero
 #print axioms completedSigmaLogDensityDerivativeTaylorSeries_hasFPowerSeriesAt
 #print axioms completedSigmaLogDensity_derivative_eq_generatingFunction_eventually
 #print axioms completedSigmaLogJetComplexGeneratingFunction_hasFPowerSeriesAt
+#print axioms displacedProductC_deriv_ofReal_eq_density_deriv_eventually
 #print axioms completedSigmaLogJetGeneratingFunction_hasFPowerSeriesAt
 #print axioms displacedProductC_ofReal_eq_density
 #print axioms displacedProductC_vanishes_at_shifted_zero

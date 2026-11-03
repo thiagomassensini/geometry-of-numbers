@@ -135,6 +135,12 @@ A mesma série foi agora complexificada coeficiente a coeficiente em
 `completedSigmaLogJetComplexGeneratingFunction` possui `HasFPowerSeriesAt` em zero. Portanto,
 a geradora analítica complexa com os jets originais está disponível.
 
+Também foi provado `displacedProductC_deriv_ofReal_eq_density_deriv_eventually`: perto de zero,
+a derivada complexa de `D_d`, avaliada na reta real, coincide com a derivada da densidade real.
+A prova usa analiticidade local de `D_d`, sua restrição real e a igualdade já estabelecida entre
+`D_d(t)` e a densidade. Isso fornece a ponte de derivadas necessária para transportar a EDO
+real à expressão complexa.
+
 O Checkpoint A permanece aberto no escopo exigido: falta transportar essa identidade para a
 equação complexa local
 `D_d'(t)+4tG_d(t²)D_d(t)=0` para `D_d=displacedProductC d`, incluindo a construção da
