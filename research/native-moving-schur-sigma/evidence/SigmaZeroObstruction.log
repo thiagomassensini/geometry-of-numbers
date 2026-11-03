@@ -12,6 +12,10 @@
 'CarrySigmaObstruction.completedSigmaLogDensity_analyticAt_origin' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'CarrySigmaObstruction.completedSigmaDensity_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogDensity_odd_iteratedDeriv_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
 'CarrySigmaObstruction.displacedProductC_even_ofReal' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarrySigmaObstruction.completedSigmaDensity_zero_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarrySigmaObstruction.displacedProductC_zero_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

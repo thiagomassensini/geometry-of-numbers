@@ -111,7 +111,13 @@ prova raio positivo para a série em `u` com coeficientes exatamente
 certifica que a soma dessa série é uma geradora analítica local. Ambos os teoremas passam
 `#print axioms` com apenas `propext`, `Classical.choice` e `Quot.sound`.
 
+Também foi provado que `completedSigmaDensity d` e seu log são pares na variável real;
+`completedSigmaLogDensity_odd_iteratedDeriv_eq_zero` registra o anulamento de todas as
+derivadas ímpares na origem. Isso fecha a paridade necessária para reduzir `t` a `t²`.
+
 O Checkpoint A **continua aberto**: ainda não foi provada a identidade local
 `D_d'(t)+4tG_d(t²)D_d(t)=0`, nem formalizada a versão complexa da geradora necessária para
-propagá-la pelo domínio. Nenhum passo da realização GNS ou da obstrução all-order foi iniciado
-como se esses gates estivessem provados.
+propagá-la pelo domínio. Em particular, falta ainda provar a igualdade entre a soma da
+geradora reduzida e o quociente log-derivativo, a partir das somas convergentes, antes de
+propagar a EDO. Nenhum passo da realização GNS ou da obstrução all-order foi iniciado como se
+esses gates estivessem provados.

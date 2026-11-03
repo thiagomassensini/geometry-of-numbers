@@ -390,6 +390,50 @@ theorem completedSigmaLogDensity_analyticAt_origin (d : ℝ)
   rw [heq]
   exact hlog
 
+/-- The original shifted sigma density is even on the real axis. -/
+theorem completedSigmaDensity_even (d t : ℝ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    completedSigmaDensity d (-t) = completedSigmaDensity d t := by
+  apply Complex.ofReal_injective
+  calc
+    (completedSigmaDensity d (-t) : ℂ) =
+        displacedProductC d ((-t : ℝ) : ℂ) := by
+          symm
+          exact displacedProductC_ofReal_eq_density d (-t) hd₁ hd₂
+    _ = displacedProductC d (-(t : ℂ)) := by norm_num
+    _ = displacedProductC d (t : ℂ) := displacedProductC_even_ofReal d t hd₁ hd₂
+    _ = (completedSigmaDensity d t : ℂ) := displacedProductC_ofReal_eq_density d t hd₁ hd₂
+
+/-- The real log-density is even on the real axis. -/
+theorem completedSigmaLogDensity_even (d : ℝ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    (fun t : ℝ => Real.log (completedSigmaDensity d (-t))) =
+      (fun t : ℝ => Real.log (completedSigmaDensity d t)) := by
+  funext t
+  rw [completedSigmaDensity_even d t hd₁ hd₂]
+
+/-- Every odd derivative of the analytic log-density vanishes at the center. -/
+theorem completedSigmaLogDensity_odd_iteratedDeriv_eq_zero (d : ℝ) (n : ℕ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    iteratedDeriv (2 * n + 1)
+      (fun t : ℝ => Real.log (completedSigmaDensity d t)) 0 = 0 := by
+  let L : ℝ → ℝ := fun t => Real.log (completedSigmaDensity d t)
+  have heven : (fun t : ℝ => L (-t)) = L := by
+    exact completedSigmaLogDensity_even d hd₁ hd₂
+  have hderiv := congrArg (fun f : ℝ → ℝ => iteratedDeriv (2 * n + 1) f 0) heven
+  rw [iteratedDeriv_comp_neg] at hderiv
+  have hpowEven (k : ℕ) : (-1 : ℝ) ^ (k * 2) = 1 := by
+    induction k with
+    | zero => simp
+    | succ k ih =>
+        rw [Nat.succ_mul, pow_add, ih]
+        norm_num
+  have hpow : (-1 : ℝ) ^ (2 * n + 1) = -1 := by
+    rw [show 2 * n + 1 = n * 2 + 1 by omega, pow_add, hpowEven n]
+    norm_num
+  simp only [L, neg_zero, hpow, smul_eq_mul] at hderiv
+  linarith
+
 /-- Ordinary Taylor series of the analytic real log-density germ. -/
 def completedSigmaLogDensityTaylorSeries (d : ℝ) :
     FormalMultilinearSeries ℝ ℝ ℝ :=
@@ -590,6 +634,8 @@ theorem offcritical_not_posSemidef_of_zero
 #print axioms completedSigmaLogJet_quarter_normalization
 #print axioms completedSigmaLogJet_eq_logDisplacedProduct
 #print axioms completedSigmaLogDensity_analyticAt_origin
+#print axioms completedSigmaDensity_even
+#print axioms completedSigmaLogDensity_odd_iteratedDeriv_eq_zero
 #print axioms displacedProductC_even_ofReal
 #print axioms completedSigmaDensity_zero_pos
 #print axioms displacedProductC_zero_ne_zero
