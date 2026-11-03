@@ -3,6 +3,8 @@
 
 ## Estado atual e ponto de entrada — 02/11/2026
 
+**Cartório de resgates:** [índice das branches auditadas e provas recuperadas em 02/11/2026](docs/RESGATE_PESQUISA_2026-11-02.md). A recuperação #147–#149 preservou os objetos originais E8/E12 e K7 com seus limites; o arquivo também documenta a pesquisa do retorno físico já presente na main e as pendências.
+
 **Consolidação de pesquisa:** esta revisão reúne os resultados dos PRs **#34–#146**, preservando os registros de prova e auditoria de cada etapa. Os relatórios que dizem “main não alterado”, “PR draft” ou “sem merge” descrevem **seus checkpoints históricos**; confira os PRs atuais antes de iniciar uma nova integração.
 
 **Comece por estes documentos, antes de abrir uma nova investigação:**
