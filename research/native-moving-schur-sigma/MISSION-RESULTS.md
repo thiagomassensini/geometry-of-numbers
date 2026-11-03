@@ -126,9 +126,11 @@ auditado `671bd23b5ec3a486668f74ebbf756ad1dce269f6`. Os três commits por result
 - A, recorrência e série: `c9bf34d`.
 - B, primeira falha: `b93d0d4`.
 - C, costura material: `01119cd`.
+- Redução radial da PDE e normalização dos logs de validação: `242b55b`.
+- Relatório e integração inicial do validador: `d1d5307`.
 
-O relatório e a integração do validador são registrados em commit próprio após estes
-resultados.
+Esta atualização do relatório registra o limite exato da nova redução: falta estabelecer a
+seção local em `d` da representação para a geradora sigma original.
 
 ## Proveniência e limites da cadeia
 
@@ -148,14 +150,19 @@ profundidade prima e momentos canônicos, e entre os jets centrais e esses momen
 transversal e a síntese material permanecem objetos distintos, exceto pelas identidades
 formalmente provadas acima.
 
-**DERIVADO MATEMATICAMENTE, sob regularidade conjunta C²:** da harmonia de
-`S(t,d) = t G_d(t²)`, a regra da cadeia para `t ≠ 0` dá
-`∂²_d G + 4u ∂²_u G + 6∂_u G = 0`, com extensão a `u=0` por continuidade analítica.
-Em `u=r²`, o operador radial vira `∂²_r + (2/r)∂_r`. No Lean estão formalizados a
-harmonicidade de `S` e a identidade PDE coeficiente a coeficiente, mas ainda não a
-diferenciabilidade conjunta local-uniforme da soma geradora que permitiria declarar a PDE
-inteira como teorema. A interpretação radial auxiliar não identifica `ℝ⁴` com o espaço
-material `C2/C3`.
+**PASSO DE REGRA DA CADEIA PROVADO; PDE DA FONTE AINDA ABERTA.** O lema
+`harmonic_radial_generating_pde_at_nonzero` formaliza que, se `S` é harmônica e as duas
+seções locais da representação `S(t,d)=t*G(d,t²)` valem perto do ponto, então para `t ≠ 0`
+vale a PDE de `G` em `u=t²>0`. A hipótese de seção em `t` corresponde ao resultado já
+provado para cada deslocamento fixo. Ainda falta provar a seção em `d` para o gerador sigma
+original, em uma vizinhança do deslocamento; equivalentemente, falta a representação
+local-uniforme nas duas variáveis que permita derivar a soma geradora em `d`. Portanto, a PDE
+funcional da fonte não é reivindicada como formalizada. Em `u=0`, a identidade
+coeficiente a coeficiente já está provada.
+
+**DERIVADO MATEMATICAMENTE:** quando `u=r²`, o operador radial vira
+`∂²_r + (2/r)∂_r`; isso descreve uma interpretação harmônica auxiliar em quatro dimensões,
+sem identificar `ℝ⁴` com o espaço material `C2/C3`.
 
 ## Referências de proveniência
 
