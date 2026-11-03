@@ -122,8 +122,7 @@ Exit code: `0`. Os `#print axioms` dos novos teoremas mostram somente
 `[propext, Classical.choice, Quot.sound]`.
 
 O trabalho parte da branch `agent/native-moving-schur-sigma`, cujo HEAD no começo desta missão
-era `671bd23b5ec3a486668f74ebbf756ad1dce269f6`. Os commits por resultado anteriores a esta
-atualização foram:
+era `671bd23b5ec3a486668f74ebbf756ad1dce269f6`. Os commits por resultado são:
 
 - A, recorrência e série: `c9bf34d`.
 - B, primeira falha: `b93d0d4`.
@@ -131,6 +130,7 @@ atualização foram:
 - Redução radial da PDE e normalização dos logs de validação: `242b55b`.
 - Relatório e integração inicial do validador: `d1d5307`.
 - Atualização do relatório com a redução radial: `3a49688`.
+- Representação conjunta e PDE funcional local, com validação: `b2eca71`.
 
 Esta atualização registra também o fechamento da seção local uniforme e da PDE funcional para
 a geradora sigma original, com axiomas padrão e sem alterar a sequência dos jets. O resultado
