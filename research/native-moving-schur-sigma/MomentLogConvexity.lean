@@ -56,6 +56,46 @@ theorem momentFunctional_sum {α : Type*} [DecidableEq α] (h : ℕ → ℝ)
   | @insert a s ha ih =>
       rw [Finset.sum_insert ha, Finset.sum_insert ha, momentFunctional_add, ih]
 
+/-- Scalar linearity of the moment functional. -/
+theorem momentFunctional_C_mul (h : ℕ → ℝ) (a : ℝ) (p : Polynomial ℝ) :
+    momentFunctional h (Polynomial.C a * p) = a * momentFunctional h p := by
+  have hp := p.as_sum_range_C_mul_X_pow
+  calc
+    momentFunctional h (Polynomial.C a * p) = momentFunctional h
+        (Polynomial.C a *
+          ∑ i ∈ Finset.range (p.natDegree + 1),
+            Polynomial.C (p.coeff i) * Polynomial.X ^ i) := by rw [← hp]
+    _ = ∑ i ∈ Finset.range (p.natDegree + 1),
+          a * (p.coeff i * h i) := by
+      rw [Finset.mul_sum, momentFunctional_sum]
+      apply Finset.sum_congr rfl
+      intro i hi
+      have hmono :
+          Polynomial.C a * (Polynomial.C (p.coeff i) * Polynomial.X ^ i) =
+            Polynomial.C (a * p.coeff i) * Polynomial.X ^ i := by
+        calc
+          _ = (Polynomial.C a * Polynomial.C (p.coeff i)) * Polynomial.X ^ i := by ac_rfl
+          _ = Polynomial.C (a * p.coeff i) * Polynomial.X ^ i := by rw [← map_mul]
+      rw [hmono, momentFunctional_C_mul_X_pow]
+      ring
+    _ = a * momentFunctional h p := by
+      have hLp : momentFunctional h p =
+          ∑ i ∈ Finset.range (p.natDegree + 1), p.coeff i * h i := by
+        calc
+          momentFunctional h p = momentFunctional h
+              (∑ i ∈ Finset.range (p.natDegree + 1),
+                Polynomial.C (p.coeff i) * Polynomial.X ^ i) := by rw [← hp]
+          _ = ∑ i ∈ Finset.range (p.natDegree + 1),
+                momentFunctional h (Polynomial.C (p.coeff i) * Polynomial.X ^ i) :=
+              momentFunctional_sum h _ _
+          _ = ∑ i ∈ Finset.range (p.natDegree + 1), p.coeff i * h i := by
+            apply Finset.sum_congr rfl
+            intro i hi
+            rw [momentFunctional_C_mul_X_pow]
+      rw [← Finset.mul_sum, hLp]
+
+#print axioms momentFunctional_C_mul
+
 /-- Applying the functional to a product expands into the finite Hankel quadratic kernel.
 The cutoffs are the original polynomial degrees; no auxiliary moment sequence is used. -/
 theorem momentFunctional_mul_eq_double_sum (h : ℕ → ℝ) (p q : Polynomial ℝ) :
@@ -112,6 +152,43 @@ theorem hankel_quadratic_nonneg {h : ℕ → ℝ} {N : ℕ}
   exact hq
 
 #print axioms hankel_quadratic_nonneg
+
+/-- H1 implies positivity of the moment functional on polynomial squares. -/
+theorem momentFunctional_square_nonneg {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef) (p : Polynomial ℝ) :
+    0 ≤ momentFunctional h (p ^ 2) := by
+  let N := p.natDegree + 1
+  let c : Fin N → ℝ := fun i => p.coeff i.val
+  have hquad := hankel_quadratic_nonneg (hH N) c
+  rw [pow_two, momentFunctional_mul_eq_double_sum]
+  have hinner (i : ℕ) :
+      (∑ j ∈ Finset.range N, p.coeff i * p.coeff j * h (i + j)) =
+        ∑ j : Fin N, p.coeff i * p.coeff j * h (i + j) := by
+    symm
+    exact Fin.sum_univ_eq_sum_range (fun j => p.coeff i * p.coeff j * h (i + j)) N
+  have houter :
+      (∑ i ∈ Finset.range N, ∑ j ∈ Finset.range N,
+        p.coeff i * p.coeff j * h (i + j)) =
+      ∑ i : Fin N, ∑ j : Fin N,
+        p.coeff i * p.coeff j * h (i.val + j.val) := by
+    calc
+      _ = ∑ i ∈ Finset.range N, ∑ j : Fin N,
+          p.coeff i * p.coeff j * h (i + j) := by
+        apply Finset.sum_congr rfl
+        intro i hi
+        exact hinner i
+      _ = ∑ i : Fin N, ∑ j : Fin N,
+          p.coeff i * p.coeff j * h (i.val + j.val) := by
+        symm
+        exact Fin.sum_univ_eq_sum_range
+          (fun i => ∑ j : Fin N, p.coeff i * p.coeff j * h (i + j)) N
+  have hquad' :
+      0 ≤ ∑ i : Fin N, ∑ j : Fin N,
+        p.coeff i * p.coeff j * h (i.val + j.val) := by
+    simpa [c] using hquad
+  simpa [N, houter] using hquad'
+
+#print axioms momentFunctional_square_nonneg
 
 /-- **Cota de razão por log-convexidade (núcleo do Checkpoint B).** Uma sequência
 não-negativa log-convexa com crescimento exponencial limitado satisfaz `a₁ ≤ R²·a₀`.

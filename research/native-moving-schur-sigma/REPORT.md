@@ -105,8 +105,13 @@ original. Provamos sua aditividade, sua ação nos monômios e a expansão finit
 `p_i q_j h_{i+j}` nos graus efetivos de `p` e `q`. Essa ponte compila com
 `-DwarningAsError=true` e usa somente os axiomas padrão do Lean.
 
-Isso **não fecha** o Checkpoint B: ainda falta provar `L(p²)≥0` a partir de H1,
-derivar Cauchy–Schwarz e as sequências `a_n=L(X^{2n}p²)` das hipóteses H1/H2, provar
+Também estão provadas a linearidade escalar `momentFunctional_C_mul` e a consequência
+`momentFunctional_square_nonneg`: H1, aplicada à matriz de ordem `p.natDegree + 1`, implica
+`L(p²)≥0` para todo polinômio. A conversão entre somas de `Fin N` e somas em `range N` é
+explícita, e o teorema passa `#print axioms` com apenas os axiomas padrão.
+
+Isso **não fecha** o Checkpoint B: ainda falta derivar Cauchy–Schwarz e as sequências
+`a_n=L(X^{2n}p²)` das hipóteses H1/H2, provar
 log-convexidade e crescimento controlado dessas sequências, e só então aplicar a cota de
 razão para obter `L(X²p²)≤R²L(p²)`.
 
