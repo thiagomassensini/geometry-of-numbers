@@ -1,0 +1,13 @@
+import CanonicalBoundaryTransfer
+
+namespace CanonicalNativeBoundaryTransfer
+
+#check boundary_energy_pos_of_canonical_pair_posDef
+#check nativeSourceFiniteBoundaryEnergy_pos_12
+#check nativeSourceFiniteBoundaryEnergy_pos_8
+
+#print axioms boundary_energy_pos_of_canonical_pair_posDef
+#print axioms nativeSourceFiniteBoundaryEnergy_pos_12
+#print axioms nativeSourceFiniteBoundaryEnergy_pos_8
+
+end CanonicalNativeBoundaryTransfer
