@@ -169,6 +169,7 @@ era `671bd23b5ec3a486668f74ebbf756ad1dce269f6`. Os commits por resultado são:
 - Atualização do relatório com a redução radial: `3a49688`.
 - Representação conjunta e PDE funcional local, com validação: `b2eca71`.
 - Estabilidade de prefixos e divergência condicional de `N_*(d)`: `8435f79`.
+- Caso funcional central `u=0` da PDE geradora sigma: `36e2a27`.
 
 Esta atualização registra o fechamento da seção local uniforme e da PDE funcional para a
 geradora sigma original e a divergência condicional da primeira ordem ruim. Os resultados estão
