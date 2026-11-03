@@ -193,3 +193,31 @@ real à expressão complexa.
 O Checkpoint A está agora fechado. `completedSigmaDensity_deriv_eq_generatingFunction_mul_eventually` deriva a equação diferencial real para a densidade a partir da identidade da log-derivada. `completedSigmaLogJetComplexGeneratingFunction_ofReal_eq_eventually` identifica as somas real e complexa na reta. Com `displacedProductC_deriv_ofReal_eq_density_deriv_eventually`, isso prova que a expressão da EDO complexa zera numa vizinhança real. A expressão é analítica em zero; `displacedProductC_local_differentialEquation` usa o princípio de zeros isolados para obter a identidade complexa numa vizinhança complexa de zero. Assim, o resultado envolve a série convergente dos `completedSigmaLogJet` originais e não uma série formal ou postulada.
 
 A propagação da EDO até o zero deslocado continua aberta. Também continuam abertos o lema universal de multiplicação limitada (Checkpoint B), a construção GNS (C), a resolvente (D) e a conclusão efetiva de negatividade para a `sigmaMatrix` original. Nenhuma dessas etapas é tratada como provada.
+
+## Atualização de 2026-11-03 — operador auto-adjunto e recuperação dos momentos
+
+A construção do Checkpoint C foi concluída no módulo independente `MomentLogConvexity.lean`.
+`momentHilbertMulX_isSelfAdjoint` identifica o operador contínuo simétrico com `IsSelfAdjoint`
+no espaço de Hilbert completo. `momentHilbertUnit` é o vetor constante `e=[1]` (sem pressupor
+que seja não nulo). `momentHilbertMulX_pow_unit` prova por indução a ação das potências, e
+`momentHilbert_recovers_moment` demonstra, para toda sequência sob H1 e H2,
+
+\[
+\langle T^n e,e\rangle=h_n.
+\]
+
+A construção continua usando a sequência de momentos original; nenhum representante por medida
+foi introduzido. Esses teoremas passam `#print axioms` com somente `propext`, `Classical.choice`
+e `Quot.sound`.
+
+**PROVADO:** checkpoints A, B e C; além disso, a identidade de recuperação dos momentos que é
+pré-requisito do D.
+
+**ABERTO:** resolvente complexa e sua holomorfia, expansão de Neumann e identificação local
+(Checkpoint D); estimativa de Cauchy para instanciar H2 com os jets sigma; propagação da EDO e
+contradição no domínio deslocado; extração do vetor negativo para a matriz sigma original.
+O resultado de negatividade all-order não está concluído.
+
+**COMPILAÇÃO:** `bash research/native-moving-schur-sigma/compile_module.sh MomentLogConvexity`
+concluiu com `-DwarningAsError=true`; todos os resultados listados passaram `#print axioms`.
+`git diff --check` passou e não há `sorry` ou `admit` no módulo.

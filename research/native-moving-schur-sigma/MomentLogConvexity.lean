@@ -3,6 +3,7 @@ import Mathlib.Algebra.Polynomial.BigOperators
 import Mathlib.LinearAlgebra.Matrix.PosDef
 import Mathlib.Analysis.InnerProductSpace.Basic
 import Mathlib.Analysis.InnerProductSpace.Completion
+import Mathlib.Analysis.InnerProductSpace.Adjoint
 import Mathlib.Analysis.Normed.Operator.Extend
 
 /-!
@@ -938,5 +939,63 @@ theorem momentHilbertMulX_symmetric {h : ℕ → ℝ}
   exact quotientMulX_symmetric hH hC hR hbound p q
 
 #print axioms momentHilbertMulX_symmetric
+
+/-- The bounded symmetric multiplier is self-adjoint on the complete Hilbert space. -/
+theorem momentHilbertMulX_isSelfAdjoint {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) :
+    IsSelfAdjoint (momentHilbertMulX hH hC hR hbound) := by
+  apply ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric.mpr
+  exact momentHilbertMulX_symmetric hH hC hR hbound
+
+#print axioms momentHilbertMulX_isSelfAdjoint
+
+/-- The cyclic vector represented by the constant polynomial `1`. -/
+noncomputable def momentHilbertUnit {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef) : momentHilbert h hH :=
+  momentQuotientEmbedding hH (Submodule.Quotient.mk 1)
+
+/-- Powers of the Hilbert-space multiplier act on the cyclic vector as monomials. -/
+theorem momentHilbertMulX_pow_unit {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) (n : ℕ) :
+    ((momentHilbertMulX hH hC hR hbound) ^ n) (momentHilbertUnit hH) =
+      momentQuotientEmbedding hH
+        (Submodule.Quotient.mk (Polynomial.X ^ n)) := by
+  induction n with
+  | zero => simp [momentHilbertUnit]
+  | succ n ih =>
+    rw [pow_succ']
+    rw [mul_apply_eq_comp, ih]
+    rw [momentHilbertMulX_coe, quotientMulX_mk]
+    congr 1
+    rw [pow_succ]
+    ring_nf
+
+#print axioms momentHilbertMulX_pow_unit
+
+/-- The self-adjoint realization reconstructs every original moment. -/
+theorem momentHilbert_recovers_moment {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) (n : ℕ) :
+      inner ℝ (((momentHilbertMulX hH hC hR hbound) ^ n) (momentHilbertUnit hH))
+      (momentHilbertUnit hH) = h n := by
+  rw [momentHilbertMulX_pow_unit]
+  simp only [momentHilbertUnit, momentQuotientEmbedding,
+    UniformSpace.Completion.coe_toComplL,
+    UniformSpace.Completion.inner_coe]
+  change quotientMomentInner hH (Submodule.Quotient.mk (Polynomial.X ^ n))
+      (Submodule.Quotient.mk 1) = h n
+  rw [quotientMomentInner_mk]
+  unfold momentB
+  have hmono : Polynomial.X ^ n * (1 : Polynomial ℝ) =
+      Polynomial.C 1 * Polynomial.X ^ n := by simp
+  rw [hmono, momentFunctional_C_mul_X_pow]
+  norm_num
+
+#print axioms momentHilbert_recovers_moment
 
 end CarryMomentLogConvex
