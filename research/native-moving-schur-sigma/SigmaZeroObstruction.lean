@@ -281,25 +281,69 @@ theorem displacedProductC_zero_ne_zero (d : ℝ)
   rw [displacedProductC_ofReal_eq_density d 0 hd₁ hd₂, ne_eq, Complex.ofReal_eq_zero]
   exact (completedSigmaDensity_zero_pos d hd₁ hd₂).ne'
 
+/-! ## Parte 3d — domínio: `D_d` holomorfa no ponto deslocado `t₀=γ+id`
+
+**Observação de domínio (obrigatória, Etapa 3).** `F` é holomorfa exatamente em
+`completedNativeHeightDomain = {z | |Im z| < 1/2}`
+(`mem_completedNativeHeightDomain_iff_im_bounds`). Em `t₀ = γ+id` os fatores de
+`D_d = F(·−id)·F(·+id)` são avaliados em `t₀−id = γ` (`Im=0`, sempre no domínio) e em
+`t₀+id = γ+2id` (`Im=2d`, no domínio **sse `|d|<1/4`**). Portanto a holomorfia de `D_d` em
+`t₀` só é garantida para `0<|d|<1/4` com a analiticidade conhecida de `F` na faixa centrada;
+para `1/4 ≤ |d| < 1/2` seria necessária uma continuação meromorfa mais ampla de `F`, não
+estabelecida aqui. **Não se extrapola a prova para todo `0<|d|<1/2`.** -/
+
+/-- **Holomorfia de `D_d` em `t₀=γ+id` para `|d|<1/4`.** Ambos os fatores estão no domínio
+de analiticidade de `F` (`γ` tem `Im=0`; `γ+2id` tem `Im=2d`, dentro de `|Im|<1/2`). -/
+theorem displacedProductC_analyticAt (d γ : ℝ)
+    (hd₁ : -(1 / 4 : ℝ) < d) (hd₂ : d < (1 / 4 : ℝ)) :
+    AnalyticAt ℂ (displacedProductC d) ((γ : ℂ) + Complex.I * (d : ℂ)) := by
+  set t₀ : ℂ := (γ : ℂ) + Complex.I * (d : ℂ) with ht₀
+  have hdom1 : (t₀ - Complex.I * (d : ℂ)) ∈ completedNativeHeightDomain := by
+    show operatorHeightParameter (t₀ - Complex.I * (d : ℂ)) ∈ genuineCriticalStrip
+    have e : t₀ - Complex.I * (d : ℂ) = displacedHeight 0 γ := by
+      rw [ht₀]; simp only [displacedHeight, Complex.ofReal_zero, mul_zero, sub_zero]; ring
+    rw [e]; exact displacedHeight_strip 0 γ (by norm_num) (by norm_num)
+  have hdom2 : (t₀ + Complex.I * (d : ℂ)) ∈ completedNativeHeightDomain := by
+    show operatorHeightParameter (t₀ + Complex.I * (d : ℂ)) ∈ genuineCriticalStrip
+    have e : t₀ + Complex.I * (d : ℂ) = displacedHeight (-(2 * d)) γ := by
+      rw [ht₀]; simp only [displacedHeight]; push_cast; ring
+    rw [e]; exact displacedHeight_strip (-(2 * d)) γ (by linarith) (by linarith)
+  have hg1 : AnalyticAt ℂ (fun τ : ℂ => τ - Complex.I * (d : ℂ)) t₀ :=
+    analyticAt_id.sub analyticAt_const
+  have hg2 : AnalyticAt ℂ (fun τ : ℂ => τ + Complex.I * (d : ℂ)) t₀ :=
+    analyticAt_id.add analyticAt_const
+  have hF1 : AnalyticAt ℂ
+      (fun τ : ℂ => completedNativeOperatorCharacteristic (τ - Complex.I * (d : ℂ))) t₀ :=
+    AnalyticAt.comp (f := fun τ : ℂ => τ - Complex.I * (d : ℂ))
+      (completedNativeOperatorCharacteristic_analyticAt hdom1) hg1
+  have hF2 : AnalyticAt ℂ
+      (fun τ : ℂ => completedNativeOperatorCharacteristic (τ + Complex.I * (d : ℂ))) t₀ :=
+    AnalyticAt.comp (f := fun τ : ℂ => τ + Complex.I * (d : ℂ))
+      (completedNativeOperatorCharacteristic_analyticAt hdom2) hg2
+  unfold displacedProductC
+  exact hF1.mul hF2
+
 /-! ### OBRIGAÇÃO ANALÍTICA RESTANTE (primeira seta ainda ABERTA)
 
-Falta exatamente **um** passo analítico, enunciado aqui com precisão e **não** introduzido
-como hipótese/predicado (`Pole` proibido). Dado `F` analítico no domínio (fato
-`completedNativeOperatorCharacteristic_analyticAt`) e um zero `F(γ)=0`, `γ>0`, com `F` não
-identicamente nulo numa vizinhança conexa de `γ`:
+Estado atual (todos PROVADOS, axiomas padrão): para `|d|<1/4`, `D_d` é **holomorfa** em
+`t₀=γ+id` (`displacedProductC_analyticAt`), **anula** aí quando `F(γ)=0`
+(`displacedProductC_vanishes_at_shifted_zero`), e é **não identicamente nula** no componente
+(pois `D_d(0)>0`, `completedSigmaDensity_zero_pos`). O nó transportado é **não-real**
+(`shifted_zero_u_im`: `Im((γ+id)²)=2γd≠0`). A normalização `1/4` e a identidade de
+coeficientes `hₙ = −L^{(2n+2)}(0)/(4(2n+1)!)` estão provadas
+(`completedSigmaLogJet_quarter_normalization`, `completedSigmaLogJet_eq_logDisplacedProduct`).
 
-  `logDeriv (fun τ => displacedProductC d τ)` é **meromorfa** em `τ = γ + i d` com **polo
-  simples** (ordem `−1`), pois `D_d = F(·−id)·F(·+id)` herda, de `F(γ)=0`, um zero simples em
-  `τ = γ + i d` (já provado `displacedProductC_vanishes_at_shifted_zero`), e o log-derivada de
-  uma função holomorfa não-identicamente-nula com zero de ordem `m` tem polo simples de
-  resíduo `m`.
+Falta estritamente **um** passo analítico, sem suporte direto no Mathlib deste pin
+(não há lema de ordem meromorfa de `logDeriv`): de `AnalyticAt D_d t₀`, `D_d t₀ = 0` e `D_d`
+não-identicamente-nula, concluir que `logDeriv D_d = D_d'/D_d` é **meromorfa** em `t₀` com
+**polo** (ordem `−1`, resíduo = multiplicidade do zero). Isso exige construir a fatoração
+local `D_d = (τ−t₀)^m · g`, `g(t₀)≠0` (via `AnalyticAt.order`/`Analysis.Analytic.IsolatedZeros`),
+e daí `logDeriv D_d = m/(τ−t₀) + logDeriv g`. Transportando por `u=τ²` (derivada `2t₀≠0`,
+inversa holomorfa local), o germe da geradora `G_d` tem polo não-removível em `u₀=(γ+id)²`.
 
-Transportando por `u = τ²` (derivada `2τ ≠ 0` em `τ = γ+id ≠ 0`), a geradora
-`G_d(u) = −logDeriv D_d(√u)/(4√u)` tem polo não-removível em `u = (γ+id)²`, cujo
-`Im = 2γd ≠ 0` (já provado `shifted_zero_u_im`). O elo que falta é estritamente a
-meromorfia/ordem do log-derivada (Mathlib: `MeromorphicAt`, `logDeriv`, `AnalyticAt.order`),
-além de `D_d` não-identicamente-nula e `D_d(0) ≠ 0` (zero-free off-axis). Nenhum desses é
-hipótese de sinal. -/
+**DOMÍNIO:** o polo acima só é acessível para `0<|d|<1/4` com a analiticidade conhecida de
+`F` na faixa `|Im z|<1/2`; para `1/4≤|d|<1/2` faltaria continuação meromorfa mais ampla de
+`F`. Nenhuma das obrigações é hipótese de sinal. -/
 
 /-! ## Parte 4 — teorema condicional honesto: isolamento da obrigação analítica -/
 
@@ -334,6 +378,7 @@ theorem offcritical_not_posSemidef_of_zero
 #print axioms displacedProductC_even_ofReal
 #print axioms completedSigmaDensity_zero_pos
 #print axioms displacedProductC_zero_ne_zero
+#print axioms displacedProductC_analyticAt
 #print axioms displacedProductC_ofReal_eq_density
 #print axioms displacedProductC_vanishes_at_shifted_zero
 #print axioms shifted_zero_u_im
