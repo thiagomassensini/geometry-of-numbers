@@ -1,0 +1,17 @@
+BUILD GammaExtendedRationals
+PASS GammaExtendedRationals
+BUILD GammaNinePolynomial
+PASS GammaNinePolynomial
+BUILD GammaNineReference
+PASS GammaNineReference
+BUILD GammaNineValue
+PASS GammaNineValue
+BUILD HeadNine
+PASS HeadNine
+BUILD OddHeadMargin
+PASS OddHeadMargin
+BUILD CompletedHeadEight
+PASS CompletedHeadEight
+BUILD FinalAudit
+PASS FinalAudit
+PASS no forbidden shortcuts or new axioms

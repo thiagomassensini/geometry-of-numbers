@@ -1,0 +1,7 @@
+'CarryOddHeadSource.odd_tail_four_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddHeadSource.native_c4_upper_of_head_box' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddHeadSource.odd_source_det_margin_of_c4_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddHeadSource.odd_source_det_pos_of_c4_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddHeadSource.odd_original_four_terms' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddHeadSource.odd_c4_ceiling_of_head_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddHeadSource.third_odd_gate_of_head_upper' depends on axioms: [propext, Classical.choice, Quot.sound]

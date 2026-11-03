@@ -1,0 +1,7 @@
+'CarryOddHeadSource.regrouped_head64_four_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddHeadSource.native_c4_upper_from_completed_c3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddHeadSource.odd_source_det_margin_from_completed_c3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddHeadSource.odd_source_det_pos_from_completed_c3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddHeadSource.odd_prefix_isUnit_from_completed_c3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddHeadSource.odd_c4_ceiling_from_completed_c3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryOddHeadSource.third_odd_gate_from_completed_c3' depends on axioms: [propext, Classical.choice, Quot.sound]
