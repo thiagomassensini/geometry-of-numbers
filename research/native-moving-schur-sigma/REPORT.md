@@ -142,8 +142,15 @@ quociente e provado independente dos representantes. `quotientMomentInnerProduct
 fornece a estrutura positiva definida; as instâncias de Mathlib dão ao quociente a estrutura
 de espaço interno. `momentHilbert` é a conclusão uniforme desse quociente, e
 `momentHilbert_complete` verifica sua completude. Esses teoremas passam `#print axioms` com
-apenas os axiomas padrão. Ainda falta definir a multiplicação por `X` no quociente, estendê-la
-à conclusão e provar a simetria e auto-adjunticidade do operador resultante.
+apenas os axiomas padrão. `quotientMulX` é a multiplicação por `X` no quociente, bem definida
+porque B dá invariância do submódulo nulo; `quotientMulX_norm_bound` prova a cota por `R`.
+`quotientMulXContinuous` e `momentHilbertMulX` fornecem os operadores contínuos no quociente
+e na conclusão. `momentHilbertMulX_on_quotient` e `momentHilbertMulX_coe` verificam que a
+extensão preserva a ação original de `X`. Finalmente, `quotientMulX_symmetric` e
+`momentHilbertMulX_symmetric` provam a simetria no quociente e em todo o espaço completado,
+respectivamente. Todas essas provas passam `#print axioms` com apenas os axiomas padrão.
+Ainda faltam a identificação formal do operador contínuo simétrico com `IsSelfAdjoint`, a
+recuperação dos momentos pela ação do operador e a resolvente.
 
 No Checkpoint A, `SigmaZeroObstruction.lean` agora prova que
 `t ↦ log(completedSigmaDensity d t)` é analítica na origem. A partir do raio positivo de sua

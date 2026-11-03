@@ -3,6 +3,7 @@ import Mathlib.Algebra.Polynomial.BigOperators
 import Mathlib.LinearAlgebra.Matrix.PosDef
 import Mathlib.Analysis.InnerProductSpace.Basic
 import Mathlib.Analysis.InnerProductSpace.Completion
+import Mathlib.Analysis.Normed.Operator.Extend
 
 /-!
 # Núcleo analítico do Checkpoint B: cota de razão por log-convexidade
@@ -712,5 +713,230 @@ theorem momentHilbert_complete (h : ℕ → ℝ)
     CompleteSpace (momentHilbert h hH) := inferInstance
 
 #print axioms momentHilbert_complete
+
+/-- Multiplication by `X` as a linear map on polynomials. -/
+noncomputable def polynomialMulX : Polynomial ℝ →ₗ[ℝ] Polynomial ℝ where
+  toFun p := Polynomial.X * p
+  map_add' p q := by ring
+  map_smul' a p := by
+    simp only [RingHom.id_apply, Polynomial.smul_eq_C_mul]
+    ring
+
+/-- H1 and H2 make the null submodule invariant under multiplication by `X`. -/
+theorem momentNullSubmodule_mulX_invariant {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) :
+    ∀ p ∈ momentNullSubmodule h hH,
+      Polynomial.X * p ∈ momentNullSubmodule h hH := by
+  intro p hp
+  change momentQ h p = 0 at hp
+  change momentQ h (Polynomial.X * p) = 0
+  have hnonneg := momentFunctional_square_nonneg hH (Polynomial.X * p)
+  have hup := momentQ_X_mul_le hH hC hR hbound p
+  rw [hp, mul_zero] at hup
+  exact le_antisymm hup hnonneg
+
+/-- The polynomial multiplier followed by the quotient map. -/
+noncomputable def polynomialMulXToQuotient {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef) :
+    Polynomial ℝ →ₗ[ℝ] Polynomial ℝ ⧸ momentNullSubmodule h hH :=
+  (momentNullSubmodule h hH).mkQ.comp polynomialMulX
+
+/-- Multiplication by `X` descends to the null-space quotient. -/
+noncomputable def quotientMulX {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) :
+    (Polynomial ℝ ⧸ momentNullSubmodule h hH) →ₗ[ℝ]
+      (Polynomial ℝ ⧸ momentNullSubmodule h hH) := by
+  apply (momentNullSubmodule h hH).liftQ (polynomialMulXToQuotient hH)
+  intro p hp
+  change (momentNullSubmodule h hH).mkQ (Polynomial.X * p) = 0
+  apply (Submodule.Quotient.eq (momentNullSubmodule h hH)).2
+  have hp' : Polynomial.X * p ∈ momentNullSubmodule h hH :=
+    momentNullSubmodule_mulX_invariant hH hC hR hbound p hp
+  simpa using hp'
+
+#print axioms quotientMulX
+
+@[simp] theorem quotientMulX_mk {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) (p : Polynomial ℝ) :
+    quotientMulX hH hC hR hbound (Submodule.Quotient.mk p) =
+      Submodule.Quotient.mk (Polynomial.X * p) := by
+  simp [quotientMulX, Submodule.liftQ_apply, polynomialMulXToQuotient,
+    polynomialMulX, Submodule.mkQ_apply]
+
+/-- The quotient norm squared is exactly the original quadratic form. -/
+theorem momentQuotient_norm_mk_sq {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef) (p : Polynomial ℝ) :
+    ‖(Submodule.Quotient.mk p : Polynomial ℝ ⧸ momentNullSubmodule h hH)‖ ^ 2 =
+      momentQ h p := by
+  rw [← real_inner_self_eq_norm_sq]
+  change quotientMomentInner hH (Submodule.Quotient.mk p) (Submodule.Quotient.mk p) =
+    momentQ h p
+  rw [quotientMomentInner_mk]
+  unfold momentB momentQ
+  rw [pow_two]
+
+/-- Multiplication by `X` is bounded by `R` on the polynomial quotient. -/
+theorem quotientMulX_norm_bound {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k)
+    (q : Polynomial ℝ ⧸ momentNullSubmodule h hH) :
+    ‖quotientMulX hH hC hR hbound q‖ ≤ R * ‖q‖ := by
+  induction q using Submodule.Quotient.induction_on with
+  | _ p =>
+    rw [quotientMulX_mk]
+    have hmul := momentQ_X_mul_le hH hC hR hbound p
+    have hsq :
+        ‖(Submodule.Quotient.mk (Polynomial.X * p) :
+          Polynomial ℝ ⧸ momentNullSubmodule h hH)‖ ^ 2 ≤
+        (R * ‖(Submodule.Quotient.mk p :
+          Polynomial ℝ ⧸ momentNullSubmodule h hH)‖) ^ 2 := by
+      rw [mul_pow, momentQuotient_norm_mk_sq, momentQuotient_norm_mk_sq]
+      exact hmul
+    exact (sq_le_sq₀ (norm_nonneg _) (mul_nonneg hR.le (norm_nonneg _))).mp hsq
+
+#print axioms quotientMulX_norm_bound
+
+/-- Continuous multiplication-by-`X` operator on the polynomial quotient. -/
+noncomputable def quotientMulXContinuous {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) :
+    (Polynomial ℝ ⧸ momentNullSubmodule h hH) →L[ℝ]
+      (Polynomial ℝ ⧸ momentNullSubmodule h hH) :=
+  LinearMap.mkContinuous (quotientMulX hH hC hR hbound) R
+    (quotientMulX_norm_bound hH hC hR hbound)
+
+#print axioms quotientMulXContinuous
+
+/-- Extend multiplication by `X` from the dense polynomial quotient to its Hilbert completion. -/
+noncomputable def momentQuotientEmbedding {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef) :
+    (Polynomial ℝ ⧸ momentNullSubmodule h hH) →L[ℝ] momentHilbert h hH :=
+  UniformSpace.Completion.toComplL (𝕜 := ℝ)
+    (E := Polynomial ℝ ⧸ momentNullSubmodule h hH)
+
+noncomputable def momentHilbertMulX {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) :
+    momentHilbert h hH →L[ℝ] momentHilbert h hH := by
+  let Q := Polynomial ℝ ⧸ momentNullSubmodule h hH
+  let H := momentHilbert h hH
+  let e : Q →L[ℝ] H := momentQuotientEmbedding hH
+  let f : Q →L[ℝ] H := e.comp (quotientMulXContinuous hH hC hR hbound)
+  exact ContinuousLinearMap.extend f e
+
+/-- The completed multiplier agrees with `X` on every polynomial class. -/
+theorem momentHilbertMulX_on_quotient {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) (p : Polynomial ℝ) :
+    momentHilbertMulX hH hC hR hbound
+        (momentQuotientEmbedding hH (Submodule.Quotient.mk p)) =
+      momentQuotientEmbedding hH (Submodule.Quotient.mk (Polynomial.X * p)) := by
+  let Q := Polynomial ℝ ⧸ momentNullSubmodule h hH
+  let e : Q →L[ℝ] momentHilbert h hH := momentQuotientEmbedding hH
+  have hdense : DenseRange (e : Q → momentHilbert h hH) := by
+    change DenseRange (UniformSpace.Completion.coe' : Q → UniformSpace.Completion Q)
+    exact UniformSpace.Completion.denseRange_coe
+  have hunif : IsUniformInducing (e : Q → momentHilbert h hH) := by
+    change IsUniformInducing (UniformSpace.Completion.coe' : Q → UniformSpace.Completion Q)
+    exact UniformSpace.Completion.isUniformInducing_coe Q
+  change (ContinuousLinearMap.extend
+      (e.comp (quotientMulXContinuous hH hC hR hbound)) e)
+      (e (Submodule.Quotient.mk p)) = _
+  rw [ContinuousLinearMap.extend_eq
+    (e.comp (quotientMulXContinuous hH hC hR hbound)) hdense hunif]
+  change e (quotientMulX hH hC hR hbound (Submodule.Quotient.mk p)) =
+    e (Submodule.Quotient.mk (Polynomial.X * p))
+  rw [quotientMulX_mk]
+
+#print axioms momentHilbertMulX_on_quotient
+
+#print axioms momentHilbertMulX
+
+/-- The extended multiplier intertwines the completion embedding with the quotient map. -/
+theorem momentHilbertMulX_coe {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k)
+    (q : Polynomial ℝ ⧸ momentNullSubmodule h hH) :
+    momentHilbertMulX hH hC hR hbound (momentQuotientEmbedding hH q) =
+      momentQuotientEmbedding hH (quotientMulX hH hC hR hbound q) := by
+  induction q using Submodule.Quotient.induction_on with
+  | _ p =>
+    simpa [quotientMulX_mk] using
+      momentHilbertMulX_on_quotient hH hC hR hbound p
+
+#print axioms momentHilbertMulX_coe
+
+/-- Multiplication by `X` is symmetric on the polynomial quotient. -/
+theorem quotientMulX_symmetric {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k)
+    (p q : Polynomial ℝ ⧸ momentNullSubmodule h hH) :
+    inner ℝ (quotientMulX hH hC hR hbound p) q =
+      inner ℝ p (quotientMulX hH hC hR hbound q) := by
+  induction p using Submodule.Quotient.induction_on with
+  | _ a =>
+    induction q using Submodule.Quotient.induction_on with
+    | _ b =>
+      simp only [quotientMulX_mk]
+      change quotientMomentInner hH
+          (Submodule.Quotient.mk (Polynomial.X * a)) (Submodule.Quotient.mk b) =
+        quotientMomentInner hH (Submodule.Quotient.mk a)
+          (Submodule.Quotient.mk (Polynomial.X * b))
+      rw [quotientMomentInner_mk, quotientMomentInner_mk]
+      unfold momentB
+      congr 1
+      ring
+
+#print axioms quotientMulX_symmetric
+
+/-- The continuous extension remains symmetric on the full Hilbert completion. -/
+theorem momentHilbertMulX_symmetric {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k)
+    (x y : momentHilbert h hH) :
+    inner ℝ (momentHilbertMulX hH hC hR hbound x) y =
+      inner ℝ x (momentHilbertMulX hH hC hR hbound y) := by
+  let P : momentHilbert h hH → momentHilbert h hH → Prop := fun u v =>
+    inner ℝ (momentHilbertMulX hH hC hR hbound u) v =
+      inner ℝ u (momentHilbertMulX hH hC hR hbound v)
+  have hclosed : IsClosed {z : momentHilbert h hH × momentHilbert h hH | P z.1 z.2} :=
+    isClosed_eq (by fun_prop) (by fun_prop)
+  change P x y
+  refine UniformSpace.Completion.induction_on₂ (p := P) x y hclosed ?_
+  intro p q
+  change inner ℝ (momentHilbertMulX hH hC hR hbound (p : momentHilbert h hH))
+      (q : momentHilbert h hH) =
+    inner ℝ (p : momentHilbert h hH)
+      (momentHilbertMulX hH hC hR hbound (q : momentHilbert h hH))
+  change inner ℝ (momentHilbertMulX hH hC hR hbound (momentQuotientEmbedding hH p))
+      (momentQuotientEmbedding hH q) =
+    inner ℝ (momentQuotientEmbedding hH p)
+      (momentHilbertMulX hH hC hR hbound (momentQuotientEmbedding hH q))
+  rw [momentHilbertMulX_coe hH hC hR hbound p,
+    momentHilbertMulX_coe hH hC hR hbound q]
+  change inner ℝ
+      ((quotientMulX hH hC hR hbound p :
+        Polynomial ℝ ⧸ momentNullSubmodule h hH) : momentHilbert h hH)
+      (q : momentHilbert h hH) =
+    inner ℝ (p : momentHilbert h hH)
+      ((quotientMulX hH hC hR hbound q :
+        Polynomial ℝ ⧸ momentNullSubmodule h hH) : momentHilbert h hH)
+  simp only [UniformSpace.Completion.inner_coe]
+  exact quotientMulX_symmetric hH hC hR hbound p q
+
+#print axioms momentHilbertMulX_symmetric
 
 end CarryMomentLogConvex
