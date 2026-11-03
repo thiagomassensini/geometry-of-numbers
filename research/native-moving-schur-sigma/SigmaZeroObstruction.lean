@@ -6,6 +6,7 @@ import Mathlib.Analysis.Analytic.OfScalars
 import Mathlib.LinearAlgebra.Matrix.PosDef
 import CarrySelfAdjointOperator.NativeBoundaryArchimedeanDressingSeparation
 import CarrySelfAdjointOperator.NativeScalarGenuineIdentification
+import CarrySelfAdjointOperator.CompletedNativePositiveJacobiResolventAnalytic
 import CPFormal.Analytic.CpGenuineRealAxisPositivity
 import MomentLogConvexity
 
@@ -68,6 +69,7 @@ força a falha de PSD em ordem finita. O teorema usa apenas o fato PROVADO da n�
 namespace CarrySigmaObstruction
 open CarrySelfAdjointOperator CarrySigmaSource CarryMovingSigma CarryMomentLogConvex
   CPFormal.Analytic.Cp
+open CarrySelfAdjointOperator.CompletedNativeRealHPCarrierCertificate
 open scoped BigOperators Matrix Topology
 noncomputable section
 set_option autoImplicit false
@@ -228,6 +230,23 @@ theorem completedSigmaLogJet_eq_logDisplacedProduct (d : ℝ) (n : ℕ)
     rw [displacedProductC_ofReal_eq_density d t hd₁ hd₂, Complex.ofReal_re]
   rw [hfun]
 
+/-- The sigma jets are even in the displacement: the original displaced product
+is unchanged when its two characteristic factors are interchanged. -/
+theorem completedSigmaLogJet_neg (d : ℝ) (n : ℕ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    completedSigmaLogJet (-d) n = completedSigmaLogJet d n := by
+  rw [completedSigmaLogJet_eq_logDisplacedProduct (-d) n (by linarith) (by linarith),
+    completedSigmaLogJet_eq_logDisplacedProduct d n hd₁ hd₂]
+  congr 2
+  funext t
+  have hleft : (t : ℂ) - Complex.I * ((-d : ℝ) : ℂ) =
+      (t : ℂ) + Complex.I * (d : ℂ) := by push_cast; ring
+  have hright : (t : ℂ) + Complex.I * ((-d : ℝ) : ℂ) =
+      (t : ℂ) - Complex.I * (d : ℂ) := by push_cast; ring
+  simp only [displacedProductC, hleft, hright, mul_comm]
+
+#print axioms completedSigmaLogJet_neg
+
 /-- **`D_d` é par no eixo real** (para deslocamento admissível): `D_d(−t) = D_d(t)`. Isto
 justifica que a geradora é genuinamente função de `u = t²` (só potências pares de `t`),
 pela evenness de `F` (`completedNativeOperatorCharacteristic_neg`). -/
@@ -359,6 +378,25 @@ theorem displacedProductC_analyticAt_origin (d : ℝ)
 /-- **Vizinhança de não-anulação da origem (Etapa A.2).** Para `|d|<1/2`, `D_d` não se anula
 numa vizinhança complexa da origem — pré-requisito para um ramo holomorfo local de `log D_d`
 e da derivada logarítmica `D_d'/D_d`. -/
+theorem displacedProductC_analyticAt_of_shiftedDomains (d : ℝ) (z : ℂ)
+    (hdom₁ : z - Complex.I * (d : ℂ) ∈ completedNativeHeightDomain)
+    (hdom₂ : z + Complex.I * (d : ℂ) ∈ completedNativeHeightDomain) :
+    AnalyticAt ℂ (displacedProductC d) z := by
+  have hg₁ : AnalyticAt ℂ (fun w : ℂ => w - Complex.I * (d : ℂ)) z :=
+    analyticAt_id.sub analyticAt_const
+  have hg₂ : AnalyticAt ℂ (fun w : ℂ => w + Complex.I * (d : ℂ)) z :=
+    analyticAt_id.add analyticAt_const
+  have hF₁ : AnalyticAt ℂ
+      (fun w : ℂ => completedNativeOperatorCharacteristic (w - Complex.I * (d : ℂ))) z :=
+    AnalyticAt.comp (f := fun w : ℂ => w - Complex.I * (d : ℂ))
+      (completedNativeOperatorCharacteristic_analyticAt hdom₁) hg₁
+  have hF₂ : AnalyticAt ℂ
+      (fun w : ℂ => completedNativeOperatorCharacteristic (w + Complex.I * (d : ℂ))) z :=
+    AnalyticAt.comp (f := fun w : ℂ => w + Complex.I * (d : ℂ))
+      (completedNativeOperatorCharacteristic_analyticAt hdom₂) hg₂
+  unfold displacedProductC
+  exact hF₁.mul hF₂
+
 theorem displacedProductC_ne_zero_nhds_zero (d : ℝ)
     (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
     ∀ᶠ z : ℂ in 𝓝 0, displacedProductC d z ≠ 0 := by
@@ -760,6 +798,53 @@ theorem completedSigmaLogJetComplexGeneratingFunction_hasFPowerSeriesAt (d : ℝ
   exact ((completedSigmaLogJetComplexSeries d).hasFPowerSeriesOnBall
     (completedSigmaLogJetComplexSeries_radius_pos d hd₁ hd₂)).hasFPowerSeriesAt
 
+/-- Under all-order positivity, the native analytic generating function and the
+constructed resolvent coincide near the origin.  Both values are identified by
+their convergent sums of the same original sigma jets. -/
+theorem completedSigmaLogJetComplexGeneratingFunction_eq_resolvent_eventually
+    (d : ℝ) (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ))
+    (hσ : ∀ N, (sigmaMatrix d 0 N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ n, |completedSigmaLogJet d n| ≤ C * R ^ n) :
+    ∀ᶠ u : ℂ in 𝓝 0,
+      completedSigmaLogJetComplexGeneratingFunction d u =
+        momentResolventCoefficient
+          (completedSigmaLogJet_hankel_psd_of_sigmaMatrix_psd d hσ)
+          hC hR hbound
+          (momentComplexUnit
+            (completedSigmaLogJet_hankel_psd_of_sigmaMatrix_psd d hσ)) u := by
+  have hseries := completedSigmaLogJetComplexGeneratingFunction_hasFPowerSeriesAt
+    d hd₁ hd₂
+  have hseriesSum := hseries.eventually_hasSum
+  have hnorm : Filter.Tendsto (fun u : ℂ => ‖u‖ * R) (𝓝 0) (𝓝 0) := by
+    have hnorm' : Filter.Tendsto (fun u : ℂ => ‖u‖) (𝓝 0) (𝓝 0) := by
+      simpa using (continuous_norm.continuousAt :
+        ContinuousAt (fun u : ℂ => ‖u‖) (0 : ℂ)).tendsto
+    simpa using hnorm'.mul_const R
+  have hsmall : ∀ᶠ u : ℂ in 𝓝 0, ‖u‖ * R < 1 := by
+    have hevent := hnorm.eventually (Iio_mem_nhds (by norm_num : (0 : ℝ) < 1))
+    simpa using hevent
+  have hresolventSum : ∀ᶠ u : ℂ in 𝓝 0,
+      HasSum (fun n : ℕ => (completedSigmaLogJet d n : ℂ) * u ^ n)
+        (momentResolventCoefficient
+          (completedSigmaLogJet_hankel_psd_of_sigmaMatrix_psd d hσ)
+          hC hR hbound
+          (momentComplexUnit
+            (completedSigmaLogJet_hankel_psd_of_sigmaMatrix_psd d hσ)) u) := by
+    filter_upwards [hsmall] with u hu
+    exact completedSigmaLogJet_resolvent_hasSum_of_sigmaMatrix_psd
+      d hσ hC hR hbound hu
+  filter_upwards [hseriesSum, hresolventSum] with u hsumAnalytic hsumResolvent
+  have hsumAnalytic' :
+      HasSum (fun n : ℕ => (completedSigmaLogJet d n : ℂ) * u ^ n)
+        (completedSigmaLogJetComplexGeneratingFunction d u) := by
+    simpa [completedSigmaLogJetComplexSeries,
+      completedSigmaLogJetComplexGeneratingFunction,
+      FormalMultilinearSeries.ofScalars_apply_eq, mul_comm] using hsumAnalytic
+  exact hsumAnalytic'.unique hsumResolvent
+
+#print axioms completedSigmaLogJetComplexGeneratingFunction_eq_resolvent_eventually
+
 private def oddIndexEquiv : ℕ ≃ {k : ℕ // k % 2 = 1} where
   toFun n := ⟨2 * n + 1, by omega⟩
   invFun k := k.1 / 2
@@ -1035,6 +1120,473 @@ theorem displacedProductC_local_differentialEquation (d : ℝ)
     exact hnonzero hzero
   have hEzero := hE.frequently_zero_iff_eventually_zero.mp hfrequent
   simpa [E, mul_assoc] using hEzero
+
+/-- Under the hypothetical all-order positivity of the original sigma matrices,
+the local differential equation can be written with the constructed moment
+resolvent itself. -/
+theorem displacedProductC_local_resolventDifferentialEquation
+    (d : ℝ) (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ))
+    (hσ : ∀ N, (sigmaMatrix d 0 N).PosSemidef) :
+    ∃ C R : ℝ, ∃ hC : 0 ≤ C, ∃ hR : 0 < R,
+      ∃ hbound : ∀ n, |completedSigmaLogJet d n| ≤ C * R ^ n,
+      ∀ᶠ z : ℂ in 𝓝 0,
+        deriv (displacedProductC d) z +
+          4 * z * momentResolventCoefficient
+            (completedSigmaLogJet_hankel_psd_of_sigmaMatrix_psd d hσ)
+            hC hR hbound
+            (momentComplexUnit
+              (completedSigmaLogJet_hankel_psd_of_sigmaMatrix_psd d hσ)) (z ^ 2) *
+          displacedProductC d z = 0 := by
+  obtain ⟨C, R, hC, hR, hbound⟩ :=
+    completedSigmaLogJet_exponential_bound d hd₁ hd₂
+  let hH := completedSigmaLogJet_hankel_psd_of_sigmaMatrix_psd d hσ
+  have hlocal := displacedProductC_local_differentialEquation d hd₁ hd₂
+  have hresolvent := completedSigmaLogJetComplexGeneratingFunction_eq_resolvent_eventually
+    d hd₁ hd₂ hσ hC hR hbound
+  have hsq : Filter.Tendsto (fun z : ℂ => z ^ 2) (𝓝 0) (𝓝 0) := by
+    have hc : Continuous (fun z : ℂ => z ^ 2) := by fun_prop
+    simpa using (hc.continuousAt : ContinuousAt (fun z : ℂ => z ^ 2) 0).tendsto
+  have hresolventSq := hsq.eventually hresolvent
+  refine ⟨C, R, hC, hR, hbound, ?_⟩
+  filter_upwards [hlocal, hresolventSq] with z hz hG
+  rw [hG] at hz
+  simpa [hH] using hz
+
+#print axioms displacedProductC_local_resolventDifferentialEquation
+
+/-- The upper right strip joining the origin to the shifted zero when `d>0`. -/
+def positiveDisplacementDomain (d : ℝ) : Set ℂ :=
+  {z | 0 < z.re ∧ 0 < z.im ∧ z.im < (1 / 2 : ℝ) - d}
+
+theorem positiveDisplacementDomain_isOpen (d : ℝ) :
+    IsOpen (positiveDisplacementDomain d) := by
+  change IsOpen ({z : ℂ | 0 < z.re} ∩
+    ({z : ℂ | 0 < z.im} ∩ {z : ℂ | z.im < (1 / 2 : ℝ) - d}))
+  exact (isOpen_lt continuous_const Complex.continuous_re).inter
+    ((isOpen_lt continuous_const Complex.continuous_im).inter
+      (isOpen_lt Complex.continuous_im continuous_const))
+
+theorem positiveDisplacementDomain_convex (d : ℝ) :
+    Convex ℝ (positiveDisplacementDomain d) := by
+  change Convex ℝ ({z : ℂ | 0 < z.re} ∩
+    ({z : ℂ | 0 < z.im} ∩ {z : ℂ | z.im < (1 / 2 : ℝ) - d}))
+  exact (convex_halfSpace_re_gt 0).inter
+    ((convex_halfSpace_im_gt 0).inter
+      (convex_halfSpace_im_lt ((1 / 2 : ℝ) - d)))
+
+theorem positiveDisplacementDomain_sq_im_pos {d : ℝ} {z : ℂ}
+    (hz : z ∈ positiveDisplacementDomain d) : 0 < (z ^ 2).im := by
+  rcases hz with ⟨hzre, hzim, _⟩
+  have him : (z ^ 2).im = 2 * z.re * z.im := by
+    rw [pow_two, Complex.mul_im]
+    ring
+  rw [him]
+  positivity
+
+/-- Both factors of the original displaced characteristic remain in its natural
+strip throughout the upper right continuation domain. -/
+theorem displacedProductC_analyticOnNhd_positiveDomain (d : ℝ)
+    (hd₀ : 0 < d) (hd₁ : d < (1 / 4 : ℝ)) :
+    AnalyticOnNhd ℂ (displacedProductC d) (positiveDisplacementDomain d) := by
+  intro z hz
+  rcases hz with ⟨hzre, hzim, hzimUpper⟩
+  have him₁ : (z - Complex.I * (d : ℂ)).im = z.im - d := by simp
+  have him₂ : (z + Complex.I * (d : ℂ)).im = z.im + d := by simp
+  have hdom₁ : z - Complex.I * (d : ℂ) ∈ completedNativeHeightDomain := by
+    rw [mem_completedNativeHeightDomain_iff_im_bounds, him₁]
+    constructor <;> linarith
+  have hdom₂ : z + Complex.I * (d : ℂ) ∈ completedNativeHeightDomain := by
+    rw [mem_completedNativeHeightDomain_iff_im_bounds, him₂]
+    constructor <;> linarith
+  exact displacedProductC_analyticAt_of_shiftedDomains d z hdom₁ hdom₂
+
+/-- The local resolvent differential equation analytically continues from the
+Neumann disk around zero into the entire upper right strip. -/
+theorem displacedProductC_resolventDifferentialEquation_on_positiveDomain
+    (d : ℝ) (hd₀ : 0 < d) (hd₁ : d < (1 / 4 : ℝ))
+    (hσ : ∀ N, (sigmaMatrix d 0 N).PosSemidef) :
+    ∃ C R : ℝ, ∃ hC : 0 ≤ C, ∃ hR : 0 < R,
+      ∃ hbound : ∀ n, |completedSigmaLogJet d n| ≤ C * R ^ n,
+      ∀ z ∈ positiveDisplacementDomain d,
+        deriv (displacedProductC d) z + 4 * z *
+          momentResolventCoefficient
+            (completedSigmaLogJet_hankel_psd_of_sigmaMatrix_psd d hσ)
+            hC hR hbound
+            (momentComplexUnit
+              (completedSigmaLogJet_hankel_psd_of_sigmaMatrix_psd d hσ)) (z ^ 2) *
+          displacedProductC d z = 0 := by
+  have hdLow : -(1 / 2 : ℝ) < d := by linarith
+  have hdHigh : d < (1 / 2 : ℝ) := by linarith
+  obtain ⟨C, R, hC, hR, hbound, hlocal⟩ :=
+    displacedProductC_local_resolventDifferentialEquation d hdLow hdHigh hσ
+  let hH := completedSigmaLogJet_hankel_psd_of_sigmaMatrix_psd d hσ
+  let e := momentComplexUnit hH
+  let G : ℂ → ℂ := momentResolventCoefficient hH hC hR hbound e
+  let E : ℂ → ℂ := fun z => deriv (displacedProductC d) z +
+    4 * z * G (z ^ 2) * displacedProductC d z
+  have hlocalE : E =ᶠ[𝓝 0] 0 := by
+    filter_upwards [hlocal] with z hz
+    simpa [E, G, hH, e] using hz
+  let r : ℝ := min (((1 / 2 : ℝ) - d) / 2) (1 / (R + 1))
+  have hr₁ : 0 < (((1 / 2 : ℝ) - d) / 2) := by linarith
+  have hr₂ : 0 < 1 / (R + 1) := by positivity
+  have hr : 0 < r := by positivity
+  have hrBound₁ : r ≤ (((1 / 2 : ℝ) - d) / 2) := min_le_left _ _
+  have hrBound₂ : r ≤ 1 / (R + 1) := min_le_right _ _
+  have hrQuarter : r < 1 / 4 := by
+    calc
+      r ≤ (((1 / 2 : ℝ) - d) / 2) := hrBound₁
+      _ < 1 / 4 := by linarith
+  have hden : 0 < R + 1 := by linarith
+  have hrTimesR : r * R < 1 := by
+    have hprod : r * (R + 1) ≤ 1 := by
+      have hmul := mul_le_mul_of_nonneg_right hrBound₂ (by positivity : 0 ≤ R + 1)
+      have hcancel : (1 / (R + 1)) * (R + 1) = 1 := by
+        field_simp
+      rw [hcancel] at hmul
+      exact hmul
+    nlinarith
+  have hrSqR : r ^ 2 * R < 1 := by
+    have hrle1 : r ≤ 1 := by
+      calc
+        r ≤ 1 / (R + 1) := hrBound₂
+        _ ≤ 1 := by
+          rw [div_le_one hden]
+          linarith
+    have hrsq : r ^ 2 ≤ r := by
+      calc
+        r ^ 2 = r * r := by ring
+        _ ≤ 1 * r := mul_le_mul_of_nonneg_right hrle1 hr.le
+        _ = r := by ring
+    exact lt_of_le_of_lt (mul_le_mul_of_nonneg_right hrsq hR.le) hrTimesR
+  have hGdiffDisk : DifferentiableOn ℂ G {u : ℂ | ‖u‖ * R < 1} := by
+    intro u hu
+    exact (momentResolventCoefficient_differentiableAt_of_radius
+      hH hC hR hbound e hu).differentiableWithinAt
+  have hGopenDisk : IsOpen {u : ℂ | ‖u‖ * R < 1} := by
+    exact isOpen_lt (continuous_norm.mul continuous_const) continuous_const
+  have hGanalyticDisk : AnalyticOnNhd ℂ G {u : ℂ | ‖u‖ * R < 1} :=
+    hGdiffDisk.analyticOnNhd hGopenDisk
+  have hGdiffNonreal : DifferentiableOn ℂ G {u : ℂ | u.im ≠ 0} := by
+    simpa [G] using momentResolventCoefficient_differentiableOn hH hC hR hbound e
+  have hGopenNonreal : IsOpen {u : ℂ | u.im ≠ 0} :=
+    isOpen_ne_fun Complex.continuous_im continuous_const
+  have hGanalyticNonreal : AnalyticOnNhd ℂ G {u : ℂ | u.im ≠ 0} :=
+    hGdiffNonreal.analyticOnNhd hGopenNonreal
+  have hDanalyticΩ := displacedProductC_analyticOnNhd_positiveDomain d hd₀ hd₁
+  have hDanalyticBall : AnalyticOnNhd ℂ (displacedProductC d) (Metric.ball 0 r) := by
+    intro z hz
+    have hzNorm : ‖z‖ < r := by simpa [Metric.mem_ball, dist_eq_norm] using hz
+    have hzImAbs : |z.im| < 1 / 4 :=
+      lt_of_le_of_lt (Complex.abs_im_le_norm z) (lt_trans hzNorm hrQuarter)
+    have hzImBounds := abs_lt.mp hzImAbs
+    have him₁ : (z - Complex.I * (d : ℂ)).im = z.im - d := by simp
+    have him₂ : (z + Complex.I * (d : ℂ)).im = z.im + d := by simp
+    have hstrip₁ : -1 / 2 < (z - Complex.I * (d : ℂ)).im ∧
+        (z - Complex.I * (d : ℂ)).im < 1 / 2 := by
+      rw [him₁]
+      constructor <;> linarith
+    have hstrip₂ : -1 / 2 < (z + Complex.I * (d : ℂ)).im ∧
+        (z + Complex.I * (d : ℂ)).im < 1 / 2 := by
+      rw [him₂]
+      constructor <;> linarith
+    have hdom₁ : z - Complex.I * (d : ℂ) ∈ completedNativeHeightDomain := by
+      rw [mem_completedNativeHeightDomain_iff_im_bounds]
+      constructor <;> linarith [hstrip₁.1, hstrip₁.2]
+    have hdom₂ : z + Complex.I * (d : ℂ) ∈ completedNativeHeightDomain := by
+      rw [mem_completedNativeHeightDomain_iff_im_bounds]
+      constructor <;> linarith [hstrip₂.1, hstrip₂.2]
+    exact displacedProductC_analyticAt_of_shiftedDomains d z hdom₁ hdom₂
+  have hGsquare : AnalyticOnNhd ℂ (fun z : ℂ => G (z ^ 2))
+      (positiveDisplacementDomain d ∪ Metric.ball 0 r) := by
+    intro z hz
+    rcases hz with hzΩ | hzBall
+    · have him : (z ^ 2).im ≠ 0 :=
+        (ne_of_gt (positiveDisplacementDomain_sq_im_pos hzΩ))
+      have hGz := hGanalyticNonreal (z ^ 2) him
+      have hsq : AnalyticAt ℂ (fun w : ℂ => w ^ 2) z := by fun_prop
+      change AnalyticAt ℂ (G ∘ (fun w : ℂ => w ^ 2)) z
+      exact (AnalyticAt.comp (g := G) (f := fun w : ℂ => w ^ 2) (x := z)
+        hGz hsq)
+    · have hzNorm : ‖z‖ < r := by simpa [Metric.mem_ball, dist_eq_norm] using hzBall
+      have hrad : ‖z ^ 2‖ * R < 1 := by
+        rw [norm_pow]
+        have hnormSq : ‖z‖ ^ 2 < r ^ 2 := by
+          nlinarith [sq_nonneg (r - ‖z‖), norm_nonneg z]
+        exact lt_of_lt_of_le
+          (mul_lt_mul_of_pos_right hnormSq hR)
+          (le_of_lt hrSqR)
+      have hGz := hGanalyticDisk (z ^ 2) hrad
+      have hsq : AnalyticAt ℂ (fun w : ℂ => w ^ 2) z := by fun_prop
+      change AnalyticAt ℂ (G ∘ (fun w : ℂ => w ^ 2)) z
+      exact (AnalyticAt.comp (g := G) (f := fun w : ℂ => w ^ 2) (x := z)
+        hGz hsq)
+  have hDanalytic : AnalyticOnNhd ℂ (displacedProductC d)
+      (positiveDisplacementDomain d ∪ Metric.ball 0 r) := by
+    intro z hz
+    rcases hz with hzΩ | hzBall
+    · exact hDanalyticΩ z hzΩ
+    · exact hDanalyticBall z hzBall
+  have hEanalytic : AnalyticOnNhd ℂ E
+      (positiveDisplacementDomain d ∪ Metric.ball 0 r) := by
+    intro z hz
+    have hDz := hDanalytic z hz
+    have hDdz := hDz.deriv
+    have hGz : AnalyticAt ℂ (fun w : ℂ => G (w ^ 2)) z := hGsquare z hz
+    have hzlin : AnalyticAt ℂ (fun w : ℂ => (4 : ℂ) * w) z := by fun_prop
+    change AnalyticAt ℂ (fun w : ℂ => deriv (displacedProductC d) w +
+      (4 : ℂ) * w * G (w ^ 2) * displacedProductC d w) z
+    exact hDdz.add ((hzlin.mul hGz).mul hDz)
+  let a : ℝ := r / 4
+  let w : ℂ := (a : ℂ) + Complex.I * (a : ℂ)
+  have ha : 0 < a := by positivity
+  have hwRe : w.re = a := by simp [w]
+  have hwIm : w.im = a := by simp [w]
+  have haUpper : a < (1 / 2 : ℝ) - d := by
+    dsimp [a]
+    linarith [hrBound₁]
+  have hwΩ : w ∈ positiveDisplacementDomain d := by
+    rw [positiveDisplacementDomain, Set.mem_setOf_eq, hwRe, hwIm]
+    exact ⟨ha, ha, haUpper⟩
+  have hwNorm : ‖w‖ < r := by
+    have h := Complex.norm_le_abs_re_add_abs_im w
+    rw [hwRe, hwIm, abs_of_pos ha] at h
+    calc
+      ‖w‖ ≤ a + a := h
+      _ = r / 2 := by dsimp [a]; ring
+      _ < r := by linarith
+  have hwBall : w ∈ Metric.ball (0 : ℂ) r := by
+    simpa [Metric.mem_ball, dist_eq_norm] using hwNorm
+  have hUnionPreconnected :
+      IsPreconnected (positiveDisplacementDomain d ∪ Metric.ball (0 : ℂ) r) := by
+    apply IsPreconnected.union' ⟨w, hwΩ, hwBall⟩
+    · exact (positiveDisplacementDomain_convex d).isPreconnected
+    · exact (convex_ball (0 : ℂ) r).isPreconnected
+  have hzeroMem : (0 : ℂ) ∈ positiveDisplacementDomain d ∪ Metric.ball 0 r := by
+    right
+    exact Metric.mem_ball_self hr
+  have hzeroOnUnion : Set.EqOn E 0 (positiveDisplacementDomain d ∪ Metric.ball 0 r) :=
+    hEanalytic.eqOn_zero_of_preconnected_of_eventuallyEq_zero
+      hUnionPreconnected hzeroMem hlocalE
+  refine ⟨C, R, hC, hR, hbound, ?_⟩
+  intro z hz
+  have hzE := hzeroOnUnion (Set.mem_union_left _ hz)
+  simpa [E, G, hH, e] using hzE
+
+#print axioms positiveDisplacementDomain_isOpen
+#print axioms positiveDisplacementDomain_convex
+#print axioms positiveDisplacementDomain_sq_im_pos
+#print axioms displacedProductC_analyticOnNhd_positiveDomain
+#print axioms displacedProductC_resolventDifferentialEquation_on_positiveDomain
+
+/-- The upper right domain accumulates at the origin. -/
+theorem zero_mem_closure_positiveDisplacementDomain (d : ℝ)
+    (hd₀ : 0 < d) (hd₁ : d < (1 / 4 : ℝ)) :
+    (0 : ℂ) ∈ closure (positiveDisplacementDomain d) := by
+  rw [Metric.mem_closure_iff]
+  intro ε hε
+  let a : ℝ := min (ε / 4) (((1 / 2 : ℝ) - d) / 4)
+  have ha : 0 < a := by
+    have hgap : 0 < (1 / 2 : ℝ) - d := by linarith
+    dsimp [a]
+    exact lt_min (by positivity) (by linarith)
+  let w : ℂ := (a : ℂ) + Complex.I * (a : ℂ)
+  have hre : w.re = a := by simp [w]
+  have him : w.im = a := by simp [w]
+  have haUpper : a < (1 / 2 : ℝ) - d := by
+    dsimp [a]
+    have hgap : 0 < (1 / 2 : ℝ) - d := by linarith
+    have hmin := min_le_right (ε / 4) (((1 / 2 : ℝ) - d) / 4)
+    linarith
+  have hwΩ : w ∈ positiveDisplacementDomain d := by
+    rw [positiveDisplacementDomain, Set.mem_setOf_eq, hre, him]
+    exact ⟨ha, ha, haUpper⟩
+  have hnorm : ‖w‖ ≤ a + a := by
+    calc
+      ‖w‖ ≤ |w.re| + |w.im| := Complex.norm_le_abs_re_add_abs_im w
+      _ = a + a := by simp [hre, him, abs_of_pos ha]
+  have hnormlt : ‖w‖ < ε := by
+    calc
+      ‖w‖ ≤ a + a := hnorm
+      _ ≤ ε / 2 := by
+        dsimp [a]
+        have hmin := min_le_left (ε / 4) (((1 / 2 : ℝ) - d) / 4)
+        linarith
+      _ < ε := by linarith
+  have hdist : dist w 0 < ε := by simpa [dist_eq_norm] using hnormlt
+  exact ⟨w, hwΩ, by simpa using hdist⟩
+
+#print axioms zero_mem_closure_positiveDisplacementDomain
+
+/-- All-order positivity of the original sigma matrices would force a holomorphic
+linear ODE for the displaced product throughout the upper right strip. Its solution
+cannot vanish at the shifted zero while the product is nonzero near the origin. -/
+theorem sigmaMatrix_not_all_psd_of_positive_zero
+    (d γ : ℝ) (hd₀ : 0 < d) (hd₁ : d < (1 / 4 : ℝ)) (hγ : 0 < γ)
+    (hzero : completedNativeOperatorCharacteristic (γ : ℂ) = 0) :
+    ¬ ∀ N, (sigmaMatrix d 0 N).PosSemidef := by
+  intro hσ
+  have hdLow : -(1 / 2 : ℝ) < d := by linarith
+  have hdHigh : d < (1 / 2 : ℝ) := by linarith
+  obtain ⟨C, R, hC, hR, hbound, hEDO⟩ :=
+    displacedProductC_resolventDifferentialEquation_on_positiveDomain d hd₀ hd₁ hσ
+  let hH := completedSigmaLogJet_hankel_psd_of_sigmaMatrix_psd d hσ
+  let G : ℂ → ℂ := momentResolventCoefficient hH hC hR hbound (momentComplexUnit hH)
+  let D : ℂ → ℂ := displacedProductC d
+  let Ω := positiveDisplacementDomain d
+  let z₀ : ℂ := (γ : ℂ) + Complex.I * (d : ℂ)
+  have hz₀re : z₀.re = γ := by simp [z₀]
+  have hz₀im : z₀.im = d := by simp [z₀]
+  have hz₀Ω : z₀ ∈ Ω := by
+    change z₀ ∈ positiveDisplacementDomain d
+    rw [positiveDisplacementDomain, Set.mem_setOf_eq, hz₀re, hz₀im]
+    exact ⟨hγ, hd₀, by linarith⟩
+  have hDanalyticΩ : AnalyticOnNhd ℂ D Ω := by
+    simpa [D, Ω] using displacedProductC_analyticOnNhd_positiveDomain d hd₀ hd₁
+  have hDanalytic : AnalyticAt ℂ D z₀ := hDanalyticΩ z₀ hz₀Ω
+  have hDzero : D z₀ = 0 := by
+    simpa [D, z₀] using displacedProductC_vanishes_at_shifted_zero d γ hzero
+  have hGnonreal : DifferentiableOn ℂ G {u : ℂ | u.im ≠ 0} := by
+    simpa [G] using momentResolventCoefficient_differentiableOn hH hC hR hbound
+      (momentComplexUnit hH)
+  have huim : (z₀ ^ 2).im ≠ 0 := by
+    rw [shifted_zero_u_im]
+    exact mul_ne_zero (mul_ne_zero two_ne_zero (ne_of_gt hγ)) (ne_of_gt hd₀)
+  have hGanalytic : AnalyticAt ℂ G (z₀ ^ 2) :=
+    (hGnonreal.analyticOnNhd
+      (isOpen_ne_fun Complex.continuous_im continuous_const)) (z₀ ^ 2) huim
+  have hsq : AnalyticAt ℂ (fun z : ℂ => z ^ 2) z₀ := by fun_prop
+  have hGsq : AnalyticAt ℂ (fun z : ℂ => G (z ^ 2)) z₀ :=
+    AnalyticAt.comp_of_eq (g := G) (f := fun z : ℂ => z ^ 2)
+      (y := z₀ ^ 2) (x := z₀) hGanalytic hsq rfl
+  let A : ℂ → ℂ := fun z => -(4 * z * G (z ^ 2))
+  have hAanalytic : AnalyticAt ℂ A z₀ := by
+    dsimp [A]
+    fun_prop
+  have hDnearZero : ∀ᶠ z : ℂ in 𝓝 0, D z ≠ 0 := by
+    simpa [D] using displacedProductC_ne_zero_nhds_zero d hdLow hdHigh
+  have hzeroClosure : (0 : ℂ) ∈ closure Ω := by
+    simpa [Ω] using zero_mem_closure_positiveDisplacementDomain d hd₀ hd₁
+  by_cases horderTop : analyticOrderAt D z₀ = ⊤
+  · have hlocalZero : D =ᶠ[𝓝 z₀] 0 := analyticOrderAt_eq_top.mp horderTop
+    have hDzeroΩ := hDanalyticΩ.eqOn_zero_of_preconnected_of_eventuallyEq_zero
+      (positiveDisplacementDomain_convex d).isPreconnected hz₀Ω hlocalZero
+    obtain ⟨z, hzD, hzΩ⟩ := (mem_closure_iff_nhds.mp hzeroClosure)
+      {z : ℂ | D z ≠ 0} hDnearZero
+    exact hzD (hDzeroΩ hzΩ)
+  · have hDorderNat :
+        (analyticOrderNatAt D z₀ : ℕ∞) = analyticOrderAt D z₀ :=
+      Nat.cast_analyticOrderNatAt horderTop
+    have hEqEventually : (fun z : ℂ => deriv D z) =ᶠ[𝓝 z₀]
+        (fun z : ℂ => A z * D z) := by
+      filter_upwards [(positiveDisplacementDomain_isOpen d).mem_nhds hz₀Ω]
+        with z hz
+      have hzODE := hEDO z hz
+      have hsum : deriv D z + 4 * z * G (z ^ 2) * D z = 0 := by
+        simpa [D, G, hH] using hzODE
+      calc
+        deriv D z = -(4 * z * G (z ^ 2) * D z) := eq_neg_of_add_eq_zero_left hsum
+        _ = A z * D z := by dsimp [A]; ring
+    have hOrderEq : analyticOrderAt (deriv D) z₀ =
+        analyticOrderAt A z₀ + analyticOrderAt D z₀ := by
+      calc
+        analyticOrderAt (deriv D) z₀ =
+            analyticOrderAt (fun z : ℂ => A z * D z) z₀ :=
+          analyticOrderAt_congr hEqEventually
+        _ = analyticOrderAt A z₀ + analyticOrderAt D z₀ := by
+          change analyticOrderAt (A * D) z₀ = _
+          exact analyticOrderAt_mul hAanalytic hDanalytic
+    have hDerivativeOrder := hDanalytic.analyticOrderAt_deriv_add_one
+    have hDerivativeOrder' : analyticOrderAt (deriv D) z₀ + 1 =
+        analyticOrderAt D z₀ := by
+      simpa [hDzero] using hDerivativeOrder
+    rw [hOrderEq, ← hDorderNat] at hDerivativeOrder'
+    cases hAorder : analyticOrderAt A z₀ with
+    | top =>
+        rw [hAorder] at hDerivativeOrder'
+        simp at hDerivativeOrder'
+    | coe m =>
+        rw [hAorder] at hDerivativeOrder'
+        simp only [← ENat.coe_one, ← ENat.coe_add] at hDerivativeOrder'
+        have hnat : m + analyticOrderNatAt D z₀ + 1 = analyticOrderNatAt D z₀ := by
+          exact_mod_cast hDerivativeOrder'
+        omega
+
+#print axioms sigmaMatrix_not_all_psd_of_positive_zero
+
+/-- Evenness of the original jets transports all-order positivity from a negative
+displacement to the corresponding positive displacement. -/
+theorem sigmaMatrix_not_all_psd_of_negative_zero
+    (d γ : ℝ) (hd₀ : d < 0) (hd₁ : -(1 / 4 : ℝ) < d) (hγ : 0 < γ)
+    (hzero : completedNativeOperatorCharacteristic (γ : ℂ) = 0) :
+    ¬ ∀ N, (sigmaMatrix d 0 N).PosSemidef := by
+  intro hσ
+  have hlow : -(1 / 2 : ℝ) < d := by linarith
+  have hhigh : d < (1 / 2 : ℝ) := by linarith
+  have hσneg : ∀ N, (sigmaMatrix (-d) 0 N).PosSemidef := by
+    intro N
+    have hmat : sigmaMatrix (-d) 0 N = sigmaMatrix d 0 N := by
+      rw [completedSigmaLogJet_sigmaMatrix_eq_hankel (-d) N,
+        completedSigmaLogJet_sigmaMatrix_eq_hankel d N]
+      ext i j
+      simp only [hankelMatrix]
+      exact completedSigmaLogJet_neg d (i.val + j.val)
+        (by linarith) (by linarith)
+    rw [hmat]
+    exact hσ N
+  have hnot := sigmaMatrix_not_all_psd_of_positive_zero (-d) γ
+    (by linarith) (by linarith) hγ hzero
+  exact hnot hσneg
+
+#print axioms sigmaMatrix_not_all_psd_of_negative_zero
+
+/-- The sigma matrix is symmetric, so failure of positive semidefiniteness gives
+a real coefficient vector with strictly negative original sigma quadratic form. -/
+theorem exists_sigmaMatrix_negative_direction {d : ℝ}
+    (hnot : ¬ ∀ N, (sigmaMatrix d 0 N).PosSemidef) :
+    ∃ N : ℕ, ∃ v : Fin N → ℝ, v ≠ 0 ∧
+      v ⬝ᵥ (sigmaMatrix d 0 N *ᵥ v) < 0 := by
+  push Not at hnot
+  rcases hnot with ⟨N, hN⟩
+  let M := sigmaMatrix d 0 N
+  have hsymm : M.IsSymm := by
+    simpa [M] using CarryMovingSigma.sigma_matrix_symm d 0 N
+  have hHerm : M.IsHermitian := by simpa using hsymm
+  have hnotQuad : ¬ ∀ v : Fin N → ℝ, 0 ≤ star v ⬝ᵥ (M *ᵥ v) := by
+    intro hquad
+    apply hN
+    exact Matrix.posSemidef_iff_dotProduct_mulVec.mpr ⟨hHerm, hquad⟩
+  push Not at hnotQuad
+  rcases hnotQuad with ⟨v, hv⟩
+  have hvneg : v ⬝ᵥ (M *ᵥ v) < 0 := by
+    simpa [Pi.star_apply, star_trivial] using hv
+  have hvne : v ≠ 0 := by
+    intro hv0
+    subst v
+    simp at hvneg
+  exact ⟨N, v, hvne, by simpa [M] using hvneg⟩
+
+#print axioms exists_sigmaMatrix_negative_direction
+
+/-- **Original-source finite-order obstruction.** Given a positive-height zero of
+the native completed characteristic, every nonzero shift with `|d|<1/4` has a
+finite original sigma matrix and a real nonzero direction of strictly negative
+quadratic form. -/
+theorem exists_sigmaMatrix_negative_direction_of_zero
+    (d γ : ℝ) (hγ : 0 < γ) (hd₀ : 0 < |d|) (hd₁ : |d| < (1 / 4 : ℝ))
+    (hzero : completedNativeOperatorCharacteristic (γ : ℂ) = 0) :
+    ∃ N : ℕ, ∃ v : Fin N → ℝ, v ≠ 0 ∧
+      v ⬝ᵥ (sigmaMatrix d 0 N *ᵥ v) < 0 := by
+  have habs := abs_lt.mp hd₁
+  have hdne : d ≠ 0 := abs_pos.mp hd₀
+  by_cases hdpos : 0 < d
+  · exact exists_sigmaMatrix_negative_direction
+      (sigmaMatrix_not_all_psd_of_positive_zero d γ hdpos habs.2 hγ hzero)
+  · have hdneg : d < 0 := lt_of_le_of_ne (not_lt.mp hdpos) hdne
+    exact exists_sigmaMatrix_negative_direction
+      (sigmaMatrix_not_all_psd_of_negative_zero d γ hdneg habs.1 hγ hzero)
+
+#print axioms exists_sigmaMatrix_negative_direction_of_zero
 
 /-! ### CHECKPOINT A — identidade diferencial local (FECHADO)
 

@@ -299,3 +299,52 @@ e `Quot.sound`; os módulos `MomentLogConvexity` e `SigmaZeroObstruction` compil
 de zero e propagar a EDO até o zero deslocado. Em seguida ainda é necessário extrair uma ordem
 finita e uma direção negativa para a `sigmaMatrix` original; a obstrução all-order não está
 provada.
+
+## Fechamento da missão — obstrução finita para a `sigmaMatrix` original
+
+**PROVADO:** sob as hipóteses explícitas `γ > 0` e
+`completedNativeOperatorCharacteristic (γ : ℂ) = 0`, para todo `d` com
+`0 < |d| < 1/4` existe uma ordem finita `N` e um vetor real não nulo `v : Fin N → ℝ` tal que
+
+\[
+v^\top\,\texttt{sigmaMatrix}(d,0,N)\,v < 0.
+\]
+
+O resultado final é `exists_sigmaMatrix_negative_direction_of_zero`. A prova não pressupõe uma
+medida de Hamburger, um operador representante, positividade no centro, nem uma sequência
+auxiliar. Sob a hipótese temporária de PSD all-order da matriz original, H1 é transferida para
+os mesmos `completedSigmaLogJet`; a cota H2 vem da série analítica da fonte geométrica. O lema
+geral `momentQ_X_mul_le` prova a multiplicação limitada por log-convexidade, e os módulos de
+momentos constroem o quociente, sua completude, o operador auto-adjunto limitado, a recuperação
+de todos os momentos e a resolvente complexa.
+
+`completedSigmaLogJetComplexGeneratingFunction_eq_resolvent_eventually` identifica as duas
+somas convergentes dos jets originais perto da origem. A EDO local passa para a resolvente
+construída e, por unicidade analítica em um conjunto preconexo, propaga-se ao domínio superior
+direito até `γ+id`. A ordem analítica de um zero contradiz a EDO; o caso de ordem infinita é
+excluído pelo princípio da identidade e pela não-anulação já provada perto de zero. A paridade
+`completedSigmaLogJet_neg` transfere o resultado ao deslocamento negativo. Por fim, a
+simetria da matriz e `posSemidef_iff_dotProduct_mulVec` extraem uma direção quadrática
+estritamente negativa.
+
+A existência de `γ > 0` com `F(γ)=0` continua como hipótese matemática explícita do teorema,
+conforme delimitado na missão; este trabalho não afirma provar essa existência. O resultado
+final, porém, atua diretamente sobre a `sigmaMatrix` original e fornece `N` e `v`, em vez de
+uma conclusão abstrata sobre um predicado `Pole`.
+
+**ABERTO:** somente a prova independente da existência de um zero positivo `γ`; ela permanece
+fora das hipóteses da obstrução condicional solicitada. Não há obrigação pendente nos
+checkpoints A–D nem na conclusão condicional sobre a matriz sigma.
+
+**REFUTADO:** nenhuma etapa da construção foi refutada.
+
+**COMPILAÇÃO:**
+
+- `bash research/native-moving-schur-sigma/compile_module.sh MomentLogConvexity` — sucesso com
+  `-DwarningAsError=true`.
+- `bash research/native-moving-schur-sigma/compile_module.sh SigmaZeroObstruction` — sucesso com
+  `-DwarningAsError=true`.
+- Os novos resultados passam `#print axioms` com apenas `propext`, `Classical.choice` e
+  `Quot.sound`; não há `sorry` nem `admit` nos módulos alterados.
+
+**GIT:** alterações preparadas para publicação na branch `agent/native-moving-schur-sigma`.

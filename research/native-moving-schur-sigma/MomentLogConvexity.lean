@@ -1278,6 +1278,38 @@ theorem momentResolventCoefficient_differentiableAt {h : ℕ → ℝ}
     momentResolventReadout e (Ring.inverse (1 - z • A))) u
   simpa only [Function.comp_def] using DifferentiableAt.comp u hread hcomp
 
+/-- The resolvent coefficient is differentiable throughout the explicit Neumann
+disk supplied by H2, including its real diameter. -/
+theorem momentResolventCoefficient_differentiableAt_of_radius {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k)
+    (e : momentComplexHilbert hH) {u : ℂ} (hu : ‖u‖ * R < 1) :
+    DifferentiableAt ℂ (momentResolventCoefficient hH hC hR hbound e) u := by
+  let A := momentComplexMulX hH hC hR hbound
+  have hAnorm : ‖A‖ ≤ R := momentComplexMulX_norm_le hH hC hR hbound
+  have hsmall : ‖u • A‖ < 1 := by
+    rw [norm_smul]
+    calc
+      ‖u‖ * ‖A‖ ≤ ‖u‖ * R :=
+        mul_le_mul_of_nonneg_left hAnorm (norm_nonneg u)
+      _ < 1 := hu
+  have hunit : IsUnit (1 - u • A) := isUnit_one_sub_of_norm_lt_one hsmall
+  have hinv : DifferentiableAt ℂ Ring.inverse (1 - u • A) :=
+    differentiableAt_inverse hunit
+  have hmul : DifferentiableAt ℂ (fun z : ℂ => z • A) u :=
+    (differentiableAt_id : DifferentiableAt ℂ (fun z : ℂ => z) u).smul_const A
+  have harg : DifferentiableAt ℂ (fun z : ℂ => 1 - z • A) u := hmul.const_sub 1
+  have hcomp : DifferentiableAt ℂ (fun z : ℂ => Ring.inverse (1 - z • A)) u := by
+    simpa only [Function.comp_def] using DifferentiableAt.comp u hinv harg
+  have hread : DifferentiableAt ℂ (momentResolventReadout e)
+      (Ring.inverse (1 - u • A)) := (momentResolventReadout e).differentiableAt
+  change DifferentiableAt ℂ
+    (fun z : ℂ => momentResolventReadout e (Ring.inverse (1 - z • A))) u
+  simpa only [Function.comp_def] using DifferentiableAt.comp u hread hcomp
+
+#print axioms momentResolventCoefficient_differentiableAt_of_radius
+
 /-- Holomorphy of the scalar moment resolvent on the complement of the real axis. -/
 theorem momentResolventCoefficient_differentiableOn {h : ℕ → ℝ}
     (hH : ∀ N, (hankelMatrix h N).PosSemidef)
