@@ -231,8 +231,10 @@ no intervalo.
 As derivadas são as derivadas iteradas reais das funções geradoras originais. O teorema
 `completedSigmaLogJetGeneratingFunction_transverse_pde_at_center` cobre funcionalmente o
 ponto `u=0`: a série convergente identifica `G_d(0)=h₀(d)` e `∂ᵤG_d(0)=h₁(d)`, e a equação
-reduz à curvatura de `h₀`. Junto ao resultado para `t ≠ 0`, isso prova a PDE funcional no
-centro e numa vizinhança perfurada de `u=0`. `#print axioms` mostra apenas `[propext,
+reduz à curvatura de `h₀`. Para algum `η > 0`, o teorema com `t ≠ 0` cobre
+`0 < u = t² < η²`; junto ao caso central, a PDE fica provada numa vizinhança relativa a
+`u ≥ 0`, que é o domínio radial vindo de `u=t²`. Não foi afirmada a continuação para `u<0`.
+`#print axioms` mostra apenas `[propext,
 Classical.choice, Quot.sound]` para os teoremas novos. O stencil de raio imaginário segue
 sendo uma média analítica, sem identificação com o bracket aritmético `C2`.
 
