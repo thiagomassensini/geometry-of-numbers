@@ -175,6 +175,97 @@ theorem shifted_zero_u_im (γ d : ℝ) :
     Complex.I_re, Complex.I_im, Complex.ofReal_re, Complex.ofReal_im]
   ring
 
+/-! ## Parte 3b — a função geradora dos jets: normalização e identidade de coeficientes
+
+Avanço efetivo sobre a fonte original (não condicional, salvo admissibilidade do
+deslocamento). Aqui `L = log D_d` com `D_d = displacedProductC d`. A função geradora
+pretendida é `G_d(u) = ∑ₙ hₙ(d) uⁿ` com `hₙ(d) = completedSigmaLogJet d n`. A fórmula
+candidata `G_d(t²) = −(1/4t)·D_d'(t)/D_d(t)` tem o coeficiente `1/4` **verificado por
+derivação** (não copiado como axioma): de `(2n+2)! = 2(n+1)(2n+1)!` segue
+`(n+1)/(2(2n+2)!) = 1/(4(2n+1)!)`, e expandindo `−L'(t)/(4t)` com `L` par o coeficiente de
+`t^{2n}` é exatamente `−L^{(2n+2)}(0)/(4(2n+1)!)`. A normalização do Lean é feita sob medida
+para isso. -/
+
+/-- **Normalização 1/4 (derivada, não assumida).** O coeficiente da definição é exatamente
+`−1/(4·(2n+1)!)`: `completedSigmaLogJet d n = −(1/(4(2n+1)!))·L^{(2n+2)}(0)`, `L = log densidade`. -/
+theorem completedSigmaLogJet_quarter_normalization (d : ℝ) (n : ℕ) :
+    completedSigmaLogJet d n =
+      -(1 / (4 * ((2 * n + 1).factorial : ℝ))) *
+        iteratedDeriv (2 * n + 2) (fun t : ℝ => Real.log (completedSigmaDensity d t)) 0 := by
+  have hf : ((2 * n + 1).factorial : ℝ) ≠ 0 := by
+    exact_mod_cast (Nat.factorial_pos (2 * n + 1)).ne'
+  have hcoef : (-((n + 1 : ℕ) : ℝ) / (2 * ((2 * n + 2).factorial : ℝ)))
+      = -(1 / (4 * ((2 * n + 1).factorial : ℝ))) := by
+    have hs : ((2 * n + 2).factorial : ℝ) = (2 * (n : ℝ) + 2) * ((2 * n + 1).factorial : ℝ) := by
+      have h2 : (2 * n + 2).factorial = (2 * n + 2) * (2 * n + 1).factorial := by
+        have e : 2 * n + 2 = (2 * n + 1) + 1 := by ring
+        rw [e, Nat.factorial_succ]
+      rw [h2]; push_cast; ring
+    rw [hs]; push_cast; field_simp; ring
+  unfold completedSigmaLogJet
+  rw [hcoef]
+
+/-- **Jets = coeficientes log-derivativos da fonte original deslocada.** Para deslocamento
+admissível, cada jet é o `(2n+2)`-ésimo coeficiente de Taylor (normalizado por `1/(4(2n+1)!)`)
+de `log D_d` na fonte **original** `D_d = F(t−id)·F(t+id)`. Liga `completedSigmaLogJet` a
+`completedNativeOperatorCharacteristic` sem predicado abstrato. -/
+theorem completedSigmaLogJet_eq_logDisplacedProduct (d : ℝ) (n : ℕ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    completedSigmaLogJet d n =
+      -(1 / (4 * ((2 * n + 1).factorial : ℝ))) *
+        iteratedDeriv (2 * n + 2)
+          (fun t : ℝ => Real.log ((displacedProductC d (t : ℂ)).re)) 0 := by
+  rw [completedSigmaLogJet_quarter_normalization]
+  have hfun : (fun t : ℝ => Real.log (completedSigmaDensity d t))
+      = (fun t : ℝ => Real.log ((displacedProductC d (t : ℂ)).re)) := by
+    funext t
+    rw [displacedProductC_ofReal_eq_density d t hd₁ hd₂, Complex.ofReal_re]
+  rw [hfun]
+
+/-- **`D_d` é par no eixo real** (para deslocamento admissível): `D_d(−t) = D_d(t)`. Isto
+justifica que a geradora é genuinamente função de `u = t²` (só potências pares de `t`),
+pela evenness de `F` (`completedNativeOperatorCharacteristic_neg`). -/
+theorem displacedProductC_even_ofReal (d t : ℝ)
+    (hd₁ : -(1 / 2 : ℝ) < d) (hd₂ : d < (1 / 2 : ℝ)) :
+    displacedProductC d (-(t : ℂ)) = displacedProductC d (t : ℂ) := by
+  have hsp : operatorHeightParameter ((t : ℂ) + Complex.I * (d : ℂ)) ∈ genuineCriticalStrip := by
+    have e : (t : ℂ) + Complex.I * (d : ℂ) = displacedHeight (-d) t := by
+      unfold displacedHeight; push_cast; ring
+    rw [e]; exact displacedHeight_strip (-d) t (by linarith) (by linarith)
+  have hsm : operatorHeightParameter ((t : ℂ) - Complex.I * (d : ℂ)) ∈ genuineCriticalStrip := by
+    have e : (t : ℂ) - Complex.I * (d : ℂ) = displacedHeight d t := rfl
+    rw [e]; exact displacedHeight_strip d t hd₁ hd₂
+  unfold displacedProductC
+  have h1 : completedNativeOperatorCharacteristic (-(t : ℂ) - Complex.I * (d : ℂ))
+      = completedNativeOperatorCharacteristic ((t : ℂ) + Complex.I * (d : ℂ)) := by
+    have e : -(t : ℂ) - Complex.I * (d : ℂ) = -((t : ℂ) + Complex.I * (d : ℂ)) := by ring
+    rw [e, completedNativeOperatorCharacteristic_neg hsp]
+  have h2 : completedNativeOperatorCharacteristic (-(t : ℂ) + Complex.I * (d : ℂ))
+      = completedNativeOperatorCharacteristic ((t : ℂ) - Complex.I * (d : ℂ)) := by
+    have e : -(t : ℂ) + Complex.I * (d : ℂ) = -((t : ℂ) - Complex.I * (d : ℂ)) := by ring
+    rw [e, completedNativeOperatorCharacteristic_neg hsm]
+  rw [h1, h2, mul_comm]
+
+/-! ### OBRIGAÇÃO ANALÍTICA RESTANTE (primeira seta ainda ABERTA)
+
+Falta exatamente **um** passo analítico, enunciado aqui com precisão e **não** introduzido
+como hipótese/predicado (`Pole` proibido). Dado `F` analítico no domínio (fato
+`completedNativeOperatorCharacteristic_analyticAt`) e um zero `F(γ)=0`, `γ>0`, com `F` não
+identicamente nulo numa vizinhança conexa de `γ`:
+
+  `logDeriv (fun τ => displacedProductC d τ)` é **meromorfa** em `τ = γ + i d` com **polo
+  simples** (ordem `−1`), pois `D_d = F(·−id)·F(·+id)` herda, de `F(γ)=0`, um zero simples em
+  `τ = γ + i d` (já provado `displacedProductC_vanishes_at_shifted_zero`), e o log-derivada de
+  uma função holomorfa não-identicamente-nula com zero de ordem `m` tem polo simples de
+  resíduo `m`.
+
+Transportando por `u = τ²` (derivada `2τ ≠ 0` em `τ = γ+id ≠ 0`), a geradora
+`G_d(u) = −logDeriv D_d(√u)/(4√u)` tem polo não-removível em `u = (γ+id)²`, cujo
+`Im = 2γd ≠ 0` (já provado `shifted_zero_u_im`). O elo que falta é estritamente a
+meromorfia/ordem do log-derivada (Mathlib: `MeromorphicAt`, `logDeriv`, `AnalyticAt.order`),
+além de `D_d` não-identicamente-nula e `D_d(0) ≠ 0` (zero-free off-axis). Nenhum desses é
+hipótese de sinal. -/
+
 /-! ## Parte 4 — teorema condicional honesto: isolamento da obrigação analítica -/
 
 /-- Deslocamento admissível: estritamente dentro da banda de reflexão. -/
@@ -203,6 +294,9 @@ theorem offcritical_not_posSemidef_of_zero
 #print axioms finite_partial_sum_eq
 #print axioms infinite_geometric_series
 #print axioms cauchy_kernel_denominator_zero_nonreal
+#print axioms completedSigmaLogJet_quarter_normalization
+#print axioms completedSigmaLogJet_eq_logDisplacedProduct
+#print axioms displacedProductC_even_ofReal
 #print axioms displacedProductC_ofReal_eq_density
 #print axioms displacedProductC_vanishes_at_shifted_zero
 #print axioms shifted_zero_u_im
