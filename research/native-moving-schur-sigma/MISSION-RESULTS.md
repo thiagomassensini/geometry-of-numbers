@@ -119,12 +119,14 @@ opostas. Há, porém, um diagrama escalar demonstrável através da resposta log
 derivada transversal completa de `F`; `fullTransverse_eq_normalizedGreen`, onde `F(t) ≠ 0`,
 identifica essa resposta com `2 i F(t) Q(t)`, pois a resposta Green normalizada é
 `Q = -F'/(2F)`; e `completedSigmaLogJet_transverse_mean_eventually` usa os valores deslocados
-desse mesmo `Q` para gerar `t G_d(t²)`. O diagrama fecha para o readout escalar total. Ele não
-identifica cada canal separadamente com os termos deslocados de `Q`, nem transforma o
-cancelamento entre canais na prova do cancelamento do produto. O primeiro é uma compensação
-não trivial da decomposição tilt/completion; o segundo decorre das duas regras da cadeia
-opostas em `F(t-id)F(t+id)`. A relação entre eles é a resposta total compartilhada, não uma
-identidade termo a termo nem uma Gram física positiva.
+desse mesmo `Q` para gerar `t G_d(t²)` localmente. Isso prova uma ponte escalar no centro e
+mostra que a geradora sigma usa a mesma resposta logarítmica original. Ainda não há um diagrama
+formalizado para `d ≠ 0`: a decomposição em tilt/completion não foi estendida aqui aos dois
+argumentos `t±id`. Tampouco cada canal foi identificado separadamente com os termos deslocados
+de `Q`, nem o cancelamento entre canais foi usado como prova do cancelamento do produto. O
+primeiro é uma compensação não trivial da decomposição tilt/completion; o segundo decorre das
+duas regras da cadeia opostas em `F(t-id)F(t+id)`. A ponte provada é do readout escalar central
+para `Q`, não uma identidade termo a termo nem uma Gram física positiva.
 
 ### 6. Positividade central all-order
 
