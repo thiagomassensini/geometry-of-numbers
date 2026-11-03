@@ -110,7 +110,13 @@ Também estão provadas a linearidade escalar `momentFunctional_C_mul` e a conse
 `L(p²)≥0` para todo polinômio. A conversão entre somas de `Fin N` e somas em `range N` é
 explícita, e o teorema passa `#print axioms` com apenas os axiomas padrão.
 
-Isso **não fecha** o Checkpoint B: ainda falta derivar Cauchy–Schwarz e as sequências
+Com a positividade em todas as direções `p + C(t)q`, foi derivada a desigualdade de
+Cauchy–Schwarz `momentB_sq_le_momentQ_mul`, incluindo o caso degenerado `Q(q)=0`; daí,
+`momentB_eq_zero_of_momentQ_eq_zero` registra que todo vetor de norma zero é ortogonal a
+todos os polinômios. Ambos são kernel-checked e passam `#print axioms` com apenas os axiomas
+padrão. A construção do operador ainda não começou.
+
+Isso **não fecha** o Checkpoint B: ainda falta derivar e majorar as sequências
 `a_n=L(X^{2n}p²)` das hipóteses H1/H2, provar
 log-convexidade e crescimento controlado dessas sequências, e só então aplicar a cota de
 razão para obter `L(X²p²)≤R²L(p²)`.

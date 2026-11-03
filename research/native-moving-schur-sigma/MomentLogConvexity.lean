@@ -190,6 +190,62 @@ theorem momentFunctional_square_nonneg {h : ℕ → ℝ}
 
 #print axioms momentFunctional_square_nonneg
 
+/-- The symmetric bilinear form induced by the moment functional. -/
+noncomputable def momentB (h : ℕ → ℝ) (p q : Polynomial ℝ) : ℝ :=
+  momentFunctional h (p * q)
+
+/-- The associated quadratic form. -/
+noncomputable def momentQ (h : ℕ → ℝ) (p : Polynomial ℝ) : ℝ :=
+  momentFunctional h (p ^ 2)
+
+/-- Cauchy--Schwarz for the Hankel form, derived from positivity on squares. -/
+theorem momentB_sq_le_momentQ_mul {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef) (p q : Polynomial ℝ) :
+    (momentB h p q) ^ 2 ≤ momentQ h p * momentQ h q := by
+  have hquad (t : ℝ) :
+      0 ≤ momentQ h p + 2 * t * momentB h p q + t ^ 2 * momentQ h q := by
+    have hpoly :
+        (p + Polynomial.C t * q) ^ 2 =
+          p ^ 2 + Polynomial.C (2 * t) * (p * q) + Polynomial.C (t ^ 2) * q ^ 2 := by
+      rw [pow_two]
+      simp only [map_mul, map_pow, map_ofNat]
+      ring
+    have hn := momentFunctional_square_nonneg hH (p + Polynomial.C t * q)
+    rw [hpoly, momentFunctional_add, momentFunctional_add,
+      momentFunctional_C_mul, momentFunctional_C_mul] at hn
+    simpa [momentB, momentQ] using hn
+  by_cases hq : momentQ h q = 0
+  · have hp := hquad 1
+    have hm := hquad (-1)
+    simp [hq] at hp hm
+    by_contra hx
+    have hx' : momentB h p q ≠ 0 := by
+      intro hz
+      apply hx
+      rw [hz, hq]
+      simp
+    have ht := hquad (-(momentQ h p + 1) / (2 * momentB h p q))
+    simp [hq] at ht
+    field_simp [hx'] at ht
+    nlinarith
+  · have hqpos : 0 < momentQ h q := lt_of_le_of_ne
+      (momentFunctional_square_nonneg hH q) (Ne.symm hq)
+    have h := hquad (-(momentB h p q) / momentQ h q)
+    field_simp [hqpos.ne'] at h
+    nlinarith
+
+#print axioms momentB_sq_le_momentQ_mul
+
+/-- A zero-norm polynomial is orthogonal to every polynomial. -/
+theorem momentB_eq_zero_of_momentQ_eq_zero {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef) {p q : Polynomial ℝ}
+    (hp : momentQ h p = 0) : momentB h p q = 0 := by
+  have hcs := momentB_sq_le_momentQ_mul hH p q
+  rw [hp, zero_mul] at hcs
+  nlinarith [sq_nonneg (momentB h p q)]
+
+#print axioms momentB_eq_zero_of_momentQ_eq_zero
+
 /-- **Cota de razão por log-convexidade (núcleo do Checkpoint B).** Uma sequência
 não-negativa log-convexa com crescimento exponencial limitado satisfaz `a₁ ≤ R²·a₀`.
 Sem hipótese de positividade estrita dos termos. -/
