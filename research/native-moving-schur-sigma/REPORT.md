@@ -233,3 +233,22 @@ Esse módulo fornece a estrutura de base para estender o multiplicador real e fo
 resolvente complexa. Ainda falta construir e validar essa extensão do operador, provar a
 inversibilidade fora do eixo real, a holomorfia e a expansão local. Nenhum teorema de resolvente
 ou propagação foi adicionado nesta etapa.
+
+## Checkpoint D — resolvente complexa fora do eixo real
+
+Em `MomentLogConvexity.lean`, `momentComplexMulX_mem_resolventSet` usa a auto-adjunticidade
+no C⋆-álgebra dos operadores contínuos no Hilbert complexo e o teorema de espectro real para
+provar que todo `z` com `Im z ≠ 0` pertence ao resolvente do multiplicador. A partir disso,
+`momentComplexMulX_one_sub_smul_isUnit` prova que `1-uT` é uma unidade para todo `u` não real,
+via a mudança algébrica de parâmetro `z=u⁻¹`.
+
+`momentResolventCoefficient` agora é a compressão escalar de `Ring.inverse (1-uT)`. O vetor
+foi colocado no primeiro argumento do produto interno complexo para respeitar a convenção do
+Mathlib (conjugado-linear no primeiro argumento) e manter a dependência holomorfa em `u`.
+`momentResolventCoefficient_differentiableAt` e
+`momentResolventCoefficient_differentiableOn` provam diferenciabilidade complexa em todo o
+complemento do eixo real, por composição com a inversão em álgebra de Banach. Os quatro
+resultados passam `#print axioms` com somente `propext`, `Classical.choice` e `Quot.sound`.
+
+**ABERTO:** expansão local em série com os coeficientes recuperados `h_n`; estimativa que
+relaciona o raio da série ao `R` de H2; instanciação sigma e propagação da EDO.

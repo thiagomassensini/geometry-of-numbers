@@ -5,6 +5,10 @@ import Mathlib.Analysis.InnerProductSpace.Basic
 import Mathlib.Analysis.InnerProductSpace.Completion
 import Mathlib.Analysis.InnerProductSpace.Adjoint
 import Mathlib.Analysis.Normed.Operator.Extend
+import Mathlib.Analysis.CStarAlgebra.ContinuousLinearMap
+import Mathlib.Analysis.CStarAlgebra.Spectrum
+import Mathlib.Analysis.Normed.Algebra.GelfandFormula
+import MomentComplexification
 
 /-!
 # Núcleo analítico do Checkpoint B: cota de razão por log-convexidade
@@ -997,5 +1001,230 @@ theorem momentHilbert_recovers_moment {h : ℕ → ℝ}
   norm_num
 
 #print axioms momentHilbert_recovers_moment
+
+/-- Coordinatewise complexification of a bounded real operator. -/
+noncomputable def complexifyMomentOperator {E : Type*}
+    [NormedAddCommGroup E] [InnerProductSpace ℝ E]
+    (T : E →L[ℝ] E) :
+    RealHilbertComplexification E →L[ℂ] RealHilbertComplexification E := by
+  let g : RealHilbertComplexification E → RealHilbertComplexification E :=
+    fun x => RealHilbertComplexification.mk (T (RealHilbertComplexification.re x))
+      (T (RealHilbertComplexification.im x))
+  let f : RealHilbertComplexification E →ₗ[ℂ] RealHilbertComplexification E :=
+    LinearMap.mk (AddHom.mk g (by
+      intro x y
+      apply RealHilbertComplexification.ext (E := E)
+      · simp [g, T.map_add]
+      · simp [g, T.map_add])) (by
+      intro z x
+      apply RealHilbertComplexification.ext (E := E)
+      · simp [g, RealHilbertComplexification.re_smul, map_sub, map_smul]
+      · simp [g, RealHilbertComplexification.im_smul, map_add, map_smul])
+  refine f.mkContinuous ‖T‖ ?_
+  intro x
+  have hx : ‖x‖ ^ 2 = ‖RealHilbertComplexification.re x‖ ^ 2 +
+      ‖RealHilbertComplexification.im x‖ ^ 2 :=
+    WithLp.prod_norm_sq_eq_of_L2 x
+  have hfx : ‖f x‖ ^ 2 = ‖T (RealHilbertComplexification.re x)‖ ^ 2 +
+      ‖T (RealHilbertComplexification.im x)‖ ^ 2 :=
+    WithLp.prod_norm_sq_eq_of_L2 (f x)
+  have hre := T.le_opNorm (RealHilbertComplexification.re x)
+  have him := T.le_opNorm (RealHilbertComplexification.im x)
+  have hre_sq : ‖T (RealHilbertComplexification.re x)‖ ^ 2 ≤
+      ‖T‖ ^ 2 * ‖RealHilbertComplexification.re x‖ ^ 2 := by
+    have hnT := norm_nonneg T
+    have hnx := norm_nonneg (RealHilbertComplexification.re x)
+    have hnTx := norm_nonneg (T (RealHilbertComplexification.re x))
+    nlinarith [sq_nonneg (‖T‖ * ‖RealHilbertComplexification.re x‖ -
+      ‖T (RealHilbertComplexification.re x)‖)]
+  have him_sq : ‖T (RealHilbertComplexification.im x)‖ ^ 2 ≤
+      ‖T‖ ^ 2 * ‖RealHilbertComplexification.im x‖ ^ 2 := by
+    have hnT := norm_nonneg T
+    have hnx := norm_nonneg (RealHilbertComplexification.im x)
+    have hnTx := norm_nonneg (T (RealHilbertComplexification.im x))
+    nlinarith [sq_nonneg (‖T‖ * ‖RealHilbertComplexification.im x‖ -
+      ‖T (RealHilbertComplexification.im x)‖)]
+  have hsq : ‖f x‖ ^ 2 ≤ (‖T‖ * ‖x‖) ^ 2 := by
+    rw [hfx, mul_pow, hx]
+    nlinarith [hre_sq, him_sq]
+  exact (sq_le_sq₀ (norm_nonneg _) (mul_nonneg (norm_nonneg _) (norm_nonneg _))).mp hsq
+
+#print axioms complexifyMomentOperator
+
+/-- Pointwise formula for the bounded complexified operator. -/
+theorem complexifyMomentOperator_apply {E : Type*}
+    [NormedAddCommGroup E] [InnerProductSpace ℝ E]
+    (T : E →L[ℝ] E) (x : RealHilbertComplexification E) :
+    complexifyMomentOperator T x =
+      RealHilbertComplexification.mk (T (RealHilbertComplexification.re x))
+        (T (RealHilbertComplexification.im x)) := by
+  unfold complexifyMomentOperator
+  simp [LinearMap.mkContinuous_apply]
+
+#print axioms complexifyMomentOperator_apply
+
+/-- Complexification preserves symmetry of a real bounded operator. -/
+theorem complexifyMomentOperator_symmetric {E : Type*}
+    [NormedAddCommGroup E] [InnerProductSpace ℝ E] [CompleteSpace E]
+    (T : E →L[ℝ] E)
+    (hSym : ∀ x y, inner ℝ (T x) y = inner ℝ x (T y)) :
+    (complexifyMomentOperator T :
+      RealHilbertComplexification E →ₗ[ℂ] RealHilbertComplexification E).IsSymmetric := by
+  change ∀ x y, inner ℂ (complexifyMomentOperator T x) y =
+    inner ℂ x (complexifyMomentOperator T y)
+  intro x y
+  rw [complexifyMomentOperator_apply, complexifyMomentOperator_apply,
+    RealHilbertComplexification.inner_apply]
+  apply Complex.ext <;>
+    simp [RealHilbertComplexification.complexInner, hSym]
+
+/-- The complexified bounded symmetric operator is self-adjoint. -/
+theorem complexifyMomentOperator_isSelfAdjoint {E : Type*}
+    [NormedAddCommGroup E] [InnerProductSpace ℝ E] [CompleteSpace E]
+    (T : E →L[ℝ] E) (hT : IsSelfAdjoint T) :
+    IsSelfAdjoint (complexifyMomentOperator T) := by
+  apply ContinuousLinearMap.isSelfAdjoint_iff_isSymmetric.mpr
+  apply complexifyMomentOperator_symmetric T
+  intro x y
+  exact hT.isSymmetric x y
+
+#print axioms complexifyMomentOperator_symmetric
+#print axioms complexifyMomentOperator_isSelfAdjoint
+
+/-- Complex Hilbert space associated with the real GNS completion. -/
+abbrev momentComplexHilbert {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef) :=
+  RealHilbertComplexification (momentHilbert h hH)
+
+/-- The moment multiplier acting on the complexification. -/
+noncomputable abbrev momentComplexMulX {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) :
+    momentComplexHilbert hH →L[ℂ] momentComplexHilbert hH :=
+  complexifyMomentOperator (momentHilbertMulX hH hC hR hbound)
+
+/-- The complex moment multiplier remains self-adjoint. -/
+theorem momentComplexMulX_isSelfAdjoint {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) :
+    IsSelfAdjoint (momentComplexMulX hH hC hR hbound) := by
+  apply complexifyMomentOperator_isSelfAdjoint
+  exact momentHilbertMulX_isSelfAdjoint hH hC hR hbound
+
+#print axioms momentComplexMulX_isSelfAdjoint
+
+/-- A nonreal complex number lies in the resolvent set of the complexified
+self-adjoint moment multiplier. -/
+theorem momentComplexMulX_mem_resolventSet {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) {z : ℂ} (hz : z.im ≠ 0) :
+    z ∈ resolventSet ℂ (momentComplexMulX hH hC hR hbound) := by
+  have hnot : z ∉ spectrum ℂ (momentComplexMulX hH hC hR hbound) := by
+    intro hspec
+    have hre := (momentComplexMulX_isSelfAdjoint hH hC hR hbound).mem_spectrum_eq_re hspec
+    have him := congrArg Complex.im hre
+    exact hz (by simpa using him)
+  exact Classical.not_not.mp (by simpa only [spectrum, Set.mem_compl_iff] using hnot)
+
+/-- The usual Neumann denominator is invertible for every nonreal parameter. -/
+theorem momentComplexMulX_one_sub_smul_isUnit {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k) {u : ℂ} (hu : u.im ≠ 0) :
+    IsUnit (1 - u • momentComplexMulX hH hC hR hbound) := by
+  have hu0 : u ≠ 0 := by
+    intro hzero
+    rw [hzero] at hu
+    exact hu (by simp)
+  have hinv_im : (u⁻¹).im ≠ 0 := by
+    intro hzero
+    have hns : Complex.normSq u ≠ 0 := mt Complex.normSq_eq_zero.mp hu0
+    have hdiv : -u.im / Complex.normSq u = 0 := by
+      simpa only [Complex.inv_im] using hzero
+    rcases (div_eq_zero_iff.mp hdiv) with hneg | hnorm
+    · exact hu (neg_eq_zero.mp hneg)
+    · exact hu0 (Complex.normSq_eq_zero.mp hnorm)
+  let z : ℂˣ := Units.mk0 (u⁻¹) (inv_ne_zero hu0)
+  have hres := momentComplexMulX_mem_resolventSet hH hC hR hbound hinv_im
+  have hunit : IsUnit ((z : ℂ) • (1 : momentComplexHilbert hH →L[ℂ]
+      momentComplexHilbert hH) - momentComplexMulX hH hC hR hbound) := by
+    have hunit' := (spectrum.mem_resolventSet_iff).mp hres
+    simpa [z, Units.val_mk0, Algebra.algebraMap_eq_smul_one] using hunit'
+  have hscaled := (IsUnit.smul_sub_iff_sub_inv_smul z
+    (momentComplexMulX hH hC hR hbound)).mp hunit
+  have hzval : (z⁻¹ : ℂ) = u := by
+    simp [z, Units.val_mk0]
+  have hzval' : ((z⁻¹ : ℂˣ) : ℂ) = u := by
+    rw [Units.val_inv_eq_inv_val]
+    exact hzval
+  change IsUnit (1 - ((z⁻¹ : ℂˣ) : ℂ) •
+    momentComplexMulX hH hC hR hbound) at hscaled
+  rw [hzval'] at hscaled
+  exact hscaled
+
+/-- The scalar matrix coefficient of the complex resolvent, with the vector
+in the first slot so it is holomorphic in Mathlib's conjugate-linear-first
+inner-product convention. -/
+noncomputable def momentResolventReadout {H : Type*}
+    [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+    (e : H) : (H →L[ℂ] H) →L[ℂ] ℂ :=
+  (innerSL ℂ e).comp ((ContinuousLinearMap.apply ℂ (E := H) H) e)
+
+/-- Scalar resolvent coefficient of the complexified moment operator. -/
+noncomputable def momentResolventCoefficient {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k)
+    (e : momentComplexHilbert hH) (u : ℂ) : ℂ :=
+  momentResolventReadout e (Ring.inverse
+    (1 - u • momentComplexMulX hH hC hR hbound))
+
+/-- The scalar resolvent coefficient is complex differentiable off the real
+axis. -/
+theorem momentResolventCoefficient_differentiableAt {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k)
+    (e : momentComplexHilbert hH) {u : ℂ} (hu : u.im ≠ 0) :
+    DifferentiableAt ℂ (momentResolventCoefficient hH hC hR hbound e) u := by
+  let A := momentComplexMulX hH hC hR hbound
+  have hunit : IsUnit (1 - u • A) := by
+    exact momentComplexMulX_one_sub_smul_isUnit hH hC hR hbound hu
+  have hinv : DifferentiableAt ℂ Ring.inverse (1 - u • A) :=
+    differentiableAt_inverse hunit
+  have hmul : DifferentiableAt ℂ (fun z : ℂ => z • A) u :=
+    (differentiableAt_id : DifferentiableAt ℂ (fun z : ℂ => z) u).smul_const A
+  have harg : DifferentiableAt ℂ (fun z : ℂ => 1 - z • A) u := hmul.const_sub 1
+  have hcomp : DifferentiableAt ℂ
+      (fun z : ℂ => Ring.inverse (1 - z • A)) u := by
+    simpa only [Function.comp_def] using DifferentiableAt.comp u hinv harg
+  have hread : DifferentiableAt ℂ
+      (momentResolventReadout e : (momentComplexHilbert hH →L[ℂ]
+        momentComplexHilbert hH) → ℂ)
+      (Ring.inverse (1 - u • A)) :=
+    (momentResolventReadout e).differentiableAt
+  change DifferentiableAt ℂ (fun z : ℂ =>
+    momentResolventReadout e (Ring.inverse (1 - z • A))) u
+  simpa only [Function.comp_def] using DifferentiableAt.comp u hread hcomp
+
+/-- Holomorphy of the scalar moment resolvent on the complement of the real axis. -/
+theorem momentResolventCoefficient_differentiableOn {h : ℕ → ℝ}
+    (hH : ∀ N, (hankelMatrix h N).PosSemidef)
+    {C R : ℝ} (hC : 0 ≤ C) (hR : 0 < R)
+    (hbound : ∀ k, |h k| ≤ C * R ^ k)
+    (e : momentComplexHilbert hH) :
+    DifferentiableOn ℂ (momentResolventCoefficient hH hC hR hbound e)
+      {u : ℂ | u.im ≠ 0} := by
+  intro u hu
+  exact (momentResolventCoefficient_differentiableAt hH hC hR hbound e hu).differentiableWithinAt
+
+#print axioms momentComplexMulX_mem_resolventSet
+#print axioms momentComplexMulX_one_sub_smul_isUnit
+#print axioms momentResolventCoefficient_differentiableAt
+#print axioms momentResolventCoefficient_differentiableOn
+
 
 end CarryMomentLogConvex
