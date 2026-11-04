@@ -1,0 +1,2 @@
+'CarrySigmaPade.sigmaPencil_metricSelfAdjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.hermitian_generalizedEigenvector_isotropic' depends on axioms: [propext, Classical.choice, Quot.sound]
