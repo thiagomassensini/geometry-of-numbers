@@ -654,31 +654,49 @@ definida da matriz física complexa 3×3: usa o certificado de duas fontes já
 existente para o bloco inicial e identifica o complemento escalar com `p₂`.
 A conclusão está restrita às três primeiras fontes.
 
-### DERIVADO
+### FASE G — coeficientes homogêneos e torres Hankel
 
-O termo racional homogêneo sugere a identidade finita
+`SecondSchurTowers.lean` formaliza a soma geométrica finita como um polinômio
+homogêneo em duas variáveis para cada momento canônico. O lema
+`nativePhysicalCayleyGeometricPolynomial_mul` prova, inclusive no ponto
+`s+t=0`, a identidade polinomial
 
 \[
-\frac{s^{2n+1}+t^{2n+1}}{s+t}
-=\sum_{r=0}^{2n}(-1)^r s^{2n-r}t^r.
+(s+t)Q_n(s,t)=s^{2n+1}+t^{2n+1},\qquad
+Q_n(s,t)=\sum_{r=0}^{2n}(-1)^r s^{2n-r}t^r.
 \]
 
-Lendo os monômios dessa soma, os setores previstos são
-`4(-1)^(i+j) h_(i+j)` em grau `(2i,2j)`,
-`4(-1)^(i+j) h_(i+j+1)` em grau `(2i+1,2j+1)` e zero nos graus de paridades
-mistas. Isso organiza o cálculo algébrico em duas torres Hankel. A extração
-conjunta desses coeficientes ainda não foi formalizada como teorema Lean
-nesta etapa. Também não foi provada uma fórmula all-order para os pivôs de
-Schur por Vandermonde confluente nem identificada essa série com os estados
-materiais do ledger Green/TFVD.
+Para `s+t ≠ 0`, `nativePhysicalCayleyAnalyticMomentTerm_eq_homogeneous_eval`
+identifica cada termo racional da série local original com a avaliação desse
+polinômio, e `nativePhysicalCayleyHomogeneousPolynomialSeries_hasSum`
+identifica a soma convergente com o kernel analítico local. A hipótese fora da
+diagonal é explícita: o teorema ainda não estende a identidade da soma do
+kernel ao ponto removível `s+t=0`.
+
+`nativePhysicalCayleyHomogeneousPolynomial_coeff` dá todos os coeficientes
+exatos de cada parcela. Em particular, as duas torres são teoremas Lean:
+
+- grau `(2i,2j)`: `4(-1)^(i+j) h_(i+j)`;
+- grau `(2i+1,2j+1)`: `4(-1)^(i+j) h_(i+j+1)`;
+- os dois setores de paridade mista têm coeficiente zero.
+
+Assim, a estrutura de coeficientes das duas Hankels está provada para a série
+homogênea convergente no domínio local declarado; não é apenas uma leitura
+formal do quociente. Seguem abertos a extensão analítica do kernel da soma à
+diagonal removível, a fórmula all-order dos pivôs por Vandermonde confluente,
+sinais independentes para Hankels de ordem arbitrária e a identificação
+dessa série com os estados materiais do ledger Green/TFVD.
 
 ### ABERTO
 
-1. Formalizar em Lean a extensão analítica removível em `s+t=0` e a extração
-   dos coeficientes das duas torres a partir da série convergente.
+1. Formalizar a extensão analítica da soma do kernel no ponto removível
+   `s+t=0`; a identidade polinomial de cada parcela já vale nesse ponto, mas
+   a identificação da soma foi provada somente para `s+t ≠ 0`.
 2. Determinar, em ordem geral, os limites de Schur via Vandermonde confluente.
 3. Obter sinais independentes para Hankel de ordem arbitrária; a positividade
    das três primeiras fontes não implica positividade central all-order.
+4. Identificar a série homogênea com os estados materiais do ledger
+   Green/TFVD.
 
 ### REFUTADO
 
@@ -689,22 +707,25 @@ alteradas.
 
 ### AUDITORIA E PUBLICAÇÃO
 
-`compile_module.sh SecondSchur` e `compile_module.sh Audit` compilaram com
-`-DwarningAsError=true`. A auditoria inclui agora 58 raízes públicas de
-`SecondSchur`; o fecho de tipos e corpos contém 5.559 constantes e aceita
-somente `[propext, Classical.choice, Quot.sound]`. A compilação percorre os
-corpos e tipos transitivos, além de imprimir axiomas para cada raiz; não
-foram introduzidos `sorry`, `admit` nem axiomas novos.
+`compile_module.sh SecondSchurTowers` e `compile_module.sh Audit` compilaram com
+`-DwarningAsError=true`. A auditoria inclui agora 71 raízes públicas de
+`SecondSchur` e `SecondSchurTowers`; o fecho de tipos e corpos contém 5.672
+constantes e aceita somente `[propext, Classical.choice, Quot.sound]`. A
+compilação percorre os corpos e tipos transitivos, além de imprimir axiomas
+para cada raiz; não foram introduzidos `sorry`, `admit` nem axiomas novos.
 
-O push A/B/C está confirmado. Os resultados D/E/F foram validados localmente
-nesta revisão; seus hashes e estado de publicação serão registrados após o
-commit e a comparação do SHA remoto. O cache `.lake` foi preservado. O checkout
-auxiliar Carry contém alterações alheias e não foi limpo nem modificado. O
-validador espera o checkout em `/home/thlinux/worktrees/carry-self-adjoint-operator`,
-mas o checkout existente está em `/home/thlinux/carry-self-adjoint-operator`;
-com uma referência temporária removível para o caminho correto, o preflight
-parou no `assert not git diff HEAD` da linha 45 de `validate.py`, devido às
-alterações locais pré-existentes do Carry. A referência temporária foi removida
-e o checkout não foi alterado. O bloqueio observado está registrado em
+Os resultados D/E/F foram publicados no commit
+[`5e5454a7afa339c63e7d400f0819e6e301d9574c`](https://github.com/thiagomassensini/geometry-of-numbers/commit/5e5454a7afa339c63e7d400f0819e6e301d9574c),
+cujo SHA remoto foi confirmado após o push. A/B/C também permanecem publicados
+nos links acima. A fase G está compilada e auditada nesta revisão; o SHA de
+publicação será acrescentado após o commit e a conferência do remoto. O cache
+`.lake` foi preservado. O checkout auxiliar Carry contém alterações alheias e
+não foi limpo nem modificado. O validador espera o checkout em
+`/home/thlinux/worktrees/carry-self-adjoint-operator`, mas o checkout existente
+está em `/home/thlinux/carry-self-adjoint-operator`; com uma referência
+temporária removível para o caminho correto, o preflight parou no `assert not
+git diff HEAD` da linha 45 de `validate.py`, devido às alterações locais
+pré-existentes do Carry. A referência temporária foi removida e o checkout
+não foi alterado. O bloqueio observado está registrado em
 `evidence/second-schur-preflight-block.md`; as compilações focadas e a auditoria
 transitiva passaram.

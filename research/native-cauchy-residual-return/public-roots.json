@@ -195,6 +195,19 @@
     "CarryCauchyResidual.nativePhysicalP2_eventually_re_pos",
     "CarryCauchyResidual.nativePhysicalP2_eventually_re_pos",
     "CarryCauchyResidual.nativePhysicalCauchyMatrix_three_reindex_eq_fromBlocks",
-    "CarryCauchyResidual.nativePhysicalCauchyMatrix_three_eventually_posDef"
+    "CarryCauchyResidual.nativePhysicalCauchyMatrix_three_eventually_posDef",
+    "CarryCauchyResidual.nativePhysicalCayleyHomogeneousPolynomial",
+    "CarryCauchyResidual.nativePhysicalCayleyGeometricPolynomial",
+    "CarryCauchyResidual.nativePhysicalCayleyHomogeneousPolynomial_eval",
+    "CarryCauchyResidual.nativePhysicalCayleyGeometricPolynomial_succ",
+    "CarryCauchyResidual.nativePhysicalCayleyGeometricPolynomial_mul",
+    "CarryCauchyResidual.nativePhysicalCayleyAnalyticMomentTerm_eq_homogeneous_eval",
+    "CarryCauchyResidual.nativePhysicalCayleyHomogeneousPolynomialSeries_hasSum",
+    "CarryCauchyResidual.nativePhysicalCayleyHomogeneousPolynomial_coeff",
+    "CarryCauchyResidual.nativePhysicalCayleyHomogeneousPolynomial_even_even_coeff",
+    "CarryCauchyResidual.nativePhysicalCayleyHomogeneousPolynomial_odd_odd_coeff",
+    "CarryCauchyResidual.nativePhysicalCayleyHomogeneousPolynomial_mixed_coeff",
+    "CarryCauchyResidual.nativePhysicalCayleyHomogeneousPolynomial_odd_even_coeff",
+    "CarryCauchyResidual.nativePhysicalCayleyHomogeneousPolynomial_coeff_zero_of_degree_ne"
   ]
 }

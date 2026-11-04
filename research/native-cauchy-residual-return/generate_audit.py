@@ -8,7 +8,7 @@ groups = {
     'cauchy': ['CauchyFrame','ResidualReturn','CrossControls'],
     'source': ['NativeTangent','ProjectionLoss','JetResidual','RawRankOne'],
     'first_survivor': ['FirstSurvivingCoefficient'],
-    'second_schur': ['SecondSchur'],
+    'second_schur': ['SecondSchur','SecondSchurTowers'],
 }
 roots = {group: ['CarryCauchyResidual.'+m.group(1) for module in modules
                  for m in re.finditer(r'^(?:theorem|def|abbrev|instance)\s+(\w+)',
@@ -20,6 +20,7 @@ import JetResidual
 import RawRankOne
 import FirstSurvivingCoefficient
 import SecondSchur
+import SecondSchurTowers
 import Lean
 
 open Lean Elab Command
