@@ -1,6 +1,7 @@
 import CrossControls
 import ProjectionLoss
 import JetResidual
+import RawRankOne
 import Lean
 
 open Lean Elab Command
@@ -123,6 +124,23 @@ elab "#audit_cauchy_residual " mode:ident ids:ident+ : command => do
 #print axioms CarryCauchyResidual.reducedJetPair
 #print axioms CarryCauchyResidual.reducedJetPair_exact
 #print axioms CarryCauchyResidual.reducedJetPair_canonical_schur_limit
+#print axioms CarryCauchyResidual.nativeRawKernel
+#print axioms CarryCauchyResidual.nativeRawForm
+#print axioms CarryCauchyResidual.nativeBalance_basis_eq_nativeRawKernel
+#print axioms CarryCauchyResidual.nativeBalance_eq_nativeRawForm
+#print axioms CarryCauchyResidual.nativeRawKernel_tendsto
+#print axioms CarryCauchyResidual.nativeRawForm_matrix_tendsto
+#print axioms CarryCauchyResidual.nativeRawForm_tendsto
+#print axioms CarryCauchyResidual.nativeRawMatrix
+#print axioms CarryCauchyResidual.nativeRawLimitMatrix
+#print axioms CarryCauchyResidual.nativeRawMatrix_entrywise_tendsto
+#print axioms CarryCauchyResidual.nativeRawLimitOperator
+#print axioms CarryCauchyResidual.nativeRawLimitMatrix_mulVec
+#print axioms CarryCauchyResidual.nativeRawLimitOperator_apply
+#print axioms CarryCauchyResidual.nativeRawLimitOperator_kernel_iff
+#print axioms CarryCauchyResidual.nativeRawLimitMatrix_rank_one
+#print axioms CarryCauchyResidual.nativeRawHead
+#print axioms CarryCauchyResidual.nativeRawSchurForm
 
 #audit_cauchy_residual cauchy
   CarryCauchyResidual.feature
@@ -204,3 +222,20 @@ elab "#audit_cauchy_residual " mode:ident ids:ident+ : command => do
   CarryCauchyResidual.reducedJetPair
   CarryCauchyResidual.reducedJetPair_exact
   CarryCauchyResidual.reducedJetPair_canonical_schur_limit
+  CarryCauchyResidual.nativeRawKernel
+  CarryCauchyResidual.nativeRawForm
+  CarryCauchyResidual.nativeBalance_basis_eq_nativeRawKernel
+  CarryCauchyResidual.nativeBalance_eq_nativeRawForm
+  CarryCauchyResidual.nativeRawKernel_tendsto
+  CarryCauchyResidual.nativeRawForm_matrix_tendsto
+  CarryCauchyResidual.nativeRawForm_tendsto
+  CarryCauchyResidual.nativeRawMatrix
+  CarryCauchyResidual.nativeRawLimitMatrix
+  CarryCauchyResidual.nativeRawMatrix_entrywise_tendsto
+  CarryCauchyResidual.nativeRawLimitOperator
+  CarryCauchyResidual.nativeRawLimitMatrix_mulVec
+  CarryCauchyResidual.nativeRawLimitOperator_apply
+  CarryCauchyResidual.nativeRawLimitOperator_kernel_iff
+  CarryCauchyResidual.nativeRawLimitMatrix_rank_one
+  CarryCauchyResidual.nativeRawHead
+  CarryCauchyResidual.nativeRawSchurForm

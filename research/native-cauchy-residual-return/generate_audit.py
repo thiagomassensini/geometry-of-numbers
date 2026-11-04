@@ -6,7 +6,7 @@ import re
 root = Path(__file__).resolve().parent
 groups = {
     'cauchy': ['CauchyFrame','ResidualReturn','CrossControls'],
-    'source': ['NativeTangent','ProjectionLoss','JetResidual'],
+    'source': ['NativeTangent','ProjectionLoss','JetResidual','RawRankOne'],
 }
 roots = {group: ['CarryCauchyResidual.'+m.group(1) for module in modules
                  for m in re.finditer(r'^(?:theorem|def|abbrev|instance)\s+(\w+)',
@@ -15,6 +15,7 @@ roots = {group: ['CarryCauchyResidual.'+m.group(1) for module in modules
 header = '''import CrossControls
 import ProjectionLoss
 import JetResidual
+import RawRankOne
 import Lean
 
 open Lean Elab Command

@@ -78,6 +78,23 @@
     "CarryCauchyResidual.reducedJetReturned",
     "CarryCauchyResidual.reducedJetPair",
     "CarryCauchyResidual.reducedJetPair_exact",
-    "CarryCauchyResidual.reducedJetPair_canonical_schur_limit"
+    "CarryCauchyResidual.reducedJetPair_canonical_schur_limit",
+    "CarryCauchyResidual.nativeRawKernel",
+    "CarryCauchyResidual.nativeRawForm",
+    "CarryCauchyResidual.nativeBalance_basis_eq_nativeRawKernel",
+    "CarryCauchyResidual.nativeBalance_eq_nativeRawForm",
+    "CarryCauchyResidual.nativeRawKernel_tendsto",
+    "CarryCauchyResidual.nativeRawForm_matrix_tendsto",
+    "CarryCauchyResidual.nativeRawForm_tendsto",
+    "CarryCauchyResidual.nativeRawMatrix",
+    "CarryCauchyResidual.nativeRawLimitMatrix",
+    "CarryCauchyResidual.nativeRawMatrix_entrywise_tendsto",
+    "CarryCauchyResidual.nativeRawLimitOperator",
+    "CarryCauchyResidual.nativeRawLimitMatrix_mulVec",
+    "CarryCauchyResidual.nativeRawLimitOperator_apply",
+    "CarryCauchyResidual.nativeRawLimitOperator_kernel_iff",
+    "CarryCauchyResidual.nativeRawLimitMatrix_rank_one",
+    "CarryCauchyResidual.nativeRawHead",
+    "CarryCauchyResidual.nativeRawSchurForm"
   ]
 }

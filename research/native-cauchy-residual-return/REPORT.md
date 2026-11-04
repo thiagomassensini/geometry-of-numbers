@@ -6,6 +6,33 @@ coordenadas fica explícito. Uma simplificação que projetasse também o retorn
 é refutada na própria fonte: ela acrescenta um termo positivo cujo limite,
 na normalização de Schur, é `4 h₀ / 9` para a segunda fonte radial.
 
+## Extensão: limite bruto de posto um
+
+Na revisão `9392ebac9930f5d11c56f595556080e8ab1de809`, o novo módulo
+`RawRankOne.lean` formaliza a escala antes de formar os jets. Para endereços
+fixos `i,j`, `nativeRawKernel_tendsto` prova
+
+\[
+B_k(i,j)=\frac{k+1}{i+j+2}(1-\overline{q_k(i)}q_k(j))\longrightarrow4h_0.
+\]
+
+A prova combina a tangente original `source_tangent` com
+`sourceReturn_tendsto`, e identifica cada coeficiente com a forma física
+`nativeBalance` nas fontes de base. `nativeRawMatrix_entrywise_tendsto`
+fornece a convergência de toda matriz finita, entrada a entrada, à matriz
+constante. `nativeRawLimitMatrix_rank_one` prova posto exatamente um para
+`N≥1`, usando `h₀>0`. O operador dessa matriz tem núcleo exatamente
+`{c : ∑ i, c i = 0}`, e `nativeRawForm_tendsto` registra, para coeficientes
+fixos independentes de `k`, o limite
+`4h₀ · conj(∑ cᵢ) · (∑ dⱼ)`.
+
+Este resultado é para coeficientes brutos fixos. Não diz que as direções de
+soma zero dos coeficientes não removem direções da síntese física:
+`nativeBalance_eq_nativeRawForm`
+mantém a identidade com a síntese incidente e retornada original. Também não
+é ainda a deflação de Schur nem um coeficiente assintótico seguinte; esses são
+os checkpoints seguintes desta investigação.
+
 Isso não prova a contratividade do retorno reduzido nem a positividade
 canônica em toda ordem. O sinal continua sendo uma obrigação independente.
 
