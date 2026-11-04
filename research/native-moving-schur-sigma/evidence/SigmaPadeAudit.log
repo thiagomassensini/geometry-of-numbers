@@ -57,4 +57,21 @@
 'CarrySigmaPade.inverseSquare_twoPole_negative_direction' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarrySigmaPade.inverseSquare_twoPole_roots' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarrySigmaPade.inverseSquare_roots_recover_height' depends on axioms: [propext, Classical.choice, Quot.sound]
-Sigma pencil/Padé audit: 53 public roots; 39883 type/body dependencies; standard axioms only; original characteristic and sigma jets retained
+'CarrySigmaObstruction.completedNativeF_analyticAt_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.completedNativeF_positive_zero_factorization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNativeLogResponse_local_factorization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaZeroPairRationalModel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.sigmaZeroPairModelSeries' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.sigmaZeroPairRemainderMoment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.sigmaZeroPairRemainderSeries' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJet_zeroPair_conditional_decomposition' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJet_positive_zero_pair_continuation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Sigma pencil/Padé audit: 62 public roots; 59125 type/body dependencies; standard axioms only; original characteristic and sigma jets retained

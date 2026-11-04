@@ -52,6 +52,15 @@
     "CarrySigmaPade.inverseSquare_twoPoleGram_det",
     "CarrySigmaPade.inverseSquare_twoPole_negative_direction",
     "CarrySigmaPade.inverseSquare_twoPole_roots",
-    "CarrySigmaPade.inverseSquare_roots_recover_height"
+    "CarrySigmaPade.inverseSquare_roots_recover_height",
+    "CarrySigmaObstruction.completedNativeF_analyticAt_real",
+    "CarrySigmaObstruction.completedNativeF_positive_zero_factorization",
+    "CarrySigmaObstruction.completedNativeLogResponse_local_factorization",
+    "CarrySigmaObstruction.sigmaZeroPairRationalModel",
+    "CarrySigmaObstruction.sigmaZeroPairModelSeries",
+    "CarrySigmaObstruction.sigmaZeroPairRemainderMoment",
+    "CarrySigmaObstruction.sigmaZeroPairRemainderSeries",
+    "CarrySigmaObstruction.completedSigmaLogJet_zeroPair_conditional_decomposition",
+    "CarrySigmaObstruction.completedSigmaLogJet_positive_zero_pair_continuation"
   ]
 }

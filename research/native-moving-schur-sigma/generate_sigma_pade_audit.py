@@ -6,9 +6,15 @@ import json
 import re
 
 root = Path(__file__).resolve().parent
-modules = ["SigmaSignedPencil", "SigmaPadeCorrespondence", "SigmaTwoPoleModel"]
+modules = [
+    "SigmaSignedPencil",
+    "SigmaPadeCorrespondence",
+    "SigmaTwoPoleModel",
+    "SigmaZeroPairDecomposition",
+]
 roots = [
-    "CarrySigmaPade." + match.group(1)
+    ("CarrySigmaObstruction." if module == "SigmaZeroPairDecomposition"
+     else "CarrySigmaPade.") + match.group(1)
     for module in modules
     for match in re.finditer(
         r"^(?:theorem|def)\s+(\w+)",
@@ -17,7 +23,7 @@ roots = [
     )
 ]
 
-header = r'''import SigmaTwoPoleModel
+header = r'''import SigmaZeroPairDecomposition
 import Lean
 
 open Lean Elab Command

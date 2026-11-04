@@ -1,9 +1,9 @@
 # Missão Luna — pencil sigma assinado e correspondência de Padé
 
-**Estado da missão: em andamento.** Os checkpoints A, B e C estão provados em
+**Estado da missão: em andamento.** Os checkpoints A–C estão provados em
 Lean, compilados com `-DwarningAsError=true`, auditados transitivamente e
-publicados. Os checkpoints D–F, a validação numérica e o relatório final ainda
-estão abertos.
+publicados. D foi formalizado sob hipóteses explícitas de continuação. E–F e a
+validação numérica continuam em andamento.
 
 ## Proveniência e Git
 
@@ -16,7 +16,7 @@ alterações preexistentes não relacionadas; elas foram preservadas.
 
 - Checkpoint A: [commit `189de259`](https://github.com/thiagomassensini/geometry-of-numbers/commit/189de2599a84aa78e6a5b50b71d5aa0b9a4645b9).
 - Checkpoint B: [commit `b2998c59`](https://github.com/thiagomassensini/geometry-of-numbers/commit/b2998c595df575e95de664085a083616ba094eec).
-- Checkpoint C: SHA a ser registrado após o commit e o push deste módulo.
+- Checkpoint C: [commit `c0a4998`](https://github.com/thiagomassensini/geometry-of-numbers/commit/c0a4998f8ae3bb2f0783c0d4258507db0e5d8b5d).
 - A ponta remota foi conferida após cada push.
 
 ## PROVADO — A: pencil assinado original
@@ -92,7 +92,7 @@ Isso explicita o caso degenerado que não pode ser descartado apenas de
 
 ## Auditoria e reprodução
 
-`SigmaPadeAudit.lean` audita 53 raízes públicas e percorre 39.883 constantes
+`SigmaPadeAudit.lean` audita 62 raízes públicas e percorre 59.125 constantes
 alcançáveis nos tipos e corpos. Foram aceitos somente os axiomas-base do Lean
 `[propext, Classical.choice, Quot.sound]`. A auditoria exige como dependências
 `sigmaMatrix`, `completedSigmaLogJet` e
@@ -103,6 +103,7 @@ cd /home/thlinux/worktrees/geometry-of-numbers-native-sigma-pade-signed-pencil
 research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaSignedPencil
 research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaPadeCorrespondence
 research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaTwoPoleModel
+research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaZeroPairDecomposition
 research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaPadeAudit
 ```
 
@@ -137,20 +138,58 @@ real `gamma` e partes imaginárias `delta` e `-delta`, recuperando
 `gamma+i delta` e `gamma-i delta`. Esses resultados verificam o mecanismo do modelo; não atribuem
 nenhuma contribuição de polos ao sigma original.
 
+## CONDICIONAL — D: fator local do zero e resto para os jatos originais
+
+`SigmaZeroPairDecomposition.lean` preserva a fonte
+`completedNativeOperatorCharacteristic` e a sequência original
+`completedSigmaLogJet`. `completedNativeF_positive_zero_factorization` usa
+analiticidade já disponível na altura real e a hipótese explícita de ordem
+analítica exata `m`; daí obtém localmente
+
+\[
+F(z)=(z-\gamma)^m g(z),\qquad g(\gamma)\ne0.
+\]
+
+Em seguida, `completedNativeLogResponse_local_factorization` prova na vizinhança
+perfurada
+
+\[
+Q(z)=-\frac{m}{2(z-\gamma)}-\frac{g'(z)}{2g(z)},
+\qquad Q=-F'/(2F).
+\]
+
+O teorema condicional liga essa identidade local à geradora original. Ele exige
+um certificado de Taylor para o modelo racional de polos conjugados e uma
+decomposição local da geradora como esse modelo mais a série residual construída
+dos próprios jatos sigma. Para algum raio testemunha `rho`, exige ainda
+
+\[
+1/|\zeta|<\rho<R_{\rm rem},\qquad
+\zeta=(\gamma+id)^{-2},\quad 0<d<1/4.
+\]
+
+Então a unicidade da série de Taylor dá
+`h_n = m * Re (zeta^(n+1)) + r_n` e a estimativa de Cauchy dá
+`|r_n| ≤ C * eta^n` com `eta = 1/rho < |zeta|`. A restrição `d<1/4` mantém
+as duas alturas deslocadas dentro do domínio nativo complexo já certificado;
+os jatos originais continuam definidos no intervalo maior `|d|<1/2`.
+
+**Não foi provado** que a característica completada satisfaz a hipótese de
+continuação `hdecomp`, nem que um zero positivo de ordem finita exista. Logo D
+não atribui contribuição de polos à fonte original sem essas hipóteses. A
+continuação e a separação espectral permanecem condicionais.
+
 ## ABERTO — próximos checkpoints
 
-1. **D:** separar, sob hipóteses analíticas explícitas, o fator de um zero
-   simples da característica original e obter um resto
-   `|r_n| ≤ C eta^n`, com `eta < |zeta|`.
-2. **E:** deduzir convergência dos coeficientes Padé e das raízes para janelas
+1. **E:** deduzir convergência dos coeficientes Padé e das raízes para janelas
    da fonte sigma original, condicional ao controle do resto.
-3. **F:** tratar a não comutatividade dos limites em `s` e `delta`, e as três
+2. **F:** tratar a não comutatividade dos limites em `s` e `delta`, e as três
    noções distintas de primeira detecção.
-4. **Validação numérica:** extrair os momentos apenas da característica
+3. **Validação numérica:** extrair os momentos apenas da característica
    completada, com dois contornos de Cauchy, e comparar com as alturas
    conhecidas sem usá-las como entrada.
 
-Até fechar D/E, a pergunta sobre convergência dos polos da fonte original
-continua sem resposta incondicional. O checkpoint B estabelece somente a
-identidade algébrica entre o pencil original e o Padé da geradora dos seus
-jets.
+Até fechar E, a pergunta sobre convergência dos polos da fonte original
+continua condicional. O checkpoint B estabelece a identidade algébrica entre o
+pencil original e o Padé da geradora dos seus jatos; D não afirma que as
+hipóteses de continuação sejam verdadeiras para esse caso.

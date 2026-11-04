@@ -1,4 +1,4 @@
-import SigmaTwoPoleModel
+import SigmaZeroPairDecomposition
 import Lean
 
 open Lean Elab Command
@@ -91,6 +91,15 @@ elab "#audit_sigma_pade " ids:ident+ : command => do
 #print axioms CarrySigmaPade.inverseSquare_twoPole_negative_direction
 #print axioms CarrySigmaPade.inverseSquare_twoPole_roots
 #print axioms CarrySigmaPade.inverseSquare_roots_recover_height
+#print axioms CarrySigmaObstruction.completedNativeF_analyticAt_real
+#print axioms CarrySigmaObstruction.completedNativeF_positive_zero_factorization
+#print axioms CarrySigmaObstruction.completedNativeLogResponse_local_factorization
+#print axioms CarrySigmaObstruction.sigmaZeroPairRationalModel
+#print axioms CarrySigmaObstruction.sigmaZeroPairModelSeries
+#print axioms CarrySigmaObstruction.sigmaZeroPairRemainderMoment
+#print axioms CarrySigmaObstruction.sigmaZeroPairRemainderSeries
+#print axioms CarrySigmaObstruction.completedSigmaLogJet_zeroPair_conditional_decomposition
+#print axioms CarrySigmaObstruction.completedSigmaLogJet_positive_zero_pair_continuation
 
 #audit_sigma_pade
   CarrySigmaPade.sigmaPencilGram
@@ -146,3 +155,12 @@ elab "#audit_sigma_pade " ids:ident+ : command => do
   CarrySigmaPade.inverseSquare_twoPole_negative_direction
   CarrySigmaPade.inverseSquare_twoPole_roots
   CarrySigmaPade.inverseSquare_roots_recover_height
+  CarrySigmaObstruction.completedNativeF_analyticAt_real
+  CarrySigmaObstruction.completedNativeF_positive_zero_factorization
+  CarrySigmaObstruction.completedNativeLogResponse_local_factorization
+  CarrySigmaObstruction.sigmaZeroPairRationalModel
+  CarrySigmaObstruction.sigmaZeroPairModelSeries
+  CarrySigmaObstruction.sigmaZeroPairRemainderMoment
+  CarrySigmaObstruction.sigmaZeroPairRemainderSeries
+  CarrySigmaObstruction.completedSigmaLogJet_zeroPair_conditional_decomposition
+  CarrySigmaObstruction.completedSigmaLogJet_positive_zero_pair_continuation

@@ -1,0 +1,13 @@
+'CarrySigmaObstruction.completedNativeF_analyticAt_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.completedNativeF_positive_zero_factorization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNativeLogResponse_local_factorization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJet_zeroPair_conditional_decomposition' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJet_positive_zero_pair_continuation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
