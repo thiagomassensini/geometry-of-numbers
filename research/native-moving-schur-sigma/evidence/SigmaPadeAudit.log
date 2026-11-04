@@ -1,0 +1,42 @@
+'CarrySigmaPade.sigmaPencilGram' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPencilShifted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPencilOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPencil_metricSelfAdjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.hermitian_generalizedEigenvector_isotropic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeD' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeB' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeC' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeAlpha' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeBeta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPencilGram_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPencilCharacteristic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPencilCharacteristic_eq_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPade_cancellation_succ_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPade_cancellation_succ_succ_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeDenominator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaOriginalMomentSeries' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeDenominatorSeries' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeNumeratorSeries' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeProductCoeff_succ_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeProductCoeff_succ_succ_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.IsPadeApproximant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeDenominatorSeries_coeff_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeDenominatorSeries_coeff_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeDenominatorSeries_coeff_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeDenominatorSeries_coeff_eq_zero_of_two_lt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaPade.sigmaOriginalMomentSeries_is_pade' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPencilGramComplex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPencilShiftedComplex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPencilCharacteristicComplex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPencilCharacteristicComplex_eq_quadratic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaPade.sigmaPadeDenominatorComplex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPencilCharacteristicComplex_eq_reciprocal_pade' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaPade.sigmaPencil_root_iff_reciprocal_pade_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPencil_root_classification' depends on axioms: [propext, Classical.choice, Quot.sound]
+Sigma pencil/Padé audit: 35 public roots; 35014 type/body dependencies; standard axioms only; original characteristic and sigma jets retained
