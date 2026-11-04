@@ -60,7 +60,8 @@ checks=[
 ]
 checks += [(f'kernel-{m}',['bash',f'{relative}/compile_module.sh',m],repo)
            for m in ['CauchyFrame','ResidualReturn','NativeTangent','ProjectionLoss',
-                     'CrossControls','JetResidual','RawRankOne','Audit']]
+                     'CrossControls','JetResidual','RawRankOne',
+                     'FirstSurvivingCoefficient','Audit']]
 checks += [
     ('exact-rational-controls',['python3',f'{relative}/experiment.py'],repo),
     ('focused-build',['lake','build','--wfail','GeometryOfNumbers.Analysis.CarryMaterialSourceFactor',

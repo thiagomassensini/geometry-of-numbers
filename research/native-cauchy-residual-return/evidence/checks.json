@@ -29,7 +29,7 @@
       "research/native-cauchy-residual-return/compile_module.sh",
       "CauchyFrame"
     ],
-    "cwd": "/home/thlinux/geometry-of-numbers",
+    "cwd": "/home/thlinux/worktrees/geometry-of-numbers-native-raw-rank-one-deflation",
     "exit_code": 0,
     "seconds": 14.269
   },
@@ -199,5 +199,28 @@
     "cwd": "/home/thlinux/geometry-of-numbers",
     "exit_code": 0,
     "seconds": 0.005
+  },
+  {
+    "name": "first-survivor-compile",
+    "command": [
+      "bash",
+      "research/native-cauchy-residual-return/compile_module.sh",
+      "FirstSurvivingCoefficient"
+    ],
+    "cwd": "/home/thlinux/worktrees/geometry-of-numbers-native-raw-rank-one-deflation",
+    "exit_code": 0,
+    "seconds": 14.217
+  },
+  {
+    "name": "first-survivor-audit",
+    "command": [
+      "bash",
+      "research/native-cauchy-residual-return/compile_module.sh",
+      "Audit"
+    ],
+    "cwd": "/home/thlinux/worktrees/geometry-of-numbers-native-raw-rank-one-deflation",
+    "exit_code": 0,
+    "seconds": 12.463,
+    "result": "30 first-survivor roots; dependency closure 5,912; allowed axioms passed"
   }
 ]

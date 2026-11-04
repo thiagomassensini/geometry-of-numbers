@@ -1,0 +1,2 @@
+PASS: FirstSurvivingCoefficient compiled with -DwarningAsError=true.
+Includes the exact raw-tail homogeneity, original jet coefficient, normalized scale limit, and first-odd Schur transport lemmas.

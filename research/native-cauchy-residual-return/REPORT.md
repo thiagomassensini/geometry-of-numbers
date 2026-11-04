@@ -70,7 +70,7 @@ canônica em toda ordem. O sinal continua sendo uma obrigação independente.
 Repositório: `thiagomassensini/geometry-of-numbers`.
 Base exata: `fdb8f7e9ce1b8681d10f2647393ad83f05bfac12`, PR #52,
 branch `agent/native-return-boundary-deflation`.
-Nova branch: `agent/native-cauchy-residual-return`.
+Branch da investigação: `agent/native-raw-rank-one-deflation`.
 Host de investigação e Lean: `ssh llm`.
 As PRs anteriores permanecem intactas; não há merge automático.
 
@@ -324,22 +324,25 @@ recuperação de todas as alturas. Não se reivindica entrelaçamento dessa
 isometria com um clock não limitado. Os certificados H6/K6/doze fontes são
 regressões preservadas e não premissas dos novos lemas.
 
-Há **51 teoremas públicos, 26 definições/aliases e um lema privado** em seis
-módulos. As 77 raízes públicas estão em `public-roots.json`.
-`Audit.lean` imprime os axiomas e percorre transitivamente os tipos e corpos.
-Somente `propext`, `Classical.choice` e `Quot.sound` são permitidos.
-Os dois grupos têm 49/28 raízes e 5.490/5.696 dependências transitivas.
-
-Ambos os grupos rejeitam dependências dos certificados H6/K6/H7, sinais de
+`public-roots.json` contém 132 raízes de auditoria em três grupos: Cauchy
+(49 raízes; fecho 5.490), source (53; 5.775) e primeiro sobrevivente
+(30; 5.912). `Audit.lean` imprime os axiomas e percorre transitivamente os
+tipos e corpos. Somente `propext`, `Classical.choice` e `Quot.sound` são
+permitidos. O guard impede dependências de certificados H6/K6/H7, sinais de
 seis/sete pivôs, energia estrita de seis fontes e não negatividade geral do
-defeito do retorno. A importação de um módulo com resultados posteriores
-não autoriza usá-los: a auditoria percorre as dependências efetivas.
+defeito do retorno. A importação de resultados posteriores não os usa por si;
+a auditoria percorre as dependências efetivas.
 
-`validate.py` executa 18 verificações, registradas em `evidence/checks.json`:
+`evidence/checks.json` registra a validação anterior com 18 verificações:
 sete compilações de pesquisa com warnings como erros; build dos consumidores
 originais; builds focado e raiz com `lake build --wfail`; auditorias
 Foundation/Geometry/Analysis; regressão H6/K6/doze fontes; controle racional;
 preservação do histórico; `git diff --check` e geração das auditorias.
+Além disso, nesta revisão `FirstSurvivingCoefficient` e `Audit` foram
+recompilados diretamente com `-DwarningAsError=true`; seus logs estão em
+`evidence/first-survivor-*.log`. O validador amplo continua sem ser executado:
+seu preflight exige que o checkout auxiliar Carry esteja limpo, e alterações
+auxiliares preexistentes foram preservadas.
 
 O controle independente usa apenas aritmética `Fraction` nas duas componentes
 complexas: 15 famílias e 165 entradas verificadas. Compara o Schur da matriz
@@ -353,56 +356,193 @@ do operador e os caches restantes da PR #51 são preservados por hash.
 Não foi criada nem removida worktree. `main` permanece no commit
 `59e53d863f4ef0ad998b0eb19fd3891c9839cc35`.
 
-## E — Próximo passo mínimo
+## E — Primeiro coeficiente sobrevivente
 
-Agora as duas sínteses restantes são comparáveis sobre o mesmo frame físico,
-e o quociente completado que precisa ser estudado está explícito. O próximo
-teste concreto é obter o PRIMEIRO coeficiente polarizado não cancelado de
-
-\[
-C_k(i,j)(1-\overline{\tau_{k,i}}\tau_{k,j}),\qquad i,j>0,
-\]
-
-diretamente da resposta logarítmica completada e da identidade Green, com
-resto controlado em ambos os argumentos. Não basta sua diagonal.
-
-Uma calibração específica para essa tentativa é o alvo
+A auditoria upstream encontrou `nativeSourceTransverseSlope_exact_remainder`:
+na reta imaginária, o logaritmo derivado original tem expansão até ordem sete
+com resto analítico de ordem oito. As fórmulas integrais dos coeficientes e
+as identidades da característica dão, para `h₀=m(0)` e `h₁=m(1)`,
 
 \[
-(k+1)C_k(i,j)(1-\overline{\tau_{k,i}}\tau_{k,j})
-\stackrel{?}{\longrightarrow}2h_1/h_0.
+s(h):=-i\,\frac{-F'(ih)}{F(ih)}
+ =2h_0h-2h_1h^3+h^5R_0(h),
 \]
 
-Esse alvo é sugerido pela expansão formal
-`-F'(iy)/F(iy)=2iy(h₀-h₁y²+…)` e pela transformação Cayley existente.
-**Não foi formalizado nem auditado nesta entrega.** Uma tentativa deve
-primeiro verificar essa expansão e seu resto na fonte original. Mesmo um
-limite positivo constante nos dois índices teria posto um: direções que o
-anulam exigiriam a ordem seguinte. Não seria uma prova all-order.
+onde `R₀` é analítica perto de zero. O novo módulo
+`FirstSurvivingCoefficient.lean` formaliza essa redução e a transforma pelo
+Cayley original, sem aproximar a fonte ou ajustar o retorno:
 
-Esse é um próximo passo menor e verificável do que simplesmente solicitar
-contratividade em toda dimensão: testar a primeira correção completa do
-retorno reduzido e identificar seu núcleo antes de qualquer nova projeção.
-Se houver cancelamentos adicionais, conservar o retorno de bordo já medido.
+\[
+q(ih)=-1+4h_0h-8h_0^2h^2
+ +(16h_0^3-4h_1)h^3+h^4R_q(h),
+\]
 
-**Conclusão:** a redução isométrica é verdadeira e não circular; a projeção
-dupla sem correção é refutada na própria fonte; o sinal do residual completo
-continua aberto. Resultado `PARTIAL`, com um NO-GO específico e quantitativo.
+com `R_q` analítica perto de zero. Os teoremas
+`nativeTransverseLogSlope_first_two_remainder` e
+`nativeTransverseChiralQuotient_cubic_remainder` mantêm explicitamente os
+restos. As identidades
+`nativeSourceOddBoundaryCoefficient_zero_eq_two_moment` e
+`nativeSourceOddBoundaryCoefficient_one_eq_two_moment` conferem os fatores
+de `h₀` e `h₁` contra os coeficientes da característica completada.
+
+Escrevendo `K=k+1`, `x=i+1`, `y=j+1`, a substituição `h=x/K` e a limitação
+local do resto analítico dão, para índices fixos,
+
+\[
+B_k(i,j)=4h_0-\frac{8h_0^2(x+y)}K+
+\frac{16h_0^3(x^2+xy+y^2)-4h_1(x^2-xy+y^2)}{K^2}
++O(K^{-3}).
+\]
+
+Esse resto é controlado: `R_q` é contínua e limitada em uma vizinhança de
+zero, então o resto do quociente é `O(K⁻⁴)` e o do kernel após o fator `K`
+é `O(K⁻³)`. Ao complementar exatamente a entrada da fonte zero, o termo
+constante cancela; o termo de ordem `K⁻¹` cancela porque
+`-8h₀²(x+y)` é aditivo nos índices. Na ordem seguinte, o termo cúbico em
+`h₀` cancela com a correção do denominador do complemento de Schur. Para
+endereços de cauda fixos `i,j≥1`, sobra
+
+\[
+\boxed{\quad
+\operatorname{Schur}_k(i,j)=\frac{4h_1ij}{K^2}+O(K^{-3}).
+\quad}
+\]
+
+O controle do resto vem diretamente do teorema Lean
+`nativeTransverseChiralQuotient_cubic_remainder`: para cada endereço fixo
+`x`,
+
+\[
+q_K(x)=-1+4h_0\frac{x}{K}-8h_0^2\frac{x^2}{K^2}
+ +(16h_0^3-4h_1)\frac{x^3}{K^3}
+ +\frac{x^4}{K^4}R_q(x/K),
+\]
+
+com `R_q` analítica numa vizinhança de zero. Escolhida uma vizinhança fechada
+contida nesse domínio, a continuidade dá `|R_q|≤M`. Para o conjunto finito
+de endereços `x=1,2,3,4` (a cabeça e as três primeiras fontes de cauda), isso
+limita uniformemente cada resto da expansão de `B_K` por `C/K³`. O termo
+constante do denominador do Schur tende a `4h₀>0`,
+logo seu inverso fica limitado para `K` grande; a expansão do quociente
+preserva a ordem `O(K⁻³)`. Portanto o resto declarado após a deflação é
+controlado para os endereços pedidos, e não só formal.
+
+Explicitamente, os coeficientes de `K⁻¹` e `K⁻²` de uma entrada são
+`u(x,y)=-8h₀²(x+y)` e
+`v(x,y)=16h₀³(x²+xy+y²)-4h₁(x²-xy+y²)`, com `x=i+1`, `y=j+1`.
+Para índices de cauda `i,j` iniciados em zero, o coeficiente de ordem dois
+do complemento é
+
+\[
+v(i+2,j+2)-v(1,j+2)-v(i+2,1)+v(1,1)
+-\frac{(u(i+2,1)-u(1,1))(u(1,j+2)-u(1,1))}{4h_0}
+=4h_1(i+1)(j+1).
+\]
+
+O termo de ordem um é a diferença mista de `u` e vale zero. A fórmula de
+ordem dois é exatamente a identidade provada por
+`rawSchurOrderTwo_eq_first_odd_pivot`.
+
+Em particular, o primeiro bloco de cauda, no endereço físico `1`, tem
+coeficiente `4h₁`. `rawKernelOrderOne_schur_cancels` e
+`rawSchurOrderTwo_eq_first_odd_pivot` formalizam os cancelamentos e a
+combinação algébrica do coeficiente. O resto assintótico vem da expansão
+original de `q` com resto analítico: fica controlado por `O(K⁻³)` depois do
+complemento de Schur.
+
+### Comparação com o Schur dos jets
+
+O vínculo de escala agora é uma identidade exata no módulo Lean.
+`nativeFirstOddJetTailScale_eq_original_factor` identifica o coeficiente da
+cauda do primeiro vetor ímpar com
+
+\[
+\beta_K=A(i\,2/K)\,\Delta_K^{-1},\qquad
+\Delta_K=i/K,
+\]
+
+onde `A` é a amplitude positiva completada original. A fase, o fatorial e o
+peso Green nessa entrada valem exatamente um. `nativeRawJetSchur_firstOdd_exact_scale`
+prova eventualmente
+
+\[
+\operatorname{Schur}^{jet}_K
+ =\overline{\beta_K}\beta_K\,
+   \operatorname{Schur}^{raw}_K(e_1,e_1),
+\]
+
+usando apenas a não anulação eventual do déficit físico e a identidade
+`remainingPair_eraseHead`: qualquer coeficiente da cabeça é eliminado, e
+nenhum cruzamento da forma foi aproximado. A continuidade da amplitude no
+centro e `F'(0)=0` dão `A(0)=i/\sqrt2`; assim
+`nativeFirstOddJetTailScale_mul_greenStep_tendsto` prova
+`\beta_K/K\to1/\sqrt2`, e
+`nativeFirstOddJetTailScale_absSq_mul_greenStep_sq_tendsto` prova o fator
+quadrático `|\beta_K|²/K²→1/2`.
+
+Por outro lado, `nativeRawJetSchur_firstOdd_tendsto` aplica a transformação
+original `nativeSourceChiralJetInput` ao primeiro vetor ímpar e obtém o limite
+`2h₁`, exatamente como a primeira diagonal do Schur canônico. O coeficiente
+bruto é `4h₁/K²`; multiplicá-lo pelo fator demonstrado `K²/2` dá `2h₁`, com
+o mesmo índice material `h₁`. Na passagem física, `head_jet_input` identifica
+a direção de cabeça com um múltiplo exato de `e₀`; na cauda,
+`reducedJetPair_exact` preserva as duas sínteses e todos os cruzamentos, e
+`reducedJetPair_canonical_schur_limit` leva essa mesma forma ao Schur
+canônico. A especialização `criticalCoordinates 1 0` é precisamente o
+primeiro vetor ímpar. O lema `canonicalFirstOddSourceSchur_eq_moment_one` reduz
+`sourceMomentSchur(m,1,0)` a `h₁`. Isso concorda com os módulos existentes:
+`criticalBalance_tendsto` dá `2h₁`, a energia de bordo da direção crítica é
+`4h₁`, e `critical_total_flux_tendsto` dá o pivô `h₁`. Os fatores dois e
+quatro vêm das normalizações já declaradas nesses lemas. O resultado de fluxo
+continua sujeito à invertibilidade do prefixo antigo; essa hipótese não é
+usada para provar o limite assintótico físico nem para atribuir sinal a `h₁`.
+
+O resgate usa a transformação completa de jets, cuja matriz preserva a
+amplitude, a fase, `a!`, a potência do passo radial e o peso Green; a escala
+`K` acima foi deduzida desse mapa original. Assim, a escala bruta fixa de
+primeira ordem vê só `h₀`, mas o resíduo da mesma geometria, após a deflação e
+a entrada dos jets, recupera o primeiro momento seguinte sem perder
+cruzamentos.
+
+## F — Sinal e limites
+
+O cálculo identifica o primeiro candidato material sobrevivente, mas não
+prova que `h₁>0`. A equivalência
+`canonicalCompletedNativeLogDerivativeMoment_one_pos_iff_fourthOrderLogCurvature`
+reduz esse sinal exatamente à desigualdade de curvatura de quarta ordem; a
+identificação positiva da primeira diagonal TFVD continua sendo hipótese
+em `canonicalCompletedNativeLogDerivativeMoment_one_pos_of_tfvdFirstOddDiagonal`.
+Para todas as ordens, `nativeSourceBoundary_all_pos_iff_sourceSchur` e
+`sourceMomentMatrix_all_posDef_iff_schur` reduzem a positividade física aos
+sinais de todos os Schur/Hankel da própria fonte. Isso é uma redução exata,
+não uma desigualdade independente derivada da geometria.
+
+O no-go `canonicalC2Geometry_seededClockAtlas_noGo_of_stieltjesPositivity`
+permanece condicional à positividade Stieltjes. `no_normalized_kernel_with_literal_material_origin`
+continua excluindo o candidato calibrado literalmente na origem. A
+obstrução `exists_sigmaMatrix_negative_direction_of_zero` continua condicional
+a um zero positivo e a um deslocamento não nulo pequeno. Nenhum desses
+resultados foi duplicado nem usado como premissa de sinal aqui.
+
+`nativeProjectionLoss_regression` preserva a perda positiva ao projetar
+também o retorno: o limite `4h₀/9` na segunda fonte segue não nulo.
+Portanto, a primeira informação sobrevivente está identificada, mas o sinal
+do residual completo continua sendo um problema aberto.
 
 ### Reprodução
 
 ```bash
-ssh llm
-cd /home/thlinux/geometry-of-numbers
-git switch agent/native-cauchy-residual-return
-python3 research/native-cauchy-residual-return/validate.py
+cd /home/thlinux/worktrees/geometry-of-numbers-native-raw-rank-one-deflation
+bash research/native-cauchy-residual-return/compile_module.sh FirstSurvivingCoefficient
+bash research/native-cauchy-residual-return/compile_module.sh Audit
 ```
 
 As compilações de pesquisa utilizam os caches históricos das PRs empilhadas,
-conforme `compile_module.sh`. Esta é reprodução no host canônico preparado,
-não uma alegação de bootstrap de um clone sem os módulos históricos.
+conforme `compile_module.sh`. O validador amplo não foi executado porque seu
+preflight exige que o checkout auxiliar Carry esteja limpo; as alterações
+paralelas já existentes foram preservadas.
 
-## Fechamento da missão: posto um e primeiro Schur
+## Fechamento da missão: posto um, coeficiente e sinal
 
 1. **Limite bruto:** demonstrado, entrada a entrada para toda dimensão finita,
    com posto um e núcleo dos vetores de soma zero, por
@@ -416,26 +556,24 @@ não uma alegação de bootstrap de um clone sem os módulos históricos.
    dependente de `k`, definida por `nativeSourceChiralJetInput`. Sua matriz
    conserva amplitude completada, fase, fator `a!`, potência do passo radial
    e pesos Green de diferenças finitas. O limite resultante é o Schur
-   canônico existente em `nativeRawJetSchur_tendsto_canonical`. Este trabalho
-   não estabelece uma lei de escala simples para resíduos brutos sucessivos.
-4. **Coeficiente seguinte:** nenhum coeficiente `a_j` foi declarado. Para
-   identificar a primeira dependência de um momento além de `h₀`, a expansão
-   precisa chegar ao termo cúbico do quociente: falta a identidade explícita
-   para `q'''(0)` em termos do momento `h₁`, junto com o resto de Taylor
-   controlado nos pontos amostrados `i(n+1)/(k+1)`. A analiticidade da fonte e
-   os momentos da característica existem nos módulos upstream; o cálculo e
-   o transporte desse termo pela geometria finita não estão provados aqui.
-5. **Sinal:** nenhuma desigualdade nova para o residual completo foi obtida.
-   Permanecem válidos os diagnósticos prévios de no-go condicional e a
-   redução exata do sinal à forma canônica. Nenhuma positividade all-order
-   foi assumida.
+   canônico existente em `nativeRawJetSchur_tendsto_canonical`; no primeiro
+   vetor ímpar, o limite é `2h₁`.
+4. **Coeficiente seguinte:** demonstrado a partir da fonte original com resto
+   analítico: `a₂(i)=-8h₀²(i+1)²`,
+   `a₃(i)=(16h₀³-4h₁)(i+1)³`, e o primeiro Schur bruto de cauda é
+   `4h₁ij/K²+O(K⁻³)`. O bloco inicial tem coeficiente `4h₁`.
+5. **Sinal:** nenhuma desigualdade nova foi obtida. A condição positiva de
+   quarta ordem para `h₁` e a redução all-order aos Schur da fonte são
+   equivalências/gates, não provas de seu lado direito. Não foi assumida
+   positividade all-order.
 6. **Projeção do retorno:** a regressão preserva a perda positiva, inclusive
    o limite `4h₀/9` na segunda fonte, por `nativeProjectionLoss_regression`.
-7. **Compilação e axiomas:** `RawRankOne.lean` e `Audit.lean` compilaram com
-   `-DwarningAsError=true`. O fecho do audit cobriu 5.490 constantes na
-   auditoria Cauchy e 5.775 na auditoria source; todas as raízes novas
-   dependem somente de `[propext, Classical.choice, Quot.sound]`. Os commits
-   commits A e B estão registrados localmente; nenhum foi enviado ou integrado.
+7. **Compilação e axiomas:** `FirstSurvivingCoefficient.lean` e
+   `Audit.lean` compilaram com `-DwarningAsError=true`. O fecho do audit
+   cobriu 5.490 constantes na auditoria Cauchy, 5.775 na auditoria source e
+   5.912 na auditoria do primeiro sobrevivente. As novas raízes usam somente
+   `[propext, Classical.choice, Quot.sound]`. Os commits A, B e C estão
+   registrados localmente; nenhum foi enviado ou integrado.
 
 Esta execução parte do remoto `origin/agent/native-moving-schur-sigma` em
 `9392ebac9930f5d11c56f595556080e8ab1de809`, no worktree
@@ -445,9 +583,10 @@ executado: seu preflight exige que o checkout auxiliar Carry esteja limpo,
 mas ele já continha alterações não relacionadas que foram preservadas. Os
 dois módulos relevantes foram compilados e auditados diretamente.
 
-**Resposta à pergunta decisiva:** a escala bruta fixa enxerga apenas `h₀` e
-seu primeiro Schur tende a zero. A transformação original dos jets recupera
-um Schur canônico potencialmente não nulo, mantendo os cruzamentos completos.
-Uma hierarquia obtida por reescalonamentos sucessivos dos resíduos da mesma
-geometria ainda depende do coeficiente cúbico e de seus restos controlados.
-Esta execução encerra nos checkpoints A e B, conforme o critério de parada.
+**Resposta à pergunta decisiva:** sim, a primeira camada após a direção de
+posto um é recuperável da mesma geometria. O termo cúbico do quociente original
+introduz `h₁`, e a deflação física revela `4h₁ij/K²` com resto `O(K⁻³)`;
+os jets completos transportam isso ao primeiro pivô com a normalização
+canônica já certificada. Isso ainda não dá o sinal de `h₁` nem a hierarquia
+all-order: cada próximo Schur continua exigindo uma desigualdade independente
+da fonte original.
