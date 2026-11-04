@@ -241,6 +241,7 @@ lemma sigmaDisplacedFirstPoleFactor_order
       simp
     rw [hprod, hApow, hBpow]
     simp
+
   · subst z
     have hA := oneMinusSquareDiv_order_one hτ (Or.inr rfl)
     have hBne : 1 - (-τ) ^ 2 / (star τ) ^ 2 ≠ 0 :=
@@ -254,6 +255,7 @@ lemma sigmaDisplacedFirstPoleFactor_order
       simp
     rw [hprod, hApow, hBpow]
     simp
+
   · subst z
     have hAne : 1 - (star τ) ^ 2 / τ ^ 2 ≠ 0 :=
       oneMinusSquareDiv_ne_zero_of_not_roots hτ hstarτ hstarnegτ
@@ -280,6 +282,23 @@ lemma sigmaDisplacedFirstPoleFactor_order
       simp
     rw [hprod, hApow, hBpow]
     simp
+
+/-- A positive real height and a positive displacement make the four signed conjugate roots
+distinct; this is a geometric fact, not part of the external zero-count certificate. -/
+lemma sigmaDisplacedFirstPoleRoot_distinct (γ d : ℝ) (hγ : 0 < γ) (hd : 0 < d) :
+    ((γ : ℂ) + Complex.I * (d : ℂ)) ≠
+        star ((γ : ℂ) + Complex.I * (d : ℂ)) ∧
+      ((γ : ℂ) + Complex.I * (d : ℂ)) ≠
+        -star ((γ : ℂ) + Complex.I * (d : ℂ)) := by
+  constructor
+  · intro h
+    have him := congrArg Complex.im h
+    have hreal : d = -d := by simpa using him
+    linarith
+  · intro h
+    have hre := congrArg Complex.re h
+    have hreal : γ = -γ := by simpa using hre
+    linarith
 
 /-- The explicit normalized factor has exactly the four signed conjugate roots when its
 multiplicity is positive and the first root is nonzero. -/
@@ -332,15 +351,16 @@ lemma sigmaDisplacedFirstPoleFactor_zero_iff
 
 /-- Explicit certificate interface for isolating exactly the four shifted points in a disk.
 `source_zero_set` and `source_order` are the external geometric obligations for the source. The
-root distinctness field is elementary geometry of the nonreal positive height; all zero, order,
-and isolation properties of the displayed polynomial factor are proved below. -/
+remaining fields are elementary range and multiplicity facts; the four-root distinctness and
+all zero, order, and isolation properties of the displayed polynomial factor are proved below.
+Only `source_zero_set` and `source_order` require external zero information. -/
 structure SigmaDisplacedProductIsolation (d γ r : ℝ) (m : ℕ) where
   radius_pos : 0 < r
   multiplicity_pos : 0 < m
+  height_pos : 0 < γ
+  displacement_pos : 0 < d
+  displacement_lt_quarter : d < (1 / 4 : ℝ)
   first_pair_inside : ‖(γ : ℂ) + Complex.I * (d : ℂ)‖ < r
-  signed_roots_distinct :
-    ((γ : ℂ) + Complex.I * (d : ℂ)) ≠ star ((γ : ℂ) + Complex.I * (d : ℂ)) ∧
-      ((γ : ℂ) + Complex.I * (d : ℂ)) ≠ -star ((γ : ℂ) + Complex.I * (d : ℂ))
   source_zero_set : ∀ z : ℂ, ‖z‖ < r →
     ((completedNativeDisplacedProductContinuation d z = 0) ↔
       sigmaDisplacedFirstPoleRoot ((γ : ℂ) + Complex.I * (d : ℂ)) z)
@@ -379,9 +399,11 @@ theorem completedNativeDisplacedProduct_factorization_of_isolation
     fun_prop [sigmaDisplacedFirstPoleFactor]
   have hτ : (γ : ℂ) + Complex.I * (d : ℂ) ≠ 0 := by
     intro hzero
-    apply hisolation.signed_roots_distinct.1
-    rw [hzero]
-    simp
+    have hre := congrArg Complex.re hzero
+    have hreal : γ = 0 := by simpa using hre
+    linarith [hisolation.height_pos]
+  have hrootsDistinct := sigmaDisplacedFirstPoleRoot_distinct γ d
+    hisolation.height_pos hisolation.displacement_pos
   have hzeros : ∀ z ∈ U, D z = 0 ↔ P z = 0 := by
     intro z hz
     have hzr : ‖z‖ < r := by
@@ -403,7 +425,7 @@ theorem completedNativeDisplacedProduct_factorization_of_isolation
     exact ⟨@SigmaDisplacedProductIsolation.source_order d γ r m hisolation z hzr hzRoot,
       sigmaDisplacedFirstPoleFactor_order
         ((γ : ℂ) + Complex.I * (d : ℂ)) m hτ
-        hisolation.signed_roots_distinct.1 hisolation.signed_roots_distinct.2 z hzRoot⟩
+        hrootsDistinct.1 hrootsDistinct.2 z hzRoot⟩
   have hisolated : ∀ z ∈ U, P z = 0 →
       ∀ᶠ w : ℂ in 𝓝 z, P w = 0 → w = z := by
     intro z hzU hzP
@@ -415,7 +437,7 @@ theorem completedNativeDisplacedProduct_factorization_of_isolation
         ((γ : ℂ) + Complex.I * (d : ℂ)) m hisolation.multiplicity_pos hτ z).mp hzP
     have horderP := sigmaDisplacedFirstPoleFactor_order
       ((γ : ℂ) + Complex.I * (d : ℂ)) m hτ
-      hisolation.signed_roots_distinct.1 hisolation.signed_roots_distinct.2 z hzRoot
+      hrootsDistinct.1 hrootsDistinct.2 z hzRoot
     obtain ⟨q, hq, hq0, hfactor⟩ := (hP z hzU).analyticOrderAt_eq_natCast.mp horderP
     have hqne : ∀ᶠ w : ℂ in 𝓝 z, q w ≠ 0 := hq.continuousAt.eventually_ne hq0
     filter_upwards [hfactor, hqne] with w hwfactor hwq
@@ -474,6 +496,30 @@ theorem completedNativeDisplacedProduct_factorization_of_isolation
     intro z hz
     exact hEvenOn z (by simpa [U] using hz)
 
+/-- On the admissible displacement range, the continuation factorization has the same germ as
+the original native displaced product. This is the explicit provenance bridge for the quotient
+constructed from the entire extension. -/
+theorem displacedProductC_native_germ_factorization_of_isolation
+    (d γ r : ℝ) (m : ℕ)
+    (hisolation : SigmaDisplacedProductIsolation d γ r m) :
+    ∃ H : ℂ → ℂ,
+      (∀ z ∈ Metric.ball 0 r, AnalyticAt ℂ H z) ∧
+      (∀ z ∈ Metric.ball 0 r, H z ≠ 0) ∧
+      (∀ z ∈ Metric.ball 0 r, H (-z) = H z) ∧
+      (∀ᶠ z : ℂ in 𝓝 0,
+        displacedProductC d z =
+          sigmaDisplacedFirstPoleFactor ((γ : ℂ) + Complex.I * (d : ℂ)) m z * H z) := by
+  obtain ⟨H, hHanalytic, hfactor, hHnonzero, hHeven⟩ :=
+    completedNativeDisplacedProduct_factorization_of_isolation d γ r m hisolation
+  have hd₁ : -(1 / 2 : ℝ) < d := by linarith [hisolation.displacement_pos]
+  have hd₂ : d < (1 / 2 : ℝ) := by linarith [hisolation.displacement_lt_quarter]
+  have hnative := completedNativeDisplacedProductContinuation_eq_native_eventually d hd₁ hd₂
+  have hball : ∀ᶠ z : ℂ in 𝓝 0, z ∈ Metric.ball 0 r :=
+    Metric.ball_mem_nhds 0 hisolation.radius_pos
+  refine ⟨H, hHanalytic, hHnonzero, hHeven, ?_⟩
+  filter_upwards [hnative, hball] with z hsource hz
+  simpa only [hsource] using hfactor z hz
+
 end
 end CarrySigmaObstruction
 
@@ -481,5 +527,7 @@ end CarrySigmaObstruction
 #print axioms CarrySigmaObstruction.oneMinusSquareDiv_zero_iff
 #print axioms CarrySigmaObstruction.sigmaDisplacedFirstPoleFactor_zero_iff
 #print axioms CarrySigmaObstruction.sigmaDisplacedFirstPoleFactor_order
+#print axioms CarrySigmaObstruction.sigmaDisplacedFirstPoleRoot_distinct
 #print axioms CarrySigmaObstruction.completedNativeDisplacedProduct_factorization_of_isolation
+#print axioms CarrySigmaObstruction.displacedProductC_native_germ_factorization_of_isolation
 

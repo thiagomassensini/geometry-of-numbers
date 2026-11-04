@@ -34,7 +34,7 @@ future zero certificate. They do not establish a zero-free region.
 `SigmaDisplacedProductIsolation d γ r m`. Its source-facing obligations are:
 
 1. `r > 0`, `m > 0`, and the first shifted root lies in `|t| < r`;
-2. the four signed conjugate roots are distinct;
+2. `γ > 0` and `0 < d < 1/4`; Lean derives that the four signed conjugate roots are distinct;
 3. throughout the **complex** disk `|t| < r`, the continued source product vanishes exactly
    at `τ`, `-τ`, `conj(τ)`, and `-conj(τ)`;
 4. its exact analytic order at each of those four points is `m`.
@@ -46,7 +46,9 @@ disk that the continued source product equals
 `(1 - t²/τ²)^m (1 - t²/conj(τ)²)^m H(t)`,
 
 where `H` is analytic, nowhere zero, and even. The constructed quotient is not an input to the
-certificate. This proves B conditionally on explicit source zero data.
+certificate. `displacedProductC_native_germ_factorization_of_isolation` additionally packages
+the same factorization as an eventual equality for the original `displacedProductC` on the
+native admissible displacement range. This proves B conditionally on explicit source zero data.
 
 The order data is an order of the *product*. If the target factor has order `m` and the other
 shifted factor also vanishes, analytic-order additivity raises the product order above `m`, so
