@@ -11,6 +11,7 @@ modules = [
     "SigmaPadeCorrespondence",
     "SigmaTwoPoleModel",
     "SigmaZeroPairDecomposition",
+    "SigmaPadeConvergence",
 ]
 roots = [
     ("CarrySigmaObstruction." if module == "SigmaZeroPairDecomposition"
@@ -23,7 +24,7 @@ roots = [
     )
 ]
 
-header = r'''import SigmaZeroPairDecomposition
+header = r'''import SigmaPadeConvergence
 import Lean
 
 open Lean Elab Command

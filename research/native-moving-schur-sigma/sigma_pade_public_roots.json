@@ -52,6 +52,7 @@
     "CarrySigmaPade.inverseSquare_twoPoleGram_det",
     "CarrySigmaPade.inverseSquare_twoPole_negative_direction",
     "CarrySigmaPade.inverseSquare_twoPole_roots",
+    "CarrySigmaPade.inverseSquare_zero_parameter_pencil_characteristic",
     "CarrySigmaPade.inverseSquare_roots_recover_height",
     "CarrySigmaObstruction.completedNativeF_analyticAt_real",
     "CarrySigmaObstruction.completedNativeF_positive_zero_factorization",
@@ -61,6 +62,15 @@
     "CarrySigmaObstruction.sigmaZeroPairRemainderMoment",
     "CarrySigmaObstruction.sigmaZeroPairRemainderSeries",
     "CarrySigmaObstruction.completedSigmaLogJet_zeroPair_conditional_decomposition",
-    "CarrySigmaObstruction.completedSigmaLogJet_positive_zero_pair_continuation"
+    "CarrySigmaObstruction.completedSigmaLogJet_positive_zero_pair_continuation",
+    "CarrySigmaPade.sigmaPadeQuadraticRootLower",
+    "CarrySigmaPade.sigmaPadeQuadraticRootLower_tendsto",
+    "CarrySigmaPade.sigmaPadeQuadraticRootLower_is_root",
+    "CarrySigmaPade.sigmaPadeNormalizedD",
+    "CarrySigmaPade.sigmaPadeNormalizedB",
+    "CarrySigmaPade.sigmaPadeNormalizedC",
+    "CarrySigmaPade.sigmaPadeOriginalNormalizedRoot_tendsto",
+    "CarrySigmaPade.sigmaPadeOriginalRoot_tendsto",
+    "CarrySigmaPade.sigmaPadeRemainder_window_normalized_tendsto"
   ]
 }

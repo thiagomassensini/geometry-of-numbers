@@ -56,6 +56,9 @@
 'CarrySigmaPade.inverseSquare_twoPoleGram_det' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarrySigmaPade.inverseSquare_twoPole_negative_direction' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarrySigmaPade.inverseSquare_twoPole_roots' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.inverseSquare_zero_parameter_pencil_characteristic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
 'CarrySigmaPade.inverseSquare_roots_recover_height' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarrySigmaObstruction.completedNativeF_analyticAt_real' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarrySigmaObstruction.completedNativeF_positive_zero_factorization' depends on axioms: [propext,
@@ -74,4 +77,13 @@
 'CarrySigmaObstruction.completedSigmaLogJet_positive_zero_pair_continuation' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
-Sigma pencil/Padé audit: 62 public roots; 59125 type/body dependencies; standard axioms only; original characteristic and sigma jets retained
+'CarrySigmaPade.sigmaPadeQuadraticRootLower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeQuadraticRootLower_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeQuadraticRootLower_is_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeNormalizedD' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeNormalizedB' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeNormalizedC' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeOriginalNormalizedRoot_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeOriginalRoot_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeRemainder_window_normalized_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+Sigma pencil/Padé audit: 72 public roots; 59140 type/body dependencies; standard axioms only; original characteristic and sigma jets retained

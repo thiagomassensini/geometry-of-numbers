@@ -365,6 +365,21 @@ theorem inverseSquare_twoPole_roots (m γ δ : ℝ) (s : ℕ)
   · simpa using twoPolePencil_characteristic m (inverseSquareNode γ δ) s
       (starRingEnd ℂ (inverseSquareNode γ δ))
 
+/-- At the coalesced parameter `delta = 0`, the auxiliary Gram window is
+singular and its characteristic determinant vanishes for every spectral
+parameter. Thus the regular-pencil root classification is not defined at the
+limit, even though the two non-real roots converge to a real value. -/
+theorem inverseSquare_zero_parameter_pencil_characteristic
+    (m γ : ℝ) (s : ℕ) (lam : ℂ) (hγ : 0 < γ) :
+    ((twoPoleShifted m (inverseSquareNode γ 0) s).map (algebraMap ℝ ℂ) -
+      lam • (twoPoleGram m (inverseSquareNode γ 0) s).map
+        (algebraMap ℝ ℂ)).det = 0 := by
+  have hdet : (twoPoleGram m (inverseSquareNode γ 0) s).det = 0 := by
+    rw [inverseSquare_twoPoleGram_det m γ 0 s hγ]
+    simp
+  rw [twoPolePencil_characteristic, hdet]
+  simp
+
 /-- The inverse-square roots recover both heights as real parts. -/
 theorem inverseSquare_roots_recover_height (γ δ : ℝ) (hγ : 0 < γ) :
     ∃ wPos wNeg : ℂ,
@@ -395,4 +410,5 @@ end CarrySigmaPade
 #print axioms CarrySigmaPade.twoPolePencil_characteristic
 #print axioms CarrySigmaPade.inverseSquare_twoPoleGram_det
 #print axioms CarrySigmaPade.inverseSquare_twoPole_roots
+#print axioms CarrySigmaPade.inverseSquare_zero_parameter_pencil_characteristic
 #print axioms CarrySigmaPade.inverseSquare_roots_recover_height

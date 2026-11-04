@@ -1,0 +1,3 @@
+'CarrySigmaPade.sigmaPadeRemainder_window_normalized_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeQuadraticRootLower_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.sigmaPadeQuadraticRootLower_is_root' depends on axioms: [propext, Classical.choice, Quot.sound]

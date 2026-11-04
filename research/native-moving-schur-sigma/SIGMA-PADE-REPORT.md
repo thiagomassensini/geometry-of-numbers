@@ -92,7 +92,7 @@ Isso explicita o caso degenerado que não pode ser descartado apenas de
 
 ## Auditoria e reprodução
 
-`SigmaPadeAudit.lean` audita 62 raízes públicas e percorre 59.125 constantes
+`SigmaPadeAudit.lean` audita 72 raízes públicas e percorre 59.140 constantes
 alcançáveis nos tipos e corpos. Foram aceitos somente os axiomas-base do Lean
 `[propext, Classical.choice, Quot.sound]`. A auditoria exige como dependências
 `sigmaMatrix`, `completedSigmaLogJet` e
@@ -104,6 +104,7 @@ research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaSignedPencil
 research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaPadeCorrespondence
 research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaTwoPoleModel
 research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaZeroPairDecomposition
+research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaPadeConvergence
 research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaPadeAudit
 ```
 
@@ -213,17 +214,93 @@ python3 research/native-moving-schur-sigma/sigma_pade_cauchy_validation.py \
   > research/native-moving-schur-sigma/evidence/SigmaPadeCauchyValidation.csv
 ```
 
-## ABERTO — próximos checkpoints
+## CONDICIONAL — E: convergência das raízes em janelas móveis
 
-1. **E:** deduzir convergência dos coeficientes Padé e das raízes para janelas
-   da fonte sigma original, condicional ao controle do resto.
-2. **F:** tratar a não comutatividade dos limites em `s` e `delta`, e as três
-   noções distintas de primeira detecção.
-3. **Validação numérica:** extrair os momentos apenas da característica
-   completada, com dois contornos de Cauchy, e comparar com as alturas
-   conhecidas sem usá-las como entrada.
+`SigmaPadeConvergence.lean` prova dois passos gerais. Primeiro, se
+`|r_n| ≤ C eta^n` com `eta<a`, então para cada deslocamento fixo `k`,
+`r_(s+k)/a^(s+1) → 0`. Segundo, a fórmula complexa da raiz quadrática é
+contínua em coeficientes normalizados quando o coeficiente líder tende a um
+valor não nulo; quando `4AC-B² ≥ 0`, a fórmula satisfaz a equação quadrática.
+`sigmaPadeOriginalNormalizedRoot_tendsto` enuncia isso diretamente para os
+coeficientes originais `sigmaPadeD/B/C`, construídos dos jatos
+`completedSigmaLogJet`; `sigmaPadeOriginalRoot_tendsto` também inclui o fator
+de escala `a` para a raiz característica sem normalização.
 
-Até fechar E, a pergunta sobre convergência dos polos da fonte original
-continua condicional. O checkpoint B estabelece a identidade algébrica entre o
-pencil original e o Padé da geradora dos seus jatos; D não afirma que as
-hipóteses de continuação sejam verdadeiras para esse caso.
+Sob as hipóteses condicionais de D, escreva `zeta=a theta`, com
+`a=|zeta|`, `theta=x+i y`, `|theta|=1` e `y≠0`. Para cada `k` fixo, a
+decomposição e o lema de resto dão
+
+\[
+\frac{h_{s+k}}{a^{s+k+1}}
+ = m\,\operatorname{Re}(\theta^{s+k+1})+o(1).
+\]
+
+Os termos principais são uniformemente limitados, então os termos de erro
+desaparecem também nos produtos que definem os três menores. As identidades
+trigonométricas do par conjugado dão
+
+\[
+\frac{D_s}{a^{2s+4}}\to-m^2y^2,\qquad
+\frac{B_s}{a^{2s+5}}\to-2m^2xy^2,\qquad
+\frac{C_s}{a^{2s+6}}\to-m^2y^2.
+\]
+
+Como `y≠0`, o coeficiente líder limite não zera e as duas raízes limite são
+distintas. Para `X=lambda/a`, o polinômio normalizado tende a
+`-m²y² (X²-2xX+1)`, cujas raízes são `theta` e `conj theta`. A fórmula
+formalizada seleciona a raiz de parte imaginária negativa; para
+`zeta=(gamma+i d)^(-2)` com `gamma,d>0`, ela converge a `zeta`, e a outra raiz
+converge a `conj zeta`. Pelo checkpoint B, as raízes finitas do denominador
+Padé são as recíprocas, portanto convergem a `1/zeta` e `1/conj zeta`. As
+raízes quadradas locais recuperam `gamma±i d`.
+
+A formalização já cobre a estimativa do resto, a continuidade da fórmula e a
+equação quadrática. O cálculo dos três limites dos menores a partir da
+decomposição foi verificado algebricamente aqui, mas ainda não está codificado
+como um teorema Lean. E permanece condicional a `hdecomp`, ao zero positivo de
+ordem finita e ao certificado de continuação de D; não afirma que esses fatos
+foram estabelecidos para a característica sigma.
+
+## PROVADO NO MODELO AUXILIAR; ABERTO NA FONTE — F: limites e primeira detecção
+
+No modelo de dois polos, para todo `d≠0`, o determinante de cada janela é
+estritamente negativo, a forma tem uma direção negativa e o lápis regular de
+ordem 2 tem raízes não reais. Para `zeta=(gamma+i d)^(-2)`, elas são
+`zeta` e `conj zeta` para todo deslocamento `s`, e ambas tendem a
+`gamma^(-2)` quando `d→0`. O determinante tende a zero. Em `d=0`, a matriz
+de Gram é singular e o determinante característico do lápis é identicamente zero:
+as raízes do lápis regular deixam de estar definidas. Assim, o valor-limite
+das raízes existe, mas a classificação como lápis regular com par não real
+desaparece continuamente no limite. Tomar `d→0` antes de extrair as raízes
+descarta o lápis regular; extrair primeiro e então tomar o limite produz o
+par coalescente. Os valores numéricos dos limites iterados das raízes,
+enquanto elas estão definidas para `d≠0`, coincidem; a singularidade está na
+classificação e na extração no ponto `d=0`, não em uma divergência dos valores.
+
+As três primeiras detecções não são equivalentes em geral. Para
+`G=diag(0,1)`, o primeiro menor principal é zero embora `G` seja
+semidefinida positiva. Para `G=K=diag(1,-1)`, há uma direção negativa e as
+raízes do lápis são reais. Para `G=diag(1,-1)` e
+`K=[[0,1],[1,0]]`, as raízes são `±i`. No modelo de dois polos, o menor
+inicial `h_s` não positivo detecta a falha principal já na ordem 1; se
+`h_s<0`, já há também direção negativa nessa ordem. Se `h_s≥0`, a direção
+negativa aparece na ordem 2 pelo determinante estritamente negativo (mesmo
+que `h_s=0`, quando o primeiro menor já é zero). As raízes não reais aparecem
+na ordem 2 para todo `d≠0`.
+
+Isso resolve a comparação e a degeneração no modelo auxiliar. Para os jatos
+sigma originais, não foi provada a decomposição em dois polos requerida por D;
+por isso a ordem da primeira detecção, as raízes não reais e a não
+comutatividade do limite com a extração de raízes seguem **ABERTAS**.
+
+## PUBLICADO E REPRODUÇÃO
+
+Os checkpoints A–G estão publicados na branch
+`agent/native-sigma-pade-signed-pencil`; os commits e SHAs finais são
+registrados na resposta de entrega. Para reproduzir os módulos Lean, defina
+`SIGMA_REFERENCE_ROOT=/home/thlinux/geometry-of-numbers-native-moving-schur-sigma`
+e execute `compile_sigma_pade.sh` para cada módulo listado na seção de
+auditoria. A extração numérica é reproduzida pelo comando acima. A auditoria
+continua exigindo proveniência de `sigmaMatrix`, `completedSigmaLogJet` e
+`completedNativeOperatorCharacteristic`, sem construir momentos a partir de
+zeros conhecidos.

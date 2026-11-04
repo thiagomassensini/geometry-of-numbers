@@ -1,4 +1,4 @@
-import SigmaZeroPairDecomposition
+import SigmaPadeConvergence
 import Lean
 
 open Lean Elab Command
@@ -90,6 +90,7 @@ elab "#audit_sigma_pade " ids:ident+ : command => do
 #print axioms CarrySigmaPade.inverseSquare_twoPoleGram_det
 #print axioms CarrySigmaPade.inverseSquare_twoPole_negative_direction
 #print axioms CarrySigmaPade.inverseSquare_twoPole_roots
+#print axioms CarrySigmaPade.inverseSquare_zero_parameter_pencil_characteristic
 #print axioms CarrySigmaPade.inverseSquare_roots_recover_height
 #print axioms CarrySigmaObstruction.completedNativeF_analyticAt_real
 #print axioms CarrySigmaObstruction.completedNativeF_positive_zero_factorization
@@ -100,6 +101,15 @@ elab "#audit_sigma_pade " ids:ident+ : command => do
 #print axioms CarrySigmaObstruction.sigmaZeroPairRemainderSeries
 #print axioms CarrySigmaObstruction.completedSigmaLogJet_zeroPair_conditional_decomposition
 #print axioms CarrySigmaObstruction.completedSigmaLogJet_positive_zero_pair_continuation
+#print axioms CarrySigmaPade.sigmaPadeQuadraticRootLower
+#print axioms CarrySigmaPade.sigmaPadeQuadraticRootLower_tendsto
+#print axioms CarrySigmaPade.sigmaPadeQuadraticRootLower_is_root
+#print axioms CarrySigmaPade.sigmaPadeNormalizedD
+#print axioms CarrySigmaPade.sigmaPadeNormalizedB
+#print axioms CarrySigmaPade.sigmaPadeNormalizedC
+#print axioms CarrySigmaPade.sigmaPadeOriginalNormalizedRoot_tendsto
+#print axioms CarrySigmaPade.sigmaPadeOriginalRoot_tendsto
+#print axioms CarrySigmaPade.sigmaPadeRemainder_window_normalized_tendsto
 
 #audit_sigma_pade
   CarrySigmaPade.sigmaPencilGram
@@ -154,6 +164,7 @@ elab "#audit_sigma_pade " ids:ident+ : command => do
   CarrySigmaPade.inverseSquare_twoPoleGram_det
   CarrySigmaPade.inverseSquare_twoPole_negative_direction
   CarrySigmaPade.inverseSquare_twoPole_roots
+  CarrySigmaPade.inverseSquare_zero_parameter_pencil_characteristic
   CarrySigmaPade.inverseSquare_roots_recover_height
   CarrySigmaObstruction.completedNativeF_analyticAt_real
   CarrySigmaObstruction.completedNativeF_positive_zero_factorization
@@ -164,3 +175,12 @@ elab "#audit_sigma_pade " ids:ident+ : command => do
   CarrySigmaObstruction.sigmaZeroPairRemainderSeries
   CarrySigmaObstruction.completedSigmaLogJet_zeroPair_conditional_decomposition
   CarrySigmaObstruction.completedSigmaLogJet_positive_zero_pair_continuation
+  CarrySigmaPade.sigmaPadeQuadraticRootLower
+  CarrySigmaPade.sigmaPadeQuadraticRootLower_tendsto
+  CarrySigmaPade.sigmaPadeQuadraticRootLower_is_root
+  CarrySigmaPade.sigmaPadeNormalizedD
+  CarrySigmaPade.sigmaPadeNormalizedB
+  CarrySigmaPade.sigmaPadeNormalizedC
+  CarrySigmaPade.sigmaPadeOriginalNormalizedRoot_tendsto
+  CarrySigmaPade.sigmaPadeOriginalRoot_tendsto
+  CarrySigmaPade.sigmaPadeRemainder_window_normalized_tendsto
