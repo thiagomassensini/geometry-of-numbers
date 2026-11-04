@@ -534,13 +534,17 @@ do residual completo continua sendo um problema aberto.
 ```bash
 cd /home/thlinux/worktrees/geometry-of-numbers-native-raw-rank-one-deflation
 bash research/native-cauchy-residual-return/compile_module.sh FirstSurvivingCoefficient
+bash research/native-cauchy-residual-return/compile_module.sh SecondSchur
+bash research/native-cauchy-residual-return/compile_module.sh SecondSchurTowers
 bash research/native-cauchy-residual-return/compile_module.sh Audit
 ```
 
 As compilações de pesquisa utilizam os caches históricos das PRs empilhadas,
-conforme `compile_module.sh`. O validador amplo não foi executado porque seu
-preflight exige que o checkout auxiliar Carry esteja limpo; as alterações
-paralelas já existentes foram preservadas.
+conforme `compile_module.sh`. `Audit` compila a auditoria transitiva de todas
+as raízes públicas registradas em `public-roots.json` e imprime os axiomas de
+cada raiz. O validador amplo não foi executado porque seu preflight exige que
+o checkout auxiliar Carry esteja limpo; as alterações paralelas já existentes
+foram preservadas.
 
 ## Fechamento da missão: posto um, coeficiente e sinal
 
