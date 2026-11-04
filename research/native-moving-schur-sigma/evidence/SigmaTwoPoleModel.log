@@ -4,4 +4,7 @@
 'CarrySigmaPade.twoPolePencil_characteristic' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarrySigmaPade.inverseSquare_twoPoleGram_det' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarrySigmaPade.inverseSquare_twoPole_roots' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.inverseSquare_zero_parameter_pencil_characteristic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
 'CarrySigmaPade.inverseSquare_roots_recover_height' depends on axioms: [propext, Classical.choice, Quot.sound]

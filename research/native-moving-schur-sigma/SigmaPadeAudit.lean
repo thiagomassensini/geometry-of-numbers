@@ -83,6 +83,14 @@ elab "#audit_sigma_pade " ids:ident+ : command => do
 #print axioms CarrySigmaPade.twoPoleGram_negative_direction
 #print axioms CarrySigmaPade.twoPoleMoment_recurrence
 #print axioms CarrySigmaPade.twoPolePencil_characteristic
+#print axioms CarrySigmaPade.twoRealPoleMoment
+#print axioms CarrySigmaPade.twoRealPoleGram
+#print axioms CarrySigmaPade.twoRealPoleShifted
+#print axioms CarrySigmaPade.twoRealPoleMoment_recurrence
+#print axioms CarrySigmaPade.twoRealPoleGram_det
+#print axioms CarrySigmaPade.twoRealPoleGram_det_pos
+#print axioms CarrySigmaPade.twoRealPolePencil_characteristic
+#print axioms CarrySigmaPade.twoRealPolePencil_real_roots
 #print axioms CarrySigmaPade.inverseSquareNode
 #print axioms CarrySigmaPade.inverseSquareNode_re
 #print axioms CarrySigmaPade.inverseSquareNode_im
@@ -102,14 +110,39 @@ elab "#audit_sigma_pade " ids:ident+ : command => do
 #print axioms CarrySigmaObstruction.completedSigmaLogJet_zeroPair_conditional_decomposition
 #print axioms CarrySigmaObstruction.completedSigmaLogJet_positive_zero_pair_continuation
 #print axioms CarrySigmaPade.sigmaPadeQuadraticRootLower
+#print axioms CarrySigmaPade.sigmaPadeQuadraticRootLower_twoPole_limit
 #print axioms CarrySigmaPade.sigmaPadeQuadraticRootLower_tendsto
 #print axioms CarrySigmaPade.sigmaPadeQuadraticRootLower_is_root
+#print axioms CarrySigmaPade.sigmaPadeAlphaBetaRoot_tendsto
+#print axioms CarrySigmaPade.sigmaPadePencil_lowerRoot_is_root
 #print axioms CarrySigmaPade.sigmaPadeNormalizedD
 #print axioms CarrySigmaPade.sigmaPadeNormalizedB
 #print axioms CarrySigmaPade.sigmaPadeNormalizedC
+#print axioms CarrySigmaPade.sigmaPadeNormalizedMoment
+#print axioms CarrySigmaPade.twoPoleMoment_scale
+#print axioms CarrySigmaPade.twoPoleMoment_minor_relations
+#print axioms CarrySigmaPade.twoPoleMoment_unitCircle_minors
+#print axioms CarrySigmaPade.sigmaPadeAlpha_eq_normalized_ratio
+#print axioms CarrySigmaPade.sigmaPadeBeta_eq_normalized_ratio
+#print axioms CarrySigmaPade.sigmaPadeAlpha_tendsto_of_normalized_minors
+#print axioms CarrySigmaPade.sigmaPadeBeta_tendsto_of_normalized_minors
+#print axioms CarrySigmaPade.sigmaPadeAlphaBeta_tendsto_of_twoPole_minor_limits
+#print axioms CarrySigmaPade.sigmaPadeDiscriminant_tendsto_of_alpha_beta
+#print axioms CarrySigmaPade.sigmaPadeD_eventually_neg_of_normalized_limit
+#print axioms CarrySigmaPade.sigmaPadeOriginalPencil_eventually_has_nonreal_root
 #print axioms CarrySigmaPade.sigmaPadeOriginalNormalizedRoot_tendsto
 #print axioms CarrySigmaPade.sigmaPadeOriginalRoot_tendsto
 #print axioms CarrySigmaPade.sigmaPadeRemainder_window_normalized_tendsto
+#print axioms CarrySigmaPade.sigmaPadeNormalizedRemainder_tendsto
+#print axioms CarrySigmaPade.sigmaPadeNormalizedMoment_sub_twoPole_tendsto
+#print axioms CarrySigmaPade.sigmaPadeNormalizedD_eq_normalizedMoments
+#print axioms CarrySigmaPade.sigmaPadeNormalizedB_eq_normalizedMoments
+#print axioms CarrySigmaPade.sigmaPadeNormalizedC_eq_normalizedMoments
+#print axioms CarrySigmaPade.sigmaPadeNormalizedMinors_tendsto_of_twoPole_remainder
+#print axioms CarrySigmaPade.twoPoleMoment_abs_le_of_normSq_eq_one
+#print axioms CarrySigmaPade.sigmaPadeNormalizedMinors_tendsto_of_unitCircle_twoPole_remainder
+#print axioms CarrySigmaPade.sigmaPadeOriginalPencil_root_tendsto_of_twoPole_remainder
+#print axioms CarrySigmaPade.sigmaPadeOriginalPencil_root_tendsto_to_twoPole
 
 #audit_sigma_pade
   CarrySigmaPade.sigmaPencilGram
@@ -157,6 +190,14 @@ elab "#audit_sigma_pade " ids:ident+ : command => do
   CarrySigmaPade.twoPoleGram_negative_direction
   CarrySigmaPade.twoPoleMoment_recurrence
   CarrySigmaPade.twoPolePencil_characteristic
+  CarrySigmaPade.twoRealPoleMoment
+  CarrySigmaPade.twoRealPoleGram
+  CarrySigmaPade.twoRealPoleShifted
+  CarrySigmaPade.twoRealPoleMoment_recurrence
+  CarrySigmaPade.twoRealPoleGram_det
+  CarrySigmaPade.twoRealPoleGram_det_pos
+  CarrySigmaPade.twoRealPolePencil_characteristic
+  CarrySigmaPade.twoRealPolePencil_real_roots
   CarrySigmaPade.inverseSquareNode
   CarrySigmaPade.inverseSquareNode_re
   CarrySigmaPade.inverseSquareNode_im
@@ -176,11 +217,36 @@ elab "#audit_sigma_pade " ids:ident+ : command => do
   CarrySigmaObstruction.completedSigmaLogJet_zeroPair_conditional_decomposition
   CarrySigmaObstruction.completedSigmaLogJet_positive_zero_pair_continuation
   CarrySigmaPade.sigmaPadeQuadraticRootLower
+  CarrySigmaPade.sigmaPadeQuadraticRootLower_twoPole_limit
   CarrySigmaPade.sigmaPadeQuadraticRootLower_tendsto
   CarrySigmaPade.sigmaPadeQuadraticRootLower_is_root
+  CarrySigmaPade.sigmaPadeAlphaBetaRoot_tendsto
+  CarrySigmaPade.sigmaPadePencil_lowerRoot_is_root
   CarrySigmaPade.sigmaPadeNormalizedD
   CarrySigmaPade.sigmaPadeNormalizedB
   CarrySigmaPade.sigmaPadeNormalizedC
+  CarrySigmaPade.sigmaPadeNormalizedMoment
+  CarrySigmaPade.twoPoleMoment_scale
+  CarrySigmaPade.twoPoleMoment_minor_relations
+  CarrySigmaPade.twoPoleMoment_unitCircle_minors
+  CarrySigmaPade.sigmaPadeAlpha_eq_normalized_ratio
+  CarrySigmaPade.sigmaPadeBeta_eq_normalized_ratio
+  CarrySigmaPade.sigmaPadeAlpha_tendsto_of_normalized_minors
+  CarrySigmaPade.sigmaPadeBeta_tendsto_of_normalized_minors
+  CarrySigmaPade.sigmaPadeAlphaBeta_tendsto_of_twoPole_minor_limits
+  CarrySigmaPade.sigmaPadeDiscriminant_tendsto_of_alpha_beta
+  CarrySigmaPade.sigmaPadeD_eventually_neg_of_normalized_limit
+  CarrySigmaPade.sigmaPadeOriginalPencil_eventually_has_nonreal_root
   CarrySigmaPade.sigmaPadeOriginalNormalizedRoot_tendsto
   CarrySigmaPade.sigmaPadeOriginalRoot_tendsto
   CarrySigmaPade.sigmaPadeRemainder_window_normalized_tendsto
+  CarrySigmaPade.sigmaPadeNormalizedRemainder_tendsto
+  CarrySigmaPade.sigmaPadeNormalizedMoment_sub_twoPole_tendsto
+  CarrySigmaPade.sigmaPadeNormalizedD_eq_normalizedMoments
+  CarrySigmaPade.sigmaPadeNormalizedB_eq_normalizedMoments
+  CarrySigmaPade.sigmaPadeNormalizedC_eq_normalizedMoments
+  CarrySigmaPade.sigmaPadeNormalizedMinors_tendsto_of_twoPole_remainder
+  CarrySigmaPade.twoPoleMoment_abs_le_of_normSq_eq_one
+  CarrySigmaPade.sigmaPadeNormalizedMinors_tendsto_of_unitCircle_twoPole_remainder
+  CarrySigmaPade.sigmaPadeOriginalPencil_root_tendsto_of_twoPole_remainder
+  CarrySigmaPade.sigmaPadeOriginalPencil_root_tendsto_to_twoPole

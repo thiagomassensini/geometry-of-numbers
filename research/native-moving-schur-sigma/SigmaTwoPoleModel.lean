@@ -254,6 +254,146 @@ theorem twoPolePencil_characteristic (m : ℝ) (ζ : ℂ) (s : ℕ) (lam : ℂ) 
     _ = ((p * r - q ^ 2 : ℝ) : ℂ) * (lam - ζ) * (lam - starRingEnd ℂ ζ) := by
           rw [mul_assoc]
 
+/-- Auxiliary real two-pole moments. They describe the coalesced-displacement
+model with two distinct positive heights; they are not identified with the
+original sigma jets without a continuation hypothesis. -/
+def twoRealPoleMoment (m₁ m₂ ρ₁ ρ₂ : ℝ) (n : ℕ) : ℝ :=
+  m₁ * ρ₁ ^ (n + 1) + m₂ * ρ₂ ^ (n + 1)
+
+def twoRealPoleGram (m₁ m₂ ρ₁ ρ₂ : ℝ) (s : ℕ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  fun i j => twoRealPoleMoment m₁ m₂ ρ₁ ρ₂ (s + i.val + j.val)
+
+def twoRealPoleShifted (m₁ m₂ ρ₁ ρ₂ : ℝ) (s : ℕ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  fun i j => twoRealPoleMoment m₁ m₂ ρ₁ ρ₂ (s + 1 + i.val + j.val)
+
+theorem twoRealPoleMoment_recurrence (m₁ m₂ ρ₁ ρ₂ : ℝ) (n : ℕ) :
+    twoRealPoleMoment m₁ m₂ ρ₁ ρ₂ (n + 2) =
+      (ρ₁ + ρ₂) * twoRealPoleMoment m₁ m₂ ρ₁ ρ₂ (n + 1) -
+        ρ₁ * ρ₂ * twoRealPoleMoment m₁ m₂ ρ₁ ρ₂ n := by
+  simp [twoRealPoleMoment, pow_succ, Nat.add_left_comm,
+    Nat.add_comm]
+  ring
+
+theorem twoRealPoleGram_det (m₁ m₂ ρ₁ ρ₂ : ℝ) (s : ℕ) :
+    (twoRealPoleGram m₁ m₂ ρ₁ ρ₂ s).det =
+      m₁ * m₂ * (ρ₁ * ρ₂) ^ (s + 1) * (ρ₁ - ρ₂) ^ 2 := by
+  have h0 : twoRealPoleMoment m₁ m₂ ρ₁ ρ₂ s =
+      m₁ * ρ₁ ^ (s + 1) + m₂ * ρ₂ ^ (s + 1) := rfl
+  have h1 : twoRealPoleMoment m₁ m₂ ρ₁ ρ₂ (s + 1) =
+      m₁ * ρ₁ ^ (s + 1) * ρ₁ + m₂ * ρ₂ ^ (s + 1) * ρ₂ := by
+    simp [twoRealPoleMoment, pow_succ, Nat.add_assoc]
+    ring
+  have h2 : twoRealPoleMoment m₁ m₂ ρ₁ ρ₂ (s + 2) =
+      m₁ * ρ₁ ^ (s + 1) * ρ₁ ^ 2 + m₂ * ρ₂ ^ (s + 1) * ρ₂ ^ 2 := by
+    simp [twoRealPoleMoment, pow_succ, Nat.add_assoc]
+    ring
+  have hdet : (twoRealPoleGram m₁ m₂ ρ₁ ρ₂ s).det =
+      twoRealPoleMoment m₁ m₂ ρ₁ ρ₂ s * twoRealPoleMoment m₁ m₂ ρ₁ ρ₂ (s + 2) -
+        twoRealPoleMoment m₁ m₂ ρ₁ ρ₂ (s + 1) ^ 2 := by
+    simp [twoRealPoleGram, Matrix.det_fin_two]
+    ring
+  rw [hdet, h0, h1, h2]
+  calc
+    (m₁ * ρ₁ ^ (s + 1) + m₂ * ρ₂ ^ (s + 1)) *
+        (m₁ * ρ₁ ^ (s + 1) * ρ₁ ^ 2 + m₂ * ρ₂ ^ (s + 1) * ρ₂ ^ 2) -
+        (m₁ * ρ₁ ^ (s + 1) * ρ₁ + m₂ * ρ₂ ^ (s + 1) * ρ₂) ^ 2 =
+      m₁ * m₂ * (ρ₁ ^ (s + 1) * ρ₂ ^ (s + 1)) * (ρ₁ - ρ₂) ^ 2 := by ring
+    _ = m₁ * m₂ * (ρ₁ * ρ₂) ^ (s + 1) * (ρ₁ - ρ₂) ^ 2 := by
+      rw [← mul_pow]
+
+theorem twoRealPoleGram_det_pos (m₁ m₂ ρ₁ ρ₂ : ℝ) (s : ℕ)
+    (hm₁ : 0 < m₁) (hm₂ : 0 < m₂) (hρ₁ : 0 < ρ₁) (hρ₂ : 0 < ρ₂)
+    (hneq : ρ₁ ≠ ρ₂) :
+    0 < (twoRealPoleGram m₁ m₂ ρ₁ ρ₂ s).det := by
+  rw [twoRealPoleGram_det]
+  positivity
+
+private theorem twoRealPole_roots_quadratic (ρ₁ ρ₂ : ℝ) (lam : ℂ) :
+    (lam - (ρ₁ : ℂ)) * (lam - (ρ₂ : ℂ)) =
+      lam ^ 2 - ((ρ₁ + ρ₂ : ℝ) : ℂ) * lam + ((ρ₁ * ρ₂ : ℝ) : ℂ) := by
+  push_cast
+  ring
+
+/-- The coalesced two-real-pole model has exactly its two real nodes as
+generalized pencil roots at every shift. -/
+theorem twoRealPolePencil_characteristic
+    (m₁ m₂ ρ₁ ρ₂ : ℝ) (s : ℕ) (lam : ℂ) :
+    ((twoRealPoleShifted m₁ m₂ ρ₁ ρ₂ s).map (algebraMap ℝ ℂ) -
+      lam • (twoRealPoleGram m₁ m₂ ρ₁ ρ₂ s).map (algebraMap ℝ ℂ)).det =
+      ((twoRealPoleGram m₁ m₂ ρ₁ ρ₂ s).det : ℂ) *
+        (lam - (ρ₁ : ℂ)) * (lam - (ρ₂ : ℂ)) := by
+  let p := twoRealPoleMoment m₁ m₂ ρ₁ ρ₂ s
+  let q := twoRealPoleMoment m₁ m₂ ρ₁ ρ₂ (s + 1)
+  let r := twoRealPoleMoment m₁ m₂ ρ₁ ρ₂ (s + 2)
+  let t := twoRealPoleMoment m₁ m₂ ρ₁ ρ₂ (s + 3)
+  let a : ℝ := (ρ₁ + ρ₂) / 2
+  let b : ℝ := ρ₁ * ρ₂
+  have h2a : 2 * a = ρ₁ + ρ₂ := by dsimp [a]; ring
+  have hr : r = 2 * a * q - b * p := by
+    dsimp [r, q, p, b]
+    rw [h2a]
+    exact twoRealPoleMoment_recurrence m₁ m₂ ρ₁ ρ₂ s
+  have ht : t = 2 * a * r - b * q := by
+    dsimp [t, r, q, b]
+    rw [h2a]
+    simpa [Nat.add_assoc] using twoRealPoleMoment_recurrence m₁ m₂ ρ₁ ρ₂ (s + 1)
+  have hdet : (twoRealPoleGram m₁ m₂ ρ₁ ρ₂ s).det = p * r - q ^ 2 := by
+    simp [p, q, r, twoRealPoleGram, Matrix.det_fin_two]
+    ring
+  let M := (twoRealPoleShifted m₁ m₂ ρ₁ ρ₂ s).map (algebraMap ℝ ℂ) -
+    lam • (twoRealPoleGram m₁ m₂ ρ₁ ρ₂ s).map (algebraMap ℝ ℂ)
+  have m00 : M 0 0 = (q : ℂ) - lam * p := by
+    simp [M, p, q, twoRealPoleShifted, twoRealPoleGram, Matrix.map_apply,
+      Matrix.sub_apply, Matrix.smul_apply, twoRealPoleMoment]
+  have m01 : M 0 1 = (r : ℂ) - lam * q := by
+    simp [M, q, r, twoRealPoleShifted, twoRealPoleGram, Matrix.map_apply,
+      Matrix.sub_apply, Matrix.smul_apply, twoRealPoleMoment]
+  have m10 : M 1 0 = (r : ℂ) - lam * q := by
+    simp [M, q, r, twoRealPoleShifted, twoRealPoleGram, Matrix.map_apply,
+      Matrix.sub_apply, Matrix.smul_apply, twoRealPoleMoment]
+  have m11 : M 1 1 = (t : ℂ) - lam * r := by
+    simp [M, r, t, twoRealPoleShifted, twoRealPoleGram, Matrix.map_apply,
+      Matrix.sub_apply, Matrix.smul_apply, twoRealPoleMoment]
+  have hmatrix : M.det =
+      ((q : ℂ) - lam * p) * ((t : ℂ) - lam * r) - ((r : ℂ) - lam * q) ^ 2 := by
+    rw [Matrix.det_fin_two, m00, m11, m01, m10]
+    ring
+  change M.det = _
+  rw [hmatrix, twoPole_char_factor_generic p q r t a b lam hr ht, hdet]
+  have h2aC : (2 : ℂ) * (a : ℂ) = ((ρ₁ + ρ₂ : ℝ) : ℂ) := by
+    exact_mod_cast h2a
+  have hbC : (b : ℂ) = ((ρ₁ * ρ₂ : ℝ) : ℂ) := by simp [b]
+  have hpoly : lam ^ 2 - 2 * (a : ℂ) * lam + (b : ℂ) =
+      lam ^ 2 - ((ρ₁ + ρ₂ : ℝ) : ℂ) * lam + ((ρ₁ * ρ₂ : ℝ) : ℂ) := by
+    rw [h2aC, hbC]
+  rw [hpoly]
+  calc
+    ((p * r - q ^ 2 : ℝ) : ℂ) *
+        (lam ^ 2 - ((ρ₁ + ρ₂ : ℝ) : ℂ) * lam + ((ρ₁ * ρ₂ : ℝ) : ℂ)) =
+        ((p * r - q ^ 2 : ℝ) : ℂ) *
+          ((lam - (ρ₁ : ℂ)) * (lam - (ρ₂ : ℂ))) := by
+            rw [twoRealPole_roots_quadratic]
+    _ = ((p * r - q ^ 2 : ℝ) : ℂ) *
+          (lam - (ρ₁ : ℂ)) * (lam - (ρ₂ : ℂ)) := by rw [mul_assoc]
+
+/-- With two positive weights and distinct positive real nodes, the coalesced
+model has a regular Gram window and its two pencil roots are exactly the two
+real nodes at every shift. -/
+theorem twoRealPolePencil_real_roots
+    (m₁ m₂ ρ₁ ρ₂ : ℝ) (s : ℕ)
+    (hm₁ : 0 < m₁) (hm₂ : 0 < m₂) (hρ₁ : 0 < ρ₁) (hρ₂ : 0 < ρ₂)
+    (hneq : ρ₁ ≠ ρ₂) :
+    0 < (twoRealPoleGram m₁ m₂ ρ₁ ρ₂ s).det ∧
+      ((twoRealPoleShifted m₁ m₂ ρ₁ ρ₂ s).map (algebraMap ℝ ℂ) -
+        (ρ₁ : ℂ) • (twoRealPoleGram m₁ m₂ ρ₁ ρ₂ s).map
+          (algebraMap ℝ ℂ)).det = 0 ∧
+      ((twoRealPoleShifted m₁ m₂ ρ₁ ρ₂ s).map (algebraMap ℝ ℂ) -
+        (ρ₂ : ℂ) • (twoRealPoleGram m₁ m₂ ρ₁ ρ₂ s).map
+          (algebraMap ℝ ℂ)).det = 0 := by
+  refine ⟨twoRealPoleGram_det_pos m₁ m₂ ρ₁ ρ₂ s hm₁ hm₂ hρ₁ hρ₂ hneq, ?_, ?_⟩
+  · simpa using twoRealPolePencil_characteristic m₁ m₂ ρ₁ ρ₂ s (ρ₁ : ℂ)
+  · simpa using twoRealPolePencil_characteristic m₁ m₂ ρ₁ ρ₂ s (ρ₂ : ℂ)
+
 /-- The inverse-square node for a pair of heights. -/
 def inverseSquareNode (γ δ : ℝ) : ℂ := ((γ : ℂ) + (δ : ℂ) * Complex.I)⁻¹ ^ 2
 
