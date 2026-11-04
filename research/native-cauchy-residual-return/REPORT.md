@@ -717,9 +717,10 @@ para cada raiz; não foram introduzidos `sorry`, `admit` nem axiomas novos.
 Os resultados D/E/F foram publicados no commit
 [`5e5454a7afa339c63e7d400f0819e6e301d9574c`](https://github.com/thiagomassensini/geometry-of-numbers/commit/5e5454a7afa339c63e7d400f0819e6e301d9574c),
 cujo SHA remoto foi confirmado após o push. A/B/C também permanecem publicados
-nos links acima. A fase G está compilada e auditada nesta revisão; o SHA de
-publicação será acrescentado após o commit e a conferência do remoto. O cache
-`.lake` foi preservado. O checkout auxiliar Carry contém alterações alheias e
+nos links acima. A fase G foi publicada no commit
+[`2c853d8bb6b46ecb80a132e0eef39abdaadce5c7`](https://github.com/thiagomassensini/geometry-of-numbers/commit/2c853d8bb6b46ecb80a132e0eef39abdaadce5c7);
+o SHA foi conferido com `git ls-remote`. O cache `.lake` foi preservado. O
+checkout auxiliar Carry contém alterações alheias e
 não foi limpo nem modificado. O validador espera o checkout em
 `/home/thlinux/worktrees/carry-self-adjoint-operator`, mas o checkout existente
 está em `/home/thlinux/carry-self-adjoint-operator`; com uma referência
