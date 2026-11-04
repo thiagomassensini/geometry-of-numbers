@@ -1,0 +1,254 @@
+'CarryCauchyResidual.feature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.cauchy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.feature_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.feature_projection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.perpendicularFeature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.perpendicularFeature_eq_complement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.perpendicularFeature_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.isometricFeature' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.isometricFeature_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.tailSynthesis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.isometricSynthesis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.synthesis_isometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.synthesis_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.tailSynthesis_eq_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.tailSynthesis_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.finitePhysicalIsometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.finitePhysicalIsometry_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.sourceReturn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.feedbackDenominator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.incidentCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.returnedCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeIn_basis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeOut_basis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.remainingIncident_basis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.remainingIncident_basis_isometric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.residual_basis_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.tailInput' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.tailCoefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.eraseHead_eq_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.linearMap_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.incidentCoordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.returnedCoordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.incidentCoordinates_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.remainingIncident_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeOut_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.residual_same_cauchy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.residual_full_source' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.reducedReturn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.reducedReturn_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.reduced_coordinates_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.residual_return_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.controlMultiplier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.controlCoefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.controlPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.control_diagonal_contracts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.control_first_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.control_second_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.control_cross' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.control_full_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.radialScale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.radialScale_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.curvature_eq_four_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.sourceReturn_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.source_tangent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.returnedCoefficient_tangent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.feedbackDenominator_tangent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.incidentCoefficient_tangent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.central_deficit_tangent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.incidentCoefficient_eventually_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.reduced_coordinates_eventually_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.reducedReturn_tendsto_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.returnedHead' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.projectedBothPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.projection_loss_polarized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.projection_loss_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.returnedHead_basis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeAnchor_norm_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.returnedHead_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.projection_loss_schur_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.projection_loss_strict_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.second_source_projection_loss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.jetTailCoefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.reducedJetIncident' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.reducedJetReturned' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.reducedJetPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.reducedJetPair_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.reducedJetPair_canonical_schur_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawForm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeBalance_basis_eq_nativeRawKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeBalance_eq_nativeRawForm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawKernel_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawForm_matrix_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawForm_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawLimitMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawMatrix_entrywise_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawLimitOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawLimitMatrix_mulVec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawLimitOperator_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawLimitOperator_kernel_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawLimitMatrix_rank_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawHead' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawSchurForm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawHead_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawForm_headCross_eq_anchorCross' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawForm_headHead_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawSchurForm_eq_remainingPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawSchurForm_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawJetSchur_eq_jetSchurRemainder_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativeRawJetSchur_tendsto_canonical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeProjectionLoss_regression' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeSourceOddBoundaryCoefficient_zero_eq_two_moment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativeSourceOddBoundaryCoefficient_one_eq_two_moment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativeTransverseLogSlope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeTransverseLogSlope_first_two_remainder' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativeTransverseChiralQuotient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeTransverseChiralQuotient_eq_cayley_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativeSourceRemainderP' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeSourceRemainderD' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeCayleyCubicRemainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeCayleyCubicRemainder_analytic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeTransverseChiralQuotient_cubic_remainder' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativeFirstOddJetDirection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.canonicalBoundaryPair_firstOddJet_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.canonicalBoundaryPair_head_firstOddJet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawJetSchur_firstOdd_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.remainingPair_smul_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.remainingPair_two_source_tail_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawSchurForm_two_source_tail_scale' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativeRawSchurForm_two_source_tail_scale_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativeFirstOddJetTailScale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeFirstOddJetTailScale_eq_original_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativeFirstOddJetTailScale_mul_greenStep_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativeFirstOddJetTailScale_absSq_mul_greenStep_sq_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativeRawJetSchur_firstOdd_exact_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.canonicalFirstOddSourceSchur_eq_moment_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.rawKernelOrderOne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.rawKernelOrderTwo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.rawSchurOrderTwo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.rawKernelOrderOne_schur_cancels' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.rawSchurOrderTwo_eq_first_odd_pivot' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalCauchyMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalD1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalD2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalD3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalP0' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalP1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalP2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawKernel_hermitian_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalCauchyMatrix_isHermitian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalD1_star' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalD2_star' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalD3_star' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalSecondSchurPivot' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalCayleyRho' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalRadialCoordinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.completedNativeLogDerivative_real_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativePhysicalCayleyRho_eq_nativeTransverseLogSlope_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativePhysicalCayleyRho_real_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalCayleyRho_hasSum_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativePhysicalCayleyAnalyticKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalCayleyAnalyticMomentTerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalCayleyPhysicalMomentTerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalCayleyAnalyticKernel_hasSum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativePhysicalCayleyAnalyticKernel_hasSum_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativePhysicalCayleyRho_cayley_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativePhysicalRadialPoint_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalCayleyFactor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalCayleyCongruenceEntry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalCayleyMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalCayleyMatrix_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.sourceReturn_eq_nativePhysicalCayley_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativePhysicalCayleyFactor_finite_eventually_real_nonzero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativePhysicalCayleyCongruenceEntry_eq_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativePhysicalCauchy_eq_inv_radialSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalCayleyCongruenceEntry_eq_analyticKernel_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativePhysicalCayleyCongruenceEntry_hasSum_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativePhysicalCayleyMatrix_hasSum_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativePhysicalCayleyMatrix_eq_analyticKernel_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativePhysicalAmplitude_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalCauchyMatrix_eq_nativePick' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativePhysicalD3_eq_scaled_dslope_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalAmplitudeNormProduct_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativePhysicalD3Scaled_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalD2_eq_head_mul_tailSchur' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalD1_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalD1_eq_deficit_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalTailSchurScaled_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalD2Scaled_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalD2RealStepScaled_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalSecondSchurPivotScaled_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativePhysicalD2_eventually_re_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalD3_eventually_re_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalP0_eventually_re_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalP1_eventually_re_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalP2_eventually_re_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalP2_eventually_re_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativePhysicalCauchyMatrix_three_reindex_eq_fromBlocks' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativePhysicalCauchyMatrix_three_eventually_posDef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Cauchy residual audit cauchy: roots 49; type/body closure 5490; allowed foundations passed
+Cauchy residual audit source: roots 53; type/body closure 5775; allowed foundations passed
+Cauchy residual audit first_survivor: roots 30; type/body closure 5912; allowed foundations passed
+Cauchy residual audit second_schur: roots 58; type/body closure 5559; allowed foundations passed

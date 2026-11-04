@@ -590,3 +590,121 @@ os jets completos transportam isso ao primeiro pivô com a normalização
 canônica já certificada. Isso ainda não dá o sinal de `h₁` nem a hierarquia
 all-order: cada próximo Schur continua exigindo uma desigualdade independente
 da fonte original.
+
+## Missão Luna: terceira fonte, segundo Schur e Cayley físico
+
+Estado revalidado em 2026-11-04 no worktree
+`/home/thlinux/worktrees/geometry-of-numbers-native-raw-rank-one-deflation`,
+branch `agent/native-raw-rank-one-deflation`. O ponto de partida foi
+`92f57e6449e23bea2f89555a66fcc9a11ae066ca`; `git fetch` confirmou o mesmo SHA
+na branch remota. Os commits A, B e C (`0905551`, `6a5670d`, `92f57e6`) já
+estavam publicados nessa branch e pertencem à linha que parte de
+`9392ebac9930f5d11c56f595556080e8ab1de809`. Links permanentes:
+[A](https://github.com/thiagomassensini/geometry-of-numbers/commit/0905551),
+[B](https://github.com/thiagomassensini/geometry-of-numbers/commit/6a5670d) e
+[C](https://github.com/thiagomassensini/geometry-of-numbers/commit/92f57e6).
+
+### PROVADO
+
+`SecondSchur.lean` conserva `completedNativeOperatorCharacteristic`,
+`completedNativeLogDerivative` e o quociente quiral original. A coordenada
+real local `nativePhysicalCayleyRho` é identificada com
+`nativeTransverseLogSlope`; `nativePhysicalCayleyRho_cayley_eventually`
+prova `q(is)=(rho(s)-1)/(rho(s)+1)`, certifica que `rho` é real e que o
+denominador não se anula no domínio local. Os fatores diagonais são
+eventualmente reais e não nulos nas três fontes. A identidade algébrica do
+kernel bruto é `nativePhysicalCayleyCongruenceEntry_eq_eventually`, usando a
+conjugação física e os endereços originais `i+1`, `j+1`.
+
+`nativePhysicalCayleyCongruenceEntry_hasSum_eventually` e
+`nativePhysicalCayleyMatrix_hasSum_eventually` provam a expansão convergente
+no domínio local de amostragem. O termo de ordem `n` contém precisamente
+`canonicalCompletedNativeLogDerivativeMoment n`, a potência de malha
+`(k+1)⁻²ⁿ` e o quociente
+`((i+1)^(2n+1)+(j+1)^(2n+1))/(i+j+2)`. A afirmação é local/eventual; não foi
+estendida para fora do domínio analítico estabelecido.
+
+Para a matriz física bruta das três primeiras fontes, os limites Lean são
+
+\[
+D_1\to4h_0,\qquad (k+1)^2D_2\to16h_0h_1,
+\]
+
+\[
+(k+1)^6D_3\to256h_1\det H_2
+ =256h_1(h_0h_2-h_1^2).
+\]
+
+O segundo pivô é formado pelos determinantes dessa mesma matriz, não por uma
+Gram auxiliar. `nativePhysicalSecondSchurPivotScaled_tendsto` prova
+
+\[
+(k+1)^4p_2(k)\longrightarrow16\left(h_2-\frac{h_1^2}{h_0}\right).
+\]
+
+O sinal do residual não entra nessa prova assintótica: a positividade é usada
+depois, em `nativePhysicalP2_eventually_re_pos`, via o certificado canônico
+independente `canonicalCompletedNativeSecondSchurComplement_pos`.
+
+`nativePhysicalP0_eventually_re_pos`, `nativePhysicalP1_eventually_re_pos`,
+`nativePhysicalP2_eventually_re_pos'` e os lemas de determinantes dão os
+sinais eventuais dos três pivôs e de `D₁,D₂,D₃`. O teorema
+`nativePhysicalCauchyMatrix_three_eventually_posDef` fecha a positividade
+definida da matriz física complexa 3×3: usa o certificado de duas fontes já
+existente para o bloco inicial e identifica o complemento escalar com `p₂`.
+A conclusão está restrita às três primeiras fontes.
+
+### DERIVADO
+
+O termo racional homogêneo sugere a identidade finita
+
+\[
+\frac{s^{2n+1}+t^{2n+1}}{s+t}
+=\sum_{r=0}^{2n}(-1)^r s^{2n-r}t^r.
+\]
+
+Lendo os monômios dessa soma, os setores previstos são
+`4(-1)^(i+j) h_(i+j)` em grau `(2i,2j)`,
+`4(-1)^(i+j) h_(i+j+1)` em grau `(2i+1,2j+1)` e zero nos graus de paridades
+mistas. Isso organiza o cálculo algébrico em duas torres Hankel. A extração
+conjunta desses coeficientes ainda não foi formalizada como teorema Lean
+nesta etapa. Também não foi provada uma fórmula all-order para os pivôs de
+Schur por Vandermonde confluente nem identificada essa série com os estados
+materiais do ledger Green/TFVD.
+
+### ABERTO
+
+1. Formalizar em Lean a extensão analítica removível em `s+t=0` e a extração
+   dos coeficientes das duas torres a partir da série convergente.
+2. Determinar, em ordem geral, os limites de Schur via Vandermonde confluente.
+3. Obter sinais independentes para Hankel de ordem arbitrária; a positividade
+   das três primeiras fontes não implica positividade central all-order.
+
+### REFUTADO
+
+Nenhuma parte desta etapa substitui o kernel físico por outro ou remove os
+retornos originais. As regressões de projeção dupla, Gram Cauchy, atlas finito
+e obstrução off-critical continuam nos módulos anteriores e não foram
+alteradas.
+
+### AUDITORIA E PUBLICAÇÃO
+
+`compile_module.sh SecondSchur` e `compile_module.sh Audit` compilaram com
+`-DwarningAsError=true`. A auditoria inclui agora 58 raízes públicas de
+`SecondSchur`; o fecho de tipos e corpos contém 5.559 constantes e aceita
+somente `[propext, Classical.choice, Quot.sound]`. A compilação percorre os
+corpos e tipos transitivos, além de imprimir axiomas para cada raiz; não
+foram introduzidos `sorry`, `admit` nem axiomas novos.
+
+O push A/B/C está confirmado. Os resultados D/E/F foram validados localmente
+nesta revisão; seus hashes e estado de publicação serão registrados após o
+commit e a comparação do SHA remoto. O cache `.lake` foi preservado. O checkout
+auxiliar Carry contém alterações alheias e não foi limpo nem modificado. O
+validador espera o checkout em `/home/thlinux/worktrees/carry-self-adjoint-operator`,
+mas o checkout existente está em `/home/thlinux/carry-self-adjoint-operator`;
+com uma referência temporária removível para o caminho correto, o preflight
+parou no `assert not git diff HEAD` da linha 45 de `validate.py`, devido às
+alterações locais pré-existentes do Carry. A referência temporária foi removida
+e o checkout não foi alterado. O bloqueio observado está registrado em
+`evidence/second-schur-preflight-block.md`; as compilações focadas e a auditoria
+transitiva passaram.
