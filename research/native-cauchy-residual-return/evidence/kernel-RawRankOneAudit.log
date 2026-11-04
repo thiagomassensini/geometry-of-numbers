@@ -92,5 +92,15 @@
 'CarryCauchyResidual.nativeRawLimitMatrix_rank_one' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarryCauchyResidual.nativeRawHead' depends on axioms: [propext, Classical.choice, Quot.sound]
 'CarryCauchyResidual.nativeRawSchurForm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawHead_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawForm_headCross_eq_anchorCross' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawForm_headHead_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawSchurForm_eq_remainingPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawSchurForm_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeRawJetSchur_eq_jetSchurRemainder_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryCauchyResidual.nativeRawJetSchur_tendsto_canonical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryCauchyResidual.nativeProjectionLoss_regression' depends on axioms: [propext, Classical.choice, Quot.sound]
 Cauchy residual audit cauchy: roots 49; type/body closure 5490; allowed foundations passed
-Cauchy residual audit source: roots 45; type/body closure 5762; allowed foundations passed
+Cauchy residual audit source: roots 53; type/body closure 5775; allowed foundations passed

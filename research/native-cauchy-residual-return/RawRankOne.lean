@@ -264,5 +264,119 @@ def nativeRawSchurForm (k N : ℕ) (c d : Fin (N+1) → ℂ) : ℂ :=
       nativeRawForm k (N+1) (nativeRawHead N) d /
       nativeRawForm k (N+1) (nativeRawHead N) (nativeRawHead N)
 
+theorem nativeRawHead_sum (N : ℕ) : ∑ i : Fin (N+1), nativeRawHead N i = 1 := by
+  simp [nativeRawHead]
+
+theorem nativeRawForm_headCross_eq_anchorCross (k N : ℕ) (c : Fin (N+1) → ℂ) :
+    nativeRawForm k (N+1) (nativeRawHead N) c =
+      anchorCross (oneReturn k) (nativeAnchor k)
+        (radialIncidentSynthesis k (N+1) c) (radialReturnedSynthesis k (N+1) c) := by
+  rw [← nativeBalance_eq_nativeRawForm]
+  change nativeBalance k (N+1) (Pi.single 0 1) c = _
+  unfold nativeBalance
+  rw [native_incident_head, native_returned_head]
+  exact (anchorCross_eq_balance (oneReturn k) (nativeAnchor k)
+    (radialIncidentSynthesis k (N+1) c) (radialReturnedSynthesis k (N+1) c)).symm
+
+theorem nativeRawForm_headHead_eq (k N : ℕ) :
+    nativeRawForm k (N+1) (nativeRawHead N) (nativeRawHead N) =
+      (oneDeficit k:ℂ)*(anchorMass k:ℂ) := by
+  rw [← nativeBalance_eq_nativeRawForm]
+  change nativeBalance k (N+1) (Pi.single 0 1) (Pi.single 0 1) = _
+  rw [nativeBalance_basis_eq_nativeRawKernel]
+  have hdef : 1-star (oneReturn k)*oneReturn k = (oneDeficit k:ℂ) := by
+    simpa only [deficit, starRingEnd_apply] using native_deficit k
+  have hhead : sourceReturn k 0 = oneReturn k := by rfl
+  rw [nativeRawKernel, cauchy]
+  simp only [Fin.val_zero]
+  rw [hhead, hdef]
+  simp only [Nat.cast_zero, zero_add, anchorMass]
+  have hk : (2:ℂ) ≠ 0 := by norm_num
+  simp only [Complex.ofReal_div, Complex.ofReal_add, Complex.ofReal_natCast,
+    Complex.ofReal_ofNat, Complex.ofReal_one]
+  field_simp [hk]
+
+/-- The first Schur subtraction of the raw finite form is the exact physical
+remainder already defined by the orthogonal projection onto the first source. -/
+theorem nativeRawSchurForm_eq_remainingPair (k N : ℕ) (c d : Fin (N+1) → ℂ)
+    (hd : oneDeficit k ≠ 0) :
+    nativeRawSchurForm k N c d = remainingPair k (N+1) c d/(oneDeficit k:ℂ) := by
+  rw [nativeRawSchurForm, ← nativeBalance_eq_nativeRawForm,
+    nativeRawForm_headCross_eq_anchorCross, nativeRawForm_headCross_eq_anchorCross,
+    nativeRawForm_headHead_eq]
+  exact (native_schur_remainder k (N+1) c d hd).symm
+
+theorem nativeRawSchurForm_tendsto_zero (N : ℕ) (c d : Fin (N+1) → ℂ) :
+    Tendsto (fun k => nativeRawSchurForm k N c d) atTop (nhds 0) := by
+  let H : ℂ := 4*(canonicalCompletedNativeLogDerivativeMoment 0:ℂ)
+  have hs := nativeRawForm_tendsto (N+1) c d
+  have hx₀ := nativeRawForm_tendsto (N+1) (nativeRawHead N) c
+  have hy₀ := nativeRawForm_tendsto (N+1) (nativeRawHead N) d
+  have hh₀ := nativeRawForm_tendsto (N+1) (nativeRawHead N) (nativeRawHead N)
+  have hx : Tendsto (fun k => nativeRawForm k (N+1) (nativeRawHead N) c) atTop
+      (nhds (H*∑ i : Fin (N+1), c i)) := by
+    simpa [H, nativeRawHead_sum] using hx₀
+  have hy : Tendsto (fun k => nativeRawForm k (N+1) (nativeRawHead N) d) atTop
+      (nhds (H*∑ i : Fin (N+1), d i)) := by
+    simpa [H, nativeRawHead_sum] using hy₀
+  have hh : Tendsto (fun k => nativeRawForm k (N+1) (nativeRawHead N)
+      (nativeRawHead N)) atTop (nhds H) := by
+    simpa [H, nativeRawHead_sum] using hh₀
+  have hH : H ≠ 0 := by
+    apply mul_ne_zero (by norm_num)
+    exact_mod_cast canonicalCompletedNativeLogDerivativeMoment_zero_pos.ne'
+  have hHstar : star H = H := by simp [H]
+  have hcancel : H*star (∑ i : Fin (N+1), c i)*∑ j : Fin (N+1), d j -
+      star (H*∑ i : Fin (N+1), c i)*(H*∑ j : Fin (N+1), d j)/H = 0 := by
+    rw [star_mul, hHstar]
+    field_simp [hH]
+    ring_nf
+  have ht := hs.sub (((continuous_star.tendsto _).comp hx).mul hy |>.div hh hH)
+  change Tendsto (fun k => nativeRawForm k (N+1) c d -
+      star (nativeRawForm k (N+1) (nativeRawHead N) c) *
+        nativeRawForm k (N+1) (nativeRawHead N) d /
+        nativeRawForm k (N+1) (nativeRawHead N) (nativeRawHead N)) atTop
+    (nhds (H*star (∑ i : Fin (N+1), c i)*∑ j : Fin (N+1), d j -
+      star (H*∑ i : Fin (N+1), c i)*(H*∑ j : Fin (N+1), d j)/H)) at ht
+  rw [hcancel] at ht
+  exact ht
+
+/-- For the original, k-dependent full jet input, the same raw Schur form is
+exactly the existing physical jet remainder. -/
+theorem nativeRawJetSchur_eq_jetSchurRemainder_eventually (n : ℕ)
+    (x y : Fin (2*(n+1)) → ℂ) :
+    ∀ᶠ k : ℕ in atTop, nativeRawSchurForm k (2*n+1)
+      (nativeSourceChiralJetInput (n+1) k x)
+      (nativeSourceChiralJetInput (n+1) k y) = jetSchurRemainder (n+1) k x y := by
+  filter_upwards [oneDeficit_eventually_pos] with k hk
+  have he := nativeRawSchurForm_eq_remainingPair k (2*n+1)
+    (nativeSourceChiralJetInput (n+1) k x)
+    (nativeSourceChiralJetInput (n+1) k y) (ne_of_gt hk)
+  unfold jetSchurRemainder jetRemainingPair
+  convert he using 1
+  congr 1
+
+theorem nativeRawJetSchur_tendsto_canonical (n : ℕ)
+    (x y : Fin (2*(n+1)) → ℂ) :
+    Tendsto (fun k => nativeRawSchurForm k (2*n+1)
+      (nativeSourceChiralJetInput (n+1) k x)
+      (nativeSourceChiralJetInput (n+1) k y)) atTop
+      (nhds (2*(canonicalBoundaryPair (n+1) x y -
+        conj (canonicalBoundaryPair (n+1) (headBoundary n) x)*
+          canonicalBoundaryPair (n+1) (headBoundary n) y/
+          (canonicalCompletedNativeLogDerivativeMoment 0:ℂ)))) := by
+  exact (jet_remaining_schur_tendsto n x y).congr'
+    (Filter.EventuallyEq.symm (nativeRawJetSchur_eq_jetSchurRemainder_eventually n x y))
+
+/-- Regression guard: the known loss from projecting the returned channel is
+kept verbatim, including its nonzero second-source limit. -/
+theorem nativeProjectionLoss_regression :
+    (∀ k N c d, projectedBothPair k N c d = remainingPair k N c d +
+      inner ℂ (returnedHead k N c) (returnedHead k N d)) ∧
+      Tendsto (fun k => ‖returnedHead k 2 (Pi.single 1 1)‖^2/oneDeficit k) atTop
+        (nhds (4*canonicalCompletedNativeLogDerivativeMoment 0/9)) := by
+  exact ⟨fun k N c d => projection_loss_polarized k N c d,
+    second_source_projection_loss⟩
+
 end
 end CarryCauchyResidual

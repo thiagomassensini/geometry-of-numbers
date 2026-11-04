@@ -29,9 +29,40 @@ fixos independentes de `k`, o limite
 Este resultado é para coeficientes brutos fixos. Não diz que as direções de
 soma zero dos coeficientes não removem direções da síntese física:
 `nativeBalance_eq_nativeRawForm`
-mantém a identidade com a síntese incidente e retornada original. Também não
-é ainda a deflação de Schur nem um coeficiente assintótico seguinte; esses são
-os checkpoints seguintes desta investigação.
+mantém a identidade com a síntese incidente e retornada original. A etapa B
+abaixo formaliza a deflação sem mudar essas fontes.
+
+## Extensão: primeiro Schur bruto e entrada de jets
+
+`nativeRawSchurForm_eq_remainingPair` identifica exatamente o complemento de
+Schur da forma bruta com `remainingPair / oneDeficit`, preservando a ordem das
+conjugações e exigindo `oneDeficit ≠ 0` apenas no índice considerado. A
+positividade de `oneDeficit` é usada eventual, pela prova já existente.
+Para vetores de coeficientes fixos, `nativeRawSchurForm_tendsto_zero` aplica a
+continuidade do complemento de Schur: os quatro blocos convergem ao mesmo
+escalar não nulo `4h₀`, então a subtração cancela exatamente no limite.
+
+Isso difere do limite de jets. `nativeRawJetSchur_eq_jetSchurRemainder_eventually`
+usa a entrada completa `nativeSourceChiralJetInput`, que depende de `k` e
+conserva exatamente a transformação já definida por
+
+\[
+M_{k}(r,a)=A_{k,r}\,\phi_a\,((a!)(\Delta_k)^a)^{-1}\,G_{a,r},
+\]
+
+onde `A` é a amplitude positiva completada, `φ` a fase de ordem, `Δ` o passo
+radial de segunda ordem e `G` o peso de diferença finita Green. Não foi
+substituída por uma potência de `K` escolhida à parte. Só depois dessa
+transformação `jet_remaining_schur_tendsto` dá o limite canônico, que pode ser
+não nulo.
+Portanto, a convergência de coeficientes fixos não pode ser trocada pela
+formação dos jets: são duas ordens de limite diferentes formalizadas por
+teoremas distintos.
+
+`nativeProjectionLoss_regression` mantém como teste a identidade
+`projectedBothPair = remainingPair + inner(returnedHead, returnedHead)` e o
+limite não nulo `4h₀/9` para a segunda fonte. A parcela perdida ao projetar
+também o retorno não foi descartada nem absorvida no Schur físico.
 
 Isso não prova a contratividade do retorno reduzido nem a positividade
 canônica em toda ordem. O sinal continua sendo uma obrigação independente.
@@ -370,3 +401,53 @@ python3 research/native-cauchy-residual-return/validate.py
 As compilações de pesquisa utilizam os caches históricos das PRs empilhadas,
 conforme `compile_module.sh`. Esta é reprodução no host canônico preparado,
 não uma alegação de bootstrap de um clone sem os módulos históricos.
+
+## Fechamento da missão: posto um e primeiro Schur
+
+1. **Limite bruto:** demonstrado, entrada a entrada para toda dimensão finita,
+   com posto um e núcleo dos vetores de soma zero, por
+   `nativeRawMatrix_entrywise_tendsto`, `nativeRawLimitMatrix_rank_one` e
+   `nativeRawLimitOperator_kernel_iff`.
+2. **Primeiro Schur de coeficientes fixos:** demonstrado. O complemento bruto
+   tende a zero por `nativeRawSchurForm_tendsto_zero` e coincide eventualmente
+   com `remainingPair / oneDeficit` por
+   `nativeRawSchurForm_eq_remainingPair`.
+3. **Jets:** a informação superior reaparece após a transformação completa,
+   dependente de `k`, definida por `nativeSourceChiralJetInput`. Sua matriz
+   conserva amplitude completada, fase, fator `a!`, potência do passo radial
+   e pesos Green de diferenças finitas. O limite resultante é o Schur
+   canônico existente em `nativeRawJetSchur_tendsto_canonical`. Este trabalho
+   não estabelece uma lei de escala simples para resíduos brutos sucessivos.
+4. **Coeficiente seguinte:** nenhum coeficiente `a_j` foi declarado. Para
+   identificar a primeira dependência de um momento além de `h₀`, a expansão
+   precisa chegar ao termo cúbico do quociente: falta a identidade explícita
+   para `q'''(0)` em termos do momento `h₁`, junto com o resto de Taylor
+   controlado nos pontos amostrados `i(n+1)/(k+1)`. A analiticidade da fonte e
+   os momentos da característica existem nos módulos upstream; o cálculo e
+   o transporte desse termo pela geometria finita não estão provados aqui.
+5. **Sinal:** nenhuma desigualdade nova para o residual completo foi obtida.
+   Permanecem válidos os diagnósticos prévios de no-go condicional e a
+   redução exata do sinal à forma canônica. Nenhuma positividade all-order
+   foi assumida.
+6. **Projeção do retorno:** a regressão preserva a perda positiva, inclusive
+   o limite `4h₀/9` na segunda fonte, por `nativeProjectionLoss_regression`.
+7. **Compilação e axiomas:** `RawRankOne.lean` e `Audit.lean` compilaram com
+   `-DwarningAsError=true`. O fecho do audit cobriu 5.490 constantes na
+   auditoria Cauchy e 5.775 na auditoria source; todas as raízes novas
+   dependem somente de `[propext, Classical.choice, Quot.sound]`. Os commits
+   commits A e B estão registrados localmente; nenhum foi enviado ou integrado.
+
+Esta execução parte do remoto `origin/agent/native-moving-schur-sigma` em
+`9392ebac9930f5d11c56f595556080e8ab1de809`, no worktree
+`/home/thlinux/worktrees/geometry-of-numbers-native-raw-rank-one-deflation`,
+branch `agent/native-raw-rank-one-deflation`. O validador amplo não foi
+executado: seu preflight exige que o checkout auxiliar Carry esteja limpo,
+mas ele já continha alterações não relacionadas que foram preservadas. Os
+dois módulos relevantes foram compilados e auditados diretamente.
+
+**Resposta à pergunta decisiva:** a escala bruta fixa enxerga apenas `h₀` e
+seu primeiro Schur tende a zero. A transformação original dos jets recupera
+um Schur canônico potencialmente não nulo, mantendo os cruzamentos completos.
+Uma hierarquia obtida por reescalonamentos sucessivos dos resíduos da mesma
+geometria ainda depende do coeficiente cúbico e de seus restos controlados.
+Esta execução encerra nos checkpoints A e B, conforme o critério de parada.

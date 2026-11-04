@@ -141,6 +141,14 @@ elab "#audit_cauchy_residual " mode:ident ids:ident+ : command => do
 #print axioms CarryCauchyResidual.nativeRawLimitMatrix_rank_one
 #print axioms CarryCauchyResidual.nativeRawHead
 #print axioms CarryCauchyResidual.nativeRawSchurForm
+#print axioms CarryCauchyResidual.nativeRawHead_sum
+#print axioms CarryCauchyResidual.nativeRawForm_headCross_eq_anchorCross
+#print axioms CarryCauchyResidual.nativeRawForm_headHead_eq
+#print axioms CarryCauchyResidual.nativeRawSchurForm_eq_remainingPair
+#print axioms CarryCauchyResidual.nativeRawSchurForm_tendsto_zero
+#print axioms CarryCauchyResidual.nativeRawJetSchur_eq_jetSchurRemainder_eventually
+#print axioms CarryCauchyResidual.nativeRawJetSchur_tendsto_canonical
+#print axioms CarryCauchyResidual.nativeProjectionLoss_regression
 
 #audit_cauchy_residual cauchy
   CarryCauchyResidual.feature
@@ -239,3 +247,11 @@ elab "#audit_cauchy_residual " mode:ident ids:ident+ : command => do
   CarryCauchyResidual.nativeRawLimitMatrix_rank_one
   CarryCauchyResidual.nativeRawHead
   CarryCauchyResidual.nativeRawSchurForm
+  CarryCauchyResidual.nativeRawHead_sum
+  CarryCauchyResidual.nativeRawForm_headCross_eq_anchorCross
+  CarryCauchyResidual.nativeRawForm_headHead_eq
+  CarryCauchyResidual.nativeRawSchurForm_eq_remainingPair
+  CarryCauchyResidual.nativeRawSchurForm_tendsto_zero
+  CarryCauchyResidual.nativeRawJetSchur_eq_jetSchurRemainder_eventually
+  CarryCauchyResidual.nativeRawJetSchur_tendsto_canonical
+  CarryCauchyResidual.nativeProjectionLoss_regression

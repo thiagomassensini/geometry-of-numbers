@@ -95,6 +95,14 @@
     "CarryCauchyResidual.nativeRawLimitOperator_kernel_iff",
     "CarryCauchyResidual.nativeRawLimitMatrix_rank_one",
     "CarryCauchyResidual.nativeRawHead",
-    "CarryCauchyResidual.nativeRawSchurForm"
+    "CarryCauchyResidual.nativeRawSchurForm",
+    "CarryCauchyResidual.nativeRawHead_sum",
+    "CarryCauchyResidual.nativeRawForm_headCross_eq_anchorCross",
+    "CarryCauchyResidual.nativeRawForm_headHead_eq",
+    "CarryCauchyResidual.nativeRawSchurForm_eq_remainingPair",
+    "CarryCauchyResidual.nativeRawSchurForm_tendsto_zero",
+    "CarryCauchyResidual.nativeRawJetSchur_eq_jetSchurRemainder_eventually",
+    "CarryCauchyResidual.nativeRawJetSchur_tendsto_canonical",
+    "CarryCauchyResidual.nativeProjectionLoss_regression"
   ]
 }
