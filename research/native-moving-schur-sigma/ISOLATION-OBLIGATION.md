@@ -72,11 +72,16 @@ certificate is currently attached.
 
 ## C, D, and convergence application: still open
 
-The B theorem does not yet construct the required function of `u = t²` from
-`-H'(t)/(4tH(t))`. This work has not proved its removable singularity at zero, its holomorphy
-as a function of `u` on a disk larger than `|τ|²`, or equality of its coefficients with
-`completedSigmaLogJet d n - m * Re(τ^(-2n-2))`. It has therefore not eliminated `hdecomp` or
-`hremRadius` in `SigmaZeroPairDecomposition.lean`.
+From B, Lean now proves `H'(0) = 0`, constructs an analytic `q` with `H'(t) = t q(t)` near
+zero, removes the singularity of `-H'(t)/(4tH(t))` at zero, and proves that this regularized
+function is analytic and even throughout the `t` disk. The declarations are
+`completedNativeDisplacedProduct_logremainderT_analytic_even_of_isolation` and its helpers.
+
+The remaining C step is to descend this analytic even function to a holomorphic function of
+`u = t²` on a disk with radius larger than `|τ|²`, and prove its Taylor coefficients are exactly
+`completedSigmaLogJet d n - m * Re(τ^(-2n-2))`. This coefficient bridge has not been proved;
+therefore `hdecomp` and `hremRadius` in `SigmaZeroPairDecomposition.lean` are not yet eliminated.
+The Cauchy bound and Padé convergence application in D/phase 7 remain open as well.
 
 Consequently there is no new exponential Cauchy bound for the original coefficient remainder
 and no new application of the existing conditional Padé convergence theorem to the native

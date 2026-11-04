@@ -17,6 +17,174 @@ open Filter Topology
 noncomputable section
 set_option autoImplicit false
 
+/-- The derivative at the center of an analytic even function vanishes. -/
+lemma analyticAt_deriv_eq_zero_of_even (f : ℂ → ℂ)
+    (hf : AnalyticAt ℂ f 0)
+    (heven : ∀ᶠ z : ℂ in 𝓝 0, f (-z) = f z) : deriv f 0 = 0 := by
+  have heq : (fun z : ℂ => f (-z)) =ᶠ[𝓝 0] f := heven
+  have hderivEq : deriv (fun z : ℂ => f (-z)) 0 = deriv f 0 :=
+    heq.deriv.self_of_nhds
+  have hfderiv : HasDerivAt f (deriv f 0) 0 := hf.differentiableAt.hasDerivAt
+  have hfderiv' : HasDerivAt f (deriv f 0) (-0) := by simpa using hfderiv
+  have hcomp : HasDerivAt (fun z : ℂ => f (-z)) (-(deriv f 0)) 0 := by
+    simpa [Function.comp_def] using
+      HasDerivAt.comp (x := (0 : ℂ)) hfderiv' (hasDerivAt_neg (0 : ℂ))
+  have hneg : deriv (fun z : ℂ => f (-z)) 0 = -(deriv f 0) := hcomp.deriv
+  have hmain : deriv f 0 = -(deriv f 0) := hderivEq.symm.trans hneg
+  have hsum : deriv f 0 + deriv f 0 = 0 := by
+    calc
+      deriv f 0 + deriv f 0 = deriv f 0 + -(deriv f 0) :=
+        congrArg (fun y : ℂ => deriv f 0 + y) hmain
+      _ = 0 := by simp
+  have hmul : (2 : ℂ) * deriv f 0 = 0 := by simpa [two_mul] using hsum
+  exact (mul_eq_zero.mp hmul).resolve_left (by norm_num)
+
+/-- Analytic division by the centered coordinate: an analytic function vanishing at zero is
+locally `z` times another analytic function. The infinite-order case is handled by local
+vanishing; the finite-order case factors the exact analytic order and lowers it by one. -/
+lemma analyticAt_factor_by_id_of_zero (f : ℂ → ℂ)
+    (hf : AnalyticAt ℂ f 0) (hzero : f 0 = 0) :
+    ∃ q : ℂ → ℂ, AnalyticAt ℂ q 0 ∧ ∀ᶠ z : ℂ in 𝓝 0, f z = z * q z := by
+  by_cases htop : analyticOrderAt f 0 = ⊤
+  · refine ⟨0, analyticAt_const, ?_⟩
+    filter_upwards [(analyticOrderAt_eq_top).mp htop] with z hz
+    simp [hz]
+  · obtain ⟨m, hm⟩ := ENat.ne_top_iff_exists.mp htop
+    have hmpos : 0 < m := by
+      by_contra hmnot
+      have hmzero : m = 0 := Nat.eq_zero_of_not_pos hmnot
+      subst m
+      apply (hf.analyticOrderAt_ne_zero.mpr hzero)
+      simpa using hm.symm
+    have horder : analyticOrderAt f 0 = m := hm.symm
+    obtain ⟨g, hg, hg0, hfactor⟩ := (hf.analyticOrderAt_eq_natCast).mp horder
+    let q : ℂ → ℂ := fun z => z ^ (m - 1) * g z
+    have hq : AnalyticAt ℂ q 0 := by
+      dsimp [q]
+      exact (analyticAt_id.pow (m - 1)).mul hg
+    have hm' : m - 1 + 1 = m := Nat.sub_add_cancel (Nat.one_le_iff_ne_zero.mpr hmpos.ne')
+    refine ⟨q, hq, ?_⟩
+    filter_upwards [hfactor] with z hz
+    have hfac : f z = z ^ m * g z := by
+      simpa [smul_eq_mul] using hz
+    rw [hfac]
+    dsimp [q]
+    calc
+      z ^ m * g z = z ^ (m - 1 + 1) * g z := by rw [hm']
+      _ = (z ^ (m - 1) * z) * g z := by rw [pow_succ]
+      _ = z * (z ^ (m - 1) * g z) := by ring
+
+/-- The logarithmic derivative divided by the centered variable has a genuine analytic removal
+at zero whenever the derivative has been analytically divided by that coordinate. -/
+lemma analyticLogDerivative_div_t_analyticAt_zero
+    (H q : ℂ → ℂ) (hH : AnalyticAt ℂ H 0) (hH0 : H 0 ≠ 0)
+    (hq : AnalyticAt ℂ q 0)
+    (hfactor : ∀ᶠ z : ℂ in 𝓝 0, deriv H z = z * q z) :
+    AnalyticAt ℂ (fun z : ℂ =>
+      if z = 0 then -q z / (4 * H z) else -deriv H z / (4 * z * H z)) 0 := by
+  have hden : AnalyticAt ℂ (fun z : ℂ => 4 * H z) 0 :=
+    analyticAt_const.mul hH
+  have hden0 : 4 * H 0 ≠ 0 := mul_ne_zero (by norm_num) hH0
+  have hregular : AnalyticAt ℂ (fun z : ℂ => -q z / (4 * H z)) 0 := by
+    exact hq.neg.div hden hden0
+  have hHne : ∀ᶠ z : ℂ in 𝓝 0, H z ≠ 0 := hH.continuousAt.eventually_ne hH0
+  have hnear : (fun z : ℂ =>
+      if z = 0 then -q z / (4 * H z) else -deriv H z / (4 * z * H z)) =ᶠ[𝓝 0]
+      (fun z : ℂ => -q z / (4 * H z)) := by
+    filter_upwards [hfactor, hHne] with z hfac hHz
+    by_cases hz : z = 0
+    · subst z
+      simp
+    · simp only [if_neg hz]
+      rw [hfac]
+      field_simp [hz, hHz]
+  exact hregular.congr hnear.symm
+
+/-- The logarithmic derivative remainder in the displacement variable, with its removable value
+at the center supplied by the analytic quotient `q`. -/
+def sigmaDisplacedLogRemainderT (H q : ℂ → ℂ) (z : ℂ) : ℂ :=
+  if z = 0 then -q z / (4 * H z) else -deriv H z / (4 * z * H z)
+
+/-- The regularized logarithmic derivative of an analytic, nowhere-zero `H` is analytic on its
+whole disk. Only the center uses the local analytic division certificate; away from zero this is
+ordinary analytic division. -/
+theorem sigmaDisplacedLogRemainderT_analyticOnNhd
+    (r : ℝ) (hr : 0 < r) (H q : ℂ → ℂ)
+    (hH : ∀ z ∈ Metric.ball 0 r, AnalyticAt ℂ H z)
+    (hHne : ∀ z ∈ Metric.ball 0 r, H z ≠ 0)
+    (hq : AnalyticAt ℂ q 0)
+    (hfactor : ∀ᶠ z : ℂ in 𝓝 0, deriv H z = z * q z) :
+    AnalyticOnNhd ℂ (sigmaDisplacedLogRemainderT H q) (Metric.ball 0 r) := by
+  intro z hz
+  by_cases hz0 : z = 0
+  · subst z
+    exact analyticLogDerivative_div_t_analyticAt_zero H q
+      (hH 0 (Metric.mem_ball_self hr)) (hHne 0 (Metric.mem_ball_self hr)) hq hfactor
+  · have hden : AnalyticAt ℂ (fun w : ℂ => 4 * w * H w) z := by
+      fun_prop
+    have hden0 : 4 * z * H z ≠ 0 :=
+      mul_ne_zero (mul_ne_zero (by norm_num) hz0) (hHne z hz)
+    have hregular : AnalyticAt ℂ
+        (fun w : ℂ => -deriv H w / (4 * w * H w)) z :=
+      ((hH z hz).deriv).neg.div hden hden0
+    have hnear : sigmaDisplacedLogRemainderT H q =ᶠ[𝓝 z]
+        (fun w : ℂ => -deriv H w / (4 * w * H w)) := by
+      filter_upwards [continuousAt_id.eventually_ne hz0] with w hw
+      have hw0 : w ≠ 0 := by simpa using hw
+      simp [sigmaDisplacedLogRemainderT, hw0]
+    exact hregular.congr hnear.symm
+
+/-- The derivative of an even analytic function is odd at every point of its symmetric disk. -/
+lemma analyticOnNhd_even_deriv_neg
+    (r : ℝ) (H : ℂ → ℂ)
+    (hH : ∀ z ∈ Metric.ball 0 r, AnalyticAt ℂ H z)
+    (hHeven : ∀ z ∈ Metric.ball 0 r, H (-z) = H z)
+    (z : ℂ) (hz : z ∈ Metric.ball 0 r) :
+    deriv H (-z) = -deriv H z := by
+  have hzR : ‖z‖ < r := by
+    simpa [Metric.mem_ball, dist_eq_norm] using hz
+  have hnegR : ‖-z‖ < r := by simpa [norm_neg] using hzR
+  have hnegU : -z ∈ Metric.ball 0 r := by
+    simpa [Metric.mem_ball, dist_eq_norm] using hnegR
+  have hballOpen : IsOpen (Metric.ball (0 : ℂ) r) := Metric.isOpen_ball
+  have hUevent : ∀ᶠ w : ℂ in 𝓝 z, w ∈ Metric.ball 0 r := hballOpen.mem_nhds hz
+  have hEvenEvent : ∀ᶠ w : ℂ in 𝓝 z, H (-w) = H w := by
+    filter_upwards [hUevent] with w hw
+    exact hHeven w hw
+  have hEq : (fun w : ℂ => H (-w)) =ᶠ[𝓝 z] H := hEvenEvent
+  have hderivEq : deriv (fun w : ℂ => H (-w)) z = deriv H z :=
+    hEq.deriv.self_of_nhds
+  have hHderiv : HasDerivAt H (deriv H (-z)) (-z) :=
+    (hH (-z) hnegU).differentiableAt.hasDerivAt
+  have hcomp : HasDerivAt (fun w : ℂ => H (-w)) (-deriv H (-z)) z := by
+    simpa [Function.comp_def] using
+      HasDerivAt.comp (x := z) hHderiv (hasDerivAt_neg z)
+  have hmain : deriv H z = -deriv H (-z) := hderivEq.symm.trans hcomp.deriv
+  have hneg := congrArg Neg.neg hmain
+  simpa using hneg.symm
+
+/-- Evenness of `H` makes the regularized logarithmic derivative an even function of `t`. -/
+theorem sigmaDisplacedLogRemainderT_even
+    (r : ℝ) (H q : ℂ → ℂ)
+    (hH : ∀ z ∈ Metric.ball 0 r, AnalyticAt ℂ H z)
+    (hHne : ∀ z ∈ Metric.ball 0 r, H z ≠ 0)
+    (hHeven : ∀ z ∈ Metric.ball 0 r, H (-z) = H z)
+    (z : ℂ) (hz : z ∈ Metric.ball 0 r) :
+    sigmaDisplacedLogRemainderT H q (-z) = sigmaDisplacedLogRemainderT H q z := by
+  by_cases hz0 : z = 0
+  · subst z
+    simp [sigmaDisplacedLogRemainderT]
+  · have hzR : ‖z‖ < r := by
+      simpa [Metric.mem_ball, dist_eq_norm] using hz
+    have hnegR : ‖-z‖ < r := by simpa [norm_neg] using hzR
+    have hnegU : -z ∈ Metric.ball 0 r := by
+      simpa [Metric.mem_ball, dist_eq_norm] using hnegR
+    have hderiv := analyticOnNhd_even_deriv_neg r H hH hHeven z hz
+    have hneg0 : -z ≠ 0 := by simpa using hz0
+    simp only [sigmaDisplacedLogRemainderT, if_neg hz0, if_neg hneg0]
+    rw [hHeven z hz, hderiv]
+    field_simp [hz0, hneg0, hHne z hz]
+
 /-- If two analytic functions have exactly the same isolated zeros, with the same positive
 order at each zero, their quotient extends to an analytic nowhere-zero function. The proof
 constructs the values at the removed points from their local analytic factors. -/
@@ -381,7 +549,7 @@ theorem completedNativeDisplacedProduct_factorization_of_isolation
         completedNativeDisplacedProductContinuation d z =
           sigmaDisplacedFirstPoleFactor ((γ : ℂ) + Complex.I * (d : ℂ)) m z * H z) ∧
       (∀ z ∈ Metric.ball 0 r, H z ≠ 0) ∧
-      (∀ z ∈ Metric.ball 0 r, H (-z) = H z) := by
+      (∀ z ∈ Metric.ball 0 r, H (-z) = H z) ∧ deriv H 0 = 0 := by
   let U : Set ℂ := Metric.ball 0 r
   let D : ℂ → ℂ := completedNativeDisplacedProductContinuation d
   let P : ℂ → ℂ := sigmaDisplacedFirstPoleFactor
@@ -493,8 +661,13 @@ theorem completedNativeDisplacedProduct_factorization_of_isolation
     have hEvenOn : ∀ z ∈ U, H (-z) = H z :=
       AnalyticOnNhd.eqOn_of_preconnected_of_eventuallyEq hHnegOn hHanalyticOn hballPre
         hzeroU hnear.symm
-    intro z hz
-    exact hEvenOn z (by simpa [U] using hz)
+    constructor
+    · intro z hz
+      exact hEvenOn z (by simpa [U] using hz)
+    · have hEvenEvent : ∀ᶠ z : ℂ in 𝓝 0, H (-z) = H z := by
+        filter_upwards [hU.mem_nhds hzeroU] with z hz
+        exact hEvenOn z hz
+      exact analyticAt_deriv_eq_zero_of_even H (hHanalytic 0 hzeroU) hEvenEvent
 
 /-- On the admissible displacement range, the continuation factorization has the same germ as
 the original native displaced product. This is the explicit provenance bridge for the quotient
@@ -516,18 +689,94 @@ theorem displacedProductC_native_germ_factorization_of_isolation
   have hnative := completedNativeDisplacedProductContinuation_eq_native_eventually d hd₁ hd₂
   have hball : ∀ᶠ z : ℂ in 𝓝 0, z ∈ Metric.ball 0 r :=
     Metric.ball_mem_nhds 0 hisolation.radius_pos
-  refine ⟨H, hHanalytic, hHnonzero, hHeven, ?_⟩
+  refine ⟨H, hHanalytic, hHnonzero, hHeven.1, ?_⟩
   filter_upwards [hnative, hball] with z hsource hz
   simpa only [hsource] using hfactor z hz
+
+/-- Isolation also gives the local analytic removal of the logarithmic derivative at the center.
+The auxiliary quotient `q` is constructed from the analytic order of `H'`; no value for the
+remainder is supplied as input. This is the center-removal step for checkpoint C. -/
+theorem completedNativeDisplacedProduct_logderivative_removable_at_center
+    (d γ r : ℝ) (m : ℕ)
+    (hisolation : SigmaDisplacedProductIsolation d γ r m) :
+    ∃ H q : ℂ → ℂ,
+      AnalyticAt ℂ H 0 ∧ H 0 ≠ 0 ∧ AnalyticAt ℂ q 0 ∧
+      (∀ᶠ z : ℂ in 𝓝 0, deriv H z = z * q z) ∧
+      AnalyticAt ℂ (fun z : ℂ =>
+        if z = 0 then -q z / (4 * H z) else -deriv H z / (4 * z * H z)) 0 := by
+  obtain ⟨H, hHanalytic, _hfactor, hHnonzero, _hHeven, hHderiv0⟩ :=
+    completedNativeDisplacedProduct_factorization_of_isolation d γ r m hisolation
+  have hzeroU : (0 : ℂ) ∈ Metric.ball 0 r := by
+    exact Metric.mem_ball_self hisolation.radius_pos
+  have hH0 : H 0 ≠ 0 := hHnonzero 0 hzeroU
+  have hHanalytic0 : AnalyticAt ℂ H 0 := hHanalytic 0 hzeroU
+  have hderivAnalytic : AnalyticAt ℂ (deriv H) 0 := hHanalytic0.deriv
+  obtain ⟨q, hq, hqfactor⟩ := analyticAt_factor_by_id_of_zero (deriv H)
+    hderivAnalytic hHderiv0
+  have hremoved := analyticLogDerivative_div_t_analyticAt_zero H q hHanalytic0 hH0
+    hq hqfactor
+  exact ⟨H, q, hHanalytic0, hH0, hq, hqfactor, hremoved⟩
+
+/-- Under the source zero-isolation certificate, the regularized logarithmic derivative of the
+constructed remainder is analytic throughout the `t` disk. This completes the singularity
+removal in C, before descent to the quadratic variable. -/
+theorem completedNativeDisplacedProduct_logremainderT_analytic_of_isolation
+    (d γ r : ℝ) (m : ℕ)
+    (hisolation : SigmaDisplacedProductIsolation d γ r m) :
+    ∃ H q : ℂ → ℂ,
+      (∀ z ∈ Metric.ball 0 r, AnalyticAt ℂ H z) ∧
+      (∀ z ∈ Metric.ball 0 r, H z ≠ 0) ∧
+      (∀ z ∈ Metric.ball 0 r, H (-z) = H z) ∧
+      (∀ᶠ z : ℂ in 𝓝 0, deriv H z = z * q z) ∧
+      AnalyticOnNhd ℂ (sigmaDisplacedLogRemainderT H q) (Metric.ball 0 r) := by
+  obtain ⟨H, hHanalytic, _hfactor, hHnonzero, hHeven, hHderiv0⟩ :=
+    completedNativeDisplacedProduct_factorization_of_isolation d γ r m hisolation
+  have hzeroU : (0 : ℂ) ∈ Metric.ball 0 r :=
+    Metric.mem_ball_self hisolation.radius_pos
+  have hderivAnalytic : AnalyticAt ℂ (deriv H) 0 :=
+    (hHanalytic 0 hzeroU).deriv
+  obtain ⟨q, hq, hqfactor⟩ := analyticAt_factor_by_id_of_zero (deriv H)
+    hderivAnalytic hHderiv0
+  have hrem := sigmaDisplacedLogRemainderT_analyticOnNhd r hisolation.radius_pos H q
+    hHanalytic hHnonzero hq hqfactor
+  exact ⟨H, q, hHanalytic, hHnonzero, hHeven, hqfactor, hrem⟩
+
+/-- The isolation certificate yields an analytic even remainder function in `t` on the full
+source disk. The remaining C step is descent to `u = t²` and coefficient identification. -/
+theorem completedNativeDisplacedProduct_logremainderT_analytic_even_of_isolation
+    (d γ r : ℝ) (m : ℕ)
+    (hisolation : SigmaDisplacedProductIsolation d γ r m) :
+    ∃ H q : ℂ → ℂ,
+      (∀ z ∈ Metric.ball 0 r, AnalyticAt ℂ H z) ∧
+      (∀ z ∈ Metric.ball 0 r, H z ≠ 0) ∧
+      (∀ z ∈ Metric.ball 0 r, H (-z) = H z) ∧
+      (∀ᶠ z : ℂ in 𝓝 0, deriv H z = z * q z) ∧
+      AnalyticOnNhd ℂ (sigmaDisplacedLogRemainderT H q) (Metric.ball 0 r) ∧
+      (∀ z ∈ Metric.ball 0 r,
+        sigmaDisplacedLogRemainderT H q (-z) = sigmaDisplacedLogRemainderT H q z) := by
+  obtain ⟨H, q, hHanalytic, hHnonzero, hHeven, hqfactor, hrem⟩ :=
+    completedNativeDisplacedProduct_logremainderT_analytic_of_isolation d γ r m hisolation
+  refine ⟨H, q, hHanalytic, hHnonzero, hHeven, hqfactor, hrem, ?_⟩
+  intro z hz
+  exact sigmaDisplacedLogRemainderT_even r H q hHanalytic hHnonzero hHeven z hz
 
 end
 end CarrySigmaObstruction
 
 #print axioms CarrySigmaObstruction.analyticQuotientExtension_of_isolated_zeros
+#print axioms CarrySigmaObstruction.analyticAt_deriv_eq_zero_of_even
+#print axioms CarrySigmaObstruction.analyticAt_factor_by_id_of_zero
+#print axioms CarrySigmaObstruction.analyticLogDerivative_div_t_analyticAt_zero
+#print axioms CarrySigmaObstruction.sigmaDisplacedLogRemainderT_analyticOnNhd
+#print axioms CarrySigmaObstruction.analyticOnNhd_even_deriv_neg
+#print axioms CarrySigmaObstruction.sigmaDisplacedLogRemainderT_even
 #print axioms CarrySigmaObstruction.oneMinusSquareDiv_zero_iff
 #print axioms CarrySigmaObstruction.sigmaDisplacedFirstPoleFactor_zero_iff
 #print axioms CarrySigmaObstruction.sigmaDisplacedFirstPoleFactor_order
 #print axioms CarrySigmaObstruction.sigmaDisplacedFirstPoleRoot_distinct
 #print axioms CarrySigmaObstruction.completedNativeDisplacedProduct_factorization_of_isolation
 #print axioms CarrySigmaObstruction.displacedProductC_native_germ_factorization_of_isolation
+#print axioms CarrySigmaObstruction.completedNativeDisplacedProduct_logderivative_removable_at_center
+#print axioms CarrySigmaObstruction.completedNativeDisplacedProduct_logremainderT_analytic_of_isolation
+#print axioms CarrySigmaObstruction.completedNativeDisplacedProduct_logremainderT_analytic_even_of_isolation
 
