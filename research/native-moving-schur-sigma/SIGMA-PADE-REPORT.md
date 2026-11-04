@@ -1,8 +1,8 @@
 # Missão Luna — pencil sigma assinado e correspondência de Padé
 
-**Estado da missão: em andamento.** Os checkpoints A e B estão provados em
+**Estado da missão: em andamento.** Os checkpoints A, B e C estão provados em
 Lean, compilados com `-DwarningAsError=true`, auditados transitivamente e
-publicados. Os checkpoints C–F, a validação numérica e o relatório final ainda
+publicados. Os checkpoints D–F, a validação numérica e o relatório final ainda
 estão abertos.
 
 ## Proveniência e Git
@@ -16,6 +16,7 @@ alterações preexistentes não relacionadas; elas foram preservadas.
 
 - Checkpoint A: [commit `189de259`](https://github.com/thiagomassensini/geometry-of-numbers/commit/189de2599a84aa78e6a5b50b71d5aa0b9a4645b9).
 - Checkpoint B: [commit `b2998c59`](https://github.com/thiagomassensini/geometry-of-numbers/commit/b2998c595df575e95de664085a083616ba094eec).
+- Checkpoint C: SHA a ser registrado após o commit e o push deste módulo.
 - A ponta remota foi conferida após cada push.
 
 ## PROVADO — A: pencil assinado original
@@ -91,7 +92,7 @@ Isso explicita o caso degenerado que não pode ser descartado apenas de
 
 ## Auditoria e reprodução
 
-`SigmaPadeAudit.lean` audita 35 raízes públicas e percorre 35.014 constantes
+`SigmaPadeAudit.lean` audita 53 raízes públicas e percorre 39.883 constantes
 alcançáveis nos tipos e corpos. Foram aceitos somente os axiomas-base do Lean
 `[propext, Classical.choice, Quot.sound]`. A auditoria exige como dependências
 `sigmaMatrix`, `completedSigmaLogJet` e
@@ -101,6 +102,7 @@ alcançáveis nos tipos e corpos. Foram aceitos somente os axiomas-base do Lean
 cd /home/thlinux/worktrees/geometry-of-numbers-native-sigma-pade-signed-pencil
 research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaSignedPencil
 research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaPadeCorrespondence
+research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaTwoPoleModel
 research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaPadeAudit
 ```
 
@@ -108,20 +110,43 @@ O script usa os caches Lean históricos e permite configurar
 `SIGMA_REFERENCE_ROOT` e `CARRY_LEAN_ROOT`. O diretório de cache local
 `.cache/` não é versionado e foi preservado.
 
+## PROVADO — C: modelo auxiliar de dois polos
+
+`SigmaTwoPoleModel.lean` declara explicitamente que sua sequência
+`twoPoleMoment m zeta n = m * Re(zeta^(n+1))` é auxiliar e não a identifica com
+`completedSigmaLogJet`. `twoPoleGram_det` prova, para todo deslocamento `s`,
+
+\[
+\det G_s^{\rm par}=-m^2(\operatorname{Im}\zeta)^2
+  (\operatorname{normSq}\zeta)^{s+1}.
+\]
+
+`twoPolePencil_characteristic` fatora o determinante complexo do lápis como
+`det(G_s) * (lambda-zeta) * (lambda-conj(zeta))`. Para
+`zeta=(gamma+i delta)^(-2)`, `inverseSquare_twoPoleGram_det` dá
+
+\[
+-\frac{4m^2\gamma^2\delta^2}{(\gamma^2+\delta^2)^{2s+6}}.
+\]
+
+Quando `m>0`, `gamma>0` e `delta≠0`, `inverseSquare_twoPole_negative_direction`
+produz um vetor com forma quadrática negativa; `inverseSquare_twoPole_roots`
+certifica as duas raízes características conjugadas, distintas e não-reais.
+`inverseSquare_roots_recover_height` exibe raízes quadradas inversas com parte
+real `gamma` e partes imaginárias `delta` e `-delta`, recuperando
+`gamma+i delta` e `gamma-i delta`. Esses resultados verificam o mecanismo do modelo; não atribuem
+nenhuma contribuição de polos ao sigma original.
+
 ## ABERTO — próximos checkpoints
 
-1. **C:** formalizar o par auxiliar
-   `h_n = m Re((gamma+i delta)^(-2(n+1)))`, sua direção negativa, o polinômio
-   do pencil e a recuperação algébrica `gamma ± i delta`. O par ainda não foi
-   identificado como contribuição da fonte original.
-2. **D:** separar, sob hipóteses analíticas explícitas, o fator de um zero
+1. **D:** separar, sob hipóteses analíticas explícitas, o fator de um zero
    simples da característica original e obter um resto
    `|r_n| ≤ C eta^n`, com `eta < |zeta|`.
-3. **E:** deduzir convergência dos coeficientes Padé e das raízes para janelas
+2. **E:** deduzir convergência dos coeficientes Padé e das raízes para janelas
    da fonte sigma original, condicional ao controle do resto.
-4. **F:** tratar a não comutatividade dos limites em `s` e `delta`, e as três
+3. **F:** tratar a não comutatividade dos limites em `s` e `delta`, e as três
    noções distintas de primeira detecção.
-5. **Validação numérica:** extrair os momentos apenas da característica
+4. **Validação numérica:** extrair os momentos apenas da característica
    completada, com dois contornos de Cauchy, e comparar com as alturas
    conhecidas sem usá-las como entrada.
 

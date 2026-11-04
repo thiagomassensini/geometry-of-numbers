@@ -1,4 +1,4 @@
-import SigmaPadeCorrespondence
+import SigmaTwoPoleModel
 import Lean
 
 open Lean Elab Command
@@ -73,6 +73,24 @@ elab "#audit_sigma_pade " ids:ident+ : command => do
 #print axioms CarrySigmaPade.sigmaPencilCharacteristicComplex_eq_reciprocal_pade
 #print axioms CarrySigmaPade.sigmaPencil_root_iff_reciprocal_pade_root
 #print axioms CarrySigmaPade.sigmaPencil_root_classification
+#print axioms CarrySigmaPade.twoPoleMoment
+#print axioms CarrySigmaPade.twoPoleGram
+#print axioms CarrySigmaPade.twoPoleShifted
+#print axioms CarrySigmaPade.normSq_pow_aux
+#print axioms CarrySigmaPade.twoPoleGram_det
+#print axioms CarrySigmaPade.twoPoleGram_det_neg
+#print axioms CarrySigmaPade.twoPoleGram_not_posSemidef
+#print axioms CarrySigmaPade.twoPoleGram_negative_direction
+#print axioms CarrySigmaPade.twoPoleMoment_recurrence
+#print axioms CarrySigmaPade.twoPolePencil_characteristic
+#print axioms CarrySigmaPade.inverseSquareNode
+#print axioms CarrySigmaPade.inverseSquareNode_re
+#print axioms CarrySigmaPade.inverseSquareNode_im
+#print axioms CarrySigmaPade.inverseSquareNode_normSq
+#print axioms CarrySigmaPade.inverseSquare_twoPoleGram_det
+#print axioms CarrySigmaPade.inverseSquare_twoPole_negative_direction
+#print axioms CarrySigmaPade.inverseSquare_twoPole_roots
+#print axioms CarrySigmaPade.inverseSquare_roots_recover_height
 
 #audit_sigma_pade
   CarrySigmaPade.sigmaPencilGram
@@ -110,3 +128,21 @@ elab "#audit_sigma_pade " ids:ident+ : command => do
   CarrySigmaPade.sigmaPencilCharacteristicComplex_eq_reciprocal_pade
   CarrySigmaPade.sigmaPencil_root_iff_reciprocal_pade_root
   CarrySigmaPade.sigmaPencil_root_classification
+  CarrySigmaPade.twoPoleMoment
+  CarrySigmaPade.twoPoleGram
+  CarrySigmaPade.twoPoleShifted
+  CarrySigmaPade.normSq_pow_aux
+  CarrySigmaPade.twoPoleGram_det
+  CarrySigmaPade.twoPoleGram_det_neg
+  CarrySigmaPade.twoPoleGram_not_posSemidef
+  CarrySigmaPade.twoPoleGram_negative_direction
+  CarrySigmaPade.twoPoleMoment_recurrence
+  CarrySigmaPade.twoPolePencil_characteristic
+  CarrySigmaPade.inverseSquareNode
+  CarrySigmaPade.inverseSquareNode_re
+  CarrySigmaPade.inverseSquareNode_im
+  CarrySigmaPade.inverseSquareNode_normSq
+  CarrySigmaPade.inverseSquare_twoPoleGram_det
+  CarrySigmaPade.inverseSquare_twoPole_negative_direction
+  CarrySigmaPade.inverseSquare_twoPole_roots
+  CarrySigmaPade.inverseSquare_roots_recover_height

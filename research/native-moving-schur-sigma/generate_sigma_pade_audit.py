@@ -6,7 +6,7 @@ import json
 import re
 
 root = Path(__file__).resolve().parent
-modules = ["SigmaSignedPencil", "SigmaPadeCorrespondence"]
+modules = ["SigmaSignedPencil", "SigmaPadeCorrespondence", "SigmaTwoPoleModel"]
 roots = [
     "CarrySigmaPade." + match.group(1)
     for module in modules
@@ -17,7 +17,7 @@ roots = [
     )
 ]
 
-header = r'''import SigmaPadeCorrespondence
+header = r'''import SigmaTwoPoleModel
 import Lean
 
 open Lean Elab Command

@@ -34,6 +34,24 @@
     "CarrySigmaPade.sigmaPadeDenominatorComplex",
     "CarrySigmaPade.sigmaPencilCharacteristicComplex_eq_reciprocal_pade",
     "CarrySigmaPade.sigmaPencil_root_iff_reciprocal_pade_root",
-    "CarrySigmaPade.sigmaPencil_root_classification"
+    "CarrySigmaPade.sigmaPencil_root_classification",
+    "CarrySigmaPade.twoPoleMoment",
+    "CarrySigmaPade.twoPoleGram",
+    "CarrySigmaPade.twoPoleShifted",
+    "CarrySigmaPade.normSq_pow_aux",
+    "CarrySigmaPade.twoPoleGram_det",
+    "CarrySigmaPade.twoPoleGram_det_neg",
+    "CarrySigmaPade.twoPoleGram_not_posSemidef",
+    "CarrySigmaPade.twoPoleGram_negative_direction",
+    "CarrySigmaPade.twoPoleMoment_recurrence",
+    "CarrySigmaPade.twoPolePencil_characteristic",
+    "CarrySigmaPade.inverseSquareNode",
+    "CarrySigmaPade.inverseSquareNode_re",
+    "CarrySigmaPade.inverseSquareNode_im",
+    "CarrySigmaPade.inverseSquareNode_normSq",
+    "CarrySigmaPade.inverseSquare_twoPoleGram_det",
+    "CarrySigmaPade.inverseSquare_twoPole_negative_direction",
+    "CarrySigmaPade.inverseSquare_twoPole_roots",
+    "CarrySigmaPade.inverseSquare_roots_recover_height"
   ]
 }

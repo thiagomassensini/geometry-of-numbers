@@ -1,0 +1,7 @@
+'CarrySigmaPade.twoPoleGram_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.twoPoleGram_negative_direction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.twoPoleMoment_recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.twoPolePencil_characteristic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.inverseSquare_twoPoleGram_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.inverseSquare_twoPole_roots' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaPade.inverseSquare_roots_recover_height' depends on axioms: [propext, Classical.choice, Quot.sound]
