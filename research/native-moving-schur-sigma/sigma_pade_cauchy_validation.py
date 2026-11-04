@@ -13,14 +13,21 @@ import mpmath as mp
 
 
 MP_DPS = 100
-QUADRATURE_N = 128
+QUADRATURE_N = 256
+mp.mp.dps = MP_DPS
 CONTOUR_RADII = (mp.mpf(100), mp.mpf(150))
-DISPLACEMENTS = (mp.mpf("0.1"), mp.mpf("0.2"))
-SHIFTS = (0, 2, 4, 8, 12, 16, 20, 24)
+DISPLACEMENTS = tuple(map(mp.mpf, ("0.2", "0.1", "0.05", "0.02", "0.01", "0")))
+SHIFTS = (10, 15, 20, 30, 40, 50)
 
 
 def completed_native_F(z: mp.mpc) -> mp.mpc:
-    """Classical formula for the source F=A*N, continued as completed xi."""
+    """Classical continuation of the native source F=A*N as completed xi.
+
+    The Lean source identifies N with zeta on the open critical strip. This
+    formula continues that same germ; the large Cauchy circles are outside the
+    already-certified native strip, so this numerical continuation is not a
+    Lean theorem about the native characteristic on those full circles.
+    """
     s = mp.mpf("0.5") + 1j * z
     return (
         mp.mpf("0.5")
@@ -81,11 +88,15 @@ def pencil_roots(jets: list[mp.mpf], shift: int) -> tuple[mp.mpc, mp.mpc]:
     return (B + disc) / (2 * D), (B - disc) / (2 * D)
 
 
-def recovered_positive_height(jets: list[mp.mpf], shift: int) -> mp.mpc:
+def recovered_height_pair(
+    jets: list[mp.mpf], shift: int
+) -> tuple[tuple[mp.mpc, mp.mpc], tuple[mp.mpc, mp.mpc]]:
     roots = pencil_roots(jets, shift)
-    # For d>0 the member corresponding to (gamma+i*d)^(-2) has negative imaginary part.
-    lam = min(roots, key=lambda value: mp.im(value))
-    return mp.sqrt(1 / lam)
+    pair = [(lam, mp.sqrt(1 / lam)) for lam in roots]
+    # At d>0 this puts gamma-i*d first; at d=0 it orders the two real
+    # recovered heights increasingly, which exposes the first two poles.
+    pair.sort(key=lambda item: (mp.re(item[1]), mp.im(item[1])))
+    return pair[0], pair[1]
 
 
 def main() -> None:
@@ -96,16 +107,28 @@ def main() -> None:
     if abs(direct_response - logarithmic_response) > mp.mpf(10) ** (-(MP_DPS // 2)):
         raise ArithmeticError("logarithmic derivative does not match the original completed F")
     nmax = max(SHIFTS) + 3
-    writer = csv.writer(__import__("sys").stdout)
+    writer = csv.writer(__import__("sys").stdout, lineterminator="\n")
     writer.writerow(
         [
             "d",
             "shift_s",
-            "contour_r100_height_re",
-            "contour_r100_height_im",
-            "contour_r150_height_re",
-            "contour_r150_height_im",
-            "height_contour_difference",
+            "contour_r100_lambda1_re",
+            "contour_r100_lambda1_im",
+            "contour_r100_height1_re",
+            "contour_r100_height1_im",
+            "contour_r100_lambda2_re",
+            "contour_r100_lambda2_im",
+            "contour_r100_height2_re",
+            "contour_r100_height2_im",
+            "contour_r150_lambda1_re",
+            "contour_r150_lambda1_im",
+            "contour_r150_height1_re",
+            "contour_r150_height1_im",
+            "contour_r150_lambda2_re",
+            "contour_r150_lambda2_im",
+            "contour_r150_height2_re",
+            "contour_r150_height2_im",
+            "height_pair_contour_difference",
             "contour_r100_max_imag_jet",
             "contour_r150_max_imag_jet",
         ]
@@ -118,20 +141,31 @@ def main() -> None:
             by_radius[radius] = jets
             residuals[radius] = imag_residual
         for shift in SHIFTS:
-            h100 = recovered_positive_height(by_radius[CONTOUR_RADII[0]], shift)
-            h150 = recovered_positive_height(by_radius[CONTOUR_RADII[1]], shift)
-            writer.writerow(
+            pair100 = recovered_height_pair(by_radius[CONTOUR_RADII[0]], shift)
+            pair150 = recovered_height_pair(by_radius[CONTOUR_RADII[1]], shift)
+            contour_difference = max(
+                abs(pair100[index][1] - pair150[index][1]) for index in range(2)
+            )
+            row = [mp.nstr(d, 6), shift]
+            for pair in (pair100, pair150):
+                for lam, height in pair:
+                    row.extend(
+                        [
+                            mp.nstr(mp.re(lam), 30),
+                            mp.nstr(mp.im(lam), 30),
+                            mp.nstr(mp.re(height), 30),
+                            mp.nstr(mp.im(height), 30),
+                        ]
+                    )
+            row.extend(
                 [
-                    mp.nstr(d, 6),
-                    shift,
-                    mp.nstr(mp.re(h100), 30),
-                    mp.nstr(mp.im(h100), 30),
-                    mp.nstr(mp.re(h150), 30),
-                    mp.nstr(mp.im(h150), 30),
-                    mp.nstr(abs(h100 - h150), 8),
+                    mp.nstr(contour_difference, 8),
                     mp.nstr(residuals[CONTOUR_RADII[0]], 8),
                     mp.nstr(residuals[CONTOUR_RADII[1]], 8),
                 ]
+            )
+            writer.writerow(
+                row
             )
 
 

@@ -1,9 +1,12 @@
 # Missão Luna — pencil sigma assinado e correspondência de Padé
 
-**Estado da missão: em andamento.** Os checkpoints A–C estão provados em
-Lean, compilados com `-DwarningAsError=true`, auditados transitivamente e
-publicados. D foi formalizado sob hipóteses explícitas de continuação. E–F e a
-validação numérica continuam em andamento.
+**Estado da missão: em andamento.** A–C estão provados e publicados. D é
+condicional a uma hipótese explícita de continuação analítica. E agora prova em
+Lean que uma decomposição original com resto exponencial controlado implica os
+limites dos menores sigma e a convergência de uma raiz original para `zeta`;
+a hipótese analítica que fornece esse resto ainda está aberta. F está
+demonstrado para modelos auxiliares de par único deslocado e de dois polos
+reais distintos. A grade numérica de G foi reproduzida.
 
 ## Proveniência e Git
 
@@ -92,7 +95,7 @@ Isso explicita o caso degenerado que não pode ser descartado apenas de
 
 ## Auditoria e reprodução
 
-`SigmaPadeAudit.lean` audita 72 raízes públicas e percorre 59.140 constantes
+`SigmaPadeAudit.lean` audita 105 raízes públicas e percorre 59.325 constantes
 alcançáveis nos tipos e corpos. Foram aceitos somente os axiomas-base do Lean
 `[propext, Classical.choice, Quot.sound]`. A auditoria exige como dependências
 `sigmaMatrix`, `completedSigmaLogJet` e
@@ -139,6 +142,18 @@ real `gamma` e partes imaginárias `delta` e `-delta`, recuperando
 `gamma+i delta` e `gamma-i delta`. Esses resultados verificam o mecanismo do modelo; não atribuem
 nenhuma contribuição de polos ao sigma original.
 
+O módulo também formaliza o limite de deslocamento zero com dois polos reais
+distintos. Para pesos `m₁,m₂>0` e nós `ρ₁,ρ₂>0`, `ρ₁≠ρ₂`,
+`twoRealPoleGram_det` dá
+
+\[
+\det G_s=m_1m_2(\rho_1\rho_2)^{s+1}(\rho_1-\rho_2)^2>0,
+\]
+
+e `twoRealPolePencil_characteristic` fatora o determinante pelas raízes
+exatas `ρ₁,ρ₂`, para todo `s`. Isso formaliza o lado `d=0` do modelo de dois
+polos; não identifica essa sequência auxiliar com os jatos sigma.
+
 ## CONDICIONAL — D: fator local do zero e resto para os jatos originais
 
 `SigmaZeroPairDecomposition.lean` preserva a fonte
@@ -180,31 +195,42 @@ continuação `hdecomp`, nem que um zero positivo de ordem finita exista. Logo D
 não atribui contribuição de polos à fonte original sem essas hipóteses. A
 continuação e a separação espectral permanecem condicionais.
 
-## NUMÉRICO — extração Cauchy independente
+## NUMÉRICO — G: extração Cauchy independente
 
-`sigma_pade_cauchy_validation.py` avalia a característica original completada
-pela fórmula
-`F(z)=1/2*s*(s-1)*pi^(-s/2)*Gamma(s/2)*zeta(s)`, `s=1/2+i*z`, e usa seu
-logaritmo derivado analítico para `Q=-F'/(2F)`. Um ponto de controle compara
-essa fórmula com `-mp.diff(F,z)/(2F(z))`. Os jatos são extraídos de
-`G_d(u)=sigmaTransverseMean(Q,sqrt(u),d)/sqrt(u)` por integrais de Cauchy nos
-círculos `|u|=100` e `|u|=150`, com 128 pontos trapezoidais por círculo. As
-alturas conhecidas não aparecem como entrada do script.
+`completedNativeOperatorCharacteristic` preserva literalmente a fatoração
+`F=A·N`: o fator arquimediano nativo multiplica `nativeScalar`. O teorema
+`completedNativeOperatorCharacteristic_eq_completedRiemannZeta` identifica
+`N` com `zeta(s)` no strip crítico aberto. Para obter os momentos por Cauchy,
+o script avalia a continuação clássica desse mesmo germe,
+`F(z)=1/2*s*(s-1)*pi^(-s/2)*Gamma(s/2)*zeta(s)`, `s=1/2+i*z`, e calcula
+analiticamente `Q=-F'/(2F)`. Perto de `u=0`, para os deslocamentos testados,
+os pontos pertencem ao strip onde a igualdade nativa foi provada; os círculos
+de Cauchy completos ultrapassam esse strip. Essa continuação é usada como
+extensão numérica do mesmo germe, mas não foi certificada em Lean em todo o
+disco nem recebe certificado intervalar. Um ponto de controle compara a
+derivada logarítmica analítica com `-mp.diff(F,z)/(2F(z))`.
 
-Após a extração, os resultados foram comparados com o primeiro zero da tabela
-pública LMFDB, `gamma_1 = 14.134725141734693790...`. Para `d=0.1`, a altura
-recuperada na janela `s=24` é aproximadamente
-`14.1347188561048563 + 0.0999973368245615 i`; para `d=0.2`, é
-`14.1347240316165533 + 0.1999988544136233 i`. Os erros em relação a
-`gamma_1+i*d` são, respectivamente, `6.29e-6` e `1.11e-6` na parte real, e
-`2.66e-6` e `1.15e-6` na parte imaginária. Entre os dois contornos, a diferença
-na altura de `s=24` é `7.9e-22` para `d=0.1` e `1.8e-22` para `d=0.2`.
+Foram extraídos os dois ramos do pencil nos dois contornos `|u|=100` e
+`|u|=150`, com 256 pontos trapezoidais por contorno e 100 dígitos, para todas
+as combinações `s=10,15,20,30,40,50` e
+`d=0.2,0.1,0.05,0.02,0.01,0`. As alturas conhecidas não entram na extração.
+Para `d=0.2`, a raiz inferior recuperada é
+`14.1347251417334538384−0.1999999999962239424i` em `s=40` e
+`14.1347251417346937506−0.1999999999999988489i` em `s=50`, reproduzindo as
+referências experimentais fornecidas. Em `d=0`, os dois ramos em `s=40` dão
+`14.1347251417346937905` e `21.0220427324547918603`; em `s=50`, dão
+`14.1347251417346937905` e `21.0220397345794759398`. Após a extração, a segunda
+altura de `d=0,s=50` difere em cerca de `9.58e-8` do segundo zero tabelado.
+Esse comportamento numérico é compatível com os dois limites distintos
+previstos em F. A diferença máxima entre as alturas obtidas pelos dois
+contornos em toda a grade foi `2.31e-31`.
 
-Isso é uma verificação numérica independente e reproduzível, não um limite de
-erro certificado: não prova a continuação analítica de D nem a convergência
-assintótica de E. A tabela LMFDB relata os primeiros 103.800.788.359 zeros e
-precisão de `±2.5e-31`; os valores de comparação foram consultados somente
-depois da extração ([LMFDB, zeros de zeta](https://www.lmfdb.org/zeros/zeta/),
+Essas diferenças medem concordância numérica entre quadraturas, não um limite
+de erro certificado nem prova de ausência de polos nos discos. Não provam a
+continuação global requerida por D, a convergência assintótica de E ou os
+limites iterados de F. A LMFDB documenta os primeiros 103.800.788.359 zeros e
+sua precisão de `±2.5e-31`; as alturas de comparação só foram consultadas após
+a extração ([LMFDB, zeros de zeta](https://www.lmfdb.org/zeros/zeta/),
 [FLINT, tutorial numérico e primeiros zeros](https://fredrikj.net/fdoc/html/tutorials/numerics/zeta.html)).
 
 Reprodução:
@@ -254,44 +280,73 @@ converge a `conj zeta`. Pelo checkpoint B, as raízes finitas do denominador
 Padé são as recíprocas, portanto convergem a `1/zeta` e `1/conj zeta`. As
 raízes quadradas locais recuperam `gamma±i d`.
 
-A formalização já cobre a estimativa do resto, a continuidade da fórmula e a
-equação quadrática. O cálculo dos três limites dos menores a partir da
-decomposição foi verificado algebricamente aqui, mas ainda não está codificado
-como um teorema Lean. E permanece condicional a `hdecomp`, ao zero positivo de
-ordem finita e ao certificado de continuação de D; não afirma que esses fatos
-foram estabelecidos para a característica sigma.
+A formalização agora prova a passagem do resto aos menores. O lema de
+perturbação de produtos usa a limitação uniforme dos momentos do modelo na
+circunferência unitária; `twoPoleMoment_abs_le_of_normSq_eq_one` prova essa
+limitação. Assim, `sigmaPadeNormalizedMinors_tendsto_of_unitCircle_twoPole_remainder`
+deduz diretamente do limite exponencial do resto os três limites
+normalizados exibidos acima, para os menores da sequência
+`completedSigmaLogJet`. Não se toma uma sequência de momentos auxiliar no
+lugar da fonte.
 
-## PROVADO NO MODELO AUXILIAR; ABERTO NA FONTE — F: limites e primeira detecção
+Com esses limites, `sigmaPadeOriginalPencil_root_tendsto_to_twoPole` prova que
+a raiz selecionada do pencil original é eventualmente não real, satisfaz a
+característica exata e converge para `zeta` quando `Im(theta)<0`; essa é a
+orientação de `zeta=(gamma+i d)^(-2)` para `gamma,d>0`. A identidade B implica
+então a convergência da raiz correspondente do denominador de Padé para
+`1/zeta`. O modelo auxiliar prova a recuperação exata de `gamma±i d` por
+raízes quadradas inversas. A continuidade do ramo de `lambda^(-1/2)` para a
+sequência original não foi formalizada como um teorema separado.
 
-No modelo de dois polos, para todo `d≠0`, o determinante de cada janela é
-estritamente negativo, a forma tem uma direção negativa e o lápis regular de
-ordem 2 tem raízes não reais. Para `zeta=(gamma+i d)^(-2)`, elas são
-`zeta` e `conj zeta` para todo deslocamento `s`, e ambas tendem a
-`gamma^(-2)` quando `d→0`. O determinante tende a zero. Em `d=0`, a matriz
-de Gram é singular e o determinante característico do lápis é identicamente zero:
-as raízes do lápis regular deixam de estar definidas. Assim, o valor-limite
-das raízes existe, mas a classificação como lápis regular com par não real
-desaparece continuamente no limite. Tomar `d→0` antes de extrair as raízes
-descarta o lápis regular; extrair primeiro e então tomar o limite produz o
-par coalescente. Os valores numéricos dos limites iterados das raízes,
-enquanto elas estão definidas para `d≠0`, coincidem; a singularidade está na
-classificação e na extração no ponto `d=0`, não em uma divergência dos valores.
+E continua condicional a `hdecomp`, ao zero positivo de ordem finita e ao
+certificado de continuação de D. A prova Lean recebe o limite exponencial do
+resto como hipótese; não afirma que a característica sigma satisfaz essas
+hipóteses.
 
-As três primeiras detecções não são equivalentes em geral. Para
-`G=diag(0,1)`, o primeiro menor principal é zero embora `G` seja
-semidefinida positiva. Para `G=K=diag(1,-1)`, há uma direção negativa e as
-raízes do lápis são reais. Para `G=diag(1,-1)` e
-`K=[[0,1],[1,0]]`, as raízes são `±i`. No modelo de dois polos, o menor
-inicial `h_s` não positivo detecta a falha principal já na ordem 1; se
-`h_s<0`, já há também direção negativa nessa ordem. Se `h_s≥0`, a direção
-negativa aparece na ordem 2 pelo determinante estritamente negativo (mesmo
-que `h_s=0`, quando o primeiro menor já é zero). As raízes não reais aparecem
-na ordem 2 para todo `d≠0`.
+## CONDICIONAL NO MODELO; ABERTO NA FONTE — F: polos distintos e limites iterados
 
-Isso resolve a comparação e a degeneração no modelo auxiliar. Para os jatos
-sigma originais, não foi provada a decomposição em dois polos requerida por D;
-por isso a ordem da primeira detecção, as raízes não reais e a não
-comutatividade do limite com a extração de raízes seguem **ABERTAS**.
+Para um primeiro par simples em `gamma₁±id`, o modelo de par conjugado tem
+raízes características `zeta₁=(gamma₁+id)⁻²` e `conj(zeta₁)` em cada janela
+quando `d≠0`. Ao fazer `d→0`, as duas raízes recíprocas quadradas convergem a
+`gamma₁`. No modelo de dois polos reais distintos no ponto `d=0`,
+`twoRealPolePencil_real_roots` prova que as raízes do pencil são exatamente
+`rho₁=gamma₁⁻²` e `rho₂=gamma₂⁻²` para todo deslocamento, sob pesos positivos e
+`gamma₁≠gamma₂`. Assim, para uma geradora que satisfaça as hipóteses de
+dominância dos dois primeiros polos e estabilidade sob o resto, a previsão dos
+limites iterados é
+
+\[
+\lim_{d\to0}\lim_{s\to\infty}\{T_{s,1}(d),T_{s,2}(d)\}
+=\{\gamma_1,\gamma_1\},\qquad
+\lim_{s\to\infty}\lim_{d\to0}\{T_{s,1}(d),T_{s,2}(d)\}
+=\{\gamma_1,\gamma_2\}.
+\]
+
+O primeiro limite usa dominância do primeiro par para todo `d>0`; o segundo
+usa dois nós reais distintos em `d=0`. A diferença é uma não comutatividade
+genuína do limite com a extração assintótica quando há um segundo polo
+separado. Ela não aparece no modelo de um único par, em que ambos os ramos
+coalescem para a mesma altura.
+
+Para a fonte sigma inteira, essa conclusão exige zeros simples e isolados em
+`gamma₁<gamma₂`, ausência de outros polos de raio igual ou maior na
+continuação relevante, um resto com raio estritamente menor que o segundo
+raio, e continuidade suficiente em `d` para cada janela finita. Essas
+hipóteses não foram descarregadas nem certificadas para
+`completedNativeOperatorCharacteristic`; os limites iterados na fonte seguem
+**ABERTOS**.
+
+As três primeiras detecções são distintas. O menor principal inicial pode
+falhar sem indefinição positiva (por exemplo `diag(0,1)` ainda é
+semidefinida positiva); uma direção negativa pode coexistir com raízes reais
+(`G=K=diag(1,-1)`); e um pencil pode ter raízes não reais (`G=diag(1,-1)`,
+`K=[[0,1],[1,0]]`). No modelo de par conjugado, o determinante negativo e as
+raízes não reais aparecem na janela de ordem 2 para todo `d≠0`. A falha
+principal em ordem 1 depende do sinal de `h_s`: ocorre imediatamente se
+`h_s<0`; se `h_s≥0`, o determinante negativo força a falha na ordem 2. Para
+polos distintos com resto, não há nesta entrega uma estimativa quantitativa da
+primeira janela; uma estimativa exige limitar explicitamente a razão entre o
+segundo e o terceiro raios e controlar os coeficientes do resto.
 
 ## PUBLICADO E REPRODUÇÃO
 
