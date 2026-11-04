@@ -20,6 +20,11 @@ alterações preexistentes não relacionadas; elas foram preservadas.
 - Checkpoint A: [commit `189de259`](https://github.com/thiagomassensini/geometry-of-numbers/commit/189de2599a84aa78e6a5b50b71d5aa0b9a4645b9).
 - Checkpoint B: [commit `b2998c59`](https://github.com/thiagomassensini/geometry-of-numbers/commit/b2998c595df575e95de664085a083616ba094eec).
 - Checkpoint C: [commit `c0a4998`](https://github.com/thiagomassensini/geometry-of-numbers/commit/c0a4998f8ae3bb2f0783c0d4258507db0e5d8b5d).
+- Checkpoint D, sob hipóteses explícitas de continuação: [commit `aa4d2af`](https://github.com/thiagomassensini/geometry-of-numbers/commit/aa4d2afb6cbeea428f44d2c60ce4d96977bb5d4a).
+- Checkpoint G, extração Cauchy inicial: [commit `9ff56d2`](https://github.com/thiagomassensini/geometry-of-numbers/commit/9ff56d2885da0258894888fe0ccda3f8a31c3c60).
+- Checkpoint E, convergência condicional inicial: [commit `4bdce8c`](https://github.com/thiagomassensini/geometry-of-numbers/commit/4bdce8c5e3b85ecdb811539787325b148b988079).
+- Checkpoints E–F, menores normalizados, raiz original e dois polos reais: [commit `87e1c9c`](https://github.com/thiagomassensini/geometry-of-numbers/commit/87e1c9c3073f97f1bbdee63692947a19857e6c6f).
+- Grade numérica completa, relatório final e CSV reproduzível: [commit `18d467d`](https://github.com/thiagomassensini/geometry-of-numbers/commit/18d467d63c46222cb5f3f90e075cda569cbb0539).
 - A ponta remota foi conferida após cada push.
 
 ## PROVADO — A: pencil assinado original
