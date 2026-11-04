@@ -179,6 +179,40 @@ continuação `hdecomp`, nem que um zero positivo de ordem finita exista. Logo D
 não atribui contribuição de polos à fonte original sem essas hipóteses. A
 continuação e a separação espectral permanecem condicionais.
 
+## NUMÉRICO — extração Cauchy independente
+
+`sigma_pade_cauchy_validation.py` avalia a característica original completada
+pela fórmula
+`F(z)=1/2*s*(s-1)*pi^(-s/2)*Gamma(s/2)*zeta(s)`, `s=1/2+i*z`, e usa seu
+logaritmo derivado analítico para `Q=-F'/(2F)`. Um ponto de controle compara
+essa fórmula com `-mp.diff(F,z)/(2F(z))`. Os jatos são extraídos de
+`G_d(u)=sigmaTransverseMean(Q,sqrt(u),d)/sqrt(u)` por integrais de Cauchy nos
+círculos `|u|=100` e `|u|=150`, com 128 pontos trapezoidais por círculo. As
+alturas conhecidas não aparecem como entrada do script.
+
+Após a extração, os resultados foram comparados com o primeiro zero da tabela
+pública LMFDB, `gamma_1 = 14.134725141734693790...`. Para `d=0.1`, a altura
+recuperada na janela `s=24` é aproximadamente
+`14.1347188561048563 + 0.0999973368245615 i`; para `d=0.2`, é
+`14.1347240316165533 + 0.1999988544136233 i`. Os erros em relação a
+`gamma_1+i*d` são, respectivamente, `6.29e-6` e `1.11e-6` na parte real, e
+`2.66e-6` e `1.15e-6` na parte imaginária. Entre os dois contornos, a diferença
+na altura de `s=24` é `7.9e-22` para `d=0.1` e `1.8e-22` para `d=0.2`.
+
+Isso é uma verificação numérica independente e reproduzível, não um limite de
+erro certificado: não prova a continuação analítica de D nem a convergência
+assintótica de E. A tabela LMFDB relata os primeiros 103.800.788.359 zeros e
+precisão de `±2.5e-31`; os valores de comparação foram consultados somente
+depois da extração ([LMFDB, zeros de zeta](https://www.lmfdb.org/zeros/zeta/),
+[FLINT, tutorial numérico e primeiros zeros](https://fredrikj.net/fdoc/html/tutorials/numerics/zeta.html)).
+
+Reprodução:
+
+```bash
+python3 research/native-moving-schur-sigma/sigma_pade_cauchy_validation.py \
+  > research/native-moving-schur-sigma/evidence/SigmaPadeCauchyValidation.csv
+```
+
 ## ABERTO — próximos checkpoints
 
 1. **E:** deduzir convergência dos coeficientes Padé e das raízes para janelas
