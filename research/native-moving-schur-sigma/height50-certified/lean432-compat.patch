@@ -1,0 +1,377 @@
+diff --git a/hunts/hardy_first_zero/lean/HardyFirstZero/EulerMaclaurin.lean b/hunts/hardy_first_zero/lean/HardyFirstZero/EulerMaclaurin.lean
+index 5124071b..dbc4bb77 100644
+--- a/hunts/hardy_first_zero/lean/HardyFirstZero/EulerMaclaurin.lean
++++ b/hunts/hardy_first_zero/lean/HardyFirstZero/EulerMaclaurin.lean
+@@ -40,10 +40,15 @@ lemma hasDerivAt_kq (a t : ℝ) : HasDerivAt (kq a) (kq1 a t) t := by
+   have h1 : HasDerivAt (fun x : ℝ => x - a) 1 t := (hasDerivAt_id' t).sub_const a
+   have h2 : HasDerivAt (fun x : ℝ => a + 1 - x) (-1) t := (hasDerivAt_id' t).const_sub (a + 1)
+   have h := ((h1.fun_pow 2).fun_mul (h2.fun_pow 2)).div_const 24
+-  unfold kq kq1
+-  convert h using 1
+-  push_cast
+-  ring
++  change HasDerivAt (fun x : ℝ => (x - a) ^ 2 * (a + 1 - x) ^ 2 / 24)
++    ((t - a) * (a + 1 - t) * (2 * a + 1 - 2 * t) / 12) t
++  have hderiv : ((t - a) * (a + 1 - t) * (2 * a + 1 - 2 * t) / 12) =
++      ((2 * (t - a) ^ (2 - 1) * 1 * (a + 1 - t) ^ 2 +
++        (t - a) ^ 2 * (2 * (a + 1 - t) ^ (2 - 1) * -1)) / 24) := by
++    norm_num
++    ring
++  rw [hderiv]
++  exact h
+ 
+ lemma hasDerivAt_kq1 (a t : ℝ) : HasDerivAt (kq1 a) (kq2 a t) t := by
+   have h1 : HasDerivAt (fun x : ℝ => x - a) 1 t := (hasDerivAt_id' t).sub_const a
+@@ -51,17 +56,28 @@ lemma hasDerivAt_kq1 (a t : ℝ) : HasDerivAt (kq1 a) (kq2 a t) t := by
+   have h3 : HasDerivAt (fun x : ℝ => 2 * a + 1 - 2 * x) (-(2 * 1)) t :=
+     ((hasDerivAt_id' t).const_mul 2).const_sub (2 * a + 1)
+   have h := ((h1.fun_mul h2).fun_mul h3).div_const 12
+-  unfold kq1 kq2
+-  convert h using 1
+-  ring
++  change HasDerivAt (fun x : ℝ => (x - a) * (a + 1 - x) *
++      (2 * a + 1 - 2 * x) / 12)
++    ((1 - 6 * (t - a) + 6 * (t - a) ^ 2) / 12) t
++  have hderiv : ((1 - 6 * (t - a) + 6 * (t - a) ^ 2) / 12) =
++      (((1 * (a + 1 - t) + (t - a) * -1) * (2 * a + 1 - 2 * t) +
++        (t - a) * (a + 1 - t) * -(2 * 1)) / 12) := by
++    norm_num
++    ring
++  rw [hderiv]
++  exact h
+ 
+ lemma hasDerivAt_kq2 (a t : ℝ) : HasDerivAt (kq2 a) (kq3 a t) t := by
+   have h1 : HasDerivAt (fun x : ℝ => x - a) 1 t := (hasDerivAt_id' t).sub_const a
+   have h := (((h1.const_mul 6).const_sub 1).fun_add ((h1.fun_pow 2).const_mul 6)).div_const 12
+-  unfold kq2 kq3
+-  convert h using 1
+-  push_cast
+-  ring
++  change HasDerivAt (fun x : ℝ => (1 - 6 * (x - a) + 6 * (x - a) ^ 2) / 12)
++    ((t - a) - 1 / 2) t
++  have hderiv : ((t - a) - 1 / 2) =
++      ((-(6 * 1) + 6 * (2 * (t - a) ^ (2 - 1) * 1)) / 12) := by
++    norm_num
++    ring
++  rw [hderiv]
++  exact h
+ 
+ lemma hasDerivAt_kq3 (a t : ℝ) : HasDerivAt (kq3 a) 1 t :=
+   ((hasDerivAt_id' t).sub_const a).sub_const (1 / 2 : ℝ)
+@@ -75,8 +91,17 @@ lemma integral_kq (a : ℝ) : ∫ t in a..a + 1, kq a t = 1 / 720 := by
+     have h1 : HasDerivAt (fun x : ℝ => x - a) 1 t := (hasDerivAt_id' t).sub_const a
+     have h := ((((h1.fun_pow 3).div_const 3).sub ((h1.fun_pow 4).div_const 2)).add
+       ((h1.fun_pow 5).div_const 5)).div_const 24
+-    convert h using 1
+-    simp only [kq]; push_cast; ring
++    change HasDerivAt
++      (fun x : ℝ => ((x - a) ^ 3 / 3 - (x - a) ^ 4 / 2 + (x - a) ^ 5 / 5) / 24)
++      (kq a t) t
++    have hderiv : kq a t =
++        ((3 * (t - a) ^ (3 - 1) * 1 / 3 - 4 * (t - a) ^ (4 - 1) * 1 / 2 +
++          5 * (t - a) ^ (5 - 1) * 1 / 5) / 24) := by
++      unfold kq
++      norm_num
++      ring
++    rw [hderiv]
++    exact h
+   rw [integral_eq_sub_of_hasDerivAt hQ
+     ((continuous_iff_continuousAt.mpr fun t => (hasDerivAt_kq a t).continuousAt).intervalIntegrable _ _)]
+   norm_num
+@@ -109,7 +134,13 @@ theorem corrected_trapezoid {g g1 g2 g3 g4 : ℝ → ℂ} {a M : ℝ}
+     have e1 := (hasDerivAt_kq1 a t).ofReal_comp.mul (h2 t ht)
+     have e2 := (hasDerivAt_kq2 a t).ofReal_comp.mul (h1 t ht)
+     have e3 := (hasDerivAt_kq3 a t).ofReal_comp.mul (h0 t ht)
+-    convert ((e0.sub e1).add e2).sub e3 using 1
++    change HasDerivAt
++      (((fun y => ((kq a y : ℝ) : ℂ) * g3 y) -
++          (fun y => ((kq1 a y : ℝ) : ℂ) * g2 y)) +
++          (fun y => ((kq2 a y : ℝ) : ℂ) * g1 y) -
++          (fun y => ((kq3 a y : ℝ) : ℂ) * g y)) _ t
++    have hsum := ((e0.sub e1).add e2).sub e3
++    apply hsum.congr_deriv
+     push_cast
+     ring
+   have hint : IntervalIntegrable (fun t => ((kq a t : ℝ) : ℂ) * g4 t - g t) volume a (a + 1) :=
+@@ -179,14 +210,14 @@ theorem norm_eBlock_le {s : ℂ} (hs : 0 < s.re) (hs1 : s ≠ 1) {x : ℝ} (hx :
+     hasDerivAt_ofReal_cpow_const (hpos t ht).ne' r0
+   have d1 : ∀ t ∈ Set.uIcc x (x + 1), HasDerivAt g1 (g2 t) t := fun t ht => by
+     have := (hasDerivAt_ofReal_cpow_const (hpos t ht).ne' r1).const_mul (-s)
+-    convert this using 1; simp only [g2]; ring
++    exact this.congr_deriv (by simp [g2]; ring)
+   have d2 : ∀ t ∈ Set.uIcc x (x + 1), HasDerivAt g2 (g3 t) t := fun t ht => by
+     have := (hasDerivAt_ofReal_cpow_const (hpos t ht).ne' r2).const_mul (-s * (-s - 1))
+-    convert this using 1; simp only [g3]; ring
++    exact this.congr_deriv (by simp [g3]; ring)
+   have d3 : ∀ t ∈ Set.uIcc x (x + 1), HasDerivAt g3 (g4 t) t := fun t ht => by
+     have := (hasDerivAt_ofReal_cpow_const (hpos t ht).ne' r3).const_mul
+       (-s * (-s - 1) * (-s - 1 - 1))
+-    convert this using 1; simp only [g4]; ring
++    exact this.congr_deriv (by simp [g4]; ring)
+   have r4 : (-s - 1 - 1 - 1 - 1 : ℂ) ≠ 0 := ne_zero_of_re_neg (by simp; linarith)
+   have hc4 : ContinuousOn g4 (Set.uIcc x (x + 1)) := fun t ht =>
+     ((hasDerivAt_ofReal_cpow_const (hpos t ht).ne' r4).continuousAt.const_mul
+diff --git a/hunts/hardy_first_zero/lean/HardyFirstZero/Phase.lean b/hunts/hardy_first_zero/lean/HardyFirstZero/Phase.lean
+index dd40abc2..06698dab 100644
+--- a/hunts/hardy_first_zero/lean/HardyFirstZero/Phase.lean
++++ b/hunts/hardy_first_zero/lean/HardyFirstZero/Phase.lean
+@@ -2,6 +2,7 @@ module
+ 
+ public import HardyFirstZero.Spine
+ public import Mathlib.NumberTheory.Harmonic.Bounds
++public import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
+ public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
+ public import Mathlib.Analysis.Real.Pi.Bounds
+ 
+@@ -265,7 +266,26 @@ lemma xj_ge {a b : ℝ} (ha : 0 ≤ a) (hab : a ≤ b) (j : ℕ) :
+   nlinarith [sq_nonneg (a * b / 4), pow_pos hc 4]
+ 
+ lemma psi_le {a b : ℝ} (ha : 0 ≤ a) (hab : a ≤ b) (j : ℕ) : psi a b j ≤ xj a b j :=
+-  Real.arctan_le_self (xj_nonneg ha hab j)
++  by
++    have hx : 0 ≤ xj a b j := xj_nonneg ha hab j
++    have hden : Continuous (fun t : ℝ => 1 + t ^ 2) := by fun_prop
++    have hcont : Continuous (fun t : ℝ => (1 + t ^ 2)⁻¹) :=
++      hden.inv₀ (fun t => by positivity)
++    have hf : IntervalIntegrable (fun t : ℝ => (1 + t ^ 2)⁻¹) MeasureTheory.volume 0
++        (xj a b j) := hcont.intervalIntegrable 0 (xj a b j)
++    have hg : IntervalIntegrable (fun _t : ℝ => (1 : ℝ)) MeasureTheory.volume 0
++        (xj a b j) := continuous_const.intervalIntegrable 0 (xj a b j)
++    have hmono :
++        (∫ t in (0 : ℝ)..xj a b j, (1 + t ^ 2)⁻¹) ≤
++          ∫ _t in (0 : ℝ)..xj a b j, (1 : ℝ) := by
++      apply intervalIntegral.integral_mono_on hx hf hg
++      intro t ht
++      have hdenPos : 0 < 1 + t ^ 2 := by positivity
++      have hdenGe : 1 ≤ 1 + t ^ 2 := by nlinarith [sq_nonneg t]
++      exact (inv_le_one₀ hdenPos).2 hdenGe
++    rw [integral_inv_one_add_sq, Real.arctan_zero, sub_zero] at hmono
++    simp only [intervalIntegral.integral_const, sub_zero, smul_eq_mul, mul_one] at hmono
++    simpa [psi, xj] using hmono
+ 
+ lemma psi_ge {a b : ℝ} (ha : 0 ≤ a) (hab : a ≤ b) (j : ℕ) :
+     xj a b j - xj a b j ^ 3 ≤ psi a b j :=
+diff --git a/hunts/rh_height_lean/lean/RHHeight/GammaIncrement.lean b/hunts/rh_height_lean/lean/RHHeight/GammaIncrement.lean
+index 8de1b73d..fd775081 100644
+--- a/hunts/rh_height_lean/lean/RHHeight/GammaIncrement.lean
++++ b/hunts/rh_height_lean/lean/RHHeight/GammaIncrement.lean
+@@ -130,10 +130,8 @@ theorem hasDerivAt_muPrim (t : ℝ) : HasDerivAt muPrim (muMain t) t := by
+   have hq : (1 + 4 * t ^ 2) / 16 ≠ 0 := by positivity
+   have hd : (1 : ℝ) + 4 * t ^ 2 ≠ 0 := by positivity
+   have h1 : HasDerivAt (fun t : ℝ => (1 + 4 * t ^ 2) / 16) (8 * t / 16) t := by
+-    have := (((hasDerivAt_id' t).pow 2).const_mul 4).const_add 1 |>.div_const 16
+-    convert this using 1
+-    simp
+-    ring
++    have h := (((hasDerivAt_id' t).pow 2).const_mul 4).const_add 1 |>.div_const 16
++    convert h using 1 <;> all_goals first | rfl | (norm_num; ring)
+   have hlog := h1.log hq
+   have hc : HasDerivAt (fun t : ℝ => t / 2) (1 / 2) t := (hasDerivAt_id' t).div_const 2
+   have h2 : HasDerivAt (fun t : ℝ => 2 * t) 2 t := by
+@@ -141,12 +139,9 @@ theorem hasDerivAt_muPrim (t : ℝ) : HasDerivAt muPrim (muMain t) t := by
+   have harc := h2.arctan
+   have H := ((((hc.mul hlog).sub (hasDerivAt_id' t)).sub (harc.const_mul (1 / 2))).sub
+     ((hasDerivAt_id' t).mul_const (Real.log Real.pi))).const_mul (1 / (2 * Real.pi))
+-  convert H using 1
+-  · funext y
+-    rfl
+-  · unfold muMain
+-    field_simp
+-    ring
++  convert H using 1 <;> all_goals first
++    | rfl
++    | (unfold muMain; field_simp; ring)
+ 
+ theorem continuous_muMain : Continuous muMain := by
+   have h1 : Continuous (fun t : ℝ => Real.log ((1 + 4 * t ^ 2) / 16)) :=
+@@ -161,9 +156,7 @@ theorem hasDerivAt_six_div (x : ℝ) (hx : x ≠ 0) :
+   have hπ := Real.pi_pos
+   have h := (hasDerivAt_const x (6 : ℝ)).div ((hasDerivAt_id' x).const_mul Real.pi)
+     (mul_ne_zero hπ.ne' hx)
+-  convert h using 1
+-  field_simp
+-  ring
++  convert h using 1 <;> all_goals first | rfl | (field_simp; ring)
+ 
+ /-- **The Gamma side between two heights, to within the Stirling error.** For `1 ≤ T₁ ≤ T₂`,
+ `|∫_{T₁}^{T₂} μ - (F T₂ - F T₁)| ≤ (6/π)(1/T₁ - 1/T₂)`, with `F = muPrim`. -/
+@@ -182,15 +175,14 @@ theorem abs_integral_mu_sub_le {T₁ T₂ : ℝ} (h1 : 1 ≤ T₁) (h12 : T₁ 
+     rw [hIcc] at hx
+     have hx0 : x ≠ 0 := (by linarith [hx.1] : (0 : ℝ) < x).ne'
+     have h := (hasDerivAt_muPrim x).sub (hasDerivAt_six_div x hx0)
+-    convert h using 1
+-    ring
++    convert h using 1 <;> all_goals first | rfl | ring
+   have hderL : ∀ x ∈ Set.uIcc T₁ T₂, HasDerivAt (fun t => muPrim t + 6 / (Real.pi * t))
+       (muMain x - 6 / (Real.pi * x ^ 2)) x := by
+     intro x hx
+     rw [hIcc] at hx
+     have hx0 : x ≠ 0 := (by linarith [hx.1] : (0 : ℝ) < x).ne'
+     have h := (hasDerivAt_muPrim x).add (hasDerivAt_six_div x hx0)
+-    convert h using 1
++    convert h using 1 <;> all_goals rfl
+   have hcont6 : ContinuousOn (fun t : ℝ => 6 / (Real.pi * t ^ 2)) (Set.uIcc T₁ T₂) := by
+     rw [hIcc]
+     apply continuousOn_const.div (by fun_prop)
+diff --git a/hunts/rh_height_lean/lean/RHHeight/LegSupport.lean b/hunts/rh_height_lean/lean/RHHeight/LegSupport.lean
+index e288a91b..ad3b51df 100644
+--- a/hunts/rh_height_lean/lean/RHHeight/LegSupport.lean
++++ b/hunts/rh_height_lean/lean/RHHeight/LegSupport.lean
+@@ -1,6 +1,9 @@
+ module
+ 
+ public import HardyTenZeros.TenSupport
++public import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
++public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Arctan
++public import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
+ 
+ @[expose] public section
+ 
+@@ -45,6 +48,33 @@ open Complex Finset ZetaLean ZetaLean.ComplexInterval HardyFirstZero
+ 
+ namespace RHHeight.Legs
+ 
++private lemma arctan_le_self_of_nonneg {x : ℝ} (hx : 0 ≤ x) : Real.arctan x ≤ x := by
++  have hden : Continuous (fun t : ℝ => 1 + t ^ 2) := by fun_prop
++  have hcont : Continuous (fun t : ℝ => (1 + t ^ 2)⁻¹) :=
++    hden.inv₀ (fun t => by positivity)
++  have hf : IntervalIntegrable (fun t : ℝ => (1 + t ^ 2)⁻¹) MeasureTheory.volume 0 x :=
++    hcont.intervalIntegrable 0 x
++  have hg : IntervalIntegrable (fun _t : ℝ => (1 : ℝ)) MeasureTheory.volume 0 x :=
++    continuous_const.intervalIntegrable 0 x
++  have hmono : (∫ t in (0 : ℝ)..x, (1 + t ^ 2)⁻¹) ≤
++      ∫ _t in (0 : ℝ)..x, (1 : ℝ) := by
++    apply intervalIntegral.integral_mono_on hx hf hg
++    intro t ht
++    have hdenPos : 0 < 1 + t ^ 2 := by positivity
++    have hdenGe : 1 ≤ 1 + t ^ 2 := by nlinarith [sq_nonneg t]
++    exact (inv_le_one₀ hdenPos).2 hdenGe
++  rw [integral_inv_one_add_sq, Real.arctan_zero, sub_zero] at hmono
++  simp only [intervalIntegral.integral_const, smul_eq_mul, mul_one] at hmono
++  simp only [sub_zero] at hmono
++  exact hmono
++
++private lemma self_le_arctan_of_nonpos {x : ℝ} (hx : x ≤ 0) : x ≤ Real.arctan x := by
++  have h := arctan_le_self_of_nonneg (neg_nonneg.mpr hx)
++  have hs : Real.arctan x = -Real.arctan (-x) := by
++    simp
++  rw [hs]
++  linarith
++
+ /-! ### Points and the main term -/
+ 
+ /-- The Gaussian-rational point `x + iy`. -/
+@@ -659,7 +689,7 @@ theorem arg_mem_of_box {B : ComplexInterval} {z : ℂ} (hB : B.contains z) (hre
+       rw [← Complex.tan_arg, Real.arctan_tan h1 h2]
+     rw [harg]
+     have hq : z.im / z.re ≤ 0 := div_nonpos_of_nonpos_of_nonneg hzim hzre.le
+-    refine le_trans ?_ (Real.self_le_arctan hq)
++    refine le_trans ?_ (self_le_arctan_of_nonpos hq)
+     push_cast
+     rw [div_le_div_iff₀ hrl0 hzre]
+     nlinarith [mul_nonneg (sub_nonneg.mpr hilo) hzre.le,
+diff --git a/lean/ZetaLean/HardyZ.lean b/lean/ZetaLean/HardyZ.lean
+index ea7c6580..16792827 100644
+--- a/lean/ZetaLean/HardyZ.lean
++++ b/lean/ZetaLean/HardyZ.lean
+@@ -117,7 +117,7 @@ lemma abs_hardyZ_eq_abs_zeta (t : ℝ) : ‖hardyZ t‖ = ‖riemannZeta (1/2 +
+     · rw [Complex.norm_of_nonneg (norm_nonneg _)]
+       congr 1
+       have H_eq : 1/4 + (t:ℂ) / 2 * I = s / 2 := by
+-        dsimp [s]; apply Complex.ext <;> simp <;> ring
++        dsimp [s]; apply Complex.ext <;> simp; ring
+       rw [H_eq]
+   rw [H3, mul_div_cancel_right₀]
+   rw [norm_ne_zero_iff]
+diff --git a/lean/ZetaLean/IntervalCExp.lean b/lean/ZetaLean/IntervalCExp.lean
+index af2ef1d6..65f562bd 100644
+--- a/lean/ZetaLean/IntervalCExp.lean
++++ b/lean/ZetaLean/IntervalCExp.lean
+@@ -408,7 +408,7 @@ def dirichletTermBox2 (nLog nExp p kL kE : ℕ) (m : ℕ) (S : ComplexInterval)
+     ComplexInterval :=
+   expCr nExp p kE (S.neg.mul { re := Interval.logQ nLog kL (m : ℚ), im := Interval.exact 0 })
+ 
+-theorem contains_dirichletTermBox2 {nLog nExp p kL kE : ℕ} (hnL : 0 < nLog)
++theorem contains_dirichletTermBox2 {nLog nExp p kL kE : ℕ} (_hnL : 0 < nLog)
+     (hnE : 0 < nExp) {m : ℕ} (hm : 0 < m) {S : ComplexInterval} {s : ℂ}
+     (hS : S.contains s) (h0 : 0 < (m : ℚ) / 2 ^ kL) (h2 : (m : ℚ) / 2 ^ kL < 2)
+     (hb : normBound (S.neg.mul
+diff --git a/lean/vendor/zeta23/Zeta23/Analytic/RectangleLogDeriv.lean b/lean/vendor/zeta23/Zeta23/Analytic/RectangleLogDeriv.lean
+index 8e6dfd57..f0a81cbe 100644
+--- a/lean/vendor/zeta23/Zeta23/Analytic/RectangleLogDeriv.lean
++++ b/lean/vendor/zeta23/Zeta23/Analytic/RectangleLogDeriv.lean
+@@ -258,7 +258,7 @@ theorem rectangleIntegral'_mul_logDeriv_of_poles {f g : ℂ → ℂ} {z w : ℂ}
+           have e1 : logDeriv f s
+               = logDeriv (fun s => (s - q) ^ analyticOrderNatAt f q * h s) s := by
+             simp only [logDeriv_apply, hfs.deriv_eq, hfs.self_of_nhds, smul_eq_mul]
+-          rw [e1, logDeriv_fun_mul (f := fun s : ℂ => (s - q) ^ analyticOrderNatAt f q) (g := h) s
++          rw [e1, logDeriv_mul (f := fun s : ℂ => (s - q) ^ analyticOrderNatAt f q) (g := h) s
+             (pow_ne_zero _ hsq) hhs (by fun_prop) hhas.differentiableAt]
+           have e2 : logDeriv (fun s : ℂ => (s - q) ^ analyticOrderNatAt f q) s
+               = (analyticOrderNatAt f q : ℂ) / (s - q) := by
+@@ -322,7 +322,7 @@ theorem rectangleIntegral'_mul_logDeriv_of_poles {f g : ℂ → ℂ} {z w : ℂ}
+         have hfs : f s ≠ 0 := fun h => hFs (by simp [hF, h])
+         have hfd : DifferentiableAt ℂ f s := (hf s hsRP).differentiableAt
+         have hldF : logDeriv F s = (m q : ℂ) / (s - q) + logDeriv f s := by
+-          rw [hF, logDeriv_fun_mul (f := fun s : ℂ => (s - q) ^ m q) (g := f) s
++          rw [hF, logDeriv_mul (f := fun s : ℂ => (s - q) ^ m q) (g := f) s
+             (pow_ne_zero _ hsq') hfs (by fun_prop) hfd]
+           have e2 : logDeriv (fun s : ℂ => (s - q) ^ m q) s = (m q : ℂ) / (s - q) := by
+             rw [show (fun s : ℂ => (s - q) ^ m q) = (fun x : ℂ => x ^ m q) ∘ (fun s => s - q)
+diff --git a/lean/vendor/zeta23/Zeta23/FromPNTPlus/Fourier.lean b/lean/vendor/zeta23/Zeta23/FromPNTPlus/Fourier.lean
+index e6b54122..de90b261 100644
+--- a/lean/vendor/zeta23/Zeta23/FromPNTPlus/Fourier.lean
++++ b/lean/vendor/zeta23/Zeta23/FromPNTPlus/Fourier.lean
+@@ -30,7 +30,7 @@ local instance {E : Type*} : Coe (E → ℝ) (E → ℂ) := ⟨fun f n => f n⟩
+ section lemmas
+ 
+ @[simp]
+-theorem nnnorm_eq_of_mem_circle (z : Circle) : ‖z.val‖₊ = 1 := NNReal.coe_eq_one.mp (by simp [Circle.norm_coe])
++theorem nnnorm_eq_of_mem_circle (z : Circle) : ‖z.val‖₊ = 1 := NNReal.coe_eq_one.mp (by simp)
+ 
+ @[simp]
+ theorem nnnorm_circle_smul (z : Circle) (s : ℂ) : ‖z • s‖₊ = ‖s‖₊ := by
+@@ -39,7 +39,7 @@ theorem nnnorm_circle_smul (z : Circle) (s : ℂ) : ‖z • s‖₊ = ‖s‖
+ noncomputable def e (u : ℝ) : ℝ →ᵇ ℂ where
+   toFun v := 𝐞 (-v * u)
+   map_bounded' :=
+-    ⟨2, fun x y => (dist_le_norm_add_norm _ _).trans (by simp [Circle.norm_coe, one_add_one_eq_two])⟩
++    ⟨2, fun x y => (dist_le_norm_add_norm _ _).trans (by simp [one_add_one_eq_two])⟩
+ 
+ @[simp] lemma e_apply (u : ℝ) (v : ℝ) : e u v = 𝐞 (-v * u) := rfl
+ 
+diff --git a/lean/vendor/zeta23/Zeta23/FromPNTPlus/StrongPNTPrefix.lean b/lean/vendor/zeta23/Zeta23/FromPNTPlus/StrongPNTPrefix.lean
+index 4380cceb..9c69c597 100644
+--- a/lean/vendor/zeta23/Zeta23/FromPNTPlus/StrongPNTPrefix.lean
++++ b/lean/vendor/zeta23/Zeta23/FromPNTPlus/StrongPNTPrefix.lean
+@@ -365,7 +365,7 @@ lemma norm_fOfZero_le_norm_BlaschkeOfZero {r R : ℝ} {f : ℂ → ℂ}
+   rw [BlaschkeOfZero r_pos r_lt_one r_lt_R finiteZeros hf_neq_zero_at_zero, ← mul_one ‖f 0‖]
+   refine mul_le_mul (by rw[mul_one]) ?_ (zero_le_one) (mul_nonneg (norm_nonneg (f 0)) zero_le_one)
+   rw [← Finset.prod_const_one (s := (finiteSetOfZeros_mono r_lt_one finiteZeros).toFinset)]
+-  apply Finset.prod_le_prod₀
++  apply Finset.prod_le_prod
+   · intro ρ hρ
+     exact zero_le_one
+   · intro ρ hρ
+@@ -470,7 +470,7 @@ theorem ZerosBound {B r R : ℝ} {f : ℂ → ℂ}
+       = ∏ ρ ∈ (finiteSetOfZeros_mono r_lt_one finiteZeros).toFinset, (R / r) ^ analyticOrderNatAt f ρ := by
+         rw [Finset.prod_pow_eq_pow_sum]
+     _ ≤ ∏ ρ ∈ (finiteSetOfZeros_mono r_lt_one finiteZeros).toFinset, (R / ‖ρ‖) ^ analyticOrderNatAt f ρ := by
+-      apply Finset.prod_le_prod₀
++      apply Finset.prod_le_prod
+       · intro ρ _
+         exact pow_nonneg (div_nonneg (le_of_lt R_pos) (le_of_lt r_pos)) _
+       · intro ρ hρ
+diff --git a/lean/vendor/zeta23/Zeta23/RvM/GammaSide.lean b/lean/vendor/zeta23/Zeta23/RvM/GammaSide.lean
+index 57eb1f7d..4ed5179a 100644
+--- a/lean/vendor/zeta23/Zeta23/RvM/GammaSide.lean
++++ b/lean/vendor/zeta23/Zeta23/RvM/GammaSide.lean
+@@ -84,7 +84,7 @@ theorem logDeriv_Gammaℝ {s : ℂ} (hs : 0 < s.re) :
+     DifferentiableAt.const_cpow (by fun_prop) (Or.inl hπ)
+   have hdg : DifferentiableAt ℂ (fun s : ℂ => Complex.Gamma (s / 2)) s :=
+     (Gamma_half_differentiableAt hs).comp s (by fun_prop)
+-  rw [e, logDeriv_fun_mul (f := fun s : ℂ => (Real.pi : ℂ) ^ (-s / 2)) (g := fun s : ℂ => Complex.Gamma (s / 2)) s hf hg hdf hdg]
++  rw [e, logDeriv_mul (f := fun s : ℂ => (Real.pi : ℂ) ^ (-s / 2)) (g := fun s : ℂ => Complex.Gamma (s / 2)) s hf hg hdf hdg]
+   -- first factor
+   have h1 : logDeriv (fun s : ℂ => (Real.pi : ℂ) ^ (-s / 2)) s = -(Real.log Real.pi : ℂ) / 2 := by
+     have hder : HasDerivAt (fun s : ℂ => (Real.pi : ℂ) ^ (-s / 2))

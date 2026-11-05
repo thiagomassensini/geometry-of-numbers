@@ -1,5 +1,5 @@
 import SigmaRemainderDescent
-import RHHeightEulerMaclaurin
+import HardyFirstZero.EulerMaclaurin
 import Mathlib.Analysis.SpecialFunctions.Gamma.Beta
 import Mathlib.NumberTheory.LSeries.Nonvanishing
 

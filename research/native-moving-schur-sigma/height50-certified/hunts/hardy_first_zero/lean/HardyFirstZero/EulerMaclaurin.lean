@@ -1,6 +1,6 @@
 module
 
-public import Mathlib
+public import HardyFirstZero.Phase
 public import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 public import Mathlib.Analysis.Complex.LocallyUniformLimit
 public import Mathlib.Analysis.Complex.CauchyIntegral
@@ -9,11 +9,6 @@ public import Mathlib.Analysis.Complex.CauchyIntegral
 
 /-!
 # The corrected trapezoid rule with a fourth-derivative remainder (hunt `hardy_first_zero`)
-
-This file ports `hunts/hardy_first_zero/lean/HardyFirstZero/EulerMaclaurin.lean` from
-`teal-sea/zeta-lab` commit `b09fa4dd2f2182cf14b248e7ffc64ff03df2c534` to the project's
-Lean 4.32 environment. The import was narrowed to Mathlib because the phase module is unused;
-the remaining changes adapt tactic syntax to the older toolchain. No compiled artifact is used.
 
 Item 1 of `RESULTS.md` section 5, the domain-independent half of the order-4
 Euler-Maclaurin representation the plan uses for `ζ` on the critical line:
@@ -45,9 +40,15 @@ lemma hasDerivAt_kq (a t : ℝ) : HasDerivAt (kq a) (kq1 a t) t := by
   have h1 : HasDerivAt (fun x : ℝ => x - a) 1 t := (hasDerivAt_id' t).sub_const a
   have h2 : HasDerivAt (fun x : ℝ => a + 1 - x) (-1) t := (hasDerivAt_id' t).const_sub (a + 1)
   have h := ((h1.fun_pow 2).fun_mul (h2.fun_pow 2)).div_const 24
-  unfold kq kq1
-  convert h using 1
-  all_goals first | rfl | ring
+  change HasDerivAt (fun x : ℝ => (x - a) ^ 2 * (a + 1 - x) ^ 2 / 24)
+    ((t - a) * (a + 1 - t) * (2 * a + 1 - 2 * t) / 12) t
+  have hderiv : ((t - a) * (a + 1 - t) * (2 * a + 1 - 2 * t) / 12) =
+      ((2 * (t - a) ^ (2 - 1) * 1 * (a + 1 - t) ^ 2 +
+        (t - a) ^ 2 * (2 * (a + 1 - t) ^ (2 - 1) * -1)) / 24) := by
+    norm_num
+    ring
+  rw [hderiv]
+  exact h
 
 lemma hasDerivAt_kq1 (a t : ℝ) : HasDerivAt (kq1 a) (kq2 a t) t := by
   have h1 : HasDerivAt (fun x : ℝ => x - a) 1 t := (hasDerivAt_id' t).sub_const a
@@ -55,16 +56,28 @@ lemma hasDerivAt_kq1 (a t : ℝ) : HasDerivAt (kq1 a) (kq2 a t) t := by
   have h3 : HasDerivAt (fun x : ℝ => 2 * a + 1 - 2 * x) (-(2 * 1)) t :=
     ((hasDerivAt_id' t).const_mul 2).const_sub (2 * a + 1)
   have h := ((h1.fun_mul h2).fun_mul h3).div_const 12
-  unfold kq1 kq2
-  convert h using 1
-  all_goals first | rfl | ring
+  change HasDerivAt (fun x : ℝ => (x - a) * (a + 1 - x) *
+      (2 * a + 1 - 2 * x) / 12)
+    ((1 - 6 * (t - a) + 6 * (t - a) ^ 2) / 12) t
+  have hderiv : ((1 - 6 * (t - a) + 6 * (t - a) ^ 2) / 12) =
+      (((1 * (a + 1 - t) + (t - a) * -1) * (2 * a + 1 - 2 * t) +
+        (t - a) * (a + 1 - t) * -(2 * 1)) / 12) := by
+    norm_num
+    ring
+  rw [hderiv]
+  exact h
 
 lemma hasDerivAt_kq2 (a t : ℝ) : HasDerivAt (kq2 a) (kq3 a t) t := by
   have h1 : HasDerivAt (fun x : ℝ => x - a) 1 t := (hasDerivAt_id' t).sub_const a
   have h := (((h1.const_mul 6).const_sub 1).fun_add ((h1.fun_pow 2).const_mul 6)).div_const 12
-  unfold kq2 kq3
-  convert h using 1
-  all_goals first | rfl | ring
+  change HasDerivAt (fun x : ℝ => (1 - 6 * (x - a) + 6 * (x - a) ^ 2) / 12)
+    ((t - a) - 1 / 2) t
+  have hderiv : ((t - a) - 1 / 2) =
+      ((-(6 * 1) + 6 * (2 * (t - a) ^ (2 - 1) * 1)) / 12) := by
+    norm_num
+    ring
+  rw [hderiv]
+  exact h
 
 lemma hasDerivAt_kq3 (a t : ℝ) : HasDerivAt (kq3 a) 1 t :=
   ((hasDerivAt_id' t).sub_const a).sub_const (1 / 2 : ℝ)
@@ -78,8 +91,17 @@ lemma integral_kq (a : ℝ) : ∫ t in a..a + 1, kq a t = 1 / 720 := by
     have h1 : HasDerivAt (fun x : ℝ => x - a) 1 t := (hasDerivAt_id' t).sub_const a
     have h := ((((h1.fun_pow 3).div_const 3).sub ((h1.fun_pow 4).div_const 2)).add
       ((h1.fun_pow 5).div_const 5)).div_const 24
-    convert h using 1
-    all_goals first | rfl | (simp only [kq]; push_cast; ring)
+    change HasDerivAt
+      (fun x : ℝ => ((x - a) ^ 3 / 3 - (x - a) ^ 4 / 2 + (x - a) ^ 5 / 5) / 24)
+      (kq a t) t
+    have hderiv : kq a t =
+        ((3 * (t - a) ^ (3 - 1) * 1 / 3 - 4 * (t - a) ^ (4 - 1) * 1 / 2 +
+          5 * (t - a) ^ (5 - 1) * 1 / 5) / 24) := by
+      unfold kq
+      norm_num
+      ring
+    rw [hderiv]
+    exact h
   rw [integral_eq_sub_of_hasDerivAt hQ
     ((continuous_iff_continuousAt.mpr fun t => (hasDerivAt_kq a t).continuousAt).intervalIntegrable _ _)]
   norm_num
@@ -112,8 +134,15 @@ theorem corrected_trapezoid {g g1 g2 g3 g4 : ℝ → ℂ} {a M : ℝ}
     have e1 := (hasDerivAt_kq1 a t).ofReal_comp.mul (h2 t ht)
     have e2 := (hasDerivAt_kq2 a t).ofReal_comp.mul (h1 t ht)
     have e3 := (hasDerivAt_kq3 a t).ofReal_comp.mul (h0 t ht)
-    convert ((e0.sub e1).add e2).sub e3 using 1
-    all_goals first | rfl | (push_cast; ring)
+    change HasDerivAt
+      (((fun y => ((kq a y : ℝ) : ℂ) * g3 y) -
+          (fun y => ((kq1 a y : ℝ) : ℂ) * g2 y)) +
+          (fun y => ((kq2 a y : ℝ) : ℂ) * g1 y) -
+          (fun y => ((kq3 a y : ℝ) : ℂ) * g y)) _ t
+    have hsum := ((e0.sub e1).add e2).sub e3
+    apply hsum.congr_deriv
+    push_cast
+    ring
   have hint : IntervalIntegrable (fun t => ((kq a t : ℝ) : ℂ) * g4 t - g t) volume a (a + 1) :=
     ((hck.continuousOn.mul hc).sub hcg).intervalIntegrable
   have hftc := integral_eq_sub_of_hasDerivAt hF hint
@@ -181,17 +210,14 @@ theorem norm_eBlock_le {s : ℂ} (hs : 0 < s.re) (hs1 : s ≠ 1) {x : ℝ} (hx :
     hasDerivAt_ofReal_cpow_const (hpos t ht).ne' r0
   have d1 : ∀ t ∈ Set.uIcc x (x + 1), HasDerivAt g1 (g2 t) t := fun t ht => by
     have := (hasDerivAt_ofReal_cpow_const (hpos t ht).ne' r1).const_mul (-s)
-    convert this using 1
-    all_goals first | rfl | (simp [g2]; ring)
+    exact this.congr_deriv (by simp [g2]; ring)
   have d2 : ∀ t ∈ Set.uIcc x (x + 1), HasDerivAt g2 (g3 t) t := fun t ht => by
     have := (hasDerivAt_ofReal_cpow_const (hpos t ht).ne' r2).const_mul (-s * (-s - 1))
-    convert this using 1
-    all_goals first | rfl | (simp [g3]; ring)
+    exact this.congr_deriv (by simp [g3]; ring)
   have d3 : ∀ t ∈ Set.uIcc x (x + 1), HasDerivAt g3 (g4 t) t := fun t ht => by
     have := (hasDerivAt_ofReal_cpow_const (hpos t ht).ne' r3).const_mul
       (-s * (-s - 1) * (-s - 1 - 1))
-    convert this using 1
-    all_goals first | rfl | (simp [g4]; ring)
+    exact this.congr_deriv (by simp [g4]; ring)
   have r4 : (-s - 1 - 1 - 1 - 1 : ℂ) ≠ 0 := ne_zero_of_re_neg (by simp; linarith)
   have hc4 : ContinuousOn g4 (Set.uIcc x (x + 1)) := fun t ht =>
     ((hasDerivAt_ofReal_cpow_const (hpos t ht).ne' r4).continuousAt.const_mul

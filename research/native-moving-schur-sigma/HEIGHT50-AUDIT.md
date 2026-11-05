@@ -1,116 +1,68 @@
-# Height-50 certificate audit and Lean bridge status
+# Height-50 certificate audit and integration
 
-## Pinned external source
+## Pinned source and theorem statements
 
-The inspected source is `teal-sea/zeta-lab` at commit
-`b09fa4dd2f2182cf14b248e7ffc64ff03df2c534` (Lean `v4.35.0-rc2`, Mathlib
-`065356127b1dc0016f66b7283ce0ce2c4055aa55`). The source checkout is
-`/tmp/zeta-lab-rhheight-audit`; it is clean at that commit.
+The external proof is from `teal-sea/zeta-lab` commit
+`b09fa4dd2f2182cf14b248e7ffc64ff03df2c534`. The upstream checkout was built and audited with
+Lean `v4.35.0-rc2` and Mathlib revision `065356127b1dc0016f66b7283ce0ce2c4055aa55`.
+The source-only compatibility port packaged here is rebuilt with this project's Lean
+`v4.32.0` and Mathlib revision `81a5d257c8e410db227a6665ed08f64fea08e997`.
 
-The declarations in `hunts/rh_height_lean/lean/RHHeight/Main.lean` are
-unconditional theorems about Mathlib's `riemannZeta`:
+The external results are unconditional theorems about Mathlib's `riemannZeta`:
 
-- `RHHeight.rh_height_fifty : RHHeight.RHHeight50` expands to every zeta zero
-  with `0 < re < 1` and `0 < im ≤ 50` having `re = 1/2` and analytic order 1.
-- `RHHeight.zero_count_fifty : RHHeight.ZeroCountUpTo 50 10` counts ten
-  *distinct* zeros in exactly that open-strip, positive-ordinate window.
-- `RHHeight.rh_up_to_height_fiftytwo : RHHeight.RHUpToHeight 52` gives the
-  same location and simplicity statement through height 52. It is not needed
-  for the radius `sqrt 300` target.
+- `RHHeight.rh_height_fifty` gives location on the critical line and analytic order one for every
+  zero with `0 < re < 1` and `0 < im ≤ 50`.
+- `RHHeight.zero_count_fifty` counts exactly ten distinct zeros in that strip and ordinate window.
+- `HardyFirstZero.first_zero_on_line` gives a line zero in `(1413/100, 707/50)`, which equals
+  `(14.13, 14.14)`.
+- The nine `HardyTenZeros.zero_in_*` theorems give individual boxes from `(21.02, 21.03)` through
+  `(49.77, 49.78)`. The integration uses the individual boxes because the aggregate theorem keeps
+  increasing ordinates but forgets the interval endpoints.
+- `RHHeight.rh_up_to_height_fiftytwo` is also included in the axiom audit, but is not needed for
+  the target radius `sqrt 300`.
 
-`Main.lean` imports `Assembly`, `GammaIncrement`, `HorizontalLegs`,
-`ExactArgument`, and `LowHeight`. The 50-height RH/count assembly reduces to
-those four analytic/counting pieces: the argument identity, the two enclosures,
-the low-height exclusion through 3, and ten line zeros. The 52-height theorem
-also uses the ten-zero line input. The height-50 statement is not a hypothesis
-or an axiom in the external source.
+The declarations and their external axiom reports are checked by the pinned package's
+`check_axioms.py --full`. Its accepted footprint is only `propext`, `Classical.choice`, and
+`Quot.sound`; it rejects missing or duplicate reports, `sorry`, and other axioms.
 
-`HardyFirstZero.first_zero_on_line` is the unconditional existence statement
-for a line zero in `(1413/100, 707/50)`, i.e. `(14.13, 14.14)`; its source
-explicitly does not assert minimality. The nine individual declarations
-`HardyTenZeros.zero_in_2102`, `zero_in_2501`, `zero_in_3042`, `zero_in_3293`,
-`zero_in_3758`, `zero_in_4091`, `zero_in_4332`, `zero_in_4800`, and
-`zero_in_4977` each assert existence in their respective consecutive
-two-decimal intervals. `HardyTenZeros.ten_zeros_on_line_below_fifty` combines
-them into ten increasing line zeros but forgets those interval bounds. Thus
-the Lean bridge uses the nine individual box statements rather than pretending
-the aggregate theorem still contains them.
+## Lean 4.32 port and closed theorem
 
-## Axiom and dependency audit
+The ported sources are under `height50-certified/`. `lean432-compat.patch` records the differences
+from the pinned upstream commit. They address Lean/Mathlib version changes in derivative
+conversion proofs, the integral proof of an arctangent inequality, a finite-product lemma name,
+the logarithmic derivative product lemma name, unused simplifier arguments, and an unused binder.
+No `.olean` file was copied or loaded across toolchain versions.
 
-`RHHeight/CheckMain.lean` pins the unfolded height-50, height-52, and count
-statements directly to Mathlib `riemannZeta` and `analyticOrderAt`.
-`HardyTenZeros/CheckAxioms.lean` pins the aggregate zero theorem, the first
-zero, and all nine box theorems. The corresponding committed `RESULTS.md`
-records clean source builds and an axiom audit accepting only Lean's standard
-`propext`, `Classical.choice`, and `Quot.sound`; it records no `sorry`, no
-`native_decide`, and no declared axiom. The check scripts fail closed on
-missing, duplicate, or nonstandard reports. I inspected those source modules
-and audit declarations at the pinned commit. A fresh 4.35 full build has not
-been run in this worktree.
+`SigmaHeight50Integration.lean` translates the external RH, exact count, first-zero interval, and
+nine individual box theorems to the bridge's four inputs. It then derives closed theorems:
 
-## Local compatibility boundary and compiled result
+- `exists_firstSigmaDisplacedProductIsolation_from_height50_certificate` proves the requested
+  `SigmaDisplacedProductIsolation (1/5) γ (sqrt 300) 1` for some `γ ∈ (14.13, 14.14)`.
+- `exists_firstSigmaHeight50PadeRecovery_from_certificate` applies the existing Padé recovery
+  theorem to that proved isolation.
 
-The local project is pinned to Lean `v4.32.0`. `RHHeightEulerMaclaurin.lean`
-is a source port from the same external commit, with its unused phase import
-removed and tactic syntax adapted. `SigmaRHHeightBridge.lean` and the source
-port compile locally with `-DwarningAsError=true`. No external `.olean` is
-copied or imported. The bridge hypotheses are the explicit height-50 RH
-statement, distinct-zero count, first interval witness, and nine individual
-box witnesses.
+The integration does not add source-zero-set or source-order premises. Those fields are proved in
+`SigmaRHHeightBridge.lean` from the external finite-height results. The final axiom report checks
+the imported RH/count/zero-box theorems, the audited height-52 result, and both closed target
+theorems; only the three standard axioms above are allowed.
 
-The bridge proves that every completed-characteristic zero in the target disk
-comes from the first certified height or its negative. It separately rules
-out real-ordinate zeta zeros by a uniform Euler--Maclaurin lower bound near
-the real axis, so the positive-ordinate RH statement is not applied at height
-zero. It proves the displaced product's four-point zero set and simple orders,
-constructs `SigmaDisplacedProductIsolation (1/5) γ (Real.sqrt 300) 1` without
-taking its zero-set or order fields as hypotheses, and applies the existing
-`completedNative_sigmaRemainder_pade_root_of_isolation` theorem. The resulting
-conditional Padé package gives convergence to both complex heights and
-eventual roots of the original sigma pencil.
+## Rebuilding and limits
 
-The local `#print axioms` audit for the zero classification, order theorem,
-isolation instance, and Padé recovery reports only `propext`,
-`Classical.choice`, and `Quot.sound`.
-
-## Handoff for the compatible integration build
-
-The target checkout fixes Lean `v4.32.0` and Mathlib revision
-`81a5d257c8e410db227a6665ed08f64fea08e997`; the external proof fixes Lean
-`v4.35.0-rc2` and Mathlib `065356127b1dc0016f66b7283ce0ce2c4055aa55`. Thus the
-external modules and the current local `.olean` files cannot be combined.
-The remaining B/C steps need an isolated source checkout of this target branch
-under the external toolchain/Mathlib pins, followed by source recompilation of
-the local dependency closure and the external proof before the theorem can
-discharge the four assumptions. The main toolchain remains untouched.
-
-On a host satisfying the memory gate, the external side's pinned full build
-first fetches the pinned Mathlib build cache in the fresh external checkout,
-then runs the source build and fail-closed audit:
+Run:
 
 ```sh
-(cd lean && lake exe cache get)
-set -o pipefail
-RHHEIGHT_OUT="$(mktemp -d)"
-LAKE_DIR="$PWD/lean/.lake" bash hunts/rh_height_lean/lean/build.sh --full "$RHHEIGHT_OUT" 2>&1 | tee "$RHHEIGHT_OUT/build.log"
-python3 hunts/rh_height_lean/lean/check_axioms.py "$RHHEIGHT_OUT/build.log" --full
+LAKE_DIR=/path/to/project/.lake \
+  bash research/native-moving-schur-sigma/build_height50_sigma.sh /tmp/height50-build
 ```
 
-The build script checks `MemAvailable ≥ 30 GiB` before each Lean process and
-compiles 74 source modules plus seven check files. The pinned source's existing
-`RESULTS.md` records a successful full build on its campaign box, but that is
-not a build of the integrated target theorem. In this session the fresh
-external checkout has no `lean/.lake` dependency cache or retained build
-output; the only matching `.olean` files found are the target's Lean 4.32 local
-bridge artifacts.
+The runner compiles the pinned external source closure with warnings as errors, applies the
+external fail-closed audit, rebuilds the sigma dependency modules and bridge with warnings as
+errors, compiles the final integration, and checks its axiom report. It writes `.olean` files and
+logs only below the chosen output directory. Before each Lean process it waits until Linux reports
+at least 30 GiB of `MemAvailable`.
 
-The external builders have an operational guard that waits for
-`MemAvailable ≥ 30 GiB` before each Lean process. At the last check this host
-had `MemAvailable = 25.89 GiB`; consequently no external compilation was
-started and the guard was not weakened. The pinned `zeta-lab` checkout has no
-GitHub Actions workflow directory. This repository's existing manual/push
-workflow builds its own Lean 4.32 project, so it does not provide a runner for
-the external Lean 4.35 source build. Completion of that build, discharge of
-the four bridge hypotheses, and a closed final theorem remain open pending a
-host that satisfies the guard.
+The sigma dependency chain uses the local analysis/carry build outputs gathered by the existing
+`compile_sigma_pade.sh`. On this workspace they are available from the main project build cache and
+`/home/thlinux/carry-self-adjoint-operator`; another checkout may set `SIGMA_REFERENCE_ROOT` and
+`CARRY_LEAN_ROOT` to its corresponding source/build roots. The external certificate itself is
+rebuilt from the vendored Lean sources and does not depend on these cached artifacts.
