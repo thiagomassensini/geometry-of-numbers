@@ -1,53 +1,44 @@
 # Estado da missão — negatividade transversal all-order
 
 **Atualizado:** 2026-11-05
+**Objetivo ativo:** concluir C2 e C3 e integrar ambos à `main`. C0, C1 e C1B não serão refeitos. A lei quantitativa distância × profundidade e os novos cadernos ficam adiados até depois de C2/C3.
 
-**Objetivo ativo:** C0 e C1 estão integrados. C1B está provado e validado localmente; publicar e integrar esse checkpoint, depois fechar C2 e C3 em entregas separadas. Investigar C4 somente depois. Não demonstrar RH nem positividade canônica central.
-
-## Checkout e base
+## Base integrada
 
 - Repositório: `thiagomassensini/geometry-of-numbers`.
-- Worktree ativa: `/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105`.
-- Branch atual: `agent/sigma-c1b-persistent-negative-20261105`, criada sobre a `main` que contém C1.
-- Base integrada C1 / `origin/main`: `b7a8a0eda7230c02f80dc63b41ab4cc9f9cf1d1e`.
-- C0 foi integrado pela PR #153, merge commit `2a3e89987beeb05d29b2e71d8b8ed6851383ccaa`.
-- C1 foi integrado pela PR #154. Commit de prova: `c2706339b15db390bf8f5f50535016bd1aca8cb8`; merge commit: `b7a8a0eda7230c02f80dc63b41ab4cc9f9cf1d1e`.
-- CI da PR #154: workflow `42101466137`, conclusão `success`; build da raiz com warnings-as-errors e auditorias de kernel hospedadas passaram.
-- A referência local da worktree foi restaurada a partir do merge commit validado; as entradas vazias originais foram preservadas em `/tmp/c1-ref-recovery.RFKurx`.
+- Base atual: `main` em `0586e238441096ecd2248e3f14bdac3a832af427`.
+- C0 foi integrado pela PR #153, merge `2a3e89987beeb05d29b2e71d8b8ed6851383ccaa`.
+- C1 foi integrado pela PR #154, merge `b7a8a0eda7230c02f80dc63b41ab4cc9f9cf1d1e`; a CI hospedada passou.
+- **C1B está integrado** pela PR #155, merge `0586e238441096ecd2248e3f14bdac3a832af427`. Não há publicação pendente desse checkpoint.
 
-## Dependências e ambiente
+## Prioridade: C2
 
-- Lean: `leanprover/lean4:v4.32.0`.
-- Mathlib: `81a5d257c8e410db227a6665ed08f64fea08e997`.
-- GreenFrame: `cd2d838bee67ad23f869a02f8ed9f0a0feb926fa`.
-- Carry source pin: `carry-self-adjoint-operator@045369f6dedcb2e75e9aefed1d12c9f73b9a2532`; CPFormal, Geometry e demais dependências estão registrados no script C1 e na proveniência C1.
-- O certificado do primeiro zero vem de `teal-sea/zeta-lab@b09fa4dd2f2182cf14b248e7ffc64ff03df2c534`; licenças e patch de compatibilidade foram preservados.
-- O build focado compara os pins de fontes transitivas e recompila a cadeia local em diretório temporário; os imports de dependências externas usam caches dos checkouts com pins explícitos.
-- Depois do aumento da VM, havia aproximadamente 60 GiB de `MemAvailable`, acima do gate de 30 GiB do script.
+Provar, nos momentos originais e sem hipótese adicional de sinal,
 
-## Checkpoints e teoremas
+```text
+∃ P : ℕ, ∀ p ≥ P, sigmaPadeD (1/5) p < 0.
+```
 
-- **C0 — integrado:** inventário e estado persistido, PR #153, merge commit `2a3e899…`.
-- **C1 — integrado e validado:** `CarrySigmaObstruction.certified_sigma_negative_direction_of_nonzero_small_shift`, para todo `0 < |d| < 1/4`, produz uma direção negativa finita da `sigmaMatrix` original. PR #154, commit de prova `c270633…`, CI hospedado aprovado no run `42101466137`.
-- **C1B — provado e validado localmente; publicação pendente:**
-  - Commit local do checkpoint: `8cc4a31` (`proof(sigma): persist negative directions across dimensions`).
-  - `sigmaMatrix_prefix_submatrix` identifica exatamente a seção menor como bloco principal prefixo da seção maior.
-  - `certified_sigma_negative_directions_persist` prova que, para cada deslocamento de C1, existe um limiar `N` tal que toda seção `M ≥ N` tem uma direção negativa.
-  - `certified_sigma_not_posSemidef_persist` prova a falha de `PosSemidef` para todas essas dimensões.
-  - A prova usa que matrizes semidefinidas positivas passam a submatrizes principais; a simetria da matriz converte a falha em uma direção quadrática negativa em cada dimensão.
-- **C2 — aberto:** negatividade eventual dos menores originais em `d=1/5`, via decomposição Padé e isolamento certificado.
-- **C3 — aberto:** transporte às torres par e ímpar, após C2.
-- **C4 — não iniciado:** fonte deslocada, fator 2 e Bézout; depende da conclusão dos anteriores.
+A primeira referência é a integração Lean 4.32 publicada no commit
+`b9ce1955c1e8830afad2323afe5266ed3f5f35d9`, em especial
+`SigmaHeight50Integration.lean`, `SigmaRemainderDescent.lean` e
+`SigmaPadeConvergence.lean`. Reutilizar e compor:
 
-## Compilação e auditoria
+- `exists_firstSigmaDisplacedProductIsolation_from_height50_certificate`;
+- `completedNative_sigmaRemainder_square_decomposition_of_isolation`;
+- `sigmaPadeNormalizedMinors_tendsto_of_unitCircle_twoPole_remainder`;
+- `sigmaPadeD_eventually_neg_of_normalized_limit`.
 
-- C1: build raiz completo em Lean 4.32 passou com 8.857/8.857 jobs sem cache; build focado e auditoria de proveniência estão em `evidence/c1-*`.
-- C1: checker recursivo confirmou 1.278 módulos-fonte não-Mathlib contra os commits/pins registrados.
-- C1/C1B: `SIGMA_OUTPUT_DIR=/tmp/sigma-c1b-persistent-20261105 research/native-moving-schur-sigma/compile_c1.sh` passou de ponta a ponta. O checker aceitou 109 relatórios de axiomas, todos limitados a `propext`, `Classical.choice` e `Quot.sound`.
-- Evidência C1B: `evidence/c1b-focused-build.log`, `evidence/c1b-source-sha256.txt` e `evidence/c1b-validation.md`.
-- Os módulos Lean C1 e C1B foram compilados de novo em saída temporária; nenhum `.olean` foi adicionado ao Git.
-- A CI hospedada confirmada é a da PR #154/C1. O C1B ainda precisa de sua própria PR e execução hospedada.
+Manter `completedSigmaLogJet` e `sigmaPadeD` originais, conservando o resto. Não inserir premissas de sinal para fechar o corolário. Ao reunir módulos, verificar e eliminar qualquer definição duplicada de `CarrySigmaObstruction.sigmaLineZero`.
 
-## Próxima ação concreta
+## Depois: C3
 
-O diff passou `git diff --check` e o commit local `8cc4a31` contém somente o módulo C1B, atualização do script, documentação e evidências desta missão. Publicar `agent/sigma-c1b-persistent-negative-20261105`, abrir PR para `main`, conferir a CI e integrar após aprovação dos gates. Em seguida iniciar C2 em uma branch separada. As demais worktrees e alterações locais permanecem preservadas.
+Usar explicitamente as janelas `p = 2i` e `p = 2i + 1` para cobrir os setores par e ímpar. Transportar cada direção negativa às dimensões maiores usando o resultado integrado de persistência de C1B. Fechar C2 antes de iniciar essa integração.
+
+## Checkpoint da tentativa Lean 4.35
+
+O checkpoint `evidence/lean435-validation-incomplete/` preserva overlays temporários, pins, logs, manifests de módulos e comandos de retomada. A validação 4.35 está **incompleta** e não é a rota prioritária: o build externo zeta-lab passou, mas a compilação focada da cadeia Geometry/Carry parou em incompatibilidades concretas de `LinearPMap`, a começar por `CarrySelfAdjointOperator.RealLinearPMapReciprocalBlock`. Não iniciar uma migração geral de Geometry ou Carry. Só voltar a esse overlay se o caminho 4.32 apresentar um impedimento concreto para C2.
+
+## Rotina de entrega
+
+Para cada checkpoint pequeno: prova → compilação → auditoria de axiomas → checkpoint durável → push → PR → merge na `main` → atualização deste estado. C4 e as tarefas quantitativas permanecem depois de C2/C3.

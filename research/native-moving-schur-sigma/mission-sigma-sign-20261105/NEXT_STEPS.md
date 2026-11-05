@@ -1,17 +1,21 @@
-# Próximos passos para retomada
+# Próximos passos da missão
 
-1. Revisar a mudança C1B em `SigmaPersistentNegativeDirection.lean`, o script de compilação, os documentos e as evidências; confirmar `git diff --check`.
-2. O commit local `8cc4a31` já contém somente esses arquivos. Publicar a branch `agent/sigma-c1b-persistent-negative-20261105` e abrir PR contra `main`.
-3. Aguardar e conferir a CI hospedada da PR C1B. Integrar quando os gates passarem e registrar o merge SHA e o run.
-4. Iniciar C2 em branch separada sobre a `main` integrada: compor a decomposição exata do resto, o limite Padé e o isolamento certificado de altura 50 para provar a negatividade eventual dos menores originais em `d=1/5`.
-5. Após C2, concluir C3 para `s=0` e `s=1`, com índices explícitos `k=2i` e `k=2i+1`; usar C1B para prolongar as direções em dimensões maiores.
-6. Investigar C4 por último, mantendo explícito o fator 2 da fonte deslocada e os canais da costura Bézout.
+## C2 — negatividade eventual dos menores originais
 
-Build focado reproduzível para C1+C1B:
+1. Trabalhar sobre a integração Lean 4.32 publicada em `b9ce1955c1e8830afad2323afe5266ed3f5f35d9`, usando-a como referência e não iniciando a migração geral 4.35.
+2. Inspecionar a fronteira entre `SigmaRHHeightBridge.lean` e `SigmaHeight50Integration.lean`; conferir a definição duplicada de `CarrySigmaObstruction.sigmaLineZero` antes de combinar os módulos.
+3. Compor o isolamento certificado, a decomposição exponencial completa do resto e o limite normalizado dos menores. Usar os quatro lemas nomeados em `SESSION_STATE.md` para obter
+   `∃ P : ℕ, ∀ p ≥ P, sigmaPadeD (1/5) p < 0`.
+4. Manter o resto analítico e as definições originais `completedSigmaLogJet` e `sigmaPadeD`. Não fechar o resultado adicionando hipóteses de sinal.
+5. Compilar os módulos relevantes com a configuração do projeto, auditar os axiomas e registrar o resultado em uma entrega pequena de C2. Fazer push, abrir PR, aguardar os gates, integrar à `main` e atualizar `SESSION_STATE.md`.
 
-```bash
-SIGMA_OUTPUT_DIR=/tmp/sigma-c1b-persistent-20261105 \
-  research/native-moving-schur-sigma/compile_c1.sh
-```
+## C3 — transporte aos setores par e ímpar
 
-O script compila em Lean 4.32.0, confere os pins e recompila as fontes locais relevantes, os módulos portados e o fechamento mínimo do certificado do primeiro zero. Dependências Lean/Mathlib/Carry externas são lidas de checkouts e caches versionados; este build focado não é uma reconstrução limpa de toda a árvore externa. A auditoria de 1.278 módulos não-Mathlib está registrada em `evidence/c1-source-pin-audit.txt`.
+6. Só depois do merge de C2, usar `p = 2i` e `p = 2i + 1` para provar a cobertura explícita dos setores par e ímpar.
+7. Transportar as direções negativas às dimensões maiores pelo teorema de persistência integrado em C1B (PR #155, merge `0586e238441096ecd2248e3f14bdac3a832af427`). Compilar, auditar axiomas, registrar checkpoint, publicar PR e integrar à `main`.
+
+## Retomada do overlay 4.35
+
+A tentativa está preservada como evidência incompleta em `evidence/lean435-validation-incomplete/`. Retomar apenas se a rota 4.32 revelar um bloqueio concreto. O ponto de parada, as declarações e os comandos estão registrados no README desse checkpoint.
+
+Lei quantitativa distância × profundidade, novos cadernos e C4 ficam para depois de C2 e C3. Não é necessário calcular a primeira profundidade de falha para provar a negatividade eventual.
