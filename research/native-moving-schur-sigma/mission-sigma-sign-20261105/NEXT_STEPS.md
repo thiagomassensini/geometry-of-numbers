@@ -1,7 +1,7 @@
 # Próximos passos para retomada
 
 1. Revisar a mudança C1B em `SigmaPersistentNegativeDirection.lean`, o script de compilação, os documentos e as evidências; confirmar `git diff --check`.
-2. Adicionar somente esses arquivos, criar um commit na branch `agent/sigma-c1b-persistent-negative-20261105`, publicar e abrir PR contra `main`.
+2. O commit local `8cc4a31` já contém somente esses arquivos. Publicar a branch `agent/sigma-c1b-persistent-negative-20261105` e abrir PR contra `main`.
 3. Aguardar e conferir a CI hospedada da PR C1B. Integrar quando os gates passarem e registrar o merge SHA e o run.
 4. Iniciar C2 em branch separada sobre a `main` integrada: compor a decomposição exata do resto, o limite Padé e o isolamento certificado de altura 50 para provar a negatividade eventual dos menores originais em `d=1/5`.
 5. Após C2, concluir C3 para `s=0` e `s=1`, com índices explícitos `k=2i` e `k=2i+1`; usar C1B para prolongar as direções em dimensões maiores.

@@ -33,7 +33,7 @@ O lema `sigmaMatrix_prefix_submatrix` identifica exatamente a seção antiga com
 |---|---|---|
 | C0 — inventário e recuperação | Integrado | PR #153; merge `2a3e89987beeb05d29b2e71d8b8ed6851383ccaa` |
 | C1 — direção negativa finita | Integrado, CI passou | PR #154; commit de prova `c2706339b15db390bf8f5f50535016bd1aca8cb8`; merge `b7a8a0eda7230c02f80dc63b41ab4cc9f9cf1d1e`; run `42101466137` success |
-| C1B — persistência em dimensões maiores | Prova e auditoria local passaram; publicação pendente | `evidence/c1b-focused-build.log`; 109 relatórios de axiomas padrão |
+| C1B — persistência em dimensões maiores | Prova e auditoria local passaram; commit `8cc4a31`, publicação pendente | `evidence/c1b-focused-build.log`; 109 relatórios de axiomas padrão |
 | C2 — menores originais eventualmente negativos em `d=1/5` | Aberto | Requer composição Padé e isolamento certificado |
 | C3 — torres par e ímpar | Aberto | Depende de C2 e usa C1B para persistir as direções |
 | C4 — fonte deslocada e Bézout | Não iniciado | Explorar depois de C1–C3, preservando o fator 2 |

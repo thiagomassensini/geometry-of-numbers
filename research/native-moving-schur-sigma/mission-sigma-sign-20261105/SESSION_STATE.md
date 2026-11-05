@@ -30,6 +30,7 @@
 - **C0 — integrado:** inventário e estado persistido, PR #153, merge commit `2a3e899…`.
 - **C1 — integrado e validado:** `CarrySigmaObstruction.certified_sigma_negative_direction_of_nonzero_small_shift`, para todo `0 < |d| < 1/4`, produz uma direção negativa finita da `sigmaMatrix` original. PR #154, commit de prova `c270633…`, CI hospedado aprovado no run `42101466137`.
 - **C1B — provado e validado localmente; publicação pendente:**
+  - Commit local do checkpoint: `8cc4a31` (`proof(sigma): persist negative directions across dimensions`).
   - `sigmaMatrix_prefix_submatrix` identifica exatamente a seção menor como bloco principal prefixo da seção maior.
   - `certified_sigma_negative_directions_persist` prova que, para cada deslocamento de C1, existe um limiar `N` tal que toda seção `M ≥ N` tem uma direção negativa.
   - `certified_sigma_not_posSemidef_persist` prova a falha de `PosSemidef` para todas essas dimensões.
@@ -49,4 +50,4 @@
 
 ## Próxima ação concreta
 
-Revisar o diff e `git diff --check`; commitar somente o módulo C1B, atualização do script, documentação e evidências desta missão; publicar `agent/sigma-c1b-persistent-negative-20261105`, abrir PR para `main`, conferir a CI e integrar após aprovação dos gates. Em seguida iniciar C2 em uma branch separada. As demais worktrees e alterações locais permanecem preservadas.
+O diff passou `git diff --check` e o commit local `8cc4a31` contém somente o módulo C1B, atualização do script, documentação e evidências desta missão. Publicar `agent/sigma-c1b-persistent-negative-20261105`, abrir PR para `main`, conferir a CI e integrar após aprovação dos gates. Em seguida iniciar C2 em uma branch separada. As demais worktrees e alterações locais permanecem preservadas.
