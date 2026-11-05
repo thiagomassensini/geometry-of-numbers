@@ -19,6 +19,8 @@ Inventário consultado em 2026-11-05. SHAs abaixo são remotos quando marcados `
 
 As PRs #139, #140, #141 e #142 constam fechadas/mescladas, e seus SHAs de merge foram confirmados ancestrais de `origin/main`. PR #146 também está mesclada; o estado de sua ponta antiga não torna os 8 commits posteriores da branch atual parte da `main`.
 
+Branch desta missão: `agent/sigma-allorder-negative-certified-20261105`, criada diretamente de `main@21b3dace…`; PR #153 aberta com o checkpoint C0 (apenas documentação).
+
 ## carry-self-adjoint-operator
 
 - `origin/main`: `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`; Lean 4.32.0; Mathlib `81a5d257…`.

@@ -1,6 +1,6 @@
 # Relatório consolidado — missão de negatividade transversal sigma
 
-**Estado inicial, 2026-11-05:** C0 inventariado; checkpoints matemáticos C1, C1B, C2, C3 e C4 ainda abertos nesta branch limpa baseada em `main@21b3dace…`.
+**Estado inicial, 2026-11-05:** C0 foi publicado em `5ad667a06007ac3d56a5b208473e01dcabcb5c64`, PR #153 aberta; checkpoints matemáticos C1, C1B, C2, C3 e C4 ainda abertos nesta branch baseada em `main@21b3dace…`.
 
 ## Pergunta e escopo
 
@@ -12,7 +12,7 @@ O módulo `SigmaZeroObstruction.lean` na branch `agent/native-moving-schur-sigma
 
 ## Resultado desta atualização
 
-Foi criado um checkout limpo da `main` atual e gravado o inventário Git/dependências/PRs em `MERGE_INVENTORY.md` e `evidence/c0-inventory.md`. O estado detalhado encontra-se em `SESSION_STATE.md`; a retomada concreta, em `NEXT_STEPS.md`.
+Foi criado um checkout limpo da `main` atual e gravado o inventário Git/dependências/PRs em `MERGE_INVENTORY.md` e `evidence/c0-inventory.md`. O commit C0 foi publicado e a PR #153 está aberta. O GitHub não retornou status checks nem workflows para o commit; CI não está sendo tratado como aprovado. O estado detalhado encontra-se em `SESSION_STATE.md`; a retomada concreta, em `NEXT_STEPS.md`.
 
 ## Status dos checkpoints
 

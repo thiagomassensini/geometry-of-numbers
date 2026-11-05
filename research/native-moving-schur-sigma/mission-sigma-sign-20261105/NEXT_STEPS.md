@@ -1,6 +1,6 @@
 # Próximos passos para retomada
 
-1. Validar estes registros C0, atualizar `SESSION_STATE.md` com o commit e SHA remoto, fazer push da branch `agent/sigma-allorder-negative-certified-20261105` e abrir PR de inventário para `main`.
+1. C0 está publicado no commit `5ad667a06007ac3d56a5b208473e01dcabcb5c64`; PR #153 está aberta, sem status/workflow retornado pelo GitHub.
 2. Antes de portar qualquer módulo, ler `docs/FORMALIZATION_PLAN.md` e `docs/SOURCE_PROVENANCE.md` conforme `AGENTS.md`.
 3. Comparar a assinatura e cadeia transitiva de `exists_sigmaMatrix_negative_direction_of_zero` com a `main`; rastrear a ponte à altura positiva pelo módulo de continuação nativa e por `HardyFirstZero.first_zero_on_line`.
 4. O port de C1 deve usar somente fontes e pins Lean 4.32 explícitos. Não copiar `.olean`, não introduzir hipótese equivalente à conclusão, e não importar a branch de pesquisa inteira.

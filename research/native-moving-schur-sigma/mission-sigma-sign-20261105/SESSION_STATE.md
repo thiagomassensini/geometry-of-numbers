@@ -10,7 +10,7 @@
 - Branch: `agent/sigma-allorder-negative-certified-20261105`.
 - HEAD local no início do C0: `21b3dacefbfcbd6c5d648bc2bada32c67d46145c`.
 - HEAD remoto da `main` usado como base: `21b3dacefbfcbd6c5d648bc2bada32c67d46145c`.
-- SHA remoto próprio da branch: ainda não publicado.
+- HEAD local/remoto da branch após C0: `5ad667a06007ac3d56a5b208473e01dcabcb5c64`.
 - Worktree nova verificada limpa antes da criação dos arquivos C0.
 
 ## Dependências e ambiente
@@ -28,7 +28,7 @@
 
 ## Checkpoint e resultados
 
-- Último checkpoint concluído: C0 — recuperação e inventário local/remoto, documentação em preparação.
+- Último checkpoint concluído: C0 — recuperação e inventário local/remoto, commit `5ad667a06007ac3d56a5b208473e01dcabcb5c64` publicado.
 - Teorema existente e compilado em branch de pesquisa, mas ainda ausente da `main`: `CarrySigmaObstruction.exists_sigmaMatrix_negative_direction_of_zero` em `research/native-moving-schur-sigma/SigmaZeroObstruction.lean`.
 - Esse teorema continua **condicional** a `hzero : completedNativeOperatorCharacteristic (γ : ℂ) = 0`; a branch registra as pontes e as hipóteses. Não é ainda C1.
 - Resultados Padé condicionais e decomposição de resto estão em `origin/agent/native-sigma-pade-signed-pencil` e `origin/agent/native-sigma-isolated-pole-radius`; isolamento integrado de altura 50 está em `origin/codex/native-sigma-height50-lean432-integrated`.
@@ -40,10 +40,11 @@
 - Arquivos desta missão: somente os registros C0 nesta pasta, mais evidências sob `evidence/`.
 - Alterações anteriores preservadas sem edição: worktree `agent/native-moving-schur-sigma` com caches/logs não rastreados; worktrees de altura 50 e Padé com caches; worktrees de geometry, carry e primos com arquivos locais listados em `MERGE_INVENTORY.md`.
 - Estado de compilação/auditoria nesta branch: ainda não executado; C0 é documentação Git.
-- Último commit publicado desta missão: nenhum.
-- PR desta missão: nenhuma.
+- Último commit publicado desta missão: `5ad667a06007ac3d56a5b208473e01dcabcb5c64` (`docs(sigma): record all-order sign mission inventory`).
+- PR desta missão: #153, aberta contra `main`, head confirmado em `5ad667a06007ac3d56a5b208473e01dcabcb5c64`.
+- CI da PR #153: o GitHub não retornou status nem workflow para o commit. CI não foi declarado aprovado; a PR permanece aberta.
 - Último erro de compilação: nenhum nesta branch. Comando de reprodução ainda não aplicável.
 
 ## Próxima ação concreta
 
-Validar o diff dos registros, publicar o checkpoint C0 em branch/PR, e então ler `docs/FORMALIZATION_PLAN.md` e `docs/SOURCE_PROVENANCE.md` antes de portar qualquer módulo. Para C1, primeiro reduzir a cadeia importada ao mínimo e confirmar a ponte exata entre `HardyFirstZero.first_zero_on_line` e a característica completada na altura real; não copiar dependências ou `.olean` sem auditar fonte e pins.
+Ler `docs/FORMALIZATION_PLAN.md` e `docs/SOURCE_PROVENANCE.md` antes de portar qualquer módulo. Para C1, primeiro reduzir a cadeia importada ao mínimo e confirmar a ponte exata entre `HardyFirstZero.first_zero_on_line` e a característica completada na altura real; não copiar dependências ou `.olean` sem auditar fonte e pins.

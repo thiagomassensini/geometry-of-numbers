@@ -46,6 +46,7 @@ Também foram listadas as worktrees restantes dos quatro repositórios. Elas con
 
 ## GitHub
 
+- PR da missão #153 aberta: head `5ad667a06007ac3d56a5b208473e01dcabcb5c64`, base `main@21b3dace…`; contém apenas os sete documentos C0. O endpoint de status retornou `statuses: []` e o endpoint de workflow retornou `workflow_runs: []`; não há CI aprovado reportado.
 - Geometry PRs #139, #140, #141 e #142: fechadas e mescladas; merge SHAs verificados como ancestrais da `origin/main` atual.
 - Geometry PR #146: fechada/mesclada; a branch atual `agent/c3-critical-tilt-prime` tem 8 commits após a base integrada e diverge da `main`.
 - Carry PR #107: aberta; #108: aberta em draft; #62: aberta em draft e empilhada em base que não é `main`.

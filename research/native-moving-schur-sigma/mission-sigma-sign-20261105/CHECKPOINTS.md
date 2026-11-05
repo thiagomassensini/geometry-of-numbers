@@ -2,7 +2,7 @@
 
 ## C0 — recuperação, inventário e ambiente (2026-11-05)
 
-**Estado:** inventário concluído; documentação inicial em preparação para publicação.
+**Estado:** documentação do inventário publicada no commit `5ad667a06007ac3d56a5b208473e01dcabcb5c64`; PR #153 aberta contra `main`. Nenhum status check/workflow foi retornado pelo GitHub; CI não declarado aprovado.
 
 - A worktree original `agent/native-moving-schur-sigma` foi localizada em `/home/thlinux/geometry-of-numbers-native-moving-schur-sigma`, HEAD `9392ebac9930f5d11c56f595556080e8ab1de809`, remoto coincidente. Não há mudanças rastreadas, mas há caches e logs de validação não rastreados; todos foram preservados.
 - A integração Lean 4.32 de altura 50 está em `/home/thlinux/worktrees/geometry-of-numbers-native-sigma-isolated-pole-radius`, HEAD/remoto `b9ce1955c1e8830afad2323afe5266ed3f5f35d9`, com apenas `.cache/` não rastreado. A worktree Padé está em `/home/thlinux/worktrees/geometry-of-numbers-native-sigma-pade-signed-pencil`, HEAD/remoto `b7a7ca1f2a06faea539ee848bc5bdfa58507cb9c`, também com apenas cache não rastreado.
