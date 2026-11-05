@@ -77,6 +77,9 @@ isolation instance, and Padé recovery reports only `propext`,
 The external builders have an operational guard that waits for
 `MemAvailable ≥ 30 GiB` before each Lean process. At the last check this host
 had `MemAvailable = 25.89 GiB`; consequently no external compilation was
-started and the guard was not weakened. Completion of the external 4.35 source
-build, discharge of the four bridge hypotheses, and a closed final theorem
-remain open pending a host that satisfies that guard.
+started and the guard was not weakened. The pinned `zeta-lab` checkout has no
+GitHub Actions workflow directory. This repository's existing manual/push
+workflow builds its own Lean 4.32 project, so it does not provide a runner for
+the external Lean 4.35 source build. Completion of that build, discharge of
+the four bridge hypotheses, and a closed final theorem remain open pending a
+host that satisfies the guard.
