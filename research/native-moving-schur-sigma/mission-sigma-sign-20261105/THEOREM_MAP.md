@@ -38,7 +38,14 @@ theorem certified_sigma_negative_direction_of_nonzero_small_shift
 
 ## Rota de persistência — C1B/C3
 
-Precisam de uma identidade exata entre `sigmaMatrix d s N` e o bloco principal prefixo de `sigmaMatrix d s M` quando `N≤M`. Dada uma direção negativa no tamanho `N`, estendê-la por zeros deve preservar a forma quadrática e a não nulidade. Isso implica `¬ PosSemidef` em todo tamanho maior. Não implica que todos os pivôs sejam negativos, nem crescimento linear do índice negativo.
+C1B está provado no módulo `SigmaPersistentNegativeDirection.lean` sobre a base integrada C1:
+
+- `sigmaMatrix_prefix_submatrix` prova, por igualdade de entradas, que para `N≤M` a seção `sigmaMatrix d s N` é a submatriz principal prefixo da `sigmaMatrix d s M`.
+- `sigmaMatrix_not_posSemidef_of_negative_direction` usa `Matrix.PosSemidef.submatrix`: se a seção maior fosse PSD, a menor também seria, contradizendo a direção negativa.
+- `certified_sigma_negative_directions_persist` conclui que há direção negativa em toda dimensão suficientemente grande para cada `0<|d|<1/4`.
+- `certified_sigma_not_posSemidef_persist` dá diretamente a não semidefinição positiva em cada uma dessas dimensões. A simetria da matriz permite recuperar um vetor real com forma quadrática estritamente negativa.
+
+Esse argumento de bloco principal é a forma formal da preservação da forma quadrática ao inserir zeros fora dos índices do bloco. Não conclui que todos os pivôs sejam negativos, nem crescimento linear do índice negativo. A publicação e a CI hospedada do checkpoint C1B estão pendentes.
 
 Possíveis módulos reutilizáveis: `CameraCoherence.lean` e `HankelLimitObject.lean` em `origin/agent/c3-critical-tilt-prime`; são posteriores ao PR #146, não estão na `main` e não devem ser importados em bloco sem auditoria.
 

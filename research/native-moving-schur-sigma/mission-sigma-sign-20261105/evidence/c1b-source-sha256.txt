@@ -1,0 +1,3 @@
+c8af4d97df95f0a920738c2e04635f9c774b27dcbb0db932cae61043f57203c5  research/native-moving-schur-sigma/SigmaPersistentNegativeDirection.lean
+c875007a0ba41095dc92e487b641b3976cc0c1377017414bb829b9969d0f3e8f  research/native-moving-schur-sigma/compile_c1.sh
+d9e0a826b5e28c009796c4b394659bf2a5573563d5fd37828b8701b580703698  research/native-moving-schur-sigma/check_c1_axioms.py

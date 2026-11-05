@@ -21,7 +21,9 @@ As PRs #139, #140, #141 e #142 constam fechadas/mescladas, e seus SHAs de merge 
 
 O checkpoint C0 da branch `agent/sigma-allorder-negative-certified-20261105` foi integrado pela PR #153; o merge commit é `2a3e89987beeb05d29b2e71d8b8ed6851383ccaa`. A branch antiga permanece preservada.
 
-A worktree C1 atual usa a branch `agent/sigma-c1-certified-20261105`, criada diretamente de `main@2a3e899…`. A prova foi validada localmente; commit, push e PR C1 ainda estão pendentes. A integração C1B deve começar de uma nova branch sobre a `main` após a integração C1.
+A worktree C1 foi criada sobre `main@2a3e899…`; a prova C1 está no commit `c2706339b15db390bf8f5f50535016bd1aca8cb8`, integrado pela PR #154 no merge `b7a8a0eda7230c02f80dc63b41ab4cc9f9cf1d1e`. A CI hospedada `42101466137` passou.
+
+A worktree ativa C1B usa `agent/sigma-c1b-persistent-negative-20261105`, criada sobre a `main` integrada C1. A identidade de bloco principal e a persistência de direções negativas foram compiladas e auditadas localmente; a publicação e a CI hospedada C1B estão pendentes.
 
 ## carry-self-adjoint-operator
 
