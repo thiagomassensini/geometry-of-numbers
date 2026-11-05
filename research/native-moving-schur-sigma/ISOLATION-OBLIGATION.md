@@ -131,5 +131,6 @@ zero table or point scan is insufficient. E1 does not imply E2.
 
 Published checkpoints before C/D: `0815c2a951ad2fd0029a5e8f158a0c8ac271e80d`,
 `5304ea3`, `8696372`, and `a8926c5` on `agent/native-sigma-isolated-pole-radius`. The current C/D,
-original-pencil root, conjugate-root, and height-recovery checkpoint is being prepared for
-publication; E2 remains an explicit open certificate obligation.
+original-pencil root, conjugate-root, and height-recovery checkpoint is published as
+`938f8ad0ee7ac615f7f1a983acd8ac0607d69988` on `agent/native-sigma-isolated-pole-radius`; the
+remote branch was verified at that SHA. E2 remains an explicit open certificate obligation.
