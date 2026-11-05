@@ -86,9 +86,11 @@ the local dependency closure and the external proof before the theorem can
 discharge the four assumptions. The main toolchain remains untouched.
 
 On a host satisfying the memory gate, the external side's pinned full build
-and fail-closed audit are:
+first fetches the pinned Mathlib build cache in the fresh external checkout,
+then runs the source build and fail-closed audit:
 
 ```sh
+(cd lean && lake exe cache get)
 set -o pipefail
 RHHEIGHT_OUT="$(mktemp -d)"
 LAKE_DIR="$PWD/lean/.lake" bash hunts/rh_height_lean/lean/build.sh --full "$RHHEIGHT_OUT" 2>&1 | tee "$RHHEIGHT_OUT/build.log"
@@ -98,7 +100,10 @@ python3 hunts/rh_height_lean/lean/check_axioms.py "$RHHEIGHT_OUT/build.log" --fu
 The build script checks `MemAvailable ≥ 30 GiB` before each Lean process and
 compiles 74 source modules plus seven check files. The pinned source's existing
 `RESULTS.md` records a successful full build on its campaign box, but that is
-not a build of the integrated target theorem.
+not a build of the integrated target theorem. In this session the fresh
+external checkout has no `lean/.lake` dependency cache or retained build
+output; the only matching `.olean` files found are the target's Lean 4.32 local
+bridge artifacts.
 
 The external builders have an operational guard that waits for
 `MemAvailable ≥ 30 GiB` before each Lean process. At the last check this host
