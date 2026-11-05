@@ -46,15 +46,16 @@ Não há publicação pendente de C1B. Sua persistência é a ferramenta de tran
 
 ## C2 — menores originais eventualmente negativos em `d = 1/5`
 
-**Prova, compilação Lean 4.32 e auditoria de axiomas passaram; PR pendente.**
+**Integrado pela PR #157**, commit de prova `bd1a6a04b8f98c33526059968c7fc079d48467f9`, merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`.
 `exists_eventually_negative_sigmaPadeD_from_height50_certificate` prova
 `∃ P, ∀ p ≥ P, sigmaPadeD (1/5) p < 0` pelos quatro lemas de composição documentados em
 `SESSION_STATE.md`. A decomposição do resto permanece na prova e os jets originais são mantidos.
-Evidências em `evidence/c2-eventual-negativity/`.
+Build Lean 4.32 e auditorias externa, de integração e transitiva passaram localmente; a PR não
+recebeu status checks hospedados. Evidências em `evidence/c2-eventual-negativity/`.
 
 ## C3 — setores par e ímpar
 
-**Aberto.** Usar a negatividade eventual dos menores para janelas `k=2i` e `k=2i+1`, obter direções em cada torre e prolongá-las para dimensões maiores. Não afirmar crescimento do índice negativo sem prova própria.
+**Prioridade ativa.** Usar a negatividade eventual dos menores para janelas `p=2i` e `p=2i+1`, obter direções em cada torre e prolongá-las para dimensões maiores. Não afirmar crescimento do índice negativo sem prova própria.
 
 ## C4 — fonte deslocada e Bézout
 

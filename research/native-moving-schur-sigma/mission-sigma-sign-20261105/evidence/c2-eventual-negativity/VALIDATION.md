@@ -1,6 +1,6 @@
 # C2: eventual negativity of the original Padé minors
 
-**Status:** proof, compilation and axiom audit passed locally; PR and merge are pending.
+**Status:** integrated by PR #157, merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`; the GitHub PR returned no hosted status checks.
 
 The compiled root is
 `CarrySigmaObstruction.exists_eventually_negative_sigmaPadeD_from_height50_certificate` in
