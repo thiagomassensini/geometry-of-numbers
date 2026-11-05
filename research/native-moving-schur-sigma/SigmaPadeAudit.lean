@@ -1,0 +1,292 @@
+import SigmaPadeConvergence
+import SigmaRemainderDescent
+import SigmaPadeEventualNegativity
+import Lean
+
+open Lean Elab Command
+
+elab "#audit_sigma_pade " ids:ident+ : command => do
+  let env := (← getEnv).setExporting false
+  let allowed := #[`propext, `Classical.choice, `Quot.sound]
+  let mut todo : List Name := []
+  for id in ids do
+    let decl ← liftCoreM <| realizeGlobalConstNoOverloadWithInfo id
+    todo := decl :: todo
+    for axiomName in (← collectAxioms decl) do
+      unless allowed.contains axiomName do
+        throwError "Unexpected axiom in {decl}: {axiomName}"
+  let mut seen : NameSet := {}
+  while !todo.isEmpty do
+    let name := todo.head!
+    todo := todo.tail!
+    if !seen.contains name then
+      seen := seen.insert name
+      if let some info := env.find? name then
+        match info with
+        | .axiomInfo _ =>
+          unless allowed.contains name do
+            throwError "Unverified dependency: {name}"
+        | _ => pure ()
+        todo := info.type.getUsedConstants.toList ++ todo
+        if let some value := info.value? (allowOpaque := true) then
+          todo := value.getUsedConstants.toList ++ todo
+      else
+        throwError "Missing declaration: {name}"
+  for required in #[
+      `CarryMovingSigma.sigmaMatrix,
+      `CarrySigmaSource.completedSigmaLogJet,
+      `CarrySelfAdjointOperator.completedNativeOperatorCharacteristic] do
+    unless seen.contains required do
+      throwError "Missing original-source provenance dependency: {required}"
+  logInfo m!"Sigma pencil/Padé audit: {ids.size} public roots; {seen.size} type/body dependencies; standard axioms only; original characteristic and sigma jets retained"
+
+#print axioms CarrySigmaPade.sigmaPencilGram
+#print axioms CarrySigmaPade.sigmaPencilShifted
+#print axioms CarrySigmaPade.sigmaPencilOperator
+#print axioms CarrySigmaPade.sigmaPencil_metricSelfAdjoint
+#print axioms CarrySigmaPade.hermitian_generalizedEigenvector_isotropic
+#print axioms CarrySigmaPade.sigmaPadeD
+#print axioms CarrySigmaPade.sigmaPadeB
+#print axioms CarrySigmaPade.sigmaPadeC
+#print axioms CarrySigmaPade.sigmaPadeAlpha
+#print axioms CarrySigmaPade.sigmaPadeBeta
+#print axioms CarrySigmaPade.sigmaPencilGram_det
+#print axioms CarrySigmaPade.sigmaPencilCharacteristic
+#print axioms CarrySigmaPade.sigmaPencilCharacteristic_eq_quadratic
+#print axioms CarrySigmaPade.sigmaPade_cancellation_succ_succ
+#print axioms CarrySigmaPade.sigmaPade_cancellation_succ_succ_succ
+#print axioms CarrySigmaPade.sigmaPadeDenominator
+#print axioms CarrySigmaPade.sigmaOriginalMomentSeries
+#print axioms CarrySigmaPade.sigmaPadeDenominatorSeries
+#print axioms CarrySigmaPade.sigmaPadeNumeratorSeries
+#print axioms CarrySigmaPade.sigmaPadeProductCoeff_succ_succ
+#print axioms CarrySigmaPade.sigmaPadeProductCoeff_succ_succ_succ
+#print axioms CarrySigmaPade.IsPadeApproximant
+#print axioms CarrySigmaPade.sigmaPadeDenominatorSeries_coeff_zero
+#print axioms CarrySigmaPade.sigmaPadeDenominatorSeries_coeff_one
+#print axioms CarrySigmaPade.sigmaPadeDenominatorSeries_coeff_two
+#print axioms CarrySigmaPade.sigmaPadeDenominatorSeries_coeff_eq_zero_of_two_lt
+#print axioms CarrySigmaPade.sigmaOriginalMomentSeries_is_pade
+#print axioms CarrySigmaPade.sigmaPencilGramComplex
+#print axioms CarrySigmaPade.sigmaPencilShiftedComplex
+#print axioms CarrySigmaPade.sigmaPencilCharacteristicComplex
+#print axioms CarrySigmaPade.sigmaPencilCharacteristicComplex_eq_quadratic
+#print axioms CarrySigmaPade.sigmaPadeDenominatorComplex
+#print axioms CarrySigmaPade.sigmaPencilCharacteristicComplex_eq_reciprocal_pade
+#print axioms CarrySigmaPade.sigmaPencil_root_iff_reciprocal_pade_root
+#print axioms CarrySigmaPade.sigmaPencil_root_classification
+#print axioms CarrySigmaPade.twoPoleMoment
+#print axioms CarrySigmaPade.twoPoleGram
+#print axioms CarrySigmaPade.twoPoleShifted
+#print axioms CarrySigmaPade.normSq_pow_aux
+#print axioms CarrySigmaPade.twoPoleGram_det
+#print axioms CarrySigmaPade.twoPoleGram_det_neg
+#print axioms CarrySigmaPade.twoPoleGram_not_posSemidef
+#print axioms CarrySigmaPade.twoPoleGram_negative_direction
+#print axioms CarrySigmaPade.twoPoleMoment_recurrence
+#print axioms CarrySigmaPade.twoPolePencil_characteristic
+#print axioms CarrySigmaPade.twoRealPoleMoment
+#print axioms CarrySigmaPade.twoRealPoleGram
+#print axioms CarrySigmaPade.twoRealPoleShifted
+#print axioms CarrySigmaPade.twoRealPoleMoment_recurrence
+#print axioms CarrySigmaPade.twoRealPoleGram_det
+#print axioms CarrySigmaPade.twoRealPoleGram_det_pos
+#print axioms CarrySigmaPade.twoRealPolePencil_characteristic
+#print axioms CarrySigmaPade.twoRealPolePencil_real_roots
+#print axioms CarrySigmaPade.inverseSquareNode
+#print axioms CarrySigmaPade.inverseSquareNode_re
+#print axioms CarrySigmaPade.inverseSquareNode_im
+#print axioms CarrySigmaPade.inverseSquareNode_normSq
+#print axioms CarrySigmaPade.inverseSquare_twoPoleGram_det
+#print axioms CarrySigmaPade.inverseSquare_twoPole_negative_direction
+#print axioms CarrySigmaPade.inverseSquare_twoPole_roots
+#print axioms CarrySigmaPade.inverseSquare_zero_parameter_pencil_characteristic
+#print axioms CarrySigmaPade.inverseSquare_roots_recover_height
+#print axioms CarrySigmaObstruction.completedNativeF_analyticAt_real
+#print axioms CarrySigmaObstruction.completedNativeF_positive_zero_factorization
+#print axioms CarrySigmaObstruction.completedNativeLogResponse_local_factorization
+#print axioms CarrySigmaObstruction.sigmaZeroPairRationalModel
+#print axioms CarrySigmaObstruction.sigmaZeroPairModelSeries
+#print axioms CarrySigmaObstruction.sigmaZeroPairRemainderMoment
+#print axioms CarrySigmaObstruction.sigmaZeroPairRemainderSeries
+#print axioms CarrySigmaObstruction.completedSigmaLogJet_zeroPair_conditional_decomposition
+#print axioms CarrySigmaObstruction.completedSigmaLogJet_positive_zero_pair_continuation
+#print axioms CarrySigmaPade.sigmaPadeQuadraticRootLower
+#print axioms CarrySigmaPade.sigmaPadeQuadraticRootLower_twoPole_limit
+#print axioms CarrySigmaPade.sigmaPadeQuadraticRootLower_tendsto
+#print axioms CarrySigmaPade.sigmaPadeQuadraticRootLower_is_root
+#print axioms CarrySigmaPade.sigmaPadeAlphaBetaRoot_tendsto
+#print axioms CarrySigmaPade.sigmaPadePencil_lowerRoot_is_root
+#print axioms CarrySigmaPade.sigmaPadeNormalizedD
+#print axioms CarrySigmaPade.sigmaPadeNormalizedB
+#print axioms CarrySigmaPade.sigmaPadeNormalizedC
+#print axioms CarrySigmaPade.sigmaPadeNormalizedMoment
+#print axioms CarrySigmaPade.twoPoleMoment_scale
+#print axioms CarrySigmaPade.twoPoleMoment_minor_relations
+#print axioms CarrySigmaPade.twoPoleMoment_unitCircle_minors
+#print axioms CarrySigmaPade.sigmaPadeAlpha_eq_normalized_ratio
+#print axioms CarrySigmaPade.sigmaPadeBeta_eq_normalized_ratio
+#print axioms CarrySigmaPade.sigmaPadeAlpha_tendsto_of_normalized_minors
+#print axioms CarrySigmaPade.sigmaPadeBeta_tendsto_of_normalized_minors
+#print axioms CarrySigmaPade.sigmaPadeAlphaBeta_tendsto_of_twoPole_minor_limits
+#print axioms CarrySigmaPade.sigmaPadeDiscriminant_tendsto_of_alpha_beta
+#print axioms CarrySigmaPade.sigmaPadeD_eventually_neg_of_normalized_limit
+#print axioms CarrySigmaPade.sigmaPadeOriginalPencil_eventually_has_nonreal_root
+#print axioms CarrySigmaPade.sigmaPadeOriginalNormalizedRoot_tendsto
+#print axioms CarrySigmaPade.sigmaPadeOriginalRoot_tendsto
+#print axioms CarrySigmaPade.sigmaPadeRemainder_window_normalized_tendsto
+#print axioms CarrySigmaPade.sigmaPadeNormalizedRemainder_tendsto
+#print axioms CarrySigmaPade.sigmaPadeNormalizedMoment_sub_twoPole_tendsto
+#print axioms CarrySigmaPade.sigmaPadeNormalizedD_eq_normalizedMoments
+#print axioms CarrySigmaPade.sigmaPadeNormalizedB_eq_normalizedMoments
+#print axioms CarrySigmaPade.sigmaPadeNormalizedC_eq_normalizedMoments
+#print axioms CarrySigmaPade.sigmaPadeNormalizedMinors_tendsto_of_twoPole_remainder
+#print axioms CarrySigmaPade.twoPoleMoment_abs_le_of_normSq_eq_one
+#print axioms CarrySigmaPade.sigmaPadeNormalizedMinors_tendsto_of_unitCircle_twoPole_remainder
+#print axioms CarrySigmaPade.sigmaPadeOriginalPencil_root_tendsto_of_twoPole_remainder
+#print axioms CarrySigmaPade.sigmaPadeOriginalPencil_root_tendsto_to_twoPole
+#print axioms CarrySigmaObstruction.sigmaEvenTaylorSeries
+#print axioms CarrySigmaObstruction.analytic_even_taylor_series_sum
+#print axioms CarrySigmaObstruction.analytic_even_taylor_series_radius
+#print axioms CarrySigmaObstruction.analytic_even_has_square_series
+#print axioms CarrySigmaObstruction.analytic_eventually_zero_of_comp_square
+#print axioms CarrySigmaObstruction.sigmaZeroPairRationalModel_hasFPowerSeriesAt
+#print axioms CarrySigmaObstruction.sigmaTwoPoleFactor
+#print axioms CarrySigmaObstruction.sigmaTwoPoleFactor_logDerivative
+#print axioms CarrySigmaObstruction.sigmaDisplacedFirstPoleFactor_eq_twoPoleFactor
+#print axioms CarrySigmaObstruction.sigmaDisplacedFirstPoleFactor_logDerivative
+#print axioms CarrySigmaObstruction.completedNative_sigmaRemainder_local_of_isolation
+#print axioms CarrySigmaObstruction.completedNative_sigmaRemainder_square_decomposition_of_isolation
+#print axioms CarrySigmaObstruction.sigmaUpperHalfPlaneSqrt
+#print axioms CarrySigmaObstruction.sigmaUpperHalfPlaneSqrt_continuous
+#print axioms CarrySigmaObstruction.sigmaUpperHalfPlaneSqrt_sq
+#print axioms CarrySigmaObstruction.sigmaUpperHalfPlaneSqrt_height_sq
+#print axioms CarrySigmaObstruction.sigmaPadeRecoveredHeight
+#print axioms CarrySigmaObstruction.completedNative_sigmaRemainder_pade_root_of_isolation
+#print axioms CarrySigmaObstruction.exists_eventually_negative_sigmaPadeD_from_height50_certificate
+
+#audit_sigma_pade
+  CarrySigmaPade.sigmaPencilGram
+  CarrySigmaPade.sigmaPencilShifted
+  CarrySigmaPade.sigmaPencilOperator
+  CarrySigmaPade.sigmaPencil_metricSelfAdjoint
+  CarrySigmaPade.hermitian_generalizedEigenvector_isotropic
+  CarrySigmaPade.sigmaPadeD
+  CarrySigmaPade.sigmaPadeB
+  CarrySigmaPade.sigmaPadeC
+  CarrySigmaPade.sigmaPadeAlpha
+  CarrySigmaPade.sigmaPadeBeta
+  CarrySigmaPade.sigmaPencilGram_det
+  CarrySigmaPade.sigmaPencilCharacteristic
+  CarrySigmaPade.sigmaPencilCharacteristic_eq_quadratic
+  CarrySigmaPade.sigmaPade_cancellation_succ_succ
+  CarrySigmaPade.sigmaPade_cancellation_succ_succ_succ
+  CarrySigmaPade.sigmaPadeDenominator
+  CarrySigmaPade.sigmaOriginalMomentSeries
+  CarrySigmaPade.sigmaPadeDenominatorSeries
+  CarrySigmaPade.sigmaPadeNumeratorSeries
+  CarrySigmaPade.sigmaPadeProductCoeff_succ_succ
+  CarrySigmaPade.sigmaPadeProductCoeff_succ_succ_succ
+  CarrySigmaPade.IsPadeApproximant
+  CarrySigmaPade.sigmaPadeDenominatorSeries_coeff_zero
+  CarrySigmaPade.sigmaPadeDenominatorSeries_coeff_one
+  CarrySigmaPade.sigmaPadeDenominatorSeries_coeff_two
+  CarrySigmaPade.sigmaPadeDenominatorSeries_coeff_eq_zero_of_two_lt
+  CarrySigmaPade.sigmaOriginalMomentSeries_is_pade
+  CarrySigmaPade.sigmaPencilGramComplex
+  CarrySigmaPade.sigmaPencilShiftedComplex
+  CarrySigmaPade.sigmaPencilCharacteristicComplex
+  CarrySigmaPade.sigmaPencilCharacteristicComplex_eq_quadratic
+  CarrySigmaPade.sigmaPadeDenominatorComplex
+  CarrySigmaPade.sigmaPencilCharacteristicComplex_eq_reciprocal_pade
+  CarrySigmaPade.sigmaPencil_root_iff_reciprocal_pade_root
+  CarrySigmaPade.sigmaPencil_root_classification
+  CarrySigmaPade.twoPoleMoment
+  CarrySigmaPade.twoPoleGram
+  CarrySigmaPade.twoPoleShifted
+  CarrySigmaPade.normSq_pow_aux
+  CarrySigmaPade.twoPoleGram_det
+  CarrySigmaPade.twoPoleGram_det_neg
+  CarrySigmaPade.twoPoleGram_not_posSemidef
+  CarrySigmaPade.twoPoleGram_negative_direction
+  CarrySigmaPade.twoPoleMoment_recurrence
+  CarrySigmaPade.twoPolePencil_characteristic
+  CarrySigmaPade.twoRealPoleMoment
+  CarrySigmaPade.twoRealPoleGram
+  CarrySigmaPade.twoRealPoleShifted
+  CarrySigmaPade.twoRealPoleMoment_recurrence
+  CarrySigmaPade.twoRealPoleGram_det
+  CarrySigmaPade.twoRealPoleGram_det_pos
+  CarrySigmaPade.twoRealPolePencil_characteristic
+  CarrySigmaPade.twoRealPolePencil_real_roots
+  CarrySigmaPade.inverseSquareNode
+  CarrySigmaPade.inverseSquareNode_re
+  CarrySigmaPade.inverseSquareNode_im
+  CarrySigmaPade.inverseSquareNode_normSq
+  CarrySigmaPade.inverseSquare_twoPoleGram_det
+  CarrySigmaPade.inverseSquare_twoPole_negative_direction
+  CarrySigmaPade.inverseSquare_twoPole_roots
+  CarrySigmaPade.inverseSquare_zero_parameter_pencil_characteristic
+  CarrySigmaPade.inverseSquare_roots_recover_height
+  CarrySigmaObstruction.completedNativeF_analyticAt_real
+  CarrySigmaObstruction.completedNativeF_positive_zero_factorization
+  CarrySigmaObstruction.completedNativeLogResponse_local_factorization
+  CarrySigmaObstruction.sigmaZeroPairRationalModel
+  CarrySigmaObstruction.sigmaZeroPairModelSeries
+  CarrySigmaObstruction.sigmaZeroPairRemainderMoment
+  CarrySigmaObstruction.sigmaZeroPairRemainderSeries
+  CarrySigmaObstruction.completedSigmaLogJet_zeroPair_conditional_decomposition
+  CarrySigmaObstruction.completedSigmaLogJet_positive_zero_pair_continuation
+  CarrySigmaPade.sigmaPadeQuadraticRootLower
+  CarrySigmaPade.sigmaPadeQuadraticRootLower_twoPole_limit
+  CarrySigmaPade.sigmaPadeQuadraticRootLower_tendsto
+  CarrySigmaPade.sigmaPadeQuadraticRootLower_is_root
+  CarrySigmaPade.sigmaPadeAlphaBetaRoot_tendsto
+  CarrySigmaPade.sigmaPadePencil_lowerRoot_is_root
+  CarrySigmaPade.sigmaPadeNormalizedD
+  CarrySigmaPade.sigmaPadeNormalizedB
+  CarrySigmaPade.sigmaPadeNormalizedC
+  CarrySigmaPade.sigmaPadeNormalizedMoment
+  CarrySigmaPade.twoPoleMoment_scale
+  CarrySigmaPade.twoPoleMoment_minor_relations
+  CarrySigmaPade.twoPoleMoment_unitCircle_minors
+  CarrySigmaPade.sigmaPadeAlpha_eq_normalized_ratio
+  CarrySigmaPade.sigmaPadeBeta_eq_normalized_ratio
+  CarrySigmaPade.sigmaPadeAlpha_tendsto_of_normalized_minors
+  CarrySigmaPade.sigmaPadeBeta_tendsto_of_normalized_minors
+  CarrySigmaPade.sigmaPadeAlphaBeta_tendsto_of_twoPole_minor_limits
+  CarrySigmaPade.sigmaPadeDiscriminant_tendsto_of_alpha_beta
+  CarrySigmaPade.sigmaPadeD_eventually_neg_of_normalized_limit
+  CarrySigmaPade.sigmaPadeOriginalPencil_eventually_has_nonreal_root
+  CarrySigmaPade.sigmaPadeOriginalNormalizedRoot_tendsto
+  CarrySigmaPade.sigmaPadeOriginalRoot_tendsto
+  CarrySigmaPade.sigmaPadeRemainder_window_normalized_tendsto
+  CarrySigmaPade.sigmaPadeNormalizedRemainder_tendsto
+  CarrySigmaPade.sigmaPadeNormalizedMoment_sub_twoPole_tendsto
+  CarrySigmaPade.sigmaPadeNormalizedD_eq_normalizedMoments
+  CarrySigmaPade.sigmaPadeNormalizedB_eq_normalizedMoments
+  CarrySigmaPade.sigmaPadeNormalizedC_eq_normalizedMoments
+  CarrySigmaPade.sigmaPadeNormalizedMinors_tendsto_of_twoPole_remainder
+  CarrySigmaPade.twoPoleMoment_abs_le_of_normSq_eq_one
+  CarrySigmaPade.sigmaPadeNormalizedMinors_tendsto_of_unitCircle_twoPole_remainder
+  CarrySigmaPade.sigmaPadeOriginalPencil_root_tendsto_of_twoPole_remainder
+  CarrySigmaPade.sigmaPadeOriginalPencil_root_tendsto_to_twoPole
+  CarrySigmaObstruction.sigmaEvenTaylorSeries
+  CarrySigmaObstruction.analytic_even_taylor_series_sum
+  CarrySigmaObstruction.analytic_even_taylor_series_radius
+  CarrySigmaObstruction.analytic_even_has_square_series
+  CarrySigmaObstruction.analytic_eventually_zero_of_comp_square
+  CarrySigmaObstruction.sigmaZeroPairRationalModel_hasFPowerSeriesAt
+  CarrySigmaObstruction.sigmaTwoPoleFactor
+  CarrySigmaObstruction.sigmaTwoPoleFactor_logDerivative
+  CarrySigmaObstruction.sigmaDisplacedFirstPoleFactor_eq_twoPoleFactor
+  CarrySigmaObstruction.sigmaDisplacedFirstPoleFactor_logDerivative
+  CarrySigmaObstruction.completedNative_sigmaRemainder_local_of_isolation
+  CarrySigmaObstruction.completedNative_sigmaRemainder_square_decomposition_of_isolation
+  CarrySigmaObstruction.sigmaUpperHalfPlaneSqrt
+  CarrySigmaObstruction.sigmaUpperHalfPlaneSqrt_continuous
+  CarrySigmaObstruction.sigmaUpperHalfPlaneSqrt_sq
+  CarrySigmaObstruction.sigmaUpperHalfPlaneSqrt_height_sq
+  CarrySigmaObstruction.sigmaPadeRecoveredHeight
+  CarrySigmaObstruction.completedNative_sigmaRemainder_pade_root_of_isolation
+  CarrySigmaObstruction.exists_eventually_negative_sigmaPadeD_from_height50_certificate

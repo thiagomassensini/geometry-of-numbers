@@ -45,16 +45,16 @@ C1B está provado no módulo `SigmaPersistentNegativeDirection.lean` sobre a bas
 - `certified_sigma_negative_directions_persist` conclui que há direção negativa em toda dimensão suficientemente grande para cada `0<|d|<1/4`.
 - `certified_sigma_not_posSemidef_persist` dá diretamente a não semidefinição positiva em cada uma dessas dimensões. A simetria da matriz permite recuperar um vetor real com forma quadrática estritamente negativa.
 
-Esse argumento de bloco principal é a forma formal da preservação da forma quadrática ao inserir zeros fora dos índices do bloco. Não conclui que todos os pivôs sejam negativos, nem crescimento linear do índice negativo. A publicação e a CI hospedada do checkpoint C1B estão pendentes.
+Esse argumento de bloco principal é a forma formal da preservação da forma quadrática ao inserir zeros fora dos índices do bloco. Não conclui que todos os pivôs sejam negativos, nem crescimento linear do índice negativo. C1B foi integrado pela PR #155, merge `0586e238441096ecd2248e3f14bdac3a832af427`.
 
 Possíveis módulos reutilizáveis: `CameraCoherence.lean` e `HankelLimitObject.lean` em `origin/agent/c3-critical-tilt-prime`; são posteriores ao PR #146, não estão na `main` e não devem ser importados em bloco sem auditoria.
 
 ## Rota B — menores Padé, C2
 
 - Originais: `hₙ(d) = completedSigmaLogJet d n` e `Dₖ(d)=hₖhₖ₊₂−hₖ₊₁²`.
-- Disponível fora da `main`: `sigmaPadeNormalizedMinors_tendsto_of_unitCircle_twoPole_remainder`, `sigmaPadeD_eventually_neg_of_normalized_limit` e a decomposição de resto `completedNative_sigmaRemainder_square_decomposition_of_isolation` em `origin/agent/native-sigma-pade-signed-pencil`.
+- Referência inicial: integração Lean 4.32 em `b9ce1955c1e8830afad2323afe5266ed3f5f35d9`. A composição agora está em `SigmaPadeEventualNegativity.lean` e foi validada localmente.
 - Fonte de isolamento fora da `main`: `exists_firstSigmaDisplacedProductIsolation_from_height50_certificate` na branch `codex/native-sigma-height50-lean432-integrated`; origem externa `teal-sea/zeta-lab@b09fa4dd…`, portada integralmente para Lean 4.32.
-- Resultado pedido: `∃ K, ∀ k≥K, Dₖ(1/5)<0`, com limite normalizado `−y²<0`, `a=1/(γ²+1/25)` e `y=Im((γ+i/5)⁻²/a)≠0`.
+- Resultado concluído localmente: `∃ K, ∀ k≥K, Dₖ(1/5)<0`, com limite normalizado `−y²<0`, `a=1/(γ²+1/25)` e `y=Im((γ+i/5)⁻²/a)≠0`; a publicação está pendente.
 - O modelo `twoPoleMoment` serve só para o termo dominante; a conclusão deve permanecer nos jets originais.
 
 ## C3 — as duas torres
