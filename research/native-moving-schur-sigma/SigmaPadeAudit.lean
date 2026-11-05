@@ -1,4 +1,5 @@
 import SigmaPadeConvergence
+import SigmaRemainderDescent
 import Lean
 
 open Lean Elab Command
@@ -143,6 +144,9 @@ elab "#audit_sigma_pade " ids:ident+ : command => do
 #print axioms CarrySigmaPade.sigmaPadeNormalizedMinors_tendsto_of_unitCircle_twoPole_remainder
 #print axioms CarrySigmaPade.sigmaPadeOriginalPencil_root_tendsto_of_twoPole_remainder
 #print axioms CarrySigmaPade.sigmaPadeOriginalPencil_root_tendsto_to_twoPole
+#print axioms CarrySigmaObstruction.completedNative_sigmaRemainder_local_of_isolation
+#print axioms CarrySigmaObstruction.completedNative_sigmaRemainder_square_decomposition_of_isolation
+#print axioms CarrySigmaObstruction.completedNative_sigmaRemainder_pade_root_of_isolation
 
 #audit_sigma_pade
   CarrySigmaPade.sigmaPencilGram
@@ -250,3 +254,6 @@ elab "#audit_sigma_pade " ids:ident+ : command => do
   CarrySigmaPade.sigmaPadeNormalizedMinors_tendsto_of_unitCircle_twoPole_remainder
   CarrySigmaPade.sigmaPadeOriginalPencil_root_tendsto_of_twoPole_remainder
   CarrySigmaPade.sigmaPadeOriginalPencil_root_tendsto_to_twoPole
+  CarrySigmaObstruction.completedNative_sigmaRemainder_local_of_isolation
+  CarrySigmaObstruction.completedNative_sigmaRemainder_square_decomposition_of_isolation
+  CarrySigmaObstruction.completedNative_sigmaRemainder_pade_root_of_isolation

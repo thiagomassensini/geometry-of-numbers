@@ -70,29 +70,66 @@ rigorous winding-number/zero count for the continued product, together with exac
 at the four roots. No such contour data, interval arithmetic proof, or equivalent analytic
 certificate is currently attached.
 
-## C, D, and convergence application: still open
+## C and D: analytic remainder and Cauchy bound, conditional on isolation
 
-From B, Lean now proves `H'(0) = 0`, constructs an analytic `q` with `H'(t) = t q(t)` near
-zero, removes the singularity of `-H'(t)/(4tH(t))` at zero, and proves that this regularized
-function is analytic and even throughout the `t` disk. The declarations are
-`completedNativeDisplacedProduct_logremainderT_analytic_even_of_isolation` and its helpers.
+`SigmaRemainderDescent.lean` now completes the analytic bridge from B. Starting with the same
+quotient `H` constructed by the isolated-zero factorization, it proves `H'(0)=0`, constructs
+analytic `q` with `H'(t)=t q(t)` near zero, and removes the center singularity of
+`-H'(t)/(4tH(t))`. The regularized remainder is analytic and even throughout the source `t`
+disk.
 
-The remaining C step is to descend this analytic even function to a holomorphic function of
-`u = t²` on a disk with radius larger than `|τ|²`, and prove its Taylor coefficients are exactly
-`completedSigmaLogJet d n - m * Re(τ^(-2n-2))`. This coefficient bridge has not been proved;
-therefore `hdecomp` and `hremRadius` in `SigmaZeroPairDecomposition.lean` are not yet eliminated.
-The Cauchy bound and Padé convergence application in D/phase 7 remain open as well.
+The file proves the two-pole logarithmic derivative identity for the explicit factor and combines
+it with `displacedProductC_local_differentialEquation`. This derives the local source identity
 
-Consequently there is no new exponential Cauchy bound for the original coefficient remainder
-and no new application of the existing conditional Padé convergence theorem to the native
-source. The existing Padé, Schur, pencil, and conditional convergence results remain intact and
-conditional. Quantitative depth estimates were not attempted.
+`G_d(t²) = sigmaZeroPairRationalModel m (τ⁻²) (t²) + sigmaDisplacedLogRemainderT H q t`.
+
+The even Taylor coefficients are then regrouped as a power series in `u=t²`. Cauchy's estimate
+proves its radius is at least `s²` for every `0<s<r_t`; choosing `s` between `|τ|` and `r_t`
+places it strictly beyond the model pole radius `|τ|²`. Uniqueness of the analytic Taylor series
+identifies every coefficient with the exact residual from the original `completedSigmaLogJet`
+jets. Thus the existing conditional theorem's `hdecomp` and `hremRadius` are constructed inside
+`completedNative_sigmaRemainder_square_decomposition_of_isolation`; they are not premises of this
+source-facing theorem.
+
+The same theorem supplies the exponential estimate
+`|sigmaZeroPairRemainderMoment d m ζ n| ≤ C * η^n` with `η < ‖ζ‖`. Its radius argument uses
+an intermediate `ρ` strictly between the model pole radius and the Cauchy radius. This proves
+C and D under the exact source zero-set/order interface, without replacing the original
+characteristic, jets, Hankel matrices, or pencil.
+
+## Phase 7: original-pencil Padé recovery, conditional on isolation
+
+The theorem `completedNative_sigmaRemainder_pade_root_of_isolation` feeds the derived coefficient
+bound into `sigmaPadeOriginalPencil_root_tendsto_to_twoPole`. It proves that the selected root
+branch of the **original sigma pencil** converges to `τ⁻²`, and that the pencil has an eventually
+nonreal root together with its conjugate, which is also an original-pencil root. The conjugate
+root branch converges to `conj(τ⁻²)`. The normalization to a unit-circle two-pole node is derived
+from the inverse-square geometry, not assumed as extra data.
+
+The theorem defines an explicit continuous square-root branch on the upper half-plane and proves
+that the two recovered inverse-square-root height branches converge to `γ + id` and `γ − id`.
+Eventually, each recovered height squares to the inverse of its corresponding original-pencil
+root. No quantitative depth estimate was attempted.
 
 ## Lean audit for the published checkpoint
 
-The two new Lean modules compiled with `-DwarningAsError=true`. Axiom reports for the new public
-continuation, polynomial-root/order, quotient, and factorization theorems contain only
-`propext`, `Classical.choice`, and `Quot.sound`; no `sorryAx`, `admit`, or new axiom is used.
+The continuation, isolation, remainder-descent, source-facing coefficient-bound, and Padé-root
+modules compile with `-DwarningAsError=true`. `SigmaPadeAudit.lean` now includes the three new
+source-facing remainder/Padé declarations in its transitive dependency audit. The audit reports
+108 public roots and 59921 type/body dependencies, with only `propext`, `Classical.choice`, and
+`Quot.sound`; it confirms dependencies on the original native characteristic and sigma jets. No
+`sorryAx`, `admit`, new axiom, or circular continuation premise is used.
 
-Published commit: `0815c2a951ad2fd0029a5e8f158a0c8ac271e80d` on
-`agent/native-sigma-isolated-pole-radius`.
+## E2: concrete certificate still open
+
+No numerical or analytic certificate has been attached for `d=0.2` on the complete complex disk
+`|u|<300` (equivalently `|t|<√300`). The exact open interface remains
+`SigmaDisplacedProductIsolation`; to apply the new C/D/Padé theorem at this target, instantiate
+its complex zero-set and exact product-order fields on the full `t` disk. In particular, the
+certificate must rule out collisions with other shifted characteristic zeros. A critical-line
+zero table or point scan is insufficient. E1 does not imply E2.
+
+Published checkpoints before C/D: `0815c2a951ad2fd0029a5e8f158a0c8ac271e80d`,
+`5304ea3`, `8696372`, and `a8926c5` on `agent/native-sigma-isolated-pole-radius`. The current C/D,
+original-pencil root, conjugate-root, and height-recovery checkpoint is being prepared for
+publication; E2 remains an explicit open certificate obligation.
