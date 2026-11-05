@@ -74,6 +74,32 @@ The local `#print axioms` audit for the zero classification, order theorem,
 isolation instance, and Padé recovery reports only `propext`,
 `Classical.choice`, and `Quot.sound`.
 
+## Handoff for the compatible integration build
+
+The target checkout fixes Lean `v4.32.0` and Mathlib revision
+`81a5d257c8e410db227a6665ed08f64fea08e997`; the external proof fixes Lean
+`v4.35.0-rc2` and Mathlib `065356127b1dc0016f66b7283ce0ce2c4055aa55`. Thus the
+external modules and the current local `.olean` files cannot be combined.
+The remaining B/C steps need an isolated source checkout of this target branch
+under the external toolchain/Mathlib pins, followed by source recompilation of
+the local dependency closure and the external proof before the theorem can
+discharge the four assumptions. The main toolchain remains untouched.
+
+On a host satisfying the memory gate, the external side's pinned full build
+and fail-closed audit are:
+
+```sh
+set -o pipefail
+RHHEIGHT_OUT="$(mktemp -d)"
+LAKE_DIR="$PWD/lean/.lake" bash hunts/rh_height_lean/lean/build.sh --full "$RHHEIGHT_OUT" 2>&1 | tee "$RHHEIGHT_OUT/build.log"
+python3 hunts/rh_height_lean/lean/check_axioms.py "$RHHEIGHT_OUT/build.log" --full
+```
+
+The build script checks `MemAvailable ≥ 30 GiB` before each Lean process and
+compiles 74 source modules plus seven check files. The pinned source's existing
+`RESULTS.md` records a successful full build on its campaign box, but that is
+not a build of the integrated target theorem.
+
 The external builders have an operational guard that waits for
 `MemAvailable ≥ 30 GiB` before each Lean process. At the last check this host
 had `MemAvailable = 25.89 GiB`; consequently no external compilation was
