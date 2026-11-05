@@ -122,12 +122,35 @@ source-facing remainder/Padé declarations in its transitive dependency audit. T
 
 ## E2: concrete certificate still open
 
-No numerical or analytic certificate has been attached for `d=0.2` on the complete complex disk
+No certificate has yet been attached to this repository for `d=0.2` on the complete complex disk
 `|u|<300` (equivalently `|t|<√300`). The exact open interface remains
 `SigmaDisplacedProductIsolation`; to apply the new C/D/Padé theorem at this target, instantiate
 its complex zero-set and exact product-order fields on the full `t` disk. In particular, the
-certificate must rule out collisions with other shifted characteristic zeros. A critical-line
-zero table or point scan is insufficient. E1 does not imply E2.
+certificate must rule out collisions with other shifted characteristic zeros. E1 does not imply
+E2.
+
+A promising external finite-height Lean result was found at `teal-sea/zeta-lab`, pinned here to
+`b09fa4dd2f2182cf14b248e7ffc64ff03df2c534`. Its `RHHeight.rh_height_fifty` states that every
+Mathlib `riemannZeta` zero in the open critical strip with `0 < Im ρ ≤ 50` is on the critical
+line and simple, and `zero_count_fifty` gives exactly ten distinct zeros. The same source tree
+locates a zero in `(14.13, 14.14)` and the next listed line zero in `(21.02, 21.03)`. See the
+[height-50 theorem](https://github.com/teal-sea/zeta-lab/blob/b09fa4dd2f2182cf14b248e7ffc64ff03df2c534/hunts/rh_height_lean/lean/RHHeight/Main.lean),
+[statement and count](https://github.com/teal-sea/zeta-lab/blob/b09fa4dd2f2182cf14b248e7ffc64ff03df2c534/hunts/rh_height_lean/lean/RHHeight/Statement.lean),
+and [the ten located line zeros](https://github.com/teal-sea/zeta-lab/blob/b09fa4dd2f2182cf14b248e7ffc64ff03df2c534/hunts/hardy_ten_zeros/lean/HardyTenZeros/TenZeros.lean).
+Those declarations make a route to E2 plausible: map the entire continuation's zeros through
+`s=1/2+iz`, use the finite-height statement and count to isolate the first ordinate, then show
+the other shifted factor is nonzero and transfer simplicity to the product.
+
+That external proof is not yet imported, ported, or independently rebuilt in this repository.
+Its pinned toolchain is Lean `v4.35.0-rc2` with Mathlib `065356127b1dc0016f66b7283ce0ce2c4055aa55`,
+while this branch uses Lean `v4.32.0`. Its build script also waits for at least 30 GiB of available
+memory before compiling; this host reported 25.5 GiB, so that external rebuild was stopped before
+compilation. The missing work is the formal bridge from that finite-height zeta result to the
+zeros and orders of `completedNativeDisplacedProductContinuation` on the full complex `t` disk,
+including the off-strip zero exclusion and the noncollision of the companion shifted factor.
+Until that bridge is compiled here and used to construct `SigmaDisplacedProductIsolation`, E2
+remains open; the external result is not treated as an axiom or as an already-instantiated
+certificate.
 
 Published checkpoints before C/D: `0815c2a951ad2fd0029a5e8f158a0c8ac271e80d`,
 `5304ea3`, `8696372`, and `a8926c5` on `agent/native-sigma-isolated-pole-radius`. The current C/D,
