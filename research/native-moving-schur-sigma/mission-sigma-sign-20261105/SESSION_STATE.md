@@ -6,12 +6,19 @@
 ## Base integrada
 
 - Repositório: `thiagomassensini/geometry-of-numbers`.
-- Base atual: `main` em `0586e238441096ecd2248e3f14bdac3a832af427`.
+- Base atual: `main` em `301c36c710c87dc5fc43db9c26aa90c005e9e5a6`; a PR #156 publicou o checkpoint 4.35 incompleto e estes registros.
 - C0 foi integrado pela PR #153, merge `2a3e89987beeb05d29b2e71d8b8ed6851383ccaa`.
 - C1 foi integrado pela PR #154, merge `b7a8a0eda7230c02f80dc63b41ab4cc9f9cf1d1e`; a CI hospedada passou.
 - **C1B está integrado** pela PR #155, merge `0586e238441096ecd2248e3f14bdac3a832af427`. Não há publicação pendente desse checkpoint.
 
 ## Prioridade: C2
+
+**Prova, compilação e auditoria local passaram; publicação pendente.** O corolário
+`exists_eventually_negative_sigmaPadeD_from_height50_certificate` foi acrescentado em
+`SigmaPadeEventualNegativity.lean` e prova o alvo abaixo sem hipóteses de sinal adicionais. A
+integração recompila os módulos compartilhados de C1 para reutilizar a definição única
+`sigmaLineZero`; a duplicação de dois lemas strip-local da bridge também foi removida.
+Evidências: `evidence/c2-eventual-negativity/VALIDATION.md` e os logs no mesmo diretório.
 
 Provar, nos momentos originais e sem hipótese adicional de sinal,
 
@@ -33,7 +40,7 @@ Manter `completedSigmaLogJet` e `sigmaPadeD` originais, conservando o resto. Nã
 
 ## Depois: C3
 
-Usar explicitamente as janelas `p = 2i` e `p = 2i + 1` para cobrir os setores par e ímpar. Transportar cada direção negativa às dimensões maiores usando o resultado integrado de persistência de C1B. Fechar C2 antes de iniciar essa integração.
+Depois do merge de C2, usar explicitamente as janelas `p = 2i` e `p = 2i + 1` para cobrir os setores par e ímpar. Transportar cada direção negativa às dimensões maiores usando o resultado integrado de persistência de C1B.
 
 ## Checkpoint da tentativa Lean 4.35
 

@@ -23,7 +23,7 @@ O checkpoint C0 da branch `agent/sigma-allorder-negative-certified-20261105` foi
 
 A worktree C1 foi criada sobre `main@2a3e899…`; a prova C1 está no commit `c2706339b15db390bf8f5f50535016bd1aca8cb8`, integrado pela PR #154 no merge `b7a8a0eda7230c02f80dc63b41ab4cc9f9cf1d1e`. A CI hospedada `42101466137` passou.
 
-A worktree ativa C1B usa `agent/sigma-c1b-persistent-negative-20261105`, criada sobre a `main` integrada C1. A identidade de bloco principal e a persistência de direções negativas foram compiladas e auditadas localmente no commit `8cc4a31`; a publicação e a CI hospedada C1B estão pendentes.
+C1B foi integrado pela PR #155 no merge `0586e238441096ecd2248e3f14bdac3a832af427`. O commit local de prova foi `8cc4a31`; não há publicação pendente desse checkpoint.
 
 ## carry-self-adjoint-operator
 

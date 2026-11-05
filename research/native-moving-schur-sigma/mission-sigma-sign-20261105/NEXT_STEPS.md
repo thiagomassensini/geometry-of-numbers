@@ -3,11 +3,11 @@
 ## C2 — negatividade eventual dos menores originais
 
 1. Trabalhar sobre a integração Lean 4.32 publicada em `b9ce1955c1e8830afad2323afe5266ed3f5f35d9`, usando-a como referência e não iniciando a migração geral 4.35.
-2. Inspecionar a fronteira entre `SigmaRHHeightBridge.lean` e `SigmaHeight50Integration.lean`; conferir a definição duplicada de `CarrySigmaObstruction.sigmaLineZero` antes de combinar os módulos.
-3. Compor o isolamento certificado, a decomposição exponencial completa do resto e o limite normalizado dos menores. Usar os quatro lemas nomeados em `SESSION_STATE.md` para obter
+2. A junção foi compilada: `SigmaRHHeightBridge.lean` reutiliza a única definição de `CarrySigmaObstruction.sigmaLineZero` de C1. Também foram removidas duas provas strip-local duplicadas da bridge.
+3. O isolamento certificado, a decomposição exponencial completa do resto e o limite normalizado dos menores já foram compostos em
    `∃ P : ℕ, ∀ p ≥ P, sigmaPadeD (1/5) p < 0`.
 4. Manter o resto analítico e as definições originais `completedSigmaLogJet` e `sigmaPadeD`. Não fechar o resultado adicionando hipóteses de sinal.
-5. Compilar os módulos relevantes com a configuração do projeto, auditar os axiomas e registrar o resultado em uma entrega pequena de C2. Fazer push, abrir PR, aguardar os gates, integrar à `main` e atualizar `SESSION_STATE.md`.
+5. A compilação Lean 4.32 e as auditorias externa, de integração e transitiva passaram. Publicar agora o checkpoint C2 em uma PR pequena, aguardar os gates, integrar à `main` e atualizar o estado com o merge.
 
 ## C3 — transporte aos setores par e ímpar
 

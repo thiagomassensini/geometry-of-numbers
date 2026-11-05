@@ -34,7 +34,7 @@ CarrySigmaObstruction.certified_sigma_negative_direction_of_nonzero_small_shift
 
 ## C1B — persistência em dimensões maiores
 
-**Prova concluída e validada localmente; publicação pendente.** A branch `agent/sigma-c1b-persistent-negative-20261105` parte da `main` integrada com C1.
+**Integrado pela PR #155**, merge `0586e238441096ecd2248e3f14bdac3a832af427`.
 
 - `sigmaMatrix_prefix_submatrix` prova que a seção de tamanho `N` é exatamente a submatriz principal prefixo da seção de tamanho `M≥N`.
 - `Matrix.PosSemidef.submatrix` mostra que a semidefinição positiva da seção maior implicaria a da seção menor, contradizendo a direção negativa de C1.
@@ -42,9 +42,15 @@ CarrySigmaObstruction.certified_sigma_negative_direction_of_nonzero_small_shift
 - A prova usa `sigma_matrix_symm` para converter a falha de `PosSemidef` em um vetor real com forma quadrática estritamente negativa. Não afirma crescimento do índice negativo nem que todos os pivôs sejam negativos.
 - O build focado C1/C1B recompilou a cadeia Lean 4.32 e aceitou 109 relatórios de axiomas padrão. Ver `evidence/c1b-focused-build.log`, `evidence/c1b-source-sha256.txt` e `evidence/c1b-validation.md`.
 
+Não há publicação pendente de C1B. Sua persistência é a ferramenta de transporte reutilizada por C3.
+
 ## C2 — menores originais eventualmente negativos em `d = 1/5`
 
-**Aberto.** Compor a decomposição exata da sequência original `completedSigmaLogJet`, o controle do resto e o certificado de altura 50 para provar `∃ K, ∀ k ≥ K, sigmaPadeD (1/5) k < 0`. Não substituir os jets originais por `twoPoleMoment`.
+**Prova, compilação Lean 4.32 e auditoria de axiomas passaram; PR pendente.**
+`exists_eventually_negative_sigmaPadeD_from_height50_certificate` prova
+`∃ P, ∀ p ≥ P, sigmaPadeD (1/5) p < 0` pelos quatro lemas de composição documentados em
+`SESSION_STATE.md`. A decomposição do resto permanece na prova e os jets originais são mantidos.
+Evidências em `evidence/c2-eventual-negativity/`.
 
 ## C3 — setores par e ímpar
 
