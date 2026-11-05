@@ -1,6 +1,6 @@
 # Inventário de branches, worktrees e PRs
 
-Inventário consultado em 2026-11-05. SHAs abaixo são remotos quando marcados `origin/*`; árvores locais sujas são apenas registradas e permanecem intocadas.
+Inventário consultado em 2026-11-05. SHAs abaixo são remotos quando marcados `origin/*`; árvores locais sujas são apenas registradas e permanecem intocadas. A tabela retrata o inventário anterior aos merges C0–C2; os checkpoints integrados mais recentes estão registrados após ela.
 
 ## geometry-of-numbers
 
@@ -24,6 +24,8 @@ O checkpoint C0 da branch `agent/sigma-allorder-negative-certified-20261105` foi
 A worktree C1 foi criada sobre `main@2a3e899…`; a prova C1 está no commit `c2706339b15db390bf8f5f50535016bd1aca8cb8`, integrado pela PR #154 no merge `b7a8a0eda7230c02f80dc63b41ab4cc9f9cf1d1e`. A CI hospedada `42101466137` passou.
 
 C1B foi integrado pela PR #155 no merge `0586e238441096ecd2248e3f14bdac3a832af427`. O commit local de prova foi `8cc4a31`; não há publicação pendente desse checkpoint.
+
+C2 foi integrado pela PR #157, com commit de prova `bd1a6a04b8f98c33526059968c7fc079d48467f9` e merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`. A PR não retornou status checks hospedados; compilação Lean 4.32 e auditorias de axiomas locais estão registradas em `evidence/c2-eventual-negativity/`.
 
 ## carry-self-adjoint-operator
 

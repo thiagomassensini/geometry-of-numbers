@@ -54,7 +54,7 @@ Possíveis módulos reutilizáveis: `CameraCoherence.lean` e `HankelLimitObject.
 - Originais: `hₙ(d) = completedSigmaLogJet d n` e `Dₖ(d)=hₖhₖ₊₂−hₖ₊₁²`.
 - Referência inicial: integração Lean 4.32 em `b9ce1955c1e8830afad2323afe5266ed3f5f35d9`. A composição agora está em `SigmaPadeEventualNegativity.lean` e foi validada localmente.
 - Fonte de isolamento fora da `main`: `exists_firstSigmaDisplacedProductIsolation_from_height50_certificate` na branch `codex/native-sigma-height50-lean432-integrated`; origem externa `teal-sea/zeta-lab@b09fa4dd…`, portada integralmente para Lean 4.32.
-- Resultado concluído localmente: `∃ K, ∀ k≥K, Dₖ(1/5)<0`, com limite normalizado `−y²<0`, `a=1/(γ²+1/25)` e `y=Im((γ+i/5)⁻²/a)≠0`; a publicação está pendente.
+- Resultado integrado pela PR #157: `∃ K, ∀ k≥K, Dₖ(1/5)<0`, com limite normalizado `−y²<0`, `a=1/(γ²+1/25)` e `y=Im((γ+i/5)⁻²/a)≠0`; merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`.
 - O modelo `twoPoleMoment` serve só para o termo dominante; a conclusão deve permanecer nos jets originais.
 
 ## C3 — as duas torres
