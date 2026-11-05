@@ -854,7 +854,7 @@ first displaced height. Zeta zeros at ordinate zero are already excluded by
 `sigmaContinuation_zero_im_eq_zero_of_height50`. -/
 theorem sigmaDisplacedProductContinuation_zero_iff_root
     {γ : ℝ} (hRH : sigmaRHHeight50) (hcount : sigmaZeroCount50)
-    (hboxes : sigmaTenZeroBoxesWithFirst γ) (_hγpos : 0 < γ)
+    (hboxes : sigmaTenZeroBoxesWithFirst γ)
     {t : ℂ} (ht : ‖t‖ < Real.sqrt 300) :
     completedNativeDisplacedProductContinuation (1 / 5) t = 0 ↔
       sigmaDisplacedFirstPoleRoot
@@ -986,7 +986,7 @@ characteristics cannot vanish together: the finite-height RH certificate puts ea
 real height axis, while their imaginary parts differ by `2/5`. -/
 theorem sigmaDisplacedProduct_order_one_of_root
     {γ : ℝ} (hRH : sigmaRHHeight50) (hcount : sigmaZeroCount50)
-    (hboxes : sigmaTenZeroBoxesWithFirst γ) (hγpos : 0 < γ)
+    (hboxes : sigmaTenZeroBoxesWithFirst γ)
     {t : ℂ} (ht : ‖t‖ < Real.sqrt 300)
     (hroot : sigmaDisplacedFirstPoleRoot
       ((γ : ℂ) + Complex.I * ((1 / 5 : ℝ) : ℂ)) t) :
@@ -998,7 +998,7 @@ theorem sigmaDisplacedProduct_order_one_of_root
     completedNativeCharacteristicContinuation (z + Complex.I * (d : ℂ))
   have hd : 0 < d := by norm_num [d]
   have hprodZero : completedNativeDisplacedProductContinuation (1 / 5) t = 0 := by
-    exact (sigmaDisplacedProductContinuation_zero_iff_root hRH hcount hboxes hγpos ht).2 hroot
+    exact (sigmaDisplacedProductContinuation_zero_iff_root hRH hcount hboxes ht).2 hroot
   have hreMinus : (t - Complex.I * (d : ℂ)).re = t.re := by simp
   have hrePlus : (t + Complex.I * (d : ℂ)).re = t.re := by simp
   have hbound : |t.re| ≤ 50 := by
@@ -1119,9 +1119,9 @@ theorem exists_firstSigmaDisplacedProductIsolation_from_height50
     by norm_num, by norm_num, ?_, ?_, ?_⟩
   · simpa [τ] using hpair
   · intro z hz
-    exact sigmaDisplacedProductContinuation_zero_iff_root hRH hcount hboxes hγpos hz
+    exact sigmaDisplacedProductContinuation_zero_iff_root hRH hcount hboxes hz
   · intro z hz hroot
-    exact sigmaDisplacedProduct_order_one_of_root hRH hcount hboxes hγpos hz hroot
+    exact sigmaDisplacedProduct_order_one_of_root hRH hcount hboxes hz hroot
 
 /-- The existing Padé theorem's complete recovery package, including convergence to both complex
 heights and eventual roots of the original finite sigma pencil. -/
