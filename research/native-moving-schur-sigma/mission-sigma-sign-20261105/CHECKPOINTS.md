@@ -10,7 +10,7 @@
 
 ## C1 — direção negativa finita para todo deslocamento pequeno
 
-**Estado:** prova Lean concluída e auditada localmente; commit, push e PR desta branch são a próxima ação operacional.
+**Estado:** integrado pela PR #154; CI hospedado concluído com sucesso.
 
 Teorema concluído:
 
@@ -29,10 +29,18 @@ CarrySigmaObstruction.certified_sigma_negative_direction_of_nonzero_small_shift
 - Axiomas do corolário e do primeiro zero: somente `propext`, `Classical.choice`, `Quot.sound`. O checker aceitou 106 relatórios; nenhuma ocorrência de `sorryAx`, `sorry`, `admit`, `native_decide` ou axioma customizado foi encontrada nos fontes C1.
 - Auditoria recursiva de proveniência: 1.278 módulos-fonte não-Mathlib alcançáveis conferem com os pins registrados em `evidence/c1-source-pin-audit.txt`.
 - Proveniência completa: `evidence/c1-source-provenance.md`; hashes: `evidence/c1-source-sha256.txt`.
+- Commit da prova: `c2706339b15db390bf8f5f50535016bd1aca8cb8`; PR #154; merge commit `b7a8a0eda7230c02f80dc63b41ab4cc9f9cf1d1e`.
+- A execução hospedada `42101466137` passou pelo build padrão com warnings-as-errors e pelos alvos de auditoria formal.
 
 ## C1B — persistência em dimensões maiores
 
-**Aberto.** Provar a identidade de bloco prefixo principal entre `sigmaMatrix d 0 N` e `sigmaMatrix d 0 M`, estender a direção negativa com zeros e concluir não-positividade semidefinida para todo `M ≥ N`. A próxima branch deve partir da `main` depois da integração de C1.
+**Prova concluída e validada localmente; publicação pendente.** A branch `agent/sigma-c1b-persistent-negative-20261105` parte da `main` integrada com C1.
+
+- `sigmaMatrix_prefix_submatrix` prova que a seção de tamanho `N` é exatamente a submatriz principal prefixo da seção de tamanho `M≥N`.
+- `Matrix.PosSemidef.submatrix` mostra que a semidefinição positiva da seção maior implicaria a da seção menor, contradizendo a direção negativa de C1.
+- `certified_sigma_negative_directions_persist` conclui uma direção negativa em cada dimensão suficientemente grande; `certified_sigma_not_posSemidef_persist` registra diretamente a não semidefinição positiva eventual.
+- A prova usa `sigma_matrix_symm` para converter a falha de `PosSemidef` em um vetor real com forma quadrática estritamente negativa. Não afirma crescimento do índice negativo nem que todos os pivôs sejam negativos.
+- O build focado C1/C1B recompilou a cadeia Lean 4.32 e aceitou 109 relatórios de axiomas padrão. Ver `evidence/c1b-focused-build.log`, `evidence/c1b-source-sha256.txt` e `evidence/c1b-validation.md`.
 
 ## C2 — menores originais eventualmente negativos em `d = 1/5`
 

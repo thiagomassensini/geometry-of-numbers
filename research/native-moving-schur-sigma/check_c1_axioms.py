@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fail-closed axiom audit for the C1 proof and its source certificate."""
+"""Fail-closed axiom audit for the C1/C1B proofs and first-zero certificate."""
 
 import re
 import sys
@@ -10,6 +10,9 @@ required = {
     "CarrySigmaObstruction.completedNativeCharacteristicContinuation_eq_native",
     "CarrySigmaObstruction.completedNativeCharacteristicContinuation_zero_iff_zeta",
     "CarrySigmaObstruction.certified_sigma_negative_direction_of_nonzero_small_shift",
+    "CarrySigmaObstruction.sigmaMatrix_prefix_submatrix",
+    "CarrySigmaObstruction.certified_sigma_negative_directions_persist",
+    "CarrySigmaObstruction.certified_sigma_not_posSemidef_persist",
     "HardyFirstZero.first_zero_on_line",
 }
 allowed = {"propext", "Classical.choice", "Quot.sound"}

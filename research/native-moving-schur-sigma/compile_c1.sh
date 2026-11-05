@@ -182,12 +182,14 @@ compile "$first_zero" HardyFirstZero.BoxSupport HardyFirstZero/BoxSupport.lean -
 compile "$first_zero" HardyFirstZero.Boxes HardyFirstZero/Boxes.lean -DautoImplicit=false -DrelaxedAutoImplicit=false
 compile "$first_zero" HardyFirstZero.FirstZero HardyFirstZero/FirstZero.lean -DautoImplicit=false -DrelaxedAutoImplicit=false
 compile "$moving" SigmaCertifiedNegativeDirection SigmaCertifiedNegativeDirection.lean
+compile "$moving" SigmaPersistentNegativeDirection SigmaPersistentNegativeDirection.lean
 
 echo "== C1 source scan"
 if rg -n '\b(sorry|admit|native_decide|sorryAx)\b|^\s*axiom\s' \
   "$moving/SigmaZeroObstruction.lean" "$moving/MomentComplexification.lean" \
   "$moving/MomentLogConvexity.lean" "$moving/SigmaNativeContinuation.lean" \
   "$moving/SigmaNativeZeroBridge.lean" "$moving/SigmaCertifiedNegativeDirection.lean" \
+  "$moving/SigmaPersistentNegativeDirection.lean" \
   "$cert/lean/ZetaLean" "$cert/hunts/hardy_first_zero/lean/HardyFirstZero"; then
   exit 1
 else
@@ -196,4 +198,4 @@ else
 fi
 
 python3 "$task_dir/check_c1_axioms.py" "$output_dir/build.log"
-echo "C1 sources, certificates, and axiom report passed."
+echo "C1/C1B sources, certificate, and axiom reports passed."
