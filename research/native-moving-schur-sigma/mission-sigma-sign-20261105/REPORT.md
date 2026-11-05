@@ -1,30 +1,42 @@
 # Relatório consolidado — missão de negatividade transversal sigma
 
-**Estado inicial, 2026-11-05:** C0 foi publicado em `5ad667a06007ac3d56a5b208473e01dcabcb5c64`, PR #153 aberta; checkpoints matemáticos C1, C1B, C2, C3 e C4 ainda abertos nesta branch baseada em `main@21b3dace…`.
+**Atualizado em 2026-11-05.** C0 foi integrado pela PR #153. C1 está formalmente concluído e passou a compilação focada e a auditoria de axiomas; commit e PR da entrega C1 ainda estão pendentes nesta atualização.
 
-## Pergunta e escopo
+## Resultado matemático concluído
 
-Compor as provas Lean existentes para obter direções negativas de `sigmaMatrix` e persistência dimensional, além da negatividade eventual de menores Padé originais em `d=1/5`. Preservar a característica completada, os jets e a matriz originais. Não provar RH nem positividade canônica central.
+Foi compilado o teorema:
 
-## Estado recuperado
+```lean
+CarrySigmaObstruction.certified_sigma_negative_direction_of_nonzero_small_shift
+    (d : ℝ) (hd₀ : 0 < |d|) (hd₁ : |d| < (1 / 4 : ℝ)) :
+    ∃ N : ℕ, ∃ v : Fin N → ℝ, v ≠ 0 ∧
+      v ⬝ᵥ (sigmaMatrix d 0 N *ᵥ v) < 0
+```
 
-O módulo `SigmaZeroObstruction.lean` na branch `agent/native-moving-schur-sigma@9392ebac…` demonstra negatividade finita sob a hipótese de um zero nativo positivo; ele não descarrega essa hipótese. Os lemas de convergência Padé e o certificado de isolamento de altura 50 estão em branches separadas e ainda não foram integrados na `main`. Os resultados publicados de curvatura #139–#142 já estão na `main`, mas não provam os checkpoints desta missão.
+A prova reutiliza o certificado formal `HardyFirstZero.first_zero_on_line`, converte o zero da zeta em zero da continuação nativa pela equivalência no strip, volta à característica nativa original usando `completedNativeCharacteristicContinuation_eq_native` somente dentro do domínio demonstrado e aplica `exists_sigmaMatrix_negative_direction_of_zero`. A conclusão é sobre os jets e a matriz `sigmaMatrix` originais.
 
-## Resultado desta atualização
+O corolário final e o certificado de primeiro zero dependem apenas de `propext`, `Classical.choice` e `Quot.sound`. A auditoria automática aceitou 106 relatórios; a varredura dos fontes C1 não achou `sorry`, `admit`, `native_decide`, `sorryAx` nem axiomas novos.
 
-Foi criado um checkout limpo da `main` atual e gravado o inventário Git/dependências/PRs em `MERGE_INVENTORY.md` e `evidence/c0-inventory.md`. O commit C0 foi publicado e a PR #153 está aberta. O GitHub não retornou status checks nem workflows para o commit; CI não está sendo tratado como aprovado. O estado detalhado encontra-se em `SESSION_STATE.md`; a retomada concreta, em `NEXT_STEPS.md`.
+## Estado dos checkpoints
 
-## Status dos checkpoints
-
-| Checkpoint | Estado | Evidência atual |
+| Checkpoint | Estado | Resultado/evidência |
 |---|---|---|
-| C0 — recuperação/inventário | Documentado; publicação do checkpoint pendente | `MERGE_INVENTORY.md`, `evidence/c0-inventory.md` |
-| C1 — direção para todo `0<|d|<1/4` | Aberto; precisa descarregar o zero | `THEOREM_MAP.md` |
-| C1B — persistência em dimensões maiores | Aberto | `THEOREM_MAP.md` |
-| C2 — menores originais eventualmente negativos em `1/5` | Aberto; teoremas/isolamento existem em branches não integradas | `THEOREM_MAP.md` |
-| C3 — setores par e ímpar | Aberto | `THEOREM_MAP.md` |
-| C4 — série deslocada/Bézout | Não iniciado | `THEOREM_MAP.md` |
+| C0 — recuperação e inventário | Integrado | PR #153; merge commit `2a3e89987beeb05d29b2e71d8b8ed6851383ccaa` |
+| C1 — direção negativa finita para todo `0<|d|<1/4` | Prova concluída e validada localmente | Teorema acima; logs de build e axiom checker em `evidence/` |
+| C1B — persistência em dimensões maiores | Aberto | Falta bloco prefixo principal e prolongamento por zeros |
+| C2 — menores originais eventualmente negativos em `d=1/5` | Aberto | Requer composição Padé e isolamento certificado |
+| C3 — torres par e ímpar | Aberto | Depende de C2 e C1B |
+| C4 — fonte deslocada e Bézout | Não iniciado | Explorar por último, com o fator 2 explícito |
 
-## Validação
+## Compilação, auditoria e pins
 
-O Lean 4.32.0 está instalado e a memória disponível é aproximadamente 51.9 GiB. Nenhum build Lean foi executado nesta branch até aqui. As worktrees preexistentes e seus arquivos locais foram preservados; nenhuma fonte foi portada ou alterada ainda.
+- O build completo da raiz em Lean 4.32, iniciado no checkout sem cache, terminou em 8.857/8.857 jobs. `evidence/c1-root-build.log` guarda a execução capturada depois que o cache ficou aquecido (8.850 jobs).
+- O comando focado `SIGMA_OUTPUT_DIR=/tmp/sigma-c1-certified-20261105 research/native-moving-schur-sigma/compile_c1.sh` recompilou os fontes locais relevantes, os módulos sigma portados, a ponte mínima e os dez módulos Lean do certificado do primeiro zero. `evidence/c1-focused-build.log` contém a saída final.
+- O checker recursivo confirmou que 1.278 módulos-fonte não-Mathlib no fechamento importado correspondem aos commits/pins registrados. A lista e o resultado estão em `evidence/c1-source-pin-audit.txt`.
+- Os caches de `.olean` externos de Lean/Mathlib/Carry foram usados a partir de checkouts com versões explícitas; o build focado não é uma recompilação limpa de toda essa árvore externa. A prova C1 e seu fechamento local foram compilados fresh na pasta de saída temporária.
+- Fontes copiadas, licenças, pins e hashes estão descritos em `evidence/c1-source-provenance.md` e `evidence/c1-source-sha256.txt`.
+- C1 foi preparado em uma branch nova sobre a `main` que já contém C0. A PR C1 e o status hospedado ainda precisam ser verificados após publicação.
+
+## Limites e próxima lacuna
+
+C1 prova que para cada deslocamento admissível existe alguma dimensão finita com uma direção negativa. Ainda não prova que a mesma negatividade persiste em toda dimensão maior; isso é C1B. Tampouco afirma negatividade de todos os pivôs, crescimento do índice negativo, positividade central all-order ou RH. C2 ainda precisa demonstrar negatividade eventual dos menores dos jets originais, e C3 precisa transportá-la às duas torres.

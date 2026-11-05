@@ -1,0 +1,10 @@
+Geometry base pin: 2a3e89987beeb05d29b2e71d8b8ed6851383ccaa
+Carry main source pin: 045369f6dedcb2e75e9aefed1d12c9f73b9a2532
+CarrySelfAdjointOperator: 891 transitive source modules match their pin
+CPFormal: 167 transitive source modules match their pin
+NativeCarrySpectralWeyl: 41 transitive source modules match their pin
+GreenFrame: 41 transitive source modules match their pin
+GeometryOfNumbers: 110 transitive source modules match their pin
+NativeCarryC3Crosswalk: 26 transitive source modules match their pin
+FiniteNativeCarryOperator: 2 transitive source modules match their pin
+Passed: 1278 reachable non-Mathlib source modules match pinned revisions.

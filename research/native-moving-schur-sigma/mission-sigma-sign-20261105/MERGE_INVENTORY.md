@@ -4,7 +4,7 @@ Inventário consultado em 2026-11-05. SHAs abaixo são remotos quando marcados `
 
 ## geometry-of-numbers
 
-- `origin/main`: `21b3dacefbfcbd6c5d648bc2bada32c67d46145c`; Lean 4.32.0; Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`.
+- `origin/main` after C0: `2a3e89987beeb05d29b2e71d8b8ed6851383ccaa`; Lean 4.32.0; Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`.
 
 | Branch/PR | SHA remoto | Base / merge-base com `main` | Exclusivos da branch / main | Estado e resultado ainda fora de `main` |
 |---|---|---|---:|---|
@@ -19,7 +19,9 @@ Inventário consultado em 2026-11-05. SHAs abaixo são remotos quando marcados `
 
 As PRs #139, #140, #141 e #142 constam fechadas/mescladas, e seus SHAs de merge foram confirmados ancestrais de `origin/main`. PR #146 também está mesclada; o estado de sua ponta antiga não torna os 8 commits posteriores da branch atual parte da `main`.
 
-Branch desta missão: `agent/sigma-allorder-negative-certified-20261105`, criada diretamente de `main@21b3dace…`; PR #153 aberta com o checkpoint C0 (apenas documentação).
+O checkpoint C0 da branch `agent/sigma-allorder-negative-certified-20261105` foi integrado pela PR #153; o merge commit é `2a3e89987beeb05d29b2e71d8b8ed6851383ccaa`. A branch antiga permanece preservada.
+
+A worktree C1 atual usa a branch `agent/sigma-c1-certified-20261105`, criada diretamente de `main@2a3e899…`. A prova foi validada localmente; commit, push e PR C1 ainda estão pendentes. A integração C1B deve começar de uma nova branch sobre a `main` após a integração C1.
 
 ## carry-self-adjoint-operator
 
