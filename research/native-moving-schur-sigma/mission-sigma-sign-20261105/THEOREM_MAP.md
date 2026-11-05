@@ -6,20 +6,28 @@
 
 ## Rota A — zero positivo certificado para direção negativa finita
 
-### Já provado em branch publicada, ainda não na `main`
+### Implicação condicional reutilizada
 
 - `CarrySigmaObstruction.exists_sigmaMatrix_negative_direction_of_zero`
 - Fonte: `research/native-moving-schur-sigma/SigmaZeroObstruction.lean`, commit `671bd23b5ec3a486668f74ebbf756ad1dce269f6` e descendentes de `origin/agent/native-moving-schur-sigma`.
 - Entrada: `d, γ`, `γ>0`, `0<|d|<1/4`, e `completedNativeOperatorCharacteristic (γ : ℂ)=0`.
 - Saída: `∃ N v`, `v≠0` e `v ⬝ᵥ (sigmaMatrix d 0 N *ᵥ v)<0`.
-- Evidência histórica: `evidence/SigmaZeroObstruction.log` na worktree antiga; `#print axioms` aceitou apenas axiomas padrão. Esta missão ainda não reproduziu o build.
-- Imports diretos incluem `SigmaNeighborhood`, `SigmaQuadratic`, módulos do operador Carry, CPFormal e `MomentLogConvexity`; a cadeia e seus pins precisam ser auditados antes de portar.
+- Fonte portada por byte da branch `agent/native-moving-schur-sigma` em `9392ebac9930f5d11c56f595556080e8ab1de809`; compilada de novo no build focado Lean 4.32 desta missão.
+- `#print axioms` confirma somente `propext`, `Classical.choice`, `Quot.sound` para a implicação e para os resultados-base auditados.
 
-### Ponte que C1 precisa compor
+### C1 — concluído e compilado nesta worktree
 
-Verificar as tipagens existentes de `completedNativeCharacteristicContinuation_eq_native`, `completedNativeCharacteristicContinuation_zero_iff_zeta`, `operatorHeightParameter`, `sigmaLineZero` e `HardyFirstZero.first_zero_on_line`. A testemunha de zeta deve virar zero da característica nativa dentro do strip onde a identificação vale. Não usar identidade do prolongamento inteiro fora do domínio do escalar nativo.
+Arquivos adicionados: `SigmaNativeZeroBridge.lean` e `SigmaCertifiedNegativeDirection.lean`. A ponte usa as declarações e seus tipos exatos:
 
-Teorema pretendido (nome provisório):
+- `HardyFirstZero.first_zero_on_line` fornece `γ > 0` e `riemannZeta (sigmaLineZero γ)=0`.
+- `operatorHeightParameter (γ : ℂ) = sigmaLineZero γ` identifica a coordenada.
+- `completedNativeCharacteristicContinuation_zero_iff_zeta` transfere o zero da zeta dentro de `genuineCriticalStrip`.
+- `completedNativeCharacteristicContinuation_eq_native` retorna à característica nativa original, também só dentro do strip.
+- `exists_sigmaMatrix_negative_direction_of_zero` conclui a direção quadrática negativa da matriz original.
+
+O teorema final está compilado e auditado com somente os axiomas padrão. O certificado Lean do primeiro zero foi copiado em fonte para `height50-certified/`; os dez módulos da cadeia mínima foram compilados de novo em Lean 4.32. Veja logs e pins em `evidence/c1-*`.
+
+Teorema C1 concluído:
 
 ```lean
 theorem certified_sigma_negative_direction_of_nonzero_small_shift

@@ -1,50 +1,61 @@
 # Estado da missão — negatividade transversal all-order
 
 **Atualizado:** 2026-11-05
-**Objetivo ativo:** recuperar os certificados e fechar C1, C1B, C2 e C3 por composição; investigar C4 somente depois. Publicar cada checkpoint em PRs revisáveis, integrando em `main` quando os gates passarem. Não demonstrar RH nem positividade canônica central.
+
+**Objetivo ativo:** publicar e integrar C1; depois provar C1B, C2 e C3 em checkpoints separados. Investigar C4 somente depois. Não demonstrar RH nem positividade canônica central.
 
 ## Checkout e base
 
 - Repositório: `thiagomassensini/geometry-of-numbers`.
-- Worktree ativa desta missão: `/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105`.
-- Branch: `agent/sigma-allorder-negative-certified-20261105`.
-- HEAD local no início do C0: `21b3dacefbfcbd6c5d648bc2bada32c67d46145c`.
-- HEAD remoto da `main` usado como base: `21b3dacefbfcbd6c5d648bc2bada32c67d46145c`.
-- HEAD local/remoto da branch após C0: `5ad667a06007ac3d56a5b208473e01dcabcb5c64`.
-- Worktree nova verificada limpa antes da criação dos arquivos C0.
+- Worktree ativa: `/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105`.
+- Branch atual: `agent/sigma-c1-certified-20261105`.
+- HEAD local atual: `2a3e89987beeb05d29b2e71d8b8ed6851383ccaa` (base antes do commit C1).
+- `origin/main`: `2a3e89987beeb05d29b2e71d8b8ed6851383ccaa`.
+- C0 foi integrado pela PR #153; merge commit da `main`: `2a3e89987beeb05d29b2e71d8b8ed6851383ccaa`.
+- PR #153: https://github.com/thiagomassensini/geometry-of-numbers/pull/153 — `MERGED` em 2026-11-05. A branch antiga de C0 foi preservada.
+- O checkpoint C1 está validado localmente, mas ainda não foi commitado, publicado ou aberto em PR.
 
 ## Dependências e ambiente
 
-- Lean fixado pelo repositório: `leanprover/lean4:v4.32.0` (instalado e confirmado).
+- Lean: `leanprover/lean4:v4.32.0`.
 - Mathlib: `81a5d257c8e410db227a6665ed08f64fea08e997`.
+- Geometry base e fontes usadas pelo build completo: `2a3e89987beeb05d29b2e71d8b8ed6851383ccaa`.
 - GreenFrame: `cd2d838bee67ad23f869a02f8ed9f0a0feb926fa`.
-- `carry-self-adjoint-operator` `origin/main`: `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`.
-- `primos` `origin/main`: `e2a723b4ec3e645539de0b9ca881951d93259cda`.
-- `momentos` `origin/main`: `05c9314d59306383baa55ed3be80ab950e799e97` (material quantitativo, não prova formal).
-- O manifesto da `main` de `carry-self-adjoint-operator` fixa geometry em `d7cc54f5c485320f1fada33118e9e6101488819a` e CPFormal/primos em `65d50f6db1208708e109982ba97e1d51d3039956`, diferentes das `main`s atuais; qualquer import dessa cadeia precisa preservar ou reconciliar esses pins explicitamente.
-- Fonte externa do certificado de altura 50: `teal-sea/zeta-lab` em `b09fa4dd2f2182cf14b248e7ffc64ff03df2c534`, portada em fonte para Lean 4.32. Não reutilizar `.olean` de Lean 4.35.
-- Memória após reinício: `MemAvailable = 54,386,116 kB` (aprox. 51.9 GiB); o limite de 30 GiB é satisfeito.
-- O `lean` padrão do shell é 4.35.0. Usar o `elan`/Lake da worktree, fixado em 4.32.0, para toda compilação desta missão.
+- Carry fonte pin: `carry-self-adjoint-operator@045369f6dedcb2e75e9aefed1d12c9f73b9a2532`; o checkout de build em `/home/thlinux/carry-self-adjoint-operator` está em `8f15ec76e5a95eb0c61da3a114729363a1d6a477` e contém trabalho local não relacionado, preservado sem alterações.
+- Pins exigidos pelo manifesto Carry: CPFormal `65d50f6db1208708e109982ba97e1d51d3039956`, NativeCarrySpectralWeyl `298d83c9351e308a5213b9f5ac32e44087f98a9f`, NativeCarryC3Crosswalk `150cfc7fb08da96bf8117f15869cc2b819d593c2`, FiniteNativeCarryOperator `00e9d6beb17226545abf5ddf90bbfede6c7146b0`, e Geometry `d7cc54f5c485320f1fada33118e9e6101488819a` no manifesto Carry. As interfaces Geometry necessárias a C1 são fornecidas e compiladas da base desta worktree, os dois pins estão registrados separadamente.
+- O certificado de primeiro zero foi copiado como fonte de `teal-sea/zeta-lab@b09fa4dd2f2182cf14b248e7ffc64ff03df2c534`; avisos de licença e patch de compatibilidade Lean 4.32 foram preservados.
+- `check_c1_pins.py` comparou 1.278 módulos-fonte não-Mathlib alcançáveis com os respectivos pins; resultado em `evidence/c1-source-pin-audit.txt`.
+- Memória disponível durante as compilações: aproximadamente 49–54 GB, acima do limite de 30 GiB.
 
-## Checkpoint e resultados
+## Checkpoints e teoremas
 
-- Último checkpoint concluído: C0 — recuperação e inventário local/remoto, commit `5ad667a06007ac3d56a5b208473e01dcabcb5c64` publicado.
-- Teorema existente e compilado em branch de pesquisa, mas ainda ausente da `main`: `CarrySigmaObstruction.exists_sigmaMatrix_negative_direction_of_zero` em `research/native-moving-schur-sigma/SigmaZeroObstruction.lean`.
-- Esse teorema continua **condicional** a `hzero : completedNativeOperatorCharacteristic (γ : ℂ) = 0`; a branch registra as pontes e as hipóteses. Não é ainda C1.
-- Resultados Padé condicionais e decomposição de resto estão em `origin/agent/native-sigma-pade-signed-pencil` e `origin/agent/native-sigma-isolated-pole-radius`; isolamento integrado de altura 50 está em `origin/codex/native-sigma-height50-lean432-integrated`.
-- Nenhum novo teorema Lean foi copiado ou compilado nesta worktree.
-- C1, C1B, C2, C3 e C4: obrigações abertas, detalhadas em `THEOREM_MAP.md`.
+- **C0 — concluído e integrado:** inventário e estado persistido, PR #153, merge commit `2a3e899…`.
+- **C1 — concluído localmente; publicação pendente:**
+  - `CarrySigmaObstruction.certified_sigma_negative_direction_of_nonzero_small_shift`.
+  - Reutiliza `HardyFirstZero.first_zero_on_line`, `operatorHeightParameter`, `sigmaLineZero`, `completedNativeCharacteristicContinuation_zero_iff_zeta`, `completedNativeCharacteristicContinuation_eq_native` no strip e `exists_sigmaMatrix_negative_direction_of_zero`.
+  - Conclusão sobre a `sigmaMatrix` original para todo `0 < |d| < 1/4`; o teorema não afirma persistência para toda dimensão maior.
+  - Axiomas impressos do corolário final e do certificado: somente `propext`, `Classical.choice`, `Quot.sound`. Auditoria automática: 106 relatórios aceitos; nenhum `sorryAx`, `sorry`, `admit`, `native_decide` ou axioma customizado nos fontes C1.
+  - Build completo da raiz passou. Evidências: `evidence/c1-root-build.log`, `evidence/c1-focused-build.log`, `evidence/c1-source-pin-audit.txt` e `evidence/c1-source-sha256.txt`.
+- **C1B — aberto:** prolongar por zeros a direção e provar não-positividade semidefinida em todas as dimensões maiores.
+- **C2 — aberto:** provar negatividade eventual dos menores originais em `d=1/5` via decomposição Padé e isolamento certificado.
+- **C3 — aberto:** transportar a negatividade eventual às torres par e ímpar.
+- **C4 — não iniciado:** fonte deslocada, fator 2 e Bézout; depende da conclusão dos anteriores.
 
-## Alterações e publicação
+## Arquivos do checkpoint C1
 
-- Arquivos desta missão: somente os registros C0 nesta pasta, mais evidências sob `evidence/`.
-- Alterações anteriores preservadas sem edição: worktree `agent/native-moving-schur-sigma` com caches/logs não rastreados; worktrees de altura 50 e Padé com caches; worktrees de geometry, carry e primos com arquivos locais listados em `MERGE_INVENTORY.md`.
-- Estado de compilação/auditoria nesta branch: ainda não executado; C0 é documentação Git.
-- Último commit publicado desta missão: `5ad667a06007ac3d56a5b208473e01dcabcb5c64` (`docs(sigma): record all-order sign mission inventory`).
-- PR desta missão: #153, aberta contra `main`, head confirmado em `5ad667a06007ac3d56a5b208473e01dcabcb5c64`.
-- CI da PR #153: o GitHub não retornou status nem workflow para o commit. CI não foi declarado aprovado; a PR permanece aberta.
-- Último erro de compilação: nenhum nesta branch. Comando de reprodução ainda não aplicável.
+- Novos módulos: `SigmaNativeZeroBridge.lean`, `SigmaCertifiedNegativeDirection.lean`.
+- Fontes copiadas por proveniência: `SigmaZeroObstruction.lean`, `MomentComplexification.lean`, `MomentLogConvexity.lean`, `SigmaNativeContinuation.lean` e o fechamento Lean do certificado de primeiro zero em `height50-certified/`.
+- Scripts: `compile_c1.sh`, `check_c1_axioms.py`, `check_c1_pins.py`.
+- Documentação e evidências: arquivos desta pasta `mission-sigma-sign-20261105/`.
+- Nenhum `.olean` foi copiado ou adicionado ao Git.
+
+## Compilação e auditoria
+
+- Build raiz completo, iniciado em cache ausente no checkout novo: `elan run leanprover/lean4:v4.32.0 lake build --wfail`; concluiu 8.857/8.857 jobs com sucesso. Uma execução subsequente capturada após o cache aquecido também passou (`lake build --wfail`, 8.850 jobs).
+- Compilação focada: `SIGMA_OUTPUT_DIR=/tmp/sigma-c1-certified-20261105 research/native-moving-schur-sigma/compile_c1.sh`.
+- A compilação focada recompila para saída temporária os fontes locais relevantes, os fontes portados e o fechamento mínimo do certificado. Os imports externos Lean/Mathlib/Carry são lidos de caches `.lake` com toolchain e versões explícitas; portanto este comando é um build focado com proveniência auditada, não uma recompilação limpa de todas as dependências externas.
+- Último erro de compilação: nenhum na execução final. Erros anteriores de caminho de fonte e escopos Lean foram corrigidos antes do log final.
 
 ## Próxima ação concreta
 
-Ler `docs/FORMALIZATION_PLAN.md` e `docs/SOURCE_PROVENANCE.md` antes de portar qualquer módulo. Para C1, primeiro reduzir a cadeia importada ao mínimo e confirmar a ponte exata entre `HardyFirstZero.first_zero_on_line` e a característica completada na altura real; não copiar dependências ou `.olean` sem auditar fonte e pins.
+Executar `git diff --check`, revisar os arquivos adicionados, commitá-los apenas nesta worktree, publicar `agent/sigma-c1-certified-20261105`, abrir PR para `main` e conferir status/CI. Fazer merge somente se os gates da missão estiverem satisfeitos; depois criar a próxima base C1B a partir da `main` integrada. As demais worktrees e alterações locais previamente inventariadas permanecem preservadas.
