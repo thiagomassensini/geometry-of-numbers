@@ -1,0 +1,10 @@
+import SigmaRationalInterpolation
+
+namespace CarrySigmaObstruction
+
+#print axioms c5InterpolationNode_injOn
+#print axioms c5InterpolationPolynomial_coeff
+#print axioms c5_interpolate_polynomial
+#print axioms c5InterpolationPolynomial_coeff_of_degree_lt
+
+end CarrySigmaObstruction

@@ -62,14 +62,18 @@ de `sigmaC00495SourceBoxes` nem de `sigmaC01SourceBoxes` nesta etapa.
 **Ponte Gamma de interpolação, integrada pela PR #175:**
 `gamma_finite_3072_620_error` melhora o erro absoluto para `10⁻²⁵⁹` e tem build
 Lean 4.32/auditoria de doze raízes. Merge `992ab31c3aacdf3b95b3c02fe58f5f3d529c0cec`.
-Uma exploração exata racional sugere evitar
-a quadratura trigonométrica: interpolar a densidade par em 129 pontos racionais
-`t_j=j/100000`. Para graus até 14, a soma absoluta dos pesos calculada é menor
-que `10^124`; o resto de Taylor seria menor que `10⁻⁴¹⁰` se a densidade tivesse
-módulo `≤10^100` no disco de raio `2/5`. Essa cota do módulo, os pesos no Lean e
-a avaliação rigorosa da fonte nos pontos continuam pendentes. A análise está
-em `analyze_rational_interpolation.py` e
-`evidence/rational-boxes/rational-interpolation-analysis.log`.
+Uma exploração exata racional sugere evitar a quadratura trigonométrica:
+interpolar a densidade par em 129 pontos racionais `t_j=j/100000`. O novo módulo
+`SigmaRationalInterpolation.lean` prova que nós distintos recuperam exatamente
+qualquer polinômio racional de grau menor que 129 e formaliza a identidade dos
+coeficientes com as somas ponderadas de Lagrange. Isso é somente o passo
+algébrico: os limites de peso calculados em Python (menores que `10^124` para
+graus até 14) ainda não foram provados no Lean. Também seguem pendentes a cota
+analítica `|completedSigmaDensity d t|≤10^100` no disco de raio `2/5` e a
+avaliação rigorosa da fonte nos pontos. A análise exploratória está em
+`analyze_rational_interpolation.py` e
+`evidence/rational-boxes/rational-interpolation-analysis.log`; build e auditoria
+da identidade algébrica estão em `evidence/rational-boxes/VALIDATION.md`.
 
 ## O5 — composição, build, axiomas e publicação — PARCIAL
 

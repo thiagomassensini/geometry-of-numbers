@@ -48,3 +48,13 @@ f1414eb90035c5cef26089039505fcd59f0eb7575b50bb811e2a034964f4fa8f  research/nativ
 6f965fb38a2dee57123da73bf789ddbf119cce08cbba59771a02c7c79d6ba37f  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/gamma-euler-audit.lean
 36dd8c96a68d0ecc0b34b805b4842800b5c297e134b2f0120c83025621551943  .lake/build/research/native-moving-schur-sigma/c5-gamma-euler-3072-clean/SigmaGammaEulerIntegral.olean
 76e19d3abf6f3abcb2627d12042e9df37d9b460be08e80c2ea47753a18e960c1  .lake/build/research/native-moving-schur-sigma/c5-gamma-euler-3072-clean/gamma-euler-audit.olean
+
+C5 exact algebraic interpolation (Lean 4.32; geometry base `ac84c9302ae608e39c742f856ad361921653f268`):
+6fc6eb8f95292e3b407687ce67412ff276a2437c50e62b7dcce6af049179ff66  research/native-moving-schur-sigma/SigmaRationalInterpolation.lean
+2cf729eceefd06adb9783a42449557bc00d19fb348585faf236684beba7306cc  research/native-moving-schur-sigma/check_c5_interpolation_axioms.py
+71023e7a5ecd318330d668586904ca8e7b73cd5ff432610e4846b1a092418194  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/interpolation-audit.lean
+4a9f92be43a097a3e2f14bd2c467ec95200ddaea6ebb224419f0ae0913367c8b  .lake/build/research/native-moving-schur-sigma/c5-interpolation-clean-20261106b/SigmaRationalInterpolation.olean
+ebb4f928e6d81ae574b753d38fb674af7f59e1d30a5f2f724520319763659c0c  .lake/build/research/native-moving-schur-sigma/c5-interpolation-clean-20261106b/interpolation-audit.olean
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-interpolation-build.log
+c9dc01c9dce391e6b729ea54fcf09045a534c5f125dad7e7d314f4e8705e4786  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/interpolation-audit.log
+eb996b3736fb4366cdb402d8a81592cd657132ec97801967ee0e782bc7a472f9  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/interpolation-audit-check.log

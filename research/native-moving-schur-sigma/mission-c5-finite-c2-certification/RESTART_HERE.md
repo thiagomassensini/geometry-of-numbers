@@ -1,28 +1,42 @@
 # Retomar primeiro — C5
 
 **MISSÃO:** C5 — certificação finita da primeira janela negativa C2 original
-**CURRENT PHASE:** O3 integrada; O4 em investigação (inclusão da fonte original nas caixas)
-**CURRENT SUBTASK:** Certificar os 129 valores racionais de `completedSigmaDensity` e formalizar a interpolação que recupera `c₀..c₁₄`; depois compor a rota à fonte C2 original
-**LAST VERIFIED THEOREMS:** `sigmaPadeD_signs_at_99_2000_of_source_boxes` e `sigmaPadeD_signs_at_1_10_of_source_boxes`
-**LAST COMPILED FILE:** `SigmaGammaEulerIntegral.lean` e `gamma-euler-audit.lean` (Lean 4.32; erro uniforme `10⁻²⁵⁹`; doze raízes auditadas)
-**LAST SUCCESSFUL MERGE:** PR #175, ponte Euler-Gamma para interpolação, merge `992ab31c3aacdf3b95b3c02fe58f5f3d529c0cec`
-**LAST REMOTE SHA:** `origin/main=992ab31c3aacdf3b95b3c02fe58f5f3d529c0cec`; Momentos `origin/research/sigma-pade-dimension-depth-20261104=68c9b5f0a196289e28a8e5586146707d27df6b75`
-**CURRENT BRANCH:** `codex/c5-finite-c2-certification-20261106`
-**MAIN SHA:** `992ab31c3aacdf3b95b3c02fe58f5f3d529c0cec`
-**C5 PRs:** #165–#175 estão integradas; a PR #2 de Momentos permanece aberta e não foi integrada
-**WHAT IS PROVED:** Recorrência polinomial sem divisão, identidade exata com `sigmaPadeD` original, transporte racional por caixas e sinais dos menores estão compilados em Lean. O3 prova os dois padrões de sinais condicionalmente à inclusão dos coeficientes nas caixas. PR #171 integrou a ponte Euler-Gamma a erro `10⁻³²`; PR #173 melhora o erro para `10⁻⁹⁹`; PR #175 reduz o erro a `10⁻²⁵⁹`.
-**WHAT IS CONDITIONAL:** `sigmaPadeD_signs_at_99_2000_of_source_boxes` e `sigmaPadeD_signs_at_1_10_of_source_boxes` exigem hipóteses explícitas de inclusão. A prova de que a fonte satisfaz essas hipóteses segue aberta.
-**WHAT IS OPEN:** O4 ainda não prova as inclusões das caixas da fonte. A ponte Euler está a erro `10⁻²⁵⁹`, mas `gammaFinite 3072 620` ainda não foi avaliada em caixas racionais nos valores necessários.
-**NEXT ACTION:** Formalizar a interpolação racional em `t_j=j/100000`, `0≤j≤128`, para recuperar os coeficientes pares `c₀..c₁₄` da fonte C2; em paralelo, certificar o avaliador da fonte nos pontos racionais.
-**EXACT NEXT MATHEMATICAL OBLIGATION:** Provar formalmente que a interpolação de 129 pontos recupera os coeficientes até o erro requerido, usando uma cota analítica uniforme na circunferência de raio `2/5`; depois certificar `completedSigmaDensity` em cada ponto racional sem trocar a fonte original.
-**EXACT NEXT COMMAND:** Reproduzir `analyze_rational_interpolation.py`; em seguida definir em Lean os pesos racionais de Lagrange e provar os limites exatos indicados em `evidence/rational-boxes/rational-interpolation-analysis.log`.
-**DO NOT REPEAT:**
-- Não refazer C2 eventual, C3, nem a recorrência analítica C4.
-- Não redefinir `completedSigmaLogJet`, `sigmaPadeD` ou `completedSigmaDisplacedSourceCoefficient`.
-- Não tratar caixas JSON nem saída de `mpmath.iv` como prova de inclusão.
-- Não repetir as três gerações intervalares já reproduzidas salvo mudança no código, backend ou limites; os logs estão em `evidence/interval-certificate/`.
-- Não usar aproximações de dois/três polos como substituto da fonte C2 completa.
-- Não mesclar a PR #2 inteira sem auditar seu escopo.
-- Não tocar nos logs/caches não rastreados das demais worktrees.
 
-Detalhes de retomada, pins e estado atual: `SESSION_STATE.md`, `THEOREM_MAP.md`, `OPEN_OBLIGATIONS.md`, `CHECKPOINTS.md` e `evidence/rational-boxes/VALIDATION.md` neste diretório.
+**FASE ATUAL:** O3 integrada; O4 em andamento, origem das caixas ainda aberta
+
+**SUBTAREFA ATUAL:** formalizar limites dos pesos de Lagrange nos 129 nós racionais; depois certificar a cota analítica da fonte e os valores racionais necessários
+
+**ÚLTIMA PROVA PUBLICADA:** PR #175, `gamma_finite_3072_620_error`, merge `992ab31c3aacdf3b95b3c02fe58f5f3d529c0cec`
+
+**ÚLTIMO REGISTRO DE ESTADO:** PR #176, merge `ac84c9302ae608e39c742f856ad361921653f268`
+
+**MAIN / `origin/main`:** `ac84c9302ae608e39c742f856ad361921653f268`
+
+**BRANCH C5:** `codex/c5-finite-c2-certification-20261106`, remota em `de8f307715f30724b550e1f0223b6c57d892487f` antes deste checkpoint
+
+**C5 PRs:** #165–#176 estão integradas; a PR #2 de Momentos permanece aberta e não foi integrada.
+
+## Estado matemático
+
+**PROVADO:** a recorrência polinomial sem divisão, a identidade exata com `sigmaPadeD` original, os sinais condicionais de O3 e a aproximação Euler-Gamma com erro `10⁻²⁵⁹` estão compilados em Lean 4.32. A identidade de Lagrange em 129 nós também está provada: todo polinômio racional de grau menor que 129 é recuperado exatamente por suas avaliações nos nós `j²`, e seus coeficientes são a soma ponderada pelos coeficientes das bases de Lagrange.
+
+**CONDICIONAL:** os padrões de sinais finais em `d=99/2000` e `d=1/10` ainda dependem de `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
+
+**ABERTO:** não estão provados no Lean os limites numéricos das somas absolutas dos pesos escalados, a cota analítica `|completedSigmaDensity d t| ≤ 10^100` no disco de raio `2/5`, nem a avaliação rigorosa da fonte nos 129 pontos. Portanto, O4 segue aberta e nenhum teorema incondicional de janela C5 foi declarado.
+
+## Próximas ações
+
+1. Provar limites racionais exatos para `c5InterpolationWeightSum n` nos graus `n≤14`, conferindo os limites exploratórios em `evidence/rational-boxes/rational-interpolation-analysis.log`.
+2. Provar uma cota uniforme da extensão analítica da densidade no disco de raio `2/5`.
+3. Certificar as avaliações racionais da fonte mantendo a cabeça C2, a cauda exponencial exata e a completação original; compor então com Hurwitz/Cauchy e as caixas O3.
+
+Build Lean 4.32 e auditoria de axiomas da identidade algébrica estão em `evidence/rational-boxes/c5-interpolation-build.log`, `interpolation-audit.log` e `interpolation-audit-check.log`. O módulo novo é `research/native-moving-schur-sigma/SigmaRationalInterpolation.lean`; os comandos reproduzíveis estão em `evidence/rational-boxes/VALIDATION.md`.
+
+## Não repetir
+
+- Não refazer C0, C1, C1B, C2 eventual, C3 ou C4.
+- Não redefinir `completedSigmaLogJet`, `sigmaPadeD` ou `completedSigmaDisplacedSourceCoefficient`.
+- Não tratar JSONs nem saída de `mpmath.iv` como prova de inclusão.
+- Não substituir a fonte C2 completa por aproximações de dois ou três polos.
+- Não mesclar a PR #2 de Momentos inteira sem auditar seu escopo.
+- Não tocar nos logs e caches não rastreados das outras worktrees.

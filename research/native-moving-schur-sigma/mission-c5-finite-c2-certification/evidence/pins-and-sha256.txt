@@ -75,3 +75,11 @@ Reproduced C5 outputs
 - C5 post-merge status PR: #174; merge commit `47a28db231dfbae24cbf1238084a60cf1b8206fb`.
 - C5 rational-interpolation Gamma PR: #175; merge commit `992ab31c3aacdf3b95b3c02fe58f5f3d529c0cec`.
 - geometry `origin/main` after the rational-interpolation Gamma proof: `992ab31c3aacdf3b95b3c02fe58f5f3d529c0cec`.
+
+## C5 exact algebraic interpolation checkpoint
+
+- Geometry `origin/main` base: PR #176 merge `ac84c9302ae608e39c742f856ad361921653f268`.
+- C5 branch before this checkpoint: `codex/c5-finite-c2-certification-20261106`, remote feature tip `de8f307715f30724b550e1f0223b6c57d892487f`.
+- Lean: `leanprover/lean4:v4.32.0`; Mathlib: `81a5d257c8e410db227a6665ed08f64fea08e997`; Carry: `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`.
+- Source and clean `.olean` hashes for `SigmaRationalInterpolation.lean`, its audit, and the fail-closed checker are recorded in `evidence/rational-boxes/source-and-olean-sha256.txt`.
+- The module proves only exact polynomial interpolation and the coefficient identity. Numerical weight bounds, the complex source bound, and C2 source-box inclusion remain open.
