@@ -4,12 +4,12 @@
 **CURRENT PHASE:** O3 integrada; O4 em investigação (inclusão da fonte original nas caixas)
 **CURRENT SUBTASK:** Obter uma caixa racional quantitativa de `Complex.Gamma` na região Cauchy, comparando Stirling com a identidade de Weierstrass já provada; em seguida compor Hurwitz, o limite Cauchy e a ponte C2 original
 **LAST VERIFIED THEOREMS:** `sigmaPadeD_signs_at_99_2000_of_source_boxes` e `sigmaPadeD_signs_at_1_10_of_source_boxes`
-**LAST COMPILED FILE:** `research/native-moving-schur-sigma/SigmaFiniteRationalIntervalAudit.lean` (Lean 4.32; seis módulos em build limpo; 13 raízes auditadas)
-**LAST SUCCESSFUL MERGE:** PR #168, estado O3 registrado, merge `1bc7318915c3e625ad228c89ff8c300cb07e52c5`
-**LAST REMOTE SHA:** `origin/main=1bc7318915c3e625ad228c89ff8c300cb07e52c5`; Momentos `origin/research/sigma-pade-dimension-depth-20261104=68c9b5f0a196289e28a8e5586146707d27df6b75`
+**LAST COMPILED FILE:** `research/native-moving-schur-sigma/height50-certified/lean/ZetaLean/IntervalCExp.lean`, seguido de `reused-interval-audit.lean` (Lean 4.32; recompilação limpa e quatro raízes auditadas)
+**LAST SUCCESSFUL MERGE:** PR #169, checkpoint O4 incompleto, merge `75782fb8b7fb00bd273bd99f78c337f98439e934`
+**LAST REMOTE SHA:** `origin/main=75782fb8b7fb00bd273bd99f78c337f98439e934`; Momentos `origin/research/sigma-pade-dimension-depth-20261104=68c9b5f0a196289e28a8e5586146707d27df6b75`
 **CURRENT BRANCH:** `codex/c5-finite-c2-certification-20261106`
-**MAIN SHA:** `1bc7318915c3e625ad228c89ff8c300cb07e52c5`
-**C5 PRs:** #165 e #166 estão integradas; a PR #2 de Momentos permanece aberta e não foi integrada
+**MAIN SHA:** `75782fb8b7fb00bd273bd99f78c337f98439e934`
+**C5 PRs:** #165, #166, #167, #168 e #169 estão integradas; a PR #2 de Momentos permanece aberta e não foi integrada
 **WHAT IS PROVED:** Recorrência polinomial sem divisão, identidade exata com `sigmaPadeD` original, transporte racional por caixas e sinais dos menores estão compilados em Lean. O3 prova os dois padrões de sinais condicionalmente à inclusão dos coeficientes nas caixas. O motor intervalar formal existente para `log`/`exp` também compila e foi auditado.
 **WHAT IS CONDITIONAL:** `sigmaPadeD_signs_at_99_2000_of_source_boxes` e `sigmaPadeD_signs_at_1_10_of_source_boxes` exigem hipóteses explícitas de inclusão. A prova de que a fonte satisfaz essas hipóteses segue aberta.
 **WHAT IS OPEN:** O4 ainda não tem inclusão analítica da fonte. A infraestrutura existente cobre bolas racionais, `log` real e `exp` real/complexo, mas ainda não produz uma caixa racional para `Complex.Gamma`.

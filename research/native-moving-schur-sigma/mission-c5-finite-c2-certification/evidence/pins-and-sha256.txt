@@ -63,3 +63,5 @@ Reproduced C5 outputs
 - geometry `origin/main` at the O4 interval-engine audit: `1bc7318915c3e625ad228c89ff8c300cb07e52c5`
 - Existing formal interval engine sources and clean `.olean` hashes are appended in `evidence/rational-boxes/source-and-olean-sha256.txt`.
 - O4 engine rebuild environment: reference geometry checkout `caa07002306b555fea5624cc11ab2ea5811a4324`; Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`; Lean 4.32.0.
+- C5 O4 audit checkpoint PR: #169; merge commit `75782fb8b7fb00bd273bd99f78c337f98439e934`.
+- geometry `origin/main` after the O4 interval-engine checkpoint: `75782fb8b7fb00bd273bd99f78c337f98439e934`.

@@ -51,3 +51,9 @@ O checkpoint de build e auditoria da O3 está em `evidence/rational-boxes/`. Ap�
 - A busca também encontrou `Zeta23.DigammaSeries.inv_gamma_eq_prod` em `height50-certified/lean/vendor/zeta23/Zeta23/GammaFacts/Series.lean`, uma identidade formal exata pelo produto de Weierstrass para `1/Γ`.
 - Primeiro subproblema analítico pendente: obter uma caixa racional quantitativa para `Complex.Gamma (w/2)` no domínio `0.1495 ≤ Re(w) ≤ 0.9495`, `|Im(w)|≤0.4`. A rota Python usa Stirling deslocado por 80 com 75 correções; a identidade de Weierstrass oferece uma rota formal alternativa, mas sua cauda ainda precisa de um limite numérico eficiente.
 - O4 segue aberta. Depois de Gamma, será necessário certificar a cauda Hurwitz e a composição de Cauchy, mantendo a fonte C2 exata.
+
+## 2026-11-06 — checkpoint O4 publicado
+
+- PR #169 publicou os comandos reproduzíveis, logs vazios de compilação, auditoria de quatro raízes e hashes do motor intervalar reutilizado.
+- Merge na `main`: `75782fb8b7fb00bd273bd99f78c337f98439e934`.
+- Esse checkpoint continua explicitamente incompleto: nenhuma inclusão de `Complex.Gamma` ou das caixas C2 foi provada; O4 segue aberta.
