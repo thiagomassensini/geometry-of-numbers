@@ -77,9 +77,10 @@ e não prova as inclusões dos coeficientes nas caixas. A obrigação O4 continu
 aberta. Próxima obrigação: provar uma cota numérica explícita a partir da
 completação C2 original, tratando os cancelamentos nos pontos `s=0` e `s=1`.
 
-**Git neste checkpoint:** branch local `codex/c5-source-analytic-domain-20261106`,
-base `origin/main` `f5d96186348bd1dde2a49061ba68421d3c7fa36d`; commit e PR ainda
-pendentes.
+**Git publicado:** PR #189, commit de prova
+`e0272bfc9099031cb127ea0db8874900d9e8eca1`, merge na `main`
+`3513a3b3854b105419d4f2cef245efac7ce88ba0`. A branch pós-merge de estado é
+`codex/c5-state-after-pr189-20261106`. Não há PR aberta.
 
 ## Validação reproduzida
 

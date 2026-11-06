@@ -10,7 +10,7 @@ incremento: commit `6424f4334edd5c776997116403043635fa0c8f83`, merge
 `evidence/rational-boxes/degree2-14-weight-bound-validation.md`.
 
 O4 continua aberta: o domínio analítico da fonte deslocada no disco de raio
-`2/5` já foi provado localmente em `SigmaC5SourceAnalytic.lean`, mas falta uma
+`2/5` já foi provado e integrado pela PR #189 em `SigmaC5SourceAnalytic.lean`, mas falta uma
 cota numérica para o módulo, a avaliação certificada nos 129 nós e a inclusão dos coeficientes
 originais nas caixas O3. Portanto, os sinais O3 continuam condicionais, e a
 missão C5 não está concluída. As referências históricas abaixo que diziam que

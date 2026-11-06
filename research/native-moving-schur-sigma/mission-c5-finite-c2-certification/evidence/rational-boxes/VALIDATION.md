@@ -10,6 +10,9 @@ Build limpo com warnings como erros e checker fail-closed de quatro relatórios
 de axiomas passaram; somente `propext`, `Classical.choice` e `Quot.sound`
 aparecem. Logs, hashes e escopo estão em
 `source-analytic-domain-validation.md`.
+O incremento foi integrado pela PR #189, commit de prova
+`e0272bfc9099031cb127ea0db8874900d9e8eca1`, merge
+`3513a3b3854b105419d4f2cef245efac7ce88ba0`.
 
 Essa etapa estabelece o domínio para Cauchy. Ainda não prova uma cota
 numérica do módulo, os valores nos 129 nós ou as inclusões dos coeficientes

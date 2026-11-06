@@ -6,8 +6,11 @@ racionais contenham os coeficientes originais.
 
 ## Estado atual — 2026-11-06
 
-- A `origin/main` consultada está em `f5d96186348bd1dde2a49061ba68421d3c7fa36d`.
-- Branch de continuação: `codex/c5-source-analytic-domain-20261106`.
+- A `origin/main` consultada está em `3513a3b3854b105419d4f2cef245efac7ce88ba0`.
+- A prova do domínio analítico foi integrada pela PR #189: commit de prova
+  `e0272bfc9099031cb127ea0db8874900d9e8eca1`, merge
+  `3513a3b3854b105419d4f2cef245efac7ce88ba0`.
+- Branch de estado pós-merge: `codex/c5-state-after-pr189-20261106`.
 - A prova local `SigmaC5SourceAnalytic.lean` fecha o domínio analítico no disco
   aberto de raio `2/5` para `|d|≤1/10`; Lean 4.32 compilou o arquivo com
   `warningAsError=true`, e os quatro `#print axioms` passaram com axiomas padrão.
@@ -57,15 +60,24 @@ a cota. Consulte `evidence/rational-boxes/source-analytic-domain-validation.md`.
 
 - Último teorema validado: `CarrySigmaObstruction.displacedProductC_analyticOnNhd_ball`.
 - Arquivo compilado: `research/native-moving-schur-sigma/SigmaC5SourceAnalytic.lean`.
-- Branch local: `codex/c5-source-analytic-domain-20261106`, baseada em
-  `origin/main` `f5d96186348bd1dde2a49061ba68421d3c7fa36d`.
-- PR: ainda não aberta neste checkpoint.
+- Prova integrada à `main` pela PR #189.
+- Branch de estado: `codex/c5-state-after-pr189-20261106`, baseada no merge
+  `3513a3b3854b105419d4f2cef245efac7ce88ba0`.
+- PR aberta: nenhuma. A próxima PR deve atacar a cota explícita do módulo.
 - Não refazer C1B, C2, C3, C4, a recorrência de transporte, O3, a ponte Gamma
   ou os limites dos pesos 0–14.
 - Obrigação matemática exata: derivar uma cota explícita do módulo usando a
   expressão original C2 completada, com as remoções de singularidade em
   `s=0` e `s=1` justificadas. O domínio analítico sozinho não basta para
   limitar o resto da interpolação.
+
+Comando de inventário para começar a obrigação seguinte:
+
+```bash
+rg -n 'nativeXiCompletionFactor|completedNativeOperatorCharacteristic|nativeScalarDomain|finiteHead_add_exactTail' \\
+  /home/thlinux/worktrees/carry-sigma-c2-pinned-045369/CarrySelfAdjointOperator \\
+  research/native-moving-schur-sigma
+```
 
 Build e auditoria do módulo de domínio:
 

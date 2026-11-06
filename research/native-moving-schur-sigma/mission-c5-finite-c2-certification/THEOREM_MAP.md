@@ -63,7 +63,7 @@ Os sinais condicionais estão provados em Lean por O3. Ainda falta provar que os
 
 ## O4 — infraestrutura formal encontrada; inclusão da fonte ainda ABERTA
 
-### Domínio analítico da fonte deslocada — PROVADO localmente
+### Domínio analítico da fonte deslocada — PROVADO E INTEGRADO
 
 Arquivo: `research/native-moving-schur-sigma/SigmaC5SourceAnalytic.lean`.
 
@@ -77,6 +77,9 @@ Arquivo: `research/native-moving-schur-sigma/SigmaC5SourceAnalytic.lean`.
 Build limpo e auditoria de quatro declarações passaram em Lean 4.32, com
 `warningAsError=true` e apenas axiomas padrão. A evidência está em
 `evidence/rational-boxes/source-analytic-domain-validation.md`.
+Integrado pela PR #189: commit de prova
+`e0272bfc9099031cb127ea0db8874900d9e8eca1`, merge
+`3513a3b3854b105419d4f2cef245efac7ce88ba0`.
 **Limite:** nenhuma cota numérica para o módulo foi provada por esta ponte.
 O4 ainda requer o majorante explícito, as avaliações racionais nos nós e as
 inclusões dos coeficientes originais nas caixas.
