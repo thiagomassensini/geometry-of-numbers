@@ -1,0 +1,4 @@
+'CarrySigmaObstruction.c5_pi_log_complex_interval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5_completion_exponent_box_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5_completion_exp_interval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+AUDIT_BUILD_EXIT=0

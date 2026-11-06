@@ -1,0 +1,4 @@
+'CarrySigmaObstruction.c5_pi_error_lt_quarter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5_pi_quarter_interval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5_pi_log_interval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+AUDIT_BUILD_EXIT=0

@@ -55,6 +55,19 @@
 - A entrega é preparatória: a avaliação da fonte original nos 129 nós e a
   inclusão nas caixas C2/O3 continuam abertas.
 
+## 2026-11-06 — `log π` e fator exponencial da completação, validado localmente
+
+- `SigmaC5PiInterval.lean` prova `c5_pi_log_interval_contains`, construindo a
+  faixa de `log π` com `log1` e a âncora formal de `log 2`.
+- `SigmaC5PiExp.lean` prova a inclusão do fator original
+  `Complex.exp (-(s/2) * log π)` em `expCr`, para qualquer retângulo complexo
+  `s` cujo limite de norma exigido seja fornecido.
+- Builds limpos Lean 4.32 e auditoria de cinco raízes passaram; apenas
+  `propext`, `Classical.choice` e `Quot.sound` aparecem. Logs, pins, hashes e
+  comando estão em `evidence/rational-boxes/c5-pi-completion-factor-validation.md`.
+- Ainda não integrado. Não avalia Gamma, a cauda Hurwitz da fonte C2 nem os
+  valores da característica nos 129 nós.
+
 ## 2026-11-06 — limite dos pesos de graus 2–14 validado localmente
 
 - `c5InterpolationCoeffAbsSum_le_four_mul_two_pow` prova que, para todo

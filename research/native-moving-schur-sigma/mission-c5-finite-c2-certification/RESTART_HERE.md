@@ -15,6 +15,13 @@ Lean 4.32 passaram para a faixa racional exata de π derivada da série de
 `arctan` e da identidade de Machin. A trilha reproduzível está em
 `evidence/rational-boxes/c5-pi-bounds-validation.md`.
 
+Há um incremento local validado ainda sem PR: `SigmaC5PiInterval.lean`
+certifica `log π` pela infraestrutura intervalar existente, e
+`SigmaC5PiExp.lean` certifica o fator original
+`Complex.exp (-(s/2) * log π)` para uma caixa de entrada com limite de norma.
+Consulte `evidence/rational-boxes/c5-pi-completion-factor-validation.md` e
+preserve-o ao retomar.
+
 O4/C5 continua incompleta: certificar a avaliação da fonte original nos 129
 nós e provar a inclusão dos coeficientes nas caixas O3. Não refazer C1B, C2,
 C3, C4, O3, o domínio analítico, a ponte Gamma, os limites de pesos ou a faixa

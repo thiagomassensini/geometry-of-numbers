@@ -1,0 +1,16 @@
+Lean pin: leanprover/lean4:v4.32.0
+Mathlib pin: 81a5d257c8e410db227a6665ed08f64fea08e997
+Carry pin: 045369f6dedcb2e75e9aefed1d12c9f73b9a2532
+
+6d0ad33d4a25c65a9b469c3ef0535e00f6e2e6675ec9524cbe02716391835488  research/native-moving-schur-sigma/SigmaC5PiInterval.lean
+a7f8b3f8c7819861658fbf726bb84ee0f543b3cc3d4f5271139761cf988e28e8  research/native-moving-schur-sigma/SigmaC5PiIntervalAudit.lean
+ca56ceb1850d95d3b340b7809a5bdbce4d49cb038509061606296ff78635ba97  research/native-moving-schur-sigma/SigmaC5PiExp.lean
+77b3f9c7259b420d3ea7c0829f6c26d6489f43e6d5bacf5e00db4a52cb1d00b8  research/native-moving-schur-sigma/SigmaC5PiExpAudit.lean
+188d70193c2c530339df6e1b371490657efa570d3238607ca0a32b3d5646b8f0  .lake/build/research/native-moving-schur-sigma/c5-pi-interval-clean-20261106/SigmaC5PiInterval.olean
+94294036fbe56b628c701aa305818ffafde1ce36d1b7069d6ffa4056aac739f0  .lake/build/research/native-moving-schur-sigma/c5-pi-interval-clean-20261106/SigmaC5PiIntervalAudit.olean
+3f043cb9dd0c72aa5722fd518edc26ddb17e3aaa51d7b519bdb796b301976aa7  .lake/build/research/native-moving-schur-sigma/c5-pi-exp-clean-20261106/SigmaC5PiExp.olean
+cf9eee47bbab4f12efb726a4d277ca02df8799a861ed37076d0674d000229098  .lake/build/research/native-moving-schur-sigma/c5-pi-exp-clean-20261106/SigmaC5PiExpAudit.olean
+ce706d40b6f9b1b9add553f35b5b482d4812f773d13013fb4cd667e1d78c7ab5  evidence/rational-boxes/c5-pi-interval-build-try4.log
+dd9bfcaba5eb40cb35e8376e2f5c934c48b5e00be4dc79dbf58df1f97ef9236d  evidence/rational-boxes/c5-pi-interval-audit-try4.log
+ce706d40b6f9b1b9add553f35b5b482d4812f773d13013fb4cd667e1d78c7ab5  evidence/rational-boxes/c5-pi-exp-build-try2.log
+fbdd402def248a5086c713fa78de106d610c8111da15289964b86d18ffb74c3a  evidence/rational-boxes/c5-pi-exp-audit-try2.log
