@@ -7,6 +7,8 @@
 
 **O4, auditoria de 2026-11-06:** os módulos de intervalo elementar foram recompilados e auditados; também foi localizada a identidade formal de Weierstrass `Zeta23.DigammaSeries.inv_gamma_eq_prod`. Nenhuma caixa numérica para `Complex.Gamma` foi ainda derivada dessa identidade, e a aproximação Stirling usada pelo avaliador segue sem ponte Lean. O4 e a inclusão incondicional das caixas continuam abertas.
 
+**Estado após a PR #181:** prova estrutural do coeficiente de grau um integrada pela PR #181 (`7460497307e7ed0ffb47ef1ac96b096e9b410472`); o registro do estado e das obrigações abertas foi integrado pela PR #182 (`8f8b9da2b8c1e8f3b8d1290608c8b2abffe9c285`). O4 permanece incompleta.
+
 **O4, prova Euler-Gamma de precisão alta integrada pela PR #173:** `gamma_finite_1024_240_error` aproxima a Gamma original por `gammaFinite 1024 240 z` com erro `≤10⁻⁹⁹` para `1495/20000≤Re(z)≤1`. Build Lean 4.32 e auditoria de dez raízes passaram; a caixa racional estreita da expressão finita continua pendente. Prova, logs e hashes estão em `evidence/rational-boxes/`.
 
 ## 1. Transporte algébrico Lean — PASSOU

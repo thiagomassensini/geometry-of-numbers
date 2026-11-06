@@ -96,6 +96,8 @@ abertos. O estado pós-PR #179 foi registrado pela PR #180, merge
 foi integrada pela PR #181, merge
 `7460497307e7ed0ffb47ef1ac96b096e9b410472`; a desigualdade numérica dos pesos
 continua em aberto e O4 permanece incompleta.
+O estado pós-PR #181 foi registrado pela PR #182, merge
+`8f8b9da2b8c1e8f3b8d1290608c8b2abffe9c285`.
 
 ## Classificação honesta se O4 continuar em aberto
 

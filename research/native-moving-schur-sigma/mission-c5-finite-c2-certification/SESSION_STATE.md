@@ -8,7 +8,8 @@
 **Registro de estado anterior à PR #177:** PR #176, merge `ac84c9302ae608e39c742f856ad361921653f268`.
 **Última prova integrada:** PR #181, estrutura derivativa do coeficiente de grau um, merge `7460497307e7ed0ffb47ef1ac96b096e9b410472`.
 **Main geometry após a PR #181:** `7460497307e7ed0ffb47ef1ac96b096e9b410472`.
-**Último checkpoint de estado:** PR #180, merge `de95637d38d5e6d5488342cd5141b88233be6eb7`; o estado pós-PR #181 está sendo registrado agora.
+**Checkpoint de estado pós-PR #181:** PR #182, merge `8f8b9da2b8c1e8f3b8d1290608c8b2abffe9c285`.
+**Main geometry no checkpoint de estado:** `8f8b9da2b8c1e8f3b8d1290608c8b2abffe9c285`.
 **Repositório geometry no checkout de pesquisa original:** branch `agent/native-moving-schur-sigma`, HEAD `9392ebac9930f5d11c56f595556080e8ab1de809`, com logs/caches não rastreados preservados.
 **Repositório Momentos:** checkout local `main` em `05c9314d59306383baa55ed3be80ab950e799e97`; branch remota de pesquisa `origin/research/sigma-pade-dimension-depth-20261104` em `68c9b5f0a196289e28a8e5586146707d27df6b75`. PR #2 está OPEN e não foi integrada.
 
