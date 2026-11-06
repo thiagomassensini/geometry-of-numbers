@@ -122,7 +122,7 @@ Em `SigmaRationalInterpolation.lean`:
 - `c5InterpolationPolynomial_coeff` e `c5InterpolationPolynomial_coeff_of_degree_lt` dão a fórmula explícita dos coeficientes por somas de Lagrange.
 - `c5InterpolationWeight` e `c5InterpolationWeightSum` representam os pesos escalados correspondentes a `t_j=j/100000`. `c5InterpolationWeightSum_zero_eq_one` prova que a soma absoluta de grau zero é `1`.
 - Para grau um, `c5Coeff_one_eq_derivative_eval_zero` e `c5LagrangeBasis_derivative_eval_zero` dão a representação estrutural. `c5LagrangeBasisProductCoeffOne_bound` prova a cota por base; `c5InterpolationCoeffOneAbsSum_le_six` e `c5InterpolationWeightSum_one_lt_ten_eleven` fecham a soma escalada abaixo de `10^11`. Build limpo e auditoria de 21 raízes: `evidence/rational-boxes/degree1-weight-bound-validation.md`.
-- Os limites de grau `2..14`, a cota analítica da fonte e a inclusão das caixas seguem abertos.
+- Na data deste registro, os limites de grau `2..14`, a cota analítica da fonte e a inclusão das caixas seguiam abertos. O snapshot atual dos pesos aparece no fim deste mapa.
 
 As quatorze raízes foram compiladas em Lean 4.32 e auditadas. Os comandos e hashes estão em `evidence/rational-boxes/VALIDATION.md` e `evidence/rational-boxes/source-and-olean-sha256.txt`. A expansão direta que excedeu o limite do simplificador está registrada em `interpolation-weight-degree1-prototype.log`.
 
@@ -131,5 +131,16 @@ integrados pela PR #185; commit de prova `90a208df98e74a7c5ab1fe83a9ef0fc90c3d3c
 merge `c840ba35711ac8f938fa24c191f2af60f505480d`. O build limpo Lean 4.32 e a
 auditoria fail-closed de 21 raízes aceitam somente `propext`, `Classical.choice`
 e `Quot.sound`. Evidência em `evidence/rational-boxes/degree1-weight-bound-validation.md`.
-O resultado cobre somente grau um e não fecha O4; os graus `2..14` continuam
-abertos.
+Naquele merge, o resultado cobria somente grau um e não fechava O4. Os graus
+`2..14` foram provados no checkpoint local mais recente descrito abaixo.
+# Estado atual dos pesos de interpolação — 2026-11-06
+
+Além do grau um já integrado, a branch atual provou que, para `2≤n≤14`,
+`c5InterpolationWeightSum n < 10^145`. O argumento usa os limites
+`c5LagrangeBasis_zeroIndex_coeff_abs_le_two_pow`,
+`c5LagrangeBasis_nonzeroIndex_coeff_abs_le_weight` e
+`c5InterpolationCoeffAbsSum_le_four_mul_two_pow`. Build limpo e auditoria de
+23 raízes passaram; ver
+`evidence/rational-boxes/degree2-14-weight-bound-validation.md`. Essa etapa
+Ainda não está publicada e não fecha O4: a cota analítica da fonte e a inclusão
+nas caixas seguem pendentes.

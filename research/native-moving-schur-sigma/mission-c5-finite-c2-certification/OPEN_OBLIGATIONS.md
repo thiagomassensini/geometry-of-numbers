@@ -1,5 +1,20 @@
 # C5 — obrigações abertas
 
+## Snapshot atual — após a validação local dos pesos 2–14
+
+Os pesos escalados de todos os graus `0..14` estão provados em Lean: grau zero
+`=1`, grau um `<10^11`, e cada grau `2..14` `<10^145`. A nova prova passou
+build limpo e auditoria fail-closed de 23 raízes. Veja
+`evidence/rational-boxes/degree2-14-weight-bound-validation.md`.
+
+O4 continua aberta: falta a cota analítica para a fonte C2 no disco de raio
+`2/5`, sua avaliação certificada nos 129 nós e a inclusão dos coeficientes
+originais nas caixas O3. Portanto, os sinais O3 continuam condicionais, e a
+missão C5 não está concluída. As referências históricas abaixo que diziam que
+os pesos `2..14` estavam pendentes registram o estado na data dos checkpoints
+anteriores; este snapshot atual e
+`evidence/rational-boxes/degree2-14-weight-bound-validation.md` as supersedem.
+
 ## O1 — validar o cálculo racional publicado — REPRODUZIDO
 
 Os dois verificadores exatos passaram sobre as caixas JSON rastreadas, com resultados `+++++++++++-` e `+++++++++-`. As três configurações de geração intervalar também foram reproduzidas após conversão local de `gmpy2.mpz` para inteiro Python nativo. Logs e patch estão em `evidence/interval-certificate/`.
@@ -73,7 +88,9 @@ provar `c5LagrangeBasisProductCoeffOne_bound`,
 `c5InterpolationCoeffOneAbsSum_le_six` e
 `c5InterpolationWeightSum_one_lt_ten_eleven`. O build limpo e a auditoria
 estão em `evidence/rational-boxes/degree1-weight-bound-validation.md`.
-Os limites Lean dos graus `2..14` continuam pendentes. A tentativa anterior
+Na data deste registro, os limites Lean dos graus `2..14` ainda estavam
+pendentes. Eles foram fechados pelo checkpoint local posterior; veja o snapshot
+atual no início e `degree2-14-weight-bound-validation.md`. A tentativa anterior
 por expansão direta atingiu o limite de passos de `simp`; o erro permanece em
 `evidence/rational-boxes/interpolation-weight-degree1-prototype.log`.
 Também seguem pendentes a cota analítica
@@ -99,7 +116,9 @@ foi integrada pela PR #181, merge
 `7460497307e7ed0ffb47ef1ac96b096e9b410472`. O limite escalado de grau um foi
 integrado pela PR #185, merge
 `c840ba35711ac8f938fa24c191f2af60f505480d`, com build limpo e auditoria de 21
-raízes. Permanecem abertos os graus `2..14` e as demais obrigações O4.
+raízes. Naquele checkpoint permaneciam abertos os graus `2..14` e as demais
+obrigações O4; os limites dos pesos foram provados no checkpoint local mais
+recente, enquanto as demais obrigações O4 continuam abertas.
 O estado pós-PR #181 foi registrado pela PR #182, merge
 `8f8b9da2b8c1e8f3b8d1290608c8b2abffe9c285`.
 

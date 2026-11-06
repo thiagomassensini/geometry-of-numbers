@@ -23,5 +23,7 @@ namespace CarrySigmaObstruction
 #print axioms c5LagrangeBasis_coeff_one_abs_le
 #print axioms c5InterpolationCoeffOneAbsSum_le_six
 #print axioms c5InterpolationWeightSum_one_lt_ten_eleven
+#print axioms c5InterpolationCoeffAbsSum_le_four_mul_two_pow
+#print axioms c5InterpolationWeightSum_lt_ten_145
 
 end CarrySigmaObstruction

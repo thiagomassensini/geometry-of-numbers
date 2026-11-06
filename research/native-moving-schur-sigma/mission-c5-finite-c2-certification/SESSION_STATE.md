@@ -1,18 +1,19 @@
 # C5 — estado da sessão
 
 **Atualizado:** 2026-11-06
-**Status atual:** C1–C4 e O3 estão integradas. A ponte Euler-Gamma de precisão `10⁻²⁵⁹`, a identidade algébrica de interpolação em 129 nós e a soma absoluta do peso escalado de grau zero (`=1`) estão provadas em Lean 4.32. Agora também estão provados e auditados os limites de grau um: soma dos coeficientes das bases `≤6` e soma do peso escalado `<10^11`. Os pesos de graus `2..14`, a cota analítica da fonte e a inclusão dos coeficientes C2 nas caixas seguem pendentes.
+**Status atual:** C1–C4 e O3 estão integradas. Também estão provados em Lean 4.32 os limites dos pesos escalados de graus `0..14`: grau zero `=1`, grau um `<10^11` e graus `2..14` `<10^145`. A etapa de graus `2..14` passou build limpo e auditoria fail-closed de 23 raízes; veja `evidence/rational-boxes/degree2-14-weight-bound-validation.md`. A prova está pronta para checkpoint/publicação nesta branch. O4 segue aberta: faltam a cota analítica da fonte, a avaliação racional nos 129 pontos e a inclusão dos coeficientes C2 nas caixas.
+**Checkpoint local de graus 2–14 (2026-11-06):** `c5LagrangeBasis_zeroIndex_coeff_abs_le_two_pow`, `c5LagrangeBasis_nonzeroIndex_coeff_abs_le_weight`, `c5InterpolationCoeffAbsSum_le_four_mul_two_pow` e `c5InterpolationWeightSum_lt_ten_145` formalizam a cota uniforme simbólica. Build limpo: `c5-interpolation-degree2-14-final-clean-build.log`, `BUILD_EXIT=0`. A auditoria das 23 raízes aceita apenas `propext`, `Classical.choice` e `Quot.sound`; logs e hashes acompanham a validação. A validação continua explicitamente incompleta e não prova inclusão de caixas.
 **Checkpoint de grau um (2026-11-06):** a alteração simbólica de `SigmaRationalInterpolation.lean` passou build Lean 4.32 limpo e auditoria fail-closed de 21 raízes. Logs e hashes estão em `evidence/rational-boxes/degree1-weight-bound-validation.md`; tentativas anteriores incompletas e a prova rejeitada com `native_decide` foram mantidas como histórico.
 **Publicação do limite de grau um:** PR #185, commit de prova `90a208df98e74a7c5ab1fe83a9ef0fc90c3d3cb6`, merge `c840ba35711ac8f938fa24c191f2af60f505480d`. O checkpoint explicitamente incompleto foi publicado separadamente pela PR #184, merge `5528ddc8093a22682c87f3f9c6575e30e90a7011`.
 **Branch C5 de trabalho:** o passo estrutural de grau um foi publicado no commit `0a188c9d71a1a54bdf446ec753609fdde8326bc8`, integrado pela PR #181. A branch remota de prova foi removida após o merge; retomar a partir da `main` atual e abrir uma branch nova.
 **Main geometry no início da auditoria O4:** `1bc7318915c3e625ad228c89ff8c300cb07e52c5` (merge da PR #168).
 **Última prova geometry integrada:** PR #185, limite simbólico do peso escalado de grau um, merge `c840ba35711ac8f938fa24c191f2af60f505480d`.
 **Registro de estado anterior à PR #177:** PR #176, merge `ac84c9302ae608e39c742f856ad361921653f268`.
-**Última prova integrada:** PR #185, limite simbólico do peso escalado de grau um, merge `c840ba35711ac8f938fa24c191f2af60f505480d`.
-**Main geometry após a PR #185:** `c840ba35711ac8f938fa24c191f2af60f505480d`.
+**Última prova integrada:** PR #185, limite simbólico do peso escalado de grau um, merge `c840ba35711ac8f938fa24c191f2af60f505480d`. A prova local de graus 2–14 ainda não foi publicada.
+**Main geometry consultada antes desta prova local (merge documental PR #186):** `b00acaaa2cc011faa064b39f08233221143a330c`.
 **Checkpoint de estado pós-PR #181:** PR #182, merge `8f8b9da2b8c1e8f3b8d1290608c8b2abffe9c285`.
 **Main geometry no checkpoint de estado:** `8f8b9da2b8c1e8f3b8d1290608c8b2abffe9c285`.
-**Repositório geometry no checkout de pesquisa original:** branch `agent/native-moving-schur-sigma`, HEAD `9392ebac9930f5d11c56f595556080e8ab1de809`, com logs/caches não rastreados preservados. A `main` remota após PR #185 está em `c840ba35711ac8f938fa24c191f2af60f505480d`.
+**Repositório geometry no checkout de pesquisa original:** branch `agent/native-moving-schur-sigma`, HEAD `9392ebac9930f5d11c56f595556080e8ab1de809`, com logs/caches não rastreados preservados. A `main` remota consultada antes da prova de graus 2–14, após PR #186, está em `b00acaaa2cc011faa064b39f08233221143a330c`.
 **Repositório Momentos:** checkout local `main` em `05c9314d59306383baa55ed3be80ab950e799e97`; branch remota de pesquisa `origin/research/sigma-pade-dimension-depth-20261104` em `68c9b5f0a196289e28a8e5586146707d27df6b75`. PR #2 está OPEN e não foi integrada.
 
 ## Inventário de trabalho anterior
@@ -52,7 +53,7 @@ O checkpoint reprodutível dessa auditoria foi integrado pela PR #169; merge na 
 
 **Grau zero dos pesos provado:** o coeficiente constante da base de Lagrange em `j=0` é `1`, as demais bases têm coeficiente constante `0`, e `c5InterpolationWeightSum_zero_eq_one` conclui que a soma absoluta do peso escalado de grau zero é exatamente `1`.
 
-**Peso de grau um provado:** além da representação derivativa, `c5LagrangeBasisProductCoeffOne_bound`, `c5InterpolationCoeffOneAbsSum_le_six` e `c5InterpolationWeightSum_one_lt_ten_eleven` dão a cota escalada `<10^11`. As tentativas diretas anteriores permanecem preservadas em `evidence/rational-boxes/degree1-retry-checkpoint.md` e `interpolation-weight-degree1-prototype.log`; os graus `2..14` continuam abertos.
+**Pesos de graus 0–14 provados:** grau zero tem soma absoluta exatamente `1`; grau um satisfaz `<10^11`; para cada `2≤n≤14`, `c5InterpolationWeightSum_lt_ten_145` prova `<10^145`. A prova de grau um integrada pela PR #185 está descrita em `degree1-weight-bound-validation.md`; a prova local mais recente está em `degree2-14-weight-bound-validation.md`. A cota analítica da fonte e a inclusão C2 nas caixas continuam abertas.
 
 **Publicação do grau um:** PR #185, merge `c840ba35711ac8f938fa24c191f2af60f505480d`; validação limpa e auditoria de 21 raízes em `evidence/rational-boxes/degree1-weight-bound-validation.md`. O4 continua aberta.
 

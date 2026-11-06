@@ -1,0 +1,29 @@
+'CarrySigmaObstruction.c5InterpolationNode_injOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5InterpolationPolynomial_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5_interpolate_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5InterpolationPolynomial_coeff_of_degree_lt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5BasisDivisor_coeff_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5LagrangeBasis_coeff_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5LagrangeBasis_coeff_zero_of_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5LagrangeBasis_zero_coeff_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5InterpolationWeightSum_zero_eq_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5BasisDivisor_eval_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5BasisDivisor_derivative_eval_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5Coeff_one_eq_derivative_eval_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5LagrangeBasis_derivative_eval_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5LagrangeBasis_coeff_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5LagrangeBasis_coeff_one_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5LagrangeBasis_coeff_one_of_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5LagrangeBasisProductCoeffOne_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5LagrangeBasis_coeff_one_zero_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5LagrangeBasis_coeff_one_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5InterpolationCoeffOneAbsSum_le_six' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5InterpolationWeightSum_one_lt_ten_eleven' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5InterpolationCoeffAbsSum_le_four_mul_two_pow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5InterpolationWeightSum_lt_ten_145' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -283,3 +283,18 @@ O build saiu sem warnings nem erros. Quatorze raízes foram auditadas, todas com
 apenas `propext`, `Classical.choice` e `Quot.sound`; o checker aceitou as
 quatorze.
 As fontes e os `.olean` têm hashes em `source-and-olean-sha256.txt`.
+
+## Atualização local — limites dos pesos de graus 2–14
+
+O módulo de interpolação prova agora `c5InterpolationCoeffAbsSum_le_four_mul_two_pow`
+e `c5InterpolationWeightSum_lt_ten_145`: para cada `2≤n≤14`, a soma absoluta
+dos pesos escalados é `<10^145`. O build limpo Lean 4.32 passou com
+`warningAsError=true`; a auditoria de 23 raízes e o checker fail-closed também
+passaram. Os logs, hashes e a demonstração do limite estão em
+`c5-interpolation-degree2-14-final-clean-*` e
+`degree2-14-weight-bound-validation.md`.
+
+Esta etapa remove a obrigação dos limites dos pesos. Continua em aberto a cota
+analítica da densidade C2 no disco de raio `2/5`, a avaliação certificada nos
+129 nós e a inclusão dos coeficientes da fonte original nas caixas O3. A
+certificação C5 ainda é incompleta.
