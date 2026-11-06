@@ -8,6 +8,7 @@
 - Repositório: `geometry-of-numbers`.
 - `origin/main` confirmado por `git ls-remote`: `c736dc073091e6184dbb673b622b6b91759accac` (PR #183).
 - Branch de trabalho: `codex/c5-degree1-weight-bound-20261106`.
+- Snapshot incompleto: commit `4d1b066`, publicado no GitHub para retomada; continua sem validação integral.
 - Toolchain: `leanprover/lean4:v4.32.0`.
 - Mathlib: `81a5d257c8e410db227a6665ed08f64fea08e997`.
 - Carry: `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`, checkout `/home/thlinux/worktrees/carry-sigma-c2-pinned-045369`.

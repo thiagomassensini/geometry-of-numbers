@@ -110,6 +110,7 @@ Reproduced C5 outputs
 
 - Confirmed `origin/main`: `c736dc073091e6184dbb673b622b6b91759accac` (PR #183).
 - Local branch: `codex/c5-degree1-weight-bound-20261106`; WIP starts from the confirmed main.
+- Incomplete checkpoint snapshot commit: `4d1b066` (`C5: checkpoint incomplete degree-one weight bound`); published for durable recovery, not a validated result.
 - Toolchain: `leanprover/lean4:v4.32.0`; Mathlib: `81a5d257c8e410db227a6665ed08f64fea08e997`.
 - Carry source pin: `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`.
 - WIP `SigmaRationalInterpolation.lean` SHA-256: `1c4106c3d625ab21cda914428b62cfd080b872e3f79445f2e3ba6e48ef9aea6e`.
