@@ -17,3 +17,16 @@ d47879e90e389dd4f215f47d21b4b9599b541f2c7a4cfee2c86f8c2eb2e35a5f  .lake/build/re
 ddc3ca2e7268b927000319739ab5a49eaaa492185aabe42229e4c4df4f473a3e  .lake/build/research/native-moving-schur-sigma/c5-rational-clean/SigmaFiniteRationalIntervalSigns.olean
 96b4838516c9b2be402e0dbb2a3c4b46195108e67351794cf4255f145f997fab  .lake/build/research/native-moving-schur-sigma/c5-rational-clean/SigmaFiniteRationalIntervalCertificates.olean
 feedc0fb57436826275a26980e2d10806bd99f3fe7fe365f691cb814e11df5c0  .lake/build/research/native-moving-schur-sigma/c5-rational-clean/SigmaFiniteRationalIntervalAudit.olean
+
+Reused formal elementary interval engine (Lean 4.32):
+ed0337e17a0a02d5390ee565850ba6ff2a58cbcbb9fd1355561bf527bf38ced6  research/native-moving-schur-sigma/height50-certified/lean/ZetaLean/Rigor.lean
+63dd29aa3810992ae9f705fdf52f04684d96c89d368aa74981217ae64bf80d83  research/native-moving-schur-sigma/height50-certified/lean/ZetaLean/IntervalExp.lean
+0e1572524912d84e7661ddadb22d23545c376957580f1c3c0a55321cccb460cd  research/native-moving-schur-sigma/height50-certified/lean/ZetaLean/IntervalCExp.lean
+667016943e32e2406041b7912e8c3a0002608aaf17ce38dac681e4c72cfd223f  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/reused-interval-audit.lean
+37d13db3f203ca8beb9c50dc975c88cd2fdf0c4d9a37423869cfbc5867fdbc8f  .lake/build/research/native-moving-schur-sigma/c5-zeta-intervals-clean/ZetaLean/Rigor.olean
+9af9ea0c7a16086beb4b0983b4a65814f8a701c519628182f520364d54587372  .lake/build/research/native-moving-schur-sigma/c5-zeta-intervals-clean/ZetaLean/IntervalExp.olean
+e9748c51fd8007a83d5e2624ed77a29b83a5ba60fdc66024ba3f1ca64c9d63ef  .lake/build/research/native-moving-schur-sigma/c5-zeta-intervals-clean/ZetaLean/IntervalCExp.olean
+95cba03a57c52bdf172790a7cfd50e0c039b1648e3a164421aeac91e28d1bb2a  .lake/build/research/native-moving-schur-sigma/c5-zeta-intervals-clean/reused-interval-audit.olean
+
+Existing formal Gamma product route (source only; not yet built in this task):
+bd2cfd658e3d241ea062e8a4f2bf05199380f0b8cfeac8cb9f95ba2ac741419a  research/native-moving-schur-sigma/height50-certified/lean/vendor/zeta23/Zeta23/GammaFacts/Series.lean

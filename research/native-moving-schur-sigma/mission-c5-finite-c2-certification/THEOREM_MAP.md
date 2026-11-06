@@ -61,6 +61,34 @@ A branch de pesquisa Momentos, commit `68c9b5f0a196289e28a8e5586146707d27df6b75`
 
 Os sinais condicionais estão provados em Lean por O3. Ainda falta provar que os coeficientes da fonte estão nas caixas JSON; a origem delas usa `mpmath.iv` ainda não certificado. Ver `SESSION_STATE.md` e `evidence/interval-certificate/`.
 
+## O4 — infraestrutura formal encontrada; inclusão da fonte ainda ABERTA
+
+Fontes existentes e recompiladas nesta etapa:
+
+- `research/native-moving-schur-sigma/height50-certified/lean/ZetaLean/Rigor.lean`
+- `research/native-moving-schur-sigma/height50-certified/lean/ZetaLean/IntervalExp.lean`
+- `research/native-moving-schur-sigma/height50-certified/lean/ZetaLean/IntervalCExp.lean`
+
+As inclusões `ZetaLean.Interval.contains_logQ`,
+`ZetaLean.Interval.contains_expI`, `ZetaLean.ComplexInterval.contains_expC` e
+`ZetaLean.ComplexInterval.contains_dirichletTerm` compilam em Lean 4.32 e foram
+auditadas; somente `propext`, `Classical.choice`, `Quot.sound` aparecem.
+Isso fornece avaliação certificada de `log`, `exp` e `m^{-s}`, mas ainda não
+compõe os coeficientes C2.
+
+**Primeiro lema C5 O4 ainda ausente:** uma caixa racional quantitativa para
+`Complex.Gamma (w/2)` em `0.1495 ≤ Re(w) ≤ 0.9495`, `|Im(w)|≤0.4`, compatível
+com a avaliação C2. O avaliador de `c2_em_interval.py` usa Stirling com
+deslocamento 80 e 75 correções, mas seu resto ainda não foi ligado formalmente
+à função Gamma. A busca encontrou também
+`Zeta23.DigammaSeries.inv_gamma_eq_prod`, identidade formal pelo produto de
+Weierstrass em `height50-certified/lean/vendor/zeta23/Zeta23/GammaFacts/Series.lean`;
+essa rota alternativa ainda precisa de uma cauda numérica eficiente. A
+completação usa `Complex.Gamma` em
+`CarrySelfAdjointOperator/CompletedOperatorCharacteristic.lean`. Depois ainda
+será necessário certificar Hurwitz e compor a extração Cauchy sem alterar a
+cabeça C2, a cauda exata ou a completação original.
+
 ## Alvos finais C5 — ainda NÃO provados
 
 As conclusões devem falar da sequência original e seus menores:

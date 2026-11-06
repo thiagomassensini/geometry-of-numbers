@@ -37,6 +37,23 @@ Lean de arredondamento externo. Esse é o primeiro bloqueio concreto à
 certificação incondicional: sem provar a inclusão da fonte nas caixas, as
 conclusões O3 permanecem condicionais.
 
+Uma busca adicional encontrou e recompilou a infraestrutura formal
+`ZetaLean.Rigor`, `ZetaLean.IntervalExp` e `ZetaLean.IntervalCExp`, que já
+certifica aritmética retangular racional, `log` real, `exp` real/complexo e
+`m^{-s}`. A auditoria de quatro raízes retornou somente axiomas padrão; os logs
+estão em `evidence/rational-boxes/reused-interval-audit.log`.
+
+**Primeiro subproblema analítico ainda em aberto:** obter uma caixa racional
+quantitativa para `Complex.Gamma z` quando `z=w/2` no domínio do Cauchy. O
+avaliador existente usa Stirling deslocado por 80 e 75 correções, mas ainda não
+há uma ponte formal para o seu resto complexo. Também existe a identidade
+formal `Zeta23.DigammaSeries.inv_gamma_eq_prod` pelo produto de Weierstrass em
+`height50-certified/lean/vendor/zeta23/Zeta23/GammaFacts/Series.lean`; ela é
+uma rota alternativa, cuja cauda precisa ser limitada com eficiência suficiente
+para as caixas atuais. Depois ainda será preciso compor a avaliação de Hurwitz
+e a inclusão via Cauchy com a ponte C2 exata. Não há prova de
+`sigmaC00495SourceBoxes` nem de `sigmaC01SourceBoxes` nesta etapa.
+
 ## O5 — composição, build, axiomas e publicação — PARCIAL
 
 A Fase 1 foi integrada pela PR #165, merge `75691edf0e74cc643f098213f60b684476132175`;

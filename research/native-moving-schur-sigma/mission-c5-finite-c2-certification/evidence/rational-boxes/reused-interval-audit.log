@@ -1,0 +1,4 @@
+'ZetaLean.Interval.contains_logQ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaLean.Interval.contains_expI' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaLean.ComplexInterval.contains_expC' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaLean.ComplexInterval.contains_dirichletTerm' depends on axioms: [propext, Classical.choice, Quot.sound]

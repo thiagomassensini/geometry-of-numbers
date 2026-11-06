@@ -65,3 +65,57 @@ original, preservando a cabeça C2, a cauda exponencial exata e a completação
 original. A avaliação numérica existente utiliza `mpmath.iv`; nem esse backend
 nem suas operações complexas elementares estão certificados em Lean. Não use
 os sinais condicionais como uma prova incondicional até fechar essa inclusão.
+
+### Infraestrutura intervalar reutilizável encontrada
+
+O repositório já contém `height50-certified/lean/ZetaLean/Rigor.lean`,
+`IntervalExp.lean` e `IntervalCExp.lean`: bolas retangulares racionais e
+inclusões comprovadas para `log` real, `exp` real/complexo e termos
+`m^{-s}`. Os três módulos foram recompilados em Lean 4.32 com warnings como
+erros em saída limpa. A auditoria de `contains_logQ`, `contains_expI`,
+`contains_expC` e `contains_dirichletTerm` mostra apenas `propext`,
+`Classical.choice` e `Quot.sound`. Logs e hashes estão junto desta validação.
+
+Build reproduzível, executado na raiz do checkout C5, usando o checkout de
+referência `geometry-of-numbers-sigma-allorder-negative-certified-20261105`
+(HEAD `caa07002306b555fea5624cc11ab2ea5811a4324`, Lean 4.32, Mathlib
+`81a5d257c8e410db227a6665ed08f64fea08e997`):
+
+```bash
+C5_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105
+C5_SOURCE_ROOT=$PWD/research/native-moving-schur-sigma/height50-certified/lean
+C5_OUTPUT=$PWD/.lake/build/research/native-moving-schur-sigma/c5-zeta-intervals-clean
+C5_EVIDENCE=$PWD/research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes
+C5_LEAN_BIN=$(cd "$C5_REFERENCE_ROOT" && elan which lean)
+C5_MATHLIB_PATH=$(cd "$C5_REFERENCE_ROOT" && lake env printenv LEAN_PATH)
+mkdir -p "$C5_OUTPUT/ZetaLean"
+export LEAN_PATH="$C5_OUTPUT:$C5_SOURCE_ROOT:$C5_MATHLIB_PATH"
+for module in Rigor IntervalExp IntervalCExp; do
+  "$C5_LEAN_BIN" -DwarningAsError=true --root="$C5_SOURCE_ROOT" \
+    -o "$C5_OUTPUT/ZetaLean/$module.olean" \
+    "$C5_SOURCE_ROOT/ZetaLean/$module.lean" \
+    > "$C5_EVIDENCE/reused-$module.log" 2>&1
+done
+"$C5_LEAN_BIN" -DwarningAsError=true --root="$C5_EVIDENCE" \
+  -o "$C5_OUTPUT/reused-interval-audit.olean" \
+  "$C5_EVIDENCE/reused-interval-audit.lean" \
+  > "$C5_EVIDENCE/reused-interval-audit.log" 2>&1
+```
+
+Os três logs de build estão vazios (sem avisos nem erros); o log da auditoria
+registra as quatro raízes e seus axiomas padrão permitidos.
+
+Essa infraestrutura ainda não enuncia uma inclusão para `Complex.Gamma`. O
+primeiro elo analítico ausente é uma caixa racional uniforme para `Gamma z` no
+retângulo necessário para `z = w/2`, `0.1495 ≤ Re(w) ≤ 0.9495` e `|Im(w)| ≤
+0.4`. A rotina Python desloca `z` por 80, usa 75 correções e acrescenta o
+resto `4(150)!/(6^150·150·149·80^149)`, mas ainda não há teorema Lean ligando
+essa aproximação à função `Complex.Gamma` da completação C2.
+
+Há uma alternativa formal já existente: `Zeta23.DigammaSeries.inv_gamma_eq_prod`
+em `height50-certified/lean/vendor/zeta23/Zeta23/GammaFacts/Series.lean` prova
+a identidade infinita de Weierstrass para `1/Γ`. O uso numérico dela também
+precisaria de um limite racional eficiente para a cauda do produto e do fator
+exponencial. A rota ainda está em avaliação; nenhuma das duas abordagens foi
+composta às estimativas de Hurwitz e à extração Cauchy. Portanto, não há ainda
+prova de inclusão para os coeficientes originais.
