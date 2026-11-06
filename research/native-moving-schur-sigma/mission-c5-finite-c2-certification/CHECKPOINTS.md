@@ -52,6 +52,14 @@ O checkpoint de build e auditoria da O3 está em `evidence/rational-boxes/`. Ap�
 - Primeiro subproblema analítico pendente: obter uma caixa racional quantitativa para `Complex.Gamma (w/2)` no domínio `0.1495 ≤ Re(w) ≤ 0.9495`, `|Im(w)|≤0.4`. A rota Python usa Stirling deslocado por 80 com 75 correções; a identidade de Weierstrass oferece uma rota formal alternativa, mas sua cauda ainda precisa de um limite numérico eficiente.
 - O4 segue aberta. Depois de Gamma, será necessário certificar a cauda Hurwitz e a composição de Cauchy, mantendo a fonte C2 exata.
 
+## 2026-11-06 — ponte Euler-Gamma provada em Lean
+
+- `SigmaGammaEulerIntegral.lean` aproxima a Gamma original pela integral de Euler truncada, prova a fórmula fechada `gammaFinite 512 81 z` e limita explicitamente tanto o resto Taylor compacto quanto a cauda infinita.
+- Para `1495/20000 ≤ Re(z) ≤ 1`, `gamma_finite_512_error` prova erro absoluto `≤ 10⁻³²`. As oito raízes públicas auditadas usam somente `propext`, `Classical.choice` e `Quot.sound`.
+- Build limpo em Lean 4.32, `warningAsError=true`; comandos, log de build, auditoria e hashes em `evidence/rational-boxes/`.
+- A main na base desta prova contém o update de estado pós-PR #169: PR #170, merge `46f5c52037cecd01b6fee43005db57539a3e1af0`.
+- A ponte é um subpasso: ainda falta uma caixa racional estreita para `gammaFinite` em cada caixa do contorno, seguida da composição Hurwitz/Cauchy. Nenhuma hipótese `sigmaC00495SourceBoxes` ou `sigmaC01SourceBoxes` foi provada nesta etapa.
+
 ## 2026-11-06 — checkpoint O4 publicado
 
 - PR #169 publicou os comandos reproduzíveis, logs vazios de compilação, auditoria de quatro raízes e hashes do motor intervalar reutilizado.

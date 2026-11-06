@@ -65,3 +65,7 @@ Reproduced C5 outputs
 - O4 engine rebuild environment: reference geometry checkout `caa07002306b555fea5624cc11ab2ea5811a4324`; Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`; Lean 4.32.0.
 - C5 O4 audit checkpoint PR: #169; merge commit `75782fb8b7fb00bd273bd99f78c337f98439e934`.
 - geometry `origin/main` after the O4 interval-engine checkpoint: `75782fb8b7fb00bd273bd99f78c337f98439e934`.
+- geometry `origin/main` at the Euler-Gamma proof base: `46f5c52037cecd01b6fee43005db57539a3e1af0` (PR #170).
+- C5 O4 post-merge state PR: #170; merge commit `46f5c52037cecd01b6fee43005db57539a3e1af0`.
+- Euler-Gamma proof module: `research/native-moving-schur-sigma/SigmaGammaEulerIntegral.lean`; Lean 4.32.0, Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`.
+- Euler-Gamma source, audit, and clean `.olean` hashes are appended in `evidence/rational-boxes/source-and-olean-sha256.txt`.

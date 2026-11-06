@@ -76,18 +76,20 @@ auditadas; somente `propext`, `Classical.choice`, `Quot.sound` aparecem.
 Isso fornece avaliação certificada de `log`, `exp` e `m^{-s}`, mas ainda não
 compõe os coeficientes C2.
 
-**Primeiro lema C5 O4 ainda ausente:** uma caixa racional quantitativa para
-`Complex.Gamma (w/2)` em `0.1495 ≤ Re(w) ≤ 0.9495`, `|Im(w)|≤0.4`, compatível
-com a avaliação C2. O avaliador de `c2_em_interval.py` usa Stirling com
-deslocamento 80 e 75 correções, mas seu resto ainda não foi ligado formalmente
-à função Gamma. A busca encontrou também
-`Zeta23.DigammaSeries.inv_gamma_eq_prod`, identidade formal pelo produto de
-Weierstrass em `height50-certified/lean/vendor/zeta23/Zeta23/GammaFacts/Series.lean`;
-essa rota alternativa ainda precisa de uma cauda numérica eficiente. A
-completação usa `Complex.Gamma` em
-`CarrySelfAdjointOperator/CompletedOperatorCharacteristic.lean`. Depois ainda
-será necessário certificar Hurwitz e compor a extração Cauchy sem alterar a
-cabeça C2, a cauda exata ou a completação original.
+`research/native-moving-schur-sigma/SigmaGammaEulerIntegral.lean` prova a
+ponte da Gamma original à aproximação explícita de Euler
+`gammaFinite 512 81 z`. Para `1495/20000 ≤ Re(z) ≤ 1`, o erro uniforme é no
+máximo `10⁻³²`; a prova mantém o resto da exponencial truncada e a cauda da
+integral. As oito raízes do módulo foram auditadas e usam apenas axiomas
+padrão (`propext`, `Classical.choice`, `Quot.sound`).
+
+**Primeiro lema C5 O4 ainda ausente:** caixas racionais estreitas para essa
+expressão finita nas regiões `z=w/2`, `0.1495 ≤ Re(w) ≤ 0.9495`,
+`|Im(w)|≤0.4`. A soma direta tem cancelamento grande; a etapa seguinte é
+avaliar a expansão Taylor racional antes da aritmética intervalar e provar seu
+resto. A alternativa `Zeta23.DigammaSeries.inv_gamma_eq_prod` continua
+disponível. Depois será necessário certificar Hurwitz e compor Cauchy/Fourier
+sem alterar a cabeça C2, a cauda exata ou a completação original.
 
 ## Alvos finais C5 — ainda NÃO provados
 

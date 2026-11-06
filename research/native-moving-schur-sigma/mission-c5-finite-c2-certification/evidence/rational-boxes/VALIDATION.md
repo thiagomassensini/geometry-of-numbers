@@ -105,17 +105,53 @@ done
 Os três logs de build estão vazios (sem avisos nem erros); o log da auditoria
 registra as quatro raízes e seus axiomas padrão permitidos.
 
-Essa infraestrutura ainda não enuncia uma inclusão para `Complex.Gamma`. O
-primeiro elo analítico ausente é uma caixa racional uniforme para `Gamma z` no
-retângulo necessário para `z = w/2`, `0.1495 ≤ Re(w) ≤ 0.9495` e `|Im(w)| ≤
-0.4`. A rotina Python desloca `z` por 80, usa 75 correções e acrescenta o
-resto `4(150)!/(6^150·150·149·80^149)`, mas ainda não há teorema Lean ligando
-essa aproximação à função `Complex.Gamma` da completação C2.
+### Ponte Euler-Gamma provada
 
-Há uma alternativa formal já existente: `Zeta23.DigammaSeries.inv_gamma_eq_prod`
-em `height50-certified/lean/vendor/zeta23/Zeta23/GammaFacts/Series.lean` prova
-a identidade infinita de Weierstrass para `1/Γ`. O uso numérico dela também
-precisaria de um limite racional eficiente para a cauda do produto e do fator
-exponencial. A rota ainda está em avaliação; nenhuma das duas abordagens foi
-composta às estimativas de Hurwitz e à extração Cauchy. Portanto, não há ainda
-prova de inclusão para os coeficientes originais.
+`research/native-moving-schur-sigma/SigmaGammaEulerIntegral.lean` prova uma
+aproximação da **Gamma original** pela expressão explícita
+`SigmaC5Gamma.gammaFinite 512 81 z`. A prova mantém a integral original, limita
+o erro da série de Taylor para `exp(-x)` no trecho compacto e acrescenta o
+limite da cauda `exp(-81)`. Em particular,
+`SigmaC5Gamma.gamma_finite_512_error` prova
+`‖Complex.Gamma z - gammaFinite 512 81 z‖ ≤ 10⁻³²` para
+`1495/20000 ≤ Re(z) ≤ 1`. O domínio inclui `z=w/2` em ambos os discos Cauchy
+usados pelo avaliador C2.
+
+Build e auditoria reproduzíveis, a partir da raiz do checkout C5. O ambiente de
+referência é `geometry-of-numbers-sigma-allorder-negative-certified-20261105`
+(HEAD `caa07002306b555fea5624cc11ab2ea5811a4324`, Lean 4.32, Mathlib
+`81a5d257c8e410db227a6665ed08f64fea08e997`):
+
+```bash
+C5_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105
+C5_SOURCE_ROOT=$PWD/research/native-moving-schur-sigma
+C5_OUTPUT=$PWD/.lake/build/research/native-moving-schur-sigma/c5-gamma-euler-clean
+C5_EVIDENCE=$PWD/research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes
+C5_LEAN_BIN=$(cd "$C5_REFERENCE_ROOT" && elan which lean)
+C5_MATHLIB_PATH=$(cd "$C5_REFERENCE_ROOT" && lake env printenv LEAN_PATH)
+mkdir -p "$C5_OUTPUT"
+export LEAN_PATH="$C5_OUTPUT:$C5_SOURCE_ROOT:$C5_MATHLIB_PATH"
+"$C5_LEAN_BIN" -DwarningAsError=true --root="$C5_SOURCE_ROOT" \
+  -o "$C5_OUTPUT/SigmaGammaEulerIntegral.olean" \
+  "$C5_SOURCE_ROOT/SigmaGammaEulerIntegral.lean" \
+  > "$C5_EVIDENCE/gamma-euler-build.log" 2>&1
+"$C5_LEAN_BIN" -DwarningAsError=true --root="$C5_EVIDENCE" \
+  -o "$C5_OUTPUT/gamma-euler-audit.olean" \
+  "$C5_EVIDENCE/gamma-euler-audit.lean" \
+  > "$C5_EVIDENCE/gamma-euler-audit.log" 2>&1
+```
+
+O build final terminou sem warnings nem erros. As oito raízes auditadas usam
+somente `propext`, `Classical.choice`, `Quot.sound`. As tentativas iniciais de
+compilação e seus erros já resolvidos foram preservados em
+`gamma-euler-prototype-errors.log` e `gamma-euler-numeric-errors.log`.
+Hashes de fontes e `.olean` estão em `source-and-olean-sha256.txt`.
+
+**O que continua faltando:** caixas racionais estreitas para `gammaFinite` nas
+pequenas caixas complexas dos pontos Cauchy. A soma direta tem cancelamento
+grande; deve-se expandir em Taylor em torno do centro racional e limitar o
+resto. Ainda faltam a avaliação certificada de Hurwitz, a extração Cauchy e a
+ponte com os coeficientes da fonte C2 original. A identidade formal
+`Zeta23.DigammaSeries.inv_gamma_eq_prod` pelo produto de Weierstrass permanece
+uma rota alternativa, mas nenhuma hipótese `sigmaC00495SourceBoxes` ou
+`sigmaC01SourceBoxes` foi provada.
