@@ -11,12 +11,12 @@ racionais contenham os coeficientes originais.
 - Em Lean 4.32 estão provados os limites dos pesos escalados de graus `0..14`:
   grau zero `=1`, grau um `<10^11`, e todo `2≤n≤14` tem soma `<10^145`.
 - `c5InterpolationWeightSum_lt_ten_145` é a última declaração validada.
+- A PR #187 integrou essa prova: commit `6424f4334edd5c776997116403043635fa0c8f83`, merge na `main` `9f4a1b43cb2b155dfc55bf49ef77d1914210b796`.
 - Build limpo com `warningAsError=true`: `evidence/rational-boxes/c5-interpolation-degree2-14-final-clean-build.log`, `BUILD_EXIT=0`.
 - Auditoria transitiva de 23 teoremas: somente `propext`, `Classical.choice` e
   `Quot.sound`. O checker fail-closed passou; logs e hashes estão ao lado.
-- A prova de graus 2–14 está validada localmente em
-  `codex/c5-weight-degree-2-14-20261106`, sobre `origin/main` em
-  `b00acaaa2cc011faa064b39f08233221143a330c`; ainda aguarda PR e merge.
+- O estado atual foi retomado em `codex/c5-state-after-pr187-20261106`, sobre
+  `origin/main` no merge `9f4a1b43cb2b155dfc55bf49ef77d1914210b796`.
 - Pins: Lean `leanprover/lean4:v4.32.0`, Mathlib
   `81a5d257c8e410db227a6665ed08f64fea08e997`, Carry
   `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`.
@@ -40,9 +40,9 @@ exploratório `10^124`.
 
 ## Próximo passo
 
-Publicar o checkpoint atual como entrega incompleta (prova + build + auditoria +
-hashes + estado), fazer merge na `main` e atualizar o estado com o SHA do merge.
-Depois disso, continuar com a cota analítica da fonte e a certificação nodal.
+Continuar com a cota analítica da fonte C2 no disco de raio `2/5` e a
+certificação nodal. PR #187 já integrou a prova de pesos; este documento
+registra o merge real e mantém explícito o estado incompleto da missão.
 
 ## Comando de build e auditoria
 

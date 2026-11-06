@@ -1,8 +1,10 @@
 # C5 — limite dos pesos de interpolação, graus 2 a 14
 
-**Status:** prova Lean compilada e auditada; checkpoint incompleto pronto para
-publicação. Esta etapa não prova a inclusão dos coeficientes C2 originais nas
-caixas O3.
+**Status:** prova Lean compilada, auditada e integrada como checkpoint
+explicitamente incompleto pela PR #187. Commit de prova
+`6424f4334edd5c776997116403043635fa0c8f83`; merge
+`9f4a1b43cb2b155dfc55bf49ef77d1914210b796`. Esta etapa não prova a inclusão
+dos coeficientes C2 originais nas caixas O3.
 
 ## Resultado formal
 
@@ -38,12 +40,11 @@ coeficientes da fonte.
 - SHA-256 do arquivo fonte, `.olean` da prova e `.olean` da auditoria:
   `c5-interpolation-degree2-14-final-clean-source-olean-sha256.txt`.
 
-O comando de reprodução está em `RESTART_HERE.md`. Os logs de tentativas
-intermediárias desta continuação permanecem no diretório ignorado
-`.lake/build/research/native-moving-schur-sigma/c5-degree2-14-20261106/`; o
-artefato durável da validação bem-sucedida está em `c5-degree2-14-final-clean-20261106`
-na worktree local e os seus hashes foram registrados acima. A prova, logs,
-pins e comando para retomada acompanham este checkpoint.
+O comando de reprodução está em `RESTART_HERE.md`. As tentativas intermediárias
+desta continuação permanecem no diretório ignorado
+`.lake/build/research/native-moving-schur-sigma/c5-degree2-14-20261106/`.
+Os `.olean` são saídas locais regeneráveis; o checkpoint durável contém a prova,
+os logs de build/auditoria, hashes, pins e comandos para retomada.
 
 ## O que segue aberto
 

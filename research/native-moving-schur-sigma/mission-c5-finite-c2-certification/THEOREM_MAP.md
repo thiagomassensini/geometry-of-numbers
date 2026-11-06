@@ -141,6 +141,7 @@ Além do grau um já integrado, a branch atual provou que, para `2≤n≤14`,
 `c5LagrangeBasis_nonzeroIndex_coeff_abs_le_weight` e
 `c5InterpolationCoeffAbsSum_le_four_mul_two_pow`. Build limpo e auditoria de
 23 raízes passaram; ver
-`evidence/rational-boxes/degree2-14-weight-bound-validation.md`. Essa etapa
-Ainda não está publicada e não fecha O4: a cota analítica da fonte e a inclusão
-nas caixas seguem pendentes.
+`evidence/rational-boxes/degree2-14-weight-bound-validation.md`. A etapa foi
+integrada pela PR #187, merge `9f4a1b43cb2b155dfc55bf49ef77d1914210b796`.
+Ela não fecha O4: a cota analítica da fonte e a inclusão nas caixas seguem
+pendentes.

@@ -131,10 +131,11 @@ Reproduced C5 outputs
 - Build: `c5-interpolation-degree1-final-clean-build.log`, `BUILD_EXIT=0`. Axiom audit: 21 roots, only `propext`, `Classical.choice`, `Quot.sound`; fail-closed checker passed.
 - Complete commands and log links: `evidence/rational-boxes/degree1-weight-bound-validation.md`.
 
-## C5 degree-two-through-fourteen weight bound — clean validation — 2026-11-06
+## C5 degree-two-through-fourteen weight bound — merged incomplete checkpoint — 2026-11-06
 
-- Status: validated locally; checkpoint/PR pending and explicitly incomplete.
-- Geometry base: `origin/main` `b00acaaa2cc011faa064b39f08233221143a330c`.
+- Status: PR #187 merged; this checkpoint remains explicitly incomplete.
+- Proof commit: `6424f4334edd5c776997116403043635fa0c8f83`.
+- Merge commit / geometry `origin/main`: `9f4a1b43cb2b155dfc55bf49ef77d1914210b796`.
 - Lean: `leanprover/lean4:v4.32.0`; Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`; Carry `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`.
 - Source `SigmaRationalInterpolation.lean` SHA-256: `1601efd6fda2f7ef604b672ec0f85947ad328304a340bfb30b909ea749feae73`.
 - Production `.olean` SHA-256: `f81a301cd7112605bd77e5eba00d05260bb70f390158aad5fba2f980c8bd28d0`.
