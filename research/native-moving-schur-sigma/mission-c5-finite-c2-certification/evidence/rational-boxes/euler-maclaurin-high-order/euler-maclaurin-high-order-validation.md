@@ -3,7 +3,10 @@
 **Status:** a identidade analítica e a cota explícita da cauda foram provadas
 localmente em Lean 4.32. O4/C5 segue incompleta: este checkpoint ainda não
 avalia nenhum dos 129 nós e não prova a inclusão dos coeficientes da fonte C2
-nas caixas racionais.
+nas caixas racionais. A entrega foi publicada na PR #205, commit de prova
+`61ddab8dbd5e669b2185a23c0900d2cba22dbf7a`, e integrada à `main` no merge
+`b56a90bceac12248bc5b8e6c2a247849ec885d6e`. O GitHub não reportou checks
+hospedados.
 
 ## Resultado formal
 
