@@ -167,7 +167,7 @@ continua aberta.
 
 Build e auditoria, a partir da raiz do checkout C5, com Lean 4.32.0,
 Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997` e base geometry
-`aa116108384a6834647e350e68fc25e81113a90a`:
+`72586b6223579ee1b37a6077ad6f2a0eceaf919c` (PR #173):
 
 ```bash
 C5_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105

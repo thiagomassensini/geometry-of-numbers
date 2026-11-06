@@ -43,12 +43,12 @@ certifica aritmética retangular racional, `log` real, `exp` real/complexo e
 `m^{-s}`. A auditoria de quatro raízes retornou somente axiomas padrão; os logs
 estão em `evidence/rational-boxes/reused-interval-audit.log`.
 
-**Ponte Euler-Gamma de alta precisão provada localmente:** `SigmaGammaEulerIntegral.lean`
+**Ponte Euler-Gamma de alta precisão integrada pela PR #173:** `SigmaGammaEulerIntegral.lean`
 prova que, para `1495/20000 ≤ Re(z) ≤ 1`, a Gamma original fica a distância no
 máximo `10⁻⁹⁹` da expressão finita `gammaFinite 1024 240 z`. O erro Taylor do
 trecho compacto é `≤10⁻¹²⁰` e a cauda é `≤exp(-240)≤10⁻¹⁰⁰`. O build Lean 4.32
 e a auditoria de dez raízes passaram, com apenas `propext`, `Classical.choice`
-e `Quot.sound`. O checkpoint está compilado, mas ainda não integrado.
+e `Quot.sound`. Merge: `72586b6223579ee1b37a6077ad6f2a0eceaf919c`.
 
 **Primeiro subproblema analítico ainda em aberto:** produzir caixas racionais
 estreitas para `gammaFinite 1024 240 z` nas caixas complexas do contorno. A soma
