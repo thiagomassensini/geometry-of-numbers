@@ -1,0 +1,3 @@
+637f5fb90fcd3e2467f9eb604bf50e5306c1c1a3caa3bbcb374952622f38a459  research/native-moving-schur-sigma/SigmaFiniteRationalIntervalBoxes.lean
+637f5fb90fcd3e2467f9eb604bf50e5306c1c1a3caa3bbcb374952622f38a459  research/native-moving-schur-sigma/SigmaFiniteRationalIntervalBoxes.lean
+PASS: generator output matches archived box module byte-for-byte

@@ -1,0 +1,23 @@
+'CarrySigmaObstruction.sigmaRatBallContains_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.sigmaRatBallContains_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.sigmaFiniteScaledMomentBall_valid_bounded' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaFiniteScaledMomentBall_contains_of_recurrence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaFiniteScaledMomentBallMinor_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaC00495Minor_lower_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.sigmaC00495Minor_final_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.sigmaC01Minor_lower_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.sigmaC01Minor_final_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.sigmaC00495_scaled_moment_boxes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.sigmaC01_scaled_moment_boxes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.sigmaPadeD_signs_at_99_2000_of_source_boxes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaPadeD_signs_at_1_10_of_source_boxes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

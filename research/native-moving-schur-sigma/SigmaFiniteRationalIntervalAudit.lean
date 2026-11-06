@@ -1,0 +1,19 @@
+import SigmaFiniteRationalIntervalCertificates
+
+namespace CarrySigmaObstruction
+
+#print axioms sigmaRatBallContains_mul
+#print axioms sigmaRatBallContains_pow
+#print axioms sigmaFiniteScaledMomentBall_valid_bounded
+#print axioms sigmaFiniteScaledMomentBall_contains_of_recurrence
+#print axioms sigmaFiniteScaledMomentBallMinor_contains
+#print axioms sigmaC00495Minor_lower_pos
+#print axioms sigmaC00495Minor_final_neg
+#print axioms sigmaC01Minor_lower_pos
+#print axioms sigmaC01Minor_final_neg
+#print axioms sigmaC00495_scaled_moment_boxes
+#print axioms sigmaC01_scaled_moment_boxes
+#print axioms sigmaPadeD_signs_at_99_2000_of_source_boxes
+#print axioms sigmaPadeD_signs_at_1_10_of_source_boxes
+
+end CarrySigmaObstruction

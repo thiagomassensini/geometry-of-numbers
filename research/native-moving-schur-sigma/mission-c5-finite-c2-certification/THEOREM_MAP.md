@@ -26,14 +26,40 @@ Arquivo novo: `research/native-moving-schur-sigma/SigmaFiniteCoefficientSignTran
 
 O fator `2` dos momentos está explícito em `completedSigmaDisplacedMoment`; por isso a identidade do menor tem fator `4`. Auditoria transitiva em `SigmaFiniteCoefficientSignTransportAudit.lean`: somente `propext`, `Classical.choice`, `Quot.sound`.
 
-## C5 Fase 3 — sinais intervalares condicionais
+## C5 O3 — propagação racional e sinais condicionais PROVADOS
+
+Arquivos novos:
+
+- `research/native-moving-schur-sigma/SigmaFiniteRationalIntervals.lean`
+- `research/native-moving-schur-sigma/SigmaFiniteRationalIntervalBoxes.lean`
+- `research/native-moving-schur-sigma/SigmaFiniteRationalIntervalTransport.lean`
+- `research/native-moving-schur-sigma/SigmaFiniteRationalIntervalSigns.lean`
+- `research/native-moving-schur-sigma/SigmaFiniteRationalIntervalCertificates.lean`
+- `research/native-moving-schur-sigma/SigmaFiniteRationalIntervalAudit.lean`
+
+| Declaração | Status, hipóteses e conclusão |
+|---|---|
+| `sigmaRatBallContains_mul`, `sigmaRatBallContains_pow` | PROVADOS: aritmética exata das bolas racionais; a fórmula do raio inclui o termo produto dos raios. |
+| `sigmaFiniteScaledMomentBall_contains_of_recurrence` | PROVADO: propaga enclosures através da recorrência polinomial sem divisão da sequência escalada C4. |
+| `sigmaC00495Minor_lower_pos`, `sigmaC00495Minor_final_neg` | PROVADOS por aritmética racional fechada: menores positivos para `s<11` e menor negativo em `s=11`. |
+| `sigmaC01Minor_lower_pos`, `sigmaC01Minor_final_neg` | PROVADOS: menores positivos para `s<9` e menor negativo em `s=9`. |
+| `sigmaPadeD_signs_at_99_2000_of_source_boxes` | PROVADO CONDICIONALMENTE a `sigmaC00495SourceBoxes`; sinais transferidos ao `sigmaPadeD` original. |
+| `sigmaPadeD_signs_at_1_10_of_source_boxes` | PROVADO CONDICIONALMENTE a `sigmaC01SourceBoxes`; sinais transferidos ao `sigmaPadeD` original. |
+
+Build limpo Lean 4.32 e auditoria transitiva aprovada; apenas `propext`,
+`Classical.choice`, `Quot.sound`. Evidência em
+`mission-c5-finite-c2-certification/evidence/rational-boxes/VALIDATION.md`.
+Esta O3 ainda não está integrada nesta revisão. A prova das hipóteses de caixa
+é O4 e não foi resolvida.
+
+## C5 O4 — origem das caixas ainda ABERTA
 
 A branch de pesquisa Momentos, commit `68c9b5f0a196289e28a8e5586146707d27df6b75`, contém as caixas e scripts. As verificações foram reproduzidas por frações racionais exatas e deram:
 
 - `d=99/2000`: `+++++++++++-`;
 - `d=1/10`: `+++++++++-`.
 
-Esses sinais ainda não estão provados em Lean. Eles são condicionais à inclusão dos coeficientes nas caixas JSON. A origem das caixas usa `mpmath.iv` ainda não certificado; ver `SESSION_STATE.md` e `evidence/interval-certificate/`.
+Os sinais condicionais estão provados em Lean por O3. Ainda falta provar que os coeficientes da fonte estão nas caixas JSON; a origem delas usa `mpmath.iv` ainda não certificado. Ver `SESSION_STATE.md` e `evidence/interval-certificate/`.
 
 ## Alvos finais C5 — ainda NÃO provados
 

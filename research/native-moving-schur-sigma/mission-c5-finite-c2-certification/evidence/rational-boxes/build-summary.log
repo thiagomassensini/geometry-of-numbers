@@ -1,0 +1,6 @@
+PASS SigmaFiniteRationalIntervals
+PASS SigmaFiniteRationalIntervalBoxes
+PASS SigmaFiniteRationalIntervalTransport
+PASS SigmaFiniteRationalIntervalSigns
+PASS SigmaFiniteRationalIntervalCertificates
+PASS SigmaFiniteRationalIntervalAudit
