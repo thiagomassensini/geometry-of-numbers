@@ -1,6 +1,6 @@
 # Próximos passos da missão
 
-**Estado conferido em 2026-11-06 contra origin/main@935911bce2c253ee508a4990face113ea63c87ee:** C0–C4 estão concluídos e integrados à main. C1B foi integrada pela PR #155 (merge 0586e238441096ecd2248e3f14bdac3a832af427); C2 e C3 também estão integrados pelas PRs #157 e #159 e foram recompilados/auditados nessa revisão. As seções C2/C3 abaixo registram entregas concluídas, não trabalho pendente. Retomar diretamente qualquer etapa posterior, sem repetir C0, C1 ou C1B.
+**Estado conferido em 2026-11-06 contra as fontes de origin/main@9951fcb7315c25b6d878befc42b2d02c26a96ec7:** C0–C4 estão concluídos e integrados à main. C1B foi integrada pela PR #155 (merge 0586e238441096ecd2248e3f14bdac3a832af427); C2 e C3 também estão integrados pelas PRs #157 e #159 e foram recompilados/auditados nessa revisão. A PR #203 atualizou documentação sem mudar essas fontes; a validação mais recente está em `evidence/c2-c3-final-validation-20261106/`. As seções C2/C3 abaixo registram entregas concluídas, não trabalho pendente. Retomar diretamente qualquer etapa posterior, sem repetir C0, C1 ou C1B.
 
 ## C2 — concluído e integrado
 

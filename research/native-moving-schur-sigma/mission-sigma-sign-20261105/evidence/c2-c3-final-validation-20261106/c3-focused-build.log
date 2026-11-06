@@ -1,0 +1,12 @@
+'CarrySigmaObstruction.sigmaMatrix_negative_direction_of_negative_pade_minor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaMatrix_negative_directions_of_window' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.exists_even_sigma_negative_directions_from_pade' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.exists_odd_sigma_negative_directions_from_pade' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
