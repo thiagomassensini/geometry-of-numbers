@@ -4,7 +4,9 @@
 
 Os pesos escalados de todos os graus `0..14` estão provados em Lean: grau zero
 `=1`, grau um `<10^11`, e cada grau `2..14` `<10^145`. A nova prova passou
-build limpo e auditoria fail-closed de 23 raízes. Veja
+build limpo e auditoria fail-closed de 23 raízes. A PR #187 integrou esse
+incremento: commit `6424f4334edd5c776997116403043635fa0c8f83`, merge
+`9f4a1b43cb2b155dfc55bf49ef77d1914210b796`. Veja
 `evidence/rational-boxes/degree2-14-weight-bound-validation.md`.
 
 O4 continua aberta: falta a cota analítica para a fonte C2 no disco de raio
@@ -116,9 +118,9 @@ foi integrada pela PR #181, merge
 `7460497307e7ed0ffb47ef1ac96b096e9b410472`. O limite escalado de grau um foi
 integrado pela PR #185, merge
 `c840ba35711ac8f938fa24c191f2af60f505480d`, com build limpo e auditoria de 21
-raízes. Naquele checkpoint permaneciam abertos os graus `2..14` e as demais
-obrigações O4; os limites dos pesos foram provados no checkpoint local mais
-recente, enquanto as demais obrigações O4 continuam abertas.
+raízes. A PR #187 integrou os limites dos graus `2..14`, com build limpo e
+auditoria de 23 raízes; merge `9f4a1b43cb2b155dfc55bf49ef77d1914210b796`.
+As demais obrigações O4 continuam abertas.
 O estado pós-PR #181 foi registrado pela PR #182, merge
 `8f8b9da2b8c1e8f3b8d1290608c8b2abffe9c285`.
 
@@ -137,8 +139,9 @@ fail-closed de 21 raízes. A auditoria inclui
 `propext`, `Classical.choice` e `Quot.sound`. Evidência e hashes:
 `evidence/rational-boxes/degree1-weight-bound-validation.md`.
 
-O limite de grau um está publicado e cobre somente esse grau. Os pesos de graus
-`2..14`, a cota analítica da fonte e as inclusões das caixas continuam abertos.
+Naquele checkpoint, o limite de grau um estava publicado e cobria somente esse
+grau. Os pesos de graus `2..14` foram integrados depois pela PR #187; a cota
+analítica da fonte e as inclusões das caixas continuam abertas.
 Os logs das falhas anteriores em
 `evidence/rational-boxes/degree1-retry-checkpoint.md` foram mantidos como
 histórico de proveniência.

@@ -12,9 +12,11 @@
 - Logs, pins, hashes e comando para retomar estão em
   `evidence/rational-boxes/degree2-14-weight-bound-validation.md` e nos
   arquivos `c5-interpolation-degree2-14-final-clean-*`.
+- A PR #187 integrou a prova: commit `6424f4334edd5c776997116403043635fa0c8f83`,
+  merge na `main` `9f4a1b43cb2b155dfc55bf49ef77d1914210b796`.
 - O checkpoint permanece incompleto: a cota analítica da fonte C2, a avaliação
   nos 129 nós e a inclusão dos coeficientes originais nas caixas continuam
-  abertas. Esta prova ainda não tem PR/merge.
+  abertas.
 
 ## 2026-11-06 — inventário inicial (pré-prova)
 
