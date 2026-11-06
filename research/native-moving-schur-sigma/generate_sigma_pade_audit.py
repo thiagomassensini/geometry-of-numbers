@@ -14,11 +14,12 @@ modules = [
     "SigmaPadeConvergence",
     "SigmaRemainderDescent",
     "SigmaPadeEventualNegativity",
+    "SigmaParityNegativeDirection",
 ]
 roots = [
     ("CarrySigmaObstruction." if module in {
         "SigmaZeroPairDecomposition", "SigmaRemainderDescent",
-        "SigmaPadeEventualNegativity"
+        "SigmaPadeEventualNegativity", "SigmaParityNegativeDirection"
     }
      else "CarrySigmaPade.") + match.group(1)
     for module in modules
@@ -32,6 +33,7 @@ roots = [
 header = r'''import SigmaPadeConvergence
 import SigmaRemainderDescent
 import SigmaPadeEventualNegativity
+import SigmaParityNegativeDirection
 import Lean
 
 open Lean Elab Command

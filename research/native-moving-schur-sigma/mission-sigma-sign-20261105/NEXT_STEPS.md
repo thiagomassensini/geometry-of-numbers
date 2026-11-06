@@ -11,8 +11,8 @@
 
 ## C3 — transporte aos setores par e ímpar
 
-6. Usar `p = 2i` e `p = 2i + 1` para provar a cobertura explícita dos setores par e ímpar: os menores correspondem às janelas `sigmaMatrix (1/5) 0 (i+2)` e `sigmaMatrix (1/5) 1 (i+2)`.
-7. Transportar as direções negativas às dimensões maiores pelo teorema de persistência integrado em C1B (PR #155, merge `0586e238441096ecd2248e3f14bdac3a832af427`). Compilar, auditar axiomas, registrar checkpoint, publicar PR e integrar à `main`.
+6. **Prova concluída:** `p = 2i` e `p = 2i + 1` dão as janelas `sigmaMatrix (1/5) 0 (i+2)` e `sigmaMatrix (1/5) 1 (i+2)`, respectivamente.
+7. **Prova concluída:** o lema de persistência integrado em C1B (PR #155, merge `0586e238441096ecd2248e3f14bdac3a832af427`) leva cada direção a todas as dimensões `M ≥ i+2`. A auditoria e o checkpoint estão em `evidence/c3-parity/`; publicar a PR e integrar à `main`, depois atualizar este estado com os identificadores finais.
 
 ## Retomada do overlay 4.35
 

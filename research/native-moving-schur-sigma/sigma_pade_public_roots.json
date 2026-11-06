@@ -123,6 +123,15 @@
     "CarrySigmaObstruction.sigmaUpperHalfPlaneSqrt_height_sq",
     "CarrySigmaObstruction.sigmaPadeRecoveredHeight",
     "CarrySigmaObstruction.completedNative_sigmaRemainder_pade_root_of_isolation",
-    "CarrySigmaObstruction.exists_eventually_negative_sigmaPadeD_from_height50_certificate"
+    "CarrySigmaObstruction.exists_eventually_negative_sigmaPadeD_from_height50_certificate",
+    "CarrySigmaObstruction.sigmaMatrix_negative_direction_of_negative_pade_minor",
+    "CarrySigmaObstruction.sigmaParityWindowEmbedding",
+    "CarrySigmaObstruction.sigmaMatrix_window_submatrix",
+    "CarrySigmaObstruction.sigmaMatrix_not_posSemidef_of_shifted_window",
+    "CarrySigmaObstruction.sigmaMatrix_negative_direction_of_not_posSemidef",
+    "CarrySigmaObstruction.sigmaMatrix_negative_direction_of_shifted_window",
+    "CarrySigmaObstruction.sigmaMatrix_negative_directions_of_window",
+    "CarrySigmaObstruction.exists_even_sigma_negative_directions_from_pade",
+    "CarrySigmaObstruction.exists_odd_sigma_negative_directions_from_pade"
   ]
 }
