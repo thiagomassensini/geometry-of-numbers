@@ -2,13 +2,14 @@
 
 ## Estado mais recente — 2026-11-06
 
-A cota de módulo já não é uma obrigação aberta: `SigmaC5AnalyticBounds.lean`
-prova localmente `displacedProductC_norm_le_10pow100_on_ball_39` para a fonte
-original no disco aberto de raio `39/100`. Build limpo Lean 4.32 e auditoria
-fail-closed de três raízes passaram. O contorno de Cauchy usa raio `38/100`,
-estritamente dentro dessa bola, e a análise racional mantém o erro de
-interpolação `<10^-410`. Detalhes, hashes e limites estão em
-`evidence/rational-boxes/analytic-bounds-validation.md`.
+A PR #191 integrou a cota `10^100` no merge
+`88a52ba3a6bda7a78b8317d892b6f7bc640c863f`. Depois, `SigmaC5AnalyticBounds.lean`
+provou localmente o majorante mais forte
+`displacedProductC_norm_le_10pow13_on_ball_39` para a fonte original no disco
+aberto de raio `39/100`. Build limpo Lean 4.32 e auditoria fail-closed de
+quatro raízes passaram. O contorno de Cauchy usa raio `38/100`, e a análise
+racional exata com o majorante `10^13` dá erro `<10^-501`. Detalhes, hashes e
+limites estão em `evidence/rational-boxes/analytic-bounds-10pow13-validation.md`.
 
 O4/C5 continua incompleta: certificar a avaliação da fonte original nos 129
 nós e provar a inclusão dos coeficientes nas caixas O3. Não refazer C1B, C2,
@@ -28,7 +29,7 @@ C5_CARRY_ROOT=/home/thlinux/worktrees/carry-sigma-c2-pinned-045369
 C5_CACHE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache
 C5_SOURCE_ROOT=$PWD/research/native-moving-schur-sigma
 C5_SOURCE_ANALYTIC_OUTPUT=$PWD/.lake/build/research/native-moving-schur-sigma/c5-source-analytic-clean-retry1-20261106
-C5_OUTPUT=$PWD/.lake/build/research/native-moving-schur-sigma/c5-analytic-bounds-repro-20261106
+C5_OUTPUT=$PWD/.lake/build/research/native-moving-schur-sigma/c5-analytic-bounds-10pow13-repro-20261106
 C5_EVIDENCE=$C5_SOURCE_ROOT/mission-c5-finite-c2-certification/evidence/rational-boxes
 C5_LEAN_BIN=$(cd "$C5_REFERENCE_ROOT" && elan which lean)
 mkdir -p "$C5_OUTPUT"
@@ -36,18 +37,20 @@ export SIGMA_REFERENCE_ROOT="$C5_REFERENCE_ROOT" CARRY_LEAN_ROOT="$C5_CARRY_ROOT
 export SIGMA_OUTPUT_DIR="$C5_OUTPUT" LEAN_BIN="$C5_LEAN_BIN"
 export SIGMA_HEIGHT50_BUILD="$C5_SOURCE_ANALYTIC_OUTPUT:$C5_CACHE_ROOT/c3-validation/c1:$C5_CACHE_ROOT/c3-validation/c2/integration:$C5_CACHE_ROOT/c4-clean:$C5_CACHE_ROOT/c4-main-clean"
 if bash "$C5_SOURCE_ROOT/compile_sigma_pade.sh" SigmaC5AnalyticBounds \
-    > "$C5_EVIDENCE/c5-analytic-bounds-repro-build.log" 2>&1; then
-  printf 'BUILD_EXIT=0\n' >> "$C5_EVIDENCE/c5-analytic-bounds-repro-build.log"
+    > "$C5_EVIDENCE/c5-analytic-bounds-10pow13-repro-build.log" 2>&1; then
+  printf 'BUILD_EXIT=0\n' >> "$C5_EVIDENCE/c5-analytic-bounds-10pow13-repro-build.log"
 else
   C5_STATUS=$?
-  printf 'BUILD_EXIT=%s\n' "$C5_STATUS" >> "$C5_EVIDENCE/c5-analytic-bounds-repro-build.log"
+  printf 'BUILD_EXIT=%s\n' "$C5_STATUS" >> "$C5_EVIDENCE/c5-analytic-bounds-10pow13-repro-build.log"
   exit "$C5_STATUS"
 fi
 python3 "$C5_SOURCE_ROOT/check_c5_analytic_bounds_axioms.py" \
-  "$C5_EVIDENCE/c5-analytic-bounds-repro-build.log"
+  "$C5_EVIDENCE/c5-analytic-bounds-10pow13-repro-build.log" \
+  > "$C5_EVIDENCE/c5-analytic-bounds-10pow13-repro-axiom-check.log"
 sha256sum "$C5_SOURCE_ROOT/SigmaC5AnalyticBounds.lean" \
   "$C5_SOURCE_ROOT/check_c5_analytic_bounds_axioms.py" \
-  "$C5_OUTPUT/SigmaC5AnalyticBounds.olean"
+  "$C5_OUTPUT/SigmaC5AnalyticBounds.olean" \
+  > "$C5_EVIDENCE/c5-analytic-bounds-10pow13-repro-source-olean-sha256.txt"
 ```
 
 O comando `compile_sigma_pade.sh` verifica a revisão limpa do Carry

@@ -8,6 +8,7 @@ from pathlib import Path
 required = {
     "CarrySigmaObstruction.complexGamma_norm_le_100",
     "CarrySigmaObstruction.complexGamma_norm_le_1000",
+    "CarrySigmaObstruction.displacedProductC_norm_le_10pow13_on_ball_39",
     "CarrySigmaObstruction.displacedProductC_norm_le_10pow100_on_ball_39",
 }
 allowed = {"propext", "Classical.choice", "Quot.sound"}

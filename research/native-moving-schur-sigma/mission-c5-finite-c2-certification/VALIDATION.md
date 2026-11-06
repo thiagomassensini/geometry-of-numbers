@@ -3,25 +3,25 @@
 ## Cota do módulo da fonte original — PASSOU localmente; O4 parcial
 
 `SigmaC5AnalyticBounds.lean` prova a cota uniforme
-`CarrySigmaObstruction.displacedProductC_norm_le_10pow100_on_ball_39` para o
+`CarrySigmaObstruction.displacedProductC_norm_le_10pow13_on_ball_39` para o
 produto deslocado original, com `|d|≤1/10` e `z∈ball(0,39/100)`. A prova
 mantém a característica nativa completada e seus fatores originais. Ela usa
 uma cota da característica de `2·10^6` em cada fator; o produto fica abaixo
-de `10^100`. Para a estimativa de Cauchy, usamos o contorno exterior de raio
+de `10^13`. Para a estimativa de Cauchy, usamos o contorno exterior de raio
 `38/100`; seu disco fechado está estritamente dentro da bola aberta de raio
 `39/100` na qual o lema da cota vale, e dentro do disco analítico aberto de
 raio `2/5` integrado pela PR #189.
 
 O build limpo em Lean 4.32 terminou com `BUILD_EXIT=0`. A auditoria
-fail-closed de `complexGamma_norm_le_100`, `complexGamma_norm_le_1000` e da
-cota de `displacedProductC` aceitou apenas `propext`, `Classical.choice` e
-`Quot.sound`. Logs, hashes e detalhes estão em
-`evidence/rational-boxes/analytic-bounds-validation.md`.
+fail-closed das duas cotas Gamma, da cota `10^13` e do wrapper `10^100`
+aceitou apenas `propext`, `Classical.choice` e `Quot.sound`. Logs, hashes e
+detalhes estão em `evidence/rational-boxes/analytic-bounds-10pow13-validation.md`.
 
-A análise de interpolação refeita em frações exatas com raio externo `38/100`
-confirma cauda `<10^-410` e erro Gamma amplificado `<10^-135`. Isso ainda não
-certifica avaliações nos nós: O4 permanece aberta até incluir os valores
-originais nos 129 pontos e provar as caixas dos coeficientes C2.
+A análise de interpolação refeita em frações exatas com majorante `10^13` e
+raio externo `38/100` confirma cauda `<10^-501` e erro Gamma amplificado
+`<10^-135`. Isso ainda não certifica avaliações nos nós: O4 permanece aberta
+até incluir os valores originais nos 129 pontos e provar as caixas dos
+coeficientes C2.
 
 ## Limite de peso de grau um — PASSOU em build limpo e auditoria
 

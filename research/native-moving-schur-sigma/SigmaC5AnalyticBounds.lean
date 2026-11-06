@@ -437,10 +437,10 @@ private theorem c5_completedCharacteristic_norm_le_twoMillion {z : ℂ}
           mul_le_mul hxi hscalar (norm_nonneg _) (by norm_num)
     _ ≤ 2000000 := by norm_num
 
-theorem displacedProductC_norm_le_10pow100_on_ball_39
+theorem displacedProductC_norm_le_10pow13_on_ball_39
     (d : ℝ) (hd : |d| ≤ (1 / 10 : ℝ)) {z : ℂ}
     (hz : z ∈ Metric.ball 0 (39 / 100 : ℝ)) :
-    ‖displacedProductC d z‖ ≤ (10 : ℝ) ^ 100 := by
+    ‖displacedProductC d z‖ ≤ (10 : ℝ) ^ 13 := by
   have hnorm : ‖z‖ < (39 / 100 : ℝ) := by
     simpa [Metric.mem_ball, dist_zero_right] using hz
   have him : |z.im| < 39 / 100 := (Complex.abs_im_le_norm z).trans_lt hnorm
@@ -468,17 +468,24 @@ theorem displacedProductC_norm_le_10pow100_on_ball_39
   change ‖completedNativeOperatorCharacteristic
       (z - Complex.I * (d : ℂ)) *
       completedNativeOperatorCharacteristic (z + Complex.I * (d : ℂ))‖ ≤
-    (10 : ℝ) ^ 100
+    (10 : ℝ) ^ 13
   rw [norm_mul]
   calc
     ‖completedNativeOperatorCharacteristic (z - Complex.I * (d : ℂ))‖ *
         ‖completedNativeOperatorCharacteristic (z + Complex.I * (d : ℂ))‖ ≤
       2000000 * 2000000 :=
         mul_le_mul hminus hplus (norm_nonneg _) (by norm_num)
-    _ ≤ (10 : ℝ) ^ 100 := by norm_num
+    _ ≤ (10 : ℝ) ^ 13 := by norm_num
+
+theorem displacedProductC_norm_le_10pow100_on_ball_39
+    (d : ℝ) (hd : |d| ≤ (1 / 10 : ℝ)) {z : ℂ}
+    (hz : z ∈ Metric.ball 0 (39 / 100 : ℝ)) :
+    ‖displacedProductC d z‖ ≤ (10 : ℝ) ^ 100 := by
+  exact (displacedProductC_norm_le_10pow13_on_ball_39 d hd hz).trans (by norm_num)
 
 #print axioms complexGamma_norm_le_100
 #print axioms complexGamma_norm_le_1000
+#print axioms displacedProductC_norm_le_10pow13_on_ball_39
 #print axioms displacedProductC_norm_le_10pow100_on_ball_39
 
 end

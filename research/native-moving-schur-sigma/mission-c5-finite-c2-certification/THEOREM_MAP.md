@@ -3,13 +3,14 @@
 ## Snapshot atual — cota da fonte validada localmente
 
 `SigmaC5AnalyticBounds.lean` prova localmente
-`CarrySigmaObstruction.displacedProductC_norm_le_10pow100_on_ball_39`:
-para `|d|≤1/10`, o módulo da fonte deslocada original é no máximo `10^100`
-em `|z|<39/100`. Build limpo Lean 4.32 e auditoria fail-closed de três raízes
+`CarrySigmaObstruction.displacedProductC_norm_le_10pow13_on_ball_39`:
+para `|d|≤1/10`, o módulo da fonte deslocada original é no máximo `10^13`
+em `|z|<39/100`. Build limpo Lean 4.32 e auditoria fail-closed de quatro raízes
 passaram, apenas com `propext`, `Classical.choice` e `Quot.sound`. Para Cauchy,
 a interpolação usa contorno de raio `38/100`, estritamente dentro dessa região;
-a estimativa racional continua `<10^-410`. Prova, hashes e logs estão em
-`evidence/rational-boxes/analytic-bounds-validation.md`.
+a estimativa racional continua `<10^-501`. Prova, hashes e logs estão em
+`evidence/rational-boxes/analytic-bounds-10pow13-validation.md`. O limite
+`10^100` integrado pela PR #191 permanece como wrapper compatível.
 
 O4 segue aberta somente quanto à certificação dos valores nos 129 nós e à
 inclusão dos coeficientes C2 originais nas caixas O3. Os sinais finais seguem
