@@ -1,5 +1,7 @@
 # Próximos passos da missão
 
+**Estado conferido em 2026-11-06:** C0–C4 estão concluídos e integrados à `main`. C1B foi integrada pela PR #155 (merge `0586e238441096ecd2248e3f14bdac3a832af427`); C2 e C3 também estão integrados pelas PRs #157 e #159. As seções C2/C3 abaixo registram entregas concluídas, não trabalho pendente. Retomar diretamente qualquer etapa posterior, sem repetir C0, C1 ou C1B.
+
 ## C2 — concluído e integrado
 
 1. Trabalhar sobre a integração Lean 4.32 publicada em `b9ce1955c1e8830afad2323afe5266ed3f5f35d9`, usando-a como referência e não iniciando a migração geral 4.35.
@@ -22,4 +24,4 @@ A tentativa está preservada como evidência incompleta em `evidence/lean435-val
 
 Integrado pela PR #162, commit `31d3df33d4524d9809c75ba4481b1fa9f57a98bc`, merge `799a0e06af5469e9fe0665943adbb1cb29d0b6f8`. `SigmaSourceBezout.lean` prova a descida local do produto deslocado para `u=t²`, a recorrência formal `C_d · H_d=-C_d′` com `H_d(n)=2*completedSigmaLogJet d n`, e a congruência de Bézout com `2 • sigmaMatrix` original. A auditoria de axiomas passou; os logs, pins e hashes estão em `evidence/c4-source-bezout/`. Não houve status checks hospedados.
 
-A lei quantitativa distância × profundidade e os novos cadernos continuam adiados. Não foi necessário calcular a primeira profundidade de falha para provar a negatividade eventual de C2.
+A lei quantitativa distância × profundidade e os novos cadernos continuam adiados. Não foi necessário calcular a primeira profundidade de falha para provar a negatividade eventual de C2. A rota 4.35 permanece somente como checkpoint incompleto; a rota 4.32 publicada continua sendo a referência validada para C2.

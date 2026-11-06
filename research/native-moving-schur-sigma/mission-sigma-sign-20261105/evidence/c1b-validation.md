@@ -8,4 +8,4 @@
 - Placeholder/axiomas novos: a varredura do script não encontrou `sorry`, `admit`, `native_decide`, `sorryAx` nem declaração `axiom` nas fontes verificadas.
 - Memória: havia aproximadamente 56–60 GiB de `MemAvailable`, acima do limite de 30 GiB do script.
 - Log integral: `c1b-focused-build.log`. Hashes dos arquivos de código e script: `c1b-source-sha256.txt`.
-- A CI hospedada concluída com sucesso (`42101466137`) corresponde à PR #154/C1. A PR C1B ainda precisa ser publicada e validada na hospedagem.
+- Publicação: C1B foi integrada à `main` pela PR #155, merge `0586e238441096ecd2248e3f14bdac3a832af427`; não há publicação pendente. A CI hospedada concluída com sucesso (`42101466137`) corresponde à PR #154/C1 e não é atribuída à PR #155.
