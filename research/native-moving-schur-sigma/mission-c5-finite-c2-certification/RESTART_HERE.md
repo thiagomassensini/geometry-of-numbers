@@ -6,6 +6,14 @@ racionais contenham os coeficientes originais.
 
 ## Estado atual — 2026-11-06
 
+- A `origin/main` consultada está em `f5d96186348bd1dde2a49061ba68421d3c7fa36d`.
+- Branch de continuação: `codex/c5-source-analytic-domain-20261106`.
+- A prova local `SigmaC5SourceAnalytic.lean` fecha o domínio analítico no disco
+  aberto de raio `2/5` para `|d|≤1/10`; Lean 4.32 compilou o arquivo com
+  `warningAsError=true`, e os quatro `#print axioms` passaram com axiomas padrão.
+- Esta ponte estabelece apenas o domínio, não a cota do módulo nem as inclusões
+  nas caixas. A validação C5 segue incompleta.
+
 - C1–C4 e O3 estão integradas. O3 prova os sinais finais apenas sob as
   hipóteses explícitas de inclusão nas caixas.
 - Em Lean 4.32 estão provados os limites dos pesos escalados de graus `0..14`:
@@ -27,7 +35,7 @@ racionais contenham os coeficientes originais.
 
 ## O que continua aberto
 
-Falta provar uma cota analítica uniforme para `completedSigmaDensity d t` no
+Falta provar uma cota numérica uniforme para `completedSigmaDensity d t` no
 disco de raio `2/5`, certificar a avaliação racional da fonte nos 129 nós e
 provar a inclusão dos coeficientes originais nas caixas O3. A saída `mpmath.iv`
 continua sendo evidência computacional, não prova de inclusão. Não declarar os
@@ -40,9 +48,55 @@ exploratório `10^124`.
 
 ## Próximo passo
 
-Continuar com a cota analítica da fonte C2 no disco de raio `2/5` e a
-certificação nodal. PR #187 já integrou a prova de pesos; este documento
-registra o merge real e mantém explícito o estado incompleto da missão.
+Continuar com uma cota explícita para o módulo da fonte C2 no disco de raio
+`2/5` e a certificação nodal. PR #187 já integrou a prova de pesos; a ponte de
+domínio analítico foi compilada localmente nesta continuação, sem ainda fechar
+a cota. Consulte `evidence/rational-boxes/source-analytic-domain-validation.md`.
+
+## Retomada exata do subpasso de domínio
+
+- Último teorema validado: `CarrySigmaObstruction.displacedProductC_analyticOnNhd_ball`.
+- Arquivo compilado: `research/native-moving-schur-sigma/SigmaC5SourceAnalytic.lean`.
+- Branch local: `codex/c5-source-analytic-domain-20261106`, baseada em
+  `origin/main` `f5d96186348bd1dde2a49061ba68421d3c7fa36d`.
+- PR: ainda não aberta neste checkpoint.
+- Não refazer C1B, C2, C3, C4, a recorrência de transporte, O3, a ponte Gamma
+  ou os limites dos pesos 0–14.
+- Obrigação matemática exata: derivar uma cota explícita do módulo usando a
+  expressão original C2 completada, com as remoções de singularidade em
+  `s=0` e `s=1` justificadas. O domínio analítico sozinho não basta para
+  limitar o resto da interpolação.
+
+Build e auditoria do módulo de domínio:
+
+```bash
+C5_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105
+C5_CARRY_ROOT=/home/thlinux/worktrees/carry-sigma-c2-pinned-045369
+C5_CACHE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache
+C5_SOURCE_ROOT=$PWD/research/native-moving-schur-sigma
+C5_OUTPUT=$PWD/.lake/build/research/native-moving-schur-sigma/c5-source-analytic-repro-20261106
+C5_EVIDENCE=$C5_SOURCE_ROOT/mission-c5-finite-c2-certification/evidence/rational-boxes
+C5_LEAN_BIN=$(cd "$C5_REFERENCE_ROOT" && elan which lean)
+C5_MATHLIB_PATH=$(cd "$C5_REFERENCE_ROOT" && lake env printenv LEAN_PATH)
+mkdir -p "$C5_OUTPUT"
+export SIGMA_REFERENCE_ROOT="$C5_REFERENCE_ROOT" CARRY_LEAN_ROOT="$C5_CARRY_ROOT"
+export SIGMA_OUTPUT_DIR="$C5_OUTPUT" LEAN_BIN="$C5_LEAN_BIN"
+export SIGMA_HEIGHT50_BUILD="$C5_CACHE_ROOT/c3-validation/c1:$C5_CACHE_ROOT/c3-validation/c2/integration:$C5_CACHE_ROOT/c4-clean:$C5_CACHE_ROOT/c4-main-clean"
+if bash "$C5_SOURCE_ROOT/compile_sigma_pade.sh" SigmaC5SourceAnalytic \\
+    > "$C5_EVIDENCE/c5-source-analytic-repro-build.log" 2>&1; then
+  printf 'BUILD_EXIT=0\\n' >> "$C5_EVIDENCE/c5-source-analytic-repro-build.log"
+else
+  C5_STATUS=$?
+  printf 'BUILD_EXIT=%s\\n' "$C5_STATUS" >> "$C5_EVIDENCE/c5-source-analytic-repro-build.log"
+  exit "$C5_STATUS"
+fi
+python3 "$C5_SOURCE_ROOT/check_c5_source_analytic_axioms.py" \\
+  "$C5_EVIDENCE/c5-source-analytic-repro-build.log" \\
+  > "$C5_EVIDENCE/c5-source-analytic-repro-axiom-check.log"
+sha256sum "$C5_SOURCE_ROOT/SigmaC5SourceAnalytic.lean" \\
+  "$C5_OUTPUT/SigmaC5SourceAnalytic.olean" \\
+  > "$C5_EVIDENCE/c5-source-analytic-repro-source-olean-sha256.txt"
+```
 
 ## Comando de build e auditoria
 

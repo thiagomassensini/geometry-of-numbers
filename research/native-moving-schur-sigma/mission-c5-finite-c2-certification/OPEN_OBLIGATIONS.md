@@ -9,8 +9,9 @@ incremento: commit `6424f4334edd5c776997116403043635fa0c8f83`, merge
 `9f4a1b43cb2b155dfc55bf49ef77d1914210b796`. Veja
 `evidence/rational-boxes/degree2-14-weight-bound-validation.md`.
 
-O4 continua aberta: falta a cota analítica para a fonte C2 no disco de raio
-`2/5`, sua avaliação certificada nos 129 nós e a inclusão dos coeficientes
+O4 continua aberta: o domínio analítico da fonte deslocada no disco de raio
+`2/5` já foi provado localmente em `SigmaC5SourceAnalytic.lean`, mas falta uma
+cota numérica para o módulo, a avaliação certificada nos 129 nós e a inclusão dos coeficientes
 originais nas caixas O3. Portanto, os sinais O3 continuam condicionais, e a
 missão C5 não está concluída. As referências históricas abaixo que diziam que
 os pesos `2..14` estavam pendentes registram o estado na data dos checkpoints
@@ -46,7 +47,7 @@ fontes/oleans e verificador fail-closed estão em `evidence/rational-boxes/`.
 
 ## O4 — origem das caixas — ABERTO
 
-Provar inclusões rigorosas dos coeficientes `c₀..c₁₄` em `d=99/2000` e `c₀..c₁₂` em `d=1/10`, preservando cabeça C2 + cauda geométrica exata + completação original. Certificar a avaliação racional estreita da expressão Gamma finita, a cauda Hurwitz/Euler–Maclaurin e o contorno Cauchy/Fourier, com todos os domínios usados. A saída Python atual não fecha essa obrigação.
+Provar inclusões rigorosas dos coeficientes `c₀..c₁₄` em `d=99/2000` e `c₀..c₁₂` em `d=1/10`, preservando cabeça C2 + cauda geométrica exata + completação original. O domínio analítico no disco de raio `2/5` está provado; ainda faltam uma cota numérica explícita do módulo, a avaliação racional estreita da expressão Gamma finita, a cauda Hurwitz/Euler–Maclaurin e a composição nodal/Cauchy, com todos os domínios usados. A saída Python atual não fecha essa obrigação.
 
 O avaliador foi conferido estruturalmente e as três reproduções passaram, mas
 `mpmath.iv`/seu backend e as operações complexas elementares ainda não têm prova

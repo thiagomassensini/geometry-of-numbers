@@ -1,3 +1,20 @@
+# C5 O4 — domínio analítico e estado da certificação
+
+`SigmaC5SourceAnalytic.lean` prova em Lean 4.32 que a fonte original
+`displacedProductC d` é analítica no disco aberto `|z|<2/5`, para
+`|d|≤1/10`. O resultado é obtido mostrando que cada argumento deslocado fica
+no domínio de altura onde a característica completada original é analítica.
+As especializações para `d=99/2000` e `d=1/10` também foram compiladas.
+
+Build limpo com warnings como erros e checker fail-closed de quatro relatórios
+de axiomas passaram; somente `propext`, `Classical.choice` e `Quot.sound`
+aparecem. Logs, hashes e escopo estão em
+`source-analytic-domain-validation.md`.
+
+Essa etapa estabelece o domínio para Cauchy. Ainda não prova uma cota
+numérica do módulo, os valores nos 129 nós ou as inclusões dos coeficientes
+originais nas caixas. Portanto, os resultados O3 abaixo seguem condicionais.
+
 # C5 O3 — bolas racionais e sinais condicionais
 
 ## Resultado
