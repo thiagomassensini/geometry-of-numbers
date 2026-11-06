@@ -4,17 +4,16 @@
 
 Os pesos escalados `0..14` seguem provados e integrados, e agora a fonte
 original também tem uma cota uniforme local, compilada e auditada:
-`CarrySigmaObstruction.displacedProductC_norm_le_10pow100_on_ball_39`
-estabelece `‖displacedProductC d z‖≤10^100` para `|d|≤1/10` e
+`CarrySigmaObstruction.displacedProductC_norm_le_10pow13_on_ball_39`
+estabelece `‖displacedProductC d z‖≤10^13` para `|d|≤1/10` e
 `|z|<39/100`. O domínio de analiticidade aberto de raio `2/5` permanece o
 resultado integrado pela PR #189. A interpolação usa contorno exterior
 `38/100`, cujo disco fechado está dentro da bola aberta onde a cota Lean vale.
 A análise racional exata com esse raio ainda dá erro de interpolação
-`<10^-410`, e a amplificação do erro Gamma `10^-259` permanece `<10^-135`.
-Veja `evidence/rational-boxes/analytic-bounds-validation.md` e
-`rational-interpolation-analysis-radius-38.log`. O log de raio `39/100` é
-mantido como histórico, mas foi substituído porque o lema Lean afirma a cota
-no disco aberto de raio `39/100`.
+`<10^-501`, e a amplificação do erro Gamma `10^-259` permanece `<10^-135`.
+Veja `evidence/rational-boxes/analytic-bounds-10pow13-validation.md` e
+`rational-interpolation-analysis-10pow13-radius-38.log`. A cota `10^100` da
+PR #191 segue como wrapper compatível.
 
 O4 continua aberta: ainda faltam a avaliação certificada da fonte nos 129
 nós e a prova de inclusão dos coeficientes C2 originais nas caixas O3. Os

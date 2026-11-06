@@ -21,6 +21,20 @@
   coeficientes C2 originais pertencem às caixas O3. Nenhum sinal incondicional
   novo foi declarado.
 
+## 2026-11-06 — majorante apertado para a fonte, validado localmente
+
+- A PR #191 integrou `displacedProductC_norm_le_10pow100_on_ball_39`, merge
+  `88a52ba3a6bda7a78b8317d892b6f7bc640c863f`.
+- O mesmo argumento dá a cota mais forte
+  `displacedProductC_norm_le_10pow13_on_ball_39`, pois cada fator tem norma
+  `≤2,000,000` e o produto é `≤4·10^12≤10^13`. O teorema `10^100` é mantido
+  como wrapper. Build limpo e auditoria fail-closed de quatro raízes passaram.
+- A análise racional exata com limite `10^13` e raio exterior `38/100` dá erro
+  de cauda `<10^-501`; hashes e logs estão em
+  `evidence/rational-boxes/analytic-bounds-10pow13-validation.md`.
+- Ainda faltam as avaliações nos 129 nós e as inclusões O3; o checkpoint C5
+  segue incompleto.
+
 ## 2026-11-06 — limite dos pesos de graus 2–14 validado localmente
 
 - `c5InterpolationCoeffAbsSum_le_four_mul_two_pow` prova que, para todo
