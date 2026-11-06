@@ -78,13 +78,13 @@ compõe os coeficientes C2.
 
 `research/native-moving-schur-sigma/SigmaGammaEulerIntegral.lean` prova a
 ponte da Gamma original à aproximação explícita de Euler
-`gammaFinite 512 81 z`. Para `1495/20000 ≤ Re(z) ≤ 1`, o erro uniforme é no
-máximo `10⁻³²`; a prova mantém o resto da exponencial truncada e a cauda da
-integral. As oito raízes do módulo foram auditadas e usam apenas axiomas
-padrão (`propext`, `Classical.choice`, `Quot.sound`).
+`gammaFinite 512 81 z` com erro `≤10⁻³²` (PR #171) e uma versão de alta precisão
+`gammaFinite 1024 240 z` com erro `≤10⁻⁹⁹` (prova local nesta branch). O novo
+build e auditoria de dez raízes usam apenas axiomas padrão (`propext`,
+`Classical.choice`, `Quot.sound`).
 
-**Primeiro lema C5 O4 ainda ausente:** caixas racionais estreitas para essa
-expressão finita nas regiões `z=w/2`, `0.1495 ≤ Re(w) ≤ 0.9495`,
+**Primeiro lema C5 O4 ainda ausente:** caixas racionais estreitas para
+`gammaFinite 1024 240 z` nas regiões `z=w/2`, `0.1495 ≤ Re(w) ≤ 0.9495`,
 `|Im(w)|≤0.4`. A soma direta tem cancelamento grande; a etapa seguinte é
 avaliar a expansão Taylor racional antes da aritmética intervalar e provar seu
 resto. A alternativa `Zeta23.DigammaSeries.inv_gamma_eq_prod` continua

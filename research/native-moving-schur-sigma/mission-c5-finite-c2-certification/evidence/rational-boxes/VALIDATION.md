@@ -155,3 +155,41 @@ ponte com os coeficientes da fonte C2 original. A identidade formal
 `Zeta23.DigammaSeries.inv_gamma_eq_prod` pelo produto de Weierstrass permanece
 uma rota alternativa, mas nenhuma hipótese `sigmaC00495SourceBoxes` ou
 `sigmaC01SourceBoxes` foi provada.
+
+### Ponte Euler-Gamma de precisão alta
+
+O lema adicional `SigmaC5Gamma.gamma_finite_1024_240_error` prova
+`‖Complex.Gamma z - gammaFinite 1024 240 z‖ ≤ 10⁻⁹⁹` para
+`1495/20000 ≤ Re(z) ≤ 1`. A prova separa o erro de Taylor `≤10⁻¹²⁰` da cauda
+`exp(-240)≤10⁻¹⁰⁰`. Assim, a aproximação da Gamma deixa de ser o limitante de
+precisão das caixas existentes. A avaliação racional da expressão finita
+continua aberta.
+
+Build e auditoria, a partir da raiz do checkout C5, com Lean 4.32.0,
+Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997` e base geometry
+`aa116108384a6834647e350e68fc25e81113a90a`:
+
+```bash
+C5_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105
+C5_SOURCE_ROOT=$PWD/research/native-moving-schur-sigma
+C5_OUTPUT=$PWD/.lake/build/research/native-moving-schur-sigma/c5-gamma-euler-1024-clean
+C5_EVIDENCE=$PWD/research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes
+C5_LEAN_BIN=$(cd "$C5_REFERENCE_ROOT" && elan which lean)
+C5_MATHLIB_PATH=$(cd "$C5_REFERENCE_ROOT" && lake env printenv LEAN_PATH)
+mkdir -p "$C5_OUTPUT"
+export LEAN_PATH="$C5_OUTPUT:$C5_SOURCE_ROOT:$C5_MATHLIB_PATH"
+"$C5_LEAN_BIN" -DwarningAsError=true --root="$C5_SOURCE_ROOT" \
+  -o "$C5_OUTPUT/SigmaGammaEulerIntegral.olean" \
+  "$C5_SOURCE_ROOT/SigmaGammaEulerIntegral.lean" \
+  > "$C5_EVIDENCE/gamma-euler-1024-retry2-build.log" 2>&1
+"$C5_LEAN_BIN" -DwarningAsError=true --root="$C5_EVIDENCE" \
+  -o "$C5_OUTPUT/gamma-euler-audit.olean" \
+  "$C5_EVIDENCE/gamma-euler-audit.lean" \
+  > "$C5_EVIDENCE/gamma-euler-1024-retry2-audit.log" 2>&1
+```
+
+Ambos comandos terminaram com código 0 e logs vazios. A auditoria registra dez
+raízes, todas usando somente `propext`, `Classical.choice` e `Quot.sound`.
+As tentativas anteriores de build, incluindo os erros corrigidos, também foram
+preservadas nos logs `gamma-euler-1024-build.log` e
+`gamma-euler-1024-retry1-build.log`.

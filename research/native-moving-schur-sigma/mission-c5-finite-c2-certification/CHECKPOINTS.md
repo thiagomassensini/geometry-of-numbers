@@ -61,6 +61,13 @@ O checkpoint de build e auditoria da O3 está em `evidence/rational-boxes/`. Ap�
 - A ponte é um subpasso: ainda falta uma caixa racional estreita para `gammaFinite` em cada caixa do contorno, seguida da composição Hurwitz/Cauchy. Nenhuma hipótese `sigmaC00495SourceBoxes` ou `sigmaC01SourceBoxes` foi provada nesta etapa.
 - PR #171 integrou a prova e a evidência; merge na `main`: `a585de1d4df0b093ef4221cf576a9a87a057652a`.
 
+## 2026-11-06 — ponte Euler-Gamma a precisão alta (prova local)
+
+- `gamma_finite_1024_240_error` prova, para `1495/20000 ≤ Re(z) ≤ 1`, que `Complex.Gamma z` difere de `gammaFinite 1024 240 z` por no máximo `10⁻⁹⁹`.
+- O limite usa a mesma integral de Euler: resto da exponencial truncada `≤10⁻¹²⁰` e cauda `exp(-240)≤10⁻¹⁰⁰`.
+- Build Lean 4.32 com warnings como erros passou; auditoria de dez raízes usa só `propext`, `Classical.choice` e `Quot.sound`.
+- Fontes, logs de tentativas, log final, auditoria e hashes estão em `evidence/rational-boxes/`. Esta prova local ainda não foi integrada; ainda faltam caixas racionais para `gammaFinite 1024 240` e a inclusão C2.
+
 ## 2026-11-06 — checkpoint O4 publicado
 
 - PR #169 publicou os comandos reproduzíveis, logs vazios de compilação, auditoria de quatro raízes e hashes do motor intervalar reutilizado.

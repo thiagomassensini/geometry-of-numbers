@@ -70,4 +70,5 @@ Reproduced C5 outputs
 - Euler-Gamma proof module: `research/native-moving-schur-sigma/SigmaGammaEulerIntegral.lean`; Lean 4.32.0, Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`.
 - Euler-Gamma source, audit, and clean `.olean` hashes are appended in `evidence/rational-boxes/source-and-olean-sha256.txt`.
 - C5 O4 Euler-Gamma PR: #171; merge commit `a585de1d4df0b093ef4221cf576a9a87a057652a`.
-- geometry `origin/main` after the Euler-Gamma substep: `a585de1d4df0b093ef4221cf576a9a87a057652a`.
+- C5 post-merge status PR: #172; merge commit `aa116108384a6834647e350e68fc25e81113a90a`.
+- geometry `origin/main` at the high-precision Euler-Gamma proof base: `aa116108384a6834647e350e68fc25e81113a90a`.

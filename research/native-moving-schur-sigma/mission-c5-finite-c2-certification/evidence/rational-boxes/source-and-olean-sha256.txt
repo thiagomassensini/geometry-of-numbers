@@ -36,3 +36,9 @@ Euler-integral approximation for the original Gamma (Lean 4.32):
 42812dcf96c6e3fbbf33f26f70a28536cc061173aeeb5d668831b41a8959f36f  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/gamma-euler-audit.lean
 99a376bc803c56f044d4b18863c2bbf3bb62cc051edb2027cc11b69be3a75341  .lake/build/research/native-moving-schur-sigma/c5-gamma-euler-clean/SigmaGammaEulerIntegral.olean
 76e19d3abf6f3abcb2627d12042e9df37d9b460be08e80c2ea47753a18e960c1  .lake/build/research/native-moving-schur-sigma/c5-gamma-euler-clean/gamma-euler-audit.olean
+
+Higher-precision Euler-integral approximation for the original Gamma (Lean 4.32; local checkpoint on main base `aa116108384a6834647e350e68fc25e81113a90a`):
+b2b222bdfb9fbdcf212ac6d62d5c5c5a248844e31cc535f3e8b40e9ec9ce18c3  research/native-moving-schur-sigma/SigmaGammaEulerIntegral.lean
+a30b9afbce47c8705ebceb051c8c2d4cab8d5ae9ffc3b19f0de0af8d46ef3d70  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/gamma-euler-audit.lean
+5f12e2d7b37852d5239e8e60b246909123e21e45646d4216b211a8b214fc9dce  .lake/build/research/native-moving-schur-sigma/c5-gamma-euler-1024-clean/SigmaGammaEulerIntegral.olean
+76e19d3abf6f3abcb2627d12042e9df37d9b460be08e80c2ea47753a18e960c1  .lake/build/research/native-moving-schur-sigma/c5-gamma-euler-1024-clean/gamma-euler-audit.olean
