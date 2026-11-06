@@ -1,7 +1,8 @@
 # C5 — faixa racional de π por Machin
 
-**Estado:** prova local validada; checkpoint preparatório, ainda sem avaliação
-dos 129 nós e sem inclusão dos coeficientes C2 nas caixas.
+**Estado:** integrada pela PR #193 (merge
+`2567ab0204c46c4ce04fca601c99e47e810e18b9`); checkpoint preparatório, ainda
+sem avaliação dos 129 nós e sem inclusão dos coeficientes C2 nas caixas.
 
 ## Resultado
 

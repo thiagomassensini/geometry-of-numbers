@@ -39,7 +39,7 @@
 - Ainda faltam as avaliações nos 129 nós e as inclusões O3; o checkpoint C5
   segue incompleto.
 
-## 2026-11-06 — faixa racional exata de π validada localmente
+## 2026-11-06 — faixa racional exata de π integrada
 
 - `SigmaC5PiBounds.lean` prova o limite da série alternada para `arctan` e
   deriva de Machin uma faixa racional exata para `Real.pi`, com truncações
@@ -50,6 +50,8 @@
 - Comandos, pins, logs, hashes, definição racional do centro/erro e uma
   tentativa decimal auxiliar não fechada estão preservados em
   `evidence/rational-boxes/c5-pi-bounds-validation.md` e arquivos relacionados.
+- PR #193 integrou este incremento; commit de prova `45bc923`, merge na `main`
+  `2567ab0204c46c4ce04fca601c99e47e810e18b9`.
 - A entrega é preparatória: a avaliação da fonte original nos 129 nós e a
   inclusão nas caixas C2/O3 continuam abertas.
 
