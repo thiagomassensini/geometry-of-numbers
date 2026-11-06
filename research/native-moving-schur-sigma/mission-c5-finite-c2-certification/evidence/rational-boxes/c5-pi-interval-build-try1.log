@@ -1,0 +1,37 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiInterval.lean:39:6: error: invalid 'calc' step, left-hand side is
+  (1 / 5) ^ 341 / 341 : ℚ
+but is expected to be
+  (1 / 5) ^ 341 / (2 * 170 + 1) : ℚ
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiInterval.lean:45:6: error: invalid 'calc' step, left-hand side is
+  (1 / 239) ^ 111 / 111 : ℚ
+but is expected to be
+  (1 / 239) ^ 111 / (2 * 55 + 1) : ℚ
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiInterval.lean:62:8: error: failed to prove positivity/nonnegativity/nonzeroness
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiInterval.lean:63:6: error: `dsimp` made no progress
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiInterval.lean:85:4: error: linarith failed to find a contradiction
+hpi : -↑c5PiError ≤ Real.pi - ↑c5PiCenter ∧ Real.pi - ↑c5PiCenter ≤ ↑c5PiError
+he : c5PiError < 1 / 4
+hpi2 : 2 ≤ Real.pi
+a✝ : (↑c5PiCenter - ↑c5PiError) / 4 ≤ 1
+⊢ False
+failed
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiInterval.lean:86:2: error: mod_cast has type
+  1 < (c5PiCenter - c5PiError) / 4
+but is expected to have type
+  0 < c5PiQuarterInterval.lo
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiInterval.lean:95:4: error: linarith failed to find a contradiction
+hpi : -↑c5PiError ≤ Real.pi - ↑c5PiCenter ∧ Real.pi - ↑c5PiCenter ≤ ↑c5PiError
+he : c5PiError < 1 / 4
+hpi4 : Real.pi ≤ 4
+a✝ : 2 ≤ (↑c5PiCenter + ↑c5PiError) / 4
+⊢ False
+failed
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiInterval.lean:105:45: error: Application type mismatch: The argument
+  n
+has type
+  ℕ
+of sort `Type` but is expected to have type
+  Interval.contains ?m.7 ?m.8
+of sort `Prop` in the application
+  Interval.contains_log1 n
+BUILD_EXIT=1

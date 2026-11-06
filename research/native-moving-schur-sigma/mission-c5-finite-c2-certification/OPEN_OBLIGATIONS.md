@@ -20,6 +20,12 @@ construída com a série alternada de `arctan` e a identidade de Machin; detalhe
 e logs em `evidence/rational-boxes/c5-pi-bounds-validation.md`. O módulo
 fornece uma faixa exata em vez de uma desigualdade decimal simplificada.
 
+Como continuação local, `SigmaC5PiInterval.lean` certifica `log π`, e
+`SigmaC5PiExp.lean` certifica o exponencial correspondente da completação
+original para uma caixa complexa de entrada. Esse resultado já passou build e
+auditoria, mas ainda não está integrado; a evidência está em
+`evidence/rational-boxes/c5-pi-completion-factor-validation.md`.
+
 O4 continua aberta: ainda faltam avaliações certificadas da fonte original
 nos 129 nós e a prova de inclusão dos coeficientes C2 originais nas caixas O3.
 Os sinais O3 permanecem condicionais e C5 não está concluída. Este snapshot

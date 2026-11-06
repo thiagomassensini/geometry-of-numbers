@@ -1,0 +1,7 @@
+import SigmaC5PiExp
+
+open CarrySigmaObstruction
+
+#print axioms c5_pi_log_complex_interval_contains
+#print axioms c5_completion_exponent_box_contains
+#print axioms c5_completion_exp_interval_contains

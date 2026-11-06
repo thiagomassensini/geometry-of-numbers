@@ -1,0 +1,29 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiInterval.lean:83:43: error: mod_cast has type
+  c5PiError < 1 / 4
+but is expected to have type
+  ↑c5PiError < 1 / 4
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiInterval.lean:88:4: error: linarith failed to find a contradiction
+hpi : -↑c5PiError ≤ Real.pi - ↑c5PiCenter ∧ Real.pi - ↑c5PiCenter ≤ ↑c5PiError
+he : c5PiError < 1 / 4
+heR : ↑c5PiError < 1 / 4
+hpi2 : 2 ≤ Real.pi
+a✝ : (↑c5PiCenter - ↑c5PiError) / 4 ≤ 1
+⊢ False
+failed
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiInterval.lean:89:2: error: mod_cast has type
+  1 < (c5PiCenter - c5PiError) / 4
+but is expected to have type
+  0 < c5PiQuarterInterval.lo
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiInterval.lean:94:43: error: mod_cast has type
+  c5PiError < 1 / 4
+but is expected to have type
+  ↑c5PiError < 1 / 4
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiInterval.lean:116:30: error: Application type mismatch: The argument
+  ?m.64
+has type
+  0 < Real.pi / 4
+but is expected to have type
+  ?m.52 ≠ 0
+in the application
+  Real.log_mul ?m.64
+BUILD_EXIT=1
