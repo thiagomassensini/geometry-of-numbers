@@ -1,0 +1,12 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:232:64: error: unsolved goals
+s : ℂ
+hsre : 0 ≤ s.re
+hsre1 : s.re ≤ 1
+hsim : |s.im| ≤ 1 / 2
+hsprod : ‖s * (s + 1)‖ ≤ 4
+hseed : seedDirichletTerm 3 s = 1
+n : ℕ
+h : ‖centerBracketTerm 3 s n‖ ≤ centerBracketMajorant 3 0 4 n
+⊢ (↑n + 1) ^ 2 = (↑n + 1) ^ 2
+'CarrySigmaObstruction.complexGamma_norm_le_100' depends on axioms: [propext, Classical.choice, Quot.sound]
+BUILD_EXIT=1

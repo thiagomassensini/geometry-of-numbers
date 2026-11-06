@@ -1,0 +1,36 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:59:11: error: unexpected token 'by'; expected '{' or tactic
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:50:10: error: Invalid rewrite argument: Expected an equality or iff proof or definition name, but `f ?a✝` is a value of type
+  ℂ
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:45:51: error: unsolved goals
+z : ℂ
+hz0 : 0 < z.re
+hz1 : z.re ≤ 1
+f : ℝ → ℂ := fun x => ↑(Real.exp (-x)) * ↑x ^ z
+hf : IntegrableOn f (Ioi 0) volume
+hsplit : (z + 1).GammaIntegral = (∫ (x : ℝ) in Ioc 0 1, f x) + ∫ (x : ℝ) in Ioi 1, f x
+hbound : ∀ᵐ (x : ℝ) ∂volume.restrict (Ioc 0 1), ‖f x‖ ≤ 1
+⊢ ‖∫ (x : ℝ) in Ioc 0 1, f x‖ ≤ 1
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:27:35: error: unsolved goals
+z : ℂ
+hz0 : 0 < z.re
+hz1 : z.re ≤ 1
+f : ℝ → ℂ := fun x => ↑(Real.exp (-x)) * ↑x ^ z
+hf : IntegrableOn f (Ioi 0) volume
+hsplit : (z + 1).GammaIntegral = (∫ (x : ℝ) in Ioc 0 1, f x) + ∫ (x : ℝ) in Ioi 1, f x
+hfirst : ‖∫ (x : ℝ) in Ioc 0 1, f x‖ ≤ 1
+⊢ ‖Complex.Gamma (z + 1)‖ ≤ 5
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:121:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  z * Complex.Gamma z
+in the target expression
+  ‖Complex.Gamma z‖ * ‖z‖ ≤ 5
+
+z : ℂ
+hzlo : 1 / 20 ≤ z.re
+hzhi : z.re ≤ 1 / 2
+hzpos : 0 < z.re
+hzne : z ≠ 0
+hrec : Complex.Gamma (z + 1) = z * Complex.Gamma z
+hshift : ‖Complex.Gamma (z + 1)‖ ≤ 5
+⊢ ‖Complex.Gamma z‖ * ‖z‖ ≤ 5
+'CarrySigmaObstruction.complexGamma_norm_le_100' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+BUILD_EXIT=1

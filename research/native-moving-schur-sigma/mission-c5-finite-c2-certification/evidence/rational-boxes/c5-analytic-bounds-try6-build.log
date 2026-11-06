@@ -1,0 +1,39 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:51:20: error(lean.unknownIdentifier): Unknown constant `Complex.norm_ofReal`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:76:20: error(lean.unknownIdentifier): Unknown constant `Complex.norm_ofReal`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:102:10: error: Tactic `apply` failed: could not unify the type of `mul_le_mul_of_nonneg_left ?m.757 ?m.758`
+  ?m.753 * ?m.754 ≤ ?m.753 * ?m.755
+with the goal
+  4 * Real.exp (-(1 / 2)) ≤ 4
+
+z : ℂ
+hz0 : 0 < z.re
+hz1 : z.re ≤ 1
+f : ℝ → ℂ := fun x => ↑(Real.exp (-x)) * ↑x ^ z
+hf : IntegrableOn f (Ioi 0) volume
+hsplit : (z + 1).GammaIntegral = (∫ (x : ℝ) in Ioc 0 1, f x) + ∫ (x : ℝ) in Ioi 1, f x
+hfirst : ‖∫ (x : ℝ) in Ioc 0 1, f x‖ ≤ 1
+hg : Integrable (fun x => 2 * Real.exp (-(1 / 2) * x)) (volume.restrict (Ioi 1))
+hpoint : ∀ᵐ (x : ℝ) ∂volume.restrict (Ioi 1), ‖f x‖ ≤ 2 * Real.exp (-(1 / 2) * x)
+⊢ 4 * Real.exp (-(1 / 2)) ≤ 4
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:34:13: error: This simp argument is unused:
+  sub_add_cancel
+
+Hint: Omit it from the simp argument list.
+  simp [f,̵ ̵s̵u̵b̵_̵a̵d̵d̵_̵c̵a̵n̵c̵e̵l̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:44:13: error: This simp argument is unused:
+  sub_add_cancel
+
+Hint: Omit it from the simp argument list.
+  simp [f,̵ ̵s̵u̵b̵_̵a̵d̵d̵_̵c̵a̵n̵c̵e̵l̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'CarrySigmaObstruction.complexGamma_norm_le_100' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+BUILD_EXIT=1

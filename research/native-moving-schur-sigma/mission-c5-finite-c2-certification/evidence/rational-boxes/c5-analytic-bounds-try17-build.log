@@ -1,0 +1,7 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:261:5: error: Variable name `hslo` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'CarrySigmaObstruction.complexGamma_norm_le_100' depends on axioms: [propext, Classical.choice, Quot.sound]
+BUILD_EXIT=1

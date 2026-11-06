@@ -1,0 +1,22 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:389:10: error: Type mismatch
+  hsim'
+has type
+  |s.im| ≤ 1 / 2
+but is expected to have type
+  |s.im - Complex.im 1| ≤ 1 / 2
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:388:37: error: This simp argument is unused:
+  Complex.zero_im
+
+Hint: Omit it from the simp argument list.
+  simp only [Complex.sub_im, C̵o̵m̵p̵l̵e̵x̵.̵z̵e̵r̵o̵_̵i̵m̵,̵ ̵sub_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:388:54: error: This simp argument is unused:
+  sub_zero
+
+Hint: Omit it from the simp argument list.
+  simp only [Complex.sub_im, Complex.zero_im,̵ ̵s̵u̵b̵_̵z̵e̵r̵o̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'CarrySigmaObstruction.complexGamma_norm_le_100' depends on axioms: [propext, Classical.choice, Quot.sound]
+BUILD_EXIT=1

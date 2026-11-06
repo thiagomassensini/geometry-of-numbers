@@ -1,5 +1,20 @@
 # C5 — mapa dos teoremas e obrigações
 
+## Snapshot atual — cota da fonte validada localmente
+
+`SigmaC5AnalyticBounds.lean` prova localmente
+`CarrySigmaObstruction.displacedProductC_norm_le_10pow100_on_ball_39`:
+para `|d|≤1/10`, o módulo da fonte deslocada original é no máximo `10^100`
+em `|z|<39/100`. Build limpo Lean 4.32 e auditoria fail-closed de três raízes
+passaram, apenas com `propext`, `Classical.choice` e `Quot.sound`. Para Cauchy,
+a interpolação usa contorno de raio `38/100`, estritamente dentro dessa região;
+a estimativa racional continua `<10^-410`. Prova, hashes e logs estão em
+`evidence/rational-boxes/analytic-bounds-validation.md`.
+
+O4 segue aberta somente quanto à certificação dos valores nos 129 nós e à
+inclusão dos coeficientes C2 originais nas caixas O3. Os sinais finais seguem
+condicionais a essas inclusões; C5 não está concluída.
+
 ## Fonte original e entradas C4
 
 Arquivo integrado: `research/native-moving-schur-sigma/SigmaSourceBezout.lean`.
@@ -80,9 +95,11 @@ Build limpo e auditoria de quatro declarações passaram em Lean 4.32, com
 Integrado pela PR #189: commit de prova
 `e0272bfc9099031cb127ea0db8874900d9e8eca1`, merge
 `3513a3b3854b105419d4f2cef245efac7ce88ba0`.
-**Limite:** nenhuma cota numérica para o módulo foi provada por esta ponte.
-O4 ainda requer o majorante explícito, as avaliações racionais nos nós e as
-inclusões dos coeficientes originais nas caixas.
+**Limite desta ponte de domínio:** ela não fornece cota numérica para o módulo.
+O majorante explícito foi provado depois, localmente, em
+`SigmaC5AnalyticBounds.lean`; continuam pendentes as avaliações racionais nos
+nós e as inclusões dos coeficientes originais nas caixas. Ver o snapshot atual
+no início deste mapa e `evidence/rational-boxes/analytic-bounds-validation.md`.
 
 Fontes existentes e recompiladas nesta etapa:
 
@@ -164,5 +181,5 @@ Além do grau um já integrado, a branch atual provou que, para `2≤n≤14`,
 23 raízes passaram; ver
 `evidence/rational-boxes/degree2-14-weight-bound-validation.md`. A etapa foi
 integrada pela PR #187, merge `9f4a1b43cb2b155dfc55bf49ef77d1914210b796`.
-Ela não fecha O4: a cota analítica da fonte e a inclusão nas caixas seguem
-pendentes.
+Na data daquele checkpoint, a cota analítica da fonte e a inclusão nas caixas
+seguiam pendentes. A cota foi provada depois; a inclusão permanece aberta.

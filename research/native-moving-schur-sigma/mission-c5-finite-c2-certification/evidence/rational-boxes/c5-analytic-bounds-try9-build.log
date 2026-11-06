@@ -1,0 +1,29 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:61:39: error: Application type mismatch: The argument
+  hexp.right
+has type
+  Real.exp (-x) ≤ 1
+but is expected to have type
+  x ^ z.re ≤ 1
+in the application
+  mul_le_one₀ ?m.482 hpow.left hexp.right
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:61:25: error: Application type mismatch: The argument
+  hexp.left
+has type
+  0 ≤ Real.exp (-x)
+but is expected to have type
+  ?m.477 ≤ 1
+in the application
+  mul_le_one₀ hexp.left
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:103:41: error: unsolved goals
+z : ℂ
+hz0 : 0 < z.re
+hz1 : z.re ≤ 1
+f : ℝ → ℂ := fun x => ↑(Real.exp (-x)) * ↑x ^ z
+hf : IntegrableOn f (Ioi 0) volume
+hsplit : (z + 1).GammaIntegral = (∫ (x : ℝ) in Ioc 0 1, f x) + ∫ (x : ℝ) in Ioi 1, f x
+hfirst : ‖∫ (x : ℝ) in Ioc 0 1, f x‖ ≤ 1
+hg : Integrable (fun x => 2 * Real.exp (-(1 / 2) * x)) (volume.restrict (Ioi 1))
+hpoint : ∀ᵐ (x : ℝ) ∂volume.restrict (Ioi 1), ‖f x‖ ≤ 2 * Real.exp (-(1 / 2) * x)
+⊢ 2 * (Real.exp (-(1 / 2)) * 2) = 4 * Real.exp (-(1 / 2))
+'CarrySigmaObstruction.complexGamma_norm_le_100' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+BUILD_EXIT=1

@@ -5,7 +5,7 @@ from pathlib import Path
 
 N = 128
 STEP = Fraction(1, 100_000)
-OUTER = Fraction(2, 5)
+OUTER = Fraction(38, 100)
 SOURCE_BOUND = 10**100
 GAMMA_ERROR = Fraction(1, 10**259)
 MAX_DEGREE = 14

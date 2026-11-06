@@ -1,0 +1,105 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:325:18: error: Tactic `constructor` failed: target is not an inductive datatype
+
+case left
+w : ℂ
+hwre : |w.re| ≤ 39 / 100
+hwim : |w.im| ≤ 49 / 100
+hre : -(39 / 100) ≤ w.re ∧ w.re ≤ 39 / 100
+him : -(49 / 100) ≤ w.im ∧ w.im ≤ 49 / 100
+⊢ 1 / 100 ≤ (1 / 2).re + (0 - w.im)
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:318:50: error: unsolved goals
+case right.left
+w : ℂ
+hwre : |w.re| ≤ 39 / 100
+hwim : |w.im| ≤ 49 / 100
+hre : -(39 / 100) ≤ w.re ∧ w.re ≤ 39 / 100
+him : -(49 / 100) ≤ w.im ∧ w.im ≤ 49 / 100
+⊢ (1 / 2).re + (0 - w.im) ≤ 99 / 100
+
+case right.right
+w : ℂ
+hwre : |w.re| ≤ 39 / 100
+hwim : |w.im| ≤ 49 / 100
+hre : -(39 / 100) ≤ w.re ∧ w.re ≤ 39 / 100
+him : -(49 / 100) ≤ w.im ∧ w.im ≤ 49 / 100
+⊢ |(1 / 2).im + w.re| ≤ 1 / 2
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:322:51: error: This simp argument is unused:
+  sub_zero
+
+Hint: Omit it from the simp argument list.
+  simp only [operatorHeightParameter, Complex.add_re, Complex.mul_re,
+  ̵  ̵ ̵ ̵Complex.I_re, Complex.I_im,
+  ̲  ̲ ̲ ̲zero_mul, one_mul, s̵u̵b̵_̵z̵e̵r̵o̵,̵ ̵add_zero,
+  ̵  ̵ ̵ ̵Complex.add_im, Complex.mul_im, Complex.I_re, Complex.I_im,
+      zero_mul, one_mul, zero_add] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:322:61: error: This simp argument is unused:
+  add_zero
+
+Hint: Omit it from the simp argument list.
+  simp only [operatorHeightParameter, Complex.add_re, Complex.mul_re,
+  ̵  ̵ ̵ ̵Complex.I_re, Complex.I_im,
+  ̲  ̲ ̲ ̲zero_mul, one_mul, sub_zero, a̵d̵d̵_̵z̵e̵r̵o̵,̵
+  ̵ ̵ ̵ ̵ ̵Complex.add_im, Complex.mul_im, Complex.I_re, Complex.I_im,
+      zero_mul, one_mul, zero_add] at *
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:348:52: error: Application type mismatch: The argument
+  norm_nonneg (s + 1)
+has type
+  0 ≤ ‖s + 1‖
+but is expected to have type
+  0 ≤ ‖s‖
+in the application
+  mul_le_mul_of_nonneg hsNorm hsplusNorm (norm_nonneg (s + 1))
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:373:8: error: Tactic `apply` failed: could not unify the type of `add_le_add ?m.350 hsim'`
+  ?m.346 + |s.im| ≤ ?m.347 + 1 / 2
+with the goal
+  |(s - 1).re| + |(s - 1).im| ≤ 1 + 1 / 2
+
+z : ℂ
+hslo : 1 / 100 ≤ (operatorHeightParameter z).re
+hshi : (operatorHeightParameter z).re ≤ 99 / 100
+hsim : |(operatorHeightParameter z).im| ≤ 1 / 2
+s : ℂ := operatorHeightParameter z
+hslo' : 1 / 100 ≤ s.re
+hshi' : s.re ≤ 99 / 100
+hsim' : |s.im| ≤ 1 / 2
+hprod : ‖s * (s + 1)‖ ≤ 4
+hsNorm : ‖s‖ ≤ 3 / 2
+⊢ |(s - 1).re| + |(s - 1).im| ≤ 1 + 1 / 2
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:378:53: error(lean.unknownIdentifier): Unknown constant `Real.one_lt_pi`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:388:4: error: not a positivity goal
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:408:8: error: No goals to be solved
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:382:26: error: This simp argument is unused:
+  Complex.div_re
+
+Hint: Omit it from the simp argument list.
+  simp [Complex.mul_re,̵ ̵C̵o̵m̵p̵l̵e̵x̵.̵d̵i̵v̵_̵r̵e̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:391:12: error: This simp argument is unused:
+  Complex.div_re
+
+Hint: Omit it from the simp argument list.
+  simp ̵[̵C̵o̵m̵p̵l̵e̵x̵.̵d̵i̵v̵_̵r̵e̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:393:12: error: This simp argument is unused:
+  Complex.div_re
+
+Hint: Omit it from the simp argument list.
+  simp ̵[̵C̵o̵m̵p̵l̵e̵x̵.̵d̵i̵v̵_̵r̵e̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:400:64: error: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  simp [nativeXiCompletionFactor, s, operatorHeightParameter,̵ ̵n̵o̵r̵m̵_̵m̵u̵l̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:447:26: error(lean.unknownIdentifier): Unknown identifier `abs_add`
+'CarrySigmaObstruction.complexGamma_norm_le_100' depends on axioms: [propext, Classical.choice, Quot.sound]
+BUILD_EXIT=1

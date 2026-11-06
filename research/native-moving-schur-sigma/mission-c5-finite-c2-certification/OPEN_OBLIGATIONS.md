@@ -1,6 +1,28 @@
 # C5 — obrigações abertas
 
-## Snapshot atual — após a validação local dos pesos 2–14
+## Snapshot atual — após a cota analítica explícita
+
+Os pesos escalados `0..14` seguem provados e integrados, e agora a fonte
+original também tem uma cota uniforme local, compilada e auditada:
+`CarrySigmaObstruction.displacedProductC_norm_le_10pow100_on_ball_39`
+estabelece `‖displacedProductC d z‖≤10^100` para `|d|≤1/10` e
+`|z|<39/100`. O domínio de analiticidade aberto de raio `2/5` permanece o
+resultado integrado pela PR #189. A interpolação usa contorno exterior
+`38/100`, cujo disco fechado está dentro da bola aberta onde a cota Lean vale.
+A análise racional exata com esse raio ainda dá erro de interpolação
+`<10^-410`, e a amplificação do erro Gamma `10^-259` permanece `<10^-135`.
+Veja `evidence/rational-boxes/analytic-bounds-validation.md` e
+`rational-interpolation-analysis-radius-38.log`. O log de raio `39/100` é
+mantido como histórico, mas foi substituído porque o lema Lean afirma a cota
+no disco aberto de raio `39/100`.
+
+O4 continua aberta: ainda faltam a avaliação certificada da fonte nos 129
+nós e a prova de inclusão dos coeficientes C2 originais nas caixas O3. Os
+sinais O3 permanecem condicionais e C5 não está concluída. Este snapshot
+substitui a afirmação anterior de que a cota analítica ainda faltava; as
+seções seguintes preservam o histórico dos checkpoints anteriores.
+
+## Snapshot histórico — após a validação local dos pesos 2–14
 
 Os pesos escalados de todos os graus `0..14` estão provados em Lean: grau zero
 `=1`, grau um `<10^11`, e cada grau `2..14` `<10^145`. A nova prova passou
