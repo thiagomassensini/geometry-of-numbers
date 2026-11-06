@@ -106,7 +106,7 @@ Reproduced C5 outputs
 - Não houve status checks hospedados na PR #181. Build limpo Lean 4.32 e auditoria local de 14 raízes estão registrados em `evidence/rational-boxes/`.
 - O estado pós-PR #181 foi publicado pela PR #182, merge `8f8b9da2b8c1e8f3b8d1290608c8b2abffe9c285`.
 
-## C5 degree-one WIP checkpoint — 2026-11-06 (NOT VALIDATED)
+## C5 degree-one WIP checkpoint — 2026-11-06 (historical, superseded)
 
 - Confirmed `origin/main`: `c736dc073091e6184dbb673b622b6b91759accac` (PR #183).
 - Local branch: `codex/c5-degree1-weight-bound-20261106`; WIP starts from the confirmed main.
@@ -118,3 +118,15 @@ Reproduced C5 outputs
 - Isolated auxiliary source `c5-sum-bound-isolated.lean` SHA-256: `487027bfc4a450e88f29e65d3d25b2646c5aa21296965072349ad9470f93d7bd`.
 - No production `.olean` SHA-256: the full module did not compile to completion. The isolated helper `.olean` is local build output and is not a production artifact.
 - Full commands, last compiler state, all attempt logs and resume steps: `degree1-retry-checkpoint.md`.
+
+## C5 degree-one weight bound — clean validation — 2026-11-06
+
+- Status: validated locally in Lean 4.32; integration PR is pending.
+- Geometry base: `origin/main` `c736dc073091e6184dbb673b622b6b91759accac`; reference source checkout `caa07002306b555fea5624cc11ab2ea5811a4324`.
+- Mathlib: `81a5d257c8e410db227a6665ed08f64fea08e997`; Carry: `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`.
+- Source `SigmaRationalInterpolation.lean` SHA-256: `879850c953d5b7cc8eb2b63abe08c8df8889ba6379d792f5d9bdb84d590ac3a9`.
+- Production `.olean` SHA-256: `111a6cd3cbb1086b2f057074d8ed984e92453a73f2ce19fcb2a5df6529c44181`.
+- Audit `.olean` SHA-256: `ebb4f928e6d81ae574b753d38fb674af7f59e1d30a5f2f724520319763659c0c`.
+- Clean output directory: `.lake/build/research/native-moving-schur-sigma/c5-degree1-final-clean-20261106`.
+- Build: `c5-interpolation-degree1-final-clean-build.log`, `BUILD_EXIT=0`. Axiom audit: 21 roots, only `propext`, `Classical.choice`, `Quot.sound`; fail-closed checker passed.
+- Complete commands and log links: `evidence/rational-boxes/degree1-weight-bound-validation.md`.

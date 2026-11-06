@@ -1,8 +1,27 @@
 # C5 — validação
 
-## Checkpoint WIP de grau um — 2026-11-06
+## Limite de peso de grau um — PASSOU em build limpo e auditoria
 
-Este checkpoint **não está validado**. O módulo de produção foi estendido com
+`SigmaRationalInterpolation.lean` compila integralmente em Lean 4.32, em
+diretório de saída limpo. Os teoremas
+`c5LagrangeBasisProductCoeffOne_bound`,
+`c5InterpolationCoeffOneAbsSum_le_six` e
+`c5InterpolationWeightSum_one_lt_ten_eleven` concluem o limite escalado
+`<10^11` do coeficiente de grau um.
+
+A auditoria fail-closed percorreu 21 raízes, incluindo os três resultados
+novos, e aceitou somente `propext`, `Classical.choice` e `Quot.sound`.
+O checker não encontrou placeholder, axioma próprio ou `native_decide`.
+Logs, hashes, pins e comandos:
+`evidence/rational-boxes/degree1-weight-bound-validation.md`.
+
+Este resultado é parcial: os graus `2..14`, a cota da fonte, as avaliações
+racionais nos pontos e a inclusão dos coeficientes C2 nas caixas seguem
+pendentes.
+
+## Histórico de tentativas incompletas de grau um — 2026-11-06
+
+As tentativas abaixo foram **superadas pela validação limpa acima**. O módulo de produção havia sido estendido com
 uma tentativa simbólica de `c5LagrangeBasisProductCoeffOne_bound` e corolários,
 mas nenhuma compilação integral produziu `SigmaRationalInterpolation.olean`.
 As tentativas, os perfis e os traces estão registrados em
@@ -22,14 +41,14 @@ A revisão WIP está na branch `codex/c5-degree1-weight-bound-20261106`, sobre
 os pins estão em `RESTART_HERE.md` e
 `evidence/rational-boxes/degree1-retry-checkpoint.md`.
 
-**Status atual:** Fase 1 de transporte algébrico integrada pela PR #165. O3 (propagação racional Lean e sinais condicionais) foi integrada pela PR #167, merge `fc17d3b16fd0ed5643cb12ef48c80bb81c81cbd9`. O checkpoint O4 foi integrado pela PR #169; estados pós-merge pelas PRs #170, #172, #174, #178 e #180; pontes Euler-Gamma pelas PRs #171, #173 e #175. A identidade algébrica de interpolação em 129 nós, a soma do peso de grau zero e a forma derivativa de grau um foram integradas pelas PRs #177, #179 e #181. A prova `gamma_finite_3072_620_error` tem erro `≤10⁻²⁵⁹`, build Lean 4.32 e auditoria de doze raízes. O4 continua aberta: os limites numéricos dos pesos, a cota da fonte e as inclusões C2 ainda precisam de prova.
+**Estado das fases anteriores:** Fase 1 de transporte algébrico integrada pela PR #165. O3 foi integrada pela PR #167. A infraestrutura O4 e as pontes Euler-Gamma estão registradas nas PRs #169–#175; a interpolação, o peso constante e a estrutura derivativa de grau um nas PRs #177–#181. A prova `gamma_finite_3072_620_error` tem erro `≤10⁻²⁵⁹`, build Lean 4.32 e auditoria de doze raízes. A O4 continua aberta: faltam limites para graus `2..14`, a cota analítica da fonte e as inclusões C2.
 **Toolchain:** `leanprover/lean4:v4.32.0`; Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`.
 **Base geometry da PR #165:** `91a1af2f9663d6761a3320e2f06504fe8aaa6776`; `main` após o merge: `75691edf0e74cc643f098213f60b684476132175`.
 **Fonte C4 compilada:** source hashes de `SigmaSourceBezout.lean`, `SourceBezout.lean`, `SigmaPadeCorrespondence.lean` e `SigmaZeroObstruction.lean` conferem com `origin/main`; pins completos em `evidence/pins-and-sha256.txt`.
 
 **O4, auditoria de 2026-11-06:** os módulos de intervalo elementar foram recompilados e auditados; também foi localizada a identidade formal de Weierstrass `Zeta23.DigammaSeries.inv_gamma_eq_prod`. Nenhuma caixa numérica para `Complex.Gamma` foi ainda derivada dessa identidade, e a aproximação Stirling usada pelo avaliador segue sem ponte Lean. O4 e a inclusão incondicional das caixas continuam abertas.
 
-**Estado após a PR #181:** prova estrutural do coeficiente de grau um integrada pela PR #181 (`7460497307e7ed0ffb47ef1ac96b096e9b410472`); o registro do estado e das obrigações abertas foi integrado pela PR #182 (`8f8b9da2b8c1e8f3b8d1290608c8b2abffe9c285`). O4 permanece incompleta.
+**Estado após PR #181/#182:** registro histórico da estrutura derivativa de grau um e do checkpoint da etapa; a desigualdade numérica foi provada depois no checkpoint acima. A integração da nova cota será registrada após a PR desta etapa.
 
 **O4, prova Euler-Gamma de precisão alta integrada pela PR #173:** `gamma_finite_1024_240_error` aproxima a Gamma original por `gammaFinite 1024 240 z` com erro `≤10⁻⁹⁹` para `1495/20000≤Re(z)≤1`. Build Lean 4.32 e auditoria de dez raízes passaram; a caixa racional estreita da expressão finita continua pendente. Prova, logs e hashes estão em `evidence/rational-boxes/`.
 
