@@ -1,11 +1,11 @@
 # C5 — estado da sessão
 
 **Atualizado:** 2026-11-06
-**Status atual:** C1–C4 e O3 estão integradas. A ponte Gamma de núcleo racional abaixo passou build limpo e auditoria local, mas ainda não está publicada. O4/C5 segue aberta: não há avaliações certificadas nos 129 nós nem inclusão dos coeficientes C2 nas caixas.
+**Status atual:** C1–C4, O3 e o checkpoint da ponte Gamma de núcleo racional estão integrados. A PR #198, commit de prova `a1646a1837603aee7d03384016ae514a7f7c820a`, foi mesclada na `main` em `36cba9d805bc3274538cdc93bd0a3702154edcb2`. O4/C5 segue aberta: não há avaliações certificadas nos 129 nós nem inclusão formal dos coeficientes C2 nas caixas.
 
 **Reprodução de 2026-11-06:** as três configurações prescritas foram executadas novamente em uma cópia temporária do checkout Momentos com o patch `gmpy2.mpz`→`int` já preservado em `evidence/interval-certificate/momentos-gmpy2-compat.patch`. As inclusões numéricas experimentais foram geradas, e o verificador independente por frações racionais exatas passou: `+++++++++++-` para `d=99/2000` nas duas configurações e `+++++++++-` para `d=1/10`. Isso continua **condicional** às caixas experimentais: não certifica por Lean que os coeficientes da fonte C2 estejam nelas. Comandos, logs e limites estão em `evidence/interval-certificate/reproduction-2026-11-06.md`.
 
-## Snapshot atual — ponte Gamma de núcleo racional validada localmente
+## Snapshot atual — ponte Gamma de núcleo racional integrada pela PR #198
 
 `SigmaC5GammaRationalCore.lean` prova, para entradas racionais, que
 `gammaFinite N T z` é exatamente `T^z` vezes uma soma finita em `ℚ+iℚ`.
@@ -22,8 +22,11 @@ genérico: ainda não calcula extremos racionais nos 129 nós, não certifica os
 limites da potência exponencial em cada nó, não avalia zeta/Hurwitz e não prova
 as inclusões dos coeficientes C2 nas caixas O3. O4 permanece aberta.
 
-Base main consultada: `dcdcf9c4ac949376fe49a8ddebfabf4fd5f8a5cd`. O incremento
-está local no checkout C5 e ainda não tem commit/PR.
+Base anterior: `dcdcf9c4ac949376fe49a8ddebfabf4fd5f8a5cd`. PR #198 publicada
+com commit de prova `a1646a1837603aee7d03384016ae514a7f7c820a`, merge na `main`
+`36cba9d805bc3274538cdc93bd0a3702154edcb2`. Não houve checks hospedados; a
+compilação limpa e a auditoria local estão registradas em
+`evidence/rational-boxes/c5-gamma-rational-core-validation.md`.
 
 **Checkpoint atual — cota analítica explícita integrada (2026-11-06):** `CarrySigmaObstruction.displacedProductC_norm_le_10pow13_on_ball_39` prova `‖displacedProductC d z‖ ≤ 10^13` para `|d|≤1/10` e `z∈ball(0,39/100)`. O wrapper `10^100` da PR #191 continua disponível. O build limpo Lean 4.32 e a auditoria fail-closed de quatro raízes passaram; somente `propext`, `Classical.choice` e `Quot.sound` aparecem. Detalhes, hashes e logs estão em `evidence/rational-boxes/analytic-bounds-10pow13-validation.md`. Com o contorno `38/100`, a análise exata dá erro de interpolação `<10^-501` e amplificação do erro Gamma `<10^-135`.
 

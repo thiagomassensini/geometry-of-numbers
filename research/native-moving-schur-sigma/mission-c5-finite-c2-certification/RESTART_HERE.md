@@ -8,11 +8,11 @@ CURRENT PHASE: Fase 2 / O4, avaliação intervalar da fonte nos 129 nós.
 CURRENT SUBTASK: ligar a soma Gamma finita exata em ℚ+iℚ a caixas para Gamma e, em seguida, à fonte original.
 LAST VERIFIED THEOREM: SigmaC5Gamma.gamma3072Interval_contains.
 LAST COMPILED FILE: SigmaC5GammaRationalCoreAudit.lean (Lean 4.32; axiomas padrão).
-LAST SUCCESSFUL COMMIT: dcdcf9c4ac949376fe49a8ddebfabf4fd5f8a5cd (base main; incremento Gamma ainda local).
-LAST REMOTE SHA: origin/main = dcdcf9c4ac949376fe49a8ddebfabf4fd5f8a5cd.
-CURRENT BRANCH: codex/c5-gamma-rational-core-20261106.
-MAIN SHA: dcdcf9c4ac949376fe49a8ddebfabf4fd5f8a5cd.
-OPEN PR: nenhuma para a ponte Gamma de núcleo racional.
+LAST SUCCESSFUL COMMIT: 36cba9d805bc3274538cdc93bd0a3702154edcb2 (merge da PR #198; prova `a1646a1837603aee7d03384016ae514a7f7c820a`).
+LAST REMOTE SHA: origin/main = 36cba9d805bc3274538cdc93bd0a3702154edcb2.
+CURRENT BRANCH: codex/c5-state-after-pr198-20261106.
+MAIN SHA: 36cba9d805bc3274538cdc93bd0a3702154edcb2.
+OPEN PR: nenhuma para o checkpoint da ponte Gamma.
 WHAT IS PROVED: gammaFinite em argumentos racionais é fatorada exatamente em T^z e uma soma finita em ℚ+iℚ; há teorema genérico para incluir Gamma verdadeira por inflação de 10^-259. As três configurações de intervalos experimentais foram reproduzidas e os sinais das caixas passaram de novo no verificador racional exato.
 WHAT IS CONDITIONAL: a inclusão de Gamma nos nós requer parâmetros de intervalo e limite exp explícitos; O3 continua condicional às caixas experimentais dos coeficientes, cuja inclusão na fonte original não foi provada por Lean.
 WHAT IS BLOCKED: ainda não há avaliações nos nós nem inclusão dos coeficientes C2; a cota zeta EM disponível tem ordem 4 e precisão insuficiente.

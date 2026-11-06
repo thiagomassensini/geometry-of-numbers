@@ -25,7 +25,7 @@ produzidos pela biblioteca experimental `mpmath.iv`. Não é uma prova formal de
 que os coeficientes da fonte C2 original pertençam às caixas, portanto não
 fecha O4 nem C5.
 
-## Ponte Gamma de núcleo racional — build e auditoria passaram localmente
+## Ponte Gamma de núcleo racional — build, auditoria e merge da PR #198
 
 `SigmaC5GammaRationalCore.lean` define uma soma finita exata em `ℚ+iℚ` e prova
 que `gammaFinite N T (a+bi)` é seu produto por `T^(a+bi)`. A caixa racional
@@ -43,6 +43,10 @@ O build focado usa Lean `4.32.0`, Mathlib
 foram compilados em diretório de saída limpo, com warnings como erros. O
 checker fail-closed aceitou seis raízes, totalizando 11 relatórios dos dois
 builds, e somente `propext`, `Classical.choice` e `Quot.sound`.
+
+O commit de prova `a1646a1837603aee7d03384016ae514a7f7c820a` foi integrado
+pela PR #198; o merge na `main` é `36cba9d805bc3274538cdc93bd0a3702154edcb2`.
+O GitHub não reportou checks hospedados. Este merge não fecha O4/C5.
 
 Logs: `c5-gamma-rational-core-try5-build.log`,
 `c5-gamma-rational-core-audit-try6-build.log` e
