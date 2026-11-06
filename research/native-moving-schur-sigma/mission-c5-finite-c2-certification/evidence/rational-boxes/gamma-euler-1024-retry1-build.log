@@ -1,0 +1,8 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-finite-c2-certification/research/native-moving-schur-sigma/SigmaGammaEulerIntegral.lean:216:52: error: unexpected token '_'; expected ':='
+/home/thlinux/worktrees/geometry-of-numbers-c5-finite-c2-certification/research/native-moving-schur-sigma/SigmaGammaEulerIntegral.lean:216:8: error: Function expected at
+  ?m.391
+but this term has type
+  0 < (8 / 3) ^ 240
+
+Note: Expected a function because this term is being applied to the argument
+  hp

@@ -43,16 +43,15 @@ certifica aritmética retangular racional, `log` real, `exp` real/complexo e
 `m^{-s}`. A auditoria de quatro raízes retornou somente axiomas padrão; os logs
 estão em `evidence/rational-boxes/reused-interval-audit.log`.
 
-**Subpasso de Gamma concluído em Lean:** `SigmaGammaEulerIntegral.lean`
-prova que a Gamma original fica a distância no máximo `10⁻³²` da expressão
-finita `gammaFinite 512 81 z`, uniformemente para
-`1495/20000 ≤ Re(z) ≤ 1`. A prova usa a integral de Euler, limita o erro da
-exponencial truncada no trecho compacto e mantém a cauda infinita com limite
-`exp(-81)`. As oito raízes auditadas dependem somente de `propext`,
-`Classical.choice` e `Quot.sound`.
+**Ponte Euler-Gamma de alta precisão provada localmente:** `SigmaGammaEulerIntegral.lean`
+prova que, para `1495/20000 ≤ Re(z) ≤ 1`, a Gamma original fica a distância no
+máximo `10⁻⁹⁹` da expressão finita `gammaFinite 1024 240 z`. O erro Taylor do
+trecho compacto é `≤10⁻¹²⁰` e a cauda é `≤exp(-240)≤10⁻¹⁰⁰`. O build Lean 4.32
+e a auditoria de dez raízes passaram, com apenas `propext`, `Classical.choice`
+e `Quot.sound`. O checkpoint está compilado, mas ainda não integrado.
 
 **Primeiro subproblema analítico ainda em aberto:** produzir caixas racionais
-estreitas para `gammaFinite 512 81 z` nas caixas complexas do contorno. A soma
+estreitas para `gammaFinite 1024 240 z` nas caixas complexas do contorno. A soma
 direta tem cancelamento grande; a próxima etapa deve calcular os coeficientes
 Taylor racionais da expressão finita antes de aplicar a aritmética intervalar e
 certificar o resto da expansão. A identidade formal
