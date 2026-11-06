@@ -2,11 +2,11 @@
 
 **Atualizado:** 2026-11-06
 **Status:** C1–C4 e O3 estão integradas; a ponte Euler-Gamma de precisão `10⁻²⁵⁹` e a identidade algébrica de interpolação em 129 nós estão provadas em Lean 4.32. Os limites Lean dos pesos, a cota analítica da fonte e a inclusão dos coeficientes C2 nas caixas seguem pendentes.
-**Branch C5 de trabalho:** `codex/c5-finite-c2-certification-20261106`; Fase 1 integrada pela PR #165 e O3 pela PR #167.
+**Branch C5 de trabalho:** `codex/c5-finite-c2-certification-20261106`, commit de prova remoto `67ff0b7ef32de922dda7cd0fcea890bc3afbf738`; Fase 1 integrada pela PR #165 e O3 pela PR #167.
 **Main geometry no início da auditoria O4:** `1bc7318915c3e625ad228c89ff8c300cb07e52c5` (merge da PR #168).
-**Última prova geometry integrada:** PR #175, ponte Euler-Gamma para interpolação, `992ab31c3aacdf3b95b3c02fe58f5f3d529c0cec`.
+**Última prova geometry integrada:** PR #177, identidade algébrica de interpolação em 129 nós, `0702371cff0c6016eae9eaa0aa9331ae95483456`.
 **Último registro de estado integrado:** PR #176, merge `ac84c9302ae608e39c742f856ad361921653f268`.
-**Main geometry atual:** `ac84c9302ae608e39c742f856ad361921653f268`.
+**Main geometry após a PR #177:** `0702371cff0c6016eae9eaa0aa9331ae95483456`.
 **Repositório geometry no checkout de pesquisa original:** branch `agent/native-moving-schur-sigma`, HEAD `9392ebac9930f5d11c56f595556080e8ab1de809`, com logs/caches não rastreados preservados.
 **Repositório Momentos:** checkout local `main` em `05c9314d59306383baa55ed3be80ab950e799e97`; branch remota de pesquisa `origin/research/sigma-pade-dimension-depth-20261104` em `68c9b5f0a196289e28a8e5586146707d27df6b75`. PR #2 está OPEN e não foi integrada.
 

@@ -6,15 +6,15 @@
 
 **SUBTAREFA ATUAL:** formalizar limites dos pesos de Lagrange nos 129 nós racionais; depois certificar a cota analítica da fonte e os valores racionais necessários
 
-**ÚLTIMA PROVA PUBLICADA:** PR #175, `gamma_finite_3072_620_error`, merge `992ab31c3aacdf3b95b3c02fe58f5f3d529c0cec`
+**ÚLTIMA PROVA PUBLICADA:** PR #177, identidade algébrica de interpolação em 129 nós, merge `0702371cff0c6016eae9eaa0aa9331ae95483456`
 
 **ÚLTIMO REGISTRO DE ESTADO:** PR #176, merge `ac84c9302ae608e39c742f856ad361921653f268`
 
-**MAIN / `origin/main`:** `ac84c9302ae608e39c742f856ad361921653f268`
+**MAIN após a PR #177:** `0702371cff0c6016eae9eaa0aa9331ae95483456`
 
-**BRANCH C5:** `codex/c5-finite-c2-certification-20261106`, remota em `de8f307715f30724b550e1f0223b6c57d892487f` antes deste checkpoint
+**BRANCH C5:** `codex/c5-finite-c2-certification-20261106`, commit de prova remoto `67ff0b7ef32de922dda7cd0fcea890bc3afbf738`
 
-**C5 PRs:** #165–#176 estão integradas; a PR #2 de Momentos permanece aberta e não foi integrada.
+**C5 PRs:** #165–#177 estão integradas; a PR #2 de Momentos permanece aberta e não foi integrada.
 
 ## Estado matemático
 
