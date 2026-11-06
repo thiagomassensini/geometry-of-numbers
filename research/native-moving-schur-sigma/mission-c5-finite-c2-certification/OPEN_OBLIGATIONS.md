@@ -1,8 +1,8 @@
 # C5 — obrigações abertas
 
-## Snapshot atual — ponte Gamma genérica validada; avaliações ainda abertas
+## Snapshot atual — ponte Gamma genérica integrada; avaliações ainda abertas
 
-A nova ponte local `SigmaC5GammaRationalCore.lean` separa `gammaFinite` em um
+A ponte integrada pela PR #198, `SigmaC5GammaRationalCore.lean`, separa `gammaFinite` em um
 fator `T^z` certificado por `dirichletTermBox2` e um núcleo em `ℚ+iℚ` exato;
 `gamma3072Interval_contains` transporta o erro Gamma `10^-259` já provado para
 um retângulo da Gamma verdadeira. Build Lean 4.32 e auditoria de seis raízes

@@ -14,7 +14,7 @@
   aberta. Os logs, JSONs, comandos e a falha anterior de compatibilidade estão
   em `evidence/interval-certificate/reproduction-2026-11-06.md`.
 
-## 2026-11-06 — ponte Gamma de núcleo racional (validada localmente)
+## 2026-11-06 — ponte Gamma de núcleo racional (PR #198 integrada)
 
 - `SigmaC5GammaRationalCore.lean` expressa exatamente `gammaFinite` como o
   produto de `T^z` por uma soma finita racional-complexa; não aproxima nem
@@ -26,6 +26,8 @@
   raízes passaram; somente `propext`, `Classical.choice` e `Quot.sound`.
   Logs, hashes e comandos em
   `evidence/rational-boxes/c5-gamma-rational-core-validation.md`.
+- Commit de prova `a1646a1837603aee7d03384016ae514a7f7c820a`; merge na `main`
+  `36cba9d805bc3274538cdc93bd0a3702154edcb2`. Não houve checks hospedados.
 - Escopo: lema genérico, sem avaliação efetiva dos 129 nós. Ainda falta
   formalizar zeta/Hurwitz de ordem alta, calcular caixas nodais completas e
   provar as inclusões dos coeficientes C2 nas caixas O3. C5 continua aberta.
