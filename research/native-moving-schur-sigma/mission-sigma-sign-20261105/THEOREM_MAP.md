@@ -78,7 +78,7 @@ formaliza `-C_d′/C_d=H_d`, com `H_d(n)=2*completedSigmaLogJet d n`.
 matriz original. O fator 2 vem da identidade `−D'_d(t)/(4tD_d(t))` e permanece positivo e
 explícito. `sourceKernel_head_tail` mantém os quatro termos cruzados quando uma fonte se
 decompõe; nenhum recebe sinal nem é artificialmente identificado com o bracket material.
-Compilação e auditoria locais: `evidence/c4-source-bezout/`; publicação pendente.
+Integrado pela PR #162, merge `799a0e06af5469e9fe0665943adbb1cb29d0b6f8`. Compilação e auditoria: `evidence/c4-source-bezout/`; o GitHub não apresentou status checks.
 
 ## Limites
 

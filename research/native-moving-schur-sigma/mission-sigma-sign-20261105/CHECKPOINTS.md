@@ -64,9 +64,9 @@ recebeu status checks hospedados. Evidências em `evidence/c2-eventual-negativit
 
 ## C4 — fonte deslocada e Bézout
 
-**Prova e auditoria locais concluídas em Lean 4.32; publicação pendente.** `SigmaSourceBezout.lean` define a fonte pelos coeficientes pares da densidade original e prova que sua soma em `t²` recompõe localmente `completedSigmaDensity d t`; `displacedProductC_ofReal_eq_density` então mantém o produto `F(t-id)F(t+id)` original.
+**Integrado pela PR #162**, commit `31d3df33d4524d9809c75ba4481b1fa9f57a98bc`, merge `799a0e06af5469e9fe0665943adbb1cb29d0b6f8`. `SigmaSourceBezout.lean` define a fonte pelos coeficientes pares da densidade original e prova que sua soma em `t²` recompõe localmente `completedSigmaDensity d t`; `displacedProductC_ofReal_eq_density` então mantém o produto `F(t-id)F(t+id)` original.
 
 - A recorrência exata é `C_d · H_d = -C_d′`, onde `H_d(n)=2*completedSigmaLogJet d n`. Como `C_d(0)>0`, o lema de derivada logarítmica formal conclui `-C_d′/C_d=H_d` sem alterar os jets.
 - `completedSigmaDisplacedMoment_hankel_eq_two_sigmaMatrix` identifica a matriz de Hankel como `2 • sigmaMatrix`. A congruência usa os coeficientes reais da fonte; o termo constante positivo torna a convolução invertível. A semidefinição positiva do bloco de Bézout equivale à da matriz sigma original.
 - `CarrySourceBezout.sourceKernel_head_tail` mantém os quatro termos ordenados da decomposição genérica. Nenhum termo recebe sinal ou é identificado artificialmente com o bracket material.
-- Compilação limpa, warnings-as-errors e auditoria transitiva de dez raízes (57.386 declarações alcançáveis), somente axiomas padrão: `evidence/c4-source-bezout/VALIDATION.md` e logs associados.
+- Compilação limpa, warnings-as-errors e auditoria transitiva de dez raízes (57.386 declarações alcançáveis), somente axiomas padrão: `evidence/c4-source-bezout/VALIDATION.md` e logs associados. O GitHub não apresentou status checks para a PR.
