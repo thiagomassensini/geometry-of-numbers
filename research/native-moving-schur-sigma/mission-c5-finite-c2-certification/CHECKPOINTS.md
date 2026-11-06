@@ -12,3 +12,12 @@
 ## Próximo checkpoint
 
 Após a validação dos dois JSONs e compilação dos lemas de transporte, salvar logs, pins e hashes nesta pasta; não misturar com os caches/logs de outras worktrees.
+
+## 2026-11-06 — transporte algébrico provado, antes do PR
+
+- `SigmaFiniteCoefficientSignTransport.lean` e seu audit Lean 4.32 compilaram em diretório de saída limpo; `#print axioms` mostrou somente `propext`, `Classical.choice` e `Quot.sound` para os quatro teoremas.
+- A recorrência mantém `completedSigmaDisplacedMoment = 2*completedSigmaLogJet` e o menor final usa `CarrySigmaPade.sigmaPadeD` original.
+- As verificações exatas dos JSONs e três gerações intervalares foram reproduzidas; os sinais são condicionais às caixas. O erro local `gmpy2.mpz`/`Decimal`, sua correção de compatibilidade e os logs foram preservados em `evidence/interval-certificate/`.
+- A inclusão dos coeficientes verdadeiros nas caixas não foi provada. Nenhum teorema de primeira janela final foi declarado.
+- Commits/push/PR/merge deste checkpoint: pendentes no momento deste registro.
+- Pins, hashes, comandos de build e SHA dos `.olean` estão em `evidence/pins-and-sha256.txt` e `evidence/transport-build-record.md`.

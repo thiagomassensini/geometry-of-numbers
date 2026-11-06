@@ -1,0 +1,17 @@
+evaluated 32 / 128 elapsed 5.57 s
+evaluated 64 / 128 elapsed 10.96 s
+evaluated 96 / 128 elapsed 16.3 s
+evaluated 128 / 128 elapsed 21.63 s
+s= 0 sign= + num= ['2.9087924e-11', '2.9087924e-11']
+s= 1 sign= + num= ['3.5172071e-18', '3.5172071e-18']
+s= 2 sign= + num= ['1.3185733e-24', '1.3185733e-24']
+s= 3 sign= + num= ['6.7541749e-31', '6.7541749e-31']
+s= 4 sign= + num= ['3.9355943e-37', '3.9355943e-37']
+s= 5 sign= + num= ['2.4350600e-43', '2.4350600e-43']
+s= 6 sign= + num= ['1.5430076e-49', '1.5430076e-49']
+s= 7 sign= + num= ['9.7009883e-56', '9.7009883e-56']
+s= 8 sign= + num= ['5.7346231e-62', '5.7346231e-62']
+s= 9 sign= + num= ['2.7046969e-68', '2.7046969e-68']
+s= 10 sign= + num= ['4.7334633e-76', '4.7334633e-76']
+s= 11 sign= - num= ['-2.7064148e-80', '-2.7064148e-80']
+saved /home/thlinux/worktrees/geometry-of-numbers-c5-finite-c2-certification/research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/interval-certificate/sign512_stirling_L12.json

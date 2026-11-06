@@ -12,48 +12,41 @@ Arquivo integrado: `research/native-moving-schur-sigma/SigmaSourceBezout.lean`.
 | `completedSigmaDisplacedSourceCoefficient_zero_pos` | PROVADO sob domínio de deslocamento C4: `c₀(d)>0`. |
 | `completedSigmaDisplacedMoment_hankel_eq_two_sigmaMatrix` | PROVADO: Hankel original equivale a `2 • sigmaMatrix`. |
 
-## C5, decomposição a formalizar
+## C5 Fase 1 — transporte algébrico PROVADO
 
-Definir uma recorrência genérica sem duplicar fonte/momentos:
+Arquivo novo: `research/native-moving-schur-sigma/SigmaFiniteCoefficientSignTransport.lean`.
 
-```text
-ell_n = 2 * completedSigmaLogJet d n
-p_n = c_0^(n+1) * ell_n
-p_0 = -c_1
-p_n = -(n+1)c_(n+1)c_0^n - Σ_{j=1}^n c_j p_(n-j)c_0^(j-1)
-```
+| Declaração | Status, hipóteses e conclusão |
+|---|---|
+| `completedSigmaFiniteScaledMoment` | Define `pₙ=c₀^(n+1)·(2*completedSigmaLogJet d n)` a partir dos coeficientes/momentos C4 existentes. |
+| `completedSigmaFiniteScaledMoment_recurrence` | PROVADO para `-(1/2)<d<1/2`: recorrência polinomial sem divisão. A soma usa `j+1` para `j∈range n`, os termos usuais `1≤j≤n`. |
+| `completedSigmaFiniteScaledMoment_minor_identity` | PROVADO para todo `d,s`: `pₛpₛ₊₂−pₛ₊₁²=4c₀^(2s+4)·CarrySigmaPade.sigmaPadeD d s`. |
+| `sigmaPadeD_pos_of_completedSigmaFiniteScaledMoment_minor_pos` | PROVADO sob domínio C4: transfere menor escalado positivo ao `sigmaPadeD` original usando `c₀>0`. |
+| `sigmaPadeD_neg_of_completedSigmaFiniteScaledMoment_minor_neg` | PROVADO analogamente para sinal negativo. |
 
-Provar para todo `n`, por coeficientes da identidade C4, e provar:
+O fator `2` dos momentos está explícito em `completedSigmaDisplacedMoment`; por isso a identidade do menor tem fator `4`. Auditoria transitiva em `SigmaFiniteCoefficientSignTransportAudit.lean`: somente `propext`, `Classical.choice`, `Quot.sound`.
 
-```text
-p_s*p_(s+2) - p_(s+1)^2
-  = 4*c_0^(2*s+4) * sigmaPadeD d s
-```
+## C5 Fase 3 — sinais intervalares condicionais
 
-Com `c₀>0`, transferir sinais em ambas as direções. As conclusões finais devem usar os `sigmaPadeD` existentes:
+A branch de pesquisa Momentos, commit `68c9b5f0a196289e28a8e5586146707d27df6b75`, contém as caixas e scripts. As verificações foram reproduzidas por frações racionais exatas e deram:
+
+- `d=99/2000`: `+++++++++++-`;
+- `d=1/10`: `+++++++++-`.
+
+Esses sinais ainda não estão provados em Lean. Eles são condicionais à inclusão dos coeficientes nas caixas JSON. A origem das caixas usa `mpmath.iv` ainda não certificado; ver `SESSION_STATE.md` e `evidence/interval-certificate/`.
+
+## Alvos finais C5 — ainda NÃO provados
+
+As conclusões devem falar da sequência original e seus menores:
 
 ```lean
 theorem completedSigma_first_negative_window_at_00495 :
-  (∀ s ≤ 10, 0 < sigmaPadeD (99 / 2000 : ℝ) s) ∧
-  sigmaPadeD (99 / 2000 : ℝ) 11 < 0
+  (∀ s ≤ 10, 0 < CarrySigmaPade.sigmaPadeD (99 / 2000 : ℝ) s) ∧
+  CarrySigmaPade.sigmaPadeD (99 / 2000 : ℝ) 11 < 0
 
 theorem completedSigma_first_negative_window_at_01 :
-  (∀ s ≤ 8, 0 < sigmaPadeD (1 / 10 : ℝ) s) ∧
-  sigmaPadeD (1 / 10 : ℝ) 9 < 0
+  (∀ s ≤ 8, 0 < CarrySigmaPade.sigmaPadeD (1 / 10 : ℝ) s) ∧
+  CarrySigmaPade.sigmaPadeD (1 / 10 : ℝ) 9 < 0
 ```
 
-## Evidência condicional existente em Momentos
-
-Branch remota `research/sigma-pade-dimension-depth-20261104`, inventário feito no commit `68c9b5f`:
-
-- `investigations/c2_first_negative_interval_certificate_20261106/coeff_box_d00495_25digits.json`;
-- `investigations/c2_first_negative_interval_certificate_20261106/coeff_box_d01_25digits.json`;
-- `verify_signs_exact.py` opera sobre frações exatas e valida somente os sinais condicionados às caixas;
-- `c2_em_interval.py` e `certify_finite_c2.py` calculam as caixas por operações elementares intervalares externas e alegam restos analíticos explícitos. Essa implementação ainda não é um verificador formal independente.
-
-## Resultado final: sem declarações C5 ainda
-
-Nenhum teorema Lean C5 foi criado nesta branch no checkpoint inicial. As inclusões
-`completedSigmaDisplacedSourceCoefficient d n ∈ [lo,hi]` são o gate para elevar as provas
-condicionais de sinal a conclusões da fonte original. Não usar sequência espectral, pencil ou
-modelo de polos como conclusão.
+A inclusão de `completedSigmaDisplacedSourceCoefficient d n` nas caixas racionais é o gate entre o cálculo condicional e esses teoremas incondicionais. Não usar uma sequência espectral, pencil ou modelo de polos como substituto.

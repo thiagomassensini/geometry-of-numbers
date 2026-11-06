@@ -1,38 +1,29 @@
 # C5 — obrigações abertas
 
-## O1 — validar o cálculo racional já publicado
+## O1 — validar o cálculo racional publicado — REPRODUZIDO
 
-Executar `verify_signs_exact.py` para os dois JSONs de Momentos. Conferir que os arquivos
-contêm extremos racionais exatos e que os sinais calculados são `+++++++++++-` e `+++++++++-`.
-Isso só valida a implicação condicional às caixas.
+Os dois verificadores exatos passaram sobre as caixas JSON rastreadas, com resultados `+++++++++++-` e `+++++++++-`. As três configurações de geração intervalar também foram reproduzidas após conversão local de `gmpy2.mpz` para inteiro Python nativo. Logs e patch estão em `evidence/interval-certificate/`.
 
-## O2 — transporte C4 em Lean
+Isso confirma a implicação racional condicional às caixas; não confirma que os coeficientes verdadeiros estejam nelas.
 
-Usar `C_d·H_d=-C_d′`, onde `H_d(n)=2*completedSigmaLogJet d n`, para provar a recorrência de
-`p_n=c_0^(n+1)H_d(n)` e a identidade do determinante com o fator `4*c₀^(2s+4)`. Não introduzir
-divisões na recorrência nem redefinir os momentos.
+## O2 — transporte C4 em Lean — PROVADO E AUDITADO
 
-## O3 — aritmética intervalar racional formal
+`SigmaFiniteCoefficientSignTransport.lean` prova a recorrência polinomial sem divisão para `pₙ=c₀^(n+1)Hₙ`, com `Hₙ=2*completedSigmaLogJet d n`, a identidade do determinante original e os dois transportes de sinal. Compila em Lean 4.32; `#print axioms` lista somente `propext`, `Classical.choice`, `Quot.sound`.
 
-Portar as duas caixas a intervalos racionais e formalizar a recorrência dos `p_n`, a inclusão
-dos polinômios dos determinantes e a exclusão de zero para todos os índices solicitados.
-Float não pode decidir sinal.
+## O3 — aritmética intervalar racional formal — ABERTO
 
-## O4 — fonte das caixas
+Portar as duas caixas a intervalos racionais e formalizar a recorrência `p_n`, a inclusão dos menores polinomiais e a exclusão de zero para todos os índices solicitados. Float não pode decidir sinal. Os sinais condicionais Python ainda não estão no kernel Lean.
 
-Provar inclusões rigorosas dos coeficientes `c₀..c₁₄` em `d=99/2000` e `c₀..c₁₂` em `d=1/10`,
-preservando cabeça C2 + cauda geométrica exata + completação original. Certificar restos de
-Hurwitz/Euler–Maclaurin, Stirling, operações elementares, contorno Cauchy/Fourier e todos os
-domínios usados. A saída Python atual não fecha essa obrigação.
+## O4 — origem das caixas — ABERTO
 
-## O5 — composição, build, axiomas e publicação
+Provar inclusões rigorosas dos coeficientes `c₀..c₁₄` em `d=99/2000` e `c₀..c₁₂` em `d=1/10`, preservando cabeça C2 + cauda geométrica exata + completação original. Certificar restos de Hurwitz/Euler–Maclaurin, Stirling, operações elementares, contorno Cauchy/Fourier e todos os domínios usados. A saída Python atual não fecha essa obrigação.
 
-Só chamar as conclusões de incondicionais quando O4 for fechado. Compilar em Lean 4.32, auditar
-axiomas próprios/`sorryAx`, registrar logs e hashes, publicar checkpoints pequenos e verificar
-PR/merge/main conforme a regra da missão.
+O avaliador foi conferido estruturalmente e as três reproduções passaram, mas `mpmath.iv`/seu backend e as operações complexas elementares ainda não têm prova Lean de arredondamento externo. Esse é o primeiro bloqueio concreto à certificação incondicional.
+
+## O5 — composição, build, axiomas e publicação — PARCIAL
+
+A Fase 1 foi compilada/auditada; o checkpoint inicial está publicado na branch C5. Ainda falta PR e merge do transporte algébrico, assim como o build/auditoria das fases O3/O4 e dos teoremas finais.
 
 ## Classificação honesta se O4 continuar em aberto
 
-Manter os resultados que dependam das caixas explicitamente condicionais e relatar precisamente
-qual coeficiente ou camada de funções elementares bloqueia a inclusão. Não declarar
-`PROVADO — CERTIFICAÇÃO COMPLETA`.
+Manter os resultados que dependem das caixas explicitamente condicionais e relatar precisamente qual coeficiente ou camada de funções elementares bloqueia a inclusão. Não declarar `PROVADO — CERTIFICAÇÃO COMPLETA`.
