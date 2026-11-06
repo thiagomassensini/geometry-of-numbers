@@ -23,8 +23,9 @@ e `sigmaC01SourceBoxes`). A composição termina no `sigmaPadeD` original.
 
 Build Lean 4.32 limpo, com warnings como erros, e auditoria transitiva de 13
 raízes passaram. Os únicos axiomas são `propext`, `Classical.choice` e
-`Quot.sound`. Comandos, logs, hashes de fontes/oleans e verificador fail-closed
-estão em `evidence/rational-boxes/`. A integração por PR ainda está pendente.
+`Quot.sound`. A etapa foi integrada pela PR #167, merge
+`fc17d3b16fd0ed5643cb12ef48c80bb81c81cbd9`. Comandos, logs, hashes de
+fontes/oleans e verificador fail-closed estão em `evidence/rational-boxes/`.
 
 ## O4 — origem das caixas — ABERTO
 
@@ -38,9 +39,9 @@ conclusões O3 permanecem condicionais.
 
 ## O5 — composição, build, axiomas e publicação — PARCIAL
 
-A Fase 1 foi integrada pela PR #165, merge `75691edf0e74cc643f098213f60b684476132175`.
-O3 passou build e auditoria local; sua publicação está pendente. O4 e os teoremas
-finais incondicionais seguem abertos.
+A Fase 1 foi integrada pela PR #165, merge `75691edf0e74cc643f098213f60b684476132175`;
+O3 foi integrada pela PR #167, merge `fc17d3b16fd0ed5643cb12ef48c80bb81c81cbd9`.
+O4 e os teoremas finais incondicionais seguem abertos.
 
 ## Classificação honesta se O4 continuar em aberto
 

@@ -49,8 +49,8 @@ Arquivos novos:
 Build limpo Lean 4.32 e auditoria transitiva aprovada; apenas `propext`,
 `Classical.choice`, `Quot.sound`. Evidência em
 `mission-c5-finite-c2-certification/evidence/rational-boxes/VALIDATION.md`.
-Esta O3 ainda não está integrada nesta revisão. A prova das hipóteses de caixa
-é O4 e não foi resolvida.
+O3 foi integrada pela PR #167, merge `fc17d3b16fd0ed5643cb12ef48c80bb81c81cbd9`.
+A prova das hipóteses de caixa é O4 e não foi resolvida.
 
 ## C5 O4 — origem das caixas ainda ABERTA
 
