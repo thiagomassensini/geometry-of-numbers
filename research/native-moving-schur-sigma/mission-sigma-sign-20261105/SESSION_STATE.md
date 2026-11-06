@@ -3,7 +3,7 @@
 **Atualizado:** 2026-11-06
 **Estado:** C0, C1, C1B, C2, C3 e C4 estão concluídos e integrados à `main`. A lei quantitativa distância × profundidade e os novos cadernos continuam adiados.
 
-**Conferência para retomada:** a revisão de base origin/main@935911bce2c253ee508a4990face113ea63c87ee inclui as atualizações até a PR #202. C1B (#155), C2 (#157) e C3 (#159) já estão publicados; não há publicação pendente dessas etapas nem motivo para reiniciá-las. Os módulos C2/C3 foram recompilados e auditados nessa base; evidências e hashes estão em evidence/c2-c3-post-reboot-20261106/. A integração 4.32 é a rota de C2. O checkpoint de Lean 4.35 abaixo continua preservado como validação incompleta, sem migração geral de Geometry/Carry.
+**Conferência para retomada:** as fontes C2/C3 foram revalidadas em `origin/main@9951fcb7315c25b6d878befc42b2d02c26a96ec7` (a PR #203 desde a revisão anterior mudou apenas documentação). C1B (#155), C2 (#157) e C3 (#159) estão publicados e integrados; não há publicação pendente nem motivo para reiniciá-los. A validação mais recente recompilou C2/C3 e repetiu a auditoria transitiva; logs e hashes estão em `evidence/c2-c3-final-validation-20261106/`. A integração 4.32 continua sendo a rota validada de C2. O checkpoint de Lean 4.35 abaixo permanece preservado como validação incompleta, sem migração geral de Geometry/Carry.
 
 ## Base integrada
 

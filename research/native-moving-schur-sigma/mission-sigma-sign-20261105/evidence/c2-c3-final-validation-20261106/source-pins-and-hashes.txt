@@ -1,0 +1,15 @@
+Repository source base: 9951fcb7315c25b6d878befc42b2d02c26a96ec7
+Lean toolchain: leanprover/lean4:v4.32.0
+Lean binary: /home/thlinux/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lean
+Mathlib: 81a5d257c8e410db227a6665ed08f64fea08e997
+GreenFrame: cd2d838bee67ad23f869a02f8ed9f0a0feb926fa
+Carry source: 045369f6dedcb2e75e9aefed1d12c9f73b9a2532
+Height-50 certificate: teal-sea/zeta-lab@b09fa4dd2f2182cf14b248e7ffc64ff03df2c534
+Reused dependency output tree: 67aea3263426cc8f9787f34aa7833a5650dde175
+
+b0e1ebbcd5056906a513a4174510e21fac279e59b7618617e41de07527635125  research/native-moving-schur-sigma/SigmaPadeEventualNegativity.lean
+40f5de85a03f0d9e1b65ef918e53e98b649f42fea36c6039fc8d819f769c0e4d  research/native-moving-schur-sigma/SigmaParityNegativeDirection.lean
+be6b73dd1e0fbefce83352cf2fa6124542ae7ca4bf8d816a371310c650c20be3  research/native-moving-schur-sigma/SigmaPadeAudit.lean
+c5cf95e1da177f4ebcb3232d1da9968d19aa9d1276ad135d109fafa333e6cc8e  research/native-moving-schur-sigma/mission-sigma-sign-20261105/evidence/c2-c3-final-validation-20261106/c2-focused-build.log
+1e6ddb248e525923866be4cfb2c327867e18e510a10f2f760e2f47e3ca682074  research/native-moving-schur-sigma/mission-sigma-sign-20261105/evidence/c2-c3-final-validation-20261106/c3-focused-build.log
+d65d29bba8dd8f8d639d3adf92a27989c992c7d861e699168a56a2b468e0dc11  research/native-moving-schur-sigma/mission-sigma-sign-20261105/evidence/c2-c3-final-validation-20261106/transitive-pade-audit.log
