@@ -1,12 +1,18 @@
 from pathlib import Path
 import os, re, subprocess, concurrent.futures, sys
-GEOM = Path('/tmp/geometry-of-numbers-native-sigma-4.35-rerun')
-CARRY = Path('/home/thlinux/carry-self-adjoint-operator')
-OUT = GEOM/'research/native-moving-schur-sigma/.build435'
-LOG = GEOM/'integration-build435'
+GEOM = Path(os.environ.get('SIGMA_435_GEOM_ROOT', Path(__file__).resolve().parent))
+CARRY = Path(os.environ.get('SIGMA_435_CARRY_ROOT', '/home/thlinux/carry-self-adjoint-operator'))
+OUT = Path(os.environ.get(
+    'SIGMA_435_OUTPUT_DIR',
+    GEOM/'research/native-moving-schur-sigma/.build435'
+))
+LOG = Path(os.environ.get('SIGMA_435_LOG_DIR', GEOM/'integration-build435'))
 LOG.mkdir(exist_ok=True)
 OUT.mkdir(exist_ok=True)
-LEAN = '/home/thlinux/.elan/toolchains/leanprover--lean4---v4.35.0-rc2/bin/lean'
+LEAN = os.environ.get(
+    'LEAN_BIN',
+    '/home/thlinux/.elan/toolchains/leanprover--lean4---v4.35.0-rc2/bin/lean'
+)
 LAKEPATH = ':'.join(x for x in subprocess.check_output(['bash','-lc',f'cd {GEOM} && lake env printenv LEAN_PATH'],text=True).strip().split(':') if '/.lake/packages/GreenFrame/.lake/build/lib/lean' not in x)
 LIBDIRS = [Path(x) for x in LAKEPATH.split(':') if x]
 FILES, ROOTS = {}, {}

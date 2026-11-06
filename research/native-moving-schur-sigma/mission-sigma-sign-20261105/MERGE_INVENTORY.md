@@ -65,3 +65,9 @@ O inventário acima é o snapshot anterior aos merges C0–C3; esta atualizaçã
 - As duas worktrees de tentativa 4.35 em `/tmp` aparecem agora como `prunable` porque seus gitdirs temporários não existem. O conteúdo necessário à retomada segue versionado em `evidence/lean435-validation-incomplete/` (overlays/patches, pins, manifests, logs e README com o último erro e comandos). Nenhuma tentativa foi recriada nem os checkpoints removidos.
 - PRs #153–#163 relevantes à missão foram consultadas no GitHub e estão mescladas: C0 #153, C1 #154, C1B #155, checkpoint 4.35 #156, C2 #157, C3 #159, atualizações de estado #160/#161/#163 e C4 #162. Os SHAs de merge correspondentes constam em `SESSION_STATE.md`, `CHECKPOINTS.md` e nos registros de validação.
 - A tabela inicial registra o estado anterior aos merges C0–C3. Em particular, suas observações de que a fonte de altura 50 e os resultados C2 estavam fora da `main` descrevem aquele snapshot, não o estado atual após a PR #157. O commit de referência `b9ce1955c1e8830afad2323afe5266ed3f5f35d9` continua preservado para proveniência, enquanto a closure C2 necessária está na `main`.
+
+## Atualização após PR #202 e revalidação C2/C3 (2026-11-06)
+
+- A base de origin/main conferida foi 935911bce2c253ee508a4990face113ea63c87ee. As integrações C1B (#155), C2 (#157) e C3 (#159) continuam presentes e sem publicação pendente.
+- C2 e C3 foram recompilados focadamente em Lean 4.32; a auditoria transitiva atual percorreu 133 roots e 70.861 dependências. Os detalhes e logs estão em evidence/c2-c3-post-reboot-20261106/.
+- As worktrees 4.35 em /tmp realmente não sobreviveram ao reinício. O checkpoint publicado preserva os overlays, patches, pins, manifests e logs. O README foi atualizado com reconstrução a partir da base 353a7db22ca3b886ff111d0e61827784a4eb6053; o scheduler agora recebe os caminhos Geometry, Carry, saída e Lean por variáveis de ambiente.

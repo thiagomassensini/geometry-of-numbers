@@ -70,3 +70,9 @@ recebeu status checks hospedados. Evidências em `evidence/c2-eventual-negativit
 - `completedSigmaDisplacedMoment_hankel_eq_two_sigmaMatrix` identifica a matriz de Hankel como `2 • sigmaMatrix`. A congruência usa os coeficientes reais da fonte; o termo constante positivo torna a convolução invertível. A semidefinição positiva do bloco de Bézout equivale à da matriz sigma original.
 - `CarrySourceBezout.sourceKernel_head_tail` mantém os quatro termos ordenados da decomposição genérica. Nenhum termo recebe sinal ou é identificado artificialmente com o bracket material.
 - Compilação limpa, warnings-as-errors e auditoria transitiva de dez raízes (57.386 declarações alcançáveis), somente axiomas padrão: `evidence/c4-source-bezout/VALIDATION.md` e logs associados. O GitHub não apresentou status checks para a PR.
+
+## Revalidação focada C2/C3 após reinício (2026-11-06)
+
+Sobre as fontes de origin/main@935911bce2c253ee508a4990face113ea63c87ee, os módulos finais C2 e C3 foram recompilados em Lean 4.32 com warnings tratados como erros. O checker C2 aceitou seu corolário; o checker C3 aceitou os quatro roots par/ímpar; ambos usam apenas propext, Classical.choice e Quot.sound. A auditoria transitiva recompilada contou 133 roots públicos e 70.861 dependências, mantendo a característica e os jets sigma originais.
+
+Logs, checker do root C2, hashes e pins estão em evidence/c2-c3-post-reboot-20261106/. Esta foi uma recompilação focada com caches das dependências já compilados no pin 4.32; a reconstrução limpa da closure continua documentada em evidence/c3-parity/VALIDATION.md.
