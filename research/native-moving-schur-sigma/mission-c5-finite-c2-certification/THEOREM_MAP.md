@@ -120,16 +120,14 @@ Em `SigmaRationalInterpolation.lean`:
 - `c5InterpolationNode_injOn` prova que os nós `j²` são distintos em `0≤j≤128`.
 - `c5_interpolate_polynomial` prova a reconstrução exata de qualquer `p : ℚ[X]` com `degree p < 129` a partir das avaliações nodais.
 - `c5InterpolationPolynomial_coeff` e `c5InterpolationPolynomial_coeff_of_degree_lt` dão a fórmula explícita dos coeficientes por somas de Lagrange.
-- `c5InterpolationWeight` e `c5InterpolationWeightSum` representam os pesos escalados correspondentes a `t_j=j/100000`. `c5InterpolationWeightSum_zero_eq_one` prova que a soma absoluta de grau zero é `1`; os limites dos graus `1..14` seguem abertos.
-- Para grau um, `c5Coeff_one_eq_derivative_eval_zero` identifica o coeficiente com a derivada em zero, e `c5LagrangeBasis_derivative_eval_zero` dá a expansão da derivada de cada base. A desigualdade numérica da soma de pesos ainda não foi provada.
+- `c5InterpolationWeight` e `c5InterpolationWeightSum` representam os pesos escalados correspondentes a `t_j=j/100000`. `c5InterpolationWeightSum_zero_eq_one` prova que a soma absoluta de grau zero é `1`.
+- Para grau um, `c5Coeff_one_eq_derivative_eval_zero` e `c5LagrangeBasis_derivative_eval_zero` dão a representação estrutural. `c5LagrangeBasisProductCoeffOne_bound` prova a cota por base; `c5InterpolationCoeffOneAbsSum_le_six` e `c5InterpolationWeightSum_one_lt_ten_eleven` fecham a soma escalada abaixo de `10^11`. Build limpo e auditoria de 21 raízes: `evidence/rational-boxes/degree1-weight-bound-validation.md`.
+- Os limites de grau `2..14`, a cota analítica da fonte e a inclusão das caixas seguem abertos.
 
 As quatorze raízes foram compiladas em Lean 4.32 e auditadas. Os comandos e hashes estão em `evidence/rational-boxes/VALIDATION.md` e `evidence/rational-boxes/source-and-olean-sha256.txt`. A expansão direta que excedeu o limite do simplificador está registrada em `interpolation-weight-degree1-prototype.log`.
 
-**WIP não integrado — grau um:** a branch `codex/c5-degree1-weight-bound-20261106`
-adiciona `c5LagrangeBasisProductCoeffOne_bound`,
-`c5InterpolationCoeffOneAbsSum_le_six` e
-`c5InterpolationWeightSum_one_lt_ten_eleven` usando identidades de produtos
-fatoriais. Essas declarações ainda não passaram por build integral e não foram
-auditadas; não são teoremas validados. O lema auxiliar isolado da soma compilou,
-mas isso não valida os teoremas de peso. Ver
-`evidence/rational-boxes/degree1-retry-checkpoint.md`.
+**Checkpoint de grau um validado localmente — publicação pendente:** a branch
+`codex/c5-degree1-weight-bound-20261106` acrescenta os três teoremas acima por
+identidades de produtos fatoriais. Build limpo e auditoria fail-closed passaram;
+veja `evidence/rational-boxes/degree1-weight-bound-validation.md`. O resultado
+cobre somente grau um e não fecha O4.

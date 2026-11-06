@@ -1,8 +1,9 @@
 # C5 — estado da sessão
 
 **Atualizado:** 2026-11-06
-**Status:** C1–C4 e O3 estão integradas; a ponte Euler-Gamma de precisão `10⁻²⁵⁹`, a identidade algébrica de interpolação em 129 nós e a soma absoluta do peso escalado de grau zero (`=1`) estão provadas em Lean 4.32. Para grau um, está provada a representação dos coeficientes por derivadas avaliadas em zero. Os limites numéricos dos pesos, a cota analítica da fonte e a inclusão dos coeficientes C2 nas caixas seguem pendentes.
-**Checkpoint WIP do limite de grau um (2026-11-06):** `origin/main` confirmado em `c736dc073091e6184dbb673b622b6b91759accac` (PR #183). A branch `codex/c5-degree1-weight-bound-20261106` contém uma nova tentativa simbólica em `SigmaRationalInterpolation.lean`, mas o build integral ainda não terminou; não há `.olean` nem auditoria nova. O lema auxiliar `c5_inv_sq_sum_range_le_isolated` compilou isoladamente, sem validar o teorema do peso. Logs e comando de retomada estão em `RESTART_HERE.md` e `evidence/rational-boxes/degree1-retry-checkpoint.md`.
+**Status atual:** C1–C4 e O3 estão integradas. A ponte Euler-Gamma de precisão `10⁻²⁵⁹`, a identidade algébrica de interpolação em 129 nós e a soma absoluta do peso escalado de grau zero (`=1`) estão provadas em Lean 4.32. Agora também estão provados e auditados os limites de grau um: soma dos coeficientes das bases `≤6` e soma do peso escalado `<10^11`. Os pesos de graus `2..14`, a cota analítica da fonte e a inclusão dos coeficientes C2 nas caixas seguem pendentes.
+**Checkpoint de grau um (2026-11-06):** a alteração simbólica de `SigmaRationalInterpolation.lean` passou build Lean 4.32 limpo e auditoria fail-closed de 21 raízes. Logs e hashes estão em `evidence/rational-boxes/degree1-weight-bound-validation.md`; tentativas anteriores incompletas e a prova rejeitada com `native_decide` foram mantidas como histórico.
+**Branch atual:** `codex/c5-degree1-weight-bound-20261106`, baseada na `main` `c736dc073091e6184dbb673b622b6b91759accac`. O checkpoint remoto anterior é `f23b617f60e114d945b6aaaf5b3d53fb1222265b`; a alteração validada está sendo preparada para publicação em PR.
 **Branch C5 de trabalho:** o passo estrutural de grau um foi publicado no commit `0a188c9d71a1a54bdf446ec753609fdde8326bc8`, integrado pela PR #181. A branch remota de prova foi removida após o merge; retomar a partir da `main` atual e abrir uma branch nova.
 **Main geometry no início da auditoria O4:** `1bc7318915c3e625ad228c89ff8c300cb07e52c5` (merge da PR #168).
 **Última prova geometry integrada:** PR #181, estrutura derivativa do peso de grau um, `7460497307e7ed0ffb47ef1ac96b096e9b410472`.
@@ -11,7 +12,7 @@
 **Main geometry após a PR #181:** `7460497307e7ed0ffb47ef1ac96b096e9b410472`.
 **Checkpoint de estado pós-PR #181:** PR #182, merge `8f8b9da2b8c1e8f3b8d1290608c8b2abffe9c285`.
 **Main geometry no checkpoint de estado:** `8f8b9da2b8c1e8f3b8d1290608c8b2abffe9c285`.
-**Repositório geometry no checkout de pesquisa original:** branch `agent/native-moving-schur-sigma`, HEAD `9392ebac9930f5d11c56f595556080e8ab1de809`, com logs/caches não rastreados preservados.
+**Repositório geometry no checkout de pesquisa original:** branch `agent/native-moving-schur-sigma`, HEAD `9392ebac9930f5d11c56f595556080e8ab1de809`, com logs/caches não rastreados preservados. A main remota confirmada antes deste checkpoint está em `c736dc073091e6184dbb673b622b6b91759accac` (PR #183).
 **Repositório Momentos:** checkout local `main` em `05c9314d59306383baa55ed3be80ab950e799e97`; branch remota de pesquisa `origin/research/sigma-pade-dimension-depth-20261104` em `68c9b5f0a196289e28a8e5586146707d27df6b75`. PR #2 está OPEN e não foi integrada.
 
 ## Inventário de trabalho anterior
@@ -47,13 +48,13 @@ O checkpoint reprodutível dessa auditoria foi integrado pela PR #169; merge na 
 
 **Primeiro lema O4 ainda ausente:** inclusão em caixas racionais estreitas da expressão finita `gammaFinite 3072 620 z` nos valores usados para os coeficientes. A ponte Euler já fica abaixo da precisão necessária; permanece a avaliação com cancelamento da soma finita, a avaliação Hurwitz e a composição com a fonte C2.
 
-**Identidade algébrica de interpolação provada nesta etapa:** `SigmaRationalInterpolation.lean` define os 129 nós `j²`, prova que são distintos e formaliza que a interpolação de Lagrange recupera exatamente qualquer polinômio racional de grau menor que 129. Também prova a expressão dos coeficientes da interpolação como soma das avaliações ponderadas pelos coeficientes das bases. Build Lean 4.32 e auditoria de quatorze raízes passaram; apenas `propext`, `Classical.choice` e `Quot.sound` aparecem. Os limites numéricos dos pesos de grau positivo ainda não foram provados no Lean.
+**Identidade algébrica de interpolação:** `SigmaRationalInterpolation.lean` define os 129 nós `j²`, prova que são distintos e formaliza a reconstrução exata de polinômios racionais de grau menor que 129 e a fórmula dos coeficientes pela interpolação de Lagrange. Build Lean 4.32 limpo e auditoria atualizada de 21 raízes passaram; apenas `propext`, `Classical.choice` e `Quot.sound` aparecem.
 
 **Grau zero dos pesos provado:** o coeficiente constante da base de Lagrange em `j=0` é `1`, as demais bases têm coeficiente constante `0`, e `c5InterpolationWeightSum_zero_eq_one` conclui que a soma absoluta do peso escalado de grau zero é exatamente `1`.
 
-**Estrutura para grau um provada:** o coeficiente linear de um polinômio é sua derivada avaliada em zero; `c5LagrangeBasis_derivative_eval_zero` expande isso como soma dos produtos das derivadas das bases. A tentativa de fechar diretamente o limite `10^11` por expansão exata esgotou o limite de passos do simplificador; o erro e comando estão preservados em `evidence/rational-boxes/interpolation-weight-degree1-prototype.log`. Os limites `n=1..14` continuam abertos. A auditoria atual cobre quatorze raízes.
+**Peso de grau um provado:** além da representação derivativa, `c5LagrangeBasisProductCoeffOne_bound`, `c5InterpolationCoeffOneAbsSum_le_six` e `c5InterpolationWeightSum_one_lt_ten_eleven` dão a cota escalada `<10^11`. As tentativas diretas anteriores permanecem preservadas em `evidence/rational-boxes/degree1-retry-checkpoint.md` e `interpolation-weight-degree1-prototype.log`; os graus `2..14` continuam abertos.
 
-**Publicação:** a prova estrutural e seu checkpoint incompleto foram integrados pela PR #181. O merge não fecha os limites numéricos dos pesos; O4 continua aberta.
+**Publicação anterior:** a prova estrutural foi integrada pela PR #181. O novo limite de grau um foi validado nesta branch após o checkpoint da PR #183; a PR de integração e o SHA de merge serão registrados em atualização posterior. O4 continua aberta.
 
 ## Validação reproduzida
 

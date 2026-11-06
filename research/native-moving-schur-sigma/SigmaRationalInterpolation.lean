@@ -5,9 +5,10 @@ import Mathlib.Analysis.PSeries
 # Exact rational interpolation for the finite C2 coefficient problem
 
 This module establishes the algebraic interpolation identity used by the
-129-node route.  It proves that the degree-zero scaled weight sum is exactly
-one.  Bounds for the positive-degree weights, a complex analytic bound for the
-source, and inclusion in the source coefficient boxes remain open.
+129-node route. It proves exact interpolation, the degree-zero scaled weight
+sum, and a symbolic bound for the degree-one scaled weight sum. Bounds for
+degrees two through fourteen, a complex analytic source bound, and inclusion
+in the source coefficient boxes remain open.
 -/
 
 namespace CarrySigmaObstruction
@@ -327,7 +328,9 @@ private theorem c5_abs_square_difference_product (j : ℕ) (hj : 1 ≤ j)
     _ = (Nat.factorial (128 - j) : ℚ) *
         (Nat.factorial (j + 128) : ℚ) := by rw [hshift]
     _ = (Nat.factorial (128 - j) : ℚ) *
-        (Nat.factorial (128 + j) : ℚ) := by congr 1 <;> omega
+        (Nat.factorial (128 + j) : ℚ) := by
+          have hargs : j + 128 = 128 + j := by omega
+          rw [hargs]
 
 private theorem c5_nonzero_square_product (j : ℕ) (hj : 1 ≤ j)
     (hj128 : j ≤ 128) :
@@ -373,6 +376,8 @@ private theorem c5_nonzero_square_product (j : ℕ) (hj : 1 ≤ j)
         (fun l : ℕ => (l : ℚ) ^ 2) hjmem
     _ = (Nat.factorial 128 : ℚ) ^ 2 := hbase
 
+/-- The degree-one coefficient of a nonzero-node Lagrange basis is bounded by
+twice the reciprocal square of its node index. -/
 theorem c5LagrangeBasisProductCoeffOne_bound :
     ∀ j : Fin 129, j.val ≠ 0 →
       |(∏ l ∈ (c5InterpolationIndices.erase j.val).erase 0,
@@ -394,19 +399,24 @@ theorem c5LagrangeBasisProductCoeffOne_bound :
     apply Finset.mem_erase.mpr
     constructor
     · exact Ne.symm (Nat.ne_of_gt hn)
-    · exact Finset.mem_range.mpr (by dsimp [n]; omega)
+    · exact Finset.mem_range.mpr (by omega)
   have hdenErase :
       (∏ k ∈ T, |q - (k : ℚ) ^ 2|) = denSmall * q := by
     have herase := Finset.prod_erase_mul T
       (fun k : ℕ => |q - (k : ℚ) ^ 2|) h0mem
     simpa [S, denSmall, abs_of_pos hqpos] using herase.symm
   have hnum : num * q = (Nat.factorial 128 : ℚ) ^ 2 := by
-    simpa [num, S, T, q] using c5_nonzero_square_product n hn hn128
+    change (∏ l ∈ ((Finset.range 129).erase n).erase 0,
+      (l : ℚ) ^ 2) * (n : ℚ) ^ 2 = (Nat.factorial 128 : ℚ) ^ 2
+    exact c5_nonzero_square_product n hn hn128
   have hden :
       (∏ k ∈ T, |q - (k : ℚ) ^ 2|) * 2 =
         (Nat.factorial (128 - n) : ℚ) *
           (Nat.factorial (128 + n) : ℚ) := by
-    simpa [T, q] using c5_abs_square_difference_product n hn hn128
+    change (∏ k ∈ (Finset.range 129).erase n,
+      |(n : ℚ) ^ 2 - (k : ℚ) ^ 2|) * 2 =
+        (Nat.factorial (128 - n) : ℚ) * (Nat.factorial (128 + n) : ℚ)
+    exact c5_abs_square_difference_product n hn hn128
   have hcenterNat := c5_factorial_center_product_le n hn128
   have hcenterMul :
       (Nat.factorial 128 : ℚ) * (Nat.factorial 128 : ℚ) ≤
@@ -425,7 +435,7 @@ theorem c5LagrangeBasisProductCoeffOne_bound :
       _ = (∏ k ∈ T, |q - (k : ℚ) ^ 2|) * 2 := hden.symm
       _ = 2 * denSmall * q := by rw [hdenErase]; ring
   have hnumLe : num ≤ 2 * denSmall := by
-    exact (mul_le_mul_right hqpos).mp hfacScaled
+    exact le_of_mul_le_mul_right hfacScaled hqpos
   have hdenFullPos : 0 < ∏ k ∈ T, |q - (k : ℚ) ^ 2| := by
     have hfacPos :
         0 < (Nat.factorial (128 - n) : ℚ) *
@@ -434,8 +444,7 @@ theorem c5LagrangeBasisProductCoeffOne_bound :
         0 < (∏ k ∈ T, |q - (k : ℚ) ^ 2|) * 2 := by
       rw [hden]
       exact hfacPos
-    norm_num at hprodPos ⊢
-    nlinarith
+    exact (mul_pos_iff_of_pos_right (by norm_num : 0 < (2 : ℚ))).mp hprodPos
   have hdenSmallPos : 0 < denSmall := by
     rw [hdenErase] at hdenFullPos
     by_contra hnot
@@ -443,7 +452,7 @@ theorem c5LagrangeBasisProductCoeffOne_bound :
     have hnonpos : denSmall * q ≤ 0 := mul_nonpos_of_nonpos_of_nonneg hle hqpos.le
     linarith
   have hcoefTerm (l : ℕ) (hl : l ∈ S) :
-      | -((q - (l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2)| *
+      |-((q - (l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2)| *
           |q - (l : ℚ) ^ 2| = (l : ℚ) ^ 2 := by
     have hln : l ≠ n := (Finset.mem_erase.mp (Finset.mem_erase.mp hl).2).1
     have hdiff : q - (l : ℚ) ^ 2 ≠ 0 := by
@@ -465,17 +474,17 @@ theorem c5LagrangeBasisProductCoeffOne_bound :
           (l : ℚ) ^ 2 := by ring
       _ = (l : ℚ) ^ 2 := by rw [inv_mul_cancel₀ habs, one_mul]
   have hprodTerm :
-      (∏ l ∈ S, | -((q - (l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2)|) * denSmall = num := by
+      (∏ l ∈ S, |-((q - (l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2)|) * denSmall = num := by
     calc
-      (∏ l ∈ S, | -((q - (l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2)|) *
+      (∏ l ∈ S, |-((q - (l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2)|) *
           (∏ l ∈ S, |q - (l : ℚ) ^ 2|) =
         ∏ l ∈ S,
-          (| -((q - (l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2)| *
+          (|-((q - (l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2)| *
             |q - (l : ℚ) ^ 2|) := by rw [← Finset.prod_mul_distrib]
       _ = num := by
         calc
           (∏ l ∈ S,
-              (| -((q - (l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2)| *
+              (|-((q - (l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2)| *
                 |q - (l : ℚ) ^ 2|)) =
               ∏ l ∈ S, (l : ℚ) ^ 2 := by
                 apply Finset.prod_congr rfl
@@ -487,9 +496,9 @@ theorem c5LagrangeBasisProductCoeffOne_bound :
           -((q - (l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2)) * q⁻¹| * q * denSmall = num := by
     rw [abs_mul, Finset.abs_prod, abs_of_pos (inv_pos.mpr hqpos)]
     calc
-      (∏ l ∈ S, | -((q - (l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2)|) * q⁻¹ *
+      (∏ l ∈ S, |-((q - (l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2)|) * q⁻¹ *
           q * denSmall =
-        ((∏ l ∈ S, | -((q - (l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2)|) * denSmall) *
+        ((∏ l ∈ S, |-((q - (l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2)|) * denSmall) *
           (q⁻¹ * q) := by ring
       _ = num := by rw [hprodTerm, inv_mul_cancel₀ (ne_of_gt hqpos), mul_one]
   have hscaled :
@@ -499,13 +508,14 @@ theorem c5LagrangeBasisProductCoeffOne_bound :
   have habsq :
       |(∏ l ∈ S,
           -((q - (l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2)) * q⁻¹| * q ≤ 2 := by
-    exact (mul_le_mul_right hdenSmallPos).mp hscaled
+    exact le_of_mul_le_mul_right hscaled hdenSmallPos
   have hbound := (le_div_iff₀ hqpos).2 habsq
   simpa [S, T, q, n, c5InterpolationIndices, c5InterpolationNode] using hbound
 
 theorem c5LagrangeBasis_coeff_one_zero_abs_le :
     |(c5LagrangeBasis 0).coeff 1| ≤ 2 := by
   rw [c5LagrangeBasis_coeff_one_zero]
+  simp only [c5InterpolationIndices, c5InterpolationNode]
   have hset : (Finset.range 129).erase 0 = Finset.Ico 1 129 := by
     ext k
     simp only [Finset.mem_erase, Finset.mem_range, Finset.mem_Ico]
@@ -514,7 +524,7 @@ theorem c5LagrangeBasis_coeff_one_zero_abs_le :
       (∑ k ∈ (Finset.range 129).erase 0, ((k : ℚ) ^ 2)⁻¹) =
         ∑ k ∈ Finset.range 128, ((k + 1 : ℚ) ^ 2)⁻¹ := by
     rw [hset, Finset.sum_Ico_eq_sum_range]
-    simp only [Nat.reduceSub, Nat.cast_add, Nat.cast_one, add_comm]
+    simp only [Nat.cast_add, Nat.cast_one, add_comm]
   rw [hsum, abs_neg]
   have hnonneg : 0 ≤ ∑ k ∈ Finset.range 128, ((k + 1 : ℚ) ^ 2)⁻¹ := by
     apply Finset.sum_nonneg
@@ -534,6 +544,8 @@ theorem c5LagrangeBasis_coeff_one_abs_le (j : ℕ) (hj : j < 129) :
     have h := c5LagrangeBasisProductCoeffOne_bound ⟨j, hj⟩ hj0
     simpa [c5InterpolationIndices, c5InterpolationNode] using h
 
+/-- The unscaled absolute degree-one coefficients of all interpolation bases
+sum to at most six. -/
 theorem c5InterpolationCoeffOneAbsSum_le_six :
     (∑ j ∈ c5InterpolationIndices,
       |(c5LagrangeBasis j).coeff 1|) ≤ 6 := by
@@ -559,22 +571,24 @@ theorem c5InterpolationCoeffOneAbsSum_le_six :
       have hsum :
           (∑ j ∈ (Finset.range 129).erase 0, f j) ≤ 4 := by
         rw [hset, Finset.sum_Ico_eq_sum_range]
-        simp [Nat.reduceSub, f, Nat.cast_add, Nat.cast_one]
+        simp [f, Nat.cast_add, Nat.cast_one]
         have htel := c5_inv_sq_sum_range_le 128 (by omega)
         have hsumEq :
-            (∑ k ∈ Finset.range 128, 2 / ((k + 1 : ℚ) ^ 2)) =
+            (∑ k ∈ Finset.range 128, 2 / (1 + (k : ℚ)) ^ 2) =
               2 * ∑ k ∈ Finset.range 128, ((k + 1 : ℚ) ^ 2)⁻¹ := by
           rw [Finset.mul_sum]
           apply Finset.sum_congr rfl
           intro k hk
-          ring
+          have hadd : (1 : ℚ) + (k : ℚ) = (k : ℚ) + 1 := by ring
+          rw [hadd, div_eq_mul_inv]
         rw [hsumEq]
         linarith
-      rw [← Finset.sum_erase_add (Finset.range 129) f h0]
       have hf0 : f 0 = 2 := by simp [f]
       rw [hf0]
       linarith
 
+/-- The sum of absolute scaled interpolation weights for degree one is below
+ten to the eleventh. -/
 theorem c5InterpolationWeightSum_one_lt_ten_eleven :
     c5InterpolationWeightSum 1 < 10 ^ 11 := by
   unfold c5InterpolationWeightSum
