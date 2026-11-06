@@ -1,6 +1,7 @@
 import SigmaPadeConvergence
 import SigmaRemainderDescent
 import SigmaPadeEventualNegativity
+import SigmaParityNegativeDirection
 import Lean
 
 open Lean Elab Command
@@ -164,6 +165,15 @@ elab "#audit_sigma_pade " ids:ident+ : command => do
 #print axioms CarrySigmaObstruction.sigmaPadeRecoveredHeight
 #print axioms CarrySigmaObstruction.completedNative_sigmaRemainder_pade_root_of_isolation
 #print axioms CarrySigmaObstruction.exists_eventually_negative_sigmaPadeD_from_height50_certificate
+#print axioms CarrySigmaObstruction.sigmaMatrix_negative_direction_of_negative_pade_minor
+#print axioms CarrySigmaObstruction.sigmaParityWindowEmbedding
+#print axioms CarrySigmaObstruction.sigmaMatrix_window_submatrix
+#print axioms CarrySigmaObstruction.sigmaMatrix_not_posSemidef_of_shifted_window
+#print axioms CarrySigmaObstruction.sigmaMatrix_negative_direction_of_not_posSemidef
+#print axioms CarrySigmaObstruction.sigmaMatrix_negative_direction_of_shifted_window
+#print axioms CarrySigmaObstruction.sigmaMatrix_negative_directions_of_window
+#print axioms CarrySigmaObstruction.exists_even_sigma_negative_directions_from_pade
+#print axioms CarrySigmaObstruction.exists_odd_sigma_negative_directions_from_pade
 
 #audit_sigma_pade
   CarrySigmaPade.sigmaPencilGram
@@ -290,3 +300,12 @@ elab "#audit_sigma_pade " ids:ident+ : command => do
   CarrySigmaObstruction.sigmaPadeRecoveredHeight
   CarrySigmaObstruction.completedNative_sigmaRemainder_pade_root_of_isolation
   CarrySigmaObstruction.exists_eventually_negative_sigmaPadeD_from_height50_certificate
+  CarrySigmaObstruction.sigmaMatrix_negative_direction_of_negative_pade_minor
+  CarrySigmaObstruction.sigmaParityWindowEmbedding
+  CarrySigmaObstruction.sigmaMatrix_window_submatrix
+  CarrySigmaObstruction.sigmaMatrix_not_posSemidef_of_shifted_window
+  CarrySigmaObstruction.sigmaMatrix_negative_direction_of_not_posSemidef
+  CarrySigmaObstruction.sigmaMatrix_negative_direction_of_shifted_window
+  CarrySigmaObstruction.sigmaMatrix_negative_directions_of_window
+  CarrySigmaObstruction.exists_even_sigma_negative_directions_from_pade
+  CarrySigmaObstruction.exists_odd_sigma_negative_directions_from_pade

@@ -5,6 +5,8 @@ task_dir=$(cd -- "$(dirname -- "$0")" && pwd)
 repo_root=$(cd -- "$task_dir/../.." && pwd)
 package="$task_dir/height50-certified"
 out_dir=${1:-$(mktemp -d "${TMPDIR:-/tmp}/sigma-height50.XXXXXX")}
+mkdir -p "$out_dir"
+out_dir=$(cd -- "$out_dir" && pwd)
 external_out="$out_dir/external"
 integration_out="$out_dir/integration"
 mkdir -p "$external_out" "$integration_out"
@@ -19,20 +21,23 @@ bash "$package/hunts/rh_height_lean/lean/build.sh" --full "$external_out" \
 python3 "$package/hunts/rh_height_lean/lean/check_axioms.py" \
   "$out_dir/external-build.log" --full
 
+SIGMA_OUTPUT_DIR="$integration_out" LEAN_BIN="$lean_bin" \
+  bash "$task_dir/compile_c1.sh"
+
 local_modules=(
-  SigmaNativeContinuation
-  SigmaNativeZeroBridge
-  SigmaCertifiedNegativeDirection
   SigmaIsolationFactorization
   SigmaSignedPencil
   SigmaPadeCorrespondence
   SigmaTwoPoleModel
+  SigmaTransverseAllOrder
+  SigmaTransverseJoint
   SigmaZeroPairDecomposition
   SigmaPadeConvergence
   SigmaRemainderDescent
   SigmaRHHeightBridge
   SigmaHeight50Integration
   SigmaPadeEventualNegativity
+  SigmaParityNegativeDirection
 )
 for module in "${local_modules[@]}"; do
   echo "== local $module" | tee -a "$out_dir/integration-build.log"
@@ -43,7 +48,10 @@ for module in "${local_modules[@]}"; do
     2>&1 | tee -a "$out_dir/integration-build.log"
 done
 
-awk '/^== local SigmaHeight50Integration$/ { copy = 1 } copy' \
+python3 "$task_dir/generate_sigma_pade_audit.py"
+awk '/^== local SigmaParityNegativeDirection$/ { exit }
+  /^== local SigmaHeight50Integration$/ { copy = 1 }
+  copy' \
   "$out_dir/integration-build.log" > "$out_dir/final-integration.log"
 python3 "$package/check_sigma_axioms.py" "$out_dir/final-integration.log"
 echo "== local SigmaPadeAudit" | tee "$out_dir/transitive-pade-audit.log"

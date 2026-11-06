@@ -55,7 +55,11 @@ recebeu status checks hospedados. Evidências em `evidence/c2-eventual-negativit
 
 ## C3 — setores par e ímpar
 
-**Prioridade ativa.** Usar a negatividade eventual dos menores para janelas `p=2i` e `p=2i+1`, obter direções em cada torre e prolongá-las para dimensões maiores. Não afirmar crescimento do índice negativo sem prova própria.
+**Prova e auditoria Lean 4.32 concluídas; integração pendente.** Em `SigmaParityNegativeDirection.lean`, `exists_even_sigma_negative_directions_from_pade` usa `p=2i` e a janela `sigmaMatrix (1/5) 0 (i+2)`; `exists_odd_sigma_negative_directions_from_pade` usa `p=2i+1` e `sigmaMatrix (1/5) 1 (i+2)`. Em ambos os casos, `sigmaMatrix_negative_directions_of_window` aplica a persistência integrada de C1B e entrega um vetor negativo para toda dimensão `M≥i+2`.
+
+- Build completo da closure externa/C2/C3 e auditoria de axiomas: `evidence/c3-parity/VALIDATION.md` e logs adjacentes.
+- Auditoria transitiva C2/C3 preserva `completedSigmaLogJet` e a característica originais; somente axiomas padrão.
+- O certificado C3 não alega crescimento do índice negativo nem negatividade de todos os pivôs.
 
 ## C4 — fonte deslocada e Bézout
 

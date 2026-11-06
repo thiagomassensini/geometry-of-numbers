@@ -6,7 +6,7 @@
 ## Base integrada
 
 - Repositório: `thiagomassensini/geometry-of-numbers`.
-- Base atual: `main` em `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`; a PR #157 integrou C2.
+- Base atual: `main` em `d9fe8117ad69108f89a558961e19ab2bdf4386bf`; a PR #157 integrou C2 e a PR #158 atualizou o estado da missão.
 - C0 foi integrado pela PR #153, merge `2a3e89987beeb05d29b2e71d8b8ed6851383ccaa`.
 - C1 foi integrado pela PR #154, merge `b7a8a0eda7230c02f80dc63b41ab4cc9f9cf1d1e`; a CI hospedada passou.
 - **C1B está integrado** pela PR #155, merge `0586e238441096ecd2248e3f14bdac3a832af427`. Não há publicação pendente desse checkpoint.
@@ -42,7 +42,7 @@ Manter `completedSigmaLogJet` e `sigmaPadeD` originais, conservando o resto. Nã
 
 ## Prioridade: C3
 
-Usar explicitamente as janelas `p = 2i` e `p = 2i + 1` para cobrir os setores par e ímpar. Transportar cada direção negativa às dimensões maiores usando o resultado integrado de persistência de C1B.
+O módulo `SigmaParityNegativeDirection.lean` fecha localmente as duas torres, usando explicitamente `p = 2i` e `p = 2i + 1` e transportando cada direção negativa a toda dimensão `M ≥ i + 2` com o lema de persistência integrado de C1B. Os teoremas são `exists_even_sigma_negative_directions_from_pade` e `exists_odd_sigma_negative_directions_from_pade`. Build e auditoria Lean 4.32 estão registrados em `evidence/c3-parity/`; publicação e merge ainda pendentes nesta revisão.
 
 ## Checkpoint da tentativa Lean 4.35
 

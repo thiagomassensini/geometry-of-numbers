@@ -1,6 +1,6 @@
 # Relatório consolidado — missão de negatividade transversal sigma
 
-**Atualizado em 2026-11-05.** C0, C1, C1B e C2 estão integrados. C3 é a prioridade ativa.
+**Atualizado em 2026-11-05.** C0, C1, C1B e C2 estão integrados. A prova e a validação de C3 foram concluídas; sua integração está pendente.
 
 ## Resultados formais
 
@@ -35,7 +35,7 @@ O lema `sigmaMatrix_prefix_submatrix` identifica exatamente a seção antiga com
 | C1 — direção negativa finita | Integrado, CI passou | PR #154; commit de prova `c2706339b15db390bf8f5f50535016bd1aca8cb8`; merge `b7a8a0eda7230c02f80dc63b41ab4cc9f9cf1d1e`; run `42101466137` success |
 | C1B — persistência em dimensões maiores | Integrado pela PR #155; merge `0586e238441096ecd2248e3f14bdac3a832af427` | `evidence/c1b-focused-build.log`; 109 relatórios de axiomas padrão |
 | C2 — menores originais eventualmente negativos em `d=1/5` | Integrado pela PR #157; merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949` | `evidence/c2-eventual-negativity/`; 72 relatórios externos, 17 de integração e auditoria transitiva de 124 raízes |
-| C3 — torres par e ímpar | Prioridade ativa | C2 cobre `p=2i` e `p=2i+1`; C1B transporta as direções às dimensões maiores |
+| C3 — torres par e ímpar | Prova/validação concluídas; PR e merge pendentes | `SigmaParityNegativeDirection.lean`; auditoria C3 de 4 resultados e transitiva de 133 raízes em `evidence/c3-parity/` |
 | C4 — fonte deslocada e Bézout | Não iniciado | Explorar depois de C1–C3, preservando o fator 2 |
 
 ## Compilação, auditoria e proveniência

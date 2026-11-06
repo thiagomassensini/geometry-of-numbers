@@ -1,0 +1,243 @@
+== MomentFunctional
+== JacobiLogic
+== PolynomialCoordinates
+== GreenFrame.Concrete.Analysis.NormalizedSplit (pinned GreenFrame package)
+== GreenFrame.Concrete.Analysis.ExternalRange (pinned GreenFrame package)
+== GreenFrame.Concrete.Analysis.StaticPoisson (pinned GreenFrame package)
+== GreenFrame.Concrete.Analysis.RestrictedGraph (pinned GreenFrame package)
+== GreenFrame.Concrete.Analysis.AmbientPoisson (pinned GreenFrame package)
+== NativeApplication
+== SchurLogic
+== SigmaParity
+== SigmaCenterZero
+== SigmaCenterAll
+== SigmaGreenCurvature
+== SigmaOffcenter
+== SigmaOffcenterBridge
+== SigmaCurvature
+== SigmaQuadratic
+== MatrixJetCalculus
+== SigmaNeighborhood
+== MomentComplexification
+'CarryMomentLogConvex.RealHilbertComplexification.inner_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+== MomentLogConvexity
+'CarryMomentLogConvex.momentFunctional_C_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentFunctional_mul_eq_double_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentFunctional_X_pow_mul_eq_double_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMomentLogConvex.hankel_quadratic_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentFunctional_square_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentB_sq_le_momentQ_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentB_eq_zero_of_momentQ_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.shiftedMomentQ_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.shiftedMomentQ_logConvex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.shiftedMomentQ_eq_double_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.shiftedMomentQ_expBounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.logConvex_expBounded_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentQ_X_mul_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentNullSubmodule' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.quotientMomentInner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.quotientMomentInnerProductCore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentHilbert' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentHilbert_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.quotientMulX' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.quotientMulX_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.quotientMulXContinuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentHilbertMulX_on_quotient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentHilbertMulX' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentHilbertMulX_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentHilbertMulX_coe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.quotientMulX_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentHilbertMulX_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentHilbertMulX_isSelfAdjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentHilbertMulX_pow_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentHilbert_recovers_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.complexifyMomentOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.complexifyMomentOperator_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.complexifyMomentOperator_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.complexifyMomentOperator_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.complexifyMomentOperator_isSelfAdjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentComplexMulX_isSelfAdjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentComplexMulX_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentResolventCoefficient_differentiableAt_of_radius' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMomentLogConvex.momentComplexMulX_mem_resolventSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentComplexMulX_one_sub_smul_isUnit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentResolventCoefficient_differentiableAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMomentLogConvex.momentResolventCoefficient_differentiableOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMomentLogConvex.momentComplexMulX_pow_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentResolventReadout_pow_eq_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentResolventReadout_neumann_term' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentResolventCoefficient_hasSum_moments' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarryMomentLogConvex.momentComplexMulX_mem_neumannBall' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarryMomentLogConvex.momentResolventCoefficient_hasSum_moments_of_radius' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+== SigmaZeroObstruction
+'CarrySigmaObstruction.completedSigmaLogJet_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJet_exponential_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJet_sigmaMatrix_eq_hankel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJet_hankel_psd_of_sigmaMatrix_psd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJet_resolvent_hasSum_of_sigmaMatrix_psd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJetComplexGeneratingFunction_eq_resolvent_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.displacedProductC_local_resolventDifferentialEquation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.positiveDisplacementDomain_isOpen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.positiveDisplacementDomain_convex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.positiveDisplacementDomain_sq_im_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.displacedProductC_analyticOnNhd_positiveDomain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.displacedProductC_resolventDifferentialEquation_on_positiveDomain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.zero_mem_closure_positiveDisplacementDomain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaMatrix_not_all_psd_of_positive_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaMatrix_not_all_psd_of_negative_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.exists_sigmaMatrix_negative_direction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.exists_sigmaMatrix_negative_direction_of_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.finite_partial_sum_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.infinite_geometric_series' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.cauchy_kernel_denominator_zero_nonreal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJet_quarter_normalization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJet_eq_logDisplacedProduct' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogDensity_analyticAt_origin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaDensity_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogDensity_odd_iteratedDeriv_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.displacedProductC_even_ofReal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.completedSigmaDensity_zero_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.displacedProductC_zero_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.displacedProductC_analyticAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.displacedProductC_analyticAt_origin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.displacedProductC_ne_zero_nhds_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogDensity_analyticAt_origin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJetGeneratingSeries_radius_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJetGeneratingFunction_hasFPowerSeriesAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogDensityDerivativeTaylorSeries_hasFPowerSeriesAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogDensity_derivative_eq_generatingFunction_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJetComplexGeneratingFunction_hasFPowerSeriesAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.displacedProductC_deriv_ofReal_eq_density_deriv_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaDensity_deriv_eq_generatingFunction_mul_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJetComplexGeneratingFunction_ofReal_eq_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.displacedProductC_differentialExpression_ofReal_eq_zero_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.displacedProductC_local_differentialEquation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaLogJetGeneratingFunction_hasFPowerSeriesAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.displacedProductC_ofReal_eq_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.displacedProductC_vanishes_at_shifted_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.shifted_zero_u_im' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.pair_negative_direction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.offcritical_not_posSemidef_of_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+== SigmaNativeContinuation
+'CarrySigmaObstruction.completedNativeCharacteristicContinuation_analyticAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNativeCharacteristicContinuation_even' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNativeCharacteristicContinuation_eq_native' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNativeDisplacedProductContinuation_even' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNativeDisplacedProductContinuation_eq_native_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+== SigmaNativeZeroBridge
+'CarrySigmaObstruction.completedNativeCharacteristicContinuation_eq_native' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNativeCharacteristicContinuation_zero_iff_zeta' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+== ZetaLean.Rigor
+== ZetaLean.IntervalExp
+== ZetaLean.IntervalCExp
+== ZetaLean.HardyZ
+== HardyFirstZero.Spine
+== HardyFirstZero.Phase
+== HardyFirstZero.EulerMaclaurin
+== HardyFirstZero.BoxSupport
+== HardyFirstZero.Boxes
+== HardyFirstZero.FirstZero
+== SigmaCertifiedNegativeDirection
+'CarrySigmaObstruction.certified_sigma_negative_direction_of_nonzero_small_shift' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'HardyFirstZero.first_zero_on_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+== SigmaPersistentNegativeDirection
+'CarrySigmaObstruction.sigmaMatrix_prefix_submatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.certified_sigma_negative_directions_persist' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.certified_sigma_not_posSemidef_persist' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+== C1 source scan
+Accepted 109 reports; all use only propext, Classical.choice, Quot.sound.
+C1/C1B sources, certificate, and axiom reports passed.
