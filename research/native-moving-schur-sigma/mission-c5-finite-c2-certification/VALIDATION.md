@@ -1,9 +1,11 @@
 # C5 — validação
 
-**Status atual:** Fase 1 de transporte algébrico integrada pela PR #165. O3 (propagação racional Lean e sinais condicionais) foi integrada pela PR #167, merge `fc17d3b16fd0ed5643cb12ef48c80bb81c81cbd9`. O4, inclusão analítica da fonte nas caixas, continua aberta.
+**Status atual:** Fase 1 de transporte algébrico integrada pela PR #165. O3 (propagação racional Lean e sinais condicionais) foi integrada pela PR #167, merge `fc17d3b16fd0ed5643cb12ef48c80bb81c81cbd9`. A PR #168 atualizou os registros de estado, merge `1bc7318915c3e625ad228c89ff8c300cb07e52c5`. O4, inclusão analítica da fonte nas caixas, continua aberta.
 **Toolchain:** `leanprover/lean4:v4.32.0`; Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`.
 **Base geometry da PR #165:** `91a1af2f9663d6761a3320e2f06504fe8aaa6776`; `main` após o merge: `75691edf0e74cc643f098213f60b684476132175`.
 **Fonte C4 compilada:** source hashes de `SigmaSourceBezout.lean`, `SourceBezout.lean`, `SigmaPadeCorrespondence.lean` e `SigmaZeroObstruction.lean` conferem com `origin/main`; pins completos em `evidence/pins-and-sha256.txt`.
+
+**O4, auditoria de 2026-11-06:** os módulos de intervalo elementar foram recompilados e auditados; também foi localizada a identidade formal de Weierstrass `Zeta23.DigammaSeries.inv_gamma_eq_prod`. Nenhuma caixa numérica para `Complex.Gamma` foi ainda derivada dessa identidade, e a aproximação Stirling usada pelo avaliador segue sem ponte Lean. O4 e a inclusão incondicional das caixas continuam abertas.
 
 ## 1. Transporte algébrico Lean — PASSOU
 

@@ -42,3 +42,12 @@ O checkpoint de build e auditoria da O3 está em `evidence/rational-boxes/`. Ap�
 - PR #167 integrou os seis módulos de aritmética intervalar racional, os sinais condicionais, o checker de axiomas e suas evidências.
 - Merge na `main`: `fc17d3b16fd0ed5643cb12ef48c80bb81c81cbd9`. O conteúdo de O3 foi validado em Lean 4.32 localmente; não houve status checks hospedados.
 - O3 prova as janelas somente sob `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`. A próxima obrigação é O4, inclusão analítica dos coeficientes da fonte C2 original.
+
+## 2026-11-06 — auditoria de infraestrutura intervalar para O4
+
+- A busca encontrou a infraestrutura já existente `ZetaLean.Rigor`, `ZetaLean.IntervalExp` e `ZetaLean.IntervalCExp`. Os três módulos recompilaram em Lean 4.32 com warnings como erros em saída limpa.
+- `contains_logQ`, `contains_expI`, `contains_expC` e `contains_dirichletTerm` foram auditados; todos usam apenas `propext`, `Classical.choice`, `Quot.sound`. Comandos, logs e hashes estão em `evidence/rational-boxes/`.
+- Isso fornece `log`, `exp` e potências Dirichlet com inclusão kernel-checked, mas ainda não fecha os coeficientes C2.
+- A busca também encontrou `Zeta23.DigammaSeries.inv_gamma_eq_prod` em `height50-certified/lean/vendor/zeta23/Zeta23/GammaFacts/Series.lean`, uma identidade formal exata pelo produto de Weierstrass para `1/Γ`.
+- Primeiro subproblema analítico pendente: obter uma caixa racional quantitativa para `Complex.Gamma (w/2)` no domínio `0.1495 ≤ Re(w) ≤ 0.9495`, `|Im(w)|≤0.4`. A rota Python usa Stirling deslocado por 80 com 75 correções; a identidade de Weierstrass oferece uma rota formal alternativa, mas sua cauda ainda precisa de um limite numérico eficiente.
+- O4 segue aberta. Depois de Gamma, será necessário certificar a cauda Hurwitz e a composição de Cauchy, mantendo a fonte C2 exata.
