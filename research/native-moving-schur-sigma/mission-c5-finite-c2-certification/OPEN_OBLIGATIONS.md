@@ -102,3 +102,13 @@ O estado pós-PR #181 foi registrado pela PR #182, merge
 ## Classificação honesta se O4 continuar em aberto
 
 Manter os resultados que dependem das caixas explicitamente condicionais e relatar precisamente qual coeficiente ou camada de funções elementares bloqueia a inclusão. Não declarar `PROVADO — CERTIFICAÇÃO COMPLETA`.
+
+## Checkpoint WIP de grau um — 2026-11-06
+
+Há uma tentativa simbólica do limite de grau um na branch
+`codex/c5-degree1-weight-bound-20261106`, baseada na main
+`c736dc073091e6184dbb673b622b6b91759accac`. Ela evita `native_decide` e usa
+produtos fatoriais, mas o build integral não terminou e nenhuma raiz nova foi
+auditada. O lema auxiliar da soma compilou isoladamente, sem fechar O4. Patches,
+logs, pins e comando de retomada estão em
+`evidence/rational-boxes/degree1-retry-checkpoint.md`.

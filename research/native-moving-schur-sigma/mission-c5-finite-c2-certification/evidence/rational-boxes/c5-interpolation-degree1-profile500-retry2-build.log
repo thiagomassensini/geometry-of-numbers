@@ -1,0 +1,1274 @@
+[Elab.async] [1.053869] ✅️ elaborating proof of _private.SigmaRationalInterpolation.0.CarrySigmaObstruction.c5_abs_sub_range_erase
+  [Elab.definition.value] [1.046255] ✅️ _private.SigmaRationalInterpolation.0.CarrySigmaObstruction.c5_abs_sub_range_erase
+    [Elab.step] [1.044184] ✅️ 
+          have hunion : (Finset.range 129).erase j = Finset.range j ∪ Finset.Ioc j 128 :=
+            by
+            ext k
+            simp only [Finset.mem_erase, Finset.mem_range, Finset.mem_union, Finset.mem_Ioc]
+            omega
+          have hdisjoint : Disjoint (Finset.range j) (Finset.Ioc j 128) :=
+            by
+            apply Finset.disjoint_left.mpr
+            intro k hk₁ hk₂
+            simp only [Finset.mem_range] at hk₁
+            simp only [Finset.mem_Ioc] at hk₂
+            omega
+          rw [hunion, Finset.prod_union hdisjoint]
+          have hleft : (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = (j.factorial : ℚ) := by
+            calc
+              (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                by
+                apply Finset.prod_congr rfl
+                intro k hk
+                have hklt : k < j := Finset.mem_range.mp hk
+                rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                rw [← Nat.cast_sub hklt.le]
+                have hnat : j - k = j - 1 - k + 1 := by omega
+                exact_mod_cast hnat
+              _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                simpa [Nat.cast_add, Nat.cast_one] using (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+              _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j
+          have hright : (∏ k ∈ Finset.Ioc j 128, |(j : ℚ) - (k : ℚ)|) = ((128 - j).factorial : ℚ) :=
+            by
+            have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+              by
+              ext k
+              simp only [Finset.mem_Ioc, Finset.mem_Ico]
+              omega
+            rw [hioc, Finset.prod_Ico_eq_prod_range]
+            have hlen : 129 - (j + 1) = 128 - j := by omega
+            rw [hlen]
+            calc
+              (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                  ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                by
+                apply Finset.prod_congr rfl
+                intro k hk
+                have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                  by
+                  push_cast
+                  ring
+                rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+              _ = ((128 - j).factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j)
+          rw [hleft, hright]
+      [Elab.step] [1.044152] ✅️ 
+            have hunion : (Finset.range 129).erase j = Finset.range j ∪ Finset.Ioc j 128 :=
+              by
+              ext k
+              simp only [Finset.mem_erase, Finset.mem_range, Finset.mem_union, Finset.mem_Ioc]
+              omega
+            have hdisjoint : Disjoint (Finset.range j) (Finset.Ioc j 128) :=
+              by
+              apply Finset.disjoint_left.mpr
+              intro k hk₁ hk₂
+              simp only [Finset.mem_range] at hk₁
+              simp only [Finset.mem_Ioc] at hk₂
+              omega
+            rw [hunion, Finset.prod_union hdisjoint]
+            have hleft : (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = (j.factorial : ℚ) := by
+              calc
+                (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                  by
+                  apply Finset.prod_congr rfl
+                  intro k hk
+                  have hklt : k < j := Finset.mem_range.mp hk
+                  rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                  rw [← Nat.cast_sub hklt.le]
+                  have hnat : j - k = j - 1 - k + 1 := by omega
+                  exact_mod_cast hnat
+                _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                  simpa [Nat.cast_add, Nat.cast_one] using
+                    (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j
+            have hright : (∏ k ∈ Finset.Ioc j 128, |(j : ℚ) - (k : ℚ)|) = ((128 - j).factorial : ℚ) :=
+              by
+              have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                by
+                ext k
+                simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                omega
+              rw [hioc, Finset.prod_Ico_eq_prod_range]
+              have hlen : 129 - (j + 1) = 128 - j := by omega
+              rw [hlen]
+              calc
+                (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                    ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                  by
+                  apply Finset.prod_congr rfl
+                  intro k hk
+                  have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                    by
+                    push_cast
+                    ring
+                  rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                _ = ((128 - j).factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j)
+            rw [hleft, hright]
+        [Elab.step] [0.722691] ✅️ have hleft : (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = (j.factorial : ℚ) := by
+              calc
+                (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                  by
+                  apply Finset.prod_congr rfl
+                  intro k hk
+                  have hklt : k < j := Finset.mem_range.mp hk
+                  rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                  rw [← Nat.cast_sub hklt.le]
+                  have hnat : j - k = j - 1 - k + 1 := by omega
+                  exact_mod_cast hnat
+                _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                  simpa [Nat.cast_add, Nat.cast_one] using
+                    (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j
+          [Elab.step] [0.722525] ✅️ focus
+                refine
+                  no_implicit_lambda%
+                    (have hleft : (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = (j.factorial : ℚ) := ?body✝;
+                    ?_)
+                case body✝ =>
+                  with_annotate_state"by"
+                    (calc
+                        (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                            ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                          by
+                          apply Finset.prod_congr rfl
+                          intro k hk
+                          have hklt : k < j := Finset.mem_range.mp hk
+                          rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                          rw [← Nat.cast_sub hklt.le]
+                          have hnat : j - k = j - 1 - k + 1 := by omega
+                          exact_mod_cast hnat
+                        _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                          simpa [Nat.cast_add, Nat.cast_one] using
+                            (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                        _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+            [Elab.step] [0.722503] ✅️ 
+                  refine
+                    no_implicit_lambda%
+                      (have hleft : (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = (j.factorial : ℚ) := ?body✝;
+                      ?_)
+                  case body✝ =>
+                    with_annotate_state"by"
+                      (calc
+                          (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                              ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                            by
+                            apply Finset.prod_congr rfl
+                            intro k hk
+                            have hklt : k < j := Finset.mem_range.mp hk
+                            rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                            rw [← Nat.cast_sub hklt.le]
+                            have hnat : j - k = j - 1 - k + 1 := by omega
+                            exact_mod_cast hnat
+                          _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                            simpa [Nat.cast_add, Nat.cast_one] using
+                              (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                          _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+              [Elab.step] [0.722490] ✅️ 
+                    refine
+                      no_implicit_lambda%
+                        (have hleft : (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = (j.factorial : ℚ) := ?body✝;
+                        ?_)
+                    case body✝ =>
+                      with_annotate_state"by"
+                        (calc
+                            (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                              by
+                              apply Finset.prod_congr rfl
+                              intro k hk
+                              have hklt : k < j := Finset.mem_range.mp hk
+                              rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                              rw [← Nat.cast_sub hklt.le]
+                              have hnat : j - k = j - 1 - k + 1 := by omega
+                              exact_mod_cast hnat
+                            _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                              simpa [Nat.cast_add, Nat.cast_one] using
+                                (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                            _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+                [Elab.step] [0.710348] ✅️ case body✝ =>
+                      with_annotate_state"by"
+                        (calc
+                            (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                              by
+                              apply Finset.prod_congr rfl
+                              intro k hk
+                              have hklt : k < j := Finset.mem_range.mp hk
+                              rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                              rw [← Nat.cast_sub hklt.le]
+                              have hnat : j - k = j - 1 - k + 1 := by omega
+                              exact_mod_cast hnat
+                            _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                              simpa [Nat.cast_add, Nat.cast_one] using
+                                (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                            _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+                  [Elab.step] [0.710170] ✅️ with_annotate_state"by"
+                          (calc
+                              (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                  ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                                by
+                                apply Finset.prod_congr rfl
+                                intro k hk
+                                have hklt : k < j := Finset.mem_range.mp hk
+                                rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                rw [← Nat.cast_sub hklt.le]
+                                have hnat : j - k = j - 1 - k + 1 := by omega
+                                exact_mod_cast hnat
+                              _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                                simpa [Nat.cast_add, Nat.cast_one] using
+                                  (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                              _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+                    [Elab.step] [0.710156] ✅️ with_annotate_state"by"
+                            (calc
+                                (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                    ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                                  by
+                                  apply Finset.prod_congr rfl
+                                  intro k hk
+                                  have hklt : k < j := Finset.mem_range.mp hk
+                                  rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                  rw [← Nat.cast_sub hklt.le]
+                                  have hnat : j - k = j - 1 - k + 1 := by omega
+                                  exact_mod_cast hnat
+                                _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                                  simpa [Nat.cast_add, Nat.cast_one] using
+                                    (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+                      [Elab.step] [0.710140] ✅️ with_annotate_state"by"
+                            (calc
+                                (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                    ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                                  by
+                                  apply Finset.prod_congr rfl
+                                  intro k hk
+                                  have hklt : k < j := Finset.mem_range.mp hk
+                                  rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                  rw [← Nat.cast_sub hklt.le]
+                                  have hnat : j - k = j - 1 - k + 1 := by omega
+                                  exact_mod_cast hnat
+                                _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                                  simpa [Nat.cast_add, Nat.cast_one] using
+                                    (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+                        [Elab.step] [0.710121] ✅️ (calc
+                                (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                    ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                                  by
+                                  apply Finset.prod_congr rfl
+                                  intro k hk
+                                  have hklt : k < j := Finset.mem_range.mp hk
+                                  rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                  rw [← Nat.cast_sub hklt.le]
+                                  have hnat : j - k = j - 1 - k + 1 := by omega
+                                  exact_mod_cast hnat
+                                _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                                  simpa [Nat.cast_add, Nat.cast_one] using
+                                    (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+                          [Elab.step] [0.710107] ✅️ calc
+                                  (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                      ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                                    by
+                                    apply Finset.prod_congr rfl
+                                    intro k hk
+                                    have hklt : k < j := Finset.mem_range.mp hk
+                                    rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                    rw [← Nat.cast_sub hklt.le]
+                                    have hnat : j - k = j - 1 - k + 1 := by omega
+                                    exact_mod_cast hnat
+                                  _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                                    simpa [Nat.cast_add, Nat.cast_one] using
+                                      (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                  _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j
+                            [Elab.step] [0.710094] ✅️ calc
+                                    (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                        ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                                      by
+                                      apply Finset.prod_congr rfl
+                                      intro k hk
+                                      have hklt : k < j := Finset.mem_range.mp hk
+                                      rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                      rw [← Nat.cast_sub hklt.le]
+                                      have hnat : j - k = j - 1 - k + 1 := by omega
+                                      exact_mod_cast hnat
+                                    _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                                      simpa [Nat.cast_add, Nat.cast_one] using
+                                        (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                    _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j
+                              [Elab.step] [0.710066] ✅️ calc
+                                    (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                        ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                                      by
+                                      apply Finset.prod_congr rfl
+                                      intro k hk
+                                      have hklt : k < j := Finset.mem_range.mp hk
+                                      rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                      rw [← Nat.cast_sub hklt.le]
+                                      have hnat : j - k = j - 1 - k + 1 := by omega
+                                      exact_mod_cast hnat
+                                    _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                                      simpa [Nat.cast_add, Nat.cast_one] using
+                                        (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                    _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j
+                                [Elab.step] [0.540057] ✅️ simpa [Nat.cast_add, Nat.cast_one] using
+                                        (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                  [Elab.step] [0.540004] ✅️ simpa [Nat.cast_add, Nat.cast_one] using
+                                          (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                    [Elab.step] [0.539973] ✅️ simpa [Nat.cast_add, Nat.cast_one] using
+                                          (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+/home/thlinux/worktrees/geometry-of-numbers-c5-finite-c2-certification/research/native-moving-schur-sigma/SigmaRationalInterpolation.lean:241:12: error: Type mismatch
+  mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+has type
+  ↑n * (↑n + 1) ≤ (↑n + 1) * (↑n + 1)
+but is expected to have type
+  ↑n * (↑n + 1) ≤ (↑n + 1) ^ 2
+[Elab.async] [3.180230] ✅️ elaborating proof of _private.SigmaRationalInterpolation.0.CarrySigmaObstruction.c5_inv_sq_sum_range_le
+  [Elab.definition.value] [3.172947] ❌️ _private.SigmaRationalInterpolation.0.CarrySigmaObstruction.c5_inv_sq_sum_range_le
+    [Elab.step] [3.171646] ✅️ induction n with
+          | zero => omega
+          | succ n ih =>
+            by_cases hn0 : n = 0
+            · subst n
+              norm_num [Finset.sum_range_succ]
+            · have hnpos : 0 < n := Nat.pos_of_ne_zero hn0
+              have hprev := ih hnpos
+              have hnq : (n : ℚ) ≠ 0 := by exact_mod_cast (ne_of_gt hnpos)
+              have hterm : ((n + 1 : ℚ) ^ 2)⁻¹ ≤ (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                by
+                have hnqpos : 0 < (n : ℚ) := by exact_mod_cast hnpos
+                have hn1qpos : 0 < (n + 1 : ℚ) := by positivity
+                have hnle : (n : ℚ) ≤ (n + 1 : ℚ) := by exact_mod_cast (Nat.le_succ n)
+                have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := by
+                  exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                calc
+                  ((n + 1 : ℚ) ^ 2)⁻¹ ≤ ((n : ℚ) * (n + 1))⁻¹ :=
+                    (inv_le_inv₀ (by positivity) (mul_pos hnqpos hn1qpos)).2 hdenle
+                  _ = (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                    by
+                    field_simp [ne_of_gt hnqpos, ne_of_gt hn1qpos]
+                    ring
+              rw [Finset.sum_range_succ, Nat.cast_add, Nat.cast_one]
+              calc
+                (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) + ((n + 1 : ℚ) ^ 2)⁻¹ ≤
+                    (2 - (n : ℚ)⁻¹) + ((n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹) :=
+                  add_le_add hprev hterm
+                _ = 2 - (n + 1 : ℚ)⁻¹ := by ring
+      [Elab.step] [3.171601] ✅️ induction n with
+            | zero => omega
+            | succ n ih =>
+              by_cases hn0 : n = 0
+              · subst n
+                norm_num [Finset.sum_range_succ]
+              · have hnpos : 0 < n := Nat.pos_of_ne_zero hn0
+                have hprev := ih hnpos
+                have hnq : (n : ℚ) ≠ 0 := by exact_mod_cast (ne_of_gt hnpos)
+                have hterm : ((n + 1 : ℚ) ^ 2)⁻¹ ≤ (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                  by
+                  have hnqpos : 0 < (n : ℚ) := by exact_mod_cast hnpos
+                  have hn1qpos : 0 < (n + 1 : ℚ) := by positivity
+                  have hnle : (n : ℚ) ≤ (n + 1 : ℚ) := by exact_mod_cast (Nat.le_succ n)
+                  have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := by
+                    exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                  calc
+                    ((n + 1 : ℚ) ^ 2)⁻¹ ≤ ((n : ℚ) * (n + 1))⁻¹ :=
+                      (inv_le_inv₀ (by positivity) (mul_pos hnqpos hn1qpos)).2 hdenle
+                    _ = (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                      by
+                      field_simp [ne_of_gt hnqpos, ne_of_gt hn1qpos]
+                      ring
+                rw [Finset.sum_range_succ, Nat.cast_add, Nat.cast_one]
+                calc
+                  (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) + ((n + 1 : ℚ) ^ 2)⁻¹ ≤
+                      (2 - (n : ℚ)⁻¹) + ((n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹) :=
+                    add_le_add hprev hterm
+                  _ = 2 - (n + 1 : ℚ)⁻¹ := by ring
+        [Elab.step] [3.171560] ✅️ induction n with
+            | zero => omega
+            | succ n ih =>
+              by_cases hn0 : n = 0
+              · subst n
+                norm_num [Finset.sum_range_succ]
+              · have hnpos : 0 < n := Nat.pos_of_ne_zero hn0
+                have hprev := ih hnpos
+                have hnq : (n : ℚ) ≠ 0 := by exact_mod_cast (ne_of_gt hnpos)
+                have hterm : ((n + 1 : ℚ) ^ 2)⁻¹ ≤ (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                  by
+                  have hnqpos : 0 < (n : ℚ) := by exact_mod_cast hnpos
+                  have hn1qpos : 0 < (n + 1 : ℚ) := by positivity
+                  have hnle : (n : ℚ) ≤ (n + 1 : ℚ) := by exact_mod_cast (Nat.le_succ n)
+                  have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := by
+                    exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                  calc
+                    ((n + 1 : ℚ) ^ 2)⁻¹ ≤ ((n : ℚ) * (n + 1))⁻¹ :=
+                      (inv_le_inv₀ (by positivity) (mul_pos hnqpos hn1qpos)).2 hdenle
+                    _ = (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                      by
+                      field_simp [ne_of_gt hnqpos, ne_of_gt hn1qpos]
+                      ring
+                rw [Finset.sum_range_succ, Nat.cast_add, Nat.cast_one]
+                calc
+                  (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) + ((n + 1 : ℚ) ^ 2)⁻¹ ≤
+                      (2 - (n : ℚ)⁻¹) + ((n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹) :=
+                    add_le_add hprev hterm
+                  _ = 2 - (n + 1 : ℚ)⁻¹ := by ring
+          [Elab.step] [3.163310] ✅️ 
+                by_cases hn0 : n = 0
+                · subst n
+                  norm_num [Finset.sum_range_succ]
+                · have hnpos : 0 < n := Nat.pos_of_ne_zero hn0
+                  have hprev := ih hnpos
+                  have hnq : (n : ℚ) ≠ 0 := by exact_mod_cast (ne_of_gt hnpos)
+                  have hterm : ((n + 1 : ℚ) ^ 2)⁻¹ ≤ (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                    by
+                    have hnqpos : 0 < (n : ℚ) := by exact_mod_cast hnpos
+                    have hn1qpos : 0 < (n + 1 : ℚ) := by positivity
+                    have hnle : (n : ℚ) ≤ (n + 1 : ℚ) := by exact_mod_cast (Nat.le_succ n)
+                    have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := by
+                      exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                    calc
+                      ((n + 1 : ℚ) ^ 2)⁻¹ ≤ ((n : ℚ) * (n + 1))⁻¹ :=
+                        (inv_le_inv₀ (by positivity) (mul_pos hnqpos hn1qpos)).2 hdenle
+                      _ = (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                        by
+                        field_simp [ne_of_gt hnqpos, ne_of_gt hn1qpos]
+                        ring
+                  rw [Finset.sum_range_succ, Nat.cast_add, Nat.cast_one]
+                  calc
+                    (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) + ((n + 1 : ℚ) ^ 2)⁻¹ ≤
+                        (2 - (n : ℚ)⁻¹) + ((n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹) :=
+                      add_le_add hprev hterm
+                    _ = 2 - (n + 1 : ℚ)⁻¹ := by ring
+            [Elab.step] [3.163263] ✅️ 
+                  by_cases hn0 : n = 0
+                  · subst n
+                    norm_num [Finset.sum_range_succ]
+                  · have hnpos : 0 < n := Nat.pos_of_ne_zero hn0
+                    have hprev := ih hnpos
+                    have hnq : (n : ℚ) ≠ 0 := by exact_mod_cast (ne_of_gt hnpos)
+                    have hterm : ((n + 1 : ℚ) ^ 2)⁻¹ ≤ (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                      by
+                      have hnqpos : 0 < (n : ℚ) := by exact_mod_cast hnpos
+                      have hn1qpos : 0 < (n + 1 : ℚ) := by positivity
+                      have hnle : (n : ℚ) ≤ (n + 1 : ℚ) := by exact_mod_cast (Nat.le_succ n)
+                      have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := by
+                        exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                      calc
+                        ((n + 1 : ℚ) ^ 2)⁻¹ ≤ ((n : ℚ) * (n + 1))⁻¹ :=
+                          (inv_le_inv₀ (by positivity) (mul_pos hnqpos hn1qpos)).2 hdenle
+                        _ = (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                          by
+                          field_simp [ne_of_gt hnqpos, ne_of_gt hn1qpos]
+                          ring
+                    rw [Finset.sum_range_succ, Nat.cast_add, Nat.cast_one]
+                    calc
+                      (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) + ((n + 1 : ℚ) ^ 2)⁻¹ ≤
+                          (2 - (n : ℚ)⁻¹) + ((n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹) :=
+                        add_le_add hprev hterm
+                      _ = 2 - (n + 1 : ℚ)⁻¹ := by ring
+              [Elab.step] [3.093043] ✅️ ·
+                    have hnpos : 0 < n := Nat.pos_of_ne_zero hn0
+                    have hprev := ih hnpos
+                    have hnq : (n : ℚ) ≠ 0 := by exact_mod_cast (ne_of_gt hnpos)
+                    have hterm : ((n + 1 : ℚ) ^ 2)⁻¹ ≤ (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                      by
+                      have hnqpos : 0 < (n : ℚ) := by exact_mod_cast hnpos
+                      have hn1qpos : 0 < (n + 1 : ℚ) := by positivity
+                      have hnle : (n : ℚ) ≤ (n + 1 : ℚ) := by exact_mod_cast (Nat.le_succ n)
+                      have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := by
+                        exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                      calc
+                        ((n + 1 : ℚ) ^ 2)⁻¹ ≤ ((n : ℚ) * (n + 1))⁻¹ :=
+                          (inv_le_inv₀ (by positivity) (mul_pos hnqpos hn1qpos)).2 hdenle
+                        _ = (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                          by
+                          field_simp [ne_of_gt hnqpos, ne_of_gt hn1qpos]
+                          ring
+                    rw [Finset.sum_range_succ, Nat.cast_add, Nat.cast_one]
+                    calc
+                      (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) + ((n + 1 : ℚ) ^ 2)⁻¹ ≤
+                          (2 - (n : ℚ)⁻¹) + ((n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹) :=
+                        add_le_add hprev hterm
+                      _ = 2 - (n + 1 : ℚ)⁻¹ := by ring
+                [Elab.step] [3.092991] ✅️ 
+                      have hnpos : 0 < n := Nat.pos_of_ne_zero hn0
+                      have hprev := ih hnpos
+                      have hnq : (n : ℚ) ≠ 0 := by exact_mod_cast (ne_of_gt hnpos)
+                      have hterm : ((n + 1 : ℚ) ^ 2)⁻¹ ≤ (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                        by
+                        have hnqpos : 0 < (n : ℚ) := by exact_mod_cast hnpos
+                        have hn1qpos : 0 < (n + 1 : ℚ) := by positivity
+                        have hnle : (n : ℚ) ≤ (n + 1 : ℚ) := by exact_mod_cast (Nat.le_succ n)
+                        have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := by
+                          exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                        calc
+                          ((n + 1 : ℚ) ^ 2)⁻¹ ≤ ((n : ℚ) * (n + 1))⁻¹ :=
+                            (inv_le_inv₀ (by positivity) (mul_pos hnqpos hn1qpos)).2 hdenle
+                          _ = (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                            by
+                            field_simp [ne_of_gt hnqpos, ne_of_gt hn1qpos]
+                            ring
+                      rw [Finset.sum_range_succ, Nat.cast_add, Nat.cast_one]
+                      calc
+                        (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) + ((n + 1 : ℚ) ^ 2)⁻¹ ≤
+                            (2 - (n : ℚ)⁻¹) + ((n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹) :=
+                          add_le_add hprev hterm
+                        _ = 2 - (n + 1 : ℚ)⁻¹ := by ring
+                  [Elab.step] [3.092972] ✅️ 
+                        have hnpos : 0 < n := Nat.pos_of_ne_zero hn0
+                        have hprev := ih hnpos
+                        have hnq : (n : ℚ) ≠ 0 := by exact_mod_cast (ne_of_gt hnpos)
+                        have hterm : ((n + 1 : ℚ) ^ 2)⁻¹ ≤ (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                          by
+                          have hnqpos : 0 < (n : ℚ) := by exact_mod_cast hnpos
+                          have hn1qpos : 0 < (n + 1 : ℚ) := by positivity
+                          have hnle : (n : ℚ) ≤ (n + 1 : ℚ) := by exact_mod_cast (Nat.le_succ n)
+                          have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := by
+                            exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                          calc
+                            ((n + 1 : ℚ) ^ 2)⁻¹ ≤ ((n : ℚ) * (n + 1))⁻¹ :=
+                              (inv_le_inv₀ (by positivity) (mul_pos hnqpos hn1qpos)).2 hdenle
+                            _ = (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                              by
+                              field_simp [ne_of_gt hnqpos, ne_of_gt hn1qpos]
+                              ring
+                        rw [Finset.sum_range_succ, Nat.cast_add, Nat.cast_one]
+                        calc
+                          (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) + ((n + 1 : ℚ) ^ 2)⁻¹ ≤
+                              (2 - (n : ℚ)⁻¹) + ((n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹) :=
+                            add_le_add hprev hterm
+                          _ = 2 - (n + 1 : ℚ)⁻¹ := by ring
+                    [Elab.step] [2.977425] ✅️ have hterm : ((n + 1 : ℚ) ^ 2)⁻¹ ≤ (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                          by
+                          have hnqpos : 0 < (n : ℚ) := by exact_mod_cast hnpos
+                          have hn1qpos : 0 < (n + 1 : ℚ) := by positivity
+                          have hnle : (n : ℚ) ≤ (n + 1 : ℚ) := by exact_mod_cast (Nat.le_succ n)
+                          have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := by
+                            exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                          calc
+                            ((n + 1 : ℚ) ^ 2)⁻¹ ≤ ((n : ℚ) * (n + 1))⁻¹ :=
+                              (inv_le_inv₀ (by positivity) (mul_pos hnqpos hn1qpos)).2 hdenle
+                            _ = (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                              by
+                              field_simp [ne_of_gt hnqpos, ne_of_gt hn1qpos]
+                              ring
+                      [Elab.step] [2.977325] ✅️ focus
+                            refine
+                              no_implicit_lambda%
+                                (have hterm : ((n + 1 : ℚ) ^ 2)⁻¹ ≤ (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ := ?body✝;
+                                ?_)
+                            case body✝ =>
+                              with_annotate_state"by"
+                                ( have hnqpos : 0 < (n : ℚ) := by exact_mod_cast hnpos
+                                  have hn1qpos : 0 < (n + 1 : ℚ) := by positivity
+                                  have hnle : (n : ℚ) ≤ (n + 1 : ℚ) := by exact_mod_cast (Nat.le_succ n)
+                                  have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := by
+                                    exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                                  calc
+                                    ((n + 1 : ℚ) ^ 2)⁻¹ ≤ ((n : ℚ) * (n + 1))⁻¹ :=
+                                      (inv_le_inv₀ (by positivity) (mul_pos hnqpos hn1qpos)).2 hdenle
+                                    _ = (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                                      by
+                                      field_simp [ne_of_gt hnqpos, ne_of_gt hn1qpos]
+                                      ring)
+                        [Elab.step] [2.977302] ✅️ 
+                              refine
+                                no_implicit_lambda%
+                                  (have hterm : ((n + 1 : ℚ) ^ 2)⁻¹ ≤ (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ := ?body✝;
+                                  ?_)
+                              case body✝ =>
+                                with_annotate_state"by"
+                                  ( have hnqpos : 0 < (n : ℚ) := by exact_mod_cast hnpos
+                                    have hn1qpos : 0 < (n + 1 : ℚ) := by positivity
+                                    have hnle : (n : ℚ) ≤ (n + 1 : ℚ) := by exact_mod_cast (Nat.le_succ n)
+                                    have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := by
+                                      exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                                    calc
+                                      ((n + 1 : ℚ) ^ 2)⁻¹ ≤ ((n : ℚ) * (n + 1))⁻¹ :=
+                                        (inv_le_inv₀ (by positivity) (mul_pos hnqpos hn1qpos)).2 hdenle
+                                      _ = (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                                        by
+                                        field_simp [ne_of_gt hnqpos, ne_of_gt hn1qpos]
+                                        ring)
+                          [Elab.step] [2.977286] ✅️ 
+                                refine
+                                  no_implicit_lambda%
+                                    (have hterm : ((n + 1 : ℚ) ^ 2)⁻¹ ≤ (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ := ?body✝;
+                                    ?_)
+                                case body✝ =>
+                                  with_annotate_state"by"
+                                    ( have hnqpos : 0 < (n : ℚ) := by exact_mod_cast hnpos
+                                      have hn1qpos : 0 < (n + 1 : ℚ) := by positivity
+                                      have hnle : (n : ℚ) ≤ (n + 1 : ℚ) := by exact_mod_cast (Nat.le_succ n)
+                                      have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := by
+                                        exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                                      calc
+                                        ((n + 1 : ℚ) ^ 2)⁻¹ ≤ ((n : ℚ) * (n + 1))⁻¹ :=
+                                          (inv_le_inv₀ (by positivity) (mul_pos hnqpos hn1qpos)).2 hdenle
+                                        _ = (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                                          by
+                                          field_simp [ne_of_gt hnqpos, ne_of_gt hn1qpos]
+                                          ring)
+                            [Elab.step] [2.951282] ✅️ case body✝ =>
+                                  with_annotate_state"by"
+                                    ( have hnqpos : 0 < (n : ℚ) := by exact_mod_cast hnpos
+                                      have hn1qpos : 0 < (n + 1 : ℚ) := by positivity
+                                      have hnle : (n : ℚ) ≤ (n + 1 : ℚ) := by exact_mod_cast (Nat.le_succ n)
+                                      have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := by
+                                        exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                                      calc
+                                        ((n + 1 : ℚ) ^ 2)⁻¹ ≤ ((n : ℚ) * (n + 1))⁻¹ :=
+                                          (inv_le_inv₀ (by positivity) (mul_pos hnqpos hn1qpos)).2 hdenle
+                                        _ = (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                                          by
+                                          field_simp [ne_of_gt hnqpos, ne_of_gt hn1qpos]
+                                          ring)
+                              [Elab.step] [2.951063] ✅️ with_annotate_state"by"
+                                      ( have hnqpos : 0 < (n : ℚ) := by exact_mod_cast hnpos
+                                        have hn1qpos : 0 < (n + 1 : ℚ) := by positivity
+                                        have hnle : (n : ℚ) ≤ (n + 1 : ℚ) := by exact_mod_cast (Nat.le_succ n)
+                                        have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := by
+                                          exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                                        calc
+                                          ((n + 1 : ℚ) ^ 2)⁻¹ ≤ ((n : ℚ) * (n + 1))⁻¹ :=
+                                            (inv_le_inv₀ (by positivity) (mul_pos hnqpos hn1qpos)).2 hdenle
+                                          _ = (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                                            by
+                                            field_simp [ne_of_gt hnqpos, ne_of_gt hn1qpos]
+                                            ring)
+                                [Elab.step] [2.951050] ✅️ with_annotate_state"by"
+                                        ( have hnqpos : 0 < (n : ℚ) := by exact_mod_cast hnpos
+                                          have hn1qpos : 0 < (n + 1 : ℚ) := by positivity
+                                          have hnle : (n : ℚ) ≤ (n + 1 : ℚ) := by exact_mod_cast (Nat.le_succ n)
+                                          have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := by
+                                            exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                                          calc
+                                            ((n + 1 : ℚ) ^ 2)⁻¹ ≤ ((n : ℚ) * (n + 1))⁻¹ :=
+                                              (inv_le_inv₀ (by positivity) (mul_pos hnqpos hn1qpos)).2 hdenle
+                                            _ = (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                                              by
+                                              field_simp [ne_of_gt hnqpos, ne_of_gt hn1qpos]
+                                              ring)
+                                  [Elab.step] [2.951032] ✅️ with_annotate_state"by"
+                                        ( have hnqpos : 0 < (n : ℚ) := by exact_mod_cast hnpos
+                                          have hn1qpos : 0 < (n + 1 : ℚ) := by positivity
+                                          have hnle : (n : ℚ) ≤ (n + 1 : ℚ) := by exact_mod_cast (Nat.le_succ n)
+                                          have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := by
+                                            exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                                          calc
+                                            ((n + 1 : ℚ) ^ 2)⁻¹ ≤ ((n : ℚ) * (n + 1))⁻¹ :=
+                                              (inv_le_inv₀ (by positivity) (mul_pos hnqpos hn1qpos)).2 hdenle
+                                            _ = (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                                              by
+                                              field_simp [ne_of_gt hnqpos, ne_of_gt hn1qpos]
+                                              ring)
+                                    [Elab.step] [2.951013] ✅️ (
+                                          have hnqpos : 0 < (n : ℚ) := by exact_mod_cast hnpos
+                                          have hn1qpos : 0 < (n + 1 : ℚ) := by positivity
+                                          have hnle : (n : ℚ) ≤ (n + 1 : ℚ) := by exact_mod_cast (Nat.le_succ n)
+                                          have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := by
+                                            exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                                          calc
+                                            ((n + 1 : ℚ) ^ 2)⁻¹ ≤ ((n : ℚ) * (n + 1))⁻¹ :=
+                                              (inv_le_inv₀ (by positivity) (mul_pos hnqpos hn1qpos)).2 hdenle
+                                            _ = (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                                              by
+                                              field_simp [ne_of_gt hnqpos, ne_of_gt hn1qpos]
+                                              ring)
+                                      [Elab.step] [2.950995] ✅️ 
+                                            have hnqpos : 0 < (n : ℚ) := by exact_mod_cast hnpos
+                                            have hn1qpos : 0 < (n + 1 : ℚ) := by positivity
+                                            have hnle : (n : ℚ) ≤ (n + 1 : ℚ) := by exact_mod_cast (Nat.le_succ n)
+                                            have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := by
+                                              exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                                            calc
+                                              ((n + 1 : ℚ) ^ 2)⁻¹ ≤ ((n : ℚ) * (n + 1))⁻¹ :=
+                                                (inv_le_inv₀ (by positivity) (mul_pos hnqpos hn1qpos)).2 hdenle
+                                              _ = (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                                                by
+                                                field_simp [ne_of_gt hnqpos, ne_of_gt hn1qpos]
+                                                ring
+                                        [Elab.step] [2.950974] ✅️ 
+                                              have hnqpos : 0 < (n : ℚ) := by exact_mod_cast hnpos
+                                              have hn1qpos : 0 < (n + 1 : ℚ) := by positivity
+                                              have hnle : (n : ℚ) ≤ (n + 1 : ℚ) := by exact_mod_cast (Nat.le_succ n)
+                                              have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := by
+                                                exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                                              calc
+                                                ((n + 1 : ℚ) ^ 2)⁻¹ ≤ ((n : ℚ) * (n + 1))⁻¹ :=
+                                                  (inv_le_inv₀ (by positivity) (mul_pos hnqpos hn1qpos)).2 hdenle
+                                                _ = (n : ℚ)⁻¹ - (n + 1 : ℚ)⁻¹ :=
+                                                  by
+                                                  field_simp [ne_of_gt hnqpos, ne_of_gt hn1qpos]
+                                                  ring
+                                          [Elab.step] [2.668826] ✅️ have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 :=
+                                                by exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                                            [Elab.step] [2.668772] ✅️ focus
+                                                  refine
+                                                    no_implicit_lambda%
+                                                      (have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := ?body✝;
+                                                      ?_)
+                                                  case body✝ =>
+                                                    with_annotate_state"by"
+                                                      (exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos))
+                                              [Elab.step] [2.668750] ✅️ 
+                                                    refine
+                                                      no_implicit_lambda%
+                                                        (have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := ?body✝;
+                                                        ?_)
+                                                    case body✝ =>
+                                                      with_annotate_state"by"
+                                                        (exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos))
+                                                [Elab.step] [2.668736] ✅️ 
+                                                      refine
+                                                        no_implicit_lambda%
+                                                          (have hdenle : (n : ℚ) * (n + 1) ≤ (n + 1 : ℚ) ^ 2 := ?body✝;
+                                                          ?_)
+                                                      case body✝ =>
+                                                        with_annotate_state"by"
+                                                          (exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos))
+                                                  [Elab.step] [2.641936] ✅️ case body✝ =>
+                                                        with_annotate_state"by"
+                                                          (exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos))
+                                                    [Elab.step] [2.641683] 💥️ with_annotate_state"by"
+                                                            (exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos))
+                                                      [Elab.step] [2.641632] 💥️ with_annotate_state"by"
+                                                              (exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos))
+                                                        [Elab.step] [2.641610] 💥️ with_annotate_state"by"
+                                                              (exact mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos))
+                                                          [Elab.step] [2.641587] 💥️ (exact
+                                                                  mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos))
+                                                            [Elab.step] [2.641568] 💥️ exact
+                                                                    mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                                                              [Elab.step] [2.641547] 💥️ exact
+                                                                      mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                                                                [Elab.step] [2.641509] 💥️ exact
+                                                                      mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                                                                  [Elab.step] [2.622726] ✅️ expected type: ↑n *
+                                                                          (↑n + 1) ≤
+                                                                        (↑n + 1) ^ 2, term
+                                                                      mul_le_mul_of_nonneg_right hnle (le_of_lt hn1qpos)
+                                                                    [Elab.app.args] [2.622369] ✅️ elabAppArgs (2 args) `@mul_le_mul_of_nonneg_right`
+                                                                      [Elab.app.propagateExpectedType] [2.583277] ❌️ ↑n *
+                                                                              (↑n + 1) ≤
+                                                                            (↑n + 1) ^
+                                                                              2 =?= ↑n * ?m.218 ≤ (↑n + 1) * ?m.218
+                                                                        [Meta.isDefEq] [2.583195] ❌️ ↑n * (↑n + 1) ≤
+                                                                              (↑n + 1) ^
+                                                                                2 =?= ↑n * ?m.218 ≤ (↑n + 1) * ?m.218
+                                                                          [Meta.isDefEq] [2.581238] ❌️ Rat.instLE.1
+                                                                                (↑n * (↑n + 1))
+                                                                                ((↑n + 1) ^
+                                                                                  2) =?= Rat.instPreorder.toLE.1
+                                                                                (↑n * ?m.218) ((↑n + 1) * ?m.218)
+                                                                            [Meta.isDefEq] [2.581190] ❌️ ((↑n + 1) ^
+                                                                                        2).blt
+                                                                                    (↑n * (↑n + 1)) =
+                                                                                  false =?= ((↑n + 1) * ?m.218).blt
+                                                                                    (↑n * ?m.218) =
+                                                                                  false
+                                                                              [Meta.isDefEq] [2.581111] ❌️ ((↑n + 1) ^
+                                                                                        2).blt
+                                                                                    (↑n *
+                                                                                      (↑n +
+                                                                                        1)) =?= ((↑n + 1) * ?m.218).blt
+                                                                                    (↑n * ?m.218)
+                                                                                [Meta.isDefEq] [2.579331] ❌️ if
+                                                                                        (decide
+                                                                                              (((↑n + 1) ^ 2).num <
+                                                                                                0) &&
+                                                                                            decide
+                                                                                              (0 ≤
+                                                                                                (↑n * (↑n + 1)).num)) =
+                                                                                          true then
+                                                                                      true
+                                                                                    else
+                                                                                      if ((↑n + 1) ^ 2).num = 0 then
+                                                                                        decide (0 < (↑n * (↑n + 1)).num)
+                                                                                      else
+                                                                                        if
+                                                                                            (decide
+                                                                                                  (0 <
+                                                                                                    ((↑n + 1) ^
+                                                                                                        2).num) &&
+                                                                                                decide
+                                                                                                  ((↑n * (↑n + 1)).num ≤
+                                                                                                    0)) =
+                                                                                              true then
+                                                                                          false
+                                                                                        else
+                                                                                          decide
+                                                                                            (((↑n + 1) ^ 2).num *
+                                                                                                ↑(↑n * (↑n + 1)).den <
+                                                                                              (↑n * (↑n + 1)).num *
+                                                                                                ↑((↑n + 1) ^
+                                                                                                      2).den) =?= if
+                                                                                        (decide
+                                                                                              (((↑n + 1) * ?m.218).num <
+                                                                                                0) &&
+                                                                                            decide
+                                                                                              (0 ≤ (↑n * ?m.218).num)) =
+                                                                                          true then
+                                                                                      true
+                                                                                    else
+                                                                                      if
+                                                                                          ((↑n + 1) * ?m.218).num =
+                                                                                            0 then
+                                                                                        decide (0 < (↑n * ?m.218).num)
+                                                                                      else
+                                                                                        if
+                                                                                            (decide
+                                                                                                  (0 <
+                                                                                                    ((↑n + 1) *
+                                                                                                        ?m.218).num) &&
+                                                                                                decide
+                                                                                                  ((↑n * ?m.218).num ≤
+                                                                                                    0)) =
+                                                                                              true then
+                                                                                          false
+                                                                                        else
+                                                                                          decide
+                                                                                            (((↑n + 1) * ?m.218).num *
+                                                                                                ↑(↑n * ?m.218).den <
+                                                                                              (↑n * ?m.218).num *
+                                                                                                ↑((↑n + 1) *
+                                                                                                      ?m.218).den)
+                                                                                  [Meta.isDefEq.delta] [1.376062] ❌️ if
+                                                                                          (decide
+                                                                                                (((↑n + 1) ^ 2).num <
+                                                                                                  0) &&
+                                                                                              decide
+                                                                                                (0 ≤
+                                                                                                  (↑n *
+                                                                                                      (↑n + 1)).num)) =
+                                                                                            true then
+                                                                                        true
+                                                                                      else
+                                                                                        if ((↑n + 1) ^ 2).num = 0 then
+                                                                                          decide
+                                                                                            (0 < (↑n * (↑n + 1)).num)
+                                                                                        else
+                                                                                          if
+                                                                                              (decide
+                                                                                                    (0 <
+                                                                                                      ((↑n + 1) ^
+                                                                                                          2).num) &&
+                                                                                                  decide
+                                                                                                    ((↑n *
+                                                                                                          (↑n +
+                                                                                                            1)).num ≤
+                                                                                                      0)) =
+                                                                                                true then
+                                                                                            false
+                                                                                          else
+                                                                                            decide
+                                                                                              (((↑n + 1) ^ 2).num *
+                                                                                                  ↑(↑n * (↑n + 1)).den <
+                                                                                                (↑n * (↑n + 1)).num *
+                                                                                                  ↑((↑n + 1) ^
+                                                                                                        2).den) =?= if
+                                                                                          (decide
+                                                                                                (((↑n + 1) *
+                                                                                                      ?m.218).num <
+                                                                                                  0) &&
+                                                                                              decide
+                                                                                                (0 ≤
+                                                                                                  (↑n * ?m.218).num)) =
+                                                                                            true then
+                                                                                        true
+                                                                                      else
+                                                                                        if
+                                                                                            ((↑n + 1) * ?m.218).num =
+                                                                                              0 then
+                                                                                          decide (0 < (↑n * ?m.218).num)
+                                                                                        else
+                                                                                          if
+                                                                                              (decide
+                                                                                                    (0 <
+                                                                                                      ((↑n + 1) *
+                                                                                                          ?m.218).num) &&
+                                                                                                  decide
+                                                                                                    ((↑n * ?m.218).num ≤
+                                                                                                      0)) =
+                                                                                                true then
+                                                                                            false
+                                                                                          else
+                                                                                            decide
+                                                                                              (((↑n + 1) * ?m.218).num *
+                                                                                                  ↑(↑n * ?m.218).den <
+                                                                                                (↑n * ?m.218).num *
+                                                                                                  ↑((↑n + 1) *
+                                                                                                        ?m.218).den)
+                                                                                    [Meta.isDefEq] [1.376015] ❌️ (decide
+                                                                                              (((↑n + 1) ^ 2).num <
+                                                                                                0) &&
+                                                                                            decide
+                                                                                              (0 ≤
+                                                                                                (↑n * (↑n + 1)).num)) =
+                                                                                          true =?= (decide
+                                                                                              (((↑n + 1) * ?m.218).num <
+                                                                                                0) &&
+                                                                                            decide
+                                                                                              (0 ≤ (↑n * ?m.218).num)) =
+                                                                                          true
+                                                                                      [Meta.isDefEq] [1.375957] ❌️ decide
+                                                                                              (((↑n + 1) ^ 2).num <
+                                                                                                0) &&
+                                                                                            decide
+                                                                                              (0 ≤
+                                                                                                (↑n *
+                                                                                                    (↑n +
+                                                                                                      1)).num) =?= decide
+                                                                                              (((↑n + 1) * ?m.218).num <
+                                                                                                0) &&
+                                                                                            decide
+                                                                                              (0 ≤ (↑n * ?m.218).num)
+                                                                                        [Meta.isDefEq.delta] [0.543584] ❌️ decide
+                                                                                                (((↑n + 1) ^ 2).num <
+                                                                                                  0) &&
+                                                                                              decide
+                                                                                                (0 ≤
+                                                                                                  (↑n *
+                                                                                                      (↑n +
+                                                                                                        1)).num) =?= decide
+                                                                                                (((↑n + 1) *
+                                                                                                      ?m.218).num <
+                                                                                                  0) &&
+                                                                                              decide
+                                                                                                (0 ≤ (↑n * ?m.218).num)
+                                                                                          [Meta.isDefEq] [0.543481] ❌️ decide
+                                                                                                (((↑n + 1) ^ 2).num <
+                                                                                                  0) =?= decide
+                                                                                                (((↑n + 1) *
+                                                                                                      ?m.218).num <
+                                                                                                  0)
+                                                                                        [Meta.isDefEq] [0.832319] ❌️ match
+                                                                                              decide
+                                                                                                (((↑n + 1) ^ 2).num <
+                                                                                                  0) with
+                                                                                            | false => false
+                                                                                            | true =>
+                                                                                              decide
+                                                                                                (0 ≤
+                                                                                                  (↑n *
+                                                                                                      (↑n +
+                                                                                                        1)).num) =?= match
+                                                                                              decide
+                                                                                                (((↑n + 1) *
+                                                                                                      ?m.218).num <
+                                                                                                  0) with
+                                                                                            | false => false
+                                                                                            | true =>
+                                                                                              decide
+                                                                                                (0 ≤ (↑n * ?m.218).num)
+                                                                                  [Meta.isDefEq] [1.203178] ❌️ Decidable.casesOn
+                                                                                        (instDecidableEqBool
+                                                                                          (decide
+                                                                                              (((↑n + 1) ^ 2).num <
+                                                                                                0) &&
+                                                                                            decide
+                                                                                              (0 ≤ (↑n * (↑n + 1)).num))
+                                                                                          true)
+                                                                                        (fun x =>
+                                                                                          if ((↑n + 1) ^ 2).num = 0 then
+                                                                                            decide
+                                                                                              (0 < (↑n * (↑n + 1)).num)
+                                                                                          else
+                                                                                            if
+                                                                                                (decide
+                                                                                                      (0 <
+                                                                                                        ((↑n + 1) ^
+                                                                                                            2).num) &&
+                                                                                                    decide
+                                                                                                      ((↑n *
+                                                                                                            (↑n +
+                                                                                                              1)).num ≤
+                                                                                                        0)) =
+                                                                                                  true then
+                                                                                              false
+                                                                                            else
+                                                                                              decide
+                                                                                                (((↑n + 1) ^ 2).num *
+                                                                                                    ↑(↑n *
+                                                                                                          (↑n +
+                                                                                                            1)).den <
+                                                                                                  (↑n * (↑n + 1)).num *
+                                                                                                    ↑((↑n + 1) ^
+                                                                                                          2).den))
+                                                                                        fun x =>
+                                                                                        true =?= Decidable.casesOn
+                                                                                        (instDecidableEqBool
+                                                                                          (decide
+                                                                                              (((↑n + 1) * ?m.218).num <
+                                                                                                0) &&
+                                                                                            decide
+                                                                                              (0 ≤ (↑n * ?m.218).num))
+                                                                                          true)
+                                                                                        (fun x =>
+                                                                                          if
+                                                                                              ((↑n + 1) * ?m.218).num =
+                                                                                                0 then
+                                                                                            decide
+                                                                                              (0 < (↑n * ?m.218).num)
+                                                                                          else
+                                                                                            if
+                                                                                                (decide
+                                                                                                      (0 <
+                                                                                                        ((↑n + 1) *
+                                                                                                            ?m.218).num) &&
+                                                                                                    decide
+                                                                                                      ((↑n *
+                                                                                                            ?m.218).num ≤
+                                                                                                        0)) =
+                                                                                                  true then
+                                                                                              false
+                                                                                            else
+                                                                                              decide
+                                                                                                (((↑n + 1) *
+                                                                                                        ?m.218).num *
+                                                                                                    ↑(↑n * ?m.218).den <
+                                                                                                  (↑n * ?m.218).num *
+                                                                                                    ↑((↑n + 1) *
+                                                                                                          ?m.218).den))
+                                                                                        fun x => true
+                                                                                    [Meta.isDefEq] [1.202278] ❌️ Decidable.rec
+                                                                                          (fun h =>
+                                                                                            (fun x =>
+                                                                                                if
+                                                                                                    ((↑n + 1) ^ 2).num =
+                                                                                                      0 then
+                                                                                                  decide
+                                                                                                    (0 <
+                                                                                                      (↑n *
+                                                                                                          (↑n + 1)).num)
+                                                                                                else
+                                                                                                  if
+                                                                                                      (decide
+                                                                                                            (0 <
+                                                                                                              ((↑n +
+                                                                                                                    1) ^
+                                                                                                                  2).num) &&
+                                                                                                          decide
+                                                                                                            ((↑n *
+                                                                                                                  (↑n +
+                                                                                                                    1)).num ≤
+                                                                                                              0)) =
+                                                                                                        true then
+                                                                                                    false
+                                                                                                  else
+                                                                                                    decide
+                                                                                                      (((↑n + 1) ^
+                                                                                                              2).num *
+                                                                                                          ↑(↑n *
+                                                                                                                (↑n +
+                                                                                                                  1)).den <
+                                                                                                        (↑n *
+                                                                                                              (↑n +
+                                                                                                                1)).num *
+                                                                                                          ↑((↑n + 1) ^
+                                                                                                                2).den))
+                                                                                              h)
+                                                                                          (fun h => (fun x => true) h)
+                                                                                          (instDecidableEqBool
+                                                                                            (decide
+                                                                                                (((↑n + 1) ^ 2).num <
+                                                                                                  0) &&
+                                                                                              decide
+                                                                                                (0 ≤
+                                                                                                  (↑n * (↑n + 1)).num))
+                                                                                            true) =?= Decidable.rec
+                                                                                          (fun h =>
+                                                                                            (fun x =>
+                                                                                                if
+                                                                                                    ((↑n + 1) *
+                                                                                                          ?m.218).num =
+                                                                                                      0 then
+                                                                                                  decide
+                                                                                                    (0 <
+                                                                                                      (↑n * ?m.218).num)
+                                                                                                else
+                                                                                                  if
+                                                                                                      (decide
+                                                                                                            (0 <
+                                                                                                              ((↑n +
+                                                                                                                    1) *
+                                                                                                                  ?m.218).num) &&
+                                                                                                          decide
+                                                                                                            ((↑n *
+                                                                                                                  ?m.218).num ≤
+                                                                                                              0)) =
+                                                                                                        true then
+                                                                                                    false
+                                                                                                  else
+                                                                                                    decide
+                                                                                                      (((↑n + 1) *
+                                                                                                              ?m.218).num *
+                                                                                                          ↑(↑n *
+                                                                                                                ?m.218).den <
+                                                                                                        (↑n *
+                                                                                                              ?m.218).num *
+                                                                                                          ↑((↑n + 1) *
+                                                                                                                ?m.218).den))
+                                                                                              h)
+                                                                                          (fun h => (fun x => true) h)
+                                                                                          (instDecidableEqBool
+                                                                                            (decide
+                                                                                                (((↑n + 1) *
+                                                                                                      ?m.218).num <
+                                                                                                  0) &&
+                                                                                              decide
+                                                                                                (0 ≤ (↑n * ?m.218).num))
+                                                                                            true)
+                                                                                      [Meta.isDefEq] [1.199027] ❌️ fun
+                                                                                              h =>
+                                                                                            (fun x =>
+                                                                                                if
+                                                                                                    ((↑n + 1) ^ 2).num =
+                                                                                                      0 then
+                                                                                                  decide
+                                                                                                    (0 <
+                                                                                                      (↑n *
+                                                                                                          (↑n + 1)).num)
+                                                                                                else
+                                                                                                  if
+                                                                                                      (decide
+                                                                                                            (0 <
+                                                                                                              ((↑n +
+                                                                                                                    1) ^
+                                                                                                                  2).num) &&
+                                                                                                          decide
+                                                                                                            ((↑n *
+                                                                                                                  (↑n +
+                                                                                                                    1)).num ≤
+                                                                                                              0)) =
+                                                                                                        true then
+                                                                                                    false
+                                                                                                  else
+                                                                                                    decide
+                                                                                                      (((↑n + 1) ^
+                                                                                                              2).num *
+                                                                                                          ↑(↑n *
+                                                                                                                (↑n +
+                                                                                                                  1)).den <
+                                                                                                        (↑n *
+                                                                                                              (↑n +
+                                                                                                                1)).num *
+                                                                                                          ↑((↑n + 1) ^
+                                                                                                                2).den))
+                                                                                              h =?= fun h =>
+                                                                                            (fun x =>
+                                                                                                if
+                                                                                                    ((↑n + 1) *
+                                                                                                          ?m.218).num =
+                                                                                                      0 then
+                                                                                                  decide
+                                                                                                    (0 <
+                                                                                                      (↑n * ?m.218).num)
+                                                                                                else
+                                                                                                  if
+                                                                                                      (decide
+                                                                                                            (0 <
+                                                                                                              ((↑n +
+                                                                                                                    1) *
+                                                                                                                  ?m.218).num) &&
+                                                                                                          decide
+                                                                                                            ((↑n *
+                                                                                                                  ?m.218).num ≤
+                                                                                                              0)) =
+                                                                                                        true then
+                                                                                                    false
+                                                                                                  else
+                                                                                                    decide
+                                                                                                      (((↑n + 1) *
+                                                                                                              ?m.218).num *
+                                                                                                          ↑(↑n *
+                                                                                                                ?m.218).den <
+                                                                                                        (↑n *
+                                                                                                              ?m.218).num *
+                                                                                                          ↑((↑n + 1) *
+                                                                                                                ?m.218).den))
+                                                                                              h
+                                                                                        [Meta.isDefEq] [1.199020] ❌️ ¬(decide
+                                                                                                    (((↑n + 1) ^
+                                                                                                          2).num <
+                                                                                                      0) &&
+                                                                                                  decide
+                                                                                                    (0 ≤
+                                                                                                      (↑n *
+                                                                                                          (↑n +
+                                                                                                            1)).num)) =
+                                                                                                true =?= ¬(decide
+                                                                                                    (((↑n + 1) *
+                                                                                                          ?m.218).num <
+                                                                                                      0) &&
+                                                                                                  decide
+                                                                                                    (0 ≤
+                                                                                                      (↑n *
+                                                                                                          ?m.218).num)) =
+                                                                                                true
+                                                                                          [Meta.isDefEq.delta] [1.198968] ❌️ ¬(decide
+                                                                                                      (((↑n + 1) ^
+                                                                                                            2).num <
+                                                                                                        0) &&
+                                                                                                    decide
+                                                                                                      (0 ≤
+                                                                                                        (↑n *
+                                                                                                            (↑n +
+                                                                                                              1)).num)) =
+                                                                                                  true =?= ¬(decide
+                                                                                                      (((↑n + 1) *
+                                                                                                            ?m.218).num <
+                                                                                                        0) &&
+                                                                                                    decide
+                                                                                                      (0 ≤
+                                                                                                        (↑n *
+                                                                                                            ?m.218).num)) =
+                                                                                                  true
+                                                                                            [Meta.isDefEq] [1.198961] ❌️ (decide
+                                                                                                      (((↑n + 1) ^
+                                                                                                            2).num <
+                                                                                                        0) &&
+                                                                                                    decide
+                                                                                                      (0 ≤
+                                                                                                        (↑n *
+                                                                                                            (↑n +
+                                                                                                              1)).num)) =
+                                                                                                  true =?= (decide
+                                                                                                      (((↑n + 1) *
+                                                                                                            ?m.218).num <
+                                                                                                        0) &&
+                                                                                                    decide
+                                                                                                      (0 ≤
+                                                                                                        (↑n *
+                                                                                                            ?m.218).num)) =
+                                                                                                  true
+                                                                                              [Meta.isDefEq] [1.198923] ❌️ decide
+                                                                                                      (((↑n + 1) ^
+                                                                                                            2).num <
+                                                                                                        0) &&
+                                                                                                    decide
+                                                                                                      (0 ≤
+                                                                                                        (↑n *
+                                                                                                            (↑n +
+                                                                                                              1)).num) =?= decide
+                                                                                                      (((↑n + 1) *
+                                                                                                            ?m.218).num <
+                                                                                                        0) &&
+                                                                                                    decide
+                                                                                                      (0 ≤
+                                                                                                        (↑n *
+                                                                                                            ?m.218).num)
+                                                                                                [Meta.isDefEq] [0.797946] ❌️ match
+                                                                                                      decide
+                                                                                                        (((↑n + 1) ^
+                                                                                                              2).num <
+                                                                                                          0) with
+                                                                                                    | false => false
+                                                                                                    | true =>
+                                                                                                      decide
+                                                                                                        (0 ≤
+                                                                                                          (↑n *
+                                                                                                              (↑n +
+                                                                                                                1)).num) =?= match
+                                                                                                      decide
+                                                                                                        (((↑n + 1) *
+                               
+Perfil encerrado após 1m19s para corrigir a unificação observada em `hdenle`; a repetição detalhava `x ^ 2` contra `x * x` dentro de `mul_le_mul_of_nonneg_right`. Sem `.olean`; tentativa inconclusiva.

@@ -124,3 +124,12 @@ Em `SigmaRationalInterpolation.lean`:
 - Para grau um, `c5Coeff_one_eq_derivative_eval_zero` identifica o coeficiente com a derivada em zero, e `c5LagrangeBasis_derivative_eval_zero` dá a expansão da derivada de cada base. A desigualdade numérica da soma de pesos ainda não foi provada.
 
 As quatorze raízes foram compiladas em Lean 4.32 e auditadas. Os comandos e hashes estão em `evidence/rational-boxes/VALIDATION.md` e `evidence/rational-boxes/source-and-olean-sha256.txt`. A expansão direta que excedeu o limite do simplificador está registrada em `interpolation-weight-degree1-prototype.log`.
+
+**WIP não integrado — grau um:** a branch `codex/c5-degree1-weight-bound-20261106`
+adiciona `c5LagrangeBasisProductCoeffOne_bound`,
+`c5InterpolationCoeffOneAbsSum_le_six` e
+`c5InterpolationWeightSum_one_lt_ten_eleven` usando identidades de produtos
+fatoriais. Essas declarações ainda não passaram por build integral e não foram
+auditadas; não são teoremas validados. O lema auxiliar isolado da soma compilou,
+mas isso não valida os teoremas de peso. Ver
+`evidence/rational-boxes/degree1-retry-checkpoint.md`.

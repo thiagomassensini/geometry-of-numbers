@@ -1,0 +1,2 @@
+
+Tentativa não concluída: Lean 4.32 permaneceu em CPU contínua por 10m15s (aprox. 2.8 GiB RSS), sem diagnóstico ou `.olean`; encerrado para capturar o primeiro gargalo remanescente no perfil.

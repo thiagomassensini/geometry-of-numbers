@@ -1,0 +1,2 @@
+
+Tentativa não concluída: Lean 4.32 permaneceu em CPU contínua por 15m20s (aprox. 2.9 GiB RSS), sem diagnóstico ou `.olean`; interrompido para compilar isoladamente o lema da soma e distinguir esse custo das provas de produto seguintes.

@@ -1,0 +1,1317 @@
+[Elab.async] [0.199522] ✅️ elaborating proof of CarrySigmaObstruction.c5BasisDivisor_eval_zero
+  [Elab.definition.value] [0.198119] ✅️ CarrySigmaObstruction.c5BasisDivisor_eval_zero
+    [Elab.step] [0.197635] ✅️ simp [Lagrange.basisDivisor]
+      [Elab.step] [0.197589] ✅️ simp [Lagrange.basisDivisor]
+        [Elab.step] [0.197552] ✅️ simp [Lagrange.basisDivisor]
+[Elab.async] [0.167719] ✅️ elaborating proof of CarrySigmaObstruction.c5BasisDivisor_derivative_eval_zero
+  [Elab.definition.value] [0.166580] ✅️ CarrySigmaObstruction.c5BasisDivisor_derivative_eval_zero
+    [Elab.step] [0.166147] ✅️ simp [Lagrange.basisDivisor]
+      [Elab.step] [0.166123] ✅️ simp [Lagrange.basisDivisor]
+        [Elab.step] [0.166090] ✅️ simp [Lagrange.basisDivisor]
+[Elab.async] [0.364309] ✅️ elaborating proof of CarrySigmaObstruction.c5LagrangeBasis_derivative_eval_zero
+  [Elab.definition.value] [0.362729] ✅️ CarrySigmaObstruction.c5LagrangeBasis_derivative_eval_zero
+    [Elab.step] [0.362066] ✅️ 
+          rw [c5LagrangeBasis, Lagrange.basis, Polynomial.derivative_prod_finset]
+          simp [Polynomial.eval_finsetSum, Polynomial.eval_mul, Polynomial.eval_prod, c5BasisDivisor_eval_zero,
+            c5BasisDivisor_derivative_eval_zero]
+      [Elab.step] [0.362035] ✅️ 
+            rw [c5LagrangeBasis, Lagrange.basis, Polynomial.derivative_prod_finset]
+            simp [Polynomial.eval_finsetSum, Polynomial.eval_mul, Polynomial.eval_prod, c5BasisDivisor_eval_zero,
+              c5BasisDivisor_derivative_eval_zero]
+        [Elab.step] [0.340553] ✅️ simp [Polynomial.eval_finsetSum, Polynomial.eval_mul, Polynomial.eval_prod,
+              c5BasisDivisor_eval_zero, c5BasisDivisor_derivative_eval_zero]
+[Elab.async] [0.483745] ✅️ elaborating proof of CarrySigmaObstruction.c5LagrangeBasis_coeff_one_zero
+  [Elab.definition.value] [0.479690] ✅️ CarrySigmaObstruction.c5LagrangeBasis_coeff_one_zero
+    [Elab.step] [0.478879] ✅️ 
+          rw [c5LagrangeBasis_coeff_one, c5LagrangeBasis_derivative_eval_zero]
+          have hprod (x : ℕ) : ∏ l ∈ (Finset.range 129).erase 0 |>.erase x, ((l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2 = 1 :=
+            by
+            apply Finset.prod_eq_one
+            intro l hl
+            have hl0 : l ≠ 0 := (Finset.mem_erase.mp ((Finset.mem_erase.mp hl).2)).1
+            have hlq : ((l : ℚ) ^ 2) ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hl0)
+            field_simp
+          simp [c5InterpolationIndices, c5InterpolationNode, hprod]
+      [Elab.step] [0.478845] ✅️ 
+            rw [c5LagrangeBasis_coeff_one, c5LagrangeBasis_derivative_eval_zero]
+            have hprod (x : ℕ) : ∏ l ∈ (Finset.range 129).erase 0 |>.erase x, ((l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2 = 1 :=
+              by
+              apply Finset.prod_eq_one
+              intro l hl
+              have hl0 : l ≠ 0 := (Finset.mem_erase.mp ((Finset.mem_erase.mp hl).2)).1
+              have hlq : ((l : ℚ) ^ 2) ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hl0)
+              field_simp
+            simp [c5InterpolationIndices, c5InterpolationNode, hprod]
+        [Elab.step] [0.122573] ✅️ have hprod (x : ℕ) :
+              ∏ l ∈ (Finset.range 129).erase 0 |>.erase x, ((l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2 = 1 :=
+              by
+              apply Finset.prod_eq_one
+              intro l hl
+              have hl0 : l ≠ 0 := (Finset.mem_erase.mp ((Finset.mem_erase.mp hl).2)).1
+              have hlq : ((l : ℚ) ^ 2) ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hl0)
+              field_simp
+          [Elab.step] [0.122506] ✅️ focus
+                refine
+                  no_implicit_lambda%
+                    (have hprod (x : ℕ) :
+                      ∏ l ∈ (Finset.range 129).erase 0 |>.erase x, ((l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2 = 1 := ?body✝;
+                    ?_)
+                case body✝ =>
+                  with_annotate_state"by"
+                    ( apply Finset.prod_eq_one
+                      intro l hl
+                      have hl0 : l ≠ 0 := (Finset.mem_erase.mp ((Finset.mem_erase.mp hl).2)).1
+                      have hlq : ((l : ℚ) ^ 2) ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hl0)
+                      field_simp)
+            [Elab.step] [0.122488] ✅️ 
+                  refine
+                    no_implicit_lambda%
+                      (have hprod (x : ℕ) :
+                        ∏ l ∈ (Finset.range 129).erase 0 |>.erase x, ((l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2 = 1 := ?body✝;
+                      ?_)
+                  case body✝ =>
+                    with_annotate_state"by"
+                      ( apply Finset.prod_eq_one
+                        intro l hl
+                        have hl0 : l ≠ 0 := (Finset.mem_erase.mp ((Finset.mem_erase.mp hl).2)).1
+                        have hlq : ((l : ℚ) ^ 2) ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hl0)
+                        field_simp)
+              [Elab.step] [0.122470] ✅️ 
+                    refine
+                      no_implicit_lambda%
+                        (have hprod (x : ℕ) :
+                          ∏ l ∈ (Finset.range 129).erase 0 |>.erase x, ((l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2 = 1 := ?body✝;
+                        ?_)
+                    case body✝ =>
+                      with_annotate_state"by"
+                        ( apply Finset.prod_eq_one
+                          intro l hl
+                          have hl0 : l ≠ 0 := (Finset.mem_erase.mp ((Finset.mem_erase.mp hl).2)).1
+                          have hlq : ((l : ℚ) ^ 2) ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hl0)
+                          field_simp)
+        [Elab.step] [0.353325] ✅️ simp [c5InterpolationIndices, c5InterpolationNode, hprod]
+[Elab.async] [0.215537] ✅️ elaborating proof of CarrySigmaObstruction.c5LagrangeBasis_coeff_one_of_ne
+  [Elab.definition.value] [0.213256] ✅️ CarrySigmaObstruction.c5LagrangeBasis_coeff_one_of_ne
+    [Elab.step] [0.212388] ✅️ 
+          rw [c5LagrangeBasis_coeff_one, c5LagrangeBasis_derivative_eval_zero]
+          apply Finset.sum_eq_single 0
+          · intro k hk hk0
+            have hzero : 0 ∈ (c5InterpolationIndices.erase j).erase k :=
+              by
+              refine Finset.mem_erase.mpr ⟨Ne.symm hk0, ?_⟩
+              exact Finset.mem_erase.mpr ⟨Ne.symm hj, by simp [c5InterpolationIndices]⟩
+            have hfactor :
+              ∏ l ∈ (c5InterpolationIndices.erase j).erase k,
+                  -((c5InterpolationNode j - c5InterpolationNode l)⁻¹ * c5InterpolationNode l) =
+                0 :=
+              by
+              apply Finset.prod_eq_zero (i := 0) hzero
+              simp [c5InterpolationNode]
+            rw [hfactor]
+            simp [c5InterpolationNode]
+          · intro hnot
+            have hmem : 0 ∈ c5InterpolationIndices.erase j :=
+              Finset.mem_erase.mpr ⟨Ne.symm hj, by simp [c5InterpolationIndices]⟩
+            exact False.elim (hnot hmem)
+      [Elab.step] [0.212361] ✅️ 
+            rw [c5LagrangeBasis_coeff_one, c5LagrangeBasis_derivative_eval_zero]
+            apply Finset.sum_eq_single 0
+            · intro k hk hk0
+              have hzero : 0 ∈ (c5InterpolationIndices.erase j).erase k :=
+                by
+                refine Finset.mem_erase.mpr ⟨Ne.symm hk0, ?_⟩
+                exact Finset.mem_erase.mpr ⟨Ne.symm hj, by simp [c5InterpolationIndices]⟩
+              have hfactor :
+                ∏ l ∈ (c5InterpolationIndices.erase j).erase k,
+                    -((c5InterpolationNode j - c5InterpolationNode l)⁻¹ * c5InterpolationNode l) =
+                  0 :=
+                by
+                apply Finset.prod_eq_zero (i := 0) hzero
+                simp [c5InterpolationNode]
+              rw [hfactor]
+              simp [c5InterpolationNode]
+            · intro hnot
+              have hmem : 0 ∈ c5InterpolationIndices.erase j :=
+                Finset.mem_erase.mpr ⟨Ne.symm hj, by simp [c5InterpolationIndices]⟩
+              exact False.elim (hnot hmem)
+        [Elab.step] [0.145370] ✅️ ·
+              intro k hk hk0
+              have hzero : 0 ∈ (c5InterpolationIndices.erase j).erase k :=
+                by
+                refine Finset.mem_erase.mpr ⟨Ne.symm hk0, ?_⟩
+                exact Finset.mem_erase.mpr ⟨Ne.symm hj, by simp [c5InterpolationIndices]⟩
+              have hfactor :
+                ∏ l ∈ (c5InterpolationIndices.erase j).erase k,
+                    -((c5InterpolationNode j - c5InterpolationNode l)⁻¹ * c5InterpolationNode l) =
+                  0 :=
+                by
+                apply Finset.prod_eq_zero (i := 0) hzero
+                simp [c5InterpolationNode]
+              rw [hfactor]
+              simp [c5InterpolationNode]
+          [Elab.step] [0.145264] ✅️ 
+                intro k hk hk0
+                have hzero : 0 ∈ (c5InterpolationIndices.erase j).erase k :=
+                  by
+                  refine Finset.mem_erase.mpr ⟨Ne.symm hk0, ?_⟩
+                  exact Finset.mem_erase.mpr ⟨Ne.symm hj, by simp [c5InterpolationIndices]⟩
+                have hfactor :
+                  ∏ l ∈ (c5InterpolationIndices.erase j).erase k,
+                      -((c5InterpolationNode j - c5InterpolationNode l)⁻¹ * c5InterpolationNode l) =
+                    0 :=
+                  by
+                  apply Finset.prod_eq_zero (i := 0) hzero
+                  simp [c5InterpolationNode]
+                rw [hfactor]
+                simp [c5InterpolationNode]
+            [Elab.step] [0.145240] ✅️ 
+                  intro k hk hk0
+                  have hzero : 0 ∈ (c5InterpolationIndices.erase j).erase k :=
+                    by
+                    refine Finset.mem_erase.mpr ⟨Ne.symm hk0, ?_⟩
+                    exact Finset.mem_erase.mpr ⟨Ne.symm hj, by simp [c5InterpolationIndices]⟩
+                  have hfactor :
+                    ∏ l ∈ (c5InterpolationIndices.erase j).erase k,
+                        -((c5InterpolationNode j - c5InterpolationNode l)⁻¹ * c5InterpolationNode l) =
+                      0 :=
+                    by
+                    apply Finset.prod_eq_zero (i := 0) hzero
+                    simp [c5InterpolationNode]
+                  rw [hfactor]
+                  simp [c5InterpolationNode]
+[Elab.async] [1.085501] ✅️ elaborating proof of _private.SigmaRationalInterpolation.0.CarrySigmaObstruction.c5_abs_sub_range_erase
+  [Elab.definition.value] [1.077869] ✅️ _private.SigmaRationalInterpolation.0.CarrySigmaObstruction.c5_abs_sub_range_erase
+    [Elab.step] [1.075729] ✅️ 
+          have hunion : (Finset.range 129).erase j = Finset.range j ∪ Finset.Ioc j 128 :=
+            by
+            ext k
+            simp only [Finset.mem_erase, Finset.mem_range, Finset.mem_union, Finset.mem_Ioc]
+            omega
+          have hdisjoint : Disjoint (Finset.range j) (Finset.Ioc j 128) :=
+            by
+            apply Finset.disjoint_left.mpr
+            intro k hk₁ hk₂
+            simp only [Finset.mem_range] at hk₁
+            simp only [Finset.mem_Ioc] at hk₂
+            omega
+          rw [hunion, Finset.prod_union hdisjoint]
+          have hleft : (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = (j.factorial : ℚ) := by
+            calc
+              (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                by
+                apply Finset.prod_congr rfl
+                intro k hk
+                have hklt : k < j := Finset.mem_range.mp hk
+                rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                rw [← Nat.cast_sub hklt.le]
+                have hnat : j - k = j - 1 - k + 1 := by omega
+                exact_mod_cast hnat
+              _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                simpa [Nat.cast_add, Nat.cast_one] using (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+              _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j
+          have hright : (∏ k ∈ Finset.Ioc j 128, |(j : ℚ) - (k : ℚ)|) = ((128 - j).factorial : ℚ) :=
+            by
+            have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+              by
+              ext k
+              simp only [Finset.mem_Ioc, Finset.mem_Ico]
+              omega
+            rw [hioc, Finset.prod_Ico_eq_prod_range]
+            have hlen : 129 - (j + 1) = 128 - j := by omega
+            rw [hlen]
+            calc
+              (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                  ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                by
+                apply Finset.prod_congr rfl
+                intro k hk
+                have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                  by
+                  push_cast
+                  ring
+                rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+              _ = ((128 - j).factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j)
+          rw [hleft, hright]
+      [Elab.step] [1.075702] ✅️ 
+            have hunion : (Finset.range 129).erase j = Finset.range j ∪ Finset.Ioc j 128 :=
+              by
+              ext k
+              simp only [Finset.mem_erase, Finset.mem_range, Finset.mem_union, Finset.mem_Ioc]
+              omega
+            have hdisjoint : Disjoint (Finset.range j) (Finset.Ioc j 128) :=
+              by
+              apply Finset.disjoint_left.mpr
+              intro k hk₁ hk₂
+              simp only [Finset.mem_range] at hk₁
+              simp only [Finset.mem_Ioc] at hk₂
+              omega
+            rw [hunion, Finset.prod_union hdisjoint]
+            have hleft : (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = (j.factorial : ℚ) := by
+              calc
+                (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                  by
+                  apply Finset.prod_congr rfl
+                  intro k hk
+                  have hklt : k < j := Finset.mem_range.mp hk
+                  rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                  rw [← Nat.cast_sub hklt.le]
+                  have hnat : j - k = j - 1 - k + 1 := by omega
+                  exact_mod_cast hnat
+                _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                  simpa [Nat.cast_add, Nat.cast_one] using
+                    (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j
+            have hright : (∏ k ∈ Finset.Ioc j 128, |(j : ℚ) - (k : ℚ)|) = ((128 - j).factorial : ℚ) :=
+              by
+              have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                by
+                ext k
+                simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                omega
+              rw [hioc, Finset.prod_Ico_eq_prod_range]
+              have hlen : 129 - (j + 1) = 128 - j := by omega
+              rw [hlen]
+              calc
+                (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                    ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                  by
+                  apply Finset.prod_congr rfl
+                  intro k hk
+                  have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                    by
+                    push_cast
+                    ring
+                  rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                _ = ((128 - j).factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j)
+            rw [hleft, hright]
+        [Elab.step] [0.756683] ✅️ have hleft : (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = (j.factorial : ℚ) := by
+              calc
+                (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                  by
+                  apply Finset.prod_congr rfl
+                  intro k hk
+                  have hklt : k < j := Finset.mem_range.mp hk
+                  rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                  rw [← Nat.cast_sub hklt.le]
+                  have hnat : j - k = j - 1 - k + 1 := by omega
+                  exact_mod_cast hnat
+                _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                  simpa [Nat.cast_add, Nat.cast_one] using
+                    (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j
+          [Elab.step] [0.756568] ✅️ focus
+                refine
+                  no_implicit_lambda%
+                    (have hleft : (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = (j.factorial : ℚ) := ?body✝;
+                    ?_)
+                case body✝ =>
+                  with_annotate_state"by"
+                    (calc
+                        (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                            ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                          by
+                          apply Finset.prod_congr rfl
+                          intro k hk
+                          have hklt : k < j := Finset.mem_range.mp hk
+                          rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                          rw [← Nat.cast_sub hklt.le]
+                          have hnat : j - k = j - 1 - k + 1 := by omega
+                          exact_mod_cast hnat
+                        _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                          simpa [Nat.cast_add, Nat.cast_one] using
+                            (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                        _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+            [Elab.step] [0.756552] ✅️ 
+                  refine
+                    no_implicit_lambda%
+                      (have hleft : (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = (j.factorial : ℚ) := ?body✝;
+                      ?_)
+                  case body✝ =>
+                    with_annotate_state"by"
+                      (calc
+                          (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                              ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                            by
+                            apply Finset.prod_congr rfl
+                            intro k hk
+                            have hklt : k < j := Finset.mem_range.mp hk
+                            rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                            rw [← Nat.cast_sub hklt.le]
+                            have hnat : j - k = j - 1 - k + 1 := by omega
+                            exact_mod_cast hnat
+                          _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                            simpa [Nat.cast_add, Nat.cast_one] using
+                              (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                          _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+              [Elab.step] [0.756541] ✅️ 
+                    refine
+                      no_implicit_lambda%
+                        (have hleft : (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = (j.factorial : ℚ) := ?body✝;
+                        ?_)
+                    case body✝ =>
+                      with_annotate_state"by"
+                        (calc
+                            (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                              by
+                              apply Finset.prod_congr rfl
+                              intro k hk
+                              have hklt : k < j := Finset.mem_range.mp hk
+                              rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                              rw [← Nat.cast_sub hklt.le]
+                              have hnat : j - k = j - 1 - k + 1 := by omega
+                              exact_mod_cast hnat
+                            _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                              simpa [Nat.cast_add, Nat.cast_one] using
+                                (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                            _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+                [Elab.step] [0.742622] ✅️ case body✝ =>
+                      with_annotate_state"by"
+                        (calc
+                            (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                              by
+                              apply Finset.prod_congr rfl
+                              intro k hk
+                              have hklt : k < j := Finset.mem_range.mp hk
+                              rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                              rw [← Nat.cast_sub hklt.le]
+                              have hnat : j - k = j - 1 - k + 1 := by omega
+                              exact_mod_cast hnat
+                            _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                              simpa [Nat.cast_add, Nat.cast_one] using
+                                (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                            _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+                  [Elab.step] [0.742499] ✅️ with_annotate_state"by"
+                          (calc
+                              (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                  ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                                by
+                                apply Finset.prod_congr rfl
+                                intro k hk
+                                have hklt : k < j := Finset.mem_range.mp hk
+                                rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                rw [← Nat.cast_sub hklt.le]
+                                have hnat : j - k = j - 1 - k + 1 := by omega
+                                exact_mod_cast hnat
+                              _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                                simpa [Nat.cast_add, Nat.cast_one] using
+                                  (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                              _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+                    [Elab.step] [0.742483] ✅️ with_annotate_state"by"
+                            (calc
+                                (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                    ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                                  by
+                                  apply Finset.prod_congr rfl
+                                  intro k hk
+                                  have hklt : k < j := Finset.mem_range.mp hk
+                                  rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                  rw [← Nat.cast_sub hklt.le]
+                                  have hnat : j - k = j - 1 - k + 1 := by omega
+                                  exact_mod_cast hnat
+                                _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                                  simpa [Nat.cast_add, Nat.cast_one] using
+                                    (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+                      [Elab.step] [0.742470] ✅️ with_annotate_state"by"
+                            (calc
+                                (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                    ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                                  by
+                                  apply Finset.prod_congr rfl
+                                  intro k hk
+                                  have hklt : k < j := Finset.mem_range.mp hk
+                                  rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                  rw [← Nat.cast_sub hklt.le]
+                                  have hnat : j - k = j - 1 - k + 1 := by omega
+                                  exact_mod_cast hnat
+                                _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                                  simpa [Nat.cast_add, Nat.cast_one] using
+                                    (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+                        [Elab.step] [0.742458] ✅️ (calc
+                                (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                    ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                                  by
+                                  apply Finset.prod_congr rfl
+                                  intro k hk
+                                  have hklt : k < j := Finset.mem_range.mp hk
+                                  rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                  rw [← Nat.cast_sub hklt.le]
+                                  have hnat : j - k = j - 1 - k + 1 := by omega
+                                  exact_mod_cast hnat
+                                _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                                  simpa [Nat.cast_add, Nat.cast_one] using
+                                    (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+                          [Elab.step] [0.742445] ✅️ calc
+                                  (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                      ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                                    by
+                                    apply Finset.prod_congr rfl
+                                    intro k hk
+                                    have hklt : k < j := Finset.mem_range.mp hk
+                                    rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                    rw [← Nat.cast_sub hklt.le]
+                                    have hnat : j - k = j - 1 - k + 1 := by omega
+                                    exact_mod_cast hnat
+                                  _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                                    simpa [Nat.cast_add, Nat.cast_one] using
+                                      (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                  _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j
+                            [Elab.step] [0.742431] ✅️ calc
+                                    (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                        ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                                      by
+                                      apply Finset.prod_congr rfl
+                                      intro k hk
+                                      have hklt : k < j := Finset.mem_range.mp hk
+                                      rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                      rw [← Nat.cast_sub hklt.le]
+                                      have hnat : j - k = j - 1 - k + 1 := by omega
+                                      exact_mod_cast hnat
+                                    _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                                      simpa [Nat.cast_add, Nat.cast_one] using
+                                        (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                    _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j
+                              [Elab.step] [0.742407] ✅️ calc
+                                    (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                        ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                                      by
+                                      apply Finset.prod_congr rfl
+                                      intro k hk
+                                      have hklt : k < j := Finset.mem_range.mp hk
+                                      rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                      rw [← Nat.cast_sub hklt.le]
+                                      have hnat : j - k = j - 1 - k + 1 := by omega
+                                      exact_mod_cast hnat
+                                    _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                                      simpa [Nat.cast_add, Nat.cast_one] using
+                                        (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                    _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j
+                                [Elab.step] [0.116506] ✅️ 
+                                      apply Finset.prod_congr rfl
+                                      intro k hk
+                                      have hklt : k < j := Finset.mem_range.mp hk
+                                      rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                      rw [← Nat.cast_sub hklt.le]
+                                      have hnat : j - k = j - 1 - k + 1 := by omega
+                                      exact_mod_cast hnat
+                                  [Elab.step] [0.116473] ✅️ 
+                                        apply Finset.prod_congr rfl
+                                        intro k hk
+                                        have hklt : k < j := Finset.mem_range.mp hk
+                                        rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                        rw [← Nat.cast_sub hklt.le]
+                                        have hnat : j - k = j - 1 - k + 1 := by omega
+                                        exact_mod_cast hnat
+                                [Elab.step] [0.564154] ✅️ simpa [Nat.cast_add, Nat.cast_one] using
+                                        (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                  [Elab.step] [0.564131] ✅️ simpa [Nat.cast_add, Nat.cast_one] using
+                                          (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                    [Elab.step] [0.564108] ✅️ simpa [Nat.cast_add, Nat.cast_one] using
+                                          (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+        [Elab.step] [0.232890] ✅️ have hright :
+              (∏ k ∈ Finset.Ioc j 128, |(j : ℚ) - (k : ℚ)|) = ((128 - j).factorial : ℚ) :=
+              by
+              have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                by
+                ext k
+                simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                omega
+              rw [hioc, Finset.prod_Ico_eq_prod_range]
+              have hlen : 129 - (j + 1) = 128 - j := by omega
+              rw [hlen]
+              calc
+                (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                    ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                  by
+                  apply Finset.prod_congr rfl
+                  intro k hk
+                  have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                    by
+                    push_cast
+                    ring
+                  rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                _ = ((128 - j).factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j)
+          [Elab.step] [0.232845] ✅️ focus
+                refine
+                  no_implicit_lambda%
+                    (have hright : (∏ k ∈ Finset.Ioc j 128, |(j : ℚ) - (k : ℚ)|) = ((128 - j).factorial : ℚ) := ?body✝;
+                    ?_)
+                case body✝ =>
+                  with_annotate_state"by"
+                    ( have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                        by
+                        ext k
+                        simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                        omega
+                      rw [hioc, Finset.prod_Ico_eq_prod_range]
+                      have hlen : 129 - (j + 1) = 128 - j := by omega
+                      rw [hlen]
+                      calc
+                        (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                            ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                          by
+                          apply Finset.prod_congr rfl
+                          intro k hk
+                          have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                            by
+                            push_cast
+                            ring
+                          rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                        _ = ((128 - j).factorial : ℚ) := by
+                          exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j))
+            [Elab.step] [0.232812] ✅️ 
+                  refine
+                    no_implicit_lambda%
+                      (have hright : (∏ k ∈ Finset.Ioc j 128, |(j : ℚ) - (k : ℚ)|) = ((128 - j).factorial : ℚ) :=
+                        ?body✝;
+                      ?_)
+                  case body✝ =>
+                    with_annotate_state"by"
+                      ( have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                          by
+                          ext k
+                          simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                          omega
+                        rw [hioc, Finset.prod_Ico_eq_prod_range]
+                        have hlen : 129 - (j + 1) = 128 - j := by omega
+                        rw [hlen]
+                        calc
+                          (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                              ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                            by
+                            apply Finset.prod_congr rfl
+                            intro k hk
+                            have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                              by
+                              push_cast
+                              ring
+                            rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                          _ = ((128 - j).factorial : ℚ) := by
+                            exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j))
+              [Elab.step] [0.232801] ✅️ 
+                    refine
+                      no_implicit_lambda%
+                        (have hright : (∏ k ∈ Finset.Ioc j 128, |(j : ℚ) - (k : ℚ)|) = ((128 - j).factorial : ℚ) :=
+                          ?body✝;
+                        ?_)
+                    case body✝ =>
+                      with_annotate_state"by"
+                        ( have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                            by
+                            ext k
+                            simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                            omega
+                          rw [hioc, Finset.prod_Ico_eq_prod_range]
+                          have hlen : 129 - (j + 1) = 128 - j := by omega
+                          rw [hlen]
+                          calc
+                            (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                                ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                              by
+                              apply Finset.prod_congr rfl
+                              intro k hk
+                              have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                                by
+                                push_cast
+                                ring
+                              rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                            _ = ((128 - j).factorial : ℚ) := by
+                              exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j))
+                [Elab.step] [0.219481] ✅️ case body✝ =>
+                      with_annotate_state"by"
+                        ( have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                            by
+                            ext k
+                            simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                            omega
+                          rw [hioc, Finset.prod_Ico_eq_prod_range]
+                          have hlen : 129 - (j + 1) = 128 - j := by omega
+                          rw [hlen]
+                          calc
+                            (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                                ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                              by
+                              apply Finset.prod_congr rfl
+                              intro k hk
+                              have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                                by
+                                push_cast
+                                ring
+                              rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                            _ = ((128 - j).factorial : ℚ) := by
+                              exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j))
+                  [Elab.step] [0.219338] ✅️ with_annotate_state"by"
+                          ( have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                              by
+                              ext k
+                              simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                              omega
+                            rw [hioc, Finset.prod_Ico_eq_prod_range]
+                            have hlen : 129 - (j + 1) = 128 - j := by omega
+                            rw [hlen]
+                            calc
+                              (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                                  ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                                by
+                                apply Finset.prod_congr rfl
+                                intro k hk
+                                have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                                  by
+                                  push_cast
+                                  ring
+                                rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                              _ = ((128 - j).factorial : ℚ) := by
+                                exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j))
+                    [Elab.step] [0.219329] ✅️ with_annotate_state"by"
+                            ( have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                                by
+                                ext k
+                                simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                                omega
+                              rw [hioc, Finset.prod_Ico_eq_prod_range]
+                              have hlen : 129 - (j + 1) = 128 - j := by omega
+                              rw [hlen]
+                              calc
+                                (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                                    ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                                  by
+                                  apply Finset.prod_congr rfl
+                                  intro k hk
+                                  have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                                    by
+                                    push_cast
+                                    ring
+                                  rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                                _ = ((128 - j).factorial : ℚ) := by
+                                  exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j))
+                      [Elab.step] [0.219319] ✅️ with_annotate_state"by"
+                            ( have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                                by
+                                ext k
+                                simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                                omega
+                              rw [hioc, Finset.prod_Ico_eq_prod_range]
+                              have hlen : 129 - (j + 1) = 128 - j := by omega
+                              rw [hlen]
+                              calc
+                                (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                                    ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                                  by
+                                  apply Finset.prod_congr rfl
+                                  intro k hk
+                                  have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                                    by
+                                    push_cast
+                                    ring
+                                  rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                                _ = ((128 - j).factorial : ℚ) := by
+                                  exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j))
+                        [Elab.step] [0.219306] ✅️ (
+                              have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                                by
+                                ext k
+                                simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                                omega
+                              rw [hioc, Finset.prod_Ico_eq_prod_range]
+                              have hlen : 129 - (j + 1) = 128 - j := by omega
+                              rw [hlen]
+                              calc
+                                (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                                    ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                                  by
+                                  apply Finset.prod_congr rfl
+                                  intro k hk
+                                  have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                                    by
+                                    push_cast
+                                    ring
+                                  rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                                _ = ((128 - j).factorial : ℚ) := by
+                                  exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j))
+                          [Elab.step] [0.219295] ✅️ 
+                                have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                                  by
+                                  ext k
+                                  simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                                  omega
+                                rw [hioc, Finset.prod_Ico_eq_prod_range]
+                                have hlen : 129 - (j + 1) = 128 - j := by omega
+                                rw [hlen]
+                                calc
+                                  (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                                      ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                                    by
+                                    apply Finset.prod_congr rfl
+                                    intro k hk
+                                    have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                                      by
+                                      push_cast
+                                      ring
+                                    rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                                  _ = ((128 - j).factorial : ℚ) := by
+                                    exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j)
+                            [Elab.step] [0.219284] ✅️ 
+                                  have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                                    by
+                                    ext k
+                                    simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                                    omega
+                                  rw [hioc, Finset.prod_Ico_eq_prod_range]
+                                  have hlen : 129 - (j + 1) = 128 - j := by omega
+                                  rw [hlen]
+                                  calc
+                                    (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                                        ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                                      by
+                                      apply Finset.prod_congr rfl
+                                      intro k hk
+                                      have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                                        by
+                                        push_cast
+                                        ring
+                                      rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                                    _ = ((128 - j).factorial : ℚ) := by
+                                      exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j)
+                              [Elab.step] [0.158074] ✅️ calc
+                                    (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                                        ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                                      by
+                                      apply Finset.prod_congr rfl
+                                      intro k hk
+                                      have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                                        by
+                                        push_cast
+                                        ring
+                                      rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                                    _ = ((128 - j).factorial : ℚ) := by
+                                      exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j)
+[Elab.async] [0.340575] ✅️ elaborating proof of _private.SigmaRationalInterpolation.0.CarrySigmaObstruction.c5_factorial_center_product_le
+  [Elab.definition.value] [0.333324] ✅️ _private.SigmaRationalInterpolation.0.CarrySigmaObstruction.c5_factorial_center_product_le
+    [Elab.step] [0.331070] ✅️ induction j with
+          | zero => simp
+          | succ j ih =>
+            have hjlt : j < 128 := by omega
+            have hleft : Nat.factorial (128 - j) = (128 - j) * Nat.factorial (127 - j) :=
+              by
+              have harg : 128 - j = (127 - j) + 1 := by omega
+              rw [harg, Nat.factorial_succ]
+            have hright : Nat.factorial (129 + j) = (129 + j) * Nat.factorial (128 + j) :=
+              by
+              have harg : 129 + j = (128 + j) + 1 := by omega
+              simpa only [harg] using (Nat.factorial_succ (128 + j))
+            have hstep :
+              Nat.factorial (128 - j) * Nat.factorial (128 + j) ≤ Nat.factorial (127 - j) * Nat.factorial (129 + j) :=
+              by
+              rw [hleft, hright]
+              have hcoef : 128 - j ≤ 129 + j := by omega
+              calc
+                ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                    (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                  by ring
+                _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) := (Nat.mul_le_mul_left _ hcoef)
+                _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring
+            rw [show 128 - (j + 1) = 127 - j by omega, show 128 + (j + 1) = 129 + j by omega]
+            exact (ih (by omega)).trans hstep
+      [Elab.step] [0.331029] ✅️ induction j with
+            | zero => simp
+            | succ j ih =>
+              have hjlt : j < 128 := by omega
+              have hleft : Nat.factorial (128 - j) = (128 - j) * Nat.factorial (127 - j) :=
+                by
+                have harg : 128 - j = (127 - j) + 1 := by omega
+                rw [harg, Nat.factorial_succ]
+              have hright : Nat.factorial (129 + j) = (129 + j) * Nat.factorial (128 + j) :=
+                by
+                have harg : 129 + j = (128 + j) + 1 := by omega
+                simpa only [harg] using (Nat.factorial_succ (128 + j))
+              have hstep :
+                Nat.factorial (128 - j) * Nat.factorial (128 + j) ≤ Nat.factorial (127 - j) * Nat.factorial (129 + j) :=
+                by
+                rw [hleft, hright]
+                have hcoef : 128 - j ≤ 129 + j := by omega
+                calc
+                  ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                      (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                    by ring
+                  _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) := (Nat.mul_le_mul_left _ hcoef)
+                  _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring
+              rw [show 128 - (j + 1) = 127 - j by omega, show 128 + (j + 1) = 129 + j by omega]
+              exact (ih (by omega)).trans hstep
+        [Elab.step] [0.330988] ✅️ induction j with
+            | zero => simp
+            | succ j ih =>
+              have hjlt : j < 128 := by omega
+              have hleft : Nat.factorial (128 - j) = (128 - j) * Nat.factorial (127 - j) :=
+                by
+                have harg : 128 - j = (127 - j) + 1 := by omega
+                rw [harg, Nat.factorial_succ]
+              have hright : Nat.factorial (129 + j) = (129 + j) * Nat.factorial (128 + j) :=
+                by
+                have harg : 129 + j = (128 + j) + 1 := by omega
+                simpa only [harg] using (Nat.factorial_succ (128 + j))
+              have hstep :
+                Nat.factorial (128 - j) * Nat.factorial (128 + j) ≤ Nat.factorial (127 - j) * Nat.factorial (129 + j) :=
+                by
+                rw [hleft, hright]
+                have hcoef : 128 - j ≤ 129 + j := by omega
+                calc
+                  ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                      (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                    by ring
+                  _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) := (Nat.mul_le_mul_left _ hcoef)
+                  _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring
+              rw [show 128 - (j + 1) = 127 - j by omega, show 128 + (j + 1) = 129 + j by omega]
+              exact (ih (by omega)).trans hstep
+          [Elab.step] [0.302209] ✅️ 
+                have hjlt : j < 128 := by omega
+                have hleft : Nat.factorial (128 - j) = (128 - j) * Nat.factorial (127 - j) :=
+                  by
+                  have harg : 128 - j = (127 - j) + 1 := by omega
+                  rw [harg, Nat.factorial_succ]
+                have hright : Nat.factorial (129 + j) = (129 + j) * Nat.factorial (128 + j) :=
+                  by
+                  have harg : 129 + j = (128 + j) + 1 := by omega
+                  simpa only [harg] using (Nat.factorial_succ (128 + j))
+                have hstep :
+                  Nat.factorial (128 - j) * Nat.factorial (128 + j) ≤
+                    Nat.factorial (127 - j) * Nat.factorial (129 + j) :=
+                  by
+                  rw [hleft, hright]
+                  have hcoef : 128 - j ≤ 129 + j := by omega
+                  calc
+                    ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                        (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                      by ring
+                    _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) := (Nat.mul_le_mul_left _ hcoef)
+                    _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring
+                rw [show 128 - (j + 1) = 127 - j by omega, show 128 + (j + 1) = 129 + j by omega]
+                exact (ih (by omega)).trans hstep
+            [Elab.step] [0.302153] ✅️ 
+                  have hjlt : j < 128 := by omega
+                  have hleft : Nat.factorial (128 - j) = (128 - j) * Nat.factorial (127 - j) :=
+                    by
+                    have harg : 128 - j = (127 - j) + 1 := by omega
+                    rw [harg, Nat.factorial_succ]
+                  have hright : Nat.factorial (129 + j) = (129 + j) * Nat.factorial (128 + j) :=
+                    by
+                    have harg : 129 + j = (128 + j) + 1 := by omega
+                    simpa only [harg] using (Nat.factorial_succ (128 + j))
+                  have hstep :
+                    Nat.factorial (128 - j) * Nat.factorial (128 + j) ≤
+                      Nat.factorial (127 - j) * Nat.factorial (129 + j) :=
+                    by
+                    rw [hleft, hright]
+                    have hcoef : 128 - j ≤ 129 + j := by omega
+                    calc
+                      ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                          (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                        by ring
+                      _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                        (Nat.mul_le_mul_left _ hcoef)
+                      _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring
+                  rw [show 128 - (j + 1) = 127 - j by omega, show 128 + (j + 1) = 129 + j by omega]
+                  exact (ih (by omega)).trans hstep
+              [Elab.step] [0.114117] ✅️ have hstep :
+                    Nat.factorial (128 - j) * Nat.factorial (128 + j) ≤
+                      Nat.factorial (127 - j) * Nat.factorial (129 + j) :=
+                    by
+                    rw [hleft, hright]
+                    have hcoef : 128 - j ≤ 129 + j := by omega
+                    calc
+                      ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                          (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                        by ring
+                      _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                        (Nat.mul_le_mul_left _ hcoef)
+                      _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring
+                [Elab.step] [0.114015] ✅️ focus
+                      refine
+                        no_implicit_lambda%
+                          (have hstep :
+                            Nat.factorial (128 - j) * Nat.factorial (128 + j) ≤
+                              Nat.factorial (127 - j) * Nat.factorial (129 + j) :=
+                            ?body✝;
+                          ?_)
+                      case body✝ =>
+                        with_annotate_state"by"
+                          ( rw [hleft, hright]
+                            have hcoef : 128 - j ≤ 129 + j := by omega
+                            calc
+                              ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                                  (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                                by ring
+                              _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                                (Nat.mul_le_mul_left _ hcoef)
+                              _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring)
+                  [Elab.step] [0.113990] ✅️ 
+                        refine
+                          no_implicit_lambda%
+                            (have hstep :
+                              Nat.factorial (128 - j) * Nat.factorial (128 + j) ≤
+                                Nat.factorial (127 - j) * Nat.factorial (129 + j) :=
+                              ?body✝;
+                            ?_)
+                        case body✝ =>
+                          with_annotate_state"by"
+                            ( rw [hleft, hright]
+                              have hcoef : 128 - j ≤ 129 + j := by omega
+                              calc
+                                ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                                    (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                                  by ring
+                                _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                                  (Nat.mul_le_mul_left _ hcoef)
+                                _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring)
+                    [Elab.step] [0.113975] ✅️ 
+                          refine
+                            no_implicit_lambda%
+                              (have hstep :
+                                Nat.factorial (128 - j) * Nat.factorial (128 + j) ≤
+                                  Nat.factorial (127 - j) * Nat.factorial (129 + j) :=
+                                ?body✝;
+                              ?_)
+                          case body✝ =>
+                            with_annotate_state"by"
+                              ( rw [hleft, hright]
+                                have hcoef : 128 - j ≤ 129 + j := by omega
+                                calc
+                                  ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                                      (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                                    by ring
+                                  _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                                    (Nat.mul_le_mul_left _ hcoef)
+                                  _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring)
+                      [Elab.step] [0.101412] ✅️ case body✝ =>
+                            with_annotate_state"by"
+                              ( rw [hleft, hright]
+                                have hcoef : 128 - j ≤ 129 + j := by omega
+                                calc
+                                  ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                                      (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                                    by ring
+                                  _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                                    (Nat.mul_le_mul_left _ hcoef)
+                                  _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring)
+                        [Elab.step] [0.101288] ✅️ with_annotate_state"by"
+                                ( rw [hleft, hright]
+                                  have hcoef : 128 - j ≤ 129 + j := by omega
+                                  calc
+                                    ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                                        (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                                      by ring
+                                    _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                                      (Nat.mul_le_mul_left _ hcoef)
+                                    _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring)
+                          [Elab.step] [0.101244] ✅️ with_annotate_state"by"
+                                  ( rw [hleft, hright]
+                                    have hcoef : 128 - j ≤ 129 + j := by omega
+                                    calc
+                                      ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                                          (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                                        by ring
+                                      _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                                        (Nat.mul_le_mul_left _ hcoef)
+                                      _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring)
+                            [Elab.step] [0.101229] ✅️ with_annotate_state"by"
+                                  ( rw [hleft, hright]
+                                    have hcoef : 128 - j ≤ 129 + j := by omega
+                                    calc
+                                      ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                                          (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                                        by ring
+                                      _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                                        (Nat.mul_le_mul_left _ hcoef)
+                                      _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring)
+                              [Elab.step] [0.101209] ✅️ (
+                                    rw [hleft, hright]
+                                    have hcoef : 128 - j ≤ 129 + j := by omega
+                                    calc
+                                      ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                                          (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                                        by ring
+                                      _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                                        (Nat.mul_le_mul_left _ hcoef)
+                                      _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring)
+                                [Elab.step] [0.101191] ✅️ 
+                                      rw [hleft, hright]
+                                      have hcoef : 128 - j ≤ 129 + j := by omega
+                                      calc
+                                        ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                                            (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                                          by ring
+                                        _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                                          (Nat.mul_le_mul_left _ hcoef)
+                                        _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring
+                                  [Elab.step] [0.101166] ✅️ 
+                                        rw [hleft, hright]
+                                        have hcoef : 128 - j ≤ 129 + j := by omega
+                                        calc
+                                          ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                                              (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                                            by ring
+                                          _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                                            (Nat.mul_le_mul_left _ hcoef)
+                                          _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring
+/home/thlinux/worktrees/geometry-of-numbers-c5-finite-c2-certification/research/native-moving-schur-sigma/SigmaRationalInterpolation.lean:232:57: error: unsolved goals
+n : ℕ
+hn : 0 < n
+⊢ ∑ k ∈ range n, ((↑k + 1) ^ 2)⁻¹ = ∑ x ∈ range (n + 1 - 1), ((↑x + 1) ^ 2)⁻¹
+[Elab.async] [0.583605] ✅️ elaborating proof of _private.SigmaRationalInterpolation.0.CarrySigmaObstruction.c5_inv_sq_sum_range_le
+  [Elab.definition.value] [0.579403] ❌️ _private.SigmaRationalInterpolation.0.CarrySigmaObstruction.c5_inv_sq_sum_range_le
+    [Elab.step] [0.578571] ✅️ 
+          have hsum : (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) = 1 + ∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹ :=
+            by
+            have hIco : (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) = ∑ i ∈ Finset.Ico 1 (n + 1), ((i : ℚ) ^ 2)⁻¹ :=
+              by
+              rw [Finset.sum_Ico_eq_sum_range]
+              simp only [Nat.cast_add, Nat.cast_one, add_comm]
+            have hset : Finset.Ico 1 (n + 1) = insert 1 (Finset.Ioc 1 n) :=
+              by
+              ext i
+              simp only [Finset.mem_Ico, Finset.mem_insert, Finset.mem_Ioc]
+              omega
+            rw [hIco, hset, Finset.sum_insert]
+            · norm_num
+            · simp
+          rw [hsum]
+          have htail := sum_Ioc_inv_sq_le_sub (α := ℚ) (k := 1) (n := n) (by norm_num) (by omega)
+          have htail' : (∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹) ≤ 1 - (n : ℚ)⁻¹ := by simpa using htail
+          calc
+            1 + ∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹ = (∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹) + 1 := by ring
+            _ ≤ (1 - (n : ℚ)⁻¹) + 1 := (add_le_add_left htail' (1 : ℚ))
+            _ = 1 + (1 - (n : ℚ)⁻¹) := by ring
+            _ = 2 - (n : ℚ)⁻¹ := by ring
+      [Elab.step] [0.578539] ✅️ 
+            have hsum : (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) = 1 + ∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹ :=
+              by
+              have hIco : (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) = ∑ i ∈ Finset.Ico 1 (n + 1), ((i : ℚ) ^ 2)⁻¹ :=
+                by
+                rw [Finset.sum_Ico_eq_sum_range]
+                simp only [Nat.cast_add, Nat.cast_one, add_comm]
+              have hset : Finset.Ico 1 (n + 1) = insert 1 (Finset.Ioc 1 n) :=
+                by
+                ext i
+                simp only [Finset.mem_Ico, Finset.mem_insert, Finset.mem_Ioc]
+                omega
+              rw [hIco, hset, Finset.sum_insert]
+              · norm_num
+              · simp
+            rw [hsum]
+            have htail := sum_Ioc_inv_sq_le_sub (α := ℚ) (k := 1) (n := n) (by norm_num) (by omega)
+            have htail' : (∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹) ≤ 1 - (n : ℚ)⁻¹ := by simpa using htail
+            calc
+              1 + ∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹ = (∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹) + 1 := by ring
+              _ ≤ (1 - (n : ℚ)⁻¹) + 1 := (add_le_add_left htail' (1 : ℚ))
+              _ = 1 + (1 - (n : ℚ)⁻¹) := by ring
+              _ = 2 - (n : ℚ)⁻¹ := by ring
+        [Elab.step] [0.292997] ✅️ have hsum :
+              (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) = 1 + ∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹ :=
+              by
+              have hIco : (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) = ∑ i ∈ Finset.Ico 1 (n + 1), ((i : ℚ) ^ 2)⁻¹ :=
+                by
+                rw [Finset.sum_Ico_eq_sum_range]
+                simp only [Nat.cast_add, Nat.cast_one, add_comm]
+              have hset : Finset.Ico 1 (n + 1) = insert 1 (Finset.Ioc 1 n) :=
+                by
+                ext i
+                simp only [Finset.mem_Ico, Finset.mem_insert, Finset.mem_Ioc]
+                omega
+              rw [hIco, hset, Finset.sum_insert]
+              · norm_num
+              · simp
+          [Elab.step] [0.292950] ✅️ focus
+                refine
+                  no_implicit_lambda%
+                    (have hsum :
+                      (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) = 1 + ∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹ := ?body✝;
+                    ?_)
+                case body✝ =>
+                  with_annotate_state"by"
+                    ( have hIco :
+                        (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) = ∑ i ∈ Finset.Ico 1 (n + 1), ((i : ℚ) ^ 2)⁻¹ :=
+                        by
+                        rw [Finset.sum_Ico_eq_sum_range]
+                        simp only [Nat.cast_add, Nat.cast_one, add_comm]
+                      have hset : Finset.Ico 1 (n + 1) = insert 1 (Finset.Ioc 1 n) :=
+                        by
+                        ext i
+                        simp only [Finset.mem_Ico, Finset.mem_insert, Finset.mem_Ioc]
+                        omega
+                      rw [hIco, hset, Finset.sum_insert]
+                      · norm_num
+                      · simp)
+            [Elab.step] [0.292916] ✅️ 
+                  refine
+                    no_implicit_lambda%
+                      (have hsum :
+                        (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) = 1 + ∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹ :=
+                        ?body✝;
+                      ?_)
+                  case body✝ =>
+                    with_annotate_state"by"
+                      ( have hIco :
+                          (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) = ∑ i ∈ Finset.Ico 1 (n + 1), ((i : ℚ) ^ 2)⁻¹ :=
+                          by
+                          rw [Finset.sum_Ico_eq_sum_range]
+                          simp only [Nat.cast_add, Nat.cast_one, add_comm]
+                        have hset : Finset.Ico 1 (n + 1) = insert 1 (Finset.Ioc 1 n) :=
+                          by
+                          ext i
+                          simp only [Finset.mem_Ico, Finset.mem_insert, Finset.mem_Ioc]
+                          omega
+                        rw [hIco, hset, Finset.sum_insert]
+                        · norm_num
+                        · simp)
+              [Elab.step] [0.292879] ✅️ 
+                    refine
+                      no_implicit_lambda%
+                        (have hsum :
+                          (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) = 1 + ∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹ :=
+                          ?body✝;
+                        ?_)
+                    case body✝ =>
+                      with_annotate_state"by"
+                        ( have hIco :
+                            (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) = ∑ i ∈ Finset.Ico 1 (n + 1), ((i : ℚ) ^ 2)⁻¹ :=
+                            by
+                            rw [Finset.sum_Ico_eq_sum_range]
+                            simp only [Nat.cast_add, Nat.cast_one, add_comm]
+                          have hset : Finset.Ico 1 (n + 1) = insert 1 (Finset.Ioc 1 n) :=
+                            by
+                            ext i
+                            simp only [Finset.mem_Ico, Finset.mem_insert, Finset.mem_Ioc]
+                            omega
+                          rw [hIco, hset, Finset.sum_insert]
+                          · norm_num
+                          · simp)
+                [Elab.step] [0.255574] ✅️ case body✝ =>
+                      with_annotate_state"by"
+                        ( have hIco :
+                            (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) = ∑ i ∈ Finset.Ico 1 (n + 1), ((i : ℚ) ^ 2)⁻¹ :=
+                            by
+                            rw [Finset.sum_Ico_eq_sum_range]
+                            simp only [Nat.cast_add, Nat.cast_one, add_comm]
+                          have hset : Finset.Ico 1 (n + 1) = insert 1 (Finset.Ioc 1 n) :=
+                            by
+                            ext i
+                            simp only [Finset.mem_Ico, Finset.mem_insert, Finset.mem_Ioc]
+                            omega
+                          rw [hIco, hset, Finset.sum_insert]
+                          · norm_num
+                          · simp)
+                  [Elab.step] [0.255272] ✅️ with_annotate_state"by"
+                          ( have hIco :
+                              (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) =
+                                ∑ i ∈ Finset.Ico 1 (n + 1), ((i : ℚ) ^ 2)⁻¹ :=
+                              by
+                              rw [Finset.sum_Ico_eq_sum_range]
+                              simp only [Nat.cast_add, Nat.cast_one, add_comm]
+                            have hset : Finset.Ico 1 (n + 1) = insert 1 (Finset.Ioc 1 n) :=
+                              by
+                              ext i
+                              simp only [Finset.mem_Ico, Finset.mem_insert, Finset.mem_Ioc]
+                              omega
+                            rw [hIco, hset, Finset.sum_insert]
+                            · norm_num
+                            · simp)
+                    [Elab.step] [0.255244] ✅️ with_annotate_state"by"
+                            ( have hIco :
+                                (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) =
+                                  ∑ i ∈ Finset.Ico 1 (n + 1), ((i : ℚ) ^ 2)⁻¹ :=
+                                by
+                                rw [Finset.sum_Ico_eq_sum_range]
+                                simp only [Nat.cast_add, Nat.cast_one, add_comm]
+                              have hset : Finset.Ico 1 (n + 1) = insert 1 (Finset.Ioc 1 n) :=
+                                by
+                                ext i
+                                simp only [Finset.mem_Ico, Finset.mem_insert, Finset.mem_Ioc]
+                                omega
+                              rw [hIco, hset, Finset.sum_insert]
+                              · norm_num
+                              · simp)
+                      [Elab.step] [0.255209] ✅️ with_annotate_state"by"
+                            ( have hIco :
+                                (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) =
+                                  ∑ i ∈ Finset.Ico 1 (n + 1), ((i : ℚ) ^ 2)⁻¹ :=
+                                by
+                                rw [Finset.sum_Ico_eq_sum_range]
+                                simp only [Nat.cast_add, Nat.cast_one, add_comm]
+                              have hset : Finset.Ico 1 (n + 1) = insert 1 (Finset.Ioc 1 n) :=
+                                by
+                                ext i
+                                simp only [Finset.mem_Ico, Finset.mem_insert, Finset.mem_Ioc]
+                                omega
+                              rw [hIco, hset, Finset.sum_insert]
+                              · norm_num
+                              · simp)
+                        [Elab.step] [0.255179] ✅️ (
+                              have hIco :
+                                (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) =
+                                  ∑ i ∈ Finset.Ico 1 (n + 1), ((i : ℚ) ^ 2)⁻¹ :=
+                                by
+                                rw [Finset.sum_Ico_eq_sum_range]
+                                simp only [Nat.cast_add, Nat.cast_one, add_comm]
+                              have hset : Finset.Ico 1 (n + 1) = insert 1 (Finset.Ioc 1 n) :=
+                                by
+                                ext i
+                                simp only [Finset.mem_Ico, Finset.mem_insert, Finset.mem_Ioc]
+                                omega
+                              rw [hIco, hset, Finset.sum_insert]
+                              · norm_num
+                              · simp)
+                          [Elab.step] [0.255146] ✅️ 
+                                have hIco :
+                                  (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) =
+                                    ∑ i ∈ Finset.Ico 1 (n + 1), ((i : ℚ) ^ 2)⁻¹ :=
+                                  by
+                                  rw [Finset.sum_Ico_eq_sum_range]
+                                  simp only [Nat.cast_add, Nat.cast_one, add_comm]
+                                have hset : Finset.Ico 1 (n + 1) = insert 1 (Finset.Ioc 1 n) :=
+                                  by
+                                  ext i
+                                  simp only [Finset.mem_Ico, Finset.mem_insert, Finset.mem_Ioc]
+                                  omega
+                                rw [hIco, hset, Finset.sum_insert]
+                                · norm_num
+                                · simp
+                            [Elab.step] [0.255113] ✅️ 
+                                  have hIco :
+                                    (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) =
+                                      ∑ i ∈ Finset.Ico 1 (n + 1), ((i : ℚ) ^ 2)⁻¹ :=
+                                    by
+                                    rw [Finset.sum_Ico_eq_sum_range]
+                                    simp only [Nat.cast_add, Nat.cast_one, add_comm]
+                                  have hset : Finset.Ico 1 (n + 1) = insert 1 (Finset.Ioc 1 n) :=
+                                    by
+                                    ext i
+                                    simp only [Finset.mem_Ico, Finset.mem_insert, Finset.mem_Ioc]
+                                    omega
+                                  rw [hIco, hset, Finset.sum_insert]
+                                  · norm_num
+                                  · simp
+        [Elab.step] [0.153074] ✅️ have htail' : (∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹) ≤ 1 - (n : ℚ)⁻¹ := by
+              simpa using htail
+          [Elab.step] [0.153019] ✅️ focus
+                refine
+                  no_implicit_lambda%
+                    (have htail' : (∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹) ≤ 1 - (n : ℚ)⁻¹ := ?body✝;
+                    ?_)
+                case body✝ => with_annotate_state"by" (simpa using htail)
+            [Elab.step] [0.152988] ✅️ 
+                  refine
+                    no_implicit_lambda%
+                      (have htail' : (∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹) ≤ 1 - (n : ℚ)⁻¹ := ?body✝;
+                      ?_)
+                  case body✝ => with_annotate_state"by" (simpa using htail)
+              [Elab.step] [0.152967] ✅️ 
+                    refine
+                      no_implicit_lambda%
+                        (have htail' : (∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹) ≤ 1 - (n : ℚ)⁻¹ := ?body✝;
+                        ?_)
+                    case body✝ => with_annotate_state"by" (simpa using htail)
+                [Elab.step] [0.118809] ✅️ case body✝ => with_ann
+Perfil encerrou a primeira falha de `c5_inv_sq_sum_range_le`: `sum_Ico_eq_sum_range` reduz o comprimento para `n + 1 - 1`, e a simplificação simbólica não o reduzia a `n`. Acrescentada `Nat.add_sub_cancel`; as demais partes da prova avançaram sem erro reportado nesta amostra. Sem `.olean`; perfil interrompido para corrigir.

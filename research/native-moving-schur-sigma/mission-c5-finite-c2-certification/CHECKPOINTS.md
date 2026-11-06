@@ -124,3 +124,11 @@ O checkpoint atual registra um lema algébrico parcial de O4. A inclusão da fon
 - Atualizados `SESSION_STATE.md`, `RESTART_HERE.md`, `OPEN_OBLIGATIONS.md`, `VALIDATION.md`, `pins-and-sha256.txt` e este histórico para registrar o merge da prova estrutural.
 - Merge do checkpoint de estado na `main`: `8f8b9da2b8c1e8f3b8d1290608c8b2abffe9c285`.
 - Nenhuma prova numérica nova foi incluída; O4 permanece aberta.
+
+## 2026-11-06 — WIP grau um, validação incompleta
+
+- Base confirmada: geometry `origin/main` em `c736dc073091e6184dbb673b622b6b91759accac` (PR #183); branch local `codex/c5-degree1-weight-bound-20261106`.
+- A tentativa simbólica do limite de grau um substitui `native_decide` por identidades de produtos fatoriais e uma cota de série. O build integral de `SigmaRationalInterpolation.lean` não concluiu; não há `.olean` novo nem auditoria aprovada das raízes novas.
+- `c5-sum-bound-isolated.lean` compilou isoladamente, mas só valida o lema auxiliar. A saída antiga com axiomas `_native.native_decide` foi separada em `interpolation-audit-degree1-native-decide-rejected.log`; o log aprovado anterior de 14 raízes foi restaurado.
+- Tentativas, traces comprimidos, pins, hashes e comando de retomada estão em `evidence/rational-boxes/degree1-retry-checkpoint.md` e nos logs associados.
+- Não abrir PR desta prova até build integral, auditoria transitiva das raízes novas e hashes de source/olean passarem. O4 permanece aberta.

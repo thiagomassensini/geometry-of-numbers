@@ -1,0 +1,63 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-finite-c2-certification/research/native-moving-schur-sigma/SigmaRationalInterpolation.lean:239:12: error: Type mismatch
+  mul_le_mul_of_nonneg_right
+    (le_of_not_gt fun a =>
+      Mathlib.Tactic.Linarith.lt_irrefl
+        (Eq.mp
+          (congrArg (fun _a => _a < 0)
+            (Mathlib.Tactic.Ring.of_eq
+              (Mathlib.Tactic.Ring.Common.sub_congr
+                (Mathlib.Tactic.Ring.Common.inv_congr
+                  (Mathlib.Tactic.Ring.Common.atom_pf (↑n) rfl
+                    (Eq.mpr
+                      (id
+                        (congrArg (fun _a => ↑n ^ Nat.rawCast 1 * Nat.rawCast 1 = ↑n ^ Nat.rawCast 1 * _a)
+                          (Eq.symm rfl)))
+                      (Eq.refl (↑n ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                  (Mathlib.Tactic.Ring.Common.inv_single
+                    (Mathlib.Tactic.Ring.Common.inv_mul (Eq.refl (↑n)⁻¹)
+                      (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                        (Mathlib.Meta.NormNum.IsNNRat.to_isNat
+                          (Mathlib.Meta.NormNum.isNNRat_inv_pos
+                            (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.IsNat.of_raw ℚ 1)))))
+                      (Eq.symm
+                          (Eq.mpr
+                            (id
+                              (congrArg (fun _a => (↑n)⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1 = (↑n)⁻¹ ^ Nat.rawCast 1 * _a)
+                                (Eq.symm rfl)))
+                            (Eq.refl ((↑n)⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1))) ▸
+                        Mathlib.Tactic.Ring.Common.mul_pf_right (↑n)⁻¹ (Nat.rawCast 1)
+                          (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                            (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul) (Mathlib.Meta.NormNum.IsNat.of_raw ℚ 1)
+                              (Mathlib.Meta.NormNum.IsNat.of_raw ℚ 1) (Eq.refl 1)))))))
+                (Mathlib.Tactic.Ring.Common.inv_congr
+                  (Mathlib.Tactic.Ring.Common.atom_pf (↑n) rfl
+                    (Eq.mpr
+                      (id
+                        (congrArg (fun _a => ↑n ^ Nat.rawCast 1 * Nat.rawCast 1 = ↑n ^ Nat.rawCast 1 * _a)
+                          (Eq.symm rfl)))
+                      (Eq.refl (↑n ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                  (Mathlib.Tactic.Ring.Common.inv_single
+                    (Mathlib.Tactic.Ring.Common.inv_mul (Eq.refl (↑n)⁻¹)
+                      (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                        (Mathlib.Meta.NormNum.IsNNRat.to_isNat
+                          (Mathlib.Meta.NormNum.isNNRat_inv_pos
+                            (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.IsNat.of_raw ℚ 1)))))
+                      (Eq.symm
+                          (Eq.mpr
+                            (id
+                              (congrArg (fun _a => (↑n)⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1 = (↑n)⁻¹ ^ Nat.rawCast 1 * _a)
+                                (Eq.symm rfl)))
+                            (Eq.refl ((↑n)⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1))) ▸
+                        Mathlib.Tactic.Ring.Common.mul_pf_right (↑n)⁻¹ (Nat.rawCast 1)
+                          (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                            (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul) (Mathlib.Meta.NormNum.IsNat.of_raw ℚ 1)
+                              (Mathlib.Meta.NormNum.IsNat.of_raw ℚ 1) (Eq.refl 1)))))))
+                (Mathlib.Tactic.Ring.Common.sub_pf
+                  (Mathlib.Tactic.Ring.Common.neg_add
+                    (Mathlib.Tactic.Ring.Common.neg_mul (↑n)⁻¹ (Nat.rawCast 1)
+                      (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                        (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                          (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℚ 1))
+                          (Eq.refl (Int.negOfNat 1)))))
+                    Mathlib.Tactic.Ring.Common.neg_zero)
+            
