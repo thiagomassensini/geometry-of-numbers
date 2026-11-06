@@ -1,5 +1,16 @@
 # C5 — validação
 
+## Avaliação da fonte C2 nos nós — ainda sem validação
+
+A auditoria da rota confirma a reescrita exata da característica original para
+`riemannZeta` e identifica `HardyFirstZero.zeta_em4_error` como o melhor resto
+formal de Euler–Maclaurin encontrado na revisão pinada. Ele é de ordem 4 e sua
+precisão em `N=100` não basta para incluir os coeficientes nas caixas O3. Ainda
+faltam um resto de ordem alta para zeta/Hurwitz, sua avaliação em intervalos
+Lean e a avaliação racional intervalar de `gammaFinite 3072 620`. Nenhuma caixa
+de coeficiente foi validada por este diagnóstico. Detalhes e pins em
+`evidence/rational-boxes/c5-original-source-zeta-route-audit.md`.
+
 ## Faixa racional exata de π — PASSOU e integrada pela PR #193
 
 `SigmaC5PiBounds.lean` prova o erro da série alternada de `Real.arctan` para

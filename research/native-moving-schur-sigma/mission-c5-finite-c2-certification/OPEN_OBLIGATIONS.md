@@ -32,6 +32,17 @@ Os sinais O3 permanecem condicionais e C5 não está concluída. Este snapshot
 substitui a afirmação anterior de que a cota analítica ainda faltava; as
 seções seguintes preservam o histórico dos checkpoints anteriores.
 
+**Primeiro gargalo numérico localizado:** a rota exata pode reescrever o
+escalar nativo como `riemannZeta` no `genuineCriticalStrip`, mas o resultado
+Euler–Maclaurin encontrado na revisão pinada é apenas
+`HardyFirstZero.zeta_em4_error`, com resto de ordem 4. Em `N=100`, o limite
+uniforme de contorno é cerca de `1.351·10⁻⁸`, insuficiente para as caixas O3.
+Falta formalizar um resto de ordem alta para zeta/Hurwitz e avaliá-lo por
+intervalos Lean; o avaliador Python de ordem 80 não fornece essa prova. Também
+falta avaliar em caixas formais a soma de `gammaFinite 3072 620`, embora seu
+erro analítico `10⁻²⁵⁹` já esteja provado. Registro reproduzível em
+`evidence/rational-boxes/c5-original-source-zeta-route-audit.md`.
+
 ## Snapshot histórico — após a validação local dos pesos 2–14
 
 Os pesos escalados de todos os graus `0..14` estão provados em Lean: grau zero
