@@ -22,7 +22,7 @@ O avaliador foi conferido estruturalmente e as três reproduções passaram, mas
 
 ## O5 — composição, build, axiomas e publicação — PARCIAL
 
-A Fase 1 foi compilada/auditada; o checkpoint inicial está publicado na branch C5. Ainda falta PR e merge do transporte algébrico, assim como o build/auditoria das fases O3/O4 e dos teoremas finais.
+A Fase 1 foi compilada/auditada e integrada pela PR #165, merge `75691edf0e74cc643f098213f60b684476132175`. Ainda faltam o build/auditoria das fases O3/O4 e dos teoremas finais.
 
 ## Classificação honesta se O4 continuar em aberto
 
