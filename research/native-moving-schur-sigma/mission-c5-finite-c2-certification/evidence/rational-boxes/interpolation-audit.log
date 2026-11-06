@@ -1,0 +1,6 @@
+'CarrySigmaObstruction.c5InterpolationNode_injOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5InterpolationPolynomial_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5_interpolate_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5InterpolationPolynomial_coeff_of_degree_lt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

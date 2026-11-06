@@ -84,9 +84,11 @@ build e auditoria de dez raízes usam apenas axiomas padrão (`propext`,
 `Classical.choice`, `Quot.sound`).
 
 A prova `gamma_finite_3072_620_error`, integrada pela PR #175, reduz o erro
-uniforme para `10⁻²⁵⁹`, com auditoria de doze raízes. Uma interpolação racional de 129 pontos
-foi analisada com frações exatas, mas ainda não foi formalizada nem aplicada à
-fonte.
+uniforme para `10⁻²⁵⁹`, com auditoria de doze raízes. `SigmaRationalInterpolation.lean`
+formaliza agora a identidade algébrica dos 129 nós: recupera exatamente
+polinômios racionais de grau menor que 129 e expressa cada coeficiente como
+soma ponderada das avaliações nodais. Os limites numéricos dos pesos e a
+aplicação dessa identidade à fonte C2 ainda estão pendentes.
 
 **Primeiro lema C5 O4 ainda ausente:** caixas racionais estreitas para
 `gammaFinite 3072 620 z` nos valores racionais de `z` usados na interpolação.
@@ -110,3 +112,14 @@ theorem completedSigma_first_negative_window_at_01 :
 ```
 
 A inclusão de `completedSigmaDisplacedSourceCoefficient d n` nas caixas racionais é o gate entre o cálculo condicional e esses teoremas incondicionais. Não usar uma sequência espectral, pencil ou modelo de polos como substituto.
+
+## Identidade algébrica dos 129 nós — provada; limites O4 ainda abertos
+
+Em `SigmaRationalInterpolation.lean`:
+
+- `c5InterpolationNode_injOn` prova que os nós `j²` são distintos em `0≤j≤128`.
+- `c5_interpolate_polynomial` prova a reconstrução exata de qualquer `p : ℚ[X]` com `degree p < 129` a partir das avaliações nodais.
+- `c5InterpolationPolynomial_coeff` e `c5InterpolationPolynomial_coeff_of_degree_lt` dão a fórmula explícita dos coeficientes por somas de Lagrange.
+- `c5InterpolationWeight` e `c5InterpolationWeightSum` representam os pesos escalados correspondentes a `t_j=j/100000`. Nenhum limite numérico para essas somas está provado ainda.
+
+As quatro raízes foram compiladas em Lean 4.32 e auditadas. Os comandos e hashes estão em `evidence/rational-boxes/VALIDATION.md` e `evidence/rational-boxes/source-and-olean-sha256.txt`.

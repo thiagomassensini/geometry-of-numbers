@@ -225,8 +225,54 @@ Ambos comandos terminaram com código 0; as doze raízes da auditoria dependem
 somente de `propext`, `Classical.choice` e `Quot.sound`.
 
 A rota de interpolação em 129 nós racionais está descrita pela análise
-exploratória reprodutível `analyze_rational_interpolation.py`. As desigualdades
-que ela reporta são verificadas com `fractions.Fraction` exato, mas ainda não
-foram reproduzidas no kernel Lean. Em particular, o limite analítico
-`|completedSigmaDensity d t|≤10^100` em `|t|≤2/5` ainda é uma obrigação, não
-uma hipótese provada.
+exploratória reprodutível `analyze_rational_interpolation.py`. A identidade
+algébrica de Lagrange agora está formalizada em `SigmaRationalInterpolation.lean`:
+o módulo prova a reconstrução exata para polinômios de grau menor que 129 e a
+expressão de seus coeficientes como somas ponderadas. Ainda não foram
+formalizados os limites numéricos dos pesos calculados com `fractions.Fraction`.
+Em particular, o limite analítico `|completedSigmaDensity d t|≤10^100` em
+`|t|≤2/5` continua sendo uma obrigação, não uma hipótese provada.
+
+### Identidade algébrica da interpolação — Lean 4.32
+
+O módulo `research/native-moving-schur-sigma/SigmaRationalInterpolation.lean`
+define os nós `j²` para `0≤j≤128`, prova sua injetividade e os teoremas
+`c5InterpolationPolynomial_coeff`, `c5_interpolate_polynomial` e
+`c5InterpolationPolynomial_coeff_of_degree_lt`. Os pesos escalados aparecem
+como `c5InterpolationWeight` e `c5InterpolationWeightSum`; nenhuma desigualdade
+para eles foi provada nesta etapa.
+
+Build limpo, executado a partir da raiz do checkout geometry C5:
+
+```bash
+C5_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105
+C5_CARRY_ROOT=/home/thlinux/worktrees/carry-sigma-c2-pinned-045369
+C5_SOURCE_ROOT=$PWD/research/native-moving-schur-sigma
+C5_OUTPUT=$PWD/.lake/build/research/native-moving-schur-sigma/c5-interpolation-clean-20261106b
+C5_LEAN_BIN=$(cd "$C5_REFERENCE_ROOT" && elan which lean)
+SIGMA_REFERENCE_ROOT=$C5_REFERENCE_ROOT
+CARRY_LEAN_ROOT=$C5_CARRY_ROOT
+SIGMA_OUTPUT_DIR=$C5_OUTPUT
+export SIGMA_REFERENCE_ROOT CARRY_LEAN_ROOT SIGMA_OUTPUT_DIR
+bash "$C5_SOURCE_ROOT/compile_sigma_pade.sh" SigmaRationalInterpolation \
+  > "$C5_SOURCE_ROOT/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-interpolation-build.log" 2>&1
+```
+
+Auditoria transitiva e verificador fail-closed:
+
+```bash
+C5_EVIDENCE=$C5_SOURCE_ROOT/mission-c5-finite-c2-certification/evidence/rational-boxes
+C5_MATHLIB_PATH=$(cd "$C5_REFERENCE_ROOT" && lake env printenv LEAN_PATH)
+export LEAN_PATH="$C5_OUTPUT:$C5_SOURCE_ROOT:$C5_REFERENCE_ROOT/.lake/build/lib/lean:$C5_MATHLIB_PATH"
+"$C5_LEAN_BIN" -DwarningAsError=true --root="$C5_EVIDENCE" \
+  -o "$C5_OUTPUT/interpolation-audit.olean" \
+  "$C5_EVIDENCE/interpolation-audit.lean" \
+  > "$C5_EVIDENCE/interpolation-audit.log" 2>&1
+python3 "$C5_SOURCE_ROOT/check_c5_interpolation_axioms.py" \
+  "$C5_EVIDENCE/interpolation-audit.log" \
+  > "$C5_EVIDENCE/interpolation-audit-check.log"
+```
+
+O build saiu sem warnings nem erros. Quatro raízes foram auditadas, todas com
+apenas `propext`, `Classical.choice` e `Quot.sound`; o checker aceitou as quatro.
+As fontes e os `.olean` têm hashes em `source-and-olean-sha256.txt`.

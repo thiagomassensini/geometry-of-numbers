@@ -11,7 +11,7 @@
 
 ## Próximo checkpoint
 
-O checkpoint de build e auditoria da O3 está em `evidence/rational-boxes/`. Após integrar essa etapa, o próximo checkpoint deve registrar a investigação/prova de O4; não misturar os caches/logs das outras worktrees.
+O checkpoint atual registra um lema algébrico parcial de O4. A inclusão da fonte nas caixas permanece aberta; consulte `RESTART_HERE.md` e não misture caches/logs das outras worktrees.
 
 ## 2026-11-06 — transporte algébrico provado, antes do PR
 
@@ -83,3 +83,11 @@ O checkpoint de build e auditoria da O3 está em `evidence/rational-boxes/`. Ap�
 - PR #169 publicou os comandos reproduzíveis, logs vazios de compilação, auditoria de quatro raízes e hashes do motor intervalar reutilizado.
 - Merge na `main`: `75782fb8b7fb00bd273bd99f78c337f98439e934`.
 - Esse checkpoint continua explicitamente incompleto: nenhuma inclusão de `Complex.Gamma` ou das caixas C2 foi provada; O4 segue aberta.
+
+## 2026-11-06 — identidade algébrica dos 129 nós de interpolação
+
+- `SigmaRationalInterpolation.lean` prova que os nós racionais `j²`, para `0≤j≤128`, são distintos e que a interpolação de Lagrange recupera qualquer polinômio racional de grau menor que 129 exatamente.
+- O módulo também prova a identidade coeficiente a coeficiente: cada coeficiente interpolado é a soma dos valores nodais multiplicados pelos coeficientes correspondentes das bases de Lagrange. Os pesos escalados usados na rota numérica estão definidos, mas seus limites ainda não foram provados.
+- Build Lean 4.32.0 com `warningAsError=true` passou em saída limpa. A auditoria cobre quatro raízes e encontrou apenas `propext`, `Classical.choice` e `Quot.sound`; o checker fail-closed passou.
+- Logs, comandos e hashes estão em `evidence/rational-boxes/VALIDATION.md`, `interpolation-audit*.log` e `source-and-olean-sha256.txt`.
+- O4 continua incompleta: faltam os limites Lean dos pesos, a cota analítica da densidade e a avaliação rigorosa da fonte nos pontos.
