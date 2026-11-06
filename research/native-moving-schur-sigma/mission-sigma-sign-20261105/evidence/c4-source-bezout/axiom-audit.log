@@ -1,0 +1,30 @@
+Sigma source/Bézout audit: 10 roots; 57386 type/body dependencies; standard axioms only; original displaced product and sigma jets retained
+'CarrySigmaObstruction.completedSigmaDisplacedSourceTaylorSeries_sums_to_density' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.displacedProductC_eq_completedSigmaDisplacedSource_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaDisplacedSource_coefficient_recurrence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaDisplacedSource_recurrence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaDisplacedSourceSeries_mul_moments_eq_neg_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaDisplacedSource_log_derivative_eq_moments' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaDisplacedMoment_hankel_eq_two_sigmaMatrix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaDisplacedSource_bezout_congruence_sigmaMatrix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaDisplacedSource_bezout_posSemidef_iff_sigmaMatrix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySourceBezout.sourceKernel_head_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+SigmaSourceBezoutAudit Lean 4.32.0: exit=0, elapsed=16.93 s

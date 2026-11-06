@@ -11,3 +11,7 @@
 - A bridge agora reutiliza a definição única `CarrySigmaObstruction.sigmaLineZero` de C1. Também foram removidas as duplicações de `sigmaNativeCompletionFactor_ne_zero_of_strip` e `completedNativeCharacteristicContinuation_zero_iff_zeta`.
 - C3 foi integrado pela PR #159, commit de prova `35dc14f13bd314639ce0c65daedf32b20f298667`, merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`. As janelas par (`p=2i`) e ímpar (`p=2i+1`) geram direções negativas em toda dimensão a partir de `i₀+2`, via persistência C1B. O GitHub não retornou status checks; evidências em `evidence/c3-parity/`.
 - A rota Lean 4.35 está preservada como checkpoint incompleto; não há plano de migração geral. C2/C3 estão concluídos. A lei quantitativa distância × profundidade, novos cadernos e C4 ficam no backlog posterior.
+
+## Adendo 2026-11-06 — C4
+
+C2/C3 permanecem concluídos e integrados. A etapa seguinte, C4, agora tem prova e auditoria locais em Lean 4.32: `D_d(t)=C_d(t²)`, `C_d·H_d=-C_d′` com `H_d(n)=2*completedSigmaLogJet d n`, e congruência de Bézout à `2 • sigmaMatrix` original. A publicação e integração desse checkpoint estão pendentes. Evidências em `evidence/c4-source-bezout/`.
