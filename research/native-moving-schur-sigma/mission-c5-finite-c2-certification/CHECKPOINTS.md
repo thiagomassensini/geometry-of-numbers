@@ -110,5 +110,11 @@ O checkpoint atual registra um lema algébrico parcial de O4. A inclusão da fon
 - `c5LagrangeBasis_derivative_eval_zero` expressa a derivada de cada base como soma finita de produtos. Isso fornece uma forma estrutural para tentar limitar o peso de grau um.
 - A tentativa de provar diretamente `c5InterpolationWeightSum 1 < 10^11` por expansão racional atingiu `simp failed: maximum number of steps exceeded`, mesmo com `maxSteps=500000`. Erro e comando exatos estão preservados em `evidence/rational-boxes/interpolation-weight-degree1-prototype.log`.
 - Depois de remover o lema numérico não fechado, o módulo recompilou limpo em Lean 4.32. A auditoria de 14 raízes passou; somente `propext`, `Classical.choice` e `Quot.sound` aparecem.
-- Base geometry: PR #180, merge `de95637d38d5e6d5488342cd5141b88233be6eb7`. A fórmula derivativa e o registro da tentativa ainda não foram publicados em PR própria.
+- Base geometry: PR #180, merge `de95637d38d5e6d5488342cd5141b88233be6eb7`. Naquele checkpoint, a fórmula derivativa e o registro da tentativa ainda não haviam sido publicados.
 - O limite numérico para grau um e todos os graus superiores continuam abertos; O4 não está concluída.
+
+## 2026-11-06 — PR #181 integrada: fórmula derivativa para grau um
+
+- A prova `c5Coeff_one_eq_derivative_eval_zero` e a expansão `c5LagrangeBasis_derivative_eval_zero`, mais a evidência do build/auditoria e a tentativa numérica malsucedida, foram publicadas pela PR #181.
+- Commit de prova `0a188c9d71a1a54bdf446ec753609fdde8326bc8`; merge na `main` `7460497307e7ed0ffb47ef1ac96b096e9b410472`.
+- O limite numérico dos pesos para grau um permanece aberto; os graus `2..14`, a cota da fonte e as inclusões O4 também permanecem abertos. A validação continua incompleta.
