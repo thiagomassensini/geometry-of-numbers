@@ -1,0 +1,5 @@
+8d2b0a9b4708200fbe805db24efb7ad8d0118578f038b2aa6f1d21bd807b1eb8  /home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5GammaRationalCore.lean
+110560746c87c9d4a60a82538115db82eedd110ec173bb7a0f38857eb204c908  /home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5GammaRationalCoreAudit.lean
+3d7c08e0f2398ed2068638c8c04d403463d8e395cb72253fab970b245ca5fa05  /home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/check_c5_gamma_rational_core_axioms.py
+dde5f00d767239484f50f84fd13cd62f928f9bd619bd989d72a08e11780ba044  /home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/.lake/build/research/native-moving-schur-sigma/c5-gamma-rational-core-final-clean-20261106/SigmaC5GammaRationalCore.olean
+2c36ecd02e7e98fc493f2eb39f8b21914fbf9cfaa0ddb4ef84e662f837b52d9e  /home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/.lake/build/research/native-moving-schur-sigma/c5-gamma-rational-core-final-clean-20261106/SigmaC5GammaRationalCoreAudit.olean

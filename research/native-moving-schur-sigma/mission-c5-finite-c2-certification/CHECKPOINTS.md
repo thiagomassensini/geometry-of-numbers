@@ -1,5 +1,35 @@
 # C5 — checkpoints
 
+## 2026-11-06 — reprodução das três caixas experimentais
+
+- As configurações `d=0.0495, L=0, N=1024, r/R=0.3/0.4`, `d=0.0495,
+  L=12, N=512, r/R=0.2/0.4` e `d=0.1, L=12, N=512, r/R=0.15/0.3` foram
+  executadas em uma cópia temporária do checkout Momentos, aplicando apenas o
+  patch de conversão `gmpy2.mpz`→`int` já guardado nesta missão.
+- Todas as gerações e as verificações independentes por frações racionais
+  exatas terminaram com código zero. Os sinais são `+++++++++++-`,
+  `+++++++++++-` e `+++++++++-`, respectivamente.
+- O checkpoint é experimental e condicional às caixas. A inclusão dos
+  coeficientes verdadeiros da fonte C2 não foi provada por Lean; O4/C5 segue
+  aberta. Os logs, JSONs, comandos e a falha anterior de compatibilidade estão
+  em `evidence/interval-certificate/reproduction-2026-11-06.md`.
+
+## 2026-11-06 — ponte Gamma de núcleo racional (validada localmente)
+
+- `SigmaC5GammaRationalCore.lean` expressa exatamente `gammaFinite` como o
+  produto de `T^z` por uma soma finita racional-complexa; não aproxima nem
+  arredonda essa soma sensível a cancelamento.
+- O avaliador `dirichletTermBox2` enxerra o fator exponencial sob hipóteses
+  explícitas. `gamma3072Interval_contains` usa o erro analítico
+  `gamma_finite_3072_620_error≤10^-259` para incluir a Gamma verdadeira.
+- Build Lean 4.32 com warnings como erros e auditoria fail-closed de seis
+  raízes passaram; somente `propext`, `Classical.choice` e `Quot.sound`.
+  Logs, hashes e comandos em
+  `evidence/rational-boxes/c5-gamma-rational-core-validation.md`.
+- Escopo: lema genérico, sem avaliação efetiva dos 129 nós. Ainda falta
+  formalizar zeta/Hurwitz de ordem alta, calcular caixas nodais completas e
+  provar as inclusões dos coeficientes C2 nas caixas O3. C5 continua aberta.
+
 ## 2026-11-06 — auditoria da rota zeta para a fonte original C5
 
 - Confirmada a rota Lean 4.32 sem trocar a fonte: o escalar nativo é

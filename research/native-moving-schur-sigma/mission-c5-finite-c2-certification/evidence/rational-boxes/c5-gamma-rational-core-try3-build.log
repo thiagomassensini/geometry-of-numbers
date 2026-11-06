@@ -1,0 +1,10 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5GammaRationalCore.lean:218:4: error: mod_cast has type
+  ‖Complex.Gamma (↑a + ↑b * Complex.I) - gammaFinite 3072 620 (↑a + ↑b * Complex.I)‖ ≤ 1 / ↑(10 ^ 259)
+but is expected to have type
+  ‖Complex.Gamma (↑a + ↑b * Complex.I) - gammaFinite 3072 620 (↑a + ↑b * Complex.I)‖ ≤ ↑(1 / ↑(10 ^ 259))
+'SigmaC5Gamma.ratComplexToComplex_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SigmaC5Gamma.ratComplexToComplex_inv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SigmaC5Gamma.gammaFinite_eq_rationalCore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SigmaC5Gamma.gammaFiniteInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SigmaC5Gamma.gamma3072Interval_contains' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+BUILD_EXIT=1

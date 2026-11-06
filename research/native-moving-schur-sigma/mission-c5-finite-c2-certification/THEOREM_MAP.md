@@ -1,5 +1,21 @@
 # C5 — mapa dos teoremas e obrigações
 
+## Snapshot atual — Gamma de núcleo racional compilada localmente
+
+Arquivo local: `research/native-moving-schur-sigma/SigmaC5GammaRationalCore.lean`.
+
+| Declaração | Status, hipóteses e limite |
+|---|---|
+| `SigmaC5Gamma.gammaFinite_eq_rationalCore` | PROVADO localmente: para `a,b,T∈ℚ`, `a>0`, separa `gammaFinite N T (a+bi)` em `T^(a+bi)` e soma finita exata em `ℚ+iℚ`. |
+| `SigmaC5Gamma.gammaFiniteRationalCoreInterval_contains` | PROVADO localmente: a caixa exata contém o valor racional complexo da soma. |
+| `SigmaC5Gamma.gammaFiniteInterval_contains` | PROVADO localmente, sob condições explícitas do avaliador `dirichletTermBox2`: a caixa contém a Gamma finita. |
+| `SigmaC5Gamma.gamma3072Interval_contains` | PROVADO localmente, para `1495/20000≤a≤1` e as hipóteses do avaliador: a caixa inflada por `10^-259` contém `Complex.Gamma (a+bi)`. |
+
+Build limpo e auditoria de seis raízes: somente axiomas padrão. A prova ainda
+não avalia qualquer nó concreto e não inclui os coeficientes C2 em O3; portanto
+é uma ponte analítica de O4, não um certificado final. Evidência em
+`evidence/rational-boxes/c5-gamma-rational-core-validation.md`.
+
 ## Snapshot atual — cota da fonte validada localmente
 
 `SigmaC5AnalyticBounds.lean` prova localmente
@@ -76,6 +92,12 @@ A branch de pesquisa Momentos, commit `68c9b5f0a196289e28a8e5586146707d27df6b75`
 - `d=1/10`: `+++++++++-`.
 
 Os sinais condicionais estão provados em Lean por O3. Ainda falta provar que os coeficientes da fonte estão nas caixas JSON; a origem delas usa `mpmath.iv` ainda não certificado. Ver `SESSION_STATE.md` e `evidence/interval-certificate/`.
+
+As três configurações de geração foram novamente reproduzidas em cópia
+temporária, com conversão explícita de `gmpy2.mpz` para `int`, e verificadas
+por frações exatas. Esse replay confirma os mesmos sinais condicionais, mas
+não aumenta o status formal da inclusão das caixas. Veja
+`evidence/interval-certificate/reproduction-2026-11-06.md`.
 
 ## O4 — infraestrutura formal encontrada; inclusão da fonte ainda ABERTA
 

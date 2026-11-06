@@ -1,5 +1,29 @@
 # C5 — obrigações abertas
 
+## Snapshot atual — ponte Gamma genérica validada; avaliações ainda abertas
+
+A nova ponte local `SigmaC5GammaRationalCore.lean` separa `gammaFinite` em um
+fator `T^z` certificado por `dirichletTermBox2` e um núcleo em `ℚ+iℚ` exato;
+`gamma3072Interval_contains` transporta o erro Gamma `10^-259` já provado para
+um retângulo da Gamma verdadeira. Build Lean 4.32 e auditoria de seis raízes
+passaram, só com axiomas padrão. Ela não fornece ainda extremos efetivos para
+os argumentos dos nós `w±`, nem limites da potência e tampouco caixa para
+`riemannZeta w±`. A fonte C2 e a genealogia cabeça+cauda continuam preservadas;
+as caixas O3 permanecem condicionais e C5 não está completa.
+
+Próxima obrigação matemática: obter e formalizar um resto Euler–Maclaurin/
+Hurwitz de ordem alta adequado ao domínio de `w±`, depois compor as avaliações
+de Gamma, zeta, fator de π e demais termos da expressão C2 original em cada nó.
+Detalhes do subpasso Gamma em `evidence/rational-boxes/c5-gamma-rational-core-validation.md`.
+
+As três gerações experimentais dos coeficientes foram reproduzidas numa cópia
+temporária do checkout Momentos, e as saídas passaram o verificador exato de
+frações: `+++++++++++-` em `d=99/2000` (duas configurações) e `+++++++++-` em
+`d=1/10`. Isso valida a propagação racional **dadas as caixas**, mas não prova
+que os coeficientes da fonte C2 pertençam a elas. O patch de compatibilidade,
+as saídas e os logs estão em `evidence/interval-certificate/`; o registro
+detalhado é `reproduction-2026-11-06.md`.
+
 ## Snapshot atual — após a cota analítica explícita
 
 Os pesos escalados `0..14` seguem provados e integrados, e a fonte original

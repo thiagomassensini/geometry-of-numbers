@@ -1,7 +1,29 @@
 # C5 — estado da sessão
 
 **Atualizado:** 2026-11-06
-**Status atual:** C1–C4 e O3 estão integradas. Também estão provados em Lean 4.32 os limites dos pesos escalados de graus `0..14`: grau zero `=1`, grau um `<10^11` e graus `2..14` `<10^145`. A PR #187 integrou a etapa de graus 2–14; commit de prova `6424f4334edd5c776997116403043635fa0c8f83`, merge `9f4a1b43cb2b155dfc55bf49ef77d1914210b796`. A PR #191 integrou o majorante da fonte `10^100`, merge `88a52ba3a6bda7a78b8317d892b6f7bc640c863f`; a PR #192 integrou o majorante mais forte `10^13`, commit `b122eafd10ed9b75f7e3c4c5f04c22b93697ffcc`, merge `654dbb0bd7bb7d400cf0c4cab61bea1873995db4`. O4/C5 segue aberta: faltam as avaliações certificadas nos 129 nós e a inclusão dos coeficientes C2 nas caixas.
+**Status atual:** C1–C4 e O3 estão integradas. A ponte Gamma de núcleo racional abaixo passou build limpo e auditoria local, mas ainda não está publicada. O4/C5 segue aberta: não há avaliações certificadas nos 129 nós nem inclusão dos coeficientes C2 nas caixas.
+
+**Reprodução de 2026-11-06:** as três configurações prescritas foram executadas novamente em uma cópia temporária do checkout Momentos com o patch `gmpy2.mpz`→`int` já preservado em `evidence/interval-certificate/momentos-gmpy2-compat.patch`. As inclusões numéricas experimentais foram geradas, e o verificador independente por frações racionais exatas passou: `+++++++++++-` para `d=99/2000` nas duas configurações e `+++++++++-` para `d=1/10`. Isso continua **condicional** às caixas experimentais: não certifica por Lean que os coeficientes da fonte C2 estejam nelas. Comandos, logs e limites estão em `evidence/interval-certificate/reproduction-2026-11-06.md`.
+
+## Snapshot atual — ponte Gamma de núcleo racional validada localmente
+
+`SigmaC5GammaRationalCore.lean` prova, para entradas racionais, que
+`gammaFinite N T z` é exatamente `T^z` vezes uma soma finita em `ℚ+iℚ`.
+`gammaFiniteInterval_contains` combina essa soma exata com o avaliador de
+`T^z`; `gamma3072Interval_contains` inclui a Gamma verdadeira inflando a caixa
+por `10^-259`, usando `gamma_finite_3072_620_error`. A expansão preserva o
+cancelamento da soma finita como aritmética racional exata.
+
+Build Lean 4.32 com warnings como erros e auditoria fail-closed de seis raízes
+passaram; os 11 relatórios combinados usam apenas `propext`, `Classical.choice`
+e `Quot.sound`. Logs, comando, pins e hashes estão em
+`evidence/rational-boxes/c5-gamma-rational-core-validation.md`. O teorema é
+genérico: ainda não calcula extremos racionais nos 129 nós, não certifica os
+limites da potência exponencial em cada nó, não avalia zeta/Hurwitz e não prova
+as inclusões dos coeficientes C2 nas caixas O3. O4 permanece aberta.
+
+Base main consultada: `dcdcf9c4ac949376fe49a8ddebfabf4fd5f8a5cd`. O incremento
+está local no checkout C5 e ainda não tem commit/PR.
 
 **Checkpoint atual — cota analítica explícita integrada (2026-11-06):** `CarrySigmaObstruction.displacedProductC_norm_le_10pow13_on_ball_39` prova `‖displacedProductC d z‖ ≤ 10^13` para `|d|≤1/10` e `z∈ball(0,39/100)`. O wrapper `10^100` da PR #191 continua disponível. O build limpo Lean 4.32 e a auditoria fail-closed de quatro raízes passaram; somente `propext`, `Classical.choice` e `Quot.sound` aparecem. Detalhes, hashes e logs estão em `evidence/rational-boxes/analytic-bounds-10pow13-validation.md`. Com o contorno `38/100`, a análise exata dá erro de interpolação `<10^-501` e amplificação do erro Gamma `<10^-135`.
 

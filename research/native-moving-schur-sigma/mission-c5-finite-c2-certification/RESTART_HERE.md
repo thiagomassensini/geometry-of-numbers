@@ -1,5 +1,34 @@
 # Retomar primeiro — missão C5
 
+## Retomada mais recente — 2026-11-06
+
+```text
+MISSION: C5 — certificar as primeiras janelas negativas da fonte C2 original.
+CURRENT PHASE: Fase 2 / O4, avaliação intervalar da fonte nos 129 nós.
+CURRENT SUBTASK: ligar a soma Gamma finita exata em ℚ+iℚ a caixas para Gamma e, em seguida, à fonte original.
+LAST VERIFIED THEOREM: SigmaC5Gamma.gamma3072Interval_contains.
+LAST COMPILED FILE: SigmaC5GammaRationalCoreAudit.lean (Lean 4.32; axiomas padrão).
+LAST SUCCESSFUL COMMIT: dcdcf9c4ac949376fe49a8ddebfabf4fd5f8a5cd (base main; incremento Gamma ainda local).
+LAST REMOTE SHA: origin/main = dcdcf9c4ac949376fe49a8ddebfabf4fd5f8a5cd.
+CURRENT BRANCH: codex/c5-gamma-rational-core-20261106.
+MAIN SHA: dcdcf9c4ac949376fe49a8ddebfabf4fd5f8a5cd.
+OPEN PR: nenhuma para a ponte Gamma de núcleo racional.
+WHAT IS PROVED: gammaFinite em argumentos racionais é fatorada exatamente em T^z e uma soma finita em ℚ+iℚ; há teorema genérico para incluir Gamma verdadeira por inflação de 10^-259. As três configurações de intervalos experimentais foram reproduzidas e os sinais das caixas passaram de novo no verificador racional exato.
+WHAT IS CONDITIONAL: a inclusão de Gamma nos nós requer parâmetros de intervalo e limite exp explícitos; O3 continua condicional às caixas experimentais dos coeficientes, cuja inclusão na fonte original não foi provada por Lean.
+WHAT IS BLOCKED: ainda não há avaliações nos nós nem inclusão dos coeficientes C2; a cota zeta EM disponível tem ordem 4 e precisão insuficiente.
+EXACT NEXT COMMAND: rg -n 'hurwitzZeta|Hurwitz|Euler.Maclaurin|eulerMaclaurin|zeta_em' research/native-moving-schur-sigma/height50-certified/lean .lake/packages/mathlib/Mathlib
+EXACT NEXT MATHEMATICAL OBLIGATION: encontrar ou provar um resto EM/Hurwitz de ordem alta e traduzi-lo em caixas racionais para os argumentos w± dos 129 nós, mantendo a representação C2 exata.
+DO NOT REPEAT: C2/C3/C4, Fase 1, O3, domínio/cota analítica, faixa de π, erro Euler-Gamma 10^-259, limites dos pesos 0–14, ponte genérica gammaFiniteRationalCore já compilada.
+```
+
+A reprodução experimental mais recente e o ajuste de compatibilidade aplicado
+somente numa cópia temporária estão documentados em
+`evidence/interval-certificate/reproduction-2026-11-06.md`. Use esses logs como
+checagem condicional, não como inclusão formal dos coeficientes.
+
+Logs e hashes do subpasso Gamma: `evidence/rational-boxes/c5-gamma-rational-core-validation.md`.
+Ele ainda não fornece extremos numéricos para qualquer nó nem prova a inclusão nas caixas O3.
+
 ## Estado mais recente — 2026-11-06
 
 A PR #195 integrou `SigmaC5PiInterval.lean` e `SigmaC5PiExp.lean`, com commit
