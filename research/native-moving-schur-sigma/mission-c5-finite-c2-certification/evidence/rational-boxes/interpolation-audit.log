@@ -4,3 +4,8 @@
 'CarrySigmaObstruction.c5InterpolationPolynomial_coeff_of_degree_lt' depends on axioms: [propext,
  Classical.choice,
  Quot.sound]
+'CarrySigmaObstruction.c5BasisDivisor_coeff_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5LagrangeBasis_coeff_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5LagrangeBasis_coeff_zero_of_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5LagrangeBasis_zero_coeff_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5InterpolationWeightSum_zero_eq_one' depends on axioms: [propext, Classical.choice, Quot.sound]

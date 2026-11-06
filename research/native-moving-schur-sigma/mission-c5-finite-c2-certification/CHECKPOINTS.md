@@ -93,3 +93,11 @@ O checkpoint atual registra um lema algébrico parcial de O4. A inclusão da fon
 - O4 continua incompleta: faltam os limites Lean dos pesos, a cota analítica da densidade e a avaliação rigorosa da fonte nos pontos.
 - A prova foi publicada pela PR #177; commit `67ff0b7ef32de922dda7cd0fcea890bc3afbf738`, merge na `main` `0702371cff0c6016eae9eaa0aa9331ae95483456`.
 - O checkpoint permanece parcial: nenhuma inclusão de `sigmaC00495SourceBoxes` ou `sigmaC01SourceBoxes` foi provada.
+
+## 2026-11-06 — soma exata do peso constante
+
+- `c5BasisDivisor_coeff_zero`, `c5LagrangeBasis_coeff_zero` e seus casos `j=0`/`j≠0` provam que somente a base indexada por zero contribui para o coeficiente constante.
+- `c5InterpolationWeightSum_zero_eq_one` fecha a soma absoluta dos pesos escalados de grau zero como exatamente `1`. Os pesos dos graus `1..14` ainda não têm limites Lean.
+- Build Lean 4.32.0 em diretório limpo passou com `warningAsError=true`. A auditoria de nove raízes encontrou somente `propext`, `Classical.choice` e `Quot.sound`; o checker fail-closed passou.
+- Base geometry: PR #178, merge `7ad7e29195790eedda01645e71e5c52edf1b4e6b`. O resultado ainda não foi publicado em PR própria.
+- O4 continua incompleta: a cota analítica da fonte, as avaliações nos pontos e as inclusões em caixas não foram provadas.

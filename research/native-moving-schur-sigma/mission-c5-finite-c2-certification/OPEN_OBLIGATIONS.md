@@ -67,10 +67,12 @@ interpolar a densidade par em 129 pontos racionais `t_j=j/100000`. O novo módul
 `SigmaRationalInterpolation.lean` prova que nós distintos recuperam exatamente
 qualquer polinômio racional de grau menor que 129 e formaliza a identidade dos
 coeficientes com as somas ponderadas de Lagrange. Isso é somente o passo
-algébrico: os limites de peso calculados em Python (menores que `10^124` para
-graus até 14) ainda não foram provados no Lean. Também seguem pendentes a cota
-analítica `|completedSigmaDensity d t|≤10^100` no disco de raio `2/5` e a
-avaliação rigorosa da fonte nos pontos. A análise exploratória está em
+algébrico. `c5InterpolationWeightSum_zero_eq_one` prova que o peso escalado de
+grau zero soma exatamente `1`; os limites calculados em Python (menores que
+`10^124` para graus até 14) ainda não foram provados para os graus `1..14` no
+Lean. Também seguem pendentes a cota analítica
+`|completedSigmaDensity d t|≤10^100` no disco de raio `2/5` e a avaliação
+rigorosa da fonte nos pontos. A análise exploratória está em
 `analyze_rational_interpolation.py` e
 `evidence/rational-boxes/rational-interpolation-analysis.log`; build e auditoria
 da identidade algébrica estão em `evidence/rational-boxes/VALIDATION.md`.
@@ -81,7 +83,8 @@ A Fase 1 foi integrada pela PR #165, merge `75691edf0e74cc643f098213f60b68447613
 O3 foi integrada pela PR #167, merge `fc17d3b16fd0ed5643cb12ef48c80bb81c81cbd9`.
 O lema algébrico dos 129 nós foi integrado pela PR #177, merge
 `0702371cff0c6016eae9eaa0aa9331ae95483456`. O4, a inclusão das caixas e os
-teoremas finais incondicionais seguem abertos.
+teoremas finais incondicionais seguem abertos. O checkpoint de estado pós-PR
+#177 foi integrado pela PR #178, merge `7ad7e29195790eedda01645e71e5c52edf1b4e6b`.
 
 ## Classificação honesta se O4 continuar em aberto
 

@@ -6,5 +6,10 @@ namespace CarrySigmaObstruction
 #print axioms c5InterpolationPolynomial_coeff
 #print axioms c5_interpolate_polynomial
 #print axioms c5InterpolationPolynomial_coeff_of_degree_lt
+#print axioms c5BasisDivisor_coeff_zero
+#print axioms c5LagrangeBasis_coeff_zero
+#print axioms c5LagrangeBasis_coeff_zero_of_ne
+#print axioms c5LagrangeBasis_zero_coeff_zero
+#print axioms c5InterpolationWeightSum_zero_eq_one
 
 end CarrySigmaObstruction

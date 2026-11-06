@@ -8,25 +8,27 @@
 
 **ÚLTIMA PROVA PUBLICADA:** PR #177, identidade algébrica de interpolação em 129 nós, merge `0702371cff0c6016eae9eaa0aa9331ae95483456`
 
-**ÚLTIMO REGISTRO DE ESTADO:** PR #176, merge `ac84c9302ae608e39c742f856ad361921653f268`
+**REGISTRO DE ESTADO ANTERIOR À PR #177:** PR #176, merge `ac84c9302ae608e39c742f856ad361921653f268`
 
-**MAIN após a PR #177:** `0702371cff0c6016eae9eaa0aa9331ae95483456`
+**ÚLTIMO CHECKPOINT DE ESTADO:** PR #178, merge `7ad7e29195790eedda01645e71e5c52edf1b4e6b`
 
-**BRANCH C5:** `codex/c5-finite-c2-certification-20261106`, commit de prova remoto `67ff0b7ef32de922dda7cd0fcea890bc3afbf738`
+**MAIN após PR #178:** `7ad7e29195790eedda01645e71e5c52edf1b4e6b`
 
-**C5 PRs:** #165–#177 estão integradas; a PR #2 de Momentos permanece aberta e não foi integrada.
+**BRANCH C5:** `codex/c5-finite-c2-certification-20261106`, último commit remoto `476df788ab3cdb0deb28d67ec426c559341e3f05`
+
+**C5 PRs:** #165–#178 estão integradas; a PR #2 de Momentos permanece aberta e não foi integrada.
 
 ## Estado matemático
 
-**PROVADO:** a recorrência polinomial sem divisão, a identidade exata com `sigmaPadeD` original, os sinais condicionais de O3 e a aproximação Euler-Gamma com erro `10⁻²⁵⁹` estão compilados em Lean 4.32. A identidade de Lagrange em 129 nós também está provada: todo polinômio racional de grau menor que 129 é recuperado exatamente por suas avaliações nos nós `j²`, e seus coeficientes são a soma ponderada pelos coeficientes das bases de Lagrange.
+**PROVADO:** a recorrência polinomial sem divisão, a identidade exata com `sigmaPadeD` original, os sinais condicionais de O3 e a aproximação Euler-Gamma com erro `10⁻²⁵⁹` estão compilados em Lean 4.32. A identidade de Lagrange em 129 nós recupera exatamente polinômios racionais de grau menor que 129. A soma absoluta dos pesos escalados para o coeficiente de grau zero é exatamente `1`.
 
 **CONDICIONAL:** os padrões de sinais finais em `d=99/2000` e `d=1/10` ainda dependem de `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
 
-**ABERTO:** não estão provados no Lean os limites numéricos das somas absolutas dos pesos escalados, a cota analítica `|completedSigmaDensity d t| ≤ 10^100` no disco de raio `2/5`, nem a avaliação rigorosa da fonte nos 129 pontos. Portanto, O4 segue aberta e nenhum teorema incondicional de janela C5 foi declarado.
+**ABERTO:** os limites numéricos das somas absolutas dos pesos escalados para os graus `1≤n≤14`, a cota analítica `|completedSigmaDensity d t| ≤ 10^100` no disco de raio `2/5`, e a avaliação rigorosa da fonte nos 129 pontos ainda não estão provados no Lean. Portanto, O4 segue aberta e nenhum teorema incondicional de janela C5 foi declarado.
 
 ## Próximas ações
 
-1. Provar limites racionais exatos para `c5InterpolationWeightSum n` nos graus `n≤14`, conferindo os limites exploratórios em `evidence/rational-boxes/rational-interpolation-analysis.log`.
+1. Provar limites racionais exatos para `c5InterpolationWeightSum n` nos graus `1≤n≤14`, conferindo os limites exploratórios em `evidence/rational-boxes/rational-interpolation-analysis.log`.
 2. Provar uma cota uniforme da extensão analítica da densidade no disco de raio `2/5`.
 3. Certificar as avaliações racionais da fonte mantendo a cabeça C2, a cauda exponencial exata e a completação original; compor então com Hurwitz/Cauchy e as caixas O3.
 
