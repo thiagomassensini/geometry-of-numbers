@@ -83,8 +83,8 @@ ponte da Gamma original à aproximação explícita de Euler
 build e auditoria de dez raízes usam apenas axiomas padrão (`propext`,
 `Classical.choice`, `Quot.sound`).
 
-A prova local `gamma_finite_3072_620_error` reduz o erro uniforme para
-`10⁻²⁵⁹`, com auditoria de doze raízes. Uma interpolação racional de 129 pontos
+A prova `gamma_finite_3072_620_error`, integrada pela PR #175, reduz o erro
+uniforme para `10⁻²⁵⁹`, com auditoria de doze raízes. Uma interpolação racional de 129 pontos
 foi analisada com frações exatas, mas ainda não foi formalizada nem aplicada à
 fonte.
 

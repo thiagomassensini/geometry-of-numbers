@@ -1,6 +1,6 @@
 # C5 — validação
 
-**Status atual:** Fase 1 de transporte algébrico integrada pela PR #165. O3 (propagação racional Lean e sinais condicionais) foi integrada pela PR #167, merge `fc17d3b16fd0ed5643cb12ef48c80bb81c81cbd9`. O checkpoint O4 foi integrado pela PR #169; estados pós-merge pelas PRs #170, #172 e #174; pontes Euler-Gamma pelas PRs #171 e #173. A prova local `gamma_finite_3072_620_error` tem erro `≤10⁻²⁵⁹`, build Lean 4.32 e auditoria de doze raízes. O4 continua aberta: a expressão finita e as inclusões da fonte ainda precisam de caixas certificadas.
+**Status atual:** Fase 1 de transporte algébrico integrada pela PR #165. O3 (propagação racional Lean e sinais condicionais) foi integrada pela PR #167, merge `fc17d3b16fd0ed5643cb12ef48c80bb81c81cbd9`. O checkpoint O4 foi integrado pela PR #169; estados pós-merge pelas PRs #170, #172 e #174; pontes Euler-Gamma pelas PRs #171, #173 e #175. A prova `gamma_finite_3072_620_error` tem erro `≤10⁻²⁵⁹`, build Lean 4.32 e auditoria de doze raízes. O4 continua aberta: a expressão finita e as inclusões da fonte ainda precisam de caixas certificadas.
 **Toolchain:** `leanprover/lean4:v4.32.0`; Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`.
 **Base geometry da PR #165:** `91a1af2f9663d6761a3320e2f06504fe8aaa6776`; `main` após o merge: `75691edf0e74cc643f098213f60b684476132175`.
 **Fonte C4 compilada:** source hashes de `SigmaSourceBezout.lean`, `SourceBezout.lean`, `SigmaPadeCorrespondence.lean` e `SigmaZeroObstruction.lean` conferem com `origin/main`; pins completos em `evidence/pins-and-sha256.txt`.
