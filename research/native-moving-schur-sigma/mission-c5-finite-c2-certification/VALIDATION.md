@@ -21,6 +21,9 @@ pendentes.
 
 ## Histórico de tentativas incompletas de grau um — 2026-11-06
 
+Essas falhas são históricas e foram sucedidas pelo build limpo e pela auditoria
+aprovada acima; permanecem para preservar a trilha de diagnóstico.
+
 As tentativas abaixo foram **superadas pela validação limpa acima**. O módulo de produção havia sido estendido com
 uma tentativa simbólica de `c5LagrangeBasisProductCoeffOne_bound` e corolários,
 mas nenhuma compilação integral produziu `SigmaRationalInterpolation.olean`.
@@ -48,9 +51,13 @@ os pins estão em `RESTART_HERE.md` e
 
 **O4, auditoria de 2026-11-06:** os módulos de intervalo elementar foram recompilados e auditados; também foi localizada a identidade formal de Weierstrass `Zeta23.DigammaSeries.inv_gamma_eq_prod`. Nenhuma caixa numérica para `Complex.Gamma` foi ainda derivada dessa identidade, e a aproximação Stirling usada pelo avaliador segue sem ponte Lean. O4 e a inclusão incondicional das caixas continuam abertas.
 
-**Estado após PR #181/#182:** registro histórico da estrutura derivativa de grau um e do checkpoint da etapa; a desigualdade numérica foi provada depois no checkpoint acima. A integração da nova cota será registrada após a PR desta etapa.
+**Estado histórico após PR #181/#182:** a estrutura derivativa estava integrada, enquanto o limite numérico ainda aguardava prova.
 
 **O4, prova Euler-Gamma de precisão alta integrada pela PR #173:** `gamma_finite_1024_240_error` aproxima a Gamma original por `gammaFinite 1024 240 z` com erro `≤10⁻⁹⁹` para `1495/20000≤Re(z)≤1`. Build Lean 4.32 e auditoria de dez raízes passaram; a caixa racional estreita da expressão finita continua pendente. Prova, logs e hashes estão em `evidence/rational-boxes/`.
+
+## Estado após PR #185 — peso de grau um integrado
+
+A PR #184 preservou o checkpoint incompleto (`5528ddc8093a22682c87f3f9c6575e30e90a7011`); a prova de grau um foi depois integrada pela PR #185, merge `c840ba35711ac8f938fa24c191f2af60f505480d`. A prova Lean 4.32 e a auditoria de 21 raízes estão registradas em `evidence/rational-boxes/degree1-weight-bound-validation.md` e nos logs associados. C5 continua parcial: os graus `2..14`, a cota analítica, as avaliações da fonte e a inclusão nas caixas seguem abertos.
 
 ## 1. Transporte algébrico Lean — PASSOU
 

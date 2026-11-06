@@ -3,16 +3,16 @@
 **Atualizado:** 2026-11-06
 **Status atual:** C1–C4 e O3 estão integradas. A ponte Euler-Gamma de precisão `10⁻²⁵⁹`, a identidade algébrica de interpolação em 129 nós e a soma absoluta do peso escalado de grau zero (`=1`) estão provadas em Lean 4.32. Agora também estão provados e auditados os limites de grau um: soma dos coeficientes das bases `≤6` e soma do peso escalado `<10^11`. Os pesos de graus `2..14`, a cota analítica da fonte e a inclusão dos coeficientes C2 nas caixas seguem pendentes.
 **Checkpoint de grau um (2026-11-06):** a alteração simbólica de `SigmaRationalInterpolation.lean` passou build Lean 4.32 limpo e auditoria fail-closed de 21 raízes. Logs e hashes estão em `evidence/rational-boxes/degree1-weight-bound-validation.md`; tentativas anteriores incompletas e a prova rejeitada com `native_decide` foram mantidas como histórico.
-**Branch atual:** `codex/c5-degree1-weight-bound-20261106`, baseada na `main` `c736dc073091e6184dbb673b622b6b91759accac`. O checkpoint remoto anterior é `f23b617f60e114d945b6aaaf5b3d53fb1222265b`; a alteração validada está sendo preparada para publicação em PR.
+**Publicação do limite de grau um:** PR #185, commit de prova `90a208df98e74a7c5ab1fe83a9ef0fc90c3d3cb6`, merge `c840ba35711ac8f938fa24c191f2af60f505480d`. O checkpoint explicitamente incompleto foi publicado separadamente pela PR #184, merge `5528ddc8093a22682c87f3f9c6575e30e90a7011`.
 **Branch C5 de trabalho:** o passo estrutural de grau um foi publicado no commit `0a188c9d71a1a54bdf446ec753609fdde8326bc8`, integrado pela PR #181. A branch remota de prova foi removida após o merge; retomar a partir da `main` atual e abrir uma branch nova.
 **Main geometry no início da auditoria O4:** `1bc7318915c3e625ad228c89ff8c300cb07e52c5` (merge da PR #168).
-**Última prova geometry integrada:** PR #181, estrutura derivativa do peso de grau um, `7460497307e7ed0ffb47ef1ac96b096e9b410472`.
+**Última prova geometry integrada:** PR #185, limite simbólico do peso escalado de grau um, merge `c840ba35711ac8f938fa24c191f2af60f505480d`.
 **Registro de estado anterior à PR #177:** PR #176, merge `ac84c9302ae608e39c742f856ad361921653f268`.
-**Última prova integrada:** PR #181, estrutura derivativa do coeficiente de grau um, merge `7460497307e7ed0ffb47ef1ac96b096e9b410472`.
-**Main geometry após a PR #181:** `7460497307e7ed0ffb47ef1ac96b096e9b410472`.
+**Última prova integrada:** PR #185, limite simbólico do peso escalado de grau um, merge `c840ba35711ac8f938fa24c191f2af60f505480d`.
+**Main geometry após a PR #185:** `c840ba35711ac8f938fa24c191f2af60f505480d`.
 **Checkpoint de estado pós-PR #181:** PR #182, merge `8f8b9da2b8c1e8f3b8d1290608c8b2abffe9c285`.
 **Main geometry no checkpoint de estado:** `8f8b9da2b8c1e8f3b8d1290608c8b2abffe9c285`.
-**Repositório geometry no checkout de pesquisa original:** branch `agent/native-moving-schur-sigma`, HEAD `9392ebac9930f5d11c56f595556080e8ab1de809`, com logs/caches não rastreados preservados. A main remota confirmada antes deste checkpoint está em `c736dc073091e6184dbb673b622b6b91759accac` (PR #183).
+**Repositório geometry no checkout de pesquisa original:** branch `agent/native-moving-schur-sigma`, HEAD `9392ebac9930f5d11c56f595556080e8ab1de809`, com logs/caches não rastreados preservados. A `main` remota após PR #185 está em `c840ba35711ac8f938fa24c191f2af60f505480d`.
 **Repositório Momentos:** checkout local `main` em `05c9314d59306383baa55ed3be80ab950e799e97`; branch remota de pesquisa `origin/research/sigma-pade-dimension-depth-20261104` em `68c9b5f0a196289e28a8e5586146707d27df6b75`. PR #2 está OPEN e não foi integrada.
 
 ## Inventário de trabalho anterior
@@ -54,7 +54,7 @@ O checkpoint reprodutível dessa auditoria foi integrado pela PR #169; merge na 
 
 **Peso de grau um provado:** além da representação derivativa, `c5LagrangeBasisProductCoeffOne_bound`, `c5InterpolationCoeffOneAbsSum_le_six` e `c5InterpolationWeightSum_one_lt_ten_eleven` dão a cota escalada `<10^11`. As tentativas diretas anteriores permanecem preservadas em `evidence/rational-boxes/degree1-retry-checkpoint.md` e `interpolation-weight-degree1-prototype.log`; os graus `2..14` continuam abertos.
 
-**Publicação anterior:** a prova estrutural foi integrada pela PR #181. O novo limite de grau um foi validado nesta branch após o checkpoint da PR #183; a PR de integração e o SHA de merge serão registrados em atualização posterior. O4 continua aberta.
+**Publicação do grau um:** PR #185, merge `c840ba35711ac8f938fa24c191f2af60f505480d`; validação limpa e auditoria de 21 raízes em `evidence/rational-boxes/degree1-weight-bound-validation.md`. O4 continua aberta.
 
 ## Validação reproduzida
 
