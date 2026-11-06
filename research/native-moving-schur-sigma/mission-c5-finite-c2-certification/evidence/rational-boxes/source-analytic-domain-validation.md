@@ -33,6 +33,13 @@ O3. Portanto, C5 permanece incompleta.
 Os quatro teoremas dependem apenas de `propext`, `Classical.choice` e
 `Quot.sound`.
 
+## Publicação
+
+Integrado à `main` pela PR #189. Commit de prova:
+`e0272bfc9099031cb127ea0db8874900d9e8eca1`. Merge:
+`3513a3b3854b105419d4f2cef245efac7ce88ba0`. O GitHub não reportou status
+checks para esta PR.
+
 ## Próxima obrigação O4
 
 Provar uma cota numérica explícita para o módulo da fonte C2 completada no
