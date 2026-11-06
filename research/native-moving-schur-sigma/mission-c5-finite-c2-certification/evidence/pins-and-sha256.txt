@@ -3,6 +3,7 @@ C5 finite C2 certification — phase 1 pins
 Git
 - geometry main base: 91a1af2f9663d6761a3320e2f06504fe8aaa6776 (PR #164 merge)
 - C5 initial inventory checkpoint: 7ed3340aa49f40029f2c3f6b393bb9a30cd165fe (pushed to origin/codex/c5-finite-c2-certification-20261106)
+- C5 phase 1 proof/evidence checkpoint: 1250a9989e596fa250304d8ec8fd3ae45897e589 (pushed to origin/codex/c5-finite-c2-certification-20261106)
 - C4 source cache worktree used to resolve imports: 67aea3263426cc8f9787f34aa7833a5650dde175; its direct source file blobs match origin/main
 - carry source checkout: 045369f6dedcb2e75e9aefed1d12c9f73b9a2532
 - Momentos branch: 68c9b5f0a196289e28a8e5586146707d27df6b75

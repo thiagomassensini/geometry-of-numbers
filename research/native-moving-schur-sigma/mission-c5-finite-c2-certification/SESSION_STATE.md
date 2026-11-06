@@ -2,7 +2,7 @@
 
 **Atualizado:** 2026-11-06
 **Status:** inventário, reprodução intervalar e transporte algébrico C5 concluídos; checker racional Lean e inclusões da fonte pendentes.
-**Branch de trabalho:** `codex/c5-finite-c2-certification-20261106`, baseada em `origin/main`.
+**Branch de trabalho:** `codex/c5-finite-c2-certification-20261106`, baseada em `origin/main`; prova algébrica no commit `1250a9989e596fa250304d8ec8fd3ae45897e589`, já enviada ao remoto.
 **Main geometry:** `91a1af2f9663d6761a3320e2f06504fe8aaa6776` (PR #164).
 **Repositório geometry no checkout de pesquisa original:** branch `agent/native-moving-schur-sigma`, HEAD `9392ebac9930f5d11c56f595556080e8ab1de809`, com logs/caches não rastreados preservados.
 **Repositório Momentos:** checkout local `main` em `05c9314d59306383baa55ed3be80ab950e799e97`; branch remota de pesquisa `origin/research/sigma-pade-dimension-depth-20261104` em `68c9b5f0a196289e28a8e5586146707d27df6b75`. PR #2 está OPEN e não foi integrada.

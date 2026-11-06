@@ -19,5 +19,5 @@ Após a validação dos dois JSONs e compilação dos lemas de transporte, salva
 - A recorrência mantém `completedSigmaDisplacedMoment = 2*completedSigmaLogJet` e o menor final usa `CarrySigmaPade.sigmaPadeD` original.
 - As verificações exatas dos JSONs e três gerações intervalares foram reproduzidas; os sinais são condicionais às caixas. O erro local `gmpy2.mpz`/`Decimal`, sua correção de compatibilidade e os logs foram preservados em `evidence/interval-certificate/`.
 - A inclusão dos coeficientes verdadeiros nas caixas não foi provada. Nenhum teorema de primeira janela final foi declarado.
-- Commits/push/PR/merge deste checkpoint: pendentes no momento deste registro.
+- Commit de prova/evidência `1250a9989e596fa250304d8ec8fd3ae45897e589`; push confirmado para `origin/codex/c5-finite-c2-certification-20261106`. PR e merge ainda pendentes.
 - Pins, hashes, comandos de build e SHA dos `.olean` estão em `evidence/pins-and-sha256.txt` e `evidence/transport-build-record.md`.
