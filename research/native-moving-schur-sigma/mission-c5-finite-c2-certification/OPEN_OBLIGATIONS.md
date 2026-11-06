@@ -2,8 +2,8 @@
 
 ## Snapshot atual — após a cota analítica explícita
 
-Os pesos escalados `0..14` seguem provados e integrados, e agora a fonte
-original também tem uma cota uniforme local, compilada e auditada:
+Os pesos escalados `0..14` seguem provados e integrados, e a fonte original
+tem uma cota uniforme compilada, auditada e integrada pela PR #192:
 `CarrySigmaObstruction.displacedProductC_norm_le_10pow13_on_ball_39`
 estabelece `‖displacedProductC d z‖≤10^13` para `|d|≤1/10` e
 `|z|<39/100`. O domínio de analiticidade aberto de raio `2/5` permanece o
@@ -15,9 +15,14 @@ Veja `evidence/rational-boxes/analytic-bounds-10pow13-validation.md` e
 `rational-interpolation-analysis-10pow13-radius-38.log`. A cota `10^100` da
 PR #191 segue como wrapper compatível.
 
-O4 continua aberta: ainda faltam a avaliação certificada da fonte nos 129
-nós e a prova de inclusão dos coeficientes C2 originais nas caixas O3. Os
-sinais O3 permanecem condicionais e C5 não está concluída. Este snapshot
+Também está validada localmente a faixa racional exata de `Real.pi` construída
+com a série alternada de `arctan` e a identidade de Machin; detalhes e logs em
+`evidence/rational-boxes/c5-pi-bounds-validation.md`. O módulo fornece uma
+faixa exata em vez de uma desigualdade decimal simplificada.
+
+O4 continua aberta: ainda faltam avaliações certificadas da fonte original
+nos 129 nós e a prova de inclusão dos coeficientes C2 originais nas caixas O3.
+Os sinais O3 permanecem condicionais e C5 não está concluída. Este snapshot
 substitui a afirmação anterior de que a cota analítica ainda faltava; as
 seções seguintes preservam o histórico dos checkpoints anteriores.
 

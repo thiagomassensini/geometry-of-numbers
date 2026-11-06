@@ -1,6 +1,6 @@
 # C5 — checkpoints
 
-## 2026-11-06 — cota analítica explícita provada localmente
+## 2026-11-06 — cota analítica explícita integrada
 
 - `SigmaC5AnalyticBounds.lean` prova que a fonte deslocada original satisfaz
   `‖displacedProductC d z‖≤10^100` para `|d|≤1/10` e `z∈ball(0,39/100)`.
@@ -17,6 +17,10 @@
   estritamente dentro do disco aberto onde o lema da fonte fornece a cota; o
   erro de cauda continua `<10^-410`, e o erro Gamma amplificado continua
   `<10^-135`. Log em `rational-interpolation-analysis-radius-38.log`.
+- A cota mais forte `10^13` foi integrada pela PR #192, commit de prova
+  `b122eafd10ed9b75f7e3c4c5f04c22b93697ffcc`, merge na `main`
+  `654dbb0bd7bb7d400cf0c4cab61bea1873995db4`; a cota `10^100` permanece como
+  wrapper.
 - C5 segue incompleta: falta certificar os valores nos 129 nós e provar que os
   coeficientes C2 originais pertencem às caixas O3. Nenhum sinal incondicional
   novo foi declarado.
@@ -34,6 +38,20 @@
   `evidence/rational-boxes/analytic-bounds-10pow13-validation.md`.
 - Ainda faltam as avaliações nos 129 nós e as inclusões O3; o checkpoint C5
   segue incompleto.
+
+## 2026-11-06 — faixa racional exata de π validada localmente
+
+- `SigmaC5PiBounds.lean` prova o limite da série alternada para `arctan` e
+  deriva de Machin uma faixa racional exata para `Real.pi`, com truncações
+  `N=170` em `1/5` e `N=55` em `1/239`.
+- Build limpo Lean 4.32 com warnings como erros e auditoria de duas raízes
+  passaram. O footprint contém somente `propext`, `Classical.choice` e
+  `Quot.sound`.
+- Comandos, pins, logs, hashes, definição racional do centro/erro e uma
+  tentativa decimal auxiliar não fechada estão preservados em
+  `evidence/rational-boxes/c5-pi-bounds-validation.md` e arquivos relacionados.
+- A entrega é preparatória: a avaliação da fonte original nos 129 nós e a
+  inclusão nas caixas C2/O3 continuam abertas.
 
 ## 2026-11-06 — limite dos pesos de graus 2–14 validado localmente
 
@@ -64,7 +82,9 @@
 
 ## Próximo checkpoint
 
-O checkpoint atual registra um lema algébrico parcial de O4. A inclusão da fonte nas caixas permanece aberta; consulte `RESTART_HERE.md` e não misture caches/logs das outras worktrees.
+Certificar a fonte original nos 129 nós e provar a inclusão dos coeficientes
+C2 nas caixas O3. A inclusão permanece aberta; consulte `RESTART_HERE.md` e não
+misture caches/logs das outras worktrees.
 
 ## 2026-11-06 — transporte algébrico provado, antes do PR
 

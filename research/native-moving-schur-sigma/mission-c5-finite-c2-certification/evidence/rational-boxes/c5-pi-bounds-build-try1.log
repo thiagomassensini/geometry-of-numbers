@@ -1,0 +1,82 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiBounds.lean:36:4: error: Tactic `apply` failed: could not unify the conclusion of `@inv_le_inv₀`
+  ?a⁻¹ ≤ ?b⁻¹ ↔ ?b ≤ ?a
+with the goal
+  (2 * ↑n + 1)⁻¹ ≤ (2 * ↑m + 1)⁻¹
+
+Note: The full type of `@inv_le_inv₀` is
+  ∀ {G₀ : Type ?u.145} [inst : GroupWithZero G₀] [inst_1 : PartialOrder G₀] [PosMulReflectLT G₀] [MulPosReflectLT G₀]
+    {a b : G₀}, 0 < a → 0 < b → (a⁻¹ ≤ b⁻¹ ↔ b ≤ a)
+
+q : ℝ
+hq0 : 0 ≤ q
+hq1 : q ≤ 1
+m n : ℕ
+hmn : m ≤ n
+he : 2 * m + 1 ≤ 2 * n + 1
+hpow : q ^ (2 * n + 1) ≤ q ^ (2 * m + 1)
+⊢ (2 * ↑n + 1)⁻¹ ≤ (2 * ↑m + 1)⁻¹
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiBounds.lean:46:4: error: failed to prove positivity/nonnegativity/nonzeroness
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiBounds.lean:49:40: error: omega could not prove the goal:
+No usable constraints found. You may need to unfold definitions so `omega` can see linear arithmetic facts about `Nat` and `Int`, which may also involve multiplication, division, and modular remainder by constants.
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiBounds.lean:50:4: error: Type mismatch
+  div_le_self hq0 hn
+has type
+  q / (2 * ↑n + 1) ≤ q
+but is expected to have type
+  (q ^ 2) ^ n * q ^ 1 / (2 * ↑n + 1) ≤ q * (q ^ 2) ^ n
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiBounds.lean:56:23: error: This simp argument is unused:
+  Nat.cast_add
+
+Hint: Omit it from the simp argument list.
+  simp [c5AtanPartial, N̵a̵t̵.̵c̵a̵s̵t̵_̵a̵d̵d̵,̵ ̵Nat.cast_mul, Nat.cast_ofNat, ← mul_div_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiBounds.lean:56:37: error: This simp argument is unused:
+  Nat.cast_mul
+
+Hint: Omit it from the simp argument list.
+  simp [c5AtanPartial, Nat.cast_add, N̵a̵t̵.̵c̵a̵s̵t̵_̵m̵u̵l̵,̵ ̵Nat.cast_ofNat, ← mul_div_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiBounds.lean:56:51: error: This simp argument is unused:
+  Nat.cast_ofNat
+
+Hint: Omit it from the simp argument list.
+  simp [c5AtanPartial, Nat.cast_add, Nat.cast_mul, N̵a̵t̵.̵c̵a̵s̵t̵_̵o̵f̵N̵a̵t̵,̵
+  ̵ ̵ ̵ ̵ ̵← mul_div_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiBounds.lean:57:4: error: This simp argument is unused:
+  ← mul_div_assoc
+
+Hint: Omit it from the simp argument list.
+  simp [c5AtanPartial, Nat.cast_add, Nat.cast_mul, Nat.cast_ofNat,̵
+  ̵ ̵ ̵ ̵ ̵←̵ ̵m̵u̵l̵_̵d̵i̵v̵_̵a̵s̵s̵o̵c̵]
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiBounds.lean:78:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑(c5AtanPartial N q)
+in the target expression
+  |Real.arctan ↑q - ∑ i ∈ range N, (-1) ^ i * f i| ≤ f N
+
+N : ℕ
+q : ℚ
+hq0 : 0 ≤ q
+hq1 : q < 1
+hq0' : 0 ≤ ↑q
+hq1' : ↑q < 1
+hnorm : ‖↑q‖ < 1
+f : ℕ → ℝ := c5AtanTerm ↑q
+hsum : HasSum (fun n => (-1) ^ n * f n) (Real.arctan ↑q)
+hanti : Antitone f
+hfs : Summable f
+herr : |Real.arctan ↑q - ∑ i ∈ range N, (-1) ^ i * f i| ≤ f N
+hcast : ↑(c5AtanPartial N q) = ∑ n ∈ range N, (-1) ^ n * ↑q ^ (2 * n + 1) / (2 * ↑n + 1)
+⊢ |Real.arctan ↑q - ↑(c5AtanPartial N q)| ≤ ↑(c5AtanRemainder N q)
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiBounds.lean:84:0: error: Unexpected name `CarrySigmaObstruction` after `end`: The current section is unnamed
+
+Hint: Delete the name `CarrySigmaObstruction` to end the current unnamed scope; outer named scopes can then be closed using additional `end` command(s):
+  end ̵C̵a̵r̵r̵y̵S̵i̵g̵m̵a̵O̵b̵s̵t̵r̵u̵c̵t̵i̵o̵n̵
+BUILD_EXIT=1

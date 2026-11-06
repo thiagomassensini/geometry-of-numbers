@@ -1,0 +1,10 @@
+Lean pin: leanprover/lean4:v4.32.0
+Mathlib pin: 81a5d257c8e410db227a6665ed08f64fea08e997
+Carry pin: 045369f6dedcb2e75e9aefed1d12c9f73b9a2532
+
+b38d68df2ddbe6728218db09e9661980a7bf635398528a840ae129fe4bdc3f97  research/native-moving-schur-sigma/SigmaC5PiBounds.lean
+cf5dba58e2a8dc97b2ff5c5adcd7076adac02f7d49f80a4e4434cbfcfd84f8aa  research/native-moving-schur-sigma/SigmaC5PiBoundsAudit.lean
+b15b9adb144e0965201bbd51dbfdadb10fa0384af5a532683c8b8ab50358322f  .lake/build/research/native-moving-schur-sigma/c5-pi-bounds-clean-20261106/SigmaC5PiBounds.olean
+1c7b58587febd7afb61ce027e6a360c554564fd16f4f3d1a45a5c9169b1c6e01  .lake/build/research/native-moving-schur-sigma/c5-pi-bounds-clean-20261106/SigmaC5PiBoundsAudit.olean
+ce706d40b6f9b1b9add553f35b5b482d4812f773d13013fb4cd667e1d78c7ab5  evidence/rational-boxes/c5-pi-bounds-clean-build.log
+83da0023b16ea80d3ec1b7304cae5f15f20bd0733cc9963fe3a023f3fb05e994  evidence/rational-boxes/c5-pi-bounds-axiom-audit.log
