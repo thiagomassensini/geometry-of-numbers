@@ -10,6 +10,14 @@ exponencial original dependente de `log π` está incluído em uma caixa, sob as
 hipóteses declaradas sobre a caixa de `s`. A avaliação da Gamma, da cauda C2 e
 dos 129 nós permanece aberta.
 
+Na retomada da avaliação dos nós, preserve a rota exata via
+`nativeScalar_eq_riemannZeta` e a ponte da cabeça C2 mais cauda exata. O
+primeiro lema numérico ausente é um Euler–Maclaurin de ordem alta em Lean:
+`HardyFirstZero.zeta_em4_error` só dá ordem 4 e, com `N=100`, limita o erro a
+cerca de `1.351·10⁻⁸` no contorno. O relatório do diagnóstico e a próxima
+sequência estão em
+`evidence/rational-boxes/c5-original-source-zeta-route-audit.md`.
+
 A PR #191 integrou a cota `10^100` no merge
 `88a52ba3a6bda7a78b8317d892b6f7bc640c863f`; a PR #192 integrou a cota mais
 forte `10^13`, merge `654dbb0bd7bb7d400cf0c4cab61bea1873995db4`. O contorno de

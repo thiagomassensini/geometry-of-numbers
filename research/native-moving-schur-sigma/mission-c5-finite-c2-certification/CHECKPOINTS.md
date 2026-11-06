@@ -1,5 +1,19 @@
 # C5 — checkpoints
 
+## 2026-11-06 — auditoria da rota zeta para a fonte original C5
+
+- Confirmada a rota Lean 4.32 sem trocar a fonte: o escalar nativo é
+  `riemannZeta` no domínio provado, e a ponte C2 conserva cabeça finita mais
+  cauda exata.
+- Primeiro limite disponível localizado: `HardyFirstZero.zeta_em4_error`, de
+  ordem 4. Em `N=100`, seu resto no contorno é aproximadamente `1.351·10⁻⁸`,
+  insuficiente para provar inclusão nas caixas O3.
+- Falta um lema Lean de ordem alta para zeta/Hurwitz, a avaliação intervalar
+  correspondente e a avaliação racional intervalar de `gammaFinite 3072 620`.
+  O limite analítico da Gamma `10⁻²⁵⁹` já está provado, mas não avalia a soma.
+- Registro do diagnóstico: `evidence/rational-boxes/c5-original-source-zeta-route-audit.md`.
+  Este checkpoint é investigação, não fechamento de O4/C5.
+
 ## 2026-11-06 — PR #195 integrada: fator exponencial com `log π`
 
 - `SigmaC5PiInterval.lean` certifica a faixa racional de `log π` e
