@@ -68,12 +68,14 @@ interpolar a densidade par em 129 pontos racionais `t_j=j/100000`. O novo módul
 qualquer polinômio racional de grau menor que 129 e formaliza a identidade dos
 coeficientes com as somas ponderadas de Lagrange. Isso é somente o passo
 algébrico. `c5InterpolationWeightSum_zero_eq_one` prova que o peso escalado de
-grau zero soma exatamente `1`; os limites calculados em Python (menores que
-`10^124` para graus até 14) ainda não foram provados para os graus `1..14` no
-Lean. Para grau um, `c5LagrangeBasis_derivative_eval_zero` expressa os
-coeficientes por uma soma de derivadas e produtos finitos; a tentativa de fechar
-o limite numérico por expansão direta atingiu o limite de passos de `simp`.
-Comando e erro estão em `evidence/rational-boxes/interpolation-weight-degree1-prototype.log`.
+grau zero soma exatamente `1`. Depois, a forma derivativa de grau um permitiu
+provar `c5LagrangeBasisProductCoeffOne_bound`,
+`c5InterpolationCoeffOneAbsSum_le_six` e
+`c5InterpolationWeightSum_one_lt_ten_eleven`. O build limpo e a auditoria
+estão em `evidence/rational-boxes/degree1-weight-bound-validation.md`.
+Os limites Lean dos graus `2..14` continuam pendentes. A tentativa anterior
+por expansão direta atingiu o limite de passos de `simp`; o erro permanece em
+`evidence/rational-boxes/interpolation-weight-degree1-prototype.log`.
 Também seguem pendentes a cota analítica
 `|completedSigmaDensity d t|≤10^100` no disco de raio `2/5` e a avaliação
 rigorosa da fonte nos pontos. A análise exploratória está em
@@ -90,12 +92,13 @@ O lema algébrico dos 129 nós foi integrado pela PR #177, merge
 teoremas finais incondicionais seguem abertos. O checkpoint de estado pós-PR
 #177 foi integrado pela PR #178, merge `7ad7e29195790eedda01645e71e5c52edf1b4e6b`.
 A soma exata do peso escalado de grau zero foi integrada pela PR #179, merge
-`f6a2298b92cbfddad77abe512d73387efea4e870`; os graus positivos e O4 permanecem
-abertos. O estado pós-PR #179 foi registrado pela PR #180, merge
+`f6a2298b92cbfddad77abe512d73387efea4e870`; naquele checkpoint, os graus
+positivos e O4 permaneciam abertos. O estado pós-PR #179 foi registrado pela PR #180, merge
 `de95637d38d5e6d5488342cd5141b88233be6eb7`. A estrutura derivativa de grau um
 foi integrada pela PR #181, merge
-`7460497307e7ed0ffb47ef1ac96b096e9b410472`; a desigualdade numérica dos pesos
-continua em aberto e O4 permanece incompleta.
+`7460497307e7ed0ffb47ef1ac96b096e9b410472`. Depois, o limite escalado de grau
+um foi compilado e auditado localmente; os graus `2..14` e as demais obrigações
+O4 permanecem abertos.
 O estado pós-PR #181 foi registrado pela PR #182, merge
 `8f8b9da2b8c1e8f3b8d1290608c8b2abffe9c285`.
 
@@ -103,12 +106,19 @@ O estado pós-PR #181 foi registrado pela PR #182, merge
 
 Manter os resultados que dependem das caixas explicitamente condicionais e relatar precisamente qual coeficiente ou camada de funções elementares bloqueia a inclusão. Não declarar `PROVADO — CERTIFICAÇÃO COMPLETA`.
 
-## Checkpoint WIP de grau um — 2026-11-06
+## Limite dos pesos de grau um — validado localmente
 
-Há uma tentativa simbólica do limite de grau um na branch
-`codex/c5-degree1-weight-bound-20261106`, baseada na main
-`c736dc073091e6184dbb673b622b6b91759accac`. Ela evita `native_decide` e usa
-produtos fatoriais, mas o build integral não terminou e nenhuma raiz nova foi
-auditada. O lema auxiliar da soma compilou isoladamente, sem fechar O4. Patches,
-logs, pins e comando de retomada estão em
-`evidence/rational-boxes/degree1-retry-checkpoint.md`.
+Em 2026-11-06, a prova simbólica baseada em produtos fatoriais passou um build
+limpo de `SigmaRationalInterpolation.lean` em Lean 4.32 e uma auditoria
+fail-closed de 21 raízes. A auditoria inclui
+`c5LagrangeBasisProductCoeffOne_bound`,
+`c5InterpolationCoeffOneAbsSum_le_six` e
+`c5InterpolationWeightSum_one_lt_ten_eleven`, todos com apenas
+`propext`, `Classical.choice` e `Quot.sound`. Evidência e hashes:
+`evidence/rational-boxes/degree1-weight-bound-validation.md`.
+
+Este checkpoint cobre somente grau um e aguarda publicação/integração. Os
+pesos de graus `2..14`, a cota analítica da fonte e as inclusões das caixas
+continuam abertos. Os logs das falhas anteriores em
+`evidence/rational-boxes/degree1-retry-checkpoint.md` foram mantidos como
+histórico de proveniência.

@@ -1,7 +1,12 @@
 # Checkpoint WIP — limite do peso de grau um
 
+> Registro histórico do estado anterior à validação limpa. A prova simbólica
+> passou posteriormente; consulte
+> `degree1-weight-bound-validation.md`. Os erros e patches abaixo permanecem
+> preservados como histórico e não descrevem mais o estado atual.
+
 **Data:** 2026-11-06  
-**Status:** INCOMPLETO; não usar como prova validada.
+**Status quando criado:** INCOMPLETO; não usar como prova validada.
 
 ## Base, branch e pins
 
@@ -32,6 +37,14 @@ O checker `check_c5_interpolation_axioms.py` e `interpolation-audit.lean` foram 
 O build integral mais recente é `c5-interpolation-degree1-pseries-retry9-build.log`. Lean 4.32 permaneceu em CPU contínua por 15m20s, com cerca de 2.9 GiB RSS, sem diagnóstico e sem `SigmaRationalInterpolation.olean`; a execução foi interrompida para investigação.
 
 O perfil mais recente, `c5-interpolation-degree1-profile100-retry9-build.log`, mostra a elaboração de `c5_inv_sq_sum_range_le` concluída. Não foi observado erro nessa prova. O módulo completo continua sem conclusão após os lemas seguintes de produtos. Tentativas anteriores, incluindo os erros de tipo efetivamente encontrados e corrigidos, estão nos arquivos `c5-interpolation-degree1-*.log*`.
+
+As tentativas corretivas finais posteriores a este snapshot também tiveram
+diagnósticos preservados byte a byte após descompressão em
+`c5-interpolation-degree1-fixed-build.log.gz`,
+`c5-interpolation-degree1-fixed-build2.log.gz` e
+`c5-interpolation-degree1-fixed-build3.log.gz`. Elas foram resolvidas pela prova
+simbólica que passou no build limpo documentado em
+`degree1-weight-bound-validation.md`.
 
 O limite de memória não é a causa observada: a última leitura registrou cerca de 63 GiB de `MemAvailable`; os processos Lean observados usaram menos de 3 GiB RSS e CPU contínua.
 
