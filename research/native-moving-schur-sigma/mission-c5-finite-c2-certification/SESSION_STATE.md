@@ -4,6 +4,7 @@
 **Status:** inventário, reprodução intervalar, transporte algébrico e O3 racional formal concluídos e integrados; a inclusão analítica da fonte nas caixas segue pendente (O4).
 **Branch C5 de trabalho:** `codex/c5-finite-c2-certification-20261106`; Fase 1 integrada pela PR #165 e O3 pela PR #167.
 **Main geometry no início da auditoria O4:** `1bc7318915c3e625ad228c89ff8c300cb07e52c5` (merge da PR #168).
+**Último merge geometry:** PR #169, checkpoint documental O4, `75782fb8b7fb00bd273bd99f78c337f98439e934`.
 **Repositório geometry no checkout de pesquisa original:** branch `agent/native-moving-schur-sigma`, HEAD `9392ebac9930f5d11c56f595556080e8ab1de809`, com logs/caches não rastreados preservados.
 **Repositório Momentos:** checkout local `main` em `05c9314d59306383baa55ed3be80ab950e799e97`; branch remota de pesquisa `origin/research/sigma-pade-dimension-depth-20261104` em `68c9b5f0a196289e28a8e5586146707d27df6b75`. PR #2 está OPEN e não foi integrada.
 
@@ -29,6 +30,8 @@
 **PENDENTE:** provar que os coeficientes verdadeiros da fonte C2 original pertencem às caixas; depois compor os dois teoremas finais incondicionais. A primeira obrigação aberta agora é O4, não O3.
 
 **O4 — avanço de infraestrutura:** os módulos existentes `ZetaLean.Rigor`, `ZetaLean.IntervalExp` e `ZetaLean.IntervalCExp` foram recompilados em Lean 4.32 com warnings como erros. Aritmética retangular racional, `log` real, `exp` real/complexo e `m^{-s}` têm inclusões kernel-checked. Quatro raízes foram auditadas e dependem apenas de `propext`, `Classical.choice`, `Quot.sound`.
+
+O checkpoint reprodutível dessa auditoria foi integrado pela PR #169; merge na main `75782fb8b7fb00bd273bd99f78c337f98439e934`. Os logs, comandos, hashes de fontes e `.olean` agora estão rastreados em `evidence/rational-boxes/`.
 
 **Primeiro lema O4 ainda ausente:** uma caixa racional quantitativa para `Complex.Gamma z` no domínio dos círculos Cauchy. A rotina Python usa Stirling complexo com deslocamento 80 e 75 correções, ainda sem ponte Lean para o resto. Há também a identidade formal `Zeta23.DigammaSeries.inv_gamma_eq_prod`, pelo produto de Weierstrass, em `height50-certified/lean/vendor/zeta23/Zeta23/GammaFacts/Series.lean`; sua cauda precisa de limite explícito eficiente. Depois vêm a composição Hurwitz/Cauchy e as duas proposições de inclusão das caixas. Evidência em `evidence/rational-boxes/`.
 
