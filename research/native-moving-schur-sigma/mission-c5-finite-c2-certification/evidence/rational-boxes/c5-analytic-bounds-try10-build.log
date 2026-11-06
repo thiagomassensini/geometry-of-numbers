@@ -1,0 +1,9 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:61:13: error: Function expected at
+  mul_le_one₀ hexp.right hpow.left hpow.right
+but this term has type
+  Real.exp (-x) * x ^ z.re ≤ 1
+
+Note: Expected a function because this term is being applied to the argument
+  hexp.1
+'CarrySigmaObstruction.complexGamma_norm_le_100' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+BUILD_EXIT=1

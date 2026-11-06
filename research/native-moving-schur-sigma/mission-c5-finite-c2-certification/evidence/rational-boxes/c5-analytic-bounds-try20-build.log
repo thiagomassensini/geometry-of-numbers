@@ -1,0 +1,29 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:321:63: error: unsolved goals
+w : ℂ
+hwre : |w.re| ≤ 39 / 100
+hwim : |w.im| ≤ 49 / 100
+hre : -(39 / 100) ≤ w.re ∧ w.re ≤ 39 / 100
+him : -(49 / 100) ≤ w.im ∧ w.im ≤ 49 / 100
+⊢ 2⁻¹ + -w.im = 2⁻¹ - w.im
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:333:27: error(lean.invalidField): Invalid field `trans`: The environment does not contain `And.trans`, so it is not possible to project the field `trans` from an expression
+  abs_le.mp hwre
+of type
+  -(39 / 100) ≤ w.re ∧ w.re ≤ 39 / 100
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:382:8: error: Tactic `apply` failed: could not unify the type of `add_le_add ?m.350 hsim'`
+  ?m.346 + |s.im| ≤ ?m.347 + 1 / 2
+with the goal
+  |(s - 1).re| + |(s - 1).im| ≤ 1 + 1 / 2
+
+z : ℂ
+hslo : 1 / 100 ≤ (operatorHeightParameter z).re
+hshi : (operatorHeightParameter z).re ≤ 99 / 100
+hsim : |(operatorHeightParameter z).im| ≤ 1 / 2
+s : ℂ := operatorHeightParameter z
+hslo' : 1 / 100 ≤ s.re
+hshi' : s.re ≤ 99 / 100
+hsim' : |s.im| ≤ 1 / 2
+hprod : ‖s * (s + 1)‖ ≤ 4
+hsNorm : ‖s‖ ≤ 3 / 2
+⊢ |(s - 1).re| + |(s - 1).im| ≤ 1 + 1 / 2
+'CarrySigmaObstruction.complexGamma_norm_le_100' depends on axioms: [propext, Classical.choice, Quot.sound]
+BUILD_EXIT=1

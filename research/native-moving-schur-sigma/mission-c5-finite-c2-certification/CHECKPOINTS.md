@@ -1,5 +1,26 @@
 # C5 — checkpoints
 
+## 2026-11-06 — cota analítica explícita provada localmente
+
+- `SigmaC5AnalyticBounds.lean` prova que a fonte deslocada original satisfaz
+  `‖displacedProductC d z‖≤10^100` para `|d|≤1/10` e `z∈ball(0,39/100)`.
+  A derivação limita Gamma pela integral de Euler e recorrência, os fatores
+  nativos pela série C3 exata e a completação original; não substitui a fonte
+  por modelo clássico.
+- Build limpo em Lean 4.32 terminou com `BUILD_EXIT=0`. A auditoria fail-closed
+  das três declarações (duas cotas Gamma e a cota da fonte) aceitou somente
+  `propext`, `Classical.choice` e `Quot.sound`.
+- Hashes de fonte, checker e `.olean`, logs e comando de retomada estão em
+  `evidence/rational-boxes/analytic-bounds-validation.md` e nos arquivos
+  `c5-analytic-bounds-final-clean-*`.
+- A análise exata de interpolação foi recalculada com raio externo `38/100`,
+  estritamente dentro do disco aberto onde o lema da fonte fornece a cota; o
+  erro de cauda continua `<10^-410`, e o erro Gamma amplificado continua
+  `<10^-135`. Log em `rational-interpolation-analysis-radius-38.log`.
+- C5 segue incompleta: falta certificar os valores nos 129 nós e provar que os
+  coeficientes C2 originais pertencem às caixas O3. Nenhum sinal incondicional
+  novo foi declarado.
+
 ## 2026-11-06 — limite dos pesos de graus 2–14 validado localmente
 
 - `c5InterpolationCoeffAbsSum_le_four_mul_two_pow` prova que, para todo

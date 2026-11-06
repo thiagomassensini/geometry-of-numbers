@@ -1,5 +1,59 @@
 # Retomar primeiro — missão C5
 
+## Estado mais recente — 2026-11-06
+
+A cota de módulo já não é uma obrigação aberta: `SigmaC5AnalyticBounds.lean`
+prova localmente `displacedProductC_norm_le_10pow100_on_ball_39` para a fonte
+original no disco aberto de raio `39/100`. Build limpo Lean 4.32 e auditoria
+fail-closed de três raízes passaram. O contorno de Cauchy usa raio `38/100`,
+estritamente dentro dessa bola, e a análise racional mantém o erro de
+interpolação `<10^-410`. Detalhes, hashes e limites estão em
+`evidence/rational-boxes/analytic-bounds-validation.md`.
+
+O4/C5 continua incompleta: certificar a avaliação da fonte original nos 129
+nós e provar a inclusão dos coeficientes nas caixas O3. Não refazer C1B, C2,
+C3, C4, O3, o domínio analítico, a ponte Gamma ou os limites de pesos.
+
+### Retomar o build da cota analítica
+
+Da raiz da worktree C5, com os checkouts fixados disponíveis:
+
+Se `C5_SOURCE_ANALYTIC_OUTPUT` ainda não existir, compile primeiro
+`SigmaC5SourceAnalytic` com o comando de domínio registrado mais abaixo neste
+arquivo.
+
+```bash
+C5_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105
+C5_CARRY_ROOT=/home/thlinux/worktrees/carry-sigma-c2-pinned-045369
+C5_CACHE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache
+C5_SOURCE_ROOT=$PWD/research/native-moving-schur-sigma
+C5_SOURCE_ANALYTIC_OUTPUT=$PWD/.lake/build/research/native-moving-schur-sigma/c5-source-analytic-clean-retry1-20261106
+C5_OUTPUT=$PWD/.lake/build/research/native-moving-schur-sigma/c5-analytic-bounds-repro-20261106
+C5_EVIDENCE=$C5_SOURCE_ROOT/mission-c5-finite-c2-certification/evidence/rational-boxes
+C5_LEAN_BIN=$(cd "$C5_REFERENCE_ROOT" && elan which lean)
+mkdir -p "$C5_OUTPUT"
+export SIGMA_REFERENCE_ROOT="$C5_REFERENCE_ROOT" CARRY_LEAN_ROOT="$C5_CARRY_ROOT"
+export SIGMA_OUTPUT_DIR="$C5_OUTPUT" LEAN_BIN="$C5_LEAN_BIN"
+export SIGMA_HEIGHT50_BUILD="$C5_SOURCE_ANALYTIC_OUTPUT:$C5_CACHE_ROOT/c3-validation/c1:$C5_CACHE_ROOT/c3-validation/c2/integration:$C5_CACHE_ROOT/c4-clean:$C5_CACHE_ROOT/c4-main-clean"
+if bash "$C5_SOURCE_ROOT/compile_sigma_pade.sh" SigmaC5AnalyticBounds \
+    > "$C5_EVIDENCE/c5-analytic-bounds-repro-build.log" 2>&1; then
+  printf 'BUILD_EXIT=0\n' >> "$C5_EVIDENCE/c5-analytic-bounds-repro-build.log"
+else
+  C5_STATUS=$?
+  printf 'BUILD_EXIT=%s\n' "$C5_STATUS" >> "$C5_EVIDENCE/c5-analytic-bounds-repro-build.log"
+  exit "$C5_STATUS"
+fi
+python3 "$C5_SOURCE_ROOT/check_c5_analytic_bounds_axioms.py" \
+  "$C5_EVIDENCE/c5-analytic-bounds-repro-build.log"
+sha256sum "$C5_SOURCE_ROOT/SigmaC5AnalyticBounds.lean" \
+  "$C5_SOURCE_ROOT/check_c5_analytic_bounds_axioms.py" \
+  "$C5_OUTPUT/SigmaC5AnalyticBounds.olean"
+```
+
+O comando `compile_sigma_pade.sh` verifica a revisão limpa do Carry
+`045369f6dedcb2e75e9aefed1d12c9f73b9a2532`, usa Lean 4.32 e exige pelo menos
+30 GiB de memória disponível durante a compilação.
+
 **MISSÃO:** certificar as primeiras janelas negativas da fonte C2 original,
 para `d=99/2000` e `d=1/10`. A validação segue incompleta até que as caixas
 racionais contenham os coeficientes originais.
@@ -14,8 +68,9 @@ racionais contenham os coeficientes originais.
 - A prova local `SigmaC5SourceAnalytic.lean` fecha o domínio analítico no disco
   aberto de raio `2/5` para `|d|≤1/10`; Lean 4.32 compilou o arquivo com
   `warningAsError=true`, e os quatro `#print axioms` passaram com axiomas padrão.
-- Esta ponte estabelece apenas o domínio, não a cota do módulo nem as inclusões
-  nas caixas. A validação C5 segue incompleta.
+- Registro daquele checkpoint: a ponte estabelecia apenas o domínio e ainda
+  não havia cota do módulo. A cota foi provada depois; as inclusões nas caixas
+  continuam pendentes.
 
 - C1–C4 e O3 estão integradas. O3 prova os sinais finais apenas sob as
   hipóteses explícitas de inclusão nas caixas.
@@ -36,27 +91,27 @@ racionais contenham os coeficientes originais.
   `c840ba35711ac8f938fa24c191f2af60f505480d`; #184 integrou o checkpoint
   explicitamente incompleto em `5528ddc8093a22682c87f3f9c6575e30e90a7011`.
 
-## O que continua aberto
+## O que continua aberto — snapshot anterior ao avanço da cota
 
-Falta provar uma cota numérica uniforme para `completedSigmaDensity d t` no
-disco de raio `2/5`, certificar a avaliação racional da fonte nos 129 nós e
-provar a inclusão dos coeficientes originais nas caixas O3. A saída `mpmath.iv`
-continua sendo evidência computacional, não prova de inclusão. Não declarar os
-teoremas finais incondicionais enquanto esse gate estiver aberto.
+Naquele snapshot faltava provar uma cota numérica uniforme, além de certificar
+a avaliação racional da fonte nos 129 nós e provar a inclusão dos coeficientes
+originais nas caixas O3. A cota numérica já foi provada, conforme o estado mais
+recente acima; as avaliações e inclusões continuam pendentes. A saída
+`mpmath.iv` continua sendo evidência computacional, não prova de inclusão.
 
 Preservar a fonte C2 original, a cabeça e a cauda exponencial exata. A ponte
 Euler-Gamma de erro `10⁻²⁵⁹` está provada. A cota dos pesos `<10^145` é uniforme
 e suficiente para a margem estimada; não é necessário recuperar o limite
 exploratório `10^124`.
 
-## Próximo passo
+## Próximo passo histórico — cota já provada
 
-Continuar com uma cota explícita para o módulo da fonte C2 no disco de raio
-`2/5` e a certificação nodal. PR #187 já integrou a prova de pesos; a ponte de
-domínio analítico foi compilada localmente nesta continuação, sem ainda fechar
-a cota. Consulte `evidence/rational-boxes/source-analytic-domain-validation.md`.
+O passo seguinte naquele checkpoint era provar a cota do módulo. Ela agora está
+provada localmente na bola aberta de raio `39/100`; o passo corrente é
+certificar as avaliações nos 129 nós e a inclusão nas caixas. Consulte
+`evidence/rational-boxes/analytic-bounds-validation.md`.
 
-## Retomada exata do subpasso de domínio
+## Retomada histórica do subpasso de domínio
 
 - Último teorema validado: `CarrySigmaObstruction.displacedProductC_analyticOnNhd_ball`.
 - Arquivo compilado: `research/native-moving-schur-sigma/SigmaC5SourceAnalytic.lean`.

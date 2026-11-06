@@ -1,0 +1,2 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:1:0: error: object file '/home/thlinux/carry-self-adjoint-operator/.lake/packages/geometry-of-numbers/.lake/build/lib/lean/GeometryOfNumbers/Analysis/CanonicalFiniteHeight.olean' of module GeometryOfNumbers.Analysis.CanonicalFiniteHeight does not exist
+BUILD_EXIT=1

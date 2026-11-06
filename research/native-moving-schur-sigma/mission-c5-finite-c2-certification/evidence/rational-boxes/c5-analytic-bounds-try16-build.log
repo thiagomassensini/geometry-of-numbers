@@ -1,0 +1,15 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:282:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ‖↑3 ^ ?y‖
+in the target expression
+  101 / 100 ≤ ‖3 ^ (1 - s)‖
+
+s : ℂ
+hslo : 1 / 100 ≤ s.re
+hshi : s.re ≤ 99 / 100
+hlog : 1 ≤ Real.log 3
+hbase : 101 / 100 ≤ 3 ^ (1 / 100)
+hexp : 1 / 100 ≤ 1 - s.re
+hpowReal : 101 / 100 ≤ 3 ^ (1 - s.re)
+⊢ 101 / 100 ≤ ‖3 ^ (1 - s)‖
+'CarrySigmaObstruction.complexGamma_norm_le_100' depends on axioms: [propext, Classical.choice, Quot.sound]
+BUILD_EXIT=1

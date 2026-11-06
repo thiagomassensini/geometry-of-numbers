@@ -1,0 +1,3 @@
+4304d3efec5b4a3b52f107a7129fef18deb31897658a93d230024da3839d87eb  /home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean
+b5957a654a856407e4f953e7eb7b86074b37d781be2b76c4b1ea621d396fa1f2  /home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/check_c5_analytic_bounds_axioms.py
+63aa6b0c17bc5e03269c4f624811da2a986fb509f2382ad043bfa278cf306845  /home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/.lake/build/research/native-moving-schur-sigma/c5-analytic-bounds-final-clean/SigmaC5AnalyticBounds.olean

@@ -1,0 +1,27 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:1:0: error: unknown module prefix 'NativeCarryC3Crosswalk'
+
+No directory 'NativeCarryC3Crosswalk' or file 'NativeCarryC3Crosswalk.olean' in the search path entries:
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/.lake/build/research/native-moving-schur-sigma/c5-analytic-bounds-try3
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/.cache/c4-clean
+/home/thlinux/worktrees/carry-sigma-c2-pinned-045369/.lake/build/lib/lean
+/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c1
+/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/integration
+/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c4-clean
+/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c4-main-clean
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/.lake/build/research/native-moving-schur-sigma/c5-source-analytic-clean-retry1-20261106
+/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105/.lake/build/lib/lean
+/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105/.lake/packages/Cli/.lake/build/lib/lean
+/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105/.lake/packages/batteries/.lake/build/lib/lean
+/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105/.lake/packages/Qq/.lake/build/lib/lean
+/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105/.lake/packages/aesop/.lake/build/lib/lean
+/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105/.lake/packages/proofwidgets/.lake/build/lib/lean
+/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105/.lake/packages/importGraph/.lake/build/lib/lean
+/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105/.lake/packages/LeanSearchClient/.lake/build/lib/lean
+/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105/.lake/packages/plausible/.lake/build/lib/lean
+/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105/.lake/packages/mathlib/.lake/build/lib/lean
+/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105/.lake/packages/GreenFrame/.lake/build/lib/lean
+/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105/.lake/build/lib/lean
+/home/thlinux/.elan/toolchains/leanprover--lean4---v4.32.0/lib/lean
+/home/thlinux/.elan/toolchains/leanprover--lean4---v4.32.0/lib/lean
+BUILD_EXIT=1

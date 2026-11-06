@@ -1,0 +1,31 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:207:8: error(lean.unknownIdentifier): Unknown constant `Real.summable_of_sum_range_le`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:208:2: error: No goals to be solved
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:225:49: error(lean.unknownIdentifier): Unknown identifier `radiusSet`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:225:60: error(lean.unknownIdentifier): Unknown identifier `halfRange`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:224:44: error: unsolved goals
+s : ℂ
+hsre : 0 ≤ s.re
+hsre1 : s.re ≤ 1
+hsim : |s.im| ≤ 1 / 2
+hsprod : ‖s * (s + 1)‖ ≤ 4
+⊢ ∑ x ∈ FiniteNativeCarryOperator.Camera.radiusSet 3, ↑x ^ (-s) = 1
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:233:8: error(lean.unknownIdentifier): Unknown identifier `radiusSet`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:233:19: error(lean.unknownIdentifier): Unknown identifier `halfRange`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:231:64: error: unsolved goals
+s : ℂ
+hsre : 0 ≤ s.re
+hsre1 : s.re ≤ 1
+hsim : |s.im| ≤ 1 / 2
+hsprod : ‖s * (s + 1)‖ ≤ 4
+hseed : seedDirichletTerm 3 s = 1
+n : ℕ
+h : ‖centerBracketTerm 3 s n‖ ≤ centerBracketMajorant 3 0 4 n
+⊢ ∑ x ∈ FiniteNativeCarryOperator.Camera.radiusSet 3, 4 * ((↑n + 1) ^ 2)⁻¹ * ↑x ^ 2 = 4 * ((↑n + 1) ^ 2)⁻¹
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5AnalyticBounds.lean:256:17: error: Type mismatch
+  add_le_add_left (LE.le.trans hsum hsum8) 1
+has type
+  ∑' (n : ℕ), ‖centerBracketTerm 3 s n‖ + 1 ≤ 8 + 1
+but is expected to have type
+  1 + ∑' (n : ℕ), ‖centerBracketTerm 3 s n‖ ≤ 1 + 8
+'CarrySigmaObstruction.complexGamma_norm_le_100' depends on axioms: [propext, Classical.choice, Quot.sound]
+BUILD_EXIT=1
