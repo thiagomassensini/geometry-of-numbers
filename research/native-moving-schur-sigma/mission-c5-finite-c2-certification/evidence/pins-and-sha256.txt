@@ -80,6 +80,8 @@ Reproduced C5 outputs
 
 - Geometry `origin/main` base: PR #176 merge `ac84c9302ae608e39c742f856ad361921653f268`.
 - C5 branch before this checkpoint: `codex/c5-finite-c2-certification-20261106`, remote feature tip `de8f307715f30724b550e1f0223b6c57d892487f`.
+- Proof commit `67ff0b7ef32de922dda7cd0fcea890bc3afbf738`; PR #177 merged to `main` as `0702371cff0c6016eae9eaa0aa9331ae95483456`.
+- Geometry `origin/main` after PR #177: `0702371cff0c6016eae9eaa0aa9331ae95483456`.
 - Lean: `leanprover/lean4:v4.32.0`; Mathlib: `81a5d257c8e410db227a6665ed08f64fea08e997`; Carry: `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`.
 - Source and clean `.olean` hashes for `SigmaRationalInterpolation.lean`, its audit, and the fail-closed checker are recorded in `evidence/rational-boxes/source-and-olean-sha256.txt`.
 - The module proves only exact polynomial interpolation and the coefficient identity. Numerical weight bounds, the complex source bound, and C2 source-box inclusion remain open.

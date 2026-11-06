@@ -79,7 +79,9 @@ da identidade algébrica estão em `evidence/rational-boxes/VALIDATION.md`.
 
 A Fase 1 foi integrada pela PR #165, merge `75691edf0e74cc643f098213f60b684476132175`;
 O3 foi integrada pela PR #167, merge `fc17d3b16fd0ed5643cb12ef48c80bb81c81cbd9`.
-O4 e os teoremas finais incondicionais seguem abertos.
+O lema algébrico dos 129 nós foi integrado pela PR #177, merge
+`0702371cff0c6016eae9eaa0aa9331ae95483456`. O4, a inclusão das caixas e os
+teoremas finais incondicionais seguem abertos.
 
 ## Classificação honesta se O4 continuar em aberto
 

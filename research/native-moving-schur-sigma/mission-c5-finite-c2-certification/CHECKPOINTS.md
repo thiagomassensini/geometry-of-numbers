@@ -91,3 +91,5 @@ O checkpoint atual registra um lema algébrico parcial de O4. A inclusão da fon
 - Build Lean 4.32.0 com `warningAsError=true` passou em saída limpa. A auditoria cobre quatro raízes e encontrou apenas `propext`, `Classical.choice` e `Quot.sound`; o checker fail-closed passou.
 - Logs, comandos e hashes estão em `evidence/rational-boxes/VALIDATION.md`, `interpolation-audit*.log` e `source-and-olean-sha256.txt`.
 - O4 continua incompleta: faltam os limites Lean dos pesos, a cota analítica da densidade e a avaliação rigorosa da fonte nos pontos.
+- A prova foi publicada pela PR #177; commit `67ff0b7ef32de922dda7cd0fcea890bc3afbf738`, merge na `main` `0702371cff0c6016eae9eaa0aa9331ae95483456`.
+- O checkpoint permanece parcial: nenhuma inclusão de `sigmaC00495SourceBoxes` ou `sigmaC01SourceBoxes` foi provada.
