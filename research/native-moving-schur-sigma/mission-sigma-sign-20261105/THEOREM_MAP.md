@@ -59,7 +59,7 @@ Possíveis módulos reutilizáveis: `CameraCoherence.lean` e `HankelLimitObject.
 
 ## C3 — as duas torres
 
-O módulo `SigmaParityNegativeDirection.lean` formaliza as duas escolhas. `exists_even_sigma_negative_directions_from_pade` escolhe `p=2P` e produz uma direção negativa em `sigmaMatrix (1/5) 0 M`; `exists_odd_sigma_negative_directions_from_pade` escolhe `p=2P+1` e produz a direção em `sigmaMatrix (1/5) 1 M`, em todo `M≥P+2`. Ambos começam no bloco `2×2` cuja determinante é `sigmaPadeD (1/5) p`, inserem-no como janela deslocada e usam `sigmaMatrix_not_posSemidef_of_negative_direction` de C1B para transportar a negatividade do bloco prefixo às dimensões maiores. Build e auditoria constam em `evidence/c3-parity/`.
+O módulo `SigmaParityNegativeDirection.lean` formaliza as duas escolhas. `exists_even_sigma_negative_directions_from_pade` escolhe `p=2P` e produz uma direção negativa em `sigmaMatrix (1/5) 0 M`; `exists_odd_sigma_negative_directions_from_pade` escolhe `p=2P+1` e produz a direção em `sigmaMatrix (1/5) 1 M`, em todo `M≥P+2`. Ambos começam no bloco `2×2` cuja determinante é `sigmaPadeD (1/5) p`, inserem-no como janela deslocada e usam `sigmaMatrix_not_posSemidef_of_negative_direction` de C1B para transportar a negatividade do bloco prefixo às dimensões maiores. C3 foi integrado pela PR #159, merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`; build e auditoria constam em `evidence/c3-parity/`.
 
 ## C4 — série de fonte deslocada
 

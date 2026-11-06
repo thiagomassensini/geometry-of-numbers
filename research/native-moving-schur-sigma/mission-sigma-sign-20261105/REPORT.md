@@ -1,6 +1,6 @@
 # Relatório consolidado — missão de negatividade transversal sigma
 
-**Atualizado em 2026-11-05.** C0, C1, C1B e C2 estão integrados. A prova e a validação de C3 foram concluídas; sua integração está pendente.
+**Atualizado em 2026-11-05.** C0, C1, C1B, C2 e C3 estão concluídos e integrados à `main`.
 
 ## Resultados formais
 
@@ -35,7 +35,7 @@ O lema `sigmaMatrix_prefix_submatrix` identifica exatamente a seção antiga com
 | C1 — direção negativa finita | Integrado, CI passou | PR #154; commit de prova `c2706339b15db390bf8f5f50535016bd1aca8cb8`; merge `b7a8a0eda7230c02f80dc63b41ab4cc9f9cf1d1e`; run `42101466137` success |
 | C1B — persistência em dimensões maiores | Integrado pela PR #155; merge `0586e238441096ecd2248e3f14bdac3a832af427` | `evidence/c1b-focused-build.log`; 109 relatórios de axiomas padrão |
 | C2 — menores originais eventualmente negativos em `d=1/5` | Integrado pela PR #157; merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949` | `evidence/c2-eventual-negativity/`; 72 relatórios externos, 17 de integração e auditoria transitiva de 124 raízes |
-| C3 — torres par e ímpar | Prova/validação concluídas; PR e merge pendentes | `SigmaParityNegativeDirection.lean`; auditoria C3 de 4 resultados e transitiva de 133 raízes em `evidence/c3-parity/` |
+| C3 — torres par e ímpar | Integrado pela PR #159; merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8` | Commit de prova `35dc14f13bd314639ce0c65daedf32b20f298667`; 4 relatórios C3, 133 raízes transitivas e 70.861 dependências em `evidence/c3-parity/` |
 | C4 — fonte deslocada e Bézout | Não iniciado | Explorar depois de C1–C3, preservando o fator 2 |
 
 ## Compilação, auditoria e proveniência
@@ -46,8 +46,9 @@ O lema `sigmaMatrix_prefix_submatrix` identifica exatamente a seção antiga com
 - A auditoria recursiva anterior confirmou 1.278 módulos-fonte não-Mathlib contra os pins em `evidence/c1-source-pin-audit.txt`. Proveniência e licenças do certificado estão em `evidence/c1-source-provenance.md`; hashes C1 e C1B estão nos manifests correspondentes.
 - C1B já está publicado pela PR #155. O checkpoint da validação incompleta 4.35 e os registros atualizados foram publicados pela PR #156, merge `301c36c710c87dc5fc43db9c26aa90c005e9e5a6`.
 - C2 foi integrado pela PR #157; o GitHub não retornou status checks para essa PR. O estado consolidado da missão foi atualizado após o merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`.
+- C3 foi integrado pela PR #159; o GitHub não retornou status checks. O merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8` conclui as prioridades C2/C3; evidências de build e auditoria estão em `evidence/c3-parity/`.
 - A compilação local respeitou o gate do script de 30 GiB; após o aumento da VM havia cerca de 60 GiB disponíveis.
 
 ## Limites
 
-Não se provam positividade central all-order, RH, negatividade de todos os pivôs ou crescimento do índice negativo. C3 deve cobrir explicitamente as duas torres.
+Não se provam positividade central all-order, RH, negatividade de todos os pivôs ou crescimento do índice negativo. C3 cobre explicitamente as duas torres par/ímpar; as tarefas quantitativas, os cadernos e C4 ficam para trabalho posterior.

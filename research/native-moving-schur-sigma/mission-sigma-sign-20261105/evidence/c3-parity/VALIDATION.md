@@ -1,6 +1,6 @@
 # C3: direções negativas nos setores par e ímpar
 
-**Status:** prova e validação Lean 4.32 concluídas; integração na `main` pendente desta PR.
+**Status:** integrado à `main` pela PR #159, commit de prova `35dc14f13bd314639ce0c65daedf32b20f298667`, merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`.
 
 ## Resultado
 
