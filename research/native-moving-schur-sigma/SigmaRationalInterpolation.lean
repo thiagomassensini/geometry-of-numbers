@@ -44,6 +44,35 @@ theorem c5BasisDivisor_coeff_zero (x y : ℚ) :
   rw [Lagrange.basisDivisor, Polynomial.coeff_C_mul, Polynomial.coeff_sub]
   simp
 
+theorem c5BasisDivisor_eval_zero (x y : ℚ) :
+    (Lagrange.basisDivisor x y).eval 0 = -((x - y)⁻¹ * y) := by
+  simp [Lagrange.basisDivisor]
+
+theorem c5BasisDivisor_derivative_eval_zero (x y : ℚ) :
+    (Lagrange.basisDivisor x y).derivative.eval 0 = (x - y)⁻¹ := by
+  simp [Lagrange.basisDivisor]
+
+theorem c5Coeff_one_eq_derivative_eval_zero (p : Polynomial ℚ) :
+    p.coeff 1 = p.derivative.eval 0 := by
+  rw [← Polynomial.coeff_zero_eq_eval_zero, Polynomial.coeff_derivative]
+  simp
+
+theorem c5LagrangeBasis_derivative_eval_zero (j : ℕ) :
+    (c5LagrangeBasis j).derivative.eval 0 =
+      ∑ k ∈ c5InterpolationIndices.erase j,
+        (∏ l ∈ (c5InterpolationIndices.erase j).erase k,
+          -((c5InterpolationNode j - c5InterpolationNode l)⁻¹ *
+            c5InterpolationNode l)) *
+          (c5InterpolationNode j - c5InterpolationNode k)⁻¹ := by
+  rw [c5LagrangeBasis, Lagrange.basis, Polynomial.derivative_prod_finset]
+  simp [Polynomial.eval_finsetSum, Polynomial.eval_mul, Polynomial.eval_prod,
+    c5BasisDivisor_eval_zero, c5BasisDivisor_derivative_eval_zero]
+
+theorem c5LagrangeBasis_coeff_one (j : ℕ) :
+    (c5LagrangeBasis j).coeff 1 =
+      (c5LagrangeBasis j).derivative.eval 0 :=
+  c5Coeff_one_eq_derivative_eval_zero _
+
 theorem c5LagrangeBasis_coeff_zero (j : ℕ) :
     (c5LagrangeBasis j).coeff 0 =
       ∏ k ∈ c5InterpolationIndices.erase j,

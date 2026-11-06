@@ -11,5 +11,10 @@ namespace CarrySigmaObstruction
 #print axioms c5LagrangeBasis_coeff_zero_of_ne
 #print axioms c5LagrangeBasis_zero_coeff_zero
 #print axioms c5InterpolationWeightSum_zero_eq_one
+#print axioms c5BasisDivisor_eval_zero
+#print axioms c5BasisDivisor_derivative_eval_zero
+#print axioms c5Coeff_one_eq_derivative_eval_zero
+#print axioms c5LagrangeBasis_derivative_eval_zero
+#print axioms c5LagrangeBasis_coeff_one
 
 end CarrySigmaObstruction

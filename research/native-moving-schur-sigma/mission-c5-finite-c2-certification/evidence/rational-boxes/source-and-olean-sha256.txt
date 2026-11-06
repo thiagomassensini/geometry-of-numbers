@@ -58,3 +58,14 @@ ebb4f928e6d81ae574b753d38fb674af7f59e1d30a5f2f724520319763659c0c  .lake/build/re
 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-interpolation-build.log
 a6c634ac9215a04be4070eede01684009d092dea71b974dbfa35ca01ef097aac  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/interpolation-audit.log
 c89684951fac1e16e895dc42853866d66000f796210c5a52b33be8fff9ed1a61  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/interpolation-audit-check.log
+
+C5 degree-one derivative structure (Lean 4.32; geometry base `de95637d38d5e6d5488342cd5141b88233be6eb7`):
+7c6590c4ff598e1a2a1e105d405547b019769eb807df46d49b9550fadbe915f8  research/native-moving-schur-sigma/SigmaRationalInterpolation.lean
+c25cc1cd199c839559f12a0eb201928b732e83a62916992122cfd6996a7f0838  research/native-moving-schur-sigma/check_c5_interpolation_axioms.py
+4bb81eaa0bf0885536ab8bd01a02804828a9281004b85f436430c2fa3afb3135  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/interpolation-audit.lean
+1932d6c160a847b7862b5517d738a34e58d744233f624178062fb0bb1b1a2c55  .lake/build/research/native-moving-schur-sigma/c5-weight-degree1-structural-clean-20261106/SigmaRationalInterpolation.olean
+ebb4f928e6d81ae574b753d38fb674af7f59e1d30a5f2f724520319763659c0c  .lake/build/research/native-moving-schur-sigma/c5-weight-degree1-structural-clean-20261106/interpolation-audit.olean
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-interpolation-build.log
+1f66face83cf5f793359a0302930ae2706a406da6f8cea01751756595a9f962e  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/interpolation-audit.log
+a41acd26867c5ac74895bac60e118b42a57346b83022b58201bf69e3300315fc  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/interpolation-audit-check.log
+7a2b2647e4be2f3e3e1b24dca88eea4848d2fca3530b73e6fa22039875203d24  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/interpolation-weight-degree1-prototype.log

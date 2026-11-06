@@ -70,7 +70,11 @@ coeficientes com as somas ponderadas de Lagrange. Isso é somente o passo
 algébrico. `c5InterpolationWeightSum_zero_eq_one` prova que o peso escalado de
 grau zero soma exatamente `1`; os limites calculados em Python (menores que
 `10^124` para graus até 14) ainda não foram provados para os graus `1..14` no
-Lean. Também seguem pendentes a cota analítica
+Lean. Para grau um, `c5LagrangeBasis_derivative_eval_zero` expressa os
+coeficientes por uma soma de derivadas e produtos finitos; a tentativa de fechar
+o limite numérico por expansão direta atingiu o limite de passos de `simp`.
+Comando e erro estão em `evidence/rational-boxes/interpolation-weight-degree1-prototype.log`.
+Também seguem pendentes a cota analítica
 `|completedSigmaDensity d t|≤10^100` no disco de raio `2/5` e a avaliação
 rigorosa da fonte nos pontos. A análise exploratória está em
 `analyze_rational_interpolation.py` e
@@ -87,7 +91,8 @@ teoremas finais incondicionais seguem abertos. O checkpoint de estado pós-PR
 #177 foi integrado pela PR #178, merge `7ad7e29195790eedda01645e71e5c52edf1b4e6b`.
 A soma exata do peso escalado de grau zero foi integrada pela PR #179, merge
 `f6a2298b92cbfddad77abe512d73387efea4e870`; os graus positivos e O4 permanecem
-abertos.
+abertos. O estado pós-PR #179 foi registrado pela PR #180, merge
+`de95637d38d5e6d5488342cd5141b88233be6eb7`.
 
 ## Classificação honesta se O4 continuar em aberto
 

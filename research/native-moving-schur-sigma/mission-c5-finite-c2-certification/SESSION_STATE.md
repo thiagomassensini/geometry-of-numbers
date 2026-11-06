@@ -1,13 +1,13 @@
 # C5 — estado da sessão
 
 **Atualizado:** 2026-11-06
-**Status:** C1–C4 e O3 estão integradas; a ponte Euler-Gamma de precisão `10⁻²⁵⁹`, a identidade algébrica de interpolação em 129 nós e a soma absoluta do peso escalado de grau zero (`=1`) estão provadas em Lean 4.32. Os pesos de graus positivos, a cota analítica da fonte e a inclusão dos coeficientes C2 nas caixas seguem pendentes.
-**Branch C5 de trabalho:** `codex/c5-finite-c2-certification-20261106`, commit de prova remoto `963dbdb035714ddf6d61f5ad329769de48c77354`; Fase 1 integrada pela PR #165 e O3 pela PR #167.
+**Status:** C1–C4 e O3 estão integradas; a ponte Euler-Gamma de precisão `10⁻²⁵⁹`, a identidade algébrica de interpolação em 129 nós e a soma absoluta do peso escalado de grau zero (`=1`) estão provadas em Lean 4.32. Para grau um, está provada a representação dos coeficientes por derivadas avaliadas em zero. Os limites numéricos dos pesos, a cota analítica da fonte e a inclusão dos coeficientes C2 nas caixas seguem pendentes.
+**Branch C5 de trabalho:** `codex/c5-finite-c2-certification-20261106`, último commit remoto `85f66341bdfa0f660ce712f351b9a1232cc11f44`; Fase 1 integrada pela PR #165 e O3 pela PR #167.
 **Main geometry no início da auditoria O4:** `1bc7318915c3e625ad228c89ff8c300cb07e52c5` (merge da PR #168).
 **Última prova geometry integrada:** PR #179, soma exata do peso escalado de grau zero, `f6a2298b92cbfddad77abe512d73387efea4e870`.
 **Registro de estado anterior à PR #177:** PR #176, merge `ac84c9302ae608e39c742f856ad361921653f268`.
-**Último checkpoint de estado antes da PR #179:** PR #178, merge `7ad7e29195790eedda01645e71e5c52edf1b4e6b`.
-**Main geometry após a PR #179:** `f6a2298b92cbfddad77abe512d73387efea4e870`.
+**Último checkpoint de estado:** PR #180, merge `de95637d38d5e6d5488342cd5141b88233be6eb7`.
+**Main geometry após a PR #180:** `de95637d38d5e6d5488342cd5141b88233be6eb7`.
 **Repositório geometry no checkout de pesquisa original:** branch `agent/native-moving-schur-sigma`, HEAD `9392ebac9930f5d11c56f595556080e8ab1de809`, com logs/caches não rastreados preservados.
 **Repositório Momentos:** checkout local `main` em `05c9314d59306383baa55ed3be80ab950e799e97`; branch remota de pesquisa `origin/research/sigma-pade-dimension-depth-20261104` em `68c9b5f0a196289e28a8e5586146707d27df6b75`. PR #2 está OPEN e não foi integrada.
 
@@ -44,9 +44,11 @@ O checkpoint reprodutível dessa auditoria foi integrado pela PR #169; merge na 
 
 **Primeiro lema O4 ainda ausente:** inclusão em caixas racionais estreitas da expressão finita `gammaFinite 3072 620 z` nos valores usados para os coeficientes. A ponte Euler já fica abaixo da precisão necessária; permanece a avaliação com cancelamento da soma finita, a avaliação Hurwitz e a composição com a fonte C2.
 
-**Identidade algébrica de interpolação provada nesta etapa:** `SigmaRationalInterpolation.lean` define os 129 nós `j²`, prova que são distintos e formaliza que a interpolação de Lagrange recupera exatamente qualquer polinômio racional de grau menor que 129. Também prova a expressão dos coeficientes da interpolação como soma das avaliações ponderadas pelos coeficientes das bases. Build Lean 4.32 e auditoria de nove raízes passaram; apenas `propext`, `Classical.choice` e `Quot.sound` aparecem. Os limites numéricos dos pesos de grau positivo ainda não foram provados no Lean.
+**Identidade algébrica de interpolação provada nesta etapa:** `SigmaRationalInterpolation.lean` define os 129 nós `j²`, prova que são distintos e formaliza que a interpolação de Lagrange recupera exatamente qualquer polinômio racional de grau menor que 129. Também prova a expressão dos coeficientes da interpolação como soma das avaliações ponderadas pelos coeficientes das bases. Build Lean 4.32 e auditoria de quatorze raízes passaram; apenas `propext`, `Classical.choice` e `Quot.sound` aparecem. Os limites numéricos dos pesos de grau positivo ainda não foram provados no Lean.
 
-**Grau zero dos pesos provado:** o coeficiente constante da base de Lagrange em `j=0` é `1`, as demais bases têm coeficiente constante `0`, e `c5InterpolationWeightSum_zero_eq_one` conclui que a soma absoluta do peso escalado de grau zero é exatamente `1`. Os limites dos graus `1..14` continuam abertos. A auditoria atualizada cobre nove raízes.
+**Grau zero dos pesos provado:** o coeficiente constante da base de Lagrange em `j=0` é `1`, as demais bases têm coeficiente constante `0`, e `c5InterpolationWeightSum_zero_eq_one` conclui que a soma absoluta do peso escalado de grau zero é exatamente `1`.
+
+**Estrutura para grau um provada:** o coeficiente linear de um polinômio é sua derivada avaliada em zero; `c5LagrangeBasis_derivative_eval_zero` expande isso como soma dos produtos das derivadas das bases. A tentativa de fechar diretamente o limite `10^11` por expansão exata esgotou o limite de passos do simplificador; o erro e comando estão preservados em `evidence/rational-boxes/interpolation-weight-degree1-prototype.log`. Os limites `n=1..14` continuam abertos. A auditoria atual cobre quatorze raízes.
 
 ## Validação reproduzida
 

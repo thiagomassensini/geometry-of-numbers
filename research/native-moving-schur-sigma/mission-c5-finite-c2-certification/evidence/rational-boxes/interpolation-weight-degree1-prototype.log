@@ -1,0 +1,27 @@
+C5 degree-one numerical weight prototype
+Date: 2026-11-06
+Base geometry main: f6a2298b92cbfddad77abe512d73387efea4e870 (PR #179)
+Toolchain: leanprover/lean4:v4.32.0
+Mathlib: 81a5d257c8e410db227a6665ed08f64fea08e997
+
+Attempted to prove c5InterpolationWeightSum 1 < 10^11 by expanding the
+129-node derivative-product formula and normalizing the resulting rational
+sum. The build command was:
+
+SIGMA_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105 \
+CARRY_LEAN_ROOT=/home/thlinux/worktrees/carry-sigma-c2-pinned-045369 \
+SIGMA_OUTPUT_DIR=/home/thlinux/worktrees/geometry-of-numbers-c5-finite-c2-certification/.lake/build/research/native-moving-schur-sigma/c5-weight-degree1-numeric \
+bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaRationalInterpolation
+
+With maxRecDepth=10000, maxHeartbeats=0 and simp maxSteps=500000, Lean 4.32
+ran for more than ten minutes and returned:
+
+research/native-moving-schur-sigma/SigmaRationalInterpolation.lean:80:2:
+error: `simp` failed: maximum number of steps exceeded
+
+An earlier run with the default simp step limit returned the same error. The
+numeric theorem was removed. The exact derivative formula and coefficient-one
+identity were retained because they compile independently. This is a
+simplifier resource limit; it does not show that the claimed inequality is
+false. Resume with a more structural rational bound instead of expanding all
+129 products at once.
