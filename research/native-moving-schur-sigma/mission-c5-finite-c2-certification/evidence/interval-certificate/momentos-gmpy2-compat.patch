@@ -3,7 +3,7 @@ index 1dae3ef..3c856f8 100644
 --- a/investigations/c2_first_negative_interval_certificate_20261106/certify_finite_c2.py
 +++ b/investigations/c2_first_negative_interval_certificate_20261106/certify_finite_c2.py
 @@ -14,7 +14,9 @@ from c2_em_interval import completed_c2, N as EM_N, P as EM_P
- 
+
  def frac(x):
   sign, man, exp, bc=x
 - q=Fraction(man,1)
@@ -11,7 +11,7 @@ index 1dae3ef..3c856f8 100644
 + # mantissa is an mpz. Normalize it to a builtin int before Fraction/Decimal.
 + q=Fraction(int(man),1)
   return (-q if sign else q) * (Fraction(2)**exp)
- 
+
  def get_endpoints(iv_num):
 @@ -50,8 +52,8 @@ class RatInterval:
   def exact_decimal_endpoints(self):
