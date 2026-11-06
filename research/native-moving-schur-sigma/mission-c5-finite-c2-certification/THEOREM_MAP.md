@@ -126,8 +126,10 @@ Em `SigmaRationalInterpolation.lean`:
 
 As quatorze raízes foram compiladas em Lean 4.32 e auditadas. Os comandos e hashes estão em `evidence/rational-boxes/VALIDATION.md` e `evidence/rational-boxes/source-and-olean-sha256.txt`. A expansão direta que excedeu o limite do simplificador está registrada em `interpolation-weight-degree1-prototype.log`.
 
-**Checkpoint de grau um validado localmente — publicação pendente:** a branch
-`codex/c5-degree1-weight-bound-20261106` acrescenta os três teoremas acima por
-identidades de produtos fatoriais. Build limpo e auditoria fail-closed passaram;
-veja `evidence/rational-boxes/degree1-weight-bound-validation.md`. O resultado
-cobre somente grau um e não fecha O4.
+**Limite de grau um — PROVADO E INTEGRADO:** os três teoremas acima foram
+integrados pela PR #185; commit de prova `90a208df98e74a7c5ab1fe83a9ef0fc90c3d3cb6`,
+merge `c840ba35711ac8f938fa24c191f2af60f505480d`. O build limpo Lean 4.32 e a
+auditoria fail-closed de 21 raízes aceitam somente `propext`, `Classical.choice`
+e `Quot.sound`. Evidência em `evidence/rational-boxes/degree1-weight-bound-validation.md`.
+O resultado cobre somente grau um e não fecha O4; os graus `2..14` continuam
+abertos.

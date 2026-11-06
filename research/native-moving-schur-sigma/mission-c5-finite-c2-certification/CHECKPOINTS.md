@@ -139,4 +139,15 @@ O checkpoint atual registra um lema algébrico parcial de O4. A inclusão da fon
 - Foram provados `c5LagrangeBasisProductCoeffOne_bound`, `c5InterpolationCoeffOneAbsSum_le_six` e `c5InterpolationWeightSum_one_lt_ten_eleven`. A soma absoluta escalada do coeficiente de grau um é estritamente menor que `10^11`.
 - A auditoria transitiva compilada de forma limpa aceitou 21 raízes; somente `propext`, `Classical.choice` e `Quot.sound` aparecem. O checker fail-closed passou.
 - Evidência, comandos e hashes: `evidence/rational-boxes/degree1-weight-bound-validation.md` e os arquivos `c5-interpolation-degree1-final-clean-*`.
-- O checkpoint é parcial e está pronto para PR. Permanecem abertos os pesos `2..14`, a cota analítica da fonte e as inclusões das caixas de coeficientes C2.
+- No registro feito antes da PR #185, o checkpoint estava parcial e pronto para publicação. Permanecem abertos os pesos `2..14`, a cota analítica da fonte e as inclusões das caixas de coeficientes C2.
+
+## 2026-11-06 — checkpoint C5 incompleto integrado pela PR #184
+
+- A PR #184 publicou a tentativa e seus diagnósticos como checkpoint explicitamente incompleto; merge na `main`: `5528ddc8093a22682c87f3f9c6575e30e90a7011`.
+- Logs, pins, comandos de retomada e o estado da tentativa foram preservados. Esse merge não certificou as caixas nem os sinais finais.
+
+## 2026-11-06 — limite de grau um integrado pela PR #185
+
+- Commit de prova `90a208df98e74a7c5ab1fe83a9ef0fc90c3d3cb6`; merge na `main`: `c840ba35711ac8f938fa24c191f2af60f505480d`.
+- `c5LagrangeBasisProductCoeffOne_bound`, `c5InterpolationCoeffOneAbsSum_le_six` e `c5InterpolationWeightSum_one_lt_ten_eleven` foram compilados em saída limpa Lean 4.32 e auditados entre 21 raízes; somente os três axiomas padrão aparecem.
+- A entrega fecha apenas o limite do peso escalado de grau um. Os pesos `2..14`, a cota analítica, as avaliações da fonte e as inclusões em caixas permanecem abertos; os teoremas finais continuam condicionais.

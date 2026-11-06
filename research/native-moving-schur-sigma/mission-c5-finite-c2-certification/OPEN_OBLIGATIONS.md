@@ -96,9 +96,10 @@ A soma exata do peso escalado de grau zero foi integrada pela PR #179, merge
 positivos e O4 permaneciam abertos. O estado pós-PR #179 foi registrado pela PR #180, merge
 `de95637d38d5e6d5488342cd5141b88233be6eb7`. A estrutura derivativa de grau um
 foi integrada pela PR #181, merge
-`7460497307e7ed0ffb47ef1ac96b096e9b410472`. Depois, o limite escalado de grau
-um foi compilado e auditado localmente; os graus `2..14` e as demais obrigações
-O4 permanecem abertos.
+`7460497307e7ed0ffb47ef1ac96b096e9b410472`. O limite escalado de grau um foi
+integrado pela PR #185, merge
+`c840ba35711ac8f938fa24c191f2af60f505480d`, com build limpo e auditoria de 21
+raízes. Permanecem abertos os graus `2..14` e as demais obrigações O4.
 O estado pós-PR #181 foi registrado pela PR #182, merge
 `8f8b9da2b8c1e8f3b8d1290608c8b2abffe9c285`.
 
@@ -117,8 +118,8 @@ fail-closed de 21 raízes. A auditoria inclui
 `propext`, `Classical.choice` e `Quot.sound`. Evidência e hashes:
 `evidence/rational-boxes/degree1-weight-bound-validation.md`.
 
-Este checkpoint cobre somente grau um e aguarda publicação/integração. Os
-pesos de graus `2..14`, a cota analítica da fonte e as inclusões das caixas
-continuam abertos. Os logs das falhas anteriores em
+O limite de grau um está publicado e cobre somente esse grau. Os pesos de graus
+`2..14`, a cota analítica da fonte e as inclusões das caixas continuam abertos.
+Os logs das falhas anteriores em
 `evidence/rational-boxes/degree1-retry-checkpoint.md` foram mantidos como
 histórico de proveniência.
