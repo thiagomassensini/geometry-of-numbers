@@ -57,3 +57,5 @@ Reproduced C5 outputs
 - source and `.olean` hashes: `evidence/rational-boxes/source-and-olean-sha256.txt`
 - exact-rational boxes regenerated idempotently from the archived decimal JSON intervals; generator SHA-256 `16c201e3aafd8f54209472d05487637084eda0bbc4930b9c11d9877ad90dcea7`
 - O3 proves signs on the original `sigmaPadeD` conditionally on source-box hypotheses. O4 inclusion remains open; this checkpoint does not establish an unconditional C5 window.
+- C5 O3 PR: #167; merge commit `fc17d3b16fd0ed5643cb12ef48c80bb81c81cbd9`
+- geometry `origin/main` after O3: `fc17d3b16fd0ed5643cb12ef48c80bb81c81cbd9`

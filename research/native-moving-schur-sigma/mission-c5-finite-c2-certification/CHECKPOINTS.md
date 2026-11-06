@@ -36,3 +36,9 @@ O checkpoint de build e auditoria da O3 está em `evidence/rational-boxes/`. Ap�
 - Os seis módulos compilaram em Lean 4.32, com warnings como erros, em saída limpa. A auditoria transitiva cobre 13 teoremas; o checker fail-closed passou e encontrou apenas `propext`, `Classical.choice`, `Quot.sound`.
 - Logs, comandos de reprodução, hashes de fontes e `.olean`, e limitação O4 estão em `evidence/rational-boxes/`. A inclusão analítica da fonte não foi provada; nenhum teorema incondicional de janela negativa foi declarado.
 - A publicar em uma PR própria. Próxima obrigação após integração: O4, provar a inclusão dos coeficientes originais nas caixas.
+
+## 2026-11-06 — O3 integrada
+
+- PR #167 integrou os seis módulos de aritmética intervalar racional, os sinais condicionais, o checker de axiomas e suas evidências.
+- Merge na `main`: `fc17d3b16fd0ed5643cb12ef48c80bb81c81cbd9`. O conteúdo de O3 foi validado em Lean 4.32 localmente; não houve status checks hospedados.
+- O3 prova as janelas somente sob `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`. A próxima obrigação é O4, inclusão analítica dos coeficientes da fonte C2 original.
