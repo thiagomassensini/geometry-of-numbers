@@ -1,6 +1,6 @@
 # Checkpoint de validação Lean 4.35 — incompleto
 
-Este diretório preserva o estado da tentativa 4.35 até 2026-11-05. É um checkpoint de continuidade, não uma integração validada nem uma migração de Geometry/Carry. A rota principal para C2 volta a ser a integração publicada em Lean 4.32, no commit `b9ce1955c1e8830afad2323afe5266ed3f5f35d9`.
+Este diretório preserva a tentativa 4.35 executada em 2026-11-05; os comandos de reconstrução foram atualizados em 2026-11-06 após o reboot. É um checkpoint de continuidade, não uma integração validada nem uma migração de Geometry/Carry. A rota principal para C2 é a integração publicada em Lean 4.32, no commit `b9ce1955c1e8830afad2323afe5266ed3f5f35d9`; C2/C3 estão concluídos nessa rota.
 
 ## O que foi preservado
 
@@ -12,7 +12,7 @@ Este diretório preserva o estado da tentativa 4.35 até 2026-11-05. É um check
 - `external-zeta-lab-pins/`: pins do desenvolvimento externo de certificado.
 - `root-build.log` dentro do arquivo de logs: saída do build completo de Geometry que encontrou incompatibilidades fora da closure focada.
 
-Os artefatos compilados `.olean` não são armazenados no Git. A cópia local de aceleração estava em `/tmp/geometry-of-numbers-native-sigma-4.35-rerun/research/native-moving-schur-sigma/.build435` (cerca de 79 MB) e pode ser reconstruída pelo scheduler.
+Os artefatos compilados `.olean` não são armazenados no Git. As worktrees temporárias originais em `/tmp` desapareceram no reinício do servidor; seus patches, pins, manifests, logs e erros continuam versionados aqui. A cópia `.olean` não é necessária para recuperar o estado e pode ser reconstruída pelo scheduler.
 
 ## Pins e resultados que já passaram
 
@@ -30,21 +30,40 @@ Esse é um bloqueio da portabilidade da closure inteira, não um impedimento já
 
 ## Comandos de retomada
 
-No mesmo host, mantendo o checkout temporário atual:
+O checkout temporário original não existe mais. Para reconstruir a tentativa exatamente sobre sua base Lean 4.32, reaplique os arquivos duráveis da `main` ao commit `353a7db22ca3b886ff111d0e61827784a4eb6053`:
 
 ```bash
-cd /tmp/geometry-of-numbers-native-sigma-4.35-rerun
-python3 compile-integration-435.py
+GEOM=/home/thlinux/worktrees/geometry-of-numbers-native-sigma-4.35-resume
+git clone https://github.com/thiagomassensini/geometry-of-numbers.git "$GEOM"
+git -C "$GEOM" checkout --detach 353a7db22ca3b886ff111d0e61827784a4eb6053
+git -C "$GEOM" fetch origin main
+git -C "$GEOM" checkout origin/main -- research/native-moving-schur-sigma/mission-sigma-sign-20261105/evidence/lean435-validation-incomplete
+EVIDENCE="$GEOM/research/native-moving-schur-sigma/mission-sigma-sign-20261105/evidence/lean435-validation-incomplete"
+cp -a "$EVIDENCE/integration-overrides" "$GEOM/"
+cp "$EVIDENCE/compile-integration-435.py" "$GEOM/"
+cp "$EVIDENCE"/integration-modules435.* "$GEOM/"
+gzip -dc "$EVIDENCE/geometry-pins-4.35.patch.gz" | git -C "$GEOM" apply
+gzip -dc "$EVIDENCE/tracked-source-overrides.patch.gz" | git -C "$GEOM" apply
+cp "$EVIDENCE/lean-toolchain" "$GEOM/lean-toolchain"
+cp "$EVIDENCE/lakefile.toml" "$GEOM/lakefile.toml"
+cp "$EVIDENCE/lake-manifest.json" "$GEOM/lake-manifest.json"
 ```
 
-O scheduler lê os patches de `integration-overrides/`, que permanecem no checkout temporário e também estão arquivados neste checkpoint. Para reaplicar os patches arquivados a uma reconstrução do checkout, copie `integration-overrides/` para a raiz do checkout 4.35 com esse mesmo nome, restaure os três arquivos de pins listados acima, e então execute o scheduler. Os manifests em `integration-modules435.*` registram a closure planejada.
-
-Para reproduzir somente a última falha do overlay no mesmo host:
+Depois de disponibilizar as dependências nos pins arquivados, execute o scheduler. Ele aceita caminhos explícitos para que a retomada não dependa do caminho temporário antigo:
 
 ```bash
-cd /tmp/geometry-of-numbers-native-sigma-4.35-rerun
-GEOM=/tmp/geometry-of-numbers-native-sigma-4.35-rerun
-OUT=$GEOM/research/native-moving-schur-sigma/.build435
+SIGMA_435_GEOM_ROOT="$GEOM" \
+SIGMA_435_CARRY_ROOT=/home/thlinux/carry-self-adjoint-operator \
+SIGMA_435_OUTPUT_DIR="$GEOM/research/native-moving-schur-sigma/.build435" \
+SIGMA_435_LOG_DIR="$GEOM/integration-build435" \
+LEAN_BIN=/home/thlinux/.elan/toolchains/leanprover--lean4---v4.35.0-rc2/bin/lean \
+python3 "$GEOM/compile-integration-435.py"
+```
+
+Para reproduzir somente o último erro direto, depois de reconstruir os outputs necessários:
+
+```bash
+OUT="$GEOM/research/native-moving-schur-sigma/.build435"
 LP="$OUT:$(cd "$GEOM" && lake env printenv LEAN_PATH | tr ':' '\n' | rg -v '/.lake/packages/GreenFrame/.lake/build/lib/lean' | paste -sd:)"
 LEAN_PATH="$LP" /home/thlinux/.elan/toolchains/leanprover--lean4---v4.35.0-rc2/bin/lean \
   --root="$GEOM/integration-overrides/CarrySelfAdjointOperator" \
@@ -52,4 +71,4 @@ LEAN_PATH="$LP" /home/thlinux/.elan/toolchains/leanprover--lean4---v4.35.0-rc2/b
   "$GEOM/integration-overrides/CarrySelfAdjointOperator/CarrySelfAdjointOperator/RealLinearPMapReciprocalBlock.lean"
 ```
 
-Para C2, começar pelo código-fonte 4.32 no commit indicado no `SESSION_STATE.md`; não é necessário calcular a primeira profundidade de falha.
+O scheduler e os overlays são apenas para continuidade da tentativa incompleta 4.35. Para C2/C3, usar a prova e a validação 4.32 já integradas. Não calcular a primeira profundidade de falha para provar a negatividade eventual.

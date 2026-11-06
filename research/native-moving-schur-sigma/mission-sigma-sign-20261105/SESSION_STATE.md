@@ -3,7 +3,7 @@
 **Atualizado:** 2026-11-06
 **Estado:** C0, C1, C1B, C2, C3 e C4 estão concluídos e integrados à `main`. A lei quantitativa distância × profundidade e os novos cadernos continuam adiados.
 
-**Conferência para retomada:** este estado foi revisto contra `main` em `77fd2a9437fae182015e0e39e4be8c757363aa0b` após a PR #199. C1B (#155), C2 (#157) e C3 (#159) já estão publicados; não há publicação pendente dessas etapas nem motivo para reiniciá-las. A integração 4.32 é a rota de C2. O checkpoint de Lean 4.35 abaixo continua preservado como validação incompleta, sem migração geral de Geometry/Carry.
+**Conferência para retomada:** a revisão de base origin/main@935911bce2c253ee508a4990face113ea63c87ee inclui as atualizações até a PR #202. C1B (#155), C2 (#157) e C3 (#159) já estão publicados; não há publicação pendente dessas etapas nem motivo para reiniciá-las. Os módulos C2/C3 foram recompilados e auditados nessa base; evidências e hashes estão em evidence/c2-c3-post-reboot-20261106/. A integração 4.32 é a rota de C2. O checkpoint de Lean 4.35 abaixo continua preservado como validação incompleta, sem migração geral de Geometry/Carry.
 
 ## Base integrada
 
@@ -53,7 +53,7 @@ Integrado pela PR #162, commit `31d3df33d4524d9809c75ba4481b1fa9f57a98bc`, merge
 
 ## Checkpoint da tentativa Lean 4.35
 
-O checkpoint `evidence/lean435-validation-incomplete/` preserva overlays temporários, pins, logs, manifests de módulos e comandos de retomada. A validação 4.35 continua **incompleta**: o build externo zeta-lab passou, mas a closure focada Geometry/Carry parou em incompatibilidades de `LinearPMap`, a começar por `CarrySelfAdjointOperator.RealLinearPMapReciprocalBlock`. C2/C3 foram concluídos em Lean 4.32; não há migração geral de Geometry ou Carry em andamento.
+O checkpoint evidence/lean435-validation-incomplete/ preserva overlays temporários, pins, logs, manifests de módulos e comandos para reconstruir as worktrees perdidas no reboot. A validação 4.35 continua **incompleta**: o build externo zeta-lab passou, mas a closure focada Geometry/Carry parou em incompatibilidades de LinearPMap, a começar por CarrySelfAdjointOperator.RealLinearPMapReciprocalBlock. C2/C3 foram concluídos e revalidados em Lean 4.32; não há migração geral de Geometry ou Carry em andamento.
 
 ## Rotina de entrega
 

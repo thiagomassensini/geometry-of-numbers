@@ -1,5 +1,7 @@
 # Registro de C2/C3 após a integração de C3
 
+**Revalidação após reinício:** os módulos finais C2/C3 foram recompilados e auditados em Lean 4.32 sobre as fontes de origin/main@935911bce2c253ee508a4990face113ea63c87ee. A auditoria transitiva aceitou 133 roots públicos e 70.861 dependências com apenas axiomas padrão. Os logs atuais, pins e hashes estão em evidence/c2-c3-post-reboot-20261106/.
+
 **Registro original:** 2026-11-05, `main` em `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8` (após PR #159).
 **Estado reconciliado:** 2026-11-06. C0–C4 estão concluídos e integrados à `main`; C1B, C2 e C3 não têm publicação pendente. A revisão atual dos marcos e próximos passos está em `SESSION_STATE.md` e `NEXT_STEPS.md`.
 

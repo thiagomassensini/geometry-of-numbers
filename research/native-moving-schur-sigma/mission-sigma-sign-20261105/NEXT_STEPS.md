@@ -1,6 +1,6 @@
 # Próximos passos da missão
 
-**Estado conferido em 2026-11-06:** C0–C4 estão concluídos e integrados à `main`. C1B foi integrada pela PR #155 (merge `0586e238441096ecd2248e3f14bdac3a832af427`); C2 e C3 também estão integrados pelas PRs #157 e #159. As seções C2/C3 abaixo registram entregas concluídas, não trabalho pendente. Retomar diretamente qualquer etapa posterior, sem repetir C0, C1 ou C1B.
+**Estado conferido em 2026-11-06 contra origin/main@935911bce2c253ee508a4990face113ea63c87ee:** C0–C4 estão concluídos e integrados à main. C1B foi integrada pela PR #155 (merge 0586e238441096ecd2248e3f14bdac3a832af427); C2 e C3 também estão integrados pelas PRs #157 e #159 e foram recompilados/auditados nessa revisão. As seções C2/C3 abaixo registram entregas concluídas, não trabalho pendente. Retomar diretamente qualquer etapa posterior, sem repetir C0, C1 ou C1B.
 
 ## C2 — concluído e integrado
 
@@ -18,7 +18,7 @@
 
 ## Retomada do overlay 4.35
 
-A tentativa está preservada como evidência incompleta em `evidence/lean435-validation-incomplete/`. Retomar apenas se a rota 4.32 revelar um bloqueio concreto. O ponto de parada, as declarações e os comandos estão registrados no README desse checkpoint.
+A tentativa está preservada como evidência incompleta em evidence/lean435-validation-incomplete/. Os antigos diretórios temporários desapareceram no reinício; o README agora registra como reconstruir a tentativa a partir do commit-base, reaplicar os patches e executar o scheduler. Retomar apenas se a rota 4.32 revelar um bloqueio concreto. A revalidação focada C2/C3 está em evidence/c2-c3-post-reboot-20261106/.
 
 ## C4 — concluído e integrado
 
