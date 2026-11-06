@@ -51,13 +51,24 @@ e a auditoria de dez raízes passaram, com apenas `propext`, `Classical.choice`
 e `Quot.sound`. Merge: `72586b6223579ee1b37a6077ad6f2a0eceaf919c`.
 
 **Primeiro subproblema analítico ainda em aberto:** produzir caixas racionais
-estreitas para `gammaFinite 1024 240 z` nas caixas complexas do contorno. A soma
+estreitas para `gammaFinite 3072 620 z` nos pontos racionais de interpolação. A soma
 direta tem cancelamento grande; a próxima etapa deve calcular os coeficientes
 Taylor racionais da expressão finita antes de aplicar a aritmética intervalar e
 certificar o resto da expansão. A identidade formal
 `Zeta23.DigammaSeries.inv_gamma_eq_prod` continua sendo uma alternativa. Depois
 será preciso compor Hurwitz e Cauchy/Fourier com a ponte C2 exata. Não há prova
 de `sigmaC00495SourceBoxes` nem de `sigmaC01SourceBoxes` nesta etapa.
+
+**Ponte Gamma de interpolação, provada localmente:**
+`gamma_finite_3072_620_error` melhora o erro absoluto para `10⁻²⁵⁹` e tem build
+Lean 4.32/auditoria de doze raízes. Uma exploração exata racional sugere evitar
+a quadratura trigonométrica: interpolar a densidade par em 129 pontos racionais
+`t_j=j/100000`. Para graus até 14, a soma absoluta dos pesos calculada é menor
+que `10^124`; o resto de Taylor seria menor que `10⁻⁴¹⁰` se a densidade tivesse
+módulo `≤10^100` no disco de raio `2/5`. Essa cota do módulo, os pesos no Lean e
+a avaliação rigorosa da fonte nos pontos continuam pendentes. A análise está
+em `analyze_rational_interpolation.py` e
+`evidence/rational-boxes/rational-interpolation-analysis.log`.
 
 ## O5 — composição, build, axiomas e publicação — PARCIAL
 

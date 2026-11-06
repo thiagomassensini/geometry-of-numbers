@@ -1,0 +1,21 @@
+nodes=0..128; step=1/100000; t_max=4/3125
+outer radius=2/5; assumed analytic modulus bound=10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+max exact sum_j |lambda[j,n]| for n<=14 < 10^124
+max exact interpolation tail contribution for n<=14 < 10^-410
+max exact amplification of Gamma error 10^-259 < 10^-135
+exact per-degree rational weight-sum bounds:
+n=0: sum_j |lambda[j,n]| < 10^1
+n=1: sum_j |lambda[j,n]| < 10^11
+n=2: sum_j |lambda[j,n]| < 10^21
+n=3: sum_j |lambda[j,n]| < 10^31
+n=4: sum_j |lambda[j,n]| < 10^40
+n=5: sum_j |lambda[j,n]| < 10^49
+n=6: sum_j |lambda[j,n]| < 10^58
+n=7: sum_j |lambda[j,n]| < 10^66
+n=8: sum_j |lambda[j,n]| < 10^75
+n=9: sum_j |lambda[j,n]| < 10^83
+n=10: sum_j |lambda[j,n]| < 10^92
+n=11: sum_j |lambda[j,n]| < 10^100
+n=12: sum_j |lambda[j,n]| < 10^108
+n=13: sum_j |lambda[j,n]| < 10^116
+n=14: sum_j |lambda[j,n]| < 10^124

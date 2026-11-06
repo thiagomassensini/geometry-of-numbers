@@ -193,3 +193,40 @@ raízes, todas usando somente `propext`, `Classical.choice` e `Quot.sound`.
 As tentativas anteriores de build, incluindo os erros corrigidos, também foram
 preservadas nos logs `gamma-euler-1024-build.log` e
 `gamma-euler-1024-retry1-build.log`.
+
+### Precisão de interpolação racional
+
+O lema `SigmaC5Gamma.gamma_finite_3072_620_error` reduz o erro uniforme para
+`10⁻²⁵⁹`. A parte do Taylor da exponencial é limitada por `10⁻³⁰⁰`; a cauda
+Euler é limitada por `exp(-620)≤10⁻²⁶⁰`. Build e auditoria usam Lean 4.32.0,
+Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997` e base geometry
+`47a28db231dfbae24cbf1238084a60cf1b8206fb`:
+
+```bash
+C5_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105
+C5_SOURCE_ROOT=$PWD/research/native-moving-schur-sigma
+C5_OUTPUT=$PWD/.lake/build/research/native-moving-schur-sigma/c5-gamma-euler-3072-clean
+C5_EVIDENCE=$PWD/research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes
+C5_LEAN_BIN=$(cd "$C5_REFERENCE_ROOT" && elan which lean)
+C5_MATHLIB_PATH=$(cd "$C5_REFERENCE_ROOT" && lake env printenv LEAN_PATH)
+mkdir -p "$C5_OUTPUT"
+export LEAN_PATH="$C5_OUTPUT:$C5_SOURCE_ROOT:$C5_MATHLIB_PATH"
+"$C5_LEAN_BIN" -DwarningAsError=true --root="$C5_SOURCE_ROOT" \
+  -o "$C5_OUTPUT/SigmaGammaEulerIntegral.olean" \
+  "$C5_SOURCE_ROOT/SigmaGammaEulerIntegral.lean" \
+  > "$C5_EVIDENCE/gamma-euler-3072-build.log" 2>&1
+"$C5_LEAN_BIN" -DwarningAsError=true --root="$C5_EVIDENCE" \
+  -o "$C5_OUTPUT/gamma-euler-audit.olean" \
+  "$C5_EVIDENCE/gamma-euler-audit.lean" \
+  > "$C5_EVIDENCE/gamma-euler-3072-audit.log" 2>&1
+```
+
+Ambos comandos terminaram com código 0; as doze raízes da auditoria dependem
+somente de `propext`, `Classical.choice` e `Quot.sound`.
+
+A rota de interpolação em 129 nós racionais está descrita pela análise
+exploratória reprodutível `analyze_rational_interpolation.py`. As desigualdades
+que ela reporta são verificadas com `fractions.Fraction` exato, mas ainda não
+foram reproduzidas no kernel Lean. Em particular, o limite analítico
+`|completedSigmaDensity d t|≤10^100` em `|t|≤2/5` ainda é uma obrigação, não
+uma hipótese provada.

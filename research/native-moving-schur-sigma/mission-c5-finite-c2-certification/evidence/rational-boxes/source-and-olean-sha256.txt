@@ -42,3 +42,9 @@ b2b222bdfb9fbdcf212ac6d62d5c5c5a248844e31cc535f3e8b40e9ec9ce18c3  research/nativ
 a30b9afbce47c8705ebceb051c8c2d4cab8d5ae9ffc3b19f0de0af8d46ef3d70  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/gamma-euler-audit.lean
 5f12e2d7b37852d5239e8e60b246909123e21e45646d4216b211a8b214fc9dce  .lake/build/research/native-moving-schur-sigma/c5-gamma-euler-1024-clean/SigmaGammaEulerIntegral.olean
 76e19d3abf6f3abcb2627d12042e9df37d9b460be08e80c2ea47753a18e960c1  .lake/build/research/native-moving-schur-sigma/c5-gamma-euler-1024-clean/gamma-euler-audit.olean
+
+High-precision Euler-integral approximation for rational interpolation (Lean 4.32; local checkpoint on main base `47a28db231dfbae24cbf1238084a60cf1b8206fb`):
+f1414eb90035c5cef26089039505fcd59f0eb7575b50bb811e2a034964f4fa8f  research/native-moving-schur-sigma/SigmaGammaEulerIntegral.lean
+6f965fb38a2dee57123da73bf789ddbf119cce08cbba59771a02c7c79d6ba37f  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/gamma-euler-audit.lean
+36dd8c96a68d0ecc0b34b805b4842800b5c297e134b2f0120c83025621551943  .lake/build/research/native-moving-schur-sigma/c5-gamma-euler-3072-clean/SigmaGammaEulerIntegral.olean
+76e19d3abf6f3abcb2627d12042e9df37d9b460be08e80c2ea47753a18e960c1  .lake/build/research/native-moving-schur-sigma/c5-gamma-euler-3072-clean/gamma-euler-audit.olean

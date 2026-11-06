@@ -83,11 +83,15 @@ ponte da Gamma original à aproximação explícita de Euler
 build e auditoria de dez raízes usam apenas axiomas padrão (`propext`,
 `Classical.choice`, `Quot.sound`).
 
+A prova local `gamma_finite_3072_620_error` reduz o erro uniforme para
+`10⁻²⁵⁹`, com auditoria de doze raízes. Uma interpolação racional de 129 pontos
+foi analisada com frações exatas, mas ainda não foi formalizada nem aplicada à
+fonte.
+
 **Primeiro lema C5 O4 ainda ausente:** caixas racionais estreitas para
-`gammaFinite 1024 240 z` nas regiões `z=w/2`, `0.1495 ≤ Re(w) ≤ 0.9495`,
-`|Im(w)|≤0.4`. A soma direta tem cancelamento grande; a etapa seguinte é
-avaliar a expansão Taylor racional antes da aritmética intervalar e provar seu
-resto. A alternativa `Zeta23.DigammaSeries.inv_gamma_eq_prod` continua
+`gammaFinite 3072 620 z` nos valores racionais de `z` usados na interpolação.
+A soma direta tem cancelamento grande; a ponte Euler de erro `10⁻²⁵⁹` já está
+disponível. A alternativa `Zeta23.DigammaSeries.inv_gamma_eq_prod` continua
 disponível. Depois será necessário certificar Hurwitz e compor Cauchy/Fourier
 sem alterar a cabeça C2, a cauda exata ou a completação original.
 

@@ -69,6 +69,14 @@ O checkpoint de build e auditoria da O3 está em `evidence/rational-boxes/`. Ap�
 - PR #173 integrou a prova e a evidência; merge na `main`: `72586b6223579ee1b37a6077ad6f2a0eceaf919c`.
 - Ainda faltam caixas racionais para `gammaFinite 1024 240` e a inclusão C2.
 
+## 2026-11-06 — ponte Euler-Gamma para interpolação racional (prova local)
+
+- `gamma_finite_3072_620_error` prova erro absoluto `≤10⁻²⁵⁹` para `gammaFinite 3072 620` em `1495/20000 ≤ Re(z) ≤ 1`.
+- Os dois componentes são limitados separadamente: resto Taylor `≤10⁻³⁰⁰`, cauda `exp(-620)≤10⁻²⁶⁰`.
+- Build Lean 4.32 com warnings como erros e auditoria de doze raízes passaram; todos os axiomas são os três padrão.
+- A análise exata racional `analyze_rational_interpolation.py` encontra uma rota em 129 pontos racionais `t_j=j/100000`; sob a cota analítica ainda a provar `|D(t)|≤10^100` no disco de raio `2/5`, o erro de interpolação para `c₀..c₁₄` fica abaixo de `10⁻⁴¹⁰`. O erro `10⁻²⁵⁹` da Gamma é amplificado por no máximo `10^124`, permanecendo abaixo de `10⁻¹³⁵` antes dos demais fatores da fonte.
+- Esta estimativa de pesos foi calculada com frações exatas em Python, mas ainda não formalizada em Lean; a cota analítica e a avaliação dos 129 valores da fonte também estão abertas. Código e log em `analyze_rational_interpolation.py` e `evidence/rational-boxes/`.
+
 ## 2026-11-06 — checkpoint O4 publicado
 
 - PR #169 publicou os comandos reproduzíveis, logs vazios de compilação, auditoria de quatro raízes e hashes do motor intervalar reutilizado.

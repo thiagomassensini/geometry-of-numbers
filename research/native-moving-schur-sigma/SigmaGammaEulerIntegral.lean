@@ -20,7 +20,7 @@ open scoped BigOperators
 noncomputable section
 set_option autoImplicit false
 set_option maxHeartbeats 3000000
-set_option exponentiation.threshold 2048
+set_option exponentiation.threshold 4096
 
 /-- Truncated Taylor polynomial for `exp (-x)`, with complex coefficients. -/
 def expHead (N : ℕ) (x : ℝ) : ℂ :=
@@ -218,6 +218,26 @@ theorem exp_neg_two_hundred_forty_bound : Real.exp (-240) ≤ 1 / 10 ^ 100 := by
         (by positivity : (0 : ℝ) < (10 : ℝ) ^ 100)]
       exact hlarge
 
+theorem exp_neg_six_hundred_twenty_bound : Real.exp (-620) ≤ 1 / 10 ^ 260 := by
+  have he : (8 / 3 : ℝ) ≤ Real.exp 1 := by linarith [Real.exp_one_gt_d9]
+  have hp : (8 / 3 : ℝ) ^ 620 ≤ (Real.exp 1) ^ 620 := pow_le_pow_left₀ (by norm_num) he 620
+  have hlarge : (10 : ℝ) ^ 260 ≤ (8 / 3 : ℝ) ^ 620 := by
+    have h20 : (3 * 10 ^ 8 : ℝ) ≤ (8 / 3 : ℝ) ^ 20 := by norm_num
+    have hpow := pow_le_pow_left₀ (by norm_num : (0 : ℝ) ≤ 3 * 10 ^ 8) h20 31
+    calc
+      (10 : ℝ) ^ 260 ≤ (3 * 10 ^ 8 : ℝ) ^ 31 := by norm_num
+      _ ≤ ((8 / 3 : ℝ) ^ 20) ^ 31 := hpow
+      _ = (8 / 3 : ℝ) ^ 620 := by rw [← pow_mul]
+  rw [show (-620 : ℝ) = -((620 : ℕ) * (1 : ℝ)) by norm_num,
+    Real.exp_neg, Real.exp_nat_mul]
+  calc
+    ((Real.exp 1) ^ 620)⁻¹ ≤ ((8 / 3 : ℝ) ^ 620)⁻¹ :=
+      by simpa only [one_div] using one_div_le_one_div_of_le (by positivity : (0 : ℝ) < (8 / 3) ^ 620) hp
+    _ ≤ 1 / 10 ^ 260 := by
+      rw [one_div, inv_le_inv₀ (by positivity : (0 : ℝ) < (8 / 3) ^ 620)
+        (by positivity : (0 : ℝ) < (10 : ℝ) ^ 260)]
+      exact hlarge
+
 /-- Uniform error for the C5 Gamma argument on the complete Cauchy rectangle. -/
 theorem gamma_finite_512_error (z : ℂ) (hz : (1495 / 20000 : ℝ) ≤ z.re)
     (hz1 : z.re ≤ 1) :
@@ -268,6 +288,32 @@ theorem gamma_finite_1024_240_error (z : ℂ) (hz : (1495 / 20000 : ℝ) ≤ z.r
   have hsmall : 27 * (240 : ℝ) ^ 1025 / (Nat.factorial 1024 : ℝ) ≤
       1 / 10 ^ 120 := by norm_num1
   have hsum := add_le_add (hfirst.trans hsmall) exp_neg_two_hundred_forty_bound
+  exact hmain.trans (hsum.trans (by norm_num))
+
+/-- Very high precision Euler approximation for the rational interpolation step. -/
+theorem gamma_finite_3072_620_error (z : ℂ) (hz : (1495 / 20000 : ℝ) ≤ z.re)
+    (hz1 : z.re ≤ 1) :
+    ‖Complex.Gamma z - gammaFinite 3072 620 z‖ ≤ 1 / 10 ^ 259 := by
+  have hmain := gamma_finite_error 3072 620 (by norm_num) (by norm_num) z
+    (by linarith [hz]) hz1
+  have hcoef : 2 / z.re ≤ 27 := by
+    have hzpos : 0 < z.re := by positivity
+    apply (div_le_iff₀ hzpos).2
+    have hlower : (2 : ℝ) ≤ 27 * z.re := by nlinarith [hz]
+    linarith
+  have hfirst : 2 * (620 : ℝ) ^ 3073 / ((Nat.factorial 3072 : ℝ) * z.re) ≤
+      27 * (620 : ℝ) ^ 3073 / (Nat.factorial 3072 : ℝ) := by
+    have hrewrite :
+        2 * (620 : ℝ) ^ 3073 / ((Nat.factorial 3072 : ℝ) * z.re) =
+          (2 / z.re) * ((620 : ℝ) ^ 3073 / (Nat.factorial 3072 : ℝ)) := by ring
+    calc
+      _ = (2 / z.re) * ((620 : ℝ) ^ 3073 / (Nat.factorial 3072 : ℝ)) := hrewrite
+      _ ≤ 27 * ((620 : ℝ) ^ 3073 / (Nat.factorial 3072 : ℝ)) :=
+        mul_le_mul_of_nonneg_right hcoef (by positivity)
+      _ = _ := by ring
+  have hsmall : 27 * (620 : ℝ) ^ 3073 / (Nat.factorial 3072 : ℝ) ≤
+      1 / 10 ^ 300 := by norm_num1
+  have hsum := add_le_add (hfirst.trans hsmall) exp_neg_six_hundred_twenty_bound
   exact hmain.trans (hsum.trans (by norm_num))
 
 end

@@ -12,3 +12,5 @@ open SigmaC5Gamma
 #print axioms gamma_finite_512_error
 #print axioms exp_neg_two_hundred_forty_bound
 #print axioms gamma_finite_1024_240_error
+#print axioms exp_neg_six_hundred_twenty_bound
+#print axioms gamma_finite_3072_620_error
