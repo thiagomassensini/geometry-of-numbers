@@ -5,12 +5,12 @@
 **CURRENT SUBTASK:** Enquadrar racionalmente a expressão finita `gammaFinite 512 81 z` nos discos Cauchy, usando a aproximação Euler-Gamma já provada; em seguida compor Hurwitz, Cauchy/Fourier e a ponte C2 original
 **LAST VERIFIED THEOREMS:** `sigmaPadeD_signs_at_99_2000_of_source_boxes` e `sigmaPadeD_signs_at_1_10_of_source_boxes`
 **LAST COMPILED FILE:** `research/native-moving-schur-sigma/SigmaGammaEulerIntegral.lean` e `gamma-euler-audit.lean` (Lean 4.32; erro uniforme `10⁻³²`; oito raízes auditadas)
-**LAST SUCCESSFUL MERGE:** PR #170, estado O4, merge `46f5c52037cecd01b6fee43005db57539a3e1af0`; a prova Euler-Gamma está nesta branch
-**LAST REMOTE SHA:** `origin/main=46f5c52037cecd01b6fee43005db57539a3e1af0`; Momentos `origin/research/sigma-pade-dimension-depth-20261104=68c9b5f0a196289e28a8e5586146707d27df6b75`
+**LAST SUCCESSFUL MERGE:** PR #171, ponte Euler-Gamma, merge `a585de1d4df0b093ef4221cf576a9a87a057652a`
+**LAST REMOTE SHA:** `origin/main=a585de1d4df0b093ef4221cf576a9a87a057652a`; Momentos `origin/research/sigma-pade-dimension-depth-20261104=68c9b5f0a196289e28a8e5586146707d27df6b75`
 **CURRENT BRANCH:** `codex/c5-finite-c2-certification-20261106`
-**MAIN SHA:** `46f5c52037cecd01b6fee43005db57539a3e1af0`
-**C5 PRs:** #165–#170 estão integradas; a PR #2 de Momentos permanece aberta e não foi integrada
-**WHAT IS PROVED:** Recorrência polinomial sem divisão, identidade exata com `sigmaPadeD` original, transporte racional por caixas e sinais dos menores estão compilados em Lean. O3 prova os dois padrões de sinais condicionalmente à inclusão dos coeficientes nas caixas. A Gamma original fica a erro `10⁻³²` da expressão finita Euler no domínio C2.
+**MAIN SHA:** `a585de1d4df0b093ef4221cf576a9a87a057652a`
+**C5 PRs:** #165–#171 estão integradas; a PR #2 de Momentos permanece aberta e não foi integrada
+**WHAT IS PROVED:** Recorrência polinomial sem divisão, identidade exata com `sigmaPadeD` original, transporte racional por caixas e sinais dos menores estão compilados em Lean. O3 prova os dois padrões de sinais condicionalmente à inclusão dos coeficientes nas caixas. PR #171 integrou a aproximação Euler da Gamma original por expressão finita com erro `10⁻³²` no domínio C2.
 **WHAT IS CONDITIONAL:** `sigmaPadeD_signs_at_99_2000_of_source_boxes` e `sigmaPadeD_signs_at_1_10_of_source_boxes` exigem hipóteses explícitas de inclusão. A prova de que a fonte satisfaz essas hipóteses segue aberta.
 **WHAT IS OPEN:** O4 ainda não prova as inclusões das caixas da fonte. A Gamma está a erro `10⁻³²` da expressão finita Euler, mas essa expressão ainda não tem caixas racionais estreitas.
 **NEXT ACTION:** Derivar os coeficientes Taylor racionais de `gammaFinite 512 81 z` em torno do centro `z₀=(1/2+d)/2`, propagar as caixas pelo polinômio e fechar um limite uniforme para o resto no raio exterior `0.2`.
