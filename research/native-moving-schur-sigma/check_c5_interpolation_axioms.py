@@ -20,6 +20,13 @@ required = {
     "CarrySigmaObstruction.c5Coeff_one_eq_derivative_eval_zero",
     "CarrySigmaObstruction.c5LagrangeBasis_derivative_eval_zero",
     "CarrySigmaObstruction.c5LagrangeBasis_coeff_one",
+    "CarrySigmaObstruction.c5LagrangeBasis_coeff_one_zero",
+    "CarrySigmaObstruction.c5LagrangeBasis_coeff_one_of_ne",
+    "CarrySigmaObstruction.c5LagrangeBasisProductCoeffOne_bound",
+    "CarrySigmaObstruction.c5LagrangeBasis_coeff_one_zero_abs_le",
+    "CarrySigmaObstruction.c5LagrangeBasis_coeff_one_abs_le",
+    "CarrySigmaObstruction.c5InterpolationCoeffOneAbsSum_le_six",
+    "CarrySigmaObstruction.c5InterpolationWeightSum_one_lt_ten_eleven",
 }
 allowed = {"propext", "Classical.choice", "Quot.sound"}
 

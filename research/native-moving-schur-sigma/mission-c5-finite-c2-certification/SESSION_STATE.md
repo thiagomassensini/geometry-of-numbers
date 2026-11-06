@@ -2,6 +2,7 @@
 
 **Atualizado:** 2026-11-06
 **Status:** C1–C4 e O3 estão integradas; a ponte Euler-Gamma de precisão `10⁻²⁵⁹`, a identidade algébrica de interpolação em 129 nós e a soma absoluta do peso escalado de grau zero (`=1`) estão provadas em Lean 4.32. Para grau um, está provada a representação dos coeficientes por derivadas avaliadas em zero. Os limites numéricos dos pesos, a cota analítica da fonte e a inclusão dos coeficientes C2 nas caixas seguem pendentes.
+**Checkpoint WIP do limite de grau um (2026-11-06):** `origin/main` confirmado em `c736dc073091e6184dbb673b622b6b91759accac` (PR #183). A branch `codex/c5-degree1-weight-bound-20261106` contém uma nova tentativa simbólica em `SigmaRationalInterpolation.lean`, mas o build integral ainda não terminou; não há `.olean` nem auditoria nova. O lema auxiliar `c5_inv_sq_sum_range_le_isolated` compilou isoladamente, sem validar o teorema do peso. Logs e comando de retomada estão em `RESTART_HERE.md` e `evidence/rational-boxes/degree1-retry-checkpoint.md`.
 **Branch C5 de trabalho:** o passo estrutural de grau um foi publicado no commit `0a188c9d71a1a54bdf446ec753609fdde8326bc8`, integrado pela PR #181. A branch remota de prova foi removida após o merge; retomar a partir da `main` atual e abrir uma branch nova.
 **Main geometry no início da auditoria O4:** `1bc7318915c3e625ad228c89ff8c300cb07e52c5` (merge da PR #168).
 **Última prova geometry integrada:** PR #181, estrutura derivativa do peso de grau um, `7460497307e7ed0ffb47ef1ac96b096e9b410472`.

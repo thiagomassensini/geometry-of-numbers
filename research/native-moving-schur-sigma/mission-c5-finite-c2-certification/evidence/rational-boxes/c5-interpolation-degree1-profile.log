@@ -1,0 +1,2 @@
+import took 2s
+The --profile run was operator-interrupted after 3m24s: it had not reported a completed declaration. No build result was produced; the real-time trace run is the next diagnostic.

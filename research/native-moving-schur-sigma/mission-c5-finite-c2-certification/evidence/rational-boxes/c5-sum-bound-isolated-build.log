@@ -1,0 +1,17 @@
+Isolated diagnostic compile, Lean 4.32.0
+Source: evidence/rational-boxes/c5-sum-bound-isolated.lean
+Output: .lake/build/research/native-moving-schur-sigma/c5-sum-bound-isolated-20261106/c5-sum-bound-isolated.olean
+Warnings treated as errors: yes
+
+Exact command/environment:
+C5_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105
+C5_EVIDENCE=$PWD/research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes
+C5_OUTPUT=$PWD/.lake/build/research/native-moving-schur-sigma/c5-sum-bound-isolated-20261106
+C5_LEAN_BIN=$(cd "$C5_REFERENCE_ROOT" && elan which lean)
+C5_MATHLIB_PATH=$(cd "$C5_REFERENCE_ROOT" && lake env printenv LEAN_PATH)
+export LEAN_PATH="$C5_OUTPUT:$C5_EVIDENCE:$C5_REFERENCE_ROOT/.lake/build/lib/lean:$C5_MATHLIB_PATH"
+"$C5_LEAN_BIN" -DwarningAsError=true --root="$C5_EVIDENCE" \
+  -o "$C5_OUTPUT/c5-sum-bound-isolated.olean" \
+  "$C5_EVIDENCE/c5-sum-bound-isolated.lean"
+
+Result: BUILD_EXIT=0. Lean emitted no warnings or errors. This validates only the isolated helper theorem, not the production module or degree-one weight bound.

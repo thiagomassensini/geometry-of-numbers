@@ -1,0 +1,2 @@
+
+Tentativa não concluída: Lean 4.32 permaneceu em CPU contínua por 13m41s (aprox. 2.4 GiB RSS), sem diagnóstico e sem `.olean`; foi interrompido para instrumentar o próximo gargalo. Não é evidência de compilação aprovada.

@@ -1,5 +1,27 @@
 # C5 — validação
 
+## Checkpoint WIP de grau um — 2026-11-06
+
+Este checkpoint **não está validado**. O módulo de produção foi estendido com
+uma tentativa simbólica de `c5LagrangeBasisProductCoeffOne_bound` e corolários,
+mas nenhuma compilação integral produziu `SigmaRationalInterpolation.olean`.
+As tentativas, os perfis e os traces estão registrados em
+`evidence/rational-boxes/c5-interpolation-degree1-*.log*`.
+
+O lema auxiliar `c5_inv_sq_sum_range_le_isolated` compilou isoladamente em
+Lean 4.32 (`c5-sum-bound-isolated-build.log`); isso não prova o limite do peso.
+O último perfil integral elaborou o lema da soma, mas os lemas de produto
+seguintes continuam sem conclusão. A saída rejeitada que encontrou axiomas
+próprios gerados por `native_decide` está em
+`interpolation-audit-degree1-native-decide-rejected.log`. O relatório
+`interpolation-audit.log` restaurado é o histórico aprovado das 14 raízes da
+versão anterior e não audita as raízes novas do checker atualizado.
+
+A revisão WIP está na branch `codex/c5-degree1-weight-bound-20261106`, sobre
+`origin/main` `c736dc073091e6184dbb673b622b6b91759accac`. O comando de retomada e
+os pins estão em `RESTART_HERE.md` e
+`evidence/rational-boxes/degree1-retry-checkpoint.md`.
+
 **Status atual:** Fase 1 de transporte algébrico integrada pela PR #165. O3 (propagação racional Lean e sinais condicionais) foi integrada pela PR #167, merge `fc17d3b16fd0ed5643cb12ef48c80bb81c81cbd9`. O checkpoint O4 foi integrado pela PR #169; estados pós-merge pelas PRs #170, #172, #174, #178 e #180; pontes Euler-Gamma pelas PRs #171, #173 e #175. A identidade algébrica de interpolação em 129 nós, a soma do peso de grau zero e a forma derivativa de grau um foram integradas pelas PRs #177, #179 e #181. A prova `gamma_finite_3072_620_error` tem erro `≤10⁻²⁵⁹`, build Lean 4.32 e auditoria de doze raízes. O4 continua aberta: os limites numéricos dos pesos, a cota da fonte e as inclusões C2 ainda precisam de prova.
 **Toolchain:** `leanprover/lean4:v4.32.0`; Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`.
 **Base geometry da PR #165:** `91a1af2f9663d6761a3320e2f06504fe8aaa6776`; `main` após o merge: `75691edf0e74cc643f098213f60b684476132175`.

@@ -1,0 +1,1 @@
+Terminated                 "$lean_bin" -DwarningAsError=true --root="$task_dir" -o "$output_dir/$module.olean" "$task_dir/$module.lean"

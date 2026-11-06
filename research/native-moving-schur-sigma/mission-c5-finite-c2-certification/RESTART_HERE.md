@@ -1,5 +1,69 @@
 # Retomar primeiro — C5
 
+## Checkpoint corrente — limite de grau um ainda não validado
+
+**Base remota confirmada:** `origin/main` = `c736dc073091e6184dbb673b622b6b91759accac` (PR #183).
+**Branch local:** `codex/c5-degree1-weight-bound-20261106`, baseada nessa revisão.
+**Estado desta branch:** prova do limite de grau um em andamento; sem `.olean`
+integral, sem auditoria nova aprovada, sem PR e sem merge. O checkpoint desta
+etapa é explicitamente incompleto.
+
+O arquivo de produção alterado é
+`research/native-moving-schur-sigma/SigmaRationalInterpolation.lean`. Ele agora
+contém uma tentativa simbólica de provar `c5LagrangeBasisProductCoeffOne_bound`
+com produtos fatoriais, mas o build integral não terminou. O lema auxiliar
+`c5_inv_sq_sum_range_le_isolated`, em
+`evidence/rational-boxes/c5-sum-bound-isolated.lean`, compilou isoladamente
+(`BUILD_EXIT=0`); isso não valida o arquivo de produção nem o limite final.
+
+**Último build integral:** `c5-interpolation-degree1-pseries-retry9-build.log`,
+interrompido após 15m20s sem diagnóstico e sem `.olean`. O perfil
+`c5-interpolation-degree1-profile100-retry9-build.log` mostra a elaboração do
+lema da soma concluída; os lemas de produto seguintes não chegaram a uma
+conclusão observável. Tentativas, traces comprimidos e pins estão em
+`evidence/rational-boxes/`.
+
+Erros concretos anteriores e estado atual:
+
+- A comparação `n*(n+1) ≤ (n+1)^2` não unificava `x*x` com `x^2`; a prova atual
+  explicita o produto e fecha a igualdade por `ring`.
+- `sum_Ico_eq_sum_range` foi colocado no sentido direto e agora simplifica
+  `n+1-1` com `Nat.add_sub_cancel`.
+- A cota de `sum_Ioo_inv_sq_le` agora reduz numericamente `2/(1+1)` a `1`.
+- A versão anterior baseada em `native_decide` foi rejeitada pela auditoria por
+  adicionar axiomas `_native.native_decide`. Sua saída está preservada em
+  `interpolation-audit-degree1-native-decide-rejected.log`; não reutilizar essa
+  prova. Os logs de auditoria aceitos para 14 raízes foram restaurados e são
+  apenas históricos, relativos à versão integrada anterior.
+
+**Próxima ação exata:** localizar o custo nos próximos lemas de produto,
+começando por `c5_rat_shifted_product`, `c5_shifted_product_erase` e
+`c5_abs_square_difference_product`. Não interpretar uma execução sem saída como
+sucesso. Depois de uma revisão que conclua, compilar em diretório novo e executar
+a auditoria das raízes novas antes de atualizar o status.
+
+Comando-base de retomada (usar diretório de saída novo):
+
+```bash
+C5_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105
+C5_CARRY_ROOT=/home/thlinux/worktrees/carry-sigma-c2-pinned-045369
+C5_SOURCE_ROOT=$PWD/research/native-moving-schur-sigma
+C5_OUTPUT=$PWD/.lake/build/research/native-moving-schur-sigma/c5-degree1-resume-clean-20261106
+C5_EVIDENCE=$C5_SOURCE_ROOT/mission-c5-finite-c2-certification/evidence/rational-boxes
+C5_LEAN_BIN=$(cd "$C5_REFERENCE_ROOT" && elan which lean)
+C5_MATHLIB_PATH=$(cd "$C5_REFERENCE_ROOT" && lake env printenv LEAN_PATH)
+mkdir -p "$C5_OUTPUT"
+export LEAN_PATH="$C5_OUTPUT:$C5_SOURCE_ROOT:$C5_REFERENCE_ROOT/.lake/build/lib/lean:$C5_MATHLIB_PATH"
+export SIGMA_REFERENCE_ROOT="$C5_REFERENCE_ROOT" CARRY_LEAN_ROOT="$C5_CARRY_ROOT" SIGMA_OUTPUT_DIR="$C5_OUTPUT" LEAN_BIN="$C5_LEAN_BIN"
+bash "$C5_SOURCE_ROOT/compile_sigma_pade.sh" SigmaRationalInterpolation \
+  > "$C5_EVIDENCE/c5-interpolation-degree1-resume-build.log" 2>&1
+```
+
+Depois do build, executar a auditoria Lean e
+`check_c5_interpolation_axioms.py` conforme
+`evidence/rational-boxes/VALIDATION.md`. A auditoria histórica não satisfaz os
+requisitos atualizados do checker.
+
 **MISSÃO:** C5 — certificação finita da primeira janela negativa C2 original
 
 **FASE ATUAL:** O3 integrada; O4 em andamento, origem das caixas ainda aberta

@@ -1,0 +1,1892 @@
+[Elab.async] [0.165407] ✅️ elaborating proof of CarrySigmaObstruction.c5BasisDivisor_eval_zero
+  [Elab.definition.value] [0.164230] ✅️ CarrySigmaObstruction.c5BasisDivisor_eval_zero
+    [Elab.step] [0.163924] ✅️ simp [Lagrange.basisDivisor]
+      [Elab.step] [0.163896] ✅️ simp [Lagrange.basisDivisor]
+        [Elab.step] [0.163864] ✅️ simp [Lagrange.basisDivisor]
+[Elab.async] [0.169803] ✅️ elaborating proof of CarrySigmaObstruction.c5BasisDivisor_derivative_eval_zero
+  [Elab.definition.value] [0.168604] ✅️ CarrySigmaObstruction.c5BasisDivisor_derivative_eval_zero
+    [Elab.step] [0.168141] ✅️ simp [Lagrange.basisDivisor]
+      [Elab.step] [0.168100] ✅️ simp [Lagrange.basisDivisor]
+        [Elab.step] [0.168065] ✅️ simp [Lagrange.basisDivisor]
+[Elab.async] [0.383566] ✅️ elaborating proof of CarrySigmaObstruction.c5LagrangeBasis_derivative_eval_zero
+  [Elab.definition.value] [0.381886] ✅️ CarrySigmaObstruction.c5LagrangeBasis_derivative_eval_zero
+    [Elab.step] [0.381268] ✅️ 
+          rw [c5LagrangeBasis, Lagrange.basis, Polynomial.derivative_prod_finset]
+          simp [Polynomial.eval_finsetSum, Polynomial.eval_mul, Polynomial.eval_prod, c5BasisDivisor_eval_zero,
+            c5BasisDivisor_derivative_eval_zero]
+      [Elab.step] [0.381241] ✅️ 
+            rw [c5LagrangeBasis, Lagrange.basis, Polynomial.derivative_prod_finset]
+            simp [Polynomial.eval_finsetSum, Polynomial.eval_mul, Polynomial.eval_prod, c5BasisDivisor_eval_zero,
+              c5BasisDivisor_derivative_eval_zero]
+        [Elab.step] [0.360184] ✅️ simp [Polynomial.eval_finsetSum, Polynomial.eval_mul, Polynomial.eval_prod,
+              c5BasisDivisor_eval_zero, c5BasisDivisor_derivative_eval_zero]
+[Elab.async] [0.509226] ✅️ elaborating proof of CarrySigmaObstruction.c5LagrangeBasis_coeff_one_zero
+  [Elab.definition.value] [0.505214] ✅️ CarrySigmaObstruction.c5LagrangeBasis_coeff_one_zero
+    [Elab.step] [0.504455] ✅️ 
+          rw [c5LagrangeBasis_coeff_one, c5LagrangeBasis_derivative_eval_zero]
+          have hprod (x : ℕ) : ∏ l ∈ (Finset.range 129).erase 0 |>.erase x, ((l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2 = 1 :=
+            by
+            apply Finset.prod_eq_one
+            intro l hl
+            have hl0 : l ≠ 0 := (Finset.mem_erase.mp ((Finset.mem_erase.mp hl).2)).1
+            have hlq : ((l : ℚ) ^ 2) ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hl0)
+            field_simp
+          simp [c5InterpolationIndices, c5InterpolationNode, hprod]
+      [Elab.step] [0.504428] ✅️ 
+            rw [c5LagrangeBasis_coeff_one, c5LagrangeBasis_derivative_eval_zero]
+            have hprod (x : ℕ) : ∏ l ∈ (Finset.range 129).erase 0 |>.erase x, ((l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2 = 1 :=
+              by
+              apply Finset.prod_eq_one
+              intro l hl
+              have hl0 : l ≠ 0 := (Finset.mem_erase.mp ((Finset.mem_erase.mp hl).2)).1
+              have hlq : ((l : ℚ) ^ 2) ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hl0)
+              field_simp
+            simp [c5InterpolationIndices, c5InterpolationNode, hprod]
+        [Elab.step] [0.132235] ✅️ have hprod (x : ℕ) :
+              ∏ l ∈ (Finset.range 129).erase 0 |>.erase x, ((l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2 = 1 :=
+              by
+              apply Finset.prod_eq_one
+              intro l hl
+              have hl0 : l ≠ 0 := (Finset.mem_erase.mp ((Finset.mem_erase.mp hl).2)).1
+              have hlq : ((l : ℚ) ^ 2) ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hl0)
+              field_simp
+          [Elab.step] [0.132166] ✅️ focus
+                refine
+                  no_implicit_lambda%
+                    (have hprod (x : ℕ) :
+                      ∏ l ∈ (Finset.range 129).erase 0 |>.erase x, ((l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2 = 1 := ?body✝;
+                    ?_)
+                case body✝ =>
+                  with_annotate_state"by"
+                    ( apply Finset.prod_eq_one
+                      intro l hl
+                      have hl0 : l ≠ 0 := (Finset.mem_erase.mp ((Finset.mem_erase.mp hl).2)).1
+                      have hlq : ((l : ℚ) ^ 2) ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hl0)
+                      field_simp)
+            [Elab.step] [0.132147] ✅️ 
+                  refine
+                    no_implicit_lambda%
+                      (have hprod (x : ℕ) :
+                        ∏ l ∈ (Finset.range 129).erase 0 |>.erase x, ((l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2 = 1 := ?body✝;
+                      ?_)
+                  case body✝ =>
+                    with_annotate_state"by"
+                      ( apply Finset.prod_eq_one
+                        intro l hl
+                        have hl0 : l ≠ 0 := (Finset.mem_erase.mp ((Finset.mem_erase.mp hl).2)).1
+                        have hlq : ((l : ℚ) ^ 2) ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hl0)
+                        field_simp)
+              [Elab.step] [0.132135] ✅️ 
+                    refine
+                      no_implicit_lambda%
+                        (have hprod (x : ℕ) :
+                          ∏ l ∈ (Finset.range 129).erase 0 |>.erase x, ((l : ℚ) ^ 2)⁻¹ * (l : ℚ) ^ 2 = 1 := ?body✝;
+                        ?_)
+                    case body✝ =>
+                      with_annotate_state"by"
+                        ( apply Finset.prod_eq_one
+                          intro l hl
+                          have hl0 : l ≠ 0 := (Finset.mem_erase.mp ((Finset.mem_erase.mp hl).2)).1
+                          have hlq : ((l : ℚ) ^ 2) ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hl0)
+                          field_simp)
+                [Elab.step] [0.101935] ✅️ case body✝ =>
+                      with_annotate_state"by"
+                        ( apply Finset.prod_eq_one
+                          intro l hl
+                          have hl0 : l ≠ 0 := (Finset.mem_erase.mp ((Finset.mem_erase.mp hl).2)).1
+                          have hlq : ((l : ℚ) ^ 2) ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hl0)
+                          field_simp)
+                  [Elab.step] [0.101773] ✅️ with_annotate_state"by"
+                          ( apply Finset.prod_eq_one
+                            intro l hl
+                            have hl0 : l ≠ 0 := (Finset.mem_erase.mp ((Finset.mem_erase.mp hl).2)).1
+                            have hlq : ((l : ℚ) ^ 2) ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hl0)
+                            field_simp)
+                    [Elab.step] [0.101756] ✅️ with_annotate_state"by"
+                            ( apply Finset.prod_eq_one
+                              intro l hl
+                              have hl0 : l ≠ 0 := (Finset.mem_erase.mp ((Finset.mem_erase.mp hl).2)).1
+                              have hlq : ((l : ℚ) ^ 2) ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hl0)
+                              field_simp)
+                      [Elab.step] [0.101736] ✅️ with_annotate_state"by"
+                            ( apply Finset.prod_eq_one
+                              intro l hl
+                              have hl0 : l ≠ 0 := (Finset.mem_erase.mp ((Finset.mem_erase.mp hl).2)).1
+                              have hlq : ((l : ℚ) ^ 2) ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hl0)
+                              field_simp)
+                        [Elab.step] [0.101716] ✅️ (
+                              apply Finset.prod_eq_one
+                              intro l hl
+                              have hl0 : l ≠ 0 := (Finset.mem_erase.mp ((Finset.mem_erase.mp hl).2)).1
+                              have hlq : ((l : ℚ) ^ 2) ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hl0)
+                              field_simp)
+                          [Elab.step] [0.101702] ✅️ 
+                                apply Finset.prod_eq_one
+                                intro l hl
+                                have hl0 : l ≠ 0 := (Finset.mem_erase.mp ((Finset.mem_erase.mp hl).2)).1
+                                have hlq : ((l : ℚ) ^ 2) ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hl0)
+                                field_simp
+                            [Elab.step] [0.101681] ✅️ 
+                                  apply Finset.prod_eq_one
+                                  intro l hl
+                                  have hl0 : l ≠ 0 := (Finset.mem_erase.mp ((Finset.mem_erase.mp hl).2)).1
+                                  have hlq : ((l : ℚ) ^ 2) ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hl0)
+                                  field_simp
+        [Elab.step] [0.369471] ✅️ simp [c5InterpolationIndices, c5InterpolationNode, hprod]
+[Elab.async] [0.225717] ✅️ elaborating proof of CarrySigmaObstruction.c5LagrangeBasis_coeff_one_of_ne
+  [Elab.definition.value] [0.223422] ✅️ CarrySigmaObstruction.c5LagrangeBasis_coeff_one_of_ne
+    [Elab.step] [0.222381] ✅️ 
+          rw [c5LagrangeBasis_coeff_one, c5LagrangeBasis_derivative_eval_zero]
+          apply Finset.sum_eq_single 0
+          · intro k hk hk0
+            have hzero : 0 ∈ (c5InterpolationIndices.erase j).erase k :=
+              by
+              refine Finset.mem_erase.mpr ⟨Ne.symm hk0, ?_⟩
+              exact Finset.mem_erase.mpr ⟨Ne.symm hj, by simp [c5InterpolationIndices]⟩
+            have hfactor :
+              ∏ l ∈ (c5InterpolationIndices.erase j).erase k,
+                  -((c5InterpolationNode j - c5InterpolationNode l)⁻¹ * c5InterpolationNode l) =
+                0 :=
+              by
+              apply Finset.prod_eq_zero (i := 0) hzero
+              simp [c5InterpolationNode]
+            rw [hfactor]
+            simp [c5InterpolationNode]
+          · intro hnot
+            have hmem : 0 ∈ c5InterpolationIndices.erase j :=
+              Finset.mem_erase.mpr ⟨Ne.symm hj, by simp [c5InterpolationIndices]⟩
+            exact False.elim (hnot hmem)
+      [Elab.step] [0.222332] ✅️ 
+            rw [c5LagrangeBasis_coeff_one, c5LagrangeBasis_derivative_eval_zero]
+            apply Finset.sum_eq_single 0
+            · intro k hk hk0
+              have hzero : 0 ∈ (c5InterpolationIndices.erase j).erase k :=
+                by
+                refine Finset.mem_erase.mpr ⟨Ne.symm hk0, ?_⟩
+                exact Finset.mem_erase.mpr ⟨Ne.symm hj, by simp [c5InterpolationIndices]⟩
+              have hfactor :
+                ∏ l ∈ (c5InterpolationIndices.erase j).erase k,
+                    -((c5InterpolationNode j - c5InterpolationNode l)⁻¹ * c5InterpolationNode l) =
+                  0 :=
+                by
+                apply Finset.prod_eq_zero (i := 0) hzero
+                simp [c5InterpolationNode]
+              rw [hfactor]
+              simp [c5InterpolationNode]
+            · intro hnot
+              have hmem : 0 ∈ c5InterpolationIndices.erase j :=
+                Finset.mem_erase.mpr ⟨Ne.symm hj, by simp [c5InterpolationIndices]⟩
+              exact False.elim (hnot hmem)
+        [Elab.step] [0.151245] ✅️ ·
+              intro k hk hk0
+              have hzero : 0 ∈ (c5InterpolationIndices.erase j).erase k :=
+                by
+                refine Finset.mem_erase.mpr ⟨Ne.symm hk0, ?_⟩
+                exact Finset.mem_erase.mpr ⟨Ne.symm hj, by simp [c5InterpolationIndices]⟩
+              have hfactor :
+                ∏ l ∈ (c5InterpolationIndices.erase j).erase k,
+                    -((c5InterpolationNode j - c5InterpolationNode l)⁻¹ * c5InterpolationNode l) =
+                  0 :=
+                by
+                apply Finset.prod_eq_zero (i := 0) hzero
+                simp [c5InterpolationNode]
+              rw [hfactor]
+              simp [c5InterpolationNode]
+          [Elab.step] [0.151127] ✅️ 
+                intro k hk hk0
+                have hzero : 0 ∈ (c5InterpolationIndices.erase j).erase k :=
+                  by
+                  refine Finset.mem_erase.mpr ⟨Ne.symm hk0, ?_⟩
+                  exact Finset.mem_erase.mpr ⟨Ne.symm hj, by simp [c5InterpolationIndices]⟩
+                have hfactor :
+                  ∏ l ∈ (c5InterpolationIndices.erase j).erase k,
+                      -((c5InterpolationNode j - c5InterpolationNode l)⁻¹ * c5InterpolationNode l) =
+                    0 :=
+                  by
+                  apply Finset.prod_eq_zero (i := 0) hzero
+                  simp [c5InterpolationNode]
+                rw [hfactor]
+                simp [c5InterpolationNode]
+            [Elab.step] [0.151105] ✅️ 
+                  intro k hk hk0
+                  have hzero : 0 ∈ (c5InterpolationIndices.erase j).erase k :=
+                    by
+                    refine Finset.mem_erase.mpr ⟨Ne.symm hk0, ?_⟩
+                    exact Finset.mem_erase.mpr ⟨Ne.symm hj, by simp [c5InterpolationIndices]⟩
+                  have hfactor :
+                    ∏ l ∈ (c5InterpolationIndices.erase j).erase k,
+                        -((c5InterpolationNode j - c5InterpolationNode l)⁻¹ * c5InterpolationNode l) =
+                      0 :=
+                    by
+                    apply Finset.prod_eq_zero (i := 0) hzero
+                    simp [c5InterpolationNode]
+                  rw [hfactor]
+                  simp [c5InterpolationNode]
+[Elab.async] [1.132700] ✅️ elaborating proof of _private.SigmaRationalInterpolation.0.CarrySigmaObstruction.c5_abs_sub_range_erase
+  [Elab.definition.value] [1.125533] ✅️ _private.SigmaRationalInterpolation.0.CarrySigmaObstruction.c5_abs_sub_range_erase
+    [Elab.step] [1.123467] ✅️ 
+          have hunion : (Finset.range 129).erase j = Finset.range j ∪ Finset.Ioc j 128 :=
+            by
+            ext k
+            simp only [Finset.mem_erase, Finset.mem_range, Finset.mem_union, Finset.mem_Ioc]
+            omega
+          have hdisjoint : Disjoint (Finset.range j) (Finset.Ioc j 128) :=
+            by
+            apply Finset.disjoint_left.mpr
+            intro k hk₁ hk₂
+            simp only [Finset.mem_range] at hk₁
+            simp only [Finset.mem_Ioc] at hk₂
+            omega
+          rw [hunion, Finset.prod_union hdisjoint]
+          have hleft : (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = (j.factorial : ℚ) := by
+            calc
+              (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                by
+                apply Finset.prod_congr rfl
+                intro k hk
+                have hklt : k < j := Finset.mem_range.mp hk
+                rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                rw [← Nat.cast_sub hklt.le]
+                have hnat : j - k = j - 1 - k + 1 := by omega
+                exact_mod_cast hnat
+              _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                simpa [Nat.cast_add, Nat.cast_one] using (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+              _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j
+          have hright : (∏ k ∈ Finset.Ioc j 128, |(j : ℚ) - (k : ℚ)|) = ((128 - j).factorial : ℚ) :=
+            by
+            have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+              by
+              ext k
+              simp only [Finset.mem_Ioc, Finset.mem_Ico]
+              omega
+            rw [hioc, Finset.prod_Ico_eq_prod_range]
+            have hlen : 129 - (j + 1) = 128 - j := by omega
+            rw [hlen]
+            calc
+              (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                  ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                by
+                apply Finset.prod_congr rfl
+                intro k hk
+                have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                  by
+                  push_cast
+                  ring
+                rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+              _ = ((128 - j).factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j)
+          rw [hleft, hright]
+      [Elab.step] [1.123444] ✅️ 
+            have hunion : (Finset.range 129).erase j = Finset.range j ∪ Finset.Ioc j 128 :=
+              by
+              ext k
+              simp only [Finset.mem_erase, Finset.mem_range, Finset.mem_union, Finset.mem_Ioc]
+              omega
+            have hdisjoint : Disjoint (Finset.range j) (Finset.Ioc j 128) :=
+              by
+              apply Finset.disjoint_left.mpr
+              intro k hk₁ hk₂
+              simp only [Finset.mem_range] at hk₁
+              simp only [Finset.mem_Ioc] at hk₂
+              omega
+            rw [hunion, Finset.prod_union hdisjoint]
+            have hleft : (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = (j.factorial : ℚ) := by
+              calc
+                (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                  by
+                  apply Finset.prod_congr rfl
+                  intro k hk
+                  have hklt : k < j := Finset.mem_range.mp hk
+                  rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                  rw [← Nat.cast_sub hklt.le]
+                  have hnat : j - k = j - 1 - k + 1 := by omega
+                  exact_mod_cast hnat
+                _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                  simpa [Nat.cast_add, Nat.cast_one] using
+                    (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j
+            have hright : (∏ k ∈ Finset.Ioc j 128, |(j : ℚ) - (k : ℚ)|) = ((128 - j).factorial : ℚ) :=
+              by
+              have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                by
+                ext k
+                simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                omega
+              rw [hioc, Finset.prod_Ico_eq_prod_range]
+              have hlen : 129 - (j + 1) = 128 - j := by omega
+              rw [hlen]
+              calc
+                (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                    ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                  by
+                  apply Finset.prod_congr rfl
+                  intro k hk
+                  have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                    by
+                    push_cast
+                    ring
+                  rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                _ = ((128 - j).factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j)
+            rw [hleft, hright]
+        [Elab.step] [0.784427] ✅️ have hleft : (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = (j.factorial : ℚ) := by
+              calc
+                (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                  by
+                  apply Finset.prod_congr rfl
+                  intro k hk
+                  have hklt : k < j := Finset.mem_range.mp hk
+                  rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                  rw [← Nat.cast_sub hklt.le]
+                  have hnat : j - k = j - 1 - k + 1 := by omega
+                  exact_mod_cast hnat
+                _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                  simpa [Nat.cast_add, Nat.cast_one] using
+                    (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j
+          [Elab.step] [0.784304] ✅️ focus
+                refine
+                  no_implicit_lambda%
+                    (have hleft : (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = (j.factorial : ℚ) := ?body✝;
+                    ?_)
+                case body✝ =>
+                  with_annotate_state"by"
+                    (calc
+                        (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                            ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                          by
+                          apply Finset.prod_congr rfl
+                          intro k hk
+                          have hklt : k < j := Finset.mem_range.mp hk
+                          rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                          rw [← Nat.cast_sub hklt.le]
+                          have hnat : j - k = j - 1 - k + 1 := by omega
+                          exact_mod_cast hnat
+                        _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                          simpa [Nat.cast_add, Nat.cast_one] using
+                            (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                        _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+            [Elab.step] [0.784284] ✅️ 
+                  refine
+                    no_implicit_lambda%
+                      (have hleft : (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = (j.factorial : ℚ) := ?body✝;
+                      ?_)
+                  case body✝ =>
+                    with_annotate_state"by"
+                      (calc
+                          (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                              ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                            by
+                            apply Finset.prod_congr rfl
+                            intro k hk
+                            have hklt : k < j := Finset.mem_range.mp hk
+                            rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                            rw [← Nat.cast_sub hklt.le]
+                            have hnat : j - k = j - 1 - k + 1 := by omega
+                            exact_mod_cast hnat
+                          _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                            simpa [Nat.cast_add, Nat.cast_one] using
+                              (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                          _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+              [Elab.step] [0.784270] ✅️ 
+                    refine
+                      no_implicit_lambda%
+                        (have hleft : (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) = (j.factorial : ℚ) := ?body✝;
+                        ?_)
+                    case body✝ =>
+                      with_annotate_state"by"
+                        (calc
+                            (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                              by
+                              apply Finset.prod_congr rfl
+                              intro k hk
+                              have hklt : k < j := Finset.mem_range.mp hk
+                              rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                              rw [← Nat.cast_sub hklt.le]
+                              have hnat : j - k = j - 1 - k + 1 := by omega
+                              exact_mod_cast hnat
+                            _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                              simpa [Nat.cast_add, Nat.cast_one] using
+                                (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                            _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+                [Elab.step] [0.771065] ✅️ case body✝ =>
+                      with_annotate_state"by"
+                        (calc
+                            (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                              by
+                              apply Finset.prod_congr rfl
+                              intro k hk
+                              have hklt : k < j := Finset.mem_range.mp hk
+                              rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                              rw [← Nat.cast_sub hklt.le]
+                              have hnat : j - k = j - 1 - k + 1 := by omega
+                              exact_mod_cast hnat
+                            _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                              simpa [Nat.cast_add, Nat.cast_one] using
+                                (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                            _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+                  [Elab.step] [0.770953] ✅️ with_annotate_state"by"
+                          (calc
+                              (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                  ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                                by
+                                apply Finset.prod_congr rfl
+                                intro k hk
+                                have hklt : k < j := Finset.mem_range.mp hk
+                                rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                rw [← Nat.cast_sub hklt.le]
+                                have hnat : j - k = j - 1 - k + 1 := by omega
+                                exact_mod_cast hnat
+                              _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                                simpa [Nat.cast_add, Nat.cast_one] using
+                                  (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                              _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+                    [Elab.step] [0.770939] ✅️ with_annotate_state"by"
+                            (calc
+                                (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                    ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                                  by
+                                  apply Finset.prod_congr rfl
+                                  intro k hk
+                                  have hklt : k < j := Finset.mem_range.mp hk
+                                  rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                  rw [← Nat.cast_sub hklt.le]
+                                  have hnat : j - k = j - 1 - k + 1 := by omega
+                                  exact_mod_cast hnat
+                                _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                                  simpa [Nat.cast_add, Nat.cast_one] using
+                                    (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+                      [Elab.step] [0.770925] ✅️ with_annotate_state"by"
+                            (calc
+                                (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                    ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                                  by
+                                  apply Finset.prod_congr rfl
+                                  intro k hk
+                                  have hklt : k < j := Finset.mem_range.mp hk
+                                  rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                  rw [← Nat.cast_sub hklt.le]
+                                  have hnat : j - k = j - 1 - k + 1 := by omega
+                                  exact_mod_cast hnat
+                                _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                                  simpa [Nat.cast_add, Nat.cast_one] using
+                                    (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+                        [Elab.step] [0.770912] ✅️ (calc
+                                (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                    ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                                  by
+                                  apply Finset.prod_congr rfl
+                                  intro k hk
+                                  have hklt : k < j := Finset.mem_range.mp hk
+                                  rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                  rw [← Nat.cast_sub hklt.le]
+                                  have hnat : j - k = j - 1 - k + 1 := by omega
+                                  exact_mod_cast hnat
+                                _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                                  simpa [Nat.cast_add, Nat.cast_one] using
+                                    (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j)
+                          [Elab.step] [0.770899] ✅️ calc
+                                  (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                      ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                                    by
+                                    apply Finset.prod_congr rfl
+                                    intro k hk
+                                    have hklt : k < j := Finset.mem_range.mp hk
+                                    rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                    rw [← Nat.cast_sub hklt.le]
+                                    have hnat : j - k = j - 1 - k + 1 := by omega
+                                    exact_mod_cast hnat
+                                  _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                                    simpa [Nat.cast_add, Nat.cast_one] using
+                                      (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                  _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j
+                            [Elab.step] [0.770886] ✅️ calc
+                                    (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                        ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                                      by
+                                      apply Finset.prod_congr rfl
+                                      intro k hk
+                                      have hklt : k < j := Finset.mem_range.mp hk
+                                      rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                      rw [← Nat.cast_sub hklt.le]
+                                      have hnat : j - k = j - 1 - k + 1 := by omega
+                                      exact_mod_cast hnat
+                                    _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                                      simpa [Nat.cast_add, Nat.cast_one] using
+                                        (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                    _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j
+                              [Elab.step] [0.770860] ✅️ calc
+                                    (∏ k ∈ Finset.range j, |(j : ℚ) - (k : ℚ)|) =
+                                        ∏ k ∈ Finset.range j, (((j - 1 - k + 1 : ℕ) : ℚ)) :=
+                                      by
+                                      apply Finset.prod_congr rfl
+                                      intro k hk
+                                      have hklt : k < j := Finset.mem_range.mp hk
+                                      rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                      rw [← Nat.cast_sub hklt.le]
+                                      have hnat : j - k = j - 1 - k + 1 := by omega
+                                      exact_mod_cast hnat
+                                    _ = ∏ k ∈ Finset.range j, ((k + 1 : ℕ) : ℚ) := by
+                                      simpa [Nat.cast_add, Nat.cast_one] using
+                                        (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                    _ = (j.factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial j
+                                [Elab.step] [0.105683] ✅️ 
+                                      apply Finset.prod_congr rfl
+                                      intro k hk
+                                      have hklt : k < j := Finset.mem_range.mp hk
+                                      rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                      rw [← Nat.cast_sub hklt.le]
+                                      have hnat : j - k = j - 1 - k + 1 := by omega
+                                      exact_mod_cast hnat
+                                  [Elab.step] [0.105645] ✅️ 
+                                        apply Finset.prod_congr rfl
+                                        intro k hk
+                                        have hklt : k < j := Finset.mem_range.mp hk
+                                        rw [abs_of_nonneg (sub_nonneg.mpr (by exact_mod_cast hklt.le))]
+                                        rw [← Nat.cast_sub hklt.le]
+                                        have hnat : j - k = j - 1 - k + 1 := by omega
+                                        exact_mod_cast hnat
+                                [Elab.step] [0.589474] ✅️ simpa [Nat.cast_add, Nat.cast_one] using
+                                        (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                  [Elab.step] [0.589447] ✅️ simpa [Nat.cast_add, Nat.cast_one] using
+                                          (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+                                    [Elab.step] [0.589417] ✅️ simpa [Nat.cast_add, Nat.cast_one] using
+                                          (Finset.prod_range_reflect (fun i : ℕ => ((i + 1 : ℕ) : ℚ)) j)
+        [Elab.step] [0.262532] ✅️ have hright :
+              (∏ k ∈ Finset.Ioc j 128, |(j : ℚ) - (k : ℚ)|) = ((128 - j).factorial : ℚ) :=
+              by
+              have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                by
+                ext k
+                simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                omega
+              rw [hioc, Finset.prod_Ico_eq_prod_range]
+              have hlen : 129 - (j + 1) = 128 - j := by omega
+              rw [hlen]
+              calc
+                (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                    ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                  by
+                  apply Finset.prod_congr rfl
+                  intro k hk
+                  have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                    by
+                    push_cast
+                    ring
+                  rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                _ = ((128 - j).factorial : ℚ) := by exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j)
+          [Elab.step] [0.262485] ✅️ focus
+                refine
+                  no_implicit_lambda%
+                    (have hright : (∏ k ∈ Finset.Ioc j 128, |(j : ℚ) - (k : ℚ)|) = ((128 - j).factorial : ℚ) := ?body✝;
+                    ?_)
+                case body✝ =>
+                  with_annotate_state"by"
+                    ( have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                        by
+                        ext k
+                        simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                        omega
+                      rw [hioc, Finset.prod_Ico_eq_prod_range]
+                      have hlen : 129 - (j + 1) = 128 - j := by omega
+                      rw [hlen]
+                      calc
+                        (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                            ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                          by
+                          apply Finset.prod_congr rfl
+                          intro k hk
+                          have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                            by
+                            push_cast
+                            ring
+                          rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                        _ = ((128 - j).factorial : ℚ) := by
+                          exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j))
+            [Elab.step] [0.262468] ✅️ 
+                  refine
+                    no_implicit_lambda%
+                      (have hright : (∏ k ∈ Finset.Ioc j 128, |(j : ℚ) - (k : ℚ)|) = ((128 - j).factorial : ℚ) :=
+                        ?body✝;
+                      ?_)
+                  case body✝ =>
+                    with_annotate_state"by"
+                      ( have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                          by
+                          ext k
+                          simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                          omega
+                        rw [hioc, Finset.prod_Ico_eq_prod_range]
+                        have hlen : 129 - (j + 1) = 128 - j := by omega
+                        rw [hlen]
+                        calc
+                          (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                              ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                            by
+                            apply Finset.prod_congr rfl
+                            intro k hk
+                            have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                              by
+                              push_cast
+                              ring
+                            rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                          _ = ((128 - j).factorial : ℚ) := by
+                            exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j))
+              [Elab.step] [0.262456] ✅️ 
+                    refine
+                      no_implicit_lambda%
+                        (have hright : (∏ k ∈ Finset.Ioc j 128, |(j : ℚ) - (k : ℚ)|) = ((128 - j).factorial : ℚ) :=
+                          ?body✝;
+                        ?_)
+                    case body✝ =>
+                      with_annotate_state"by"
+                        ( have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                            by
+                            ext k
+                            simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                            omega
+                          rw [hioc, Finset.prod_Ico_eq_prod_range]
+                          have hlen : 129 - (j + 1) = 128 - j := by omega
+                          rw [hlen]
+                          calc
+                            (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                                ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                              by
+                              apply Finset.prod_congr rfl
+                              intro k hk
+                              have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                                by
+                                push_cast
+                                ring
+                              rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                            _ = ((128 - j).factorial : ℚ) := by
+                              exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j))
+                [Elab.step] [0.248163] ✅️ case body✝ =>
+                      with_annotate_state"by"
+                        ( have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                            by
+                            ext k
+                            simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                            omega
+                          rw [hioc, Finset.prod_Ico_eq_prod_range]
+                          have hlen : 129 - (j + 1) = 128 - j := by omega
+                          rw [hlen]
+                          calc
+                            (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                                ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                              by
+                              apply Finset.prod_congr rfl
+                              intro k hk
+                              have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                                by
+                                push_cast
+                                ring
+                              rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                            _ = ((128 - j).factorial : ℚ) := by
+                              exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j))
+                  [Elab.step] [0.248032] ✅️ with_annotate_state"by"
+                          ( have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                              by
+                              ext k
+                              simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                              omega
+                            rw [hioc, Finset.prod_Ico_eq_prod_range]
+                            have hlen : 129 - (j + 1) = 128 - j := by omega
+                            rw [hlen]
+                            calc
+                              (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                                  ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                                by
+                                apply Finset.prod_congr rfl
+                                intro k hk
+                                have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                                  by
+                                  push_cast
+                                  ring
+                                rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                              _ = ((128 - j).factorial : ℚ) := by
+                                exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j))
+                    [Elab.step] [0.248022] ✅️ with_annotate_state"by"
+                            ( have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                                by
+                                ext k
+                                simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                                omega
+                              rw [hioc, Finset.prod_Ico_eq_prod_range]
+                              have hlen : 129 - (j + 1) = 128 - j := by omega
+                              rw [hlen]
+                              calc
+                                (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                                    ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                                  by
+                                  apply Finset.prod_congr rfl
+                                  intro k hk
+                                  have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                                    by
+                                    push_cast
+                                    ring
+                                  rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                                _ = ((128 - j).factorial : ℚ) := by
+                                  exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j))
+                      [Elab.step] [0.248012] ✅️ with_annotate_state"by"
+                            ( have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                                by
+                                ext k
+                                simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                                omega
+                              rw [hioc, Finset.prod_Ico_eq_prod_range]
+                              have hlen : 129 - (j + 1) = 128 - j := by omega
+                              rw [hlen]
+                              calc
+                                (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                                    ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                                  by
+                                  apply Finset.prod_congr rfl
+                                  intro k hk
+                                  have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                                    by
+                                    push_cast
+                                    ring
+                                  rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                                _ = ((128 - j).factorial : ℚ) := by
+                                  exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j))
+                        [Elab.step] [0.247998] ✅️ (
+                              have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                                by
+                                ext k
+                                simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                                omega
+                              rw [hioc, Finset.prod_Ico_eq_prod_range]
+                              have hlen : 129 - (j + 1) = 128 - j := by omega
+                              rw [hlen]
+                              calc
+                                (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                                    ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                                  by
+                                  apply Finset.prod_congr rfl
+                                  intro k hk
+                                  have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                                    by
+                                    push_cast
+                                    ring
+                                  rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                                _ = ((128 - j).factorial : ℚ) := by
+                                  exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j))
+                          [Elab.step] [0.247986] ✅️ 
+                                have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                                  by
+                                  ext k
+                                  simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                                  omega
+                                rw [hioc, Finset.prod_Ico_eq_prod_range]
+                                have hlen : 129 - (j + 1) = 128 - j := by omega
+                                rw [hlen]
+                                calc
+                                  (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                                      ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                                    by
+                                    apply Finset.prod_congr rfl
+                                    intro k hk
+                                    have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                                      by
+                                      push_cast
+                                      ring
+                                    rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                                  _ = ((128 - j).factorial : ℚ) := by
+                                    exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j)
+                            [Elab.step] [0.247973] ✅️ 
+                                  have hioc : Finset.Ioc j 128 = Finset.Ico (j + 1) 129 :=
+                                    by
+                                    ext k
+                                    simp only [Finset.mem_Ioc, Finset.mem_Ico]
+                                    omega
+                                  rw [hioc, Finset.prod_Ico_eq_prod_range]
+                                  have hlen : 129 - (j + 1) = 128 - j := by omega
+                                  rw [hlen]
+                                  calc
+                                    (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                                        ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                                      by
+                                      apply Finset.prod_congr rfl
+                                      intro k hk
+                                      have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                                        by
+                                        push_cast
+                                        ring
+                                      rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                                    _ = ((128 - j).factorial : ℚ) := by
+                                      exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j)
+                              [Elab.step] [0.176279] ✅️ calc
+                                    (∏ k ∈ Finset.range (128 - j), |(j : ℚ) - ((j + 1 + k : ℕ) : ℚ)|) =
+                                        ∏ k ∈ Finset.range (128 - j), ((k + 1 : ℕ) : ℚ) :=
+                                      by
+                                      apply Finset.prod_congr rfl
+                                      intro k hk
+                                      have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                                        by
+                                        push_cast
+                                        ring
+                                      rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                                    _ = ((128 - j).factorial : ℚ) := by
+                                      exact_mod_cast Finset.prod_range_add_one_eq_factorial (128 - j)
+                                [Elab.step] [0.111738] ✅️ 
+                                      apply Finset.prod_congr rfl
+                                      intro k hk
+                                      have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                                        by
+                                        push_cast
+                                        ring
+                                      rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+                                  [Elab.step] [0.111707] ✅️ 
+                                        apply Finset.prod_congr rfl
+                                        intro k hk
+                                        have hcalc : (j : ℚ) - ((j + 1 + k : ℕ) : ℚ) = -((k + 1 : ℕ) : ℚ) :=
+                                          by
+                                          push_cast
+                                          ring
+                                        rw [hcalc, abs_neg, abs_of_nonneg (by positivity)]
+[Elab.async] [0.350142] ✅️ elaborating proof of _private.SigmaRationalInterpolation.0.CarrySigmaObstruction.c5_factorial_center_product_le
+  [Elab.definition.value] [0.345029] ✅️ _private.SigmaRationalInterpolation.0.CarrySigmaObstruction.c5_factorial_center_product_le
+    [Elab.step] [0.343518] ✅️ induction j with
+          | zero => simp
+          | succ j ih =>
+            have hjlt : j < 128 := by omega
+            have hleft : Nat.factorial (128 - j) = (128 - j) * Nat.factorial (127 - j) :=
+              by
+              have harg : 128 - j = (127 - j) + 1 := by omega
+              rw [harg, Nat.factorial_succ]
+            have hright : Nat.factorial (129 + j) = (129 + j) * Nat.factorial (128 + j) :=
+              by
+              have harg : 129 + j = (128 + j) + 1 := by omega
+              simpa only [harg] using (Nat.factorial_succ (128 + j))
+            have hstep :
+              Nat.factorial (128 - j) * Nat.factorial (128 + j) ≤ Nat.factorial (127 - j) * Nat.factorial (129 + j) :=
+              by
+              rw [hleft, hright]
+              have hcoef : 128 - j ≤ 129 + j := by omega
+              calc
+                ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                    (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                  by ring
+                _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) := (Nat.mul_le_mul_left _ hcoef)
+                _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring
+            rw [show 128 - (j + 1) = 127 - j by omega, show 128 + (j + 1) = 129 + j by omega]
+            exact (ih (by omega)).trans hstep
+      [Elab.step] [0.343480] ✅️ induction j with
+            | zero => simp
+            | succ j ih =>
+              have hjlt : j < 128 := by omega
+              have hleft : Nat.factorial (128 - j) = (128 - j) * Nat.factorial (127 - j) :=
+                by
+                have harg : 128 - j = (127 - j) + 1 := by omega
+                rw [harg, Nat.factorial_succ]
+              have hright : Nat.factorial (129 + j) = (129 + j) * Nat.factorial (128 + j) :=
+                by
+                have harg : 129 + j = (128 + j) + 1 := by omega
+                simpa only [harg] using (Nat.factorial_succ (128 + j))
+              have hstep :
+                Nat.factorial (128 - j) * Nat.factorial (128 + j) ≤ Nat.factorial (127 - j) * Nat.factorial (129 + j) :=
+                by
+                rw [hleft, hright]
+                have hcoef : 128 - j ≤ 129 + j := by omega
+                calc
+                  ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                      (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                    by ring
+                  _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) := (Nat.mul_le_mul_left _ hcoef)
+                  _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring
+              rw [show 128 - (j + 1) = 127 - j by omega, show 128 + (j + 1) = 129 + j by omega]
+              exact (ih (by omega)).trans hstep
+        [Elab.step] [0.343445] ✅️ induction j with
+            | zero => simp
+            | succ j ih =>
+              have hjlt : j < 128 := by omega
+              have hleft : Nat.factorial (128 - j) = (128 - j) * Nat.factorial (127 - j) :=
+                by
+                have harg : 128 - j = (127 - j) + 1 := by omega
+                rw [harg, Nat.factorial_succ]
+              have hright : Nat.factorial (129 + j) = (129 + j) * Nat.factorial (128 + j) :=
+                by
+                have harg : 129 + j = (128 + j) + 1 := by omega
+                simpa only [harg] using (Nat.factorial_succ (128 + j))
+              have hstep :
+                Nat.factorial (128 - j) * Nat.factorial (128 + j) ≤ Nat.factorial (127 - j) * Nat.factorial (129 + j) :=
+                by
+                rw [hleft, hright]
+                have hcoef : 128 - j ≤ 129 + j := by omega
+                calc
+                  ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                      (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                    by ring
+                  _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) := (Nat.mul_le_mul_left _ hcoef)
+                  _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring
+              rw [show 128 - (j + 1) = 127 - j by omega, show 128 + (j + 1) = 129 + j by omega]
+              exact (ih (by omega)).trans hstep
+          [Elab.step] [0.313314] ✅️ 
+                have hjlt : j < 128 := by omega
+                have hleft : Nat.factorial (128 - j) = (128 - j) * Nat.factorial (127 - j) :=
+                  by
+                  have harg : 128 - j = (127 - j) + 1 := by omega
+                  rw [harg, Nat.factorial_succ]
+                have hright : Nat.factorial (129 + j) = (129 + j) * Nat.factorial (128 + j) :=
+                  by
+                  have harg : 129 + j = (128 + j) + 1 := by omega
+                  simpa only [harg] using (Nat.factorial_succ (128 + j))
+                have hstep :
+                  Nat.factorial (128 - j) * Nat.factorial (128 + j) ≤
+                    Nat.factorial (127 - j) * Nat.factorial (129 + j) :=
+                  by
+                  rw [hleft, hright]
+                  have hcoef : 128 - j ≤ 129 + j := by omega
+                  calc
+                    ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                        (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                      by ring
+                    _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) := (Nat.mul_le_mul_left _ hcoef)
+                    _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring
+                rw [show 128 - (j + 1) = 127 - j by omega, show 128 + (j + 1) = 129 + j by omega]
+                exact (ih (by omega)).trans hstep
+            [Elab.step] [0.313269] ✅️ 
+                  have hjlt : j < 128 := by omega
+                  have hleft : Nat.factorial (128 - j) = (128 - j) * Nat.factorial (127 - j) :=
+                    by
+                    have harg : 128 - j = (127 - j) + 1 := by omega
+                    rw [harg, Nat.factorial_succ]
+                  have hright : Nat.factorial (129 + j) = (129 + j) * Nat.factorial (128 + j) :=
+                    by
+                    have harg : 129 + j = (128 + j) + 1 := by omega
+                    simpa only [harg] using (Nat.factorial_succ (128 + j))
+                  have hstep :
+                    Nat.factorial (128 - j) * Nat.factorial (128 + j) ≤
+                      Nat.factorial (127 - j) * Nat.factorial (129 + j) :=
+                    by
+                    rw [hleft, hright]
+                    have hcoef : 128 - j ≤ 129 + j := by omega
+                    calc
+                      ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                          (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                        by ring
+                      _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                        (Nat.mul_le_mul_left _ hcoef)
+                      _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring
+                  rw [show 128 - (j + 1) = 127 - j by omega, show 128 + (j + 1) = 129 + j by omega]
+                  exact (ih (by omega)).trans hstep
+              [Elab.step] [0.122249] ✅️ have hstep :
+                    Nat.factorial (128 - j) * Nat.factorial (128 + j) ≤
+                      Nat.factorial (127 - j) * Nat.factorial (129 + j) :=
+                    by
+                    rw [hleft, hright]
+                    have hcoef : 128 - j ≤ 129 + j := by omega
+                    calc
+                      ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                          (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                        by ring
+                      _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                        (Nat.mul_le_mul_left _ hcoef)
+                      _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring
+                [Elab.step] [0.122158] ✅️ focus
+                      refine
+                        no_implicit_lambda%
+                          (have hstep :
+                            Nat.factorial (128 - j) * Nat.factorial (128 + j) ≤
+                              Nat.factorial (127 - j) * Nat.factorial (129 + j) :=
+                            ?body✝;
+                          ?_)
+                      case body✝ =>
+                        with_annotate_state"by"
+                          ( rw [hleft, hright]
+                            have hcoef : 128 - j ≤ 129 + j := by omega
+                            calc
+                              ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                                  (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                                by ring
+                              _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                                (Nat.mul_le_mul_left _ hcoef)
+                              _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring)
+                  [Elab.step] [0.122137] ✅️ 
+                        refine
+                          no_implicit_lambda%
+                            (have hstep :
+                              Nat.factorial (128 - j) * Nat.factorial (128 + j) ≤
+                                Nat.factorial (127 - j) * Nat.factorial (129 + j) :=
+                              ?body✝;
+                            ?_)
+                        case body✝ =>
+                          with_annotate_state"by"
+                            ( rw [hleft, hright]
+                              have hcoef : 128 - j ≤ 129 + j := by omega
+                              calc
+                                ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                                    (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                                  by ring
+                                _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                                  (Nat.mul_le_mul_left _ hcoef)
+                                _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring)
+                    [Elab.step] [0.122123] ✅️ 
+                          refine
+                            no_implicit_lambda%
+                              (have hstep :
+                                Nat.factorial (128 - j) * Nat.factorial (128 + j) ≤
+                                  Nat.factorial (127 - j) * Nat.factorial (129 + j) :=
+                                ?body✝;
+                              ?_)
+                          case body✝ =>
+                            with_annotate_state"by"
+                              ( rw [hleft, hright]
+                                have hcoef : 128 - j ≤ 129 + j := by omega
+                                calc
+                                  ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                                      (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                                    by ring
+                                  _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                                    (Nat.mul_le_mul_left _ hcoef)
+                                  _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring)
+                      [Elab.step] [0.109435] ✅️ case body✝ =>
+                            with_annotate_state"by"
+                              ( rw [hleft, hright]
+                                have hcoef : 128 - j ≤ 129 + j := by omega
+                                calc
+                                  ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                                      (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                                    by ring
+                                  _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                                    (Nat.mul_le_mul_left _ hcoef)
+                                  _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring)
+                        [Elab.step] [0.109303] ✅️ with_annotate_state"by"
+                                ( rw [hleft, hright]
+                                  have hcoef : 128 - j ≤ 129 + j := by omega
+                                  calc
+                                    ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                                        (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                                      by ring
+                                    _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                                      (Nat.mul_le_mul_left _ hcoef)
+                                    _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring)
+                          [Elab.step] [0.109283] ✅️ with_annotate_state"by"
+                                  ( rw [hleft, hright]
+                                    have hcoef : 128 - j ≤ 129 + j := by omega
+                                    calc
+                                      ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                                          (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                                        by ring
+                                      _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                                        (Nat.mul_le_mul_left _ hcoef)
+                                      _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring)
+                            [Elab.step] [0.109260] ✅️ with_annotate_state"by"
+                                  ( rw [hleft, hright]
+                                    have hcoef : 128 - j ≤ 129 + j := by omega
+                                    calc
+                                      ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                                          (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                                        by ring
+                                      _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                                        (Nat.mul_le_mul_left _ hcoef)
+                                      _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring)
+                              [Elab.step] [0.109241] ✅️ (
+                                    rw [hleft, hright]
+                                    have hcoef : 128 - j ≤ 129 + j := by omega
+                                    calc
+                                      ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                                          (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                                        by ring
+                                      _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                                        (Nat.mul_le_mul_left _ hcoef)
+                                      _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring)
+                                [Elab.step] [0.109225] ✅️ 
+                                      rw [hleft, hright]
+                                      have hcoef : 128 - j ≤ 129 + j := by omega
+                                      calc
+                                        ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                                            (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                                          by ring
+                                        _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                                          (Nat.mul_le_mul_left _ hcoef)
+                                        _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring
+                                  [Elab.step] [0.109201] ✅️ 
+                                        rw [hleft, hright]
+                                        have hcoef : 128 - j ≤ 129 + j := by omega
+                                        calc
+                                          ((128 - j) * Nat.factorial (127 - j)) * Nat.factorial (128 + j) =
+                                              (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (128 - j) :=
+                                            by ring
+                                          _ ≤ (Nat.factorial (127 - j) * Nat.factorial (128 + j)) * (129 + j) :=
+                                            (Nat.mul_le_mul_left _ hcoef)
+                                          _ = Nat.factorial (127 - j) * ((129 + j) * Nat.factorial (128 + j)) := by ring
+/home/thlinux/worktrees/geometry-of-numbers-c5-finite-c2-certification/research/native-moving-schur-sigma/SigmaRationalInterpolation.lean:230:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ k ∈ range (?n - ?m), ?f (?m + k)
+in the target expression
+  ∑ k ∈ range n, ((↑k + 1) ^ 2)⁻¹ = 1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹
+
+n : ℕ
+hn : 0 < n
+⊢ ∑ k ∈ range n, ((↑k + 1) ^ 2)⁻¹ = 1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹
+/home/thlinux/worktrees/geometry-of-numbers-c5-finite-c2-certification/research/native-moving-schur-sigma/SigmaRationalInterpolation.lean:247:31: error: Type mismatch
+  add_le_add_left htail' 1
+has type
+  ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1 ≤ 1 - (↑n)⁻¹ + 1
+but is expected to have type
+  1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ ≤ 1 + (1 - (↑n)⁻¹)
+[Elab.async] [2.443968] ✅️ elaborating proof of _private.SigmaRationalInterpolation.0.CarrySigmaObstruction.c5_inv_sq_sum_range_le
+  [Elab.definition.value] [2.440434] ❌️ _private.SigmaRationalInterpolation.0.CarrySigmaObstruction.c5_inv_sq_sum_range_le
+    [Elab.step] [2.439812] ✅️ 
+          have hsum : (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) = 1 + ∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹ :=
+            by
+            rw [← Finset.sum_Ico_eq_sum_range]
+            have hset : Finset.Ico 1 (n + 1) = insert 1 (Finset.Ioc 1 n) :=
+              by
+              ext i
+              simp only [Finset.mem_Ico, Finset.mem_insert, Finset.mem_Ioc]
+              omega
+            rw [hset, Finset.sum_insert]
+            · norm_num
+            · simp
+          rw [hsum]
+          have htail := sum_Ioc_inv_sq_le_sub (α := ℚ) (k := 1) (n := n) (by norm_num) (by omega)
+          have htail' : (∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹) ≤ 1 - (n : ℚ)⁻¹ := by simpa using htail
+          calc
+            1 + ∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹ ≤ 1 + (1 - (n : ℚ)⁻¹) := add_le_add_left htail' (1 : ℚ)
+            _ = 2 - (n : ℚ)⁻¹ := by ring
+      [Elab.step] [2.439789] ✅️ 
+            have hsum : (∑ k ∈ Finset.range n, ((k + 1 : ℚ) ^ 2)⁻¹) = 1 + ∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹ :=
+              by
+              rw [← Finset.sum_Ico_eq_sum_range]
+              have hset : Finset.Ico 1 (n + 1) = insert 1 (Finset.Ioc 1 n) :=
+                by
+                ext i
+                simp only [Finset.mem_Ico, Finset.mem_insert, Finset.mem_Ioc]
+                omega
+              rw [hset, Finset.sum_insert]
+              · norm_num
+              · simp
+            rw [hsum]
+            have htail := sum_Ioc_inv_sq_le_sub (α := ℚ) (k := 1) (n := n) (by norm_num) (by omega)
+            have htail' : (∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹) ≤ 1 - (n : ℚ)⁻¹ := by simpa using htail
+            calc
+              1 + ∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹ ≤ 1 + (1 - (n : ℚ)⁻¹) := add_le_add_left htail' (1 : ℚ)
+              _ = 2 - (n : ℚ)⁻¹ := by ring
+        [Elab.step] [0.127235] ✅️ have htail' : (∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹) ≤ 1 - (n : ℚ)⁻¹ := by
+              simpa using htail
+          [Elab.step] [0.127176] ✅️ focus
+                refine
+                  no_implicit_lambda%
+                    (have htail' : (∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹) ≤ 1 - (n : ℚ)⁻¹ := ?body✝;
+                    ?_)
+                case body✝ => with_annotate_state"by" (simpa using htail)
+            [Elab.step] [0.127152] ✅️ 
+                  refine
+                    no_implicit_lambda%
+                      (have htail' : (∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹) ≤ 1 - (n : ℚ)⁻¹ := ?body✝;
+                      ?_)
+                  case body✝ => with_annotate_state"by" (simpa using htail)
+              [Elab.step] [0.127137] ✅️ 
+                    refine
+                      no_implicit_lambda%
+                        (have htail' : (∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹) ≤ 1 - (n : ℚ)⁻¹ := ?body✝;
+                        ?_)
+                    case body✝ => with_annotate_state"by" (simpa using htail)
+                [Elab.step] [0.103736] ✅️ case body✝ => with_annotate_state"by" (simpa using htail)
+                  [Elab.step] [0.103622] ✅️ with_annotate_state"by" (simpa using htail)
+                    [Elab.step] [0.103607] ✅️ with_annotate_state"by" (simpa using htail)
+                      [Elab.step] [0.103589] ✅️ with_annotate_state"by" (simpa using htail)
+                        [Elab.step] [0.103573] ✅️ (simpa using htail)
+                          [Elab.step] [0.103559] ✅️ simpa using htail
+                            [Elab.step] [0.103546] ✅️ simpa using htail
+                              [Elab.step] [0.103519] ✅️ simpa using htail
+        [Elab.step] [2.249018] ✅️ calc
+              1 + ∑ i ∈ Finset.Ioc 1 n, ((i : ℚ) ^ 2)⁻¹ ≤ 1 + (1 - (n : ℚ)⁻¹) := add_le_add_left htail' (1 : ℚ)
+              _ = 2 - (n : ℚ)⁻¹ := by ring
+          [Elab.coe] [2.091183] 💥️ adding coercion for add_le_add_left htail'
+                1 : ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1 ≤ 1 - (↑n)⁻¹ + 1 =?= 1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ ≤ 1 + (1 - (↑n)⁻¹)
+            [Meta.isDefEq] [2.073508] ❌️ LE.le (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1) =?= LE.le (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹)
+              [Meta.isDefEq] [2.048300] ❌️ Rat.instLE.1
+                    (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1) =?= Rat.instLE.1 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹)
+                [Meta.isDefEq] [2.048267] ❌️ fun b =>
+                      b.blt (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1) =
+                        false =?= fun b => b.blt (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹) = false
+                  [Meta.isDefEq] [2.048239] ❌️ b.blt (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1) =
+                        false =?= b.blt (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹) = false
+                    [Meta.isDefEq] [2.048169] ❌️ b.blt
+                          (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1) =?= b.blt (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹)
+                      [Meta.isDefEq] [2.023364] ❌️ if
+                              (decide (b.num < 0) && decide (0 ≤ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num)) = true then true
+                          else
+                            if b.num = 0 then decide (0 < (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num)
+                            else
+                              if (decide (0 < b.num) && decide ((∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num ≤ 0)) = true then
+                                false
+                              else
+                                decide
+                                  (b.num * ↑(∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).den <
+                                    (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num *
+                                      ↑b.den) =?= if
+                              (decide (b.num < 0) && decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)) = true then true
+                          else
+                            if b.num = 0 then decide (0 < (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                            else
+                              if (decide (0 < b.num) && decide ((1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num ≤ 0)) = true then
+                                false
+                              else
+                                decide
+                                  (b.num * ↑(1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).den <
+                                    (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num * ↑b.den)
+                        [Meta.isDefEq.delta] [1.039351] ❌️ if
+                                (decide (b.num < 0) && decide (0 ≤ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num)) = true then
+                              true
+                            else
+                              if b.num = 0 then decide (0 < (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num)
+                              else
+                                if (decide (0 < b.num) && decide ((∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num ≤ 0)) = true then
+                                  false
+                                else
+                                  decide
+                                    (b.num * ↑(∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).den <
+                                      (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num *
+                                        ↑b.den) =?= if
+                                (decide (b.num < 0) && decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)) = true then
+                              true
+                            else
+                              if b.num = 0 then decide (0 < (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                              else
+                                if (decide (0 < b.num) && decide ((1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num ≤ 0)) = true then
+                                  false
+                                else
+                                  decide
+                                    (b.num * ↑(1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).den <
+                                      (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num * ↑b.den)
+                          [Meta.isDefEq] [1.039325] ❌️ (decide (b.num < 0) &&
+                                  decide (0 ≤ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num)) =
+                                true =?= (decide (b.num < 0) && decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)) = true
+                            [Meta.isDefEq] [1.039269] ❌️ decide (b.num < 0) &&
+                                  decide
+                                    (0 ≤
+                                      (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                          1).num) =?= decide (b.num < 0) &&
+                                  decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                              [Meta.isDefEq.delta] [0.369239] ❌️ decide (b.num < 0) &&
+                                    decide
+                                      (0 ≤
+                                        (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                            1).num) =?= decide (b.num < 0) &&
+                                    decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                [Meta.isDefEq] [0.369224] ❌️ decide
+                                      (0 ≤
+                                        (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                            1).num) =?= decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                  [Meta.isDefEq.delta] [0.198713] ❌️ decide
+                                        (0 ≤
+                                          (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                              1).num) =?= decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                    [Meta.isDefEq] [0.198696] ❌️ 0 ≤
+                                          (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                              1).num =?= 0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                      [Meta.isDefEq] [0.174095] ❌️ Int.instLEInt.1 0
+                                            (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                1).num =?= Int.instLEInt.1 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                        [Meta.isDefEq] [0.174071] ❌️ Int.le 0
+                                              (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                  1).num =?= Int.le 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                          [Meta.isDefEq] [0.151007] ❌️ ((∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num -
+                                                  0).NonNeg =?= ((1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num - 0).NonNeg
+                                            [Meta.isDefEq] [0.150927] ❌️ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num -
+                                                  0 =?= (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num - 0
+                                              [Meta.isDefEq] [0.129391] ❌️ instHSub.1
+                                                    (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                    0 =?= instHSub.1 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                                [Meta.isDefEq] [0.129364] ❌️ Sub.sub (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                      0 =?= Sub.sub (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                                  [Meta.isDefEq] [0.109381] ❌️ Int.instSub.1
+                                                        (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                        0 =?= Int.instSub.1 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                                    [Meta.isDefEq] [0.109357] ❌️ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num.sub
+                                                          0 =?= (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num.sub 0
+                                  [Meta.isDefEq] [0.170462] ❌️ Decidable.casesOn
+                                        (Int.decLe 0 (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num) (fun x => false) fun x =>
+                                        true =?= Decidable.casesOn (Int.decLe 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                        (fun x => false) fun x => true
+                                    [Meta.isDefEq] [0.170030] ❌️ Decidable.rec (fun h => (fun x => false) h)
+                                          (fun h => (fun x => true) h)
+                                          (Int.decLe 0
+                                            (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                1).num) =?= Decidable.rec (fun h => (fun x => false) h)
+                                          (fun h => (fun x => true) h) (Int.decLe 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                      [Meta.isDefEq] [0.168591] ❌️ fun h =>
+                                            (fun x => false) h =?= fun h => (fun x => false) h
+                                        [Meta.isDefEq] [0.168580] ❌️ ¬0 ≤
+                                                (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                    1).num =?= ¬0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                          [Meta.isDefEq.delta] [0.168518] ❌️ ¬0 ≤
+                                                  (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                      1).num =?= ¬0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                            [Meta.isDefEq] [0.168509] ❌️ 0 ≤
+                                                  (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                      1).num =?= 0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                              [Meta.isDefEq] [0.150965] ❌️ Int.instLEInt.1 0
+                                                    (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                        1).num =?= Int.instLEInt.1 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                [Meta.isDefEq] [0.150950] ❌️ Int.le 0
+                                                      (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                          1).num =?= Int.le 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                  [Meta.isDefEq] [0.134409] ❌️ ((∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num -
+                                                          0).NonNeg =?= ((1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num - 0).NonNeg
+                                                    [Meta.isDefEq] [0.134368] ❌️ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num -
+                                                          0 =?= (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num - 0
+                                                      [Meta.isDefEq] [0.117561] ❌️ instHSub.1
+                                                            (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                            0 =?= instHSub.1 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                                        [Meta.isDefEq] [0.117547] ❌️ Sub.sub
+                                                              (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                              0 =?= Sub.sub (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                                          [Meta.isDefEq] [0.101036] ❌️ Int.instSub.1
+                                                                (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                                0 =?= Int.instSub.1 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                                0
+                                                            [Meta.isDefEq] [0.101020] ❌️ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                        1).num.sub
+                                                                  0 =?= (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num.sub 0
+                              [Meta.isDefEq] [0.669989] ❌️ match decide (b.num < 0) with
+                                  | false => false
+                                  | true =>
+                                    decide (0 ≤ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num) =?= match decide (b.num < 0) with
+                                  | false => false
+                                  | true => decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                [Meta.isDefEq.delta] [0.347698] ❌️ match decide (b.num < 0) with
+                                    | false => false
+                                    | true =>
+                                      decide (0 ≤ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num) =?= match decide (b.num < 0) with
+                                    | false => false
+                                    | true => decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                  [Meta.isDefEq] [0.347667] ❌️ fun _ =>
+                                        decide
+                                          (0 ≤
+                                            (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                1).num) =?= fun _ => decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                    [Meta.isDefEq] [0.347635] ❌️ decide
+                                          (0 ≤
+                                            (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                1).num) =?= decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                      [Meta.isDefEq.delta] [0.182776] ❌️ decide
+                                            (0 ≤
+                                              (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                  1).num) =?= decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                        [Meta.isDefEq] [0.182769] ❌️ 0 ≤
+                                              (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                  1).num =?= 0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                          [Meta.isDefEq] [0.166213] ❌️ Int.instLEInt.1 0
+                                                (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                    1).num =?= Int.instLEInt.1 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                            [Meta.isDefEq] [0.166201] ❌️ Int.le 0
+                                                  (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                      1).num =?= Int.le 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                              [Meta.isDefEq] [0.149648] ❌️ ((∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num -
+                                                      0).NonNeg =?= ((1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num - 0).NonNeg
+                                                [Meta.isDefEq] [0.149606] ❌️ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num -
+                                                      0 =?= (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num - 0
+                                                  [Meta.isDefEq] [0.133145] ❌️ instHSub.1
+                                                        (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                        0 =?= instHSub.1 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                                    [Meta.isDefEq] [0.133131] ❌️ Sub.sub
+                                                          (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                          0 =?= Sub.sub (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                                      [Meta.isDefEq] [0.116401] ❌️ Int.instSub.1
+                                                            (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                            0 =?= Int.instSub.1 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                                        [Meta.isDefEq] [0.116386] ❌️ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                    1).num.sub
+                                                              0 =?= (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num.sub 0
+                                      [Meta.isDefEq] [0.164810] ❌️ Decidable.casesOn
+                                            (Int.decLe 0 (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num) (fun x => false) fun x =>
+                                            true =?= Decidable.casesOn (Int.decLe 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                            (fun x => false) fun x => true
+                                        [Meta.isDefEq] [0.164452] ❌️ Decidable.rec (fun h => (fun x => false) h)
+                                              (fun h => (fun x => true) h)
+                                              (Int.decLe 0
+                                                (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                    1).num) =?= Decidable.rec (fun h => (fun x => false) h)
+                                              (fun h => (fun x => true) h)
+                                              (Int.decLe 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                          [Meta.isDefEq] [0.163142] ❌️ fun h =>
+                                                (fun x => false) h =?= fun h => (fun x => false) h
+                                            [Meta.isDefEq] [0.163135] ❌️ ¬0 ≤
+                                                    (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                        1).num =?= ¬0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                              [Meta.isDefEq.delta] [0.163081] ❌️ ¬0 ≤
+                                                      (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                          1).num =?= ¬0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                [Meta.isDefEq] [0.163073] ❌️ 0 ≤
+                                                      (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                          1).num =?= 0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                  [Meta.isDefEq] [0.146781] ❌️ Int.instLEInt.1 0
+                                                        (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                            1).num =?= Int.instLEInt.1 0
+                                                        (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                    [Meta.isDefEq] [0.146767] ❌️ Int.le 0
+                                                          (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                              1).num =?= Int.le 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                      [Meta.isDefEq] [0.130518] ❌️ ((∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                  1).num -
+                                                              0).NonNeg =?= ((1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num -
+                                                              0).NonNeg
+                                                        [Meta.isDefEq] [0.130471] ❌️ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                  1).num -
+                                                              0 =?= (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num - 0
+                                                          [Meta.isDefEq] [0.114402] ❌️ instHSub.1
+                                                                (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                                0 =?= instHSub.1 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                                            [Meta.isDefEq] [0.114384] ❌️ Sub.sub
+                                                                  (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                                  0 =?= Sub.sub (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                [Meta.isDefEq] [0.321055] ❌️ fun _ =>
+                                      decide
+                                        (0 ≤
+                                          (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                              1).num) =?= fun _ => decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                  [Meta.isDefEq] [0.321041] ❌️ decide
+                                        (0 ≤
+                                          (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                              1).num) =?= decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                    [Meta.isDefEq.delta] [0.160054] ❌️ decide
+                                          (0 ≤
+                                            (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                1).num) =?= decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                      [Meta.isDefEq] [0.160047] ❌️ 0 ≤
+                                            (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                1).num =?= 0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                        [Meta.isDefEq] [0.144201] ❌️ Int.instLEInt.1 0
+                                              (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                  1).num =?= Int.instLEInt.1 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                          [Meta.isDefEq] [0.144189] ❌️ Int.le 0
+                                                (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                    1).num =?= Int.le 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                            [Meta.isDefEq] [0.127980] ❌️ ((∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num -
+                                                    0).NonNeg =?= ((1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num - 0).NonNeg
+                                              [Meta.isDefEq] [0.127937] ❌️ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num -
+                                                    0 =?= (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num - 0
+                                                [Meta.isDefEq] [0.111847] ❌️ instHSub.1
+                                                      (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                      0 =?= instHSub.1 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                                  [Meta.isDefEq] [0.111832] ❌️ Sub.sub
+                                                        (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                        0 =?= Sub.sub (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                    [Meta.isDefEq] [0.160940] ❌️ Decidable.casesOn
+                                          (Int.decLe 0 (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num) (fun x => false) fun x =>
+                                          true =?= Decidable.casesOn (Int.decLe 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                          (fun x => false) fun x => true
+                                      [Meta.isDefEq] [0.160589] ❌️ Decidable.rec (fun h => (fun x => false) h)
+                                            (fun h => (fun x => true) h)
+                                            (Int.decLe 0
+                                              (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                  1).num) =?= Decidable.rec (fun h => (fun x => false) h)
+                                            (fun h => (fun x => true) h)
+                                            (Int.decLe 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                        [Meta.isDefEq] [0.159232] ❌️ fun h =>
+                                              (fun x => false) h =?= fun h => (fun x => false) h
+                                          [Meta.isDefEq] [0.159223] ❌️ ¬0 ≤
+                                                  (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                      1).num =?= ¬0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                            [Meta.isDefEq.delta] [0.159168] ❌️ ¬0 ≤
+                                                    (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                        1).num =?= ¬0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                              [Meta.isDefEq] [0.159162] ❌️ 0 ≤
+                                                    (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                        1).num =?= 0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                [Meta.isDefEq] [0.143335] ❌️ Int.instLEInt.1 0
+                                                      (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                          1).num =?= Int.instLEInt.1 0
+                                                      (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                  [Meta.isDefEq] [0.143323] ❌️ Int.le 0
+                                                        (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                            1).num =?= Int.le 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                    [Meta.isDefEq] [0.127427] ❌️ ((∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num -
+                                                            0).NonNeg =?= ((1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num -
+                                                            0).NonNeg
+                                                      [Meta.isDefEq] [0.127377] ❌️ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num -
+                                                            0 =?= (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num - 0
+                                                        [Meta.isDefEq] [0.111411] ❌️ instHSub.1
+                                                              (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                              0 =?= instHSub.1 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                                          [Meta.isDefEq] [0.111395] ❌️ Sub.sub
+                                                                (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                                0 =?= Sub.sub (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                        [Meta.isDefEq] [0.983956] ❌️ Decidable.casesOn
+                              (instDecidableEqBool
+                                (decide (b.num < 0) && decide (0 ≤ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num)) true)
+                              (fun x =>
+                                if b.num = 0 then decide (0 < (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num)
+                                else
+                                  if
+                                      (decide (0 < b.num) && decide ((∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num ≤ 0)) =
+                                        true then
+                                    false
+                                  else
+                                    decide
+                                      (b.num * ↑(∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).den <
+                                        (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num * ↑b.den))
+                              fun x =>
+                              true =?= Decidable.casesOn
+                              (instDecidableEqBool
+                                (decide (b.num < 0) && decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)) true)
+                              (fun x =>
+                                if b.num = 0 then decide (0 < (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                else
+                                  if
+                                      (decide (0 < b.num) && decide ((1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num ≤ 0)) =
+                                        true then
+                                    false
+                                  else
+                                    decide
+                                      (b.num * ↑(1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).den <
+                                        (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num * ↑b.den))
+                              fun x => true
+                          [Meta.isDefEq] [0.983210] ❌️ Decidable.rec
+                                (fun h =>
+                                  (fun x =>
+                                      if b.num = 0 then decide (0 < (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num)
+                                      else
+                                        if
+                                            (decide (0 < b.num) && decide ((∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num ≤ 0)) =
+                                              true then
+                                          false
+                                        else
+                                          decide
+                                            (b.num * ↑(∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).den <
+                                              (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num * ↑b.den))
+                                    h)
+                                (fun h => (fun x => true) h)
+                                (instDecidableEqBool
+                                  (decide (b.num < 0) && decide (0 ≤ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num))
+                                  true) =?= Decidable.rec
+                                (fun h =>
+                                  (fun x =>
+                                      if b.num = 0 then decide (0 < (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                      else
+                                        if
+                                            (decide (0 < b.num) && decide ((1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num ≤ 0)) =
+                                              true then
+                                          false
+                                        else
+                                          decide
+                                            (b.num * ↑(1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).den <
+                                              (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num * ↑b.den))
+                                    h)
+                                (fun h => (fun x => true) h)
+                                (instDecidableEqBool
+                                  (decide (b.num < 0) && decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)) true)
+                            [Meta.isDefEq] [0.980527] ❌️ fun h =>
+                                  (fun x =>
+                                      if b.num = 0 then decide (0 < (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num)
+                                      else
+                                        if
+                                            (decide (0 < b.num) && decide ((∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num ≤ 0)) =
+                                              true then
+                                          false
+                                        else
+                                          decide
+                                            (b.num * ↑(∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).den <
+                                              (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num * ↑b.den))
+                                    h =?= fun h =>
+                                  (fun x =>
+                                      if b.num = 0 then decide (0 < (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                      else
+                                        if
+                                            (decide (0 < b.num) && decide ((1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num ≤ 0)) =
+                                              true then
+                                          false
+                                        else
+                                          decide
+                                            (b.num * ↑(1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).den <
+                                              (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num * ↑b.den))
+                                    h
+                              [Meta.isDefEq] [0.980519] ❌️ ¬(decide (b.num < 0) &&
+                                        decide (0 ≤ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num)) =
+                                      true =?= ¬(decide (b.num < 0) &&
+                                        decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)) =
+                                      true
+                                [Meta.isDefEq.delta] [0.980457] ❌️ ¬(decide (b.num < 0) &&
+                                          decide (0 ≤ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num)) =
+                                        true =?= ¬(decide (b.num < 0) &&
+                                          decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)) =
+                                        true
+                                  [Meta.isDefEq] [0.980449] ❌️ (decide (b.num < 0) &&
+                                          decide (0 ≤ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num)) =
+                                        true =?= (decide (b.num < 0) &&
+                                          decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)) =
+                                        true
+                                    [Meta.isDefEq] [0.980330] ❌️ decide (b.num < 0) &&
+                                          decide
+                                            (0 ≤
+                                              (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                  1).num) =?= decide (b.num < 0) &&
+                                          decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                      [Meta.isDefEq.delta] [0.323166] ❌️ decide (b.num < 0) &&
+                                            decide
+                                              (0 ≤
+                                                (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                    1).num) =?= decide (b.num < 0) &&
+                                            decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                        [Meta.isDefEq] [0.323152] ❌️ decide
+                                              (0 ≤
+                                                (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                    1).num) =?= decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                          [Meta.isDefEq.delta] [0.159371] ❌️ decide
+                                                (0 ≤
+                                                  (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                      1).num) =?= decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                            [Meta.isDefEq] [0.159365] ❌️ 0 ≤
+                                                  (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                      1).num =?= 0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                              [Meta.isDefEq] [0.142471] ❌️ Int.instLEInt.1 0
+                                                    (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                        1).num =?= Int.instLEInt.1 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                [Meta.isDefEq] [0.142450] ❌️ Int.le 0
+                                                      (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                          1).num =?= Int.le 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                  [Meta.isDefEq] [0.126095] ❌️ ((∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num -
+                                                          0).NonNeg =?= ((1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num - 0).NonNeg
+                                                    [Meta.isDefEq] [0.126032] ❌️ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num -
+                                                          0 =?= (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num - 0
+                                                      [Meta.isDefEq] [0.110294] ❌️ instHSub.1
+                                                            (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                            0 =?= instHSub.1 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                                        [Meta.isDefEq] [0.110277] ❌️ Sub.sub
+                                                              (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                              0 =?= Sub.sub (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                          [Meta.isDefEq] [0.163738] ❌️ Decidable.casesOn
+                                                (Int.decLe 0 (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num) (fun x => false)
+                                                fun x =>
+                                                true =?= Decidable.casesOn
+                                                (Int.decLe 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num) (fun x => false)
+                                                fun x => true
+                                            [Meta.isDefEq] [0.163362] ❌️ Decidable.rec (fun h => (fun x => false) h)
+                                                  (fun h => (fun x => true) h)
+                                                  (Int.decLe 0
+                                                    (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                        1).num) =?= Decidable.rec (fun h => (fun x => false) h)
+                                                  (fun h => (fun x => true) h)
+                                                  (Int.decLe 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                              [Meta.isDefEq] [0.162078] ❌️ fun h =>
+                                                    (fun x => false) h =?= fun h => (fun x => false) h
+                                                [Meta.isDefEq] [0.162069] ❌️ ¬0 ≤
+                                                        (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                            1).num =?= ¬0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                  [Meta.isDefEq.delta] [0.162010] ❌️ ¬0 ≤
+                                                          (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                              1).num =?= ¬0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                    [Meta.isDefEq] [0.162003] ❌️ 0 ≤
+                                                          (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                              1).num =?= 0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                      [Meta.isDefEq] [0.145975] ❌️ Int.instLEInt.1 0
+                                                            (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                1).num =?= Int.instLEInt.1 0
+                                                            (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                        [Meta.isDefEq] [0.145958] ❌️ Int.le 0
+                                                              (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                  1).num =?= Int.le 0
+                                                              (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                          [Meta.isDefEq] [0.129931] ❌️ ((∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                      1).num -
+                                                                  0).NonNeg =?= ((1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num -
+                                                                  0).NonNeg
+                                                            [Meta.isDefEq] [0.129886] ❌️ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                      1).num -
+                                                                  0 =?= (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num - 0
+                                                              [Meta.isDefEq] [0.113792] ❌️ instHSub.1
+                                                                    (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                                    0 =?= instHSub.1 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                                    0
+                                                                [Meta.isDefEq] [0.113776] ❌️ Sub.sub
+                                                                      (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                                      0 =?= Sub.sub (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                                      0
+                                      [Meta.isDefEq] [0.657129] ❌️ match decide (b.num < 0) with
+                                          | false => false
+                                          | true =>
+                                            decide
+                                              (0 ≤
+                                                (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num) =?= match decide (b.num < 0) with
+                                          | false => false
+                                          | true => decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                        [Meta.isDefEq.delta] [0.339833] ❌️ match decide (b.num < 0) with
+                                            | false => false
+                                            | true =>
+                                              decide
+                                                (0 ≤
+                                                  (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num) =?= match decide (b.num < 0) with
+                                            | false => false
+                                            | true => decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                          [Meta.isDefEq] [0.339799] ❌️ fun _ =>
+                                                decide
+                                                  (0 ≤
+                                                    (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                        1).num) =?= fun _ =>
+                                                decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                            [Meta.isDefEq] [0.339775] ❌️ decide
+                                                  (0 ≤
+                                                    (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                        1).num) =?= decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                              [Meta.isDefEq.delta] [0.178970] ❌️ decide
+                                                    (0 ≤
+                                                      (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                          1).num) =?= decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                                [Meta.isDefEq] [0.178953] ❌️ 0 ≤
+                                                      (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                          1).num =?= 0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                  [Meta.isDefEq] [0.162617] ❌️ Int.instLEInt.1 0
+                                                        (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                            1).num =?= Int.instLEInt.1 0
+                                                        (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                    [Meta.isDefEq] [0.162602] ❌️ Int.le 0
+                                                          (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                              1).num =?= Int.le 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                      [Meta.isDefEq] [0.146131] ❌️ ((∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                  1).num -
+                                                              0).NonNeg =?= ((1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num -
+                                                              0).NonNeg
+                                                        [Meta.isDefEq] [0.146079] ❌️ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                  1).num -
+                                                              0 =?= (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num - 0
+                                                          [Meta.isDefEq] [0.129754] ❌️ instHSub.1
+                                                                (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                                0 =?= instHSub.1 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                                            [Meta.isDefEq] [0.129740] ❌️ Sub.sub
+                                                                  (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                                  0 =?= Sub.sub (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                                              [Meta.isDefEq] [0.113137] ❌️ Int.instSub.1
+                                                                    (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                                    0 =?= Int.instSub.1
+                                                                    (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                                                [Meta.isDefEq] [0.113121] ❌️ (∑ i ∈ Ioc 1 n,
+                                                                              (↑i ^ 2)⁻¹ +
+                                                                            1).num.sub
+                                                                      0 =?= (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num.sub 0
+                                              [Meta.isDefEq] [0.160748] ❌️ Decidable.casesOn
+                                                    (Int.decLe 0 (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num) (fun x => false)
+                                                    fun x =>
+                                                    true =?= Decidable.casesOn
+                                                    (Int.decLe 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num) (fun x => false)
+                                                    fun x => true
+                                                [Meta.isDefEq] [0.160311] ❌️ Decidable.rec (fun h => (fun x => false) h)
+                                                      (fun h => (fun x => true) h)
+                                                      (Int.decLe 0
+                                                        (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                            1).num) =?= Decidable.rec (fun h => (fun x => false) h)
+                                                      (fun h => (fun x => true) h)
+                                                      (Int.decLe 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                                  [Meta.isDefEq] [0.159078] ❌️ fun h =>
+                                                        (fun x => false) h =?= fun h => (fun x => false) h
+                                                    [Meta.isDefEq] [0.159069] ❌️ ¬0 ≤
+                                                            (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                1).num =?= ¬0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                      [Meta.isDefEq.delta] [0.158994] ❌️ ¬0 ≤
+                                                              (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                  1).num =?= ¬0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                        [Meta.isDefEq] [0.158975] ❌️ 0 ≤
+                                                              (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                  1).num =?= 0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                          [Meta.isDefEq] [0.142556] ❌️ Int.instLEInt.1 0
+                                                                (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                    1).num =?= Int.instLEInt.1 0
+                                                                (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                            [Meta.isDefEq] [0.142541] ❌️ Int.le 0
+                                                                  (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                      1).num =?= Int.le 0
+                                                                  (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                              [Meta.isDefEq] [0.126808] ❌️ ((∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                          1).num -
+                                                                      0).NonNeg =?= ((1 +
+                                                                          ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num -
+                                                                      0).NonNeg
+                                                                [Meta.isDefEq] [0.126762] ❌️ (∑ i ∈ Ioc 1 n,
+                                                                            (↑i ^ 2)⁻¹ +
+                                                                          1).num -
+                                                                      0 =?= (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num - 0
+                                                                  [Meta.isDefEq] [0.111217] ❌️ instHSub.1
+                                                                        (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                                        0 =?= instHSub.1
+                                                                        (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                                                    [Meta.isDefEq] [0.111201] ❌️ Sub.sub
+                                                                          (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                                          0 =?= Sub.sub
+                                                                          (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                        [Meta.isDefEq] [0.316140] ❌️ fun _ =>
+                                              decide
+                                                (0 ≤
+                                                  (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                      1).num) =?= fun _ =>
+                                              decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                          [Meta.isDefEq] [0.316125] ❌️ decide
+                                                (0 ≤
+                                                  (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                      1).num) =?= decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                            [Meta.isDefEq.delta] [0.160827] ❌️ decide
+                                                  (0 ≤
+                                                    (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                        1).num) =?= decide (0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                              [Meta.isDefEq] [0.160821] ❌️ 0 ≤
+                                                    (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                        1).num =?= 0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                [Meta.isDefEq] [0.145437] ❌️ Int.instLEInt.1 0
+                                                      (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                          1).num =?= Int.instLEInt.1 0
+                                                      (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                  [Meta.isDefEq] [0.145422] ❌️ Int.le 0
+                                                        (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                            1).num =?= Int.le 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                    [Meta.isDefEq] [0.130117] ❌️ ((∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num -
+                                                            0).NonNeg =?= ((1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num -
+                                                            0).NonNeg
+                                                      [Meta.isDefEq] [0.130077] ❌️ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num -
+                                                            0 =?= (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num - 0
+                                                        [Meta.isDefEq] [0.107194] ❌️ instHSub.1
+                                                              (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                              0 =?= instHSub.1 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                                          [Meta.isDefEq] [0.107179] ❌️ Sub.sub
+                                                                (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                                0 =?= Sub.sub (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                            [Meta.isDefEq] [0.155246] ❌️ Decidable.casesOn
+                                                  (Int.decLe 0 (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num) (fun x => false)
+                                                  fun x =>
+                                                  true =?= Decidable.casesOn
+                                                  (Int.decLe 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num) (fun x => false)
+                                                  fun x => true
+                                              [Meta.isDefEq] [0.154839] ❌️ Decidable.rec (fun h => (fun x => false) h)
+                                                    (fun h => (fun x => true) h)
+                                                    (Int.decLe 0
+                                                      (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                          1).num) =?= Decidable.rec (fun h => (fun x => false) h)
+                                                    (fun h => (fun x => true) h)
+                                                    (Int.decLe 0 (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num)
+                                                [Meta.isDefEq] [0.153634] ❌️ fun h =>
+                                                      (fun x => false) h =?= fun h => (fun x => false) h
+                                                  [Meta.isDefEq] [0.153627] ❌️ ¬0 ≤
+                                                          (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                              1).num =?= ¬0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                    [Meta.isDefEq.delta] [0.153570] ❌️ ¬0 ≤
+                                                            (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                1).num =?= ¬0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                      [Meta.isDefEq] [0.153564] ❌️ 0 ≤
+                                                            (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                1).num =?= 0 ≤ (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                        [Meta.isDefEq] [0.138278] ❌️ Int.instLEInt.1 0
+                                                              (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                  1).num =?= Int.instLEInt.1 0
+                                                              (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                          [Meta.isDefEq] [0.138262] ❌️ Int.le 0
+                                                                (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                    1).num =?= Int.le 0
+                                                                (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num
+                                                            [Meta.isDefEq] [0.122961] ❌️ ((∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                        1).num -
+                                                                    0).NonNeg =?= ((1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num -
+                                                                    0).NonNeg
+                                                              [Meta.isDefEq] [0.122917] ❌️ (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ +
+                                                                        1).num -
+                                                                    0 =?= (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num - 0
+                                                                [Meta.isDefEq] [0.107659] ❌️ instHSub.1
+                                                                      (∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹ + 1).num
+                                                                      0 =?= instHSub.1
+                                                                      (1 + ∑ i ∈ Ioc 1 n, (↑i ^ 2)⁻¹).num 0
+                                                            
+A captura identificou dois erros concretos em `c5_inv_sq_sum_range_le`: a reescrita reversa de `sum_Ico_eq_sum_range` não casava com `k + 1`, e `add_le_add_left` preserva a ordem oposta de operandos à do objetivo. A soma agora é convertida de `Ico` para `range` no sentido do lema, e a desigualdade explicita a comutatividade. Perfil encerrado sem `.olean`.
