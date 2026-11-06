@@ -1,11 +1,11 @@
 # C5 — estado da sessão
 
 **Atualizado:** 2026-11-06
-**Status:** inventário, reprodução intervalar, transporte algébrico e O3 racional formal concluídos e integrados; as pontes Euler-Gamma de precisão `10⁻³²` e `10⁻⁹⁹` estão integradas; as caixas racionais de `gammaFinite` e a inclusão da fonte C2 seguem pendentes.
+**Status:** inventário, reprodução intervalar, transporte algébrico e O3 racional formal concluídos e integrados; as pontes Euler-Gamma de precisão `10⁻³²` e `10⁻⁹⁹` estão integradas; uma terceira ponte de erro `10⁻²⁵⁹` está provada localmente; as caixas racionais de `gammaFinite` e a inclusão da fonte C2 seguem pendentes.
 **Branch C5 de trabalho:** `codex/c5-finite-c2-certification-20261106`; Fase 1 integrada pela PR #165 e O3 pela PR #167.
 **Main geometry no início da auditoria O4:** `1bc7318915c3e625ad228c89ff8c300cb07e52c5` (merge da PR #168).
-**Último merge geometry:** PR #173, ponte Euler-Gamma de precisão alta, `72586b6223579ee1b37a6077ad6f2a0eceaf919c`.
-**Main geometry após a prova de precisão alta:** `72586b6223579ee1b37a6077ad6f2a0eceaf919c`.
+**Último merge geometry:** PR #174, atualização pós-#173, `47a28db231dfbae24cbf1238084a60cf1b8206fb`.
+**Main geometry na base da prova de precisão para interpolação:** `47a28db231dfbae24cbf1238084a60cf1b8206fb`.
 **Repositório geometry no checkout de pesquisa original:** branch `agent/native-moving-schur-sigma`, HEAD `9392ebac9930f5d11c56f595556080e8ab1de809`, com logs/caches não rastreados preservados.
 **Repositório Momentos:** checkout local `main` em `05c9314d59306383baa55ed3be80ab950e799e97`; branch remota de pesquisa `origin/research/sigma-pade-dimension-depth-20261104` em `68c9b5f0a196289e28a8e5586146707d27df6b75`. PR #2 está OPEN e não foi integrada.
 
@@ -38,7 +38,9 @@ O checkpoint reprodutível dessa auditoria foi integrado pela PR #169; merge na 
 
 **Subpasso Gamma de precisão alta integrado pela PR #173:** `gamma_finite_1024_240_error` demonstra erro `≤10⁻⁹⁹` para `gammaFinite 1024 240` no mesmo domínio. Build Lean 4.32 com warnings como erros e auditoria de dez raízes passaram. Merge: `72586b6223579ee1b37a6077ad6f2a0eceaf919c`. Logs e hashes estão em `evidence/rational-boxes/`.
 
-**Primeiro lema O4 ainda ausente:** inclusão em caixas racionais estreitas da expressão finita `gammaFinite 1024 240 z` nos discos Cauchy. O limite de erro Euler agora é menor que a precisão das caixas existentes; permanece a soma finita com cancelamento grande. Em seguida vêm a composição com Hurwitz e Cauchy/Fourier e as duas proposições de inclusão das caixas.
+**Subpasso Gamma para interpolação racional provado localmente:** `gamma_finite_3072_620_error` demonstra erro `≤10⁻²⁵⁹` para `gammaFinite 3072 620`, no domínio `1495/20000 ≤ Re(z) ≤ 1`. Build Lean 4.32 e auditoria de doze raízes passaram; o candidato ainda não foi integrado. Logs e hashes estão em `evidence/rational-boxes/`.
+
+**Primeiro lema O4 ainda ausente:** inclusão em caixas racionais estreitas da expressão finita `gammaFinite 3072 620 z` nos valores usados para os coeficientes. A ponte Euler já fica abaixo da precisão necessária; permanece a avaliação com cancelamento da soma finita, a avaliação Hurwitz e a composição com a fonte C2.
 
 ## Validação reproduzida
 
