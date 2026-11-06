@@ -73,4 +73,5 @@ Reproduced C5 outputs
 - C5 post-merge status PR: #172; merge commit `aa116108384a6834647e350e68fc25e81113a90a`.
 - C5 high-precision Euler-Gamma PR: #173; merge commit `72586b6223579ee1b37a6077ad6f2a0eceaf919c`.
 - C5 post-merge status PR: #174; merge commit `47a28db231dfbae24cbf1238084a60cf1b8206fb`.
-- geometry `origin/main` at the rational-interpolation Gamma proof base: `47a28db231dfbae24cbf1238084a60cf1b8206fb`.
+- C5 rational-interpolation Gamma PR: #175; merge commit `992ab31c3aacdf3b95b3c02fe58f5f3d529c0cec`.
+- geometry `origin/main` after the rational-interpolation Gamma proof: `992ab31c3aacdf3b95b3c02fe58f5f3d529c0cec`.

@@ -200,7 +200,7 @@ O lema `SigmaC5Gamma.gamma_finite_3072_620_error` reduz o erro uniforme para
 `10⁻²⁵⁹`. A parte do Taylor da exponencial é limitada por `10⁻³⁰⁰`; a cauda
 Euler é limitada por `exp(-620)≤10⁻²⁶⁰`. Build e auditoria usam Lean 4.32.0,
 Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997` e base geometry
-`47a28db231dfbae24cbf1238084a60cf1b8206fb`:
+`992ab31c3aacdf3b95b3c02fe58f5f3d529c0cec` (PR #175):
 
 ```bash
 C5_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105

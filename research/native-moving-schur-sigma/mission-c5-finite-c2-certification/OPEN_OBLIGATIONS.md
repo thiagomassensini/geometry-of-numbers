@@ -59,9 +59,10 @@ certificar o resto da expansão. A identidade formal
 será preciso compor Hurwitz e Cauchy/Fourier com a ponte C2 exata. Não há prova
 de `sigmaC00495SourceBoxes` nem de `sigmaC01SourceBoxes` nesta etapa.
 
-**Ponte Gamma de interpolação, provada localmente:**
+**Ponte Gamma de interpolação, integrada pela PR #175:**
 `gamma_finite_3072_620_error` melhora o erro absoluto para `10⁻²⁵⁹` e tem build
-Lean 4.32/auditoria de doze raízes. Uma exploração exata racional sugere evitar
+Lean 4.32/auditoria de doze raízes. Merge `992ab31c3aacdf3b95b3c02fe58f5f3d529c0cec`.
+Uma exploração exata racional sugere evitar
 a quadratura trigonométrica: interpolar a densidade par em 129 pontos racionais
 `t_j=j/100000`. Para graus até 14, a soma absoluta dos pesos calculada é menor
 que `10^124`; o resto de Taylor seria menor que `10⁻⁴¹⁰` se a densidade tivesse
