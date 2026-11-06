@@ -1,5 +1,21 @@
 # C5 — checkpoints
 
+## 2026-11-06 — limite dos pesos de graus 2–14 validado localmente
+
+- `c5InterpolationCoeffAbsSum_le_four_mul_two_pow` prova que, para todo
+  `n≥1`, a soma absoluta dos coeficientes das bases de Lagrange é no máximo
+  `4·2^n`. `c5InterpolationWeightSum_lt_ten_145` conclui a cota escalada
+  `<10^145` para cada `2≤n≤14`.
+- `SigmaRationalInterpolation.lean` passou build limpo em Lean 4.32 com
+  `warningAsError=true`; a auditoria fail-closed de 23 raízes passou usando
+  somente `propext`, `Classical.choice` e `Quot.sound`.
+- Logs, pins, hashes e comando para retomar estão em
+  `evidence/rational-boxes/degree2-14-weight-bound-validation.md` e nos
+  arquivos `c5-interpolation-degree2-14-final-clean-*`.
+- O checkpoint permanece incompleto: a cota analítica da fonte C2, a avaliação
+  nos 129 nós e a inclusão dos coeficientes originais nas caixas continuam
+  abertas. Esta prova ainda não tem PR/merge.
+
 ## 2026-11-06 — inventário inicial (pré-prova)
 
 - Criada worktree isolada `codex/c5-finite-c2-certification-20261106` sobre geometry `origin/main` em `91a1af2f9663d6761a3320e2f06504fe8aaa6776`.

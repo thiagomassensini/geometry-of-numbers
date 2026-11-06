@@ -27,6 +27,8 @@ required = {
     "CarrySigmaObstruction.c5LagrangeBasis_coeff_one_abs_le",
     "CarrySigmaObstruction.c5InterpolationCoeffOneAbsSum_le_six",
     "CarrySigmaObstruction.c5InterpolationWeightSum_one_lt_ten_eleven",
+    "CarrySigmaObstruction.c5InterpolationCoeffAbsSum_le_four_mul_two_pow",
+    "CarrySigmaObstruction.c5InterpolationWeightSum_lt_ten_145",
 }
 allowed = {"propext", "Classical.choice", "Quot.sound"}
 
