@@ -55,12 +55,13 @@ recebeu status checks hospedados. Evidências em `evidence/c2-eventual-negativit
 
 ## C3 — setores par e ímpar
 
-**Prova e auditoria Lean 4.32 concluídas; integração pendente.** Em `SigmaParityNegativeDirection.lean`, `exists_even_sigma_negative_directions_from_pade` usa `p=2i` e a janela `sigmaMatrix (1/5) 0 (i+2)`; `exists_odd_sigma_negative_directions_from_pade` usa `p=2i+1` e `sigmaMatrix (1/5) 1 (i+2)`. Em ambos os casos, `sigmaMatrix_negative_directions_of_window` aplica a persistência integrada de C1B e entrega um vetor negativo para toda dimensão `M≥i+2`.
+**Integrado pela PR #159**, commit de prova `35dc14f13bd314639ce0c65daedf32b20f298667`, merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`. Em `SigmaParityNegativeDirection.lean`, `exists_even_sigma_negative_directions_from_pade` usa `p=2i` e a janela `sigmaMatrix (1/5) 0 (i+2)`; `exists_odd_sigma_negative_directions_from_pade` usa `p=2i+1` e `sigmaMatrix (1/5) 1 (i+2)`. Em ambos os casos, `sigmaMatrix_negative_directions_of_window` aplica a persistência integrada de C1B e entrega um vetor negativo para toda dimensão `M≥i+2`.
 
 - Build completo da closure externa/C2/C3 e auditoria de axiomas: `evidence/c3-parity/VALIDATION.md` e logs adjacentes.
 - Auditoria transitiva C2/C3 preserva `completedSigmaLogJet` e a característica originais; somente axiomas padrão.
 - O certificado C3 não alega crescimento do índice negativo nem negatividade de todos os pivôs.
+- O GitHub não retornou status checks para a PR #159.
 
 ## C4 — fonte deslocada e Bézout
 
-**Não iniciado; exploratório.** Verificar a recorrência em `u=t²` com o fator 2, avaliar a costura com `source_bezout_to_hankel_congruence` e manter explícitos os canais físicos e compensadores. Não atrasar C1–C3.
+**Não iniciado; backlog posterior a C2/C3.** Verificar a recorrência em `u=t²` com o fator 2, avaliar a costura com `source_bezout_to_hankel_congruence` e manter explícitos os canais físicos e compensadores.

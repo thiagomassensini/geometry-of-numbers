@@ -9,13 +9,13 @@
 4. Manter o resto analítico e as definições originais `completedSigmaLogJet` e `sigmaPadeD`. Não fechar o resultado adicionando hipóteses de sinal.
 5. Integrado pela PR #157: commit de prova `bd1a6a04b8f98c33526059968c7fc079d48467f9`, merge na `main` `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`. Build e auditorias locais passaram; o GitHub não retornou status checks. Evidências: `evidence/c2-eventual-negativity/`.
 
-## C3 — transporte aos setores par e ímpar
+## C3 — concluído e integrado
 
-6. **Prova concluída:** `p = 2i` e `p = 2i + 1` dão as janelas `sigmaMatrix (1/5) 0 (i+2)` e `sigmaMatrix (1/5) 1 (i+2)`, respectivamente.
-7. **Prova concluída:** o lema de persistência integrado em C1B (PR #155, merge `0586e238441096ecd2248e3f14bdac3a832af427`) leva cada direção a todas as dimensões `M ≥ i+2`. A auditoria e o checkpoint estão em `evidence/c3-parity/`; publicar a PR e integrar à `main`, depois atualizar este estado com os identificadores finais.
+6. Integrado pela PR #159, commit de prova `35dc14f13bd314639ce0c65daedf32b20f298667`, merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`.
+7. As janelas `p=2i` e `p=2i+1` cobrem explicitamente os setores par e ímpar; C1B transporta cada direção negativa a todas as dimensões `M≥i+2`. Build e auditorias locais passaram; o GitHub não retornou status checks. Evidências: `evidence/c3-parity/`.
 
 ## Retomada do overlay 4.35
 
 A tentativa está preservada como evidência incompleta em `evidence/lean435-validation-incomplete/`. Retomar apenas se a rota 4.32 revelar um bloqueio concreto. O ponto de parada, as declarações e os comandos estão registrados no README desse checkpoint.
 
-Lei quantitativa distância × profundidade, novos cadernos e C4 ficam para depois de C2 e C3. Não é necessário calcular a primeira profundidade de falha para provar a negatividade eventual.
+C2 e C3 estão concluídos. Lei quantitativa distância × profundidade, novos cadernos e C4 ficam no backlog seguinte. Não foi necessário calcular a primeira profundidade de falha para provar a negatividade eventual.

@@ -1,6 +1,6 @@
 # Inventário de branches, worktrees e PRs
 
-Inventário consultado em 2026-11-05. SHAs abaixo são remotos quando marcados `origin/*`; árvores locais sujas são apenas registradas e permanecem intocadas. A tabela retrata o inventário anterior aos merges C0–C2; os checkpoints integrados mais recentes estão registrados após ela.
+Inventário consultado em 2026-11-05. SHAs abaixo são remotos quando marcados `origin/*`; árvores locais sujas são apenas registradas e permanecem intocadas. A tabela retrata o inventário anterior aos merges C0–C3; os checkpoints integrados mais recentes estão registrados após ela.
 
 ## geometry-of-numbers
 
@@ -27,7 +27,7 @@ C1B foi integrado pela PR #155 no merge `0586e238441096ecd2248e3f14bdac3a832af42
 
 C2 foi integrado pela PR #157, com commit de prova `bd1a6a04b8f98c33526059968c7fc079d48467f9` e merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`. A PR não retornou status checks hospedados; compilação Lean 4.32 e auditorias de axiomas locais estão registradas em `evidence/c2-eventual-negativity/`.
 
-C3 foi provado e validado localmente sobre a `main` após o merge documental `d9fe8117ad69108f89a558961e19ab2bdf4386bf`. A branch `codex/sigma-c3-parity-impl-20261105` reúne as torres par/ímpar, o fechamento mínimo da closure 4.32 e a evidência em `evidence/c3-parity/`; a PR e o merge ainda estão pendentes.
+C3 foi integrado pela PR #159, commit de prova `35dc14f13bd314639ce0c65daedf32b20f298667`, merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`. A closure 4.32, as torres par/ímpar e as evidências estão em `evidence/c3-parity/`. O GitHub não retornou status checks; C2/C3 estão concluídos.
 
 ## carry-self-adjoint-operator
 
