@@ -1,0 +1,23 @@
+# C5 — checkpoints
+
+## 2026-11-06 — inventário inicial (pré-prova)
+
+- Criada worktree isolada `codex/c5-finite-c2-certification-20261106` sobre geometry `origin/main` em `91a1af2f9663d6761a3320e2f06504fe8aaa6776`.
+- A branch de pesquisa original geometry `agent/native-moving-schur-sigma` em `9392ebac9930f5d11c56f595556080e8ab1de809` tem logs/caches não rastreados, preservados sem alteração.
+- C4 e a missão C0–C4 estão documentadas na main e integradas.
+- A branch de pesquisa Momentos `origin/research/sigma-pade-dimension-depth-20261104` está em `68c9b5f`; PR #2 está aberta. Ela contém as duas caixas racionais, código para gerar caixas e relatório condicional. Não foi feito merge.
+- O build alvo é Lean 4.32.0, conforme `lean-toolchain` da main.
+- Estado matemático inicial e comandos de retomada: `RESTART_HERE.md` e `SESSION_STATE.md`.
+
+## Próximo checkpoint
+
+Após a validação dos dois JSONs e compilação dos lemas de transporte, salvar logs, pins e hashes nesta pasta; não misturar com os caches/logs de outras worktrees.
+
+## 2026-11-06 — transporte algébrico provado, antes do PR
+
+- `SigmaFiniteCoefficientSignTransport.lean` e seu audit Lean 4.32 compilaram em diretório de saída limpo; `#print axioms` mostrou somente `propext`, `Classical.choice` e `Quot.sound` para os quatro teoremas.
+- A recorrência mantém `completedSigmaDisplacedMoment = 2*completedSigmaLogJet` e o menor final usa `CarrySigmaPade.sigmaPadeD` original.
+- As verificações exatas dos JSONs e três gerações intervalares foram reproduzidas; os sinais são condicionais às caixas. O erro local `gmpy2.mpz`/`Decimal`, sua correção de compatibilidade e os logs foram preservados em `evidence/interval-certificate/`.
+- A inclusão dos coeficientes verdadeiros nas caixas não foi provada. Nenhum teorema de primeira janela final foi declarado.
+- Commit de prova/evidência `1250a9989e596fa250304d8ec8fd3ae45897e589`; push confirmado para `origin/codex/c5-finite-c2-certification-20261106`. PR e merge ainda pendentes.
+- Pins, hashes, comandos de build e SHA dos `.olean` estão em `evidence/pins-and-sha256.txt` e `evidence/transport-build-record.md`.

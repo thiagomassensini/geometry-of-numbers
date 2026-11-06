@@ -1,0 +1,10 @@
+import SigmaFiniteCoefficientSignTransport
+
+namespace CarrySigmaObstruction
+
+#print axioms completedSigmaFiniteScaledMoment_recurrence
+#print axioms completedSigmaFiniteScaledMoment_minor_identity
+#print axioms sigmaPadeD_pos_of_completedSigmaFiniteScaledMoment_minor_pos
+#print axioms sigmaPadeD_neg_of_completedSigmaFiniteScaledMoment_minor_neg
+
+end CarrySigmaObstruction

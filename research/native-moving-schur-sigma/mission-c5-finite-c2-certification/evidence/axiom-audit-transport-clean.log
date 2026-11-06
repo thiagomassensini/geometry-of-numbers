@@ -1,0 +1,12 @@
+'CarrySigmaObstruction.completedSigmaFiniteScaledMoment_recurrence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedSigmaFiniteScaledMoment_minor_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaPadeD_pos_of_completedSigmaFiniteScaledMoment_minor_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaPadeD_neg_of_completedSigmaFiniteScaledMoment_minor_neg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,35 @@
+diff --git a/investigations/c2_first_negative_interval_certificate_20261106/certify_finite_c2.py b/investigations/c2_first_negative_interval_certificate_20261106/certify_finite_c2.py
+index 1dae3ef..3c856f8 100644
+--- a/investigations/c2_first_negative_interval_certificate_20261106/certify_finite_c2.py
++++ b/investigations/c2_first_negative_interval_certificate_20261106/certify_finite_c2.py
+@@ -14,7 +14,9 @@ from c2_em_interval import completed_c2, N as EM_N, P as EM_P
+
+ def frac(x):
+  sign, man, exp, bc=x
+- q=Fraction(man,1)
++ # mpmath may use gmpy2 internally, in which case the interval endpoint's
++ # mantissa is an mpz. Normalize it to a builtin int before Fraction/Decimal.
++ q=Fraction(int(man),1)
+  return (-q if sign else q) * (Fraction(2)**exp)
+
+ def get_endpoints(iv_num):
+@@ -50,8 +52,8 @@ class RatInterval:
+  def exact_decimal_endpoints(self):
+   with localcontext() as context:
+    context.prec=160
+-   return [str(Decimal(self.lo.numerator)/Decimal(self.lo.denominator)),
+-           str(Decimal(self.hi.numerator)/Decimal(self.hi.denominator))]
++   return [str(Decimal(int(self.lo.numerator))/Decimal(int(self.lo.denominator))),
++           str(Decimal(int(self.hi.numerator))/Decimal(int(self.hi.denominator)))]
+  def as_scientific(self,fig=16):
+   return [f'{float(self.lo):.{fig}e}',f'{float(self.hi):.{fig}e}']
+  def __repr__(self):return repr(self.as_scientific())
+@@ -102,7 +104,7 @@ def exact_coefficients(d, max_n=14, n_nodes=1024, radius='0.3',outer='0.4', fbou
+    with localcontext() as context:
+     context.prec=90
+     context.rounding=rounding
+-    return Fraction(Decimal(fr.numerator)/Decimal(fr.denominator))
++    return Fraction(Decimal(int(fr.numerator))/Decimal(int(fr.denominator)))
+   raw.append(RatInterval(rounded(lo-alias,ROUND_FLOOR),rounded(hi+alias,ROUND_CEILING)))
+  return raw,{'evaluations':len(samples),'time_s':time.time()-t0,'radius':radius,
+              'outer':outer,'outer_product_bound':fbound*fbound,'points':n_nodes,

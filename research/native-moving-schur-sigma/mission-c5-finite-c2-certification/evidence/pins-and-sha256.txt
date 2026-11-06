@@ -1,0 +1,45 @@
+C5 finite C2 certification — phase 1 pins
+
+Git
+- geometry main base: 91a1af2f9663d6761a3320e2f06504fe8aaa6776 (PR #164 merge)
+- C5 initial inventory checkpoint: 7ed3340aa49f40029f2c3f6b393bb9a30cd165fe (pushed to origin/codex/c5-finite-c2-certification-20261106)
+- C5 phase 1 proof/evidence checkpoint: 1250a9989e596fa250304d8ec8fd3ae45897e589 (pushed to origin/codex/c5-finite-c2-certification-20261106)
+- C4 source cache worktree used to resolve imports: 67aea3263426cc8f9787f34aa7833a5650dde175; its direct source file blobs match origin/main
+- carry source checkout: 045369f6dedcb2e75e9aefed1d12c9f73b9a2532
+- Momentos branch: 68c9b5f0a196289e28a8e5586146707d27df6b75
+
+Lean
+- toolchain: leanprover/lean4:v4.32.0
+- Mathlib: 81a5d257c8e410db227a6665ed08f64fea08e997
+- Carry lean-toolchain SHA-256: 2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e
+- Carry lake-manifest.json SHA-256: 822866313e377adcb9c6249680ed67ceb47682af1bb0cd3cc5203554786bcfeb
+- clean Lean output: .lake/build/research/native-moving-schur-sigma/c5-lean432-clean/
+- SigmaFiniteCoefficientSignTransport.olean SHA-256: a331d492db38d0c44ea6a76d49296e48b29fa071eb4019f9cf2df01d570b180f
+- SigmaFiniteCoefficientSignTransportAudit.olean SHA-256: cdf6710420bfd672f6c8ef6e8a08c2e1bb248b4504e6a210d1f2449c53ddd19c
+
+C5 Lean source SHA-256
+- SigmaFiniteCoefficientSignTransport.lean: 44e24ad89d7e0d1bc524231c9acb8664b87cb796b203a795efb78b1bdf08ddf7
+- SigmaFiniteCoefficientSignTransportAudit.lean: ea0d1c3897fb7ec91faf974b7593f3d9995ca561282c3185aa9ac42534e3fbf6
+
+Original source/dependency SHA-256
+- SigmaSourceBezout.lean: 5b9e8d064dd4cb046479dc35dae0bde5613f37025111eff880c1922287b54378
+- SourceBezout.lean: f81d9bf0d25c98989f9e7751d798f1ec8cafefe721515f6ebaa5792eecc7f68b
+- SigmaPadeCorrespondence.lean: 23dc6c96bab65e99f5232140f9ccc20acddf2573507dffe149cacd9803fa631f
+- SigmaZeroObstruction.lean: a618db1deb1f9ae52fd3d9a0ca5f4bbcaae853d09d917db8f95a44360396455a
+- carry C2GeometryNativeSourceBridge.lean: acdb8d67ba096275bedb85c436b8945187374a596425458b22cf7e339cfe3217
+
+Momentos research files at branch 68c9b5f0a196289e28a8e5586146707d27df6b75
+- c2_em_interval.py: 2526a3ef2c9e6c4535c49daeb633f306f38f195df9ec4059f3c22a28282cf53f
+- certify_finite_c2.py upstream: 929a0d62f2f7e15766974fea4f34ed22938795e8a9bf242f346b5493ef67747e
+- verify_signs_exact.py: bcf92a09ef68a16c5f3371be41c335529e4073bfad9222842f34722d46166a31
+- coeff_box_d00495_25digits.json: 5fdc12968b596f0509ad7824a49cc9b09a16c3544028e38ff4405f18e78cd96a
+- coeff_box_d01_25digits.json: 8bf5ea52a7398018208031abd9a18a55304fb8a27dff79aaff15d2ed3f2191e4
+- local gmpy2-compatible generator copy: b01bd1565a92fdd41953dafc45071a1b41d64edebb2fa6b218c2e4d808173d7d
+- local compatibility patch: interval-certificate/momentos-gmpy2-compat.patch
+
+Reproduced C5 outputs
+- sign1024_stirling.json: af91b5225d2323d9ba86c94701c96825d023411d09735e9708ade39675358e26
+- sign512_stirling_L12.json: 7875e0ccdbfc309663d71c1eb7c2fc340fb196a1a622d8d0dfe12aa28f3b98d8
+- sign512_d01_L12.json: c1bfe638f569e59703e5ae41be735971ae944f690ba13e066429dbd1b607b030
+- exact verifier outputs (two JSONs): interval-certificate/verify-d00495.log; interval-certificate/verify-d01.log
+- failed initial generator attempt due to gmpy2.mpz/Decimal mismatch: interval-certificate/sign1024_stirling-initial-gmpy2-failure.log
