@@ -1,0 +1,20 @@
+Lean toolchain: leanprover/lean4:v4.32.0
+Geometry base: thiagomassensini/geometry-of-numbers@ed85c42272798604c54454325e138b8c0680c7ca
+Earlier integration used for the C2 route: b9ce1955c1e8830afad2323afe5266ed3f5f35d9
+Carry source checkout: /home/thlinux/worktrees/carry-sigma-c2-pinned-045369
+Carry commit: 045369f6dedcb2e75e9aefed1d12c9f73b9a2532
+Carry lean-toolchain SHA-256: 2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e
+Carry lake-manifest.json SHA-256: 822866313e377adcb9c6249680ed67ceb47682af1bb0cd3cc5203554786bcfeb
+C1 import cache: research/native-moving-schur-sigma/.cache/c3-validation/c1
+
+SHA-256 (new C4 files and direct source dependencies):
+f81d9bf0d25c98989f9e7751d798f1ec8cafefe721515f6ebaa5792eecc7f68b  research/native-moving-schur-sigma/SourceBezout.lean
+5b9e8d064dd4cb046479dc35dae0bde5613f37025111eff880c1922287b54378  research/native-moving-schur-sigma/SigmaSourceBezout.lean
+6768ba437a008203adcd491c7d41cbed350c7ae73ce4e58fea6fdde7aabe6952  research/native-moving-schur-sigma/SigmaSourceBezoutAudit.lean
+a618db1deb1f9ae52fd3d9a0ca5f4bbcaae853d09d917db8f95a44360396455a  research/native-moving-schur-sigma/SigmaZeroObstruction.lean
+33bba29599299b630eee1e7ec74f5ef0bcf85368da6e7a2dc2fc6974953e44cb  research/native-moving-schur-sigma/SigmaNeighborhood.lean
+9d88a5e96beba8299ce429fd53c1cb135918ffe94cd932d63b45aa572b9f4ad5  research/native-moving-schur-sigma/MatrixJetCalculus.lean
+1012b49108abfe5e60e704a8ae901c18d72336e17e3c1736dd44e6807fa2abf3  research/native-moving-schur-sigma/MomentLogConvexity.lean
+467f6a299805e7b3090d1557c0ec8bb1f06e1d5d4868797006083367bbe9d302  research/native-moving-schur-sigma/MomentComplexification.lean
+0195736c5a41aa612acff6930f9080c1833bcca1f743fcb09a5db2e6fb3d2961  research/native-sixth-explicit-sigma/SigmaQuadratic.lean
+8c09573d6690fc1c7f98de53ade8ccd87493bc9a1dfcb2e658c7173454a32136  research/native-moving-schur-sigma/compile_sigma_pade.sh

@@ -63,14 +63,22 @@ O módulo `SigmaParityNegativeDirection.lean` formaliza as duas escolhas. `exist
 
 ## C4 — série de fonte deslocada
 
-Investigar, sem impor identificação artificial com o bracket material:
+Prova local concluída em Lean 4.32, sem identificação artificial com o bracket material:
 
-```text
-D_d(t) = F(t-id) F(t+id) = C_d(t²)
--C'_d(u)/C_d(u) = 2 * ∑ n, completedSigmaLogJet d n * u^n
-```
+`completedSigmaDisplacedSourceTaylorSeries_sums_to_density` e
+`displacedProductC_eq_completedSigmaDisplacedSource_eventually` recompõem localmente
+`D_d(t)=F(t-id)F(t+id)=C_d(t²)` pelos coeficientes pares da densidade original. A recorrência
+`completedSigmaDisplacedSourceSeries_mul_moments_eq_neg_derivative` dá
+`C_d · H_d=-C_d′`; como `C_d(0)>0`, `completedSigmaDisplacedSource_log_derivative_eq_moments`
+formaliza `-C_d′/C_d=H_d`, com `H_d(n)=2*completedSigmaLogJet d n`.
 
-O fator 2 vem da derivada anterior `−D'_d(t)/(4tD_d(t))`. Primeiro lema faltante, recorrência exata, escala positiva e canais compensadores devem ser nomeados se a costura Bézout não fechar.
+`completedSigmaDisplacedMoment_hankel_eq_two_sigmaMatrix` identifica a sequência de momentos com
+`2 • sigmaMatrix`; `completedSigmaDisplacedSource_bezout_congruence_sigmaMatrix` e
+`completedSigmaDisplacedSource_bezout_posSemidef_iff_sigmaMatrix` dão a costura de Bézout à
+matriz original. O fator 2 vem da identidade `−D'_d(t)/(4tD_d(t))` e permanece positivo e
+explícito. `sourceKernel_head_tail` mantém os quatro termos cruzados quando uma fonte se
+decompõe; nenhum recebe sinal nem é artificialmente identificado com o bracket material.
+Compilação e auditoria locais: `evidence/c4-source-bezout/`; publicação pendente.
 
 ## Limites
 
