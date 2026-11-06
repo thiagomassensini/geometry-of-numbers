@@ -49,12 +49,12 @@ f1414eb90035c5cef26089039505fcd59f0eb7575b50bb811e2a034964f4fa8f  research/nativ
 36dd8c96a68d0ecc0b34b805b4842800b5c297e134b2f0120c83025621551943  .lake/build/research/native-moving-schur-sigma/c5-gamma-euler-3072-clean/SigmaGammaEulerIntegral.olean
 76e19d3abf6f3abcb2627d12042e9df37d9b460be08e80c2ea47753a18e960c1  .lake/build/research/native-moving-schur-sigma/c5-gamma-euler-3072-clean/gamma-euler-audit.olean
 
-C5 exact algebraic interpolation (Lean 4.32; geometry base `ac84c9302ae608e39c742f856ad361921653f268`):
-6fc6eb8f95292e3b407687ce67412ff276a2437c50e62b7dcce6af049179ff66  research/native-moving-schur-sigma/SigmaRationalInterpolation.lean
-2cf729eceefd06adb9783a42449557bc00d19fb348585faf236684beba7306cc  research/native-moving-schur-sigma/check_c5_interpolation_axioms.py
-71023e7a5ecd318330d668586904ca8e7b73cd5ff432610e4846b1a092418194  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/interpolation-audit.lean
-4a9f92be43a097a3e2f14bd2c467ec95200ddaea6ebb224419f0ae0913367c8b  .lake/build/research/native-moving-schur-sigma/c5-interpolation-clean-20261106b/SigmaRationalInterpolation.olean
-ebb4f928e6d81ae574b753d38fb674af7f59e1d30a5f2f724520319763659c0c  .lake/build/research/native-moving-schur-sigma/c5-interpolation-clean-20261106b/interpolation-audit.olean
+C5 exact interpolation and degree-zero weight (Lean 4.32; geometry base `7ad7e29195790eedda01645e71e5c52edf1b4e6b`):
+542835ace7f6b73f16b3fdf33a820fa21b76a2b10b05bfdb5c543c0995af3c30  research/native-moving-schur-sigma/SigmaRationalInterpolation.lean
+71e9b89d0c93567fa77057e92c207495e4d0d47b90651f119a51b5d1b9a908a9  research/native-moving-schur-sigma/check_c5_interpolation_axioms.py
+bf043060befdece1a3e7deddc87ebf23197b7ae0e45dde9ae4f9b4af774eb51f  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/interpolation-audit.lean
+e657fd6c1b98a67598f884fc6d08527d4790ac936b4f89977d22603d8bd361ce  .lake/build/research/native-moving-schur-sigma/c5-weight-clean-20261106b/SigmaRationalInterpolation.olean
+ebb4f928e6d81ae574b753d38fb674af7f59e1d30a5f2f724520319763659c0c  .lake/build/research/native-moving-schur-sigma/c5-weight-clean-20261106b/interpolation-audit.olean
 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-interpolation-build.log
-c9dc01c9dce391e6b729ea54fcf09045a534c5f125dad7e7d314f4e8705e4786  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/interpolation-audit.log
-eb996b3736fb4366cdb402d8a81592cd657132ec97801967ee0e782bc7a472f9  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/interpolation-audit-check.log
+a6c634ac9215a04be4070eede01684009d092dea71b974dbfa35ca01ef097aac  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/interpolation-audit.log
+c89684951fac1e16e895dc42853866d66000f796210c5a52b33be8fff9ed1a61  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/interpolation-audit-check.log

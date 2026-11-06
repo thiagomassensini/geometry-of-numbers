@@ -10,6 +10,11 @@ required = {
     "CarrySigmaObstruction.c5InterpolationPolynomial_coeff",
     "CarrySigmaObstruction.c5_interpolate_polynomial",
     "CarrySigmaObstruction.c5InterpolationPolynomial_coeff_of_degree_lt",
+    "CarrySigmaObstruction.c5BasisDivisor_coeff_zero",
+    "CarrySigmaObstruction.c5LagrangeBasis_coeff_zero",
+    "CarrySigmaObstruction.c5LagrangeBasis_coeff_zero_of_ne",
+    "CarrySigmaObstruction.c5LagrangeBasis_zero_coeff_zero",
+    "CarrySigmaObstruction.c5InterpolationWeightSum_zero_eq_one",
 }
 allowed = {"propext", "Classical.choice", "Quot.sound"}
 

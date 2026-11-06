@@ -85,3 +85,11 @@ Reproduced C5 outputs
 - Lean: `leanprover/lean4:v4.32.0`; Mathlib: `81a5d257c8e410db227a6665ed08f64fea08e997`; Carry: `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`.
 - Source and clean `.olean` hashes for `SigmaRationalInterpolation.lean`, its audit, and the fail-closed checker are recorded in `evidence/rational-boxes/source-and-olean-sha256.txt`.
 - The module proves only exact polynomial interpolation and the coefficient identity. Numerical weight bounds, the complex source bound, and C2 source-box inclusion remain open.
+
+## C5 degree-zero interpolation weight substep
+
+- Geometry base: PR #178 merge `7ad7e29195790eedda01645e71e5c52edf1b4e6b`.
+- C5 branch before this substep: `codex/c5-finite-c2-certification-20261106`, remote tip `476df788ab3cdb0deb28d67ec426c559341e3f05`.
+- Lean: `leanprover/lean4:v4.32.0`; Mathlib: `81a5d257c8e410db227a6665ed08f64fea08e997`; Carry: `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`.
+- The new Lean theorem `c5InterpolationWeightSum_zero_eq_one` proves the exact degree-zero scaled weight sum is `1`; positive-degree weight bounds and O4 source inclusion remain open.
+- Source, checker, audit and clean `.olean` hashes are in `evidence/rational-boxes/source-and-olean-sha256.txt`.

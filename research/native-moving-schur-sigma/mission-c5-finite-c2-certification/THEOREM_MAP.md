@@ -120,6 +120,6 @@ Em `SigmaRationalInterpolation.lean`:
 - `c5InterpolationNode_injOn` prova que os nós `j²` são distintos em `0≤j≤128`.
 - `c5_interpolate_polynomial` prova a reconstrução exata de qualquer `p : ℚ[X]` com `degree p < 129` a partir das avaliações nodais.
 - `c5InterpolationPolynomial_coeff` e `c5InterpolationPolynomial_coeff_of_degree_lt` dão a fórmula explícita dos coeficientes por somas de Lagrange.
-- `c5InterpolationWeight` e `c5InterpolationWeightSum` representam os pesos escalados correspondentes a `t_j=j/100000`. Nenhum limite numérico para essas somas está provado ainda.
+- `c5InterpolationWeight` e `c5InterpolationWeightSum` representam os pesos escalados correspondentes a `t_j=j/100000`. `c5InterpolationWeightSum_zero_eq_one` prova que a soma absoluta de grau zero é `1`; os limites dos graus `1..14` seguem abertos.
 
-As quatro raízes foram compiladas em Lean 4.32 e auditadas. Os comandos e hashes estão em `evidence/rational-boxes/VALIDATION.md` e `evidence/rational-boxes/source-and-olean-sha256.txt`.
+As nove raízes foram compiladas em Lean 4.32 e auditadas. Os comandos e hashes estão em `evidence/rational-boxes/VALIDATION.md` e `evidence/rational-boxes/source-and-olean-sha256.txt`.
