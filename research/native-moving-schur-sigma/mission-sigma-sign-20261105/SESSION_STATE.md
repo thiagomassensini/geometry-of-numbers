@@ -6,7 +6,8 @@
 ## Base integrada
 
 - Repositório: `thiagomassensini/geometry-of-numbers`.
-- Base atual da `main`: `799a0e06af5469e9fe0665943adbb1cb29d0b6f8`, merge da PR #162 (C4). C3 está integrada desde `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8` (PR #159); o registro consolidado anterior foi publicado pela PR #160, merge `29f8ceec1a593158ce10ade2f870b263d2d9c174`.
+- A prova C4 foi compilada sobre `ed85c42272798604c54454325e138b8c0680c7ca` e integrada pela PR #162, merge `799a0e06af5469e9fe0665943adbb1cb29d0b6f8`. O estado pós-C4 foi registrado pela PR #163, merge `13f4b6f509c090344d7dc41213f83018f3bdcc69`.
+- C3 está integrada desde `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8` (PR #159); o registro consolidado anterior foi publicado pela PR #160, merge `29f8ceec1a593158ce10ade2f870b263d2d9c174`.
 - C0 foi integrado pela PR #153, merge `2a3e89987beeb05d29b2e71d8b8ed6851383ccaa`.
 - C1 foi integrado pela PR #154, merge `b7a8a0eda7230c02f80dc63b41ab4cc9f9cf1d1e`; a CI hospedada passou.
 - **C1B está integrado** pela PR #155, merge `0586e238441096ecd2248e3f14bdac3a832af427`. Não há publicação pendente desse checkpoint.

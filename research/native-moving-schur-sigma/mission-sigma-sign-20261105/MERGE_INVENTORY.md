@@ -52,4 +52,15 @@ C3 foi integrado pela PR #159, commit de prova `35dc14f13bd314639ce0c65daedf32b2
 
 ## Regra de integração
 
-Não fazer merges em massa. Para C1/C1B/C2/C3, integrar à `main` somente o código autocontido que passar build e auditoria, e registrar qualquer dependência de PR encadeada. C4 é secundário. Branches antigas permanecem para proveniência.
+Não fazer merges em massa. Para C1/C1B/C2/C3/C4, integrar à `main` somente o código autocontido que passar build e auditoria, e registrar qualquer dependência de PR encadeada. Branches antigas permanecem para proveniência.
+
+## Atualização após C4 (2026-11-06)
+
+O inventário acima é o snapshot anterior aos merges C0–C3; esta atualização registra as mudanças posteriores sem reescrever os estados históricos das worktrees alheias.
+
+- `origin/main` contém C4 pela PR #162: branch `codex/sigma-c4-source-bezout-20261106`, commit de prova `31d3df33d4524d9809c75ba4481b1fa9f57a98bc`, merge `799a0e06af5469e9fe0665943adbb1cb29d0b6f8`.
+- A observação da tabela histórica de que `SigmaZeroObstruction.lean` estava ausente da `main` descrevia o snapshot de 2026-11-05. O módulo e a closure C1/C2 necessários foram incorporados pelas PRs #154 e #157; não está ausente da `main` atual.
+- O estado pós-C4 foi integrado pela PR #163, merge `13f4b6f509c090344d7dc41213f83018f3bdcc69`. A ponta de `origin/main` observada nesse snapshot é esse commit.
+- A worktree `/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main` está no branch local `codex/c4-state-merged-20261106`, commit `9138be9e110354878487719696a697e65a74463a`, que foi o head da PR #163. Seus únicos itens não rastreados observados são o symlink local `.lake` e caches de compilação sob `research/native-moving-schur-sigma/.cache/`; foram preservados e não incluídos nos commits.
+- As duas worktrees de tentativa 4.35 em `/tmp` aparecem agora como `prunable` porque seus gitdirs temporários não existem. O conteúdo necessário à retomada segue versionado em `evidence/lean435-validation-incomplete/` (overlays/patches, pins, manifests, logs e README com o último erro e comandos). Nenhuma tentativa foi recriada nem os checkpoints removidos.
+- PRs #153–#163 relevantes à missão foram consultadas no GitHub e estão mescladas: C0 #153, C1 #154, C1B #155, checkpoint 4.35 #156, C2 #157, C3 #159, atualizações de estado #160/#161/#163 e C4 #162. Os SHAs de merge correspondentes constam em `SESSION_STATE.md`, `CHECKPOINTS.md` e nos registros de validação.
