@@ -1,8 +1,8 @@
 # C5 — validação
 
-**Status atual:** Fase 1 de transporte algébrico provada e auditada. A verificação racional dos JSONs e a geração intervalar foram reproduzidas. As fases de verificação racional Lean e inclusão intervalar da fonte ainda não estão fechadas.
+**Status atual:** Fase 1 de transporte algébrico provada, auditada e integrada pela PR #165, merge `75691edf0e74cc643f098213f60b684476132175`. A verificação racional dos JSONs e a geração intervalar foram reproduzidas. As fases de verificação racional Lean e inclusão intervalar da fonte ainda não estão fechadas.
 **Toolchain:** `leanprover/lean4:v4.32.0`; Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`.
-**Base geometry:** `91a1af2f9663d6761a3320e2f06504fe8aaa6776`.
+**Base geometry da PR #165:** `91a1af2f9663d6761a3320e2f06504fe8aaa6776`; `main` após o merge: `75691edf0e74cc643f098213f60b684476132175`.
 **Fonte C4 compilada:** source hashes de `SigmaSourceBezout.lean`, `SourceBezout.lean`, `SigmaPadeCorrespondence.lean` e `SigmaZeroObstruction.lean` conferem com `origin/main`; pins completos em `evidence/pins-and-sha256.txt`.
 
 ## 1. Transporte algébrico Lean — PASSOU
@@ -17,6 +17,8 @@ A prova começa em `completedSigmaDisplacedSource_coefficient_recurrence` de C4 
 O build final foi feito para diretório de saída novo, com warnings tratados como erros, usando o script `compile_sigma_pade.sh`. Os logs e o comando exato estão em `build-transport-clean.log` e `transport-build-record.md`.
 
 `#print axioms` para os quatro teoremas auditados lista apenas `propext`, `Classical.choice` e `Quot.sound`. Saída em `axiom-audit-transport-clean.log`. Nenhum axioma próprio, `sorryAx` ou `admit` foi introduzido.
+
+PR #165 foi integrada à `main`; o GitHub não retornou status checks hospedados. A validação local registrada acima é o resultado de build/auditoria desta fase.
 
 ## 2. Genealogia da fonte — conferida, preservada
 

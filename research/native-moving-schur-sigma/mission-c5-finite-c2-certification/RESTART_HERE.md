@@ -1,19 +1,19 @@
 # Retomar primeiro — C5
 
 **MISSÃO:** C5 — certificação finita da primeira janela negativa C2 original
-**CURRENT PHASE:** Fase 1 (transporte algébrico) concluída; Fase 3 (caixas condicionais) a iniciar
+**CURRENT PHASE:** Fase 1 (transporte algébrico) integrada; iniciar O3 (verificação racional Lean)
 **CURRENT SUBTASK:** Formalizar o propagador intervalar racional e provar os sinais condicionais das duas listas de coeficientes
 **LAST VERIFIED THEOREM:** `sigmaPadeD_neg_of_completedSigmaFiniteScaledMoment_minor_neg`
 **LAST COMPILED FILE:** `research/native-moving-schur-sigma/SigmaFiniteCoefficientSignTransport.lean` (Lean 4.32; build limpo e auditoria em `evidence/`)
-**LAST SUCCESSFUL COMMIT:** `1250a9989e596fa250304d8ec8fd3ae45897e589` (proof + evidence; push confirmado)
-**LAST REMOTE SHA:** geometry C5 `1250a9989e596fa250304d8ec8fd3ae45897e589`; `origin/main=91a1af2f9663d6761a3320e2f06504fe8aaa6776`; Momentos `origin/research/sigma-pade-dimension-depth-20261104=68c9b5f0a196289e28a8e5586146707d27df6b75`
+**LAST SUCCESSFUL MERGE:** PR #165; commit de prova `1250a9989e596fa250304d8ec8fd3ae45897e589`; merge `75691edf0e74cc643f098213f60b684476132175`
+**LAST REMOTE SHA:** `origin/main=75691edf0e74cc643f098213f60b684476132175`; Momentos `origin/research/sigma-pade-dimension-depth-20261104=68c9b5f0a196289e28a8e5586146707d27df6b75`
 **CURRENT BRANCH:** `codex/c5-finite-c2-certification-20261106`
-**MAIN SHA:** `91a1af2f9663d6761a3320e2f06504fe8aaa6776`
-**OPEN PR:** Ainda não há PR C5; Momentos PR #2 permanece aberta e não foi integrada
+**MAIN SHA:** `75691edf0e74cc643f098213f60b684476132175`
+**C5 PR:** #165 está integrada; Momentos PR #2 permanece aberta e não foi integrada
 **WHAT IS PROVED:** Recorrência polinomial sem divisão, identidade exata com `sigmaPadeD` original e transportes de sinal estão compilados em Lean para a fonte C4. As três gerações intervalares e os dois verificadores racionais foram reproduzidos.
 **WHAT IS CONDITIONAL:** Os sinais finitos seguem das caixas racionais sob a hipótese de que os coeficientes verdadeiros da fonte estejam dentro delas; a inclusão ainda não foi provada.
 **WHAT IS BLOCKED:** O transporte algébrico não tem bloqueio. A inclusão da fonte segue aberta porque o gerador usa funções elementares `mpmath.iv` ainda não certificadas em Lean.
-**EXACT NEXT COMMAND:** `gh pr create --repo thiagomassensini/geometry-of-numbers --base main --head codex/c5-finite-c2-certification-20261106 --title "proof(c5): add C4 polynomial sign transport" --body-file research/native-moving-schur-sigma/mission-c5-finite-c2-certification/PR-transport.md`
+**NEXT ACTION:** Implementar O3: intervalos com centro e raio racionais, propagação por multiplicação e recorrência dos menores; manter os sinais como condicionais às caixas até O4.
 **EXACT NEXT MATHEMATICAL OBLIGATION:** Formalizar intervalos racionais, propagar as caixas pela recorrência `pₙ` e provar em Lean os padrões `+++++++++++-` e `+++++++++-` sob as hipóteses de caixa; em seguida provar a inclusão dos coeficientes da fonte C2 original.
 **DO NOT REPEAT:**
 - Não refazer C2 eventual, C3, nem a recorrência analítica C4.
