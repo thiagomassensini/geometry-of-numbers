@@ -85,6 +85,9 @@ O lema algébrico dos 129 nós foi integrado pela PR #177, merge
 `0702371cff0c6016eae9eaa0aa9331ae95483456`. O4, a inclusão das caixas e os
 teoremas finais incondicionais seguem abertos. O checkpoint de estado pós-PR
 #177 foi integrado pela PR #178, merge `7ad7e29195790eedda01645e71e5c52edf1b4e6b`.
+A soma exata do peso escalado de grau zero foi integrada pela PR #179, merge
+`f6a2298b92cbfddad77abe512d73387efea4e870`; os graus positivos e O4 permanecem
+abertos.
 
 ## Classificação honesta se O4 continuar em aberto
 

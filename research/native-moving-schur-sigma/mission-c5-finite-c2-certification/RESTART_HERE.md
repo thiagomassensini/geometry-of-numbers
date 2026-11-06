@@ -6,17 +6,17 @@
 
 **SUBTAREFA ATUAL:** formalizar limites dos pesos de Lagrange nos 129 nós racionais; depois certificar a cota analítica da fonte e os valores racionais necessários
 
-**ÚLTIMA PROVA PUBLICADA:** PR #177, identidade algébrica de interpolação em 129 nós, merge `0702371cff0c6016eae9eaa0aa9331ae95483456`
+**ÚLTIMA PROVA PUBLICADA:** PR #179, soma exata do peso escalado de grau zero, merge `f6a2298b92cbfddad77abe512d73387efea4e870`
 
 **REGISTRO DE ESTADO ANTERIOR À PR #177:** PR #176, merge `ac84c9302ae608e39c742f856ad361921653f268`
 
-**ÚLTIMO CHECKPOINT DE ESTADO:** PR #178, merge `7ad7e29195790eedda01645e71e5c52edf1b4e6b`
+**CHECKPOINT DE ESTADO ANTERIOR À PR #179:** PR #178, merge `7ad7e29195790eedda01645e71e5c52edf1b4e6b`
 
-**MAIN após PR #178:** `7ad7e29195790eedda01645e71e5c52edf1b4e6b`
+**MAIN após PR #179:** `f6a2298b92cbfddad77abe512d73387efea4e870`
 
-**BRANCH C5:** `codex/c5-finite-c2-certification-20261106`, último commit remoto `476df788ab3cdb0deb28d67ec426c559341e3f05`
+**BRANCH C5:** `codex/c5-finite-c2-certification-20261106`, commit de prova remoto `963dbdb035714ddf6d61f5ad329769de48c77354`
 
-**C5 PRs:** #165–#178 estão integradas; a PR #2 de Momentos permanece aberta e não foi integrada.
+**C5 PRs:** #165–#179 estão integradas; a PR #2 de Momentos permanece aberta e não foi integrada.
 
 ## Estado matemático
 
