@@ -45,3 +45,15 @@ Reproduced C5 outputs
 - sign512_d01_L12.json: c1bfe638f569e59703e5ae41be735971ae944f690ba13e066429dbd1b607b030
 - exact verifier outputs (two JSONs): interval-certificate/verify-d00495.log; interval-certificate/verify-d01.log
 - failed initial generator attempt due to gmpy2.mpz/Decimal mismatch: interval-certificate/sign1024_stirling-initial-gmpy2-failure.log
+
+## O3 rational-box Lean checkpoint
+
+- geometry `origin/main` base: `dd7d63fb370c38b2655fb336aa6d3680767b134a` (PR #166 merge)
+- Lean: `leanprover/lean4:v4.32.0`; Mathlib: `81a5d257c8e410db227a6665ed08f64fea08e997`
+- Carry: `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`
+- clean output directory: `.lake/build/research/native-moving-schur-sigma/c5-rational-clean/`
+- six Lean module builds passed with `warningAsError=true`; `evidence/rational-boxes/build-*.log`
+- 13 axiom roots audited; only `propext`, `Classical.choice`, `Quot.sound`; log/checker in `evidence/rational-boxes/`
+- source and `.olean` hashes: `evidence/rational-boxes/source-and-olean-sha256.txt`
+- exact-rational boxes regenerated idempotently from the archived decimal JSON intervals; generator SHA-256 `16c201e3aafd8f54209472d05487637084eda0bbc4930b9c11d9877ad90dcea7`
+- O3 proves signs on the original `sigmaPadeD` conditionally on source-box hypotheses. O4 inclusion remains open; this checkpoint does not establish an unconditional C5 window.

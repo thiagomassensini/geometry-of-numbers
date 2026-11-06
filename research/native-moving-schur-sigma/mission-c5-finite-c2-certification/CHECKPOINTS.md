@@ -11,7 +11,7 @@
 
 ## Próximo checkpoint
 
-Após a validação dos dois JSONs e compilação dos lemas de transporte, salvar logs, pins e hashes nesta pasta; não misturar com os caches/logs de outras worktrees.
+O checkpoint de build e auditoria da O3 está em `evidence/rational-boxes/`. Após integrar essa etapa, o próximo checkpoint deve registrar a investigação/prova de O4; não misturar os caches/logs das outras worktrees.
 
 ## 2026-11-06 — transporte algébrico provado, antes do PR
 
@@ -28,3 +28,11 @@ Após a validação dos dois JSONs e compilação dos lemas de transporte, salva
 - A revisão foi compilada em Lean 4.32 com warnings como erros; os quatro footprints de axiomas contêm somente `propext`, `Classical.choice` e `Quot.sound`. O GitHub não apresentou status checks hospedados.
 - A PR mantém explícito que os padrões de sinais numéricos continuam condicionais às caixas. A integração não declara os teoremas finais de C5.
 - `origin/main` após o merge: `75691edf0e74cc643f098213f60b684476132175`. A próxima obrigação é O3, propagação intervalar racional formal em Lean.
+
+## 2026-11-06 — O3 formalizada, antes da publicação
+
+- Adicionados seis módulos Lean que representam os dados das duas caixas como bolas racionais exatas, propagam a recorrência escalada de C4, encerram os sinais de cada menor e transferem os resultados ao `sigmaPadeD` original sob hipóteses explícitas de inclusão.
+- Em `99/2000`, os menores são positivos para `s<11` e negativo em `s=11`; em `1/10`, positivos para `s<9` e negativo em `s=9`. Os resultados permanecem condicionais a `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
+- Os seis módulos compilaram em Lean 4.32, com warnings como erros, em saída limpa. A auditoria transitiva cobre 13 teoremas; o checker fail-closed passou e encontrou apenas `propext`, `Classical.choice`, `Quot.sound`.
+- Logs, comandos de reprodução, hashes de fontes e `.olean`, e limitação O4 estão em `evidence/rational-boxes/`. A inclusão analítica da fonte não foi provada; nenhum teorema incondicional de janela negativa foi declarado.
+- A publicar em uma PR própria. Próxima obrigação após integração: O4, provar a inclusão dos coeficientes originais nas caixas.

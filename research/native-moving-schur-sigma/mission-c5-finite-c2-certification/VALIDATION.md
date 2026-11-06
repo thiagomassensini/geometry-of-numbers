@@ -1,6 +1,6 @@
 # C5 — validação
 
-**Status atual:** Fase 1 de transporte algébrico provada, auditada e integrada pela PR #165, merge `75691edf0e74cc643f098213f60b684476132175`. A verificação racional dos JSONs e a geração intervalar foram reproduzidas. As fases de verificação racional Lean e inclusão intervalar da fonte ainda não estão fechadas.
+**Status atual:** Fase 1 de transporte algébrico integrada pela PR #165. O3 (propagação racional Lean e sinais condicionais) está provada, compilada em build limpo e auditada localmente; a publicação dessa etapa ainda está pendente. O4, inclusão analítica da fonte nas caixas, continua aberta.
 **Toolchain:** `leanprover/lean4:v4.32.0`; Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`.
 **Base geometry da PR #165:** `91a1af2f9663d6761a3320e2f06504fe8aaa6776`; `main` após o merge: `75691edf0e74cc643f098213f60b684476132175`.
 **Fonte C4 compilada:** source hashes de `SigmaSourceBezout.lean`, `SourceBezout.lean`, `SigmaPadeCorrespondence.lean` e `SigmaZeroObstruction.lean` conferem com `origin/main`; pins completos em `evidence/pins-and-sha256.txt`.
@@ -58,6 +58,24 @@ A primeira execução falhou antes de produzir JSON porque esta instalação do 
 
 O avaliador permanece experimental: as funções elementares `mpmath.iv` e sua garantia de arredondamento externo não foram provadas em Lean. Portanto, as caixas ainda não são inclusões formais dos coeficientes verdadeiros.
 
-## 5. Resultado matemático — ainda condicional
+## 5. Sinais condicionais — provados em Lean
 
-Não foram provados ainda em Lean os sinais `D₀..D₁₀>0, D₁₁<0` em `d=99/2000` nem `D₀..D₈>0, D₉<0` em `d=1/10`. Nenhum teorema final C5 incondicional existe nesta fase. O transporte C4 foi provado e auditado; O3/O4 permanecem abertas em `OPEN_OBLIGATIONS.md`.
+O3 compõe as caixas racionais com a recorrência polinomial sem divisão e prova
+em Lean os sinais condicionais dos menores. Os teoremas
+`sigmaPadeD_signs_at_99_2000_of_source_boxes` e
+`sigmaPadeD_signs_at_1_10_of_source_boxes` concluem sobre o `sigmaPadeD`
+original, assumindo respectivamente `sigmaC00495SourceBoxes` e
+`sigmaC01SourceBoxes`. Todos os índices requeridos foram cobertos: `D₀..D₁₀>0,
+D₁₁<0` em `d=99/2000` e `D₀..D₈>0, D₉<0` em `d=1/10`.
+
+O build limpo dos seis módulos e a auditoria das 13 raízes passaram; apenas
+`propext`, `Classical.choice` e `Quot.sound` aparecem. Consulte
+`evidence/rational-boxes/VALIDATION.md` para comandos, logs e hashes.
+
+## 6. Resultado incondicional — ainda aberto
+
+Os dois teoremas finais de primeira janela negativa ainda não são
+incondicionais, pois O4 não prova que os coeficientes reais da fonte C2 original
+estão dentro das caixas. A fonte permanece a cabeça C2, a cauda exponencial
+exata e a completação original; os resultados condicionais não substituem essa
+prova. A primeira obrigação aberta está em `OPEN_OBLIGATIONS.md`.
