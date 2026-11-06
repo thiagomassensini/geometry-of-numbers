@@ -79,7 +79,7 @@ compõe os coeficientes C2.
 `research/native-moving-schur-sigma/SigmaGammaEulerIntegral.lean` prova a
 ponte da Gamma original à aproximação explícita de Euler
 `gammaFinite 512 81 z` com erro `≤10⁻³²` (PR #171) e uma versão de alta precisão
-`gammaFinite 1024 240 z` com erro `≤10⁻⁹⁹` (prova local nesta branch). O novo
+`gammaFinite 1024 240 z` com erro `≤10⁻⁹⁹` (PR #173). O novo
 build e auditoria de dez raízes usam apenas axiomas padrão (`propext`,
 `Classical.choice`, `Quot.sound`).
 
