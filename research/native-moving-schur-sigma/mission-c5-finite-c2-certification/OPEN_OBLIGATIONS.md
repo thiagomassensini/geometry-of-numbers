@@ -15,10 +15,10 @@ Veja `evidence/rational-boxes/analytic-bounds-10pow13-validation.md` e
 `rational-interpolation-analysis-10pow13-radius-38.log`. A cota `10^100` da
 PR #191 segue como wrapper compatível.
 
-Também está validada localmente a faixa racional exata de `Real.pi` construída
-com a série alternada de `arctan` e a identidade de Machin; detalhes e logs em
-`evidence/rational-boxes/c5-pi-bounds-validation.md`. O módulo fornece uma
-faixa exata em vez de uma desigualdade decimal simplificada.
+Também está integrada pela PR #193 a faixa racional exata de `Real.pi`
+construída com a série alternada de `arctan` e a identidade de Machin; detalhes
+e logs em `evidence/rational-boxes/c5-pi-bounds-validation.md`. O módulo
+fornece uma faixa exata em vez de uma desigualdade decimal simplificada.
 
 O4 continua aberta: ainda faltam avaliações certificadas da fonte original
 nos 129 nós e a prova de inclusão dos coeficientes C2 originais nas caixas O3.

@@ -1,6 +1,6 @@
 # C5 — validação
 
-## Faixa racional exata de π — PASSOU em build limpo e auditoria local
+## Faixa racional exata de π — PASSOU e integrada pela PR #193
 
 `SigmaC5PiBounds.lean` prova o erro da série alternada de `Real.arctan` para
 argumentos racionais entre zero e um. Com truncações `N=170` e `N=55`, a
@@ -12,6 +12,8 @@ Build Lean 4.32 limpo com warnings como erros passou; a auditoria transitiva de
 `c5_arctan_partial_enclosure` e `c5_pi_rational_enclosure` encontrou somente
 `propext`, `Classical.choice` e `Quot.sound`. Logs, pins, hashes e comando estão
 em `evidence/rational-boxes/c5-pi-bounds-validation.md`.
+
+Merge na `main`: `2567ab0204c46c4ce04fca601c99e47e810e18b9`.
 
 Esse incremento não certifica a avaliação da fonte nos nós e não prova
 inclusão C2 nas caixas; C5 segue incompleta.

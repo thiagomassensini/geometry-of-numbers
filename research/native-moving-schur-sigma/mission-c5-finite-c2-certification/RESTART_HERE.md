@@ -9,11 +9,11 @@ Cauchy usa raio `38/100`, e a análise racional exata com esse majorante dá
 erro `<10^-501`. Detalhes, hashes e logs estão em
 `evidence/rational-boxes/analytic-bounds-10pow13-validation.md`.
 
-O último incremento local é `SigmaC5PiBounds.lean`: build limpo e auditoria
+`SigmaC5PiBounds.lean` foi integrada pela PR #193, commit de prova `45bc923`,
+merge `2567ab0204c46c4ce04fca601c99e47e810e18b9`. Build limpo e auditoria
 Lean 4.32 passaram para a faixa racional exata de π derivada da série de
 `arctan` e da identidade de Machin. A trilha reproduzível está em
-`evidence/rational-boxes/c5-pi-bounds-validation.md`. Antes de retomar, confira
-se esse incremento já foi integrado; no snapshot atual, ainda não.
+`evidence/rational-boxes/c5-pi-bounds-validation.md`.
 
 O4/C5 continua incompleta: certificar a avaliação da fonte original nos 129
 nós e provar a inclusão dos coeficientes nas caixas O3. Não refazer C1B, C2,
