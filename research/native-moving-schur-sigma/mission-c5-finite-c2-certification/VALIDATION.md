@@ -1,5 +1,78 @@
 # C5 — validação
 
+## Reprodução das três caixas intervalares — PASSOU, condicional
+
+As três configurações prescritas foram executadas novamente em uma cópia
+temporária do checkout Momentos; o checkout compartilhado permaneceu sem
+alterações. A cópia usou o patch preservado `momentos-gmpy2-compat.patch`, que
+normaliza `gmpy2.mpz` para `int` antes de passar numeradores e denominadores a
+`Decimal`. Todas as gerações terminaram com `REPRO_EXIT=0`. O verificador
+independente por frações racionais exatas também passou nas três saídas, com
+`+++++++++++-` nas duas configurações `d=0.0495` e `+++++++++-` em `d=0.1`.
+
+Logs de geração: `sign1024_stirling-reproduced.log`,
+`sign512_stirling_L12-reproduced.log` e `sign512_d01_L12-reproduced.log`.
+Logs da checagem exata: os arquivos `*.exact-check.log` com os mesmos prefixos.
+JSONs gerados e resultados exatos estão na mesma pasta. A falha anterior de
+compatibilidade ficou registrada em `sign1024_stirling-initial-gmpy2-failure.log`;
+as três tentativas iniciais sem patch nesta retomada encontraram a mesma falha
+antes de escrever JSON. O registro completo, comandos e checksums estão em
+`evidence/interval-certificate/reproduction-2026-11-06.md` e
+`evidence/interval-certificate/reproduction-2026-11-06-sha256.txt`.
+
+**Limite:** isso confirma sinais racionais condicionais aos intervalos
+produzidos pela biblioteca experimental `mpmath.iv`. Não é uma prova formal de
+que os coeficientes da fonte C2 original pertençam às caixas, portanto não
+fecha O4 nem C5.
+
+## Ponte Gamma de núcleo racional — build e auditoria passaram localmente
+
+`SigmaC5GammaRationalCore.lean` define uma soma finita exata em `ℚ+iℚ` e prova
+que `gammaFinite N T (a+bi)` é seu produto por `T^(a+bi)`. A caixa racional
+exata contém esse núcleo; `gammaFiniteInterval_contains` combina-a com
+`ZetaLean.ComplexInterval.dirichletTermBox2` para o fator de potência. Para
+`N=3072`, `T=620`, `gamma3072Interval_contains` infla a caixa da Gamma finita
+pelo erro rigoroso `10^-259` e inclui `Complex.Gamma (a+bi)`, sob as hipóteses
+de intervalo e limite exponencial declaradas no teorema.
+
+O build focado usa Lean `4.32.0`, Mathlib
+`81a5d257c8e410db227a6665ed08f64fea08e997` e Carry
+`045369f6dedcb2e75e9aefed1d12c9f73b9a2532`; os módulos de apoio são
+`SigmaGammaEulerIntegral` (erro `10^-259`, PR #175) e
+`ZetaLean.IntervalCExp` (infraestrutura O4, PR #169). Ambos os módulos-alvo
+foram compilados em diretório de saída limpo, com warnings como erros. O
+checker fail-closed aceitou seis raízes, totalizando 11 relatórios dos dois
+builds, e somente `propext`, `Classical.choice` e `Quot.sound`.
+
+Logs: `c5-gamma-rational-core-try5-build.log`,
+`c5-gamma-rational-core-audit-try6-build.log` e
+`c5-gamma-rational-core-final-axiom-check.log`. Hashes de fonte, checker e
+olean em `c5-gamma-rational-core-source-olean-sha256.txt`. O comando reprodutor
+está nesta validação; o runner impõe `MemAvailable≥30 GiB`.
+
+```bash
+C5_SOURCE_ROOT="$PWD/research/native-moving-schur-sigma"
+C5_EVIDENCE="$C5_SOURCE_ROOT/mission-c5-finite-c2-certification/evidence/rational-boxes"
+C5_OUTPUT="$PWD/.lake/build/research/native-moving-schur-sigma/c5-gamma-rational-core-final-clean-20261106"
+C5_EULER_CACHE="/home/thlinux/worktrees/geometry-of-numbers-c5-finite-c2-certification/.lake/build/research/native-moving-schur-sigma/c5-gamma-euler-3072-clean"
+C5_INTERVAL_CACHE="/home/thlinux/worktrees/geometry-of-numbers-c5-finite-c2-certification/.lake/build/research/native-moving-schur-sigma/c5-zeta-intervals-clean"
+export SIGMA_REFERENCE_ROOT="/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105"
+export CARRY_LEAN_ROOT="/home/thlinux/worktrees/carry-sigma-c2-pinned-045369"
+export SIGMA_OUTPUT_DIR="$C5_OUTPUT"
+export SIGMA_HEIGHT50_BUILD="$C5_EULER_CACHE:$C5_INTERVAL_CACHE"
+export LEAN_BIN="$(elan which lean)"
+bash "$C5_SOURCE_ROOT/compile_sigma_pade.sh" SigmaC5GammaRationalCore
+bash "$C5_SOURCE_ROOT/compile_sigma_pade.sh" SigmaC5GammaRationalCoreAudit
+python3 "$C5_SOURCE_ROOT/check_c5_gamma_rational_core_axioms.py" \
+  "$C5_EVIDENCE/c5-gamma-rational-core-try5-build.log" \
+  "$C5_EVIDENCE/c5-gamma-rational-core-audit-try6-build.log"
+```
+
+**Limite desta etapa:** o teorema é genérico; não foram obtidos ainda valores
+racionais efetivos para qualquer um dos 129 nós, nem a caixa completa da fonte
+C2 nos pontos. A inclusão dos coeficientes nas caixas O3 continua não provada,
+e C5 não está concluída.
+
 ## Avaliação da fonte C2 nos nós — ainda sem validação
 
 A auditoria da rota confirma a reescrita exata da característica original para

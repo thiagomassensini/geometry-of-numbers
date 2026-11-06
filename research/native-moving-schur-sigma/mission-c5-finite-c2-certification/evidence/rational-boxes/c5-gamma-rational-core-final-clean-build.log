@@ -1,0 +1,14 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5GammaRationalCore.lean:210:58: error: Application type mismatch: The argument
+  herr
+has type
+  ‖Complex.Gamma (↑a + ↑b * Complex.I) - gammaFinite 3072 620 (↑a + ↑b * Complex.I)‖ ≤ 1 / 10 ^ 259
+but is expected to have type
+  ‖Complex.Gamma (↑a + ↑b * Complex.I) - gammaFinite 3072 (↑620) (↑a + ↑b * Complex.I)‖ ≤ ↑(1 / 10 ^ 259)
+in the application
+  ZetaLean.ComplexInterval.contains_inflate hfinite herr
+'SigmaC5Gamma.ratComplexToComplex_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SigmaC5Gamma.ratComplexToComplex_inv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SigmaC5Gamma.gammaFinite_eq_rationalCore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SigmaC5Gamma.gammaFiniteInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SigmaC5Gamma.gamma3072Interval_contains' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+BUILD_EXIT=1
