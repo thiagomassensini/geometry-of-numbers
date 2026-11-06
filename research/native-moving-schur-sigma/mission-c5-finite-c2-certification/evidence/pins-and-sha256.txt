@@ -102,3 +102,5 @@ Reproduced C5 outputs
 - Lean: `leanprover/lean4:v4.32.0`; Mathlib: `81a5d257c8e410db227a6665ed08f64fea08e997`; Carry: `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`.
 - Foram provadas as identidades `c5Coeff_one_eq_derivative_eval_zero` e `c5LagrangeBasis_derivative_eval_zero`; a desigualdade para a soma dos pesos de grau um segue aberta.
 - O erro de expansão racional, comando e limitações do simplificador estão em `evidence/rational-boxes/interpolation-weight-degree1-prototype.log`; hashes do build estrutural estão em `source-and-olean-sha256.txt`.
+- PR #181 integrou a prova estrutural e o registro de validação incompleta; commit `0a188c9d71a1a54bdf446ec753609fdde8326bc8`, merge na `main` `7460497307e7ed0ffb47ef1ac96b096e9b410472`.
+- Não houve status checks hospedados na PR #181. Build limpo Lean 4.32 e auditoria local de 14 raízes estão registrados em `evidence/rational-boxes/`.

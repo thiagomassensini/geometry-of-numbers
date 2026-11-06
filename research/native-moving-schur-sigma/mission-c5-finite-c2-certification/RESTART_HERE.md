@@ -6,15 +6,15 @@
 
 **SUBTAREFA ATUAL:** formalizar limites dos pesos de Lagrange nos 129 nós racionais; depois certificar a cota analítica da fonte e os valores racionais necessários
 
-**ÚLTIMA PROVA PUBLICADA:** PR #179, soma exata do peso escalado de grau zero, merge `f6a2298b92cbfddad77abe512d73387efea4e870`
+**ÚLTIMA PROVA PUBLICADA:** PR #181, estrutura derivativa para o coeficiente linear, merge `7460497307e7ed0ffb47ef1ac96b096e9b410472`
 
 **ÚLTIMO CHECKPOINT DE ESTADO:** PR #180, merge `de95637d38d5e6d5488342cd5141b88233be6eb7`
 
-**MAIN após PR #180:** `de95637d38d5e6d5488342cd5141b88233be6eb7`
+**MAIN após PR #181:** `7460497307e7ed0ffb47ef1ac96b096e9b410472`
 
-**BRANCH C5:** `codex/c5-finite-c2-certification-20261106`, último commit remoto `85f66341bdfa0f660ce712f351b9a1232cc11f44`
+**BRANCH C5:** a branch de prova foi removida após o merge da PR #181. Abrir uma branch nova a partir da `main` `7460497307e7ed0ffb47ef1ac96b096e9b410472`.
 
-**C5 PRs:** #165–#180 estão integradas; a PR #2 de Momentos permanece aberta e não foi integrada.
+**C5 PRs:** #165–#181 estão integradas; a PR #2 de Momentos permanece aberta e não foi integrada.
 
 ## Estado matemático
 
@@ -31,6 +31,8 @@
 3. Certificar as avaliações racionais da fonte mantendo a cabeça C2, a cauda exponencial exata e a completação original; compor então com Hurwitz/Cauchy e as caixas O3.
 
 Build Lean 4.32 e auditoria de axiomas da identidade algébrica estão em `evidence/rational-boxes/c5-interpolation-build.log`, `interpolation-audit.log` e `interpolation-audit-check.log`. O módulo é `research/native-moving-schur-sigma/SigmaRationalInterpolation.lean`; os comandos reproduzíveis estão em `evidence/rational-boxes/VALIDATION.md`.
+
+A etapa de grau um foi integrada pela PR #181. O checkpoint e o erro da tentativa numérica estão preservados em `evidence/rational-boxes/`; o limite de peso ainda está aberto.
 
 ## Não repetir
 

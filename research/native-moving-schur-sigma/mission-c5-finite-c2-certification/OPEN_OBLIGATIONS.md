@@ -92,7 +92,10 @@ teoremas finais incondicionais seguem abertos. O checkpoint de estado pós-PR
 A soma exata do peso escalado de grau zero foi integrada pela PR #179, merge
 `f6a2298b92cbfddad77abe512d73387efea4e870`; os graus positivos e O4 permanecem
 abertos. O estado pós-PR #179 foi registrado pela PR #180, merge
-`de95637d38d5e6d5488342cd5141b88233be6eb7`.
+`de95637d38d5e6d5488342cd5141b88233be6eb7`. A estrutura derivativa de grau um
+foi integrada pela PR #181, merge
+`7460497307e7ed0ffb47ef1ac96b096e9b410472`; a desigualdade numérica dos pesos
+continua em aberto e O4 permanece incompleta.
 
 ## Classificação honesta se O4 continuar em aberto
 
