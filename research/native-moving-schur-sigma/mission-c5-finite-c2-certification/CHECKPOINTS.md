@@ -1,5 +1,18 @@
 # C5 — checkpoints
 
+## 2026-11-06 — PR #195 integrada: fator exponencial com `log π`
+
+- `SigmaC5PiInterval.lean` certifica a faixa racional de `log π` e
+  `SigmaC5PiExp.lean` leva essa faixa ao fator original da completação usando
+  `expCr`, sob as hipóteses de caixa de entrada registradas na validação.
+- Build limpo Lean 4.32 e auditoria de cinco raízes passaram; somente axiomas
+  padrão foram encontrados. Logs, hashes, pins e comandos estão em
+  `evidence/rational-boxes/c5-pi-completion-factor-validation.md`.
+- PR #195, commit de prova `321ae94`, merge na `main`
+  `0032b10295bfeaadb29d0387f9b99dde9b160ac3`.
+- C5 permanece incompleta: avaliação da fonte original nos 129 nós e inclusão
+  dos coeficientes C2 nas caixas O3 ainda estão pendentes.
+
 ## 2026-11-06 — cota analítica explícita integrada
 
 - `SigmaC5AnalyticBounds.lean` prova que a fonte deslocada original satisfaz
