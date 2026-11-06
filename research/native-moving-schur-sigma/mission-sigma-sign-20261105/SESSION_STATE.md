@@ -3,6 +3,8 @@
 **Atualizado:** 2026-11-06
 **Estado:** C0, C1, C1B, C2, C3 e C4 estão concluídos e integrados à `main`. A lei quantitativa distância × profundidade e os novos cadernos continuam adiados.
 
+**Conferência para retomada:** este estado foi revisto contra `main` em `77fd2a9437fae182015e0e39e4be8c757363aa0b` após a PR #199. C1B (#155), C2 (#157) e C3 (#159) já estão publicados; não há publicação pendente dessas etapas nem motivo para reiniciá-las. A integração 4.32 é a rota de C2. O checkpoint de Lean 4.35 abaixo continua preservado como validação incompleta, sem migração geral de Geometry/Carry.
+
 ## Base integrada
 
 - Repositório: `thiagomassensini/geometry-of-numbers`.

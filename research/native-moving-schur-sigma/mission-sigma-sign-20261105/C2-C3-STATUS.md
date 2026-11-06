@@ -1,7 +1,7 @@
 # Registro de C2/C3 após a integração de C3
 
-**Data:** 2026-11-05
-**Base:** `main` em `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8` (após PR #159).
+**Registro original:** 2026-11-05, `main` em `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8` (após PR #159).
+**Estado reconciliado:** 2026-11-06. C0–C4 estão concluídos e integrados à `main`; C1B, C2 e C3 não têm publicação pendente. A revisão atual dos marcos e próximos passos está em `SESSION_STATE.md` e `NEXT_STEPS.md`.
 
 - C0, C1 e C1B estão integrados; PR #155 fechou C1B nesse merge.
 - C1B foi integrado pela PR #155, merge `0586e238441096ecd2248e3f14bdac3a832af427`.
@@ -10,7 +10,7 @@
 - Os pontos de composição previstos são `exists_firstSigmaDisplacedProductIsolation_from_height50_certificate`, `completedNative_sigmaRemainder_square_decomposition_of_isolation`, `sigmaPadeNormalizedMinors_tendsto_of_unitCircle_twoPole_remainder` e `sigmaPadeD_eventually_neg_of_normalized_limit`.
 - A bridge agora reutiliza a definição única `CarrySigmaObstruction.sigmaLineZero` de C1. Também foram removidas as duplicações de `sigmaNativeCompletionFactor_ne_zero_of_strip` e `completedNativeCharacteristicContinuation_zero_iff_zeta`.
 - C3 foi integrado pela PR #159, commit de prova `35dc14f13bd314639ce0c65daedf32b20f298667`, merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`. As janelas par (`p=2i`) e ímpar (`p=2i+1`) geram direções negativas em toda dimensão a partir de `i₀+2`, via persistência C1B. O GitHub não retornou status checks; evidências em `evidence/c3-parity/`.
-- A rota Lean 4.35 está preservada como checkpoint incompleto; não há plano de migração geral. C2/C3 estão concluídos. A lei quantitativa distância × profundidade, novos cadernos e C4 ficam no backlog posterior.
+- A rota Lean 4.35 está preservada como checkpoint incompleto; não há plano de migração geral. C2/C3 estão concluídos. A lei quantitativa distância × profundidade e os novos cadernos ficam no backlog posterior. C4 foi concluído e integrado pela PR #162, conforme o adendo abaixo.
 
 ## Adendo 2026-11-06 — C4
 
