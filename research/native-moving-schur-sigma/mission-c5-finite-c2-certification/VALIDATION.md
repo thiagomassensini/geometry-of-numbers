@@ -1,6 +1,22 @@
 # C5 — validação
 
-## Cota do módulo da fonte original — PASSOU localmente; O4 parcial
+## Faixa racional exata de π — PASSOU em build limpo e auditoria local
+
+`SigmaC5PiBounds.lean` prova o erro da série alternada de `Real.arctan` para
+argumentos racionais entre zero e um. Com truncações `N=170` e `N=55`, a
+identidade de Machin dá `c5_pi_rational_enclosure`, que limita
+`|Real.pi - c5PiCenter|` pelo racional exato `c5PiError`. O resultado não
+depende da tentativa auxiliar de reduzir esse erro a uma potência decimal.
+
+Build Lean 4.32 limpo com warnings como erros passou; a auditoria transitiva de
+`c5_arctan_partial_enclosure` e `c5_pi_rational_enclosure` encontrou somente
+`propext`, `Classical.choice` e `Quot.sound`. Logs, pins, hashes e comando estão
+em `evidence/rational-boxes/c5-pi-bounds-validation.md`.
+
+Esse incremento não certifica a avaliação da fonte nos nós e não prova
+inclusão C2 nas caixas; C5 segue incompleta.
+
+## Cota do módulo da fonte original — PASSOU e integrada; O4 parcial
 
 `SigmaC5AnalyticBounds.lean` prova a cota uniforme
 `CarrySigmaObstruction.displacedProductC_norm_le_10pow13_on_ball_39` para o
@@ -12,7 +28,8 @@ de `10^13`. Para a estimativa de Cauchy, usamos o contorno exterior de raio
 `39/100` na qual o lema da cota vale, e dentro do disco analítico aberto de
 raio `2/5` integrado pela PR #189.
 
-O build limpo em Lean 4.32 terminou com `BUILD_EXIT=0`. A auditoria
+O build limpo em Lean 4.32 terminou com `BUILD_EXIT=0` e a cota `10^13` foi
+integrada pela PR #192, merge `654dbb0bd7bb7d400cf0c4cab61bea1873995db4`. A auditoria
 fail-closed das duas cotas Gamma, da cota `10^13` e do wrapper `10^100`
 aceitou apenas `propext`, `Classical.choice` e `Quot.sound`. Logs, hashes e
 detalhes estão em `evidence/rational-boxes/analytic-bounds-10pow13-validation.md`.

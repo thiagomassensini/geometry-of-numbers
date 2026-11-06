@@ -1,0 +1,3 @@
+'CarrySigmaObstruction.c5_arctan_partial_enclosure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5_pi_rational_enclosure' depends on axioms: [propext, Classical.choice, Quot.sound]
+AUDIT_BUILD_EXIT=0

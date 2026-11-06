@@ -1,0 +1,75 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiBounds.lean:21:12: error(lean.dependsOnNoncomputable): failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Real.instDivInvMonoid', which is 'noncomputable'
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiBounds.lean:34:4: error: Tactic `apply` failed: could not unify the conclusion of `@inv_le_inv₀`
+  ?a⁻¹ ≤ ?b⁻¹ ↔ ?b ≤ ?a
+with the goal
+  (2 * ↑n + 1)⁻¹ ≤ (2 * ↑m + 1)⁻¹
+
+Note: The full type of `@inv_le_inv₀` is
+  ∀ {G₀ : Type ?u.145} [inst : GroupWithZero G₀] [inst_1 : PartialOrder G₀] [PosMulReflectLT G₀] [MulPosReflectLT G₀]
+    {a b : G₀}, 0 < a → 0 < b → (a⁻¹ ≤ b⁻¹ ↔ b ≤ a)
+
+q : ℝ
+hq0 : 0 ≤ q
+hq1 : q ≤ 1
+m n : ℕ
+hmn : m ≤ n
+he : 2 * m + 1 ≤ 2 * n + 1
+hpow : q ^ (2 * n + 1) ≤ q ^ (2 * m + 1)
+⊢ (2 * ↑n + 1)⁻¹ ≤ (2 * ↑m + 1)⁻¹
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiBounds.lean:44:4: error: failed to prove positivity/nonnegativity/nonzeroness
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiBounds.lean:47:40: error: omega could not prove the goal:
+No usable constraints found. You may need to unfold definitions so `omega` can see linear arithmetic facts about `Nat` and `Int`, which may also involve multiplication, division, and modular remainder by constants.
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiBounds.lean:48:4: error: Type mismatch
+  div_le_self hq0 hn
+has type
+  q / (2 * ↑n + 1) ≤ q
+but is expected to have type
+  (q ^ 2) ^ n * q ^ 1 / (2 * ↑n + 1) ≤ q * (q ^ 2) ^ n
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiBounds.lean:54:23: error: This simp argument is unused:
+  Nat.cast_add
+
+Hint: Omit it from the simp argument list.
+  simp [c5AtanPartial, Nat.cast_a̵d̵d̵,̵ ̵N̵a̵t̵.̵c̵a̵s̵t̵_̵mul, Nat.cast_ofNat]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiBounds.lean:54:37: error: This simp argument is unused:
+  Nat.cast_mul
+
+Hint: Omit it from the simp argument list.
+  simp [c5AtanPartial, Nat.cast_add, Nat.cast_m̵u̵l̵,̵ ̵N̵a̵t̵.̵c̵a̵s̵t̵_̵ofNat]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiBounds.lean:54:51: error: This simp argument is unused:
+  Nat.cast_ofNat
+
+Hint: Omit it from the simp argument list.
+  simp [c5AtanPartial, Nat.cast_add, Nat.cast_mul,̵ ̵N̵a̵t̵.̵c̵a̵s̵t̵_̵o̵f̵N̵a̵t̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiBounds.lean:76:4: error: Type mismatch: After simplification, term
+  c5AtanPartial_cast N q
+ has type
+  ↑(c5AtanPartial N q) = ∑ n ∈ range N, (-1) ^ n * ↑q ^ (2 * n + 1) / (2 * ↑n + 1)
+but is expected to have type
+  ↑(c5AtanPartial N q) = ∑ x ∈ range N, (-1) ^ x * (↑q ^ (2 * x + 1) / (2 * ↑x + 1))
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5PiBounds.lean:81:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑(c5AtanRemainder N q)
+in the target expression
+  |Real.arctan ↑q - ↑(c5AtanPartial N q)| ≤ f N
+
+N : ℕ
+q : ℚ
+hq0 : 0 ≤ q
+hq1 : q < 1
+hq0' : 0 ≤ ↑q
+hq1' : ↑q < 1
+hnorm : ‖↑q‖ < 1
+f : ℕ → ℝ := c5AtanTerm ↑q
+hsum : HasSum (fun n => (-1) ^ n * f n) (Real.arctan ↑q)
+hanti : Antitone f
+hfs : Summable f
+herr : |Real.arctan ↑q - ↑(c5AtanPartial N q)| ≤ f N
+hpartial : ↑(c5AtanPartial N q) = ∑ n ∈ range N, (-1) ^ n * f n
+hrem : ↑(c5AtanRemainder N q) = f N
+⊢ |Real.arctan ↑q - ↑(c5AtanPartial N q)| ≤ ↑(c5AtanRemainder N q)
+BUILD_EXIT=1

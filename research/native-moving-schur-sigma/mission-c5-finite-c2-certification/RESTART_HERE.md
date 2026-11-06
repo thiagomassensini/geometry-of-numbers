@@ -3,17 +3,22 @@
 ## Estado mais recente — 2026-11-06
 
 A PR #191 integrou a cota `10^100` no merge
-`88a52ba3a6bda7a78b8317d892b6f7bc640c863f`. Depois, `SigmaC5AnalyticBounds.lean`
-provou localmente o majorante mais forte
-`displacedProductC_norm_le_10pow13_on_ball_39` para a fonte original no disco
-aberto de raio `39/100`. Build limpo Lean 4.32 e auditoria fail-closed de
-quatro raízes passaram. O contorno de Cauchy usa raio `38/100`, e a análise
-racional exata com o majorante `10^13` dá erro `<10^-501`. Detalhes, hashes e
-limites estão em `evidence/rational-boxes/analytic-bounds-10pow13-validation.md`.
+`88a52ba3a6bda7a78b8317d892b6f7bc640c863f`; a PR #192 integrou a cota mais
+forte `10^13`, merge `654dbb0bd7bb7d400cf0c4cab61bea1873995db4`. O contorno de
+Cauchy usa raio `38/100`, e a análise racional exata com esse majorante dá
+erro `<10^-501`. Detalhes, hashes e logs estão em
+`evidence/rational-boxes/analytic-bounds-10pow13-validation.md`.
+
+O último incremento local é `SigmaC5PiBounds.lean`: build limpo e auditoria
+Lean 4.32 passaram para a faixa racional exata de π derivada da série de
+`arctan` e da identidade de Machin. A trilha reproduzível está em
+`evidence/rational-boxes/c5-pi-bounds-validation.md`. Antes de retomar, confira
+se esse incremento já foi integrado; no snapshot atual, ainda não.
 
 O4/C5 continua incompleta: certificar a avaliação da fonte original nos 129
 nós e provar a inclusão dos coeficientes nas caixas O3. Não refazer C1B, C2,
-C3, C4, O3, o domínio analítico, a ponte Gamma ou os limites de pesos.
+C3, C4, O3, o domínio analítico, a ponte Gamma, os limites de pesos ou a faixa
+racional de π já provada.
 
 ### Retomar o build da cota analítica
 
@@ -61,7 +66,7 @@ O comando `compile_sigma_pade.sh` verifica a revisão limpa do Carry
 para `d=99/2000` e `d=1/10`. A validação segue incompleta até que as caixas
 racionais contenham os coeficientes originais.
 
-## Estado atual — 2026-11-06
+## Snapshot histórico — início do trabalho C5, antes das PRs #189–#192
 
 - A `origin/main` consultada está em `3513a3b3854b105419d4f2cef245efac7ce88ba0`.
 - A prova do domínio analítico foi integrada pela PR #189: commit de prova
