@@ -1,0 +1,2 @@
+845f510ecb40e1045cb6e507e0180dfb58bfd5db77476cfda9d40feecfacf56c  /home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5SourceAnalytic.lean
+e8862230bdfb34b763f0791741a859b7d297b926453e408867044365e2672fb3  /home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/.lake/build/research/native-moving-schur-sigma/c5-source-analytic-clean-retry1-20261106/SigmaC5SourceAnalytic.olean

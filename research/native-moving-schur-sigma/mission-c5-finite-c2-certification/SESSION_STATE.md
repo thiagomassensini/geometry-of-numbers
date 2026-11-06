@@ -57,6 +57,30 @@ O checkpoint reprodutível dessa auditoria foi integrado pela PR #169; merge na 
 
 **Publicação do grau um:** PR #185, merge `c840ba35711ac8f938fa24c191f2af60f505480d`; validação limpa e auditoria de 21 raízes em `evidence/rational-boxes/degree1-weight-bound-validation.md`. O4 continua aberta.
 
+## Checkpoint O4 — domínio analítico da fonte deslocada (2026-11-06)
+
+**PROVADO localmente em Lean 4.32:** `SigmaC5SourceAnalytic.lean` estabelece
+`displacedProductC_analyticOnNhd_ball` para `|d|≤1/10` e disco aberto de raio
+`2/5`, com especializações em `99/2000` e `1/10`. A prova transporta os dois
+argumentos da característica completada original ao domínio de altura do
+Carry; não muda a fonte C2.
+
+Build limpo com `warningAsError=true` passou. O checker fail-closed auditou as
+quatro declarações públicas e aceitou somente `propext`, `Classical.choice` e
+`Quot.sound`. Fonte, log da tentativa inicial com cache errado, log da execução
+que passou, saída do checker e hashes estão em
+`evidence/rational-boxes/source-analytic-domain-validation.md`.
+
+Este resultado prova apenas analiticidade no domínio. **Não** estabelece a
+cota de módulo necessária à interpolação, não certifica os valores nos 129 nós
+e não prova as inclusões dos coeficientes nas caixas. A obrigação O4 continua
+aberta. Próxima obrigação: provar uma cota numérica explícita a partir da
+completação C2 original, tratando os cancelamentos nos pontos `s=0` e `s=1`.
+
+**Git neste checkpoint:** branch local `codex/c5-source-analytic-domain-20261106`,
+base `origin/main` `f5d96186348bd1dde2a49061ba68421d3c7fa36d`; commit e PR ainda
+pendentes.
+
 ## Validação reproduzida
 
 - A: `d=.0495`, `L=0`, `N=1024`, `r/R=.30/.40`: `+++++++++++-`.

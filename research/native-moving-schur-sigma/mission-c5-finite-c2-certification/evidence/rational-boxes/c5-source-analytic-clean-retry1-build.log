@@ -1,0 +1,11 @@
+'CarrySigmaObstruction.displacedProductC_shiftedFactors_mem_completedNativeHeightDomain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.displacedProductC_analyticOnNhd_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.displacedProductC_analyticOnNhd_ball_00495' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.displacedProductC_analyticOnNhd_ball_01' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BUILD_EXIT=0

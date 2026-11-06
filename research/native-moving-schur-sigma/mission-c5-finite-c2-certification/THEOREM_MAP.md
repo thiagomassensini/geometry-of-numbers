@@ -63,6 +63,24 @@ Os sinais condicionais estão provados em Lean por O3. Ainda falta provar que os
 
 ## O4 — infraestrutura formal encontrada; inclusão da fonte ainda ABERTA
 
+### Domínio analítico da fonte deslocada — PROVADO localmente
+
+Arquivo: `research/native-moving-schur-sigma/SigmaC5SourceAnalytic.lean`.
+
+| Declaração | Status |
+|---|---|
+| `displacedProductC_shiftedFactors_mem_completedNativeHeightDomain` | PROVADO: se `|d|≤1/10` e `|z|<2/5`, ambos os fatores da fonte deslocada estão no domínio analítico de altura original. |
+| `displacedProductC_analyticOnNhd_ball` | PROVADO: o produto deslocado original é analítico no disco aberto de raio `2/5`. |
+| `displacedProductC_analyticOnNhd_ball_00495` | PROVADO para `d=99/2000`. |
+| `displacedProductC_analyticOnNhd_ball_01` | PROVADO para `d=1/10`. |
+
+Build limpo e auditoria de quatro declarações passaram em Lean 4.32, com
+`warningAsError=true` e apenas axiomas padrão. A evidência está em
+`evidence/rational-boxes/source-analytic-domain-validation.md`.
+**Limite:** nenhuma cota numérica para o módulo foi provada por esta ponte.
+O4 ainda requer o majorante explícito, as avaliações racionais nos nós e as
+inclusões dos coeficientes originais nas caixas.
+
 Fontes existentes e recompiladas nesta etapa:
 
 - `research/native-moving-schur-sigma/height50-certified/lean/ZetaLean/Rigor.lean`
