@@ -1,12 +1,12 @@
 # Estado da missão — negatividade transversal all-order
 
 **Atualizado:** 2026-11-06
-**Estado:** C0, C1, C1B, C2 e C3 estão concluídos e integrados à `main`. A prova e a auditoria locais de C4 também estão concluídas; falta publicar e integrar esse checkpoint. A lei quantitativa distância × profundidade e os novos cadernos continuam adiados.
+**Estado:** C0, C1, C1B, C2, C3 e C4 estão concluídos e integrados à `main`. A lei quantitativa distância × profundidade e os novos cadernos continuam adiados.
 
 ## Base integrada
 
 - Repositório: `thiagomassensini/geometry-of-numbers`.
-- Base de código de C4: `ed85c42272798604c54454325e138b8c0680c7ca` (após PR #161 de atualização do estado). A prova C3 está integrada desde `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8` (PR #159); o registro consolidado anterior foi publicado pela PR #160, merge `29f8ceec1a593158ce10ade2f870b263d2d9c174`.
+- Base atual da `main`: `799a0e06af5469e9fe0665943adbb1cb29d0b6f8`, merge da PR #162 (C4). C3 está integrada desde `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8` (PR #159); o registro consolidado anterior foi publicado pela PR #160, merge `29f8ceec1a593158ce10ade2f870b263d2d9c174`.
 - C0 foi integrado pela PR #153, merge `2a3e89987beeb05d29b2e71d8b8ed6851383ccaa`.
 - C1 foi integrado pela PR #154, merge `b7a8a0eda7230c02f80dc63b41ab4cc9f9cf1d1e`; a CI hospedada passou.
 - **C1B está integrado** pela PR #155, merge `0586e238441096ecd2248e3f14bdac3a832af427`. Não há publicação pendente desse checkpoint.
@@ -44,9 +44,9 @@ Manter `completedSigmaLogJet` e `sigmaPadeD` originais, conservando o resto. Nã
 
 Integrado pela PR #159, commit de prova `35dc14f13bd314639ce0c65daedf32b20f298667`, merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`. `exists_even_sigma_negative_directions_from_pade` usa `p=2i`; `exists_odd_sigma_negative_directions_from_pade` usa `p=2i+1`. Cada torre fornece um vetor negativo em todas as dimensões `M≥i₀+2`, transportado pela persistência de C1B. Build, auditorias e checkpoint estão em `evidence/c3-parity/`. O GitHub não retornou status checks para a PR.
 
-## C4 — prova local concluída; integração pendente
+## C4 — concluído e integrado
 
-Em Lean 4.32, `SigmaSourceBezout.lean` constrói a série-fonte pelos coeficientes pares da densidade original e prova localmente `D_d(t)=C_d(t²)`. A recorrência formal é `C_d · H_d = -C_d′`, com `H_d(n)=2*completedSigmaLogJet d n`; o fator dois vem da identidade logarítmica original e permanece explícito. O termo constante positivo de `C_d` fornece a convolução triangular invertível, e a congruência de Bézout se reduz exatamente a `2 • sigmaMatrix` original. A equivalência PSD e a auditoria de axiomas passaram localmente; a publicação está em preparação. Os quatro termos genéricos head/tail continuam separados e sem hipóteses de sinal. Evidências: `evidence/c4-source-bezout/`.
+Integrado pela PR #162, commit `31d3df33d4524d9809c75ba4481b1fa9f57a98bc`, merge `799a0e06af5469e9fe0665943adbb1cb29d0b6f8`. Em Lean 4.32, `SigmaSourceBezout.lean` constrói a série-fonte pelos coeficientes pares da densidade original e prova localmente `D_d(t)=C_d(t²)`. A recorrência formal é `C_d · H_d = -C_d′`, com `H_d(n)=2*completedSigmaLogJet d n`; o fator dois vem da identidade logarítmica original e permanece explícito. O termo constante positivo de `C_d` fornece a convolução triangular invertível, e a congruência de Bézout se reduz exatamente a `2 • sigmaMatrix` original. A equivalência PSD e a auditoria de axiomas passaram localmente. Os quatro termos genéricos head/tail continuam separados e sem hipóteses de sinal. Evidências: `evidence/c4-source-bezout/`; o GitHub não apresentou status checks.
 
 ## Checkpoint da tentativa Lean 4.35
 
@@ -54,4 +54,4 @@ O checkpoint `evidence/lean435-validation-incomplete/` preserva overlays tempor�
 
 ## Rotina de entrega
 
-Para cada checkpoint: prova → compilação → auditoria de axiomas → checkpoint durável → push → PR → merge na `main` → atualização deste estado. C2/C3 estão encerrados. C4 aguarda publicação e integração; a lei quantitativa distância × profundidade e os novos cadernos permanecem adiados.
+Para cada checkpoint: prova → compilação → auditoria de axiomas → checkpoint durável → push → PR → merge na `main` → atualização deste estado. C0–C4 estão encerrados. A lei quantitativa distância × profundidade e os novos cadernos permanecem adiados.

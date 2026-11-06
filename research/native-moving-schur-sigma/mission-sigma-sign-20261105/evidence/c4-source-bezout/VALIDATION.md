@@ -1,7 +1,8 @@
 # C4 — fonte deslocada e Bézout
 
-**Estado:** prova e auditoria locais concluídas em Lean 4.32; checkpoint pronto para publicação.
-Base local: `ed85c42272798604c54454325e138b8c0680c7ca`, com C0–C3 integrados.
+**Estado:** integrado pela PR #162, commit `31d3df33d4524d9809c75ba4481b1fa9f57a98bc`, merge
+`799a0e06af5469e9fe0665943adbb1cb29d0b6f8`. A compilação foi feita sobre a base
+`ed85c42272798604c54454325e138b8c0680c7ca`, que já continha C0–C3.
 
 ## Resultado formalizado
 
@@ -42,6 +43,7 @@ nem lhes atribui sinais.
   dos jets e do produto deslocado originais. A auditoria rejeitaria `sorryAx` ou axioma próprio.
 - A execução ocorreu com aproximadamente 60 GiB disponíveis; o limite de 30 GiB do script foi
   mantido.
+- O GitHub não apresentou status checks hospedados para a PR #162.
 - Sem pressupostos de sinal para os jets, sem redefinição de `completedSigmaLogJet` e sem
   alteração do produto deslocado original.
 

@@ -1,6 +1,6 @@
 # Relatório consolidado — missão de negatividade transversal sigma
 
-**Atualizado em 2026-11-06.** C0, C1, C1B, C2 e C3 estão integrados à `main`; a prova C4 passou compilação e auditoria local e aguarda publicação.
+**Atualizado em 2026-11-06.** C0, C1, C1B, C2, C3 e C4 estão integrados à `main`.
 
 ## Resultados formais
 
@@ -36,7 +36,7 @@ O lema `sigmaMatrix_prefix_submatrix` identifica exatamente a seção antiga com
 | C1B — persistência em dimensões maiores | Integrado pela PR #155; merge `0586e238441096ecd2248e3f14bdac3a832af427` | `evidence/c1b-focused-build.log`; 109 relatórios de axiomas padrão |
 | C2 — menores originais eventualmente negativos em `d=1/5` | Integrado pela PR #157; merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949` | `evidence/c2-eventual-negativity/`; 72 relatórios externos, 17 de integração e auditoria transitiva de 124 raízes |
 | C3 — torres par e ímpar | Integrado pela PR #159; merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8` | Commit de prova `35dc14f13bd314639ce0c65daedf32b20f298667`; 4 relatórios C3, 133 raízes transitivas e 70.861 dependências em `evidence/c3-parity/` |
-| C4 — fonte deslocada e Bézout | Prova e auditoria locais concluídas; PR pendente | `evidence/c4-source-bezout/`; fator 2 explícito e `sigmaMatrix` original |
+| C4 — fonte deslocada e Bézout | Integrado pela PR #162; merge `799a0e06af5469e9fe0665943adbb1cb29d0b6f8` | `evidence/c4-source-bezout/`; fator 2 explícito e `sigmaMatrix` original |
 
 ## Compilação, auditoria e proveniência
 
@@ -47,7 +47,7 @@ O lema `sigmaMatrix_prefix_submatrix` identifica exatamente a seção antiga com
 - C1B já está publicado pela PR #155. O checkpoint da validação incompleta 4.35 e os registros atualizados foram publicados pela PR #156, merge `301c36c710c87dc5fc43db9c26aa90c005e9e5a6`.
 - C2 foi integrado pela PR #157; o GitHub não retornou status checks para essa PR. O estado consolidado da missão foi atualizado após o merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`.
 - C3 foi integrado pela PR #159; o GitHub não retornou status checks. O merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8` conclui as prioridades C2/C3; evidências de build e auditoria estão em `evidence/c3-parity/`.
-- C4 preserva o produto deslocado original e prova a recorrência formal `C_d · H_d=-C_d′`, com `H_d(n)=2*completedSigmaLogJet d n`. Sua forma de Hankel é `2 • sigmaMatrix`; positividade do termo constante dá a equivalência PSD do bloco Bézout com a matriz sigma original. O build limpo e a auditoria transitiva local passaram; evidências em `evidence/c4-source-bezout/`.
+- C4 foi integrado pela PR #162, commit `31d3df33d4524d9809c75ba4481b1fa9f57a98bc`, merge `799a0e06af5469e9fe0665943adbb1cb29d0b6f8`. Preserva o produto deslocado original e prova a recorrência formal `C_d · H_d=-C_d′`, com `H_d(n)=2*completedSigmaLogJet d n`. Sua forma de Hankel é `2 • sigmaMatrix`; positividade do termo constante dá a equivalência PSD do bloco Bézout com a matriz sigma original. O build limpo e a auditoria transitiva local passaram; o GitHub não apresentou status checks. Evidências em `evidence/c4-source-bezout/`.
 - A compilação local respeitou o gate do script de 30 GiB; após o aumento da VM havia cerca de 60 GiB disponíveis.
 
 ## Limites

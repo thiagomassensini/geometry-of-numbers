@@ -14,4 +14,4 @@
 
 ## Adendo 2026-11-06 — C4
 
-C2/C3 permanecem concluídos e integrados. A etapa seguinte, C4, agora tem prova e auditoria locais em Lean 4.32: `D_d(t)=C_d(t²)`, `C_d·H_d=-C_d′` com `H_d(n)=2*completedSigmaLogJet d n`, e congruência de Bézout à `2 • sigmaMatrix` original. A publicação e integração desse checkpoint estão pendentes. Evidências em `evidence/c4-source-bezout/`.
+C2/C3 permanecem concluídos e integrados. C4 foi integrado pela PR #162, commit `31d3df33d4524d9809c75ba4481b1fa9f57a98bc`, merge `799a0e06af5469e9fe0665943adbb1cb29d0b6f8`. A prova e auditoria Lean 4.32 estabelecem `D_d(t)=C_d(t²)`, `C_d·H_d=-C_d′` com `H_d(n)=2*completedSigmaLogJet d n`, e congruência de Bézout à `2 • sigmaMatrix` original. Evidências em `evidence/c4-source-bezout/`; não houve status checks hospedados.

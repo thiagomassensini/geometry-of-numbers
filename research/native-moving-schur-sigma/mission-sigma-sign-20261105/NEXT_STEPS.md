@@ -18,10 +18,8 @@
 
 A tentativa está preservada como evidência incompleta em `evidence/lean435-validation-incomplete/`. Retomar apenas se a rota 4.32 revelar um bloqueio concreto. O ponto de parada, as declarações e os comandos estão registrados no README desse checkpoint.
 
-## C4 — prova e auditoria concluídas localmente
+## C4 — concluído e integrado
 
-`SigmaSourceBezout.lean` prova a descida local do produto deslocado para `u=t²`, a recorrência formal `C_d · H_d=-C_d′` com `H_d(n)=2*completedSigmaLogJet d n`, e a congruência de Bézout com `2 • sigmaMatrix` original. A auditoria de axiomas passou; os logs, pins e hashes estão em `evidence/c4-source-bezout/`.
-
-Próxima ação: versionar somente a prova C4, seu auditor e as evidências/documentação C4; publicar branch e PR; integrar na `main` após os gates; atualizar `SESSION_STATE.md` e este registro com o merge.
+Integrado pela PR #162, commit `31d3df33d4524d9809c75ba4481b1fa9f57a98bc`, merge `799a0e06af5469e9fe0665943adbb1cb29d0b6f8`. `SigmaSourceBezout.lean` prova a descida local do produto deslocado para `u=t²`, a recorrência formal `C_d · H_d=-C_d′` com `H_d(n)=2*completedSigmaLogJet d n`, e a congruência de Bézout com `2 • sigmaMatrix` original. A auditoria de axiomas passou; os logs, pins e hashes estão em `evidence/c4-source-bezout/`. Não houve status checks hospedados.
 
 A lei quantitativa distância × profundidade e os novos cadernos continuam adiados. Não foi necessário calcular a primeira profundidade de falha para provar a negatividade eventual de C2.
