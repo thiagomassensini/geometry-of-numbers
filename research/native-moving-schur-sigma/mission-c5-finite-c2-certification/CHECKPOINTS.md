@@ -59,6 +59,7 @@ O checkpoint de build e auditoria da O3 está em `evidence/rational-boxes/`. Ap�
 - Build limpo em Lean 4.32, `warningAsError=true`; comandos, log de build, auditoria e hashes em `evidence/rational-boxes/`.
 - A main na base desta prova contém o update de estado pós-PR #169: PR #170, merge `46f5c52037cecd01b6fee43005db57539a3e1af0`.
 - A ponte é um subpasso: ainda falta uma caixa racional estreita para `gammaFinite` em cada caixa do contorno, seguida da composição Hurwitz/Cauchy. Nenhuma hipótese `sigmaC00495SourceBoxes` ou `sigmaC01SourceBoxes` foi provada nesta etapa.
+- PR #171 integrou a prova e a evidência; merge na `main`: `a585de1d4df0b093ef4221cf576a9a87a057652a`.
 
 ## 2026-11-06 — checkpoint O4 publicado
 

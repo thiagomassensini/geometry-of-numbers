@@ -4,7 +4,7 @@
 **Status:** inventário, reprodução intervalar, transporte algébrico e O3 racional formal concluídos e integrados; a ponte analítica Gamma→expressão finita foi provada localmente em O4; a caixa racional da expressão finita e a inclusão da fonte C2 seguem pendentes.
 **Branch C5 de trabalho:** `codex/c5-finite-c2-certification-20261106`; Fase 1 integrada pela PR #165 e O3 pela PR #167.
 **Main geometry no início da auditoria O4:** `1bc7318915c3e625ad228c89ff8c300cb07e52c5` (merge da PR #168).
-**Último merge geometry:** PR #170, atualização do estado pós-checkpoint O4, `46f5c52037cecd01b6fee43005db57539a3e1af0`.
+**Último merge geometry:** PR #171, ponte Euler-Gamma para avaliador finito, `a585de1d4df0b093ef4221cf576a9a87a057652a`.
 **Main geometry na base da prova Euler-Gamma:** `46f5c52037cecd01b6fee43005db57539a3e1af0` (merge da PR #170).
 **Repositório geometry no checkout de pesquisa original:** branch `agent/native-moving-schur-sigma`, HEAD `9392ebac9930f5d11c56f595556080e8ab1de809`, com logs/caches não rastreados preservados.
 **Repositório Momentos:** checkout local `main` em `05c9314d59306383baa55ed3be80ab950e799e97`; branch remota de pesquisa `origin/research/sigma-pade-dimension-depth-20261104` em `68c9b5f0a196289e28a8e5586146707d27df6b75`. PR #2 está OPEN e não foi integrada.
@@ -34,7 +34,7 @@
 
 O checkpoint reprodutível dessa auditoria foi integrado pela PR #169; merge na main `75782fb8b7fb00bd273bd99f78c337f98439e934`. Os logs, comandos, hashes de fontes e `.olean` agora estão rastreados em `evidence/rational-boxes/`.
 
-**Subpasso Gamma provado localmente:** `SigmaC5Gamma.gamma_finite_512_error` demonstra `‖Complex.Gamma z - gammaFinite 512 81 z‖ ≤ 10⁻³²` para `1495/20000 ≤ Re(z) ≤ 1`. O erro preserva a cauda da integral de Euler; build Lean 4.32 e auditoria de oito raízes em `evidence/rational-boxes/`.
+**Subpasso Gamma integrado pela PR #171:** `SigmaC5Gamma.gamma_finite_512_error` demonstra `‖Complex.Gamma z - gammaFinite 512 81 z‖ ≤ 10⁻³²` para `1495/20000 ≤ Re(z) ≤ 1`. O erro preserva a cauda da integral de Euler; build Lean 4.32 e auditoria de oito raízes em `evidence/rational-boxes/`. Merge: `a585de1d4df0b093ef4221cf576a9a87a057652a`.
 
 **Primeiro lema O4 ainda ausente:** inclusão em caixas racionais estreitas da expressão `gammaFinite 512 81 z` para os pontos do contorno. A soma finita tem cancelamentos grandes; a rota seguinte é a expansão Taylor racional em torno do centro Cauchy, com resto certificado. Depois vêm a composição com Hurwitz e Cauchy/Fourier e as duas proposições de inclusão das caixas.
 
