@@ -1,0 +1,58 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5ZetaBernoulliBounds.lean:26:42: error: linarith failed to find a contradiction
+k : ℕ
+hk : 2 ≤ k
+hk1 : 1 < k
+hbase : Summable fun n => 1 / ↑n ^ k
+hsum : Summable fun n => 1 / (↑n + 1) ^ k
+x : ℝ
+hx : x ∈ Set.Ici 1
+y : ℝ
+hy : y ∈ Set.Ici 1
+hxy : x ≤ y
+a✝ : x ≤ 0
+⊢ False
+failed
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5ZetaBernoulliBounds.lean:26:109: error: No goals to be solved
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5ZetaBernoulliBounds.lean:26:62: error: unsolved goals
+k : ℕ
+hk : 2 ≤ k
+hk1 : 1 < k
+hbase : Summable fun n => 1 / ↑n ^ k
+hsum : Summable fun n => 1 / (↑n + 1) ^ k
+x : ℝ
+hx : x ∈ Set.Ici 1
+y : ℝ
+hy : y ∈ Set.Ici 1
+hxy : x ≤ y
+this : 2 ≤ ↑k
+⊢ -↑k ≤ 0
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5ZetaBernoulliBounds.lean:28:4: error(lean.unknownIdentifier): Unknown identifier `integrableOn_Ioi_rpow_of_lt`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5ZetaBernoulliBounds.lean:31:41: error: linarith failed to find a contradiction
+k : ℕ
+hk : 2 ≤ k
+hk1 : 1 < k
+hbase : Summable fun n => 1 / ↑n ^ k
+hsum : Summable fun n => 1 / (↑n + 1) ^ k
+hanti : AntitoneOn (fun t => t ^ (-↑k)) (Set.Ici 1)
+hintg : MeasureTheory.IntegrableOn (fun t => t ^ (-↑k)) (Set.Ioi 1) MeasureTheory.volume
+t : ℝ
+ht : t ∈ Set.Ioi 1
+a✝ : t ≤ 0
+⊢ False
+failed
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5ZetaBernoulliBounds.lean:32:16: error(lean.unknownIdentifier): Unknown constant `AntitoneOn.tsum_comp_add_le_integral`
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5ZetaBernoulliBounds.lean:17:43: error: unsolved goals
+k : ℕ
+hk : 2 ≤ k
+hk1 : 1 < k
+hbase : Summable fun n => 1 / ↑n ^ k
+hsum : Summable fun n => 1 / (↑n + 1) ^ k
+hanti : AntitoneOn (fun t => t ^ (-↑k)) (Set.Ici 1)
+hintg : MeasureTheory.IntegrableOn (fun t => t ^ (-↑k)) (Set.Ioi 1) MeasureTheory.volume
+hnonneg : ∀ t ∈ Set.Ioi 1, 0 ≤ t ^ (-↑k)
+⊢ ∑' (n : ℕ), 1 / (↑n + 1) ^ k ≤ 2
+/home/thlinux/worktrees/geometry-of-numbers-c5-weight-degree-2-14-20261106/research/native-moving-schur-sigma/SigmaC5ZetaBernoulliBounds.lean:57:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
