@@ -231,7 +231,9 @@ o módulo prova a reconstrução exata para polinômios de grau menor que 129 e 
 expressão de seus coeficientes como somas ponderadas. Também prova que a soma
 absoluta do peso escalado de grau zero é exatamente `1`. Os limites numéricos
 dos pesos dos graus `1..14` calculados com `fractions.Fraction` ainda não foram
-formalizados.
+formalizados. Para grau um, a derivada das bases tem expressão finita formal;
+uma tentativa de computar a desigualdade diretamente excedeu o limite de passos
+de `simp`, com erro preservado em `interpolation-weight-degree1-prototype.log`.
 Em particular, o limite analítico `|completedSigmaDensity d t|≤10^100` em
 `|t|≤2/5` continua sendo uma obrigação, não uma hipótese provada.
 
@@ -243,6 +245,8 @@ define os nós `j²` para `0≤j≤128`, prova sua injetividade e os teoremas
 `c5InterpolationPolynomial_coeff_of_degree_lt`. Os pesos escalados aparecem
 como `c5InterpolationWeight` e `c5InterpolationWeightSum`;
 `c5InterpolationWeightSum_zero_eq_one` fecha o caso de grau zero.
+`c5Coeff_one_eq_derivative_eval_zero` e
+`c5LagrangeBasis_derivative_eval_zero` formalizam o caso estrutural de grau um.
 
 Build limpo, executado a partir da raiz do checkout geometry C5:
 
@@ -250,7 +254,7 @@ Build limpo, executado a partir da raiz do checkout geometry C5:
 C5_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105
 C5_CARRY_ROOT=/home/thlinux/worktrees/carry-sigma-c2-pinned-045369
 C5_SOURCE_ROOT=$PWD/research/native-moving-schur-sigma
-C5_OUTPUT=$PWD/.lake/build/research/native-moving-schur-sigma/c5-weight-clean-20261106b
+C5_OUTPUT=$PWD/.lake/build/research/native-moving-schur-sigma/c5-weight-degree1-structural-clean-20261106
 C5_LEAN_BIN=$(cd "$C5_REFERENCE_ROOT" && elan which lean)
 SIGMA_REFERENCE_ROOT=$C5_REFERENCE_ROOT
 CARRY_LEAN_ROOT=$C5_CARRY_ROOT
@@ -275,6 +279,7 @@ python3 "$C5_SOURCE_ROOT/check_c5_interpolation_axioms.py" \
   > "$C5_EVIDENCE/interpolation-audit-check.log"
 ```
 
-O build saiu sem warnings nem erros. Nove raízes foram auditadas, todas com
-apenas `propext`, `Classical.choice` e `Quot.sound`; o checker aceitou as nove.
+O build saiu sem warnings nem erros. Quatorze raízes foram auditadas, todas com
+apenas `propext`, `Classical.choice` e `Quot.sound`; o checker aceitou as
+quatorze.
 As fontes e os `.olean` têm hashes em `source-and-olean-sha256.txt`.

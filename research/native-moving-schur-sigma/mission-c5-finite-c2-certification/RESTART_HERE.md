@@ -8,19 +8,17 @@
 
 **ÚLTIMA PROVA PUBLICADA:** PR #179, soma exata do peso escalado de grau zero, merge `f6a2298b92cbfddad77abe512d73387efea4e870`
 
-**REGISTRO DE ESTADO ANTERIOR À PR #177:** PR #176, merge `ac84c9302ae608e39c742f856ad361921653f268`
+**ÚLTIMO CHECKPOINT DE ESTADO:** PR #180, merge `de95637d38d5e6d5488342cd5141b88233be6eb7`
 
-**CHECKPOINT DE ESTADO ANTERIOR À PR #179:** PR #178, merge `7ad7e29195790eedda01645e71e5c52edf1b4e6b`
+**MAIN após PR #180:** `de95637d38d5e6d5488342cd5141b88233be6eb7`
 
-**MAIN após PR #179:** `f6a2298b92cbfddad77abe512d73387efea4e870`
+**BRANCH C5:** `codex/c5-finite-c2-certification-20261106`, último commit remoto `85f66341bdfa0f660ce712f351b9a1232cc11f44`
 
-**BRANCH C5:** `codex/c5-finite-c2-certification-20261106`, commit de prova remoto `963dbdb035714ddf6d61f5ad329769de48c77354`
-
-**C5 PRs:** #165–#179 estão integradas; a PR #2 de Momentos permanece aberta e não foi integrada.
+**C5 PRs:** #165–#180 estão integradas; a PR #2 de Momentos permanece aberta e não foi integrada.
 
 ## Estado matemático
 
-**PROVADO:** a recorrência polinomial sem divisão, a identidade exata com `sigmaPadeD` original, os sinais condicionais de O3 e a aproximação Euler-Gamma com erro `10⁻²⁵⁹` estão compilados em Lean 4.32. A identidade de Lagrange em 129 nós recupera exatamente polinômios racionais de grau menor que 129. A soma absoluta dos pesos escalados para o coeficiente de grau zero é exatamente `1`.
+**PROVADO:** a recorrência polinomial sem divisão, a identidade exata com `sigmaPadeD` original, os sinais condicionais de O3 e a aproximação Euler-Gamma com erro `10⁻²⁵⁹` estão compilados em Lean 4.32. A identidade de Lagrange em 129 nós recupera exatamente polinômios racionais de grau menor que 129. A soma absoluta dos pesos escalados para grau zero é exatamente `1`; para grau um, o coeficiente de cada base está expresso como a derivada avaliada em zero.
 
 **CONDICIONAL:** os padrões de sinais finais em `d=99/2000` e `d=1/10` ainda dependem de `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
 
@@ -28,11 +26,11 @@
 
 ## Próximas ações
 
-1. Provar limites racionais exatos para `c5InterpolationWeightSum n` nos graus `1≤n≤14`, conferindo os limites exploratórios em `evidence/rational-boxes/rational-interpolation-analysis.log`.
+1. Provar limites racionais exatos para `c5InterpolationWeightSum n` nos graus `1≤n≤14`. Para grau um, usar a fórmula de derivada e evitar expandir as 129 bases de uma vez; a tentativa custosa e seu erro estão em `evidence/rational-boxes/interpolation-weight-degree1-prototype.log`.
 2. Provar uma cota uniforme da extensão analítica da densidade no disco de raio `2/5`.
 3. Certificar as avaliações racionais da fonte mantendo a cabeça C2, a cauda exponencial exata e a completação original; compor então com Hurwitz/Cauchy e as caixas O3.
 
-Build Lean 4.32 e auditoria de axiomas da identidade algébrica estão em `evidence/rational-boxes/c5-interpolation-build.log`, `interpolation-audit.log` e `interpolation-audit-check.log`. O módulo novo é `research/native-moving-schur-sigma/SigmaRationalInterpolation.lean`; os comandos reproduzíveis estão em `evidence/rational-boxes/VALIDATION.md`.
+Build Lean 4.32 e auditoria de axiomas da identidade algébrica estão em `evidence/rational-boxes/c5-interpolation-build.log`, `interpolation-audit.log` e `interpolation-audit-check.log`. O módulo é `research/native-moving-schur-sigma/SigmaRationalInterpolation.lean`; os comandos reproduzíveis estão em `evidence/rational-boxes/VALIDATION.md`.
 
 ## Não repetir
 
