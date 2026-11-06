@@ -30,3 +30,9 @@ e9748c51fd8007a83d5e2624ed77a29b83a5ba60fdc66024ba3f1ca64c9d63ef  .lake/build/re
 
 Existing formal Gamma product route (source only; not yet built in this task):
 bd2cfd658e3d241ea062e8a4f2bf05199380f0b8cfeac8cb9f95ba2ac741419a  research/native-moving-schur-sigma/height50-certified/lean/vendor/zeta23/Zeta23/GammaFacts/Series.lean
+
+Euler-integral approximation for the original Gamma (Lean 4.32):
+02874a87fe159c1a8cf00eaad714470c0a3bdf321d667ef19c33e223fe52450c  research/native-moving-schur-sigma/SigmaGammaEulerIntegral.lean
+42812dcf96c6e3fbbf33f26f70a28536cc061173aeeb5d668831b41a8959f36f  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/gamma-euler-audit.lean
+99a376bc803c56f044d4b18863c2bbf3bb62cc051edb2027cc11b69be3a75341  .lake/build/research/native-moving-schur-sigma/c5-gamma-euler-clean/SigmaGammaEulerIntegral.olean
+76e19d3abf6f3abcb2627d12042e9df37d9b460be08e80c2ea47753a18e960c1  .lake/build/research/native-moving-schur-sigma/c5-gamma-euler-clean/gamma-euler-audit.olean

@@ -1,0 +1,66 @@
+Try this:
+  [apply] abel_nf
+/home/thlinux/worktrees/geometry-of-numbers-c5-finite-c2-certification/research/native-moving-schur-sigma/SigmaGammaEulerIntegral.lean:130:69: error: unsolved goals
+N : ℕ
+T : ℝ
+hT : 1 ≤ T
+hN : T / ↑(N + 1) ≤ 1 / 2
+z : ℂ
+hz : 0 < z.re
+hz1 : z.re ≤ 1
+hT0 : 0 ≤ T
+hf : IntegrableOn (fun x => ↑(Real.exp (-x)) * ↑x ^ (z - 1)) (Ioi 0) volume
+he :
+  Complex.Gamma z =
+    (∫ (x : ℝ) in 0..T, ↑(Real.exp (-x)) * ↑x ^ (z - 1)) + ∫ (x : ℝ) in Ioi T, ↑(Real.exp (-x)) * ↑x ^ (z - 1)
+⊢ (∫ (x : ℝ) in 0..T, ↑(Real.exp (-1 • x)) * ↑x ^ (z + -1 • 1)) +
+      ∫ (x : ℝ) in Ioi T, ↑(Real.exp (-1 • x)) * ↑x ^ (z + -1 • 1) + -1 • gammaHeadIntegral N T z =
+    (∫ (x : ℝ) in 0..T, ↑(Real.exp (-1 • x)) * ↑x ^ (z + -1 • 1)) +
+      (-1 • gammaHeadIntegral N T z + ∫ (x : ℝ) in Ioi T, ↑(Real.exp (-1 • x)) * ↑x ^ (z + -1 • 1))
+/home/thlinux/worktrees/geometry-of-numbers-c5-finite-c2-certification/research/native-moving-schur-sigma/SigmaGammaEulerIntegral.lean:131:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (∫ (x : ℝ) in 0..T, ↑(Real.exp (-x)) * ↑x ^ (z - 1)) +
+    ∫ (x : ℝ) in Ioi T, ↑(Real.exp (-x)) * ↑x ^ (z - 1) - gammaHeadIntegral N T z
+in the target expression
+  ‖((∫ (x : ℝ) in 0..T, ↑(Real.exp (-x)) * ↑x ^ (z - 1)) + ∫ (x : ℝ) in Ioi T, ↑(Real.exp (-x)) * ↑x ^ (z - 1)) -
+        gammaHeadIntegral N T z‖ ≤
+    2 * T ^ (N + 1) / (↑N.factorial * z.re) + Real.exp (-T)
+
+N : ℕ
+T : ℝ
+hT : 1 ≤ T
+hN : T / ↑(N + 1) ≤ 1 / 2
+z : ℂ
+hz : 0 < z.re
+hz1 : z.re ≤ 1
+hT0 : 0 ≤ T
+hf : IntegrableOn (fun x => ↑(Real.exp (-x)) * ↑x ^ (z - 1)) (Ioi 0) volume
+he :
+  Complex.Gamma z =
+    (∫ (x : ℝ) in 0..T, ↑(Real.exp (-x)) * ↑x ^ (z - 1)) + ∫ (x : ℝ) in Ioi T, ↑(Real.exp (-x)) * ↑x ^ (z - 1)
+hid :
+  (∫ (x : ℝ) in 0..T, ↑(Real.exp (-x)) * ↑x ^ (z - 1)) +
+      ∫ (x : ℝ) in Ioi T, ↑(Real.exp (-x)) * ↑x ^ (z - 1) - gammaHeadIntegral N T z =
+    (∫ (x : ℝ) in 0..T, ↑(Real.exp (-x)) * ↑x ^ (z - 1)) - gammaHeadIntegral N T z +
+      ∫ (x : ℝ) in Ioi T, ↑(Real.exp (-x)) * ↑x ^ (z - 1)
+⊢ ‖((∫ (x : ℝ) in 0..T, ↑(Real.exp (-x)) * ↑x ^ (z - 1)) + ∫ (x : ℝ) in Ioi T, ↑(Real.exp (-x)) * ↑x ^ (z - 1)) -
+        gammaHeadIntegral N T z‖ ≤
+    2 * T ^ (N + 1) / (↑N.factorial * z.re) + Real.exp (-T)
+/home/thlinux/worktrees/geometry-of-numbers-c5-finite-c2-certification/research/native-moving-schur-sigma/SigmaGammaEulerIntegral.lean:206:39: error: unexpected identifier after decimal point; consider parenthesizing the number
+/home/thlinux/worktrees/geometry-of-numbers-c5-finite-c2-certification/research/native-moving-schur-sigma/SigmaGammaEulerIntegral.lean:206:38: error: (↥) must have a function type, not
+  ?m.178
+/home/thlinux/worktrees/geometry-of-numbers-c5-finite-c2-certification/research/native-moving-schur-sigma/SigmaGammaEulerIntegral.lean:198:62: error: unsolved goals
+case hfirst
+z : ℂ
+hz : 1495 / 20000 ≤ z.re
+hz1 : z.re ≤ 1
+hmain : ‖Complex.Gamma z - gammaFinite 512 81 z‖ ≤ 2 * 81 ^ (512 + 1) / (↑(Nat.factorial 512) * z.re) + Real.exp (-81)
+hcoef : 2 / z.re ≤ 27
+⊢ 2 * 81 ^ 513 / sorry
+
+z : ℂ
+hz : 1495 / 20000 ≤ z.re
+hz1 : z.re ≤ 1
+hmain : ‖Complex.Gamma z - gammaFinite 512 81 z‖ ≤ 2 * 81 ^ (512 + 1) / (↑(Nat.factorial 512) * z.re) + Real.exp (-81)
+hcoef : 2 / z.re ≤ 27
+hfirst : 2 * 81 ^ 513 / sorry
+⊢ ‖Complex.Gamma z - gammaFinite 512 81 z‖ ≤ 1 / 10 ^ 32

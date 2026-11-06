@@ -29,7 +29,7 @@ fontes/oleans e verificador fail-closed estão em `evidence/rational-boxes/`.
 
 ## O4 — origem das caixas — ABERTO
 
-Provar inclusões rigorosas dos coeficientes `c₀..c₁₄` em `d=99/2000` e `c₀..c₁₂` em `d=1/10`, preservando cabeça C2 + cauda geométrica exata + completação original. Certificar restos de Hurwitz/Euler–Maclaurin, Stirling, operações elementares, contorno Cauchy/Fourier e todos os domínios usados. A saída Python atual não fecha essa obrigação.
+Provar inclusões rigorosas dos coeficientes `c₀..c₁₄` em `d=99/2000` e `c₀..c₁₂` em `d=1/10`, preservando cabeça C2 + cauda geométrica exata + completação original. Certificar a avaliação racional estreita da expressão Gamma finita, a cauda Hurwitz/Euler–Maclaurin e o contorno Cauchy/Fourier, com todos os domínios usados. A saída Python atual não fecha essa obrigação.
 
 O avaliador foi conferido estruturalmente e as três reproduções passaram, mas
 `mpmath.iv`/seu backend e as operações complexas elementares ainda não têm prova
@@ -43,16 +43,22 @@ certifica aritmética retangular racional, `log` real, `exp` real/complexo e
 `m^{-s}`. A auditoria de quatro raízes retornou somente axiomas padrão; os logs
 estão em `evidence/rational-boxes/reused-interval-audit.log`.
 
-**Primeiro subproblema analítico ainda em aberto:** obter uma caixa racional
-quantitativa para `Complex.Gamma z` quando `z=w/2` no domínio do Cauchy. O
-avaliador existente usa Stirling deslocado por 80 e 75 correções, mas ainda não
-há uma ponte formal para o seu resto complexo. Também existe a identidade
-formal `Zeta23.DigammaSeries.inv_gamma_eq_prod` pelo produto de Weierstrass em
-`height50-certified/lean/vendor/zeta23/Zeta23/GammaFacts/Series.lean`; ela é
-uma rota alternativa, cuja cauda precisa ser limitada com eficiência suficiente
-para as caixas atuais. Depois ainda será preciso compor a avaliação de Hurwitz
-e a inclusão via Cauchy com a ponte C2 exata. Não há prova de
-`sigmaC00495SourceBoxes` nem de `sigmaC01SourceBoxes` nesta etapa.
+**Subpasso de Gamma concluído em Lean:** `SigmaGammaEulerIntegral.lean`
+prova que a Gamma original fica a distância no máximo `10⁻³²` da expressão
+finita `gammaFinite 512 81 z`, uniformemente para
+`1495/20000 ≤ Re(z) ≤ 1`. A prova usa a integral de Euler, limita o erro da
+exponencial truncada no trecho compacto e mantém a cauda infinita com limite
+`exp(-81)`. As oito raízes auditadas dependem somente de `propext`,
+`Classical.choice` e `Quot.sound`.
+
+**Primeiro subproblema analítico ainda em aberto:** produzir caixas racionais
+estreitas para `gammaFinite 512 81 z` nas caixas complexas do contorno. A soma
+direta tem cancelamento grande; a próxima etapa deve calcular os coeficientes
+Taylor racionais da expressão finita antes de aplicar a aritmética intervalar e
+certificar o resto da expansão. A identidade formal
+`Zeta23.DigammaSeries.inv_gamma_eq_prod` continua sendo uma alternativa. Depois
+será preciso compor Hurwitz e Cauchy/Fourier com a ponte C2 exata. Não há prova
+de `sigmaC00495SourceBoxes` nem de `sigmaC01SourceBoxes` nesta etapa.
 
 ## O5 — composição, build, axiomas e publicação — PARCIAL
 
