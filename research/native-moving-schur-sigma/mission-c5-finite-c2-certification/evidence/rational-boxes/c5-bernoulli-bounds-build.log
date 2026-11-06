@@ -1,0 +1,2 @@
+'SigmaC5Zeta.natPowSeries_le_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SigmaC5Zeta.bernoulliFun_abs_le_four_factorial_div_six_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
