@@ -1,8 +1,9 @@
 # C5 — `log π` e exponencial da completação
 
-**Estado:** prova local validada; ainda não integrada neste snapshot. O4/C5
-continua incompleta: não há avaliações certificadas nos 129 nós nem inclusão
-dos coeficientes C2 nas caixas O3.
+**Estado:** integrada pela PR #195 (commit de prova `321ae94`, merge
+`0032b10295bfeaadb29d0387f9b99dde9b160ac3`). O4/C5 continua incompleta: não há
+avaliações certificadas nos 129 nós nem inclusão dos coeficientes C2 nas caixas
+O3.
 
 ## Resultado formal
 

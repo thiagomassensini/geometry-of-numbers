@@ -18,7 +18,7 @@ Merge na `main`: `2567ab0204c46c4ce04fca601c99e47e810e18b9`.
 Esse incremento não certifica a avaliação da fonte nos nós e não prova
 inclusão C2 nas caixas; C5 segue incompleta.
 
-## `log π` e fator exponencial da completação — PASSOU localmente
+## `log π` e fator exponencial da completação — PASSOU e integrado pela PR #195
 
 `SigmaC5PiInterval.lean` usa a faixa de π integrada pela PR #193 para provar
 uma caixa racional de `Real.log Real.pi` por meio de `ZetaLean.Interval.log1`.
@@ -27,10 +27,11 @@ uma caixa racional de `Real.log Real.pi` por meio de `ZetaLean.Interval.log1`.
 definição original da completação.
 
 Build limpo Lean 4.32 e auditoria das cinco raízes passaram; somente
-`propext`, `Classical.choice` e `Quot.sound` aparecem. Evidência reproduzível,
-pins e hashes em `evidence/rational-boxes/c5-pi-completion-factor-validation.md`.
-O incremento ainda não está integrado e não avalia Gamma, a cauda C2 nem os
-129 nós.
+`propext`, `Classical.choice` e `Quot.sound` aparecem. PR #195, commit de prova
+`321ae94`, merge na `main` `0032b10295bfeaadb29d0387f9b99dde9b160ac3`.
+Evidência reproduzível, pins e hashes em
+`evidence/rational-boxes/c5-pi-completion-factor-validation.md`. O incremento
+não avalia Gamma, a cauda C2 nem os 129 nós.
 
 ## Cota do módulo da fonte original — PASSOU e integrada; O4 parcial
 

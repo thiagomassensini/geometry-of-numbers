@@ -2,6 +2,14 @@
 
 ## Estado mais recente — 2026-11-06
 
+A PR #195 integrou `SigmaC5PiInterval.lean` e `SigmaC5PiExp.lean`, com commit
+de prova `321ae94` e merge `0032b10295bfeaadb29d0387f9b99dde9b160ac3`. O build
+limpo e a auditoria Lean 4.32 passaram; os detalhes e comandos estão em
+`evidence/rational-boxes/c5-pi-completion-factor-validation.md`. O fator
+exponencial original dependente de `log π` está incluído em uma caixa, sob as
+hipóteses declaradas sobre a caixa de `s`. A avaliação da Gamma, da cauda C2 e
+dos 129 nós permanece aberta.
+
 A PR #191 integrou a cota `10^100` no merge
 `88a52ba3a6bda7a78b8317d892b6f7bc640c863f`; a PR #192 integrou a cota mais
 forte `10^13`, merge `654dbb0bd7bb7d400cf0c4cab61bea1873995db4`. O contorno de
@@ -15,12 +23,9 @@ Lean 4.32 passaram para a faixa racional exata de π derivada da série de
 `arctan` e da identidade de Machin. A trilha reproduzível está em
 `evidence/rational-boxes/c5-pi-bounds-validation.md`.
 
-Há um incremento local validado ainda sem PR: `SigmaC5PiInterval.lean`
-certifica `log π` pela infraestrutura intervalar existente, e
-`SigmaC5PiExp.lean` certifica o fator original
-`Complex.exp (-(s/2) * log π)` para uma caixa de entrada com limite de norma.
-Consulte `evidence/rational-boxes/c5-pi-completion-factor-validation.md` e
-preserve-o ao retomar.
+`SigmaC5PiInterval.lean` e `SigmaC5PiExp.lean` já estão integradas pela PR
+#195; consulte `evidence/rational-boxes/c5-pi-completion-factor-validation.md`
+para reproduzir o build e a auditoria.
 
 O4/C5 continua incompleta: certificar a avaliação da fonte original nos 129
 nós e provar a inclusão dos coeficientes nas caixas O3. Não refazer C1B, C2,

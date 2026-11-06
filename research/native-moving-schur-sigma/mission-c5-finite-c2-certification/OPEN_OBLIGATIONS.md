@@ -20,10 +20,10 @@ construída com a série alternada de `arctan` e a identidade de Machin; detalhe
 e logs em `evidence/rational-boxes/c5-pi-bounds-validation.md`. O módulo
 fornece uma faixa exata em vez de uma desigualdade decimal simplificada.
 
-Como continuação local, `SigmaC5PiInterval.lean` certifica `log π`, e
+Pela PR #195, `SigmaC5PiInterval.lean` certifica `log π`, e
 `SigmaC5PiExp.lean` certifica o exponencial correspondente da completação
-original para uma caixa complexa de entrada. Esse resultado já passou build e
-auditoria, mas ainda não está integrado; a evidência está em
+original para uma caixa complexa de entrada. Commit de prova `321ae94`, merge
+`0032b10295bfeaadb29d0387f9b99dde9b160ac3`. A evidência está em
 `evidence/rational-boxes/c5-pi-completion-factor-validation.md`.
 
 O4 continua aberta: ainda faltam avaliações certificadas da fonte original
