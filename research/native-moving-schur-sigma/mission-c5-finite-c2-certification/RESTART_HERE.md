@@ -8,9 +8,11 @@
 
 **ÚLTIMA PROVA PUBLICADA:** PR #181, estrutura derivativa para o coeficiente linear, merge `7460497307e7ed0ffb47ef1ac96b096e9b410472`
 
-**ÚLTIMO CHECKPOINT DE ESTADO:** PR #180, merge `de95637d38d5e6d5488342cd5141b88233be6eb7`
+**ÚLTIMO CHECKPOINT DE ESTADO:** PR #182, estado pós-PR #181, merge `8f8b9da2b8c1e8f3b8d1290608c8b2abffe9c285`
 
 **MAIN após PR #181:** `7460497307e7ed0ffb47ef1ac96b096e9b410472`
+
+**CHECKPOINT DE ESTADO após PR #181:** `8f8b9da2b8c1e8f3b8d1290608c8b2abffe9c285`
 
 **BRANCH C5:** a branch de prova foi removida após o merge da PR #181. Abrir uma branch nova a partir da `main` `7460497307e7ed0ffb47ef1ac96b096e9b410472`.
 

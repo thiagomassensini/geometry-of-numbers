@@ -118,3 +118,9 @@ O checkpoint atual registra um lema algébrico parcial de O4. A inclusão da fon
 - A prova `c5Coeff_one_eq_derivative_eval_zero` e a expansão `c5LagrangeBasis_derivative_eval_zero`, mais a evidência do build/auditoria e a tentativa numérica malsucedida, foram publicadas pela PR #181.
 - Commit de prova `0a188c9d71a1a54bdf446ec753609fdde8326bc8`; merge na `main` `7460497307e7ed0ffb47ef1ac96b096e9b410472`.
 - O limite numérico dos pesos para grau um permanece aberto; os graus `2..14`, a cota da fonte e as inclusões O4 também permanecem abertos. A validação continua incompleta.
+
+## 2026-11-06 — PR #182: estado pós-PR #181
+
+- Atualizados `SESSION_STATE.md`, `RESTART_HERE.md`, `OPEN_OBLIGATIONS.md`, `VALIDATION.md`, `pins-and-sha256.txt` e este histórico para registrar o merge da prova estrutural.
+- Merge do checkpoint de estado na `main`: `8f8b9da2b8c1e8f3b8d1290608c8b2abffe9c285`.
+- Nenhuma prova numérica nova foi incluída; O4 permanece aberta.
