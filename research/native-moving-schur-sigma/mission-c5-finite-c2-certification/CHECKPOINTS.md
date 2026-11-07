@@ -1,5 +1,18 @@
 # C5 — checkpoints
 
+## 2026-11-07 — exportação Lean das caixas zeta em quatro coordenadas (parcial)
+
+- Quatro sondas Lean exportaram 129 caixas racionais exatas cada, para
+  `a=2/5`, `901/2000`, `1099/2000` e `3/5`; os índices cobrem `j=0…128`.
+- Os logs registram tempos de 30:25–32:00, código 0 e pico RSS abaixo de
+  6,56 GiB. O CSV tem 516 linhas de caixas e foi gerado por um exportador que
+  confere a cobertura dos índices e a forma racional dos quatro extremos.
+- Isso conclui apenas a exportação de zeta. A composição com Gamma, o fator
+  dependente de π, a interpolação e as duas inclusões dos coeficientes C2
+  continuam abertas; também falta provar em Lean que os extremos do CSV
+  coincidem com as definições das caixas. Veja
+  `evidence/rational-boxes/c5-centered-all-a-zeta-export-validation.md`.
+
 ## 2026-11-07 — estado integrado da negatividade e checkpoint C5 parcial
 
 - C1B foi integrada pela PR #155, merge

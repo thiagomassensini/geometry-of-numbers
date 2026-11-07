@@ -1,0 +1,124 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-source-box-inclusions-20261107/research/native-moving-schur-sigma/SigmaC5CenteredAllA0400Probe.lean:6:19: error(lean.unknownIdentifier): Unknown identifier `c5BernoulliPrimeTable`
+/home/thlinux/worktrees/geometry-of-numbers-c5-source-box-inclusions-20261107/research/native-moving-schur-sigma/SigmaC5CenteredAllA0400Probe.lean:10:15: error(lean.unknownIdentifier): Unknown identifier `c5RationalZetaCenteredNodeBoxWithTable`
+/home/thlinux/worktrees/geometry-of-numbers-c5-source-box-inclusions-20261107/research/native-moving-schur-sigma/SigmaC5CenteredAllA0400Probe.lean:11:24: error(lean.invalidField): Invalid field notation: Type of
+  box
+is not known; cannot resolve field `re`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `AEMeasurable.re`
+  • `Complex.re`
+  • `Measurable.re`
+  • `QuadraticAlgebra.re`
+  • `QuaternionAlgebra.re`
+  • `RCLike.re`
+  • `TendstoUniformly.re`
+  • `TendstoUniformlyOn.re`
+  • `UpperHalfPlane.re`
+  • `Zsqrtd.re`
+  • `Complex.UnitClosedDisc.re`
+  • `Complex.UnitDisc.re`
+  • `MeasureTheory.AEStronglyMeasurable.re`
+  • `MeasureTheory.ComplexMeasure.re`
+  • `MeasureTheory.Integrable.re`
+  • `MeasureTheory.MemLp.re`
+  • `ComplexInterval.re`
+/home/thlinux/worktrees/geometry-of-numbers-c5-source-box-inclusions-20261107/research/native-moving-schur-sigma/SigmaC5CenteredAllA0400Probe.lean:11:37: error(lean.invalidField): Invalid field notation: Type of
+  box
+is not known; cannot resolve field `re`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `AEMeasurable.re`
+  • `Complex.re`
+  • `Measurable.re`
+  • `QuadraticAlgebra.re`
+  • `QuaternionAlgebra.re`
+  • `RCLike.re`
+  • `TendstoUniformly.re`
+  • `TendstoUniformlyOn.re`
+  • `UpperHalfPlane.re`
+  • `Zsqrtd.re`
+  • `Complex.UnitClosedDisc.re`
+  • `Complex.UnitDisc.re`
+  • `MeasureTheory.AEStronglyMeasurable.re`
+  • `MeasureTheory.ComplexMeasure.re`
+  • `MeasureTheory.Integrable.re`
+  • `MeasureTheory.MemLp.re`
+  • `ComplexInterval.re`
+/home/thlinux/worktrees/geometry-of-numbers-c5-source-box-inclusions-20261107/research/native-moving-schur-sigma/SigmaC5CenteredAllA0400Probe.lean:11:50: error(lean.invalidField): Invalid field notation: Type of
+  box
+is not known; cannot resolve field `im`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `AEMeasurable.im`
+  • `Complex.im`
+  • `Measurable.im`
+  • `QuadraticAlgebra.im`
+  • `Quaternion.im`
+  • `QuaternionAlgebra.im`
+  • `RCLike.im`
+  • `TendstoUniformly.im`
+  • `TendstoUniformlyOn.im`
+  • `UpperHalfPlane.im`
+  • `Zsqrtd.im`
+  • `CategoryTheory.Abelian.im`
+  • `CategoryTheory.Limits.im`
+  • `CategoryTheory.Subgroupoid.im`
+  • `Complex.UnitClosedDisc.im`
+  • `Complex.UnitDisc.im`
+  • `MeasureTheory.AEStronglyMeasurable.im`
+  • `MeasureTheory.ComplexMeasure.im`
+  • `MeasureTheory.Integrable.im`
+  • `MeasureTheory.MemLp.im`
+  • `ComplexInterval.im`
+  • `CategoryTheory.Subgroupoid.Map.Arrows.im`
+/home/thlinux/worktrees/geometry-of-numbers-c5-source-box-inclusions-20261107/research/native-moving-schur-sigma/SigmaC5CenteredAllA0400Probe.lean:11:63: error(lean.invalidField): Invalid field notation: Type of
+  box
+is not known; cannot resolve field `im`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `AEMeasurable.im`
+  • `Complex.im`
+  • `Measurable.im`
+  • `QuadraticAlgebra.im`
+  • `Quaternion.im`
+  • `QuaternionAlgebra.im`
+  • `RCLike.im`
+  • `TendstoUniformly.im`
+  • `TendstoUniformlyOn.im`
+  • `UpperHalfPlane.im`
+  • `Zsqrtd.im`
+  • `CategoryTheory.Abelian.im`
+  • `CategoryTheory.Limits.im`
+  • `CategoryTheory.Subgroupoid.im`
+  • `Complex.UnitClosedDisc.im`
+  • `Complex.UnitDisc.im`
+  • `MeasureTheory.AEStronglyMeasurable.im`
+  • `MeasureTheory.ComplexMeasure.im`
+  • `MeasureTheory.Integrable.im`
+  • `MeasureTheory.MemLp.im`
+  • `ComplexInterval.im`
+  • `CategoryTheory.Subgroupoid.Map.Arrows.im`
+Command exited with non-zero status 1
+	Command being timed: "bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaC5CenteredAllA0400Probe"
+	User time (seconds): 10.58
+	System time (seconds): 4.56
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:15.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6535416
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 301578
+	Voluntary context switches: 281
+	Involuntary context switches: 156
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1

@@ -1,0 +1,14 @@
+94a8b64662a7b5472df007594052170e569e257e3e813ae21e52feee0c0fb12d  research/native-moving-schur-sigma/SigmaC5CenteredAllA0400Probe.lean
+8a69aa3e0c6b03bae8895aff2d944b02df05af6c5282fdd5da10b7d59e022c12  research/native-moving-schur-sigma/SigmaC5CenteredAllA0600Probe.lean
+83670125e41f0911db445b081181e495dd3f30779c5297ed1d00fa5680200571  research/native-moving-schur-sigma/SigmaC5CenteredAllA4505Probe.lean
+aeab0de1c467add020a8a4216b5b168a849fd68285787236143964cec90cb40e  research/native-moving-schur-sigma/SigmaC5CenteredAllA5495Probe.lean
+c36bccde76270c0504f014af282e04b143ec765d7a0d5a1ad15b18146c0b0d13  research/native-moving-schur-sigma/.cache/c5-centered-all-a-20261107/SigmaC5CenteredAllA0400Probe.olean
+1938e5ca434ca7a394a05ea365802d37a488a6a196c72811ddc3974e000d3bdd  research/native-moving-schur-sigma/.cache/c5-centered-all-a-20261107/SigmaC5CenteredAllA0600Probe.olean
+4ca8da2495a16217ef4cc65d03cfb2f027d0beefef5caa2c91bba846eac976af  research/native-moving-schur-sigma/.cache/c5-centered-all-a-20261107/SigmaC5CenteredAllA4505Probe.olean
+9adf294f65006a9d31c5027f5bfa183bedbdc3d9553132c099203c263d1c276f  research/native-moving-schur-sigma/.cache/c5-centered-all-a-20261107/SigmaC5CenteredAllA5495Probe.olean
+fc9b73d03bf59edd59cfa70690556aba9538dc7577b9e83ff33eebc08795203a  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-centered-all-a-0400-probe-retry1.log
+4149e9237201598a6058b27b6c18a8db16309d37cb5ec9b18fabea0deb77e773  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-centered-all-a-0400-probe-retry2.log
+2c740585606405257dd7058e3fbfdac23b6a7cca4c0cd23d54d24bb07bd6a6d0  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-centered-all-a-0600-probe-retry1.log
+0617fe5763e8671d664d3e3cf27b916fb17eed3f86ba5b155c035b841b1f179f  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-centered-all-a-4505-probe-retry1.log
+c65c62e3ccd61b8e8cb8b56f1e33009c6f99060faf39ee837c9efe212a712b7f  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-centered-all-a-5495-probe-retry1.log
+6d01a7b5c13ca83c9078b0361e2952eba716d3145890977e9d190ff2322c11b5  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-centered-all-a-zeta-boxes.csv

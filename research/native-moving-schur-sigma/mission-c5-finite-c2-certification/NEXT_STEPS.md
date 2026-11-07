@@ -18,13 +18,12 @@ encerrou após 15:57 sem largura final; a memória ficou em ~6,5 GiB, então o
 limite é tempo de CPU. Evidência em
 `evidence/rational-boxes/c5-fast-bernoulli-table-validation.md`.
 
-1. Exportar os extremos racionais dos 129 nós com uma tabela Bernoulli
-   compartilhada; a sonda agregada e a sonda com saída por nó estão em
-   `SigmaC5Centered129SharedTableProbe.lean` e
-   `SigmaC5Centered129StreamProbe.lean`. Caso a execução única continue lenta,
-   reduzir a aritmética por nó e retomar sem recalcular Bernoulli em cada ponto.
-2. Escolher `nExp`/`p` para a precisão O3 e compor as caixas com Gamma, o
-   fator original dependente de π e a expressão
+1. **Concluído nesta etapa:** exportar os extremos racionais para os quatro
+   valores reais e todos os 129 nós; CSV, sondas, logs, pins e reprodução em
+   `evidence/rational-boxes/c5-centered-all-a-zeta-export-validation.md`.
+2. Importar os extremos exportados como constantes Lean e provar que coincidem
+   com as definições das caixas. Depois escolher `nExp`/`p` para a precisão O3
+   e compor as caixas com Gamma, o fator original dependente de π e a expressão
    da fonte C2; preservar a cabeça e a cauda exata; provar as inclusões em
    `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
 3. Auditar os teoremas finais de sinal C5 depois das duas inclusões.

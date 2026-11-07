@@ -25,6 +25,17 @@ mais memória. O checkpoint parcial foi integrado pela PR #211, commit
 comandos e logs em
 `evidence/rational-boxes/c5-fast-bernoulli-table-validation.md`.
 
+## Exportação das caixas zeta em quatro coordenadas (2026-11-07)
+
+Depois do checkpoint #211, quatro sondas Lean compilaram e terminaram com
+código 0. Cada uma exportou os 129 índices `j=0…128` como extremos racionais
+para `a=2/5`, `901/2000`, `1099/2000` e `3/5`. O CSV reúne 516 caixas e os
+logs guardam as saídas exatas, tempos e picos de memória. Esta etapa conclui a
+exportação nodal de zeta; as avaliações de Gamma, completação por π,
+interpolação e inclusões C5 seguem abertas. A igualdade formal do CSV com as
+caixas calculadas também ainda precisa ser registrada em Lean. Evidência em
+`evidence/rational-boxes/c5-centered-all-a-zeta-export-validation.md`.
+
 ## Snapshot atual — cobertura formal dos 129 nós de zeta integrada pela PR #209
 
 **Atualizado:** 2026-11-07 UTC. O commit de prova
