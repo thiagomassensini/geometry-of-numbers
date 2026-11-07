@@ -6,7 +6,7 @@
 - A prova compõe `240^(1/5)`, núcleo racional de 1024 termos em 16 blocos e o erro formal da aproximação finita, com inflação `10⁻⁹⁹`.
 - `build-attempt11.log` termina sem erro; duas raízes `#print axioms` exibem somente `propext`, `Classical.choice`, `Quot.sound`. Sem `sorryAx` ou `native_decide`.
 - Fonte, log final, tentativas e comando: `evidence/rational-boxes/c5-gamma-first-node-20261107/README.md`.
-- Checkpoint local na branch `codex/c5-gamma-first-node-20261107`, base `71721874eb01071a07c83e4f71117b7d662e1b53`; publicação pendente neste registro.
+- Commit de prova `742dd764df81ee75bd487d1bf21e5a9afa5519c5`, branch `codex/c5-gamma-first-node-20261107`, baseada na `main` `11f5ea452f6d41f4a1545ecf614cea39730f58a0`; push/PR pendentes neste registro.
 - Escopo limitado a um ponto real. Coeficientes C2, caixas da fonte e sinais finais continuam abertos.
 
 ## Histórico — checkpoint do núcleo Gamma racional por blocos (PR #282)

@@ -3,11 +3,11 @@
 ## Estado atual — composição Gamma no primeiro ponto (2026-11-07)
 
 - Missão C5 continua ativa; C2, C3 e C4 estão concluídas e não devem ser refeitas.
-- Branch `codex/c5-gamma-first-node-20261107`, base local `71721874eb01071a07c83e4f71117b7d662e1b53`; `origin/main` em `11f5ea452f6d41f4a1545ecf614cea39730f58a0`. Sincronizar os dois commits de documentação antes da publicação.
+- Branch `codex/c5-gamma-first-node-20261107`, baseada na `main` `11f5ea452f6d41f4a1545ecf614cea39730f58a0`; commit de prova `742dd764df81ee75bd487d1bf21e5a9afa5519c5`.
 - Provado e compilado: `CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains` contém `Complex.Gamma (1/5 : ℂ)`. A inclusão compõe a potência `240^z`, o núcleo racional de 1024 termos em blocos certificados e o erro `gamma_finite_1024_240_error` com inflação final `10⁻⁹⁹`.
 - Build final: Lean 4.32.0, warnings como erros, `BUILD_EXIT=0`; auditoria das duas raízes: só `propext`, `Classical.choice`, `Quot.sound`, sem `sorryAx`, axioma próprio ou `native_decide`. Logs e fonte auditada estão em `evidence/rational-boxes/c5-gamma-first-node-20261107/README.md`.
-- Estado de publicação neste snapshot: ainda local, sem commit/PR. C5 segue incompleta; O3 permanece condicionada a `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
-- Próximo: reproduzir build do README, salvar/publicar este checkpoint e ampliar a certificação Gamma para `901/4000`, depois à malha complexa usada pela fonte C2.
+- Estado de publicação neste snapshot: commit local pronto, push/PR pendentes. C5 segue incompleta; O3 permanece condicionada a `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
+- Próximo: publicar este checkpoint e ampliar a certificação Gamma para `901/4000`, depois à malha complexa usada pela fonte C2.
 
 ## Histórico — checkpoint do núcleo Gamma racional por blocos (PR #282)
 
