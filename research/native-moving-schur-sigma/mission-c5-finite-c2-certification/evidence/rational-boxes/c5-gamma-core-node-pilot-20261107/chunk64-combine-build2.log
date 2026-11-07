@@ -1,0 +1,3 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaCoreChunk64Combine.lean:29:2: error: `simp` made no progress
+'c5GammaCoreNodePilotScaled_eq_chunkSum' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'c5GammaCoreNodePilotScaled_chunkBounds' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
