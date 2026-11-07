@@ -1,7 +1,7 @@
 # C5 — núcleo certificado do nó trivial `m = 1`
 
 **Estado:** checkpoint parcial. As identidades formais do nó `m = 1` e as
-igualdades das caixas arredondadas nos estágios 1, 2 e 3 foram compiladas e
+igualdades das caixas arredondadas nos estágios 1, 2, 3 e 4 foram compiladas e
 auditadas. A ponte CSV–Lean e as inclusões dos coeficientes C2 continuam
 abertas; C5 não está concluída.
 
@@ -82,6 +82,19 @@ Tentativas de expansão direta e a sonda que isolou as fórmulas estão em
 `0d312c654015bf10384969e64f352b0313e2dd39`. O GitHub não reportou checks; a
 compilação e a auditoria locais estão nos logs acima.
 
+`SigmaC5ZeroExpStage4Certificate.lean` importa a prova integrada do estágio 3
+e prova `c5ZeroExpStage4_eq`, igualando `c5RoundedExpC 192 896 4` na entrada
+zero a `c5ZeroExpStage4Export`. Quatro lemas dão os extremos exatos do
+quadrado da caixa de estágio 3; os pisos/tetos correspondentes são
+`2^896 - 11`, `2^896 + 15`, `-15` e `15`. O build e a auditoria das nove
+declarações passaram em Lean 4.32.0, somente com axiomas padrão. Os logs, pins,
+hashes e comando de reprodução estão em
+`SigmaC5ZeroExpStage4Certificate.build.log`, `SigmaC5ZeroExpStage4Audit.log`,
+`stage4-pins.txt` e `stage4-sha256.txt`. A primeira tentativa parou no import
+por falta de um diretório de cache; o diagnóstico e o comando estão em
+`stage4-attempts/`. Este checkpoint do estágio 4 está validado localmente e
+aguarda publicação; C5 continua incompleta.
+
 ## Pins e reprodução
 
 O checkpoint original do nó `m = 1` parte de `main` em
@@ -124,9 +137,20 @@ The preserved logs are the successful runs used for this checkpoint. The audit
 source files use `#print axioms` for the listed declarations. Re-running the
 commands above writes fresh logs under the selected output directory.
 
+Para reproduzir o estágio 4 depois de disponibilizar os módulos importados nos
+caches dos estágios 2 e 3, use o comando exato registrado em `stage4-pins.txt`.
+Ele acrescenta os diretórios dessas duas compilações e o cache que contém
+`SigmaC5RoundedComplexExp.olean` antes de executar:
+
+```bash
+bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaC5ZeroExpStage4Certificate
+bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaC5ZeroExpStage4Audit
+```
+
 ## Próxima obrigação aberta
 
-Os estágios 1, 2 e 3 agora estão provados. A tentativa que falhou ao aplicar diretamente
+Os estágios 1, 2, 3 e 4 agora estão provados localmente; o estágio 4 aguarda
+publicação. A tentativa que falhou ao aplicar diretamente
 `Int.floor_eq_iff.mpr` e `Int.ceil_eq_iff.mpr` permanece como histórico; veja
 [`stage1-export-equality-last-attempt.log`](stage1-export-equality-last-attempt.log).
 O fonte exato dessa tentativa está preservado como
@@ -148,7 +172,7 @@ aceito como resultado. Esta tentativa não invalida as identidades já
 compiladas e auditadas acima.
 
 Ainda não há ponte CSV–Lean, inclusão dos coeficientes O3, composição completa
-da fonte C2, nem sinal finito de C5. O próximo passo é avançar o estágio 4 da
+da fonte C2, nem sinal finito de C5. O próximo passo é avançar o estágio 5 da
 exponencial e depois ligar formalmente as caixas exportadas,
 compondo zeta, Gamma, o fator dependente de π e a fonte C2 original. Não
 inferir fechamento de C5 a partir deste checkpoint.

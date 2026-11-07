@@ -11,7 +11,22 @@
   de C2/C3; não é preciso calcular a primeira profundidade de falha para a
   negatividade eventual já provada.
 
-## Atualização mais recente — igualdade do estágio 3 integrada pela PR #228
+## Atualização mais recente — igualdade do estágio 4 (2026-11-07; publicação pendente)
+
+`SigmaC5ZeroExpStage4Certificate.lean` importa a prova integrada do estágio 3
+e prova que `c5RoundedExpC 192 896 4` na entrada zero coincide com
+`c5ZeroExpStage4Export`. Os extremos racionais do quadrado do estágio 3 e seus
+pisos/tetos foram provados, resultando em `2^896 - 11`, `2^896 + 15`, `-15` e
+`15`. Build Lean 4.32 (`warningAsError=true`) e auditoria das nove raízes
+passaram; somente axiomas padrão aparecem. Pins, hashes, logs, comandos e o
+erro inicial de caminho de import estão em
+`evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
+
+C5 continua incompleta: a ponte CSV–Lean, as inclusões dos coeficientes da
+fonte C2 nas caixas e os sinais finais seguem abertos. O estágio 4 aguarda
+publicação.
+
+## Atualização anterior — igualdade do estágio 3 integrada pela PR #228
 
 `SigmaC5ZeroExpStage3Certificate.lean` importa a prova integrada do estágio 2
 e prova que a caixa `c5RoundedExpC 192 896 3` na entrada zero coincide com
@@ -40,8 +55,8 @@ provam os pisos/tetos da caixa quadrada do estágio 1 por desigualdades
 racionais exatas. Build Lean 4.32 (`warningAsError=true`) e auditoria de onze
 declarações passaram; somente axiomas padrão aparecem. Os logs, pins e hashes
 estão em `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
-O estágio 3 foi integrado pela PR #228; o passo seguinte é a caixa exportada
-do estágio 4.
+O estágio 3 foi integrado pela PR #228; a igualdade exportada do estágio 4
+está registrada na atualização mais recente.
 
 C5 permanece incompleta: as caixas dos estágios 1 e 2 não ligam o CSV às caixas
 Lean nem provam `sigmaC00495SourceBoxes` ou `sigmaC01SourceBoxes`.
