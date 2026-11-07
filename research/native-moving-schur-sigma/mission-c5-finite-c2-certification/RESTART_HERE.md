@@ -2,13 +2,14 @@
 
 ## Estado atual — C5 e reprodução auditadas (2026-11-07)
 
-- `origin/main` está em `d6f8ad760856e6f48a17fb2a7ec5c70e8ffb96db` (após PR #277). Branch de trabalho: `codex/c5-after-pr277-20261107`. PR #277 (`C5: record interval reproductions and active mission state`) integrou o checkpoint e a reprodução em 2026-11-07; sem checks hospedados.
+- `origin/main` está em `aadd036a7d46a357faf21ddf3e986505e525c929` (merge da PR #278). A branch ativa é `codex/c5-centered-first-term-20261107`; a PR do subpasso atual ainda será aberta.
 - C1B já entrou pela PR #155, merge `0586e238441096ecd2248e3f14bdac3a832af427`; C2 pela PR #157, merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`; C3 pela PR #159, merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`. C4 e a recorrência dos momentos também estão integradas. Não reabrir essas fases nem a migração geral para Lean 4.35.
 - C5 O2 (`SigmaFiniteCoefficientSignTransport`) está provada em Lean 4.32: recorrência polinomial sem divisão e transporte do sinal para `sigmaPadeD` original. O3 também está provada e auditada, mas **condicionada** às inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
 - Reproduzi as três configurações de `certify_finite_c2.py`; o verificador racional exato confirmou `+++++++++++-`, `+++++++++++-` e `+++++++++-`. Logs, JSONs e hashes: `evidence/rational-boxes/reproduction-20261107/`. A execução precisou do patch local `gmpy2.mpz`→`int`, já preservado em `evidence/interval-certificate/momentos-gmpy2-compat.patch`; o checkout Momentos foi restaurado limpo. Esses resultados continuam condicionais e não provam a inclusão formal da fonte.
 - A PR #213 já exportou 516 caixas racionais de zeta nos 129 nós e quatro coordenadas. `#eval`/CSV confirma a exportação e a cobertura, mas ainda não há prova Lean de que cada valor exportado seja igual à caixa usada na composição. A tentativa monolítica para uma caixa está documentada como falha; não a repetir.
 - Último resultado formal relevante à avaliação nodal: `c5RationalZetaCenteredNodeBoxWithTable_contains`, em `SigmaC5RationalNodeCenteredInstantiate.lean` (Lean 4.32). O checkpoint auxiliar `c5RoundedExpStateC_stage18_correct` também está integrado, mas não define o próximo passo da missão.
-- **Próxima obrigação:** retomar a prova composicional por componentes da caixa zeta exportada (cabeça, correções de Bernoulli e exponencial), reutilizando a igualdade de `log 2` já provada em blocos. Depois ligar Gamma, fator de π e a fonte C2 original, mantendo cabeça e cauda exata, e provar as duas inclusões. Não tentar novamente uma redução monolítica de 28 minutos.
+- Nesta branch, `c5CenteredDirichletTermBox_one_eq_generic` e `c5CenteredDirichletTermBox_one_fixed` compilam em Lean 4.32 e foram auditadas: somente `propext`, `Classical.choice` e `Quot.sound`. O primeiro termo da cabeça, `m=1`, é exatamente `c5GenericBox 11 15`; a prova não cobre os outros 98 termos nem a inclusão da fonte. Evidência e reprodução: `evidence/rational-boxes/c5-centered-first-term-20261107/`.
+- **Próxima obrigação:** o primeiro termo `m=1` agora está isolado formalmente na branch ativa. Retomar o termo `m=2` a partir do estado Taylor `n=18` já integrado e provar a próxima transição `n=19`, sem repetir os estágios anteriores. Depois continuar por componentes até compor Gamma, fator de π, cabeça e cauda C2 exatas, provar as duas inclusões e fechar os sinais. A tentativa monolítica de 28 minutos não deve ser repetida.
 - Alvo final: provar incondicionalmente os sinais de `sigmaPadeD` original em `d=99/2000` e `d=1/10`. A missão permanece incompleta até as inclusões da fonte e a composição final passarem build e auditoria.
 
 
@@ -24,7 +25,7 @@ LAST COMPILED FILE: SigmaC5M2TaylorStateStage18Certificate.lean (Lean 4.32.0, wa
 BUILD: BUILD_EXIT=0; cinco raízes com propext, Classical.choice, Quot.sound; sem sorryAx.
 SCOPE: nó m=2, argumento (a,j)=(2/5,0), recorrência até n=18.
 EVIDENCE: evidence/rational-boxes/c5-m2-dirichlet-term-stage18-20261107/README.md.
-NEXT AT THAT CHECKPOINT: n=19; superseded by the active C5 source-inclusion objective above.
+NEXT AT THAT CHECKPOINT: n=19. After the m=1 theorem on the active branch, this is again the next transition for the m=2 term.
 DO NOT REPEAT: C1B/C2/C3/C4; migração geral para Lean 4.35; prova monolítica dos 192 passos.
 ```
 

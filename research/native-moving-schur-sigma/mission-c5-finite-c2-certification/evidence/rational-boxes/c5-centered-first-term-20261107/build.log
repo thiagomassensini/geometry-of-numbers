@@ -1,0 +1,5 @@
+'CarrySigmaObstruction.c5CenteredDirichletTermBox_one_eq_generic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5CenteredDirichletTermBox_one_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+BUILD_EXIT=0
