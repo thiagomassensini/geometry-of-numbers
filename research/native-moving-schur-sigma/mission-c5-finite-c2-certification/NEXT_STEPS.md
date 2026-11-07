@@ -1,10 +1,10 @@
 # Próximos passos — C5
 
-## Estado atual e próximo passo — segunda caixa Gamma em ponto real (2026-11-07)
+## Estado atual e próximo passo — segunda caixa Gamma em ponto real integrada (2026-11-07)
 
 - `CarrySigmaObstruction.c5GammaSecondRealPointBox_contains` contém `Γ(901/4000)`; probe, pisos dos 16 blocos, combinação racional e caixa Gamma passaram no build Lean 4.32.0 com warnings como erros.
 - A auditoria das raízes públicas mostra somente axiomas padrão; não há `sorryAx`, axiomas próprios ou `native_decide`. Os logs, fontes, pins e comando reprodutível estão em `evidence/rational-boxes/c5-gamma-second-real-point-20261107/README.md`.
-- A validação local está pronta; checkpoint GitHub/PR ainda pendente nesta revisão.
+- A PR #287 integrou a validação no merge `742eb6fd03311adbb80507867c47e726fd648a21`; commit de prova `7f3d880e73f5383718cf2442b915e8cd866139cf`.
 - Próximo subpasso matemático: avaliar e certificar os pontos complexos da malha C5 que entram na composição da fonte em `d=99/2000` e `d=1/10`.
 - Depois, compor Gamma e zeta com os fatores originais da fonte completada e a quadratura dos coeficientes; provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`; então fechar os sinais de `sigmaPadeD` original.
 - Limite atual: apenas dois pontos reais de Gamma. C5 permanece incompleta.

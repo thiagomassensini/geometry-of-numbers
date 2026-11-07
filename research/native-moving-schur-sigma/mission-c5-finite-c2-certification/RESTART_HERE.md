@@ -1,11 +1,11 @@
 # Retomar primeiro — missão C5
 
-## Estado atual — segunda caixa Gamma em ponto real validada localmente (2026-11-07)
+## Estado atual — segunda caixa Gamma em ponto real integrada (2026-11-07)
 
 - C5 segue ativa; C2, C3 e C4 permanecem concluídas. Não reiniciar etapas anteriores nem a migração geral para Lean 4.35.
 - Último resultado compilado: `CarrySigmaObstruction.c5GammaSecondRealPointBox_contains` em `SigmaC5GammaSecondRealPointGammaCertificate.lean`, que contém `Complex.Gamma (901/4000 : ℂ)`.
 - Os quatro módulos passaram em Lean 4.32.0 com warnings como erros. As raízes auditadas mostram somente `propext`, `Classical.choice`, `Quot.sound`; sem `sorryAx`, axiomas próprios ou `native_decide`.
-- Evidência completa e comando de retomada: `evidence/rational-boxes/c5-gamma-second-real-point-20261107/README.md` e `reproduce.sh`. O checkpoint foi validado localmente; a publicação será anotada depois do merge da PR.
+- Evidência completa e comando de retomada: `evidence/rational-boxes/c5-gamma-second-real-point-20261107/README.md` e `reproduce.sh`. A PR #287 integrou o checkpoint no merge `742eb6fd03311adbb80507867c47e726fd648a21` (commit `7f3d880e73f5383718cf2442b915e8cd866139cf`).
 - Próxima obrigação: compor as avaliações de Gamma nos nós complexos da fonte com as caixas de zeta, o fator nativo original e as quadraturas para provar as duas inclusões da fonte C2.
 - C1B/C2/C3/C4, a caixa Gamma em `1/5` e o ponto `901/4000` já estão concluídos; não repetir.
 

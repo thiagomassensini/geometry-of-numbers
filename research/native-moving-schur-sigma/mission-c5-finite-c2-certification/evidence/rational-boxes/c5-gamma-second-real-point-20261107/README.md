@@ -31,8 +31,10 @@ provado por séries racionais; para este ponto, usa-se `kE = 3`.
   `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`.
 - MemAvailable observado antes da compilação: `63391316 kB` (~60,5 GiB); o
   build manteve o limite de 30 GiB do script.
-- Esta validação está concluída localmente; o checkpoint GitHub/PR ainda está
-  pendente nesta revisão.
+- A PR #287 integrou o checkpoint: commit de prova
+  `7f3d880e73f5383718cf2442b915e8cd866139cf`, merge na `main`
+  `742eb6fd03311adbb80507867c47e726fd648a21`.
+- O GitHub não reportou checks hospedados para a PR #287; a validação formal registrada é a compilação local acima.
 
 ## Fontes e logs
 
