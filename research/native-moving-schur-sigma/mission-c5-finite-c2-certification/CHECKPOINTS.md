@@ -1,6 +1,6 @@
 # C5 — checkpoints
 
-## 2026-11-07 — transição m=2, n=8→9 validada localmente; PR pendente
+## 2026-11-07 — transição m=2, n=8→9 integrada pela PR #257
 
 - `c5RoundedExpStateC_stage9_correct` prova a transição da recorrência no nó
   `(2/5,0)`, com produto de sinais não-negativos/não-positivos, coeficiente
@@ -9,9 +9,11 @@
   auditadas mostram somente axiomas padrão.
 - Fontes, probe, logs e checksums estão em
   `evidence/rational-boxes/c5-m2-dirichlet-term-stage9-20261107/`.
-- Ainda é checkpoint local sem PR ou merge. Cobre somente `n≤9` de um nó; não
-  cobre os estados restantes, quadraturas, caixa completa, inclusões da fonte
-  C2 ou sinais finais. Próximo passo: publicar; depois `n=10`.
+- A PR #257 integrou o commit de prova
+  `62c9fbd7b04034f21ccf0336abf0d83d8c6a6592` no merge
+  `9655308b17dbf565d272f7578545bb68b7b0b867`; não houve checks hospedados.
+  Cobre somente `n≤9` de um nó; não cobre estados restantes, quadraturas,
+  caixa completa, inclusões da fonte C2 ou sinais finais. Próximo: `n=10`.
 
 ## 2026-11-07 — transição m=2, n=7→8 integrada pela PR #255
 
