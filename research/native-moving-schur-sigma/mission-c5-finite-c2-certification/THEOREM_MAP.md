@@ -1,9 +1,11 @@
 # C5 — mapa dos teoremas e obrigações
 
-## Checkpoint local — cobertura adaptativa de zeta nos 129 nós
+## O4 integrado pela PR #209 — cobertura adaptativa de zeta nos 129 nós
 
-Arquivo local: `SigmaC5RationalNodeLogBounds.lean` e
-`SigmaC5RationalNodeInstantiate.lean`, ainda não publicados nesta atualização.
+Arquivos integrados: `SigmaC5RationalNodeLogBounds.lean` e
+`SigmaC5RationalNodeInstantiate.lean`. Commit de prova
+`05dae531d4ec10c916c340f58255f35977a3abdd`; merge da PR #209
+`386b654eabe4c942d6b0db46754120ab79b52fb5`.
 
 | Declaração | Status, hipóteses e limite |
 |---|---|

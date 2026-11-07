@@ -8,9 +8,9 @@ CURRENT PHASE: composição das caixas nodais com a fonte original e inclusão O
 CURRENT SUBTASK: escolher `nExp`/`p`, exportar retângulos racionais, compor zeta/Gamma/fator de π com a cabeça C2 e sua cauda exata.
 LAST VERIFIED THEOREM: `CarrySigmaObstruction.c5RationalZetaAdaptiveNodeConjugateBox_contains_at`.
 LAST COMPILED FILE: `SigmaC5RationalNodeInstantiateAudit.lean` (Lean 4.32.0, warnings como erros).
-LAST PROOF BRANCH: `codex/c5-node-instantiation-20261107`, baseada na main `296e899e70bee78c54a3278e73e9bd89eaafaa58`; checkpoint ainda local, sem PR.
-LAST PUBLISHED COMMIT: PR #208, merge `296e899e70bee78c54a3278e73e9bd89eaafaa58`.
-OPEN PR: nenhuma para este checkpoint; código e evidência estão locais.
+LAST PROOF PR: #209, commit `05dae531d4ec10c916c340f58255f35977a3abdd`, merge `386b654eabe4c942d6b0db46754120ab79b52fb5`.
+CURRENT MAIN SHA: `386b654eabe4c942d6b0db46754120ab79b52fb5`.
+OPEN PR: nenhuma para o checkpoint de cobertura zeta.
 WHAT IS PROVED: condições adaptativas de log/exp construídas para todos os `1≤m≤100`; caixas de `riemannZeta` nos 129 nós `b=j/100000` para todo `a∈[2/5,3/5]`, mais os nós conjugados. Cauda Euler–Maclaurin preservada e inflação `<10^-250`. Auditoria de 21 raízes, somente axiomas padrão.
 WHAT REMAINS: achatamento de extremos numéricos, composição com Gamma, π e fonte C2, e inclusões dos coeficientes em `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`. C5 está incompleta.
 EVIDENCE: `evidence/rational-boxes/c5-adaptive-zeta-node-instantiation-validation.md`; logs limpos em `evidence/rational-boxes/c5-node-instantiation-clean-20261107/`.
@@ -28,7 +28,7 @@ Ele ainda não fornece extremos numéricos para qualquer nó nem prova a inclus�
 
 O avaliador genérico foi integrado pela PR #207 como checkpoint explicitamente
 incompleto; aquela etapa ainda não instanciava os nós. A cobertura adaptativa
-formal foi construída depois e está registrada no checkpoint local acima.
+formal foi construída depois e está registrada no checkpoint integrado acima.
 Hipóteses, logs, pins e hashes do avaliador genérico original permanecem em
 `evidence/rational-boxes/c5-rational-node-evaluator-validation.md`.
 

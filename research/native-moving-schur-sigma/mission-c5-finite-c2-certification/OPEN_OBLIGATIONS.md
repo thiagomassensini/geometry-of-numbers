@@ -10,8 +10,9 @@ ficam em `[-5,5]`, e a potência tem `normBound≤4`. A cauda exata continua
 incluída com inflação `<10^-250`.
 
 O build limpo Lean 4.32 e o checker fail-closed de 21 raízes passaram, apenas
-com axiomas padrão. Os arquivos ainda estão em branch local, baseada na main
-`296e899e70bee78c54a3278e73e9bd89eaafaa58`; evidência reproduzível em
+com axiomas padrão. O checkpoint foi integrado pela PR #209, commit de prova
+`05dae531d4ec10c916c340f58255f35977a3abdd`, merge
+`386b654eabe4c942d6b0db46754120ab79b52fb5`; evidência reproduzível em
 `evidence/rational-boxes/c5-adaptive-zeta-node-instantiation-validation.md`.
 
 **Ainda faltam** extremos racionais achatados, a composição com Gamma, o fator

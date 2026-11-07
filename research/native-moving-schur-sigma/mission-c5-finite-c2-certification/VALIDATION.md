@@ -15,11 +15,12 @@ raízes; aparecem somente `propext`, `Classical.choice` e `Quot.sound`. Logs,
 hashes, pins, comando de reprodução e tentativas anteriores estão no registro
 `evidence/rational-boxes/c5-adaptive-zeta-node-instantiation-validation.md`.
 
-Este checkpoint ainda não exporta extremos numéricos achatados nem compõe
-Gamma, o fator dependente de π e a fonte C2; não prova as inclusões O3 e não
-fecha C5. O código foi preparado em branch local com base no merge da PR #208
-`296e899e70bee78c54a3278e73e9bd89eaafaa58`, ainda sem publicação neste
-registro.
+Este checkpoint foi integrado pela PR #209, commit de prova
+`05dae531d4ec10c916c340f58255f35977a3abdd`, merge
+`386b654eabe4c942d6b0db46754120ab79b52fb5`. Ainda não exporta extremos
+numéricos achatados nem compõe Gamma, o fator dependente de π e a fonte C2;
+não prova as inclusões O3 e não fecha C5. A branch de prova partiu do merge
+da PR #208 `296e899e70bee78c54a3278e73e9bd89eaafaa58`.
 
 ## Avaliador racional genérico de zeta — PROVADO CONDICIONALMENTE
 
