@@ -18,7 +18,10 @@ como validação. Os logs, três fontes de auditoria, pins, hashes e comandos
 estão em `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
 
 C5 segue incompleta; não há ponte CSV–Lean, composição completa da fonte C2,
-inclusões O3 ou prova dos sinais finais.
+inclusões O3 ou prova dos sinais finais. Este checkpoint parcial foi integrado
+pela PR #222, commit `67e6cf9fdf86ac735b6ade80d2f4a64982968363`, merge
+`e55858690e296d00c88692b8f30902987e853137`; o GitHub não reportou checks
+hospedados.
 
 ## Componente `log 2` em blocos — PASSOU; C5 permanece parcial
 

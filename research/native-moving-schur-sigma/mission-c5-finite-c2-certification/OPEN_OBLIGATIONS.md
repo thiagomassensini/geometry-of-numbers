@@ -20,8 +20,9 @@ aceito. A evidência integral está em
 Continuam abertas a ligação formal das 516 linhas CSV às caixas Lean, a
 composição de todos os termos da fonte C2 original, as inclusões
 `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` e os sinais finais C5. O
-checkpoint do nó trivial está pronto para publicação como parcial; ele não
-fecha C5.
+checkpoint parcial do nó trivial foi integrado pela PR #222, commit de prova
+`67e6cf9fdf86ac735b6ade80d2f4a64982968363`, merge na `main`
+`e55858690e296d00c88692b8f30902987e853137`; ele não fecha C5.
 
 ## Atualização — componente `log 2` fechado; composição C5 continua aberta
 

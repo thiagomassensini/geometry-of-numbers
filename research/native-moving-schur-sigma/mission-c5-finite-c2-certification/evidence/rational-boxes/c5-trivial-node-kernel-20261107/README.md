@@ -4,6 +4,11 @@
 compiladas e auditadas; a prova da igualdade entre a caixa Lean e os extremos
 exportados da exponencial ainda está incompleta. C5 permanece aberta.
 
+Integrado pela PR #222, commit de prova
+`67e6cf9fdf86ac735b6ade80d2f4a64982968363`, merge na `main`
+`e55858690e296d00c88692b8f30902987e853137`; o GitHub não reportou checks
+hospedados.
+
 ## Resultado validado
 
 - `c5CenteredFastLogSumState_zero` e `c5CenteredFastLog1_one_eq_zero` mostram
