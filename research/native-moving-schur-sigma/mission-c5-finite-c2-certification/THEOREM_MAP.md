@@ -1,5 +1,19 @@
 # C5 — mapa dos teoremas e obrigações
 
+## Exponencial arredondada no estágio 1 — provada localmente
+
+`SigmaC5ZeroExpStagesCertificate.lean` prova
+`c5ZeroExpStage1_eq`: a caixa `c5RoundedExpC 192 896 1` na entrada zero é
+exatamente `c5ZeroExpStage1Export`. Os quatro extremos são certificados por
+igualdades de piso/teto com desigualdades racionais exatas. A auditoria de
+`c5ZeroExpStage0_eq`, dos quatro lemas de arredondamento e de `c5ZeroExpStage1_eq`
+reporta somente axiomas padrão. Build, auditoria, pins e hashes em
+`evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
+
+Este subpasso ainda não foi integrado. Ele não estabelece as igualdades das
+516 linhas CSV com as caixas Lean, não compõe a fonte C2 completa e não prova
+`sigmaC00495SourceBoxes` ou `sigmaC01SourceBoxes`; O4/C5 continua aberta.
+
 ## O4 integrado pela PR #209 — cobertura adaptativa de zeta nos 129 nós
 
 Arquivos integrados: `SigmaC5RationalNodeLogBounds.lean` e

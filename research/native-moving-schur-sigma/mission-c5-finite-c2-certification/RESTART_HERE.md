@@ -1,26 +1,26 @@
 # Retomar primeiro — missão C5
 
-## Retomada mais recente — checkpoint parcial do nó `m = 1` (PR #222)
+## Retomada mais recente — igualdade exata da exponencial no estágio 1
 
 C1B/C2/C3 já estão integradas pelas PRs #155/#157/#159; não as refazer. A
-prioridade vigente é C5. Os lemas do nó `m = 1` foram adicionados aos módulos
-de log centrado, exponencial arredondada e caixas de Dirichlet, e builds e
-auditorias Lean 4.32 passaram. O resto de Taylor continua explícito. C5 segue
-incompleta.
+prioridade vigente é C5. O núcleo `m = 1` foi integrado pela PR #222, e agora
+`SigmaC5ZeroExpStagesCertificate.lean` prova que a caixa exponencial
+arredondada de estágio 1 coincide com os extremos racionais exportados. Os
+quatro pisos/tetos foram provados e auditados em Lean 4.32; C5 ainda está
+incompleta, pois falta a ponte CSV–Lean e as inclusões dos coeficientes da
+fonte C2 nas caixas.
 
-**Base atual:** `main` após PR #222, merge
-`e55858690e296d00c88692b8f30902987e853137`. O commit de prova é
-`67e6cf9fdf86ac735b6ade80d2f4a64982968363`; o GitHub não reportou checks
-hospedados.
+**Base de trabalho:** Geometry `main` em
+`7fba05cd1d6c1a47b4638cf37831458cd49a37a4`, branch
+`codex/c5-after-checkpoint-merges-20261107`. O novo checkpoint de estágio 1
+está validado localmente, com PR/merge ainda pendentes.
 
-Retomar pela igualdade ainda não provada entre a caixa exponencial de estágio
-1 e os extremos exportados. O último build parou ao tentar fechar as
-desigualdades de `Int.floor`/`Int.ceil`; o log completo é
-`evidence/rational-boxes/c5-trivial-node-kernel-20261107/stage1-export-equality-last-attempt.log`.
-Os comandos, pins e fontes de auditoria estão no `README.md` da mesma pasta.
-Não aceitar o `sorryAx` mostrado depois dos erros. Depois de provar esse caso,
-seguir para a ponte CSV–Lean, composição da fonte C2 e inclusões O3. O
-checkpoint foi integrado como parcial e não fecha C5.
+Retomar pela validação/integracão deste checkpoint e, em seguida, provar as
+igualdades exportadas dos estágios seguintes. O build de prova e o audit
+separado, os pins, hashes, a tentativa interrompida e as falhas históricas
+estão em `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`. Depois,
+retomar a ponte CSV–Lean, compor a fonte C2 original e provar as inclusões O3.
+Este resultado fecha somente a igualdade do estágio 1, não C5.
 
 ## Retomada anterior — 2026-11-07 UTC, componente `log 2` certificado
 

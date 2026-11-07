@@ -1,6 +1,6 @@
 # C5 — validação
 
-## Núcleo do nó trivial `m = 1` — PASSOU; igualdade exportada ainda não
+## Nó trivial `m = 1` e igualdade exportada do estágio 1 — PASSOU; C5 parcial
 
 Em Lean 4.32.0, com `warningAsError=true`, passaram os builds de
 `SigmaC5RationalNodePreciseLogBounds.lean`,
@@ -10,18 +10,22 @@ o estado do log em zero, `log 1`, a conversão do log centrado, o argumento e o
 termo de Dirichlet em `m = 1`, e o estado/caixa da exponencial na entrada zero.
 Todas reportam somente `propext`, `Classical.choice` e `Quot.sound`.
 
-A prova preserva a inflação racional que limita o resto de Taylor. Ela não
-estabelece a igualdade da caixa do estágio 1 com os extremos exportados: a
-tentativa mais recente falhou ao montar as desigualdades de piso e teto, e
-terminou com `BUILD_EXIT=1`. O `sorryAx` impresso depois dos erros não conta
-como validação. Os logs, três fontes de auditoria, pins, hashes e comandos
-estão em `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
+A prova preserva a inflação racional que limita o resto de Taylor.
+`SigmaC5ZeroExpStagesCertificate.lean` prova que a caixa de estágio 1 na
+entrada zero coincide exatamente com `c5ZeroExpStage1Export`; quatro lemas
+provam os pisos e tetos por desigualdades racionais exatas. O build Lean 4.32
+com `warningAsError=true` passou, e a auditoria por import das seis raízes
+reporta somente `propext`, `Classical.choice` e `Quot.sound`. As falhas antigas
+continuam preservadas como histórico, sem serem tratadas como validação. Logs,
+fontes, pins, hashes e comandos estão em
+`evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
 
 C5 segue incompleta; não há ponte CSV–Lean, composição completa da fonte C2,
-inclusões O3 ou prova dos sinais finais. Este checkpoint parcial foi integrado
-pela PR #222, commit `67e6cf9fdf86ac735b6ade80d2f4a64982968363`, merge
+inclusões O3 ou prova dos sinais finais. O núcleo inicial do nó trivial foi
+integrado pela PR #222, commit `67e6cf9fdf86ac735b6ade80d2f4a64982968363`, merge
 `e55858690e296d00c88692b8f30902987e853137`; o GitHub não reportou checks
-hospedados.
+hospedados. A atualização do estágio 1 está validada localmente e aguarda sua
+publicação pelo checkpoint atual.
 
 ## Componente `log 2` em blocos — PASSOU; C5 permanece parcial
 

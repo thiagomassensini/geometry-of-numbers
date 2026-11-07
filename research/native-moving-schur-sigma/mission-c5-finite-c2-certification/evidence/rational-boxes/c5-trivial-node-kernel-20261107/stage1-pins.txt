@@ -1,0 +1,14 @@
+Geometry main at start of this checkpoint: 7fba05cd1d6c1a47b4638cf37831458cd49a37a4
+Geometry worktree branch: codex/c5-after-checkpoint-merges-20261107
+Reference Geometry root: /home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105
+Reference Geometry commit: caa07002306b555fea5624cc11ab2ea5811a4324
+Carry root: /home/thlinux/worktrees/carry-sigma-c2-pinned-045369
+Carry commit: 045369f6dedcb2e75e9aefed1d12c9f73b9a2532
+Mathlib commit: 81a5d257c8e410db227a6665ed08f64fea08e997
+Lean: 4.32.0 (commit 8c9756b28d64dab099da31a4c09229a9e6a2ef35)
+Build setting: warningAsError=true
+MemAvailable when validated: approximately 59.8 GiB
+Proof build: SigmaC5ZeroExpStagesCertificate.stage1-build.log, BUILD_EXIT=0
+Axiom audit build: SigmaC5ZeroExpStagesCertificate.stage1-axioms.log, AUDIT_BUILD_EXIT=0
+Theorems audited: c5ZeroExpStage0_eq; four stage-1 floor/ceil lemmas; c5ZeroExpStage1_eq
+Axioms reported: propext, Classical.choice, Quot.sound only
