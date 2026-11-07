@@ -1,5 +1,25 @@
 # Retomar primeiro — missão C5
 
+## Retomada mais recente — nó m=2, transição Taylor n=4→5
+
+```text
+MISSION: C5 — certificar as janelas negativas da fonte C2 original.
+CURRENT BASE: main 442b4904c41d47a63825040a3e42c3fef75763d4 (PR #248).
+LOCAL BRANCH: codex/c5-m2-stage5-20261107 (checkpoint ainda não publicado).
+LAST VERIFIED THEOREM: c5RoundedExpStateC_stage5_correct.
+LAST COMPILED FILE: SigmaC5M2TaylorStateStage5Certificate.lean (Lean 4.32.0, warnings como erros).
+AXIOM AUDIT: cinco raízes com propext, Classical.choice, Quot.sound; sem sorryAx.
+SCOPE: nó m=2, argumento (a,j)=(2/5,0), recorrência até n=5.
+OPEN: n=6…192, quadraturas, nó completo, ponte CSV–Lean, inclusões da fonte e sinais C5.
+EVIDENCE: evidence/rational-boxes/c5-m2-dirichlet-term-stage5-20261107/README.md.
+PINS: Geometry de referência bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3; Carry 045369f6dedcb2e75e9aefed1d12c9f73b9a2532; Lean 4.32.0.
+DO NOT REPEAT: C1B/C2/C3/C4; migração geral para Lean 4.35; prova monolítica dos 192 passos.
+```
+
+O estágio `n=4` foi integrado pela PR #247 e o registro pós-merge pela PR #248.
+Para este passo, siga as dependências e o ambiente no README da evidência.
+
+
 ## Retomada mais recente — nó m=2, transição Taylor n=3→4 integrada pela PR #247
 
 ```text

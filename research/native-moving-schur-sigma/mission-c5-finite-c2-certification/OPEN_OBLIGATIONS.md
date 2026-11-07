@@ -1,5 +1,15 @@
 # C5 — obrigações abertas
 
+## Atualização local — recorrência de um nó até n=5
+
+A recorrência `c5RoundedExpStateC` foi provada até `n=5` no nó `(2/5,0)`.
+Faltam os estados restantes até `n=192`, as quadraturas e a caixa nodal
+completa; em seguida, a ponte CSV–Lean, a composição da fonte e as inclusões
+`sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes`. Evidência em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage5-20261107/README.md`.
+Este checkpoint ainda não foi publicado e C5 continua parcial.
+
+
 ## Atualização — estado de um nó até n=4 integrado pela PR #247
 
 A recorrência foi formalizada até `n=4` para `(a,j)=(2/5,0)` e integrada pela
