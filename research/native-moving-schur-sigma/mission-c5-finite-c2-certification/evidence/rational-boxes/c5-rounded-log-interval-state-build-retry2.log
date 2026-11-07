@@ -1,0 +1,76 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:374:8: error: linarith failed to find a contradiction
+case left
+p : ℕ
+q : ℚ
+n : ℕ
+ih :
+  Interval.logSum n q - ↑n / 2 ^ p ≤ (c5CenteredFastLogSumState p q n).2.lo ∧
+    (c5CenteredFastLogSumState p q n).2.hi ≤ Interval.logSum n q + ↑n / 2 ^ p
+hpow : (c5CenteredFastLogSumState p q n).1 = q ^ (n + 1)
+hlog : Interval.logSum (n + 1) q = Interval.logSum n q + q ^ (n + 1) / (↑n + 1)
+hroundLo :
+  ((c5CenteredFastLogSumState p q n).2.add (Interval.exact ((c5CenteredFastLogSumState p q n).1 / (↑n + 1)))).lo -
+      1 / 2 ^ p ≤
+    (Interval.coarsen p
+        ((c5CenteredFastLogSumState p q n).2.add (Interval.exact ((c5CenteredFastLogSumState p q n).1 / (↑n + 1))))).lo
+hroundHi :
+  (Interval.coarsen p
+        ((c5CenteredFastLogSumState p q n).2.add
+          (Interval.exact ((c5CenteredFastLogSumState p q n).1 / (↑n + 1))))).hi ≤
+    ((c5CenteredFastLogSumState p q n).2.add (Interval.exact ((c5CenteredFastLogSumState p q n).1 / (↑n + 1)))).hi +
+      1 / 2 ^ p
+hroundLo' :
+  (c5CenteredFastLogSumState p q n).2.lo + q ^ (n + 1) / (↑n + 1) - 1 / 2 ^ p ≤
+    (Interval.coarsen p ((c5CenteredFastLogSumState p q n).2.add (Interval.exact (q ^ (n + 1) / (↑n + 1))))).lo
+hroundHi' :
+  (Interval.coarsen p ((c5CenteredFastLogSumState p q n).2.add (Interval.exact (q ^ (n + 1) / (↑n + 1))))).hi ≤
+    (c5CenteredFastLogSumState p q n).2.hi + q ^ (n + 1) / (↑n + 1) + 1 / 2 ^ p
+a✝ :
+  (Interval.coarsen p
+        ((c5CenteredFastLogSumState p q n).2.add
+          (Interval.exact ((c5CenteredFastLogSumState p q n).1 / (↑n + 1))))).lo <
+    Interval.logSum n q + q ^ (n + 1) / (↑n + 1) - (↑n + 1) / 2 ^ p
+⊢ False
+failed
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:377:8: error: linarith failed to find a contradiction
+case right
+p : ℕ
+q : ℚ
+n : ℕ
+ih :
+  Interval.logSum n q - ↑n / 2 ^ p ≤ (c5CenteredFastLogSumState p q n).2.lo ∧
+    (c5CenteredFastLogSumState p q n).2.hi ≤ Interval.logSum n q + ↑n / 2 ^ p
+hpow : (c5CenteredFastLogSumState p q n).1 = q ^ (n + 1)
+hlog : Interval.logSum (n + 1) q = Interval.logSum n q + q ^ (n + 1) / (↑n + 1)
+hroundLo :
+  ((c5CenteredFastLogSumState p q n).2.add (Interval.exact ((c5CenteredFastLogSumState p q n).1 / (↑n + 1)))).lo -
+      1 / 2 ^ p ≤
+    (Interval.coarsen p
+        ((c5CenteredFastLogSumState p q n).2.add (Interval.exact ((c5CenteredFastLogSumState p q n).1 / (↑n + 1))))).lo
+hroundHi :
+  (Interval.coarsen p
+        ((c5CenteredFastLogSumState p q n).2.add
+          (Interval.exact ((c5CenteredFastLogSumState p q n).1 / (↑n + 1))))).hi ≤
+    ((c5CenteredFastLogSumState p q n).2.add (Interval.exact ((c5CenteredFastLogSumState p q n).1 / (↑n + 1)))).hi +
+      1 / 2 ^ p
+hroundLo' :
+  (c5CenteredFastLogSumState p q n).2.lo + q ^ (n + 1) / (↑n + 1) - 1 / 2 ^ p ≤
+    (Interval.coarsen p ((c5CenteredFastLogSumState p q n).2.add (Interval.exact (q ^ (n + 1) / (↑n + 1))))).lo
+hroundHi' :
+  (Interval.coarsen p ((c5CenteredFastLogSumState p q n).2.add (Interval.exact (q ^ (n + 1) / (↑n + 1))))).hi ≤
+    (c5CenteredFastLogSumState p q n).2.hi + q ^ (n + 1) / (↑n + 1) + 1 / 2 ^ p
+a✝ :
+  Interval.logSum n q + q ^ (n + 1) / (↑n + 1) + (↑n + 1) / 2 ^ p <
+    (Interval.coarsen p
+        ((c5CenteredFastLogSumState p q n).2.add (Interval.exact ((c5CenteredFastLogSumState p q n).1 / (↑n + 1))))).hi
+⊢ False
+failed
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:391:10: error: Function expected at
+  one_le_pow₀ ?m.66
+but this term has type
+  1 ≤ 2 ^ ?m.67
+
+Note: Expected a function because this term is being applied to the argument
+  _
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:397:44: error: exponent 384 exceeds the threshold 256, exponentiation operation was not evaluated, use `set_option exponentiation.threshold <num>` to set a new threshold
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:415:6: error: exponent 384 exceeds the threshold 256, exponentiation operation was not evaluated, use `set_option exponentiation.threshold <num>` to set a new threshold

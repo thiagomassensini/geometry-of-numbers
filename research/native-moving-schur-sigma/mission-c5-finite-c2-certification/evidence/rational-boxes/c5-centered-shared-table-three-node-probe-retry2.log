@@ -1,0 +1,9 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5CenteredSharedTableProbe.lean:8:4: error: Type mismatch
+  c5RationalZetaCenteredNodeBoxWithTable 512 192 896 (3 / 5) (j / 100000) bernTable
+has type
+  ZetaLean.ComplexInterval
+but is expected to have type
+  ComplexInterval
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5CenteredSharedTableProbe.lean:11:53: error(lean.unknownIdentifier): Unknown identifier `ComplexInterval`
+Command exited with non-zero status 1
+ELAPSED 0:09.99 CPU 100% MAX_RSS 6539068 KiB

@@ -1,0 +1,83 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:27:8: error: Application type mismatch: The argument
+  contains_mul (c5RatComplexPowInterval_contains p z n) (c5RatComplexInterval_contains z)
+has type
+  ((c5RatComplexPowInterval p z n).mul (c5RatComplexInterval z)).contains
+    (ratComplexToComplex (c5RatComplexPow z n) * ratComplexToComplex z)
+but is expected to have type
+  ((c5RatComplexPowInterval p z n).mul (c5RatComplexInterval z)).contains
+    (ratComplexToComplex (ratComplexMul (c5RatComplexPow z n) z))
+in the application
+  contains_coarsen p (contains_mul (c5RatComplexPowInterval_contains p z n) (c5RatComplexInterval_contains z))
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:82:74: error: unsolved goals
+p : ℕ
+a b : ℚ
+N j : ℕ
+k : ℕ := 2 * j + 1
+bern : ComplexInterval := exact (c5RatBernoulliCoefficient j) 0
+poch : ComplexInterval := c5RatPochhammerInterval p a b k
+invPow : ComplexInterval := c5RatComplexPowInterval p (1 / ↑N, 0) k
+hbern : bern.contains (ratComplexToComplex (c5RatBernoulliCoefficient j, 0))
+hpoch : (c5RatPochhammerInterval p a b k).contains (ratComplexToComplex (c5RatPochhammer a b k))
+hinv : (c5RatComplexPowInterval p (1 / ↑N, 0) k).contains (ratComplexToComplex (c5RatComplexPow (1 / ↑N, 0) k))
+hmul₁ :
+  (coarsen p (bern.mul (c5RatPochhammerInterval p a b k))).contains
+    (ratComplexToComplex (c5RatBernoulliCoefficient j, 0) * ratComplexToComplex (c5RatPochhammer a b k))
+hmul₂ :
+  (coarsen p
+        ((coarsen p (bern.mul (c5RatPochhammerInterval p a b k))).mul
+          (c5RatComplexPowInterval p (1 / ↑N, 0) k))).contains
+    (ratComplexToComplex (c5RatBernoulliCoefficient j, 0) * ratComplexToComplex (c5RatPochhammer a b k) *
+      ratComplexToComplex (c5RatComplexPow (1 / ↑N, 0) k))
+⊢ ↑(c5RatBernoulliCoefficient j) * ratComplexToComplex (c5RatPochhammer a b (2 * j + 1)) *
+      ratComplexToComplex (c5RatComplexPow ((↑N)⁻¹, 0) (2 * j + 1)) =
+    ↑(c5RatBernoulliCoefficient j) * ratComplexToComplex (c5RatPochhammer a b k) *
+      ratComplexToComplex (c5RatComplexPow ((↑N)⁻¹, 0) k)
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:84:9: error: Type mismatch
+  coarsen p ((coarsen p (bern.mul poch)).mul invPow)
+has type
+  ComplexInterval
+but is expected to have type
+  Prop
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:84:59: error: unexpected token ')'; expected command
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:117:12: error: Type mismatch
+  c5RatCorrectionSum_toComplex a b (P + 1) N
+has type
+  ratComplexToComplex (c5RatCorrectionSum a b (P + 1) N) =
+    ∑ j ∈ Finset.range (P + 1),
+      SigmaC5Zeta.emBernoulliCoefficient j * SigmaC5Zeta.emPochhammer (↑a + ↑b * Complex.I) (2 * j + 1) *
+        ↑N ^ (-↑(2 * j + 1))
+but is expected to have type
+  ratComplexToComplex (c5RatCorrectionSum a b (P + 1) N) =
+    ∑ i ∈ Finset.range (P + 1), ratComplexToComplex (c5RatCorrectionTerm a b N i)
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:124:16: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ j ∈ Finset.range P,
+    SigmaC5Zeta.emBernoulliCoefficient j * SigmaC5Zeta.emPochhammer (↑a + ↑b * Complex.I) (2 * j + 1) *
+      ↑N ^ (-↑(2 * j + 1))
+in the target expression
+  ∑ i ∈ Finset.range P, ratComplexToComplex (c5RatCorrectionTerm a b N i) +
+      ratComplexToComplex (c5RatCorrectionTerm a b N P) =
+    ratComplexToComplex (c5RatCorrectionSum a b P N) + ratComplexToComplex (c5RatCorrectionTerm a b N P)
+
+p : ℕ
+a b : ℚ
+N P : ℕ
+hsum : (c5RatCorrectionSumInterval p a b N P).contains (ratComplexToComplex (c5RatCorrectionSum a b P N))
+hterm : (c5RatCorrectionTermInterval p a b N P).contains (ratComplexToComplex (c5RatCorrectionTerm a b N P))
+⊢ ∑ i ∈ Finset.range P, ratComplexToComplex (c5RatCorrectionTerm a b N i) +
+      ratComplexToComplex (c5RatCorrectionTerm a b N P) =
+    ratComplexToComplex (c5RatCorrectionSum a b P N) + ratComplexToComplex (c5RatCorrectionTerm a b N P)
+'CarrySigmaObstruction.c5RatComplexPowInterval_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5RatPochhammerInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionTermInterval_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionSumInterval_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5RatScaleInterval_contains' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+BUILD_EXIT=1

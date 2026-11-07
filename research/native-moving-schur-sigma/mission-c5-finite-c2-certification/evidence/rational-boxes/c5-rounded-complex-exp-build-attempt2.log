@@ -1,0 +1,4 @@
+'CarrySigmaObstruction.contains_c5RoundedPowI' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.contains_c5RoundedExpSumC' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.contains_c5RoundedExpSmall' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.contains_c5RoundedExpC' depends on axioms: [propext, Classical.choice, Quot.sound]

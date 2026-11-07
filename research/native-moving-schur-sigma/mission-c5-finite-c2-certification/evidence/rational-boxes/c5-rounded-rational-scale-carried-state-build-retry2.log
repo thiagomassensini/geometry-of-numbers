@@ -1,0 +1,28 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:136:8: error: 'change' tactic failed, pattern
+  (exact a b).contains (ratComplexToComplex (a, b))
+is not definitionally equal to target
+  (c5RatCorrectionStateInterval p a b N 0).1.contains (ratComplexToComplex (c5RatPochhammer a b (2 * 0 + 1)))
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:140:8: error: 'change' tactic failed, pattern
+  (exact (1 / ↑N) 0).contains (ratComplexToComplex (1 / ↑N, 0))
+is not definitionally equal to target
+  (c5RatCorrectionStateInterval p a b N 0).2.1.contains (ratComplexToComplex (c5RatComplexPow (1 / ↑N, 0) (2 * 0 + 1)))
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:244:8: error: Type mismatch
+  hpow₂
+has type
+  (coarsen p
+        ((coarsen p ((c5RatCorrectionStateInterval p a b N j).2.1.mul (exact (↑N)⁻¹ 0))).mul (exact (↑N)⁻¹ 0))).contains
+    (ratComplexToComplex (c5RatComplexPow (1 / ↑N, 0) (2 * j + 1)) * (↑N)⁻¹ * (↑N)⁻¹)
+but is expected to have type
+  (coarsen p
+        ((coarsen p ((c5RatCorrectionStateInterval p a b N j).2.1.mul (exact (1 / ↑N) 0))).mul
+          (exact (1 / ↑N) 0))).contains
+    (ratComplexToComplex (c5RatComplexPow (1 / ↑N, 0) k) * ratComplexToComplex (1 / ↑N, 0) *
+      ratComplexToComplex (1 / ↑N, 0))
+'CarrySigmaObstruction.c5RatComplexPowInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatPochhammerInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionTermInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionSumInterval_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5RatScaleInterval_contains' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

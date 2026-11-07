@@ -1,0 +1,12 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5FastBernoulliTable.lean:34:55: error: unexpected token ')'; expected ':=' or '|'
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5FastBernoulliTable.lean:31:12: error: type expected, got
+  ((c5BernoulliPrimeTable n).push
+  (1 - ∑ k ∈ Finset.range n, ↑(n.choose k) / ↑(n - k + 1) * (c5BernoulliPrimeTable n).getD k 0) : Array ℚ)
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5FastBernoulliTable.lean:26:14: error: unsolved goals
+case neg
+n : ℕ
+ih : ∀ i < n, (c5BernoulliPrimeTable n).getD i 0 = bernoulli' i
+i : ℕ
+hi : i < n + 1
+h : ¬i < n
+⊢ (c5BernoulliPrimeTable (n + 1)).getD i 0 = bernoulli' i

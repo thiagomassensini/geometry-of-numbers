@@ -1,0 +1,106 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5CenteredSharedTableProbe.lean:8:4: error: Type mismatch
+  c5RationalZetaCenteredNodeBoxWithTable 512 192 896 (3 / 5) (j / 100000) bernTable
+has type
+  ZetaLean.ComplexInterval
+but is expected to have type
+  ComplexInterval
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5CenteredSharedTableProbe.lean:12:21: error(lean.invalidField): Invalid field notation: Type of
+  box
+is not known; cannot resolve field `re`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `AEMeasurable.re`
+  • `Complex.re`
+  • `Measurable.re`
+  • `QuadraticAlgebra.re`
+  • `QuaternionAlgebra.re`
+  • `RCLike.re`
+  • `TendstoUniformly.re`
+  • `TendstoUniformlyOn.re`
+  • `UpperHalfPlane.re`
+  • `Zsqrtd.re`
+  • `Complex.UnitClosedDisc.re`
+  • `Complex.UnitDisc.re`
+  • `MeasureTheory.AEStronglyMeasurable.re`
+  • `MeasureTheory.ComplexMeasure.re`
+  • `MeasureTheory.Integrable.re`
+  • `MeasureTheory.MemLp.re`
+  • `ZetaLean.ComplexInterval.re`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5CenteredSharedTableProbe.lean:12:33: error(lean.invalidField): Invalid field notation: Type of
+  box
+is not known; cannot resolve field `re`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `AEMeasurable.re`
+  • `Complex.re`
+  • `Measurable.re`
+  • `QuadraticAlgebra.re`
+  • `QuaternionAlgebra.re`
+  • `RCLike.re`
+  • `TendstoUniformly.re`
+  • `TendstoUniformlyOn.re`
+  • `UpperHalfPlane.re`
+  • `Zsqrtd.re`
+  • `Complex.UnitClosedDisc.re`
+  • `Complex.UnitDisc.re`
+  • `MeasureTheory.AEStronglyMeasurable.re`
+  • `MeasureTheory.ComplexMeasure.re`
+  • `MeasureTheory.Integrable.re`
+  • `MeasureTheory.MemLp.re`
+  • `ZetaLean.ComplexInterval.re`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5CenteredSharedTableProbe.lean:13:21: error(lean.invalidField): Invalid field notation: Type of
+  box
+is not known; cannot resolve field `im`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `AEMeasurable.im`
+  • `Complex.im`
+  • `Measurable.im`
+  • `QuadraticAlgebra.im`
+  • `Quaternion.im`
+  • `QuaternionAlgebra.im`
+  • `RCLike.im`
+  • `TendstoUniformly.im`
+  • `TendstoUniformlyOn.im`
+  • `UpperHalfPlane.im`
+  • `Zsqrtd.im`
+  • `CategoryTheory.Abelian.im`
+  • `CategoryTheory.Limits.im`
+  • `CategoryTheory.Subgroupoid.im`
+  • `Complex.UnitClosedDisc.im`
+  • `Complex.UnitDisc.im`
+  • `MeasureTheory.AEStronglyMeasurable.im`
+  • `MeasureTheory.ComplexMeasure.im`
+  • `MeasureTheory.Integrable.im`
+  • `MeasureTheory.MemLp.im`
+  • `ZetaLean.ComplexInterval.im`
+  • `CategoryTheory.Subgroupoid.Map.Arrows.im`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5CenteredSharedTableProbe.lean:13:33: error(lean.invalidField): Invalid field notation: Type of
+  box
+is not known; cannot resolve field `im`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `AEMeasurable.im`
+  • `Complex.im`
+  • `Measurable.im`
+  • `QuadraticAlgebra.im`
+  • `Quaternion.im`
+  • `QuaternionAlgebra.im`
+  • `RCLike.im`
+  • `TendstoUniformly.im`
+  • `TendstoUniformlyOn.im`
+  • `UpperHalfPlane.im`
+  • `Zsqrtd.im`
+  • `CategoryTheory.Abelian.im`
+  • `CategoryTheory.Limits.im`
+  • `CategoryTheory.Subgroupoid.im`
+  • `Complex.UnitClosedDisc.im`
+  • `Complex.UnitDisc.im`
+  • `MeasureTheory.AEStronglyMeasurable.im`
+  • `MeasureTheory.ComplexMeasure.im`
+  • `MeasureTheory.Integrable.im`
+  • `MeasureTheory.MemLp.im`
+  • `ZetaLean.ComplexInterval.im`
+  • `CategoryTheory.Subgroupoid.Map.Arrows.im`
+Command exited with non-zero status 1
+ELAPSED 0:13.36 CPU 100% MAX_RSS 6540852 KiB

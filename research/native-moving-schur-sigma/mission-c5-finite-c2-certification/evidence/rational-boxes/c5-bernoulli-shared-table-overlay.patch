@@ -1,0 +1,1937 @@
+diff --git a/research/native-moving-schur-sigma/SigmaC5BernoulliProbe.lean b/research/native-moving-schur-sigma/SigmaC5BernoulliProbe.lean
+new file mode 100644
+index 0000000..b8e4bcf
+--- /dev/null
++++ b/research/native-moving-schur-sigma/SigmaC5BernoulliProbe.lean
+@@ -0,0 +1,6 @@
++import SigmaC5RationalNodeEval
++
++open CarrySigmaObstruction
++
++#eval let c : ℚ := (bernoulli 600 : ℚ)
++  (c.num.natAbs.log2, c.den.log2)
+diff --git a/research/native-moving-schur-sigma/SigmaC5Centered129SharedTableProbe.lean b/research/native-moving-schur-sigma/SigmaC5Centered129SharedTableProbe.lean
+new file mode 100644
+index 0000000..640272b
+--- /dev/null
++++ b/research/native-moving-schur-sigma/SigmaC5Centered129SharedTableProbe.lean
+@@ -0,0 +1,13 @@
++import SigmaC5RationalNodeCenteredInstantiate
++
++open CarrySigmaObstruction ZetaLean
++
++def c5Centered129SharedTableProbeBoxes : List ComplexInterval :=
++  let bernTable := c5BernoulliPrimeTable 601
++  (List.range 129).map fun j =>
++    c5RationalZetaCenteredNodeBoxWithTable 512 192 896 (3 / 5)
++      ((j : ℚ) / 100000) bernTable
++
++#eval (c5Centered129SharedTableProbeBoxes.map fun (box : ComplexInterval) =>
++  (box.re.hi - box.re.lo).den.log2 +
++    (box.im.hi - box.im.lo).den.log2).sum
+diff --git a/research/native-moving-schur-sigma/SigmaC5Centered129StreamProbe.lean b/research/native-moving-schur-sigma/SigmaC5Centered129StreamProbe.lean
+new file mode 100644
+index 0000000..4e0cb92
+--- /dev/null
++++ b/research/native-moving-schur-sigma/SigmaC5Centered129StreamProbe.lean
+@@ -0,0 +1,13 @@
++import SigmaC5RationalNodeCenteredInstantiate
++
++open CarrySigmaObstruction ZetaLean
++
++#eval do
++  let bernTable := c5BernoulliPrimeTable 601
++  (List.range 129).forM fun j => do
++    let b : ℚ := (j : ℚ) / 100000
++    let box := c5RationalZetaCenteredNodeBoxWithTable 512 192 896
++      (3 / 5) b bernTable
++    let reWidth : ℚ := box.re.hi - box.re.lo
++    let imWidth : ℚ := box.im.hi - box.im.lo
++    IO.println s!"{j}: ({reWidth.num.natAbs.log2}, {reWidth.den.log2}), ({imWidth.num.natAbs.log2}, {imWidth.den.log2})"
+diff --git a/research/native-moving-schur-sigma/SigmaC5CenteredExpProbe.lean b/research/native-moving-schur-sigma/SigmaC5CenteredExpProbe.lean
+new file mode 100644
+index 0000000..b4060da
+--- /dev/null
++++ b/research/native-moving-schur-sigma/SigmaC5CenteredExpProbe.lean
+@@ -0,0 +1,21 @@
++import SigmaC5RationalNodeCenteredBoxes
++
++open ZetaLean ZetaLean.ComplexInterval
++
++def c5CenteredExpProbeInput : ComplexInterval :=
++  (ComplexInterval.exact (2 / 5) (128 / 100000)).neg.mul
++    { re := (CarrySigmaObstruction.c5CenteredLogQ 512
++      (CarrySigmaObstruction.c5CenteredLogScale 100) 100).coarsen 896,
++      im := Interval.exact 0 }
++
++def c5CenteredExpProbeBox : ComplexInterval :=
++  expCr 192 896 4 c5CenteredExpProbeInput
++
++def c5CenteredExpProbeRealWidth : ℚ :=
++  c5CenteredExpProbeBox.re.hi - c5CenteredExpProbeBox.re.lo
++
++def c5CenteredExpProbeImagWidth : ℚ :=
++  c5CenteredExpProbeBox.im.hi - c5CenteredExpProbeBox.im.lo
++
++#eval (c5CenteredExpProbeRealWidth.num.natAbs.log2, c5CenteredExpProbeRealWidth.den.log2)
++#eval (c5CenteredExpProbeImagWidth.num.natAbs.log2, c5CenteredExpProbeImagWidth.den.log2)
+diff --git a/research/native-moving-schur-sigma/SigmaC5CenteredLogProbe.lean b/research/native-moving-schur-sigma/SigmaC5CenteredLogProbe.lean
+new file mode 100644
+index 0000000..59113a6
+--- /dev/null
++++ b/research/native-moving-schur-sigma/SigmaC5CenteredLogProbe.lean
+@@ -0,0 +1,11 @@
++import SigmaC5RationalNodeCenteredBoxes
++
++open ZetaLean
++
++def c5CenteredLogProbeBox : Interval :=
++  (CarrySigmaObstruction.c5CenteredLogQ 512
++    (CarrySigmaObstruction.c5CenteredLogScale 100) 100).coarsen 896
++
++def c5CenteredLogProbeWidth : ℚ := c5CenteredLogProbeBox.hi - c5CenteredLogProbeBox.lo
++
++#eval (c5CenteredLogProbeWidth.num.natAbs.log2, c5CenteredLogProbeWidth.den.log2)
+diff --git a/research/native-moving-schur-sigma/SigmaC5CenteredSharedTableProbe.lean b/research/native-moving-schur-sigma/SigmaC5CenteredSharedTableProbe.lean
+new file mode 100644
+index 0000000..772a1af
+--- /dev/null
++++ b/research/native-moving-schur-sigma/SigmaC5CenteredSharedTableProbe.lean
+@@ -0,0 +1,16 @@
++import SigmaC5RationalNodeCenteredInstantiate
++
++open CarrySigmaObstruction
++open ZetaLean
++
++def c5CenteredSharedTableProbeBoxes : List ComplexInterval :=
++  let bernTable := c5BernoulliPrimeTable 601
++  (List.range 3).map fun j =>
++    c5RationalZetaCenteredNodeBoxWithTable 512 192 896 (3 / 5)
++      ((j : ℚ) / 100000) bernTable
++
++#eval c5CenteredSharedTableProbeBoxes.map fun (box : ComplexInterval) =>
++  let reWidth : ℚ := box.re.hi - box.re.lo
++  let imWidth : ℚ := box.im.hi - box.im.lo
++  ((reWidth.num.natAbs.log2, reWidth.den.log2),
++    (imWidth.num.natAbs.log2, imWidth.den.log2))
+diff --git a/research/native-moving-schur-sigma/SigmaC5CenteredTermProbe.lean b/research/native-moving-schur-sigma/SigmaC5CenteredTermProbe.lean
+new file mode 100644
+index 0000000..883c208
+--- /dev/null
++++ b/research/native-moving-schur-sigma/SigmaC5CenteredTermProbe.lean
+@@ -0,0 +1,13 @@
++import SigmaC5RationalNodeCenteredBoxes
++
++open ZetaLean ZetaLean.ComplexInterval
++
++def c5CenteredProbeBox : ComplexInterval :=
++  CarrySigmaObstruction.c5CenteredDirichletTermBox 512 192 896 4 100
++    (ComplexInterval.exact (2 / 5) (128 / 100000))
++
++def c5CenteredProbeRealWidth : ℚ := c5CenteredProbeBox.re.hi - c5CenteredProbeBox.re.lo
++def c5CenteredProbeImagWidth : ℚ := c5CenteredProbeBox.im.hi - c5CenteredProbeBox.im.lo
++
++#eval (c5CenteredProbeRealWidth.num.natAbs.log2, c5CenteredProbeRealWidth.den.log2)
++#eval (c5CenteredProbeImagWidth.num.natAbs.log2, c5CenteredProbeImagWidth.den.log2)
+diff --git a/research/native-moving-schur-sigma/SigmaC5CenteredZetaNodeProbe.lean b/research/native-moving-schur-sigma/SigmaC5CenteredZetaNodeProbe.lean
+new file mode 100644
+index 0000000..8854f01
+--- /dev/null
++++ b/research/native-moving-schur-sigma/SigmaC5CenteredZetaNodeProbe.lean
+@@ -0,0 +1,18 @@
++import SigmaC5RationalNodeCenteredInstantiate
++
++open ZetaLean ZetaLean.ComplexInterval
++open CarrySigmaObstruction
++
++def c5CenteredNodeProbeBox : ComplexInterval :=
++  c5RationalZetaCenteredNodeBox 512 192 896 (3 / 5) (128 / 100000)
++
++def c5CenteredNodeProbeRealWidth : ℚ :=
++  c5CenteredNodeProbeBox.re.hi - c5CenteredNodeProbeBox.re.lo
++
++def c5CenteredNodeProbeImagWidth : ℚ :=
++  c5CenteredNodeProbeBox.im.hi - c5CenteredNodeProbeBox.im.lo
++
++#eval ((c5CenteredNodeProbeRealWidth.num.natAbs.log2,
++    c5CenteredNodeProbeRealWidth.den.log2),
++  (c5CenteredNodeProbeImagWidth.num.natAbs.log2,
++    c5CenteredNodeProbeImagWidth.den.log2))
+diff --git a/research/native-moving-schur-sigma/SigmaC5FastBernoulliProbe.lean b/research/native-moving-schur-sigma/SigmaC5FastBernoulliProbe.lean
+new file mode 100644
+index 0000000..24ae6e1
+--- /dev/null
++++ b/research/native-moving-schur-sigma/SigmaC5FastBernoulliProbe.lean
+@@ -0,0 +1,6 @@
++import SigmaC5FastBernoulliTable
++
++open CarrySigmaObstruction
++
++#eval let c := (c5BernoulliPrimeTable 601).getD 600 0
++  (c.num.natAbs.log2, c.den.log2)
+diff --git a/research/native-moving-schur-sigma/SigmaC5FastBernoulliTable.lean b/research/native-moving-schur-sigma/SigmaC5FastBernoulliTable.lean
+new file mode 100644
+index 0000000..4c112c8
+--- /dev/null
++++ b/research/native-moving-schur-sigma/SigmaC5FastBernoulliTable.lean
+@@ -0,0 +1,65 @@
++import Mathlib.NumberTheory.Bernoulli
++
++namespace CarrySigmaObstruction
++
++open scoped BigOperators
++
++/-- Build the Bernoulli-prime sequence once, retaining all earlier values in
++an array so the recurrence can read them in constant time. -/
++def c5BernoulliPrimeTable : ℕ → Array ℚ
++  | 0 => #[]
++  | n + 1 =>
++      let prev := c5BernoulliPrimeTable n
++      prev.push (1 - ∑ k ∈ Finset.range n,
++        (n.choose k : ℚ) / ((n - k + 1 : ℕ) : ℚ) * prev.getD k 0)
++
++theorem c5BernoulliPrimeTable_size (n : ℕ) :
++    (c5BernoulliPrimeTable n).size = n := by
++  induction n with
++  | zero => rfl
++  | succ n ih => simp [c5BernoulliPrimeTable, ih]
++
++theorem c5BernoulliPrimeTable_getD (n i : ℕ) (hi : i < n) :
++    (c5BernoulliPrimeTable n).getD i 0 = bernoulli' i := by
++  induction n generalizing i with
++  | zero => omega
++  | succ n ih =>
++      by_cases h : i < n
++      · rw [c5BernoulliPrimeTable]
++        have hs := c5BernoulliPrimeTable_size n
++        have hget :
++            ((c5BernoulliPrimeTable n).push
++                (1 - ∑ k ∈ Finset.range n,
++                  (n.choose k : ℚ) / ((n - k + 1 : ℕ) : ℚ) *
++                    (c5BernoulliPrimeTable n).getD k 0)).getD i 0 =
++              (c5BernoulliPrimeTable n).getD i 0 := by
++          rw [Array.getD_eq_getD_getElem?, Array.getElem?_push, hs]
++          simp [Nat.ne_of_lt h]
++        rw [hget]
++        exact ih i h
++      · have hieq : i = n := by omega
++        subst i
++        rw [c5BernoulliPrimeTable]
++        have hs := c5BernoulliPrimeTable_size n
++        have hget :
++            ((c5BernoulliPrimeTable n).push
++                (1 - ∑ k ∈ Finset.range n,
++                  (n.choose k : ℚ) / ((n - k + 1 : ℕ) : ℚ) *
++                    (c5BernoulliPrimeTable n).getD k 0)).getD n 0 =
++              1 - ∑ k ∈ Finset.range n,
++                (n.choose k : ℚ) / ((n - k + 1 : ℕ) : ℚ) *
++                  (c5BernoulliPrimeTable n).getD k 0 := by
++          rw [Array.getD_eq_getD_getElem?, Array.getElem?_push, hs]
++          simp
++        rw [hget, bernoulli'_def]
++        congr 1
++        apply Finset.sum_congr rfl
++        intro k hk
++        have hklt : k < n := Finset.mem_range.mp hk
++        have hden : ((n - k + 1 : ℕ) : ℚ) =
++            (n : ℚ) - (k : ℚ) + 1 := by
++          rw [Nat.cast_add, Nat.cast_sub (Nat.le_of_lt hklt)]
++          norm_num
++        rw [hden, ← ih k hklt]
++
++end CarrySigmaObstruction
+diff --git a/research/native-moving-schur-sigma/SigmaC5RationalNodeCenteredBoxes.lean b/research/native-moving-schur-sigma/SigmaC5RationalNodeCenteredBoxes.lean
+new file mode 100644
+index 0000000..2fc1de2
+--- /dev/null
++++ b/research/native-moving-schur-sigma/SigmaC5RationalNodeCenteredBoxes.lean
+@@ -0,0 +1,176 @@
++import SigmaC5RationalNodePreciseLogBounds
++import SigmaC5RoundedComplexExp
++import SigmaC5RationalNodeInstantiate
++import SigmaC5RoundedRationalScale
++
++namespace CarrySigmaObstruction
++
++open ZetaLean ZetaLean.ComplexInterval
++set_option autoImplicit false
++set_option maxHeartbeats 0
++set_option maxRecDepth 1000000
++
++private theorem c5_two_pow_ge_one (p : ℕ) : (1 : ℚ) ≤ 2 ^ p := by
++  induction p with
++  | zero => norm_num
++  | succ p ih =>
++      rw [pow_succ]
++      nlinarith [mul_le_mul_of_nonneg_right ih
++        (by norm_num : (0 : ℚ) ≤ (2 : ℚ))]
++
++/-- Outward dyadic rounding grows either endpoint magnitude by at most one. -/
++theorem c5CoarsenIntervalAbsBound (p : ℕ) (L : Interval)
++    (hLo : |L.lo| ≤ 16) (hHi : |L.hi| ≤ 16) :
++    |(L.coarsen p).lo| ≤ 17 ∧ |(L.coarsen p).hi| ≤ 17 := by
++  let D : ℚ := 2 ^ p
++  have hDpos : 0 < D := by positivity
++  have hDge : 1 ≤ D := by simpa [D] using c5_two_pow_ge_one p
++  have hfloorLo : L.lo * D - 1 < (Int.floor (L.lo * D) : ℚ) := by
++    have h := Int.lt_floor_add_one (L.lo * D)
++    linarith
++  have hfloorHi : (Int.floor (L.lo * D) : ℚ) ≤ L.lo * D := Int.floor_le _
++  have hceilLo : L.hi * D ≤ (Int.ceil (L.hi * D) : ℚ) := Int.le_ceil _
++  have hceilHi : (Int.ceil (L.hi * D) : ℚ) < L.hi * D + 1 := by
++    have h := Int.ceil_lt_add_one (L.hi * D)
++    linarith
++  have hLoLower : -16 ≤ L.lo := (abs_le.mp hLo).1
++  have hLoUpper : L.lo ≤ 16 := (abs_le.mp hLo).2
++  have hHiLower : -16 ≤ L.hi := (abs_le.mp hHi).1
++  have hHiUpper : L.hi ≤ 16 := (abs_le.mp hHi).2
++  constructor
++  · apply abs_le.mpr
++    constructor
++    · change -17 ≤ (Int.floor (L.lo * D) : ℚ) / D
++      rw [le_div_iff₀ hDpos]
++      nlinarith
++    · change (Int.floor (L.lo * D) : ℚ) / D ≤ 17
++      rw [div_le_iff₀ hDpos]
++      nlinarith
++  · apply abs_le.mpr
++    constructor
++    · change -17 ≤ (Int.ceil (L.hi * D) : ℚ) / D
++      rw [le_div_iff₀ hDpos]
++      nlinarith
++    · change (Int.ceil (L.hi * D) : ℚ) / D ≤ 17
++      rw [div_le_iff₀ hDpos]
++      nlinarith
++
++theorem c5CenteredLogQCoarsenedAbsBound (nLog p m : ℕ)
++    (hm0 : 1 ≤ m) (hm100 : m ≤ 100) :
++    |((c5CenteredLogQ nLog (c5CenteredLogScale m) (m : ℚ)).coarsen p).lo| ≤ 17 ∧
++      |((c5CenteredLogQ nLog (c5CenteredLogScale m) (m : ℚ)).coarsen p).hi| ≤ 17 := by
++  exact c5CoarsenIntervalAbsBound p _
++    (c5CenteredLogQLogBound nLog m hm0 hm100).1
++    (c5CenteredLogQLogBound nLog m hm0 hm100).2
++
++def c5CenteredDirichletTermBoxWithLogTwo (nLog nExp p kE : ℕ)
++    (logTwo : Interval) (m : ℕ) (S : ComplexInterval) : ComplexInterval :=
++  c5RoundedExpC nExp p kE (S.neg.mul
++    { re := (c5CenteredLogQFromLogTwo nLog (c5CenteredLogScale m)
++        (m : ℚ) logTwo).coarsen p,
++      im := Interval.exact 0 })
++
++def c5CenteredDirichletTermBox (nLog nExp p kE : ℕ) (m : ℕ)
++    (S : ComplexInterval) : ComplexInterval :=
++  c5CenteredDirichletTermBoxWithLogTwo nLog nExp p kE
++    (c5CenteredLog2I nLog) m S
++
++theorem c5CenteredDirichletTermBoxNormBound {nLog p m : ℕ} {a b : ℚ}
++    (hm0 : 1 ≤ m) (hm100 : m ≤ 100)
++    (haLo : 2 / 5 ≤ a) (haHi : a ≤ 3 / 5)
++    (hbLo : 0 ≤ b) (hbHi : b ≤ 128 / 100000) :
++    normBound ((ComplexInterval.exact a b).neg.mul
++      { re := (c5CenteredLogQ nLog (c5CenteredLogScale m) (m : ℚ)).coarsen p,
++        im := Interval.exact 0 }) ≤ 16 := by
++  have hL := c5CenteredLogQCoarsenedAbsBound nLog p m hm0 hm100
++  have hreal := c5AbsIntervalMulExactEndpoints (c := -a) (M := 17) hL.1 hL.2
++  have himag := c5AbsIntervalMulExactEndpoints (c := -b) (M := 17) hL.1 hL.2
++  have hbox :
++      (ComplexInterval.exact a b).neg.mul
++        { re := (c5CenteredLogQ nLog (c5CenteredLogScale m) (m : ℚ)).coarsen p,
++          im := Interval.exact 0 } =
++        { re := (Interval.exact (-a)).mul
++            ((c5CenteredLogQ nLog (c5CenteredLogScale m) (m : ℚ)).coarsen p),
++          im := (Interval.exact (-b)).mul
++            ((c5CenteredLogQ nLog (c5CenteredLogScale m) (m : ℚ)).coarsen p) } := by
++    apply congrArg₂ ComplexInterval.mk
++    · simp [ComplexInterval.neg, ComplexInterval.exact, Interval.exact,
++        Interval.neg, Interval.mul, Interval.sub, Interval.add]
++    · simp [ComplexInterval.neg, ComplexInterval.exact,
++        Interval.exact, Interval.neg, Interval.mul, Interval.add]
++  rw [hbox]
++  change max
++      |((Interval.exact (-a)).mul
++          ((c5CenteredLogQ nLog (c5CenteredLogScale m) (m : ℚ)).coarsen p)).lo|
++      |((Interval.exact (-a)).mul
++          ((c5CenteredLogQ nLog (c5CenteredLogScale m) (m : ℚ)).coarsen p)).hi| +
++    max
++      |((Interval.exact (-b)).mul
++          ((c5CenteredLogQ nLog (c5CenteredLogScale m) (m : ℚ)).coarsen p)).lo|
++      |((Interval.exact (-b)).mul
++          ((c5CenteredLogQ nLog (c5CenteredLogScale m) (m : ℚ)).coarsen p)).hi| ≤ 16
++  calc
++    _ ≤ |a| * 17 + |b| * 17 := by
++      simpa only [abs_neg] using
++        add_le_add (max_le hreal.1 hreal.2) (max_le himag.1 himag.2)
++    _ ≤ (3 / 5 : ℚ) * 17 + (128 / 100000 : ℚ) * 17 := by
++      have haAbs : |a| ≤ (3 / 5 : ℚ) := abs_le.mpr ⟨by linarith, by linarith⟩
++      have hbAbs : |b| ≤ (128 / 100000 : ℚ) := abs_le.mpr ⟨by linarith, by linarith⟩
++      exact add_le_add
++        (mul_le_mul_of_nonneg_right haAbs (by norm_num))
++        (mul_le_mul_of_nonneg_right hbAbs (by norm_num))
++    _ ≤ 16 := by norm_num
++
++theorem c5CenteredDirichletTermBoxContains {nLog nExp p : ℕ}
++    (_hnLog : 0 < nLog) (hnExp : 0 < nExp) {m : ℕ} (hm : 0 < m)
++    {a b : ℚ} (hm100 : m ≤ 100)
++    (haLo : 2 / 5 ≤ a) (haHi : a ≤ 3 / 5)
++    (hbLo : 0 ≤ b) (hbHi : b ≤ 128 / 100000) :
++    (c5CenteredDirichletTermBox nLog nExp p 4 m
++      (ComplexInterval.exact a b)).contains
++      ((m : ℂ) ^ (-((a : ℂ) + (b : ℂ) * Complex.I))) := by
++  have hm0 : 1 ≤ m := by omega
++  have hscale := c5CenteredLogScaleRange m hm0 hm100
++  have h0 : 0 < (m : ℚ) / 2 ^ c5CenteredLogScale m :=
++    lt_of_lt_of_le (by norm_num) hscale.1
++  have h2 : (m : ℚ) / 2 ^ c5CenteredLogScale m < 2 :=
++    lt_of_le_of_lt hscale.2 (by norm_num)
++  have hlog := contains_c5CenteredLogQ (nLog := nLog)
++    (k := c5CenteredLogScale m) (q := (m : ℚ)) h0 h2
++  have hlog' := Interval.contains_coarsen p hlog
++  rw [show (((m : ℚ) : ℝ)) = ((m : ℕ) : ℝ) by push_cast; rfl] at hlog'
++  let L : Interval := (c5CenteredLogQ nLog (c5CenteredLogScale m) (m : ℚ)).coarsen p
++  have hL : ({ re := L, im := Interval.exact 0 } : ComplexInterval).contains
++      ((Real.log m : ℝ) : ℂ) := by
++    constructor
++    · change Interval.contains L (Real.log m)
++      simpa [L] using hlog'
++    · rw [Complex.ofReal_im]
++      norm_num [Interval.contains, Interval.exact]
++  have hbnd : normBound ((ComplexInterval.exact a b).neg.mul
++      { re := L, im := Interval.exact 0 }) ≤ 2 ^ 4 := by
++    calc
++      _ ≤ 16 := c5CenteredDirichletTermBoxNormBound
++        (nLog := nLog) (p := p) (m := m) hm0 hm100 haLo haHi hbLo hbHi
++      _ = 2 ^ 4 := by norm_num
++  have hs : (ComplexInterval.exact a b).contains
++      ((a : ℂ) + (b : ℂ) * Complex.I) := c5ExactRatPoint_contains a b
++  have hexp := contains_c5RoundedExpC nExp p hnExp 4 _ _
++    (contains_mul (contains_neg hs) hL) hbnd
++  have hmne : (m : ℂ) ≠ 0 := Nat.cast_ne_zero.mpr hm.ne'
++  rw [show (m : ℂ) ^ (-((a : ℂ) + (b : ℂ) * Complex.I)) =
++      Complex.exp (-((a : ℂ) + (b : ℂ) * Complex.I) *
++        ((Real.log m : ℝ) : ℂ)) by
++    rw [Complex.cpow_def_of_ne_zero hmne,
++      show Complex.log (m : ℂ) = ((Real.log m : ℝ) : ℂ) by
++        rw [show (m : ℂ) = (((m : ℕ) : ℝ) : ℂ) by push_cast; rfl,
++          Complex.ofReal_log (by positivity : (0 : ℝ) ≤ (m : ℝ))],
++      mul_comm]]
++  simpa [c5CenteredDirichletTermBox, c5CenteredDirichletTermBoxWithLogTwo,
++    c5CenteredLogQFromLogTwo, c5CenteredLogQ, L] using hexp
++
++#print axioms c5CenteredLogQCoarsenedAbsBound
++#print axioms c5CenteredDirichletTermBoxNormBound
++#print axioms c5CenteredDirichletTermBoxContains
++
++end CarrySigmaObstruction
+diff --git a/research/native-moving-schur-sigma/SigmaC5RationalNodeCenteredInstantiate.lean b/research/native-moving-schur-sigma/SigmaC5RationalNodeCenteredInstantiate.lean
+new file mode 100644
+index 0000000..d9afb36
+--- /dev/null
++++ b/research/native-moving-schur-sigma/SigmaC5RationalNodeCenteredInstantiate.lean
+@@ -0,0 +1,213 @@
++import SigmaC5RationalNodeCenteredBoxes
++import Mathlib.NumberTheory.Harmonic.ZetaAsymp
++
++namespace CarrySigmaObstruction
++
++open SigmaC5Zeta SigmaC5Gamma ZetaLean ZetaLean.ComplexInterval
++set_option autoImplicit false
++set_option maxHeartbeats 0
++set_option maxRecDepth 1000000
++
++def c5RationalZetaCenteredHeadBox (nLog nExp p : ℕ) (a b : ℚ) : ComplexInterval :=
++  let logTwo := c5CenteredLog2I nLog
++  c5ComplexIntervalRangeSum
++    (fun i => c5CenteredDirichletTermBoxWithLogTwo nLog nExp p 4 logTwo
++      (i + 1) (ComplexInterval.exact a b)) 99
++
++theorem c5RationalZetaCenteredHeadBox_contains {nLog nExp p : ℕ}
++    {a b : ℚ} (_hnLog : 0 < nLog) (hnExp : 0 < nExp)
++    (haLo : 2 / 5 ≤ a) (haHi : a ≤ 3 / 5)
++    (hbLo : 0 ≤ b) (hbHi : b ≤ 128 / 100000) :
++    (c5RationalZetaCenteredHeadBox nLog nExp p a b).contains
++      (∑ i ∈ Finset.range 99,
++        ((i + 1 : ℕ) : ℂ) ^ (-((a : ℂ) + (b : ℂ) * Complex.I))) := by
++  apply c5ComplexIntervalRangeSum_contains
++  intro i hi
++  have hm0 : 1 ≤ i + 1 := by omega
++  have hm100 : i + 1 ≤ 100 := by omega
++  have hterm := c5CenteredDirichletTermBoxContains
++    (nLog := nLog) (nExp := nExp) (p := p) (by omega) hnExp
++    (hm := by omega) (hm100 := hm100) haLo haHi hbLo hbHi
++  simpa [c5RationalZetaCenteredHeadBox, c5CenteredDirichletTermBox] using hterm
++
++def c5RationalZetaCenteredBasePowerBox (nLog nExp p : ℕ) (a b : ℚ) :
++    ComplexInterval :=
++  let logTwo := c5CenteredLog2I nLog
++  c5CenteredDirichletTermBoxWithLogTwo nLog nExp p 4 logTwo 100
++    (ComplexInterval.exact a b)
++
++theorem c5RationalZetaCenteredBasePowerBox_contains {nLog nExp p : ℕ}
++    {a b : ℚ} (_hnLog : 0 < nLog) (hnExp : 0 < nExp)
++    (haLo : 2 / 5 ≤ a) (haHi : a ≤ 3 / 5)
++    (hbLo : 0 ≤ b) (hbHi : b ≤ 128 / 100000) :
++    (c5RationalZetaCenteredBasePowerBox nLog nExp p a b).contains
++      ((100 : ℂ) ^ (-((a : ℂ) + (b : ℂ) * Complex.I))) := by
++  have hterm := c5CenteredDirichletTermBoxContains
++    (nLog := nLog) (nExp := nExp) (p := p) (m := 100) (by omega) hnExp
++    (hm := by norm_num) (hm100 := by norm_num) haLo haHi hbLo hbHi
++  simpa [c5RationalZetaCenteredBasePowerBox, c5CenteredDirichletTermBox]
++    using hterm
++
++def c5RationalZetaCenteredFiniteBoxWithTable (nLog nExp p : ℕ)
++    (a b : ℚ) (bernTable : Array ℚ) : ComplexInterval :=
++  (c5RationalZetaCenteredHeadBox nLog nExp p a b).add
++    ((c5RationalZetaCenteredBasePowerBox nLog nExp p a b).mul
++      (c5RatScaleIntervalWithTable p a b 300 100 bernTable))
++
++def c5RationalZetaCenteredFiniteBox (nLog nExp p : ℕ) (a b : ℚ) :
++    ComplexInterval :=
++  c5RationalZetaCenteredFiniteBoxWithTable nLog nExp p a b
++    (c5BernoulliPrimeTable 601)
++
++def c5RationalZetaCenteredNodeBoxWithTable (nLog nExp p : ℕ)
++    (a b : ℚ) (bernTable : Array ℚ) : ComplexInterval :=
++  (c5RationalZetaCenteredFiniteBoxWithTable nLog nExp p a b bernTable).inflate
++    (1 / 10 ^ 250)
++
++def c5RationalZetaCenteredNodeBox (nLog nExp p : ℕ) (a b : ℚ) :
++    ComplexInterval :=
++  c5RationalZetaCenteredNodeBoxWithTable nLog nExp p a b
++    (c5BernoulliPrimeTable 601)
++
++theorem c5RationalZetaCenteredNodeBoxWithTable_contains {nLog nExp p : ℕ}
++    (bernTable : Array ℚ) (hsize : 601 ≤ bernTable.size)
++    (hBernTable : ∀ i, i < bernTable.size →
++      bernTable.getD i 0 = bernoulli' i)
++    {a b : ℚ} (haLo : (2 / 5 : ℝ) ≤ (a : ℝ))
++    (haHi : (a : ℝ) ≤ 3 / 5) (hbLo : (0 : ℝ) ≤ (b : ℝ))
++    (hbHi : (b : ℝ) ≤ 128 / 100000)
++    (hden : (a - 1) ^ 2 + b ^ 2 ≠ 0)
++    (hnLog : 0 < nLog) (hnExp : 0 < nExp) :
++    (c5RationalZetaCenteredNodeBoxWithTable nLog nExp p a b bernTable).contains
++      (riemannZeta ((a : ℂ) + (b : ℂ) * Complex.I)) := by
++  let s : ℂ := (a : ℂ) + (b : ℂ) * Complex.I
++  let tail : ℂ := ∑' k : ℕ, emZetaHighBlock s 300 ((k + 100 : ℕ) : ℝ)
++  let finite : ℂ := (∑ i ∈ Finset.range 100, (i : ℂ) ^ (-s)) +
++    (100 : ℂ) ^ (-s) * ratComplexToComplex (c5RatScale a b 300 100)
++  have hsre : (2 / 5 : ℝ) ≤ s.re := by simpa [s] using haLo
++  have hsre' : s.re ≤ (3 / 5 : ℝ) := by simpa [s] using haHi
++  have hsIm : |s.im| ≤ (128 / 100000 : ℝ) := by
++    rw [show s.im = (b : ℝ) by simp [s]]
++    rw [abs_of_nonneg hbLo]
++    exact hbHi
++  have hspos : 0 < s.re := lt_of_lt_of_le (by norm_num) hsre
++  have hsne : s ≠ 1 := by
++    intro h
++    have hRe := congrArg Complex.re h
++    simp [s] at hRe
++    linarith
++  have hzeta : riemannZeta s = emZetaHighRHS 100 300 s := by
++    by_cases hb : b = 0
++    · have hreal := zeta_em_high_real (x := (a : ℝ))
++        (N := 100) (P := 300)
++        (lt_of_lt_of_le (by norm_num : (0 : ℝ) < 2 / 5) haLo)
++        (ne_of_lt (lt_of_le_of_lt haHi (by norm_num : (3 / 5 : ℝ) < 1)))
++        (by norm_num) (by norm_num)
++      simpa [s, hb] using hreal
++    · have hbpos : (0 : ℝ) < (b : ℝ) := by
++        rcases eq_or_lt_of_le hbLo with heq | hlt
++        · have hbzero : b = 0 := by exact_mod_cast heq.symm
++          exact (hb hbzero).elim
++        · exact hlt
++      have hsMem : s ∈ emQP := by
++        constructor
++        · exact hspos
++        · simpa [s] using hbpos
++      exact zeta_em_high (N := 100) (P := 300) hsMem (by norm_num) (by norm_num)
++  have hfactor := c5_emZetaHighRHS_factor (a := a) (b := b)
++    (P := 300) (N := 100) (by norm_num) hden
++  have hfactor' : emZetaHighRHS 100 300 s = finite - tail := by
++    simpa [s, finite, tail] using hfactor
++  have hcastLo : ((2 / 5 : ℚ) : ℝ) = (2 / 5 : ℝ) := by norm_num
++  have hcastHi : ((3 / 5 : ℚ) : ℝ) = (3 / 5 : ℝ) := by norm_num
++  have hcastB : ((128 / 100000 : ℚ) : ℝ) = (128 / 100000 : ℝ) := by norm_num
++  have haLoQ : (2 / 5 : ℚ) ≤ a := by
++    have h : ((2 / 5 : ℚ) : ℝ) ≤ (a : ℝ) := by rw [hcastLo]; exact haLo
++    norm_cast at h
++  have haHiQ : a ≤ 3 / 5 := by
++    have h : (a : ℝ) ≤ ((3 / 5 : ℚ) : ℝ) := by rw [hcastHi]; exact haHi
++    norm_cast at h
++  have hbLoQ : (0 : ℚ) ≤ b := by exact_mod_cast hbLo
++  have hbHiQ : b ≤ 128 / 100000 := by
++    have h : (b : ℝ) ≤ ((128 / 100000 : ℚ) : ℝ) := by rw [hcastB]; exact hbHi
++    norm_cast at h
++  have hheadBox := c5RationalZetaCenteredHeadBox_contains
++    (nLog := nLog) (nExp := nExp) (p := p) hnLog hnExp
++    haLoQ haHiQ hbLoQ hbHiQ
++  have hheadEq :
++      (∑ i ∈ Finset.range 100, (i : ℂ) ^ (-s)) =
++        ∑ i ∈ Finset.range 99,
++          ((i + 1 : ℕ) : ℂ) ^ (-s) :=
++    c5_sum_zeta_head_eq_shifted s (by
++      intro h
++      have hRe := congrArg Complex.re h
++      simp at hRe
++      linarith [hspos])
++  have hheadBox' :
++      (c5RationalZetaCenteredHeadBox nLog nExp p a b).contains
++        (∑ i ∈ Finset.range 100, (i : ℂ) ^ (-s)) := by
++    rw [hheadEq]
++    simpa [s] using hheadBox
++  have hbaseBox := c5RationalZetaCenteredBasePowerBox_contains
++    (nLog := nLog) (nExp := nExp) (p := p) hnLog hnExp
++    haLoQ haHiQ hbLoQ hbHiQ
++  have hscaleBox := c5RatScaleIntervalWithTable_contains p a b 300 100
++    bernTable hsize hBernTable
++  have hprodBox := ComplexInterval.contains_mul hbaseBox hscaleBox
++  have hfiniteBox := ComplexInterval.contains_add hheadBox' hprodBox
++  have htail := emZetaHighTail_norm_le_node hspos hsne hsre hsre' hsIm
++  have hdiff : ‖riemannZeta s - finite‖ ≤ (1 / 10 ^ 250 : ℝ) := by
++    rw [hzeta, hfactor']
++    calc
++      ‖(finite - tail) - finite‖ = ‖-tail‖ := by congr 1; ring
++      _ = ‖tail‖ := norm_neg _
++      _ ≤ (1 / 10 ^ 250 : ℝ) := htail.le
++  let finite' : ℂ :=
++    (∑ i ∈ Finset.range 100, (i : ℂ) ^
++      (-((a : ℂ) + (b : ℂ) * Complex.I))) +
++      (100 : ℂ) ^ (-((a : ℂ) + (b : ℂ) * Complex.I)) *
++        ratComplexToComplex (c5RatScale a b 300 100)
++  have hdiff' :
++      ‖riemannZeta ((a : ℂ) + (b : ℂ) * Complex.I) - finite'‖ ≤
++        (((1 / 10 ^ 250 : ℚ) : ℝ)) := by
++    simpa [s, finite, finite'] using hdiff
++  have hfiniteBox' :
++      (c5RationalZetaCenteredFiniteBoxWithTable nLog nExp p a b bernTable).contains
++        finite' := by
++    simpa [c5RationalZetaCenteredFiniteBoxWithTable, s, finite'] using hfiniteBox
++  have hcontained := ComplexInterval.contains_inflate
++    (x := c5RationalZetaCenteredFiniteBoxWithTable nLog nExp p a b bernTable)
++    (z := finite')
++    (w := riemannZeta ((a : ℂ) + (b : ℂ) * Complex.I))
++    (r := (1 / 10 ^ 250 : ℚ)) hfiniteBox' hdiff'
++  simpa [c5RationalZetaCenteredNodeBoxWithTable] using hcontained
++
++theorem c5RationalZetaCenteredNodeBox_contains {nLog nExp p : ℕ}
++    {a b : ℚ} (haLo : (2 / 5 : ℝ) ≤ (a : ℝ))
++    (haHi : (a : ℝ) ≤ 3 / 5) (hbLo : (0 : ℝ) ≤ (b : ℝ))
++    (hbHi : (b : ℝ) ≤ 128 / 100000)
++    (hden : (a - 1) ^ 2 + b ^ 2 ≠ 0)
++    (hnLog : 0 < nLog) (hnExp : 0 < nExp) :
++    (c5RationalZetaCenteredNodeBox nLog nExp p a b).contains
++      (riemannZeta ((a : ℂ) + (b : ℂ) * Complex.I)) := by
++  apply c5RationalZetaCenteredNodeBoxWithTable_contains
++    (c5BernoulliPrimeTable 601)
++  · simp [c5BernoulliPrimeTable_size]
++  · intro i hi
++    have hi' : i < 601 := by
++      simpa [c5BernoulliPrimeTable_size] using hi
++    exact c5BernoulliPrimeTable_getD 601 i hi'
++  · exact haLo
++  · exact haHi
++  · exact hbLo
++  · exact hbHi
++  · exact hden
++  · exact hnLog
++  · exact hnExp
++
++#print axioms c5RationalZetaCenteredHeadBox_contains
++#print axioms c5RationalZetaCenteredBasePowerBox_contains
++#print axioms c5RationalZetaCenteredNodeBox_contains
++#print axioms c5RationalZetaCenteredNodeBoxWithTable_contains
++
++end CarrySigmaObstruction
+diff --git a/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean b/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean
+new file mode 100644
+index 0000000..46c2939
+--- /dev/null
++++ b/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean
+@@ -0,0 +1,659 @@
++import SigmaC5RationalNodeLogBounds
++
++namespace CarrySigmaObstruction
++
++open ZetaLean ZetaLean.ComplexInterval
++set_option autoImplicit false
++
++/-- Center each binary reduction around one.  Unlike ceiling log2, this keeps
++the argument of `log1` in `[2/3, 4/3]`, so its series ratio has magnitude at
++most `1/3`. -/
++def c5CenteredLogScale (m : ℕ) : ℕ :=
++  if m ≤ 1 then 0 else if m ≤ 2 then 1 else if m ≤ 5 then 2 else
++  if m ≤ 10 then 3 else if m ≤ 21 then 4 else if m ≤ 42 then 5 else
++  if m ≤ 85 then 6 else 7
++
++theorem c5CenteredLogScaleRange (m : ℕ) (hm0 : 1 ≤ m) (hm100 : m ≤ 100) :
++    (2 / 3 : ℚ) ≤ (m : ℚ) / 2 ^ c5CenteredLogScale m ∧
++      (m : ℚ) / 2 ^ c5CenteredLogScale m ≤ 4 / 3 := by
++  interval_cases m <;> norm_num [c5CenteredLogScale]
++
++theorem c5CenteredLogScaleLeSeven (m : ℕ) : c5CenteredLogScale m ≤ 7 := by
++  unfold c5CenteredLogScale
++  split_ifs <;> omega
++
++private theorem c5_geom_third (n : ℕ) :
++    (∑ i ∈ Finset.range n, (1 / 3 : ℚ) ^ (i + 1)) =
++      (1 - (1 / 3 : ℚ) ^ n) / 2 := by
++  induction n with
++  | zero => norm_num
++  | succ n ih =>
++      rw [Finset.sum_range_succ, ih]
++      rw [pow_succ]
++      ring
++
++private theorem c5_geom_half (n : ℕ) :
++    (∑ i ∈ Finset.range n, (1 / 2 : ℚ) ^ (i + 1)) =
++      1 - (1 / 2 : ℚ) ^ n := by
++  induction n with
++  | zero => norm_num
++  | succ n ih =>
++      rw [Finset.sum_range_succ, ih]
++      rw [pow_succ]
++      ring
++
++private theorem c5_abs_logSum_third {n : ℕ} {q : ℚ} (hq : |q| ≤ 1 / 3) :
++    |Interval.logSum n q| ≤ 1 / 2 := by
++  unfold Interval.logSum
++  calc
++    |∑ i ∈ Finset.range n, q ^ (i + 1) / (i + 1)| ≤
++        ∑ i ∈ Finset.range n, |q ^ (i + 1) / (i + 1)| :=
++      Finset.abs_sum_le_sum_abs _ _
++    _ ≤ ∑ i ∈ Finset.range n, (1 / 3 : ℚ) ^ (i + 1) := by
++      apply Finset.sum_le_sum
++      intro i hi
++      have hden : (1 : ℚ) ≤ (i : ℚ) + 1 := by
++        exact_mod_cast (show 1 ≤ i + 1 by omega)
++      rw [abs_div, abs_pow, abs_of_nonneg (by positivity : (0 : ℚ) ≤ (i + 1 : ℚ))]
++      calc
++        |q| ^ (i + 1) / (i + 1 : ℚ) ≤ |q| ^ (i + 1) :=
++          div_le_self (by positivity) hden
++        _ ≤ (1 / 3 : ℚ) ^ (i + 1) :=
++          pow_le_pow_left₀ (abs_nonneg q) hq (i + 1)
++    _ = (1 - (1 / 3 : ℚ) ^ n) / 2 := c5_geom_third n
++    _ ≤ 1 / 2 := by
++      have hn : 0 ≤ (1 / 3 : ℚ) ^ n := pow_nonneg (by norm_num) _
++      nlinarith
++
++private theorem c5_abs_logSum_half {n : ℕ} {q : ℚ} (hq : |q| ≤ 1 / 2) :
++    |Interval.logSum n q| ≤ 1 := by
++  unfold Interval.logSum
++  calc
++    |∑ i ∈ Finset.range n, q ^ (i + 1) / (i + 1)| ≤
++        ∑ i ∈ Finset.range n, |q ^ (i + 1) / (i + 1)| :=
++      Finset.abs_sum_le_sum_abs _ _
++    _ ≤ ∑ i ∈ Finset.range n, (1 / 2 : ℚ) ^ (i + 1) := by
++      apply Finset.sum_le_sum
++      intro i hi
++      have hden : (1 : ℚ) ≤ (i : ℚ) + 1 := by
++        exact_mod_cast (show 1 ≤ i + 1 by omega)
++      rw [abs_div, abs_pow, abs_of_nonneg (by positivity : (0 : ℚ) ≤ (i + 1 : ℚ))]
++      calc
++        |q| ^ (i + 1) / (i + 1 : ℚ) ≤ |q| ^ (i + 1) :=
++          div_le_self (by positivity) hden
++        _ ≤ (1 / 2 : ℚ) ^ (i + 1) :=
++          pow_le_pow_left₀ (abs_nonneg q) hq (i + 1)
++    _ = 1 - (1 / 2 : ℚ) ^ n := c5_geom_half n
++    _ ≤ 1 := by
++      have hn : 0 ≤ (1 / 2 : ℚ) ^ n := pow_nonneg (by norm_num) _
++      linarith
++
++private theorem c5_abs_logRem_third {n : ℕ} {q : ℚ} (hq : |q| ≤ 1 / 3) :
++    |Interval.logRem n q| ≤ 1 / 2 := by
++  unfold Interval.logRem
++  have hden : 0 < 1 - |q| := by linarith [abs_nonneg q]
++  have hpow : |q| ^ (n + 1) ≤ (1 / 3 : ℚ) ^ (n + 1) :=
++    pow_le_pow_left₀ (abs_nonneg q) hq (n + 1)
++  have hnum : |q| ^ (n + 1) ≤ 1 / 3 := by
++    calc
++      |q| ^ (n + 1) ≤ (1 / 3 : ℚ) ^ (n + 1) := hpow
++      _ ≤ 1 / 3 := by
++        have hpow' : (1 / 3 : ℚ) ^ n ≤ 1 := by
++          exact pow_le_one₀
++            (by norm_num : (0 : ℚ) ≤ (1 / 3 : ℚ))
++            (by norm_num : (1 / 3 : ℚ) ≤ 1)
++        rw [pow_succ]
++        simpa using mul_le_mul_of_nonneg_right hpow'
++          (by norm_num : (0 : ℚ) ≤ (1 / 3 : ℚ))
++  rw [abs_of_nonneg (div_nonneg (pow_nonneg (abs_nonneg q) _) (le_of_lt hden))]
++  rw [div_le_iff₀ hden]
++  nlinarith [hq]
++
++private theorem c5_abs_logRem_half {n : ℕ} {q : ℚ} (hq : |q| ≤ 1 / 2) :
++    |Interval.logRem n q| ≤ 1 := by
++  unfold Interval.logRem
++  have hden : 0 < 1 - |q| := by linarith [abs_nonneg q]
++  have hpow : |q| ^ (n + 1) ≤ (1 / 2 : ℚ) ^ (n + 1) :=
++    pow_le_pow_left₀ (abs_nonneg q) hq (n + 1)
++  have hnum : |q| ^ (n + 1) ≤ 1 / 2 := by
++    calc
++      |q| ^ (n + 1) ≤ (1 / 2 : ℚ) ^ (n + 1) := hpow
++      _ ≤ 1 / 2 := by
++        have hpow' : (1 / 2 : ℚ) ^ n ≤ 1 := by
++          exact pow_le_one₀
++            (by norm_num : (0 : ℚ) ≤ (1 / 2 : ℚ))
++            (by norm_num : (1 / 2 : ℚ) ≤ 1)
++        rw [pow_succ]
++        simpa using mul_le_mul_of_nonneg_right hpow'
++          (by norm_num : (0 : ℚ) ≤ (1 / 2 : ℚ))
++  rw [abs_of_nonneg (div_nonneg (pow_nonneg (abs_nonneg q) _) (le_of_lt hden))]
++  rw [div_le_iff₀ hden]
++  nlinarith [hq]
++
++private theorem c5_abs_max_le {x y M : ℚ} (hx : |x| ≤ M) (hy : |y| ≤ M) :
++    |max x y| ≤ M := by
++  apply abs_le.mpr
++  constructor
++  · exact (abs_le.mp hx).1.trans (le_max_left _ _)
++  · exact max_le (abs_le.mp hx).2 (abs_le.mp hy).2
++
++private theorem c5_log1_third_endpoint_bound (n : ℕ) (x : ℚ)
++    (hq : |1 - x| ≤ 1 / 3) :
++    |(Interval.log1 n (Interval.exact x)).lo| ≤ 1 ∧
++      |(Interval.log1 n (Interval.exact x)).hi| ≤ 1 := by
++  have hs := c5_abs_logSum_third (n := n) (q := 1 - x) hq
++  have hr := c5_abs_logRem_third (n := n) (q := 1 - x) hq
++  have hlo : |-(Interval.logSum n (1 - x)) - Interval.logRem n (1 - x)| ≤ 1 := by
++    calc
++      |-(Interval.logSum n (1 - x)) - Interval.logRem n (1 - x)| ≤
++          |Interval.logSum n (1 - x)| + |Interval.logRem n (1 - x)| := by
++            rw [show -Interval.logSum n (1 - x) - Interval.logRem n (1 - x) =
++              -(Interval.logSum n (1 - x) + Interval.logRem n (1 - x)) by ring,
++              abs_neg]
++            exact abs_add_le (Interval.logSum n (1 - x))
++              (Interval.logRem n (1 - x))
++      _ ≤ 1 := by linarith
++  have hhi0 : |-Interval.logSum n (1 - x) + Interval.logRem n (1 - x)| ≤ 1 := by
++    calc
++      |-Interval.logSum n (1 - x) + Interval.logRem n (1 - x)| ≤
++          |Interval.logSum n (1 - x)| + |Interval.logRem n (1 - x)| := by
++            simpa [abs_neg] using (abs_add_le (-Interval.logSum n (1 - x))
++              (Interval.logRem n (1 - x)))
++      _ ≤ 1 := by linarith
++  constructor
++  · simpa [Interval.log1, Interval.exact] using hlo
++  · change |max (-Interval.logSum n (1 - x) + Interval.logRem n (1 - x))
++      (-Interval.logSum n (1 - x) - Interval.logRem n (1 - x))| ≤ 1
++    exact c5_abs_max_le hhi0 hlo
++
++private theorem c5_log1_half_endpoint_bound (n : ℕ) :
++    |(Interval.log1 n (Interval.exact (1 / 2))).lo| ≤ 2 ∧
++      |(Interval.log1 n (Interval.exact (1 / 2))).hi| ≤ 2 := by
++  have hq : |1 - (1 / 2 : ℚ)| ≤ 1 / 2 := by norm_num
++  have hs := c5_abs_logSum_half (n := n) (q := 1 - (1 / 2 : ℚ)) hq
++  have hr := c5_abs_logRem_half (n := n) (q := 1 - (1 / 2 : ℚ)) hq
++  let S : ℚ := Interval.logSum n (1 - (1 / 2 : ℚ))
++  let R : ℚ := Interval.logRem n (1 - (1 / 2 : ℚ))
++  have hs' : |S| ≤ 1 := by simpa [S] using hs
++  have hr' : |R| ≤ 1 := by simpa [R] using hr
++  have hlo : |-S - R| ≤ 2 := by
++    calc
++      |-S - R| ≤ |S| + |R| := by
++        rw [show -S - R = -(S + R) by ring, abs_neg]
++        exact abs_add_le S R
++      _ ≤ 2 := by linarith
++  have hhi0 : |-S + R| ≤ 2 := by
++    calc
++      |-S + R| ≤ |S| + |R| := by
++        simpa [abs_neg] using (abs_add_le (-S) R)
++      _ ≤ 2 := by linarith
++  constructor
++  · simpa [Interval.log1, Interval.exact, S, R] using hlo
++  · change |max (-S + R) (-S - R)| ≤ 2
++    exact c5_abs_max_le hhi0 hlo
++
++/-- A fast enclosure of `log 2`, using `log 2 = log(4/3) - log(2/3)`.
++Both logarithm series have ratio at most `1/3`. -/
++def c5CenteredLog2I (nLog : ℕ) : Interval :=
++  (Interval.log1 nLog (Interval.exact (4 / 3))).add
++    (Interval.log1 nLog (Interval.exact (2 / 3))).neg
++
++theorem c5CenteredLog2IContains (nLog : ℕ) :
++    (c5CenteredLog2I nLog).contains (Real.log 2) := by
++  have hFour := Interval.contains_log1 (n := nLog)
++    (Interval.contains_exact (4 / 3 : ℚ)) (by norm_num [Interval.exact])
++    (by norm_num [Interval.exact])
++  have hTwo := Interval.contains_log1 (n := nLog)
++    (Interval.contains_exact (2 / 3 : ℚ)) (by norm_num [Interval.exact])
++    (by norm_num [Interval.exact])
++  have hsum : (c5CenteredLog2I nLog).contains
++      (Real.log (4 / 3 : ℝ) + -Real.log (2 / 3 : ℝ)) := by
++    simpa [c5CenteredLog2I] using Interval.contains_add hFour (Interval.contains_neg hTwo)
++  have hiden : Real.log (4 / 3 : ℝ) + -Real.log (2 / 3 : ℝ) = Real.log 2 := by
++    calc
++      _ = Real.log (4 / 3 : ℝ) - Real.log (2 / 3 : ℝ) := by ring
++      _ = Real.log ((4 / 3 : ℝ) / (2 / 3 : ℝ)) := by
++        rw [← Real.log_div (by norm_num) (by norm_num)]
++      _ = Real.log 2 := by congr 1; norm_num
++  rw [hiden] at hsum
++  exact hsum
++
++theorem c5CenteredLog2IAbsBound (nLog : ℕ) :
++    |(c5CenteredLog2I nLog).lo| ≤ 2 ∧ |(c5CenteredLog2I nLog).hi| ≤ 2 := by
++  have hFour := c5_log1_third_endpoint_bound nLog (4 / 3 : ℚ) (by norm_num)
++  have hTwo := c5_log1_third_endpoint_bound nLog (2 / 3 : ℚ) (by norm_num)
++  constructor
++  · change |(Interval.log1 nLog (Interval.exact (4 / 3))).lo +
++      -(Interval.log1 nLog (Interval.exact (2 / 3))).hi| ≤ 2
++    calc
++      _ ≤ |(Interval.log1 nLog (Interval.exact (4 / 3))).lo| +
++          |-(Interval.log1 nLog (Interval.exact (2 / 3))).hi| := abs_add_le _ _
++      _ ≤ 2 := by simpa [abs_neg] using (by linarith [hFour.1, hTwo.2])
++  · change |(Interval.log1 nLog (Interval.exact (4 / 3))).hi +
++      -(Interval.log1 nLog (Interval.exact (2 / 3))).lo| ≤ 2
++    calc
++      _ ≤ |(Interval.log1 nLog (Interval.exact (4 / 3))).hi| +
++          |-(Interval.log1 nLog (Interval.exact (2 / 3))).lo| := abs_add_le _ _
++      _ ≤ 2 := by simpa [abs_neg] using (by linarith [hFour.2, hTwo.1])
++
++/-! A rounded, linearly accumulated version of the rational logarithm
++series.  The usual `Interval.logSum` recomputes each power independently;
++this state carries the next power and rounds the partial sum after each term. -/
++private theorem c5IntervalCoarsenLoError (p : ℕ) (x : Interval) :
++    x.lo - 1 / (2 : ℚ) ^ p ≤ (x.coarsen p).lo := by
++  have hD : (0 : ℚ) < (2 : ℚ) ^ p := by positivity
++  have hfloor : x.lo * (2 : ℚ) ^ p - 1 <
++      (Int.floor (x.lo * (2 : ℚ) ^ p) : ℚ) := by
++    have h := Int.lt_floor_add_one (x.lo * (2 : ℚ) ^ p)
++    linarith
++  have hscaled :
++      (x.lo - 1 / (2 : ℚ) ^ p) * (2 : ℚ) ^ p ≤
++        (Int.floor (x.lo * (2 : ℚ) ^ p) : ℚ) := by
++    rw [sub_mul, div_mul_cancel₀ _ hD.ne']
++    exact le_of_lt hfloor
++  change x.lo - 1 / (2 : ℚ) ^ p ≤
++    (Int.floor (x.lo * (2 : ℚ) ^ p) : ℚ) / (2 : ℚ) ^ p
++  exact (le_div_iff₀ hD).2 hscaled
++
++private theorem c5IntervalCoarsenHiError (p : ℕ) (x : Interval) :
++    (x.coarsen p).hi ≤ x.hi + 1 / (2 : ℚ) ^ p := by
++  have hD : (0 : ℚ) < (2 : ℚ) ^ p := by positivity
++  have hceil : (Int.ceil (x.hi * (2 : ℚ) ^ p) : ℚ) <
++      x.hi * (2 : ℚ) ^ p + 1 := by
++    have h := Int.ceil_lt_add_one (x.hi * (2 : ℚ) ^ p)
++    linarith
++  have hscaled :
++      (Int.ceil (x.hi * (2 : ℚ) ^ p) : ℚ) ≤
++        (x.hi + 1 / (2 : ℚ) ^ p) * (2 : ℚ) ^ p := by
++    rw [add_mul, div_mul_cancel₀ _ hD.ne']
++    exact le_of_lt hceil
++  change (Int.ceil (x.hi * (2 : ℚ) ^ p) : ℚ) / (2 : ℚ) ^ p ≤
++    x.hi + 1 / (2 : ℚ) ^ p
++  exact (div_le_iff₀ hD).2 hscaled
++
++def c5CenteredFastLogSumState (p : ℕ) (q : ℚ) : ℕ → ℚ × Interval
++  | 0 => (q, Interval.exact 0)
++  | n + 1 =>
++      let prev := c5CenteredFastLogSumState p q n
++      (prev.1 * q,
++        (prev.2.add (Interval.exact (prev.1 / ((n + 1 : ℕ) : ℚ)))).coarsen p)
++
++private theorem c5CenteredFastLogSumState_pow (p : ℕ) (q : ℚ) :
++    ∀ n, (c5CenteredFastLogSumState p q n).1 = q ^ (n + 1)
++  | 0 => by simp [c5CenteredFastLogSumState]
++  | n + 1 => by
++      change (c5CenteredFastLogSumState p q n).1 * q = q ^ (n + 1 + 1)
++      rw [c5CenteredFastLogSumState_pow p q n]
++      exact (pow_succ q (n + 1)).symm
++
++private theorem c5CenteredLogSumSucc (n : ℕ) (q : ℚ) :
++    Interval.logSum (n + 1) q =
++      Interval.logSum n q + q ^ (n + 1) / ((n + 1 : ℕ) : ℚ) := by
++  unfold Interval.logSum
++  rw [Finset.sum_range_succ, Nat.cast_succ]
++
++private theorem c5CenteredFastLogSumState_contains (p : ℕ) (q : ℚ) :
++    ∀ n, (c5CenteredFastLogSumState p q n).2.contains
++      (Interval.logSum n q : ℝ)
++  | 0 => by
++      simp [c5CenteredFastLogSumState, Interval.logSum, Interval.contains,
++        Interval.exact]
++  | n + 1 => by
++      have ih := c5CenteredFastLogSumState_contains p q n
++      have hpow := c5CenteredFastLogSumState_pow p q n
++      have hcast :
++          ((q ^ (n + 1) / ((n + 1 : ℕ) : ℚ) : ℚ) : ℝ) =
++            (q : ℝ) ^ (n + 1) / (n + 1 : ℝ) := by
++        push_cast
++        rfl
++      have hterm :
++          (Interval.exact ((c5CenteredFastLogSumState p q n).1 /
++            ((n + 1 : ℕ) : ℚ))).contains
++              ((q : ℝ) ^ (n + 1) / (n + 1 : ℝ)) := by
++        rw [hpow, ← hcast]
++        exact Interval.contains_exact _
++      have hsum := Interval.contains_coarsen p
++        (Interval.contains_add ih hterm)
++      have hsumCast : (Interval.logSum (n + 1) q : ℝ) =
++          (Interval.logSum n q : ℝ) +
++            (q : ℝ) ^ (n + 1) / (n + 1 : ℝ) := by
++        rw [c5CenteredLogSumSucc]
++        push_cast
++        rfl
++      rw [← hsumCast] at hsum
++      exact hsum
++
++private theorem c5CenteredFastLogSumState_bounds (p : ℕ) (q : ℚ) :
++    ∀ n,
++      Interval.logSum n q - (n : ℚ) / (2 : ℚ) ^ p ≤
++          (c5CenteredFastLogSumState p q n).2.lo ∧
++        (c5CenteredFastLogSumState p q n).2.hi ≤
++          Interval.logSum n q + (n : ℚ) / (2 : ℚ) ^ p
++  | 0 => by simp [c5CenteredFastLogSumState, Interval.logSum, Interval.exact]
++  | n + 1 => by
++      have ih := c5CenteredFastLogSumState_bounds p q n
++      have hpow := c5CenteredFastLogSumState_pow p q n
++      have hlog := c5CenteredLogSumSucc n q
++      have hdelta : ((n + 1 : ℕ) : ℚ) / (2 : ℚ) ^ p =
++          (n : ℚ) / (2 : ℚ) ^ p + 1 / (2 : ℚ) ^ p := by
++        rw [Nat.cast_succ]
++        ring
++      have hroundLo := c5IntervalCoarsenLoError p
++        ((c5CenteredFastLogSumState p q n).2.add
++          (Interval.exact ((c5CenteredFastLogSumState p q n).1 /
++            ((n + 1 : ℕ) : ℚ))))
++      have hroundHi := c5IntervalCoarsenHiError p
++        ((c5CenteredFastLogSumState p q n).2.add
++          (Interval.exact ((c5CenteredFastLogSumState p q n).1 /
++            ((n + 1 : ℕ) : ℚ))))
++      have hroundLo' :
++          (c5CenteredFastLogSumState p q n).2.lo +
++              (c5CenteredFastLogSumState p q n).1 / ((n + 1 : ℕ) : ℚ) -
++                1 / (2 : ℚ) ^ p ≤
++            (((c5CenteredFastLogSumState p q n).2.add
++              (Interval.exact ((c5CenteredFastLogSumState p q n).1 /
++                ((n + 1 : ℕ) : ℚ)))).coarsen p).lo := by
++        simpa [Interval.add, Interval.exact] using hroundLo
++      have hroundHi' :
++          (((c5CenteredFastLogSumState p q n).2.add
++            (Interval.exact ((c5CenteredFastLogSumState p q n).1 /
++              ((n + 1 : ℕ) : ℚ)))).coarsen p).hi ≤
++            (c5CenteredFastLogSumState p q n).2.hi +
++              (c5CenteredFastLogSumState p q n).1 / ((n + 1 : ℕ) : ℚ) +
++                1 / (2 : ℚ) ^ p := by
++        simpa [Interval.add, Interval.exact] using hroundHi
++      rw [hpow] at hroundLo' hroundHi'
++      change
++        Interval.logSum (n + 1) q - ((n + 1 : ℕ) : ℚ) / (2 : ℚ) ^ p ≤
++            (((c5CenteredFastLogSumState p q n).2.add
++              (Interval.exact ((c5CenteredFastLogSumState p q n).1 /
++                ((n + 1 : ℕ) : ℚ)))).coarsen p).lo ∧
++          (((c5CenteredFastLogSumState p q n).2.add
++            (Interval.exact ((c5CenteredFastLogSumState p q n).1 /
++              ((n + 1 : ℕ) : ℚ)))).coarsen p).hi ≤
++            Interval.logSum (n + 1) q + ((n + 1 : ℕ) : ℚ) / (2 : ℚ) ^ p
++      constructor
++      · rw [hlog, hdelta]
++        rw [hpow]
++        push_cast at *
++        linarith [ih.1, hroundLo']
++      · rw [hlog, hdelta]
++        rw [hpow]
++        push_cast at *
++        linarith [ih.2, hroundHi']
++
++private theorem c5NatLeTwoPow (n : ℕ) : n ≤ 2 ^ n := by
++  induction n with
++  | zero => norm_num
++  | succ n ih =>
++      have hp : (1 : ℕ) ≤ 2 ^ n := Nat.one_le_iff_ne_zero.mpr (by positivity)
++      rw [pow_succ]
++      omega
++
++private theorem c5CenteredFastLogSumErrorLeOne (n : ℕ) :
++    (n : ℚ) / (2 : ℚ) ^ (n + 384) ≤ 1 := by
++  have hn : (n : ℚ) ≤ (2 : ℚ) ^ n := by exact_mod_cast c5NatLeTwoPow n
++  have h384 : (1 : ℚ) ≤ (2 : ℚ) ^ 384 := by
++    exact one_le_pow₀ (by norm_num : (1 : ℚ) ≤ 2)
++  have hpow : (2 : ℚ) ^ n ≤ (2 : ℚ) ^ (n + 384) := by
++    rw [pow_add]
++    simpa using mul_le_mul_of_nonneg_left h384
++      (pow_nonneg (show (0 : ℚ) ≤ 2 by norm_num) n)
++  have hnum : (n : ℚ) ≤ (2 : ℚ) ^ (n + 384) := hn.trans hpow
++  exact (div_le_iff₀ (by positivity)).2 (by simpa using hnum)
++
++private theorem c5CenteredIntervalEndpointAbsBound {S : Interval} {v ε : ℚ}
++    (hvalue : |v| ≤ 1 / 2) (herr : ε ≤ 1)
++    (hbelow : S.lo ≤ v) (habove : v ≤ S.hi)
++    (hloErr : v - ε ≤ S.lo) (hhiErr : S.hi ≤ v + ε) :
++    |S.lo| ≤ 3 / 2 ∧ |S.hi| ≤ 3 / 2 := by
++  constructor
++  · apply abs_le.mpr
++    constructor <;> linarith [abs_le.mp hvalue]
++  · apply abs_le.mpr
++    constructor <;> linarith [abs_le.mp hvalue]
++
++private theorem c5CenteredFastLogSumAbsBound (n : ℕ) (q : ℚ)
++    (hq : |q| ≤ 1 / 3) :
++    |(c5CenteredFastLogSumState (n + 384) q n).2.lo| ≤ 3 / 2 ∧
++      |(c5CenteredFastLogSumState (n + 384) q n).2.hi| ≤ 3 / 2 := by
++  have hsum := c5_abs_logSum_third (n := n) hq
++  have hstate := c5CenteredFastLogSumState_contains (n + 384) q n
++  have hlo : (c5CenteredFastLogSumState (n + 384) q n).2.lo ≤
++      Interval.logSum n q := by exact_mod_cast hstate.1
++  have hhi : Interval.logSum n q ≤
++      (c5CenteredFastLogSumState (n + 384) q n).2.hi := by exact_mod_cast hstate.2
++  have herr := c5CenteredFastLogSumState_bounds (n + 384) q n
++  let ε : ℚ := (n : ℚ) / (2 : ℚ) ^ (n + 384)
++  have herr' : ε ≤ 1 := by simpa [ε] using c5CenteredFastLogSumErrorLeOne n
++  have hloErr : Interval.logSum n q - ε ≤
++      (c5CenteredFastLogSumState (n + 384) q n).2.lo := by
++    simpa [ε] using herr.1
++  have hhiErr : (c5CenteredFastLogSumState (n + 384) q n).2.hi ≤
++      Interval.logSum n q + ε := by
++    simpa [ε] using herr.2
++  exact c5CenteredIntervalEndpointAbsBound hsum herr'
++    (by exact_mod_cast (c5CenteredFastLogSumState_contains (n + 384) q n).1)
++    (by exact_mod_cast (c5CenteredFastLogSumState_contains (n + 384) q n).2)
++    hloErr hhiErr
++
++private def c5CenteredFastLog1Lower (n : ℕ) (x : Interval) : ℚ :=
++  -((c5CenteredFastLogSumState (n + 384) (1 - x.lo) n).2.hi) -
++    Interval.logRem n (1 - x.lo)
++
++private def c5CenteredFastLog1Upper (n : ℕ) (x : Interval) : ℚ :=
++  max
++    (-((c5CenteredFastLogSumState (n + 384) (1 - x.hi) n).2.lo) +
++      Interval.logRem n (1 - x.hi))
++    (-((c5CenteredFastLogSumState (n + 384) (1 - x.lo) n).2.lo) -
++      Interval.logRem n (1 - x.lo))
++
++private theorem c5CenteredFastLog1Lower_le_log1 (n : ℕ) (x : Interval) :
++    c5CenteredFastLog1Lower n x ≤ (Interval.log1 n x).lo := by
++  have hs := c5CenteredFastLogSumState_contains (n + 384) (1 - x.lo) n
++  have hsum : Interval.logSum n (1 - x.lo) ≤
++      (c5CenteredFastLogSumState (n + 384) (1 - x.lo) n).2.hi := by
++    exact_mod_cast hs.2
++  dsimp [c5CenteredFastLog1Lower, Interval.log1]
++  linarith
++
++private theorem c5CenteredFastLog1Upper_ge_log1 (n : ℕ) (x : Interval) :
++    (Interval.log1 n x).hi ≤ c5CenteredFastLog1Upper n x := by
++  have hhi := c5CenteredFastLogSumState_contains (n + 384) (1 - x.hi) n
++  have hlo := c5CenteredFastLogSumState_contains (n + 384) (1 - x.lo) n
++  have hhi' :
++      (c5CenteredFastLogSumState (n + 384) (1 - x.hi) n).2.lo ≤
++        Interval.logSum n (1 - x.hi) := by exact_mod_cast hhi.1
++  have hlo' :
++      (c5CenteredFastLogSumState (n + 384) (1 - x.lo) n).2.lo ≤
++        Interval.logSum n (1 - x.lo) := by exact_mod_cast hlo.1
++  dsimp [c5CenteredFastLog1Upper, Interval.log1]
++  exact max_le
++    (le_trans (by linarith) (le_max_left _ _))
++    (le_trans (by linarith) (le_max_right _ _))
++
++def c5CenteredFastLog1 (n : ℕ) (x : Interval) : Interval :=
++  { lo := c5CenteredFastLog1Lower n x,
++    hi := c5CenteredFastLog1Upper n x,
++    le := (c5CenteredFastLog1Lower_le_log1 n x).trans
++      ((Interval.log1 n x).le.trans (c5CenteredFastLog1Upper_ge_log1 n x)) }
++
++private theorem c5CenteredFastLog1Contains (n : ℕ) (x : Interval) (t : ℝ)
++    (hx : x.contains t) (hlo : 0 < x.lo) (hhi : x.hi < 2) :
++    (c5CenteredFastLog1 n x).contains (Real.log t) := by
++  have hs := Interval.contains_log1 (n := n) hx hlo hhi
++  refine ⟨?_, ?_⟩
++  · have hcover := c5CenteredFastLog1Lower_le_log1 n x
++    exact le_trans (by exact_mod_cast hcover) hs.1
++  · have hcover := c5CenteredFastLog1Upper_ge_log1 n x
++    exact le_trans hs.2 (by exact_mod_cast hcover)
++
++private theorem c5CenteredFastLog1AbsBound (n : ℕ) (x : ℚ)
++    (hq : |1 - x| ≤ 1 / 3) :
++    |(c5CenteredFastLog1 n (Interval.exact x)).lo| ≤ 2 ∧
++      |(c5CenteredFastLog1 n (Interval.exact x)).hi| ≤ 2 := by
++  have hsum := c5CenteredFastLogSumAbsBound n (1 - x) hq
++  have hrem := c5_abs_logRem_third (n := n) hq
++  let S := (c5CenteredFastLogSumState (n + 384) (1 - x) n).2
++  let R := Interval.logRem n (1 - x)
++  have hlow : |-S.hi - R| ≤ 2 := by
++    calc
++      _ = |-(S.hi + R)| := by congr 1; ring
++      _ = |S.hi + R| := abs_neg _
++      _ ≤ |S.hi| + |R| := abs_add_le _ _
++      _ ≤ 3 / 2 + 1 / 2 := add_le_add hsum.2 hrem
++      _ = 2 := by norm_num
++  have hUpperLeft : |-S.lo + R| ≤ 2 := by
++    calc
++      _ ≤ |-S.lo| + |R| := abs_add_le _ _
++      _ = |S.lo| + |R| := by rw [abs_neg]
++      _ ≤ 3 / 2 + 1 / 2 := add_le_add hsum.1 hrem
++      _ = 2 := by norm_num
++  have hUpperRight : |-S.lo - R| ≤ 2 := by
++    calc
++      _ = |-(S.lo + R)| := by congr 1; ring
++      _ = |S.lo + R| := abs_neg _
++      _ ≤ |S.lo| + |R| := abs_add_le _ _
++      _ ≤ 3 / 2 + 1 / 2 := add_le_add hsum.1 hrem
++      _ = 2 := by norm_num
++  have hUpper := c5_abs_max_le hUpperLeft hUpperRight
++  constructor
++  · simpa [S, R, c5CenteredFastLog1, c5CenteredFastLog1Lower,
++      c5CenteredFastLog1Upper, Interval.exact] using hlow
++  · simpa [S, R, c5CenteredFastLog1, c5CenteredFastLog1Lower,
++      c5CenteredFastLog1Upper, Interval.exact] using hUpper
++
++def c5CenteredLogQFromLogTwo (nLog k : ℕ) (q : ℚ) (logTwo : Interval) : Interval :=
++  ((Interval.exact (k : ℚ)).mul logTwo).add
++    (c5CenteredFastLog1 nLog (Interval.exact (q / 2 ^ k)))
++
++def c5CenteredLogQ (nLog k : ℕ) (q : ℚ) : Interval :=
++  c5CenteredLogQFromLogTwo nLog k q (c5CenteredLog2I nLog)
++
++theorem contains_c5CenteredLogQFromLogTwo {nLog k : ℕ} {q : ℚ}
++    {logTwo : Interval} (hlogTwo : logTwo.contains (Real.log 2))
++    (h0 : 0 < q / 2 ^ k) (h2 : q / 2 ^ k < 2) :
++    (c5CenteredLogQFromLogTwo nLog k q logTwo).contains (Real.log q) := by
++  have h2k : (0 : ℚ) < 2 ^ k := by positivity
++  have hq0 : (0 : ℚ) < q := by
++    have h := mul_pos h0 h2k
++    rwa [div_mul_cancel₀ _ h2k.ne'] at h
++  have hid : Real.log q = (k : ℝ) * Real.log 2 + Real.log ((q : ℝ) / 2 ^ k) := by
++    rw [Real.log_div (by exact_mod_cast hq0.ne') (by positivity), Real.log_pow]
++    ring
++  have hA := Interval.contains_mul (Interval.contains_exact (k : ℚ)) hlogTwo
++  have hB' : (c5CenteredFastLog1 nLog (Interval.exact (q / 2 ^ k))).contains
++      (Real.log ((q / 2 ^ k : ℚ) : ℝ)) := by
++    apply c5CenteredFastLog1Contains nLog (Interval.exact (q / 2 ^ k)) _
++      (Interval.contains_exact _) (by exact_mod_cast h0) (by exact_mod_cast h2)
++  have hC := Interval.contains_add hA hB'
++  have hcast : ((q / 2 ^ k : ℚ) : ℝ) = (q : ℝ) / 2 ^ k := by
++    push_cast
++    ring
++  rw [hcast] at hC
++  rw [c5CenteredLogQFromLogTwo, hid,
++    show (k : ℝ) = (((k : ℚ) : ℝ)) by push_cast; rfl]
++  exact hC
++
++theorem contains_c5CenteredLogQ {nLog k : ℕ} {q : ℚ}
++    (h0 : 0 < q / 2 ^ k) (h2 : q / 2 ^ k < 2) :
++    (c5CenteredLogQ nLog k q).contains (Real.log q) := by
++  exact contains_c5CenteredLogQFromLogTwo (c5CenteredLog2IContains nLog) h0 h2
++
++theorem c5CenteredLogQLogBound (nLog m : ℕ) (hm0 : 1 ≤ m) (hm100 : m ≤ 100) :
++    |(c5CenteredLogQ nLog (c5CenteredLogScale m) (m : ℚ)).lo| ≤ 16 ∧
++      |(c5CenteredLogQ nLog (c5CenteredLogScale m) (m : ℚ)).hi| ≤ 16 := by
++  have hscale := c5CenteredLogScaleRange m hm0 hm100
++  have hq : |1 - (m : ℚ) / 2 ^ c5CenteredLogScale m| ≤ 1 / 3 := by
++    rcases hscale with ⟨hlo, hhi⟩
++    rw [abs_le]
++    constructor <;> linarith
++  have hlog1 := c5CenteredFastLog1AbsBound nLog
++    ((m : ℚ) / 2 ^ c5CenteredLogScale m) hq
++  have hlog2 := c5CenteredLog2IAbsBound nLog
++  have hk : 0 ≤ (c5CenteredLogScale m : ℚ) ∧
++      |(c5CenteredLogScale m : ℚ)| ≤ 7 := by
++    constructor
++    · positivity
++    · rw [abs_of_nonneg (by positivity)]
++      exact_mod_cast c5CenteredLogScaleLeSeven m
++  have hprod := c5AbsIntervalMulExactEndpoints
++    (c := (c5CenteredLogScale m : ℚ)) (M := 2) hlog2.1 hlog2.2
++  have hprod' :
++      |((Interval.exact (c5CenteredLogScale m : ℚ)).mul
++          (c5CenteredLog2I nLog)).lo| ≤ 14 ∧
++        |((Interval.exact (c5CenteredLogScale m : ℚ)).mul
++          (c5CenteredLog2I nLog)).hi| ≤ 14 := by
++    constructor
++    · calc
++        _ ≤ |(c5CenteredLogScale m : ℚ)| * 2 := hprod.1
++        _ ≤ 14 := by nlinarith [hk.2]
++    · calc
++        _ ≤ |(c5CenteredLogScale m : ℚ)| * 2 := hprod.2
++        _ ≤ 14 := by nlinarith [hk.2]
++  rw [c5CenteredLogQ, c5CenteredLogQFromLogTwo]
++  simp only [Interval.add]
++  constructor
++  · calc
++      _ ≤ |((Interval.exact (c5CenteredLogScale m : ℚ)).mul
++          (c5CenteredLog2I nLog)).lo| +
++          |(c5CenteredFastLog1 nLog (Interval.exact
++            ((m : ℚ) / 2 ^ c5CenteredLogScale m))).lo| := abs_add_le _ _
++      _ ≤ 16 := by linarith [hprod'.1, hlog1.1]
++  · calc
++      _ ≤ |((Interval.exact (c5CenteredLogScale m : ℚ)).mul
++          (c5CenteredLog2I nLog)).hi| +
++          |(c5CenteredFastLog1 nLog (Interval.exact
++            ((m : ℚ) / 2 ^ c5CenteredLogScale m))).hi| := abs_add_le _ _
++      _ ≤ 16 := by linarith [hprod'.2, hlog1.2]
++
++theorem c5CenteredLogQAbsBound (nLog m : ℕ) (hm0 : 1 ≤ m) (hm100 : m ≤ 100) :
++    |(Interval.logQ nLog (c5CenteredLogScale m) (m : ℚ)).lo| ≤ 15 ∧
++      |(Interval.logQ nLog (c5CenteredLogScale m) (m : ℚ)).hi| ≤ 15 := by
++  have hscale := c5CenteredLogScaleRange m hm0 hm100
++  have hq : |1 - (m : ℚ) / 2 ^ c5CenteredLogScale m| ≤ 1 / 3 := by
++    rcases hscale with ⟨hlo, hhi⟩
++    rw [abs_le]
++    constructor <;> linarith
++  have hlog1 := c5_log1_third_endpoint_bound nLog
++    ((m : ℚ) / 2 ^ c5CenteredLogScale m) hq
++  have hlog2 := c5_log1_half_endpoint_bound nLog
++  have hlog2' : |(Interval.log2I nLog).lo| ≤ 2 ∧
++      |(Interval.log2I nLog).hi| ≤ 2 := by
++    constructor
++    · simpa [Interval.log2I, Interval.neg] using hlog2.2
++    · simpa [Interval.log2I, Interval.neg] using hlog2.1
++  have hk : 0 ≤ (c5CenteredLogScale m : ℚ) ∧
++      |(c5CenteredLogScale m : ℚ)| ≤ 7 := by
++    constructor
++    · positivity
++    · rw [abs_of_nonneg (by positivity)]
++      exact_mod_cast c5CenteredLogScaleLeSeven m
++  have hprod := c5AbsIntervalMulExactEndpoints
++    (c := (c5CenteredLogScale m : ℚ)) (M := 2) hlog2'.1 hlog2'.2
++  have hprod' :
++      |((Interval.exact (c5CenteredLogScale m : ℚ)).mul (Interval.log2I nLog)).lo| ≤ 14 ∧
++        |((Interval.exact (c5CenteredLogScale m : ℚ)).mul (Interval.log2I nLog)).hi| ≤ 14 := by
++    constructor
++    · calc
++        _ ≤ |(c5CenteredLogScale m : ℚ)| * 2 := hprod.1
++        _ ≤ 14 := by nlinarith [hk.2]
++    · calc
++        _ ≤ |(c5CenteredLogScale m : ℚ)| * 2 := hprod.2
++        _ ≤ 14 := by nlinarith [hk.2]
++
++  rw [Interval.logQ]
++  simp only [Interval.add]
++  constructor
++  · calc
++      _ ≤ |((Interval.exact (c5CenteredLogScale m : ℚ)).mul (Interval.log2I nLog)).lo| +
++          |(Interval.log1 nLog (Interval.exact ((m : ℚ) / 2 ^ c5CenteredLogScale m))).lo| :=
++        abs_add_le _ _
++      _ ≤ 15 := by linarith [hprod'.1, hlog1.1]
++  · calc
++      _ ≤ |((Interval.exact (c5CenteredLogScale m : ℚ)).mul (Interval.log2I nLog)).hi| +
++          |(Interval.log1 nLog (Interval.exact ((m : ℚ) / 2 ^ c5CenteredLogScale m))).hi| :=
++        abs_add_le _ _
++      _ ≤ 15 := by linarith [hprod'.2, hlog1.2]
++
++end CarrySigmaObstruction
+diff --git a/research/native-moving-schur-sigma/SigmaC5RoundedComplexExp.lean b/research/native-moving-schur-sigma/SigmaC5RoundedComplexExp.lean
+new file mode 100644
+index 0000000..eecf72d
+--- /dev/null
++++ b/research/native-moving-schur-sigma/SigmaC5RoundedComplexExp.lean
+@@ -0,0 +1,139 @@
++import SigmaC5RationalNodePreciseLogBounds
++
++namespace CarrySigmaObstruction
++
++open ZetaLean ZetaLean.ComplexInterval
++set_option autoImplicit false
++set_option maxHeartbeats 0
++set_option maxRecDepth 1000000
++
++/-- Complex powers with outward rounding after each multiplication. -/
++def c5RoundedPowI (p : ℕ) (x : ComplexInterval) : ℕ → ComplexInterval
++  | 0 => ComplexInterval.exact 1 0
++  | n + 1 => ((c5RoundedPowI p x n).mul x).coarsen p
++
++theorem contains_c5RoundedPowI {p : ℕ} {x : ComplexInterval} {z : ℂ}
++    (hx : x.contains z) : ∀ n, (c5RoundedPowI p x n).contains (z ^ n)
++  | 0 => by
++      rw [pow_zero]
++      refine ⟨⟨?_, ?_⟩, ⟨?_, ?_⟩⟩ <;>
++        norm_num [c5RoundedPowI, ComplexInterval.exact,
++          Interval.exact, Interval.contains]
++  | n + 1 => by
++      rw [pow_succ]
++      exact ComplexInterval.contains_coarsen p
++        (ComplexInterval.contains_mul (contains_c5RoundedPowI hx n) hx)
++
++/-- Carry the current rounded power and the rounded Taylor sum together. This
++computes every power once instead of rebuilding powers `0,…,n` from scratch at
++each summand. -/
++def c5RoundedExpStateC (p : ℕ) (x : ComplexInterval) :
++    ℕ → ComplexInterval × ComplexInterval
++  | 0 => (ComplexInterval.exact 1 0, ComplexInterval.exact 0 0)
++  | n + 1 =>
++      let prev := c5RoundedExpStateC p x n
++      ((prev.1.mul x).coarsen p,
++        (prev.2.add
++          ((ComplexInterval.smulQ (1 / n.factorial) prev.1).coarsen p)).coarsen p)
++
++theorem contains_c5RoundedExpStateC {p : ℕ} {x : ComplexInterval} {z : ℂ}
++    (hx : x.contains z) : ∀ n,
++      (c5RoundedExpStateC p x n).1.contains (z ^ n) ∧
++        (c5RoundedExpStateC p x n).2.contains
++          (∑ i ∈ Finset.range n, z ^ i / i.factorial)
++  | 0 => by
++      constructor
++      · rw [pow_zero]
++        refine ⟨⟨?_, ?_⟩, ⟨?_, ?_⟩⟩ <;>
++          norm_num [c5RoundedExpStateC, ComplexInterval.exact,
++            Interval.exact, Interval.contains]
++      · simpa [c5RoundedExpStateC] using ComplexInterval.contains_zero
++  | n + 1 => by
++      have ih := contains_c5RoundedExpStateC (p := p) hx n
++      simp only [c5RoundedExpStateC, Finset.sum_range_succ]
++      constructor
++      · rw [pow_succ]
++        exact ComplexInterval.contains_coarsen p
++          (ComplexInterval.contains_mul ih.1 hx)
++      · have hterm := ComplexInterval.contains_smulQ
++          (q := 1 / n.factorial) ih.1
++        rw [show ((((1 / n.factorial : ℚ) : ℝ)) : ℂ) * z ^ n =
++            z ^ n / n.factorial by push_cast; ring] at hterm
++        exact ComplexInterval.contains_coarsen p
++          (ComplexInterval.contains_add ih.2
++            (ComplexInterval.contains_coarsen p hterm))
++
++/-- The Taylor sum with outward rounding after every term and addition. -/
++def c5RoundedExpSumC (p : ℕ) (x : ComplexInterval) (n : ℕ) : ComplexInterval :=
++  (c5RoundedExpStateC p x n).2
++
++theorem contains_c5RoundedExpSumC {p : ℕ} {x : ComplexInterval} {z : ℂ}
++    (hx : x.contains z) : ∀ n,
++      (c5RoundedExpSumC p x n).contains
++        (∑ i ∈ Finset.range n, z ^ i / i.factorial) := by
++  intro n
++  exact (contains_c5RoundedExpStateC (p := p) hx n).2
++
++/-- Taylor remainder using the uniform `‖z‖≤1` bound, avoiding a large
++power of the interval endpoint in the rational remainder. -/
++def c5RoundedExpSmall (n p : ℕ) (x : ComplexInterval) : ComplexInterval :=
++  (c5RoundedExpSumC p x n).inflate ((n + 1) / (n.factorial * n))
++
++theorem contains_c5RoundedExpSmall {n p : ℕ} (hn : 0 < n)
++    {x : ComplexInterval} {z : ℂ} (hx : x.contains z)
++    (hb : normBound x ≤ 1) :
++    (c5RoundedExpSmall n p x).contains (Complex.exp z) := by
++  have hzBound := norm_le_normBound hx
++  have hz1 : ‖z‖ ≤ 1 := hzBound.trans (by exact_mod_cast hb)
++  have hexp := Complex.exp_bound hz1 hn
++  have hpow : ‖z‖ ^ n ≤ 1 := by
++    exact pow_le_one₀ (norm_nonneg z) hz1
++  have hTaylor := contains_c5RoundedExpSumC (p := p) hx n
++  have hfactor : (0 : ℝ) ≤ (n.succ : ℝ) * ((n.factorial * n : ℝ))⁻¹ := by
++    positivity
++  have hrem : ‖z‖ ^ n * ((n.succ : ℝ) * ((n.factorial * n : ℝ))⁻¹) ≤
++      (((n + 1 : ℚ) / (n.factorial * n : ℚ) : ℚ) : ℝ) := by
++    calc
++      _ ≤ 1 * ((n.succ : ℝ) * ((n.factorial * n : ℝ))⁻¹) :=
++        mul_le_mul_of_nonneg_right hpow hfactor
++      _ = (((n + 1 : ℚ) / (n.factorial * n : ℚ) : ℚ) : ℝ) := by
++        push_cast [Nat.succ_eq_add_one]
++        ring
++  have hbound : ‖Complex.exp z -
++      (∑ i ∈ Finset.range n, z ^ i / i.factorial)‖ ≤
++        (((n + 1 : ℚ) / (n.factorial * n : ℚ) : ℚ) : ℝ) := hexp.trans hrem
++  simpa [c5RoundedExpSmall] using ComplexInterval.contains_inflate hTaylor hbound
++
++/-- `exp` on a complex box, rounding to `p` dyadic bits after every Taylor
++power, Taylor addition and squaring. -/
++def c5RoundedExpC (n p : ℕ) : ℕ → ComplexInterval → ComplexInterval
++  | 0, x => c5RoundedExpSmall n p x
++  | k + 1, x =>
++      let y := c5RoundedExpC n p k (ComplexInterval.halveC x)
++      (y.mul y).coarsen p
++
++theorem contains_c5RoundedExpC (n p : ℕ) (hn : 0 < n) :
++    ∀ (k : ℕ) (x : ComplexInterval) (z : ℂ), x.contains z →
++      normBound x ≤ 2 ^ k → (c5RoundedExpC n p k x).contains (Complex.exp z)
++  | 0, x, z, hx, hb => by
++      exact contains_c5RoundedExpSmall hn hx (by simpa using hb)
++  | k + 1, x, z, hx, hb => by
++      have hy : (c5RoundedExpC n p k (ComplexInterval.halveC x)).contains
++          (Complex.exp (z / 2)) := by
++        refine contains_c5RoundedExpC n p hn k (ComplexInterval.halveC x)
++          (z / 2) (ComplexInterval.contains_halveC hx) ?_
++        rw [ComplexInterval.normBound_halveC]
++        rw [pow_succ] at hb
++        linarith
++      have hmul := ComplexInterval.contains_mul hy hy
++      rw [show Complex.exp (z / 2) * Complex.exp (z / 2) = Complex.exp z by
++        rw [← Complex.exp_add]
++        ring_nf] at hmul
++      exact ComplexInterval.contains_coarsen p hmul
++
++#print axioms contains_c5RoundedPowI
++#print axioms contains_c5RoundedExpSumC
++#print axioms contains_c5RoundedExpSmall
++#print axioms contains_c5RoundedExpC
++
++end CarrySigmaObstruction
+diff --git a/research/native-moving-schur-sigma/SigmaC5RoundedLogProbe.lean b/research/native-moving-schur-sigma/SigmaC5RoundedLogProbe.lean
+new file mode 100644
+index 0000000..3f97b7a
+--- /dev/null
++++ b/research/native-moving-schur-sigma/SigmaC5RoundedLogProbe.lean
+@@ -0,0 +1,11 @@
++import SigmaC5RationalNodePreciseLogBounds
++
++open ZetaLean
++
++def c5RoundedLogProbeBox : Interval :=
++  CarrySigmaObstruction.c5CenteredFastLog1 512 (Interval.exact (25 / 32))
++
++def c5RoundedLogProbeWidth : ℚ :=
++  c5RoundedLogProbeBox.hi - c5RoundedLogProbeBox.lo
++
++#eval (c5RoundedLogProbeWidth.num.natAbs.log2, c5RoundedLogProbeWidth.den.log2)
+diff --git a/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean b/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean
+new file mode 100644
+index 0000000..2b7344a
+--- /dev/null
++++ b/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean
+@@ -0,0 +1,412 @@
++import SigmaC5RationalNodeInstantiate
++import SigmaC5FastBernoulliTable
++
++namespace CarrySigmaObstruction
++
++open SigmaC5Gamma ZetaLean ZetaLean.ComplexInterval
++open scoped BigOperators
++
++set_option autoImplicit false
++
++/-! Specialized multiplication by an exact rational complex number.  The
++generic rectangle product visits all sixteen corner products; here each
++coordinate is scaled by one exact rational before the two coordinates are
++added. -/
++def c5RatIntervalMulExact (x : Interval) (c : ℚ) : Interval :=
++  if hc : 0 ≤ c then
++    { lo := x.lo * c, hi := x.hi * c,
++      le := mul_le_mul_of_nonneg_right x.le hc }
++  else
++    { lo := x.hi * c, hi := x.lo * c,
++      le := mul_le_mul_of_nonpos_right x.le (le_of_not_ge hc) }
++
++theorem c5RatIntervalMulExact_contains {x : Interval} {c : ℚ} {t : ℝ}
++    (hx : x.contains t) : (c5RatIntervalMulExact x c).contains (t * c) := by
++  by_cases hc : 0 ≤ c
++  · have hcR : (0 : ℝ) ≤ (c : ℝ) := by exact_mod_cast hc
++    simp [c5RatIntervalMulExact, hc, Interval.contains]
++    exact ⟨mul_le_mul_of_nonneg_right hx.1 hcR,
++      mul_le_mul_of_nonneg_right hx.2 hcR⟩
++  · have hcR : (c : ℝ) ≤ 0 := by exact_mod_cast (le_of_not_ge hc)
++    simp [c5RatIntervalMulExact, hc, Interval.contains]
++    exact ⟨mul_le_mul_of_nonpos_right hx.2 hcR,
++      mul_le_mul_of_nonpos_right hx.1 hcR⟩
++
++def c5RatComplexMulExact (x : ComplexInterval) (a b : ℚ) : ComplexInterval :=
++  { re := (c5RatIntervalMulExact x.re a).sub
++      (c5RatIntervalMulExact x.im b),
++    im := (c5RatIntervalMulExact x.re b).add
++      (c5RatIntervalMulExact x.im a) }
++
++theorem c5RatComplexMulExact_contains {x : ComplexInterval} {w : ℂ}
++    {a b : ℚ} (hx : x.contains w) :
++    (c5RatComplexMulExact x a b).contains
++      (w * ratComplexToComplex (a, b)) := by
++  have hre := Interval.contains_sub
++    (c5RatIntervalMulExact_contains (c := a) hx.1)
++    (c5RatIntervalMulExact_contains (c := b) hx.2)
++  have him := Interval.contains_add
++    (c5RatIntervalMulExact_contains (c := b) hx.1)
++    (c5RatIntervalMulExact_contains (c := a) hx.2)
++  constructor
++  · simpa [c5RatComplexMulExact, ratComplexToComplex, Complex.mul_re] using hre
++  · simpa [c5RatComplexMulExact, ratComplexToComplex, Complex.mul_im] using him
++
++/-! The inverse powers in the Euler–Maclaurin correction are real. Keeping
++them as a real interval avoids widening a zero imaginary component and avoids
++the generic four-corner complex rectangle product at every summand. -/
++def c5RatComplexMulInterval (x : ComplexInterval) (r : Interval) :
++    ComplexInterval :=
++  { re := x.re.mul r, im := x.im.mul r }
++
++theorem c5RatComplexMulInterval_contains {x : ComplexInterval} {w : ℂ}
++    {r : Interval} {t : ℝ} (hx : x.contains w) (hr : r.contains t) :
++    (c5RatComplexMulInterval x r).contains (w * (t : ℂ)) := by
++  have hre := Interval.contains_mul hx.1 hr
++  have him := Interval.contains_mul hx.2 hr
++  constructor
++  · simpa [c5RatComplexMulInterval, Complex.mul_re] using hre
++  · simpa [c5RatComplexMulInterval, Complex.mul_im] using him
++
++private theorem c5RatComplexPow_real (q : ℚ) (n : ℕ) :
++    ratComplexToComplex (c5RatComplexPow (q, 0) n) = ((q ^ n : ℚ) : ℂ) := by
++  induction n with
++  | zero =>
++      apply Complex.ext <;> simp [c5RatComplexPow, ratComplexToComplex]
++  | succ n ih =>
++      change ratComplexToComplex
++        (ratComplexMul (c5RatComplexPow (q, 0) n) (q, 0)) = _
++      rw [ratComplexToComplex_mul, ih, ratComplexToComplex_real]
++      norm_cast
++      rw [pow_succ]
++
++/-- Rounded interval powers for the exact rational-complex powers in the
++Euler–Maclaurin correction. -/
++def c5RatComplexPowInterval (p : ℕ) (z : C5RatComplex) : ℕ → ComplexInterval
++  | 0 => ComplexInterval.exact 1 0
++  | n + 1 =>
++      (c5RatComplexMulExact (c5RatComplexPowInterval p z n) z.1 z.2).coarsen p
++
++theorem c5RatComplexPowInterval_contains (p : ℕ) (z : C5RatComplex) :
++    ∀ n, (c5RatComplexPowInterval p z n).contains
++      (ratComplexToComplex (c5RatComplexPow z n))
++  | 0 => by
++      change (ComplexInterval.exact 1 0).contains
++        (ratComplexToComplex (1, 0))
++      exact ⟨Interval.contains_exact _, Interval.contains_exact _⟩
++  | n + 1 => by
++      rw [c5RatComplexPowInterval, c5RatComplexPow]
++      rw [ratComplexToComplex_mul]
++      exact ComplexInterval.contains_coarsen p
++        (c5RatComplexMulExact_contains
++          (c5RatComplexPowInterval_contains p z n))
++
++/-- A dyadically rounded enclosure of the finite rising factorial. -/
++def c5RatPochhammerInterval (p : ℕ) (a b : ℚ) : ℕ → ComplexInterval
++  | 0 => ComplexInterval.exact 1 0
++  | n + 1 =>
++      (c5RatComplexMulExact (c5RatPochhammerInterval p a b n)
++        (a + (n : ℚ)) b).coarsen p
++
++theorem c5RatPochhammerInterval_contains (p : ℕ) (a b : ℚ) :
++    ∀ n, (c5RatPochhammerInterval p a b n).contains
++      (ratComplexToComplex (c5RatPochhammer a b n))
++  | 0 => by
++      change (ComplexInterval.exact 1 0).contains
++        (ratComplexToComplex (1, 0))
++      exact ⟨Interval.contains_exact _, Interval.contains_exact _⟩
++  | n + 1 => by
++      rw [c5RatPochhammerInterval, c5RatPochhammer]
++      rw [ratComplexToComplex_mul]
++      exact ComplexInterval.contains_coarsen p
++        (c5RatComplexMulExact_contains
++          (c5RatPochhammerInterval_contains p a b n))
++
++/-- One order-300 correction term, rounded after each complex product. -/
++def c5RatCorrectionTermInterval (p : ℕ) (a b : ℚ) (N j : ℕ) :
++    ComplexInterval :=
++  let k := 2 * j + 1
++  let bern := ComplexInterval.exact (c5RatBernoulliCoefficient j) 0
++  let poch := c5RatPochhammerInterval p a b k
++  let invPow := c5RatComplexPowInterval p ((1 / (N : ℚ)), 0) k
++  ((bern.mul poch).coarsen p).mul invPow |>.coarsen p
++
++theorem c5RatCorrectionTermInterval_contains (p : ℕ) (a b : ℚ)
++    (N j : ℕ) :
++    (c5RatCorrectionTermInterval p a b N j).contains
++      (ratComplexToComplex (c5RatCorrectionTerm a b N j)) := by
++  let k := 2 * j + 1
++  let bern := ComplexInterval.exact (c5RatBernoulliCoefficient j) 0
++  let poch := c5RatPochhammerInterval p a b k
++  let invPow := c5RatComplexPowInterval p ((1 / (N : ℚ)), 0) k
++  have hbern : bern.contains
++      (ratComplexToComplex (c5RatBernoulliCoefficient j, 0)) := by
++    exact ⟨Interval.contains_exact _, Interval.contains_exact _⟩
++  have hpoch := c5RatPochhammerInterval_contains p a b k
++  have hinv := c5RatComplexPowInterval_contains p ((1 / (N : ℚ)), 0) k
++  have hmul₁ := ComplexInterval.contains_coarsen p
++    (ComplexInterval.contains_mul hbern hpoch)
++  have hmul₂ := ComplexInterval.contains_coarsen p
++    (ComplexInterval.contains_mul hmul₁ hinv)
++  have hterm :
++      ratComplexToComplex (c5RatCorrectionTerm a b N j) =
++        ratComplexToComplex (c5RatBernoulliCoefficient j, 0) *
++          ratComplexToComplex (c5RatPochhammer a b k) *
++            ratComplexToComplex (c5RatComplexPow ((1 / (N : ℚ)), 0) k) := by
++    change ratComplexToComplex
++        (ratComplexMul
++          (ratComplexMul (c5RatBernoulliCoefficient j, 0)
++            (c5RatPochhammer a b k))
++          (c5RatComplexPow ((1 / (N : ℚ)), 0) k)) = _
++    rw [ratComplexToComplex_mul, ratComplexToComplex_mul]
++  change (ComplexInterval.coarsen p
++    ((ComplexInterval.coarsen p (bern.mul poch)).mul invPow)).contains _
++  rw [hterm]
++  exact hmul₂
++
++/-- Carry the current rising factorial, inverse power, and correction sum from
++one Bernoulli order to the next, rounding each operation outward. -/
++def c5RatCorrectionStateInterval (p : ℕ) (a b : ℚ) (N : ℕ)
++    (bernCoeff : ℕ → ℚ) :
++    ℕ → ComplexInterval × ℚ × ComplexInterval
++  | 0 => (ComplexInterval.exact a b,
++      1 / (N : ℚ), ComplexInterval.exact 0 0)
++  | j + 1 =>
++      let prev := c5RatCorrectionStateInterval p a b N bernCoeff j
++      let k := 2 * j + 1
++      let term :=
++        (c5RatComplexMulExact
++          (ComplexInterval.coarsen p
++            (c5RatComplexMulExact prev.1 (bernCoeff j) 0))
++          prev.2.1 0).coarsen p
++      let nextPoch :=
++        (c5RatComplexMulExact
++          ((c5RatComplexMulExact prev.1 (a + (k : ℚ)) b).coarsen p)
++          (a + ((k + 1 : ℕ) : ℚ)) b).coarsen p
++      let nextPow :=
++        prev.2.1 * (1 / (N : ℚ)) * (1 / (N : ℚ))
++      (nextPoch, nextPow, (prev.2.2.add term).coarsen p)
++
++private theorem c5RatCorrectionSum_cast (a b : ℚ) (N P : ℕ) :
++    ratComplexToComplex (c5RatCorrectionSum a b P N) =
++      ∑ i ∈ Finset.range P,
++        ratComplexToComplex (c5RatCorrectionTerm a b N i) := by
++  rw [c5RatCorrectionSum, ratComplexToComplex_sum]
++
++set_option maxHeartbeats 2000000
++
++theorem c5RatCorrectionStateInterval_contains (p : ℕ) (a b : ℚ) (N P : ℕ)
++    (bernCoeff : ℕ → ℚ)
++    (hBernCoeff : ∀ j, j < P → bernCoeff j = c5RatBernoulliCoefficient j) :
++    ∀ j, j ≤ P →
++      (c5RatCorrectionStateInterval p a b N bernCoeff j).1.contains
++        (ratComplexToComplex (c5RatPochhammer a b (2 * j + 1))) ∧
++      (c5RatCorrectionStateInterval p a b N bernCoeff j).2.1 =
++        (1 / (N : ℚ)) ^ (2 * j + 1) ∧
++      (c5RatCorrectionStateInterval p a b N bernCoeff j).2.2.contains
++        (ratComplexToComplex (c5RatCorrectionSum a b j N))
++  | 0, _ => by
++      constructor
++      · simpa [c5RatCorrectionStateInterval, c5RatPochhammer,
++          ratComplexMul] using
++          (show (ComplexInterval.exact a b).contains
++              (ratComplexToComplex (a, b)) from
++            ⟨Interval.contains_exact _, Interval.contains_exact _⟩)
++      constructor
++      · simp [c5RatCorrectionStateInterval, pow_one]
++      · change (ComplexInterval.exact 0 0).contains
++          (ratComplexToComplex (0, 0))
++        exact ⟨Interval.contains_exact _, Interval.contains_exact _⟩
++  | j + 1, hj => by
++      have ih := c5RatCorrectionStateInterval_contains p a b N P bernCoeff hBernCoeff
++        j (by omega)
++      let k : ℕ := 2 * j + 1
++      have hcoeff := hBernCoeff j (by omega)
++      have htermMul₁ := ComplexInterval.contains_coarsen p
++        (c5RatComplexMulExact_contains
++          (a := bernCoeff j) (b := 0) ih.1)
++      have htermMul₂ := ComplexInterval.contains_coarsen p
++        (c5RatComplexMulExact_contains
++          (a := (c5RatCorrectionStateInterval p a b N bernCoeff j).2.1)
++          (b := 0) htermMul₁)
++      have htermCast :
++          ratComplexToComplex (c5RatCorrectionTerm a b N j) =
++            ratComplexToComplex (c5RatBernoulliCoefficient j, 0) *
++              ratComplexToComplex (c5RatPochhammer a b k) *
++                ratComplexToComplex (c5RatComplexPow ((1 / (N : ℚ)), 0) k) := by
++        change ratComplexToComplex
++            (ratComplexMul
++              (ratComplexMul (c5RatBernoulliCoefficient j, 0)
++                (c5RatPochhammer a b k))
++              (c5RatComplexPow ((1 / (N : ℚ)), 0) k)) = _
++        rw [ratComplexToComplex_mul, ratComplexToComplex_mul]
++      have htermCastSwap :
++          ratComplexToComplex (c5RatCorrectionTerm a b N j) =
++            ratComplexToComplex (c5RatPochhammer a b k) *
++              ratComplexToComplex (bernCoeff j, 0) *
++                ratComplexToComplex
++                  ((c5RatCorrectionStateInterval p a b N bernCoeff j).2.1, 0) := by
++        rw [htermCast, mul_comm (ratComplexToComplex (c5RatBernoulliCoefficient j, 0))
++          (ratComplexToComplex (c5RatPochhammer a b k))]
++        rw [← hcoeff]
++        rw [c5RatComplexPow_real]
++        dsimp [k]
++        rw [← ih.2.1]
++        simp [ratComplexToComplex_real]
++      have hterm :
++          ((c5RatComplexMulExact
++              (ComplexInterval.coarsen p
++              (c5RatComplexMulExact
++                (c5RatCorrectionStateInterval p a b N bernCoeff j).1
++                (bernCoeff j) 0))
++              (c5RatCorrectionStateInterval p a b N bernCoeff j).2.1 0).coarsen p).contains
++              (ratComplexToComplex (c5RatCorrectionTerm a b N j)) := by
++        rw [htermCastSwap]
++        simpa [c5RatCorrectionStateInterval, k] using htermMul₂
++      have hsumSplit :
++          ratComplexToComplex (c5RatCorrectionSum a b (j + 1) N) =
++            ratComplexToComplex (c5RatCorrectionSum a b j N) +
++              ratComplexToComplex (c5RatCorrectionTerm a b N j) := by
++        calc
++          ratComplexToComplex (c5RatCorrectionSum a b (j + 1) N) =
++              ∑ i ∈ Finset.range (j + 1),
++                ratComplexToComplex (c5RatCorrectionTerm a b N i) :=
++            c5RatCorrectionSum_cast a b N (j + 1)
++          _ = (∑ i ∈ Finset.range j,
++                ratComplexToComplex (c5RatCorrectionTerm a b N i)) +
++                ratComplexToComplex (c5RatCorrectionTerm a b N j) := by
++            rw [Finset.sum_range_succ]
++          _ = ratComplexToComplex (c5RatCorrectionSum a b j N) +
++                ratComplexToComplex (c5RatCorrectionTerm a b N j) := by
++            rw [← c5RatCorrectionSum_cast a b N j]
++      have hsum := ComplexInterval.contains_coarsen p
++        (ComplexInterval.contains_add ih.2.2 hterm)
++      have hpoch₁ := ComplexInterval.contains_coarsen p
++        (c5RatComplexMulExact_contains
++          (a := a + (k : ℚ)) (b := b) ih.1)
++      have hpoch₂ := ComplexInterval.contains_coarsen p
++        (c5RatComplexMulExact_contains
++          (a := a + ((k + 1 : ℕ) : ℚ)) (b := b) hpoch₁)
++      have hpochCast :
++          ratComplexToComplex (c5RatPochhammer a b (2 * (j + 1) + 1)) =
++            ratComplexToComplex (c5RatPochhammer a b k) *
++              ratComplexToComplex (a + (k : ℚ), b) *
++                ratComplexToComplex (a + ((k + 1 : ℕ) : ℚ), b) := by
++        have hidx : 2 * (j + 1) + 1 = k + 2 := by
++          dsimp [k]
++          omega
++        rw [hidx, c5RatPochhammer, ratComplexToComplex_mul,
++          c5RatPochhammer, ratComplexToComplex_mul]
++      have hidx : 2 * (j + 1) + 1 = k + 2 := by
++        dsimp [k]
++        omega
++      have hpowCast :
++          ((1 / (N : ℚ)) ^ (2 * (j + 1) + 1) : ℚ) =
++            (1 / (N : ℚ)) ^ k * (1 / (N : ℚ)) * (1 / (N : ℚ)) := by
++        rw [hidx, pow_add]
++        simp [pow_two, mul_assoc]
++      simp only [c5RatCorrectionStateInterval]
++      refine ⟨?_, ?_, ?_⟩
++      · rw [hpochCast]
++        exact hpoch₂
++      · rw [hpowCast]
++        rw [ih.2.1]
++      · rw [hsumSplit]
++        exact hsum
++
++/-- The full correction sum with rounded interval additions and shared
++Pochhammer/power recurrences. -/
++def c5RatCorrectionSumIntervalWithTable (p : ℕ) (a b : ℚ) (N P : ℕ)
++    (bernTable : Array ℚ) :
++    ComplexInterval :=
++  let bernCoeff := fun j =>
++    bernTable.getD (2 * j + 2) 0 / (Nat.factorial (2 * j + 2) : ℚ)
++  (c5RatCorrectionStateInterval p a b N bernCoeff P).2.2
++
++theorem c5RatCorrectionSumIntervalWithTable_contains (p : ℕ) (a b : ℚ)
++    (N P : ℕ) (bernTable : Array ℚ)
++    (hsize : 2 * P + 1 ≤ bernTable.size)
++    (hBernTable : ∀ i, i < bernTable.size →
++      bernTable.getD i 0 = bernoulli' i) :
++    (c5RatCorrectionSumIntervalWithTable p a b N P bernTable).contains
++      (ratComplexToComplex (c5RatCorrectionSum a b P N)) := by
++  let bernCoeff := fun j =>
++    bernTable.getD (2 * j + 2) 0 / (Nat.factorial (2 * j + 2) : ℚ)
++  have hcoeff : ∀ j, j < P → bernCoeff j = c5RatBernoulliCoefficient j := by
++    intro j hj
++    have hidx : 2 * j + 2 < 2 * P + 1 := by omega
++    have hidx' : 2 * j + 2 < bernTable.size := lt_of_lt_of_le hidx hsize
++    dsimp [bernCoeff, c5RatBernoulliCoefficient]
++    rw [hBernTable (2 * j + 2) hidx']
++    rw [← bernoulli_eq_bernoulli'_of_ne_one (by omega : 2 * j + 2 ≠ 1)]
++  change (c5RatCorrectionStateInterval p a b N bernCoeff P).2.2.contains _
++  exact (c5RatCorrectionStateInterval_contains p a b N P bernCoeff hcoeff
++    P (by omega)).2.2
++
++def c5RatCorrectionSumInterval (p : ℕ) (a b : ℚ) (N P : ℕ) :
++    ComplexInterval :=
++  c5RatCorrectionSumIntervalWithTable p a b N P
++    (c5BernoulliPrimeTable (2 * P + 1))
++
++theorem c5RatCorrectionSumInterval_contains (p : ℕ) (a b : ℚ) (N P : ℕ) :
++    (c5RatCorrectionSumInterval p a b N P).contains
++      (ratComplexToComplex (c5RatCorrectionSum a b P N)) := by
++  apply c5RatCorrectionSumIntervalWithTable_contains
++  · simp [c5BernoulliPrimeTable_size]
++  · intro i hi
++    have hi' : i < 2 * P + 1 := by
++      simpa [c5BernoulliPrimeTable_size] using hi
++    exact c5BernoulliPrimeTable_getD (2 * P + 1) i hi'
++
++/-- A rounded enclosure of the rational factor multiplying `100 ^ (-s)` in
++the exact Euler–Maclaurin zeta identity. -/
++def c5RatScaleIntervalWithTable (p : ℕ) (a b : ℚ) (P N : ℕ)
++    (bernTable : Array ℚ) : ComplexInterval :=
++  ((c5RatComplexInterval
++      (c5RatComplexAdd
++        (ratComplexMul (N, 0) (ratComplexInv (a - 1, b))) (1 / 2, 0))).add
++      (c5RatCorrectionSumIntervalWithTable p a b N P bernTable)).coarsen p
++
++theorem c5RatScaleIntervalWithTable_contains (p : ℕ) (a b : ℚ) (P N : ℕ)
++    (bernTable : Array ℚ) (hsize : 2 * P + 1 ≤ bernTable.size)
++    (hBernTable : ∀ i, i < bernTable.size →
++      bernTable.getD i 0 = bernoulli' i) :
++    (c5RatScaleIntervalWithTable p a b P N bernTable).contains
++      (ratComplexToComplex (c5RatScale a b P N)) := by
++  have hbase := c5RatComplexInterval_contains
++    (c5RatComplexAdd
++      (ratComplexMul (N, 0) (ratComplexInv (a - 1, b))) (1 / 2, 0))
++  have hsum := c5RatCorrectionSumIntervalWithTable_contains p a b N P
++    bernTable hsize hBernTable
++  have hadd := ComplexInterval.contains_add hbase hsum
++  have hscale :
++      ratComplexToComplex (c5RatScale a b P N) =
++        ratComplexToComplex
++          (c5RatComplexAdd
++            (ratComplexMul (N, 0) (ratComplexInv (a - 1, b))) (1 / 2, 0)) +
++          ratComplexToComplex (c5RatCorrectionSum a b P N) := by
++    simp [c5RatScale, c5RatComplexToComplex_add]
++  rw [c5RatScaleIntervalWithTable, hscale]
++  exact ComplexInterval.contains_coarsen p hadd
++
++def c5RatScaleInterval (p : ℕ) (a b : ℚ) (P N : ℕ) : ComplexInterval :=
++  c5RatScaleIntervalWithTable p a b P N
++    (c5BernoulliPrimeTable (2 * P + 1))
++
++theorem c5RatScaleInterval_contains (p : ℕ) (a b : ℚ) (P N : ℕ) :
++    (c5RatScaleInterval p a b P N).contains
++      (ratComplexToComplex (c5RatScale a b P N)) := by
++  apply c5RatScaleIntervalWithTable_contains
++  · simp [c5BernoulliPrimeTable_size]
++  · intro i hi
++    have hi' : i < 2 * P + 1 := by
++      simpa [c5BernoulliPrimeTable_size] using hi
++    exact c5BernoulliPrimeTable_getD (2 * P + 1) i hi'
++
++#print axioms c5RatComplexPowInterval_contains
++#print axioms c5RatPochhammerInterval_contains
++#print axioms c5RatCorrectionTermInterval_contains
++#print axioms c5RatCorrectionSumInterval_contains
++#print axioms c5RatScaleInterval_contains
++
++end CarrySigmaObstruction
+diff --git a/research/native-moving-schur-sigma/SigmaC5RoundedScaleProbe.lean b/research/native-moving-schur-sigma/SigmaC5RoundedScaleProbe.lean
+new file mode 100644
+index 0000000..6b5769f
+--- /dev/null
++++ b/research/native-moving-schur-sigma/SigmaC5RoundedScaleProbe.lean
+@@ -0,0 +1,18 @@
++import SigmaC5RoundedRationalScale
++
++open ZetaLean ZetaLean.ComplexInterval
++open CarrySigmaObstruction
++
++def c5RoundedScaleProbeBox : ComplexInterval :=
++  c5RatScaleInterval 896 (3 / 5) (128 / 100000) 300 100
++
++def c5RoundedScaleProbeRealWidth : ℚ :=
++  c5RoundedScaleProbeBox.re.hi - c5RoundedScaleProbeBox.re.lo
++
++def c5RoundedScaleProbeImagWidth : ℚ :=
++  c5RoundedScaleProbeBox.im.hi - c5RoundedScaleProbeBox.im.lo
++
++#eval ((c5RoundedScaleProbeRealWidth.num.natAbs.log2,
++    c5RoundedScaleProbeRealWidth.den.log2),
++  (c5RoundedScaleProbeImagWidth.num.natAbs.log2,
++    c5RoundedScaleProbeImagWidth.den.log2))
+diff --git a/research/native-moving-schur-sigma/SigmaC5RoundedTermProbe.lean b/research/native-moving-schur-sigma/SigmaC5RoundedTermProbe.lean
+new file mode 100644
+index 0000000..60dc330
+--- /dev/null
++++ b/research/native-moving-schur-sigma/SigmaC5RoundedTermProbe.lean
+@@ -0,0 +1,19 @@
++import SigmaC5RationalNodeCenteredBoxes
++
++open ZetaLean ZetaLean.ComplexInterval
++open CarrySigmaObstruction
++
++def c5RoundedTermProbeBox : ComplexInterval :=
++  c5CenteredDirichletTermBoxWithLogTwo 512 192 896 4 (c5CenteredLog2I 512) 100
++    (ComplexInterval.exact (3 / 5) (128 / 100000))
++
++def c5RoundedTermProbeRealWidth : ℚ :=
++  c5RoundedTermProbeBox.re.hi - c5RoundedTermProbeBox.re.lo
++
++def c5RoundedTermProbeImagWidth : ℚ :=
++  c5RoundedTermProbeBox.im.hi - c5RoundedTermProbeBox.im.lo
++
++#eval ((c5RoundedTermProbeRealWidth.num.natAbs.log2,
++    c5RoundedTermProbeRealWidth.den.log2),
++  (c5RoundedTermProbeImagWidth.num.natAbs.log2,
++    c5RoundedTermProbeImagWidth.den.log2))

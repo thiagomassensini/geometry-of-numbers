@@ -1,0 +1,12 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:231:18: error: Type mismatch: After simplification, term
+  add_le_add hFour.left hTwo.right
+ has type
+  |(Interval.log1 nLog (Interval.exact (4 / 3))).lo| + |(Interval.log1 nLog (Interval.exact (2 / 3))).hi| ≤ 1 + 1
+but is expected to have type
+  |(Interval.log1 nLog (Interval.exact (4 / 3))).lo| + |(Interval.log1 nLog (Interval.exact (2 / 3))).hi| ≤ 2
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:237:18: error: Type mismatch: After simplification, term
+  add_le_add hFour.right hTwo.left
+ has type
+  |(Interval.log1 nLog (Interval.exact (4 / 3))).hi| + |(Interval.log1 nLog (Interval.exact (2 / 3))).lo| ≤ 1 + 1
+but is expected to have type
+  |(Interval.log1 nLog (Interval.exact (4 / 3))).hi| + |(Interval.log1 nLog (Interval.exact (2 / 3))).lo| ≤ 2

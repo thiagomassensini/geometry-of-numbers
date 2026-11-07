@@ -1,0 +1,7 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:263:6: error: unsolved goals
+case succ.snd
+q : ℚ
+n : ℕ
+ih : c5CenteredFastLogSumState q n = (q ^ (n + 1), Interval.logSum n q)
+⊢ ∑ i ∈ Finset.range n, q ^ (i + 1) / (↑i + 1) + q ^ (n + 1) / ↑(n + 1) =
+    ∑ x ∈ Finset.range n, q ^ (x + 1) / (↑x + 1) + q ^ (n + 1) / (↑n + 1)

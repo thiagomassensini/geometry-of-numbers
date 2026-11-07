@@ -1,0 +1,24 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:357:51: error: Application type mismatch: The argument
+  hi
+has type
+  i < (c5BernoulliPrimeTable (2 * P + 1)).size
+but is expected to have type
+  i < 2 * P + 1
+in the application
+  c5BernoulliPrimeTable_getD (2 * P + 1) i hi
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:400:51: error: Application type mismatch: The argument
+  hi
+has type
+  i < (c5BernoulliPrimeTable (2 * P + 1)).size
+but is expected to have type
+  i < 2 * P + 1
+in the application
+  c5BernoulliPrimeTable_getD (2 * P + 1) i hi
+'CarrySigmaObstruction.c5RatComplexPowInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatPochhammerInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionTermInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionSumInterval_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5RatScaleInterval_contains' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

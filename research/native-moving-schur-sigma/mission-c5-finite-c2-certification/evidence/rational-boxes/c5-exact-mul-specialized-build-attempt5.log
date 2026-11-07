@@ -1,0 +1,25 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:213:12: error: No goals to be solved
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:223:8: error: Type mismatch
+  htermMul₂
+has type
+  (coarsen p
+        ((coarsen p
+              (c5RatComplexMulExact (c5RatCorrectionStateInterval p a b N j).1 (c5RatBernoulliCoefficient j) 0)).mul
+          (c5RatCorrectionStateInterval p a b N j).2.1)).contains
+    (ratComplexToComplex (c5RatPochhammer a b (2 * j + 1)) * ratComplexToComplex (c5RatBernoulliCoefficient j, 0) *
+      ratComplexToComplex (c5RatComplexPow (1 / ↑N, 0) (2 * j + 1)))
+but is expected to have type
+  (coarsen p
+        ((coarsen p
+              (c5RatComplexMulExact (c5RatCorrectionStateInterval p a b N j).1 (c5RatBernoulliCoefficient j) 0)).mul
+          (c5RatCorrectionStateInterval p a b N j).2.1)).contains
+    (ratComplexToComplex (c5RatBernoulliCoefficient j, 0) * ratComplexToComplex (c5RatPochhammer a b k) *
+      ratComplexToComplex (c5RatComplexPow (1 / ↑N, 0) k))
+'CarrySigmaObstruction.c5RatComplexPowInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatPochhammerInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionTermInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionSumInterval_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5RatScaleInterval_contains' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

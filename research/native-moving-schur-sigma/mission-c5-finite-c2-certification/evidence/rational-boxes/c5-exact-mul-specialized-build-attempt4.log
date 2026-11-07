@@ -1,0 +1,40 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:147:10: error: Variable name `inv` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:205:9: error: Function expected at
+  c5RatComplexMulExact_contains ih.left
+but this term has type
+  (c5RatComplexMulExact (c5RatCorrectionStateInterval p a b N j).1 ?m.188 ?m.189).contains
+    (ratComplexToComplex (c5RatPochhammer a b (2 * j + 1)) * ratComplexToComplex (?m.188, ?m.189))
+
+Note: Expected a function because this term is being applied to the argument
+  hbern
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:195:13: error: unsolved goals
+p : ℕ
+a b : ℚ
+N j : ℕ
+ih :
+  (c5RatCorrectionStateInterval p a b N j).1.contains (ratComplexToComplex (c5RatPochhammer a b (2 * j + 1))) ∧
+    (c5RatCorrectionStateInterval p a b N j).2.1.contains
+        (ratComplexToComplex (c5RatComplexPow (1 / ↑N, 0) (2 * j + 1))) ∧
+      (c5RatCorrectionStateInterval p a b N j).2.2.contains (ratComplexToComplex (c5RatCorrectionSum a b j N))
+k : ℕ := 2 * j + 1
+inv : ComplexInterval := exact (1 / ↑N) 0
+bern : ComplexInterval := exact (c5RatBernoulliCoefficient j) 0
+hbern : bern.contains (ratComplexToComplex (c5RatBernoulliCoefficient j, 0))
+⊢ (c5RatCorrectionStateInterval p a b N (j + 1)).1.contains
+      (ratComplexToComplex (c5RatPochhammer a b (2 * (j + 1) + 1))) ∧
+    (c5RatCorrectionStateInterval p a b N (j + 1)).2.1.contains
+        (ratComplexToComplex (c5RatComplexPow (1 / ↑N, 0) (2 * (j + 1) + 1))) ∧
+      (c5RatCorrectionStateInterval p a b N (j + 1)).2.2.contains
+        (ratComplexToComplex (c5RatCorrectionSum a b (j + 1) N))
+'CarrySigmaObstruction.c5RatComplexPowInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatPochhammerInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionTermInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionSumInterval_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5RatScaleInterval_contains' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

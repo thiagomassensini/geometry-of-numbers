@@ -1,0 +1,44 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5FastBernoulliTable.lean:31:35: error(lean.unknownIdentifier): Unknown constant `Option.getD_getD`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5FastBernoulliTable.lean:32:17: error: Application type mismatch: The argument
+  i
+has type
+  ℕ
+of sort `Type` but is expected to have type
+  i < n
+of sort `Prop` in the application
+  ih i
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5FastBernoulliTable.lean:41:8: error: Tactic `apply` failed: could not unify the conclusion of `Finset.sum_congr rfl`
+  Finset.sum ?m.81 ?m.78 = Finset.sum ?m.81 ?m.79
+with the goal
+  (if True then some (1 - ∑ x ∈ Finset.range n, ↑(n.choose x) / ↑(n - x + 1) * (c5BernoulliPrimeTable n)[x]?.getD 0)
+        else (c5BernoulliPrimeTable n)[n]?).getD
+      0 =
+    1 - ∑ k ∈ Finset.range n, ↑(n.choose k) / (↑n - ↑k + 1) * bernoulli' k
+
+Note: The full type of `Finset.sum_congr rfl` is
+  (∀ x ∈ ?m.81, ?m.78 x = ?m.79 x) → Finset.sum ?m.81 ?m.78 = Finset.sum ?m.81 ?m.79
+
+case neg
+n : ℕ
+ih : n < n → (c5BernoulliPrimeTable n).getD n 0 = bernoulli' n
+hi : n < n + 1
+h : ¬n < n
+hs : (c5BernoulliPrimeTable n).size = n
+⊢ (if True then some (1 - ∑ x ∈ Finset.range n, ↑(n.choose x) / ↑(n - x + 1) * (c5BernoulliPrimeTable n)[x]?.getD 0)
+        else (c5BernoulliPrimeTable n)[n]?).getD
+      0 =
+    1 - ∑ k ∈ Finset.range n, ↑(n.choose k) / (↑n - ↑k + 1) * bernoulli' k
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5FastBernoulliTable.lean:38:10: error: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  simp only [Array.getD_eq_getD_getElem?, Array.getElem?_push, hs, i̵f̵_̵p̵o̵s̵ ̵r̵f̵l̵,̵ ̵Option.getD_some]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5FastBernoulliTable.lean:38:22: error: This simp argument is unused:
+  Option.getD_some
+
+Hint: Omit it from the simp argument list.
+  simp only [Array.getD_eq_getD_getElem?, Array.getElem?_push, hs, if_pos r̵f̵l̵,̵ ̵O̵p̵t̵i̵o̵n̵.̵g̵e̵t̵D̵_̵s̵o̵m̵e̵]̵r̲f̲l̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

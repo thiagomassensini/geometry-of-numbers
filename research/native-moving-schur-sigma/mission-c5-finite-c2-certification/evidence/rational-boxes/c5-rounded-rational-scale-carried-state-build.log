@@ -1,0 +1,116 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:199:53: error: unexpected token ','; expected ')'
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:134:8: error: Type mismatch: After simplification, term
+  c5ExactRatPoint_contains a b
+ has type
+  (exact a b).contains (↑a + ↑b * Complex.I)
+but is expected to have type
+  (exact a b).contains { re := ↑a, im := ↑b }
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:199:33: error: Application type mismatch: The argument
+  a + ↑(k + 1)
+has type
+  ℚ
+but is expected to have type
+  RatComplex
+in the application
+  ratComplexToComplex (a + ↑(k + 1))
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:143:13: error: unsolved goals
+case hfactor₂
+p : ℕ
+a b : ℚ
+N j : ℕ
+ih :
+  (c5RatCorrectionStateInterval p a b N j).1.contains (ratComplexToComplex (c5RatPochhammer a b (2 * j + 1))) ∧
+    (c5RatCorrectionStateInterval p a b N j).2.1.contains
+        (ratComplexToComplex (c5RatComplexPow (1 / ↑N, 0) (2 * j + 1))) ∧
+      (c5RatCorrectionStateInterval p a b N j).2.2.contains (ratComplexToComplex (c5RatCorrectionSum a b j N))
+k : ℕ := 2 * j + 1
+inv : ComplexInterval := exact (1 / ↑N) 0
+bern : ComplexInterval := exact (c5RatBernoulliCoefficient j) 0
+hbern : bern.contains (ratComplexToComplex (c5RatBernoulliCoefficient j, 0))
+htermMul₁ :
+  (coarsen p (bern.mul (c5RatCorrectionStateInterval p a b N j).1)).contains
+    (ratComplexToComplex (c5RatBernoulliCoefficient j, 0) * ratComplexToComplex (c5RatPochhammer a b (2 * j + 1)))
+htermMul₂ :
+  (coarsen p
+        ((coarsen p (bern.mul (c5RatCorrectionStateInterval p a b N j).1)).mul
+          (c5RatCorrectionStateInterval p a b N j).2.1)).contains
+    (ratComplexToComplex (c5RatBernoulliCoefficient j, 0) * ratComplexToComplex (c5RatPochhammer a b (2 * j + 1)) *
+      ratComplexToComplex (c5RatComplexPow (1 / ↑N, 0) (2 * j + 1)))
+htermCast :
+  ratComplexToComplex (c5RatCorrectionTerm a b N j) =
+    ratComplexToComplex (c5RatBernoulliCoefficient j, 0) * ratComplexToComplex (c5RatPochhammer a b k) *
+      ratComplexToComplex (c5RatComplexPow (1 / ↑N, 0) k)
+hterm :
+  (coarsen p
+        ((coarsen p (bern.mul (c5RatCorrectionStateInterval p a b N j).1)).mul
+          (c5RatCorrectionStateInterval p a b N j).2.1)).contains
+    (ratComplexToComplex (c5RatCorrectionTerm a b N j))
+hsumSplit :
+  ratComplexToComplex (c5RatCorrectionSum a b (j + 1) N) =
+    ratComplexToComplex (c5RatCorrectionSum a b j N) + ratComplexToComplex (c5RatCorrectionTerm a b N j)
+hsum :
+  (coarsen p
+        ((c5RatCorrectionStateInterval p a b N j).2.2.add
+          (coarsen p
+            ((coarsen p (bern.mul (c5RatCorrectionStateInterval p a b N j).1)).mul
+              (c5RatCorrectionStateInterval p a b N j).2.1)))).contains
+    (ratComplexToComplex (c5RatCorrectionSum a b j N) + ratComplexToComplex (c5RatCorrectionTerm a b N j))
+hfactor₁ : (exact (a + ↑k) b).contains (ratComplexToComplex (a + ↑k, b))
+⊢ (exact (a + ↑(k + 1)) b).contains (ratComplexToComplex sorry)
+
+p : ℕ
+a b : ℚ
+N j : ℕ
+ih :
+  (c5RatCorrectionStateInterval p a b N j).1.contains (ratComplexToComplex (c5RatPochhammer a b (2 * j + 1))) ∧
+    (c5RatCorrectionStateInterval p a b N j).2.1.contains
+        (ratComplexToComplex (c5RatComplexPow (1 / ↑N, 0) (2 * j + 1))) ∧
+      (c5RatCorrectionStateInterval p a b N j).2.2.contains (ratComplexToComplex (c5RatCorrectionSum a b j N))
+k : ℕ := 2 * j + 1
+inv : ComplexInterval := exact (1 / ↑N) 0
+bern : ComplexInterval := exact (c5RatBernoulliCoefficient j) 0
+hbern : bern.contains (ratComplexToComplex (c5RatBernoulliCoefficient j, 0))
+htermMul₁ :
+  (coarsen p (bern.mul (c5RatCorrectionStateInterval p a b N j).1)).contains
+    (ratComplexToComplex (c5RatBernoulliCoefficient j, 0) * ratComplexToComplex (c5RatPochhammer a b (2 * j + 1)))
+htermMul₂ :
+  (coarsen p
+        ((coarsen p (bern.mul (c5RatCorrectionStateInterval p a b N j).1)).mul
+          (c5RatCorrectionStateInterval p a b N j).2.1)).contains
+    (ratComplexToComplex (c5RatBernoulliCoefficient j, 0) * ratComplexToComplex (c5RatPochhammer a b (2 * j + 1)) *
+      ratComplexToComplex (c5RatComplexPow (1 / ↑N, 0) (2 * j + 1)))
+htermCast :
+  ratComplexToComplex (c5RatCorrectionTerm a b N j) =
+    ratComplexToComplex (c5RatBernoulliCoefficient j, 0) * ratComplexToComplex (c5RatPochhammer a b k) *
+      ratComplexToComplex (c5RatComplexPow (1 / ↑N, 0) k)
+hterm :
+  (coarsen p
+        ((coarsen p (bern.mul (c5RatCorrectionStateInterval p a b N j).1)).mul
+          (c5RatCorrectionStateInterval p a b N j).2.1)).contains
+    (ratComplexToComplex (c5RatCorrectionTerm a b N j))
+hsumSplit :
+  ratComplexToComplex (c5RatCorrectionSum a b (j + 1) N) =
+    ratComplexToComplex (c5RatCorrectionSum a b j N) + ratComplexToComplex (c5RatCorrectionTerm a b N j)
+hsum :
+  (coarsen p
+        ((c5RatCorrectionStateInterval p a b N j).2.2.add
+          (coarsen p
+            ((coarsen p (bern.mul (c5RatCorrectionStateInterval p a b N j).1)).mul
+              (c5RatCorrectionStateInterval p a b N j).2.1)))).contains
+    (ratComplexToComplex (c5RatCorrectionSum a b j N) + ratComplexToComplex (c5RatCorrectionTerm a b N j))
+hfactor₁ : (exact (a + ↑k) b).contains (ratComplexToComplex (a + ↑k, b))
+hfactor₂ : (exact (a + ↑(k + 1)) b).contains (ratComplexToComplex sorry)
+⊢ (c5RatCorrectionStateInterval p a b N (j + 1)).1.contains
+      (ratComplexToComplex (c5RatPochhammer a b (2 * (j + 1) + 1))) ∧
+    (c5RatCorrectionStateInterval p a b N (j + 1)).2.1.contains
+        (ratComplexToComplex (c5RatComplexPow (1 / ↑N, 0) (2 * (j + 1) + 1))) ∧
+      (c5RatCorrectionStateInterval p a b N (j + 1)).2.2.contains
+        (ratComplexToComplex (c5RatCorrectionSum a b (j + 1) N))
+'CarrySigmaObstruction.c5RatComplexPowInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatPochhammerInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionTermInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionSumInterval_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5RatScaleInterval_contains' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

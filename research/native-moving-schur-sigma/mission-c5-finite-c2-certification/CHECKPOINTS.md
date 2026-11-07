@@ -1,5 +1,20 @@
 # C5 — checkpoints
 
+## 2026-11-07 — estado integrado da negatividade e checkpoint C5 parcial
+
+- C1B foi integrada pela PR #155, merge
+  `0586e238441096ecd2248e3f14bdac3a832af427`.
+- C2 foi integrada pela PR #157, merge
+  `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`.
+- C3 foi integrada pela PR #159, merge
+  `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`.
+- C5 segue explicitamente incompleta. A tabela Bernoulli compartilhada e as
+  caixas de nó estão provadas e auditadas, mas as inclusões
+  `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` continuam abertas.
+- Pins, fontes da sobreposição temporária, logs, último estado de falha e
+  comandos de retomada estão em
+  `evidence/rational-boxes/c5-fast-bernoulli-table-validation.md`.
+
 ## 2026-11-07 UTC — cobertura zeta adaptativa dos 129 nós (PR #209 integrada)
 
 - `SigmaC5RationalNodeLogBounds.lean` prova por aritmética racional os limites
@@ -339,3 +354,21 @@ misture caches/logs das outras worktrees.
   na `main` `27a61e6bebcce178b81b961f507400ed77b96d3b`. A validação segue
   explicitamente incompleta.
 - Validação detalhada: `evidence/rational-boxes/c5-rational-node-evaluator-validation.md`.
+
+## 2026-11-07 — tabela Bernoulli incremental e caixa zeta com tabela compartilhada (checkpoint local)
+
+- `c5BernoulliPrimeTable` constrói `bernoulli'` em um array; o tamanho e cada
+  entrada foram provados. A recorrência de escala consome coeficientes dessa
+  tabela e mantém a potência inversa como racional exato.
+- Os módulos da tabela, da escala e da caixa centrada com tabela foram
+  compilados em Lean 4.32 com warnings como erros. As raízes auditadas incluem
+  apenas `propext`, `Classical.choice` e `Quot.sound`.
+- Uma tabela compartilhada calculou três caixas nodais em 2:20. O lote de 129
+  alturas não terminou dentro de 15:57 e não produziu largura agregada; a
+  medição é preservada, sem alegação de conclusão.
+- A VM disponibilizou 64 GiB totais e o pico medido foi ~6,5 GiB. Não é
+  necessário aumentar a memória.
+- C5 continua parcial: nenhuma inclusão `sigmaC00495SourceBoxes` ou
+  `sigmaC01SourceBoxes` foi provada. Ver
+  `evidence/rational-boxes/c5-fast-bernoulli-table-validation.md` para pins,
+  logs e retomada.

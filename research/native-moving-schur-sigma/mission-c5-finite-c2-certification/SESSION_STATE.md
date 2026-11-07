@@ -1,5 +1,28 @@
 # C5 — estado da sessão
 
+## Estado da missão de negatividade (atualizado em 2026-11-07)
+
+- C1B foi integrada pela PR #155, no merge `0586e238441096ecd2248e3f14bdac3a832af427`.
+- C2 foi integrada pela PR #157, no merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`.
+- C3 foi integrada pela PR #159, no merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`.
+- A prioridade ativa continua sendo a certificação finita C5. Esses merges não
+  dependem de uma migração geral para Lean 4.35; C2/C3 foram validadas em Lean 4.32.
+- A lei distância × profundidade e os novos cadernos estão adiados até depois
+  de C2/C3; não é preciso calcular a primeira profundidade de falha para a
+  negatividade eventual já provada.
+
+## Checkpoint local parcial — Bernoulli compartilhado (2026-11-07)
+
+Na worktree `codex/c5-flatten-zeta-boxes-20261107`, a tabela incremental de
+Bernoulli e a integração da tabela à caixa Euler–Maclaurin de um nó foram
+provadas, compiladas em Lean 4.32 e auditadas. A caixa completa de um nó
+terminou em 2:05; três nós com tabela compartilhada terminaram em 2:20. O lote
+de 129 nós continua lento e foi interrompido sem largura final após 15:57.
+Memória medida: cerca de 6,5 GiB usados numa VM com 64 GiB totais; não pedir
+mais memória. C5 segue incompleta e este checkpoint local ainda não foi
+integrado. Detalhes, comandos e logs em
+`evidence/rational-boxes/c5-fast-bernoulli-table-validation.md`.
+
 ## Snapshot atual — cobertura formal dos 129 nós de zeta integrada pela PR #209
 
 **Atualizado:** 2026-11-07 UTC. O commit de prova

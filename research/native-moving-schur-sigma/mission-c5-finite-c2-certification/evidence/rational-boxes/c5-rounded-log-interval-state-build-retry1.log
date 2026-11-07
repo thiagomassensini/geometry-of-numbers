@@ -1,0 +1,104 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:373:8: error: linarith failed to find a contradiction
+case left
+p : ℕ
+q : ℚ
+n : ℕ
+ih :
+  Interval.logSum n q - ↑n / 2 ^ p ≤ (c5CenteredFastLogSumState p q n).2.lo ∧
+    (c5CenteredFastLogSumState p q n).2.hi ≤ Interval.logSum n q + ↑n / 2 ^ p
+hpow : (c5CenteredFastLogSumState p q n).1 = q ^ (n + 1)
+hlog : Interval.logSum (n + 1) q = Interval.logSum n q + q ^ (n + 1) / ↑(n + 1)
+hroundLo :
+  ((c5CenteredFastLogSumState p q n).2.add (Interval.exact ((c5CenteredFastLogSumState p q n).1 / ↑(n + 1)))).lo -
+      1 / 2 ^ p ≤
+    (Interval.coarsen p
+        ((c5CenteredFastLogSumState p q n).2.add (Interval.exact ((c5CenteredFastLogSumState p q n).1 / ↑(n + 1))))).lo
+hroundHi :
+  (Interval.coarsen p
+        ((c5CenteredFastLogSumState p q n).2.add
+          (Interval.exact ((c5CenteredFastLogSumState p q n).1 / ↑(n + 1))))).hi ≤
+    ((c5CenteredFastLogSumState p q n).2.add (Interval.exact ((c5CenteredFastLogSumState p q n).1 / ↑(n + 1)))).hi +
+      1 / 2 ^ p
+hroundLo' :
+  (c5CenteredFastLogSumState p q n).2.lo + q ^ (n + 1) / ↑(n + 1) - 1 / 2 ^ p ≤
+    (Interval.coarsen p ((c5CenteredFastLogSumState p q n).2.add (Interval.exact (q ^ (n + 1) / ↑(n + 1))))).lo
+hroundHi' :
+  (Interval.coarsen p ((c5CenteredFastLogSumState p q n).2.add (Interval.exact (q ^ (n + 1) / ↑(n + 1))))).hi ≤
+    (c5CenteredFastLogSumState p q n).2.hi + q ^ (n + 1) / ↑(n + 1) + 1 / 2 ^ p
+a✝ :
+  (Interval.coarsen p
+        ((c5CenteredFastLogSumState p q n).2.add
+          (Interval.exact ((c5CenteredFastLogSumState p q n).1 / ↑(n + 1))))).lo <
+    Interval.logSum n q + q ^ (n + 1) / ↑(n + 1) - ↑(n + 1) / 2 ^ p
+⊢ False
+failed
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:375:8: error: linarith failed to find a contradiction
+case right
+p : ℕ
+q : ℚ
+n : ℕ
+ih :
+  Interval.logSum n q - ↑n / 2 ^ p ≤ (c5CenteredFastLogSumState p q n).2.lo ∧
+    (c5CenteredFastLogSumState p q n).2.hi ≤ Interval.logSum n q + ↑n / 2 ^ p
+hpow : (c5CenteredFastLogSumState p q n).1 = q ^ (n + 1)
+hlog : Interval.logSum (n + 1) q = Interval.logSum n q + q ^ (n + 1) / ↑(n + 1)
+hroundLo :
+  ((c5CenteredFastLogSumState p q n).2.add (Interval.exact ((c5CenteredFastLogSumState p q n).1 / ↑(n + 1)))).lo -
+      1 / 2 ^ p ≤
+    (Interval.coarsen p
+        ((c5CenteredFastLogSumState p q n).2.add (Interval.exact ((c5CenteredFastLogSumState p q n).1 / ↑(n + 1))))).lo
+hroundHi :
+  (Interval.coarsen p
+        ((c5CenteredFastLogSumState p q n).2.add
+          (Interval.exact ((c5CenteredFastLogSumState p q n).1 / ↑(n + 1))))).hi ≤
+    ((c5CenteredFastLogSumState p q n).2.add (Interval.exact ((c5CenteredFastLogSumState p q n).1 / ↑(n + 1)))).hi +
+      1 / 2 ^ p
+hroundLo' :
+  (c5CenteredFastLogSumState p q n).2.lo + q ^ (n + 1) / ↑(n + 1) - 1 / 2 ^ p ≤
+    (Interval.coarsen p ((c5CenteredFastLogSumState p q n).2.add (Interval.exact (q ^ (n + 1) / ↑(n + 1))))).lo
+hroundHi' :
+  (Interval.coarsen p ((c5CenteredFastLogSumState p q n).2.add (Interval.exact (q ^ (n + 1) / ↑(n + 1))))).hi ≤
+    (c5CenteredFastLogSumState p q n).2.hi + q ^ (n + 1) / ↑(n + 1) + 1 / 2 ^ p
+a✝ :
+  Interval.logSum n q + q ^ (n + 1) / ↑(n + 1) + ↑(n + 1) / 2 ^ p <
+    (Interval.coarsen p
+        ((c5CenteredFastLogSumState p q n).2.add (Interval.exact ((c5CenteredFastLogSumState p q n).1 / ↑(n + 1))))).hi
+⊢ False
+failed
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:389:16: error(lean.unknownIdentifier): Unknown identifier `c5_two_pow_ge_one`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:392:4: error: Type mismatch
+  mul_le_mul_of_nonneg_left h384
+    (pow_nonneg
+      (have this :=
+        Mathlib.Meta.NormNum.isNat_le_true (Mathlib.Meta.NormNum.isNat_ofNat ℚ (Eq.refl 0))
+          (Mathlib.Meta.NormNum.isNat_ofNat ℚ (Eq.refl 2)) (Eq.refl true);
+      this)
+      n)
+has type
+  2 ^ n * 1 ≤ 2 ^ n * 2 ^ 384
+but is expected to have type
+  2 ^ n ≤ 2 ^ n * 2 ^ 384
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:394:50: error: exponent 384 exceeds the threshold 256, exponentiation operation was not evaluated, use `set_option exponentiation.threshold <num>` to set a new threshold
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:412:20: error: exponent 384 exceeds the threshold 256, exponentiation operation was not evaluated, use `set_option exponentiation.threshold <num>` to set a new threshold
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:480:18: error: Type mismatch: After simplification, term
+  add_le_add hsum.right hrem
+ has type
+  |(c5CenteredFastLogSumState (n + 384) (1 - x) n).2.hi| + |Interval.logRem n (1 - x)| ≤ 3 / 2 + 2⁻¹
+but is expected to have type
+  |(c5CenteredFastLogSumState (n + 384) (1 - x) n).2.hi| + |Interval.logRem n (1 - x)| ≤ 2
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:483:6: error: invalid 'calc' step, left-hand side is
+  |S.lo + R| : ℚ
+but is expected to be
+  |-S.lo + R| : ℚ
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:484:18: error: Type mismatch: After simplification, term
+  add_le_add hsum.left hrem
+ has type
+  |(c5CenteredFastLogSumState (n + 384) (1 - x) n).2.lo| + |Interval.logRem n (1 - x)| ≤ 3 / 2 + 2⁻¹
+but is expected to have type
+  |(c5CenteredFastLogSumState (n + 384) (1 - x) n).2.lo| + |Interval.logRem n (1 - x)| ≤ 2
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:490:18: error: Type mismatch: After simplification, term
+  add_le_add hsum.left hrem
+ has type
+  |(c5CenteredFastLogSumState (n + 384) (1 - x) n).2.lo| + |Interval.logRem n (1 - x)| ≤ 3 / 2 + 2⁻¹
+but is expected to have type
+  |(c5CenteredFastLogSumState (n + 384) (1 - x) n).2.lo| + |Interval.logRem n (1 - x)| ≤ 2

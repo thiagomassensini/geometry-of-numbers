@@ -1,0 +1,16 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5FastBernoulliTable.lean:40:6: error: unsolved goals
+case neg.e_a
+n : ℕ
+ih : ∀ i < n, (c5BernoulliPrimeTable n).getD i 0 = bernoulli' i
+hi : n < n + 1
+h : ¬n < n
+hs : (c5BernoulliPrimeTable n).size = n
+hget :
+  ((c5BernoulliPrimeTable n).push
+          (1 - ∑ k ∈ Finset.range n, ↑(n.choose k) / ↑(n - k + 1) * (c5BernoulliPrimeTable n).getD k 0)).getD
+      n 0 =
+    1 - ∑ k ∈ Finset.range n, ↑(n.choose k) / ↑(n - k + 1) * (c5BernoulliPrimeTable n).getD k 0
+k : ℕ
+hk : k ∈ Finset.range n
+⊢ ↑(n.choose k) / ↑(n - k + 1) * (c5BernoulliPrimeTable n).getD k 0 =
+    ↑(n.choose k) / (↑n - ↑k + 1) * (c5BernoulliPrimeTable n).getD k 0
