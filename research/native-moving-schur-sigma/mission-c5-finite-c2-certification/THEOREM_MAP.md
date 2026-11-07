@@ -1,6 +1,6 @@
 # C5 — mapa dos teoremas e obrigações
 
-## Exponencial arredondada no estágio 6 — provada localmente
+## Exponencial arredondada no estágio 6 — provada e integrada pela PR #234
 
 `SigmaC5ZeroExpStage6Certificate.lean` importa a igualdade integrada do
 estágio 5, define `c5ZeroExpStage6Export` e prova `c5ZeroExpStage6_eq`. A caixa
@@ -9,7 +9,10 @@ real é `[(2^896 - 47)/2^896, (2^896 + 63)/2^896]`, e a parte imaginária é
 e quatro provam os pisos/tetos. A auditoria das nove raízes mostra apenas
 axiomas padrão. Build, auditoria, pins e hashes estão em
 `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`. Este subpasso ainda
-aguarda publicação e não fecha a ponte CSV–Lean nem as inclusões C2.
+foi integrado pela PR #234: commit de prova
+`a9be0be89794465fefa44bf66c3b50d5702cc0f5`, merge na `main`
+`5571ceb84e0483da55ff7ba212942a4ab13b7cab`; o GitHub não reportou checks.
+Este subpasso não fecha a ponte CSV–Lean nem as inclusões C2.
 
 ## Exponencial arredondada no estágio 5 — provada e integrada pela PR #232
 

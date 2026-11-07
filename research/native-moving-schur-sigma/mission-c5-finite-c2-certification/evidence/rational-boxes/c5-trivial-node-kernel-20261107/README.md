@@ -118,7 +118,9 @@ extremos do quadrado do estágio 5; os pisos/tetos são `2^896 - 47`,
 passaram em Lean 4.32.0, somente com axiomas padrão. Logs, pins e hashes estão
 em `SigmaC5ZeroExpStage6Certificate.build.log`,
 `SigmaC5ZeroExpStage6Audit.log`, `stage6-pins.txt` e `stage6-sha256.txt`.
-Este checkpoint do estágio 6 está validado localmente e aguarda publicação; C5
+PR #234 integrou este checkpoint: commit de prova
+`a9be0be89794465fefa44bf66c3b50d5702cc0f5`, merge na `main`
+`5571ceb84e0483da55ff7ba212942a4ab13b7cab`. O GitHub não reportou checks; C5
 continua incompleta.
 
 ## Pins e reprodução
@@ -189,10 +191,12 @@ bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaC5ZeroExpStag
 bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaC5ZeroExpStage6Audit
 ```
 
+O estágio 6 foi integrado; a próxima prova deve generalizar a recorrência das
+caixas para `2 ≤ k ≤ 192`.
+
 ## Próxima obrigação aberta
 
-Os estágios 1, 2, 3, 4 e 5 estão provados e integrados; o estágio 6 foi provado
-localmente e aguarda publicação. A tentativa que falhou ao aplicar diretamente
+Os estágios 1, 2, 3, 4, 5 e 6 estão provados e integrados. A tentativa que falhou ao aplicar diretamente
 `Int.floor_eq_iff.mpr` e `Int.ceil_eq_iff.mpr` permanece como histórico; veja
 [`stage1-export-equality-last-attempt.log`](stage1-export-equality-last-attempt.log).
 O fonte exato dessa tentativa está preservado como
@@ -214,7 +218,7 @@ aceito como resultado. Esta tentativa não invalida as identidades já
 compiladas e auditadas acima.
 
 Ainda não há ponte CSV–Lean, inclusão dos coeficientes O3, composição completa
-da fonte C2, nem sinal finito de C5. O próximo passo é publicar o estágio 6 e
-generalizar a recorrência das caixas antes de ligar formalmente as caixas,
+da fonte C2, nem sinal finito de C5. O próximo passo é generalizar a recorrência
+das caixas antes de ligar formalmente as caixas,
 compondo zeta, Gamma, o fator dependente de π e a fonte C2 original. Não
 inferir fechamento de C5 a partir deste checkpoint.

@@ -1,6 +1,6 @@
 # Retomar primeiro — missão C5
 
-## Retomada mais recente — estágio 6 validado localmente
+## Retomada mais recente — estágio 6 integrado
 
 C1B/C2/C3 já estão integradas pelas PRs #155/#157/#159; não as refazer. A
 prioridade vigente é C5. O núcleo `m = 1` foi integrado pela PR #222, e as
@@ -30,17 +30,19 @@ padrão. O estágio 5 foi integrado pela PR #232, commit de prova
 `SigmaC5ZeroExpStage6Certificate.lean` importa o estágio 5 integrado, define a
 caixa seguinte em função de `2^896` e prova `c5ZeroExpStage6_eq`. O build e a
 auditoria das nove declarações passaram em Lean 4.32, somente com axiomas
-padrão. O estágio 6 está validado localmente e aguarda publicação.
+padrão. O estágio 6 foi integrado pela PR #234, commit de prova
+`a9be0be89794465fefa44bf66c3b50d5702cc0f5`, merge
+`5571ceb84e0483da55ff7ba212942a4ab13b7cab`.
 
-**Base de trabalho:** Geometry `main` após PR #233, merge
-`13ae30b5601206fe61c45ea8b52f35c0124be58a`, branch
-`codex/c5-zero-exp-stage6-20261107`.
+**Base de trabalho:** Geometry `main` após PR #234, merge
+`5571ceb84e0483da55ff7ba212942a4ab13b7cab`, branch
+`codex/c5-zero-exp-stage6-state-after-merge-20261107`.
 
-Retomar publicando o estágio 6 e generalizando a recorrência para `2 ≤ k ≤ 192`.
-Builds, auditorias, pins, hashes, tentativas e sondas estão em
+Retomar provando a recorrência exata das caixas para `2 ≤ k ≤ 192`. Builds,
+auditorias, pins, hashes, tentativas e sondas estão em
 `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`. Depois, retomar a
 ponte CSV–Lean, compor a fonte C2 original e provar as inclusões O3. Os merges
-atuais fecham somente as igualdades dos estágios 1–5, não C5.
+atuais fecham somente as igualdades dos estágios 1–6, não C5.
 
 ## Retomada anterior — 2026-11-07 UTC, componente `log 2` certificado
 
