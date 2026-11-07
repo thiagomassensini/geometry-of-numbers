@@ -10,6 +10,10 @@ temporária foram preservados em
 confirmou os sinais condicionais já arquivados. Isso não fecha a inclusão
 formal dos coeficientes nem muda as obrigações C5.
 
+O registro e os artefatos foram integrados pela PR #237, merge
+`5fe7837e0f9509950aeb95777bdd220d68835ad8`; o GitHub não reportou checks
+hospedados.
+
 ## Prioridade imediata — generalizar a recorrência
 
 O núcleo `m = 1` já está formalizado e compilado: o log centrado vira a caixa
