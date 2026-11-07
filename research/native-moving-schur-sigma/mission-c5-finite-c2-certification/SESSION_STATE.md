@@ -1,14 +1,16 @@
 # C5 — estado da sessão
 
-## Atualização — estágio Taylor 18 do nó m=2 compilado; publicação pendente
+## Atualização — estágio Taylor 18 do nó m=2 integrado pela PR #275
 
-Na branch `codex/c5-m2-stage18-20261107`, baseada na `main` em `0807c1052a9e5ac4464139e1593958a495a80103`, foi
-provada localmente `c5RoundedExpStateC_stage18_correct` para `(a,j)=(2/5,0)`.
-Lean 4.32.0 com `warningAsError=true` terminou em `BUILD_EXIT=0`; as cinco
-declarações auditadas dependem somente de axiomas padrão, sem `sorryAx`.
-Fontes, pins, logs e hashes estão em
-`evidence/rational-boxes/c5-m2-dirichlet-term-stage18-20261107/`. A PR está
-pendente de publicação.
+Na branch de prova `codex/c5-m2-stage18-20261107`, baseada na `main` em
+`0807c1052a9e5ac4464139e1593958a495a80103`, foi provada
+`c5RoundedExpStateC_stage18_correct` para `(a,j)=(2/5,0)`. Lean 4.32.0 com
+`warningAsError=true` terminou em `BUILD_EXIT=0`; as cinco declarações
+auditadas dependem somente de axiomas padrão, sem `sorryAx`. Fontes, pins,
+logs e hashes estão em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage18-20261107/`.
+O commit `eb7209321914de6733de0bd160e1c64633924dba` foi integrado pela PR #275 no merge `df23788957cb17b16832d5f4c9e47fd8aa12d68f`; o GitHub não
+reportou checks hospedados.
 
 O resultado cobre somente `n≤18` de um nó. Os estados restantes, demais nós,
 quadraturas, caixa completa, inclusão da fonte C2 e sinais finais seguem

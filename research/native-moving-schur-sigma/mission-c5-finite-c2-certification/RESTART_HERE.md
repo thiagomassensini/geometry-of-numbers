@@ -1,12 +1,12 @@
 # Retomar primeiro — missão C5
 
-## Retomada mais recente — nó m=2, transição Taylor n=17→18 compilada; PR pendente
+## Retomada mais recente — nó m=2, transição Taylor n=17→18 integrada pela PR #275
 
 ```text
 MISSION: C5 — certificar as janelas negativas da fonte C2 original.
-PROOF PR: ainda não criada; publicação pendente.
-BASE MAIN: 0807c1052a9e5ac4464139e1593958a495a80103 (PR #274 integrada).
-BRANCH: codex/c5-m2-stage18-20261107.
+PROOF PR: #275, commit de prova eb7209321914de6733de0bd160e1c64633924dba, merge df23788957cb17b16832d5f4c9e47fd8aa12d68f.
+PROOF BASE MAIN: 0807c1052a9e5ac4464139e1593958a495a80103 (PR #274 integrada).
+CURRENT MAIN: df23788957cb17b16832d5f4c9e47fd8aa12d68f.
 LAST VERIFIED THEOREM: c5RoundedExpStateC_stage18_correct.
 LAST COMPILED FILE: SigmaC5M2TaylorStateStage18Certificate.lean (Lean 4.32.0, warnings como erros).
 BUILD: BUILD_EXIT=0; cinco raízes com propext, Classical.choice, Quot.sound; sem sorryAx.
