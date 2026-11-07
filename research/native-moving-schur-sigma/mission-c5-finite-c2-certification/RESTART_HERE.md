@@ -3,6 +3,7 @@
 ## Checkpoint — primeiro núcleo Gamma racional certificado por blocos (2026-11-07)
 
 - Base de `main`: merge da PR #281, `ec5c5e8998b62726ada6f942cf4c2410048a2a23`; branch de trabalho `codex/c5-o4-after-stage19-20261107`. Geometry de referência está em `bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3` e Carry em `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`.
+- Integração: PR #282, commit de prova `131d5f57da009a830c0a967bb5cf4713412c3473`, merge `7c301a2bb0b975369c8f8889ec2940372d2266c2` em 2026-11-07. Retome a partir da `main` nesse merge; o branch citado acima é a origem do checkpoint.
 - Para `gammaFiniteRationalCore 1024 240 (1/5) 0`, 16 blocos de 64 termos têm seus pisos certificados em Lean. A recomposição dá a caixa exata do núcleo racional `[S/2^1024,(S+16)/2^1024] × {0}`; a inclusão está em `c5GammaCoreNodePilotChunkBox_contains`. Auditoria isolada: 20 raízes, somente `propext`, `Classical.choice`, `Quot.sound`, sem `sorryAx` nem `native_decide`; Lean 4.32 com warnings como erros.
 - Escopo: um ponto e só o núcleo racional. A caixa ainda não inclui `240^z`, `gammaFinite`, Gamma completa, zeta, os demais nós nem os coeficientes da fonte C2. `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` seguem sem prova; C5 permanece incompleta.
 - Fontes, comandos, logs de tentativas falhas, checker e hashes estão em `evidence/rational-boxes/c5-gamma-core-node-pilot-20261107/README.md`. Não repetir a prova monolítica nem usar o caminho `native_decide`.
