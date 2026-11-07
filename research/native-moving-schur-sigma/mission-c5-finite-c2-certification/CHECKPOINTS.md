@@ -1,6 +1,18 @@
 # C5 — checkpoints
 
-## 2026-11-07 — transição m=2, n=17→18 integrada pela PR #275
+## Estado atual — C5 e reprodução auditadas (2026-11-07)
+
+- `origin/main` está em `ad42b3d0914d41d511256022ce95f59189ffe772` (após PR #276). Branch de trabalho: `codex/c5-source-audit-reproduction-20261107`.
+- C1B já entrou pela PR #155, merge `0586e238441096ecd2248e3f14bdac3a832af427`; C2 pela PR #157, merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`; C3 pela PR #159, merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`. C4 e a recorrência dos momentos também estão integradas. Não reabrir essas fases nem a migração geral para Lean 4.35.
+- C5 O2 (`SigmaFiniteCoefficientSignTransport`) está provada em Lean 4.32: recorrência polinomial sem divisão e transporte do sinal para `sigmaPadeD` original. O3 também está provada e auditada, mas **condicionada** às inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
+- Reproduzi as três configurações de `certify_finite_c2.py`; o verificador racional exato confirmou `+++++++++++-`, `+++++++++++-` e `+++++++++-`. Logs, JSONs e hashes: `evidence/rational-boxes/reproduction-20261107/`. A execução precisou do patch local `gmpy2.mpz`→`int`, já preservado em `evidence/interval-certificate/momentos-gmpy2-compat.patch`; o checkout Momentos foi restaurado limpo. Esses resultados continuam condicionais e não provam a inclusão formal da fonte.
+- A PR #213 já exportou 516 caixas racionais de zeta nos 129 nós e quatro coordenadas. `#eval`/CSV confirma a exportação e a cobertura, mas ainda não há prova Lean de que cada valor exportado seja igual à caixa usada na composição. A tentativa monolítica para uma caixa está documentada como falha; não a repetir.
+- Último resultado formal relevante à avaliação nodal: `c5RationalZetaCenteredNodeBoxWithTable_contains`, em `SigmaC5RationalNodeCenteredInstantiate.lean` (Lean 4.32). O checkpoint auxiliar `c5RoundedExpStateC_stage18_correct` também está integrado, mas não define o próximo passo da missão.
+- **Próxima obrigação:** retomar a prova composicional por componentes da caixa zeta exportada (cabeça, correções de Bernoulli e exponencial), reutilizando a igualdade de `log 2` já provada em blocos. Depois ligar Gamma, fator de π e a fonte C2 original, mantendo cabeça e cauda exata, e provar as duas inclusões. Não tentar novamente uma redução monolítica de 28 minutos.
+- Alvo final: provar incondicionalmente os sinais de `sigmaPadeD` original em `d=99/2000` e `d=1/10`. A missão permanece incompleta até as inclusões da fonte e a composição final passarem build e auditoria.
+
+
+## Checkpoint auxiliar — transição m=2, n=17→18 integrada pela PR #275
 
 - `c5RoundedExpStateC_stage18_correct` prova a transição no nó `(2/5,0)`, com
   coeficiente `1/17! = 1/355687428096000`, arredondamentos em 896 bits e soma.
@@ -11,7 +23,7 @@
 - O commit `eb7209321914de6733de0bd160e1c64633924dba` entrou na `main` pelo merge `df23788957cb17b16832d5f4c9e47fd8aa12d68f`; o GitHub não
   reportou checks hospedados.
 - Cobre apenas `n≤18` de um nó. Estados seguintes, quadraturas, caixa completa,
-  inclusão C2 e sinais finais permanecem abertos. Próximo: `n=19`.
+  inclusão C2 e sinais finais permanecem abertos. A extensão para `n=19` é auxiliar; a prioridade está no topo deste arquivo.
 
 ## 2026-11-07 — transição m=2, n=16→17 integrada pela PR #273
 

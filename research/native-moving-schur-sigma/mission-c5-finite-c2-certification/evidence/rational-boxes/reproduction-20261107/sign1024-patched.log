@@ -1,0 +1,21 @@
+evaluated 32 / 256 elapsed 5.67 s
+evaluated 64 / 256 elapsed 11.2 s
+evaluated 96 / 256 elapsed 16.71 s
+evaluated 128 / 256 elapsed 22.14 s
+evaluated 160 / 256 elapsed 27.4 s
+evaluated 192 / 256 elapsed 32.56 s
+evaluated 224 / 256 elapsed 37.73 s
+evaluated 256 / 256 elapsed 42.9 s
+s= 0 sign= + num= ['2.9087924e-11', '2.9087924e-11']
+s= 1 sign= + num= ['3.5172071e-18', '3.5172071e-18']
+s= 2 sign= + num= ['1.3185733e-24', '1.3185733e-24']
+s= 3 sign= + num= ['6.7541749e-31', '6.7541749e-31']
+s= 4 sign= + num= ['3.9355943e-37', '3.9355943e-37']
+s= 5 sign= + num= ['2.4350600e-43', '2.4350600e-43']
+s= 6 sign= + num= ['1.5430076e-49', '1.5430076e-49']
+s= 7 sign= + num= ['9.7009883e-56', '9.7009883e-56']
+s= 8 sign= + num= ['5.7346231e-62', '5.7346231e-62']
+s= 9 sign= + num= ['2.7046969e-68', '2.7046969e-68']
+s= 10 sign= + num= ['4.7334633e-76', '4.7334633e-76']
+s= 11 sign= - num= ['-2.7064148e-80', '-2.7064148e-80']
+saved /home/thlinux/worktrees/geometry-of-numbers-c5-source-box-inclusions-20261107/research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/reproduction-20261107/sign1024.json

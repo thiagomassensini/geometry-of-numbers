@@ -1,21 +1,30 @@
 # Retomar primeiro — missão C5
 
-## Retomada mais recente — nó m=2, transição Taylor n=17→18 integrada pela PR #275
+## Estado atual — C5 e reprodução auditadas (2026-11-07)
+
+- `origin/main` está em `ad42b3d0914d41d511256022ce95f59189ffe772` (após PR #276). Branch de trabalho: `codex/c5-source-audit-reproduction-20261107`.
+- C1B já entrou pela PR #155, merge `0586e238441096ecd2248e3f14bdac3a832af427`; C2 pela PR #157, merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`; C3 pela PR #159, merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`. C4 e a recorrência dos momentos também estão integradas. Não reabrir essas fases nem a migração geral para Lean 4.35.
+- C5 O2 (`SigmaFiniteCoefficientSignTransport`) está provada em Lean 4.32: recorrência polinomial sem divisão e transporte do sinal para `sigmaPadeD` original. O3 também está provada e auditada, mas **condicionada** às inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
+- Reproduzi as três configurações de `certify_finite_c2.py`; o verificador racional exato confirmou `+++++++++++-`, `+++++++++++-` e `+++++++++-`. Logs, JSONs e hashes: `evidence/rational-boxes/reproduction-20261107/`. A execução precisou do patch local `gmpy2.mpz`→`int`, já preservado em `evidence/interval-certificate/momentos-gmpy2-compat.patch`; o checkout Momentos foi restaurado limpo. Esses resultados continuam condicionais e não provam a inclusão formal da fonte.
+- A PR #213 já exportou 516 caixas racionais de zeta nos 129 nós e quatro coordenadas. `#eval`/CSV confirma a exportação e a cobertura, mas ainda não há prova Lean de que cada valor exportado seja igual à caixa usada na composição. A tentativa monolítica para uma caixa está documentada como falha; não a repetir.
+- Último resultado formal relevante à avaliação nodal: `c5RationalZetaCenteredNodeBoxWithTable_contains`, em `SigmaC5RationalNodeCenteredInstantiate.lean` (Lean 4.32). O checkpoint auxiliar `c5RoundedExpStateC_stage18_correct` também está integrado, mas não define o próximo passo da missão.
+- **Próxima obrigação:** retomar a prova composicional por componentes da caixa zeta exportada (cabeça, correções de Bernoulli e exponencial), reutilizando a igualdade de `log 2` já provada em blocos. Depois ligar Gamma, fator de π e a fonte C2 original, mantendo cabeça e cauda exata, e provar as duas inclusões. Não tentar novamente uma redução monolítica de 28 minutos.
+- Alvo final: provar incondicionalmente os sinais de `sigmaPadeD` original em `d=99/2000` e `d=1/10`. A missão permanece incompleta até as inclusões da fonte e a composição final passarem build e auditoria.
+
+
+## Snapshot anterior — checkpoint auxiliar do nó m=2, n=17→18 (PR #275)
 
 ```text
 MISSION: C5 — certificar as janelas negativas da fonte C2 original.
 PROOF PR: #275, commit de prova eb7209321914de6733de0bd160e1c64633924dba, merge df23788957cb17b16832d5f4c9e47fd8aa12d68f.
 PROOF BASE MAIN: 0807c1052a9e5ac4464139e1593958a495a80103 (PR #274 integrada).
-CURRENT MAIN: df23788957cb17b16832d5f4c9e47fd8aa12d68f.
-LAST VERIFIED THEOREM: c5RoundedExpStateC_stage18_correct.
+MAIN AT THAT CHECKPOINT: df23788957cb17b16832d5f4c9e47fd8aa12d68f.
+LAST VERIFIED THEOREM: c5RoundedExpStateC_stage18_correct (auxiliar).
 LAST COMPILED FILE: SigmaC5M2TaylorStateStage18Certificate.lean (Lean 4.32.0, warnings como erros).
 BUILD: BUILD_EXIT=0; cinco raízes com propext, Classical.choice, Quot.sound; sem sorryAx.
 SCOPE: nó m=2, argumento (a,j)=(2/5,0), recorrência até n=18.
-OPEN: n=19…192, outros nós, quadraturas, caixa completa, ponte CSV–Lean, inclusões da fonte e sinais C5.
 EVIDENCE: evidence/rational-boxes/c5-m2-dirichlet-term-stage18-20261107/README.md.
-PINS: Geometry bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3; Carry 045369f6dedcb2e75e9aefed1d12c9f73b9a2532; Lean 4.32.0.
-EXPORT: probe #eval fornece os racionais; o certificado valida as igualdades.
-NEXT: continuar a recorrência do nó m=2 em n=19.
+NEXT AT THAT CHECKPOINT: n=19; superseded by the active C5 source-inclusion objective above.
 DO NOT REPEAT: C1B/C2/C3/C4; migração geral para Lean 4.35; prova monolítica dos 192 passos.
 ```
 
