@@ -17,6 +17,9 @@ build de prova e a auditoria por import. A tentativa antiga, que aplicava os
 lemas de piso/teto à igualdade composta, continua guardada somente como
 histórico. A evidência está em
 `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
+O resultado foi integrado pela PR #224, commit de prova
+`a908789fad182aa9a2d8eb85b2da641c11c4da62`, merge
+`d667abfc42020e442c62ec1b49b82f5bcf1971ad`; não houve checks hospedados.
 
 Continuam abertas as igualdades exportadas dos estágios posteriores da
 exponencial, a ligação formal das 516 linhas CSV às caixas Lean, a composição

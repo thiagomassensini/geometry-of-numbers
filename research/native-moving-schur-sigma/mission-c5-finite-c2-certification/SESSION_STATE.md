@@ -13,6 +13,11 @@
 
 ## Atualização mais recente — igualdade do estágio 1 (2026-11-07)
 
+O checkpoint foi integrado pela PR #224, commit de prova
+`a908789fad182aa9a2d8eb85b2da641c11c4da62`, merge na `main`
+`d667abfc42020e442c62ec1b49b82f5bcf1971ad`. O GitHub não reportou checks
+hospedados.
+
 `SigmaC5ZeroExpStagesCertificate.lean` prova que a exponencial arredondada no
 estágio 1, com argumento zero, coincide exatamente com os extremos racionais
 exportados. Quatro lemas provam os pisos e tetos por desigualdades racionais
@@ -40,7 +45,7 @@ módulos alterados compilaram em Lean 4.32.0 com `warningAsError=true`; as
 auditorias dos sete teoremas registraram somente axiomas padrão.
 
 Naquele checkpoint a igualdade da caixa do estágio 1 seguia aberta; essa
-lacuna foi fechada localmente pela atualização acima. A PR #222, commit de
+lacuna foi fechada pela PR #224. A PR #222, commit de
 prova `67e6cf9fdf86ac735b6ade80d2f4a64982968363`, continua sendo o merge que
 integrou o núcleo inicial do nó trivial na `main` (`e55858690e296d00c88692b8f30902987e853137`).
 O estado atual da prova de estágio 1 e sua publicação estão registrados na

@@ -1,6 +1,6 @@
 # C5 — checkpoints
 
-## 2026-11-07 — caixa exponencial de estágio 1 provada (publicação pendente)
+## 2026-11-07 — caixa exponencial de estágio 1 provada e integrada (PR #224)
 
 - `c5ZeroExpStage1_eq` prova a igualdade entre
   `c5RoundedExpC 192 896 1 (ComplexInterval.exact 0 0)` e os extremos racionais
@@ -11,9 +11,12 @@
   `Quot.sound` nas seis declarações auditadas.
 - Logs, fontes, hashes, pins, falhas históricas e comando de retomada estão em
   `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
-- Este checkpoint ainda não foi integrado. A igualdade do estágio 1 não liga
-  o CSV às caixas Lean e não prova a inclusão dos coeficientes C2 nas caixas
-  O3; C5 permanece incompleta.
+- PR #224 integrou o checkpoint: commit de prova
+  `a908789fad182aa9a2d8eb85b2da641c11c4da62`, merge
+  `d667abfc42020e442c62ec1b49b82f5bcf1971ad`. O GitHub não reportou checks
+  hospedados.
+- A igualdade do estágio 1 não liga o CSV às caixas Lean e não prova a inclusão
+  dos coeficientes C2 nas caixas O3; C5 permanece incompleta.
 
 ## 2026-11-07 — identidades exatas do nó `m = 1` (checkpoint parcial integrado)
 

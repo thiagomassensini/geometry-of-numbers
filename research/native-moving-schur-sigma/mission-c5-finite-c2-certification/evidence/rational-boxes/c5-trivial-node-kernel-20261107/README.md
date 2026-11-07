@@ -10,6 +10,10 @@ Integrado pela PR #222, commit de prova
 `e55858690e296d00c88692b8f30902987e853137`; o GitHub não reportou checks
 hospedados.
 
+A igualdade do estágio 1 foi integrada pela PR #224, commit de prova
+`a908789fad182aa9a2d8eb85b2da641c11c4da62`, merge na `main`
+`d667abfc42020e442c62ec1b49b82f5bcf1971ad`; o GitHub não reportou checks.
+
 ## Resultado validado
 
 - `c5CenteredFastLogSumState_zero` e `c5CenteredFastLog1_one_eq_zero` mostram
