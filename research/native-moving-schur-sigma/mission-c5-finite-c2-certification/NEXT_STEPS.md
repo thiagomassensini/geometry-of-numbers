@@ -1,6 +1,6 @@
 # Próximos passos — C5
 
-## Prioridade imediata — fechar e publicar o estágio 2; depois avançar ao 3
+## Prioridade imediata — avançar para o estágio 3
 
 O núcleo `m = 1` já está formalizado e compilado: o log centrado vira a caixa
 exata `0`, o argumento do termo de Dirichlet vira `0`, e a exponencial
@@ -18,12 +18,12 @@ os extremos exportados, com os quatro pisos/tetos provados exatamente. Build
 Lean 4.32 e auditoria isolada passaram; o GitHub não reportou checks. Evidências
 e hashes estão em `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
 
-Agora `c5ZeroExpStage2_eq` e seus quatro lemas de arredondamento também
-compilaram e passaram pela auditoria; a publicação deste checkpoint ainda
-está pendente.
+`c5ZeroExpStage2_eq` e seus quatro lemas de arredondamento foram integrados
+pela PR #226, commit de prova `ab0f2782369e7f0966fa6c769d23ca18ea9abb1f`,
+merge `96579150be6700793970bf8cd84f91dd2cccb102`; o GitHub não reportou checks.
 
-1. Publicar e integrar a prova do estágio 2; então provar e auditar o estágio 3
-   da exponencial com argumento zero, preservando a inflação do resto.
+1. Provar e auditar o estágio 3 da exponencial com argumento zero, preservando
+   a inflação do resto.
 2. Retomar a ponte formal CSV–Lean e avaliar, em etapas, os demais termos da
    caixa; depois compor Gamma, o fator de π e a fonte C2 original e provar as
    inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.

@@ -1,13 +1,15 @@
 # C5 — mapa dos teoremas e obrigações
 
-## Exponencial arredondada no estágio 2 — provada localmente
+## Exponencial arredondada no estágio 2 — provada e integrada pela PR #226
 
 `c5ZeroExpStage2_eq` prova que a caixa `c5RoundedExpC 192 896 2` na entrada
 zero é exatamente `c5ZeroExpStage2Export`. Quatro lemas provam os pisos/tetos
 do estágio 1 por desigualdades racionais exatas. A auditoria de onze raízes
 reporta somente axiomas padrão. Build, auditoria, pins e hashes em
-`evidence/rational-boxes/c5-trivial-node-kernel-20261107/`. Este subpasso ainda
-aguarda publicação; não liga o CSV às caixas Lean nem prova as inclusões C2.
+`evidence/rational-boxes/c5-trivial-node-kernel-20261107/`. PR #226, commit de
+prova `ab0f2782369e7f0966fa6c769d23ca18ea9abb1f`, merge na `main`
+`96579150be6700793970bf8cd84f91dd2cccb102`; o GitHub não reportou checks.
+Este subpasso não liga o CSV às caixas Lean nem prova as inclusões C2.
 
 ## Exponencial arredondada no estágio 1 — provada e integrada pela PR #224
 
