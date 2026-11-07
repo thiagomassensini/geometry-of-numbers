@@ -45,7 +45,10 @@ quadrada e quatro certificam pisos/tetos. Build limpo e auditoria das nove
 raízes passaram em Lean 4.32.0, somente com axiomas padrão. Os logs, pins,
 hashes e histórico das tentativas interrompidas estão em
 `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`. Este resultado
-aguarda publicação e não fecha a ponte CSV–Lean nem as inclusões O3.
+foi integrado pela PR #228, commit de prova
+`682eae99f4b05abd70ee8068aada7bc2af3e0ebb`, merge na `main`
+`0d312c654015bf10384969e64f352b0313e2dd39`; o GitHub não reportou checks.
+Não fecha a ponte CSV–Lean nem as inclusões O3.
 
 ## Componente `log 2` em blocos — PASSOU; C5 permanece parcial
 
