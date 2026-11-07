@@ -1,11 +1,12 @@
 # C5 — obrigações abertas
 
-## Atualização — recorrência de um nó até n=16 compilada localmente
+## Atualização — recorrência de um nó até n=16 integrada pela PR #271
 
 `c5RoundedExpStateC_stage16_correct` compilou e passou pela auditoria em Lean
-4.32.0. Evidências em
-`evidence/rational-boxes/c5-m2-dirichlet-term-stage16-20261107/`. A publicação
-em PR está pendente. O resultado cobre somente `n≤16` no nó `(2/5,0)`.
+4.32.0. A PR #271 integrou o commit `3e9f0e225e426e92a86430ec6d1a22b093ed04af` no merge `795caa0eebfaa61874c1fff22c683fb85bdf941a`; o GitHub não
+reportou checks hospedados. Evidências em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage16-20261107/`. O resultado
+cobre somente `n≤16` no nó `(2/5,0)`.
 
 Continuam abertas a extensão até `n=192`, os demais nós, quadraturas, caixa
 nodal completa, ponte CSV–Lean, composição com a fonte original e inclusões
