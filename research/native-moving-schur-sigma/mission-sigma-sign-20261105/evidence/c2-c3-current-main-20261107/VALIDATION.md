@@ -38,6 +38,10 @@ C2 prova, nos momentos originais, sem hipótese de sinal adicional e mantendo o 
 
 C3 usa `p = 2i` e `p = 2i + 1` para cobrir explicitamente os setores par e ímpar. Cada janela negativa `2 × 2` é transportada pela persistência C1B a toda dimensão `M ≥ i + 2`. Não foi calculada a primeira profundidade de falha.
 
+## Reconfirmação após PR #241 (2026-11-07)
+
+A ponta atual de `origin/main` é `24f61b01732f44599869350c4bf675c3f3a3dcb6`. Executei `git diff --quiet b604c06dd0c13e7f77c65fb0634aa0b082d6c8d1 24f61b01732f44599869350c4bf675c3f3a3dcb6 --` sobre `SigmaRHHeightBridge.lean`, `SigmaHeight50Integration.lean`, `SigmaPadeEventualNegativity.lean`, `SigmaParityNegativeDirection.lean` e `SigmaPadeAudit.lean`; o código de saída foi zero, sem diferenças. Assim, a compilação 4.32 e a auditoria transitiva arquivadas continuam cobrindo a closure C2/C3 atual. `git grep 'def sigmaLineZero' origin/main -- research/native-moving-schur-sigma` encontra somente a definição em `SigmaCertifiedNegativeDirection.lean`.
+
 ## Comandos reproduzidos
 
 Com `SIGMA_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main`, `CARRY_LEAN_ROOT=/home/thlinux/worktrees/carry-sigma-c2-pinned-045369`, `SIGMA_HEIGHT50_BUILD` apontando para `research/native-moving-schur-sigma/.cache/c3-validation/final-run/{integration,external}`, `LEAN_BIN=/home/thlinux/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lean` e `SIGMA_OUTPUT_DIR` apontando para um diretório de saída limpo:
