@@ -1,18 +1,23 @@
 # C5 — estado da sessão
 
-**Atualizado:** 2026-11-06
+**Atualizado:** 2026-11-07
+**Última integração de código:** PR #207, commit de prova
+`fb8bb31ed1fcbb4d1d9c88aceea1dd83539935df`, merge
+`27a61e6bebcce178b81b961f507400ed77b96d3b`. O avaliador zeta está integrado;
+O4/C5 continua explicitamente incompleta.
 **Status atual:** C1–C4, O3, a ponte Gamma de núcleo racional e o checkpoint Euler–Maclaurin de ordem alta estão integrados. A PR #198, commit de prova `a1646a1837603aee7d03384016ae514a7f7c820a`, foi mesclada na `main` em `36cba9d805bc3274538cdc93bd0a3702154edcb2`; a PR #205, commit de prova `61ddab8dbd5e669b2185a23c0900d2cba22dbf7a`, foi mesclada em `b56a90bceac12248bc5b8e6c2a247849ec885d6e`. O4/C5 segue aberta: ainda não há avaliações certificadas nos 129 nós nem inclusão formal dos coeficientes C2 nas caixas.
 
-**Checkpoint local atual — avaliador racional genérico:** na branch
-`codex/c5-rational-zeta-node-eval-20261106`, `SigmaC5RationalNodeEval.lean`
+**Checkpoint integrado — avaliador racional genérico (PR #207):** o commit de
+prova `fb8bb31ed1fcbb4d1d9c88aceea1dd83539935df` foi mesclado na `main` em
+`27a61e6bebcce178b81b961f507400ed77b96d3b`. `SigmaC5RationalNodeEval.lean`
 fatoriza a correção Bernoulli de `emZetaHighRHS 100 300` em aritmética
 racional-complexa e prova `c5RationalZetaNodeBox_contains` sob condições
 explícitas de log/exp para a cabeça e a base 100. A cauda exata é mantida e
 absorvida com erro `<10^-250`. Build Lean 4.32 com warnings como erros e
-auditoria fail-closed de dez roots passaram, só com axiomas padrão. Este
-checkpoint ainda não está publicado; não há instanciação concreta nos 129
-nós, composição com Gamma/fator de completação ou inclusão dos coeficientes
-nas caixas O3. Evidência e hashes:
+auditoria fail-closed de dez roots passaram, só com axiomas padrão. O
+checkpoint foi publicado explicitamente como incompleto: não há instanciação
+concreta nos 129 nós, composição com Gamma/fator de completação ou inclusão
+dos coeficientes nas caixas O3. Evidência, pins e hashes:
 `evidence/rational-boxes/c5-rational-node-evaluator-validation.md`.
 
 Os verificadores racionais dos dois JSONs Momentos também foram repetidos: os
