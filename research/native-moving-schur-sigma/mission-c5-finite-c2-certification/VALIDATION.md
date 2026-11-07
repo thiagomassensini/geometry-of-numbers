@@ -1,5 +1,19 @@
 # C5 — validação
 
+## Transição do nó m=2 para n=8 — passou localmente; PR pendente
+
+`SigmaC5M2TaylorStateStage8Certificate.lean` compilou em Lean 4.32.0 com
+`warningAsError=true`, usando Geometry no pin
+`bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3` e Carry no pin
+`045369f6dedcb2e75e9aefed1d12c9f73b9a2532`. O build terminou com
+`BUILD_EXIT=0`; as cinco raízes auditadas usam somente `propext`,
+`Classical.choice` e `Quot.sound`, sem `sorryAx`. Fonte, logs e comando em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage8-20261107/README.md`.
+
+A prova valida apenas `c5RoundedExpStateC` até `n=8` no nó `(2/5,0)`. Os
+estados seguintes, quadraturas, caixa completa, composição com a fonte C2 e
+sinais finais permanecem abertos. C5 segue incompleta.
+
 ## Transição do nó m=2 para n=7 — passou e foi integrada pela PR #253; C5 parcial
 
 `SigmaC5M2TaylorStateStage7Certificate.lean` compilou em Lean 4.32.0 com
