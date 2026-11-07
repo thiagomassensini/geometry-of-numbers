@@ -2,7 +2,7 @@
 
 ## Estado atual — C5 e reprodução auditadas (2026-11-07)
 
-- `origin/main` está em `ad42b3d0914d41d511256022ce95f59189ffe772` (após PR #276). Branch de trabalho: `codex/c5-source-audit-reproduction-20261107`.
+- `origin/main` está em `d6f8ad760856e6f48a17fb2a7ec5c70e8ffb96db` (após PR #277). Branch de trabalho: `codex/c5-after-pr277-20261107`. PR #277 (`C5: record interval reproductions and active mission state`) integrou o checkpoint e a reprodução em 2026-11-07; sem checks hospedados.
 - C1B já entrou pela PR #155, merge `0586e238441096ecd2248e3f14bdac3a832af427`; C2 pela PR #157, merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`; C3 pela PR #159, merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`. C4 e a recorrência dos momentos também estão integradas. Não reabrir essas fases nem a migração geral para Lean 4.35.
 - C5 O2 (`SigmaFiniteCoefficientSignTransport`) está provada em Lean 4.32: recorrência polinomial sem divisão e transporte do sinal para `sigmaPadeD` original. O3 também está provada e auditada, mas **condicionada** às inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
 - Reproduzi as três configurações de `certify_finite_c2.py`; o verificador racional exato confirmou `+++++++++++-`, `+++++++++++-` e `+++++++++-`. Logs, JSONs e hashes: `evidence/rational-boxes/reproduction-20261107/`. A execução precisou do patch local `gmpy2.mpz`→`int`, já preservado em `evidence/interval-certificate/momentos-gmpy2-compat.patch`; o checkout Momentos foi restaurado limpo. Esses resultados continuam condicionais e não provam a inclusão formal da fonte.
