@@ -1,0 +1,8 @@
+1ffe44b176e5dd6cbf7768e56e63a491005b1a688f10e5afaca5fd9c36bd3b14  research/native-moving-schur-sigma/SigmaC5ZeroExpStage3Certificate.lean
+cc7ffa3547bb64179290b0c9b789e4ba9249d442bb086b538eb536c53736c89a  research/native-moving-schur-sigma/SigmaC5ZeroExpStage3Audit.lean
+40981d7b9923a6dce13dd189d57ed299588df50b0370bed9782ca2bede38f772  research/native-moving-schur-sigma/.cache/c5-zero-exp-stage3-separated-20261107/SigmaC5ZeroExpStage3Certificate.olean
+bb57589d3d8e868995af4fe592d964597b1ba3df052c9b828031a6e376712771  research/native-moving-schur-sigma/.cache/c5-zero-exp-stage3-separated-20261107/SigmaC5ZeroExpStage3Audit.olean
+ce706d40b6f9b1b9add553f35b5b482d4812f773d13013fb4cd667e1d78c7ab5  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-trivial-node-kernel-20261107/SigmaC5ZeroExpStage3Certificate.build.log
+016648d6279f1c2597fd6042a9c144d670c7cef2585e85f1fa55895f5853f8f9  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-trivial-node-kernel-20261107/SigmaC5ZeroExpStage3Audit.log
+8d343e542b8b74d4745ff28affad426090853960e015a5d3b931ef29eb0e6575  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-trivial-node-kernel-20261107/stage3-pins.txt
+38de24d047f9713cd39ee3424e10fc0e99a99284dcdd101fb79bcedb25d9d668  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-trivial-node-kernel-20261107/SigmaC5ZeroExpStagesCertificate.pre-split.lean

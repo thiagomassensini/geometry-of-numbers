@@ -1,0 +1,2 @@
+BUILD_EXIT=130
+INTERRUPTED: switched to a separate stage-3 module to avoid recompiling the already-integrated stage-0/1/2 declarations. No Lean error was reported.

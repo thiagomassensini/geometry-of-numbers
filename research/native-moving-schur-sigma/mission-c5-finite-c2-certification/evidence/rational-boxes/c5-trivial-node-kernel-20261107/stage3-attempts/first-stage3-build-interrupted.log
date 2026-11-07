@@ -1,0 +1,3 @@
+BUILD_EXIT=130
+INTERRUPTED_AFTER_10_MINUTES=1
+Reason: repeated exact rational normalization in the stage-2 square floor/ceil lemmas was still CPU-bound with no error output; proof was decomposed. Memory remained above 59 GiB.

@@ -1,0 +1,6 @@
+Geometry main at start: 1b4e40df3b62a7112a3ee1dbf4c893eba7b13592
+Geometry worktree branch: codex/c5-zero-exp-stage3-20261107
+Reference Geometry: caa07002306b555fea5624cc11ab2ea5811a4324
+Carry: 045369f6dedcb2e75e9aefed1d12c9f73b9a2532
+Lean: 4.32.0 (commit 8c9756b28d64dab099da31a4c09229a9e6a2ef35)
+warningAsError=true

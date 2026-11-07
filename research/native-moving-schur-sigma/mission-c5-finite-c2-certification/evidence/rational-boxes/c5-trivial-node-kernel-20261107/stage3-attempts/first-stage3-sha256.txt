@@ -1,0 +1,2 @@
+8de7586b5e740af47b5465bb49abb92f1d29f0f79544e00aea3e8642bcd85155  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-trivial-node-kernel-20261107/stage3-attempts/SigmaC5ZeroExpStagesCertificate.first-attempt.failed.lean
+34c22a9f88021dddc5075ee4805c89efaf03ed18bf77ceb4a97b1f750b044634  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-trivial-node-kernel-20261107/stage3-attempts/first-stage3-build-interrupted.log

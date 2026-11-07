@@ -11,7 +11,21 @@
   de C2/C3; não é preciso calcular a primeira profundidade de falha para a
   negatividade eventual já provada.
 
-## Atualização mais recente — igualdade do estágio 2 (PR #226)
+## Atualização mais recente — igualdade do estágio 3 (2026-11-07; publicação pendente)
+
+`SigmaC5ZeroExpStage3Certificate.lean` importa a prova integrada do estágio 2
+e prova que a caixa `c5RoundedExpC 192 896 3` na entrada zero coincide com
+`c5ZeroExpStage3Export`. Quatro lemas registram os extremos exatos da caixa
+quadrada e quatro certificam os pisos/tetos. Build Lean 4.32 (`warningAsError`
+ativo) e auditoria das nove raízes passaram; somente axiomas padrão aparecem.
+Evidências, pins, hashes e tentativas de desenvolvimento estão em
+`evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
+
+C5 continua incompleta; não há ainda ponte CSV–Lean ou inclusões dos
+coeficientes da fonte C2 nas caixas. O checkpoint do estágio 3 está validado
+localmente e aguarda publicação.
+
+## Atualização anterior — igualdade do estágio 2 (PR #226)
 
 A PR #226 integrou este checkpoint: commit de prova
 `ab0f2782369e7f0966fa6c769d23ca18ea9abb1f`, merge na `main`
