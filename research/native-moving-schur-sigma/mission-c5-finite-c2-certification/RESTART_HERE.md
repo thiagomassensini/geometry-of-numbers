@@ -2,16 +2,32 @@
 
 ## Estado atual — C5 e reprodução auditadas (2026-11-07)
 
-- `origin/main` está em `aadd036a7d46a357faf21ddf3e986505e525c929` (merge da PR #278). A branch ativa é `codex/c5-centered-first-term-20261107`; a PR do subpasso atual ainda será aberta.
+- `origin/main` está em `b06200968bc004694ee8d7acc3af88463d40ebf2` (merge da PR #279). Branch ativa: `codex/c5-after-pr279-20261107`.
 - C1B já entrou pela PR #155, merge `0586e238441096ecd2248e3f14bdac3a832af427`; C2 pela PR #157, merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`; C3 pela PR #159, merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`. C4 e a recorrência dos momentos também estão integradas. Não reabrir essas fases nem a migração geral para Lean 4.35.
 - C5 O2 (`SigmaFiniteCoefficientSignTransport`) está provada em Lean 4.32: recorrência polinomial sem divisão e transporte do sinal para `sigmaPadeD` original. O3 também está provada e auditada, mas **condicionada** às inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
 - Reproduzi as três configurações de `certify_finite_c2.py`; o verificador racional exato confirmou `+++++++++++-`, `+++++++++++-` e `+++++++++-`. Logs, JSONs e hashes: `evidence/rational-boxes/reproduction-20261107/`. A execução precisou do patch local `gmpy2.mpz`→`int`, já preservado em `evidence/interval-certificate/momentos-gmpy2-compat.patch`; o checkout Momentos foi restaurado limpo. Esses resultados continuam condicionais e não provam a inclusão formal da fonte.
 - A PR #213 já exportou 516 caixas racionais de zeta nos 129 nós e quatro coordenadas. `#eval`/CSV confirma a exportação e a cobertura, mas ainda não há prova Lean de que cada valor exportado seja igual à caixa usada na composição. A tentativa monolítica para uma caixa está documentada como falha; não a repetir.
-- Último resultado formal relevante à avaliação nodal: `c5RationalZetaCenteredNodeBoxWithTable_contains`, em `SigmaC5RationalNodeCenteredInstantiate.lean` (Lean 4.32). O checkpoint auxiliar `c5RoundedExpStateC_stage18_correct` também está integrado, mas não define o próximo passo da missão.
-- Nesta branch, `c5CenteredDirichletTermBox_one_eq_generic` e `c5CenteredDirichletTermBox_one_fixed` compilam em Lean 4.32 e foram auditadas: somente `propext`, `Classical.choice` e `Quot.sound`. O primeiro termo da cabeça, `m=1`, é exatamente `c5GenericBox 11 15`; a prova não cobre os outros 98 termos nem a inclusão da fonte. Evidência e reprodução: `evidence/rational-boxes/c5-centered-first-term-20261107/`.
-- **Próxima obrigação:** o primeiro termo `m=1` agora está isolado formalmente na branch ativa. Retomar o termo `m=2` a partir do estado Taylor `n=18` já integrado e provar a próxima transição `n=19`, sem repetir os estágios anteriores. Depois continuar por componentes até compor Gamma, fator de π, cabeça e cauda C2 exatas, provar as duas inclusões e fechar os sinais. A tentativa monolítica de 28 minutos não deve ser repetida.
+- Último resultado formal para a recorrência nodal: `c5RoundedExpStateC_stage18_correct` já está integrado pela PR #275; nesta branch, `c5RoundedExpStateC_stage19_correct` também compilou e passou pela auditoria Lean 4.32, ainda pendente de publicação. Evidência completa em `evidence/rational-boxes/c5-m2-dirichlet-term-stage19-20261107/`.
+- A PR #279 integrou `c5CenteredDirichletTermBox_one_eq_generic` e `c5CenteredDirichletTermBox_one_fixed` (commit `aa542db5f40bc8d1cb5cf76c3ef8d46358702cb0`, merge `b06200968bc004694ee8d7acc3af88463d40ebf2`). O primeiro termo da cabeça, `m=1`, é exatamente `c5GenericBox 11 15`; build Lean 4.32 e auditoria padrão passaram. Isso não cobre os outros 98 termos nem a inclusão da fonte. Evidência em `evidence/rational-boxes/c5-centered-first-term-20261107/`.
+- **Próxima obrigação:** publicar e integrar o checkpoint local `n=18→19` do termo `m=2`; depois retomar O4 com o menor passo necessário para ligar as caixas exportadas à composição Lean, compor os fatores Gamma, π, cabeça e cauda da fonte C2 e provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`. Não continuar a recorrência às cegas nem repetir a tentativa monolítica de 28 minutos.
 - Alvo final: provar incondicionalmente os sinais de `sigmaPadeD` original em `d=99/2000` e `d=1/10`. A missão permanece incompleta até as inclusões da fonte e a composição final passarem build e auditoria.
 
+
+## Checkpoint local — recorrência nodal `m=2`, `n=18→19` (compilado, publicação pendente)
+
+`SigmaC5M2TaylorStateStage19Certificate.lean` prova
+`c5RoundedExpStateC_stage19_correct` para `(a,j)=(2/5,0)`, usando o estado
+`n=18` da PR #275. Lean 4.32.0 compilou com `warningAsError=true`; as cinco
+raízes auditadas dependem somente de `propext`, `Classical.choice` e
+`Quot.sound`, sem `sorryAx`. O probe exportou seis limites racionais; o estado
+`n=19` tem potência negativa, termo de Taylor positivo e soma acumulada positiva.
+Builds, falha inicial preservada, pins, comandos e hashes estão em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage19-20261107/`. A compilação
+observou 60.45 GiB de `MemAvailable` sob o limite de 30 GiB.
+
+O alcance é apenas uma transição em um nó. Não prova a caixa C2 completa, as
+inclusões da fonte nem os sinais finais. A publicação ainda está pendente nesta
+branch, baseada na `main` `b06200968bc004694ee8d7acc3af88463d40ebf2`.
 
 ## Snapshot anterior — checkpoint auxiliar do nó m=2, n=17→18 (PR #275)
 
