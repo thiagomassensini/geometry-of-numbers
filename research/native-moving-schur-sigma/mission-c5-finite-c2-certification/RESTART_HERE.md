@@ -1,5 +1,25 @@
 # Retomar primeiro — missão C5
 
+## Retomada mais recente — nó m=2, transição Taylor n=7→8 validada localmente
+
+```text
+MISSION: C5 — certificar as janelas negativas da fonte C2 original.
+CHECKPOINT: local; PR e merge ainda pendentes.
+BASE MAIN: e6a05bb60a866502400d163923d5ae749db48d9c (PR #254 integrada).
+LAST VERIFIED THEOREM: c5RoundedExpStateC_stage8_correct.
+LAST COMPILED FILE: SigmaC5M2TaylorStateStage8Certificate.lean (Lean 4.32.0, warnings como erros).
+BUILD: BUILD_EXIT=0; cinco raízes com propext, Classical.choice, Quot.sound; sem sorryAx.
+SCOPE: nó m=2, argumento (a,j)=(2/5,0), recorrência até n=8.
+OPEN: n=9…192, outros nós, quadraturas, nó completo, ponte CSV–Lean, inclusões da fonte e sinais C5.
+EVIDENCE: evidence/rational-boxes/c5-m2-dirichlet-term-stage8-20261107/README.md.
+PINS: Geometry bf76ce8f5bb753b377a12ba6dbd5c397e4fb3; Carry 045369f6dedcb2e75e9aefed1d12c9f73b9a2532; Lean 4.32.0.
+EXPORT: probe #eval fornece os racionais usados; o certificado prova as igualdades.
+NEXT: publicar este checkpoint e continuar em n=9.
+DO NOT REPEAT: C1B/C2/C3/C4; migração geral para Lean 4.35; prova monolítica dos 192 passos.
+```
+
+Consulte o README da evidência para o probe, build, pins e hashes.
+
 ## Retomada mais recente — nó m=2, transição Taylor n=6→7 integrada pela PR #253
 
 ```text
