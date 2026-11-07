@@ -1,5 +1,17 @@
 # C5 — obrigações abertas
 
+## Nota de validação numérica — replay de 2026-11-07
+
+As caixas experimentais da primeira janela negativa foram reproduzidas usando
+uma cópia local do avaliador Momentos com conversões `gmpy2.mpz` → `int`. O
+checker racional independente repetiu os sinais condicionais. A tentativa sem
+patch e seus logs também foram preservados. Isso não prova a inclusão das
+saídas de `mpmath.iv` nas caixas nem altera as obrigações formais: a recorrência
+genérica da exponencial arredondada, a ponte CSV–Lean, a composição da fonte
+C2 e as inclusões `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes` continuam
+abertas. Registro reproduzível:
+`evidence/interval-certificate/reproduction-2026-11-07.md`.
+
 ## Atualização — estágio 6 integrado; composição da fonte ainda aberta
 
 Os lemas `c5CenteredLogQFromLogTwo_one`,

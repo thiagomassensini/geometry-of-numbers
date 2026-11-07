@@ -1,5 +1,15 @@
 # Próximos passos — C5
 
+## Checkpoint recente — replay numérico preservado (2026-11-07)
+
+As três configurações intervalares foram repetidas: `d=0.0495` com 1024 nós e
+com 512 nós/corte 12, e `d=0.1` com 512 nós/corte 12. O erro inicial sem patch
+(`gmpy2.mpz` não aceito por `Decimal`) e as três execuções corrigidas na cópia
+temporária foram preservados em
+`evidence/interval-certificate/reproduction-2026-11-07.md`. O checker exato
+confirmou os sinais condicionais já arquivados. Isso não fecha a inclusão
+formal dos coeficientes nem muda as obrigações C5.
+
 ## Prioridade imediata — generalizar a recorrência
 
 O núcleo `m = 1` já está formalizado e compilado: o log centrado vira a caixa
