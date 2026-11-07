@@ -1,0 +1,6 @@
+'c5M2Stage3PowerCoarsenExport' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5M2Stage3PowerCorrect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5M2Stage3TermCoarsenExport' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5M2Stage3SumCorrect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5RoundedExpStateC_stage3_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+BUILD_EXIT=0

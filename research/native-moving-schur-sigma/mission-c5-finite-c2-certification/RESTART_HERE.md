@@ -1,5 +1,26 @@
 # Retomar primeiro — missão C5
 
+## Retomada mais recente — nó m=2, transição Taylor n=2→3
+
+```text
+MISSION: C5 — certificar as janelas negativas da fonte C2 original.
+CURRENT BASE: main 418d440c6b7c1feff274ae17156595d186942d0e (PR #244).
+LOCAL BRANCH: codex/c5-m2-stage3-20261107 (checkpoint ainda não publicado).
+LAST VERIFIED THEOREM: c5RoundedExpStateC_stage3_correct.
+LAST COMPILED FILE: SigmaC5M2TaylorStateStage3Certificate.lean (Lean 4.32.0, warnings como erros).
+AXIOM AUDIT: cinco raízes com propext, Classical.choice, Quot.sound; sem sorryAx.
+SCOPE: termo nodal m=2 em (a,j)=(2/5,0), recorrência Taylor n=0…3.
+OPEN: n=4…192, quadraturas da exponencial, nó completo, ponte CSV–Lean e inclusões C5.
+EVIDENCE: evidence/rational-boxes/c5-m2-dirichlet-term-stage3-20261107/README.md.
+PINS: Geometry de referência bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3; Carry 045369f6dedcb2e75e9aefed1d12c9f73b9a2532; Lean 4.32.0.
+DO NOT REPEAT: C1B/C2/C3/C4; migração geral para Lean 4.35; prova monolítica dos 192 passos.
+```
+
+O estágio 2 já está integrado pela PR #243 e os documentos pós-merge pela PR
+#244. Para reproduzir este passo, siga o ambiente e as dependências no README
+do estágio 2 e compile o módulo indicado na evidência do estágio 3.
+
+
 ## Retomada mais recente — piloto do nó m=2 até o estado n=2
 
 ```text

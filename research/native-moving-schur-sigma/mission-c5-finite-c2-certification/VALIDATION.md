@@ -1,5 +1,20 @@
 # C5 — validação
 
+## Transição do nó m=2 para n=3 — PASSOU localmente; PR pendente; C5 parcial
+
+`SigmaC5M2TaylorStateStage3Certificate.lean` compilou em Lean 4.32.0 com
+`warningAsError=true`. As cinco declarações auditadas reportam somente
+`propext`, `Classical.choice` e `Quot.sound`. O build aprovado não contém
+`sorryAx`. A primeira tentativa ficou aberta por uma variável não usada e por
+falta de desdobramento da caixa da soma; o log foi preservado separadamente.
+
+A prova valida apenas `c5RoundedExpStateC` em `n=3` para o nó `(2/5,0)`. Ela
+não certifica os demais estados, as quadraturas da exponencial, a caixa nodal
+completa ou a inclusão dos coeficientes originais. Evidências e comando em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage3-20261107/README.md`.
+C5 permanece incompleta.
+
+
 ## Piloto do nó m=2 até n=2 — PASSOU e foi integrado pela PR #243; C5 parcial
 
 `SigmaC5M2TaylorStateStage2Refined.lean` compilou em Lean 4.32.0 com

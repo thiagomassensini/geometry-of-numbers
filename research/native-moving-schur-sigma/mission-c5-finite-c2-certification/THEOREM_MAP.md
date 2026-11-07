@@ -1,5 +1,19 @@
 # C5 — mapa dos teoremas e obrigações
 
+## Recorrência nodal m=2 até n=3 (local, PR pendente)
+
+`SigmaC5M2TaylorStateStage3Certificate.lean` prova
+`c5RoundedExpStateC_stage3_correct`, importando o estado `n=2` integrado pela
+PR #243. O passo de produto usa intervalos com fator não-negativo e fator
+não-positivo; a escala `1/2` e os dois coarsenings são certificados por
+aritmética racional exata. A auditoria mostra apenas axiomas padrão. Evidências
+estão em `evidence/rational-boxes/c5-m2-dirichlet-term-stage3-20261107/`.
+
+O teorema cobre somente os estados Taylor até `n=3`, para um nó. Não cobre a
+série completa, as quadraturas, a caixa nodal ou os coeficientes C2 originais.
+A PR deste checkpoint ainda está pendente.
+
+
 ## Piloto nodal m=2 — Taylor até n=2 (PR #243 integrada; C5 parcial)
 
 `SigmaC5M2TaylorStateStage2Refined.lean` prova
