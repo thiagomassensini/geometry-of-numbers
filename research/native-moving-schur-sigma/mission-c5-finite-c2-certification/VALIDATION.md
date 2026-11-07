@@ -24,8 +24,10 @@ C5 segue incompleta; não há ponte CSV–Lean, composição completa da fonte C
 inclusões O3 ou prova dos sinais finais. O núcleo inicial do nó trivial foi
 integrado pela PR #222, commit `67e6cf9fdf86ac735b6ade80d2f4a64982968363`, merge
 `e55858690e296d00c88692b8f30902987e853137`; o GitHub não reportou checks
-hospedados. A atualização do estágio 1 está validada localmente e aguarda sua
-publicação pelo checkpoint atual.
+hospedados. A atualização do estágio 1 foi integrada pela PR #224, commit de
+prova
+`a908789fad182aa9a2d8eb85b2da641c11c4da62`, merge
+`d667abfc42020e442c62ec1b49b82f5bcf1971ad`; o GitHub não reportou checks.
 
 ## Componente `log 2` em blocos — PASSOU; C5 permanece parcial
 

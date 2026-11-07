@@ -1,6 +1,6 @@
 # Retomar primeiro — missão C5
 
-## Retomada mais recente — igualdade exata da exponencial no estágio 1
+## Retomada mais recente — checkpoint de estágio 1 integrado (PR #224)
 
 C1B/C2/C3 já estão integradas pelas PRs #155/#157/#159; não as refazer. A
 prioridade vigente é C5. O núcleo `m = 1` foi integrado pela PR #222, e agora
@@ -10,17 +10,17 @@ quatro pisos/tetos foram provados e auditados em Lean 4.32; C5 ainda está
 incompleta, pois falta a ponte CSV–Lean e as inclusões dos coeficientes da
 fonte C2 nas caixas.
 
-**Base de trabalho:** Geometry `main` em
-`7fba05cd1d6c1a47b4638cf37831458cd49a37a4`, branch
-`codex/c5-after-checkpoint-merges-20261107`. O novo checkpoint de estágio 1
-está validado localmente, com PR/merge ainda pendentes.
+**Base de trabalho:** Geometry `main` após PR #224, merge
+`d667abfc42020e442c62ec1b49b82f5bcf1971ad`. O commit de prova é
+`a908789fad182aa9a2d8eb85b2da641c11c4da62`; o GitHub não reportou checks
+hospedados.
 
-Retomar pela validação/integracão deste checkpoint e, em seguida, provar as
-igualdades exportadas dos estágios seguintes. O build de prova e o audit
-separado, os pins, hashes, a tentativa interrompida e as falhas históricas
-estão em `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`. Depois,
-retomar a ponte CSV–Lean, compor a fonte C2 original e provar as inclusões O3.
-Este resultado fecha somente a igualdade do estágio 1, não C5.
+Retomar provando as igualdades exportadas dos estágios seguintes da exponencial
+arredondada. O build de prova e o audit separado, os pins, hashes, tentativas
+interrompidas e falhas históricas estão em
+`evidence/rational-boxes/c5-trivial-node-kernel-20261107/`. Depois, retomar a
+ponte CSV–Lean, compor a fonte C2 original e provar as inclusões O3. O merge
+fecha somente a igualdade do estágio 1, não C5.
 
 ## Retomada anterior — 2026-11-07 UTC, componente `log 2` certificado
 

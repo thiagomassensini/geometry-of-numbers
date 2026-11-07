@@ -9,12 +9,13 @@ explícito. Os sete teoremas auditados usam somente axiomas padrão. A evidênci
 os pins e os comandos estão em
 `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
 
-O checkpoint do nó `m = 1` foi integrado pela PR #222, commit de prova
-`67e6cf9fdf86ac735b6ade80d2f4a64982968363`, merge na `main`
-`e55858690e296d00c88692b8f30902987e853137`; não houve checks hospedados.
-Depois desse merge, `c5ZeroExpStage1_eq` foi provado localmente: a caixa de
-estágio 1 coincide com os extremos exportados, e os quatro pisos/tetos foram
-provados exatamente. Build Lean 4.32 e auditoria isolada passaram; evidências
+O núcleo do nó `m = 1` foi integrado pela PR #222, merge
+`e55858690e296d00c88692b8f30902987e853137`. Em seguida, a PR #224 integrou
+`c5ZeroExpStage1_eq`, commit de prova
+`a908789fad182aa9a2d8eb85b2da641c11c4da62`, merge na `main`
+`d667abfc42020e442c62ec1b49b82f5bcf1971ad`. A caixa de estágio 1 coincide com
+os extremos exportados, com os quatro pisos/tetos provados exatamente. Build
+Lean 4.32 e auditoria isolada passaram; o GitHub não reportou checks. Evidências
 e hashes estão em `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
 
 1. Provar e auditar as igualdades exportadas para os estágios seguintes da
