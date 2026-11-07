@@ -1,0 +1,11 @@
+Lean-source changes under research/native-moving-schur-sigma between
+b604c06dd0c13e7f77c65fb0634aa0b082d6c8d1 and
+89710ecaf940f1a7887cd133451916edd76bddcb:
+
+A research/native-moving-schur-sigma/SigmaC5ZeroExpGenericRecurrence.lean
+A research/native-moving-schur-sigma/SigmaC5ZeroExpGenericRecurrenceAudit.lean
+A research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-generic-exp-recurrence-20261107/SigmaC5ZeroExpGenericRecurrence.lean
+A research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-generic-exp-recurrence-20261107/SigmaC5ZeroExpGenericRecurrenceAudit.lean
+
+These are new C5 files. No pre-existing Lean source in the C2/C3 dependency
+closure changed in this range.

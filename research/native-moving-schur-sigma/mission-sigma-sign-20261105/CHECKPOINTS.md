@@ -86,3 +86,9 @@ Os logs de compilação, auditoria, pins e hashes estão em `evidence/c2-c3-prio
 ## Revalidação após reinício e PR #235 (2026-11-07)
 
 `origin/main` foi conferida em `b604c06dd0c13e7f77c65fb0634aa0b082d6c8d1`. Os módulos C2/C3 recompilaram em Lean 4.32 a partir de fontes com hashes idênticos aos da `main` atual; os verificadores C2/C3 aceitaram somente `propext`, `Classical.choice` e `Quot.sound`. A auditoria transitiva repetida contou 133 raízes públicas e 70.861 dependências. Evidências e comandos estão em `evidence/c2-c3-current-main-20261107/`. C2 (#157), C3 (#159), C1B (#155) e o checkpoint durável dos overlays 4.35 (#221) já estão mesclados; não há prova nem publicação C2/C3 pendente.
+
+## Reconfirmação após PR #240 (2026-11-07)
+
+- A ponta atual consultada é `origin/main@89710ecaf940f1a7887cd133451916edd76bddcb`. C1B (#155), C2 (#157), C3 (#159), o checkpoint incompleto 4.35 (#221) e a revalidação pós-reinício (#236) estão integrados.
+- Os cinco módulos C2/C3 cobertos pelos hashes da execução de 2026-11-07 não mudaram entre `b604c06` e `89710ec`; os builds e a auditoria transitiva arquivados continuam válidos para a base atual. A comparação está documentada em `evidence/c2-c3-current-main-20261107/VALIDATION.md` e `source-pins-and-hashes.txt`.
+- Os patches de overlay, pins, manifests, logs com o último erro e comandos de retomada 4.35 permanecem em `evidence/lean435-validation-incomplete/`, publicados pela PR #221. A validação continua incompleta e não foi retomada; para C2 usa-se a integração Lean 4.32 publicada.

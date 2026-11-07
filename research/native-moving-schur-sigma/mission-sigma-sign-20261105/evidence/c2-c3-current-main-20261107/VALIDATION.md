@@ -2,6 +2,10 @@
 
 **Estado:** concluída em 2026-11-07. C2 e C3 já estavam integrados à `main` pelas PRs #157 e #159; esta execução recompilou a closure e repetiu as auditorias após o aumento de memória da VM. Não houve alteração nas provas.
 
+## Conferência da `main` após PR #240
+
+Em `2026-11-07`, `origin/main` avançou para `89710ecaf940f1a7887cd133451916edd76bddcb`. Os cinco módulos C2/C3 compilados nesta validação foram comparados entre a revisão registrada abaixo (`b604c06`) e essa ponta atual; `git diff` não encontrou alterações neles. A listagem completa das mudanças Lean sob `research/native-moving-schur-sigma` mostra somente módulos C5 novos; nenhum fonte existente da closure C2/C3 mudou (`current-main-lean-source-diff.txt`). Os hashes abaixo continuam iguais no snapshot compilado e na `main` atual, então esta validação continua cobrindo a closure C2/C3 vigente. A conferência dos cinco módulos foi reproduzida com `git diff --quiet b604c06dd0c13e7f77c65fb0634aa0b082d6c8d1 89710ecaf940f1a7887cd133451916edd76bddcb -- research/native-moving-schur-sigma/SigmaRHHeightBridge.lean research/native-moving-schur-sigma/SigmaHeight50Integration.lean research/native-moving-schur-sigma/SigmaPadeEventualNegativity.lean research/native-moving-schur-sigma/SigmaParityNegativeDirection.lean research/native-moving-schur-sigma/SigmaPadeAudit.lean`; o comando terminou com código zero. O checkpoint separado da tentativa 4.35 permanece publicado na PR #221 como incompleto; nenhuma migração Geometry/Carry foi retomada.
+
 ## Revisões e pins
 
 - `origin/main` conferida: `b604c06dd0c13e7f77c65fb0634aa0b082d6c8d1` (após PR #235).
