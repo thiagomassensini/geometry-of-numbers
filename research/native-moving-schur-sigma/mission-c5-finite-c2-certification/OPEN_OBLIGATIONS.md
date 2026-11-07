@@ -1,13 +1,14 @@
 # C5 — obrigações abertas
 
-## Atualização local — estado de um nó até n=4
+## Atualização — estado de um nó até n=4 integrado pela PR #247
 
-A recorrência foi formalizada até `n=4` para `(a,j)=(2/5,0)`, mas a extensão
-até `n=192` e a avaliação nodal completa continuam abertas. Faltam também as
-quadraturas, a ponte CSV–Lean, a composição da fonte e as inclusões
-`sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes`. O resultado local está em
-`evidence/rational-boxes/c5-m2-dirichlet-term-stage4-20261107/README.md` e
-aguarda publicação; C5 segue parcial.
+A recorrência foi formalizada até `n=4` para `(a,j)=(2/5,0)` e integrada pela
+PR #247, merge `ab6d5f1923770d4db830ba9ebf2fbc17c9626149`; o GitHub não reportou
+checks. A extensão até `n=192` e a avaliação nodal completa continuam abertas.
+Faltam também as quadraturas, a ponte CSV–Lean, a composição da fonte e as
+inclusões `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes`. Evidência em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage4-20261107/README.md`; C5
+segue parcial.
 
 
 ## Atualização — recorrência de um nó até n=3 integrada pela PR #245

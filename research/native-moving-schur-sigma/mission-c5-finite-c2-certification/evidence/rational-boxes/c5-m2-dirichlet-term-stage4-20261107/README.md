@@ -49,5 +49,11 @@ O wrapper usa `warningAsError=true` e exige o checkout Carry pinado e limpo. O
 build aprovado está preservado em `state-stage4-build.log`. Não houve tentativa
 de prova Lean que falhasse nesta etapa.
 
-Os arquivos e logs do checkpoint estão listados em `SHA256SUMS.txt`. A
-integração continua pendente até a PR desta etapa ser incorporada.
+## Publicação do checkpoint
+
+A PR #247 integrou o resultado: commit de prova
+`7b355ce2349a242c133caf8d71b777c2a186c0a0`, merge na `main`
+`ab6d5f1923770d4db830ba9ebf2fbc17c9626149`. O GitHub não reportou checks
+hospedados. A integração permanece parcial, conforme o escopo acima.
+
+Os arquivos e logs do checkpoint estão listados em `SHA256SUMS.txt`.

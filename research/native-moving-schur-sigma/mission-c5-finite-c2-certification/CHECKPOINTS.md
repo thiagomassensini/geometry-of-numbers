@@ -1,6 +1,6 @@
 # C5 — checkpoints
 
-## 2026-11-07 — transição m=2, n=3→4 compilada localmente; PR pendente
+## 2026-11-07 — transição m=2, n=3→4 integrada pela PR #247
 
 - `c5RoundedExpStateC_stage4_correct` prova a recorrência até `n=4` em
   `(a,j)=(2/5,0)`. Reutiliza o produto de intervalos não-positivos e certifica
@@ -9,8 +9,9 @@
   auditadas e retornam somente axiomas padrão.
 - Fontes, pins, hashes, log e comando estão em
   `evidence/rational-boxes/c5-m2-dirichlet-term-stage4-20261107/`.
-- O checkpoint está local e aguarda PR. Ele não certifica `n=5…192`, as
-  quadraturas, o nó completo ou qualquer inclusão C2.
+- A PR #247 integrou o checkpoint, commit de prova `7b355ce2349a242c133caf8d71b777c2a186c0a0`, merge na `main`
+  `ab6d5f1923770d4db830ba9ebf2fbc17c9626149`; não houve checks hospedados.
+  Ele não certifica `n=5…192`, as quadraturas, o nó completo ou inclusões C2.
 - Próximo passo: estender a recorrência a `n=5`.
 
 

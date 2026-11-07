@@ -1,6 +1,6 @@
 # Próximos passos — C5
 
-## Atualização local — nó m=2 provado até n=4 (2026-11-07; PR pendente)
+## Atualização — nó m=2 provado até n=4 (PR #247 integrada)
 
 `c5RoundedExpStateC_stage4_correct` passou o build Lean 4.32.0 com
 `warningAsError=true` e a auditoria das cinco raízes, que mostra somente
@@ -8,8 +8,9 @@ axiomas padrão. O coeficiente `1/3!`, o produto de sinais não-positivos e a
 soma foram certificados em aritmética racional. A evidência está em
 `evidence/rational-boxes/c5-m2-dirichlet-term-stage4-20261107/README.md`.
 
-Próximo passo: provar `n=5` pela mesma decomposição e então registrar esse
-checkpoint. Ainda faltam os estados até `n=192`, as quadraturas do avaliador,
+A PR #247 integrou esse checkpoint, commit de prova `7b355ce2349a242c133caf8d71b777c2a186c0a0`, merge na `main`
+`ab6d5f1923770d4db830ba9ebf2fbc17c9626149`; não houve checks hospedados.
+Próximo passo: provar `n=5` pela mesma decomposição. Ainda faltam os estados até `n=192`, as quadraturas do avaliador,
 a igualdade com a caixa nodal completa, a ponte das 516 caixas e as inclusões
 C2. C5 continua incompleta.
 
