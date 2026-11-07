@@ -1,0 +1,10 @@
+'c5ZeroExpStage4Square_re_lo_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5ZeroExpStage4Square_re_hi_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5ZeroExpStage4Square_im_lo_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5ZeroExpStage4Square_im_hi_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5ZeroExpStage4Square_re_lo_floor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5ZeroExpStage4Square_re_hi_ceil' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5ZeroExpStage4Square_im_lo_floor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5ZeroExpStage4Square_im_hi_ceil' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5ZeroExpStage5_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+AUDIT_BUILD_EXIT=0
