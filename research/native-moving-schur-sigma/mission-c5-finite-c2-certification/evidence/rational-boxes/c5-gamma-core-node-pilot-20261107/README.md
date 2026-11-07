@@ -42,6 +42,10 @@ avaliação nativa. O log é `chunk64-axiom-audit.log`.
 
 ## Arquivos e histórico
 
+Este checkpoint parcial foi publicado pela PR #282, com commit de prova
+`131d5f57da009a830c0a967bb5cf4713412c3473`, integrada à `main` no merge
+`7c301a2bb0b975369c8f8889ec2940372d2266c2` em 2026-11-07.
+
 Fontes compiladas: `SigmaC5GammaCoreNodePilot.lean`,
 `SigmaC5GammaCoreChunk64Probe.lean`, `SigmaC5GammaCoreChunk64Certificate.lean`,
 `SigmaC5GammaCoreChunk64Combine.lean` e `SigmaC5GammaCoreChunk64Audit.lean`.
