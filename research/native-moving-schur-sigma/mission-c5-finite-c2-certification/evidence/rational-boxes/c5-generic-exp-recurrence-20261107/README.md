@@ -1,7 +1,9 @@
 # C5 — recorrência genérica da exponencial arredondada
 
-**Estado:** checkpoint validado localmente, ainda não publicado pela PR deste
-subpasso. C5 permanece incompleta: ainda faltam a ponte CSV–Lean, a inclusão
+**Estado:** provado, auditado e integrado pela PR #239. O commit de prova
+`be04221f5eb4a174804fb96c9011d0b58bfc2642` foi integrado na `main` pelo merge
+`8c3691e59f9280864b93c4868eb465dbdad6da2c`; o GitHub não reportou checks
+hospedados. C5 permanece incompleta: ainda faltam a ponte CSV–Lean, a inclusão
 dos coeficientes da fonte C2 nas caixas e os sinais condicionais finais.
 
 ## Resultado validado
