@@ -1,5 +1,23 @@
 # C5 — estado da sessão
 
+## Atualização local — transição do nó m=2 de n=3 para n=4 compilada (2026-11-07)
+
+Na branch `codex/c5-m2-stage4-20261107`, baseada na main após PR #246
+(`61ffbda123b474184a6756deee9bbf57b2daa41c`), foi provado
+`c5RoundedExpStateC_stage4_correct` para `(a,j)=(2/5,0)`. A prova reutiliza a
+multiplicação de intervalos não-positivos e certifica a escala `1/3! = 1/6`,
+a soma e os coarsenings em 896 bits. Lean 4.32.0 com
+`warningAsError=true` passou; as cinco declarações auditadas têm somente
+axiomas padrão. Fonte, log, pin, hash e reprodução estão em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage4-20261107/README.md`.
+O checkpoint ainda aguarda publicação por PR.
+
+O escopo continua restrito à recorrência até `n=4` de um único nó. Ainda não
+há avaliação formal dos 192 termos, das quadraturas, da caixa nodal completa,
+da ponte CSV–Lean ou das inclusões da fonte C2. O próximo passo é `n=5`.
+C5 permanece incompleta.
+
+
 ## Atualização — transição do nó m=2 de n=2 para n=3 integrada pela PR #245 (2026-11-07)
 
 Na branch `codex/c5-m2-stage3-20261107`, baseada na main após PR #244

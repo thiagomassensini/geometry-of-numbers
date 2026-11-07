@@ -1,5 +1,19 @@
 # C5 — checkpoints
 
+## 2026-11-07 — transição m=2, n=3→4 compilada localmente; PR pendente
+
+- `c5RoundedExpStateC_stage4_correct` prova a recorrência até `n=4` em
+  `(a,j)=(2/5,0)`. Reutiliza o produto de intervalos não-positivos e certifica
+  a escala `1/3! = 1/6`, o termo arredondado e a soma acumulada.
+- Build Lean 4.32 com `warningAsError=true` passou; cinco declarações foram
+  auditadas e retornam somente axiomas padrão.
+- Fontes, pins, hashes, log e comando estão em
+  `evidence/rational-boxes/c5-m2-dirichlet-term-stage4-20261107/`.
+- O checkpoint está local e aguarda PR. Ele não certifica `n=5…192`, as
+  quadraturas, o nó completo ou qualquer inclusão C2.
+- Próximo passo: estender a recorrência a `n=5`.
+
+
 ## 2026-11-07 — transição m=2, n=2→3 integrada pela PR #245
 
 - `c5RoundedExpStateC_stage3_correct` prova a recorrência até `n=3` no nó
