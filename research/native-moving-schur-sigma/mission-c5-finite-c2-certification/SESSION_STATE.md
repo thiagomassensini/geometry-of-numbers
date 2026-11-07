@@ -24,8 +24,10 @@ aberta. A última tentativa falhou ao aplicar `Int.floor_eq_iff.mpr` e
 `Int.ceil_eq_iff.mpr` às expressões racionais resultantes; o log completo,
 fontes de auditoria, pins, hashes e comandos estão em
 `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`. C5 continua
-incompleta, sem ponte CSV–Lean ou inclusões O3. Este checkpoint local ainda
-precisa ser publicado em PR.
+incompleta, sem ponte CSV–Lean ou inclusões O3. Este checkpoint parcial foi
+publicado pela PR #222, commit de prova `67e6cf9fdf86ac735b6ade80d2f4a64982968363`,
+merge na `main` `e55858690e296d00c88692b8f30902987e853137`. O GitHub não reportou
+checks hospedados.
 
 ## Checkpoint mais recente — componente `log 2` certificado por blocos
 

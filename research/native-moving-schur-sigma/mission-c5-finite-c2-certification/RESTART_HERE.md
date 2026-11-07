@@ -1,12 +1,17 @@
 # Retomar primeiro — missão C5
 
-## Estado mais recente — checkpoint local do nó `m = 1`
+## Retomada mais recente — checkpoint parcial do nó `m = 1` (PR #222)
 
 C1B/C2/C3 já estão integradas pelas PRs #155/#157/#159; não as refazer. A
 prioridade vigente é C5. Os lemas do nó `m = 1` foram adicionados aos módulos
 de log centrado, exponencial arredondada e caixas de Dirichlet, e builds e
 auditorias Lean 4.32 passaram. O resto de Taylor continua explícito. C5 segue
 incompleta.
+
+**Base atual:** `main` após PR #222, merge
+`e55858690e296d00c88692b8f30902987e853137`. O commit de prova é
+`67e6cf9fdf86ac735b6ade80d2f4a64982968363`; o GitHub não reportou checks
+hospedados.
 
 Retomar pela igualdade ainda não provada entre a caixa exponencial de estágio
 1 e os extremos exportados. O último build parou ao tentar fechar as
@@ -15,9 +20,9 @@ desigualdades de `Int.floor`/`Int.ceil`; o log completo é
 Os comandos, pins e fontes de auditoria estão no `README.md` da mesma pasta.
 Não aceitar o `sorryAx` mostrado depois dos erros. Depois de provar esse caso,
 seguir para a ponte CSV–Lean, composição da fonte C2 e inclusões O3. O
-checkpoint está local e aguarda PR; ele não fecha C5.
+checkpoint foi integrado como parcial e não fecha C5.
 
-## Retomada mais recente — 2026-11-07 UTC, componente `log 2` certificado
+## Retomada anterior — 2026-11-07 UTC, componente `log 2` certificado
 
 ```text
 MISSION: C5 — certificar as primeiras janelas negativas da fonte C2 original.

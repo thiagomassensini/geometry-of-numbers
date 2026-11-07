@@ -1,6 +1,6 @@
 # Próximos passos — C5
 
-## Prioridade imediata — publicar o checkpoint do nó `m = 1` (2026-11-07)
+## Prioridade imediata — fechar a igualdade do estágio 1 (2026-11-07)
 
 O núcleo `m = 1` já está formalizado e compilado: o log centrado vira a caixa
 exata `0`, o argumento do termo de Dirichlet vira `0`, e a exponencial
@@ -9,14 +9,13 @@ explícito. Os sete teoremas auditados usam somente axiomas padrão. A evidênci
 os pins e os comandos estão em
 `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
 
-1. Publicar este checkpoint como parcial, preservando a tentativa malsucedida
-   de igualdade dos extremos de estágio 1. O erro concreto está na forma de
-   montar as provas de `Int.floor`/`Int.ceil`, registrado em
-   `stage1-export-equality-last-attempt.log`; `sorryAx` emitido após os erros
-   não é prova aceita.
-2. Resolver os limites inteiros que determinam as extremidades arredondadas
+Checkpoint parcial integrado pela PR #222, commit de prova
+`67e6cf9fdf86ac735b6ade80d2f4a64982968363`, merge na `main`
+`e55858690e296d00c88692b8f30902987e853137`; não houve checks hospedados.
+
+1. Resolver os limites inteiros que determinam as extremidades arredondadas
    no estágio 1, compilar e auditar o próximo lema isolado.
-3. Retomar a ponte formal CSV–Lean e avaliar, em etapas, os demais termos da
+2. Retomar a ponte formal CSV–Lean e avaliar, em etapas, os demais termos da
    caixa; depois compor Gamma, o fator de π e a fonte C2 original e provar as
    inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
 

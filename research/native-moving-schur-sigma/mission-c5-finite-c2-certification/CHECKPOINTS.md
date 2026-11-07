@@ -1,6 +1,6 @@
 # C5 — checkpoints
 
-## 2026-11-07 — identidades exatas do nó `m = 1` (checkpoint parcial, PR pendente)
+## 2026-11-07 — identidades exatas do nó `m = 1` (checkpoint parcial integrado)
 
 - O log centrado em `1` é exatamente zero, para qualquer intervalo `logTwo`.
   Assim, o argumento exponencial e o termo de Dirichlet `m = 1` reduzem ao
@@ -16,8 +16,11 @@
 - A tentativa de identificar os extremos exatos do estágio 1 falhou na
   construção das desigualdades de `Int.floor`/`Int.ceil`; não existe igualdade
   CSV–Lean provada por este passo. A saída `sorryAx` subsequente é inválida.
+- PR #222, commit de prova `67e6cf9fdf86ac735b6ade80d2f4a64982968363`, integrou
+  o checkpoint à `main` no merge `e55858690e296d00c88692b8f30902987e853137`.
+  O GitHub não reportou checks hospedados.
 - C5 permanece aberta: sem avaliação completa da fonte, sem inclusões O3 e
-  sem fechamento dos sinais. O checkpoint aguarda publicação em PR.
+  sem fechamento dos sinais.
 
 ## 2026-11-07 — `log 2` em blocos certificado (C5 ainda incompleta)
 
