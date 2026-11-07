@@ -1,0 +1,5 @@
+49a53c11190ff6187e17b01f7b0f2aa92071c4e0c6a9e4a17fdb1e9d1f7826f9  ./README.md
+a38ce5838bfbe242560c4c746a740aa73a27bab583c902a3ba101d0dcd57cce4  ./SigmaC5M2TaylorStateStage18Certificate.lean
+6e832a91001a3cbe12a69a1c766e5d968742fe63106d6868e39723b5c5bf4dab  ./SigmaC5M2TaylorStateStage18ExportProbe.lean
+de74f7f9d06868d48c519f3303628a0982785423c2d66af0fdbc46a03b008c99  ./state-stage18-build.log
+417ddd8182a7dbd0f35343b723d269cbc58363306b0de5a50104ee41126286c7  ./state-stage18-export-probe.log

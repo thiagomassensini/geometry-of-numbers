@@ -1,25 +1,30 @@
 # Retomar primeiro — missão C5
 
-## Retomada mais recente — nó m=2, transição Taylor n=16→17 integrada pela PR #273
+## Retomada mais recente — nó m=2, transição Taylor n=17→18 compilada; PR pendente
 
 ```text
 MISSION: C5 — certificar as janelas negativas da fonte C2 original.
-PROOF PR: #273, commit de prova 0783b090aa4f9b6faf7ecd3605c187ae46352498, merge 41164de6cf0042594833bae02cdab2ce4cd11aae.
-PROOF BASE MAIN: 00ea9d49245e701884db695ce718279deab43056 (PR #272 integrada).
-CURRENT MAIN: 41164de6cf0042594833bae02cdab2ce4cd11aae.
-LAST VERIFIED THEOREM: c5RoundedExpStateC_stage17_correct.
-LAST COMPILED FILE: SigmaC5M2TaylorStateStage17Certificate.lean (Lean 4.32.0, warnings como erros).
+PROOF PR: ainda não criada; publicação pendente.
+BASE MAIN: 0807c1052a9e5ac4464139e1593958a495a80103 (PR #274 integrada).
+BRANCH: codex/c5-m2-stage18-20261107.
+LAST VERIFIED THEOREM: c5RoundedExpStateC_stage18_correct.
+LAST COMPILED FILE: SigmaC5M2TaylorStateStage18Certificate.lean (Lean 4.32.0, warnings como erros).
 BUILD: BUILD_EXIT=0; cinco raízes com propext, Classical.choice, Quot.sound; sem sorryAx.
-SCOPE: nó m=2, argumento (a,j)=(2/5,0), recorrência até n=17.
-OPEN: n=18…192, outros nós, quadraturas, caixa completa, ponte CSV–Lean, inclusões da fonte e sinais C5.
-EVIDENCE: evidence/rational-boxes/c5-m2-dirichlet-term-stage17-20261107/README.md.
+SCOPE: nó m=2, argumento (a,j)=(2/5,0), recorrência até n=18.
+OPEN: n=19…192, outros nós, quadraturas, caixa completa, ponte CSV–Lean, inclusões da fonte e sinais C5.
+EVIDENCE: evidence/rational-boxes/c5-m2-dirichlet-term-stage18-20261107/README.md.
 PINS: Geometry bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3; Carry 045369f6dedcb2e75e9aefed1d12c9f73b9a2532; Lean 4.32.0.
 EXPORT: probe #eval fornece os racionais; o certificado valida as igualdades.
-NEXT: continuar a recorrência do nó m=2 em n=18.
+NEXT: continuar a recorrência do nó m=2 em n=19.
 DO NOT REPEAT: C1B/C2/C3/C4; migração geral para Lean 4.35; prova monolítica dos 192 passos.
 ```
 
-Consulte o README de estágio 17 para reprodução, pins, logs e checksums.
+Consulte o README de estágio 18 para reprodução, pins, logs e checksums.
+
+## Checkpoint anterior integrado — transição Taylor n=16→17 pela PR #273
+
+`c5RoundedExpStateC_stage17_correct` foi integrado no merge `41164de6cf0042594833bae02cdab2ce4cd11aae`.
+Evidência: `evidence/rational-boxes/c5-m2-dirichlet-term-stage17-20261107/`.
 
 ## Checkpoint anterior integrado — transição Taylor n=15→16 pela PR #271
 
