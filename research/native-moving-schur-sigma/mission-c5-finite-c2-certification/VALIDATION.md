@@ -1,5 +1,26 @@
 # C5 — validação
 
+## Componente `log 2` em blocos — PASSOU; C5 permanece parcial
+
+`SigmaC5Log2Certified.lean` prova as somas racionais
+`Interval.logSum 512 (1/3)` e `Interval.logSum 512 (-1/3)` por decomposição em
+16 blocos de 32 termos. A soma dos blocos é recomposta formalmente, e
+`c5CenteredLog2I 512 = c5ExportedLogTwo512` certifica exatamente os extremos
+exportados desse componente.
+
+O build Lean 4.32.0 passou com warnings como erros. O checker fail-closed
+aceitou exatamente as três declarações auditadas; só aparecem `propext`,
+`Classical.choice` e `Quot.sound`. A varredura da fonte não encontrou
+`sorry`, `sorryAx`, `admit` ou `native_decide`. Fonte, checker, build/auditoria,
+saída `#eval`, pins, hashes e comando reprodutor estão em
+`evidence/rational-boxes/c5-log2-component-validation/README.md`.
+
+**Limite:** isso fecha só o componente central `log 2`. O CSV de 516 extremos
+continua sem igualdade formal com as caixas Lean; a cabeça e demais correções
+não foram compostas com Gamma, fator de π e fonte C2. As inclusões
+`sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` seguem abertas, então os sinais
+C5 permanecem condicionais.
+
 ## Tentativa de igualdade CSV–Lean — FALHOU; C5 segue parcial
 
 A primeira linha do CSV foi testada contra `c5RationalZetaCenteredNodeBox`.
@@ -13,15 +34,15 @@ Comandos, pins, fontes e logs estão em
 `evidence/rational-boxes/c5-exported-box-proof-attempt/`. O checkpoint foi
 integrado pela PR #215, commit `baa5e3e`, merge `6bfb4b14606ec1896a2d01d60be4ca54117bd128`.
 
-## Tentativa de igualdade isolada para `log 2` — NÃO VALIDADA
+## Primeira abordagem direta de `log 2` — FALHOU; substituída pela prova em blocos
 
-A avaliação Lean exporta `c5CenteredLog2I 512` em ~40 s. A prova dos limites
-racionais por `norm_num` deixou metas abertas mesmo após separar os campos,
-aumentar `maxSteps` a 1M e aplicar `norm_num1`. Não há teorema compilado ou
-auditoria válida; não tratar os extremos como fato formal. Fontes, logs e hashes
-em `evidence/rational-boxes/c5-log2-component-attempt/`. O registro foi
+A tentativa inicial exportou `c5CenteredLog2I 512`, mas as provas diretas por
+`norm_num` deixaram metas abertas mesmo após separar os campos e elevar
+`maxSteps` a 1M. Essa abordagem não gerou teorema auditável; o histórico foi
 integrado pela PR #217, commit `e34733a`, merge
-`30a615cafa3b27de40427a73cc64988c77e236d3`.
+`30a615cafa3b27de40427a73cc64988c77e236d3`. O resultado foi depois superado
+pela prova certificada em blocos documentada acima. As fontes e logs antigos
+permanecem em `evidence/rational-boxes/c5-log2-component-attempt/`.
 
 ## Cobertura zeta adaptativa dos 129 nós — PASSOU; C5 parcial
 
