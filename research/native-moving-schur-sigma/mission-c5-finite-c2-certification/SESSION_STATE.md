@@ -11,7 +11,7 @@
   de C2/C3; não é preciso calcular a primeira profundidade de falha para a
   negatividade eventual já provada.
 
-## Checkpoint local parcial — Bernoulli compartilhado (2026-11-07)
+## Checkpoint integrado — Bernoulli compartilhado (2026-11-07)
 
 Na worktree `codex/c5-flatten-zeta-boxes-20261107`, a tabela incremental de
 Bernoulli e a integração da tabela à caixa Euler–Maclaurin de um nó foram
@@ -19,8 +19,10 @@ provadas, compiladas em Lean 4.32 e auditadas. A caixa completa de um nó
 terminou em 2:05; três nós com tabela compartilhada terminaram em 2:20. O lote
 de 129 nós continua lento e foi interrompido sem largura final após 15:57.
 Memória medida: cerca de 6,5 GiB usados numa VM com 64 GiB totais; não pedir
-mais memória. C5 segue incompleta e este checkpoint local ainda não foi
-integrado. Detalhes, comandos e logs em
+mais memória. O checkpoint parcial foi integrado pela PR #211, commit
+`bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3`, merge na `main`
+`c6dd548bcb030a21bb90c1aee08023c2ca2d485f`. C5 segue incompleta. Detalhes,
+comandos e logs em
 `evidence/rational-boxes/c5-fast-bernoulli-table-validation.md`.
 
 ## Snapshot atual — cobertura formal dos 129 nós de zeta integrada pela PR #209

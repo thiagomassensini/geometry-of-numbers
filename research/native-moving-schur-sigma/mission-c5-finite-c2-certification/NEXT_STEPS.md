@@ -9,8 +9,10 @@ estão concluídas: C1B pela PR #155 (merge
 `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`). A prioridade ativa é a
 certificação finita C5.
 
-**Checkpoint local de execução:** `c5BernoulliPrimeTable` e a caixa centrada
-com tabela compartilhada compilam e passam pela auditoria padrão de axiomas.
+**Checkpoint de execução integrado pela PR #211:** commit
+`bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3`, merge na `main`
+`c6dd548bcb030a21bb90c1aee08023c2ca2d485f`. `c5BernoulliPrimeTable` e a caixa
+centrada com tabela compartilhada compilam e passam pela auditoria padrão de axiomas.
 Três nós foram avaliados em 2:20 com uma só tabela. A tentativa de lote 129
 encerrou após 15:57 sem largura final; a memória ficou em ~6,5 GiB, então o
 limite é tempo de CPU. Evidência em
