@@ -1,9 +1,9 @@
 # Estado da missão — negatividade transversal all-order
 
-**Atualizado:** 2026-11-06
+**Atualizado:** 2026-11-07
 **Estado:** C0, C1, C1B, C2, C3 e C4 estão concluídos e integrados à `main`. A lei quantitativa distância × profundidade e os novos cadernos continuam adiados.
 
-**Conferência para retomada:** as fontes C2/C3 foram revalidadas em `origin/main@9951fcb7315c25b6d878befc42b2d02c26a96ec7` (a PR #203 desde a revisão anterior mudou apenas documentação). C1B (#155), C2 (#157) e C3 (#159) estão publicados e integrados; não há publicação pendente nem motivo para reiniciá-los. A validação mais recente recompilou C2/C3 e repetiu a auditoria transitiva; logs e hashes estão em `evidence/c2-c3-final-validation-20261106/`. A integração 4.32 continua sendo a rota validada de C2. O checkpoint de Lean 4.35 abaixo permanece preservado como validação incompleta, sem migração geral de Geometry/Carry.
+**Conferência para retomada:** `origin/main` em `08a413f34dd5588ed3d021351af27f3f55e0c072` contém as integrações publicadas C1B (#155), C2 (#157) e C3 (#159); nenhuma delas tem publicação pendente. Em 2026-11-07, `SigmaRHHeightBridge.lean`, `SigmaHeight50Integration.lean`, os módulos finais C2/C3 e a auditoria recompilaram em Lean 4.32; a auditoria transitiva aceitou 133 raízes públicas e 70.861 dependências. Logs, pins e hashes estão em `evidence/c2-c3-priority-20261107/`. C1B foi integrado pela PR #155 no merge `0586e238441096ecd2248e3f14bdac3a832af427`. A integração publicada 4.32 continua sendo a referência C2; o checkpoint 4.35 abaixo permanece versionado e incompleto, sem migração geral de Geometry/Carry.
 
 ## Base integrada
 

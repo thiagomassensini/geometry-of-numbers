@@ -76,3 +76,9 @@ recebeu status checks hospedados. Evidências em `evidence/c2-eventual-negativit
 Sobre as fontes de origin/main@935911bce2c253ee508a4990face113ea63c87ee, os módulos finais C2 e C3 foram recompilados em Lean 4.32 com warnings tratados como erros. O checker C2 aceitou seu corolário; o checker C3 aceitou os quatro roots par/ímpar; ambos usam apenas propext, Classical.choice e Quot.sound. A auditoria transitiva recompilada contou 133 roots públicos e 70.861 dependências, mantendo a característica e os jets sigma originais.
 
 Logs, checker do root C2, hashes e pins estão em evidence/c2-c3-post-reboot-20261106/. Esta foi uma recompilação focada com caches das dependências já compilados no pin 4.32; a reconstrução limpa da closure continua documentada em evidence/c3-parity/VALIDATION.md.
+
+## Prioridade C2/C3 confirmada na main atual (2026-11-07)
+
+Sobre `origin/main@08a413f34dd5588ed3d021351af27f3f55e0c072`, C2 e C3 foram recompilados em Lean 4.32 a partir dos fontes integrados. O verificador C2 aceitou o corolário `exists_eventually_negative_sigmaPadeD_from_height50_certificate`; o verificador C3 aceitou os quatro resultados públicos de janela/direção. A auditoria transitiva aceitou 133 raízes e 70.861 dependências de tipo/corpo com apenas axiomas padrão e confirmou a proveniência de `completedSigmaLogJet`, da característica original e de `sigmaMatrix`. A única definição de `CarrySigmaObstruction.sigmaLineZero` continua em `SigmaCertifiedNegativeDirection.lean`.
+
+Os logs de compilação, auditoria, pins e hashes estão em `evidence/c2-c3-priority-20261107/`. A integração de referência 4.32 permanece a publicada em `b9ce1955c1e8830afad2323afe5266ed3f5f35d9`. A validação 4.35 permanece apenas como checkpoint incompleto em `evidence/lean435-validation-incomplete/`; não foi iniciada migração geral de Geometry/Carry.

@@ -1,0 +1,14 @@
+'CarrySigmaObstruction.sigmaContinuation_zero_im_eq_zero_of_height50' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaDisplacedProductContinuation_zero_iff_root' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaDisplacedProduct_order_one_of_root' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.exists_firstSigmaDisplacedProductIsolation_from_height50' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaPadeRootRecovery_of_isolation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.exists_firstSigmaHeight50PadeRecovery' depends on axioms: [propext, Classical.choice, Quot.sound]
