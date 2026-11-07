@@ -1,5 +1,20 @@
 # Próximos passos — C5
 
+## Atualização local — nó m=2 validado até n=3 (2026-11-07; publicação pendente)
+
+`c5RoundedExpStateC_stage3_correct` compila em Lean 4.32.0 com warnings como
+erros e foi auditado com cinco declarações, somente axiomas padrão. A prova
+certifica a transição `n=2→3` no nó `(2/5,0)`, incluindo a multiplicação real
+de sinais mistos e o termo escalado por `1/2`. Evidência e reprodução estão em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage3-20261107/README.md`.
+
+A publicação deste checkpoint está pendente. Próximo passo: provar `n=4` e
+confirmar que o formato por estágios se mantém manejável. Depois, ainda será
+preciso chegar a `n=192`, validar as quadraturas do termo nodal, ligar as 516
+caixas à fonte C2 e provar as inclusões `sigmaC00495SourceBoxes` e
+`sigmaC01SourceBoxes`. C5 continua incompleta.
+
+
 ## Atualização local — estado do nó m=2 até n=2 compilado (2026-11-07)
 
 A primeira fatia da ponte CSV–Lean para `(a,j)=(2/5,0)` passou localmente:

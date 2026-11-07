@@ -1,5 +1,19 @@
 # C5 — checkpoints
 
+## 2026-11-07 — transição m=2, n=2→3 compilada localmente; PR pendente
+
+- `c5RoundedExpStateC_stage3_correct` prova a recorrência até `n=3` no nó
+  `(a,j)=(2/5,0)`. O passo foi decomposto em produto real de sinais mistos,
+  escala `1/2`, coarsening do termo e atualização da soma.
+- Lean 4.32.0 com `warningAsError=true` compilou; as cinco declarações
+  auditadas mostram somente axiomas padrão e não há `sorryAx` na saída aceita.
+- O último erro da tentativa inicial, o build válido, o pin e a reprodução
+  estão em `evidence/rational-boxes/c5-m2-dirichlet-term-stage3-20261107/`.
+- Este checkpoint está local e aguarda PR. Ele cobre somente `n≤3`; não valida
+  `n=192`, quadraturas, o nó completo, a ponte CSV–Lean ou a inclusão da fonte.
+- Próximo passo: estender a mesma decomposição a `n=4`.
+
+
 ## 2026-11-07 — piloto m=2 até n=2 integrado pela PR #243
 
 - No branch `codex/c5-m2-stage-transition-20261107`, baseado em
