@@ -11,7 +11,7 @@
   de C2/C3; não é preciso calcular a primeira profundidade de falha para a
   negatividade eventual já provada.
 
-## Atualização mais recente — igualdade do estágio 5 (2026-11-07; publicação pendente)
+## Atualização mais recente — igualdade do estágio 5 integrada pela PR #232
 
 `SigmaC5ZeroExpStage5Certificate.lean` importa a prova integrada do estágio 4,
 define a caixa arredondada seguinte e prova que
@@ -22,9 +22,11 @@ racionais do quadrado do estágio 4 e os pisos/tetos `2^896 - 23`,
 axiomas padrão. Pins, hashes e logs estão em
 `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
 
-C5 continua incompleta: a ponte CSV–Lean, as inclusões dos coeficientes da
-fonte C2 nas caixas e os sinais finais seguem abertos. O estágio 5 aguarda
-publicação.
+O commit de prova `821b119d4f0d506e685a585d7f3a52c00a6a95d5` foi integrado pela
+PR #232, merge na `main`
+`75bacc9c2b7ca8113ee906c61a411922e01bb978`; o GitHub não reportou checks
+hospedados. C5 continua incompleta: a ponte CSV–Lean, as inclusões dos
+coeficientes da fonte C2 nas caixas e os sinais finais seguem abertos.
 
 ## Atualização anterior — igualdade do estágio 4 integrada pela PR #230
 
