@@ -2,20 +2,20 @@
 
 ## Estado atual — primeira Gamma em ponto real provada
 
-`Γ(1/5)` agora tem uma caixa Lean formal via `c5GammaCoreFirstNodeBox_contains`.
-O resultado foi validado localmente em Lean 4.32; build, auditoria, hashes e
-tentativas estão em `evidence/rational-boxes/c5-gamma-first-node-20261107/`.
-Ele ainda não foi publicado neste snapshot e cobre apenas um ponto.
+`Γ(1/5)` tem uma caixa Lean formal via `c5GammaCoreFirstNodeBox_contains`,
+integrada pela PR #285 no merge `832b201b6907c6682aa9657c3e4ff9da6dd40254`.
+Build, auditoria, hashes e tentativas estão em
+`evidence/rational-boxes/c5-gamma-first-node-20261107/`. A prova cobre apenas
+um ponto.
 
 Continuam abertas, em ordem:
 
-1. publicar e integrar este checkpoint;
-2. certificar Gamma no ponto `901/4000` e então nas coordenadas complexas da
+1. certificar Gamma no ponto `901/4000` e então nas coordenadas complexas da
    malha C5;
-3. compor caixas de Gamma e zeta com os fatores originais da fonte completada e
+2. compor caixas de Gamma e zeta com os fatores originais da fonte completada e
    a quadratura de coeficientes;
-4. provar as inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`;
-5. fechar os sinais de `sigmaPadeD` original nos dois deslocamentos.
+3. provar as inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`;
+4. fechar os sinais de `sigmaPadeD` original nos dois deslocamentos.
 
 Os certificados condicionais de O3 continuam corretos sob suas hipóteses, mas
 não são certificados incondicionais da fonte. C5 permanece incompleta.

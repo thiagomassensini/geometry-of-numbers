@@ -1,12 +1,12 @@
 # C5 — mapa dos teoremas e obrigações
 
-## Resultado novo — Gamma no primeiro ponto (local, Lean 4.32)
+## Resultado integrado — Gamma no primeiro ponto (PR #285, Lean 4.32)
 
 | Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |
 |---|---|---|---|---|
 | `CarrySigmaObstruction.c5GammaCoreFirstNodePowerArg_normBound` | `SigmaC5GammaFirstNodeCertificate.lean` | nenhuma | norma do argumento da potência ≤ 4 | bounds racionais das séries de log; **PROVADO localmente** |
 | `CarrySigmaObstruction.c5GammaCoreFirstNodePowerBox_contains` | idem | nenhuma | `dirichletTermBox2` contém `240^(1/5)` | primeiro núcleo Gamma em blocos + potência intervalar; **PROVADO localmente** |
-| `CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains` | idem | nenhuma | caixa inflada contém `Complex.Gamma (1/5 : ℂ)` | caixa de potência, núcleo racional e erro `gamma_finite_1024_240_error`; **PROVADO localmente**, ainda não publicado neste snapshot |
+| `CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains` | idem | nenhuma | caixa inflada contém `Complex.Gamma (1/5 : ℂ)` | caixa de potência, núcleo racional e erro `gamma_finite_1024_240_error`; **PROVADO e integrado pela PR #285**, merge `832b201b6907c6682aa9657c3e4ff9da6dd40254` |
 
 O resultado cobre somente `Γ(1/5)`. Não prova as inclusões condicionais
 `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes` nem os sinais C5.
