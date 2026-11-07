@@ -1,5 +1,21 @@
 # C5 — checkpoints
 
+## 2026-11-07 — transição m=2, n=5→6 validada localmente; ainda não publicada
+
+- `c5RoundedExpStateC_stage6_correct` prova a próxima transição da recorrência
+  para o nó `(a,j)=(2/5,0)`, com coeficiente `1/5! = 1/120`, termo arredondado
+  e atualização racional da soma.
+- Lean 4.32.0 com `warningAsError=true` passou no pin Geometry
+  `bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3` e Carry
+  `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`. As cinco declarações auditadas
+  mostram somente axiomas padrão.
+- Fonte, logs e checksums estão em
+  `evidence/rational-boxes/c5-m2-dirichlet-term-stage6-20261107/`.
+- O checkpoint ainda está local, sem PR ou merge. Cobre somente `n≤6` de um
+  nó; não cobre os estados seguintes, quadraturas, caixa completa, inclusões
+  da fonte C2 ou sinais finais. Próximo passo: publicar esta etapa; em seguida,
+  estender a prova a `n=7`.
+
 ## 2026-11-07 — transição m=2, n=4→5 integrada pela PR #249
 
 - `c5RoundedExpStateC_stage5_correct` prova a recorrência até `n=5` para o
