@@ -8,6 +8,9 @@
   `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`.
 - C3 foi integrada pela PR #159, merge
   `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`.
+- O checkpoint de tabela Bernoulli compartilhada foi integrado pela PR #211,
+  commit `bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3`, merge
+  `c6dd548bcb030a21bb90c1aee08023c2ca2d485f`.
 - C5 segue explicitamente incompleta. A tabela Bernoulli compartilhada e as
   caixas de nó estão provadas e auditadas, mas as inclusões
   `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` continuam abertas.
