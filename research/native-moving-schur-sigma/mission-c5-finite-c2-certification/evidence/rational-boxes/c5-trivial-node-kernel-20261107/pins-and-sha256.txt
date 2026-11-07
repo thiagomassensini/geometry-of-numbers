@@ -1,0 +1,12 @@
+Base Geometry main: c67b2f72e0ad2f331c0966fb3ed82e98655e3df8
+Reference Geometry: caa07002306b555fea5624cc11ab2ea5811a4324
+Carry: 045369f6dedcb2e75e9aefed1d12c9f73b9a2532
+Mathlib: 81a5d257c8e410db227a6665ed08f64fea08e997
+Lean: 4.32.0 (commit 8c9756b28d64dab099da31a4c09229a9e6a2ef35)
+Build setting: warningAsError=true
+
+SHA-256 entries for the changed Lean modules, audit sources, failed-attempt
+source, and preserved logs were generated in SHA256SUMS.txt. Recompute after any
+source or evidence-file edit with:
+
+  sha256sum research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean research/native-moving-schur-sigma/SigmaC5RoundedComplexExp.lean research/native-moving-schur-sigma/SigmaC5RationalNodeCenteredBoxes.lean research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-trivial-node-kernel-20261107/*.lean research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-trivial-node-kernel-20261107/*.log

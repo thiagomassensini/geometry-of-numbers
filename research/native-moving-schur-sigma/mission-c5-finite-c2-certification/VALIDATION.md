@@ -1,5 +1,25 @@
 # C5 — validação
 
+## Núcleo do nó trivial `m = 1` — PASSOU; igualdade exportada ainda não
+
+Em Lean 4.32.0, com `warningAsError=true`, passaram os builds de
+`SigmaC5RationalNodePreciseLogBounds.lean`,
+`SigmaC5RoundedComplexExp.lean` e
+`SigmaC5RationalNodeCenteredBoxes.lean`. As auditorias cobrem sete teoremas:
+o estado do log em zero, `log 1`, a conversão do log centrado, o argumento e o
+termo de Dirichlet em `m = 1`, e o estado/caixa da exponencial na entrada zero.
+Todas reportam somente `propext`, `Classical.choice` e `Quot.sound`.
+
+A prova preserva a inflação racional que limita o resto de Taylor. Ela não
+estabelece a igualdade da caixa do estágio 1 com os extremos exportados: a
+tentativa mais recente falhou ao montar as desigualdades de piso e teto, e
+terminou com `BUILD_EXIT=1`. O `sorryAx` impresso depois dos erros não conta
+como validação. Os logs, três fontes de auditoria, pins, hashes e comandos
+estão em `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
+
+C5 segue incompleta; não há ponte CSV–Lean, composição completa da fonte C2,
+inclusões O3 ou prova dos sinais finais.
+
 ## Componente `log 2` em blocos — PASSOU; C5 permanece parcial
 
 `SigmaC5Log2Certified.lean` prova as somas racionais

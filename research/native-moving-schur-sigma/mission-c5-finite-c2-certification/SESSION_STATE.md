@@ -11,6 +11,22 @@
   de C2/C3; não é preciso calcular a primeira profundidade de falha para a
   negatividade eventual já provada.
 
+## Atualização mais recente — núcleo do nó `m = 1` (2026-11-07)
+
+Foram acrescentadas provas exatas para o log centrado e o termo de Dirichlet
+em `m = 1`, e para a recorrência da exponencial complexa no argumento zero.
+O resto de Taylor continua incluído como inflação racional explícita. Os três
+módulos alterados compilaram em Lean 4.32.0 com `warningAsError=true`; as
+auditorias dos sete teoremas registraram somente axiomas padrão.
+
+A igualdade da caixa exponencial de estágio 1 com os extremos exportados segue
+aberta. A última tentativa falhou ao aplicar `Int.floor_eq_iff.mpr` e
+`Int.ceil_eq_iff.mpr` às expressões racionais resultantes; o log completo,
+fontes de auditoria, pins, hashes e comandos estão em
+`evidence/rational-boxes/c5-trivial-node-kernel-20261107/`. C5 continua
+incompleta, sem ponte CSV–Lean ou inclusões O3. Este checkpoint local ainda
+precisa ser publicado em PR.
+
 ## Checkpoint mais recente — componente `log 2` certificado por blocos
 
 `SigmaC5Log2Certified.lean` prova as somas `Interval.logSum 512 (±1/3)` em

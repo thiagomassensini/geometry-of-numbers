@@ -1,5 +1,24 @@
 # C5 — checkpoints
 
+## 2026-11-07 — identidades exatas do nó `m = 1` (checkpoint parcial, PR pendente)
+
+- O log centrado em `1` é exatamente zero, para qualquer intervalo `logTwo`.
+  Assim, o argumento exponencial e o termo de Dirichlet `m = 1` reduzem ao
+  avaliador arredondado na entrada complexa zero.
+- A recorrência em zero mantém a potência exatamente nula e a soma de Taylor
+  exatamente unitária em todo estágio positivo; `c5RoundedExpSmall_zero`
+  mantém explícita a inflação racional do resto de Taylor.
+- Os módulos alterados compilaram com Lean 4.32.0 e
+  `warningAsError=true`. As auditorias dos sete teoremas retornaram somente
+  `propext`, `Classical.choice` e `Quot.sound`.
+- Evidência reproduzível, pins, hashes, fontes de auditoria e último erro em
+  `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
+- A tentativa de identificar os extremos exatos do estágio 1 falhou na
+  construção das desigualdades de `Int.floor`/`Int.ceil`; não existe igualdade
+  CSV–Lean provada por este passo. A saída `sorryAx` subsequente é inválida.
+- C5 permanece aberta: sem avaliação completa da fonte, sem inclusões O3 e
+  sem fechamento dos sinais. O checkpoint aguarda publicação em PR.
+
 ## 2026-11-07 — `log 2` em blocos certificado (C5 ainda incompleta)
 
 - `SigmaC5Log2Certified.lean` divide cada `Interval.logSum 512 (±1/3)` em 16

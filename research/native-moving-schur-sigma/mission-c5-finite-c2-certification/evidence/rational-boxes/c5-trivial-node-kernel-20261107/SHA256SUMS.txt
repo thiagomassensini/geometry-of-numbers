@@ -1,0 +1,14 @@
+3dce7446d653035352cf6b2b94e449aa71d0476c018e361e953731b05805b622  research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean
+390068b5823d290e80bd54ebc175546105c6bf7979f4aca4c7b9ba30014e9ec7  research/native-moving-schur-sigma/SigmaC5RoundedComplexExp.lean
+4a709886020654a50acc76a7e581f935a36182e776fa3397ba5a11ca12d11475  research/native-moving-schur-sigma/SigmaC5RationalNodeCenteredBoxes.lean
+a004361943343f0b75be7cf0538deea1d134857e2224925b475e1996ce57a5ec  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-trivial-node-kernel-20261107/SigmaC5CenteredDirichletM1Audit.lean
+62d4b9369f73edf596139a2c5f9cf6733d212358b17af2c46f1c67ba061f538d  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-trivial-node-kernel-20261107/SigmaC5CenteredLogOneAudit.lean
+1a49022947e17c00d92583cc0a8c190d51f5bd31509836bbb48ca3fcc4611ead  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-trivial-node-kernel-20261107/SigmaC5RoundedExpZeroAudit.lean
+cab092ca23e923c7165b601e23be659155b486956a8b7a8d30def3ba3bdf47a5  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-trivial-node-kernel-20261107/SigmaC5ZeroExpStage1Diagnostic5.failed.lean
+0dab464aa5aaed07f5fc3228a08d7e4e9e4a618f90355ecff39cbe357d4353e1  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-trivial-node-kernel-20261107/centered-dirichlet-m1-axiom-audit.log
+904dadd28c32e1cfed6d1b27f52458d2516b3febc34426c5de6f404e3dfbb46b  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-trivial-node-kernel-20261107/centered-dirichlet-m1-build.log
+08fcb908dd3d56516bf13fba3c8ee1d402484f6ff016ad19e622e1524e6009d2  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-trivial-node-kernel-20261107/precise-fastlog-zero-axiom-audit.log
+ce706d40b6f9b1b9add553f35b5b482d4812f773d13013fb4cd667e1d78c7ab5  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-trivial-node-kernel-20261107/precise-fastlog-zero-build.log
+f9fd9d61a0363da39bc4f8c4fb13d4d17ac7965f58f40924facd924435579f64  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-trivial-node-kernel-20261107/rounded-complex-exp-zero-axiom-audit.log
+ad5c4a9593bca661dd02fe48daf84708f9399310c632453f0951af10b81d95c0  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-trivial-node-kernel-20261107/rounded-complex-exp-zero-build.log
+9a9e1b0231821fea8c82d502506dc26dc3d77beea26955385b137b9894a3141c  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-trivial-node-kernel-20261107/stage1-export-equality-last-attempt.log

@@ -1,0 +1,6 @@
+import SigmaC5RoundedComplexExp
+
+set_option autoImplicit false
+
+#print axioms CarrySigmaObstruction.c5RoundedExpStateC_zero_succ
+#print axioms CarrySigmaObstruction.c5RoundedExpSmall_zero

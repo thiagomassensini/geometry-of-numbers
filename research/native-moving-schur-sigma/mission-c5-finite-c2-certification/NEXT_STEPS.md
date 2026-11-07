@@ -1,5 +1,29 @@
 # Próximos passos — C5
 
+## Prioridade imediata — publicar o checkpoint do nó `m = 1` (2026-11-07)
+
+O núcleo `m = 1` já está formalizado e compilado: o log centrado vira a caixa
+exata `0`, o argumento do termo de Dirichlet vira `0`, e a exponencial
+arredondada preserva a potência nula, a soma unitária e o resto de Taylor
+explícito. Os sete teoremas auditados usam somente axiomas padrão. A evidência,
+os pins e os comandos estão em
+`evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
+
+1. Publicar este checkpoint como parcial, preservando a tentativa malsucedida
+   de igualdade dos extremos de estágio 1. O erro concreto está na forma de
+   montar as provas de `Int.floor`/`Int.ceil`, registrado em
+   `stage1-export-equality-last-attempt.log`; `sorryAx` emitido após os erros
+   não é prova aceita.
+2. Resolver os limites inteiros que determinam as extremidades arredondadas
+   no estágio 1, compilar e auditar o próximo lema isolado.
+3. Retomar a ponte formal CSV–Lean e avaliar, em etapas, os demais termos da
+   caixa; depois compor Gamma, o fator de π e a fonte C2 original e provar as
+   inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
+
+O trabalho C1B/C2/C3 está integrado (PRs #155/#157/#159). Não reabrir uma
+migração geral para Lean 4.35, a lei distância × profundidade ou os novos
+cadernos nesta etapa. C5 e os sinais O3 continuam incompletos.
+
 **Estado atual:** a cobertura adaptativa dos 129 nós foi integrada pela PR
 #209, commit de prova `05dae531d4ec10c916c340f58255f35977a3abdd`, merge
 `386b654eabe4c942d6b0db46754120ab79b52fb5`. C2/C3 da missão de negatividade
