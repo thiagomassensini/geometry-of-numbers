@@ -1,12 +1,18 @@
 # C5 — validação
 
-## Validação recente — caixa `Γ(1/5)`
+## Validação recente — caixa `Γ(901/4000)`
 
-- Fonte: `SigmaC5GammaFirstNodeCertificate.lean`, SHA-256 `1147934df954be735242d97dca54346b19d45c6a1835a991b384557ece957ad8`.
-- Lean 4.32.0, script `compile_sigma_pade.sh`, `warningAsError=true`; saída `BUILD_EXIT=0` registrada em `evidence/rational-boxes/c5-gamma-first-node-20261107/build-attempt11.log`.
-- Auditoria das raízes de inclusão: `propext`, `Classical.choice`, `Quot.sound`; sem `sorryAx`, axiomas próprios ou `native_decide`.
-- A caixa composta contém `Complex.Gamma (1/5 : ℂ)`, raio adicional `10⁻⁹⁹`.
-- A PR #285 integrou o resultado no merge `832b201b6907c6682aa9657c3e4ff9da6dd40254`. A caixa não equivale à inclusão dos coeficientes C2; a fonte original e os sinais finais permanecem não certificados.
+- Fonte principal: `SigmaC5GammaSecondRealPointGammaCertificate.lean`, SHA-256 `931ca3014a0443fe40bd213c5f9f0dc2cae4a864b986b49a86f46e34cf005411`.
+- Os módulos Probe, Certificate, Combine e Gamma foram compilados em Lean 4.32.0 via `compile_sigma_pade.sh`; `warningAsError=true`, saída 0 em cada log.
+- Auditoria das raízes públicas: apenas `propext`, `Classical.choice`, `Quot.sound`; sem `sorryAx`, axiomas próprios ou `native_decide`.
+- A caixa composta contém `Complex.Gamma (901/4000 : ℂ)` e usa a inflação `10⁻⁹⁹`.
+- Validação local concluída; PR e integração ainda serão registrados. Evidência: `evidence/rational-boxes/c5-gamma-second-real-point-20261107/README.md`.
+
+## Histórico — caixa `Γ(1/5)` integrada pela PR #285
+
+- `CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains` contém `Complex.Gamma (1/5 : ℂ)`.
+- PR #285 integrou o commit `742dd764df81ee75bd487d1bf21e5a9afa5519c5`; merge `832b201b6907c6682aa9657c3e4ff9da6dd40254`.
+- Fonte, comando, hashes e logs: `evidence/rational-boxes/c5-gamma-first-node-20261107/README.md`.
 
 ## Histórico — checkpoint do núcleo Gamma racional por blocos (PR #282)
 

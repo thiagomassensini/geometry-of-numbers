@@ -1,13 +1,18 @@
 # C5 — estado da sessão
 
-## Estado atual — composição Gamma no primeiro ponto (2026-11-07)
+## Estado atual — segunda caixa Gamma em ponto real validada localmente (2026-11-07)
 
-- Missão C5 continua ativa; C2, C3 e C4 estão concluídas e não devem ser refeitas.
-- PR #285 integrou o commit de prova `742dd764df81ee75bd487d1bf21e5a9afa5519c5`; merge atual da `main`: `832b201b6907c6682aa9657c3e4ff9da6dd40254`.
-- Provado e compilado: `CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains` contém `Complex.Gamma (1/5 : ℂ)`. A inclusão compõe a potência `240^z`, o núcleo racional de 1024 termos em blocos certificados e o erro `gamma_finite_1024_240_error` com inflação final `10⁻⁹⁹`.
-- Build final: Lean 4.32.0, warnings como erros, `BUILD_EXIT=0`; auditoria das duas raízes: só `propext`, `Classical.choice`, `Quot.sound`, sem `sorryAx`, axioma próprio ou `native_decide`. Logs e fonte auditada estão em `evidence/rational-boxes/c5-gamma-first-node-20261107/README.md`.
-- O checkpoint está publicado e integrado na `main`. C5 segue incompleta; O3 permanece condicionada a `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
-- Próximo: ampliar a certificação Gamma para `901/4000`, depois à malha complexa usada pela fonte C2.
+- Missão C5 continua ativa; C2, C3 e C4 já estão concluídas. Não reiniciar fases anteriores nem a migração geral para Lean 4.35.
+- A prova `CarrySigmaObstruction.c5GammaSecondRealPointBox_contains` compila e contém `Complex.Gamma (901/4000 : ℂ)`. O certificado fecha 16 pisos de blocos, recompõe o núcleo racional, inclui `240^(901/4000)` com `dirichletTermBox2` e acrescenta o erro formal com raio `10⁻⁹⁹`.
+- Os quatro módulos passaram em Lean 4.32.0 com warnings como erros. Auditoria das raízes: somente `propext`, `Classical.choice`, `Quot.sound`, sem `sorryAx`, axiomas próprios ou `native_decide`. Logs, fontes, pins, hashes e comando estão em `evidence/rational-boxes/c5-gamma-second-real-point-20261107/README.md`.
+- Esse é um checkpoint validado localmente; a publicação no GitHub será registrada após a PR e o merge. A caixa cobre apenas um segundo ponto real; não fecha os nós complexos nem os coeficientes da fonte.
+- Próximo passo: estender a inclusão Gamma aos pontos complexos efetivamente usados pela fonte C2, mantendo a composição com os fatores originais de zeta, fator nativo e quadraturas.
+
+## Histórico — caixa Gamma em `1/5` integrada pela PR #285
+
+- `CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains` contém `Complex.Gamma (1/5 : ℂ)`, compondo a potência, núcleo racional em 16 blocos e erro `gamma_finite_1024_240_error`.
+- PR #285 integrou o commit `742dd764df81ee75bd487d1bf21e5a9afa5519c5`; merge `832b201b6907c6682aa9657c3e4ff9da6dd40254`.
+- Evidência: `evidence/rational-boxes/c5-gamma-first-node-20261107/README.md`.
 
 ## Histórico — checkpoint do núcleo Gamma racional por blocos (PR #282)
 

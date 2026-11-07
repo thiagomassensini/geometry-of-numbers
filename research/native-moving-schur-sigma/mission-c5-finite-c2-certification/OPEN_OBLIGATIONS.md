@@ -1,24 +1,21 @@
 # C5 — obrigações abertas
 
-## Estado atual — primeira Gamma em ponto real provada
+## Estado atual — dois pontos reais de Gamma provados
 
-`Γ(1/5)` tem uma caixa Lean formal via `c5GammaCoreFirstNodeBox_contains`,
-integrada pela PR #285 no merge `832b201b6907c6682aa9657c3e4ff9da6dd40254`.
-Build, auditoria, hashes e tentativas estão em
-`evidence/rational-boxes/c5-gamma-first-node-20261107/`. A prova cobre apenas
-um ponto.
+As caixas formais de `Γ(1/5)` e `Γ(901/4000)` foram provadas; a segunda está validada localmente neste checkpoint. Evidência e comando: `evidence/rational-boxes/c5-gamma-second-real-point-20261107/README.md`.
 
 Continuam abertas, em ordem:
 
-1. certificar Gamma no ponto `901/4000` e então nas coordenadas complexas da
-   malha C5;
-2. compor caixas de Gamma e zeta com os fatores originais da fonte completada e
-   a quadratura de coeficientes;
+1. certificar Gamma nos pontos complexos da malha realmente usados pela fonte C5;
+2. compor Gamma e zeta com os fatores originais da fonte completada e as quadraturas;
 3. provar as inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`;
 4. fechar os sinais de `sigmaPadeD` original nos dois deslocamentos.
 
-Os certificados condicionais de O3 continuam corretos sob suas hipóteses, mas
-não são certificados incondicionais da fonte. C5 permanece incompleta.
+Os certificados condicionais de O3 continuam corretos sob suas hipóteses, mas não são certificados incondicionais da fonte. C5 permanece incompleta.
+
+## Histórico — primeira caixa real `Γ(1/5)` integrada
+
+A prova `c5GammaCoreFirstNodeBox_contains` entrou pela PR #285, merge `832b201b6907c6682aa9657c3e4ff9da6dd40254`. Evidência: `evidence/rational-boxes/c5-gamma-first-node-20261107/README.md`.
 
 ## Histórico — checkpoint do núcleo Gamma racional por blocos (PR #282)
 

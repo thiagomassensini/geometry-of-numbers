@@ -1,13 +1,16 @@
 # C5 — checkpoints
 
-## 2026-11-07 — primeira caixa da Gamma completa
+## 2026-11-07 — segunda caixa real de Gamma validada localmente
 
-- `c5GammaCoreFirstNodeBox_contains` compila em Lean 4.32 e contém `Γ(1/5)`.
-- A prova compõe `240^(1/5)`, núcleo racional de 1024 termos em 16 blocos e o erro formal da aproximação finita, com inflação `10⁻⁹⁹`.
-- `build-attempt11.log` termina sem erro; duas raízes `#print axioms` exibem somente `propext`, `Classical.choice`, `Quot.sound`. Sem `sorryAx` ou `native_decide`.
-- Fonte, log final, tentativas e comando: `evidence/rational-boxes/c5-gamma-first-node-20261107/README.md`.
-- PR #285 integrou o commit de prova `742dd764df81ee75bd487d1bf21e5a9afa5519c5`; merge na `main` `832b201b6907c6682aa9657c3e4ff9da6dd40254`.
-- Escopo limitado a um ponto real. Coeficientes C2, caixas da fonte e sinais finais continuam abertos.
+- `CarrySigmaObstruction.c5GammaSecondRealPointBox_contains` contém `Γ(901/4000)`.
+- O certificado reúne 16 blocos de 64 termos para o núcleo racional, a inclusão da potência `240^(901/4000)` e `gamma_finite_1024_240_error`, com inflação `10⁻⁹⁹`.
+- Probe, certificado dos pisos, combinação da caixa e composição Gamma compilaram em Lean 4.32.0 com warnings como erros. As raízes auditadas usam só `propext`, `Classical.choice`, `Quot.sound`; sem `sorryAx` ou `native_decide`.
+- Fontes, logs, hashes, pins e comando: `evidence/rational-boxes/c5-gamma-second-real-point-20261107/README.md`. Validação local concluída; publicação pendente da PR.
+- O resultado cobre um segundo ponto real; os pontos complexos da fonte, as caixas C2 e os sinais finais continuam abertos.
+
+## Checkpoint anterior — primeira caixa Gamma `Γ(1/5)` (PR #285 integrada)
+
+Merge `832b201b6907c6682aa9657c3e4ff9da6dd40254`; evidência em `evidence/rational-boxes/c5-gamma-first-node-20261107/README.md`.
 
 ## Histórico — checkpoint do núcleo Gamma racional por blocos (PR #282)
 
