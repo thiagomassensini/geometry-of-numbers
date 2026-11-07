@@ -1,0 +1,4 @@
+'c5Interval_exact_neg_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5M2ExpArgExpr_eq_simple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5M2TaylorArgExpr_eq_export' depends on axioms: [propext, Classical.choice, Quot.sound]
+ELAPSED 0:18.57 MAX_RSS 6647656 KiB

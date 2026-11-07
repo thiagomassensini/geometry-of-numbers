@@ -1,5 +1,31 @@
 # C5 — estado da sessão
 
+## Atualização — piloto C5 do nó m=2, recorrência Taylor até n=2 (2026-11-07)
+
+No branch local `codex/c5-m2-stage-transition-20261107`, baseado na `main`
+`e96caa7b1850a0d2775c5f801ccfe598e4a2ee0d` (PR #242), foi compilada e auditada
+uma prova para o nó `(a,j)=(2/5,0)`. O log `log 2` exportado e arredondado, o
+argumento após quatro metades e os estados de Taylor `n=0,1,2` são tratados em
+módulos Lean separados. O teorema novo é
+`c5RoundedExpStateC_stage2_correct_refined`.
+
+O build Lean 4.32.0 com `warningAsError=true` passou; as quatro declarações
+auditadas têm apenas `propext`, `Classical.choice` e `Quot.sound`. Não há
+`sorryAx` no build aceito. Evidências, hashes, fontes, o vetor exato exportado,
+os logs de falha e o comando de retomada estão em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage2-20261107/README.md`.
+Neste registro, o checkpoint ainda está local e aguarda publicação por PR.
+
+Escopo: a prova fecha somente o estado Taylor `n=2`. Não fecha os 192 termos,
+a quadratura final do avaliador, a caixa completa do nó `m=2`, a ponte das 516
+caixas CSV, as inclusões `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes` ou os
+sinais finais C5. A tentativa monolítica anterior falhou ao reduzir em bloco
+os quatro cantos do produto complexo; ela e a recuperação inválida `sorryAx`
+estão preservadas como tentativas, não como validação. Próximo passo local:
+certificar `n=3` com uma regra para sinais mistos e avaliar o custo de continuar
+por estágios.
+
+
 ## Atualização — recorrência genérica provada e integrada pela PR #239 (2026-11-07)
 
 `SigmaC5ZeroExpGenericRecurrence.lean` prova uma fórmula fechada para

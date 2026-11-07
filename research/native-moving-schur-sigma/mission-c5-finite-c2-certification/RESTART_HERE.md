@@ -1,6 +1,29 @@
 # Retomar primeiro — missão C5
 
-## Retomada mais recente — recorrência genérica integrada pela PR #239
+## Retomada mais recente — piloto do nó m=2 até o estado n=2
+
+```text
+MISSION: C5 — certificar as janelas negativas da fonte C2 original.
+CURRENT BASE: main e96caa7b1850a0d2775c5f801ccfe598e4a2ee0d (PR #242).
+LOCAL BRANCH: codex/c5-m2-stage-transition-20261107 (checkpoint ainda não publicado).
+LAST VERIFIED THEOREM: c5RoundedExpStateC_stage2_correct_refined.
+LAST COMPILED FILE: SigmaC5M2TaylorStateStage2Refined.lean (Lean 4.32.0, warnings como erros).
+AXIOM AUDIT: propext, Classical.choice, Quot.sound nas quatro declarações auditadas; sem sorryAx.
+SCOPE: nó (a,j)=(2/5,0), estados Taylor n=0,1,2. Não é a caixa completa m=2 nem a inclusão da fonte.
+OPEN: estado n=3; depois n=192 e composição da avaliação completa; ponte das 516 caixas e inclusões C5.
+EVIDENCE: evidence/rational-boxes/c5-m2-dirichlet-term-stage2-20261107/README.md.
+PINS: Geometry de referência bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3; Carry 045369f6dedcb2e75e9aefed1d12c9f73b9a2532; Lean 4.32.0.
+DO NOT REPEAT: C1B/C2/C3/C4; migração geral para Lean 4.35; prova monolítica que expande os 192 passos de uma vez.
+```
+
+O passo imediato é estender a prova em um passo, usando os registros e comandos
+em `evidence/rational-boxes/c5-m2-dirichlet-term-stage2-20261107/README.md`.
+A exportação de estados `n=0…192` é saída de `#eval`, não uma prova. O arquivo que contém a recuperação `sorryAx` está arquivado em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage2-20261107/attempts/` e não
+deve ser tratado como compilação válida.
+
+
+## Retomada anterior — recorrência genérica integrada pela PR #239
 
 ```text
 MISSION: C5 — certificar as janelas negativas da fonte C2 original.
