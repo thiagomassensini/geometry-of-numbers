@@ -1,0 +1,3 @@
+'c5GammaComplexNodeChunk64RealFloor_0' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5GammaComplexNodeChunk64ImagFloor_0' depends on axioms: [propext, Classical.choice, Quot.sound]
+BUILD_EXIT=0

@@ -1,0 +1,3 @@
+'CarrySigmaObstruction.c5GammaComplexNodePowerArg_normBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5GammaComplexNodePowerBox_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5GammaComplexNodeBox_contains' depends on axioms: [propext, Classical.choice, Quot.sound]

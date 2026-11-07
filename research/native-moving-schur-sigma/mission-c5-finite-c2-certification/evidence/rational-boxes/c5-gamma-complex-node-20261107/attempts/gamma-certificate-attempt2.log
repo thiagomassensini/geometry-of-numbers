@@ -1,0 +1,22 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaComplexNodeGammaCertificate.lean:52:4: error: invalid 'calc' step, left-hand side is
+  max |((Interval.exact (901 / 4000)).mul (Interval.logQ 384 8 240)).lo|
+      |((Interval.exact (901 / 4000)).mul (Interval.logQ 384 8 240)).hi| +
+    max |((Interval.exact (3 / 20)).mul (Interval.logQ 384 8 240)).lo|
+      |((Interval.exact (3 / 20)).mul (Interval.logQ 384 8 240)).hi| : ℚ
+but is expected to be
+  max |({ lo := 901 / 4000, hi := 901 / 4000, le := ⋯ }.mul (Interval.logQ 384 8 240)).lo|
+      |({ lo := 901 / 4000, hi := 901 / 4000, le := ⋯ }.mul (Interval.logQ 384 8 240)).hi| +
+    max |0 + ({ lo := 3 / 20, hi := 3 / 20, le := ⋯ }.mul (Interval.logQ 384 8 240)).lo|
+      |0 + ({ lo := 3 / 20, hi := 3 / 20, le := ⋯ }.mul (Interval.logQ 384 8 240)).hi| : ℚ
+'CarrySigmaObstruction.c5GammaComplexNodePowerArg_normBound' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5GammaComplexNodePowerBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5GammaComplexNodeBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
