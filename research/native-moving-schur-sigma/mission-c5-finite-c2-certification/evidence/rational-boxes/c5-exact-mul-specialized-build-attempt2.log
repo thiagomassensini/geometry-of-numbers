@@ -1,0 +1,11 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:27:4: error: 'push_cast' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:32:4: error: 'push_cast' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+'CarrySigmaObstruction.c5RatComplexPowInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatPochhammerInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionTermInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionSumInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatScaleInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]

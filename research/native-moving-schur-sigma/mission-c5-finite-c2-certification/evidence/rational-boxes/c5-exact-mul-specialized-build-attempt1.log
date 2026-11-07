@@ -1,0 +1,81 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:26:4: error: 'change' tactic failed, pattern
+  ↑(x.lo * c) ≤ t * ↑c ∧ t * ↑c ≤ ↑(x.hi * c)
+is not definitionally equal to target
+  (c5RatIntervalMulExact x c).contains (t * ↑c)
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:32:4: error: 'change' tactic failed, pattern
+  ↑(x.hi * c) ≤ t * ↑c ∧ t * ↑c ≤ ↑(x.lo * c)
+is not definitionally equal to target
+  (c5RatIntervalMulExact x c).contains (t * ↑c)
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:48:14: error: don't know how to synthesize implicit argument `b`
+  @Interval.contains_sub (c5RatIntervalMulExact x.re ?m.14) (c5RatIntervalMulExact x.im ?m.19) (w.re * ↑?m.14)
+    (w.im * ↑?m.19) (c5RatIntervalMulExact_contains hx.left) (c5RatIntervalMulExact_contains hx.right)
+context:
+x : ComplexInterval
+w : ℂ
+a b : ℚ
+hx : x.contains w
+⊢ ℝ
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:48:14: error: don't know how to synthesize implicit argument `a`
+  @Interval.contains_sub (c5RatIntervalMulExact x.re ?m.14) (c5RatIntervalMulExact x.im ?m.19) (w.re * ↑?m.14)
+    (w.im * ↑?m.19) (c5RatIntervalMulExact_contains hx.left) (c5RatIntervalMulExact_contains hx.right)
+context:
+x : ComplexInterval
+w : ℂ
+a b : ℚ
+hx : x.contains w
+⊢ ℝ
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:48:14: error: don't know how to synthesize implicit argument `y`
+  @Interval.contains_sub (c5RatIntervalMulExact x.re ?m.14) (c5RatIntervalMulExact x.im ?m.19) (w.re * ↑?m.14)
+    (w.im * ↑?m.19) (c5RatIntervalMulExact_contains hx.left) (c5RatIntervalMulExact_contains hx.right)
+context:
+x : ComplexInterval
+w : ℂ
+a b : ℚ
+hx : x.contains w
+⊢ ZetaLean.Interval
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:48:14: error: don't know how to synthesize implicit argument `x`
+  @Interval.contains_sub (c5RatIntervalMulExact x.re ?m.14) (c5RatIntervalMulExact x.im ?m.19) (w.re * ↑?m.14)
+    (w.im * ↑?m.19) (c5RatIntervalMulExact_contains hx.left) (c5RatIntervalMulExact_contains hx.right)
+context:
+x : ComplexInterval
+w : ℂ
+a b : ℚ
+hx : x.contains w
+⊢ ZetaLean.Interval
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:50:5: error: don't know how to synthesize implicit argument `c`
+  @c5RatIntervalMulExact_contains x.im ?m.19 w.im hx.right
+context:
+x : ComplexInterval
+w : ℂ
+a b : ℚ
+hx : x.contains w
+⊢ ℚ
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:49:5: error: don't know how to synthesize implicit argument `c`
+  @c5RatIntervalMulExact_contains x.re ?m.14 w.re hx.left
+context:
+x : ComplexInterval
+w : ℂ
+a b : ℚ
+hx : x.contains w
+⊢ ℚ
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:48:7: error: failed to infer `have` declaration type
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:47:42: error: unsolved goals
+x : ComplexInterval
+w : ℂ
+a b : ℚ
+hx : x.contains w
+⊢ (c5RatComplexMulExact x a b).contains (w * ratComplexToComplex (a, b))
+'CarrySigmaObstruction.c5RatComplexPowInterval_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5RatPochhammerInterval_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionTermInterval_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionSumInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatScaleInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]

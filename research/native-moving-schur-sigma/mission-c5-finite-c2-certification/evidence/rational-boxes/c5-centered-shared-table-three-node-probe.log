@@ -1,0 +1,208 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5CenteredSharedTableProbe.lean:8:4: error: Type mismatch
+  c5RationalZetaCenteredNodeBoxWithTable 512 192 896 (3 / 5) (j / 100000) bernTable
+has type
+  ZetaLean.ComplexInterval
+but is expected to have type
+  ComplexInterval
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5CenteredSharedTableProbe.lean:12:17: error(lean.invalidField): Invalid field notation: Type of
+  box
+is not known; cannot resolve field `re`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `AEMeasurable.re`
+  • `Complex.re`
+  • `Measurable.re`
+  • `QuadraticAlgebra.re`
+  • `QuaternionAlgebra.re`
+  • `RCLike.re`
+  • `TendstoUniformly.re`
+  • `TendstoUniformlyOn.re`
+  • `UpperHalfPlane.re`
+  • `Zsqrtd.re`
+  • `Complex.UnitClosedDisc.re`
+  • `Complex.UnitDisc.re`
+  • `MeasureTheory.AEStronglyMeasurable.re`
+  • `MeasureTheory.ComplexMeasure.re`
+  • `MeasureTheory.Integrable.re`
+  • `MeasureTheory.MemLp.re`
+  • `ZetaLean.ComplexInterval.re`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5CenteredSharedTableProbe.lean:12:29: error(lean.invalidField): Invalid field notation: Type of
+  box
+is not known; cannot resolve field `re`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `AEMeasurable.re`
+  • `Complex.re`
+  • `Measurable.re`
+  • `QuadraticAlgebra.re`
+  • `QuaternionAlgebra.re`
+  • `RCLike.re`
+  • `TendstoUniformly.re`
+  • `TendstoUniformlyOn.re`
+  • `UpperHalfPlane.re`
+  • `Zsqrtd.re`
+  • `Complex.UnitClosedDisc.re`
+  • `Complex.UnitDisc.re`
+  • `MeasureTheory.AEStronglyMeasurable.re`
+  • `MeasureTheory.ComplexMeasure.re`
+  • `MeasureTheory.Integrable.re`
+  • `MeasureTheory.MemLp.re`
+  • `ZetaLean.ComplexInterval.re`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5CenteredSharedTableProbe.lean:13:17: error(lean.invalidField): Invalid field notation: Type of
+  box
+is not known; cannot resolve field `im`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `AEMeasurable.im`
+  • `Complex.im`
+  • `Measurable.im`
+  • `QuadraticAlgebra.im`
+  • `Quaternion.im`
+  • `QuaternionAlgebra.im`
+  • `RCLike.im`
+  • `TendstoUniformly.im`
+  • `TendstoUniformlyOn.im`
+  • `UpperHalfPlane.im`
+  • `Zsqrtd.im`
+  • `CategoryTheory.Abelian.im`
+  • `CategoryTheory.Limits.im`
+  • `CategoryTheory.Subgroupoid.im`
+  • `Complex.UnitClosedDisc.im`
+  • `Complex.UnitDisc.im`
+  • `MeasureTheory.AEStronglyMeasurable.im`
+  • `MeasureTheory.ComplexMeasure.im`
+  • `MeasureTheory.Integrable.im`
+  • `MeasureTheory.MemLp.im`
+  • `ZetaLean.ComplexInterval.im`
+  • `CategoryTheory.Subgroupoid.Map.Arrows.im`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5CenteredSharedTableProbe.lean:13:29: error(lean.invalidField): Invalid field notation: Type of
+  box
+is not known; cannot resolve field `im`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `AEMeasurable.im`
+  • `Complex.im`
+  • `Measurable.im`
+  • `QuadraticAlgebra.im`
+  • `Quaternion.im`
+  • `QuaternionAlgebra.im`
+  • `RCLike.im`
+  • `TendstoUniformly.im`
+  • `TendstoUniformlyOn.im`
+  • `UpperHalfPlane.im`
+  • `Zsqrtd.im`
+  • `CategoryTheory.Abelian.im`
+  • `CategoryTheory.Limits.im`
+  • `CategoryTheory.Subgroupoid.im`
+  • `Complex.UnitClosedDisc.im`
+  • `Complex.UnitDisc.im`
+  • `MeasureTheory.AEStronglyMeasurable.im`
+  • `MeasureTheory.ComplexMeasure.im`
+  • `MeasureTheory.Integrable.im`
+  • `MeasureTheory.MemLp.im`
+  • `ZetaLean.ComplexInterval.im`
+  • `CategoryTheory.Subgroupoid.Map.Arrows.im`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5CenteredSharedTableProbe.lean:14:4: error(lean.invalidField): Invalid field notation: Type of
+  reWidth
+is not known; cannot resolve field `num`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `FractionalIdeal.num`
+  • `HomogeneousLocalization.num`
+  • `IsFractionRing.num`
+  • `Matrix.num`
+  • `NNRat.num`
+  • `Rat.num`
+  • `RatFunc.num`
+  • `UpperHalfPlane.num`
+  • `Filter.Tendsto.num`
+  • `HomogeneousLocalization.NumDenSameDeg.num`
+  • `Int.Nonneg.num`
+  • `Lean.Json.num`
+  • `Lean.Name.num`
+  • `Lean.NamePart.num`
+  • `Int.Linear.Expr.num`
+  • `Int.Linear.Poly.num`
+  • `Lean.Doc.DocArg.num`
+  • `Lean.IR.LitVal.num`
+  • `Lean.Json.Parser.num`
+  • `Lean.JsonRpc.RequestID.num`
+  • `Lean.Parser.Level.num`
+  • `Lean.Parser.Term.num`
+  • `Nat.Linear.Expr.num`
+  • `Nat.SOM.Expr.num`
+  • `Lean.Grind.CommRing.Expr.num`
+  • `Lean.Grind.CommRing.Poly.num`
+  • `Lean.Level.PP.Result.num`
+  • `Lean.Meta.Grind.CaseTrace.num`
+  • `Lean.Meta.Sym.Offset.num`
+  • `Lean.Grind.CommRing.Poly.NonnegCoeffs.num`
+  • `Lean.Meta.Grind.EMatch.State.num`
+  • `Lean.Meta.Grind.Split.State.num`
+  • `Lean.Grind.CommRing.Poly.NonnegCoeffs.below.num`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5CenteredSharedTableProbe.lean:14:29: error(lean.invalidField): Invalid field notation: Type of
+  reWidth
+is not known; cannot resolve field `den`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `FractionalIdeal.den`
+  • `HomogeneousLocalization.den`
+  • `IsFractionRing.den`
+  • `Matrix.den`
+  • `NNRat.den`
+  • `Rat.den`
+  • `Filter.Tendsto.den`
+  • `HomogeneousLocalization.NumDenSameDeg.den`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5CenteredSharedTableProbe.lean:15:5: error(lean.invalidField): Invalid field notation: Type of
+  imWidth
+is not known; cannot resolve field `num`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `FractionalIdeal.num`
+  • `HomogeneousLocalization.num`
+  • `IsFractionRing.num`
+  • `Matrix.num`
+  • `NNRat.num`
+  • `Rat.num`
+  • `RatFunc.num`
+  • `UpperHalfPlane.num`
+  • `Filter.Tendsto.num`
+  • `HomogeneousLocalization.NumDenSameDeg.num`
+  • `Int.Nonneg.num`
+  • `Lean.Json.num`
+  • `Lean.Name.num`
+  • `Lean.NamePart.num`
+  • `Int.Linear.Expr.num`
+  • `Int.Linear.Poly.num`
+  • `Lean.Doc.DocArg.num`
+  • `Lean.IR.LitVal.num`
+  • `Lean.Json.Parser.num`
+  • `Lean.JsonRpc.RequestID.num`
+  • `Lean.Parser.Level.num`
+  • `Lean.Parser.Term.num`
+  • `Nat.Linear.Expr.num`
+  • `Nat.SOM.Expr.num`
+  • `Lean.Grind.CommRing.Expr.num`
+  • `Lean.Grind.CommRing.Poly.num`
+  • `Lean.Level.PP.Result.num`
+  • `Lean.Meta.Grind.CaseTrace.num`
+  • `Lean.Meta.Sym.Offset.num`
+  • `Lean.Grind.CommRing.Poly.NonnegCoeffs.num`
+  • `Lean.Meta.Grind.EMatch.State.num`
+  • `Lean.Meta.Grind.Split.State.num`
+  • `Lean.Grind.CommRing.Poly.NonnegCoeffs.below.num`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5CenteredSharedTableProbe.lean:15:30: error(lean.invalidField): Invalid field notation: Type of
+  imWidth
+is not known; cannot resolve field `den`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `FractionalIdeal.den`
+  • `HomogeneousLocalization.den`
+  • `IsFractionRing.den`
+  • `Matrix.den`
+  • `NNRat.den`
+  • `Rat.den`
+  • `Filter.Tendsto.den`
+  • `HomogeneousLocalization.NumDenSameDeg.den`
+Command exited with non-zero status 1
+ELAPSED 0:18.34 CPU 100% MAX_RSS 6538248 KiB

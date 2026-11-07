@@ -1,0 +1,58 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedComplexExp.lean:18:6: error: Type mismatch: After simplification, term
+  contains_exact 1 0
+ has type
+  (exact 1 0).contains { re := 1, im := 0 }
+but is expected to have type
+  (exact 1 0).contains 1
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedComplexExp.lean:40:20: error: don't know how to synthesize implicit argument `x`
+  @contains_smulQ (1 / ↑n.factorial) (c5RoundedPowI ?m.59 x n) (z ^ n) (contains_c5RoundedPowI hx n)
+context:
+p : ℕ
+x : ComplexInterval
+z : ℂ
+hx : x.contains z
+n : ℕ
+⊢ ComplexInterval
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedComplexExp.lean:41:32: error: don't know how to synthesize implicit argument `p`
+  @contains_c5RoundedPowI ?m.59 x z hx n
+context:
+p : ℕ
+x : ComplexInterval
+z : ℂ
+hx : x.contains z
+n : ℕ
+⊢ ℕ
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedComplexExp.lean:40:11: error: failed to infer `have` declaration type
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedComplexExp.lean:38:13: error: unsolved goals
+p : ℕ
+x : ComplexInterval
+z : ℂ
+hx : x.contains z
+n : ℕ
+⊢ (c5RoundedExpSumC p x (n + 1)).contains (∑ x ∈ Finset.range n, z ^ x / ↑x.factorial + z ^ n / ↑n.factorial)
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedComplexExp.lean:66:4: error: Type mismatch: After simplification, term
+  hmul
+ has type
+  ‖z‖ ^ n * ↑((↑n + 1) / ↑(n.factorial * n)) ≤ ↑((↑n + 1) / ↑(n.factorial * n))
+but is expected to have type
+  ‖z‖ ^ n * ((↑n + 1) / ↑(n.factorial * n)) ≤ (↑n + 1) / ↑(n.factorial * n)
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedComplexExp.lean:71:14: error: Application type mismatch: The argument
+  hexp
+has type
+  ‖Complex.exp z - ∑ m ∈ Finset.range n, z ^ m / ↑m.factorial‖ ≤ ‖z‖ ^ n * (↑n.succ * (↑n.factorial * ↑n)⁻¹)
+but is expected to have type
+  ‖Complex.exp z - ∑ i ∈ Finset.range n, z ^ i / ↑i.factorial‖ ≤ ‖z‖ ^ n * ((↑n + 1) / ↑(n.factorial * n))
+in the application
+  hboundAux hexp
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedComplexExp.lean:72:49: error: Application type mismatch: The argument
+  hbound
+has type
+  ‖Complex.exp z - ∑ i ∈ Finset.range n, z ^ i / ↑i.factorial‖ ≤ (↑n + 1) / ↑(n.factorial * n)
+but is expected to have type
+  ‖Complex.exp z - ∑ i ∈ Finset.range n, z ^ i / ↑i.factorial‖ ≤ ↑((↑n + 1) / (↑n.factorial * ↑n))
+in the application
+  contains_inflate hTaylor hbound
+'CarrySigmaObstruction.contains_c5RoundedPowI' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.contains_c5RoundedExpSumC' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.contains_c5RoundedExpSmall' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.contains_c5RoundedExpC' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

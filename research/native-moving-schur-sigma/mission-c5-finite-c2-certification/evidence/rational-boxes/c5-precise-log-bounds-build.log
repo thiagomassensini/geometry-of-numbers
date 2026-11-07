@@ -1,0 +1,32 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:106:48: error: unsolved goals
+n : ℕ
+q : ℚ
+hq : |q| ≤ 1 / 3
+hden : 0 < 1 - |q|
+hpow : |q| ^ (n + 1) ≤ (1 / 3) ^ (n + 1)
+hpow' : (1 / 3) ^ n ≤ 1
+⊢ 0 ≤ ?m.251
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:126:48: error: unsolved goals
+n : ℕ
+q : ℚ
+hq : |q| ≤ 1 / 2
+hden : 0 < 1 - |q|
+hpow : |q| ^ (n + 1) ≤ (1 / 2) ^ (n + 1)
+hpow' : (1 / 2) ^ n ≤ 1
+⊢ 0 ≤ ?m.244
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:194:18: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:196:15: error: (deterministic) timeout at `«synthesize pending MVars»`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:167:0: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean:205:8: error: (kernel) unknown constant '_private.SigmaC5RationalNodePreciseLogBounds.0.CarrySigmaObstruction.c5_log1_half_endpoint_bound'

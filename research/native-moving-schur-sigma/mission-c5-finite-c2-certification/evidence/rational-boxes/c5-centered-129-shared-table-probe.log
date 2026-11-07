@@ -1,0 +1,4 @@
+Command terminated by signal 2
+ELAPSED 11:01.07 CPU 99% MAX_RSS 6539792 KiB
+
+PROBE STATUS: interrupted after 11:01.07 elapsed; 99% CPU; peak RSS 6539792 KiB; aggregate width sum had not been printed.

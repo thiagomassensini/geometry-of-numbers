@@ -1,0 +1,10 @@
+'CarrySigmaObstruction.c5RationalZetaCenteredHeadBox_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5RationalZetaCenteredBasePowerBox_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5RationalZetaCenteredNodeBox_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BUILD_EXIT=0

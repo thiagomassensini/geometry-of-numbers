@@ -1,0 +1,3 @@
+'CarrySigmaObstruction.c5CenteredLogQCoarsenedAbsBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5CenteredDirichletTermBoxNormBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5CenteredDirichletTermBoxContains' depends on axioms: [propext, Classical.choice, Quot.sound]

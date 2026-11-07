@@ -1,0 +1,33 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RoundedRationalScale.lean:242:43: error: unsolved goals
+p : ℕ
+a b : ℚ
+N j : ℕ
+ih :
+  (c5RatCorrectionStateInterval p a b N j).1.contains (ratComplexToComplex (c5RatPochhammer a b (2 * j + 1))) ∧
+    (c5RatCorrectionStateInterval p a b N j).2.1.contains ↑((1 / ↑N) ^ (2 * j + 1)) ∧
+      (c5RatCorrectionStateInterval p a b N j).2.2.contains (ratComplexToComplex (c5RatCorrectionSum a b j N))
+k : ℕ := 2 * j + 1
+htermMul₁ :
+  (coarsen p (c5RatComplexMulExact (c5RatCorrectionStateInterval p a b N j).1 (c5RatBernoulliCoefficient j) 0)).contains
+    (ratComplexToComplex (c5RatPochhammer a b (2 * j + 1)) * ratComplexToComplex (c5RatBernoulliCoefficient j, 0))
+htermMul₂ :
+  (coarsen p
+        (c5RatComplexMulInterval
+          (coarsen p (c5RatComplexMulExact (c5RatCorrectionStateInterval p a b N j).1 (c5RatBernoulliCoefficient j) 0))
+          (c5RatCorrectionStateInterval p a b N j).2.1)).contains
+    (ratComplexToComplex (c5RatPochhammer a b (2 * j + 1)) * ratComplexToComplex (c5RatBernoulliCoefficient j, 0) *
+      ↑↑((1 / ↑N) ^ (2 * j + 1)))
+htermCast :
+  ratComplexToComplex (c5RatCorrectionTerm a b N j) =
+    ratComplexToComplex (c5RatBernoulliCoefficient j, 0) * ratComplexToComplex (c5RatPochhammer a b k) *
+      ratComplexToComplex (c5RatComplexPow (1 / ↑N, 0) k)
+⊢ ratComplexToComplex (c5RatPochhammer a b k) * ratComplexToComplex (c5RatBernoulliCoefficient j, 0) * ↑(1 / ↑N) ^ k =
+    ratComplexToComplex (c5RatPochhammer a b k) * ratComplexToComplex (c5RatBernoulliCoefficient j, 0) * (1 / ↑↑N) ^ k
+'CarrySigmaObstruction.c5RatComplexPowInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatPochhammerInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionTermInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionSumInterval_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5RatScaleInterval_contains' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

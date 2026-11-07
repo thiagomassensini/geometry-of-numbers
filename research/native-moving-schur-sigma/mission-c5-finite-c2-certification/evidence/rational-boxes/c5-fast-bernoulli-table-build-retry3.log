@@ -1,0 +1,10 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5FastBernoulliTable.lean:62:10: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  c ≥ 1
+  b - c ≥ 1
+  a ≥ 0
+  a + c ≥ 0
+where
+ a := ↑k
+ b := Int.subNatNat n k
+ c := ↑(n - k)

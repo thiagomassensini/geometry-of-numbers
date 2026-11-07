@@ -3,13 +3,26 @@
 **Estado atual:** a cobertura adaptativa dos 129 nós foi integrada pela PR
 #209, commit de prova `05dae531d4ec10c916c340f58255f35977a3abdd`, merge
 `386b654eabe4c942d6b0db46754120ab79b52fb5`. C2/C3 da missão de negatividade
-estão concluídas; a prioridade ativa é a certificação finita C5.
+estão concluídas: C1B pela PR #155 (merge
+`0586e238441096ecd2248e3f14bdac3a832af427`), C2 pela PR #157 (merge
+`f4f5cf5ecc60ea3747cbaf21389fab52832d3949`) e C3 pela PR #159 (merge
+`b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`). A prioridade ativa é a
+certificação finita C5.
 
-1. Escolher `nExp`/`p` para a precisão O3 e exportar os extremos racionais das
-   caixas de zeta nos nós. A cobertura de todos os `j=0,…,128` e a conjugação
-   já estão provadas em `c5RationalZetaAdaptiveNodeBox_contains_at` e
-   `c5RationalZetaAdaptiveNodeConjugateBox_contains_at`.
-2. Compor as caixas com Gamma, o fator original dependente de π e a expressão
+**Checkpoint local de execução:** `c5BernoulliPrimeTable` e a caixa centrada
+com tabela compartilhada compilam e passam pela auditoria padrão de axiomas.
+Três nós foram avaliados em 2:20 com uma só tabela. A tentativa de lote 129
+encerrou após 15:57 sem largura final; a memória ficou em ~6,5 GiB, então o
+limite é tempo de CPU. Evidência em
+`evidence/rational-boxes/c5-fast-bernoulli-table-validation.md`.
+
+1. Exportar os extremos racionais dos 129 nós com uma tabela Bernoulli
+   compartilhada; a sonda agregada e a sonda com saída por nó estão em
+   `SigmaC5Centered129SharedTableProbe.lean` e
+   `SigmaC5Centered129StreamProbe.lean`. Caso a execução única continue lenta,
+   reduzir a aritmética por nó e retomar sem recalcular Bernoulli em cada ponto.
+2. Escolher `nExp`/`p` para a precisão O3 e compor as caixas com Gamma, o
+   fator original dependente de π e a expressão
    da fonte C2; preservar a cabeça e a cauda exata; provar as inclusões em
    `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
 3. Auditar os teoremas finais de sinal C5 depois das duas inclusões.

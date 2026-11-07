@@ -1,0 +1,4 @@
+Command terminated by signal 2
+ELAPSED 12:18.85 CPU 99% MAX_RSS 6545580 KiB
+
+PROBE STATUS: interrupted at 12:18.85 elapsed; 99% CPU; peak RSS 6545580 KiB; no width output. Reproducible command is preserved in the shell command recorded in the task log context.
