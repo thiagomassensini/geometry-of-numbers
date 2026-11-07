@@ -1,24 +1,26 @@
 # Retomar primeiro — missão C5
 
-## Retomada mais recente — nó m=2, transição Taylor n=10→11 integrada pela PR #261
+## Retomada mais recente — nó m=2, transição Taylor n=11→12 compilada; PR pendente
 
 ```text
 MISSION: C5 — certificar as janelas negativas da fonte C2 original.
-PROOF PR: #261, commit de prova 0240e4cf8fbe192042b6116cd30bee66c2f42594, merge cb271df9a03500440be8e510bffc74a78311252f.
-BASE MAIN: 29377f9d59f5ad36e2a4447f445de3898649324d (PR #260 integrada).
-LAST VERIFIED THEOREM: c5RoundedExpStateC_stage11_correct.
-LAST COMPILED FILE: SigmaC5M2TaylorStateStage11Certificate.lean (Lean 4.32.0, warnings como erros).
+PROOF PR: ainda não criada; publicação pendente.
+BASE MAIN: 6288bc32726d64d1b3e1106cabecf81c4bf642e8 (PR #262 integrada).
+BRANCH: codex/c5-m2-stage12-20261107.
+LAST VERIFIED THEOREM: c5RoundedExpStateC_stage12_correct.
+LAST COMPILED FILE: SigmaC5M2TaylorStateStage12Certificate.lean (Lean 4.32.0, warnings como erros).
 BUILD: BUILD_EXIT=0; cinco raízes com propext, Classical.choice, Quot.sound; sem sorryAx.
-SCOPE: nó m=2, argumento (a,j)=(2/5,0), recorrência até n=11.
-OPEN: n=12…192, outros nós, quadraturas, caixa completa, ponte CSV–Lean, inclusões da fonte e sinais C5.
-EVIDENCE: evidence/rational-boxes/c5-m2-dirichlet-term-stage11-20261107/README.md.
-PINS: Geometry bf76ce8f5bb753b377a12ba6dbd5c397e4fb3; Carry 045369f6dedcb2e75e9aefed1d12c9f73b9a2532; Lean 4.32.0.
+SCOPE: nó m=2, argumento (a,j)=(2/5,0), recorrência até n=12.
+OPEN: n=13…192, outros nós, quadraturas, caixa completa, ponte CSV–Lean, inclusões da fonte e sinais C5.
+EVIDENCE: evidence/rational-boxes/c5-m2-dirichlet-term-stage12-20261107/README.md.
+PINS: Geometry bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3; Carry 045369f6dedcb2e75e9aefed1d12c9f73b9a2532; Lean 4.32.0.
 EXPORT: probe #eval fornece os racionais; o certificado valida as igualdades.
-NEXT: continuar a recorrência do nó m=2 em n=12.
+RETRY NOTE: primeiro probe com erro de busca do módulo preservado; repetição passou sem mudanças.
+NEXT: continuar a recorrência do nó m=2 em n=13.
 DO NOT REPEAT: C1B/C2/C3/C4; migração geral para Lean 4.35; prova monolítica dos 192 passos.
 ```
 
-Consulte o README de estágio 11 para reprodução, pins e checksums.
+Consulte o README de estágio 12 para reprodução, pins, logs e checksums.
 
 ## Retomada mais recente — nó m=2, transição Taylor n=9→10 integrada pela PR #259
 

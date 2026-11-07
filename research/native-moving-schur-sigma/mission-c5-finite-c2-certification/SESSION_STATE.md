@@ -1,21 +1,21 @@
 # C5 — estado da sessão
 
-## Atualização — estágio Taylor 11 do nó m=2 integrado pela PR #261
+## Atualização — estágio Taylor 12 do nó m=2 compilado; publicação pendente
 
-Na branch local `codex/c5-m2-stage11-20261107`, baseada na `main` após PR #260
-(`29377f9d59f5ad36e2a4447f445de3898649324d`), foi provada
-`c5RoundedExpStateC_stage11_correct` para `(a,j)=(2/5,0)`. Lean 4.32.0 com
-`warningAsError=true` terminou em `BUILD_EXIT=0`; Geometry e Carry usam os
-pins da evidência. As cinco declarações auditadas dependem somente de axiomas
-padrão, sem `sorryAx`. Fontes, logs, hashes e pins estão em
-`evidence/rational-boxes/c5-m2-dirichlet-term-stage11-20261107/`.
-O commit de prova `0240e4cf8fbe192042b6116cd30bee66c2f42594` foi integrado pela
-PR #261 no merge `cb271df9a03500440be8e510bffc74a78311252f`; o GitHub não
-reportou checks hospedados.
+Na branch `codex/c5-m2-stage12-20261107`, baseada na `main` em
+`6288bc32726d64d1b3e1106cabecf81c4bf642e8`, foi provada localmente
+`c5RoundedExpStateC_stage12_correct` para `(a,j)=(2/5,0)`. Lean 4.32.0 com
+`warningAsError=true` terminou em `BUILD_EXIT=0`; as cinco declarações
+auditadas dependem somente de axiomas padrão, sem `sorryAx`. Fontes, pins,
+logs e hashes estão em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage12-20261107/`. A PR de prova
+está pendente de publicação. O primeiro probe teve uma falha de busca do
+módulo `SigmaC5RationalNodeLogBounds`, preservada na evidência; a repetição
+sem alterações compilou.
 
-O resultado cobre somente `n≤11` de um nó. Os estados restantes, demais nós,
+O resultado cobre somente `n≤12` de um nó. Os estados restantes, demais nós,
 quadraturas, caixa completa, inclusão da fonte C2 e sinais finais seguem
-abertos. C5 permanece incompleta. Próximo: avançar para `n=12`.
+abertos. C5 permanece incompleta. Próximo: avançar para `n=13`.
 
 ## Atualização — estágio Taylor 10 do nó m=2 integrado pela PR #259
 
