@@ -1,6 +1,6 @@
 # C5 — validação
 
-## Nó trivial `m = 1` e igualdades dos estágios 1–2 — PASSARAM; C5 parcial
+## Nó trivial `m = 1` e igualdades dos estágios 1–3 — PASSARAM; C5 parcial
 
 Em Lean 4.32.0, com `warningAsError=true`, passaram os builds de
 `SigmaC5RationalNodePreciseLogBounds.lean`,
@@ -36,6 +36,16 @@ passaram em Lean 4.32.0, somente com axiomas padrão. Evidências e hashes estã
 no mesmo diretório. A PR #226 integrou o subpasso, commit de prova
 `ab0f2782369e7f0966fa6c769d23ca18ea9abb1f`, merge
 `96579150be6700793970bf8cd84f91dd2cccb102`; o GitHub não reportou checks.
+
+O estágio 3 também passou localmente. `SigmaC5ZeroExpStage3Certificate.lean`
+importa a prova integrada do estágio 2 e mostra que
+`c5RoundedExpC 192 896 3` na entrada zero coincide com
+`c5ZeroExpStage3Export`. Quatro lemas provam os extremos exatos da caixa
+quadrada e quatro certificam pisos/tetos. Build limpo e auditoria das nove
+raízes passaram em Lean 4.32.0, somente com axiomas padrão. Os logs, pins,
+hashes e histórico das tentativas interrompidas estão em
+`evidence/rational-boxes/c5-trivial-node-kernel-20261107/`. Este resultado
+aguarda publicação e não fecha a ponte CSV–Lean nem as inclusões O3.
 
 ## Componente `log 2` em blocos — PASSOU; C5 permanece parcial
 

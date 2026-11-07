@@ -22,12 +22,18 @@ O resultado foi integrado pela PR #224, commit de prova
 `d667abfc42020e442c62ec1b49b82f5bcf1971ad`; não houve checks hospedados.
 
 `c5ZeroExpStage2_eq` e os quatro lemas de arredondamento da caixa quadrada do
-estágio 1 também foram provados, compilados e auditados. Esse checkpoint ainda
-foi integrado pela PR #226, commit de prova
+estágio 1 também foram provados, compilados e auditados. Esse checkpoint foi
+integrado pela PR #226, commit de prova
 `ab0f2782369e7f0966fa6c769d23ca18ea9abb1f`, merge
-`96579150be6700793970bf8cd84f91dd2cccb102`; não houve checks hospedados. A
-próxima obrigação imediata é a caixa exportada do estágio 3; continuam abertas
-a ligação do CSV, a composição completa da fonte e as inclusões O3.
+`96579150be6700793970bf8cd84f91dd2cccb102`; não houve checks hospedados.
+Continuam abertas a ligação do CSV, a composição completa da fonte e as
+inclusões O3.
+
+`c5ZeroExpStage3_eq`, com oito lemas para a expressão exata da caixa quadrada
+do estágio 2 e seus pisos/tetos, foi compilado e auditado localmente em módulo
+separado que importa o estágio 2 integrado. A publicação do estágio 3 está
+pendente; após ela, o próximo passo da exponencial é o estágio 4. A ponte
+CSV–Lean, a composição completa da fonte e as inclusões O3 seguem abertas.
 
 Continuam abertas as igualdades exportadas dos estágios posteriores da
 exponencial, a ligação formal das 516 linhas CSV às caixas Lean, a composição

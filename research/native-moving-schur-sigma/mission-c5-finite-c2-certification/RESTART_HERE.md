@@ -1,23 +1,23 @@
 # Retomar primeiro — missão C5
 
-## Retomada mais recente — estágio 2 integrado; avançar ao estágio 3
+## Retomada mais recente — igualdade do estágio 3 validada localmente
 
 C1B/C2/C3 já estão integradas pelas PRs #155/#157/#159; não as refazer. A
 prioridade vigente é C5. O núcleo `m = 1` foi integrado pela PR #222, a
-igualdade do estágio 1 pela PR #224, e `SigmaC5ZeroExpStagesCertificate.lean`
-agora prova também que a caixa exponencial arredondada de estágio 2 coincide
-com os extremos exportados. Os quatro novos pisos/tetos foram provados e
-auditados em Lean 4.32. C5 continua incompleta; a ponte CSV–Lean e as inclusões
-dos coeficientes da fonte C2 nas caixas ainda faltam.
+igualdades dos estágios 1 e 2 pelas PRs #224 e #226. `SigmaC5ZeroExpStage3Certificate.lean`
+importa o estágio 2 integrado e prova que a caixa exponencial arredondada de
+estágio 3 coincide com os extremos exportados. Build e auditoria dos nove
+teoremas novos passaram em Lean 4.32. C5 continua incompleta; faltam a ponte
+CSV–Lean e as inclusões dos coeficientes da fonte C2 nas caixas.
 
-**Base de trabalho:** Geometry `main` após PR #226, merge
-`96579150be6700793970bf8cd84f91dd2cccb102`. O estágio 2 foi integrado pela
-PR #226, commit de prova `ab0f2782369e7f0966fa6c769d23ca18ea9abb1f`; o GitHub
-não reportou checks.
+**Base de trabalho:** Geometry `main` após PR #227, merge
+`1b4e40df3b62a7112a3ee1dbf4c893eba7b13592`, branch
+`codex/c5-zero-exp-stage3-20261107`. O estágio 3 está validado localmente; a
+publicação/integração está pendente.
 
-Retomar provando as igualdades exportadas dos estágios seguintes da exponencial
-arredondada, começando pelo estágio 3. Builds, auditorias, pins, hashes,
-tentativas interrompidas e falhas históricas estão em
+Retomar publicando este checkpoint e avançando para o estágio 4 da exponencial
+arredondada. Builds, auditorias, pins, hashes, tentativas interrompidas e
+sondas estão em
 `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`. Depois, retomar a
 ponte CSV–Lean, compor a fonte C2 original e provar as inclusões O3. Os merges
 atuais fecham somente as igualdades dos estágios 1 e 2, não C5.

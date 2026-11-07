@@ -1,7 +1,7 @@
 # C5 — núcleo certificado do nó trivial `m = 1`
 
 **Estado:** checkpoint parcial. As identidades formais do nó `m = 1` e as
-igualdades das caixas arredondadas nos estágios 1 e 2 foram compiladas e
+igualdades das caixas arredondadas nos estágios 1, 2 e 3 foram compiladas e
 auditadas. A ponte CSV–Lean e as inclusões dos coeficientes C2 continuam
 abertas; C5 não está concluída.
 
@@ -69,6 +69,17 @@ declarações passaram em Lean 4.32.0; somente `propext`, `Classical.choice` e
 `ab0f2782369e7f0966fa6c769d23ca18ea9abb1f`, merge
 `96579150be6700793970bf8cd84f91dd2cccb102`; o GitHub não reportou checks.
 
+`SigmaC5ZeroExpStage3Certificate.lean` importa a prova integrada do estágio 2
+e prova `c5ZeroExpStage3_eq`, igualando `c5RoundedExpC 192 896 3` na entrada
+zero a `c5ZeroExpStage3Export`. Quatro lemas exibem os extremos racionais da
+caixa quadrada e quatro certificam seus pisos/tetos. O build limpo e a auditoria
+das nove declarações passaram em Lean 4.32.0, somente com axiomas padrão. Logs,
+pins e hashes estão em `SigmaC5ZeroExpStage3Certificate.build.log`,
+`SigmaC5ZeroExpStage3Audit.log`, `stage3-pins.txt` e `stage3-sha256.txt`.
+Tentativas de expansão direta e a sonda que isolou as fórmulas estão em
+`stage3-attempts/`. Este checkpoint está validado localmente; a publicação
+aguarda a PR deste checkpoint.
+
 ## Pins e reprodução
 
 O checkpoint original do nó `m = 1` parte de `main` em
@@ -103,6 +114,8 @@ bash "$S/compile_sigma_pade.sh" SigmaC5RationalNodeCenteredBoxes
 bash "$S/compile_sigma_pade.sh" SigmaC5CenteredDirichletM1Audit
 bash "$S/compile_sigma_pade.sh" SigmaC5ZeroExpStagesCertificate
 bash "$S/compile_sigma_pade.sh" SigmaC5ZeroExpStagesAudit
+bash "$S/compile_sigma_pade.sh" SigmaC5ZeroExpStage3Certificate
+bash "$S/compile_sigma_pade.sh" SigmaC5ZeroExpStage3Audit
 ```
 
 The preserved logs are the successful runs used for this checkpoint. The audit
@@ -111,7 +124,7 @@ commands above writes fresh logs under the selected output directory.
 
 ## Próxima obrigação aberta
 
-Os estágios 1 e 2 agora estão provados. A tentativa que falhou ao aplicar diretamente
+Os estágios 1, 2 e 3 agora estão provados. A tentativa que falhou ao aplicar diretamente
 `Int.floor_eq_iff.mpr` e `Int.ceil_eq_iff.mpr` permanece como histórico; veja
 [`stage1-export-equality-last-attempt.log`](stage1-export-equality-last-attempt.log).
 O fonte exato dessa tentativa está preservado como
@@ -133,7 +146,7 @@ aceito como resultado. Esta tentativa não invalida as identidades já
 compiladas e auditadas acima.
 
 Ainda não há ponte CSV–Lean, inclusão dos coeficientes O3, composição completa
-da fonte C2, nem sinal finito de C5. O próximo passo é avançar os estágios
-seguintes da exponencial e depois ligar formalmente as caixas exportadas,
+da fonte C2, nem sinal finito de C5. O próximo passo é avançar o estágio 4 da
+exponencial e depois ligar formalmente as caixas exportadas,
 compondo zeta, Gamma, o fator dependente de π e a fonte C2 original. Não
 inferir fechamento de C5 a partir deste checkpoint.
