@@ -1,5 +1,25 @@
 # C5 — mapa dos teoremas e obrigações
 
+## Checkpoint local — cobertura adaptativa de zeta nos 129 nós
+
+Arquivo local: `SigmaC5RationalNodeLogBounds.lean` e
+`SigmaC5RationalNodeInstantiate.lean`, ainda não publicados nesta atualização.
+
+| Declaração | Status, hipóteses e limite |
+|---|---|
+| `CarrySigmaObstruction.c5LogQAdaptiveAbsBound` | PROVADO: limites racionais uniformes de `logQ` para `1≤m≤100`, com 128 parcelas. |
+| `CarrySigmaObstruction.c5AdaptiveLogScaleReducedRange` | PROVADO: a escala adaptativa mantém `m/2^k∈[1/2,1]` nesse intervalo. |
+| `CarrySigmaObstruction.c5RationalZetaAdaptiveTermSide` | PROVADO: constrói as condições de log/exp para cada termo, usando `normBound≤4`. |
+| `CarrySigmaObstruction.c5RationalZetaAdaptiveHeadBox_contains` e `...BasePowerBox_contains` | PROVADO: constroem as caixas da cabeça e da potência-base sem hipóteses auxiliares do chamador. |
+| `CarrySigmaObstruction.c5RationalZetaAdaptiveNodeBox_contains_at` | PROVADO: para `j≤128`, `b=j/100000` e `a∈[2/5,3/5]`, inclui zeta numa caixa racional; conserva a cauda `<10^-250`. |
+| `CarrySigmaObstruction.c5RationalZetaAdaptiveNodeConjugateBox_contains_at` | PROVADO: estende a inclusão aos argumentos de parte imaginária negativa por conjugação. |
+
+Build limpo Lean 4.32 e auditoria fail-closed de 21 raízes passaram; só
+`propext`, `Classical.choice` e `Quot.sound` aparecem. Pins, hashes e logs em
+`evidence/rational-boxes/c5-adaptive-zeta-node-instantiation-validation.md`.
+Isto ainda não fornece extremos achatados nem compõe Gamma, π ou a fonte C2;
+as inclusões dos coeficientes nas caixas O3 e a conclusão C5 permanecem abertas.
+
 ## O4 integrado pela PR #207 — avaliador racional genérico de zeta (incompleto)
 
 Arquivo integrado: `research/native-moving-schur-sigma/SigmaC5RationalNodeEval.lean`.

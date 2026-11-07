@@ -1,0 +1,25 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:73:12: error: This simp argument is unused:
+  ComplexInterval.mul
+
+Hint: Omit it from the simp argument list.
+  simp [̵C̵o̵m̵p̵l̵e̵x̵I̵n̵t̵e̵r̵v̵a̵l̵.̵m̵u̵l̵,̵ ̵C̵o̵m̵p̵l̵e̵x̵I̵n̵t̵e̵r̵v̵a̵l̵.̵n̵e̵g̵,̵[̲C̲o̲m̲p̲l̲e̲x̲I̲n̲t̲e̲r̲v̲a̲l̲.̲n̲e̲g̲,̲ ComplexInterval.exact, Interval.exact, Interval.neg, Interval.mul,
+  ̲  ̲ ̲ ̲ ̲ ̲Interval.sub, Interval.add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:75:12: error: This simp argument is unused:
+  ComplexInterval.mul
+
+Hint: Omit it from the simp argument list.
+  simp [̵C̵o̵m̵p̵l̵e̵x̵I̵n̵t̵e̵r̵v̵a̵l̵.̵m̵u̵l̵,̵ ̵C̵o̵m̵p̵l̵e̵x̵I̵n̵t̵e̵r̵v̵a̵l̵.̵n̵e̵g̵,̵[̲C̲o̲m̲p̲l̲e̲x̲I̲n̲t̲e̲r̲v̲a̲l̲.̲n̲e̲g̲,̲ ComplexInterval.exact, Interval.exact, Interval.neg, Interval.mul,
+  ̲  ̲ ̲ ̲ ̲ ̲Interval.sub, Interval.add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:76:52: error: This simp argument is unused:
+  Interval.sub
+
+Hint: Omit it from the simp argument list.
+  simp [ComplexInterval.mul, ComplexInterval.neg, ComplexInterval.exact, Interval.exact,
+  ̲  ̲ ̲ ̲ ̲ ̲Interval.neg, Interval.mul, I̵n̵t̵e̵r̵v̵a̵l̵.̵s̵u̵b̵,̵ ̵Interval.add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BUILD_EXIT=1

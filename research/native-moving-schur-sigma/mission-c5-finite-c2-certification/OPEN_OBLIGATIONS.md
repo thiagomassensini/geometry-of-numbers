@@ -1,24 +1,27 @@
 # C5 — obrigações abertas
 
-## Snapshot mais recente — avaliador zeta genérico validado, sem caixas nodais
+## Snapshot mais recente — cobertura zeta adaptativa provada, composição C5 aberta
 
-`SigmaC5RationalNodeEval.lean` prova uma fatorização racional exata de
-`emZetaHighRHS 100 300` e um teorema genérico que inclui
-`riemannZeta(a+bi)` em `c5RationalZetaNodeBox`, desde que sejam fornecidas as
-condições explícitas de log/exp para os 99 termos da cabeça e para a potência
-de base 100. O resto analítico permanece inteiro e a inflação usada é
-`10^-250`. Build limpo Lean 4.32 e auditoria fail-closed de dez raízes passaram;
-somente axiomas padrão. Evidência e hashes:
-`evidence/rational-boxes/c5-rational-node-evaluator-validation.md`.
+`SigmaC5RationalNodeLogBounds.lean` e `SigmaC5RationalNodeInstantiate.lean`
+instanciam as condições adaptativas de log/exp e provam a inclusão de zeta nos
+129 nós `b=j/100000`, `0≤j≤128`, para `a∈[2/5,3/5]`, bem como nos argumentos
+conjugados. A escala prova `m/2^k∈[1/2,1]`; os limites uniformes de `logQ`
+ficam em `[-5,5]`, e a potência tem `normBound≤4`. A cauda exata continua
+incluída com inflação `<10^-250`.
 
-**Ainda não há avaliações de nenhum dos 129 nós.** O primeiro próximo passo é
-instanciar essas condições para `b=j/100000`, `0≤j≤128`, nas partes reais dos
-argumentos da fonte C2; depois calcular os retângulos e compor Gamma, fator de
-π, cabeça e cauda C2. Nenhuma inclusão em `sigmaC00495SourceBoxes` ou
-`sigmaC01SourceBoxes` foi provada. O checkpoint é uma ponte condicional local,
-não O4 concluída; C5 continua parcial.
+O build limpo Lean 4.32 e o checker fail-closed de 21 raízes passaram, apenas
+com axiomas padrão. Os arquivos ainda estão em branch local, baseada na main
+`296e899e70bee78c54a3278e73e9bd89eaafaa58`; evidência reproduzível em
+`evidence/rational-boxes/c5-adaptive-zeta-node-instantiation-validation.md`.
 
-## Snapshot atual — ponte Gamma genérica integrada; avaliações ainda abertas
+**Ainda faltam** extremos racionais achatados, a composição com Gamma, o fator
+de π e a expressão da fonte C2, e as inclusões em `sigmaC00495SourceBoxes` e
+`sigmaC01SourceBoxes`. Portanto, os sinais O3 continuam condicionais e C5 não
+está concluída. Próximo passo: selecionar a precisão, exportar as caixas,
+compor a fonte original mantendo sua cabeça e cauda exata e provar as duas
+inclusões.
+
+## Checkpoint anterior — ponte Gamma genérica integrada pela PR #198
 
 A ponte integrada pela PR #198, `SigmaC5GammaRationalCore.lean`, separa `gammaFinite` em um
 fator `T^z` certificado por `dirichletTermBox2` e um núcleo em `ℚ+iℚ` exato;

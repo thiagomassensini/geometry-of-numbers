@@ -16,6 +16,17 @@ required = {
     "CarrySigmaObstruction.c5RationalZetaHeadBox_contains",
     "CarrySigmaObstruction.c5RationalZetaBasePowerBox_contains",
     "CarrySigmaObstruction.c5RationalZetaNodeBox_contains",
+    "CarrySigmaObstruction.c5AdaptiveLogScaleValid",
+    "CarrySigmaObstruction.c5LogQAdaptiveAbsBound",
+    "CarrySigmaObstruction.c5AdaptiveProductNormBoundLeFour",
+    "CarrySigmaObstruction.c5RationalZetaAdaptiveTermSide",
+    "CarrySigmaObstruction.c5RationalZetaAdaptiveHeadBox_contains",
+    "CarrySigmaObstruction.c5RationalZetaAdaptiveBasePowerBox_contains",
+    "CarrySigmaObstruction.c5RationalZetaAdaptiveNodeBox_contains",
+    "CarrySigmaObstruction.c5RationalZetaAdaptiveNodeBox_contains_at",
+    "CarrySigmaObstruction.c5AdaptiveLogScaleReducedRange",
+    "CarrySigmaObstruction.c5ComplexIntervalConjugateBox_contains",
+    "CarrySigmaObstruction.c5RationalZetaAdaptiveNodeConjugateBox_contains_at",
 }
 allowed = {"propext", "Classical.choice", "Quot.sound"}
 

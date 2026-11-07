@@ -1,0 +1,2 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:253:4: error(lean.unknownIdentifier): Unknown identifier `ZetaAsymptotics.riemannZeta_conj`
+BUILD_EXIT=1

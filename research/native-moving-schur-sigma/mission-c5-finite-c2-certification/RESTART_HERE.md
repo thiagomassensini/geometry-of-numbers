@@ -1,24 +1,21 @@
 # Retomar primeiro — missão C5
 
-## Retomada mais recente — 2026-11-07, após integração do avaliador racional
+## Retomada mais recente — 2026-11-07 UTC, cobertura zeta adaptativa local
 
 ```text
 MISSION: C5 — certificar as primeiras janelas negativas da fonte C2 original.
-CURRENT PHASE: Fase 2 / O4, avaliação racional dos valores nos nós.
-CURRENT SUBTASK: instanciar `c5RationalZetaNodeBox_contains` nas amostras `j/100000`, provando suas condições de log/exp e extraindo retângulos concretos.
-LAST VERIFIED THEOREM: `CarrySigmaObstruction.c5RationalZetaNodeBox_contains`.
-LAST COMPILED FILE: `SigmaC5RationalNodeEvalAudit.lean` (Lean 4.32.0, warnings como erros).
-LAST SUCCESSFUL COMMIT: prova `fb8bb31ed1fcbb4d1d9c88aceea1dd83539935df`, integrada pela PR #207 no merge `27a61e6bebcce178b81b961f507400ed77b96d3b`.
-LAST REMOTE SHA: merge da PR #207: `27a61e6bebcce178b81b961f507400ed77b96d3b`.
-CURRENT BRANCH: retomar criando uma branch nova a partir da `main`.
-MAIN SHA: `27a61e6bebcce178b81b961f507400ed77b96d3b` no início desta retomada.
-OPEN PR: nenhuma PR de código C5; a #207 está mesclada.
-WHAT IS PROVED: fatorização racional exata da correção Bernoulli de `emZetaHighRHS 100 300`; caixa genérica para `riemannZeta(a+bi)` sob condições explícitas de log/exp; o resto exponencial permanece e é absorvido pela inflação `<10^-250`. O checker auditou dez raízes com axiomas padrão.
-WHAT IS CONDITIONAL: as condições `hhead` e `hbase` não foram instanciadas em nenhum dos 129 nós; Gamma, fator de π e a fonte C2 ainda não foram compostos com essas caixas.
-WHAT IS BLOCKED: não há retângulos nodais concretos nem inclusão de `c₀..c₁₄`/`c₀..c₁₂` nas caixas O3.
-EXACT NEXT COMMAND: `sed -n '245,260p' /home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105/research/native-moving-schur-sigma/height50-certified/lean/ZetaLean/IntervalExp.lean; sed -n '110,130p' /home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105/research/native-moving-schur-sigma/height50-certified/lean/ZetaLean/IntervalCExp.lean; sed -n '407,430p' /home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105/research/native-moving-schur-sigma/height50-certified/lean/ZetaLean/IntervalCExp.lean`
-EXACT NEXT MATHEMATICAL OBLIGATION: obter majorantes racionais uniformes para `logQ` e o `normBound` das potências de Dirichlet, com `1≤m≤100`, `b=j/100000`, `j≤128` e `a∈{2/5,901/2000,1099/2000,3/5}`; instanciar os 129 retângulos, tratar argumentos negativos por conjugação e então compor Gamma/fator da câmera.
-DO NOT REPEAT: C1B/C2/C3/C4; transporte polinomial C4; sinais O3 condicionais; domínio/cota analítica; faixa de π e fator exponencial; limites dos pesos 0–14; erro Gamma `10^-259`; EM ordem 300 com cauda `<10^-250`; ponte Gamma racional genérica; fatorização e caixa genéricas deste avaliador.
+CURRENT PHASE: composição das caixas nodais com a fonte original e inclusão O3.
+CURRENT SUBTASK: escolher `nExp`/`p`, exportar retângulos racionais, compor zeta/Gamma/fator de π com a cabeça C2 e sua cauda exata.
+LAST VERIFIED THEOREM: `CarrySigmaObstruction.c5RationalZetaAdaptiveNodeConjugateBox_contains_at`.
+LAST COMPILED FILE: `SigmaC5RationalNodeInstantiateAudit.lean` (Lean 4.32.0, warnings como erros).
+LAST PROOF BRANCH: `codex/c5-node-instantiation-20261107`, baseada na main `296e899e70bee78c54a3278e73e9bd89eaafaa58`; checkpoint ainda local, sem PR.
+LAST PUBLISHED COMMIT: PR #208, merge `296e899e70bee78c54a3278e73e9bd89eaafaa58`.
+OPEN PR: nenhuma para este checkpoint; código e evidência estão locais.
+WHAT IS PROVED: condições adaptativas de log/exp construídas para todos os `1≤m≤100`; caixas de `riemannZeta` nos 129 nós `b=j/100000` para todo `a∈[2/5,3/5]`, mais os nós conjugados. Cauda Euler–Maclaurin preservada e inflação `<10^-250`. Auditoria de 21 raízes, somente axiomas padrão.
+WHAT REMAINS: achatamento de extremos numéricos, composição com Gamma, π e fonte C2, e inclusões dos coeficientes em `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`. C5 está incompleta.
+EVIDENCE: `evidence/rational-boxes/c5-adaptive-zeta-node-instantiation-validation.md`; logs limpos em `evidence/rational-boxes/c5-node-instantiation-clean-20261107/`.
+EXACT NEXT MATHEMATICAL OBLIGATION: escolher precisão suficiente para os sinais O3, produzir os extremos racionais de cada nó e compor a fonte C2 original mantendo a cabeça e a cauda exata.
+DO NOT REPEAT: C1B/C2/C3/C4; transporte polinomial C4; domínio/cota analítica; faixa de π e fator exponencial; limites dos pesos 0–14; erro Gamma `10^-259`; EM ordem 300; ponte Gamma racional genérica; caixa racional genérica e cobertura adaptativa dos 129 nós já compiladas.
 ```
 
 A reprodução experimental mais recente e o ajuste de compatibilidade aplicado
@@ -29,10 +26,11 @@ checagem condicional, não como inclusão formal dos coeficientes.
 Logs e hashes do subpasso Gamma: `evidence/rational-boxes/c5-gamma-rational-core-validation.md`.
 Ele ainda não fornece extremos numéricos para qualquer nó nem prova a inclusão nas caixas O3.
 
-O avaliador foi integrado pela PR #207 como checkpoint explicitamente
-incompleto. A validação completa, hipóteses, logs, pins e hashes está em
-`evidence/rational-boxes/c5-rational-node-evaluator-validation.md`. Ele prova
-somente uma ponte genérica condicional, não avalia os nós C5.
+O avaliador genérico foi integrado pela PR #207 como checkpoint explicitamente
+incompleto; aquela etapa ainda não instanciava os nós. A cobertura adaptativa
+formal foi construída depois e está registrada no checkpoint local acima.
+Hipóteses, logs, pins e hashes do avaliador genérico original permanecem em
+`evidence/rational-boxes/c5-rational-node-evaluator-validation.md`.
 
 ## Estado mais recente — 2026-11-06
 

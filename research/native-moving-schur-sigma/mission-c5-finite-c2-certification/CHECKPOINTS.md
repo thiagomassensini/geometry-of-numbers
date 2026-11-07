@@ -1,5 +1,24 @@
 # C5 — checkpoints
 
+## 2026-11-07 UTC — cobertura zeta adaptativa dos 129 nós (local, ainda não publicada)
+
+- `SigmaC5RationalNodeLogBounds.lean` prova por aritmética racional os limites
+  de log necessários para `1≤m≤100`; a escala adaptativa mantém `m/2^k` entre
+  `1/2` e `1`.
+- `SigmaC5RationalNodeInstantiate.lean` constrói as condições da cabeça e da
+  potência-base, inclui zeta em todos os nós `j=0,…,128` para
+  `a∈[2/5,3/5]`, e transporta a inclusão aos nós conjugados. A cauda exata
+  Euler–Maclaurin permanece na caixa, com inflação `<10^-250`.
+- Build limpo Lean 4.32 (`warningAsError=true`) passou e checker fail-closed
+  aceitou 21 raízes, somente com axiomas padrão. Logs, pins, hashes, comandos
+  e falhas anteriores em
+  `evidence/rational-boxes/c5-adaptive-zeta-node-instantiation-validation.md`.
+- Base: main no merge da PR #208 `296e899e70bee78c54a3278e73e9bd89eaafaa58`;
+  branch local `codex/c5-node-instantiation-20261107`.
+- Limite: não há extremos racionais achatados nem composição com Gamma, fator
+  de π e fonte C2; as inclusões O3 e C5 continuam abertas. A publicação deste
+  checkpoint deve identificá-lo explicitamente como incompleto.
+
 ## 2026-11-06 — reprodução das três caixas experimentais
 
 - As configurações `d=0.0495, L=0, N=1024, r/R=0.3/0.4`, `d=0.0495,

@@ -1,0 +1,64 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:90:28: error(lean.unknownIdentifier): Unknown identifier `emZetaHighBlock`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:92:23: error(lean.unknownIdentifier): Unknown identifier `ratComplexToComplex`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:105:31: error(lean.unknownIdentifier): Unknown identifier `emZetaHighRHS`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:107:20: error(lean.unknownIdentifier): Unknown identifier `zeta_em_high_real`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:118:23: error(lean.unknownIdentifier): Unknown identifier `emQP`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:125:18: error(lean.unknownIdentifier): Unknown identifier `emZetaHighRHS`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:127:37: error: mod_cast has type
+  (2 : ℝ) / 5 ≤ ↑a
+but is expected to have type
+  (2 : ℚ) / 5 ≤ a
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:128:31: error: mod_cast has type
+  ↑a ≤ 3 / 5
+but is expected to have type
+  a ≤ 3 / 5
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:130:38: error: mod_cast has type
+  ↑b ≤ 128 / 100000
+but is expected to have type
+  b ≤ 128 / 100000
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:152:16: error(lean.unknownIdentifier): Unknown identifier `emZetaHighTail_norm_le_node`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:88:55: error: unsolved goals
+nExp p : ℕ
+a b : ℚ
+haLo : 2 / 5 ≤ ↑a
+haHi : ↑a ≤ 3 / 5
+hbLo : 0 ≤ ↑b
+hbHi : ↑b ≤ 128 / 100000
+hden : (a - 1) ^ 2 + b ^ 2 ≠ 0
+hnExp : 0 < nExp
+s : ℂ := ↑a + ↑b * Complex.I
+tail : ℂ := ∑' (k : ℕ), sorry
+finite : ℂ := ∑ i ∈ Finset.range 100, ↑i ^ (-s) + 100 ^ (-s) * sorry
+hsre : 2 / 5 ≤ s.re
+hsre' : s.re ≤ 3 / 5
+hsIm : |s.im| ≤ 128 / 100000
+hspos : 0 < s.re
+hsne : s ≠ 1
+hzeta : riemannZeta s = sorry
+hfactor :
+  SigmaC5Zeta.emZetaHighRHS 100 300 (↑a + ↑b * Complex.I) =
+    ∑ i ∈ Finset.range 100, ↑i ^ (-(↑a + ↑b * Complex.I)) +
+        ↑100 ^ (-(↑a + ↑b * Complex.I)) * SigmaC5Gamma.ratComplexToComplex (c5RatScale a b 300 100) -
+      ∑' (k : ℕ), SigmaC5Zeta.emZetaHighBlock (↑a + ↑b * Complex.I) 300 ↑(k + 100)
+hfactor' : sorry = finite - tail
+haLoQ : 2 / 5 ≤ a
+haHiQ : a ≤ 3 / 5
+hbLoQ : 0 ≤ b
+hbHiQ : b ≤ 128 / 100000
+hheadBox :
+  (c5RationalZetaAdaptiveHeadBox nExp p a b).contains (∑ i ∈ Finset.range 99, ↑(i + 1) ^ (-(↑a + ↑b * Complex.I)))
+hheadEq : ∑ i ∈ Finset.range 100, ↑i ^ (-s) = ∑ i ∈ Finset.range 99, ↑(i + 1) ^ (-s)
+hheadBox' : (c5RationalZetaAdaptiveHeadBox nExp p a b).contains (∑ i ∈ Finset.range 100, ↑i ^ (-s))
+hbaseBox : (c5RationalZetaAdaptiveBasePowerBox nExp p a b).contains (100 ^ (-(↑a + ↑b * Complex.I)))
+hscaleBox :
+  (c5RatComplexInterval (c5RatScale a b 300 100)).contains (SigmaC5Gamma.ratComplexToComplex (c5RatScale a b 300 100))
+hprodBox :
+  ((c5RationalZetaAdaptiveBasePowerBox nExp p a b).mul (c5RatComplexInterval (c5RatScale a b 300 100))).contains
+    (100 ^ (-(↑a + ↑b * Complex.I)) * SigmaC5Gamma.ratComplexToComplex (c5RatScale a b 300 100))
+hfiniteBox :
+  ((c5RationalZetaAdaptiveHeadBox nExp p a b).add
+        ((c5RationalZetaAdaptiveBasePowerBox nExp p a b).mul (c5RatComplexInterval (c5RatScale a b 300 100)))).contains
+    (∑ i ∈ Finset.range 100, ↑i ^ (-s) +
+      100 ^ (-(↑a + ↑b * Complex.I)) * SigmaC5Gamma.ratComplexToComplex (c5RatScale a b 300 100))
+⊢ (c5RationalZetaAdaptiveNodeBox nExp p a b).contains (riemannZeta (↑a + ↑b * Complex.I))
+BUILD_EXIT=1

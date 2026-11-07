@@ -1,0 +1,21 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:72:4: error: No applicable extensionality theorem found for type
+  ComplexInterval
+
+Note: Extensionality theorems can be registered by marking them with the `[ext]` attribute
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:79:31: error: Application type mismatch: The argument
+  hreal.left
+has type
+  |((Interval.exact (-a)).mul L).lo| ≤ |(-a)| * 5
+but is expected to have type
+  |((Interval.exact (-a)).mul L).lo| ≤ |a| * 5
+in the application
+  max_le hreal.left
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:79:56: error: Application type mismatch: The argument
+  himag.left
+has type
+  |((Interval.exact (-b)).mul L).lo| ≤ |(-b)| * 5
+but is expected to have type
+  |((Interval.exact (-b)).mul L).lo| ≤ |b| * 5
+in the application
+  max_le himag.left
+BUILD_EXIT=1
