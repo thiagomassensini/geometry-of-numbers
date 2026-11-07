@@ -1,19 +1,19 @@
 # C5 — checkpoints
 
-## 2026-11-07 — transição m=2, n=10→11 integrada pela PR #261
+## 2026-11-07 — transição m=2, n=11→12 compilada; publicação pendente
 
-- `c5RoundedExpStateC_stage11_correct` prova a transição no nó `(2/5,0)`, com
-  coeficiente `1/10! = 1/3628800`, arredondamentos em 896 bits e soma
-  acumulada.
+- `c5RoundedExpStateC_stage12_correct` prova localmente a transição no nó
+  `(2/5,0)`, com coeficiente `1/11! = 1/39916800`, arredondamentos em 896 bits
+  e soma acumulada.
 - Lean 4.32.0 com `warningAsError=true` passou; as cinco raízes auditadas
   usam apenas axiomas padrão.
 - Fontes, logs e checksums estão em
-  `evidence/rational-boxes/c5-m2-dirichlet-term-stage11-20261107/`.
-- A PR #261 integrou o commit de prova
-  `0240e4cf8fbe192042b6116cd30bee66c2f42594` no merge
-  `cb271df9a03500440be8e510bffc74a78311252f`; não houve checks hospedados.
-  Cobre apenas `n≤11` de um nó. Estados seguintes, quadraturas, caixa completa,
-  inclusão C2 e sinais finais permanecem abertos. Próximo: `n=12`.
+  `evidence/rational-boxes/c5-m2-dirichlet-term-stage12-20261107/`.
+- O primeiro probe falhou na busca de `SigmaC5RationalNodeLogBounds`; o log
+  foi preservado e a repetição compilou. A branch está baseada na main
+  `6288bc32726d64d1b3e1106cabecf81c4bf642e8`; PR ainda pendente.
+- Cobre apenas `n≤12` de um nó. Estados seguintes, quadraturas, caixa completa,
+  inclusão C2 e sinais finais permanecem abertos. Próximo: `n=13`.
 
 ## 2026-11-07 — transição m=2, n=9→10 integrada pela PR #259
 
