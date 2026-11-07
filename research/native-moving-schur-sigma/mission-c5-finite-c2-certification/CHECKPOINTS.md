@@ -1,6 +1,6 @@
 # C5 — checkpoints
 
-## 2026-11-07 — recorrência genérica dos estágios 2–192 validada localmente
+## 2026-11-07 — recorrência genérica dos estágios 2–192 integrada (PR #239)
 
 - `c5RoundedExpC_zero_stage_2_to_192_closed_form` prova uma fórmula única para
   a exponencial arredondada na entrada zero em todos os estágios `2 ≤ k ≤ 192`.
@@ -11,8 +11,11 @@
   somente axiomas padrão aparecem. Logs, erros de cache recuperados, pins,
   hashes e comando estão em
   `evidence/rational-boxes/c5-generic-exp-recurrence-20261107/`.
-- O checkpoint local aguarda a PR e o merge. C5 continua incompleta: ainda
-  faltam a ponte CSV–Lean, as inclusões na fonte C2 e os sinais finais.
+- PR #239 integrou o checkpoint: commit de prova
+  `be04221f5eb4a174804fb96c9011d0b58bfc2642`, merge na `main`
+  `8c3691e59f9280864b93c4868eb465dbdad6da2c`. O GitHub não reportou checks.
+- C5 continua incompleta: ainda faltam a ponte CSV–Lean, as inclusões na
+  fonte C2 e os sinais finais.
 
 ## 2026-11-07 — caixa exponencial de estágio 6 provada e integrada (PR #234)
 

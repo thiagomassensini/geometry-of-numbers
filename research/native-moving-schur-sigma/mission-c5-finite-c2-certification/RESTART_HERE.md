@@ -1,13 +1,14 @@
 # Retomar primeiro — missão C5
 
-## Retomada mais recente — recorrência genérica validada localmente
+## Retomada mais recente — recorrência genérica integrada pela PR #239
 
 ```text
 MISSION: C5 — certificar as janelas negativas da fonte C2 original.
-CURRENT PHASE: preparar o checkpoint da recorrência genérica para publicação; depois, ponte CSV–Lean e composição da fonte.
-CURRENT BASE: main em df83c72ee79cd9652177b11b96ae03401e6f271a; a branch local ainda não contém este subpasso.
+CURRENT PHASE: ponte CSV–Lean e composição da fonte C2.
+CURRENT BASE: main em 8c3691e59f9280864b93c4868eb465dbdad6da2c.
 LAST VERIFIED THEOREM: c5RoundedExpC_zero_stage_2_to_192_closed_form.
 LAST COMPILED FILE: SigmaC5ZeroExpGenericRecurrenceAudit.lean (Lean 4.32.0, warnings como erros).
+LAST PROOF PR: #239, commit de prova be04221f5eb4a174804fb96c9011d0b58bfc2642, merge 8c3691e59f9280864b93c4868eb465dbdad6da2c; sem checks hospedados.
 OPEN PR: nenhuma para a recorrência genérica.
 WHAT IS PROVED: fórmula fechada da exponencial arredondada na entrada zero, para cada 2≤k≤192; resto original preservado; auditoria com somente axiomas padrão.
 WHAT REMAINS: ponte CSV–Lean, composição da fonte C2, inclusões sigmaC00495SourceBoxes/sigmaC01SourceBoxes e sinais finais C5.
@@ -16,7 +17,7 @@ RESOURCES: Lean 4.32.0; Carry pin 045369f6dedcb2e75e9aefed1d12c9f73b9a2532; 60.5
 DO NOT REPEAT: C1B/C2/C3, migração geral para Lean 4.35 ou estágios C5 já integrados.
 ```
 
-O build e a auditoria locais passaram. A reconstrução do módulo-base e as
+O build e a auditoria passaram e estão integrados. A reconstrução do módulo-base e as
 tentativas de cache que falharam estão registradas junto da reprodução; use
 `evidence/rational-boxes/c5-generic-exp-recurrence-20261107/reproduce.sh`.
 

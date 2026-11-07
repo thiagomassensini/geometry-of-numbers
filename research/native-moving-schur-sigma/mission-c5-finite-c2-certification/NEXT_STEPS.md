@@ -1,15 +1,18 @@
 # Próximos passos — C5
 
-## Estado atual — recorrência genérica validada; publicação pendente
+## Estado atual — recorrência genérica integrada; ponte CSV–Lean próxima
 
 `c5RoundedExpC_zero_stage_2_to_192_closed_form` prova os estágios 2 a 192 na
 entrada zero por uma fórmula fechada, em Lean 4.32.0. Build com warnings como
 erros e auditoria separada passaram com somente axiomas padrão. A evidência e o
 comando de reprodução estão em
-`evidence/rational-boxes/c5-generic-exp-recurrence-20261107/`. Este checkpoint
-local ainda aguarda sua PR e integração.
+`evidence/rational-boxes/c5-generic-exp-recurrence-20261107/`. A PR #239
+integrou o checkpoint: commit de prova
+`be04221f5eb4a174804fb96c9011d0b58bfc2642`, merge na `main`
+`8c3691e59f9280864b93c4868eb465dbdad6da2c`. O GitHub não reportou checks
+hospedados.
 
-Depois da publicação, a próxima tarefa é a ponte formal CSV–Lean, seguida da
+O próximo passo é a ponte formal CSV–Lean, seguida da
 composição Gamma/π/fonte C2 e das inclusões `sigmaC00495SourceBoxes` e
 `sigmaC01SourceBoxes`. C5 continua incompleta.
 
@@ -79,9 +82,9 @@ prova `a9be0be89794465fefa44bf66c3b50d5702cc0f5`, merge na `main`
 `5571ceb84e0483da55ff7ba212942a4ab13b7cab`. O GitHub não reportou checks;
 pins, hashes e logs estão registrados na evidência do nó trivial.
 
-1. **Validado localmente neste subpasso:** provar a recorrência exata das caixas
-   para `2 ≤ k ≤ 192`, sem criar um certificado separado por estágio. A prova,
-   build, auditoria, pins e comandos estão em
+1. **Integrado pela PR #239:** a recorrência exata das caixas para `2 ≤ k ≤ 192`
+   foi provada sem criar um certificado separado por estágio. A prova, build,
+   auditoria, pins e comandos estão em
    `evidence/rational-boxes/c5-generic-exp-recurrence-20261107/`.
 2. Retomar a ponte formal CSV–Lean e avaliar, em etapas, os demais termos da
    caixa; depois compor Gamma, o fator de π e a fonte C2 original e provar as

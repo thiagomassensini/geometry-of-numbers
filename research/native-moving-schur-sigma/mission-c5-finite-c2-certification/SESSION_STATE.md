@@ -1,14 +1,16 @@
 # C5 — estado da sessão
 
-## Atualização — recorrência genérica compilada e auditada localmente (2026-11-07)
+## Atualização — recorrência genérica provada e integrada pela PR #239 (2026-11-07)
 
 `SigmaC5ZeroExpGenericRecurrence.lean` prova uma fórmula fechada para
 `c5RoundedExpC 192 896 k (ComplexInterval.exact 0 0)` em todo `2 ≤ k ≤ 192`.
 Com `r = k - 2`, o resultado é a caixa com parâmetros `3*2^r-1` e
 `4*2^r-1`. O resto de Taylor permanece o da definição original. Build com
 Lean 4.32.0 e `warningAsError=true`, além da auditoria separada, passaram com
-somente axiomas padrão. O checkpoint local está preparado para publicação; os
-logs, pins, hashes, erros de cache recuperados e comandos estão em
+somente axiomas padrão. O commit de prova `be04221f5eb4a174804fb96c9011d0b58bfc2642`
+foi integrado pela PR #239 no merge da `main`
+`8c3691e59f9280864b93c4868eb465dbdad6da2c`; o GitHub não reportou checks
+hospedados. Logs, pins, hashes, erros de cache recuperados e comandos estão em
 `evidence/rational-boxes/c5-generic-exp-recurrence-20261107/`.
 
 C5 ainda não está concluída: a ponte CSV–Lean, as inclusões dos coeficientes
@@ -33,10 +35,9 @@ hospedados. A branch de prova partiu de `9fafe0d7db30e8a8391be863fe8d56dd3ca7ebf
 
 Esse replay é evidência numérica experimental: não formaliza a implementação
 intervalar externa e não prova que os coeficientes originais pertençam às
-caixas. A recorrência genérica de `2 ≤ k ≤ 192` foi formalizada e auditada
-localmente; falta publicar esse checkpoint. C5/O4 permanece aberta. Depois da
-integração, o trabalho continua pela ponte CSV–Lean e pela composição da fonte
-C2.
+caixas. A recorrência genérica de `2 ≤ k ≤ 192` foi formalizada, auditada e
+integrada pela PR #239. C5/O4 permanece aberta. O trabalho continua pela ponte
+CSV–Lean e pela composição da fonte C2.
 
 ## Estado da missão de negatividade (atualizado em 2026-11-07)
 

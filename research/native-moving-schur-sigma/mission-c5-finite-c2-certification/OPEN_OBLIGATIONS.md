@@ -1,13 +1,14 @@
 # C5 — obrigações abertas
 
-## Atualização — recorrência genérica validada localmente (2026-11-07)
+## Atualização — recorrência genérica integrada pela PR #239 (2026-11-07)
 
 `c5RoundedExpC_zero_stage_2_to_192_closed_form` formaliza os estágios 2–192
 na entrada zero com os parâmetros `3*2^(k-2)-1` e `4*2^(k-2)-1`, mantendo a
 definição original e seu resto. O build Lean 4.32.0 com `warningAsError=true`
 e a auditoria isolada passaram com axiomas padrão. A evidência está em
-`evidence/rational-boxes/c5-generic-exp-recurrence-20261107/`; ainda aguarda
-publicação pela PR deste subpasso.
+`evidence/rational-boxes/c5-generic-exp-recurrence-20261107/`. O commit de prova
+`be04221f5eb4a174804fb96c9011d0b58bfc2642` foi integrado pela PR #239 no merge
+`8c3691e59f9280864b93c4868eb465dbdad6da2c`; não houve checks hospedados.
 
 Continuam abertas a ligação formal das 516 caixas CSV às definições Lean, a
 composição completa da fonte C2, as inclusões
@@ -21,8 +22,8 @@ uma cópia local do avaliador Momentos com conversões `gmpy2.mpz` → `int`. O
 checker racional independente repetiu os sinais condicionais. A tentativa sem
 patch e seus logs também foram preservados. Isso não prova a inclusão das
 saídas de `mpmath.iv` nas caixas. A recorrência genérica da exponencial
-arredondada foi provada localmente e aguarda publicação; a ponte CSV–Lean, a
-composição da fonte C2 e as inclusões
+arredondada foi integrada pela PR #239; a ponte CSV–Lean, a composição da fonte
+C2 e as inclusões
 `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes` continuam abertas. Registro
 reproduzível:
 `evidence/interval-certificate/reproduction-2026-11-07.md`.
@@ -93,9 +94,8 @@ importa o estágio 5 integrado. A caixa exportada é
 O estágio 6 foi integrado pela PR #234, commit de prova
 `a9be0be89794465fefa44bf66c3b50d5702cc0f5`, merge na `main`
 `5571ceb84e0483da55ff7ba212942a4ab13b7cab`; o GitHub não reportou checks.
-O subpasso de generalização da recorrência foi provado localmente e aguarda
-integração. A ponte CSV–Lean, a composição completa da fonte e as inclusões O3
-seguem abertas.
+O subpasso de generalização da recorrência foi integrado pela PR #239. A ponte
+CSV–Lean, a composição completa da fonte e as inclusões O3 seguem abertas.
 
 Continuam abertas a ligação formal das 516 linhas CSV às caixas Lean, a
 composição de todos os termos da fonte C2 original, as inclusões
