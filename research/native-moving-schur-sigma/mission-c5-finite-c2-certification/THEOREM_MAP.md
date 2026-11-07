@@ -1,6 +1,6 @@
 # C5 — mapa dos teoremas e obrigações
 
-## Recorrência nodal m=2 até n=4 (local, PR pendente)
+## Recorrência nodal m=2 até n=4 (PR #247 integrada; C5 parcial)
 
 `SigmaC5M2TaylorStateStage4Certificate.lean` prova
 `c5RoundedExpStateC_stage4_correct` para o nó `(2/5,0)`, importando o estado
@@ -10,7 +10,8 @@ atualização da soma. A auditoria exibe somente axiomas padrão. Evidências em
 `evidence/rational-boxes/c5-m2-dirichlet-term-stage4-20261107/`.
 
 O teorema não cobre o restante da série, as quadraturas ou a caixa do nó
-completo, e não liga a fonte C2 às caixas. A PR deste checkpoint está pendente.
+completo, e não liga a fonte C2 às caixas. A PR #247 integrou este checkpoint, commit de prova `7b355ce2349a242c133caf8d71b777c2a186c0a0`, merge
+`ab6d5f1923770d4db830ba9ebf2fbc17c9626149`; o GitHub não reportou checks.
 
 
 ## Recorrência nodal m=2 até n=3 (PR #245 integrada; C5 parcial)
