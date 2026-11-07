@@ -10,7 +10,8 @@ inválida. O pico foi ~7,6 GiB com ~58 GiB disponíveis, apontando custo de
 redução e não falta de RAM. A exportação CSV permanece não ligada formalmente
 às definições Lean e não foi usada para provar as inclusões dos coeficientes.
 Comandos, pins, fontes e logs estão em
-`evidence/rational-boxes/c5-exported-box-proof-attempt/`.
+`evidence/rational-boxes/c5-exported-box-proof-attempt/`. O checkpoint foi
+integrado pela PR #215, commit `baa5e3e`, merge `6bfb4b14606ec1896a2d01d60be4ca54117bd128`.
 
 ## Cobertura zeta adaptativa dos 129 nós — PASSOU; C5 parcial
 

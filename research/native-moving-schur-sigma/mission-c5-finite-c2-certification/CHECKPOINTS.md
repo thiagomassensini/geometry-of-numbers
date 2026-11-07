@@ -409,3 +409,17 @@ misture caches/logs das outras worktrees.
 - Próxima etapa: compartilhar a avaliação dos componentes numéricos em lemas
   certificados antes de ampliar a prova a qualquer lote de nós. C5 continua
   explicitamente incompleta.
+
+
+## 2026-11-07 — PR #215 integrada: checkpoint da ponte CSV–Lean incompleta
+
+- A linha piloto `(a,j)=(2/5,0)` não obteve prova de igualdade com a definição
+  Lean. `decide` parou em `Rat.num`, `rfl` não fechou por conversibilidade e
+  `norm_num` com 1M passos excedeu o limite em ~28 minutos.
+- Os fontes das três rotas, logs, pins, comando e hashes foram publicados. O
+  CSV segue sem ligação formal às definições; não houve inclusão C5 nem auditoria
+  válida do teorema da tentativa.
+- PR #215, commit `baa5e3e`; merge na `main`
+  `6bfb4b14606ec1896a2d01d60be4ca54117bd128`.
+- C5 continua explicitamente incompleta. Próximo passo: compartilhar lemas de
+  cálculo numérico, validar uma caixa-piloto e só então ampliar a avaliação.

@@ -27,6 +27,12 @@ fatorar e compartilhar a redução do log, da cabeça, das correções de Bernou
 e da exponencial, medindo componentes separadamente antes de tentar as 516
 igualdades.
 
+**Registro pós-merge:** a tentativa e seus limites foram publicados como
+checkpoint explicitamente incompleto pela PR #215, commit `baa5e3e`, merge na
+`main` `6bfb4b14606ec1896a2d01d60be4ca54117bd128`. A main permanece com a
+exportação CSV não ligada formalmente às caixas Lean e com as duas inclusões
+C5 abertas.
+
 ## Checkpoint integrado — Bernoulli compartilhado (2026-11-07)
 
 Na worktree `codex/c5-flatten-zeta-boxes-20261107`, a tabela incremental de

@@ -30,7 +30,8 @@ sondas `#eval`; ainda não há igualdade Lean que os ligue a
 `decide`, `rfl` ou `norm_num` expandido. Não usar esses extremos como fatos
 formais. Decompor a avaliação em componentes compartilhados e obter um piloto
 com compilação e auditoria válida antes de formar lotes. Evidência e erros:
-`evidence/rational-boxes/c5-exported-box-proof-attempt/`.
+`evidence/rational-boxes/c5-exported-box-proof-attempt/`. O diagnóstico foi
+publicado pela PR #215, merge `6bfb4b14606ec1896a2d01d60be4ca54117bd128`.
 
 As inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` seguem abertas,
 bem como composição C5; os sinais permanecem condicionais. C5 não está
