@@ -1,6 +1,6 @@
 # Próximos passos — C5
 
-## Prioridade imediata — publicar estágio 6; depois generalizar a recorrência
+## Prioridade imediata — generalizar a recorrência
 
 O núcleo `m = 1` já está formalizado e compilado: o log centrado vira a caixa
 exata `0`, o argumento do termo de Dirichlet vira `0`, e a exponencial
@@ -47,11 +47,13 @@ pins, hashes e logs estão registrados na evidência do nó trivial.
 Agora `c5ZeroExpStage6_eq` e os oito lemas dos extremos e arredondamentos do
 quadrado do estágio 5 passaram build e auditoria em Lean 4.32. A caixa exata
 resultante tem parte real `[(2^896 - 47)/2^896, (2^896 + 63)/2^896]` e parte
-imaginária `[-63/2^896, 63/2^896]`. A publicação do estágio 6 ainda está
-pendente; pins, hashes e logs estão registrados na evidência do nó trivial.
+imaginária `[-63/2^896, 63/2^896]`. A PR #234 integrou o estágio 6: commit de
+prova `a9be0be89794465fefa44bf66c3b50d5702cc0f5`, merge na `main`
+`5571ceb84e0483da55ff7ba212942a4ab13b7cab`. O GitHub não reportou checks;
+pins, hashes e logs estão registrados na evidência do nó trivial.
 
-1. Publicar e integrar o estágio 6; depois provar a recorrência exata das
-   caixas para `2 ≤ k ≤ 192`, sem criar um certificado separado por estágio.
+1. Provar a recorrência exata das caixas para `2 ≤ k ≤ 192`, sem criar um
+   certificado separado por estágio.
 2. Retomar a ponte formal CSV–Lean e avaliar, em etapas, os demais termos da
    caixa; depois compor Gamma, o fator de π e a fonte C2 original e provar as
    inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.

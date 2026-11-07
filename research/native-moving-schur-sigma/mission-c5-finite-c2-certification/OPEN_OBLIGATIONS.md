@@ -1,6 +1,6 @@
 # C5 — obrigações abertas
 
-## Atualização — estágio 6 validado localmente; composição da fonte ainda aberta
+## Atualização — estágio 6 integrado; composição da fonte ainda aberta
 
 Os lemas `c5CenteredLogQFromLogTwo_one`,
 `c5CenteredDirichletExponentArg_one`,
@@ -60,9 +60,11 @@ as inclusões O3 seguem abertas.
 estágio 5 e seus pisos/tetos, foi compilado e auditado em módulo separado que
 importa o estágio 5 integrado. A caixa exportada é
 `[(2^896 - 47)/2^896, (2^896 + 63)/2^896] × [-63/2^896, 63/2^896]`.
-A publicação do estágio 6 está pendente; o próximo subpasso será generalizar
-a recorrência para `2 ≤ k ≤ 192`. A ponte CSV–Lean, a composição completa da
-fonte e as inclusões O3 seguem abertas.
+O estágio 6 foi integrado pela PR #234, commit de prova
+`a9be0be89794465fefa44bf66c3b50d5702cc0f5`, merge na `main`
+`5571ceb84e0483da55ff7ba212942a4ab13b7cab`; o GitHub não reportou checks.
+O próximo subpasso é generalizar a recorrência para `2 ≤ k ≤ 192`. A ponte
+CSV–Lean, a composição completa da fonte e as inclusões O3 seguem abertas.
 
 Continuam abertas as igualdades exportadas dos estágios posteriores da
 exponencial, a ligação formal das 516 linhas CSV às caixas Lean, a composição

@@ -69,8 +69,11 @@ que `c5RoundedExpC 192 896 6` na entrada zero coincide com essa caixa. Os
 extremos racionais do quadrado do estágio 5 dão pisos/tetos `2^896 - 47`,
 `2^896 + 63`, `-63` e `63`. Build e auditoria das nove raízes passaram em
 Lean 4.32.0, somente com axiomas padrão. Pins, hashes e logs estão em
-`evidence/rational-boxes/c5-trivial-node-kernel-20261107/`. A publicação do
-estágio 6 está pendente; C5 continua incompleta.
+`evidence/rational-boxes/c5-trivial-node-kernel-20261107/`. O estágio 6 foi
+integrado pela PR #234, commit de prova
+`a9be0be89794465fefa44bf66c3b50d5702cc0f5`, merge na `main`
+`5571ceb84e0483da55ff7ba212942a4ab13b7cab`; o GitHub não reportou checks.
+C5 continua incompleta.
 
 O estágio 5 também passou localmente. `SigmaC5ZeroExpStage5Certificate.lean`
 importa a prova integrada do estágio 4, define `c5ZeroExpStage5Export` e prova
