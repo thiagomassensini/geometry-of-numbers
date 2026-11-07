@@ -11,6 +11,9 @@ genérica da exponencial arredondada, a ponte CSV–Lean, a composição da font
 C2 e as inclusões `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes` continuam
 abertas. Registro reproduzível:
 `evidence/interval-certificate/reproduction-2026-11-07.md`.
+O checkpoint foi integrado pela PR #237 no merge
+`5fe7837e0f9509950aeb95777bdd220d68835ad8`; o GitHub não reportou checks
+hospedados.
 
 ## Atualização — estágio 6 integrado; composição da fonte ainda aberta
 

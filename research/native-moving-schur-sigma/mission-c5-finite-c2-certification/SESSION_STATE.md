@@ -12,6 +12,10 @@ verificador de frações racionais. Os sinais condicionais foram
 anteriores. Os novos logs, JSONs, saídas exatas, patch, hashes e comandos estão
 em `evidence/interval-certificate/reproduction-2026-11-07.md`.
 
+Este checkpoint foi publicado pela PR #237 e integrado na `main` no merge
+`5fe7837e0f9509950aeb95777bdd220d68835ad8`; o GitHub não reportou checks
+hospedados. A branch de prova partiu de `9fafe0d7db30e8a8391be863fe8d56dd3ca7ebfb`.
+
 Esse replay é evidência numérica experimental: não formaliza a implementação
 intervalar externa e não prova que os coeficientes originais pertençam às
 caixas. C5/O4 permanece aberta. A próxima etapa Lean continua sendo provar a

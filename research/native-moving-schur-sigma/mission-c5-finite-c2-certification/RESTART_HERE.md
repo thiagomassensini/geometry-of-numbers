@@ -11,7 +11,9 @@ JSONs já arquivados. Isto segue condicional às caixas e não prova as inclusõ
 dos coeficientes C2 em Lean. Logs, patch, hashes, pins e comandos estão em
 `evidence/interval-certificate/reproduction-2026-11-07.md`.
 
-Base do checkpoint: `origin/main` em
+O checkpoint foi integrado pela PR #237, merge
+`5fe7837e0f9509950aeb95777bdd220d68835ad8`; o GitHub não reportou checks
+hospedados. A branch partiu de `origin/main` em
 `9fafe0d7db30e8a8391be863fe8d56dd3ca7ebfb`, após a PR #236. A prova Lean mais
 recente continua sendo a igualdade do estágio 6 abaixo; a próxima prova é a
 recorrência exata para `2 ≤ k ≤ 192`.
@@ -48,10 +50,10 @@ padrão. O estágio 6 foi integrado pela PR #234, commit de prova
 `a9be0be89794465fefa44bf66c3b50d5702cc0f5`, merge
 `5571ceb84e0483da55ff7ba212942a4ab13b7cab`.
 
-**Base formal C5:** Geometry `main` contém o estágio 6 da PR #234. O checkpoint
-de reprodução atual parte da `main` após a PR #236, commit
-`9fafe0d7db30e8a8391be863fe8d56dd3ca7ebfb`, na branch
-`codex/c5-phase0-replay-20261107`.
+**Base atual:** Geometry `main` após a PR #237, commit
+`5fe7837e0f9509950aeb95777bdd220d68835ad8`. A branch formal C5 contém o
+estágio 6 integrado pela PR #234; o checkpoint de reprodução da PR #237
+partiu do commit `9fafe0d7db30e8a8391be863fe8d56dd3ca7ebfb`.
 
 Retomar provando a recorrência exata das caixas para `2 ≤ k ≤ 192`. Builds,
 auditorias, pins, hashes, tentativas e sondas estão em
