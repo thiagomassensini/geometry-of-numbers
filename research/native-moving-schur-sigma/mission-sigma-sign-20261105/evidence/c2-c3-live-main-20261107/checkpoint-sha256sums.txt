@@ -1,0 +1,3 @@
+5b8343873eee8c28ba765920df868f8b0e589616b5e3de180e24145dcf7c9920  research/native-moving-schur-sigma/mission-sigma-sign-20261105/evidence/lean435-validation-incomplete/geometry-pins-4.35.patch.gz
+54b286b2dc52235b021d706ad691a9bcb5183a2980bb85b92f20e0b3fcaae0fb  research/native-moving-schur-sigma/mission-sigma-sign-20261105/evidence/lean435-validation-incomplete/tracked-source-overrides.patch.gz
+c2efdb2ec33e648fda36c7451ad791230baa9bc57549cc0241671ca61c8578cb  research/native-moving-schur-sigma/mission-sigma-sign-20261105/evidence/lean435-validation-incomplete/logs-lean435.tar.gz

@@ -100,3 +100,12 @@ Os logs de compilação, auditoria, pins e hashes estão em `evidence/c2-c3-prio
 ## Reconfirmação da prioridade C2/C3 após PR #283 (2026-11-07)
 
 `origin/main@71721874eb01071a07c83e4f71117b7d662e1b53` mantém C1B integrada pela PR #155 (merge `0586e238441096ecd2248e3f14bdac3a832af427`), C2 pela PR #157 e C3 pela PR #159. A rota Lean 4.32 publicada em `b9ce1955c1e8830afad2323afe5266ed3f5f35d9` conclui C2 com os momentos originais, a decomposição completa do resto e sem hipóteses de sinal adicionais; C3 cobre as janelas `p=2i` e `p=2i+1` e transporta as direções negativas às dimensões maiores via C1B. A comparação dos fontes C2/C3 entre `24f61b0` e `7172187` não encontrou diferenças, então os builds e a auditoria transitiva arquivados (133 raízes, 70.861 dependências, axiomas padrão) continuam válidos. O checkpoint da tentativa 4.35 foi publicado pela PR #221 e segue explicitamente incompleto; overlays, patches, pins, manifests, logs com o último erro e comandos de retomada estão em `evidence/lean435-validation-incomplete/`. Não há impedimento demonstrado na rota 4.32 nem entrega C2/C3 por publicar.
+
+
+## Conferência após a PR #288 — 2026-11-07
+
+A ponta consultada é origin/main@78a10e8af611a5c690b248f8889b9e87674fd5c8. C1B (#155, merge 0586e238441096ecd2248e3f14bdac3a832af427), C2 (#157, merge f4f5cf5ecc60ea3747cbaf21389fab52832d3949), C3 (#159, merge b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8) e o checkpoint Lean 4.35 incompleto (#221, merge c67b2f72e0ad2f331c0966fb3ed82e98655e3df8) já estão publicados na main. Nenhuma entrega C1B/C2/C3 está pendente.
+
+Os cinco módulos C2/C3 foram recompilados diretamente a partir dessa ponta em Lean 4.32 com warningAsError. Os verificadores C2/C3 aceitaram o corolário e os quatro relatórios públicos usando somente propext, Classical.choice e Quot.sound; SigmaPadeAudit refez a auditoria de 133 raízes públicas e 70.861 dependências. Os logs atuais estão em evidence/c2-c3-live-main-20261107/build-logs/; os logs pós-reinício anteriores permanecem preservados em evidence/c2-c3-current-main-20261107/.
+
+A integração Lean 4.32 no commit b9ce1955c1e8830afad2323afe5266ed3f5f35d9 continua sendo a primeira referência C2 e não mostrou impedimento. A prova conserva o resto e as definições originais, sem hipótese de sinal adicional. A tentativa 4.35 continua somente como checkpoint incompleto; patches, logs, pins, erro mais recente e comandos de retomada estão preservados no checkpoint publicado #221.
