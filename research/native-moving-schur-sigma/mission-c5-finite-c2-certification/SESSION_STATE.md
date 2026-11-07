@@ -1,6 +1,6 @@
 # C5 — estado da sessão
 
-## Atualização local — nó m=2 validado até n=5 (2026-11-07; publicação pendente)
+## Atualização — nó m=2 validado até n=5 (PR #249 integrada)
 
 Na branch `codex/c5-m2-stage5-20261107`, baseada na `main` após PR #248
 (`442b4904c41d47a63825040a3e42c3fef75763d4`), foi provado
@@ -9,7 +9,8 @@ produto com sinais mistos, o coeficiente `1/4! = 1/24`, o arredondamento e a
 soma. Lean 4.32.0, `warningAsError=true`; as cinco raízes auditadas têm
 somente axiomas padrão. Fonte, log, pin, hashes e comando estão em
 `evidence/rational-boxes/c5-m2-dirichlet-term-stage5-20261107/README.md`.
-Este checkpoint ainda aguarda publicação.
+A PR #249 integrou o checkpoint, commit de prova `1782048f05c43fc31e491fa7192105235b34a14e`, merge na `main`
+`58b9a61532f79f6aa51ebfb48edaacf728be3738`; o GitHub não reportou checks.
 
 A prova cobre somente a recorrência até `n=5` de um nó. O próximo passo é
 `n=6`; continuam abertos os outros termos, as quadraturas, a caixa completa,
