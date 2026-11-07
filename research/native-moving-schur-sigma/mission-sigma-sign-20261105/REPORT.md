@@ -1,6 +1,9 @@
 # Relatório consolidado — missão de negatividade transversal sigma
 
-**Atualizado em 2026-11-07 contra `origin/main@71721874eb01071a07c83e4f71117b7d662e1b53`, após a PR #283.** C0, C1, C1B, C2, C3 e C4 estão integrados à `main`. Após o reinício da VM, C2/C3 recompilaram em Lean 4.32 e passaram pela auditoria transitiva. Os cinco módulos-fonte auditados continuam idênticos ao snapshot compilado `b604c06dd0c13e7f77c65fb0634aa0b082d6c8d1`; confirmei também que não mudaram entre `origin/main@24f61b01732f44599869350c4bf675c3f3a3dcb6` e a ponta atual, então a evidência arquivada continua aplicável. Os logs, pins e hashes estão em `evidence/c2-c3-current-main-20261107/`; o checkpoint 4.35 da PR #221 permanece publicado e claramente identificado como validação incompleta.
+**Atualizado em 2026-11-07 contra origin/main@78a10e8af611a5c690b248f8889b9e87674fd5c8, após a PR #288.** C0–C4 estão integrados. C1B (#155), C2 (#157), C3 (#159) e o checkpoint 4.35 incompleto (#221) já estão publicados; nada dessas entregas está pendente. Os cinco módulos C2/C3 foram recompilados diretamente na main atual em Lean 4.32 com warningAsError, e a auditoria transitiva passou novamente com 133 raízes e 70.861 dependências. Detalhes: evidence/c2-c3-live-main-20261107/.
+
+
+**Registro anterior após a PR #283.** C0, C1, C1B, C2, C3 e C4 estão integrados à `main`. Após o reinício da VM, C2/C3 recompilaram em Lean 4.32 e passaram pela auditoria transitiva. Os cinco módulos-fonte auditados continuam idênticos ao snapshot compilado `b604c06dd0c13e7f77c65fb0634aa0b082d6c8d1`; confirmei também que não mudaram entre `origin/main@24f61b01732f44599869350c4bf675c3f3a3dcb6` e a ponta atual, então a evidência arquivada continua aplicável. Os logs, pins e hashes estão em `evidence/c2-c3-current-main-20261107/`; o checkpoint 4.35 da PR #221 permanece publicado e claramente identificado como validação incompleta.
 
 ## Resultados formais
 

@@ -25,3 +25,12 @@
 ## Adendo 2026-11-06 — C4
 
 C2/C3 permanecem concluídos e integrados. C4 foi integrado pela PR #162, commit `31d3df33d4524d9809c75ba4481b1fa9f57a98bc`, merge `799a0e06af5469e9fe0665943adbb1cb29d0b6f8`. A prova e auditoria Lean 4.32 estabelecem `D_d(t)=C_d(t²)`, `C_d·H_d=-C_d′` com `H_d(n)=2*completedSigmaLogJet d n`, e congruência de Bézout à `2 • sigmaMatrix` original. Evidências em `evidence/c4-source-bezout/`; não houve status checks hospedados.
+
+
+## Conferência após a PR #288 — 2026-11-07
+
+A ponta consultada é origin/main@78a10e8af611a5c690b248f8889b9e87674fd5c8. C1B (#155, merge 0586e238441096ecd2248e3f14bdac3a832af427), C2 (#157, merge f4f5cf5ecc60ea3747cbaf21389fab52832d3949), C3 (#159, merge b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8) e o checkpoint Lean 4.35 incompleto (#221, merge c67b2f72e0ad2f331c0966fb3ed82e98655e3df8) já estão publicados na main. Nenhuma entrega C1B/C2/C3 está pendente.
+
+Os cinco módulos C2/C3 foram recompilados diretamente a partir dessa ponta em Lean 4.32 com warningAsError. Os verificadores C2/C3 aceitaram o corolário e os quatro relatórios públicos usando somente propext, Classical.choice e Quot.sound; SigmaPadeAudit refez a auditoria de 133 raízes públicas e 70.861 dependências. Os logs atuais estão em evidence/c2-c3-live-main-20261107/build-logs/; os logs pós-reinício anteriores permanecem preservados em evidence/c2-c3-current-main-20261107/.
+
+A integração Lean 4.32 no commit b9ce1955c1e8830afad2323afe5266ed3f5f35d9 continua sendo a primeira referência C2 e não mostrou impedimento. A prova conserva o resto e as definições originais, sem hipótese de sinal adicional. A tentativa 4.35 continua somente como checkpoint incompleto; patches, logs, pins, erro mais recente e comandos de retomada estão preservados no checkpoint publicado #221.

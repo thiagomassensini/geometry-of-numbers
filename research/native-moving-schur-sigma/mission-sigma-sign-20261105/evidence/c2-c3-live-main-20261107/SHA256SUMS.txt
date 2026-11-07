@@ -1,0 +1,10 @@
+a93bedfe6f19d56fb7f1c566cc280c9380ebe5f20b37b3ce336865e2737e65ff  research/native-moving-schur-sigma/mission-sigma-sign-20261105/evidence/c2-c3-live-main-20261107/VALIDATION.md
+c139f98ae89c63302078f942895baabb96522407b642c7c19b4ab95f01fdee99  research/native-moving-schur-sigma/mission-sigma-sign-20261105/evidence/c2-c3-live-main-20261107/axiom-checkers-c2.log
+0b95e47a242d6ff7c49f14005ace62f970164f248e74a01e804d83a63ea4e6ea  research/native-moving-schur-sigma/mission-sigma-sign-20261105/evidence/c2-c3-live-main-20261107/axiom-checkers-c3.log
+8f1c18253d9db4e5ea562fccbb569adf565ce5fe243b3c028d2f7f1d4cc2b606  research/native-moving-schur-sigma/mission-sigma-sign-20261105/evidence/c2-c3-live-main-20261107/build-logs/SigmaHeight50Integration.log
+d65d29bba8dd8f8d639d3adf92a27989c992c7d861e699168a56a2b468e0dc11  research/native-moving-schur-sigma/mission-sigma-sign-20261105/evidence/c2-c3-live-main-20261107/build-logs/SigmaPadeAudit.log
+c5cf95e1da177f4ebcb3232d1da9968d19aa9d1276ad135d109fafa333e6cc8e  research/native-moving-schur-sigma/mission-sigma-sign-20261105/evidence/c2-c3-live-main-20261107/build-logs/SigmaPadeEventualNegativity.log
+1e6ddb248e525923866be4cfb2c327867e18e510a10f2f760e2f47e3ca682074  research/native-moving-schur-sigma/mission-sigma-sign-20261105/evidence/c2-c3-live-main-20261107/build-logs/SigmaParityNegativeDirection.log
+a8d18e828418786ae0a26e3f7f478d2d52c0fda775043dd6e19858dfe4b98457  research/native-moving-schur-sigma/mission-sigma-sign-20261105/evidence/c2-c3-live-main-20261107/build-logs/SigmaRHHeightBridge.log
+c7b681d7e496b56ef3f64dc19b7197122635aa276081ad45067584dc46863d4b  research/native-moving-schur-sigma/mission-sigma-sign-20261105/evidence/c2-c3-live-main-20261107/checkpoint-sha256sums.txt
+cb7ec48b16bd639e3388201f479b98979ec8b7d17d57baf357b54b5a493bf943  research/native-moving-schur-sigma/mission-sigma-sign-20261105/evidence/c2-c3-live-main-20261107/source-pins-and-hashes.txt

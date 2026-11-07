@@ -1,0 +1,3 @@
+'CarrySigmaObstruction.exists_eventually_negative_sigmaPadeD_from_height50_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
