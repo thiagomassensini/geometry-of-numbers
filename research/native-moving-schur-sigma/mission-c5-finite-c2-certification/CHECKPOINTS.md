@@ -1,5 +1,17 @@
 # C5 — checkpoints
 
+## 2026-11-07 — caixa exponencial de estágio 6 provada (publicação pendente)
+
+- `c5ZeroExpStage6_eq` prova que `c5RoundedExpC 192 896 6` na entrada zero é
+  exatamente a caixa `c5ZeroExpStage6Export`, definida em função de `2^896`.
+- Quatro lemas exibem os extremos exatos do quadrado do estágio 5 e quatro
+  certificam seus pisos/tetos: `2^896 - 47`, `2^896 + 63`, `-63` e `63`.
+- Build Lean 4.32 e auditoria das nove declarações passaram; somente axiomas
+  padrão aparecem. Pins, hashes e logs estão em
+  `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
+- Este checkpoint aguarda publicação; não fecha a ponte CSV–Lean ou as
+  inclusões O3, e C5 permanece incompleta.
+
 ## 2026-11-07 — caixa exponencial de estágio 5 provada e integrada (PR #232)
 
 - `c5ZeroExpStage5_eq` prova que `c5RoundedExpC 192 896 5` na entrada zero é

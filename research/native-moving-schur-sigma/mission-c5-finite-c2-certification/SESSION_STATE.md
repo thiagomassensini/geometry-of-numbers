@@ -11,7 +11,21 @@
   de C2/C3; não é preciso calcular a primeira profundidade de falha para a
   negatividade eventual já provada.
 
-## Atualização mais recente — igualdade do estágio 5 integrada pela PR #232
+## Atualização mais recente — igualdade do estágio 6 (2026-11-07; publicação pendente)
+
+`SigmaC5ZeroExpStage6Certificate.lean` importa a prova integrada do estágio 5,
+define a caixa arredondada seguinte e prova que
+`c5RoundedExpC 192 896 6` na entrada zero coincide com ela. Os extremos
+racionais do quadrado do estágio 5 produzem os pisos/tetos `2^896 - 47`,
+`2^896 + 63`, `-63` e `63`. Build Lean 4.32 (`warningAsError=true`) e auditoria
+das nove raízes passaram, somente com axiomas padrão. Pins, hashes e logs estão
+em `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
+
+C5 continua incompleta: a ponte CSV–Lean, as inclusões dos coeficientes da
+fonte C2 nas caixas e os sinais finais seguem abertos. O estágio 6 aguarda
+publicação.
+
+## Atualização anterior — igualdade do estágio 5 integrada pela PR #232
 
 `SigmaC5ZeroExpStage5Certificate.lean` importa a prova integrada do estágio 4,
 define a caixa arredondada seguinte e prova que

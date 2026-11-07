@@ -1,0 +1,36 @@
+Geometry main at start of this checkpoint: 13ae30b5601206fe61c45ea8b52f35c0124be58a
+Geometry worktree branch: codex/c5-zero-exp-stage6-20261107
+Geometry reference root: /home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105
+Geometry reference commit: caa07002306b555fea5624cc11ab2ea5811a4324
+Carry root: /home/thlinux/worktrees/carry-sigma-c2-pinned-045369
+Carry commit: 045369f6dedcb2e75e9aefed1d12c9f73b9a2532
+Mathlib commit: 81a5d257c8e410db227a6665ed08f64fea08e997
+Lean: 4.32.0 (commit 8c9756b28d64dab099da31a4c09229a9e6a2ef35)
+Build setting: warningAsError=true
+Imported stage-5 module: SigmaC5ZeroExpStage5Certificate, integrated by PR #232
+Imported stage-4 module: SigmaC5ZeroExpStage4Certificate, integrated by PR #230
+Stage-6 exported box: real [(2^896 - 47)/2^896, (2^896 + 63)/2^896], imaginary [-63/2^896, 63/2^896]
+Axioms of nine stage-6 declarations: propext, Classical.choice, Quot.sound only
+MemAvailable before build: 60 GiB
+
+Output directory:
+/home/thlinux/worktrees/geometry-of-numbers-c5-node-pilot-after-log2-20261107/research/native-moving-schur-sigma/.cache/c5-zero-exp-stage6-separated-20261107
+Imported build directories:
+/home/thlinux/worktrees/geometry-of-numbers-c5-node-pilot-after-log2-20261107/research/native-moving-schur-sigma/.cache/c5-zero-exp-stage5-separated-20261107
+/home/thlinux/worktrees/geometry-of-numbers-c5-node-pilot-after-log2-20261107/research/native-moving-schur-sigma/.cache/c5-zero-exp-stage4-separated-20261107
+/home/thlinux/worktrees/geometry-of-numbers-c5-node-pilot-after-log2-20261107/research/native-moving-schur-sigma/.cache/c5-zero-exp-stage3-separated-20261107
+/home/thlinux/worktrees/geometry-of-numbers-c5-node-pilot-after-log2-20261107/research/native-moving-schur-sigma/.cache/c5-zero-exp-stage2-20261107
+/home/thlinux/worktrees/geometry-of-numbers-c5-node-pilot-after-log2-20261107/research/native-moving-schur-sigma/.cache/c5-exp-zero-integrated-20261107
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/.cache/c5-node-instantiation-clean-20261107
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/.cache/c5-centered-node-clean-20261107
+/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c1
+/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/integration
+/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c4-clean
+/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c4-main-clean
+
+From the Geometry checkout, use these values as SIGMA_OUTPUT_DIR and
+SIGMA_HEIGHT50_BUILD; set SIGMA_REFERENCE_ROOT, CARRY_LEAN_ROOT and LEAN_BIN
+to their pinned values above. Then run:
+
+  bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaC5ZeroExpStage6Certificate
+  bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaC5ZeroExpStage6Audit
