@@ -1,6 +1,6 @@
 # Próximos passos — C5
 
-## Prioridade imediata — avançar ao estágio 4
+## Prioridade imediata — publicar estágio 4; depois avançar ao estágio 5
 
 O núcleo `m = 1` já está formalizado e compilado: o log centrado vira a caixa
 exata `0`, o argumento do termo de Dirichlet vira `0`, e a exponencial
@@ -29,8 +29,13 @@ prova `682eae99f4b05abd70ee8068aada7bc2af3e0ebb`, merge na `main`
 `0d312c654015bf10384969e64f352b0313e2dd39`. O GitHub não reportou checks
 hospedados.
 
-1. Provar e auditar o estágio 4 da exponencial com argumento zero, preservando
-   a inflação do resto.
+Agora `c5ZeroExpStage4_eq` e os oito lemas dos extremos e arredondamentos do
+quadrado do estágio 3 passaram build e auditoria em Lean 4.32. A publicação do
+estágio 4 ainda está pendente; os detalhes, pins, hashes e o primeiro erro de
+configuração de imports estão registrados na evidência do nó trivial.
+
+1. Publicar e integrar o estágio 4; então provar e auditar o estágio 5 da
+   exponencial com argumento zero, preservando a inflação do resto.
 2. Retomar a ponte formal CSV–Lean e avaliar, em etapas, os demais termos da
    caixa; depois compor Gamma, o fator de π e a fonte C2 original e provar as
    inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.

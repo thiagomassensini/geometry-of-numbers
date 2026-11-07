@@ -1,0 +1,12 @@
+research/native-moving-schur-sigma/SigmaC5ZeroExpStage4Certificate.lean:1:0: error: unknown module prefix 'SigmaC5RoundedComplexExp'
+
+No directory 'SigmaC5RoundedComplexExp' or file 'SigmaC5RoundedComplexExp.olean' in the search path entries:
+  research/native-moving-schur-sigma/.cache/c5-zero-exp-stage4-separated-20261107
+  research/native-moving-schur-sigma/.cache/c5-zero-exp-stage3-separated-20261107
+  research/native-moving-schur-sigma/.cache/c5-zero-exp-stage2-20261107
+  research/native-moving-schur-sigma/.cache
+  reference Geometry .lake/build/lib/lean
+  reference Geometry dependency caches
+  pinned Carry dependency caches
+
+BUILD_EXIT=1

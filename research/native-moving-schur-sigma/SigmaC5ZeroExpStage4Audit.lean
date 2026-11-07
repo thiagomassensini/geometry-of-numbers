@@ -1,0 +1,11 @@
+import SigmaC5ZeroExpStage4Certificate
+
+#print axioms c5ZeroExpStage3Square_re_lo_eq
+#print axioms c5ZeroExpStage3Square_re_hi_eq
+#print axioms c5ZeroExpStage3Square_im_lo_eq
+#print axioms c5ZeroExpStage3Square_im_hi_eq
+#print axioms c5ZeroExpStage3Square_re_lo_floor
+#print axioms c5ZeroExpStage3Square_re_hi_ceil
+#print axioms c5ZeroExpStage3Square_im_lo_floor
+#print axioms c5ZeroExpStage3Square_im_hi_ceil
+#print axioms c5ZeroExpStage4_eq

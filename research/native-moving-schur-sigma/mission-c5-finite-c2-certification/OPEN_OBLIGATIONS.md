@@ -1,6 +1,6 @@
 # C5 — obrigações abertas
 
-## Atualização — estágio 3 integrado; composição da fonte ainda aberta
+## Atualização — estágio 4 validado localmente; composição da fonte ainda aberta
 
 Os lemas `c5CenteredLogQFromLogTwo_one`,
 `c5CenteredDirichletExponentArg_one`,
@@ -35,7 +35,13 @@ separado que importa o estágio 2 integrado. O estágio 3 foi integrado pela
 PR #228, commit de prova
 `682eae99f4b05abd70ee8068aada7bc2af3e0ebb`, merge na `main`
 `0d312c654015bf10384969e64f352b0313e2dd39`; o GitHub não reportou checks
-hospedados. O próximo passo da exponencial é o estágio 4. A ponte CSV–Lean, a
+hospedados. A ponte CSV–Lean, a composição completa da fonte e as inclusões O3
+seguem abertas.
+
+`c5ZeroExpStage4_eq`, com oito lemas para os extremos exatos do quadrado do
+estágio 3 e seus pisos/tetos, foi compilado e auditado em módulo separado que
+importa o estágio 3 integrado. A publicação do estágio 4 está pendente; depois
+dela, o próximo passo da exponencial é o estágio 5. A ponte CSV–Lean, a
 composição completa da fonte e as inclusões O3 seguem abertas.
 
 Continuam abertas as igualdades exportadas dos estágios posteriores da
