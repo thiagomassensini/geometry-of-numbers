@@ -1,5 +1,18 @@
 # C5 — checkpoints
 
+## 2026-11-07 — transição m=2, n=9→10 validada localmente; PR pendente
+
+- `c5RoundedExpStateC_stage10_correct` prova a transição no nó `(2/5,0)` com
+  produto intervalar, escala `1/9! = 1/362880`, arredondamento em 896 bits e
+  soma racional.
+- Lean 4.32.0 com `warningAsError=true` passou; cinco declarações auditadas
+  usam somente axiomas padrão.
+- Fonte, probe, logs e checksums estão em
+  `evidence/rational-boxes/c5-m2-dirichlet-term-stage10-20261107/`.
+- O checkpoint ainda é local. Cobre somente `n≤10` de um nó, sem estados
+  restantes, quadraturas, caixa completa, inclusões da fonte C2 ou sinais
+  finais. Próximo passo: publicar e continuar em `n=11`.
+
 ## 2026-11-07 — transição m=2, n=8→9 integrada pela PR #257
 
 - `c5RoundedExpStateC_stage9_correct` prova a transição da recorrência no nó

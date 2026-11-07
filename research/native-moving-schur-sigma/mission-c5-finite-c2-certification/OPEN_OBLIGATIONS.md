@@ -1,5 +1,17 @@
 # C5 — obrigações abertas
 
+## Atualização — recorrência de um nó até n=10 validada localmente
+
+`c5RoundedExpStateC_stage10_correct` compilou e passou pela auditoria em Lean
+4.32.0; o checkpoint ainda não foi publicado. Evidências em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage10-20261107/`. O resultado
+cobre somente `n≤10` no nó `(2/5,0)`.
+
+Continuam abertas a extensão até `n=192`, os outros nós, quadraturas, caixa
+nodal completa, ponte CSV–Lean, composição com a fonte original e inclusões
+`sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes`. C5 segue parcial; próximo:
+`n=11`.
+
 ## Atualização — recorrência de um nó até n=9 integrada pela PR #257
 
 `c5RoundedExpStateC_stage9_correct` compilou e passou pela auditoria de axiomas
