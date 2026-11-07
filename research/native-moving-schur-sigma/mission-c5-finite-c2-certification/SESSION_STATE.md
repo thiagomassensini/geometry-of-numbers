@@ -1,5 +1,20 @@
 # C5 — estado da sessão
 
+## Atualização — estágio Taylor 11 do nó m=2 validado localmente; PR pendente
+
+Na branch local `codex/c5-m2-stage11-20261107`, baseada na `main` após PR #260
+(`29377f9d59f5ad36e2a4447f445de3898649324d`), foi provada
+`c5RoundedExpStateC_stage11_correct` para `(a,j)=(2/5,0)`. Lean 4.32.0 com
+`warningAsError=true` terminou em `BUILD_EXIT=0`; Geometry e Carry usam os
+pins da evidência. As cinco declarações auditadas dependem somente de axiomas
+padrão, sem `sorryAx`. Fontes, logs, hashes e pins estão em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage11-20261107/`.
+
+O resultado cobre somente `n≤11` de um nó e ainda não foi publicado por PR.
+Os estados restantes, demais nós, quadraturas, caixa completa, inclusão da
+fonte C2 e sinais finais seguem abertos. C5 permanece incompleta. Próximo:
+publicar e integrar esta etapa, depois avançar para `n=12`.
+
 ## Atualização — estágio Taylor 10 do nó m=2 integrado pela PR #259
 
 Na branch local `codex/c5-m2-stage10-20261107`, baseada na `main` após PR #258

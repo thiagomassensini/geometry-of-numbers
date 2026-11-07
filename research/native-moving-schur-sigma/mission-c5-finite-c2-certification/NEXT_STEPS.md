@@ -1,5 +1,20 @@
 # Próximos passos — C5
 
+## Atualização — estágio Taylor 11 compilado localmente; PR pendente
+
+`c5RoundedExpStateC_stage11_correct` passou em Lean 4.32.0 com
+`warningAsError=true`; cinco raízes auditadas mostram somente axiomas padrão.
+Fonte e registros estão em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage11-20261107/README.md`.
+Este checkpoint cobre apenas `n≤11` no nó `(2/5,0)`.
+
+1. Publicar a transição `n=10→11` e registrar o merge.
+2. Estender a recorrência para `n=12` e prosseguir até `n=192`.
+3. Certificar as quadraturas e a caixa nodal completa.
+4. Provar a ponte CSV–Lean, as inclusões da fonte C2 e os sinais finais.
+
+C5 continua incompleta.
+
 ## Atualização — estágio Taylor 10 integrado pela PR #259
 
 `c5RoundedExpStateC_stage10_correct` passou em Lean 4.32.0 com
