@@ -1,18 +1,19 @@
 # Próximos passos — C5
 
-## Atualização — estágio Taylor 7 compilado localmente; PR ainda pendente
+## Atualização — estágio Taylor 7 integrado pela PR #253
 
 `c5RoundedExpStateC_stage7_correct` passou em Lean 4.32.0 com
 `warningAsError=true`; cinco declarações auditadas exibem somente axiomas
 padrão. Fonte, probe, logs, pins e checksums estão em
 `evidence/rational-boxes/c5-m2-dirichlet-term-stage7-20261107/README.md`.
-Este checkpoint cobre apenas `n≤7` no nó `(2/5,0)` e ainda não foi publicado.
+A PR #253 integrou o commit de prova
+`a08a5c9c5a1d02fc33b3207ef2be3d362d526de8` no merge
+`952fcd76093681f3feacc540bb0db9c49bfc6034`; o GitHub não reportou checks
+hospedados. O checkpoint cobre apenas `n≤7` no nó `(2/5,0)`.
 
-1. Revisar e publicar a etapa `n=7`; após o merge, registrar o SHA da
-   integração.
-2. Estender a recorrência para `n=8` e continuar modularmente até `n=192`.
-3. Certificar as quadraturas e a caixa nodal completa.
-4. Provar a ponte CSV–Lean, as inclusões da fonte C2 e os sinais finais.
+1. Estender a recorrência para `n=8` e continuar modularmente até `n=192`.
+2. Certificar as quadraturas e a caixa nodal completa.
+3. Provar a ponte CSV–Lean, as inclusões da fonte C2 e os sinais finais.
 
 C5 permanece incompleta.
 

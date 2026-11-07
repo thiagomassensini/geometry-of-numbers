@@ -1,6 +1,6 @@
 # C5 — checkpoints
 
-## 2026-11-07 — transição m=2, n=6→7 validada localmente; PR pendente
+## 2026-11-07 — transição m=2, n=6→7 integrada pela PR #253
 
 - `c5RoundedExpStateC_stage7_correct` prova a transição seguinte no nó
   `(a,j)=(2/5,0)`, incluindo o produto de sinais não-negativos/não-positivos,
@@ -9,10 +9,11 @@
   usam somente axiomas padrão.
 - A fonte, o probe de exportação, os logs e os checksums estão em
   `evidence/rational-boxes/c5-m2-dirichlet-term-stage7-20261107/`.
-- O checkpoint é local e ainda não tem PR ou merge. Ele cobre somente `n≤7`
-  de um nó; não cobre os estados seguintes, quadraturas, caixa completa,
-  inclusões da fonte C2 ou sinais finais. Próximo: publicar a etapa e avançar
-  para `n=8`.
+- A PR #253 integrou o commit de prova
+  `a08a5c9c5a1d02fc33b3207ef2be3d362d526de8` no merge
+  `952fcd76093681f3feacc540bb0db9c49bfc6034`; não houve checks hospedados.
+  Cobre somente `n≤7` de um nó; não cobre estados seguintes, quadraturas,
+  caixa completa, inclusões da fonte C2 ou sinais finais. Próximo: `n=8`.
 
 ## 2026-11-07 — transição m=2, n=5→6 integrada pela PR #251
 
