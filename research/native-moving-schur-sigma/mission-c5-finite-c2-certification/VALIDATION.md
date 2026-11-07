@@ -1,18 +1,22 @@
 # C5 — validação
 
-## Transição do nó m=2 para n=16 — passou e foi integrada pela PR #271; C5 parcial
+## Transição do nó m=2 para n=17 — passou localmente; C5 parcial
 
-`SigmaC5M2TaylorStateStage16Certificate.lean` compilou em Lean 4.32.0 com
+`SigmaC5M2TaylorStateStage17Certificate.lean` compilou em Lean 4.32.0 com
 `warningAsError=true`; o build terminou com `BUILD_EXIT=0`. As cinco raízes
 auditadas usam somente `propext`, `Classical.choice` e `Quot.sound`, sem
 `sorryAx`. Pins, logs e comando estão em
-`evidence/rational-boxes/c5-m2-dirichlet-term-stage16-20261107/`.
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage17-20261107/`.
 
-A prova cobre `c5RoundedExpStateC` somente até `n=16` no nó `(2/5,0)`.
+A prova cobre `c5RoundedExpStateC` somente até `n=17` no nó `(2/5,0)`.
 Estados seguintes, quadraturas, caixa completa, composição com a fonte C2 e
-sinais finais continuam abertos. A PR #271 integrou o commit `3e9f0e225e426e92a86430ec6d1a22b093ed04af` pelo
-merge `795caa0eebfaa61874c1fff22c683fb85bdf941a`; o GitHub não reportou checks hospedados. C5 permanece
-incompleta.
+sinais finais continuam abertos. A PR está pendente; C5 permanece incompleta.
+
+## Transição do nó m=2 para n=16 — integrada pela PR #271
+
+`c5RoundedExpStateC_stage16_correct` compilou e passou pela auditoria Lean.
+A integração ocorreu no merge `795caa0eebfaa61874c1fff22c683fb85bdf941a`. Evidência em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage16-20261107/`.
 
 ## Transição do nó m=2 para n=15 — integrada pela PR #269
 
