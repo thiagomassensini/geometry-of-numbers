@@ -1,20 +1,24 @@
 # C5 — estado da sessão
 
-## Atualização — estágio Taylor 14 do nó m=2 integrado pela PR #267
+## Atualização — estágio Taylor 15 do nó m=2 compilado; publicação pendente
 
-Na branch de prova `codex/c5-m2-stage14-20261107`, baseada na `main` em
-`9fdcbda23aa1a22b104244a2c5b477c36194ad87`, foi provada
-`c5RoundedExpStateC_stage14_correct` para `(a,j)=(2/5,0)`. Lean 4.32.0 com
-`warningAsError=true` terminou em `BUILD_EXIT=0`; as cinco declarações
-auditadas dependem somente de axiomas padrão, sem `sorryAx`. Fontes, pins,
-logs e hashes estão em
-`evidence/rational-boxes/c5-m2-dirichlet-term-stage14-20261107/`.
-O commit `eaf5a2a71a5d896d4521e2b7cf969421343b3982` foi integrado pela PR #267 no merge `b1a7c9b14eb1352cc470508fdb2bf9a8baaea56a`; o GitHub não
-reportou checks hospedados.
+Na branch `codex/c5-m2-stage15-20261107`, baseada na `main` em `7918b5d819ecb938af918f9ab67282010fb8197b`, foi
+provada localmente `c5RoundedExpStateC_stage15_correct` para `(a,j)=(2/5,0)`.
+Lean 4.32.0 com `warningAsError=true` terminou em `BUILD_EXIT=0`; as cinco
+declarações auditadas dependem somente de axiomas padrão, sem `sorryAx`.
+Fontes, pins, logs e hashes estão em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage15-20261107/`. A PR está
+pendente de publicação.
 
-O resultado cobre somente `n≤14` de um nó. Os estados restantes, demais nós,
+O resultado cobre somente `n≤15` de um nó. Os estados restantes, demais nós,
 quadraturas, caixa completa, inclusão da fonte C2 e sinais finais seguem
-abertos. C5 permanece incompleta. Próximo: avançar para `n=15`.
+abertos. C5 permanece incompleta. Próximo: avançar para `n=16`.
+
+## Checkpoint anterior — estágio Taylor 14 integrado pela PR #267
+
+`c5RoundedExpStateC_stage14_correct` entrou na `main` pelo commit
+`eaf5a2a71a5d896d4521e2b7cf969421343b3982` e merge `b1a7c9b14eb1352cc470508fdb2bf9a8baaea56a`. Evidência em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage14-20261107/`.
 
 ## Checkpoint anterior — estágio Taylor 13 integrado pela PR #265
 
