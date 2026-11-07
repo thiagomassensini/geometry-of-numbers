@@ -1,12 +1,12 @@
 # C5 — estado da sessão
 
-## Estado atual — segunda caixa Gamma em ponto real integrada (2026-11-07)
+## Estado atual — primeiro nó complexo de Gamma integrado (2026-11-07)
 
-- Missão C5 continua ativa; C2, C3 e C4 já estão concluídas. Não reiniciar fases anteriores nem a migração geral para Lean 4.35.
-- A prova `CarrySigmaObstruction.c5GammaSecondRealPointBox_contains` compila e contém `Complex.Gamma (901/4000 : ℂ)`. O certificado fecha 16 pisos de blocos, recompõe o núcleo racional, inclui `240^(901/4000)` com `dirichletTermBox2` e acrescenta o erro formal com raio `10⁻⁹⁹`.
-- Os quatro módulos passaram em Lean 4.32.0 com warnings como erros. Auditoria das raízes: somente `propext`, `Classical.choice`, `Quot.sound`, sem `sorryAx`, axiomas próprios ou `native_decide`. Logs, fontes, pins, hashes e comando estão em `evidence/rational-boxes/c5-gamma-second-real-point-20261107/README.md`.
-- PR #287 integrou este checkpoint (`7f3d880e73f5383718cf2442b915e8cd866139cf`); merge na `main`: `742eb6fd03311adbb80507867c47e726fd648a21`. A caixa cobre apenas um segundo ponto real; não fecha os nós complexos nem os coeficientes da fonte.
-- Próximo passo: estender a inclusão Gamma aos pontos complexos efetivamente usados pela fonte C2, mantendo a composição com os fatores originais de zeta, fator nativo e quadraturas.
+- Missão C5 continua ativa; C1B/C2/C3/C4 já estão concluídas. Não reiniciar fases anteriores nem a migração geral para Lean 4.35.
+- `CarrySigmaObstruction.c5GammaComplexNodeBox_contains` contém `Complex.Gamma (901/4000 + (3/20) * Complex.I)`. A prova compõe os 16 blocos de pisos do núcleo racional, a caixa de `240^z` e o erro de `gamma_finite_1024_240_error`, inflado por `10⁻⁹⁹`.
+- Os cinco módulos passaram em Lean 4.32.0 com `warningAsError=true`; as raízes auditadas usam apenas `propext`, `Classical.choice` e `Quot.sound`, sem `sorryAx`, axiomas próprios ou `native_decide`. Fontes, comandos, logs, pins e hashes: `evidence/rational-boxes/c5-gamma-complex-node-20261107/README.md`.
+- PR #290 integrou o commit `482110b10c9173f6a8c9b231c7f3ed07c0935933`; merge na `main`: `06001aaae85c19d01dca48a802fecbb06ffb381d`.
+- O alcance é um nó complexo somente. Permanecem abertas a ponte CSV–Lean, as demais caixas Gamma e zeta/Hurwitz, a composição com o fator nativo e quadraturas, e as inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`; C5 continua incompleta.
 
 ## Histórico — caixa Gamma em `1/5` integrada pela PR #285
 
