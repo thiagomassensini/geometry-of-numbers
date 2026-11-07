@@ -1,15 +1,15 @@
 # C5 — checkpoints
 
-## 2026-11-07 — transição m=2, n=13→14 compilada; publicação pendente
+## 2026-11-07 — transição m=2, n=13→14 integrada pela PR #267
 
-- `c5RoundedExpStateC_stage14_correct` prova localmente a transição no nó
-  `(2/5,0)`, com coeficiente `1/13! = 1/6227020800`, arredondamentos em 896
-  bits e soma acumulada.
+- `c5RoundedExpStateC_stage14_correct` prova a transição no nó `(2/5,0)`, com
+  coeficiente `1/13! = 1/6227020800`, arredondamentos em 896 bits e soma.
 - Lean 4.32.0 com `warningAsError=true` passou; as cinco raízes auditadas
   usam apenas axiomas padrão.
 - Fontes, logs e checksums estão em
   `evidence/rational-boxes/c5-m2-dirichlet-term-stage14-20261107/`.
-- A branch parte da main `9fdcbda23aa1a22b104244a2c5b477c36194ad87`; PR ainda pendente.
+- O commit `eaf5a2a71a5d896d4521e2b7cf969421343b3982` entrou na `main` pelo merge `b1a7c9b14eb1352cc470508fdb2bf9a8baaea56a`; o GitHub não
+  reportou checks hospedados.
 - Cobre apenas `n≤14` de um nó. Estados seguintes, quadraturas, caixa completa,
   inclusão C2 e sinais finais permanecem abertos. Próximo: `n=15`.
 
