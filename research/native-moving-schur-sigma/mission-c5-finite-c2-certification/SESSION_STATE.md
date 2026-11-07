@@ -1,20 +1,24 @@
 # C5 — estado da sessão
 
-## Atualização — estágio Taylor 13 do nó m=2 integrado pela PR #265
+## Atualização — estágio Taylor 14 do nó m=2 compilado; publicação pendente
 
-Na branch de prova `codex/c5-m2-stage13-20261107`, baseada na `main` em
-`08f238c465179076a2fb15635e23e513245d3d6d`, foi provada
-`c5RoundedExpStateC_stage13_correct` para `(a,j)=(2/5,0)`. Lean 4.32.0 com
-`warningAsError=true` terminou em `BUILD_EXIT=0`; as cinco declarações
-auditadas dependem somente de axiomas padrão, sem `sorryAx`. Fontes, pins,
-logs e hashes estão em
-`evidence/rational-boxes/c5-m2-dirichlet-term-stage13-20261107/`.
-O commit de prova `4c4856c022eb302b013d36c10806d609770c42d2` foi integrado pela PR #265 no merge
-`52c57108c74cb5f7f12bdbd94ca616f3bba8cf2a`; o GitHub não reportou checks hospedados.
+Na branch `codex/c5-m2-stage14-20261107`, baseada na `main` em `9fdcbda23aa1a22b104244a2c5b477c36194ad87`, foi
+provada localmente `c5RoundedExpStateC_stage14_correct` para `(a,j)=(2/5,0)`.
+Lean 4.32.0 com `warningAsError=true` terminou em `BUILD_EXIT=0`; as cinco
+declarações auditadas dependem somente de axiomas padrão, sem `sorryAx`.
+Fontes, pins, logs e hashes estão em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage14-20261107/`. A PR de prova
+está pendente de publicação.
 
-O resultado cobre somente `n≤13` de um nó. Os estados restantes, demais nós,
+O resultado cobre somente `n≤14` de um nó. Os estados restantes, demais nós,
 quadraturas, caixa completa, inclusão da fonte C2 e sinais finais seguem
-abertos. C5 permanece incompleta. Próximo: avançar para `n=14`.
+abertos. C5 permanece incompleta. Próximo: avançar para `n=15`.
+
+## Checkpoint anterior — estágio Taylor 13 integrado pela PR #265
+
+`c5RoundedExpStateC_stage13_correct` entrou na `main` pelo commit `4c4856c022eb302b013d36c10806d609770c42d2`
+e merge `52c57108c74cb5f7f12bdbd94ca616f3bba8cf2a`. Evidência em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage13-20261107/`.
 
 ## Checkpoint anterior — estágio Taylor 12 integrado pela PR #263
 
