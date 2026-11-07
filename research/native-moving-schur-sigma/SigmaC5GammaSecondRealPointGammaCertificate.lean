@@ -99,7 +99,7 @@ private theorem c5GammaSecondRealPoint_log1_half_endpoint_bound (n : ℕ) (x : �
       (-Interval.logSum n (1 - x) - Interval.logRem n (1 - x))| ≤ 2
     exact c5GammaSecondRealPoint_abs_max_le hhi0 hlo
 
-private theorem c5GammaSecondRealPoint_logQ_absBound :
+theorem c5GammaSecondRealPoint_logQ_absBound :
     |(Interval.logQ 384 8 240).lo| ≤ 18 ∧
       |(Interval.logQ 384 8 240).hi| ≤ 18 := by
   have hq : |1 - (240 : ℚ) / 2 ^ 8| ≤ 1 / 2 := by norm_num
@@ -233,5 +233,6 @@ theorem c5GammaSecondRealPointBox_contains :
 
 #print axioms c5GammaSecondRealPointPowerBox_contains
 #print axioms c5GammaSecondRealPointBox_contains
+#print axioms c5GammaSecondRealPoint_logQ_absBound
 
 end CarrySigmaObstruction

@@ -1,0 +1,162 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaComplexNodeGammaCertificate.lean:45:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (Interval.exact (901 / 4000)).mul (Interval.exact 0)
+in the target expression
+  max
+        |{
+                re :=
+                  ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                              im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.re.mul
+                        { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.re).sub
+                    ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                            im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.im.mul
+                      { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.im),
+                im :=
+                  ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                              im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.re.mul
+                        { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.im).add
+                    ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                            im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.im.mul
+                      { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.re) }.re.lo|
+        |{
+                re :=
+                  ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                              im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.re.mul
+                        { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.re).sub
+                    ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                            im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.im.mul
+                      { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.im),
+                im :=
+                  ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                              im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.re.mul
+                        { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.im).add
+                    ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                            im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.im.mul
+                      { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.re) }.re.hi| +
+      max
+        |{
+                re :=
+                  ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                              im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.re.mul
+                        { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.re).sub
+                    ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                            im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.im.mul
+                      { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.im),
+                im :=
+                  ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                              im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.re.mul
+                        { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.im).add
+                    ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                            im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.im.mul
+                      { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.re) }.im.lo|
+        |{
+                re :=
+                  ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                              im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.re.mul
+                        { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.re).sub
+                    ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                            im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.im.mul
+                      { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.im),
+                im :=
+                  ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                              im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.re.mul
+                        { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.im).add
+                    ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                            im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.im.mul
+                      { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.re) }.im.hi| ≤
+    8
+
+hlog : |(Interval.logQ 384 8 240).lo| ≤ 18 ∧ |(Interval.logQ 384 8 240).hi| ≤ 18
+hre :
+  |((Interval.exact (901 / 4000)).mul (Interval.logQ 384 8 240)).lo| ≤ |901 / 4000| * 18 ∧
+    |((Interval.exact (901 / 4000)).mul (Interval.logQ 384 8 240)).hi| ≤ |901 / 4000| * 18
+him :
+  |((Interval.exact (3 / 20)).mul (Interval.logQ 384 8 240)).lo| ≤ |3 / 20| * 18 ∧
+    |((Interval.exact (3 / 20)).mul (Interval.logQ 384 8 240)).hi| ≤ |3 / 20| * 18
+hzeroRe : (Interval.exact (901 / 4000)).mul (Interval.exact 0) = Interval.exact 0
+hzeroIm : (Interval.exact (3 / 20)).mul (Interval.exact 0) = Interval.exact 0
+⊢ max
+        |{
+                re :=
+                  ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                              im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.re.mul
+                        { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.re).sub
+                    ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                            im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.im.mul
+                      { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.im),
+                im :=
+                  ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                              im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.re.mul
+                        { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.im).add
+                    ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                            im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.im.mul
+                      { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.re) }.re.lo|
+        |{
+                re :=
+                  ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                              im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.re.mul
+                        { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.re).sub
+                    ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                            im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.im.mul
+                      { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.im),
+                im :=
+                  ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                              im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.re.mul
+                        { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.im).add
+                    ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                            im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.im.mul
+                      { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.re) }.re.hi| +
+      max
+        |{
+                re :=
+                  ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                              im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.re.mul
+                        { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.re).sub
+                    ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                            im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.im.mul
+                      { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.im),
+                im :=
+                  ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                              im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.re.mul
+                        { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.im).add
+                    ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                            im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.im.mul
+                      { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.re) }.im.lo|
+        |{
+                re :=
+                  ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                              im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.re.mul
+                        { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.re).sub
+                    ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                            im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.im.mul
+                      { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.im),
+                im :=
+                  ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                              im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.re.mul
+                        { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.im).add
+                    ({ re := { lo := 901 / 4000, hi := 901 / 4000, le := ⋯ },
+                            im := { lo := 3 / 20, hi := 3 / 20, le := ⋯ } }.im.mul
+                      { re := Interval.logQ 384 8 240, im := { lo := 0, hi := 0, le := ⋯ } }.re) }.im.hi| ≤
+    8
+
+Note: The target expression is not type-correct under the `instances` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  Application type mismatch: The argument
+    neg_neg (901 / 4000)
+  has type
+    @Eq ℚ (- -(901 / 4000)) (901 / 4000)
+  but is expected to have type
+    @Eq ℚ (-(exact (-(901 / 4000)) (-(3 / 20))).re.lo) (901 / 4000)
+  in the application
+    neg_neg (901 / 4000) ▸ Interval.neg._proof_1 (exact (-(901 / 4000)) (-(3 / 20))).re
+'CarrySigmaObstruction.c5GammaComplexNodePowerArg_normBound' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5GammaComplexNodePowerBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5GammaComplexNodeBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

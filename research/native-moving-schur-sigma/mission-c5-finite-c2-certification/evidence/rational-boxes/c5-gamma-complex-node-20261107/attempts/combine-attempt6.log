@@ -1,0 +1,6 @@
+'c5GammaComplexNodeCoreScaledReal_eq_chunkSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5GammaComplexNodeCoreScaledImag_eq_chunkSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5GammaComplexNodeCoreScaled_chunkBounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5GammaComplexNodeRealFloorSum_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5GammaComplexNodeImagFloorSum_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5GammaComplexNodeCoreBox_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
