@@ -1,6 +1,6 @@
 # C5 — checkpoints
 
-## 2026-11-07 — transição m=2, n=2→3 compilada localmente; PR pendente
+## 2026-11-07 — transição m=2, n=2→3 integrada pela PR #245
 
 - `c5RoundedExpStateC_stage3_correct` prova a recorrência até `n=3` no nó
   `(a,j)=(2/5,0)`. O passo foi decomposto em produto real de sinais mistos,
@@ -9,8 +9,10 @@
   auditadas mostram somente axiomas padrão e não há `sorryAx` na saída aceita.
 - O último erro da tentativa inicial, o build válido, o pin e a reprodução
   estão em `evidence/rational-boxes/c5-m2-dirichlet-term-stage3-20261107/`.
-- Este checkpoint está local e aguarda PR. Ele cobre somente `n≤3`; não valida
-  `n=192`, quadraturas, o nó completo, a ponte CSV–Lean ou a inclusão da fonte.
+- A PR #245 integrou este checkpoint, commit de prova `e264aea05ac6036dea612c5e9ca97c8c7cc81495`, merge na
+  `main` `727b3920d12e0979c5f722a04732fb346fc880d8`; não houve checks hospedados.
+  Ele cobre somente `n≤3`; não valida `n=192`, quadraturas, nó completo,
+  ponte CSV–Lean ou inclusão da fonte.
 - Próximo passo: estender a mesma decomposição a `n=4`.
 
 

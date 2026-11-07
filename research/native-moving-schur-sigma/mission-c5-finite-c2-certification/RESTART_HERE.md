@@ -1,11 +1,11 @@
 # Retomar primeiro — missão C5
 
-## Retomada mais recente — nó m=2, transição Taylor n=2→3
+## Retomada mais recente — nó m=2, transição Taylor n=2→3 integrada pela PR #245
 
 ```text
 MISSION: C5 — certificar as janelas negativas da fonte C2 original.
-CURRENT BASE: main 418d440c6b7c1feff274ae17156595d186942d0e (PR #244).
-LOCAL BRANCH: codex/c5-m2-stage3-20261107 (checkpoint ainda não publicado).
+PROOF MERGE: PR #245, commit de prova e264aea05ac6036dea612c5e9ca97c8c7cc81495, merge 727b3920d12e0979c5f722a04732fb346fc880d8.
+ESTADO: checkpoint integrado; consultar origin/main antes da próxima alteração.
 LAST VERIFIED THEOREM: c5RoundedExpStateC_stage3_correct.
 LAST COMPILED FILE: SigmaC5M2TaylorStateStage3Certificate.lean (Lean 4.32.0, warnings como erros).
 AXIOM AUDIT: cinco raízes com propext, Classical.choice, Quot.sound; sem sorryAx.
@@ -21,7 +21,7 @@ O estágio 2 já está integrado pela PR #243 e os documentos pós-merge pela PR
 do estágio 2 e compile o módulo indicado na evidência do estágio 3.
 
 
-## Retomada mais recente — piloto do nó m=2 até o estado n=2
+## Retomada anterior — piloto do nó m=2 até o estado n=2
 
 ```text
 MISSION: C5 — certificar as janelas negativas da fonte C2 original.

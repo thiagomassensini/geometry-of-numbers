@@ -1,6 +1,6 @@
 # Próximos passos — C5
 
-## Atualização local — nó m=2 validado até n=3 (2026-11-07; publicação pendente)
+## Atualização — nó m=2 validado até n=3 (PR #245 integrada)
 
 `c5RoundedExpStateC_stage3_correct` compila em Lean 4.32.0 com warnings como
 erros e foi auditado com cinco declarações, somente axiomas padrão. A prova
@@ -8,7 +8,9 @@ certifica a transição `n=2→3` no nó `(2/5,0)`, incluindo a multiplicação 
 de sinais mistos e o termo escalado por `1/2`. Evidência e reprodução estão em
 `evidence/rational-boxes/c5-m2-dirichlet-term-stage3-20261107/README.md`.
 
-A publicação deste checkpoint está pendente. Próximo passo: provar `n=4` e
+A PR #245 integrou este checkpoint, commit de prova `e264aea05ac6036dea612c5e9ca97c8c7cc81495`, merge na
+`main` `727b3920d12e0979c5f722a04732fb346fc880d8`; não houve checks
+hospedados. Próximo passo: provar `n=4` e
 confirmar que o formato por estágios se mantém manejável. Depois, ainda será
 preciso chegar a `n=192`, validar as quadraturas do termo nodal, ligar as 516
 caixas à fonte C2 e provar as inclusões `sigmaC00495SourceBoxes` e

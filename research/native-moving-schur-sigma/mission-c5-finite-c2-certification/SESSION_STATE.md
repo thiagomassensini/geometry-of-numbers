@@ -1,6 +1,6 @@
 # C5 — estado da sessão
 
-## Atualização local — transição do nó m=2 de n=2 para n=3 compilada (2026-11-07)
+## Atualização — transição do nó m=2 de n=2 para n=3 integrada pela PR #245 (2026-11-07)
 
 Na branch `codex/c5-m2-stage3-20261107`, baseada na main após PR #244
 (`418d440c6b7c1feff274ae17156595d186942d0e`), foi provada a igualdade
@@ -10,7 +10,8 @@ arredondamentos em 896 bits. Lean 4.32.0 com `warningAsError=true` passou; as
 cinco declarações auditadas têm somente axiomas padrão. Evidência, pin, hashes,
 log e erro intermediário estão em
 `evidence/rational-boxes/c5-m2-dirichlet-term-stage3-20261107/README.md`.
-Este checkpoint local ainda aguarda publicação.
+A PR #245 integrou o checkpoint, commit de prova `e264aea05ac6036dea612c5e9ca97c8c7cc81495`, merge na `main`
+`727b3920d12e0979c5f722a04732fb346fc880d8`; o GitHub não reportou checks.
 
 O escopo é só a recorrência até `n=3`. Não fecha os 192 termos, as quadraturas,
 a caixa completa do nó ou as inclusões da fonte C2. A próxima etapa é
