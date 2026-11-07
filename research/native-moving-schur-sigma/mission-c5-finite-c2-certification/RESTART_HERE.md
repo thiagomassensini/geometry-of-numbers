@@ -5,8 +5,8 @@
 ```text
 MISSION: C5 — certificar as primeiras janelas negativas da fonte C2 original.
 CURRENT PHASE: prova formal da ligação entre os extremos CSV e as caixas Lean; composição C5 permanece aberta.
-CURRENT BASE: main após PR #214, `dcca7d1cdef7c2f13685540a7768c3d8c9899aa8`.
-LAST PROOF PR: #213, commit `f51db20fa6fd21e08bbc2080cdd4bcb2265e2ea1`, merge `5fe8a7b330d6a106e2b2c44781b8d0677c7ea7f3`.
+CURRENT BASE: main após PR #215, `6bfb4b14606ec1896a2d01d60be4ca54117bd128`.
+LAST PROOF PR: #213, commit `f51db20fa6fd21e08bbc2080cdd4bcb2265e2ea1`, merge `5fe8a7b330d6a106e2b2c44781b8d0677c7ea7f3`. Latest checkpoint documental: PR #215, merge `6bfb4b14606ec1896a2d01d60be4ca54117bd128`.
 FAILED PILOT: `(a,j)=(2/5,0)`; `decide` trava em `Rat.num`, `rfl` não fecha por definicionalidade, `norm_num` com 1M passos excede o limite em ~28 min.
 WHAT IS PROVED: cobertura adaptativa formal de zeta nos 129 nós e exportação de 516 caixas por `#eval`; a exportação não foi ligada formalmente aos literais CSV.
 WHAT REMAINS: decompor a computação em lemas compartilhados, provar a ponte formal, compor com Gamma/π/fonte C2 e provar as inclusões em `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.

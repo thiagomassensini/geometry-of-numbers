@@ -30,6 +30,8 @@ Nenhum método fechou: `decide` não reduz `Rat.num`, `rfl` não é conversível
 a expansão monolítica excede 1 milhão de passos após ~28 minutos. Não há
 `.olean` válido, auditoria aprovada ou inclusão C5. Os erros e o comando estão
 preservados em `evidence/rational-boxes/c5-exported-box-proof-attempt/`.
+Checkpoint integrado pela PR #215, commit `baa5e3e`, merge na `main`
+`6bfb4b14606ec1896a2d01d60be4ca54117bd128`.
 
 1. **Concluído nesta etapa:** exportar os extremos racionais para os quatro
    valores reais e todos os 129 nós; CSV, sondas, logs, pins e reprodução em
