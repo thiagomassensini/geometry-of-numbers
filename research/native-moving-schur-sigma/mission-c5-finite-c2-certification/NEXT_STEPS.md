@@ -1,13 +1,15 @@
 # Próximos passos — C5
 
-## Atualização local — nó m=2 validado até n=5 (2026-11-07; PR pendente)
+## Atualização — nó m=2 validado até n=5 (PR #249 integrada)
 
 `c5RoundedExpStateC_stage5_correct` compilou em Lean 4.32.0 com warnings como
 erros e a auditoria das cinco declarações retornou apenas axiomas padrão. O
 passo usou `1/4! = 1/24` e a multiplicação de intervalos de sinais mistos.
 Evidência em `evidence/rational-boxes/c5-m2-dirichlet-term-stage5-20261107/README.md`.
 
-A PR ainda está pendente. Próximo: `n=6`. Depois, ainda será necessário provar
+A PR #249 integrou este checkpoint, commit de prova `1782048f05c43fc31e491fa7192105235b34a14e`, merge na `main`
+`58b9a61532f79f6aa51ebfb48edaacf728be3738`; não houve checks hospedados.
+Próximo: `n=6`. Depois, ainda será necessário provar
 os demais termos, as quadraturas do avaliador, a caixa nodal completa, a ponte
 das 516 caixas e as inclusões da fonte C2. C5 segue incompleta.
 

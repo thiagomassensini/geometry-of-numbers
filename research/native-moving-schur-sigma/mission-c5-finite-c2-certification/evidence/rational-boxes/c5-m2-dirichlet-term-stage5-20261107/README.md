@@ -49,5 +49,8 @@ O wrapper verifica que o checkout Carry está limpo e pinado e compila com
 `warningAsError=true`. O build aceito está preservado em
 `state-stage5-build.log`; não houve tentativa de prova Lean que falhasse.
 
-Os arquivos do checkpoint estão listados em `SHA256SUMS.txt`. C5 continua
-incompleta até que a avaliação do nó e as inclusões da fonte C2 sejam provadas.
+A PR #249 integrou o resultado: commit de prova
+`1782048f05c43fc31e491fa7192105235b34a14e`, merge na `main`
+`58b9a61532f79f6aa51ebfb48edaacf728be3738`. O GitHub não reportou checks
+hospedados. Os arquivos do checkpoint estão listados em `SHA256SUMS.txt`; C5
+continua incompleta até que a avaliação do nó e as inclusões da fonte C2 sejam provadas.
