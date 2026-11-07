@@ -1,17 +1,21 @@
 # C5 — obrigações abertas
 
-## Atualização — recorrência de um nó até n=17 integrada pela PR #273
+## Atualização — recorrência de um nó até n=18 compilada localmente
 
-`c5RoundedExpStateC_stage17_correct` compilou e passou pela auditoria em Lean
-4.32.0. A PR #273 integrou o commit `0783b090aa4f9b6faf7ecd3605c187ae46352498` no merge `41164de6cf0042594833bae02cdab2ce4cd11aae`; o GitHub não
-reportou checks hospedados. Evidências em
-`evidence/rational-boxes/c5-m2-dirichlet-term-stage17-20261107/`. O resultado
-cobre somente `n≤17` no nó `(2/5,0)`.
+`c5RoundedExpStateC_stage18_correct` compilou e passou pela auditoria em Lean
+4.32.0. Evidências em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage18-20261107/`. A publicação
+em PR está pendente. O resultado cobre somente `n≤18` no nó `(2/5,0)`.
 
 Continuam abertas a extensão até `n=192`, os demais nós, quadraturas, caixa
 nodal completa, ponte CSV–Lean, composição com a fonte original e inclusões
 `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes`. C5 segue parcial; próximo:
-`n=18`.
+`n=19`.
+
+## Checkpoint anterior — recorrência até n=17 integrada pela PR #273
+
+A prova foi integrada pelo merge `41164de6cf0042594833bae02cdab2ce4cd11aae`; cobre somente o nó `(2/5,0)` até
+`n=17`. A extensão corrente e os demais itens seguem incompletos.
 
 ## Checkpoint anterior — recorrência até n=16 integrada pela PR #271
 
