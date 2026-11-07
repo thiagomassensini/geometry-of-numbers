@@ -1,19 +1,20 @@
 # Próximos passos — C5
 
-## Atualização — estágio Taylor 6 compilado localmente; publicação ainda pendente
+## Atualização — estágio Taylor 6 integrado pela PR #251
 
 `c5RoundedExpStateC_stage6_correct` passou em Lean 4.32.0 com
 `warningAsError=true`; as cinco declarações auditadas têm somente axiomas
 padrão. A evidência integral está em
 `evidence/rational-boxes/c5-m2-dirichlet-term-stage6-20261107/README.md`.
-Este é um checkpoint parcial até `n=6` do nó `(2/5,0)`, ainda sem PR ou merge.
+A PR #251 integrou o commit de prova
+`e6c9ef307c69c59a8e665232b4b0271c481d8fcd` no merge
+`7b61a5ceb0d8567c33fe27a5810d493f4640ed69`; o GitHub não reportou checks
+hospedados. O checkpoint cobre somente `n≤6` do nó `(2/5,0)`.
 
-1. Revisar e publicar este checkpoint em PR; depois do merge, atualizar os
-   documentos com o merge SHA real.
-2. Estender a recorrência do nó m=2 para `n=7`, seguindo o padrão modular dos
+1. Estender a recorrência do nó m=2 para `n=7`, seguindo o padrão modular dos
    estágios anteriores.
-3. Continuar até `n=192`; certificar quadraturas e a caixa nodal completa.
-4. Provar a ponte CSV–Lean, as inclusões da fonte C2 e os sinais finais.
+2. Continuar até `n=192`; certificar quadraturas e a caixa nodal completa.
+3. Provar a ponte CSV–Lean, as inclusões da fonte C2 e os sinais finais.
 
 C5 continua incompleta; o estágio atual não fecha a fonte C2 nem as janelas
 negativas finais.

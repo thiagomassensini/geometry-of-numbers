@@ -1,10 +1,10 @@
 # Retomar primeiro — missão C5
 
-## Retomada mais recente — nó m=2, transição Taylor n=5→6 validada localmente
+## Retomada mais recente — nó m=2, transição Taylor n=5→6 integrada pela PR #251
 
 ```text
 MISSION: C5 — certificar as janelas negativas da fonte C2 original.
-CHECKPOINT: local, PR e merge ainda pendentes.
+PROOF PR: #251, commit de prova e6c9ef307c69c59a8e665232b4b0271c481d8fcd, merge 7b61a5ceb0d8567c33fe27a5810d493f4640ed69.
 BASE MAIN: 850582ec76a9819149df2cbad4eba49f3e666e40 (PR #250 integrada).
 LAST VERIFIED THEOREM: c5RoundedExpStateC_stage6_correct.
 LAST COMPILED FILE: SigmaC5M2TaylorStateStage6Certificate.lean (Lean 4.32.0, warnings como erros).
@@ -14,7 +14,7 @@ OPEN: n=7…192, outros nós, quadraturas, nó completo, ponte CSV–Lean, inclu
 EVIDENCE: evidence/rational-boxes/c5-m2-dirichlet-term-stage6-20261107/README.md.
 PINS: Geometry bf76ce8f5bb753b377a12ba6dbd5c397e4fb3; Carry 045369f6dedcb2e75e9aefed1d12c9f73b9a2532; Lean 4.32.0.
 LAST ENVIRONMENT ERROR: tentativa isolada sem o diretório compartilhado de saída não encontrou SigmaC5M2TaylorStateStage5Certificate; log preservado, build final corrigido passou.
-NEXT: revisar, publicar PR e mergear este checkpoint; registrar o SHA integrado; continuar em n=7.
+NEXT: continuar a recorrência do nó m=2 em n=7.
 DO NOT REPEAT: C1B/C2/C3/C4; migração geral para Lean 4.35; prova monolítica dos 192 passos.
 ```
 

@@ -1,6 +1,6 @@
 # C5 — checkpoints
 
-## 2026-11-07 — transição m=2, n=5→6 validada localmente; ainda não publicada
+## 2026-11-07 — transição m=2, n=5→6 integrada pela PR #251
 
 - `c5RoundedExpStateC_stage6_correct` prova a próxima transição da recorrência
   para o nó `(a,j)=(2/5,0)`, com coeficiente `1/5! = 1/120`, termo arredondado
@@ -11,10 +11,12 @@
   mostram somente axiomas padrão.
 - Fonte, logs e checksums estão em
   `evidence/rational-boxes/c5-m2-dirichlet-term-stage6-20261107/`.
-- O checkpoint ainda está local, sem PR ou merge. Cobre somente `n≤6` de um
-  nó; não cobre os estados seguintes, quadraturas, caixa completa, inclusões
-  da fonte C2 ou sinais finais. Próximo passo: publicar esta etapa; em seguida,
-  estender a prova a `n=7`.
+- A PR #251 integrou o commit de prova
+  `e6c9ef307c69c59a8e665232b4b0271c481d8fcd` no merge
+  `7b61a5ceb0d8567c33fe27a5810d493f4640ed69`; não houve checks hospedados.
+  Cobre somente `n≤6` de um nó, sem estados seguintes, quadraturas, caixa
+  completa, inclusões da fonte C2 ou sinais finais. Próximo passo: estender a
+  prova a `n=7`.
 
 ## 2026-11-07 — transição m=2, n=4→5 integrada pela PR #249
 

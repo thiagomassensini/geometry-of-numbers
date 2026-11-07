@@ -1,6 +1,6 @@
 # C5 — validação
 
-## Transição do nó m=2 para n=6 — passou localmente; checkpoint ainda não publicado
+## Transição do nó m=2 para n=6 — passou e foi integrada pela PR #251; C5 parcial
 
 `SigmaC5M2TaylorStateStage6Certificate.lean` compilou em Lean 4.32.0 com
 `warningAsError=true`, contra Geometry no pin
@@ -12,8 +12,10 @@
 
 A prova cobre apenas `c5RoundedExpStateC` até `n=6` no nó `(2/5,0)`. Ela não
 fecha os outros termos, as quadraturas, a caixa nodal completa ou a ligação
-entre as caixas e os coeficientes da fonte C2. A PR do checkpoint e seu merge
-continuam pendentes; C5 permanece incompleta.
+entre as caixas e os coeficientes da fonte C2. A PR #251 integrou o commit de
+prova `e6c9ef307c69c59a8e665232b4b0271c481d8fcd` no merge
+`7b61a5ceb0d8567c33fe27a5810d493f4640ed69`; o GitHub não reportou checks
+hospedados. C5 permanece incompleta.
 
 ## Transição do nó m=2 para n=5 — PASSOU e foi integrada pela PR #249; C5 parcial
 
