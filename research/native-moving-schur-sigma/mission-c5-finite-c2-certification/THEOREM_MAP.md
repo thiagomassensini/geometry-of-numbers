@@ -1,5 +1,17 @@
 # C5 — mapa dos teoremas e obrigações
 
+## Validação local recente — Gamma em `901/4000`
+
+| Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |
+|---|---|---|---|---|
+| `CarrySigmaObstruction.c5GammaSecondRealPointPowerArg_normBound` | `SigmaC5GammaSecondRealPointGammaCertificate.lean` | nenhuma | norma do argumento da potência `≤ 8` | limites racionais de `logQ`; **VALIDADO localmente** |
+| `CarrySigmaObstruction.c5GammaSecondRealPointPowerBox_contains` | idem | nenhuma | `dirichletTermBox2` contém `240^(901/4000)` | núcleo racional em blocos + potência intervalar; **VALIDADO localmente** |
+| `CarrySigmaObstruction.c5GammaSecondRealPointBox_contains` | idem | nenhuma | caixa inflada contém `Complex.Gamma (901/4000 : ℂ)` | caixa do núcleo e erro `gamma_finite_1024_240_error`; **VALIDADO localmente, PR pendente** |
+
+Build Lean 4.32.0 com warnings como erros e auditoria de axiomas constam em
+`evidence/rational-boxes/c5-gamma-second-real-point-20261107/README.md`.
+Este ponto não prova os nós complexos nem as inclusões da fonte C2.
+
 ## Resultado integrado — Gamma no primeiro ponto (PR #285, Lean 4.32)
 
 | Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |

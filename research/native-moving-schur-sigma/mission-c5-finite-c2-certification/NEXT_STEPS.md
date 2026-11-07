@@ -1,13 +1,17 @@
 # Próximos passos — C5
 
-## Estado atual e próximo passo — caixa Gamma em um ponto (2026-11-07)
+## Estado atual e próximo passo — segunda caixa Gamma em ponto real (2026-11-07)
 
-- A prova `CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains` compila em Lean 4.32 e contém `Γ(1/5)` usando a potência intervalar, os 16 blocos racionais já certificados e o limite do erro de `gammaFinite`.
-- Build e auditoria bem-sucedidos estão registrados em `evidence/rational-boxes/c5-gamma-first-node-20261107/README.md`; todas as tentativas anteriores foram preservadas. Axiomas: somente os três padrão; sem `sorryAx`.
-- PR #285 integrou a prova `742dd764df81ee75bd487d1bf21e5a9afa5519c5`; merge atual da `main`: `832b201b6907c6682aa9657c3e4ff9da6dd40254`.
-- Próximo subpasso matemático: construir a caixa Gamma no ponto real `901/4000` necessário ao deslocamento `99/2000`, a partir do menor conjunto de blocos racionais.
-- Depois: generalizar a avaliação aos nós complexos e compor os valores de Gamma e zeta, o fator nativo e a quadratura que definem os coeficientes C2. Então provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` e fechar os sinais de `sigmaPadeD` original.
-- Limite atual: um ponto Gamma apenas. As inclusões dos coeficientes C2 e os sinais finais seguem não provados; C5 continua incompleta.
+- `CarrySigmaObstruction.c5GammaSecondRealPointBox_contains` contém `Γ(901/4000)`; probe, pisos dos 16 blocos, combinação racional e caixa Gamma passaram no build Lean 4.32.0 com warnings como erros.
+- A auditoria das raízes públicas mostra somente axiomas padrão; não há `sorryAx`, axiomas próprios ou `native_decide`. Os logs, fontes, pins e comando reprodutível estão em `evidence/rational-boxes/c5-gamma-second-real-point-20261107/README.md`.
+- A validação local está pronta; checkpoint GitHub/PR ainda pendente nesta revisão.
+- Próximo subpasso matemático: avaliar e certificar os pontos complexos da malha C5 que entram na composição da fonte em `d=99/2000` e `d=1/10`.
+- Depois, compor Gamma e zeta com os fatores originais da fonte completada e a quadratura dos coeficientes; provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`; então fechar os sinais de `sigmaPadeD` original.
+- Limite atual: apenas dois pontos reais de Gamma. C5 permanece incompleta.
+
+## Checkpoint anterior — caixa `Γ(1/5)` (PR #285 integrada)
+
+`CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains` está integrada no merge `832b201b6907c6682aa9657c3e4ff9da6dd40254`; evidência em `evidence/rational-boxes/c5-gamma-first-node-20261107/README.md`.
 
 ## Histórico — checkpoint do núcleo Gamma racional por blocos (PR #282)
 

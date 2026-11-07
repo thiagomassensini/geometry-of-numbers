@@ -1,0 +1,4 @@
+'c5GammaSecondRealPointCoreScaled_eq_chunkSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5GammaSecondRealPointCoreScaled_chunkBounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5GammaSecondRealPointChunkFloorSum_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5GammaSecondRealPointCoreChunkBox_contains' depends on axioms: [propext, Classical.choice, Quot.sound]

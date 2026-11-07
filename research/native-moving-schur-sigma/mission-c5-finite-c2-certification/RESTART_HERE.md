@@ -1,15 +1,17 @@
 # Retomar primeiro — missão C5
 
-## Estado atual — composição Gamma no primeiro ponto (2026-11-07)
+## Estado atual — segunda caixa Gamma em ponto real validada localmente (2026-11-07)
 
-- Missão C5 em andamento; C2, C3 e C4 permanecem concluídas. Não reiniciar etapas anteriores.
-- PR #285 integrou o commit de prova `742dd764df81ee75bd487d1bf21e5a9afa5519c5`; merge e HEAD atual da `main`: `832b201b6907c6682aa9657c3e4ff9da6dd40254`.
-- Último teorema compilado: `CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains`, no arquivo `SigmaC5GammaFirstNodeCertificate.lean`. Prova `Γ(1/5)` dentro da caixa construída com `240^z`, o núcleo racional já certificado em 16 blocos e erro de `gammaFinite` `10⁻⁹⁹`.
-- Build Lean 4.32.0 com warnings como erros passou em `build-attempt11.log`. As duas raízes auditadas usam apenas `propext`, `Classical.choice`, `Quot.sound`; sem `sorryAx`, axioma próprio ou `native_decide`.
-- Fonte e logs estão publicados e integrados. Evidência, tentativas 1–11, comando e hashes: `evidence/rational-boxes/c5-gamma-first-node-20261107/README.md`.
-- Condicional: O3 ainda depende de `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`; os sinais C5 finais não estão provados. O resultado novo cobre só `Γ(1/5)`.
-- Próximo comando: usar o build registrado em `README.md` após acrescentar o bloco racional do ponto `901/4000`. Próxima obrigação: certificar esse ponto e depois expandir a malha Gamma para compor a fonte C2.
-- DO NOT REPEAT: C1B/C2/C3/C4, o núcleo racional `gammaFiniteRationalCore 1024 240 (1/5) 0`, a composição de `Γ(1/5)`, nem a migração geral para Lean 4.35.
+- C5 segue ativa; C2, C3 e C4 permanecem concluídas. Não reiniciar etapas anteriores nem a migração geral para Lean 4.35.
+- Último resultado compilado: `CarrySigmaObstruction.c5GammaSecondRealPointBox_contains` em `SigmaC5GammaSecondRealPointGammaCertificate.lean`, que contém `Complex.Gamma (901/4000 : ℂ)`.
+- Os quatro módulos passaram em Lean 4.32.0 com warnings como erros. As raízes auditadas mostram somente `propext`, `Classical.choice`, `Quot.sound`; sem `sorryAx`, axiomas próprios ou `native_decide`.
+- Evidência completa e comando de retomada: `evidence/rational-boxes/c5-gamma-second-real-point-20261107/README.md` e `reproduce.sh`. O checkpoint foi validado localmente; a publicação será anotada depois do merge da PR.
+- Próxima obrigação: compor as avaliações de Gamma nos nós complexos da fonte com as caixas de zeta, o fator nativo original e as quadraturas para provar as duas inclusões da fonte C2.
+- C1B/C2/C3/C4, a caixa Gamma em `1/5` e o ponto `901/4000` já estão concluídos; não repetir.
+
+## Checkpoint anterior — caixa `Γ(1/5)` (PR #285 integrada)
+
+`CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains` está integrada pelo merge `832b201b6907c6682aa9657c3e4ff9da6dd40254`; evidência em `evidence/rational-boxes/c5-gamma-first-node-20261107/README.md`.
 
 ## Histórico — checkpoint do núcleo Gamma racional por blocos (PR #282)
 
