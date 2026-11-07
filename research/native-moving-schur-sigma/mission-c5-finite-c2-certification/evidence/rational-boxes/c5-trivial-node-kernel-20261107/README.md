@@ -77,8 +77,10 @@ das nove declarações passaram em Lean 4.32.0, somente com axiomas padrão. Log
 pins e hashes estão em `SigmaC5ZeroExpStage3Certificate.build.log`,
 `SigmaC5ZeroExpStage3Audit.log`, `stage3-pins.txt` e `stage3-sha256.txt`.
 Tentativas de expansão direta e a sonda que isolou as fórmulas estão em
-`stage3-attempts/`. Este checkpoint está validado localmente; a publicação
-aguarda a PR deste checkpoint.
+`stage3-attempts/`. PR #228 integrou este checkpoint: commit de prova
+`682eae99f4b05abd70ee8068aada7bc2af3e0ebb`, merge na `main`
+`0d312c654015bf10384969e64f352b0313e2dd39`. O GitHub não reportou checks; a
+compilação e a auditoria locais estão nos logs acima.
 
 ## Pins e reprodução
 

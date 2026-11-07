@@ -1,6 +1,6 @@
 # Próximos passos — C5
 
-## Prioridade imediata — publicar estágio 3; depois avançar ao estágio 4
+## Prioridade imediata — avançar ao estágio 4
 
 O núcleo `m = 1` já está formalizado e compilado: o log centrado vira a caixa
 exata `0`, o argumento do termo de Dirichlet vira `0`, e a exponencial
@@ -24,11 +24,13 @@ merge `96579150be6700793970bf8cd84f91dd2cccb102`; o GitHub não reportou checks.
 
 Agora `c5ZeroExpStage3_eq` e os oito lemas sobre os extremos e arredondamento
 da caixa quadrada do estágio 2 passaram build e auditoria; esta prova importa
-o módulo de estágio 2 já integrado. A publicação do estágio 3 ainda está
-pendente.
+o módulo de estágio 2 já integrado. A PR #228 integrou o checkpoint: commit de
+prova `682eae99f4b05abd70ee8068aada7bc2af3e0ebb`, merge na `main`
+`0d312c654015bf10384969e64f352b0313e2dd39`. O GitHub não reportou checks
+hospedados.
 
-1. Publicar e integrar o estágio 3; então provar e auditar o estágio 4 da
-   exponencial com argumento zero, preservando a inflação do resto.
+1. Provar e auditar o estágio 4 da exponencial com argumento zero, preservando
+   a inflação do resto.
 2. Retomar a ponte formal CSV–Lean e avaliar, em etapas, os demais termos da
    caixa; depois compor Gamma, o fator de π e a fonte C2 original e provar as
    inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.

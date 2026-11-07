@@ -1,26 +1,28 @@
 # Retomar primeiro — missão C5
 
-## Retomada mais recente — igualdade do estágio 3 validada localmente
+## Retomada mais recente — igualdade do estágio 3 integrada
 
 C1B/C2/C3 já estão integradas pelas PRs #155/#157/#159; não as refazer. A
-prioridade vigente é C5. O núcleo `m = 1` foi integrado pela PR #222, a
-igualdades dos estágios 1 e 2 pelas PRs #224 e #226. `SigmaC5ZeroExpStage3Certificate.lean`
+prioridade vigente é C5. O núcleo `m = 1` foi integrado pela PR #222, e as
+igualdades dos estágios 1 e 2 pelas PRs #224 e #226.
+`SigmaC5ZeroExpStage3Certificate.lean`
 importa o estágio 2 integrado e prova que a caixa exponencial arredondada de
 estágio 3 coincide com os extremos exportados. Build e auditoria dos nove
-teoremas novos passaram em Lean 4.32. C5 continua incompleta; faltam a ponte
-CSV–Lean e as inclusões dos coeficientes da fonte C2 nas caixas.
+teoremas novos passaram em Lean 4.32. A PR #228 integrou a prova, commit
+`682eae99f4b05abd70ee8068aada7bc2af3e0ebb`, merge
+`0d312c654015bf10384969e64f352b0313e2dd39`. C5 continua incompleta; faltam a
+ponte CSV–Lean e as inclusões dos coeficientes da fonte C2 nas caixas.
 
-**Base de trabalho:** Geometry `main` após PR #227, merge
-`1b4e40df3b62a7112a3ee1dbf4c893eba7b13592`, branch
-`codex/c5-zero-exp-stage3-20261107`. O estágio 3 está validado localmente; a
-publicação/integração está pendente.
+**Base de trabalho:** Geometry `main` após PR #228, merge
+`0d312c654015bf10384969e64f352b0313e2dd39`, branch
+`codex/c5-zero-exp-stage3-state-after-merge-20261107`.
 
-Retomar publicando este checkpoint e avançando para o estágio 4 da exponencial
-arredondada. Builds, auditorias, pins, hashes, tentativas interrompidas e
+Retomar provando e auditando o estágio 4 da exponencial arredondada. Builds,
+auditorias, pins, hashes, tentativas interrompidas e
 sondas estão em
 `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`. Depois, retomar a
 ponte CSV–Lean, compor a fonte C2 original e provar as inclusões O3. Os merges
-atuais fecham somente as igualdades dos estágios 1 e 2, não C5.
+atuais fecham somente as igualdades dos estágios 1–3, não C5.
 
 ## Retomada anterior — 2026-11-07 UTC, componente `log 2` certificado
 
