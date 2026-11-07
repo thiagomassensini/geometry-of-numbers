@@ -56,5 +56,6 @@ inicial de busca do módulo.
 
 ## Publicação
 
-Checkpoint local preparado sobre `main` em `6288bc32726d64d1b3e1106cabecf81c4bf642e8`;
-a PR ainda não foi criada. Esta validação é parcial e não conclui C5.
+A PR #263 integrou o commit de prova `b7c442c318de488cb928fc8e456110b4b27a81f4` na `main` pelo merge
+`4b5b6a0aebd54798e6a26b2eda69994589c78668`. O GitHub não reportou checks hospedados. Esta validação é parcial e
+não conclui C5.
