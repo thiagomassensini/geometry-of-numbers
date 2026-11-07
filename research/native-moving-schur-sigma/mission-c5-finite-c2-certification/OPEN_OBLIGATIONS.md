@@ -2,7 +2,7 @@
 
 ## Estado atual — dois pontos reais de Gamma provados
 
-As caixas formais de `Γ(1/5)` e `Γ(901/4000)` foram provadas; a segunda está validada localmente neste checkpoint. Evidência e comando: `evidence/rational-boxes/c5-gamma-second-real-point-20261107/README.md`.
+As caixas formais de `Γ(1/5)` e `Γ(901/4000)` estão integradas; a segunda entrou pela PR #287, merge `742eb6fd03311adbb80507867c47e726fd648a21`. Evidência e comando: `evidence/rational-boxes/c5-gamma-second-real-point-20261107/README.md`.
 
 Continuam abertas, em ordem:
 

@@ -1,12 +1,12 @@
 # C5 — mapa dos teoremas e obrigações
 
-## Validação local recente — Gamma em `901/4000`
+## Resultado integrado — Gamma em `901/4000` (PR #287, Lean 4.32)
 
 | Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |
 |---|---|---|---|---|
-| `CarrySigmaObstruction.c5GammaSecondRealPointPowerArg_normBound` | `SigmaC5GammaSecondRealPointGammaCertificate.lean` | nenhuma | norma do argumento da potência `≤ 8` | limites racionais de `logQ`; **VALIDADO localmente** |
-| `CarrySigmaObstruction.c5GammaSecondRealPointPowerBox_contains` | idem | nenhuma | `dirichletTermBox2` contém `240^(901/4000)` | núcleo racional em blocos + potência intervalar; **VALIDADO localmente** |
-| `CarrySigmaObstruction.c5GammaSecondRealPointBox_contains` | idem | nenhuma | caixa inflada contém `Complex.Gamma (901/4000 : ℂ)` | caixa do núcleo e erro `gamma_finite_1024_240_error`; **VALIDADO localmente, PR pendente** |
+| `CarrySigmaObstruction.c5GammaSecondRealPointPowerArg_normBound` | `SigmaC5GammaSecondRealPointGammaCertificate.lean` | nenhuma | norma do argumento da potência `≤ 8` | limites racionais de `logQ`; **PROVADO e integrado pela PR #287** |
+| `CarrySigmaObstruction.c5GammaSecondRealPointPowerBox_contains` | idem | nenhuma | `dirichletTermBox2` contém `240^(901/4000)` | núcleo racional em blocos + potência intervalar; **PROVADO e integrado pela PR #287** |
+| `CarrySigmaObstruction.c5GammaSecondRealPointBox_contains` | idem | nenhuma | caixa inflada contém `Complex.Gamma (901/4000 : ℂ)` | caixa do núcleo e erro `gamma_finite_1024_240_error`; **PROVADO e integrado pela PR #287**, merge `742eb6fd03311adbb80507867c47e726fd648a21` |
 
 Build Lean 4.32.0 com warnings como erros e auditoria de axiomas constam em
 `evidence/rational-boxes/c5-gamma-second-real-point-20261107/README.md`.
@@ -16,8 +16,8 @@ Este ponto não prova os nós complexos nem as inclusões da fonte C2.
 
 | Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |
 |---|---|---|---|---|
-| `CarrySigmaObstruction.c5GammaCoreFirstNodePowerArg_normBound` | `SigmaC5GammaFirstNodeCertificate.lean` | nenhuma | norma do argumento da potência ≤ 4 | bounds racionais das séries de log; **PROVADO localmente** |
-| `CarrySigmaObstruction.c5GammaCoreFirstNodePowerBox_contains` | idem | nenhuma | `dirichletTermBox2` contém `240^(1/5)` | primeiro núcleo Gamma em blocos + potência intervalar; **PROVADO localmente** |
+| `CarrySigmaObstruction.c5GammaCoreFirstNodePowerArg_normBound` | `SigmaC5GammaFirstNodeCertificate.lean` | nenhuma | norma do argumento da potência ≤ 4 | bounds racionais das séries de log; **PROVADO e integrado pela PR #285** |
+| `CarrySigmaObstruction.c5GammaCoreFirstNodePowerBox_contains` | idem | nenhuma | `dirichletTermBox2` contém `240^(1/5)` | primeiro núcleo Gamma em blocos + potência intervalar; **PROVADO e integrado pela PR #285** |
 | `CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains` | idem | nenhuma | caixa inflada contém `Complex.Gamma (1/5 : ℂ)` | caixa de potência, núcleo racional e erro `gamma_finite_1024_240_error`; **PROVADO e integrado pela PR #285**, merge `832b201b6907c6682aa9657c3e4ff9da6dd40254` |
 
 O resultado cobre somente `Γ(1/5)`. Não prova as inclusões condicionais

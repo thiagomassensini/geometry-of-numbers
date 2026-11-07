@@ -1,11 +1,11 @@
 # C5 — checkpoints
 
-## 2026-11-07 — segunda caixa real de Gamma validada localmente
+## 2026-11-07 — segunda caixa real de Gamma integrada pela PR #287
 
 - `CarrySigmaObstruction.c5GammaSecondRealPointBox_contains` contém `Γ(901/4000)`.
 - O certificado reúne 16 blocos de 64 termos para o núcleo racional, a inclusão da potência `240^(901/4000)` e `gamma_finite_1024_240_error`, com inflação `10⁻⁹⁹`.
 - Probe, certificado dos pisos, combinação da caixa e composição Gamma compilaram em Lean 4.32.0 com warnings como erros. As raízes auditadas usam só `propext`, `Classical.choice`, `Quot.sound`; sem `sorryAx` ou `native_decide`.
-- Fontes, logs, hashes, pins e comando: `evidence/rational-boxes/c5-gamma-second-real-point-20261107/README.md`. Validação local concluída; publicação pendente da PR.
+- Fontes, logs, hashes, pins e comando: `evidence/rational-boxes/c5-gamma-second-real-point-20261107/README.md`. PR #287 integrou o commit `7f3d880e73f5383718cf2442b915e8cd866139cf` no merge `742eb6fd03311adbb80507867c47e726fd648a21`.
 - O resultado cobre um segundo ponto real; os pontos complexos da fonte, as caixas C2 e os sinais finais continuam abertos.
 
 ## Checkpoint anterior — primeira caixa Gamma `Γ(1/5)` (PR #285 integrada)

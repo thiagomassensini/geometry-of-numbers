@@ -6,7 +6,7 @@
 - Os módulos Probe, Certificate, Combine e Gamma foram compilados em Lean 4.32.0 via `compile_sigma_pade.sh`; `warningAsError=true`, saída 0 em cada log.
 - Auditoria das raízes públicas: apenas `propext`, `Classical.choice`, `Quot.sound`; sem `sorryAx`, axiomas próprios ou `native_decide`.
 - A caixa composta contém `Complex.Gamma (901/4000 : ℂ)` e usa a inflação `10⁻⁹⁹`.
-- Validação local concluída; PR e integração ainda serão registrados. Evidência: `evidence/rational-boxes/c5-gamma-second-real-point-20261107/README.md`.
+- PR #287 integrou o resultado no merge `742eb6fd03311adbb80507867c47e726fd648a21` (commit `7f3d880e73f5383718cf2442b915e8cd866139cf`). Evidência: `evidence/rational-boxes/c5-gamma-second-real-point-20261107/README.md`.
 
 ## Histórico — caixa `Γ(1/5)` integrada pela PR #285
 
