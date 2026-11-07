@@ -54,12 +54,12 @@ Possíveis módulos reutilizáveis: `CameraCoherence.lean` e `HankelLimitObject.
 - Originais: `hₙ(d) = completedSigmaLogJet d n` e `Dₖ(d)=hₖhₖ₊₂−hₖ₊₁²`.
 - Referência inicial: integração Lean 4.32 em `b9ce1955c1e8830afad2323afe5266ed3f5f35d9`. Os módulos necessários foram incorporados à `main` pela PR #157; a composição está em `SigmaPadeEventualNegativity.lean` e foi validada localmente.
 - O isolamento `exists_firstSigmaDisplacedProductIsolation_from_height50_certificate` veio da branch `codex/native-sigma-height50-lean432-integrated`, com origem externa `teal-sea/zeta-lab@b09fa4dd…`, portada para Lean 4.32. A ponta dessa branch não foi mesclada como um todo; a fonte e a closure usadas por C2 foram selecionadas e integradas à `main` na PR #157.
-- Resultado integrado pela PR #157: `∃ K, ∀ k≥K, Dₖ(1/5)<0`, com limite normalizado `−y²<0`, `a=1/(γ²+1/25)` e `y=Im((γ+i/5)⁻²/a)≠0`; merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`.
+- Resultado integrado pela PR #157: `∃ K, ∀ k≥K, Dₖ(1/5)<0`, com limite normalizado `−y²<0`, `a=1/(γ²+1/25)` e `y=Im((γ+i/5)⁻²/a)≠0`; merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`. Revalidação Lean 4.32 pós-reinício e hashes de fontes na `main` atual: `evidence/c2-c3-current-main-20261107/`.
 - O modelo `twoPoleMoment` serve só para o termo dominante; a conclusão deve permanecer nos jets originais.
 
 ## C3 — as duas torres
 
-O módulo `SigmaParityNegativeDirection.lean` formaliza as duas escolhas. `exists_even_sigma_negative_directions_from_pade` escolhe `p=2P` e produz uma direção negativa em `sigmaMatrix (1/5) 0 M`; `exists_odd_sigma_negative_directions_from_pade` escolhe `p=2P+1` e produz a direção em `sigmaMatrix (1/5) 1 M`, em todo `M≥P+2`. Ambos começam no bloco `2×2` cuja determinante é `sigmaPadeD (1/5) p`, inserem-no como janela deslocada e usam `sigmaMatrix_not_posSemidef_of_negative_direction` de C1B para transportar a negatividade do bloco prefixo às dimensões maiores. C3 foi integrado pela PR #159, merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`; build e auditoria constam em `evidence/c3-parity/`.
+O módulo `SigmaParityNegativeDirection.lean` formaliza as duas escolhas. `exists_even_sigma_negative_directions_from_pade` escolhe `p=2P` e produz uma direção negativa em `sigmaMatrix (1/5) 0 M`; `exists_odd_sigma_negative_directions_from_pade` escolhe `p=2P+1` e produz a direção em `sigmaMatrix (1/5) 1 M`, em todo `M≥P+2`. Ambos começam no bloco `2×2` cuja determinante é `sigmaPadeD (1/5) p`, inserem-no como janela deslocada e usam `sigmaMatrix_not_posSemidef_of_negative_direction` de C1B para transportar a negatividade do bloco prefixo às dimensões maiores. C3 foi integrado pela PR #159, merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`; build e auditoria constam em `evidence/c3-parity/`, com revalidação adicional em `evidence/c2-c3-current-main-20261107/`.
 
 ## C4 — série de fonte deslocada
 

@@ -1,6 +1,6 @@
 # Próximos passos da missão
 
-**Estado conferido em 2026-11-07 contra `origin/main@08a413f34dd5588ed3d021351af27f3f55e0c072`:** C0–C4 estão concluídos e integrados à `main`. C1B foi integrada pela PR #155 (merge `0586e238441096ecd2248e3f14bdac3a832af427`); C2 e C3 também estão integrados pelas PRs #157 e #159. A recompilação Lean 4.32 e a auditoria transitiva mais recentes estão em `evidence/c2-c3-priority-20261107/`. As seções C2/C3 abaixo registram entregas concluídas, não trabalho pendente. A rota 4.32 publicada continua sendo a referência C2; o checkpoint 4.35 continua preservado como validação incompleta. Retomar diretamente qualquer etapa posterior, sem repetir C0, C1 ou C1B.
+**Estado conferido após o reinício em 2026-11-07 contra `origin/main@b604c06dd0c13e7f77c65fb0634aa0b082d6c8d1`:** C0–C4 estão concluídos e integrados à `main`. C1B foi integrada pela PR #155 (merge `0586e238441096ecd2248e3f14bdac3a832af427`); C2 e C3 também estão integrados pelas PRs #157 e #159. Os módulos C2/C3 recompilaram em Lean 4.32 a partir de fontes com hashes idênticos aos da `main` atual; a auditoria transitiva mais recente está em `evidence/c2-c3-current-main-20261107/`. As seções C2/C3 abaixo registram entregas concluídas, sem publicação pendente. A rota 4.32 publicada continua sendo a referência C2; o checkpoint 4.35 permanece preservado como validação incompleta. Retomar diretamente qualquer etapa posterior, sem repetir C0, C1, C1B, C2 ou C3.
 
 ## C2 — concluído e integrado
 
