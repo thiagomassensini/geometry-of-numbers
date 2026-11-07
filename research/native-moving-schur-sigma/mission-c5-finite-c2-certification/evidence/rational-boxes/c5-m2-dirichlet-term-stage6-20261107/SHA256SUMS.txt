@@ -1,0 +1,6 @@
+3bc2cd5f784012be7880ed316f23bf4d5749fd7126b53406bd5bbf09bbf73a3b  ./README.md
+d0a02792953b4242a6a6552790bdf81eee50bcb5ac00fbec4f0857bade757c22  ./SigmaC5M2TaylorStateStage6Certificate.lean
+737695ce29bf85997e88900ccf3e34505de1c8be38f9217d9c0fb1541357ffee  ./attempt-isolated-output-missing-stage5.log
+a0f13d4b0dde48fa1b889b8f1abe0ee9e08b9ddfbee8cfb69af36615e85971d3  ./state-stage6-build.log
+5a6cfff7e6dd64ab85a32eae2329f8ca0a958ecdfe17142683900efb87f65a93  ./state-stage6-build1.log
+a0f13d4b0dde48fa1b889b8f1abe0ee9e08b9ddfbee8cfb69af36615e85971d3  ./state-stage6-first-run-unpinned.log

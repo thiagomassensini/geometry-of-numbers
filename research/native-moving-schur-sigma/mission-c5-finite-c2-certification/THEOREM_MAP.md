@@ -1,5 +1,18 @@
 # C5 — mapa dos teoremas e obrigações
 
+## Recorrência nodal m=2 até n=6 (validada localmente; publicação pendente)
+
+`SigmaC5M2TaylorStateStage6Certificate.lean` prova
+`c5RoundedExpStateC_stage6_correct` para `(a,j)=(2/5,0)`, importando o estado
+`n=5`. O passo usa o coeficiente `1/120`, verifica o termo arredondado e
+atualiza a soma por aritmética racional. Lean 4.32.0 com
+`warningAsError=true` passou; a auditoria mostra apenas axiomas padrão.
+Evidência em `evidence/rational-boxes/c5-m2-dirichlet-term-stage6-20261107/`.
+
+O checkpoint ainda não foi publicado. Não prova a série até `n=192`, os demais
+termos, quadraturas, caixa nodal completa, inclusão dos coeficientes C2
+originais nem os sinais finais. O próximo estado a certificar é `n=7`.
+
 ## Recorrência nodal m=2 até n=5 (PR #249 integrada; C5 parcial)
 
 `SigmaC5M2TaylorStateStage5Certificate.lean` prova

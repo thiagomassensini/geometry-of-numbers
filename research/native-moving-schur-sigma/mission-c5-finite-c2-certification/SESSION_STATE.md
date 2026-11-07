@@ -1,5 +1,24 @@
 # C5 — estado da sessão
 
+## Atualização — estágio Taylor 6 do nó m=2 validado localmente; checkpoint/PR pendentes
+
+Na branch local `codex/c5-m2-stage6-20261107`, baseada na `main` após PR #250
+(`850582ec76a9819149df2cbad4eba49f3e666e40`), foi provada
+`c5RoundedExpStateC_stage6_correct` para `(a,j)=(2/5,0)`. A compilação final
+usou Lean 4.32.0, `warningAsError=true`, Geometry no pin
+`bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3` e Carry no pin
+`045369f6dedcb2e75e9aefed1d12c9f73b9a2532`; terminou com `BUILD_EXIT=0`.
+As cinco declarações auditadas têm somente axiomas padrão, sem `sorryAx`.
+Fonte, logs, pins, checksums e reprodução estão em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage6-20261107/`.
+
+O resultado cobre somente a recorrência Taylor até `n=6` em um nó. Não cobre
+`n=7…192`, os demais nós, as quadraturas, o nó completo, a ponte CSV–Lean, as
+inclusões dos coeficientes da fonte C2 ou os sinais finais. O checkpoint está
+local e ainda não foi publicado; C5 continua incompleta. Próximo passo: revisar
+o diff, publicar a PR do estágio 6 e, após o merge, registrar o SHA real da
+integração; depois continuar com `n=7`.
+
 ## Atualização — nó m=2 validado até n=5 (PR #249 integrada)
 
 Na branch `codex/c5-m2-stage5-20261107`, baseada na `main` após PR #248
