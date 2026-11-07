@@ -1,0 +1,7 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-formalize-zeta-boxes-20261107/research/native-moving-schur-sigma/SigmaC5FormalizeOneZetaBox.lean:15:2: error: Tactic `rfl` failed: The left-hand side
+  c5RationalZetaCenteredNodeBox 512 192 896 (2 / 5) 0
+is not definitionally equal to the right-hand side
+  c5ExportedZetaBox_2_5_0
+
+⊢ c5RationalZetaCenteredNodeBox 512 192 896 (2 / 5) 0 = c5ExportedZetaBox_2_5_0
+'c5RationalZetaCenteredNodeBox_2_5_0_eq_export' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

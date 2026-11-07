@@ -24,14 +24,22 @@ limite é tempo de CPU. Evidência em
 racionais (129 nós em quatro coordenadas); a prova de igualdade entre o CSV
 e as definições Lean segue pendente.
 
+**Tentativa local de ponte formal (2026-11-07, não validada):** a primeira
+caixa `(a,j)=(2/5,0)` foi testada com `decide`, `rfl` e `norm_num` certificado.
+Nenhum método fechou: `decide` não reduz `Rat.num`, `rfl` não é conversível, e
+a expansão monolítica excede 1 milhão de passos após ~28 minutos. Não há
+`.olean` válido, auditoria aprovada ou inclusão C5. Os erros e o comando estão
+preservados em `evidence/rational-boxes/c5-exported-box-proof-attempt/`.
+
 1. **Concluído nesta etapa:** exportar os extremos racionais para os quatro
    valores reais e todos os 129 nós; CSV, sondas, logs, pins e reprodução em
    `evidence/rational-boxes/c5-centered-all-a-zeta-export-validation.md`.
-2. Importar os extremos exportados como constantes Lean e provar que coincidem
-   com as definições das caixas. Depois escolher `nExp`/`p` para a precisão O3
-   e compor as caixas com Gamma, o fator original dependente de π e a expressão
-   da fonte C2; preservar a cabeça e a cauda exata; provar as inclusões em
-   `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
+2. Decompor a avaliação em lemas compartilhados (log, cabeça, correções de
+   Bernoulli e exponencial), provar uma caixa piloto sem decisão nativa e sem
+   exceder o limite de passos; então ligar o CSV às caixas Lean. Em seguida,
+   escolher `nExp`/`p` para a precisão O3, compor com Gamma, o fator original
+   dependente de π e a fonte C2, preservando a cabeça e a cauda exata, e provar
+   as inclusões em `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
 3. Auditar os teoremas finais de sinal C5 depois das duas inclusões.
 
 Ainda não há inclusão dos coeficientes C2 nas caixas O3, então os sinais C5

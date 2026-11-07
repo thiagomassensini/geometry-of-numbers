@@ -22,6 +22,20 @@ está concluída. Próximo passo: selecionar a precisão, exportar as caixas,
 compor a fonte original mantendo sua cabeça e cauda exata e provar as duas
 inclusões.
 
+## Obrigação imediata — formalizar a exportação de caixas zeta (2026-11-07)
+
+Os 516 extremos racionais em `c5-centered-all-a-zeta-boxes.csv` vieram de
+sondas `#eval`; ainda não há igualdade Lean que os ligue a
+`c5RationalZetaCenteredNodeBox`. A prova piloto de uma linha não fechou com
+`decide`, `rfl` ou `norm_num` expandido. Não usar esses extremos como fatos
+formais. Decompor a avaliação em componentes compartilhados e obter um piloto
+com compilação e auditoria válida antes de formar lotes. Evidência e erros:
+`evidence/rational-boxes/c5-exported-box-proof-attempt/`.
+
+As inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` seguem abertas,
+bem como composição C5; os sinais permanecem condicionais. C5 não está
+concluída.
+
 ## Checkpoint anterior — ponte Gamma genérica integrada pela PR #198
 
 A ponte integrada pela PR #198, `SigmaC5GammaRationalCore.lean`, separa `gammaFinite` em um

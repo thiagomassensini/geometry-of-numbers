@@ -1,0 +1,10 @@
+fd3fb85889cf520e11e1c57a7d00cacc97dae6369c2184163ef6c032c798dc37  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-exported-box-proof-attempt/README.md
+659f357bd489051edbd4f359647ef6ae51114a85420b2e4bae6aa0b390195ead  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-exported-box-proof-attempt/c5-exported-box-2_5-0-decide.lean
+5f8411b7505d883eb3e3bbc93d2475f94b4fa9484888b71aa35a059eab0165b8  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-exported-box-proof-attempt/c5-exported-box-2_5-0-norm-num.lean
+1616a367455febd9e5bda9638cd7b51a326d81cefa2a433b8b1c1dd5a6e864fa  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-exported-box-proof-attempt/c5-exported-box-2_5-0-rfl.lean
+e3d2d64af33868b7edc8a355ea644061f67d80d82586ef70801b738990ade9b6  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-exported-box-proof-attempt/compile-decide.log
+c370d048deae1a73fd7efb551378d8440ddbffd6d2c3bd87816c43aa7784069a  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-exported-box-proof-attempt/compile-norm-num-1m-steps.log
+175b0afae4a0fe06a3daefe1054f35c52ba1cecefc0cdd843f278ac7bf2b139d  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-exported-box-proof-attempt/compile-norm-num-default.log
+52af5dfa25bfa04995fbf7688f8dfdd9688bc6142fcdeb751736fe655c55b8e7  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-exported-box-proof-attempt/compile-rfl.log
+6d01a7b5c13ca83c9078b0361e2952eba716d3145890977e9d190ff2322c11b5  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-centered-all-a-zeta-boxes.csv
+3078dec093bbc097f36ee36d1c8218fef936c06d68cfec03eae297071989b6e6  research/native-moving-schur-sigma/SigmaC5RationalNodeCenteredInstantiate.lean
