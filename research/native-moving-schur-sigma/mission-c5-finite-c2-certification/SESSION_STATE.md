@@ -1,22 +1,26 @@
 # C5 — estado da sessão
 
-## Atualização — estágio Taylor 12 do nó m=2 integrado pela PR #263
+## Atualização — estágio Taylor 13 do nó m=2 compilado; publicação pendente
 
-Na branch de prova `codex/c5-m2-stage12-20261107`, baseada na `main` em
-`6288bc32726d64d1b3e1106cabecf81c4bf642e8`, foi provada
-`c5RoundedExpStateC_stage12_correct` para `(a,j)=(2/5,0)`. Lean 4.32.0 com
+Na branch `codex/c5-m2-stage13-20261107`, baseada na `main` em
+`08f238c465179076a2fb15635e23e513245d3d6d`, foi provada localmente
+`c5RoundedExpStateC_stage13_correct` para `(a,j)=(2/5,0)`. Lean 4.32.0 com
 `warningAsError=true` terminou em `BUILD_EXIT=0`; as cinco declarações
 auditadas dependem somente de axiomas padrão, sem `sorryAx`. Fontes, pins,
 logs e hashes estão em
-`evidence/rational-boxes/c5-m2-dirichlet-term-stage12-20261107/`.
-O commit de prova `b7c442c318de488cb928fc8e456110b4b27a81f4` foi integrado
-pela PR #263 no merge `4b5b6a0aebd54798e6a26b2eda69994589c78668`; o GitHub
-não reportou checks hospedados. O primeiro probe teve uma falha de busca do módulo `SigmaC5RationalNodeLogBounds`, preservada na
-evidência; a repetição sem alterações compilou.
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage13-20261107/`. A PR de prova
+está pendente de publicação.
 
-O resultado cobre somente `n≤12` de um nó. Os estados restantes, demais nós,
+O resultado cobre somente `n≤13` de um nó. Os estados restantes, demais nós,
 quadraturas, caixa completa, inclusão da fonte C2 e sinais finais seguem
-abertos. C5 permanece incompleta. Próximo: avançar para `n=13`.
+abertos. C5 permanece incompleta. Próximo: avançar para `n=14`.
+
+## Checkpoint anterior — estágio Taylor 12 integrado pela PR #263
+
+`c5RoundedExpStateC_stage12_correct` foi integrado pelo commit de prova
+`b7c442c318de488cb928fc8e456110b4b27a81f4`, merge
+`4b5b6a0aebd54798e6a26b2eda69994589c78668`. A evidência correspondente fica
+em `evidence/rational-boxes/c5-m2-dirichlet-term-stage12-20261107/`.
 
 ## Atualização — estágio Taylor 10 do nó m=2 integrado pela PR #259
 

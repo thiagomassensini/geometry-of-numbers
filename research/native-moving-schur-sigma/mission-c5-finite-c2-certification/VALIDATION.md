@@ -1,20 +1,24 @@
 # C5 — validação
 
-## Transição do nó m=2 para n=12 — passou e foi integrada pela PR #263; C5 parcial
+## Transição do nó m=2 para n=13 — passou localmente; C5 parcial
 
-`SigmaC5M2TaylorStateStage12Certificate.lean` compilou em Lean 4.32.0 com
+`SigmaC5M2TaylorStateStage13Certificate.lean` compilou em Lean 4.32.0 com
 `warningAsError=true`; o build terminou com `BUILD_EXIT=0`. As cinco raízes
 auditadas usam somente `propext`, `Classical.choice` e `Quot.sound`, sem
 `sorryAx`. Pins, logs e comando estão em
-`evidence/rational-boxes/c5-m2-dirichlet-term-stage12-20261107/`.
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage13-20261107/`.
 
-A primeira execução do probe falhou ao resolver
-`SigmaC5RationalNodeLogBounds`; essa saída está preservada. Uma repetição do
-mesmo comando passou sem alteração de fonte. A prova cobre `c5RoundedExpStateC`
-somente até `n=12` no nó `(2/5,0)`. Estados seguintes, quadraturas, caixa
-completa, composição com a fonte C2 e sinais finais continuam abertos. A PR
-#263 integrou o commit `b7c442c318de488cb928fc8e456110b4b27a81f4` pelo merge `4b5b6a0aebd54798e6a26b2eda69994589c78668`; o GitHub não reportou
-checks hospedados. C5 permanece incompleta.
+A prova cobre `c5RoundedExpStateC` somente até `n=13` no nó `(2/5,0)`.
+Estados seguintes, quadraturas, caixa completa, composição com a fonte C2 e
+sinais finais continuam abertos. A PR está pendente; C5 permanece incompleta.
+
+## Transição do nó m=2 para n=12 — integrada pela PR #263
+
+`c5RoundedExpStateC_stage12_correct` compilou e passou pela auditoria em Lean
+4.32.0. A PR #263 integrou o commit de prova
+`b7c442c318de488cb928fc8e456110b4b27a81f4` no merge
+`4b5b6a0aebd54798e6a26b2eda69994589c78668`. Evidência em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage12-20261107/`.
 
 ## Transição do nó m=2 para n=10 — passou e foi integrada pela PR #259; C5 parcial
 
