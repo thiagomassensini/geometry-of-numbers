@@ -1,0 +1,3 @@
+'CarrySigmaObstruction.c5RoundedExpStateC_zero_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RoundedExpSmall_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+AUDIT_EXIT=0

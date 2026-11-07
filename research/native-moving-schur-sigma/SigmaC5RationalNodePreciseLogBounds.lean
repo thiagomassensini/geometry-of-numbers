@@ -278,6 +278,14 @@ def c5CenteredFastLogSumState (p : ℕ) (q : ℚ) : ℕ → ℚ × Interval
       (prev.1 * q,
         (prev.2.add (Interval.exact (prev.1 / ((n + 1 : ℕ) : ℚ)))).coarsen p)
 
+lemma c5CenteredFastLogSumState_zero (p n : ℕ) :
+    c5CenteredFastLogSumState p 0 n = (0, Interval.exact 0) := by
+  induction n with
+  | zero => simp [c5CenteredFastLogSumState, Interval.exact]
+  | succ n ih =>
+      simp [c5CenteredFastLogSumState, ih, Interval.exact,
+        Interval.add, Interval.coarsen]
+
 private theorem c5CenteredFastLogSumState_pow (p : ℕ) (q : ℚ) :
     ∀ n, (c5CenteredFastLogSumState p q n).1 = q ^ (n + 1)
   | 0 => by simp [c5CenteredFastLogSumState]
@@ -478,6 +486,12 @@ def c5CenteredFastLog1 (n : ℕ) (x : Interval) : Interval :=
     le := (c5CenteredFastLog1Lower_le_log1 n x).trans
       ((Interval.log1 n x).le.trans (c5CenteredFastLog1Upper_ge_log1 n x)) }
 
+lemma c5CenteredFastLog1_one_eq_zero (n : ℕ) :
+    c5CenteredFastLog1 n (Interval.exact 1) = Interval.exact 0 := by
+  simp [c5CenteredFastLog1, c5CenteredFastLog1Lower,
+    c5CenteredFastLog1Upper, c5CenteredFastLogSumState_zero,
+    Interval.exact, Interval.logRem]
+
 private theorem c5CenteredFastLog1Contains (n : ℕ) (x : Interval) (t : ℝ)
     (hx : x.contains t) (hlo : 0 < x.lo) (hhi : x.hi < 2) :
     (c5CenteredFastLog1 n x).contains (Real.log t) := by
@@ -526,6 +540,15 @@ private theorem c5CenteredFastLog1AbsBound (n : ℕ) (x : ℚ)
 def c5CenteredLogQFromLogTwo (nLog k : ℕ) (q : ℚ) (logTwo : Interval) : Interval :=
   ((Interval.exact (k : ℚ)).mul logTwo).add
     (c5CenteredFastLog1 nLog (Interval.exact (q / 2 ^ k)))
+
+lemma c5CenteredLogQFromLogTwo_one (nLog : ℕ) (logTwo : Interval) :
+    c5CenteredLogQFromLogTwo nLog (c5CenteredLogScale 1) (1 : ℚ) logTwo =
+      Interval.exact 0 := by
+  simp only [c5CenteredLogQFromLogTwo]
+  rw [show c5CenteredLogScale 1 = 0 by norm_num [c5CenteredLogScale]]
+  simp only [pow_zero, div_one]
+  rw [c5CenteredFastLog1_one_eq_zero]
+  simp [Interval.exact, Interval.mul, Interval.add]
 
 def c5CenteredLogQ (nLog k : ℕ) (q : ℚ) : Interval :=
   c5CenteredLogQFromLogTwo nLog k q (c5CenteredLog2I nLog)

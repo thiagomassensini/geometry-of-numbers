@@ -70,6 +70,24 @@ def c5CenteredDirichletTermBoxWithLogTwo (nLog nExp p kE : ℕ)
         (m : ℚ) logTwo).coarsen p,
       im := Interval.exact 0 })
 
+theorem c5CenteredDirichletExponentArg_one (nLog p : ℕ)
+    (logTwo : Interval) (S : ComplexInterval) :
+    S.neg.mul
+      { re := (c5CenteredLogQFromLogTwo nLog (c5CenteredLogScale 1)
+          (1 : ℚ) logTwo).coarsen p,
+        im := Interval.exact 0 } = ComplexInterval.exact 0 0 := by
+  rw [c5CenteredLogQFromLogTwo_one]
+  simp [ComplexInterval.exact, ComplexInterval.neg, ComplexInterval.mul,
+    Interval.exact, Interval.coarsen, Interval.mul, Interval.add,
+    Interval.sub, Interval.neg]
+
+theorem c5CenteredDirichletTermBoxWithLogTwo_one
+    (nLog nExp p kE : ℕ) (logTwo : Interval) (S : ComplexInterval) :
+    c5CenteredDirichletTermBoxWithLogTwo nLog nExp p kE logTwo 1 S =
+      c5RoundedExpC nExp p kE (ComplexInterval.exact 0 0) := by
+  simp [c5CenteredDirichletTermBoxWithLogTwo,
+    c5CenteredDirichletExponentArg_one]
+
 def c5CenteredDirichletTermBox (nLog nExp p kE : ℕ) (m : ℕ)
     (S : ComplexInterval) : ComplexInterval :=
   c5CenteredDirichletTermBoxWithLogTwo nLog nExp p kE

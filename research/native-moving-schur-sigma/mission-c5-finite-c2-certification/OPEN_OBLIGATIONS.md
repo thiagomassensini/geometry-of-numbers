@@ -1,5 +1,28 @@
 # C5 — obrigações abertas
 
+## Atualização — núcleo `m = 1` provado; igualdade do estágio 1 ainda aberta
+
+Os lemas `c5CenteredLogQFromLogTwo_one`,
+`c5CenteredDirichletExponentArg_one`,
+`c5CenteredDirichletTermBoxWithLogTwo_one`,
+`c5RoundedExpStateC_zero_succ` e `c5RoundedExpSmall_zero`, junto aos lemas de
+estado/log usados por eles, compilam em Lean 4.32.0 e passaram por auditoria
+de axiomas: somente `propext`, `Classical.choice` e `Quot.sound`.
+`c5RoundedExpSmall_zero` conserva o resto racional, sem hipótese de sinal.
+
+O primeiro limite restante neste ramo é provar as desigualdades inteiras que
+determinam os `floor` e `ceil` da caixa de estágio 1 exportada. A última
+tentativa usou `Int.floor_eq_iff.mpr`/`Int.ceil_eq_iff.mpr` em uma forma não
+unificável e terminou com código 1; nenhum resultado dessa tentativa foi
+aceito. A evidência integral está em
+`evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
+
+Continuam abertas a ligação formal das 516 linhas CSV às caixas Lean, a
+composição de todos os termos da fonte C2 original, as inclusões
+`sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` e os sinais finais C5. O
+checkpoint do nó trivial está pronto para publicação como parcial; ele não
+fecha C5.
+
 ## Atualização — componente `log 2` fechado; composição C5 continua aberta
 
 `SigmaC5Log2Certified.lean` certifica as duas somas de 512 termos em 16 blocos

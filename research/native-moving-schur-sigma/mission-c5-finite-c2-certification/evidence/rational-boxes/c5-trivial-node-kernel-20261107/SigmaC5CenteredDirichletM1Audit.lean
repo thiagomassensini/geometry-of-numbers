@@ -1,0 +1,7 @@
+import SigmaC5RationalNodeCenteredBoxes
+
+set_option autoImplicit false
+
+#print axioms CarrySigmaObstruction.c5CenteredLogQFromLogTwo_one
+#print axioms CarrySigmaObstruction.c5CenteredDirichletExponentArg_one
+#print axioms CarrySigmaObstruction.c5CenteredDirichletTermBoxWithLogTwo_one

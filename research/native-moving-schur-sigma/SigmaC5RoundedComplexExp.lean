@@ -36,6 +36,39 @@ def c5RoundedExpStateC (p : ℕ) (x : ComplexInterval) :
         (prev.2.add
           ((ComplexInterval.smulQ (1 / n.factorial) prev.1).coarsen p)).coarsen p)
 
+private theorem c5CoarsenExactZero (p : ℕ) :
+    Interval.coarsen p ({ lo := 0, hi := 0, le := by norm_num } : Interval) =
+      Interval.exact 0 := by
+  simp [Interval.coarsen, Interval.exact]
+
+private theorem c5CoarsenExactOne (p : ℕ) :
+    Interval.coarsen p ({ lo := 1, hi := 1, le := by norm_num } : Interval) =
+      Interval.exact 1 := by
+  simp only [Interval.coarsen, Interval.exact, Interval.mk.injEq, one_mul]
+  have hp : (2 : ℚ) ^ p = ((2 ^ p : ℕ) : ℚ) := by norm_cast
+  rw [hp, Int.floor_natCast, Int.ceil_natCast]
+  norm_num
+
+/-- At the zero input, the rounded exponential recurrence keeps the exact
+zero power and exact unit Taylor sum at every positive stage. -/
+theorem c5RoundedExpStateC_zero_succ (p n : ℕ) :
+    c5RoundedExpStateC p (ComplexInterval.exact 0 0) (n + 1) =
+      (ComplexInterval.exact 0 0, ComplexInterval.exact 1 0) := by
+  induction n with
+  | zero =>
+      simp [c5RoundedExpStateC, ComplexInterval.exact,
+        ComplexInterval.mul, ComplexInterval.add, ComplexInterval.smulQ,
+        ComplexInterval.coarsen, Interval.exact, Interval.mul, Interval.add,
+        Interval.sub, Interval.neg, c5CoarsenExactZero,
+        c5CoarsenExactOne]
+  | succ n ih =>
+      rw [c5RoundedExpStateC, ih]
+      simp [ComplexInterval.exact, ComplexInterval.mul,
+        ComplexInterval.add, ComplexInterval.smulQ,
+        ComplexInterval.coarsen, Interval.exact, Interval.mul, Interval.add,
+        Interval.sub, Interval.neg, c5CoarsenExactZero,
+        c5CoarsenExactOne]
+
 theorem contains_c5RoundedExpStateC {p : ℕ} {x : ComplexInterval} {z : ℂ}
     (hx : x.contains z) : ∀ n,
       (c5RoundedExpStateC p x n).1.contains (z ^ n) ∧
@@ -78,6 +111,15 @@ theorem contains_c5RoundedExpSumC {p : ℕ} {x : ComplexInterval} {z : ℂ}
 power of the interval endpoint in the rational remainder. -/
 def c5RoundedExpSmall (n p : ℕ) (x : ComplexInterval) : ComplexInterval :=
   (c5RoundedExpSumC p x n).inflate ((n + 1) / (n.factorial * n))
+
+theorem c5RoundedExpSmall_zero (n p : ℕ) (hn : 0 < n) :
+    c5RoundedExpSmall n p (ComplexInterval.exact 0 0) =
+      (ComplexInterval.exact 1 0).inflate ((n + 1) / (n.factorial * n)) := by
+  cases n with
+  | zero => omega
+  | succ n =>
+      simp [c5RoundedExpSmall, c5RoundedExpSumC,
+        c5RoundedExpStateC_zero_succ]
 
 theorem contains_c5RoundedExpSmall {n p : ℕ} (hn : 0 < n)
     {x : ComplexInterval} {z : ℂ} (hx : x.contains z)
