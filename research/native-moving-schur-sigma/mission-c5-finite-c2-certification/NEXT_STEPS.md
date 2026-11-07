@@ -1,6 +1,26 @@
 # Próximos passos — C5
 
-## Estado atual — recorrência genérica integrada; ponte CSV–Lean próxima
+## Atualização local — estado do nó m=2 até n=2 compilado (2026-11-07)
+
+A primeira fatia da ponte CSV–Lean para `(a,j)=(2/5,0)` passou localmente:
+`c5RoundedExpStateC_stage2_correct_refined` prova a recorrência de Taylor até
+`n=2`, partindo do log `2` exportado e do argumento com quatro metades. Lean
+4.32.0, `warningAsError=true`, compilação e auditoria de axiomas passaram.
+A evidência reprodutível está em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage2-20261107/README.md`.
+Este checkpoint ainda não foi publicado; o build de `n=192` e o teorema para o
+termo completo continuam abertos.
+
+Próximo passo: provar `n=3` com multiplicação de intervalos de sinais mistos,
+sem voltar à simplificação monolítica que falhou. Se o método por estágios for
+sustentável, estender ao estado `n=192`; depois compor as quatro quadraturas da
+caixa de Dirichlet e provar sua igualdade com a avaliação nodal completa. A
+obrigação maior permanece ligar formalmente as 516 caixas à fonte C2 e provar
+as inclusões `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes`. C5 segue
+incompleta.
+
+
+## Estado anterior — recorrência genérica integrada; ponte CSV–Lean próxima
 
 `c5RoundedExpC_zero_stage_2_to_192_closed_form` prova os estágios 2 a 192 na
 entrada zero por uma fórmula fechada, em Lean 4.32.0. Build com warnings como

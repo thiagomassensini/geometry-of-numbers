@@ -1,5 +1,23 @@
 # C5 — validação
 
+## Piloto do nó m=2 até n=2 — PASSOU localmente; C5 parcial
+
+`SigmaC5M2TaylorStateStage2Refined.lean` compilou em Lean 4.32.0 com
+`warningAsError=true`. A auditoria das quatro raízes
+`c5M2Stage2PowerCoarsenExport`, `c5M2Stage2PowerCorrect`,
+`c5M2Stage2SumCorrect` e `c5RoundedExpStateC_stage2_correct_refined` mostrou
+somente `propext`, `Classical.choice` e `Quot.sound`. O último log mostra código
+zero e não contém `sorryAx`.
+
+A prova valida a transição de `c5RoundedExpStateC` de `n=1` para `n=2` para o
+argumento do nó `(2/5,0)`, derivado do log `2` e quatro metades. Não valida a
+série de 192 termos nem a caixa nodal completa. A tentativa monolítica e as
+iterações falhas foram mantidas como evidência negativa, separadas do build
+aceito. Fontes, logs, hashes, pins e comandos de reprodução estão em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage2-20261107/README.md`.
+A ponte CSV–Lean e as inclusões da fonte C2 continuam abertas.
+
+
 ## Recorrência genérica da exponencial nos estágios 2–192 — PASSOU e FOI INTEGRADA; C5 parcial
 
 `SigmaC5ZeroExpGenericRecurrence.lean` prova a igualdade fechada entre

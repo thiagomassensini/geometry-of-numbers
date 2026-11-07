@@ -1,5 +1,20 @@
 # C5 — mapa dos teoremas e obrigações
 
+## Piloto nodal m=2 — Taylor até n=2 (local, ainda não publicado)
+
+`SigmaC5M2TaylorStateStage2Refined.lean` prova
+`c5RoundedExpStateC_stage2_correct_refined` para o argumento racional do nó
+`(a,j)=(2/5,0)`. O estado parte do log `2` arredondado e do argumento após
+quatro metades. Os lemas de produto real com sinal conhecido, coarsening exato
+e atualização da soma eliminam as simplificações do produto complexo em uma
+única tática. A prova compila e a auditoria retorna somente axiomas padrão.
+
+Este teorema cobre `n=0,1,2`, não o Taylor completo com `n=192`, nem as quatro
+quadraturas de `c5RoundedExpC`, nem a caixa `c5CenteredDirichletTermBox` inteira.
+Ele ainda não demonstra a inclusão do coeficiente original na caixa racional.
+Fontes, exportação, erros e comando estão em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage2-20261107/README.md`.
+
 ## Recorrência genérica nos estágios 2–192 — provada e integrada pela PR #239
 
 `SigmaC5ZeroExpGenericRecurrence.lean` prova

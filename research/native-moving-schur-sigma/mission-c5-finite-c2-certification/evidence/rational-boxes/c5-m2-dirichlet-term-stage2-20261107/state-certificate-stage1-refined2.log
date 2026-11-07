@@ -1,0 +1,5 @@
+'c5M2TaylorArgExport_coarsen_re_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5M2TaylorArgExport_coarsen_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5M2Stage1TaylorTerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5RoundedExpStateC_stage1_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+BUILD_EXIT=0

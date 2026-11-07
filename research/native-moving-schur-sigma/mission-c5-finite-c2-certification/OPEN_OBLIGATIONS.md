@@ -1,5 +1,17 @@
 # C5 — obrigações abertas
 
+## Atualização — estado parcial do termo nodal m=2
+
+O piloto `(a,j)=(2/5,0)` agora prova, em Lean 4.32, somente a recorrência
+`c5RoundedExpStateC` até `n=2`. Permanecem em aberto `n=3…192`, as quatro
+quadraturas da exponencial, a igualdade com o termo nodal completo e a inclusão
+desse nó na composição dos coeficientes C2. A exportação `#eval` de todos os
+estados não é certificado formal. Evidência, comandos e erros estão em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage2-20261107/README.md`.
+As inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` e os sinais finais
+C5 continuam abertos.
+
+
 ## Atualização — recorrência genérica integrada pela PR #239 (2026-11-07)
 
 `c5RoundedExpC_zero_stage_2_to_192_closed_form` formaliza os estágios 2–192

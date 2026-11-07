@@ -1,0 +1,2 @@
+'c5M2LogTwoCoarsen_eq_export' depends on axioms: [propext, Classical.choice, Quot.sound]
+ELAPSED 0:18.09 MAX_RSS 6629520 KiB
