@@ -1,11 +1,13 @@
 # C5 — obrigações abertas
 
-## Atualização — recorrência de um nó até n=8 validada localmente
+## Atualização — recorrência de um nó até n=8 integrada pela PR #255
 
 `c5RoundedExpStateC_stage8_correct` compilou e passou pela auditoria em Lean
-4.32.0; a PR ainda está pendente. Fonte e registros estão em
-`evidence/rational-boxes/c5-m2-dirichlet-term-stage8-20261107/`. A prova cobre
-somente `n≤8` no nó `(2/5,0)`.
+4.32.0. Fonte e registros estão em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage8-20261107/`. A PR #255
+integrou o commit de prova `96f5f5709829282756bc8c8a2b52a80290c96735` no
+merge `29d363068d52c62c37afc3896f6b3d46f734f16b`; não houve checks hospedados.
+A prova cobre somente `n≤8` no nó `(2/5,0)`.
 
 Continuam abertas a recorrência até `n=192`, os outros nós, as quadraturas, a
 caixa nodal completa, a ponte CSV–Lean, a composição com a fonte original e as

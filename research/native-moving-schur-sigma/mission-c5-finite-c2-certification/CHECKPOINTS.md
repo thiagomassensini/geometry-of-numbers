@@ -1,6 +1,6 @@
 # C5 — checkpoints
 
-## 2026-11-07 — transição m=2, n=7→8 validada localmente; PR pendente
+## 2026-11-07 — transição m=2, n=7→8 integrada pela PR #255
 
 - `c5RoundedExpStateC_stage8_correct` prova a transição no nó `(2/5,0)`, com
   produto de intervalos não-positivos, escala `1/7! = 1/5040`, arredondamentos
@@ -9,9 +9,12 @@
   usam somente axiomas padrão.
 - Fonte, probe de exportação, logs e checksums estão em
   `evidence/rational-boxes/c5-m2-dirichlet-term-stage8-20261107/`.
-- Ainda não há PR ou merge. O resultado cobre somente `n≤8` de um nó, sem os
-  estados seguintes, quadraturas, caixa completa, inclusões da fonte C2 ou
-  sinais finais. Próximo: publicar e avançar para `n=9`.
+- A PR #255 integrou o commit de prova
+  `96f5f5709829282756bc8c8a2b52a80290c96735` no merge
+  `29d363068d52c62c37afc3896f6b3d46f734f16b`; não houve checks hospedados.
+  O resultado cobre somente `n≤8` de um nó, sem estados seguintes,
+  quadraturas, caixa completa, inclusões da fonte C2 ou sinais finais.
+  Próximo: `n=9`.
 
 ## 2026-11-07 — transição m=2, n=6→7 integrada pela PR #253
 

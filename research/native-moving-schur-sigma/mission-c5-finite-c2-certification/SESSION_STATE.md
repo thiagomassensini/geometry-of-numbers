@@ -1,6 +1,6 @@
 # C5 — estado da sessão
 
-## Atualização — estágio Taylor 8 do nó m=2 validado localmente; PR pendente
+## Atualização — estágio Taylor 8 do nó m=2 integrado pela PR #255
 
 Na branch local `codex/c5-m2-stage8-20261107`, baseada na `main` após PR #254
 (`e6a05bb60a866502400d163923d5ae749db48d9c`), foi provada
@@ -11,11 +11,13 @@ Na branch local `codex/c5-m2-stage8-20261107`, baseada na `main` após PR #254
 dependem somente de axiomas padrão, sem `sorryAx`. A fonte, o probe, os logs,
 pins e hashes estão em
 `evidence/rational-boxes/c5-m2-dirichlet-term-stage8-20261107/`.
+O commit de prova `96f5f5709829282756bc8c8a2b52a80290c96735` foi integrado pela
+PR #255 no merge `29d363068d52c62c37afc3896f6b3d46f734f16b`; o GitHub não
+reportou checks hospedados.
 
-O checkpoint cobre somente a recorrência até `n=8` de um nó e ainda não foi
-publicado. Não fecha os estados restantes, quadraturas, caixa completa,
-inclusões da fonte C2 ou sinais finais. C5 permanece incompleta. Próximo:
-publicar e integrar esta etapa, depois continuar com `n=9`.
+O checkpoint cobre somente a recorrência até `n=8` de um nó. Não fecha os
+estados restantes, quadraturas, caixa completa, inclusões da fonte C2 ou sinais
+finais. C5 permanece incompleta. Próximo: continuar com `n=9`.
 
 ## Atualização — estágio Taylor 7 do nó m=2 integrado pela PR #253
 
