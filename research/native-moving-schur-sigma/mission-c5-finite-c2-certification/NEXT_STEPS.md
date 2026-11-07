@@ -1,5 +1,18 @@
 # Próximos passos — C5
 
+## Estado atual — recorrência genérica validada; publicação pendente
+
+`c5RoundedExpC_zero_stage_2_to_192_closed_form` prova os estágios 2 a 192 na
+entrada zero por uma fórmula fechada, em Lean 4.32.0. Build com warnings como
+erros e auditoria separada passaram com somente axiomas padrão. A evidência e o
+comando de reprodução estão em
+`evidence/rational-boxes/c5-generic-exp-recurrence-20261107/`. Este checkpoint
+local ainda aguarda sua PR e integração.
+
+Depois da publicação, a próxima tarefa é a ponte formal CSV–Lean, seguida da
+composição Gamma/π/fonte C2 e das inclusões `sigmaC00495SourceBoxes` e
+`sigmaC01SourceBoxes`. C5 continua incompleta.
+
 ## Checkpoint recente — replay numérico preservado (2026-11-07)
 
 As três configurações intervalares foram repetidas: `d=0.0495` com 1024 nós e
@@ -14,7 +27,7 @@ O registro e os artefatos foram integrados pela PR #237, merge
 `5fe7837e0f9509950aeb95777bdd220d68835ad8`; o GitHub não reportou checks
 hospedados.
 
-## Prioridade imediata — generalizar a recorrência
+## Histórico — prova genérica da recorrência
 
 O núcleo `m = 1` já está formalizado e compilado: o log centrado vira a caixa
 exata `0`, o argumento do termo de Dirichlet vira `0`, e a exponencial
@@ -66,8 +79,10 @@ prova `a9be0be89794465fefa44bf66c3b50d5702cc0f5`, merge na `main`
 `5571ceb84e0483da55ff7ba212942a4ab13b7cab`. O GitHub não reportou checks;
 pins, hashes e logs estão registrados na evidência do nó trivial.
 
-1. Provar a recorrência exata das caixas para `2 ≤ k ≤ 192`, sem criar um
-   certificado separado por estágio.
+1. **Validado localmente neste subpasso:** provar a recorrência exata das caixas
+   para `2 ≤ k ≤ 192`, sem criar um certificado separado por estágio. A prova,
+   build, auditoria, pins e comandos estão em
+   `evidence/rational-boxes/c5-generic-exp-recurrence-20261107/`.
 2. Retomar a ponte formal CSV–Lean e avaliar, em etapas, os demais termos da
    caixa; depois compor Gamma, o fator de π e a fonte C2 original e provar as
    inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.

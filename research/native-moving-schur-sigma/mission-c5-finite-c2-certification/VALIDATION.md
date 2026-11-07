@@ -1,5 +1,21 @@
 # C5 — validação
 
+## Recorrência genérica da exponencial nos estágios 2–192 — PASSOU LOCALMENTE; C5 parcial
+
+`SigmaC5ZeroExpGenericRecurrence.lean` prova a igualdade fechada entre
+`c5RoundedExpC 192 896 k (ComplexInterval.exact 0 0)` e a caixa definida por
+`3*2^(k-2)-1` e `4*2^(k-2)-1`, para cada `2 ≤ k ≤ 192`. O passo genérico
+certifica os quatro extremos da caixa quadrada, os pisos e tetos em 896 bits e
+o limite de erro que torna a recorrência uniforme. A prova mantém o resto
+racional original.
+
+O build limpo em Lean 4.32.0 passou com `warningAsError=true`; a auditoria
+separada mostrou apenas `propext`, `Classical.choice` e `Quot.sound` nas quatro
+raízes. Os logs, fontes, pins, hashes e comando estão em
+`evidence/rational-boxes/c5-generic-exp-recurrence-20261107/`. O checkpoint
+ainda aguarda publicação. C5 continua parcial: sem ponte CSV–Lean, inclusão da
+fonte C2 ou sinais finais.
+
 ## Nó trivial `m = 1` e igualdades dos estágios 1–6 — PASSARAM; C5 parcial
 
 Em Lean 4.32.0, com `warningAsError=true`, passaram os builds de

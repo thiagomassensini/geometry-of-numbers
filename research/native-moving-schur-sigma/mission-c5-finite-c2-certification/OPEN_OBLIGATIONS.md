@@ -1,15 +1,30 @@
 # C5 — obrigações abertas
 
+## Atualização — recorrência genérica validada localmente (2026-11-07)
+
+`c5RoundedExpC_zero_stage_2_to_192_closed_form` formaliza os estágios 2–192
+na entrada zero com os parâmetros `3*2^(k-2)-1` e `4*2^(k-2)-1`, mantendo a
+definição original e seu resto. O build Lean 4.32.0 com `warningAsError=true`
+e a auditoria isolada passaram com axiomas padrão. A evidência está em
+`evidence/rational-boxes/c5-generic-exp-recurrence-20261107/`; ainda aguarda
+publicação pela PR deste subpasso.
+
+Continuam abertas a ligação formal das 516 caixas CSV às definições Lean, a
+composição completa da fonte C2, as inclusões
+`sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes` e os sinais finais C5. Não
+reiniciar C1B, C2 ou C3.
+
 ## Nota de validação numérica — replay de 2026-11-07
 
 As caixas experimentais da primeira janela negativa foram reproduzidas usando
 uma cópia local do avaliador Momentos com conversões `gmpy2.mpz` → `int`. O
 checker racional independente repetiu os sinais condicionais. A tentativa sem
 patch e seus logs também foram preservados. Isso não prova a inclusão das
-saídas de `mpmath.iv` nas caixas nem altera as obrigações formais: a recorrência
-genérica da exponencial arredondada, a ponte CSV–Lean, a composição da fonte
-C2 e as inclusões `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes` continuam
-abertas. Registro reproduzível:
+saídas de `mpmath.iv` nas caixas. A recorrência genérica da exponencial
+arredondada foi provada localmente e aguarda publicação; a ponte CSV–Lean, a
+composição da fonte C2 e as inclusões
+`sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes` continuam abertas. Registro
+reproduzível:
 `evidence/interval-certificate/reproduction-2026-11-07.md`.
 O checkpoint foi integrado pela PR #237 no merge
 `5fe7837e0f9509950aeb95777bdd220d68835ad8`; o GitHub não reportou checks
@@ -78,12 +93,12 @@ importa o estágio 5 integrado. A caixa exportada é
 O estágio 6 foi integrado pela PR #234, commit de prova
 `a9be0be89794465fefa44bf66c3b50d5702cc0f5`, merge na `main`
 `5571ceb84e0483da55ff7ba212942a4ab13b7cab`; o GitHub não reportou checks.
-O próximo subpasso é generalizar a recorrência para `2 ≤ k ≤ 192`. A ponte
-CSV–Lean, a composição completa da fonte e as inclusões O3 seguem abertas.
+O subpasso de generalização da recorrência foi provado localmente e aguarda
+integração. A ponte CSV–Lean, a composição completa da fonte e as inclusões O3
+seguem abertas.
 
-Continuam abertas as igualdades exportadas dos estágios posteriores da
-exponencial, a ligação formal das 516 linhas CSV às caixas Lean, a composição
-de todos os termos da fonte C2 original, as inclusões
+Continuam abertas a ligação formal das 516 linhas CSV às caixas Lean, a
+composição de todos os termos da fonte C2 original, as inclusões
 `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` e os sinais finais C5. O
 checkpoint parcial do nó trivial foi integrado pela PR #222, commit de prova
 `67e6cf9fdf86ac735b6ade80d2f4a64982968363`, merge na `main`

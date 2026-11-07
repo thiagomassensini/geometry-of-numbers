@@ -1,0 +1,5 @@
+'c5GenericBox_square_coarsen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5RoundedExpC_zero_stage_generic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5RoundedExpC_zero_stage_2_to_192' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5RoundedExpC_zero_stage_2_to_192_closed_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+BUILD_EXIT=0

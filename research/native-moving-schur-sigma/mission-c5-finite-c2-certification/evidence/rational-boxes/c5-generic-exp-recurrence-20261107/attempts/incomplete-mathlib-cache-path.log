@@ -1,0 +1,3 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-phase0-replay-20261107/research/native-moving-schur-sigma/SigmaC5ZeroExpGenericRecurrenceProbe.lean:1:0: error: object file '/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/external/Zeta23/FromPNTPlus/Mathlib/NumberTheory/ZetaValues.olean' of module Mathlib.NumberTheory.ZetaValues does not exist
+
+BUILD_EXIT=1

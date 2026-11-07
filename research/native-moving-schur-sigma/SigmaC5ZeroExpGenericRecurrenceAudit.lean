@@ -1,0 +1,6 @@
+import SigmaC5ZeroExpGenericRecurrence
+
+#print axioms c5GenericBox_square_coarsen
+#print axioms c5RoundedExpC_zero_stage_generic
+#print axioms c5RoundedExpC_zero_stage_2_to_192
+#print axioms c5RoundedExpC_zero_stage_2_to_192_closed_form
