@@ -1,6 +1,6 @@
 # Relatório consolidado — missão de negatividade transversal sigma
 
-**Atualizado em 2026-11-07 contra `origin/main@89710ecaf940f1a7887cd133451916edd76bddcb`.** C0, C1, C1B, C2, C3 e C4 estão integrados à `main`. Após o reinício da VM, C2/C3 recompilaram em Lean 4.32 e passaram pela auditoria transitiva. Os cinco módulos-fonte auditados não mudaram da revisão compilada `b604c06` até a `main` atual; por isso a validação continua aplicável. Os logs, pins e hashes estão em `evidence/c2-c3-current-main-20261107/`; o checkpoint 4.35 permanece publicado como validação incompleta.
+**Atualizado em 2026-11-07 contra `origin/main@24f61b01732f44599869350c4bf675c3f3a3dcb6`, após as PRs #240 e #241.** C0, C1, C1B, C2, C3 e C4 estão integrados à `main`. Após o reinício da VM, C2/C3 recompilaram em Lean 4.32 e passaram pela auditoria transitiva. Os cinco módulos-fonte auditados continuam idênticos ao snapshot compilado `b604c06dd0c13e7f77c65fb0634aa0b082d6c8d1`; a comparação até o HEAD atual foi repetida para este registro. Os logs, pins e hashes estão em `evidence/c2-c3-current-main-20261107/`; o checkpoint 4.35 permanece publicado como validação incompleta.
 
 ## Resultados formais
 

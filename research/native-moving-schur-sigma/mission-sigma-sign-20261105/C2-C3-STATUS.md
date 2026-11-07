@@ -3,7 +3,7 @@
 **Revalidação final:** os módulos C2/C3 foram recompilados e auditados em Lean 4.32 sobre as fontes de origin/main@9951fcb7315c25b6d878befc42b2d02c26a96ec7. A auditoria transitiva aceitou 133 roots públicos e 70.861 dependências com apenas axiomas padrão. Os logs, pins e hashes desta execução estão em evidence/c2-c3-final-validation-20261106/; a revalidação imediatamente após o reboot permanece em evidence/c2-c3-post-reboot-20261106/.
 
 **Registro original:** 2026-11-05, `main` em `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8` (após PR #159).
-**Estado reconciliado após reinício:** 2026-11-07. C0–C4 estão concluídos e integrados à `main`; C1B, C2 e C3 não têm publicação pendente. C2/C3 recompilaram e passaram pela auditoria transitiva em Lean 4.32 com fontes idênticas às de `origin/main@b604c06dd0c13e7f77c65fb0634aa0b082d6c8d1`; os logs da repetição estão em `evidence/c2-c3-current-main-20261107/`. A revisão atual dos marcos e próximos passos está em `SESSION_STATE.md` e `NEXT_STEPS.md`.
+**Estado reconciliado após reinício:** 2026-11-07. C0–C4 estão concluídos e integrados à `main`; C1B, C2 e C3 não têm publicação pendente. C2/C3 recompilaram e passaram pela auditoria transitiva em Lean 4.32 com fontes idênticas ao snapshot `origin/main@b604c06dd0c13e7f77c65fb0634aa0b082d6c8d1`; a comparação direta até `origin/main@24f61b01732f44599869350c4bf675c3f3a3dcb6`, após as PRs #240/#241, também não encontra diferenças nos cinco módulos auditados. Os logs da compilação estão em `evidence/c2-c3-current-main-20261107/`. A revisão dos marcos e próximos passos está em `SESSION_STATE.md` e `NEXT_STEPS.md`.
 
 - C0, C1 e C1B estão integrados; PR #155 fechou C1B nesse merge.
 - C1B foi integrado pela PR #155, merge `0586e238441096ecd2248e3f14bdac3a832af427`.
@@ -16,7 +16,7 @@
 
 ## Reconfirmação da prioridade e da base atual (2026-11-07)
 
-`origin/main@89710ecaf940f1a7887cd133451916edd76bddcb` contém C1B (#155), C2 (#157), C3 (#159) e o checkpoint Lean 4.35 incompleto (#221). A validação pós-reinício em Lean 4.32 está registrada em `evidence/c2-c3-current-main-20261107/`; a comparação das fontes entre a revisão compilada `b604c06` e a `main` atual não encontrou mudanças nos cinco módulos C2/C3 auditados. Portanto, a validação permanece aplicável à base atual. C1B foi integrado no merge `0586e238441096ecd2248e3f14bdac3a832af427`; nenhuma publicação C2/C3 está pendente. A rota 4.32 não apresenta bloqueio para C2, então não se retomou a migração geral 4.35.
+`origin/main@24f61b01732f44599869350c4bf675c3f3a3dcb6` contém C1B (#155), C2 (#157), C3 (#159), o checkpoint Lean 4.35 incompleto (#221) e a reconciliação de estado da PR #241. A validação pós-reinício em Lean 4.32 está registrada em `evidence/c2-c3-current-main-20261107/`; uma comparação direta entre o snapshot compilado `b604c06dd0c13e7f77c65fb0634aa0b082d6c8d1` e esta ponta não encontra mudanças nos cinco módulos C2/C3 auditados. Portanto, a validação permanece aplicável à base atual. C1B foi integrado no merge `0586e238441096ecd2248e3f14bdac3a832af427`; nenhuma publicação C2/C3 está pendente. A rota 4.32 não apresenta bloqueio para C2, então não se retomou a migração geral 4.35.
 
 ## Adendo 2026-11-06 — C4
 
