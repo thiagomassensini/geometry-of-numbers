@@ -25,6 +25,9 @@ condicionais.
 - Mathlib: `81a5d257c8e410db227a6665ed08f64fea08e997`.
 - O wrapper verifica o pin Carry e espera por `MemAvailable ≥ 30 GiB`.
 - Build: [`build.log`](build.log). Auditoria: [`axiom-audit.log`](axiom-audit.log).
+- Integrado pela PR #219, commit `bd84a673b3c5c1c82168a6655c59ad6a28bbf127`,
+  merge na `main` `d6ed8ad249ef69c33920164fe43821cc83f138a8`. Não houve checks
+  hospedados.
 - `#print axioms` reportou exatamente três raízes: `c5LogSum512_pos_eq`,
   `c5LogSum512_neg_eq` e `c5CenteredLog2I_512_eq_export`. Todas dependem
   somente de `propext`, `Classical.choice` e `Quot.sound`; o checker

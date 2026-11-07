@@ -40,7 +40,9 @@ exportado. Build Lean 4.32.0 com warnings como erros e auditoria fail-closed
 das três raízes passaram; só aparecem axiomas padrão. A tentativa direta
 anterior e seu histórico permanecem em
 `evidence/rational-boxes/c5-log2-component-attempt/` e foram registrados pela
-PR #217 (merge `30a615cafa3b27de40427a73cc64988c77e236d3`).
+PR #217 (merge `30a615cafa3b27de40427a73cc64988c77e236d3`). A prova em blocos
+foi integrada pela PR #219, commit `bd84a673b3c5c1c82168a6655c59ad6a28bbf127`,
+merge na `main` `d6ed8ad249ef69c33920164fe43821cc83f138a8`.
 
 1. **Concluído nesta etapa:** exportar os extremos racionais para os quatro
    valores reais e todos os 129 nós; CSV, sondas, logs, pins e reprodução em

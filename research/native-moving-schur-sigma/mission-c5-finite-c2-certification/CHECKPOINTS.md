@@ -9,6 +9,9 @@
 - Build limpo Lean 4.32.0 com `warningAsError=true` passou. A auditoria
   fail-closed passou nas três raízes; só aparecem `propext`, `Classical.choice`
   e `Quot.sound`. A fonte não contém placeholders.
+- PR #219, commit `bd84a673b3c5c1c82168a6655c59ad6a28bbf127`, integrada na
+  `main` pelo merge `d6ed8ad249ef69c33920164fe43821cc83f138a8`. O GitHub não
+  reportou checks hospedados.
 - Fonte, checker, logs, pins, comando de retomada e hashes estão em
   `evidence/rational-boxes/c5-log2-component-validation/README.md`.
 - Escopo: a prova cobre apenas o componente `log 2`; não liga as 516 linhas do
