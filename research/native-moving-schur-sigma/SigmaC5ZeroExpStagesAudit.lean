@@ -6,3 +6,8 @@ import SigmaC5ZeroExpStagesCertificate
 #print axioms c5ZeroExpStage0Square_im_lo_floor
 #print axioms c5ZeroExpStage0Square_im_hi_ceil
 #print axioms c5ZeroExpStage1_eq
+#print axioms c5ZeroExpStage1Square_re_lo_floor
+#print axioms c5ZeroExpStage1Square_re_hi_ceil
+#print axioms c5ZeroExpStage1Square_im_lo_floor
+#print axioms c5ZeroExpStage1Square_im_hi_ceil
+#print axioms c5ZeroExpStage2_eq

@@ -1,9 +1,9 @@
 # C5 — núcleo certificado do nó trivial `m = 1`
 
-**Estado:** checkpoint parcial. As identidades formais do nó `m = 1` e a
-igualdade da caixa arredondada no estágio 1 foram compiladas e auditadas. A
-ponte CSV–Lean e as inclusões dos coeficientes C2 continuam abertas; C5 não
-está concluída.
+**Estado:** checkpoint parcial. As identidades formais do nó `m = 1` e as
+igualdades das caixas arredondadas nos estágios 1 e 2 foram compiladas e
+auditadas. A ponte CSV–Lean e as inclusões dos coeficientes C2 continuam
+abertas; C5 não está concluída.
 
 Integrado pela PR #222, commit de prova
 `67e6cf9fdf86ac735b6ade80d2f4a64982968363`, merge na `main`
@@ -32,7 +32,7 @@ alterados. As três auditorias registradas aqui reportam somente
 `propext`, `Classical.choice` e `Quot.sound`. Os logs de build e auditoria e as
 fontes das auditorias estão nesta pasta; `SHA256SUMS.txt` registra seus hashes.
 
-## Igualdade exata do estágio 1
+## Igualdades exatas dos estágios 1 e 2
 
 `SigmaC5ZeroExpStagesCertificate.lean` prova que
 `c5RoundedExpC 192 896 1 (ComplexInterval.exact 0 0)` é exatamente
@@ -40,6 +40,9 @@ fontes das auditorias estão nesta pasta; `SHA256SUMS.txt` registra seus hashes.
 da caixa quadrada por desigualdades racionais exatas. A auditoria isolada
 reporta somente `propext`, `Classical.choice` e `Quot.sound` para os quatro
 lemas de arredondamento, a identidade de estágio 0 e a identidade de estágio 1.
+Essa prova foi integrada pela PR #224, commit de prova
+`a908789fad182aa9a2d8eb85b2da641c11c4da62`, merge
+`d667abfc42020e442c62ec1b49b82f5bcf1971ad`.
 
 O build de prova passou em Lean 4.32.0 com `warningAsError=true`; a auditoria
 por import passou separadamente. Logs, fontes, hash do `.olean`, hash dos
@@ -55,11 +58,21 @@ módulo de auditoria importado compilou com código zero. As duas interrupções
 estão em `SigmaC5ZeroExpStagesCertificate.extra-full-build-interrupted.log` e
 `SigmaC5ZeroExpStagesCertificate.final-rebuild-interrupted.log`.
 
+`c5ZeroExpStage2_eq` prova que `c5RoundedExpC 192 896 2` na entrada zero é
+exatamente `c5ZeroExpStage2Export`. Quatro lemas adicionais verificam os
+pisos/tetos da caixa quadrada de estágio 1. O build e a auditoria das onze
+declarações passaram em Lean 4.32.0; somente `propext`, `Classical.choice` e
+`Quot.sound` aparecem. Logs, pins e hashes estão em
+`SigmaC5ZeroExpStagesCertificate.stage2-build.log`,
+`SigmaC5ZeroExpStagesCertificate.stage2-axioms.log`, `stage2-pins.txt` e
+`stage2-sha256.txt`. A publicação deste subpasso ainda está pendente.
+
 ## Pins e reprodução
 
 O checkpoint original do nó `m = 1` parte de `main` em
-`c67b2f72e0ad2f331c0966fb3ed82e98655e3df8`; os pins da validação do estágio 1
-estão em [`stage1-pins.txt`](stage1-pins.txt). Para o checkpoint original,
+`c67b2f72e0ad2f331c0966fb3ed82e98655e3df8`; os pins das validações dos estágios
+1 e 2 estão em [`stage1-pins.txt`](stage1-pins.txt) e [`stage2-pins.txt`](stage2-pins.txt).
+Para o checkpoint original,
 foram usados a revisão de referência `caa07002306b555fea5624cc11ab2ea5811a4324`,
 Carry `045369f6dedcb2e75e9aefed1d12c9f73b9a2532` e Mathlib
 `81a5d257c8e410db227a6665ed08f64fea08e997`; veja também
@@ -96,7 +109,7 @@ commands above writes fresh logs under the selected output directory.
 
 ## Próxima obrigação aberta
 
-O estágio 1 agora está provado. A tentativa que falhou ao aplicar diretamente
+Os estágios 1 e 2 agora estão provados. A tentativa que falhou ao aplicar diretamente
 `Int.floor_eq_iff.mpr` e `Int.ceil_eq_iff.mpr` permanece como histórico; veja
 [`stage1-export-equality-last-attempt.log`](stage1-export-equality-last-attempt.log).
 O fonte exato dessa tentativa está preservado como

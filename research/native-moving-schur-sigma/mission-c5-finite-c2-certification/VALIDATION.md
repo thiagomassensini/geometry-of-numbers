@@ -1,6 +1,6 @@
 # C5 — validação
 
-## Nó trivial `m = 1` e igualdade exportada do estágio 1 — PASSOU; C5 parcial
+## Nó trivial `m = 1` e igualdades dos estágios 1–2 — PASSARAM; C5 parcial
 
 Em Lean 4.32.0, com `warningAsError=true`, passaram os builds de
 `SigmaC5RationalNodePreciseLogBounds.lean`,
@@ -28,6 +28,12 @@ hospedados. A atualização do estágio 1 foi integrada pela PR #224, commit de
 prova
 `a908789fad182aa9a2d8eb85b2da641c11c4da62`, merge
 `d667abfc42020e442c62ec1b49b82f5bcf1971ad`; o GitHub não reportou checks.
+
+O estágio 2 agora também passou: `c5ZeroExpStage2_eq` coincide com
+`c5ZeroExpStage2Export`; quatro novos lemas certificam os pisos/tetos por
+desigualdades racionais exatas. Build limpo e auditoria das onze raízes
+passaram em Lean 4.32.0, somente com axiomas padrão. Evidências e hashes estão
+no mesmo diretório. Este subpasso ainda aguarda publicação.
 
 ## Componente `log 2` em blocos — PASSOU; C5 permanece parcial
 

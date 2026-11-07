@@ -21,6 +21,12 @@ O resultado foi integrado pela PR #224, commit de prova
 `a908789fad182aa9a2d8eb85b2da641c11c4da62`, merge
 `d667abfc42020e442c62ec1b49b82f5bcf1971ad`; não houve checks hospedados.
 
+`c5ZeroExpStage2_eq` e os quatro lemas de arredondamento da caixa quadrada do
+estágio 1 também foram provados, compilados e auditados. Esse checkpoint ainda
+está na branch de trabalho, pendente de publicação. A próxima obrigação
+imediata é a caixa exportada do estágio 3; continuam abertas a ligação do CSV,
+a composição completa da fonte e as inclusões O3.
+
 Continuam abertas as igualdades exportadas dos estágios posteriores da
 exponencial, a ligação formal das 516 linhas CSV às caixas Lean, a composição
 de todos os termos da fonte C2 original, as inclusões

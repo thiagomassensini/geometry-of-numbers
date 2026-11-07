@@ -11,7 +11,20 @@
   de C2/C3; não é preciso calcular a primeira profundidade de falha para a
   negatividade eventual já provada.
 
-## Atualização mais recente — igualdade do estágio 1 (2026-11-07)
+## Atualização mais recente — igualdade do estágio 2 (2026-11-07; publicação pendente)
+
+`c5ZeroExpStage2_eq` prova que `c5RoundedExpC 192 896 2` na entrada zero
+coincide exatamente com `c5ZeroExpStage2Export`. Quatro lemas adicionais
+provam os pisos/tetos da caixa quadrada do estágio 1 por desigualdades
+racionais exatas. Build Lean 4.32 (`warningAsError=true`) e auditoria de onze
+declarações passaram; somente axiomas padrão aparecem. Os logs, pins e hashes
+estão em `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
+O checkpoint ainda está nesta branch, pendente de publicação.
+
+C5 permanece incompleta: as caixas dos estágios 1 e 2 não ligam o CSV às caixas
+Lean nem provam `sigmaC00495SourceBoxes` ou `sigmaC01SourceBoxes`.
+
+## Atualização anterior — igualdade do estágio 1 (PR #224)
 
 O checkpoint foi integrado pela PR #224, commit de prova
 `a908789fad182aa9a2d8eb85b2da641c11c4da62`, merge na `main`
