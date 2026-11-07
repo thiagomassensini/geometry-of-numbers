@@ -1,0 +1,7 @@
+Int.floor_eq_iff.{u_2} {R : Type u_2} [Ring R] [LinearOrder R] [FloorRing R] {z : ℤ} {a : R} :
+  ⌊a⌋ = z ↔ ↑z ≤ a ∧ a < ↑z + 1
+Int.ceil_eq_iff.{u_2} {R : Type u_2} [Ring R] [LinearOrder R] [FloorRing R] {z : ℤ} {a : R} :
+  ⌈a⌉ = z ↔ ↑z - 1 < a ∧ a ≤ ↑z
+/home/thlinux/worktrees/geometry-of-numbers-c5-phase0-replay-20261107/research/native-moving-schur-sigma/SigmaC5ZeroExpGenericRecurrenceProbe.lean:476:14: error(lean.unknownIdentifier): Unknown identifier `c5ZeroExpStage2_eq`
+
+BUILD_EXIT=1

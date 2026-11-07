@@ -1,5 +1,19 @@
 # C5 — mapa dos teoremas e obrigações
 
+## Recorrência genérica nos estágios 2–192 — validada localmente
+
+`SigmaC5ZeroExpGenericRecurrence.lean` prova
+`c5RoundedExpC_zero_stage_2_to_192_closed_form`: para cada `2 ≤ k ≤ 192`, a
+caixa da exponencial arredondada na entrada zero tem parâmetros
+`3*2^(k-2)-1` e `4*2^(k-2)-1`. `c5GenericBox_square_coarsen` demonstra o passo
+exato de arredondamento em 896 bits; os limites para `k≤192` justificam sua
+aplicação em todo estágio. A auditoria isolada usa apenas axiomas padrão. O
+checkpoint local aguarda publicação; fontes, logs, pins, hashes e reprodução
+estão em `evidence/rational-boxes/c5-generic-exp-recurrence-20261107/`.
+
+Isto fecha a recorrência na entrada zero, mas ainda não liga as 516 caixas CSV
+à avaliação nodal, não compõe Gamma/π/fonte C2 e não prova as inclusões O3.
+
 ## Exponencial arredondada no estágio 6 — provada e integrada pela PR #234
 
 `SigmaC5ZeroExpStage6Certificate.lean` importa a igualdade integrada do

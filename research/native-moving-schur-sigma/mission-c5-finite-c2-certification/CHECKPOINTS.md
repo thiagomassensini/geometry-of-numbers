@@ -1,5 +1,19 @@
 # C5 — checkpoints
 
+## 2026-11-07 — recorrência genérica dos estágios 2–192 validada localmente
+
+- `c5RoundedExpC_zero_stage_2_to_192_closed_form` prova uma fórmula única para
+  a exponencial arredondada na entrada zero em todos os estágios `2 ≤ k ≤ 192`.
+- Para `r=k-2`, os parâmetros são `3*2^r-1` e `4*2^r-1`; os extremos e
+  arredondamentos racionais foram certificados exatamente em 896 bits. O
+  operador `c5RoundedExpC` original conserva sua inflação do resto de Taylor.
+- Build Lean 4.32 com `warningAsError=true` e auditoria por import passaram;
+  somente axiomas padrão aparecem. Logs, erros de cache recuperados, pins,
+  hashes e comando estão em
+  `evidence/rational-boxes/c5-generic-exp-recurrence-20261107/`.
+- O checkpoint local aguarda a PR e o merge. C5 continua incompleta: ainda
+  faltam a ponte CSV–Lean, as inclusões na fonte C2 e os sinais finais.
+
 ## 2026-11-07 — caixa exponencial de estágio 6 provada e integrada (PR #234)
 
 - `c5ZeroExpStage6_eq` prova que `c5RoundedExpC 192 896 6` na entrada zero é
