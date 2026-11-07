@@ -12,6 +12,9 @@
   continuam abertas; também falta provar em Lean que os extremos do CSV
   coincidem com as definições das caixas. Veja
   `evidence/rational-boxes/c5-centered-all-a-zeta-export-validation.md`.
+- Publicado pela PR #213, commit de prova
+  `f51db20fa6fd21e08bbc2080cdd4bcb2265e2ea1`, merge na `main`
+  `5fe8a7b330d6a106e2b2c44781b8d0677c7ea7f3`.
 
 ## 2026-11-07 — estado integrado da negatividade e checkpoint C5 parcial
 
