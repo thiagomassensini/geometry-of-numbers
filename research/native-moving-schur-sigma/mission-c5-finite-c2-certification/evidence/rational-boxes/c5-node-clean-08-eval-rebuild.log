@@ -1,0 +1,28 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeEval.lean:1:0: error: unknown module prefix 'SigmaC5EulerMaclaurin'
+
+No directory 'SigmaC5EulerMaclaurin' or file 'SigmaC5EulerMaclaurin.olean' in the search path entries:
+.cache/c5-rational-node-clean-20261106
+/home/thlinux/worktrees/geometry-of-numbers-c5-finite-c2-certification/.lake/build/research/native-moving-schur-sigma/c5-zeta-intervals-clean
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/.cache
+
+/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/Cli/.lake/build/lib/lean
+/home/thlinux/carry-c2-source-raw-green/.lake/packages/GreenFrame/.lake/build/lib/lean
+/home/thlinux/carry-c2-source-raw-green/.lake/packages/FiniteNativeCarryOperator/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/batteries/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/Qq/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/aesop/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/proofwidgets/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/importGraph/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/LeanSearchClient/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/plausible/.lake/build/lib/lean
+/home/thlinux/carry-c2-source-raw-green/.lake/packages/CPFormal/.lake/build/lib/lean
+/home/thlinux/carry-c2-source-raw-green/.lake/packages/NativeCarrySpectralWeyl/.lake/build/lib/lean
+/home/thlinux/carry-c2-source-raw-green/.lake/packages/CarryGeometry/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/mathlib/.lake/build/lib/lean
+/home/thlinux/carry-c2-source-raw-green/.lake/packages/NativeCarryC3Crosswalk/.lake/build/lib/lean
+/home/thlinux/carry-self-adjoint-operator/.lake/packages/geometry-of-numbers/.lake/build/lib/lean
+/home/thlinux/worktrees/carry-sigma-c2-pinned-045369/.lake/build/lib/lean
+/home/thlinux/.elan/toolchains/leanprover--lean4---v4.32.0/lib/lean
+/home/thlinux/.elan/toolchains/leanprover--lean4---v4.32.0/lib/lean
+BUILD_EXIT=1

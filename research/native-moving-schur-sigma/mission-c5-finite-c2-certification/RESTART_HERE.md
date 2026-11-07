@@ -1,24 +1,24 @@
 # Retomar primeiro — missão C5
 
-## Retomada mais recente — 2026-11-06
+## Retomada mais recente — 2026-11-06, avaliador racional genérico
 
 ```text
 MISSION: C5 — certificar as primeiras janelas negativas da fonte C2 original.
-CURRENT PHASE: Fase 2 / O4, avaliação intervalar da fonte nos 129 nós.
-CURRENT SUBTASK: ligar a soma Gamma finita exata em ℚ+iℚ a caixas para Gamma e, em seguida, à fonte original.
-LAST VERIFIED THEOREM: SigmaC5Gamma.gamma3072Interval_contains.
-LAST COMPILED FILE: SigmaC5GammaRationalCoreAudit.lean (Lean 4.32; axiomas padrão).
-LAST SUCCESSFUL COMMIT: 36cba9d805bc3274538cdc93bd0a3702154edcb2 (merge da PR #198; prova `a1646a1837603aee7d03384016ae514a7f7c820a`).
-LAST REMOTE SHA: origin/main = 36cba9d805bc3274538cdc93bd0a3702154edcb2.
-CURRENT BRANCH: codex/c5-state-after-pr198-20261106.
-MAIN SHA: 36cba9d805bc3274538cdc93bd0a3702154edcb2.
-OPEN PR: nenhuma para o checkpoint da ponte Gamma.
-WHAT IS PROVED: gammaFinite em argumentos racionais é fatorada exatamente em T^z e uma soma finita em ℚ+iℚ; há teorema genérico para incluir Gamma verdadeira por inflação de 10^-259. As três configurações de intervalos experimentais foram reproduzidas e os sinais das caixas passaram de novo no verificador racional exato.
-WHAT IS CONDITIONAL: a inclusão de Gamma nos nós requer parâmetros de intervalo e limite exp explícitos; O3 continua condicional às caixas experimentais dos coeficientes, cuja inclusão na fonte original não foi provada por Lean.
-WHAT IS BLOCKED: ainda não há avaliações nos nós nem inclusão dos coeficientes C2; a cota zeta EM disponível tem ordem 4 e precisão insuficiente.
-EXACT NEXT COMMAND: rg -n 'hurwitzZeta|Hurwitz|Euler.Maclaurin|eulerMaclaurin|zeta_em' research/native-moving-schur-sigma/height50-certified/lean .lake/packages/mathlib/Mathlib
-EXACT NEXT MATHEMATICAL OBLIGATION: encontrar ou provar um resto EM/Hurwitz de ordem alta e traduzi-lo em caixas racionais para os argumentos w± dos 129 nós, mantendo a representação C2 exata.
-DO NOT REPEAT: C2/C3/C4, Fase 1, O3, domínio/cota analítica, faixa de π, erro Euler-Gamma 10^-259, limites dos pesos 0–14, ponte genérica gammaFiniteRationalCore já compilada.
+CURRENT PHASE: Fase 2 / O4, avaliação racional dos valores nos nós.
+CURRENT SUBTASK: instanciar `c5RationalZetaNodeBox_contains` nas amostras `j/100000`, provando suas condições de log/exp e extraindo retângulos concretos.
+LAST VERIFIED THEOREM: `CarrySigmaObstruction.c5RationalZetaNodeBox_contains`.
+LAST COMPILED FILE: `SigmaC5RationalNodeEvalAudit.lean` (Lean 4.32.0, warnings como erros).
+LAST SUCCESSFUL COMMIT: `c3d8d0fc106134bdfa9c62c6d529489b20e157c3` (merge da PR #206; o avaliador local ainda não foi publicado).
+LAST REMOTE SHA: `origin/main = c3d8d0fc106134bdfa9c62c6d529489b20e157c3`.
+CURRENT BRANCH: `codex/c5-rational-zeta-node-eval-20261106`.
+MAIN SHA: `c3d8d0fc106134bdfa9c62c6d529489b20e157c3`.
+OPEN PR: nenhuma; a prova local ainda será publicada como checkpoint parcial.
+WHAT IS PROVED: fatorização racional exata da correção Bernoulli de `emZetaHighRHS 100 300`; caixa genérica para `riemannZeta(a+bi)` sob condições explícitas de log/exp; o resto exponencial permanece e é absorvido pela inflação `<10^-250`. O checker auditou dez raízes com axiomas padrão.
+WHAT IS CONDITIONAL: as condições `hhead` e `hbase` não foram instanciadas em nenhum dos 129 nós; Gamma, fator de π e a fonte C2 ainda não foram compostos com essas caixas.
+WHAT IS BLOCKED: não há retângulos nodais concretos nem inclusão de `c₀..c₁₄`/`c₀..c₁₂` nas caixas O3.
+EXACT NEXT COMMAND: `sed -n '245,260p' /home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105/research/native-moving-schur-sigma/height50-certified/lean/ZetaLean/IntervalExp.lean; sed -n '110,130p' /home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105/research/native-moving-schur-sigma/height50-certified/lean/ZetaLean/IntervalCExp.lean; sed -n '407,430p' /home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105/research/native-moving-schur-sigma/height50-certified/lean/ZetaLean/IntervalCExp.lean`
+EXACT NEXT MATHEMATICAL OBLIGATION: obter majorantes racionais uniformes para `logQ` e o `normBound` das potências de Dirichlet, com `1≤m≤100`, `b=j/100000`, `j≤128` e `a∈{2/5,901/2000,1099/2000,3/5}`; instanciar os 129 retângulos, tratar argumentos negativos por conjugação e então compor Gamma/fator da câmera.
+DO NOT REPEAT: C1B/C2/C3/C4; transporte polinomial C4; sinais O3 condicionais; domínio/cota analítica; faixa de π e fator exponencial; limites dos pesos 0–14; erro Gamma `10^-259`; EM ordem 300 com cauda `<10^-250`; ponte Gamma racional genérica; fatorização e caixa genéricas deste avaliador.
 ```
 
 A reprodução experimental mais recente e o ajuste de compatibilidade aplicado
@@ -28,6 +28,11 @@ checagem condicional, não como inclusão formal dos coeficientes.
 
 Logs e hashes do subpasso Gamma: `evidence/rational-boxes/c5-gamma-rational-core-validation.md`.
 Ele ainda não fornece extremos numéricos para qualquer nó nem prova a inclusão nas caixas O3.
+
+Este checkpoint foi acrescentado localmente na branch indicada acima; a validação
+completa, hipóteses, logs e hashes está em
+`evidence/rational-boxes/c5-rational-node-evaluator-validation.md`. Ele prova
+somente uma ponte genérica condicional, não avalia os nós C5.
 
 ## Estado mais recente — 2026-11-06
 

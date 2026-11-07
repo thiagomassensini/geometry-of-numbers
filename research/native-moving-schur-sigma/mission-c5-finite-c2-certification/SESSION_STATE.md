@@ -3,6 +3,23 @@
 **Atualizado:** 2026-11-06
 **Status atual:** C1–C4, O3, a ponte Gamma de núcleo racional e o checkpoint Euler–Maclaurin de ordem alta estão integrados. A PR #198, commit de prova `a1646a1837603aee7d03384016ae514a7f7c820a`, foi mesclada na `main` em `36cba9d805bc3274538cdc93bd0a3702154edcb2`; a PR #205, commit de prova `61ddab8dbd5e669b2185a23c0900d2cba22dbf7a`, foi mesclada em `b56a90bceac12248bc5b8e6c2a247849ec885d6e`. O4/C5 segue aberta: ainda não há avaliações certificadas nos 129 nós nem inclusão formal dos coeficientes C2 nas caixas.
 
+**Checkpoint local atual — avaliador racional genérico:** na branch
+`codex/c5-rational-zeta-node-eval-20261106`, `SigmaC5RationalNodeEval.lean`
+fatoriza a correção Bernoulli de `emZetaHighRHS 100 300` em aritmética
+racional-complexa e prova `c5RationalZetaNodeBox_contains` sob condições
+explícitas de log/exp para a cabeça e a base 100. A cauda exata é mantida e
+absorvida com erro `<10^-250`. Build Lean 4.32 com warnings como erros e
+auditoria fail-closed de dez roots passaram, só com axiomas padrão. Este
+checkpoint ainda não está publicado; não há instanciação concreta nos 129
+nós, composição com Gamma/fator de completação ou inclusão dos coeficientes
+nas caixas O3. Evidência e hashes:
+`evidence/rational-boxes/c5-rational-node-evaluator-validation.md`.
+
+Os verificadores racionais dos dois JSONs Momentos também foram repetidos: os
+sinais condicionais são `+++++++++++-` em `99/2000` e `+++++++++-` em `1/10`.
+Esses sinais continuam condicionados às caixas e não demonstram sua inclusão
+na fonte C2.
+
 **Reprodução de 2026-11-06:** as três configurações prescritas foram executadas novamente em uma cópia temporária do checkout Momentos com o patch `gmpy2.mpz`→`int` já preservado em `evidence/interval-certificate/momentos-gmpy2-compat.patch`. As inclusões numéricas experimentais foram geradas, e o verificador independente por frações racionais exatas passou: `+++++++++++-` para `d=99/2000` nas duas configurações e `+++++++++-` para `d=1/10`. Isso continua **condicional** às caixas experimentais: não certifica por Lean que os coeficientes da fonte C2 estejam nelas. Comandos, logs e limites estão em `evidence/interval-certificate/reproduction-2026-11-06.md`.
 
 **Checkpoint integrado de Euler–Maclaurin de ordem alta (2026-11-06):** `SigmaC5EulerMaclaurin.lean` prova a identidade da `riemannZeta` original no quadrante superior `Re(s)>0, Im(s)>0` e nos pontos reais positivos `s≠1`. Com `N=100`, `P=300`, limita por `<10^-250` a cauda nos nós com `2/5≤Re(s)≤3/5` e `|Im(s)|≤128/100000`. Build limpo Lean 4.32 e auditoria fail-closed de oito raízes passaram; somente os axiomas padrão foram usados. PR #205, commit de prova `61ddab8dbd5e669b2185a23c0900d2cba22dbf7a`, merge `b56a90bceac12248bc5b8e6c2a247849ec885d6e`; o GitHub não reportou checks hospedados. A validação, pins, comandos, logs e hashes estão em `evidence/rational-boxes/euler-maclaurin-high-order/`. Esta etapa **não** avalia os 129 nós, não certifica caixas da fonte C2 e não fecha O4.
@@ -36,7 +53,7 @@ compilação limpa e a auditoria local estão registradas em
 
 **Checkpoint integrado — fator de completação dependente de π (PR #195):** `SigmaC5PiInterval.lean` transforma a faixa racional de π em faixa intervalar de `log π` com o `Interval.log1` certificado. `SigmaC5PiExp.lean` transporta essa faixa ao fator original `Complex.exp (-(s/2) * log π)` via `expCr`, para qualquer caixa `s` com o limite de norma exigido. Build limpo e auditoria das cinco raízes passaram em Lean 4.32; apenas axiomas padrão aparecem. PR #195, commit de prova `321ae94`, merge na `main` `0032b10295bfeaadb29d0387f9b99dde9b160ac3`. Logs, pins, hashes e comando estão em `evidence/rational-boxes/c5-pi-completion-factor-validation.md`. Este subpasso não avalia Gamma, a cauda C2 ou os 129 nós.
 
-**Próxima etapa de O4:** compor caixas intervalares racionais para a parte finita de `emZetaHighRHS 100 300` nos 129 nós e inflá-las pela cauda `<10^-250`. Depois, combinar zeta, Gamma e a fonte C2 original para provar as inclusões nas caixas. `evidence/rational-boxes/c5-original-source-zeta-route-audit.md` preserva a análise inicial da rota de ordem 4; os passos atuais estão em `evidence/rational-boxes/euler-maclaurin-high-order/` e `NEXT_STEPS.md`. O4/C5 continua aberta.
+**Próxima etapa de O4:** instanciar as condições `hhead`/`hbase` do avaliador para `j=0,…,128`, `b=j/100000` e as partes reais `2/5`, `901/2000`, `1099/2000` e `3/5`; extrair retângulos racionais concretos. Depois, combinar zeta, Gamma, fator dependente de π e a fonte C2 original, mantendo sua cabeça e cauda exata, para provar as inclusões O3. A validação genérica local está em `evidence/rational-boxes/c5-rational-node-evaluator-validation.md`; a análise inicial da rota de ordem 4 está em `c5-original-source-zeta-route-audit.md`. O4/C5 continua aberta.
 
 **Checkpoint de graus 2–14 (2026-11-06):** `c5LagrangeBasis_zeroIndex_coeff_abs_le_two_pow`, `c5LagrangeBasis_nonzeroIndex_coeff_abs_le_weight`, `c5InterpolationCoeffAbsSum_le_four_mul_two_pow` e `c5InterpolationWeightSum_lt_ten_145` formalizam a cota uniforme simbólica. Build limpo: `c5-interpolation-degree2-14-final-clean-build.log`, `BUILD_EXIT=0`. A auditoria das 23 raízes aceita apenas `propext`, `Classical.choice` e `Quot.sound`; logs e hashes estão preservados. O checkpoint permanece explicitamente incompleto e não prova inclusão de caixas.
 **Checkpoint de grau um (2026-11-06):** a alteração simbólica de `SigmaRationalInterpolation.lean` passou build Lean 4.32 limpo e auditoria fail-closed de 21 raízes. Logs e hashes estão em `evidence/rational-boxes/degree1-weight-bound-validation.md`; tentativas anteriores incompletas e a prova rejeitada com `native_decide` foram mantidas como histórico.

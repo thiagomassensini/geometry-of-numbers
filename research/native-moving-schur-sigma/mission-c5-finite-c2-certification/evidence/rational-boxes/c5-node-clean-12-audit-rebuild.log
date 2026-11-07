@@ -1,0 +1,11 @@
+'CarrySigmaObstruction.c5RatComplexToComplex_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatPochhammer_toComplex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionTerm_toComplex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionSum_toComplex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatScale_toComplex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5_emZetaHighRHS_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5ComplexIntervalRangeSum_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RationalZetaHeadBox_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RationalZetaBasePowerBox_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RationalZetaNodeBox_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+BUILD_EXIT=0

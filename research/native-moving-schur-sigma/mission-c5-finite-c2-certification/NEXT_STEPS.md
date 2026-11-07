@@ -6,14 +6,20 @@
 missão de negatividade já estão concluídas; este trabalho segue na
 certificação finita C5.
 
-1. Avaliar por aritmética intervalar racional a parte finita da fórmula em
-   `N=100`, `P=300` nos 129 nós; somar a inflação de erro `<10^-250` para a
-   cauda inteira. Usar o teorema real no nó `j=0` e a continuação analítica
-   para `j>0`.
-2. Compor essas caixas com o fator Gamma e a fonte C2 original, preservando a
-   definição do coeficiente. Provar as inclusões nas caixas C2 de ambos os
-   deslocamentos.
-3. Só então concluir os sinais C5 incondicionais e atualizar o estado final.
+1. `SigmaC5RationalNodeEval.lean` agora fatoriza exatamente a parte de
+   Bernoulli de `emZetaHighRHS 100 300` e prova uma caixa genérica para zeta,
+   sob condições explícitas. Instanciar `hhead` e `hbase` para os valores
+   `b=j/100000`, `0≤j≤128`, e as partes reais dos dois deslocamentos C2;
+   tratar as partes imaginárias negativas por conjugação, calcular os
+   retângulos racionais concretos e absorver a cauda `<10^-250`.
+2. Compor as caixas nodais com Gamma, o fator original dependente de π e a
+   fonte C2 original. Preservar a cabeça C2 mais a cauda exata e provar as
+   inclusões em `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
+3. Só depois concluir os sinais C5 incondicionais e atualizar o estado final.
+
+O avaliador genérico e a auditoria local estão documentados em
+`evidence/rational-boxes/c5-rational-node-evaluator-validation.md`; ainda não
+há nenhum nó instanciado nem inclusão de coeficientes provada.
 
 Continuam adiados a lei quantitativa distância × profundidade e os novos
 cadernos. Não é necessário calcular a primeira profundidade de falha para a
