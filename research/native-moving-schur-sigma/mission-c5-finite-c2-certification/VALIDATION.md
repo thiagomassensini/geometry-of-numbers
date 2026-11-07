@@ -1,6 +1,6 @@
 # C5 — validação
 
-## Piloto do nó m=2 até n=2 — PASSOU localmente; C5 parcial
+## Piloto do nó m=2 até n=2 — PASSOU e foi integrado pela PR #243; C5 parcial
 
 `SigmaC5M2TaylorStateStage2Refined.lean` compilou em Lean 4.32.0 com
 `warningAsError=true`. A auditoria das quatro raízes
@@ -15,7 +15,9 @@ série de 192 termos nem a caixa nodal completa. A tentativa monolítica e as
 iterações falhas foram mantidas como evidência negativa, separadas do build
 aceito. Fontes, logs, hashes, pins e comandos de reprodução estão em
 `evidence/rational-boxes/c5-m2-dirichlet-term-stage2-20261107/README.md`.
-A ponte CSV–Lean e as inclusões da fonte C2 continuam abertas.
+A ponte CSV–Lean e as inclusões da fonte C2 continuam abertas. A PR #243
+incluiu o checkpoint na `main`, merge
+`20c30cec4b3964fc063d8eb3c93e09a41d319cfc`; o GitHub não reportou checks.
 
 
 ## Recorrência genérica da exponencial nos estágios 2–192 — PASSOU e FOI INTEGRADA; C5 parcial

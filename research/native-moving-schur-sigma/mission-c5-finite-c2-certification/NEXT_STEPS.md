@@ -8,8 +8,10 @@ A primeira fatia da ponte CSV–Lean para `(a,j)=(2/5,0)` passou localmente:
 4.32.0, `warningAsError=true`, compilação e auditoria de axiomas passaram.
 A evidência reprodutível está em
 `evidence/rational-boxes/c5-m2-dirichlet-term-stage2-20261107/README.md`.
-Este checkpoint ainda não foi publicado; o build de `n=192` e o teorema para o
-termo completo continuam abertos.
+A PR #243 integrou esse checkpoint, commit de prova
+`86d42067db230b661321190ca397bb496e855186`, merge na `main`
+`20c30cec4b3964fc063d8eb3c93e09a41d319cfc`; não houve checks hospedados. O
+build de `n=192` e o teorema para o termo completo continuam abertos.
 
 Próximo passo: provar `n=3` com multiplicação de intervalos de sinais mistos,
 sem voltar à simplificação monolítica que falhou. Se o método por estágios for

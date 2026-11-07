@@ -14,7 +14,7 @@ auditadas têm apenas `propext`, `Classical.choice` e `Quot.sound`. Não há
 `sorryAx` no build aceito. Evidências, hashes, fontes, o vetor exato exportado,
 os logs de falha e o comando de retomada estão em
 `evidence/rational-boxes/c5-m2-dirichlet-term-stage2-20261107/README.md`.
-Neste registro, o checkpoint ainda está local e aguarda publicação por PR.
+O checkpoint foi publicado pela PR #243, commit de prova `86d42067db230b661321190ca397bb496e855186`, integrada na `main` pelo merge `20c30cec4b3964fc063d8eb3c93e09a41d319cfc`. O GitHub não reportou checks hospedados.
 
 Escopo: a prova fecha somente o estado Taylor `n=2`. Não fecha os 192 termos,
 a quadratura final do avaliador, a caixa completa do nó `m=2`, a ponte das 516
