@@ -33,19 +33,22 @@ preservados em `evidence/rational-boxes/c5-exported-box-proof-attempt/`.
 Checkpoint integrado pela PR #215, commit `baa5e3e`, merge na `main`
 `6bfb4b14606ec1896a2d01d60be4ca54117bd128`.
 
-**Subcomponente `log 2` testado:** a saída `#eval` de `c5CenteredLog2I 512`
-foi obtida em ~40 s, mas a igualdade aos literais ainda deixa metas abertas
-mesmo com extensionalidade, `maxSteps=1000000` e `norm_num1`. Detalhes e logs
-em `evidence/rational-boxes/c5-log2-component-attempt/`; o checkpoint foi
-integrado pela PR #217, merge `30a615cafa3b27de40427a73cc64988c77e236d3`. A
-rota seguinte deve provar somas parciais em blocos, com certificados reutilizáveis.
+**Subcomponente `log 2` testado:** agora está certificado em
+`evidence/rational-boxes/c5-log2-component-validation/`: 16 blocos de 32 termos
+provam as duas somas racionais de 512 termos e a igualdade exata do intervalo
+exportado. Build Lean 4.32.0 com warnings como erros e auditoria fail-closed
+das três raízes passaram; só aparecem axiomas padrão. A tentativa direta
+anterior e seu histórico permanecem em
+`evidence/rational-boxes/c5-log2-component-attempt/` e foram registrados pela
+PR #217 (merge `30a615cafa3b27de40427a73cc64988c77e236d3`).
 
 1. **Concluído nesta etapa:** exportar os extremos racionais para os quatro
    valores reais e todos os 129 nós; CSV, sondas, logs, pins e reprodução em
    `evidence/rational-boxes/c5-centered-all-a-zeta-export-validation.md`.
-2. Decompor a avaliação em lemas compartilhados (log, cabeça, correções de
-   Bernoulli e exponencial), provar uma caixa piloto sem decisão nativa e sem
-   exceder o limite de passos; então ligar o CSV às caixas Lean. Em seguida,
+2. Continuar a decomposição da caixa piloto nos componentes ainda não
+   certificados (cabeça, correções de Bernoulli e exponencial), e provar em
+   Lean a ligação formal dos extremos CSV às caixas calculadas. O resultado de
+   `log 2` cobre apenas o componente central, não as 516 igualdades. Em seguida,
    escolher `nExp`/`p` para a precisão O3, compor com Gamma, o fator original
    dependente de π e a fonte C2, preservando a cabeça e a cauda exata, e provar
    as inclusões em `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.

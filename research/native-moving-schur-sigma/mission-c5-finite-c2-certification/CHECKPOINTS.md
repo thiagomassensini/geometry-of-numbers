@@ -1,5 +1,23 @@
 # C5 — checkpoints
 
+## 2026-11-07 — `log 2` em blocos certificado (C5 ainda incompleta)
+
+- `SigmaC5Log2Certified.lean` divide cada `Interval.logSum 512 (±1/3)` em 16
+  blocos de 32 termos, certifica cada bloco com aritmética racional e recompõe
+  as somas completas. O teorema final prova
+  `c5CenteredLog2I 512 = c5ExportedLogTwo512`.
+- Build limpo Lean 4.32.0 com `warningAsError=true` passou. A auditoria
+  fail-closed passou nas três raízes; só aparecem `propext`, `Classical.choice`
+  e `Quot.sound`. A fonte não contém placeholders.
+- Fonte, checker, logs, pins, comando de retomada e hashes estão em
+  `evidence/rational-boxes/c5-log2-component-validation/README.md`.
+- Escopo: a prova cobre apenas o componente `log 2`; não liga as 516 linhas do
+  CSV às caixas Lean e não prova as inclusões
+  `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes`. C5 continua aberta. A linha
+  piloto `(a,j)=(2/5,0)` ainda falha com `decide` em `Rat.num`, `rfl` por não
+  conversibilidade, e `norm_num` após ~28 minutos/1M passos. O próximo passo é
+  formalizar os componentes restantes e a ligação CSV–Lean.
+
 ## 2026-11-07 — exportação Lean das caixas zeta em quatro coordenadas (parcial)
 
 - Quatro sondas Lean exportaram 129 caixas racionais exatas cada, para

@@ -1,16 +1,16 @@
 # Retomar primeiro — missão C5
 
-## Retomada mais recente — 2026-11-07 UTC, ponte CSV–Lean sem solução ainda
+## Retomada mais recente — 2026-11-07 UTC, componente `log 2` certificado
 
 ```text
 MISSION: C5 — certificar as primeiras janelas negativas da fonte C2 original.
-CURRENT PHASE: decompor a prova aritmética da caixa CSV–Lean; composição C5 permanece aberta.
-CURRENT BASE: main após PR #217, `30a615cafa3b27de40427a73cc64988c77e236d3`.
-LAST PROOF PR: #213, commit `f51db20fa6fd21e08bbc2080cdd4bcb2265e2ea1`, merge `5fe8a7b330d6a106e2b2c44781b8d0677c7ea7f3`. Latest checkpoint documental: PR #217, merge `30a615cafa3b27de40427a73cc64988c77e236d3`; ela registra a tentativa isolada de `log 2`.
-FAILED PILOTS: `(a,j)=(2/5,0)` falha com `decide`/`rfl`/`norm_num`; a igualdade de `c5CenteredLog2I 512` aos extremos exportados também deixa metas abertas após extensionalidade e `norm_num1`.
-WHAT IS PROVED: cobertura adaptativa formal de zeta nos 129 nós e exportação de 516 caixas por `#eval`; a exportação não foi ligada formalmente aos literais CSV.
-WHAT REMAINS: provar somas parciais de log em blocos com certificados reutilizáveis, validar uma caixa piloto, compor com Gamma/π/fonte C2 e provar as inclusões em `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
-EVIDENCE: `evidence/rational-boxes/c5-exported-box-proof-attempt/` e `evidence/rational-boxes/c5-log2-component-attempt/`.
+CURRENT PHASE: continuar a decomposição da caixa CSV–Lean e compor a fonte C2; C5 permanece aberta.
+CURRENT BASE: `main` após PR #218, `ea8f8f636f0ff96b6c42ef9af612d0d32319b45a`.
+LAST INTEGRATED PROOF PR: #217, merge `30a615cafa3b27de40427a73cc64988c77e236d3`; o novo componente em blocos está em validação nesta branch.
+FAILED PILOT STILL OPEN: `(a,j)=(2/5,0)` não fecha: `decide` para em `Rat.num`, `rfl` falha por não conversibilidade e `norm_num` excedeu 1M passos após ~28 minutos. A tentativa direta de igualdade para `log 2` foi superada pela prova em blocos.
+WHAT IS PROVED: cobertura adaptativa formal de zeta nos 129 nós; exportação de 516 caixas por `#eval`; somas `Interval.logSum 512 (±1/3)` certificadas em 16 blocos de 32 termos; igualdade formal `c5CenteredLog2I 512 = c5ExportedLogTwo512`.
+WHAT REMAINS: ligar formalmente as linhas CSV às caixas Lean; avaliar os demais componentes da caixa; compor com Gamma/π/fonte C2 e provar as inclusões em `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
+EVIDENCE: `evidence/rational-boxes/c5-log2-component-validation/README.md`, mais o histórico das tentativas em `c5-exported-box-proof-attempt/` e `c5-log2-component-attempt/`.
 RESOURCES: Lean 4.32; Carry pin `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`; não há necessidade de mais memória.
 DO NOT REPEAT: C1B/C2/C3/C4; as adaptações Lean 4.35 preservadas; os módulos C5 já integrados.
 ```

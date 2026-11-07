@@ -1,5 +1,21 @@
 # C5 — obrigações abertas
 
+## Atualização — componente `log 2` fechado; composição C5 continua aberta
+
+`SigmaC5Log2Certified.lean` certifica as duas somas de 512 termos em 16 blocos
+racionais de 32 termos e prova a igualdade exata do intervalo exportado.
+Compilação Lean 4.32.0 e auditoria fail-closed passaram, apenas com os axiomas
+padrão. Os detalhes, hashes, pins, logs e comando estão em
+`evidence/rational-boxes/c5-log2-component-validation/README.md`.
+
+Isso não certifica os extremos das 516 linhas CSV contra as caixas Lean, nem
+avalia os componentes restantes ou prova as inclusões
+`sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`. C5 e os sinais finais continuam
+abertos. A tentativa piloto CSV–Lean permanece o primeiro erro concreto: a
+redução `decide` para em `Rat.num`, `rfl` não é conversível e `norm_num` excedeu
+1 milhão de passos após ~28 minutos. O próximo passo é fatorar os componentes
+restantes e estabelecer a ponte formal em um caso piloto.
+
 ## Snapshot mais recente — cobertura zeta adaptativa provada, composição C5 aberta
 
 `SigmaC5RationalNodeLogBounds.lean` e `SigmaC5RationalNodeInstantiate.lean`
@@ -15,23 +31,22 @@ com axiomas padrão. O checkpoint foi integrado pela PR #209, commit de prova
 `386b654eabe4c942d6b0db46754120ab79b52fb5`; evidência reproduzível em
 `evidence/rational-boxes/c5-adaptive-zeta-node-instantiation-validation.md`.
 
-**Ainda faltam** extremos racionais achatados, a composição com Gamma, o fator
-de π e a expressão da fonte C2, e as inclusões em `sigmaC00495SourceBoxes` e
-`sigmaC01SourceBoxes`. Portanto, os sinais O3 continuam condicionais e C5 não
-está concluída. Próximo passo: selecionar a precisão, exportar as caixas,
-compor a fonte original mantendo sua cabeça e cauda exata e provar as duas
-inclusões.
+**Ainda faltam** ligar formalmente os extremos racionais exportados às caixas
+Lean, compor com Gamma, o fator de π e a expressão da fonte C2, e provar as
+inclusões em `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`. Portanto, os
+sinais O3 continuam condicionais e C5 não está concluída. Próximo passo:
+formalizar uma caixa piloto, compor a fonte original mantendo sua cabeça e
+cauda exata e provar as duas inclusões.
 
-## Obrigação imediata — formalizar a exportação de caixas zeta (2026-11-07)
+## Tentativa piloto CSV–Lean ainda aberta (2026-11-07)
 
 Os 516 extremos racionais em `c5-centered-all-a-zeta-boxes.csv` vieram de
 sondas `#eval`; ainda não há igualdade Lean que os ligue a
 `c5RationalZetaCenteredNodeBox`. A prova piloto de uma linha não fechou com
 `decide`, `rfl` ou `norm_num` expandido. Não usar esses extremos como fatos
-formais. Decompor a avaliação em componentes compartilhados e obter um piloto
-com compilação e auditoria válida antes de formar lotes. A tentativa de isolar
-`c5CenteredLog2I 512` exportou os números, mas não provou a igualdade; o próximo
-subpasso é uma soma em blocos com certificados aritméticos. Evidência e erros:
+formais. O subpasso `c5CenteredLog2I 512`, antes pendente, foi concluído pela
+prova em blocos registrada acima; ela cobre apenas o componente `log 2`.
+Evidência e erros do piloto CSV–Lean:
 `evidence/rational-boxes/c5-exported-box-proof-attempt/`; a prova isolada de
 `log 2` está em `evidence/rational-boxes/c5-log2-component-attempt/`. O diagnóstico inicial foi publicado pela PR #215, merge
 `6bfb4b14606ec1896a2d01d60be4ca54117bd128`; o teste isolado de `log 2` e

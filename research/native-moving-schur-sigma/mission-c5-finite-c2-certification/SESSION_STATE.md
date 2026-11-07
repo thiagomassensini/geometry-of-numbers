@@ -11,6 +11,24 @@
   de C2/C3; não é preciso calcular a primeira profundidade de falha para a
   negatividade eventual já provada.
 
+## Checkpoint mais recente — componente `log 2` certificado por blocos
+
+`SigmaC5Log2Certified.lean` prova as somas `Interval.logSum 512 (±1/3)` em
+16 blocos racionais de 32 termos, recompõe cada soma finita e prova a igualdade
+exata `c5CenteredLog2I 512 = c5ExportedLogTwo512`. A compilação limpa em Lean
+4.32.0 passou com warnings como erros; a auditoria fail-closed passou para as
+três raízes e encontrou somente `propext`, `Classical.choice` e `Quot.sound`.
+Não há `sorry` nem `sorryAx` na fonte ou no relatório.
+
+Este resultado certifica somente o componente central `log 2`. Ele ainda não
+liga as 516 linhas do CSV às caixas Lean, não avalia a cabeça/correções restantes
+e não prova `sigmaC00495SourceBoxes` nem `sigmaC01SourceBoxes`; C5 permanece
+incompleta. O primeiro erro aberto continua sendo a ponte CSV–Lean: na tentativa
+piloto `(a,j)=(2/5,0)`, `decide` parou em `Rat.num`, `rfl` não foi conversível e
+`norm_num` excedeu 1 milhão de passos após cerca de 28 minutos. Fonte, logs,
+pins, hash do `.olean` e comando de retomada estão em
+`evidence/rational-boxes/c5-log2-component-validation/README.md`.
+
 ## Tentativa de ponte formal dos extremos CSV (2026-11-07, incompleta)
 
 Foi testada a linha `(a,j)=(2/5,0)` entre o CSV de 516 caixas e
@@ -33,17 +51,18 @@ checkpoint explicitamente incompleto pela PR #215, commit `baa5e3e`, merge na
 exportação CSV não ligada formalmente às caixas Lean e com as duas inclusões
 C5 abertas.
 
-## Tentativa isolada do componente `log 2` (2026-11-07, incompleta)
+## Tentativa inicial direta do componente `log 2` (2026-11-07, superada)
 
 Como passo de decomposição, `#eval` exportou os extremos exatos de
 `c5CenteredLog2I 512` em ~40 s. A prova aritmética desses mesmos extremos não
 fechou: `norm_num` deixou metas abertas, inclusive após separar `lo`/`hi`, usar
 `maxSteps=1000000` e tentar `norm_num1`. Nenhum teorema foi compilado nem
 teve auditoria válida. Logs e fontes estão em
-`evidence/rational-boxes/c5-log2-component-attempt/`. O diagnóstico foi
+`evidence/rational-boxes/c5-log2-component-attempt/`. Esse diagnóstico foi
 integrado pela PR #217, commit `e34733a`, merge na `main`
-`30a615cafa3b27de40427a73cc64988c77e236d3`. O próximo passo é certificar
-blocos da soma finita com lemas reutilizáveis, sem ampliar limites de passos.
+`30a615cafa3b27de40427a73cc64988c77e236d3`. A prova em blocos acima superou
+esse subproblema; a ponte dos 516 extremos e a composição da fonte continuam
+abertas.
 
 ## Checkpoint integrado — Bernoulli compartilhado (2026-11-07)
 
