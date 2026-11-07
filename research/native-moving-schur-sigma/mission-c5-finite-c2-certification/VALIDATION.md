@@ -1,6 +1,6 @@
 # C5 — validação
 
-## Transição do nó m=2 para n=11 — passou localmente; PR pendente
+## Transição do nó m=2 para n=11 — passou e foi integrada pela PR #261; C5 parcial
 
 `SigmaC5M2TaylorStateStage11Certificate.lean` compilou em Lean 4.32.0 com
 `warningAsError=true`; o build terminou com `BUILD_EXIT=0`. As cinco raízes
@@ -10,7 +10,10 @@ auditadas usam somente `propext`, `Classical.choice` e `Quot.sound`, sem
 
 A prova cobre `c5RoundedExpStateC` somente até `n=11` no nó `(2/5,0)`. Os
 estados seguintes, quadraturas, caixa completa, composição com a fonte C2 e
-sinais finais continuam abertos; C5 permanece incompleta.
+sinais finais continuam abertos. A PR #261 integrou o commit de prova
+`0240e4cf8fbe192042b6116cd30bee66c2f42594` no merge
+`cb271df9a03500440be8e510bffc74a78311252f`; o GitHub não reportou checks
+hospedados. C5 permanece incompleta.
 
 ## Transição do nó m=2 para n=10 — passou e foi integrada pela PR #259; C5 parcial
 

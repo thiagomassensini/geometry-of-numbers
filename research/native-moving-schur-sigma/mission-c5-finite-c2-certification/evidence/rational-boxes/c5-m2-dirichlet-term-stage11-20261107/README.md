@@ -54,4 +54,7 @@ estão em `SHA256SUMS.txt`.
 
 ## Publicação
 
-Este checkpoint está local, sem PR ou merge. Ele é parcial e não conclui C5.
+A PR #261 integrou o commit de prova
+`0240e4cf8fbe192042b6116cd30bee66c2f42594` na `main`, pelo merge
+`cb271df9a03500440be8e510bffc74a78311252f`. O GitHub não reportou checks
+hospedados. O checkpoint é parcial e não conclui C5.
