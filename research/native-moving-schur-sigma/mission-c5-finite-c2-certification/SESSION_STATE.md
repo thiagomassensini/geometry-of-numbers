@@ -1,5 +1,23 @@
 # C5 — estado da sessão
 
+## Atualização — replay das caixas intervalares repetido (2026-11-07)
+
+As três configurações da fonte C2 foram executadas outra vez a partir do
+checkout Momentos `68c9b5f0a196289e28a8e5586146707d27df6b75`. Sem patch, a
+configuração de 1024 nós reproduziu o erro ambiental de conversão
+`gmpy2.mpz` → `Decimal`, e o traceback foi arquivado. Aplicando o patch somente
+a uma cópia temporária do script, as três gerações terminaram e passaram pelo
+verificador de frações racionais. Os sinais condicionais foram
+`+++++++++++-`, `+++++++++++-` e `+++++++++-`, idênticos aos registros
+anteriores. Os novos logs, JSONs, saídas exatas, patch, hashes e comandos estão
+em `evidence/interval-certificate/reproduction-2026-11-07.md`.
+
+Esse replay é evidência numérica experimental: não formaliza a implementação
+intervalar externa e não prova que os coeficientes originais pertençam às
+caixas. C5/O4 permanece aberta. A próxima etapa Lean continua sendo provar a
+recorrência das caixas arredondadas para `2 ≤ k ≤ 192`, depois ligar os dados
+nodais à composição da fonte C2.
+
 ## Estado da missão de negatividade (atualizado em 2026-11-07)
 
 - C1B foi integrada pela PR #155, no merge `0586e238441096ecd2248e3f14bdac3a832af427`.
