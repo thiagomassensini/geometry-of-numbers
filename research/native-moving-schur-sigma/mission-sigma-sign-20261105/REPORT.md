@@ -1,6 +1,6 @@
 # Relatório consolidado — missão de negatividade transversal sigma
 
-**Atualizado em 2026-11-06.** C0, C1, C1B, C2, C3 e C4 estão integrados à `main`.
+**Atualizado em 2026-11-07.** C0, C1, C1B, C2, C3 e C4 estão integrados à `main`. A revalidação mais recente recompilou C2/C3 nas fontes de `origin/main@08a413f34dd5588ed3d021351af27f3f55e0c072`; logs, pins e hashes estão em `evidence/c2-c3-priority-20261107/`.
 
 ## Resultados formais
 
@@ -47,6 +47,7 @@ O lema `sigmaMatrix_prefix_submatrix` identifica exatamente a seção antiga com
 - C1B já está publicado pela PR #155. O checkpoint da validação incompleta 4.35 e os registros atualizados foram publicados pela PR #156, merge `301c36c710c87dc5fc43db9c26aa90c005e9e5a6`.
 - C2 foi integrado pela PR #157; o GitHub não retornou status checks para essa PR. O estado consolidado da missão foi atualizado após o merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`.
 - C3 foi integrado pela PR #159; o GitHub não retornou status checks. O merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8` conclui as prioridades C2/C3; evidências de build e auditoria estão em `evidence/c3-parity/`.
+- A revalidação em Lean 4.32 de `origin/main@08a413f34dd5588ed3d021351af27f3f55e0c072` recompilou os módulos C2 e C3 e refez a auditoria transitiva: 133 raízes públicas, 70.861 dependências de tipo/corpo e somente axiomas padrão. A definição `CarrySigmaObstruction.sigmaLineZero` continua única. Evidências detalhadas: `evidence/c2-c3-priority-20261107/`.
 - C4 foi integrado pela PR #162, commit `31d3df33d4524d9809c75ba4481b1fa9f57a98bc`, merge `799a0e06af5469e9fe0665943adbb1cb29d0b6f8`. Preserva o produto deslocado original e prova a recorrência formal `C_d · H_d=-C_d′`, com `H_d(n)=2*completedSigmaLogJet d n`. Sua forma de Hankel é `2 • sigmaMatrix`; positividade do termo constante dá a equivalência PSD do bloco Bézout com a matriz sigma original. O build limpo e a auditoria transitiva local passaram; o GitHub não apresentou status checks. Evidências em `evidence/c4-source-bezout/`.
 - A compilação local respeitou o gate do script de 30 GiB; após o aumento da VM havia cerca de 60 GiB disponíveis.
 

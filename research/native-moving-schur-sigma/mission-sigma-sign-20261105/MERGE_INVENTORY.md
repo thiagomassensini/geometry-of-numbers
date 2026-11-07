@@ -71,3 +71,9 @@ O inventário acima é o snapshot anterior aos merges C0–C3; esta atualizaçã
 - A base de origin/main conferida foi 935911bce2c253ee508a4990face113ea63c87ee. As integrações C1B (#155), C2 (#157) e C3 (#159) continuam presentes e sem publicação pendente.
 - C2 e C3 foram recompilados focadamente em Lean 4.32; a auditoria transitiva atual percorreu 133 roots e 70.861 dependências. Os detalhes e logs estão em evidence/c2-c3-post-reboot-20261106/.
 - As worktrees 4.35 em /tmp realmente não sobreviveram ao reinício. O checkpoint publicado preserva os overlays, patches, pins, manifests e logs. O README foi atualizado com reconstrução a partir da base 353a7db22ca3b886ff111d0e61827784a4eb6053; o scheduler agora recebe os caminhos Geometry, Carry, saída e Lean por variáveis de ambiente.
+
+## Atualização após PR #220 e revalidação C2/C3 (2026-11-07)
+
+- `origin/main` foi conferida em `08a413f34dd5588ed3d021351af27f3f55e0c072`. C1B (#155, merge `0586e238441096ecd2248e3f14bdac3a832af427`), C2 (#157) e C3 (#159) continuam presentes; não existe publicação pendente dessas entregas.
+- C2/C3 recompilaram em Lean 4.32 nessa revisão. A auditoria transitiva repetida percorreu 133 raízes e 70.861 dependências, somente com axiomas padrão. A evidência desta execução está em `evidence/c2-c3-priority-20261107/`.
+- O checkpoint 4.35 segue durável na `main`, com overlays, patches, pins, manifests, logs/erro e comandos de reconstrução em `evidence/lean435-validation-incomplete/`. Ele permanece explicitamente incompleto. A rota 4.32 publicada continua sendo a referência para C2; não se iniciou migração geral de Geometry/Carry.
