@@ -1,5 +1,14 @@
 # C5 — checkpoints
 
+## 2026-11-07 — primeiro nó complexo de Gamma integrado pela PR #290
+
+- `CarrySigmaObstruction.c5GammaComplexNodeBox_contains` contém `Γ(901/4000 + 3i/20)`, primeiro nó complexo usado pela malha C2 em `d=99/2000`, altura de Cauchy `3/10`.
+- A caixa inclui `240^z`, o núcleo racional em 16 blocos de 64 termos e o resto formal de `gamma_finite_1024_240_error`, com inflação `10⁻⁹⁹`.
+- Cinco módulos passaram num build limpo de Lean 4.32.0 com `warningAsError=true`; raízes auditadas dependem somente de axiomas padrão e não usam `sorryAx`, axiomas próprios ou `native_decide`.
+- Evidência reproduzível, tentativas, pins, logs e hashes: `evidence/rational-boxes/c5-gamma-complex-node-20261107/README.md`.
+- A PR #290 integrou o commit `482110b10c9173f6a8c9b231c7f3ed07c0935933` no merge `06001aaae85c19d01dca48a802fecbb06ffb381d`.
+- Este é um checkpoint parcial: os outros nós, a ponte CSV–Lean, as inclusões da fonte e os sinais finais continuam abertos.
+
 ## 2026-11-07 — segunda caixa real de Gamma integrada pela PR #287
 
 - `CarrySigmaObstruction.c5GammaSecondRealPointBox_contains` contém `Γ(901/4000)`.

@@ -1,6 +1,14 @@
 # C5 — validação
 
-## Validação recente — caixa `Γ(901/4000)`
+## Validação recente — primeiro nó complexo de Gamma
+
+- Fonte principal: `SigmaC5GammaComplexNodeGammaCertificate.lean`; declaração `CarrySigmaObstruction.c5GammaComplexNodeBox_contains`.
+- O build limpo recompilou os cinco módulos em Lean 4.32.0 com `warningAsError=true`; cada etapa terminou com saída 0.
+- Auditoria das raízes: somente `propext`, `Classical.choice`, `Quot.sound`; sem `sorryAx`, axiomas próprios ou `native_decide`.
+- A caixa composta contém `Complex.Gamma (901/4000 + (3/20) * Complex.I)` e usa a inflação `10⁻⁹⁹`.
+- PR #290 integrou o commit `482110b10c9173f6a8c9b231c7f3ed07c0935933` no merge `06001aaae85c19d01dca48a802fecbb06ffb381d`. Build, logs, pins, hashes e tentativas: `evidence/rational-boxes/c5-gamma-complex-node-20261107/README.md`.
+
+## Validação anterior — caixa `Γ(901/4000)`
 
 - Fonte principal: `SigmaC5GammaSecondRealPointGammaCertificate.lean`, SHA-256 `931ca3014a0443fe40bd213c5f9f0dc2cae4a864b986b49a86f46e34cf005411`.
 - Os módulos Probe, Certificate, Combine e Gamma foram compilados em Lean 4.32.0 via `compile_sigma_pade.sh`; `warningAsError=true`, saída 0 em cada log.

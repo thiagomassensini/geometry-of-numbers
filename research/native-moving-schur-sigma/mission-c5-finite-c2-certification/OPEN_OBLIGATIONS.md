@@ -1,14 +1,17 @@
 # C5 — obrigações abertas
 
-## Estado atual — dois pontos reais de Gamma provados
+## Estado atual — primeiro nó complexo de Gamma provado
 
-As caixas formais de `Γ(1/5)` e `Γ(901/4000)` estão integradas; a segunda entrou pela PR #287, merge `742eb6fd03311adbb80507867c47e726fd648a21`. Evidência e comando: `evidence/rational-boxes/c5-gamma-second-real-point-20261107/README.md`.
+Além das caixas em `1/5` e `901/4000`, a PR #290 integrou
+`c5GammaComplexNodeBox_contains` para `Γ(901/4000 + 3i/20)` (merge
+`06001aaae85c19d01dca48a802fecbb06ffb381d`). Evidência e comando:
+`evidence/rational-boxes/c5-gamma-complex-node-20261107/README.md`.
 
 Continuam abertas, em ordem:
 
-1. certificar Gamma nos pontos complexos da malha realmente usados pela fonte C5;
-2. compor Gamma e zeta com os fatores originais da fonte completada e as quadraturas;
-3. provar as inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`;
+1. formalizar a ponte que relaciona a exportação CSV das caixas de zeta com os retângulos Lean usados na fonte, e certificar Gamma nos demais nós necessários;
+2. compor Gamma e zeta com o fator nativo original e as quadraturas da fonte completada;
+3. provar as inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` sem hipóteses auxiliares;
 4. fechar os sinais de `sigmaPadeD` original nos dois deslocamentos.
 
 Os certificados condicionais de O3 continuam corretos sob suas hipóteses, mas não são certificados incondicionais da fonte. C5 permanece incompleta.
