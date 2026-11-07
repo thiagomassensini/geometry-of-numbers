@@ -1,0 +1,9 @@
+ecae7d6e2bd71ea19286f52a9d4c3991e656335cecd9f528120926296b9fc647  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-log2-component-attempt/README.md
+d14a5fbb7e4c8716f097c41d67ff50ae1b049374d85cf6e874da2abb08a7ae4c  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-log2-component-attempt/SigmaC5Log2ExportProbe.lean
+fd108906248aa3f2e9d39f57b15bd14544d72a635845dacb8ce1f7520776b326  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-log2-component-attempt/SigmaC5Log2Certified.lean
+d0fe3a025422b8fb55502878dd3dfa481e8b8c479bb17bc95b8ef85f3878cb0f  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-log2-component-attempt/log2-export.log
+439e550ab1c66b717733147f786bf06db0b984370b31485a5d3ebe4728839c5d  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-log2-component-attempt/log2-certify.log
+439e550ab1c66b717733147f786bf06db0b984370b31485a5d3ebe4728839c5d  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-log2-component-attempt/log2-certify-1m.log
+30c2a52e6c5633737593b8757501be74021a74cf14ec368c39befd3741d4399d  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-log2-component-attempt/log2-certify-ext-1m.log
+28d3aef8c6248314669c97ff8fd24457f74b594d893f44566b1a5a49f334334d  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-log2-component-attempt/log2-certify-norm-num1.log
+ef3b3a50b6923e156d0a51a23edf6f447c3a00373f8bba852af8e83015cb2b90  research/native-moving-schur-sigma/SigmaC5RationalNodePreciseLogBounds.lean

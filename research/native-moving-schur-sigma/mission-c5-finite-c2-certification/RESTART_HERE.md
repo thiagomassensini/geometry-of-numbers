@@ -4,13 +4,13 @@
 
 ```text
 MISSION: C5 — certificar as primeiras janelas negativas da fonte C2 original.
-CURRENT PHASE: prova formal da ligação entre os extremos CSV e as caixas Lean; composição C5 permanece aberta.
-CURRENT BASE: main após PR #215, `6bfb4b14606ec1896a2d01d60be4ca54117bd128`.
-LAST PROOF PR: #213, commit `f51db20fa6fd21e08bbc2080cdd4bcb2265e2ea1`, merge `5fe8a7b330d6a106e2b2c44781b8d0677c7ea7f3`. Latest checkpoint documental: PR #215, merge `6bfb4b14606ec1896a2d01d60be4ca54117bd128`.
-FAILED PILOT: `(a,j)=(2/5,0)`; `decide` trava em `Rat.num`, `rfl` não fecha por definicionalidade, `norm_num` com 1M passos excede o limite em ~28 min.
+CURRENT PHASE: decompor a prova aritmética da caixa CSV–Lean; composição C5 permanece aberta.
+CURRENT BASE: main após PR #216, `792a5864e1fe0d5568f64d7865c71c316b420863`.
+LAST PROOF PR: #213, commit `f51db20fa6fd21e08bbc2080cdd4bcb2265e2ea1`, merge `5fe8a7b330d6a106e2b2c44781b8d0677c7ea7f3`. Latest checkpoint documental: PR #216, merge `792a5864e1fe0d5568f64d7865c71c316b420863`; ela registra a PR #215.
+FAILED PILOTS: `(a,j)=(2/5,0)` falha com `decide`/`rfl`/`norm_num`; a igualdade de `c5CenteredLog2I 512` aos extremos exportados também deixa metas abertas após extensionalidade e `norm_num1`.
 WHAT IS PROVED: cobertura adaptativa formal de zeta nos 129 nós e exportação de 516 caixas por `#eval`; a exportação não foi ligada formalmente aos literais CSV.
-WHAT REMAINS: decompor a computação em lemas compartilhados, provar a ponte formal, compor com Gamma/π/fonte C2 e provar as inclusões em `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
-EVIDENCE: `evidence/rational-boxes/c5-exported-box-proof-attempt/`.
+WHAT REMAINS: provar somas parciais de log em blocos com certificados reutilizáveis, validar uma caixa piloto, compor com Gamma/π/fonte C2 e provar as inclusões em `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
+EVIDENCE: `evidence/rational-boxes/c5-exported-box-proof-attempt/` e `evidence/rational-boxes/c5-log2-component-attempt/`.
 RESOURCES: Lean 4.32; Carry pin `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`; não há necessidade de mais memória.
 DO NOT REPEAT: C1B/C2/C3/C4; as adaptações Lean 4.35 preservadas; os módulos C5 já integrados.
 ```

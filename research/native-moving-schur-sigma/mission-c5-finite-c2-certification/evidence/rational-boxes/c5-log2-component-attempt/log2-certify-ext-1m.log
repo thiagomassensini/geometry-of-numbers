@@ -1,0 +1,5 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-formalize-zeta-boxes-20261107/research/native-moving-schur-sigma/SigmaC5Log2Certified.lean:13:2: error: No applicable extensionality theorem found for type
+  ZetaLean.Interval
+
+Note: Extensionality theorems can be registered by marking them with the `[ext]` attribute
+'c5CenteredLog2I_512_eq_export' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
