@@ -1,26 +1,26 @@
 # Retomar primeiro — missão C5
 
-## Retomada mais recente — checkpoint de estágio 1 integrado (PR #224)
+## Retomada mais recente — igualdade do estágio 2 validada localmente
 
 C1B/C2/C3 já estão integradas pelas PRs #155/#157/#159; não as refazer. A
-prioridade vigente é C5. O núcleo `m = 1` foi integrado pela PR #222, e agora
-`SigmaC5ZeroExpStagesCertificate.lean` prova que a caixa exponencial
-arredondada de estágio 1 coincide com os extremos racionais exportados. Os
-quatro pisos/tetos foram provados e auditados em Lean 4.32; C5 ainda está
-incompleta, pois falta a ponte CSV–Lean e as inclusões dos coeficientes da
-fonte C2 nas caixas.
+prioridade vigente é C5. O núcleo `m = 1` foi integrado pela PR #222, a
+igualdade do estágio 1 pela PR #224, e `SigmaC5ZeroExpStagesCertificate.lean`
+agora prova também que a caixa exponencial arredondada de estágio 2 coincide
+com os extremos exportados. Os quatro novos pisos/tetos foram provados e
+auditados em Lean 4.32. C5 continua incompleta; a ponte CSV–Lean e as inclusões
+dos coeficientes da fonte C2 nas caixas ainda faltam.
 
-**Base de trabalho:** Geometry `main` após PR #224, merge
-`d667abfc42020e442c62ec1b49b82f5bcf1971ad`. O commit de prova é
-`a908789fad182aa9a2d8eb85b2da641c11c4da62`; o GitHub não reportou checks
-hospedados.
+**Base de trabalho:** Geometry `main` após PR #225, merge
+`fd5fe9806d99b932df9139974eaa7c64eee236ba`, branch
+`codex/c5-zero-exp-stage2-20261107`. O estágio 2 está validado localmente; a
+publicação/integração está pendente.
 
-Retomar provando as igualdades exportadas dos estágios seguintes da exponencial
-arredondada. O build de prova e o audit separado, os pins, hashes, tentativas
-interrompidas e falhas históricas estão em
+Retomar publicando este checkpoint e depois provando as igualdades exportadas
+dos estágios seguintes da exponencial arredondada. Builds, auditorias, pins,
+hashes, tentativas interrompidas e falhas históricas estão em
 `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`. Depois, retomar a
-ponte CSV–Lean, compor a fonte C2 original e provar as inclusões O3. O merge
-fecha somente a igualdade do estágio 1, não C5.
+ponte CSV–Lean, compor a fonte C2 original e provar as inclusões O3. Os merges
+atuais fecham somente as igualdades dos estágios 1 e 2, não C5.
 
 ## Retomada anterior — 2026-11-07 UTC, componente `log 2` certificado
 

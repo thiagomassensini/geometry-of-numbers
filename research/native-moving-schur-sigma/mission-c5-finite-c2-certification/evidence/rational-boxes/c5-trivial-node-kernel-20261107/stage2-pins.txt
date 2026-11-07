@@ -1,0 +1,11 @@
+Geometry main at start of this checkpoint: fd5fe9806d99b932df9139974eaa7c64eee236ba
+Geometry worktree branch: codex/c5-zero-exp-stage2-20261107
+Reference Geometry root: /home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105
+Reference Geometry commit: caa07002306b555fea5624cc11ab2ea5811a4324
+Carry root: /home/thlinux/worktrees/carry-sigma-c2-pinned-045369
+Carry commit: 045369f6dedcb2e75e9aefed1d12c9f73b9a2532
+Mathlib commit: 81a5d257c8e410db227a6665ed08f64fea08e997
+Lean: 4.32.0 (commit 8c9756b28d64dab099da31a4c09229a9e6a2ef35)
+Build setting: warningAsError=true
+Theorems: stage 0 equality; stage 0 square four floor/ceil lemmas; stage 1 equality; stage 1 square four floor/ceil lemmas; stage 2 equality
+Axioms reported: propext, Classical.choice, Quot.sound only

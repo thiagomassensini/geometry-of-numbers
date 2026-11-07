@@ -105,6 +105,61 @@ theorem c5ZeroExpStage1_eq :
     c5ZeroExpStage1Export]
   norm_num [c5ZeroExpStage1Export]
 
+def c5ZeroExpStage1Square : ComplexInterval :=
+  c5ZeroExpStage1Export.mul c5ZeroExpStage1Export
+
+lemma c5ZeroExpStage1Square_re_lo_floor :
+    Int.floor (c5ZeroExpStage1Square.re.lo * 2 ^ 896) = (2 : ℤ) ^ 896 - 2 := by
+  apply Int.floor_eq_iff.mpr
+  constructor <;> norm_num [c5ZeroExpStage1Square, ComplexInterval.mul,
+    Interval.mul, Interval.sub, Interval.neg, Interval.add,
+    c5ZeroExpStage1Export]
+
+lemma c5ZeroExpStage1Square_re_hi_ceil :
+    Int.ceil (c5ZeroExpStage1Square.re.hi * 2 ^ 896) = (2 : ℤ) ^ 896 + 3 := by
+  apply Int.ceil_eq_iff.mpr
+  constructor <;> norm_num [c5ZeroExpStage1Square, ComplexInterval.mul,
+    Interval.mul, Interval.sub, Interval.neg, Interval.add,
+    c5ZeroExpStage1Export]
+
+lemma c5ZeroExpStage1Square_im_lo_floor :
+    Int.floor (c5ZeroExpStage1Square.im.lo * 2 ^ 896) = -3 := by
+  apply Int.floor_eq_iff.mpr
+  constructor <;> norm_num [c5ZeroExpStage1Square, ComplexInterval.mul,
+    Interval.mul, Interval.add, c5ZeroExpStage1Export]
+
+lemma c5ZeroExpStage1Square_im_hi_ceil :
+    Int.ceil (c5ZeroExpStage1Square.im.hi * 2 ^ 896) = 3 := by
+  apply Int.ceil_eq_iff.mpr
+  constructor <;> norm_num [c5ZeroExpStage1Square, ComplexInterval.mul,
+    Interval.mul, Interval.add, c5ZeroExpStage1Export]
+
+theorem c5ZeroExpStage2_eq :
+    c5RoundedExpC 192 896 2 (ComplexInterval.exact 0 0) =
+      c5ZeroExpStage2Export := by
+  have hhalf : ComplexInterval.halveC (ComplexInterval.exact 0 0) =
+      ComplexInterval.exact 0 0 := by
+    simp [ComplexInterval.halveC, ComplexInterval.exact, Interval.exact,
+      Interval.halve]
+  have hy : c5RoundedExpC 192 896 1
+      (ComplexInterval.halveC (ComplexInterval.exact 0 0)) =
+      c5ZeroExpStage1Export := by
+    rw [hhalf]
+    simpa [c5RoundedExpC] using c5ZeroExpStage1_eq
+  change ((c5RoundedExpC 192 896 1
+      (ComplexInterval.halveC (ComplexInterval.exact 0 0))).mul
+      (c5RoundedExpC 192 896 1
+        (ComplexInterval.halveC (ComplexInterval.exact 0 0)))).coarsen 896 =
+      c5ZeroExpStage2Export
+  rw [hy]
+  change c5ZeroExpStage1Square.coarsen 896 = c5ZeroExpStage2Export
+  simp [ComplexInterval.coarsen, Interval.coarsen,
+    c5ZeroExpStage1Square_re_lo_floor, c5ZeroExpStage1Square_re_hi_ceil,
+    c5ZeroExpStage1Square_im_lo_floor, c5ZeroExpStage1Square_im_hi_ceil,
+    c5ZeroExpStage2Export]
+  norm_num [c5ZeroExpStage2Export]
+
 
 #print axioms c5ZeroExpStage0_eq
 #print axioms c5ZeroExpStage1_eq
+#print axioms c5ZeroExpStage2_eq
