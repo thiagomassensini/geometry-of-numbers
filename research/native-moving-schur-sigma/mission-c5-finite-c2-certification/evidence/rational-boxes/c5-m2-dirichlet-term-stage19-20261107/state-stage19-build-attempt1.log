@@ -1,0 +1,20 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5M2TaylorStateStage19Certificate.lean:93:34: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  c5RoundedExpStateC 896 c5M2TaylorArgExport 18
+in the target expression
+  (coarsen 896 ((c5RoundedExpStateC 896 c5M2TaylorArgExport 17).1.mul c5M2TaylorArgExport),
+      coarsen 896
+        ((c5RoundedExpStateC 896 c5M2TaylorArgExport 17).2.add
+          (coarsen 896 (smulQ (1 / ↑(Nat.factorial 17)) (c5RoundedExpStateC 896 c5M2TaylorArgExport 17).1)))) =
+    c5M2Stage19
+
+⊢ (coarsen 896 ((c5RoundedExpStateC 896 c5M2TaylorArgExport 17).1.mul c5M2TaylorArgExport),
+      coarsen 896
+        ((c5RoundedExpStateC 896 c5M2TaylorArgExport 17).2.add
+          (coarsen 896 (smulQ (1 / ↑(Nat.factorial 17)) (c5RoundedExpStateC 896 c5M2TaylorArgExport 17).1)))) =
+    c5M2Stage19
+'c5M2Stage19PowerCoarsenExport' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5M2Stage19PowerCorrect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5M2Stage19TermCoarsenExport' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5M2Stage19SumCorrect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5RoundedExpStateC_stage19_correct' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+BUILD_EXIT=1
