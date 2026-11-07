@@ -1,0 +1,51 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-source-box-inclusions-20261107/research/native-moving-schur-sigma/SigmaC5CenteredAllA4505Probe.lean:1:0: error: unknown module prefix 'SigmaC5RationalNodeLogBounds'
+
+No directory 'SigmaC5RationalNodeLogBounds' or file 'SigmaC5RationalNodeLogBounds.olean' in the search path entries:
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/.cache/c5-centered-node-clean-20261107
+/home/thlinux/worktrees/geometry-of-numbers-c5-finite-c2-certification/.lake/build/research/native-moving-schur-sigma/c5-zeta-intervals-clean
+/home/thlinux/worktrees/geometry-of-numbers-c5-source-box-inclusions-20261107/research/native-moving-schur-sigma/.cache
+
+/home/thlinux/worktrees/geometry-of-numbers-sigma-allorder-negative-certified-20261105/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/Cli/.lake/build/lib/lean
+/home/thlinux/carry-c2-source-raw-green/.lake/packages/GreenFrame/.lake/build/lib/lean
+/home/thlinux/carry-c2-source-raw-green/.lake/packages/FiniteNativeCarryOperator/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/batteries/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/Qq/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/aesop/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/proofwidgets/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/importGraph/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/LeanSearchClient/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/plausible/.lake/build/lib/lean
+/home/thlinux/carry-c2-source-raw-green/.lake/packages/CPFormal/.lake/build/lib/lean
+/home/thlinux/carry-c2-source-raw-green/.lake/packages/NativeCarrySpectralWeyl/.lake/build/lib/lean
+/home/thlinux/carry-c2-source-raw-green/.lake/packages/CarryGeometry/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/mathlib/.lake/build/lib/lean
+/home/thlinux/carry-c2-source-raw-green/.lake/packages/NativeCarryC3Crosswalk/.lake/build/lib/lean
+/home/thlinux/carry-self-adjoint-operator/.lake/packages/geometry-of-numbers/.lake/build/lib/lean
+/home/thlinux/worktrees/carry-sigma-c2-pinned-045369/.lake/build/lib/lean
+/home/thlinux/.elan/toolchains/leanprover--lean4---v4.32.0/lib/lean
+/home/thlinux/.elan/toolchains/leanprover--lean4---v4.32.0/lib/lean
+Command exited with non-zero status 1
+	Command being timed: "bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaC5CenteredAllA4505Probe"
+	User time (seconds): 1.05
+	System time (seconds): 1.11
+	Percent of CPU this job got: 103%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.10
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 801716
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 44
+	Minor (reclaiming a frame) page faults: 46743
+	Voluntary context switches: 598
+	Involuntary context switches: 10
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
