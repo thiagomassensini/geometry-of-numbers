@@ -1,5 +1,18 @@
 # C5 — mapa dos teoremas e obrigações
 
+## Recorrência nodal m=2 até n=5 (local, PR pendente)
+
+`SigmaC5M2TaylorStateStage5Certificate.lean` prova
+`c5RoundedExpStateC_stage5_correct` para `(a,j)=(2/5,0)`, importando o estado
+`n=4` integrado pela PR #247. O lema de produto de sinais mistos e a escala
+`1/24` sustentam a atualização do quinto estado; floors e ceils são exatos.
+A auditoria retorna apenas axiomas padrão. Evidência em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage5-20261107/`.
+
+Ainda não há prova do restante da série, das quadraturas, da caixa nodal ou da
+inclusão dos coeficientes C2 originais. A PR deste checkpoint está pendente.
+
+
 ## Recorrência nodal m=2 até n=4 (PR #247 integrada; C5 parcial)
 
 `SigmaC5M2TaylorStateStage4Certificate.lean` prova

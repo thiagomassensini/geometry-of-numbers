@@ -1,5 +1,21 @@
 # C5 — estado da sessão
 
+## Atualização local — nó m=2 validado até n=5 (2026-11-07; publicação pendente)
+
+Na branch `codex/c5-m2-stage5-20261107`, baseada na `main` após PR #248
+(`442b4904c41d47a63825040a3e42c3fef75763d4`), foi provado
+`c5RoundedExpStateC_stage5_correct` para `(a,j)=(2/5,0)`. A prova certifica o
+produto com sinais mistos, o coeficiente `1/4! = 1/24`, o arredondamento e a
+soma. Lean 4.32.0, `warningAsError=true`; as cinco raízes auditadas têm
+somente axiomas padrão. Fonte, log, pin, hashes e comando estão em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage5-20261107/README.md`.
+Este checkpoint ainda aguarda publicação.
+
+A prova cobre somente a recorrência até `n=5` de um nó. O próximo passo é
+`n=6`; continuam abertos os outros termos, as quadraturas, a caixa completa,
+a ponte CSV–Lean, as inclusões C2 e os sinais finais. C5 permanece incompleta.
+
+
 ## Atualização — transição do nó m=2 de n=3 para n=4 integrada pela PR #247 (2026-11-07)
 
 Na branch `codex/c5-m2-stage4-20261107`, baseada na main após PR #246
