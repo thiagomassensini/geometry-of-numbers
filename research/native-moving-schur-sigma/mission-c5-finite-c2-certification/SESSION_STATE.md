@@ -1,6 +1,6 @@
 # C5 — estado da sessão
 
-## Atualização — estágio Taylor 11 do nó m=2 validado localmente; PR pendente
+## Atualização — estágio Taylor 11 do nó m=2 integrado pela PR #261
 
 Na branch local `codex/c5-m2-stage11-20261107`, baseada na `main` após PR #260
 (`29377f9d59f5ad36e2a4447f445de3898649324d`), foi provada
@@ -9,11 +9,13 @@ Na branch local `codex/c5-m2-stage11-20261107`, baseada na `main` após PR #260
 pins da evidência. As cinco declarações auditadas dependem somente de axiomas
 padrão, sem `sorryAx`. Fontes, logs, hashes e pins estão em
 `evidence/rational-boxes/c5-m2-dirichlet-term-stage11-20261107/`.
+O commit de prova `0240e4cf8fbe192042b6116cd30bee66c2f42594` foi integrado pela
+PR #261 no merge `cb271df9a03500440be8e510bffc74a78311252f`; o GitHub não
+reportou checks hospedados.
 
-O resultado cobre somente `n≤11` de um nó e ainda não foi publicado por PR.
-Os estados restantes, demais nós, quadraturas, caixa completa, inclusão da
-fonte C2 e sinais finais seguem abertos. C5 permanece incompleta. Próximo:
-publicar e integrar esta etapa, depois avançar para `n=12`.
+O resultado cobre somente `n≤11` de um nó. Os estados restantes, demais nós,
+quadraturas, caixa completa, inclusão da fonte C2 e sinais finais seguem
+abertos. C5 permanece incompleta. Próximo: avançar para `n=12`.
 
 ## Atualização — estágio Taylor 10 do nó m=2 integrado pela PR #259
 

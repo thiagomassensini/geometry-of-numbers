@@ -1,6 +1,6 @@
 # C5 — checkpoints
 
-## 2026-11-07 — transição m=2, n=10→11 validada localmente; PR pendente
+## 2026-11-07 — transição m=2, n=10→11 integrada pela PR #261
 
 - `c5RoundedExpStateC_stage11_correct` prova a transição no nó `(2/5,0)`, com
   coeficiente `1/10! = 1/3628800`, arredondamentos em 896 bits e soma
@@ -9,9 +9,11 @@
   usam apenas axiomas padrão.
 - Fontes, logs e checksums estão em
   `evidence/rational-boxes/c5-m2-dirichlet-term-stage11-20261107/`.
-- Ainda é checkpoint local e cobre apenas `n≤11` de um nó. Estados seguintes,
-  quadraturas, caixa completa, inclusão C2 e sinais finais permanecem abertos.
-  Próximo passo: publicar e avançar para `n=12`.
+- A PR #261 integrou o commit de prova
+  `0240e4cf8fbe192042b6116cd30bee66c2f42594` no merge
+  `cb271df9a03500440be8e510bffc74a78311252f`; não houve checks hospedados.
+  Cobre apenas `n≤11` de um nó. Estados seguintes, quadraturas, caixa completa,
+  inclusão C2 e sinais finais permanecem abertos. Próximo: `n=12`.
 
 ## 2026-11-07 — transição m=2, n=9→10 integrada pela PR #259
 
