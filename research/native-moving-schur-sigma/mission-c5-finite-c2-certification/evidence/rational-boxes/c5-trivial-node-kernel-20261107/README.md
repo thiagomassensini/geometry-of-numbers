@@ -105,7 +105,9 @@ extremos do quadrado do estágio 4; os pisos/tetos são `2^896 - 23`,
 passaram em Lean 4.32.0, somente com axiomas padrão. Logs, pins e hashes estão
 em `SigmaC5ZeroExpStage5Certificate.build.log`,
 `SigmaC5ZeroExpStage5Audit.log`, `stage5-pins.txt` e `stage5-sha256.txt`.
-Este checkpoint do estágio 5 está validado localmente e aguarda publicação; C5
+PR #232 integrou este checkpoint: commit de prova
+`821b119d4f0d506e685a585d7f3a52c00a6a95d5`, merge na `main`
+`75bacc9c2b7ca8113ee906c61a411922e01bb978`. O GitHub não reportou checks; C5
 continua incompleta.
 
 ## Pins e reprodução
@@ -170,8 +172,7 @@ bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaC5ZeroExpStag
 
 ## Próxima obrigação aberta
 
-Os estágios 1, 2, 3 e 4 estão provados e integrados; o estágio 5 foi provado
-localmente e aguarda publicação. A tentativa que falhou ao aplicar diretamente
+Os estágios 1, 2, 3, 4 e 5 estão provados e integrados. A tentativa que falhou ao aplicar diretamente
 `Int.floor_eq_iff.mpr` e `Int.ceil_eq_iff.mpr` permanece como histórico; veja
 [`stage1-export-equality-last-attempt.log`](stage1-export-equality-last-attempt.log).
 O fonte exato dessa tentativa está preservado como
