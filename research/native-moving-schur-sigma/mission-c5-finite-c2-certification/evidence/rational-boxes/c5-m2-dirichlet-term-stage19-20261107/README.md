@@ -54,5 +54,6 @@ executa o verificador fail-closed. As fontes e o gerador ficam junto dos logs;
 
 ## Publicação
 
-Validação local concluída. O checkpoint ainda não foi publicado em uma PR no
-momento da criação deste registro.
+A PR #280 integrou o commit de prova `8a8fcde` na `main` pelo merge
+`de09a348a9e2b0f0c6bd700eeed63d92726a56c5`. O GitHub não reportou checks
+hospedados. A integração é apenas um checkpoint parcial e não conclui C5.
