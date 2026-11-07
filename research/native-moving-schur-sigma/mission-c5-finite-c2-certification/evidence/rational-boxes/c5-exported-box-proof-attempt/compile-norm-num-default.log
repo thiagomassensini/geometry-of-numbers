@@ -1,0 +1,12 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-formalize-zeta-boxes-20261107/research/native-moving-schur-sigma/SigmaC5FormalizeOneZetaBox.lean:9:10: error: Fields missing: `le`
+
+Hint: Add missing fields:
+  ,̲
+  ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲l̲e̲ ̲:̲=̲ ̲_̲
+/home/thlinux/worktrees/geometry-of-numbers-c5-formalize-zeta-boxes-20261107/research/native-moving-schur-sigma/SigmaC5FormalizeOneZetaBox.lean:10:10: error: Fields missing: `le`
+
+Hint: Add missing fields:
+  ,̲
+  ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲ ̲l̲e̲ ̲:̲=̲ ̲_̲
+/home/thlinux/worktrees/geometry-of-numbers-c5-formalize-zeta-boxes-20261107/research/native-moving-schur-sigma/SigmaC5FormalizeOneZetaBox.lean:15:2: error: `simp` failed: maximum number of steps exceeded
+'c5RationalZetaCenteredNodeBox_2_5_0_eq_export' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

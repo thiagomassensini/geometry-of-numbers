@@ -1,6 +1,21 @@
 # Retomar primeiro — missão C5
 
-## Retomada mais recente — 2026-11-07 UTC, cobertura zeta adaptativa local
+## Retomada mais recente — 2026-11-07 UTC, ponte CSV–Lean sem solução ainda
+
+```text
+MISSION: C5 — certificar as primeiras janelas negativas da fonte C2 original.
+CURRENT PHASE: prova formal da ligação entre os extremos CSV e as caixas Lean; composição C5 permanece aberta.
+CURRENT BASE: main após PR #214, `dcca7d1cdef7c2f13685540a7768c3d8c9899aa8`.
+LAST PROOF PR: #213, commit `f51db20fa6fd21e08bbc2080cdd4bcb2265e2ea1`, merge `5fe8a7b330d6a106e2b2c44781b8d0677c7ea7f3`.
+FAILED PILOT: `(a,j)=(2/5,0)`; `decide` trava em `Rat.num`, `rfl` não fecha por definicionalidade, `norm_num` com 1M passos excede o limite em ~28 min.
+WHAT IS PROVED: cobertura adaptativa formal de zeta nos 129 nós e exportação de 516 caixas por `#eval`; a exportação não foi ligada formalmente aos literais CSV.
+WHAT REMAINS: decompor a computação em lemas compartilhados, provar a ponte formal, compor com Gamma/π/fonte C2 e provar as inclusões em `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
+EVIDENCE: `evidence/rational-boxes/c5-exported-box-proof-attempt/`.
+RESOURCES: Lean 4.32; Carry pin `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`; não há necessidade de mais memória.
+DO NOT REPEAT: C1B/C2/C3/C4; as adaptações Lean 4.35 preservadas; os módulos C5 já integrados.
+```
+
+## Retomada anterior — 2026-11-07 UTC, cobertura zeta adaptativa local
 
 ```text
 MISSION: C5 — certificar as primeiras janelas negativas da fonte C2 original.

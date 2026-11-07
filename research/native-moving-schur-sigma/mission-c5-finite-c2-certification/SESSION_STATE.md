@@ -11,6 +11,22 @@
   de C2/C3; não é preciso calcular a primeira profundidade de falha para a
   negatividade eventual já provada.
 
+## Tentativa de ponte formal dos extremos CSV (2026-11-07, incompleta)
+
+Foi testada a linha `(a,j)=(2/5,0)` entre o CSV de 516 caixas e
+`c5RationalZetaCenteredNodeBox 512 192 896 (2/5) 0`. `decide` parou na
+redução de `Rat.num`, `rfl` confirmou que a igualdade não é definicional, e
+`norm_num` com `maxSteps=1000000` excedeu o limite após cerca de 28 minutos.
+O pico observado foi ~7,6 GiB numa VM com ~58 GiB disponíveis. Não há
+teorema-ponte compilado nem auditoria válida; `sorryAx` exibido após os erros é
+recuperação do elaborador e não foi aceito como resultado. Portanto, o CSV
+permanece apenas saída de `#eval`, sem uso formal nas inclusões C5. Logs,
+fontes, pins e comando estão em
+`evidence/rational-boxes/c5-exported-box-proof-attempt/`. Próximo passo:
+fatorar e compartilhar a redução do log, da cabeça, das correções de Bernoulli
+e da exponencial, medindo componentes separadamente antes de tentar as 516
+igualdades.
+
 ## Checkpoint integrado — Bernoulli compartilhado (2026-11-07)
 
 Na worktree `codex/c5-flatten-zeta-boxes-20261107`, a tabela incremental de

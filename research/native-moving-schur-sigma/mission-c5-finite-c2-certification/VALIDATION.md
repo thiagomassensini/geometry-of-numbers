@@ -1,5 +1,17 @@
 # C5 — validação
 
+## Tentativa de igualdade CSV–Lean — FALHOU; C5 segue parcial
+
+A primeira linha do CSV foi testada contra `c5RationalZetaCenteredNodeBox`.
+`decide` não reduziu `Rat.num`, `rfl` não foi conversível, e `norm_num` com
+`maxSteps=1000000` excedeu o limite após ~28 minutos. Não foi produzido
+`.olean` válido nem auditoria do teorema; a saída `sorryAx` após erro é
+inválida. O pico foi ~7,6 GiB com ~58 GiB disponíveis, apontando custo de
+redução e não falta de RAM. A exportação CSV permanece não ligada formalmente
+às definições Lean e não foi usada para provar as inclusões dos coeficientes.
+Comandos, pins, fontes e logs estão em
+`evidence/rational-boxes/c5-exported-box-proof-attempt/`.
+
 ## Cobertura zeta adaptativa dos 129 nós — PASSOU; C5 parcial
 
 `SigmaC5RationalNodeLogBounds.lean` e `SigmaC5RationalNodeInstantiate.lean`

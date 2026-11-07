@@ -391,3 +391,21 @@ misture caches/logs das outras worktrees.
   `sigmaC01SourceBoxes` foi provada. Ver
   `evidence/rational-boxes/c5-fast-bernoulli-table-validation.md` para pins,
   logs e retomada.
+
+
+## 2026-11-07 — ponte CSV–Lean para caixa zeta: tentativa incompleta
+
+- A caixa `(a,j)=(2/5,0)` foi comparada com a linha correspondente do CSV
+  contra `c5RationalZetaCenteredNodeBox 512 192 896 (2/5) 0`.
+- `decide` falhou ao reduzir `Rat.num`; `rfl` falhou por não-conversibilidade;
+  `norm_num` com `maxSteps=1000000` excedeu o limite após aproximadamente 28
+  minutos. O pico observado foi ~7,6 GiB, com ~58 GiB disponíveis.
+- Nenhum teorema foi compilado; a listagem `#print axioms` posterior aos erros
+  contém `sorryAx` da recuperação do elaborador e não é auditoria válida.
+- Os arquivos e logs foram preservados em
+  `evidence/rational-boxes/c5-exported-box-proof-attempt/`. O CSV permanece
+  não certificado como igualdade das caixas Lean, e nenhuma inclusão `sigmaC00495SourceBoxes` ou
+  `sigmaC01SourceBoxes` foi provada.
+- Próxima etapa: compartilhar a avaliação dos componentes numéricos em lemas
+  certificados antes de ampliar a prova a qualquer lote de nós. C5 continua
+  explicitamente incompleta.
