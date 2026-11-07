@@ -423,3 +423,18 @@ misture caches/logs das outras worktrees.
   `6bfb4b14606ec1896a2d01d60be4ca54117bd128`.
 - C5 continua explicitamente incompleta. Próximo passo: compartilhar lemas de
   cálculo numérico, validar uma caixa-piloto e só então ampliar a avaliação.
+
+
+## 2026-11-07 — tentativa de prova isolada de `c5CenteredLog2I 512`
+
+- `#eval` exportou os dois extremos racionais em ~40 s.
+- `norm_num` não provou a igualdade aos literais; separar os campos, elevar
+  `maxSteps` a 1M e aplicar `norm_num1` também deixou metas abertas. Não há
+  teorema compilado nem auditoria válida; `sorryAx` nos logs é recuperação de
+  erro do elaborador.
+- Fontes e logs estão em
+  `evidence/rational-boxes/c5-log2-component-attempt/`. A redução em Lean
+  continua necessária antes de tratar a saída exportada como formal.
+- Próximo passo: dividir a soma em blocos e provar cada parcela intermediária
+  com aritmética racional certificada. C5 e as inclusões de fonte permanecem
+  incompletas.

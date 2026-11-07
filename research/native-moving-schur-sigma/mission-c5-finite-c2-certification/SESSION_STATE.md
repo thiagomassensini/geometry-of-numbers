@@ -33,6 +33,17 @@ checkpoint explicitamente incompleto pela PR #215, commit `baa5e3e`, merge na
 exportação CSV não ligada formalmente às caixas Lean e com as duas inclusões
 C5 abertas.
 
+## Tentativa isolada do componente `log 2` (2026-11-07, incompleta)
+
+Como passo de decomposição, `#eval` exportou os extremos exatos de
+`c5CenteredLog2I 512` em ~40 s. A prova aritmética desses mesmos extremos não
+fechou: `norm_num` deixou metas abertas, inclusive após separar `lo`/`hi`, usar
+`maxSteps=1000000` e tentar `norm_num1`. Nenhum teorema foi compilado nem
+teve auditoria válida. Logs e fontes estão em
+`evidence/rational-boxes/c5-log2-component-attempt/`. O próximo passo é
+certificar blocos da soma finita com lemas reutilizáveis, sem ampliar limites
+de passos.
+
 ## Checkpoint integrado — Bernoulli compartilhado (2026-11-07)
 
 Na worktree `codex/c5-flatten-zeta-boxes-20261107`, a tabela incremental de

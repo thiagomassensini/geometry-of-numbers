@@ -33,6 +33,12 @@ preservados em `evidence/rational-boxes/c5-exported-box-proof-attempt/`.
 Checkpoint integrado pela PR #215, commit `baa5e3e`, merge na `main`
 `6bfb4b14606ec1896a2d01d60be4ca54117bd128`.
 
+**Subcomponente `log 2` testado:** a saída `#eval` de `c5CenteredLog2I 512`
+foi obtida em ~40 s, mas a igualdade aos literais ainda deixa metas abertas
+mesmo com extensionalidade, `maxSteps=1000000` e `norm_num1`. Detalhes e logs
+em `evidence/rational-boxes/c5-log2-component-attempt/`. A rota seguinte deve
+provar somas parciais em blocos, com certificados reutilizáveis.
+
 1. **Concluído nesta etapa:** exportar os extremos racionais para os quatro
    valores reais e todos os 129 nós; CSV, sondas, logs, pins e reprodução em
    `evidence/rational-boxes/c5-centered-all-a-zeta-export-validation.md`.

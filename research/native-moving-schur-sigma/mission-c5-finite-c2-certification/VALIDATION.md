@@ -13,6 +13,14 @@ Comandos, pins, fontes e logs estão em
 `evidence/rational-boxes/c5-exported-box-proof-attempt/`. O checkpoint foi
 integrado pela PR #215, commit `baa5e3e`, merge `6bfb4b14606ec1896a2d01d60be4ca54117bd128`.
 
+## Tentativa de igualdade isolada para `log 2` — NÃO VALIDADA
+
+A avaliação Lean exporta `c5CenteredLog2I 512` em ~40 s. A prova dos limites
+racionais por `norm_num` deixou metas abertas mesmo após separar os campos,
+aumentar `maxSteps` a 1M e aplicar `norm_num1`. Não há teorema compilado ou
+auditoria válida; não tratar os extremos como fato formal. Fontes, logs e hashes
+em `evidence/rational-boxes/c5-log2-component-attempt/`.
+
 ## Cobertura zeta adaptativa dos 129 nós — PASSOU; C5 parcial
 
 `SigmaC5RationalNodeLogBounds.lean` e `SigmaC5RationalNodeInstantiate.lean`

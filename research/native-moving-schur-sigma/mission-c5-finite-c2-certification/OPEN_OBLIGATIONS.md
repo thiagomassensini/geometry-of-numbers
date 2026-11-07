@@ -29,9 +29,12 @@ sondas `#eval`; ainda não há igualdade Lean que os ligue a
 `c5RationalZetaCenteredNodeBox`. A prova piloto de uma linha não fechou com
 `decide`, `rfl` ou `norm_num` expandido. Não usar esses extremos como fatos
 formais. Decompor a avaliação em componentes compartilhados e obter um piloto
-com compilação e auditoria válida antes de formar lotes. Evidência e erros:
-`evidence/rational-boxes/c5-exported-box-proof-attempt/`. O diagnóstico foi
-publicado pela PR #215, merge `6bfb4b14606ec1896a2d01d60be4ca54117bd128`.
+com compilação e auditoria válida antes de formar lotes. A tentativa de isolar
+`c5CenteredLog2I 512` exportou os números, mas não provou a igualdade; o próximo
+subpasso é uma soma em blocos com certificados aritméticos. Evidência e erros:
+`evidence/rational-boxes/c5-exported-box-proof-attempt/`; a prova isolada de
+`log 2` está em `evidence/rational-boxes/c5-log2-component-attempt/`. O primeiro
+diagnóstico foi publicado pela PR #215, merge `6bfb4b14606ec1896a2d01d60be4ca54117bd128`.
 
 As inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` seguem abertas,
 bem como composição C5; os sinais permanecem condicionais. C5 não está
