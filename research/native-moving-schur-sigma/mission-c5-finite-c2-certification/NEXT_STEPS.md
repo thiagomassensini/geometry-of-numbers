@@ -1,5 +1,20 @@
 # Próximos passos — C5
 
+## Atualização — estágio Taylor 9 compilado localmente; PR pendente
+
+`c5RoundedExpStateC_stage9_correct` passou em Lean 4.32.0 com
+`warningAsError=true`; cinco declarações auditadas usam somente axiomas
+padrão. A evidência está em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage9-20261107/README.md`.
+O alcance é `n≤9` no nó `(2/5,0)`; ainda não há PR.
+
+1. Publicar a transição `n=8→9` e registrar o merge.
+2. Provar `n=10` e continuar até `n=192`.
+3. Certificar quadraturas e a caixa nodal completa.
+4. Provar a ponte CSV–Lean, as inclusões da fonte C2 e os sinais finais.
+
+C5 continua incompleta.
+
 ## Atualização — estágio Taylor 8 integrado pela PR #255
 
 `c5RoundedExpStateC_stage8_correct` passou em Lean 4.32.0 com
