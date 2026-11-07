@@ -14,6 +14,10 @@
 - C3 foi integrado pela PR #159, commit de prova `35dc14f13bd314639ce0c65daedf32b20f298667`, merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`. As janelas par (`p=2i`) e ímpar (`p=2i+1`) geram direções negativas em toda dimensão a partir de `i₀+2`, via persistência C1B. O GitHub não retornou status checks; evidências em `evidence/c3-parity/`.
 - A rota Lean 4.35 está preservada como checkpoint incompleto; não há plano de migração geral. C2/C3 estão concluídos. A lei quantitativa distância × profundidade e os novos cadernos ficam no backlog posterior. C4 foi concluído e integrado pela PR #162, conforme o adendo abaixo.
 
+## Reconfirmação da prioridade e da base atual (2026-11-07)
+
+`origin/main@89710ecaf940f1a7887cd133451916edd76bddcb` contém C1B (#155), C2 (#157), C3 (#159) e o checkpoint Lean 4.35 incompleto (#221). A validação pós-reinício em Lean 4.32 está registrada em `evidence/c2-c3-current-main-20261107/`; a comparação das fontes entre a revisão compilada `b604c06` e a `main` atual não encontrou mudanças nos cinco módulos C2/C3 auditados. Portanto, a validação permanece aplicável à base atual. C1B foi integrado no merge `0586e238441096ecd2248e3f14bdac3a832af427`; nenhuma publicação C2/C3 está pendente. A rota 4.32 não apresenta bloqueio para C2, então não se retomou a migração geral 4.35.
+
 ## Adendo 2026-11-06 — C4
 
 C2/C3 permanecem concluídos e integrados. C4 foi integrado pela PR #162, commit `31d3df33d4524d9809c75ba4481b1fa9f57a98bc`, merge `799a0e06af5469e9fe0665943adbb1cb29d0b6f8`. A prova e auditoria Lean 4.32 estabelecem `D_d(t)=C_d(t²)`, `C_d·H_d=-C_d′` com `H_d(n)=2*completedSigmaLogJet d n`, e congruência de Bézout à `2 • sigmaMatrix` original. Evidências em `evidence/c4-source-bezout/`; não houve status checks hospedados.
