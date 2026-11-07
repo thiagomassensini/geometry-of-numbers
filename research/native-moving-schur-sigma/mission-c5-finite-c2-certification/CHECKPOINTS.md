@@ -1,6 +1,15 @@
 # C5 — checkpoints
 
-## Checkpoint — primeiro núcleo Gamma racional certificado por blocos (2026-11-07)
+## 2026-11-07 — primeira caixa da Gamma completa
+
+- `c5GammaCoreFirstNodeBox_contains` compila em Lean 4.32 e contém `Γ(1/5)`.
+- A prova compõe `240^(1/5)`, núcleo racional de 1024 termos em 16 blocos e o erro formal da aproximação finita, com inflação `10⁻⁹⁹`.
+- `build-attempt11.log` termina sem erro; duas raízes `#print axioms` exibem somente `propext`, `Classical.choice`, `Quot.sound`. Sem `sorryAx` ou `native_decide`.
+- Fonte, log final, tentativas e comando: `evidence/rational-boxes/c5-gamma-first-node-20261107/README.md`.
+- Commit de prova `742dd764df81ee75bd487d1bf21e5a9afa5519c5`, branch `codex/c5-gamma-first-node-20261107`, baseada na `main` `11f5ea452f6d41f4a1545ecf614cea39730f58a0`; push/PR pendentes neste registro.
+- Escopo limitado a um ponto real. Coeficientes C2, caixas da fonte e sinais finais continuam abertos.
+
+## Histórico — checkpoint do núcleo Gamma racional por blocos (PR #282)
 
 - Base de `main`: merge da PR #281, `ec5c5e8998b62726ada6f942cf4c2410048a2a23`; branch de trabalho `codex/c5-o4-after-stage19-20261107`. Geometry de referência está em `bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3` e Carry em `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`.
 - Integração: PR #282, commit de prova `131d5f57da009a830c0a967bb5cf4713412c3473`, merge `7c301a2bb0b975369c8f8889ec2940372d2266c2` em 2026-11-07. O checkpoint já está na `main`.

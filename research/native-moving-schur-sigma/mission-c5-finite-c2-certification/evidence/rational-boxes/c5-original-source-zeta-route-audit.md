@@ -1,5 +1,31 @@
 # C5 — auditoria da rota exata da fonte e da lacuna de zeta
 
+## Atualização — prova de zeta de ordem 300 e primeira caixa Gamma (2026-11-07)
+
+A conclusão antiga abaixo sobre inexistência de Euler–Maclaurin de ordem alta
+foi superada pela rota formal já presente em Lean 4.32. O módulo
+`SigmaC5RationalNodeCenteredInstantiate.lean` prova
+`c5RationalZetaCenteredNodeBox_contains` para a malha inteira de argumentos
+`a + i b` no domínio usado: usa a expansão de Euler–Maclaurin de ordem 300,
+o resto `emZetaHighTail_norm_le_node`, a tabela de Bernoulli demonstrada e
+caixas intervalares racionais. Assim, a avaliação de zeta isolada não é mais o
+primeiro bloqueio.
+
+Também foi provado localmente
+`CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains`, que contém
+`Γ(1/5)` com base no núcleo racional em 16 blocos e na cota formal do erro de
+`gammaFinite`. Build, auditoria e logs estão em
+`evidence/rational-boxes/c5-gamma-first-node-20261107/README.md`.
+
+## Lacuna real remanescente
+
+A prova genérica de caixa para zeta e a caixa de um ponto para Gamma ainda não
+foram compostas com os fatores da característica C2 completada e com a
+quadratura que define os coeficientes da fonte deslocada. Faltam Gamma nos
+demais pontos da malha, a propagação intervalar até cada coeficiente e a prova
+de `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes`. Os sinais O3 permanecem
+condicionais. Este checkpoint não fecha a inclusão intervalar da fonte.
+
 **Estado:** checkpoint de investigação, não validação numérica. Nenhuma
 inclusão dos coeficientes originais nas caixas O3 foi provada neste passo.
 

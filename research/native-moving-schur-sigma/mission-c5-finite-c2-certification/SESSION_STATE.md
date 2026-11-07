@@ -1,6 +1,15 @@
 # C5 — estado da sessão
 
-## Checkpoint — primeiro núcleo Gamma racional certificado por blocos (2026-11-07)
+## Estado atual — composição Gamma no primeiro ponto (2026-11-07)
+
+- Missão C5 continua ativa; C2, C3 e C4 estão concluídas e não devem ser refeitas.
+- Branch `codex/c5-gamma-first-node-20261107`, baseada na `main` `11f5ea452f6d41f4a1545ecf614cea39730f58a0`; commit de prova `742dd764df81ee75bd487d1bf21e5a9afa5519c5`.
+- Provado e compilado: `CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains` contém `Complex.Gamma (1/5 : ℂ)`. A inclusão compõe a potência `240^z`, o núcleo racional de 1024 termos em blocos certificados e o erro `gamma_finite_1024_240_error` com inflação final `10⁻⁹⁹`.
+- Build final: Lean 4.32.0, warnings como erros, `BUILD_EXIT=0`; auditoria das duas raízes: só `propext`, `Classical.choice`, `Quot.sound`, sem `sorryAx`, axioma próprio ou `native_decide`. Logs e fonte auditada estão em `evidence/rational-boxes/c5-gamma-first-node-20261107/README.md`.
+- Estado de publicação neste snapshot: commit local pronto, push/PR pendentes. C5 segue incompleta; O3 permanece condicionada a `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
+- Próximo: publicar este checkpoint e ampliar a certificação Gamma para `901/4000`, depois à malha complexa usada pela fonte C2.
+
+## Histórico — checkpoint do núcleo Gamma racional por blocos (PR #282)
 
 - Base de `main`: merge da PR #281, `ec5c5e8998b62726ada6f942cf4c2410048a2a23`; branch de trabalho `codex/c5-o4-after-stage19-20261107`. Geometry de referência está em `bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3` e Carry em `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`.
 - Integração: PR #282, commit de prova `131d5f57da009a830c0a967bb5cf4713412c3473`, merge `7c301a2bb0b975369c8f8889ec2940372d2266c2` em 2026-11-07. O checkpoint já está na `main`.

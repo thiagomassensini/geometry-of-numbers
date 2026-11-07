@@ -1,6 +1,17 @@
 # Retomar primeiro — missão C5
 
-## Checkpoint — primeiro núcleo Gamma racional certificado por blocos (2026-11-07)
+## Estado atual — composição Gamma no primeiro ponto (2026-11-07)
+
+- Missão C5 em andamento; C2, C3 e C4 permanecem concluídas. Não reiniciar etapas anteriores.
+- Branch `codex/c5-gamma-first-node-20261107`, baseada na `main` `11f5ea452f6d41f4a1545ecf614cea39730f58a0`; prova no commit `742dd764df81ee75bd487d1bf21e5a9afa5519c5`. Push e PR ainda pendentes.
+- Último teorema compilado: `CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains`, no arquivo `SigmaC5GammaFirstNodeCertificate.lean`. Prova `Γ(1/5)` dentro da caixa construída com `240^z`, o núcleo racional já certificado em 16 blocos e erro de `gammaFinite` `10⁻⁹⁹`.
+- Build Lean 4.32.0 com warnings como erros passou em `build-attempt11.log`. As duas raízes auditadas usam apenas `propext`, `Classical.choice`, `Quot.sound`; sem `sorryAx`, axioma próprio ou `native_decide`.
+- O fonte e todos os logs já estão commitados; falta push/PR. Evidência, tentativas 1–11, comando e hashes: `evidence/rational-boxes/c5-gamma-first-node-20261107/README.md`.
+- Condicional: O3 ainda depende de `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`; os sinais C5 finais não estão provados. O resultado novo cobre só `Γ(1/5)`.
+- Próximo comando: reproduzir o build pelo comando em `README.md`. Próxima obrigação: certificar o núcleo racional em `901/4000`, depois expandir a malha Gamma para compor a fonte C2.
+- DO NOT REPEAT: C1B/C2/C3/C4, o núcleo racional `gammaFiniteRationalCore 1024 240 (1/5) 0`, a composição de `Γ(1/5)`, nem a migração geral para Lean 4.35.
+
+## Histórico — checkpoint do núcleo Gamma racional por blocos (PR #282)
 
 - Base de `main`: merge da PR #281, `ec5c5e8998b62726ada6f942cf4c2410048a2a23`; branch de trabalho `codex/c5-o4-after-stage19-20261107`. Geometry de referência está em `bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3` e Carry em `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`.
 - Integração: PR #282, commit de prova `131d5f57da009a830c0a967bb5cf4713412c3473`, merge `7c301a2bb0b975369c8f8889ec2940372d2266c2` em 2026-11-07. Retome a partir da `main` nesse merge; o branch citado acima é a origem do checkpoint.

@@ -1,6 +1,26 @@
 # C5 — obrigações abertas
 
-## Checkpoint — primeiro núcleo Gamma racional certificado por blocos (2026-11-07)
+## Estado atual — primeira Gamma em ponto real provada
+
+`Γ(1/5)` agora tem uma caixa Lean formal via `c5GammaCoreFirstNodeBox_contains`.
+O resultado foi validado localmente em Lean 4.32; build, auditoria, hashes e
+tentativas estão em `evidence/rational-boxes/c5-gamma-first-node-20261107/`.
+Ele ainda não foi publicado neste snapshot e cobre apenas um ponto.
+
+Continuam abertas, em ordem:
+
+1. publicar e integrar este checkpoint;
+2. certificar Gamma no ponto `901/4000` e então nas coordenadas complexas da
+   malha C5;
+3. compor caixas de Gamma e zeta com os fatores originais da fonte completada e
+   a quadratura de coeficientes;
+4. provar as inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`;
+5. fechar os sinais de `sigmaPadeD` original nos dois deslocamentos.
+
+Os certificados condicionais de O3 continuam corretos sob suas hipóteses, mas
+não são certificados incondicionais da fonte. C5 permanece incompleta.
+
+## Histórico — checkpoint do núcleo Gamma racional por blocos (PR #282)
 
 - Base de `main`: merge da PR #281, `ec5c5e8998b62726ada6f942cf4c2410048a2a23`; branch de trabalho `codex/c5-o4-after-stage19-20261107`. Geometry de referência está em `bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3` e Carry em `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`.
 - Integração: PR #282, commit de prova `131d5f57da009a830c0a967bb5cf4713412c3473`, merge `7c301a2bb0b975369c8f8889ec2940372d2266c2` em 2026-11-07. O checkpoint já está na `main`.

@@ -1,0 +1,41 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaFirstNodeCertificate.lean:167:29: error: Tactic `rfl` failed: The left-hand side
+  (Interval.exact 0).mul (Interval.exact 0)
+is not definitionally equal to the right-hand side
+  Interval.exact 0
+
+hlog : |(Interval.logQ 384 8 240).lo| ≤ 18 ∧ |(Interval.logQ 384 8 240).hi| ≤ 18
+hreal :
+  |((Interval.exact (1 / 5)).mul (Interval.logQ 384 8 240)).lo| ≤ |1 / 5| * 18 ∧
+    |((Interval.exact (1 / 5)).mul (Interval.logQ 384 8 240)).hi| ≤ |1 / 5| * 18
+⊢ (Interval.exact 0).mul (Interval.exact 0) = Interval.exact 0
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaFirstNodeCertificate.lean:169:29: error: Tactic `rfl` failed: The left-hand side
+  (Interval.exact (1 / 5)).mul (Interval.exact 0)
+is not definitionally equal to the right-hand side
+  Interval.exact 0
+
+hlog : |(Interval.logQ 384 8 240).lo| ≤ 18 ∧ |(Interval.logQ 384 8 240).hi| ≤ 18
+hreal :
+  |((Interval.exact (1 / 5)).mul (Interval.logQ 384 8 240)).lo| ≤ |1 / 5| * 18 ∧
+    |((Interval.exact (1 / 5)).mul (Interval.logQ 384 8 240)).hi| ≤ |1 / 5| * 18
+hzero : (Interval.exact 0).mul (Interval.exact 0) = Interval.exact 0
+⊢ (Interval.exact (1 / 5)).mul (Interval.exact 0) = Interval.exact 0
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaFirstNodeCertificate.lean:171:29: error: Tactic `rfl` failed: The left-hand side
+  (Interval.exact 0).mul (Interval.logQ 384 8 240)
+is not definitionally equal to the right-hand side
+  Interval.exact 0
+
+hlog : |(Interval.logQ 384 8 240).lo| ≤ 18 ∧ |(Interval.logQ 384 8 240).hi| ≤ 18
+hreal :
+  |((Interval.exact (1 / 5)).mul (Interval.logQ 384 8 240)).lo| ≤ |1 / 5| * 18 ∧
+    |((Interval.exact (1 / 5)).mul (Interval.logQ 384 8 240)).hi| ≤ |1 / 5| * 18
+hzero : (Interval.exact 0).mul (Interval.exact 0) = Interval.exact 0
+hrightzero : (Interval.exact (1 / 5)).mul (Interval.exact 0) = Interval.exact 0
+⊢ (Interval.exact 0).mul (Interval.logQ 384 8 240) = Interval.exact 0
+'CarrySigmaObstruction.c5GammaCoreFirstNodePowerBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

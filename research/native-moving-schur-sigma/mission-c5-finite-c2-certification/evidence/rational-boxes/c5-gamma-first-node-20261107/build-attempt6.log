@@ -1,0 +1,24 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaFirstNodeCertificate.lean:117:16: error(lean.unknownIdentifier): Unknown identifier `c5AbsIntervalMulExactEndpoints`
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaFirstNodeCertificate.lean:103:45: error: unsolved goals
+hq : |1 - 240 / 2 ^ 8| ≤ 1 / 2
+hlog1 hlog1' :
+  |(Interval.log1 384 (Interval.exact (240 / 2 ^ 8))).lo| ≤ 2 ∧
+    |(Interval.log1 384 (Interval.exact (240 / 2 ^ 8))).hi| ≤ 2
+hlog2base :
+  |(Interval.log1 384 (Interval.exact (1 / 2))).lo| ≤ 2 ∧ |(Interval.log1 384 (Interval.exact (1 / 2))).hi| ≤ 2
+hlog2 : |(Interval.log2I 384).lo| ≤ 2 ∧ |(Interval.log2I 384).hi| ≤ 2
+⊢ |(Interval.logQ 384 8 240).lo| ≤ 18 ∧ |(Interval.logQ 384 8 240).hi| ≤ 18
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaFirstNodeCertificate.lean:152:16: error(lean.unknownIdentifier): Unknown identifier `c5AbsIntervalMulExactEndpoints`
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaFirstNodeCertificate.lean:150:74: error: unsolved goals
+hlog : |(Interval.logQ 384 8 240).lo| ≤ 18 ∧ |(Interval.logQ 384 8 240).hi| ≤ 18
+⊢ ((gammaFiniteNegativePointBox (1 / 5) 0).neg.mul
+        { re := Interval.logQ 384 8 240, im := Interval.exact 0 }).normBound ≤
+    4
+'CarrySigmaObstruction.c5GammaCoreFirstNodePowerBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

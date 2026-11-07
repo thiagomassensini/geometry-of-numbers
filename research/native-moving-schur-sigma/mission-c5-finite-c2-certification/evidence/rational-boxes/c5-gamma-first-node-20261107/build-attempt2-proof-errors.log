@@ -1,0 +1,80 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaFirstNodeCertificate.lean:11:4: error(lean.dependsOnNoncomputable): failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Complex.instDivInvMonoid', which is 'noncomputable'
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaFirstNodeCertificate.lean:26:72: error: unsolved goals
+⊢ max
+        |({
+                  lo :=
+                    min
+                      (1 / 5 *
+                        ({ lo := 148129 / 26880, hi := 149809 / 26880, le := ⋯ }.add
+                            { lo := -(232840303649 / 3607772528640), hi := -(232840303537 / 3607772528640),
+                              le := ⋯ }).lo)
+                      (1 / 5 *
+                        ({ lo := 148129 / 26880, hi := 149809 / 26880, le := ⋯ }.add
+                            { lo := -(232840303649 / 3607772528640), hi := -(232840303537 / 3607772528640),
+                              le := ⋯ }).hi),
+                  hi :=
+                    max
+                      (1 / 5 *
+                        ({ lo := 148129 / 26880, hi := 149809 / 26880, le := ⋯ }.add
+                            { lo := -(232840303649 / 3607772528640), hi := -(232840303537 / 3607772528640),
+                              le := ⋯ }).lo)
+                      (1 / 5 *
+                        ({ lo := 148129 / 26880, hi := 149809 / 26880, le := ⋯ }.add
+                            { lo := -(232840303649 / 3607772528640), hi := -(232840303537 / 3607772528640),
+                              le := ⋯ }).hi),
+                  le := ⋯ }.sub
+              { lo := 0, hi := 0, le := ⋯ }).lo|
+        |({
+                  lo :=
+                    min
+                      (1 / 5 *
+                        ({ lo := 148129 / 26880, hi := 149809 / 26880, le := ⋯ }.add
+                            { lo := -(232840303649 / 3607772528640), hi := -(232840303537 / 3607772528640),
+                              le := ⋯ }).lo)
+                      (1 / 5 *
+                        ({ lo := 148129 / 26880, hi := 149809 / 26880, le := ⋯ }.add
+                            { lo := -(232840303649 / 3607772528640), hi := -(232840303537 / 3607772528640),
+                              le := ⋯ }).hi),
+                  hi :=
+                    max
+                      (1 / 5 *
+                        ({ lo := 148129 / 26880, hi := 149809 / 26880, le := ⋯ }.add
+                            { lo := -(232840303649 / 3607772528640), hi := -(232840303537 / 3607772528640),
+                              le := ⋯ }).lo)
+                      (1 / 5 *
+                        ({ lo := 148129 / 26880, hi := 149809 / 26880, le := ⋯ }.add
+                            { lo := -(232840303649 / 3607772528640), hi := -(232840303537 / 3607772528640),
+                              le := ⋯ }).hi),
+                  le := ⋯ }.sub
+              { lo := 0, hi := 0, le := ⋯ }).hi| +
+      max |({ lo := 0, hi := 0, le := ⋯ }.add { lo := 0, hi := 0, le := ⋯ }).lo|
+        |({ lo := 0, hi := 0, le := ⋯ }.add { lo := 0, hi := 0, le := ⋯ }).hi| ≤
+    4
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaFirstNodeCertificate.lean:37:38: error: unsolved goals
+⊢ (↑(exact (-(1 / 5)) 0).re.lo ≤ -(1 / 5) ∧ -(1 / 5) ≤ ↑(exact (-(1 / 5)) 0).re.hi) ∧
+    (exact (-(1 / 5)) 0).im.lo ≤ 0 ∧ 0 ≤ (exact (-(1 / 5)) 0).im.hi
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaFirstNodeCertificate.lean:43:4: error: Type mismatch: After simplification, term
+  c5GammaCoreFirstNodePowerArg_normBound
+ has type
+  @LE.le ℚ Rat.instLE
+    ((gammaFiniteNegativePointBox 5⁻¹ 0).neg.mul { re := Interval.logQ 8 8 240, im := Interval.exact 0 }).normBound 4
+but is expected to have type
+  @LE.le ℚ Rat.instLE
+    ((gammaFiniteNegativePointBox 5⁻¹ 0).neg.mul { re := Interval.logQ 8 8 240, im := Interval.exact 0 }).normBound
+    (2 ^ 2)
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaFirstNodeCertificate.lean:67:4: error: Type mismatch: After simplification, term
+  contains_mul hpow hcore
+ has type
+  (c5GammaCoreFirstNodePowerBox.mul c5GammaCoreNodePilotChunkBox).contains
+    (240 ^ c5GammaCoreFirstNodePoint * ratComplexToComplex c5GammaCoreNodePilot)
+but is expected to have type
+  (c5GammaCoreFirstNodePowerBox.mul c5GammaCoreNodePilotChunkBox).contains
+    (240 ^ c5GammaCoreFirstNodePoint * ratComplexToComplex (gammaFiniteRationalCore 1024 240 5⁻¹ 0))
+'CarrySigmaObstruction.c5GammaCoreFirstNodePowerBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
