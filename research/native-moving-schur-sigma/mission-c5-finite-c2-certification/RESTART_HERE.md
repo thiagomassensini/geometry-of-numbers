@@ -5,8 +5,8 @@
 ```text
 MISSION: C5 — certificar as primeiras janelas negativas da fonte C2 original.
 CURRENT PHASE: decompor a prova aritmética da caixa CSV–Lean; composição C5 permanece aberta.
-CURRENT BASE: main após PR #216, `792a5864e1fe0d5568f64d7865c71c316b420863`.
-LAST PROOF PR: #213, commit `f51db20fa6fd21e08bbc2080cdd4bcb2265e2ea1`, merge `5fe8a7b330d6a106e2b2c44781b8d0677c7ea7f3`. Latest checkpoint documental: PR #216, merge `792a5864e1fe0d5568f64d7865c71c316b420863`; ela registra a PR #215.
+CURRENT BASE: main após PR #217, `30a615cafa3b27de40427a73cc64988c77e236d3`.
+LAST PROOF PR: #213, commit `f51db20fa6fd21e08bbc2080cdd4bcb2265e2ea1`, merge `5fe8a7b330d6a106e2b2c44781b8d0677c7ea7f3`. Latest checkpoint documental: PR #217, merge `30a615cafa3b27de40427a73cc64988c77e236d3`; ela registra a tentativa isolada de `log 2`.
 FAILED PILOTS: `(a,j)=(2/5,0)` falha com `decide`/`rfl`/`norm_num`; a igualdade de `c5CenteredLog2I 512` aos extremos exportados também deixa metas abertas após extensionalidade e `norm_num1`.
 WHAT IS PROVED: cobertura adaptativa formal de zeta nos 129 nós e exportação de 516 caixas por `#eval`; a exportação não foi ligada formalmente aos literais CSV.
 WHAT REMAINS: provar somas parciais de log em blocos com certificados reutilizáveis, validar uma caixa piloto, compor com Gamma/π/fonte C2 e provar as inclusões em `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.

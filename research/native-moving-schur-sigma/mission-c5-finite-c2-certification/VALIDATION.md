@@ -19,7 +19,9 @@ A avaliação Lean exporta `c5CenteredLog2I 512` em ~40 s. A prova dos limites
 racionais por `norm_num` deixou metas abertas mesmo após separar os campos,
 aumentar `maxSteps` a 1M e aplicar `norm_num1`. Não há teorema compilado ou
 auditoria válida; não tratar os extremos como fato formal. Fontes, logs e hashes
-em `evidence/rational-boxes/c5-log2-component-attempt/`.
+em `evidence/rational-boxes/c5-log2-component-attempt/`. O registro foi
+integrado pela PR #217, commit `e34733a`, merge
+`30a615cafa3b27de40427a73cc64988c77e236d3`.
 
 ## Cobertura zeta adaptativa dos 129 nós — PASSOU; C5 parcial
 

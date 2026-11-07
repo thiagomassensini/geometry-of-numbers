@@ -438,3 +438,13 @@ misture caches/logs das outras worktrees.
 - Próximo passo: dividir a soma em blocos e provar cada parcela intermediária
   com aritmética racional certificada. C5 e as inclusões de fonte permanecem
   incompletas.
+
+
+## 2026-11-07 — PR #217 integrada: tentativa isolada de `log 2`
+
+- O registro `#eval` dos extremos foi preservado junto às tentativas de prova;
+  a igualdade racional não fechou e não há raiz auditável nova.
+- PR #217, commit `e34733a`; merge na `main`
+  `30a615cafa3b27de40427a73cc64988c77e236d3`.
+- C5 permanece incompleta; próximo passo é somar em blocos com certificados
+  reutilizáveis antes de ampliar a prova às caixas de zeta.
