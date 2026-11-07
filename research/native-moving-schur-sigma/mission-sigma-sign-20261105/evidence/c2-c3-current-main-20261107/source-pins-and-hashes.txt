@@ -1,0 +1,25 @@
+Current origin/main observed after PR #235: b604c06dd0c13e7f77c65fb0634aa0b082d6c8d1
+Build source snapshot (PR #221 branch): f848c8a34b5f6859d5d8c0419bac214f972278f7
+Lean toolchain: leanprover/lean4:v4.32.0
+Mathlib: 81a5d257c8e410db227a6665ed08f64fea08e997
+GreenFrame: cd2d838bee67ad23f869a02f8ed9f0a0feb926fa
+Carry source: 045369f6dedcb2e75e9aefed1d12c9f73b9a2532
+Height-50 certificate: teal-sea/zeta-lab@b09fa4dd2f2182cf14b248e7ffc64ff03df2c534
+Reused dependency output tree: 67aea3263426cc8f9787f34aa7833a5650dde175
+Lean compiler: /home/thlinux/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lean
+Compiler option: -DwarningAsError=true
+
+Source SHA-256 (same on the build snapshot and current origin/main):
+da16205159f49fcd865a31e2c374c48595045b6a8e27f741581b4acf930d0767  research/native-moving-schur-sigma/SigmaRHHeightBridge.lean
+6c4fff9ab4460d29dc05cc77bbc2a6ee32e894fff470288eaf41be2ca264b5ee  research/native-moving-schur-sigma/SigmaHeight50Integration.lean
+b0e1ebbcd5056906a513a4174510e21fac279e59b7618617e41de07527635125  research/native-moving-schur-sigma/SigmaPadeEventualNegativity.lean
+40f5de85a03f0d9e1b65ef918e53e98b649f42fea36c6039fc8d819f769c0e4d  research/native-moving-schur-sigma/SigmaParityNegativeDirection.lean
+be6b73dd1e0fbefce83352cf2fa6124542ae7ca4bf8d816a371310c650c20be3  research/native-moving-schur-sigma/SigmaPadeAudit.lean
+
+Validation and checker log SHA-256:
+347f53e8f37599cd39e31fbdd48729a7b6de599e993e2d565325e33c438e3603  axiom-checkers.log
+a8d18e828418786ae0a26e3f7f478d2d52c0fda775043dd6e19858dfe4b98457  sigma-rh-height-bridge-build.log
+8f1c18253d9db4e5ea562fccbb569adf565ce5fe243b3c028d2f7f1d4cc2b606  height50-integration-build.log
+c5cf95e1da177f4ebcb3232d1da9968d19aa9d1276ad135d109fafa333e6cc8e  c2-build.log
+1e6ddb248e525923866be4cfb2c327867e18e510a10f2f760e2f47e3ca682074  c3-build.log
+d65d29bba8dd8f8d639d3adf92a27989c992c7d861e699168a56a2b468e0dc11  transitive-audit.log

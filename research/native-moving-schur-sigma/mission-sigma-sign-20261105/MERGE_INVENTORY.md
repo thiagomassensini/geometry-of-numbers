@@ -77,3 +77,9 @@ O inventário acima é o snapshot anterior aos merges C0–C3; esta atualizaçã
 - `origin/main` foi conferida em `08a413f34dd5588ed3d021351af27f3f55e0c072`. C1B (#155, merge `0586e238441096ecd2248e3f14bdac3a832af427`), C2 (#157) e C3 (#159) continuam presentes; não existe publicação pendente dessas entregas.
 - C2/C3 recompilaram em Lean 4.32 nessa revisão. A auditoria transitiva repetida percorreu 133 raízes e 70.861 dependências, somente com axiomas padrão. A evidência desta execução está em `evidence/c2-c3-priority-20261107/`.
 - O checkpoint 4.35 segue durável na `main`, com overlays, patches, pins, manifests, logs/erro e comandos de reconstrução em `evidence/lean435-validation-incomplete/`. Ele permanece explicitamente incompleto. A rota 4.32 publicada continua sendo a referência para C2; não se iniciou migração geral de Geometry/Carry.
+
+## Atualização após PR #235 e reinício da VM (2026-11-07)
+
+- `origin/main` foi conferida em `b604c06dd0c13e7f77c65fb0634aa0b082d6c8d1`. As integrações C1B (#155, merge `0586e238441096ecd2248e3f14bdac3a832af427`), C2 (#157, merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`) e C3 (#159, merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`) continuam ancestrais da `main`.
+- O checkpoint de overlays/logs/pins 4.35 foi publicado e mesclado pela PR #221, merge `c67b2f72e0ad2f331c0966fb3ed82e98655e3df8`. Ele conserva a tentativa como incompleta; a rota C2 4.32 não tem bloqueio identificado.
+- Após a ampliação de memória, C2/C3 recompilaram e passaram pelos verificadores Lean 4.32. A auditoria transitiva encontrou 133 raízes e 70.861 dependências, apenas com axiomas padrão. Fontes, logs e comandos estão em `evidence/c2-c3-current-main-20261107/`; os hashes das fontes coincidem com `origin/main` em `b604c06`.
