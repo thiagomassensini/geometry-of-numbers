@@ -1,6 +1,6 @@
 # C5 — mapa dos teoremas e obrigações
 
-## Recorrência nodal m=2 até n=3 (local, PR pendente)
+## Recorrência nodal m=2 até n=3 (PR #245 integrada; C5 parcial)
 
 `SigmaC5M2TaylorStateStage3Certificate.lean` prova
 `c5RoundedExpStateC_stage3_correct`, importando o estado `n=2` integrado pela
@@ -11,7 +11,9 @@ estão em `evidence/rational-boxes/c5-m2-dirichlet-term-stage3-20261107/`.
 
 O teorema cobre somente os estados Taylor até `n=3`, para um nó. Não cobre a
 série completa, as quadraturas, a caixa nodal ou os coeficientes C2 originais.
-A PR deste checkpoint ainda está pendente.
+A PR #245 integrou o checkpoint, commit de prova
+`e264aea05ac6036dea612c5e9ca97c8c7cc81495`, merge
+`727b3920d12e0979c5f722a04732fb346fc880d8`; o GitHub não reportou checks.
 
 
 ## Piloto nodal m=2 — Taylor até n=2 (PR #243 integrada; C5 parcial)

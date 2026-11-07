@@ -52,6 +52,13 @@ O comando de compilação usa `warningAsError=true` e o wrapper verifica o pin
 limpo do Carry. O log integral da execução aceita está em
 `state-stage3-build2.log`.
 
+## Publicação do checkpoint
+
+A PR #245 integrou o resultado: commit de prova
+`e264aea05ac6036dea612c5e9ca97c8c7cc81495`, merge na `main`
+`727b3920d12e0979c5f722a04732fb346fc880d8`. O GitHub não reportou checks
+hospedados. A integração continua parcial, conforme o escopo acima.
+
 ## Tentativa intermediária inválida
 
 `attempts/state-stage3-build1.log` preserva a primeira compilação. Ela mostrou

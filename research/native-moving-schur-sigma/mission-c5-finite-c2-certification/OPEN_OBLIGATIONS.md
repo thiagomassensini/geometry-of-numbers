@@ -1,9 +1,10 @@
 # C5 — obrigações abertas
 
-## Atualização local — recorrência de um nó até n=3
+## Atualização — recorrência de um nó até n=3 integrada pela PR #245
 
-A transição para o estado `n=3` foi provada para `(a,j)=(2/5,0)`, mas segue
-pendente de publicação. Ainda faltam `n=4…192`, as quadraturas da exponencial
+A transição para o estado `n=3` foi provada para `(a,j)=(2/5,0)` e integrada
+pela PR #245, merge `727b3920d12e0979c5f722a04732fb346fc880d8`; o GitHub não
+reportou checks. Ainda faltam `n=4…192`, as quadraturas da exponencial
 e a igualdade com o termo nodal completo; depois, a ligação das caixas à fonte
 C2 e as inclusões `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes`. Evidência em
 `evidence/rational-boxes/c5-m2-dirichlet-term-stage3-20261107/README.md`.
