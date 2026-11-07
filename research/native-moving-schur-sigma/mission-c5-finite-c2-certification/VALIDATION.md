@@ -1,5 +1,17 @@
 # C5 — validação
 
+## Transição do nó m=2 para n=10 — passou localmente; PR pendente
+
+`SigmaC5M2TaylorStateStage10Certificate.lean` compilou em Lean 4.32.0 com
+`warningAsError=true`; os pins e o comando estão no README da evidência. O
+build terminou em `BUILD_EXIT=0`; as cinco raízes auditadas dependem somente de
+`propext`, `Classical.choice` e `Quot.sound`, sem `sorryAx`. Evidência em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage10-20261107/`.
+
+A prova valida `c5RoundedExpStateC` apenas até `n=10` no nó `(2/5,0)`. Os
+estados restantes, quadraturas, caixa completa, inclusão da fonte C2 e sinais
+finais continuam abertos. C5 permanece incompleta.
+
 ## Transição do nó m=2 para n=9 — passou e foi integrada pela PR #257; C5 parcial
 
 `SigmaC5M2TaylorStateStage9Certificate.lean` compilou em Lean 4.32.0 com
