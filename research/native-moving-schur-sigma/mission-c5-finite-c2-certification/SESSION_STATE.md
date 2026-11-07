@@ -1,15 +1,16 @@
 # C5 — estado da sessão
 
-## Atualização — estágio Taylor 13 do nó m=2 compilado; publicação pendente
+## Atualização — estágio Taylor 13 do nó m=2 integrado pela PR #265
 
-Na branch `codex/c5-m2-stage13-20261107`, baseada na `main` em
-`08f238c465179076a2fb15635e23e513245d3d6d`, foi provada localmente
+Na branch de prova `codex/c5-m2-stage13-20261107`, baseada na `main` em
+`08f238c465179076a2fb15635e23e513245d3d6d`, foi provada
 `c5RoundedExpStateC_stage13_correct` para `(a,j)=(2/5,0)`. Lean 4.32.0 com
 `warningAsError=true` terminou em `BUILD_EXIT=0`; as cinco declarações
 auditadas dependem somente de axiomas padrão, sem `sorryAx`. Fontes, pins,
 logs e hashes estão em
-`evidence/rational-boxes/c5-m2-dirichlet-term-stage13-20261107/`. A PR de prova
-está pendente de publicação.
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage13-20261107/`.
+O commit de prova `4c4856c022eb302b013d36c10806d609770c42d2` foi integrado pela PR #265 no merge
+`52c57108c74cb5f7f12bdbd94ca616f3bba8cf2a`; o GitHub não reportou checks hospedados.
 
 O resultado cobre somente `n≤13` de um nó. Os estados restantes, demais nós,
 quadraturas, caixa completa, inclusão da fonte C2 e sinais finais seguem
