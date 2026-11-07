@@ -1,0 +1,22 @@
+import SigmaC5GammaCoreChunk64Combine
+
+#print axioms c5GammaChunk64_0_floor
+#print axioms c5GammaChunk64_1_floor
+#print axioms c5GammaChunk64_2_floor
+#print axioms c5GammaChunk64_3_floor
+#print axioms c5GammaChunk64_4_floor
+#print axioms c5GammaChunk64_5_floor
+#print axioms c5GammaChunk64_6_floor
+#print axioms c5GammaChunk64_7_floor
+#print axioms c5GammaChunk64_8_floor
+#print axioms c5GammaChunk64_9_floor
+#print axioms c5GammaChunk64_10_floor
+#print axioms c5GammaChunk64_11_floor
+#print axioms c5GammaChunk64_12_floor
+#print axioms c5GammaChunk64_13_floor
+#print axioms c5GammaChunk64_14_floor
+#print axioms c5GammaChunk64_15_floor
+#print axioms c5GammaCoreNodePilotScaled_eq_chunkSum
+#print axioms c5GammaCoreNodePilotScaled_chunkBounds
+#print axioms c5GammaCoreChunkFloorSum_eq
+#print axioms c5GammaCoreNodePilotChunkBox_contains

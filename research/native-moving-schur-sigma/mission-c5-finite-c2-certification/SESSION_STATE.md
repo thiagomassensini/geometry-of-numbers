@@ -1,6 +1,15 @@
 # C5 — estado da sessão
 
-## Estado atual — C5 e reprodução auditadas (2026-11-07)
+## Checkpoint — primeiro núcleo Gamma racional certificado por blocos (2026-11-07)
+
+- Base de `main`: merge da PR #281, `ec5c5e8998b62726ada6f942cf4c2410048a2a23`; branch de trabalho `codex/c5-o4-after-stage19-20261107`. Geometry de referência está em `bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3` e Carry em `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`.
+- Para `gammaFiniteRationalCore 1024 240 (1/5) 0`, 16 blocos de 64 termos têm seus pisos certificados em Lean. A recomposição dá a caixa exata do núcleo racional `[S/2^1024,(S+16)/2^1024] × {0}`; a inclusão está em `c5GammaCoreNodePilotChunkBox_contains`. Auditoria isolada: 20 raízes, somente `propext`, `Classical.choice`, `Quot.sound`, sem `sorryAx` nem `native_decide`; Lean 4.32 com warnings como erros.
+- Escopo: um ponto e só o núcleo racional. A caixa ainda não inclui `240^z`, `gammaFinite`, Gamma completa, zeta, os demais nós nem os coeficientes da fonte C2. `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` seguem sem prova; C5 permanece incompleta.
+- Fontes, comandos, logs de tentativas falhas, checker e hashes estão em `evidence/rational-boxes/c5-gamma-core-node-pilot-20261107/README.md`. Não repetir a prova monolítica nem usar o caminho `native_decide`.
+- Próximo: compor esta caixa com a inclusão formal da potência e o erro `gamma_finite_1024_240_error`, fechar uma caixa Gamma para o ponto e só então expandir para os nós de interpolação.
+
+
+## Snapshot anterior — estado após PR #280 (2026-11-07)
 
 - A última integração de prova na `main` é a PR #280: commit `8a8fcde3682f804a2e3cdb03dae2be5d71d54654`, merge `de09a348a9e2b0f0c6bd700eeed63d92726a56c5`. Esta atualização de estado foi preparada na branch `codex/c5-stage19-state-20261107` sobre essa base.
 - C1B já entrou pela PR #155, merge `0586e238441096ecd2248e3f14bdac3a832af427`; C2 pela PR #157, merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`; C3 pela PR #159, merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`. C4 e a recorrência dos momentos também estão integradas. Não reabrir essas fases nem a migração geral para Lean 4.35.
@@ -9,7 +18,7 @@
 - A PR #213 já exportou 516 caixas racionais de zeta nos 129 nós e quatro coordenadas. `#eval`/CSV confirma a exportação e a cobertura, mas ainda não há prova Lean de que cada valor exportado seja igual à caixa usada na composição. A tentativa monolítica para uma caixa está documentada como falha; não a repetir.
 - Último resultado formal para a recorrência nodal: `c5RoundedExpStateC_stage18_correct` já está integrado pela PR #275; `c5RoundedExpStateC_stage19_correct` também compilou e passou pela auditoria Lean 4.32, integrado pela PR #280 (commit `8a8fcde3682f804a2e3cdb03dae2be5d71d54654`). Evidência completa em `evidence/rational-boxes/c5-m2-dirichlet-term-stage19-20261107/`.
 - A PR #279 integrou `c5CenteredDirichletTermBox_one_eq_generic` e `c5CenteredDirichletTermBox_one_fixed` (commit `aa542db5f40bc8d1cb5cf76c3ef8d46358702cb0`, merge `b06200968bc004694ee8d7acc3af88463d40ebf2`). O primeiro termo da cabeça, `m=1`, é exatamente `c5GenericBox 11 15`; build Lean 4.32 e auditoria padrão passaram. Isso não cobre os outros 98 termos nem a inclusão da fonte. Evidência em `evidence/rational-boxes/c5-centered-first-term-20261107/`.
-- **Próxima obrigação:** retomar O4 com o menor passo necessário para ligar as caixas exportadas à composição Lean, compor os fatores Gamma, π, cabeça e cauda da fonte C2 e provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`. Avançar a recorrência Taylor além de `n=19` somente quando houver uma dependência concreta; não repetir a tentativa monolítica de 28 minutos.
+- **Próxima obrigação:** fechar uma caixa Gamma completa no primeiro ponto usando a caixa certificada do núcleo racional, a inclusão formal de `240^z` e `gamma_finite_1024_240_error`; depois estender a composição aos nós da interpolação e provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`. Não repetir a prova monolítica nem ampliar Taylor sem dependência concreta.
 - Alvo final: provar incondicionalmente os sinais de `sigmaPadeD` original em `d=99/2000` e `d=1/10`. A missão permanece incompleta até as inclusões da fonte e a composição final passarem build e auditoria.
 
 
@@ -645,7 +654,7 @@ O checkpoint reprodutível dessa auditoria foi integrado pela PR #169; merge na 
 
 **Subpasso Gamma para interpolação racional integrado pela PR #175:** `gamma_finite_3072_620_error` demonstra erro `≤10⁻²⁵⁹` para `gammaFinite 3072 620`, no domínio `1495/20000 ≤ Re(z) ≤ 1`. Build Lean 4.32 e auditoria de doze raízes passaram. Merge: `992ab31c3aacdf3b95b3c02fe58f5f3d529c0cec`. Logs e hashes estão em `evidence/rational-boxes/`.
 
-**Primeiro lema O4 ainda ausente:** inclusão em caixas racionais estreitas da expressão finita `gammaFinite 3072 620 z` nos valores usados para os coeficientes. A ponte Euler já fica abaixo da precisão necessária; permanece a avaliação com cancelamento da soma finita, a avaliação Hurwitz e a composição com a fonte C2.
+**Estado corrigido do subproblema Gamma:** um piloto novo certifica o núcleo racional de `gammaFinite 1024 240` em `(a,b)=(1/5,0)` por 16 blocos de 64 parcelas. A caixa `[S/2^1024,(S+16)/2^1024]×{0}` está provada, mas ainda não inclui `240^z` nem `gammaFinite` ou Gamma completa. O erro analítico `gamma_finite_1024_240_error` já está integrado; a composição de potência, caixa do ponto e extensão aos nós ainda falta. Evidência: `evidence/rational-boxes/c5-gamma-core-node-pilot-20261107/README.md`.
 
 **Identidade algébrica de interpolação:** `SigmaRationalInterpolation.lean` define os 129 nós `j²`, prova que são distintos e formaliza a reconstrução exata de polinômios racionais de grau menor que 129 e a fórmula dos coeficientes pela interpolação de Lagrange. Build Lean 4.32 limpo e auditoria atualizada de 21 raízes passaram; apenas `propext`, `Classical.choice` e `Quot.sound` aparecem.
 

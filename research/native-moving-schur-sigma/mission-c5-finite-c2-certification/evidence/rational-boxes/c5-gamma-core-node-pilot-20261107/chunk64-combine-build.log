@@ -1,0 +1,12 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaCoreChunk64Combine.lean:21:14: error: unsolved goals
+case succ
+f : ℕ → ℚ
+n : ℕ
+ih : ∑ k ∈ Finset.range (64 * n), f k = ∑ i ∈ Finset.range n, ∑ j ∈ Finset.range 64, f (64 * i + j)
+⊢ ∑ i ∈ Finset.range n, ∑ j ∈ Finset.range 64, f (64 * i + j) +
+      (∑ x ∈ Finset.range 63, f (64 * n + x) + f (64 * n + 63)) =
+    ∑ i ∈ Finset.range (n + 1), ∑ j ∈ Finset.range 64, f (64 * i + j)
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaCoreChunk64Combine.lean:27:57: error: Tactic `unfold` failed to unfold `c5GammaCoreTermReal` in
+  (gammaFiniteRationalCore 1024 240 (1 / 5) 0).1 * 2 ^ 1024 = ∑ i ∈ Finset.range 16, c5GammaCoreChunk64 i
+'c5GammaCoreNodePilotScaled_eq_chunkSum' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'c5GammaCoreNodePilotScaled_chunkBounds' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

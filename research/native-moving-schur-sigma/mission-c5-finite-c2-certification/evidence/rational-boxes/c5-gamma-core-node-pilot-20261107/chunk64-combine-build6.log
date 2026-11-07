@@ -1,0 +1,4 @@
+'c5GammaCoreNodePilotScaled_eq_chunkSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5GammaCoreNodePilotScaled_chunkBounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5GammaCoreChunkFloorSum_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5GammaCoreNodePilotChunkBox_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
