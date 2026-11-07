@@ -1,19 +1,17 @@
 # Próximos passos — C5
 
-## Atualização — estágio Taylor 17 compilado localmente; PR pendente
+## Atualização — estágio Taylor 17 integrado pela PR #273
 
 `c5RoundedExpStateC_stage17_correct` passou em Lean 4.32.0 com
 `warningAsError=true`; as cinco raízes auditadas mostram somente axiomas
-padrão. Evidência em
+padrão. O commit `0783b090aa4f9b6faf7ecd3605c187ae46352498` entrou na `main` pelo merge `41164de6cf0042594833bae02cdab2ce4cd11aae`.
+O GitHub não reportou checks hospedados. Evidência em
 `evidence/rational-boxes/c5-m2-dirichlet-term-stage17-20261107/README.md`.
-O checkpoint cobre apenas `n≤17` no nó `(2/5,0)`. A branch local é
-`codex/c5-m2-stage17-20261107`, baseada na main `00ea9d49245e701884db695ce718279deab43056`; publicação da PR está
-pendente.
+O checkpoint cobre apenas `n≤17` no nó `(2/5,0)`.
 
-1. Publicar a prova e a evidência, revisar a PR e integrá-la à `main`.
-2. Estender a recorrência para `n=18` e prosseguir até `n=192`.
-3. Certificar as quadraturas e a caixa nodal completa.
-4. Provar a ponte CSV–Lean, as inclusões da fonte C2 e os sinais finais.
+1. Estender a recorrência para `n=18` e prosseguir até `n=192`.
+2. Certificar as quadraturas e a caixa nodal completa.
+3. Provar a ponte CSV–Lean, as inclusões da fonte C2 e os sinais finais.
 
 C5 continua incompleta.
 
