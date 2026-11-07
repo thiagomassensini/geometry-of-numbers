@@ -92,8 +92,10 @@ hashes e comando de reprodução estão em
 `SigmaC5ZeroExpStage4Certificate.build.log`, `SigmaC5ZeroExpStage4Audit.log`,
 `stage4-pins.txt` e `stage4-sha256.txt`. A primeira tentativa parou no import
 por falta de um diretório de cache; o diagnóstico e o comando estão em
-`stage4-attempts/`. Este checkpoint do estágio 4 está validado localmente e
-aguarda publicação; C5 continua incompleta.
+`stage4-attempts/`. PR #230 integrou este checkpoint: commit de prova
+`fe2df2cd361d0d5096d6c4503468833e364b4481`, merge na `main`
+`f89cb99d6790bb2c84985c67022b8045a7fb181f`. O GitHub não reportou checks; C5
+continua incompleta.
 
 ## Pins e reprodução
 
@@ -149,8 +151,7 @@ bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaC5ZeroExpStag
 
 ## Próxima obrigação aberta
 
-Os estágios 1, 2, 3 e 4 agora estão provados localmente; o estágio 4 aguarda
-publicação. A tentativa que falhou ao aplicar diretamente
+Os estágios 1, 2, 3 e 4 estão provados e integrados. A tentativa que falhou ao aplicar diretamente
 `Int.floor_eq_iff.mpr` e `Int.ceil_eq_iff.mpr` permanece como histórico; veja
 [`stage1-export-equality-last-attempt.log`](stage1-export-equality-last-attempt.log).
 O fonte exato dessa tentativa está preservado como
