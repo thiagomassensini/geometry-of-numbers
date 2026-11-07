@@ -299,7 +299,7 @@ misture caches/logs das outras worktrees.
 - `c5LagrangeBasisProductCoeffOne_bound`, `c5InterpolationCoeffOneAbsSum_le_six` e `c5InterpolationWeightSum_one_lt_ten_eleven` foram compilados em saída limpa Lean 4.32 e auditados entre 21 raízes; somente os três axiomas padrão aparecem.
 - A entrega fecha apenas o limite do peso escalado de grau um. Os pesos `2..14`, a cota analítica, as avaliações da fonte e as inclusões em caixas permanecem abertos; os teoremas finais continuam condicionais.
 
-## 2026-11-06 — avaliador racional genérico dos nós zeta (checkpoint local)
+## 2026-11-07 — avaliador racional genérico dos nós zeta (checkpoint parcial integrado)
 
 - `SigmaC5RationalNodeEval.lean` prova a fatorização racional exata da
   correção de Bernoulli em `emZetaHighRHS 100 300`, mantém a cauda exata e
@@ -315,6 +315,7 @@ misture caches/logs das outras worktrees.
   nodais, composição com Gamma/fonte C2, nem inclusão O4. C5 permanece
   incompleta. A falha de build causada por caminho relativo e a recompilação
   com caminho absoluto também foram preservadas.
-- Branch de checkpoint: `codex/c5-rational-zeta-node-eval-20261106`, sobre a
-  `main` `c3d8d0fc106134bdfa9c62c6d529489b20e157c3`; ainda aguardando PR/merge.
+- PR #207: commit de prova `fb8bb31ed1fcbb4d1d9c88aceea1dd83539935df`, merge
+  na `main` `27a61e6bebcce178b81b961f507400ed77b96d3b`. A validação segue
+  explicitamente incompleta.
 - Validação detalhada: `evidence/rational-boxes/c5-rational-node-evaluator-validation.md`.

@@ -1,10 +1,10 @@
 # Próximos passos — C5
 
-**Estado:** o checkpoint de Euler–Maclaurin de ordem alta e a cota da cauda
-`<10^-250` foram integrados pela PR #205 (merge
-`b56a90bceac12248bc5b8e6c2a247849ec885d6e`). C5 permanece parcial. C2/C3 da
-missão de negatividade já estão concluídas; este trabalho segue na
-certificação finita C5.
+**Estado:** a PR #207 integrou o avaliador racional genérico de zeta e levou
+a `main` ao merge `27a61e6bebcce178b81b961f507400ed77b96d3b`. O avaliador foi integrado como
+checkpoint explicitamente incompleto; C5 permanece parcial. C2/C3 da missão
+de negatividade já estão concluídas; este trabalho segue na certificação
+finita C5. Não há PR aberta para este checkpoint.
 
 1. `SigmaC5RationalNodeEval.lean` agora fatoriza exatamente a parte de
    Bernoulli de `emZetaHighRHS 100 300` e prova uma caixa genérica para zeta,
@@ -17,7 +17,9 @@ certificação finita C5.
    inclusões em `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
 3. Só depois concluir os sinais C5 incondicionais e atualizar o estado final.
 
-O avaliador genérico e a auditoria local estão documentados em
+O avaliador genérico, a auditoria local e a publicação pela PR #207 (commit de
+prova `fb8bb31ed1fcbb4d1d9c88aceea1dd83539935df`, merge
+`27a61e6bebcce178b81b961f507400ed77b96d3b`) estão documentados em
 `evidence/rational-boxes/c5-rational-node-evaluator-validation.md`; ainda não
 há nenhum nó instanciado nem inclusão de coeficientes provada.
 

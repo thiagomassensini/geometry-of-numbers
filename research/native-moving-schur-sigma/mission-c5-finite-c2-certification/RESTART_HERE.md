@@ -1,6 +1,6 @@
 # Retomar primeiro — missão C5
 
-## Retomada mais recente — 2026-11-06, avaliador racional genérico
+## Retomada mais recente — 2026-11-07, após integração do avaliador racional
 
 ```text
 MISSION: C5 — certificar as primeiras janelas negativas da fonte C2 original.
@@ -8,11 +8,11 @@ CURRENT PHASE: Fase 2 / O4, avaliação racional dos valores nos nós.
 CURRENT SUBTASK: instanciar `c5RationalZetaNodeBox_contains` nas amostras `j/100000`, provando suas condições de log/exp e extraindo retângulos concretos.
 LAST VERIFIED THEOREM: `CarrySigmaObstruction.c5RationalZetaNodeBox_contains`.
 LAST COMPILED FILE: `SigmaC5RationalNodeEvalAudit.lean` (Lean 4.32.0, warnings como erros).
-LAST SUCCESSFUL COMMIT: `c3d8d0fc106134bdfa9c62c6d529489b20e157c3` (merge da PR #206; o avaliador local ainda não foi publicado).
-LAST REMOTE SHA: `origin/main = c3d8d0fc106134bdfa9c62c6d529489b20e157c3`.
-CURRENT BRANCH: `codex/c5-rational-zeta-node-eval-20261106`.
-MAIN SHA: `c3d8d0fc106134bdfa9c62c6d529489b20e157c3`.
-OPEN PR: nenhuma; a prova local ainda será publicada como checkpoint parcial.
+LAST SUCCESSFUL COMMIT: prova `fb8bb31ed1fcbb4d1d9c88aceea1dd83539935df`, integrada pela PR #207 no merge `27a61e6bebcce178b81b961f507400ed77b96d3b`.
+LAST REMOTE SHA: merge da PR #207: `27a61e6bebcce178b81b961f507400ed77b96d3b`.
+CURRENT BRANCH: retomar criando uma branch nova a partir da `main`.
+MAIN SHA: `27a61e6bebcce178b81b961f507400ed77b96d3b` no início desta retomada.
+OPEN PR: nenhuma PR de código C5; a #207 está mesclada.
 WHAT IS PROVED: fatorização racional exata da correção Bernoulli de `emZetaHighRHS 100 300`; caixa genérica para `riemannZeta(a+bi)` sob condições explícitas de log/exp; o resto exponencial permanece e é absorvido pela inflação `<10^-250`. O checker auditou dez raízes com axiomas padrão.
 WHAT IS CONDITIONAL: as condições `hhead` e `hbase` não foram instanciadas em nenhum dos 129 nós; Gamma, fator de π e a fonte C2 ainda não foram compostos com essas caixas.
 WHAT IS BLOCKED: não há retângulos nodais concretos nem inclusão de `c₀..c₁₄`/`c₀..c₁₂` nas caixas O3.
@@ -29,8 +29,8 @@ checagem condicional, não como inclusão formal dos coeficientes.
 Logs e hashes do subpasso Gamma: `evidence/rational-boxes/c5-gamma-rational-core-validation.md`.
 Ele ainda não fornece extremos numéricos para qualquer nó nem prova a inclusão nas caixas O3.
 
-Este checkpoint foi acrescentado localmente na branch indicada acima; a validação
-completa, hipóteses, logs e hashes está em
+O avaliador foi integrado pela PR #207 como checkpoint explicitamente
+incompleto. A validação completa, hipóteses, logs, pins e hashes está em
 `evidence/rational-boxes/c5-rational-node-evaluator-validation.md`. Ele prova
 somente uma ponte genérica condicional, não avalia os nós C5.
 

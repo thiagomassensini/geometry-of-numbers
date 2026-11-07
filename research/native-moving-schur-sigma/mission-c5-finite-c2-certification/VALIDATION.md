@@ -10,6 +10,11 @@ de `emZetaHighRHS 100 300` mantém a soma de cauda explícita, e
 `c5RationalZetaNodeBox_contains` inclui zeta sob condições explícitas do
 avaliador `logQ`/`expCr`, inflando pela cota `<10^-250`.
 
+Checkpoint integrado pela PR #207: commit de prova
+`fb8bb31ed1fcbb4d1d9c88aceea1dd83539935df`, merge na `main`
+`27a61e6bebcce178b81b961f507400ed77b96d3b`. Essa integração não altera os
+limites de validação abaixo.
+
 As condições de intervalo continuam sem instanciação concreta nos 129 nós.
 Este checkpoint não calcula caixas para Gamma ou para a fonte C2 e não prova
 as inclusões dos coeficientes nas caixas O3. Logs, pins, hashes e falha do

@@ -1,9 +1,10 @@
 # C5 — mapa dos teoremas e obrigações
 
-## Snapshot local de O4 — avaliador racional genérico de zeta
+## O4 integrado pela PR #207 — avaliador racional genérico de zeta (incompleto)
 
-Arquivo local: `research/native-moving-schur-sigma/SigmaC5RationalNodeEval.lean`
-na branch `codex/c5-rational-zeta-node-eval-20261106`; ainda não mesclado.
+Arquivo integrado: `research/native-moving-schur-sigma/SigmaC5RationalNodeEval.lean`.
+Commit de prova `fb8bb31ed1fcbb4d1d9c88aceea1dd83539935df`; merge na `main`
+`27a61e6bebcce178b81b961f507400ed77b96d3b`.
 
 | Declaração | Status, hipóteses e limite |
 |---|---|
