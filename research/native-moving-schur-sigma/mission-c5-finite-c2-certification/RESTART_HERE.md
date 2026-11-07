@@ -5,8 +5,8 @@
 ```text
 MISSION: C5 — certificar as primeiras janelas negativas da fonte C2 original.
 CURRENT PHASE: continuar a decomposição da caixa CSV–Lean e compor a fonte C2; C5 permanece aberta.
-CURRENT BASE: `main` após PR #218, `ea8f8f636f0ff96b6c42ef9af612d0d32319b45a`.
-LAST INTEGRATED PROOF PR: #217, merge `30a615cafa3b27de40427a73cc64988c77e236d3`; o novo componente em blocos está em validação nesta branch.
+CURRENT BASE: `main` após PR #219, `d6ed8ad249ef69c33920164fe43821cc83f138a8`.
+LAST INTEGRATED PROOF PR: #219, commit `bd84a673b3c5c1c82168a6655c59ad6a28bbf127`, merge `d6ed8ad249ef69c33920164fe43821cc83f138a8`. O GitHub não reportou checks hospedados.
 FAILED PILOT STILL OPEN: `(a,j)=(2/5,0)` não fecha: `decide` para em `Rat.num`, `rfl` falha por não conversibilidade e `norm_num` excedeu 1M passos após ~28 minutos. A tentativa direta de igualdade para `log 2` foi superada pela prova em blocos.
 WHAT IS PROVED: cobertura adaptativa formal de zeta nos 129 nós; exportação de 516 caixas por `#eval`; somas `Interval.logSum 512 (±1/3)` certificadas em 16 blocos de 32 termos; igualdade formal `c5CenteredLog2I 512 = c5ExportedLogTwo512`.
 WHAT REMAINS: ligar formalmente as linhas CSV às caixas Lean; avaliar os demais componentes da caixa; compor com Gamma/π/fonte C2 e provar as inclusões em `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.

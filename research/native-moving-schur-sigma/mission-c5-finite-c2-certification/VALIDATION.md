@@ -14,6 +14,9 @@ aceitou exatamente as três declarações auditadas; só aparecem `propext`,
 `sorry`, `sorryAx`, `admit` ou `native_decide`. Fonte, checker, build/auditoria,
 saída `#eval`, pins, hashes e comando reprodutor estão em
 `evidence/rational-boxes/c5-log2-component-validation/README.md`.
+O commit de prova `bd84a673b3c5c1c82168a6655c59ad6a28bbf127` foi integrado
+pela PR #219, merge na `main` `d6ed8ad249ef69c33920164fe43821cc83f138a8`;
+não houve checks hospedados.
 
 **Limite:** isso fecha só o componente central `log 2`. O CSV de 516 extremos
 continua sem igualdade formal com as caixas Lean; a cabeça e demais correções

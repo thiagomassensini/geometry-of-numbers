@@ -19,6 +19,9 @@ exata `c5CenteredLog2I 512 = c5ExportedLogTwo512`. A compilação limpa em Lean
 4.32.0 passou com warnings como erros; a auditoria fail-closed passou para as
 três raízes e encontrou somente `propext`, `Classical.choice` e `Quot.sound`.
 Não há `sorry` nem `sorryAx` na fonte ou no relatório.
+O commit de prova `bd84a673b3c5c1c82168a6655c59ad6a28bbf127` foi integrado
+pela PR #219, merge na `main` `d6ed8ad249ef69c33920164fe43821cc83f138a8`; o
+GitHub não reportou checks hospedados.
 
 Este resultado certifica somente o componente central `log 2`. Ele ainda não
 liga as 516 linhas do CSV às caixas Lean, não avalia a cabeça/correções restantes

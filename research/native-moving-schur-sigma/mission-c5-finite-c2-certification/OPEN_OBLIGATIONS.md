@@ -7,6 +7,9 @@ racionais de 32 termos e prova a igualdade exata do intervalo exportado.
 Compilação Lean 4.32.0 e auditoria fail-closed passaram, apenas com os axiomas
 padrão. Os detalhes, hashes, pins, logs e comando estão em
 `evidence/rational-boxes/c5-log2-component-validation/README.md`.
+O checkpoint foi integrado pela PR #219, commit
+`bd84a673b3c5c1c82168a6655c59ad6a28bbf127`, merge na `main`
+`d6ed8ad249ef69c33920164fe43821cc83f138a8`.
 
 Isso não certifica os extremos das 516 linhas CSV contra as caixas Lean, nem
 avalia os componentes restantes ou prova as inclusões
