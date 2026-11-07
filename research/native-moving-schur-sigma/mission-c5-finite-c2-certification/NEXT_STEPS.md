@@ -18,6 +18,12 @@ encerrou após 15:57 sem largura final; a memória ficou em ~6,5 GiB, então o
 limite é tempo de CPU. Evidência em
 `evidence/rational-boxes/c5-fast-bernoulli-table-validation.md`.
 
+**Exportação de zeta integrada pela PR #213:** commit
+`f51db20fa6fd21e08bbc2080cdd4bcb2265e2ea1`, merge na `main`
+`5fe8a7b330d6a106e2b2c44781b8d0677c7ea7f3`. Foram exportados 516 caixas
+racionais (129 nós em quatro coordenadas); a prova de igualdade entre o CSV
+e as definições Lean segue pendente.
+
 1. **Concluído nesta etapa:** exportar os extremos racionais para os quatro
    valores reais e todos os 129 nós; CSV, sondas, logs, pins e reprodução em
    `evidence/rational-boxes/c5-centered-all-a-zeta-export-validation.md`.
