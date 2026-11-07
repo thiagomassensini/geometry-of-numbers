@@ -1,0 +1,14 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaFirstNodeCertificate.lean:159:2: error: 'change' tactic failed, pattern
+  ((exact (1 / 5) 0).mul { re := Interval.logQ 384 8 240, im := Interval.exact 0 }).normBound ≤ 4
+is not definitionally equal to target
+  ((gammaFiniteNegativePointBox (1 / 5) 0).neg.mul
+        { re := Interval.logQ 384 8 240, im := Interval.exact 0 }).normBound ≤
+    4
+'CarrySigmaObstruction.c5GammaCoreFirstNodePowerBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

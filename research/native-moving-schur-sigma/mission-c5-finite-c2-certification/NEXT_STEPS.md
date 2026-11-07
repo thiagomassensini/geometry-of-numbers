@@ -1,6 +1,15 @@
 # Próximos passos — C5
 
-## Checkpoint — primeiro núcleo Gamma racional certificado por blocos (2026-11-07)
+## Estado atual e próximo passo — caixa Gamma em um ponto (2026-11-07)
+
+- A prova `CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains` compila em Lean 4.32 e contém `Γ(1/5)` usando a potência intervalar, os 16 blocos racionais já certificados e o limite do erro de `gammaFinite`.
+- Build e auditoria bem-sucedidos estão registrados em `evidence/rational-boxes/c5-gamma-first-node-20261107/README.md`; todas as tentativas anteriores foram preservadas. Axiomas: somente os três padrão; sem `sorryAx`.
+- O checkpoint ainda não foi publicado neste snapshot. Branch `codex/c5-gamma-first-node-20261107`, base `71721874eb01071a07c83e4f71117b7d662e1b53`; `origin/main` `11f5ea452f6d41f4a1545ecf614cea39730f58a0`.
+- Próximo subpasso matemático: construir a caixa Gamma no ponto real `901/4000` necessário ao deslocamento `99/2000`, a partir do menor conjunto de blocos racionais.
+- Depois: generalizar a avaliação aos nós complexos e compor os valores de Gamma e zeta, o fator nativo e a quadratura que definem os coeficientes C2. Então provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` e fechar os sinais de `sigmaPadeD` original.
+- Limite atual: um ponto Gamma apenas. As inclusões dos coeficientes C2 e os sinais finais seguem não provados; C5 continua incompleta.
+
+## Histórico — checkpoint do núcleo Gamma racional por blocos (PR #282)
 
 - Base de `main`: merge da PR #281, `ec5c5e8998b62726ada6f942cf4c2410048a2a23`; branch de trabalho `codex/c5-o4-after-stage19-20261107`. Geometry de referência está em `bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3` e Carry em `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`.
 - Integração: PR #282, commit de prova `131d5f57da009a830c0a967bb5cf4713412c3473`, merge `7c301a2bb0b975369c8f8889ec2940372d2266c2` em 2026-11-07. O checkpoint já está na `main`.

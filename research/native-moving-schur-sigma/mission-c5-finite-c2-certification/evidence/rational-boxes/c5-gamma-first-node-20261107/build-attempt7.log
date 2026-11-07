@@ -1,0 +1,21 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaFirstNodeCertificate.lean:124:6: error: invalid 'calc' step, left-hand side is
+  |((Interval.exact 8).mul (Interval.log2I 384)).lo| : ℚ
+but is expected to be
+  |((Interval.exact 8).mul (Interval.log2I 384)).hi| : ℚ
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaFirstNodeCertificate.lean:155:2: error: 'change' tactic failed, pattern
+  max |((Interval.exact (1 / 5)).mul (Interval.logQ 384 8 240)).lo|
+        |((Interval.exact (1 / 5)).mul (Interval.logQ 384 8 240)).hi| +
+      max |(Interval.exact 0).lo| |(Interval.exact 0).hi| ≤
+    4
+is not definitionally equal to target
+  ((gammaFiniteNegativePointBox (1 / 5) 0).neg.mul
+        { re := Interval.logQ 384 8 240, im := Interval.exact 0 }).normBound ≤
+    4
+'CarrySigmaObstruction.c5GammaCoreFirstNodePowerBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

@@ -1,6 +1,17 @@
 # C5 — mapa dos teoremas e obrigações
 
-## Checkpoint — primeiro núcleo Gamma racional certificado por blocos (2026-11-07)
+## Resultado novo — Gamma no primeiro ponto (local, Lean 4.32)
+
+| Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |
+|---|---|---|---|---|
+| `CarrySigmaObstruction.c5GammaCoreFirstNodePowerArg_normBound` | `SigmaC5GammaFirstNodeCertificate.lean` | nenhuma | norma do argumento da potência ≤ 4 | bounds racionais das séries de log; **PROVADO localmente** |
+| `CarrySigmaObstruction.c5GammaCoreFirstNodePowerBox_contains` | idem | nenhuma | `dirichletTermBox2` contém `240^(1/5)` | primeiro núcleo Gamma em blocos + potência intervalar; **PROVADO localmente** |
+| `CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains` | idem | nenhuma | caixa inflada contém `Complex.Gamma (1/5 : ℂ)` | caixa de potência, núcleo racional e erro `gamma_finite_1024_240_error`; **PROVADO localmente**, ainda não publicado neste snapshot |
+
+O resultado cobre somente `Γ(1/5)`. Não prova as inclusões condicionais
+`sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes` nem os sinais C5.
+
+## Histórico — checkpoint do núcleo Gamma racional por blocos (PR #282)
 
 - Base de `main`: merge da PR #281, `ec5c5e8998b62726ada6f942cf4c2410048a2a23`; branch de trabalho `codex/c5-o4-after-stage19-20261107`. Geometry de referência está em `bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3` e Carry em `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`.
 - Integração: PR #282, commit de prova `131d5f57da009a830c0a967bb5cf4713412c3473`, merge `7c301a2bb0b975369c8f8889ec2940372d2266c2` em 2026-11-07. O checkpoint já está na `main`.

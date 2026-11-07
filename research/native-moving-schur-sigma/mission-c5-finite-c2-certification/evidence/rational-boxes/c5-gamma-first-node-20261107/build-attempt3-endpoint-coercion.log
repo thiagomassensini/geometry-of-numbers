@@ -1,0 +1,23 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaFirstNodeCertificate.lean:38:4: error: Type mismatch: After simplification, term
+  contains_exact (-(1 / 5)) 0
+ has type
+  (exact (-5⁻¹) 0).contains { re := -5⁻¹, im := 0 }
+but is expected to have type
+  (exact (-5⁻¹) 0).contains (-5⁻¹)
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaFirstNodeCertificate.lean:43:4: error: Type mismatch: After simplification, term
+  c5GammaCoreFirstNodePowerArg_normBound
+ has type
+  @LE.le ℚ Rat.instLE
+    ((gammaFiniteNegativePointBox 5⁻¹ 0).neg.mul { re := Interval.logQ 8 8 240, im := Interval.exact 0 }).normBound 4
+but is expected to have type
+  @LE.le ℚ Rat.instLE
+    ((gammaFiniteNegativePointBox 5⁻¹ 0).neg.mul { re := Interval.logQ 8 8 240, im := Interval.exact 0 }).normBound
+    (2 ^ 2)
+'CarrySigmaObstruction.c5GammaCoreFirstNodePowerBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

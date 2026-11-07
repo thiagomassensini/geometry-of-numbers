@@ -1,0 +1,74 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaFirstNodeCertificate.lean:168:4: error: No applicable extensionality theorem found for type
+  ZetaLean.Interval
+
+Note: Extensionality theorems can be registered by marking them with the `[ext]` attribute
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaFirstNodeCertificate.lean:171:4: error: No applicable extensionality theorem found for type
+  ZetaLean.Interval
+
+Note: Extensionality theorems can be registered by marking them with the `[ext]` attribute
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaFirstNodeCertificate.lean:174:4: error: No applicable extensionality theorem found for type
+  ZetaLean.Interval
+
+Note: Extensionality theorems can be registered by marking them with the `[ext]` attribute
+/home/thlinux/worktrees/geometry-of-numbers-c5-logq-two-20261107/research/native-moving-schur-sigma/SigmaC5GammaFirstNodeCertificate.lean:179:2: error: Type mismatch
+  LE.le.trans
+    (max_le_iff.mpr
+      ⟨LE.le.trans hreal.left
+          (Mathlib.Meta.NormNum.isRat_le_true
+            (Mathlib.Meta.NormNum.IsNNRat.to_isRat
+              (Mathlib.Meta.NormNum.isNNRat_mul (Eq.refl HMul.hMul)
+                (Mathlib.Meta.NormNum.isNNRat_abs_nonneg
+                  (Mathlib.Meta.NormNum.isNNRat_div
+                    (Mathlib.Meta.NormNum.isNNRat_mul (Eq.refl HMul.hMul)
+                      (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℚ (Eq.refl 1)))
+                      (Mathlib.Meta.NormNum.isNNRat_inv_pos
+                        (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℚ (Eq.refl 5))))
+                      (Eq.refl (Nat.mul 1 1)) (Eq.refl 5))))
+                (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℚ (Eq.refl 18)))
+                (Eq.refl (Nat.mul 1 18)) (Eq.refl 5)))
+            (Mathlib.Meta.NormNum.IsNNRat.to_isRat
+              (Mathlib.Meta.NormNum.isNNRat_div
+                (Mathlib.Meta.NormNum.isNNRat_mul (Eq.refl HMul.hMul)
+                  (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℚ (Eq.refl 18)))
+                  (Mathlib.Meta.NormNum.isNNRat_inv_pos
+                    (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℚ (Eq.refl 5))))
+                  (Eq.refl (Nat.mul 18 1)) (Eq.refl 5))))
+            (Eq.refl true)),
+        LE.le.trans hreal.right
+          (Mathlib.Meta.NormNum.isRat_le_true
+            (Mathlib.Meta.NormNum.IsNNRat.to_isRat
+              (Mathlib.Meta.NormNum.isNNRat_mul (Eq.refl HMul.hMul)
+                (Mathlib.Meta.NormNum.isNNRat_abs_nonneg
+                  (Mathlib.Meta.NormNum.isNNRat_div
+                    (Mathlib.Meta.NormNum.isNNRat_mul (Eq.refl HMul.hMul)
+                      (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℚ (Eq.refl 1)))
+                      (Mathlib.Meta.NormNum.isNNRat_inv_pos
+                        (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℚ (Eq.refl 5))))
+                      (Eq.refl (Nat.mul 1 1)) (Eq.refl 5))))
+                (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℚ (Eq.refl 18)))
+                (Eq.refl (Nat.mul 1 18)) (Eq.refl 5)))
+            (Mathlib.Meta.NormNum.IsNNRat.to_isRat
+              (Mathlib.Meta.NormNum.isNNRat_div
+                (Mathlib.Meta.NormNum.isNNRat_mul (Eq.refl HMul.hMul)
+                  (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℚ (Eq.refl 18)))
+                  (Mathlib.Meta.NormNum.isNNRat_inv_pos
+                    (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℚ (Eq.refl 5))))
+                  (Eq.refl (Nat.mul 18 1)) (Eq.refl 5))))
+            (Eq.refl true))⟩)
+    hbound
+has type
+  max |((Interval.exact (1 / 5)).mul (Interval.logQ 384 8 240)).lo|
+      |((Interval.exact (1 / 5)).mul (Interval.logQ 384 8 240)).hi| ≤
+    4
+but is expected to have type
+  max |({ lo := 1 / 5, hi := 1 / 5, le := ⋯ }.mul (Interval.logQ 384 8 240)).lo + -0|
+      |({ lo := 1 / 5, hi := 1 / 5, le := ⋯ }.mul (Interval.logQ 384 8 240)).hi + -0| ≤
+    4
+'CarrySigmaObstruction.c5GammaCoreFirstNodePowerBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5GammaCoreFirstNodeBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
