@@ -1,6 +1,6 @@
 # C5 — estado da sessão
 
-## Atualização — estágio Taylor 6 do nó m=2 validado localmente; checkpoint/PR pendentes
+## Atualização — estágio Taylor 6 do nó m=2 integrado pela PR #251
 
 Na branch local `codex/c5-m2-stage6-20261107`, baseada na `main` após PR #250
 (`850582ec76a9819149df2cbad4eba49f3e666e40`), foi provada
@@ -11,13 +11,14 @@ usou Lean 4.32.0, `warningAsError=true`, Geometry no pin
 As cinco declarações auditadas têm somente axiomas padrão, sem `sorryAx`.
 Fonte, logs, pins, checksums e reprodução estão em
 `evidence/rational-boxes/c5-m2-dirichlet-term-stage6-20261107/`.
+O commit de prova `e6c9ef307c69c59a8e665232b4b0271c481d8fcd` foi integrado pela
+PR #251 no merge `7b61a5ceb0d8567c33fe27a5810d493f4640ed69`; o GitHub não
+reportou checks hospedados.
 
 O resultado cobre somente a recorrência Taylor até `n=6` em um nó. Não cobre
 `n=7…192`, os demais nós, as quadraturas, o nó completo, a ponte CSV–Lean, as
-inclusões dos coeficientes da fonte C2 ou os sinais finais. O checkpoint está
-local e ainda não foi publicado; C5 continua incompleta. Próximo passo: revisar
-o diff, publicar a PR do estágio 6 e, após o merge, registrar o SHA real da
-integração; depois continuar com `n=7`.
+inclusões dos coeficientes da fonte C2 ou os sinais finais. C5 continua
+incompleta. Próximo passo nesta trilha é continuar com `n=7`.
 
 ## Atualização — nó m=2 validado até n=5 (PR #249 integrada)
 

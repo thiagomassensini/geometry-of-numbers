@@ -60,5 +60,7 @@ Os checksums de todos os artefatos deste diretório estão em `SHA256SUMS.txt`.
 
 ## Publicação
 
-Este checkpoint registra validação parcial. A integração por PR e o merge na
-`main` serão anotados aqui e nos registros da missão após sua conclusão.
+A PR #251 integrou o commit de prova
+`e6c9ef307c69c59a8e665232b4b0271c481d8fcd` na `main`, pelo merge
+`7b61a5ceb0d8567c33fe27a5810d493f4640ed69`. O GitHub não reportou checks
+hospedados. Este segue sendo um checkpoint parcial: C5 não está concluída.
