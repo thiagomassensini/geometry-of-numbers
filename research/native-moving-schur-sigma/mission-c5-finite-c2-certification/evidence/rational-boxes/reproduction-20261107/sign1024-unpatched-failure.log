@@ -1,0 +1,22 @@
+evaluated 32 / 256 elapsed 5.64 s
+evaluated 64 / 256 elapsed 11.1 s
+evaluated 96 / 256 elapsed 16.56 s
+evaluated 128 / 256 elapsed 21.99 s
+evaluated 160 / 256 elapsed 27.21 s
+evaluated 192 / 256 elapsed 32.46 s
+evaluated 224 / 256 elapsed 37.67 s
+evaluated 256 / 256 elapsed 42.95 s
+Traceback (most recent call last):
+  File "/home/thlinux/worktrees/momentos-c5-research/investigations/c2_first_negative_interval_certificate_20261106/certify_finite_c2.py", line 153, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/thlinux/worktrees/momentos-c5-research/investigations/c2_first_negative_interval_certificate_20261106/certify_finite_c2.py", line 133, in main
+    c,meta=exact_coefficients(args.d,max_n=args.max_s+3,n_nodes=args.nodes,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/thlinux/worktrees/momentos-c5-research/investigations/c2_first_negative_interval_certificate_20261106/certify_finite_c2.py", line 106, in exact_coefficients
+    raw.append(RatInterval(rounded(lo-alias,ROUND_FLOOR),rounded(hi+alias,ROUND_CEILING)))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/thlinux/worktrees/momentos-c5-research/investigations/c2_first_negative_interval_certificate_20261106/certify_finite_c2.py", line 105, in rounded
+    return Fraction(Decimal(fr.numerator)/Decimal(fr.denominator))
+                    ^^^^^^^^^^^^^^^^^^^^^
+TypeError: conversion from gmpy2.mpz to Decimal is not supported
