@@ -56,5 +56,7 @@ Checksums: `SHA256SUMS.txt`.
 
 ## Publicação
 
-Este checkpoint ainda está local, sem PR ou merge. A validação é parcial e não
-conclui C5.
+A PR #255 integrou o commit de prova
+`96f5f5709829282756bc8c8a2b52a80290c96735` na `main`, pelo merge
+`29d363068d52c62c37afc3896f6b3d46f734f16b`. O GitHub não reportou checks
+hospedados. Este checkpoint é parcial e não conclui C5.

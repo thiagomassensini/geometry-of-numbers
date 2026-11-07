@@ -1,6 +1,6 @@
 # C5 — validação
 
-## Transição do nó m=2 para n=8 — passou localmente; PR pendente
+## Transição do nó m=2 para n=8 — passou e foi integrada pela PR #255; C5 parcial
 
 `SigmaC5M2TaylorStateStage8Certificate.lean` compilou em Lean 4.32.0 com
 `warningAsError=true`, usando Geometry no pin
@@ -12,7 +12,10 @@
 
 A prova valida apenas `c5RoundedExpStateC` até `n=8` no nó `(2/5,0)`. Os
 estados seguintes, quadraturas, caixa completa, composição com a fonte C2 e
-sinais finais permanecem abertos. C5 segue incompleta.
+sinais finais permanecem abertos. A PR #255 integrou o commit de prova
+`96f5f5709829282756bc8c8a2b52a80290c96735` no merge
+`29d363068d52c62c37afc3896f6b3d46f734f16b`; o GitHub não reportou checks
+hospedados. C5 segue incompleta.
 
 ## Transição do nó m=2 para n=7 — passou e foi integrada pela PR #253; C5 parcial
 
