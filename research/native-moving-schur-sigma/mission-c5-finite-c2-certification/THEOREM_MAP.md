@@ -1,18 +1,27 @@
 # C5 — mapa dos teoremas e obrigações
 
-## Recorrência nodal m=2 até n=12 (PR #263 integrada; C5 parcial)
+## Recorrência nodal m=2 até n=13 (validação local; C5 parcial)
 
-`SigmaC5M2TaylorStateStage12Certificate.lean` prova
-`c5RoundedExpStateC_stage12_correct` para `(a,j)=(2/5,0)`, importando o estado
-`n=11`. A transição verifica o produto intervalar, `1/39916800`, os
+`SigmaC5M2TaylorStateStage13Certificate.lean` prova
+`c5RoundedExpStateC_stage13_correct` para `(a,j)=(2/5,0)`, importando o estado
+`n=12`. A transição verifica o produto intervalar, `1/479001600`, os
 arredondamentos e a soma. Lean 4.32.0 com `warningAsError=true` passou; a
 auditoria mostra somente axiomas padrão. Evidência em
-`evidence/rational-boxes/c5-m2-dirichlet-term-stage12-20261107/`.
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage13-20261107/`.
 
-A PR #263 integrou o commit `b7c442c318de488cb928fc8e456110b4b27a81f4` no merge `4b5b6a0aebd54798e6a26b2eda69994589c78668`; o GitHub não reportou
-checks hospedados. Não fecha `n=192`, os demais nós, quadraturas, caixa
-completa, inclusão dos coeficientes C2 originais ou sinais finais. Próximo
-estado: `n=13`.
+O checkpoint parte da main `08f238c465179076a2fb15635e23e513245d3d6d` e aguarda
+publicação em PR. Não fecha `n=192`, os demais nós, quadraturas, caixa completa,
+inclusão dos coeficientes C2 originais ou sinais finais. Próximo estado:
+`n=14`.
+
+## Recorrência nodal m=2 até n=12 (PR #263 integrada)
+
+`SigmaC5M2TaylorStateStage12Certificate.lean` prova
+`c5RoundedExpStateC_stage12_correct` para `(a,j)=(2/5,0)`. A PR #263 integrou
+o commit `b7c442c318de488cb928fc8e456110b4b27a81f4` no merge
+`4b5b6a0aebd54798e6a26b2eda69994589c78668`. Evidência em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage12-20261107/`. Isso não
+fecha a recorrência completa nem as inclusões/sinais C5.
 
 ## Recorrência nodal m=2 até n=10 (PR #259 integrada; C5 parcial)
 

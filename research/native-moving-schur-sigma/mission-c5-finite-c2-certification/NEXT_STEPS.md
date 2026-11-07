@@ -1,22 +1,27 @@
 # Próximos passos — C5
 
-## Atualização — estágio Taylor 12 integrado pela PR #263
+## Atualização — estágio Taylor 13 compilado localmente; PR pendente
 
-`c5RoundedExpStateC_stage12_correct` passou em Lean 4.32.0 com
+`c5RoundedExpStateC_stage13_correct` passou em Lean 4.32.0 com
 `warningAsError=true`; as cinco raízes auditadas mostram somente axiomas
-padrão. O commit de prova
-`b7c442c318de488cb928fc8e456110b4b27a81f4` entrou na `main` pelo merge
-`4b5b6a0aebd54798e6a26b2eda69994589c78668`. O GitHub não reportou checks
-hospedados. Evidência em
-`evidence/rational-boxes/c5-m2-dirichlet-term-stage12-20261107/README.md`.
-O checkpoint cobre apenas `n≤12` no nó `(2/5,0)`; a falha inicial de busca de
-módulo também está preservada nos logs.
+padrão. Evidência em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage13-20261107/README.md`.
+O checkpoint cobre apenas `n≤13` no nó `(2/5,0)`. A branch local é
+`codex/c5-m2-stage13-20261107`, baseada na main
+`08f238c465179076a2fb15635e23e513245d3d6d`; publicação da PR está pendente.
 
-1. Estender a recorrência para `n=13` e prosseguir até `n=192`.
-2. Certificar as quadraturas e a caixa nodal completa.
-3. Provar a ponte CSV–Lean, as inclusões da fonte C2 e os sinais finais.
+1. Publicar a prova e a evidência, revisar a PR e integrá-la à `main`.
+2. Estender a recorrência para `n=14` e prosseguir até `n=192`.
+3. Certificar as quadraturas e a caixa nodal completa.
+4. Provar a ponte CSV–Lean, as inclusões da fonte C2 e os sinais finais.
 
 C5 continua incompleta.
+
+## Checkpoint anterior — estágio Taylor 12 integrado pela PR #263
+
+O estágio `n=11→12` no nó `(2/5,0)` foi integrado pelo merge
+`4b5b6a0aebd54798e6a26b2eda69994589c78668`; sua evidência está em
+`evidence/rational-boxes/c5-m2-dirichlet-term-stage12-20261107/`.
 
 ## Atualização — estágio Taylor 10 integrado pela PR #259
 
