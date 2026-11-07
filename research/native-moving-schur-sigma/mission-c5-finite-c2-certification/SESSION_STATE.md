@@ -11,7 +11,27 @@
   de C2/C3; não é preciso calcular a primeira profundidade de falha para a
   negatividade eventual já provada.
 
-## Atualização mais recente — núcleo do nó `m = 1` (2026-11-07)
+## Atualização mais recente — igualdade do estágio 1 (2026-11-07)
+
+`SigmaC5ZeroExpStagesCertificate.lean` prova que a exponencial arredondada no
+estágio 1, com argumento zero, coincide exatamente com os extremos racionais
+exportados. Quatro lemas provam os pisos e tetos por desigualdades racionais
+exatas. O build Lean 4.32 com `warningAsError=true` passou para os mesmos corpos
+de prova; a auditoria por import foi compilada separadamente e retorna apenas
+`propext`, `Classical.choice` e `Quot.sound` para as seis raízes. Fontes, logs,
+hashes, pins e comandos estão em
+`evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
+
+Esse resultado fecha somente a igualdade do estágio 1. Não conecta o CSV às
+caixas Lean, não avalia os outros termos da fonte original e não prova
+`sigmaC00495SourceBoxes` nem `sigmaC01SourceBoxes`; C5 segue aberta. A
+primeira recompilação redundante, com auditorias auxiliares embutidas, foi
+interrompida após 3 minutos; uma segunda tentativa completa do mesmo corpo de
+prova foi interrompida após 5 minutos de redução racional, sem erro matemático.
+O build prévio dos mesmos corpos de teoremas e o módulo de auditoria por import
+passaram.
+
+## Contexto anterior — núcleo do nó `m = 1` (2026-11-07)
 
 Foram acrescentadas provas exatas para o log centrado e o termo de Dirichlet
 em `m = 1`, e para a recorrência da exponencial complexa no argumento zero.
@@ -19,15 +39,12 @@ O resto de Taylor continua incluído como inflação racional explícita. Os tr�
 módulos alterados compilaram em Lean 4.32.0 com `warningAsError=true`; as
 auditorias dos sete teoremas registraram somente axiomas padrão.
 
-A igualdade da caixa exponencial de estágio 1 com os extremos exportados segue
-aberta. A última tentativa falhou ao aplicar `Int.floor_eq_iff.mpr` e
-`Int.ceil_eq_iff.mpr` às expressões racionais resultantes; o log completo,
-fontes de auditoria, pins, hashes e comandos estão em
-`evidence/rational-boxes/c5-trivial-node-kernel-20261107/`. C5 continua
-incompleta, sem ponte CSV–Lean ou inclusões O3. Este checkpoint parcial foi
-publicado pela PR #222, commit de prova `67e6cf9fdf86ac735b6ade80d2f4a64982968363`,
-merge na `main` `e55858690e296d00c88692b8f30902987e853137`. O GitHub não reportou
-checks hospedados.
+Naquele checkpoint a igualdade da caixa do estágio 1 seguia aberta; essa
+lacuna foi fechada localmente pela atualização acima. A PR #222, commit de
+prova `67e6cf9fdf86ac735b6ade80d2f4a64982968363`, continua sendo o merge que
+integrou o núcleo inicial do nó trivial na `main` (`e55858690e296d00c88692b8f30902987e853137`).
+O estado atual da prova de estágio 1 e sua publicação estão registrados na
+seção mais recente e no `README.md` de evidências.
 
 ## Checkpoint mais recente — componente `log 2` certificado por blocos
 

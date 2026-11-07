@@ -1,0 +1,2 @@
+BUILD_EXIT=130
+INTERRUPTED: redundant full recompilation after adding #print axioms lines; the proof source with identical theorem bodies had already compiled successfully in stage1-build.log. The separate import-based axiom audit was compiled successfully.

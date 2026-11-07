@@ -1,8 +1,9 @@
 # C5 — núcleo certificado do nó trivial `m = 1`
 
-**Estado:** checkpoint parcial. As identidades formais do nó `m = 1` foram
-compiladas e auditadas; a prova da igualdade entre a caixa Lean e os extremos
-exportados da exponencial ainda está incompleta. C5 permanece aberta.
+**Estado:** checkpoint parcial. As identidades formais do nó `m = 1` e a
+igualdade da caixa arredondada no estágio 1 foram compiladas e auditadas. A
+ponte CSV–Lean e as inclusões dos coeficientes C2 continuam abertas; C5 não
+está concluída.
 
 Integrado pela PR #222, commit de prova
 `67e6cf9fdf86ac735b6ade80d2f4a64982968363`, merge na `main`
@@ -27,12 +28,37 @@ alterados. As três auditorias registradas aqui reportam somente
 `propext`, `Classical.choice` e `Quot.sound`. Os logs de build e auditoria e as
 fontes das auditorias estão nesta pasta; `SHA256SUMS.txt` registra seus hashes.
 
+## Igualdade exata do estágio 1
+
+`SigmaC5ZeroExpStagesCertificate.lean` prova que
+`c5RoundedExpC 192 896 1 (ComplexInterval.exact 0 0)` é exatamente
+`c5ZeroExpStage1Export`. Quatro lemas verificam os pisos e tetos dos extremos
+da caixa quadrada por desigualdades racionais exatas. A auditoria isolada
+reporta somente `propext`, `Classical.choice` e `Quot.sound` para os quatro
+lemas de arredondamento, a identidade de estágio 0 e a identidade de estágio 1.
+
+O build de prova passou em Lean 4.32.0 com `warningAsError=true`; a auditoria
+por import passou separadamente. Logs, fontes, hash do `.olean`, hash dos
+registros e uma tentativa redundante interrompida estão preservados em
+`SigmaC5ZeroExpStagesCertificate.stage1-build.log`,
+`SigmaC5ZeroExpStagesCertificate.stage1-axioms.log`,
+`stage1-pins.txt` e `stage1-sha256.txt`. Uma recompilação redundante com as
+linhas `#print axioms` dos quatro lemas auxiliares dentro do módulo foi
+interrompida após 3 minutos; outra compilação limpa do mesmo corpo de prova foi
+interrompida após 5 minutos de redução racional. Nenhuma relatou erro
+matemático. O build anterior desse mesmo corpo terminou com código zero, e o
+módulo de auditoria importado compilou com código zero. As duas interrupções
+estão em `SigmaC5ZeroExpStagesCertificate.extra-full-build-interrupted.log` e
+`SigmaC5ZeroExpStagesCertificate.final-rebuild-interrupted.log`.
+
 ## Pins e reprodução
 
-O checkpoint parte de `main` em `c67b2f72e0ad2f331c0966fb3ed82e98655e3df8`.
-Foram usados a revisão de referência `caa07002306b555fea5624cc11ab2ea5811a4324`,
+O checkpoint original do nó `m = 1` parte de `main` em
+`c67b2f72e0ad2f331c0966fb3ed82e98655e3df8`; os pins da validação do estágio 1
+estão em [`stage1-pins.txt`](stage1-pins.txt). Para o checkpoint original,
+foram usados a revisão de referência `caa07002306b555fea5624cc11ab2ea5811a4324`,
 Carry `045369f6dedcb2e75e9aefed1d12c9f73b9a2532` e Mathlib
-`81a5d257c8e410db227a6665ed08f64fea08e997`. Consulte
+`81a5d257c8e410db227a6665ed08f64fea08e997`; veja também
 [`pins-and-sha256.txt`](pins-and-sha256.txt).
 
 Da raiz do checkout Geometry:
@@ -56,23 +82,22 @@ bash "$S/compile_sigma_pade.sh" SigmaC5RoundedComplexExp
 bash "$S/compile_sigma_pade.sh" SigmaC5RoundedExpZeroAudit
 bash "$S/compile_sigma_pade.sh" SigmaC5RationalNodeCenteredBoxes
 bash "$S/compile_sigma_pade.sh" SigmaC5CenteredDirichletM1Audit
+bash "$S/compile_sigma_pade.sh" SigmaC5ZeroExpStagesCertificate
+bash "$S/compile_sigma_pade.sh" SigmaC5ZeroExpStagesAudit
 ```
 
 The preserved logs are the successful runs used for this checkpoint. The audit
 source files use `#print axioms` for the listed declarations. Re-running the
 commands above writes fresh logs under the selected output directory.
 
-## Primeiro obstáculo ainda aberto
+## Próxima obrigação aberta
 
-O argumento e a recorrência em zero estão formalizados, mas não foi provado
-que a caixa exponencial do estágio 1 coincide exatamente com os extremos
-racionais exportados. A última tentativa tentou fechar as igualdades de
-`Int.floor` e `Int.ceil` pela forma inadequada de `Int.floor_eq_iff.mpr`; a
-compilação terminou com `BUILD_EXIT=1`. Veja
+O estágio 1 agora está provado. A tentativa que falhou ao aplicar diretamente
+`Int.floor_eq_iff.mpr` e `Int.ceil_eq_iff.mpr` permanece como histórico; veja
 [`stage1-export-equality-last-attempt.log`](stage1-export-equality-last-attempt.log).
 O fonte exato dessa tentativa está preservado como
 [`SigmaC5ZeroExpStage1Diagnostic5.failed.lean`](SigmaC5ZeroExpStage1Diagnostic5.failed.lean).
-Para repetir o último erro, com o ambiente de build descrito acima:
+Para repetir esse erro histórico, com o ambiente de build descrito acima:
 
 ```bash
 cp "$C5_EVIDENCE/SigmaC5ZeroExpStage1Diagnostic5.failed.lean" \
@@ -89,7 +114,7 @@ aceito como resultado. Esta tentativa não invalida as identidades já
 compiladas e auditadas acima.
 
 Ainda não há ponte CSV–Lean, inclusão dos coeficientes O3, composição completa
-da fonte C2, nem sinal finito de C5. O próximo passo é provar as desigualdades
-inteiras exatas que determinam os pisos e tetos do estágio 1 e, em seguida,
-retomar a ligação formal das caixas exportadas. Não inferir fechamento de C5
-a partir deste checkpoint.
+da fonte C2, nem sinal finito de C5. O próximo passo é avançar os estágios
+seguintes da exponencial e depois ligar formalmente as caixas exportadas,
+compondo zeta, Gamma, o fator dependente de π e a fonte C2 original. Não
+inferir fechamento de C5 a partir deste checkpoint.

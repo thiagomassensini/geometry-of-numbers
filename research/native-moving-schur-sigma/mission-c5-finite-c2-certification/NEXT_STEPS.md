@@ -1,6 +1,6 @@
 # Próximos passos — C5
 
-## Prioridade imediata — fechar a igualdade do estágio 1 (2026-11-07)
+## Prioridade imediata — avançar a exponencial certificada (2026-11-07)
 
 O núcleo `m = 1` já está formalizado e compilado: o log centrado vira a caixa
 exata `0`, o argumento do termo de Dirichlet vira `0`, e a exponencial
@@ -9,12 +9,16 @@ explícito. Os sete teoremas auditados usam somente axiomas padrão. A evidênci
 os pins e os comandos estão em
 `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
 
-Checkpoint parcial integrado pela PR #222, commit de prova
+O checkpoint do nó `m = 1` foi integrado pela PR #222, commit de prova
 `67e6cf9fdf86ac735b6ade80d2f4a64982968363`, merge na `main`
 `e55858690e296d00c88692b8f30902987e853137`; não houve checks hospedados.
+Depois desse merge, `c5ZeroExpStage1_eq` foi provado localmente: a caixa de
+estágio 1 coincide com os extremos exportados, e os quatro pisos/tetos foram
+provados exatamente. Build Lean 4.32 e auditoria isolada passaram; evidências
+e hashes estão em `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
 
-1. Resolver os limites inteiros que determinam as extremidades arredondadas
-   no estágio 1, compilar e auditar o próximo lema isolado.
+1. Provar e auditar as igualdades exportadas para os estágios seguintes da
+   exponencial com argumento zero, preservando a inflação do resto.
 2. Retomar a ponte formal CSV–Lean e avaliar, em etapas, os demais termos da
    caixa; depois compor Gamma, o fator de π e a fonte C2 original e provar as
    inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.

@@ -1,6 +1,6 @@
 # C5 — obrigações abertas
 
-## Atualização — núcleo `m = 1` provado; igualdade do estágio 1 ainda aberta
+## Atualização — igualdade do estágio 1 provada; composição da fonte ainda aberta
 
 Os lemas `c5CenteredLogQFromLogTwo_one`,
 `c5CenteredDirichletExponentArg_one`,
@@ -10,15 +10,17 @@ estado/log usados por eles, compilam em Lean 4.32.0 e passaram por auditoria
 de axiomas: somente `propext`, `Classical.choice` e `Quot.sound`.
 `c5RoundedExpSmall_zero` conserva o resto racional, sem hipótese de sinal.
 
-O primeiro limite restante neste ramo é provar as desigualdades inteiras que
-determinam os `floor` e `ceil` da caixa de estágio 1 exportada. A última
-tentativa usou `Int.floor_eq_iff.mpr`/`Int.ceil_eq_iff.mpr` em uma forma não
-unificável e terminou com código 1; nenhum resultado dessa tentativa foi
-aceito. A evidência integral está em
+`c5ZeroExpStage1_eq` prova que a exponencial arredondada do estágio 1 com
+argumento zero é a caixa exportada. Os quatro pisos e tetos foram reduzidos a
+desigualdades racionais exatas e auditados em Lean 4.32; o relatório contém o
+build de prova e a auditoria por import. A tentativa antiga, que aplicava os
+lemas de piso/teto à igualdade composta, continua guardada somente como
+histórico. A evidência está em
 `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
 
-Continuam abertas a ligação formal das 516 linhas CSV às caixas Lean, a
-composição de todos os termos da fonte C2 original, as inclusões
+Continuam abertas as igualdades exportadas dos estágios posteriores da
+exponencial, a ligação formal das 516 linhas CSV às caixas Lean, a composição
+de todos os termos da fonte C2 original, as inclusões
 `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` e os sinais finais C5. O
 checkpoint parcial do nó trivial foi integrado pela PR #222, commit de prova
 `67e6cf9fdf86ac735b6ade80d2f4a64982968363`, merge na `main`
