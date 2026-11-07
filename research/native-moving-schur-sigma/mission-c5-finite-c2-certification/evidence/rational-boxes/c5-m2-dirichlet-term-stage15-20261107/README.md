@@ -52,5 +52,6 @@ axiomas.
 
 ## Publicação
 
-Checkpoint local preparado sobre `main` em `7918b5d819ecb938af918f9ab67282010fb8197b`;
-a PR ainda não foi criada. Esta validação é parcial e não conclui C5.
+A PR #269 integrou o commit de prova `2dd2bb75153245bb13613135a66721f7a992fcea` na `main` pelo merge
+`fe6d5c238ba9ee796dc5ef56880aa60e89899c63`. O GitHub não reportou checks hospedados. Esta validação é parcial e
+não conclui C5.
