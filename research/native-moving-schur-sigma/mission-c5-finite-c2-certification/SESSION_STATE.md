@@ -40,9 +40,10 @@ Como passo de decomposição, `#eval` exportou os extremos exatos de
 fechou: `norm_num` deixou metas abertas, inclusive após separar `lo`/`hi`, usar
 `maxSteps=1000000` e tentar `norm_num1`. Nenhum teorema foi compilado nem
 teve auditoria válida. Logs e fontes estão em
-`evidence/rational-boxes/c5-log2-component-attempt/`. O próximo passo é
-certificar blocos da soma finita com lemas reutilizáveis, sem ampliar limites
-de passos.
+`evidence/rational-boxes/c5-log2-component-attempt/`. O diagnóstico foi
+integrado pela PR #217, commit `e34733a`, merge na `main`
+`30a615cafa3b27de40427a73cc64988c77e236d3`. O próximo passo é certificar
+blocos da soma finita com lemas reutilizáveis, sem ampliar limites de passos.
 
 ## Checkpoint integrado — Bernoulli compartilhado (2026-11-07)
 

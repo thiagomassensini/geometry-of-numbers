@@ -33,8 +33,10 @@ com compilação e auditoria válida antes de formar lotes. A tentativa de isola
 `c5CenteredLog2I 512` exportou os números, mas não provou a igualdade; o próximo
 subpasso é uma soma em blocos com certificados aritméticos. Evidência e erros:
 `evidence/rational-boxes/c5-exported-box-proof-attempt/`; a prova isolada de
-`log 2` está em `evidence/rational-boxes/c5-log2-component-attempt/`. O primeiro
-diagnóstico foi publicado pela PR #215, merge `6bfb4b14606ec1896a2d01d60be4ca54117bd128`.
+`log 2` está em `evidence/rational-boxes/c5-log2-component-attempt/`. O diagnóstico inicial foi publicado pela PR #215, merge
+`6bfb4b14606ec1896a2d01d60be4ca54117bd128`; o teste isolado de `log 2` e
+seus limites foram integrados pela PR #217, merge
+`30a615cafa3b27de40427a73cc64988c77e236d3`.
 
 As inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` seguem abertas,
 bem como composição C5; os sinais permanecem condicionais. C5 não está

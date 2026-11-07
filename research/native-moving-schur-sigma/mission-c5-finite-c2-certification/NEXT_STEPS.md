@@ -36,8 +36,9 @@ Checkpoint integrado pela PR #215, commit `baa5e3e`, merge na `main`
 **Subcomponente `log 2` testado:** a saída `#eval` de `c5CenteredLog2I 512`
 foi obtida em ~40 s, mas a igualdade aos literais ainda deixa metas abertas
 mesmo com extensionalidade, `maxSteps=1000000` e `norm_num1`. Detalhes e logs
-em `evidence/rational-boxes/c5-log2-component-attempt/`. A rota seguinte deve
-provar somas parciais em blocos, com certificados reutilizáveis.
+em `evidence/rational-boxes/c5-log2-component-attempt/`; o checkpoint foi
+integrado pela PR #217, merge `30a615cafa3b27de40427a73cc64988c77e236d3`. A
+rota seguinte deve provar somas parciais em blocos, com certificados reutilizáveis.
 
 1. **Concluído nesta etapa:** exportar os extremos racionais para os quatro
    valores reais e todos os 129 nós; CSV, sondas, logs, pins e reprodução em
