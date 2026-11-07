@@ -1,6 +1,6 @@
 # C5 — estado da sessão
 
-## Atualização — estágio Taylor 7 do nó m=2 validado localmente; PR pendente
+## Atualização — estágio Taylor 7 do nó m=2 integrado pela PR #253
 
 Na branch local `codex/c5-m2-stage7-20261107`, baseada na `main` após PR #252
 (`c0d2b4799ce81a5428ee84b68a886bd656441779`), foi provada
@@ -11,11 +11,13 @@ com `warningAsError=true` terminou com `BUILD_EXIT=0`; Geometry está pinado em
 têm somente axiomas padrão, sem `sorryAx`. A fonte, o probe de exportação, os
 logs, pins e hashes estão em
 `evidence/rational-boxes/c5-m2-dirichlet-term-stage7-20261107/`.
+O commit de prova `a08a5c9c5a1d02fc33b3207ef2be3d362d526de8` foi integrado pela
+PR #253 no merge `952fcd76093681f3feacc540bb0db9c49bfc6034`; o GitHub não
+reportou checks hospedados.
 
-Este checkpoint cobre somente a recorrência até `n=7` de um nó e ainda não foi
-publicado por PR. Não fecha os estados restantes, quadraturas, caixa completa,
-inclusões da fonte C2 ou sinais finais. C5 permanece incompleta. Próximo passo:
-publicar e integrar este checkpoint; em seguida, avançar para `n=8`.
+Este checkpoint cobre somente a recorrência até `n=7` de um nó. Não fecha os
+estados restantes, quadraturas, caixa completa, inclusões da fonte C2 ou sinais
+finais. C5 permanece incompleta. Próximo passo: avançar para `n=8`.
 
 ## Atualização — estágio Taylor 6 do nó m=2 integrado pela PR #251
 

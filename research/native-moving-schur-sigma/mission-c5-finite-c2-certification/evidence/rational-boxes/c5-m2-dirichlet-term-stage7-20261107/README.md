@@ -59,6 +59,7 @@ contém a compilação e a auditoria do certificado. Os checksums estão em
 
 ## Publicação
 
-Esta validação está em uma branch local e ainda não foi publicada por PR. O
-checkpoint é deliberadamente parcial; a integração será registrada depois do
-merge.
+A PR #253 integrou o commit de prova
+`a08a5c9c5a1d02fc33b3207ef2be3d362d526de8` na `main`, pelo merge
+`952fcd76093681f3feacc540bb0db9c49bfc6034`. O GitHub não reportou checks
+hospedados. Este continua sendo um checkpoint parcial; C5 não está concluída.
