@@ -1,4 +1,4 @@
-Current origin/main rechecked after PR #240: 89710ecaf940f1a7887cd133451916edd76bddcb
+Current origin/main rechecked after PR #283: 71721874eb01071a07c83e4f71117b7d662e1b53
 Lean 4.32 build/revalidation base before subsequent C5 merges: b604c06dd0c13e7f77c65fb0634aa0b082d6c8d1
 Build source snapshot (PR #221 branch): f848c8a34b5f6859d5d8c0419bac214f972278f7
 Lean toolchain: leanprover/lean4:v4.32.0
@@ -9,10 +9,10 @@ Height-50 certificate: teal-sea/zeta-lab@b09fa4dd2f2182cf14b248e7ffc64ff03df2c53
 Reused dependency output tree: 67aea3263426cc8f9787f34aa7833a5650dde175
 Lean compiler: /home/thlinux/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lean
 Compiler option: -DwarningAsError=true
-Scope check: `git diff --quiet b604c06dd0c13e7f77c65fb0634aa0b082d6c8d1 89710ecaf940f1a7887cd133451916edd76bddcb -- research/native-moving-schur-sigma/SigmaRHHeightBridge.lean research/native-moving-schur-sigma/SigmaHeight50Integration.lean research/native-moving-schur-sigma/SigmaPadeEventualNegativity.lean research/native-moving-schur-sigma/SigmaParityNegativeDirection.lean research/native-moving-schur-sigma/SigmaPadeAudit.lean` returned 0.
+Scope check: `git diff --quiet b604c06dd0c13e7f77c65fb0634aa0b082d6c8d1 89710ecaf940f1a7887cd133451916edd76bddcb -- research/native-moving-schur-sigma/SigmaRHHeightBridge.lean research/native-moving-schur-sigma/SigmaHeight50Integration.lean research/native-moving-schur-sigma/SigmaPadeEventualNegativity.lean research/native-moving-schur-sigma/SigmaParityNegativeDirection.lean research/native-moving-schur-sigma/SigmaPadeAudit.lean` returned 0. The same C2/C3 module scope was compared from the previous documented revision `24f61b01732f44599869350c4bf675c3f3a3dcb6` to `71721874eb01071a07c83e4f71117b7d662e1b53`; no source differences were found.
 The complete Lean source diff for that range is preserved in `current-main-lean-source-diff.txt`; it contains only new C5 modules and their evidence copies.
 
-Source SHA-256 (same on the build snapshot, b604c06 build base, and current origin/main@89710ec; no diff in these modules from b604c06 to 89710ec):
+Source SHA-256 (same on the build snapshot, b604c06 build base, and current origin/main@7172187; the tracked C2/C3 modules were unchanged through the intervening main revisions):
 da16205159f49fcd865a31e2c374c48595045b6a8e27f741581b4acf930d0767  research/native-moving-schur-sigma/SigmaRHHeightBridge.lean
 6c4fff9ab4460d29dc05cc77bbc2a6ee32e894fff470288eaf41be2ca264b5ee  research/native-moving-schur-sigma/SigmaHeight50Integration.lean
 b0e1ebbcd5056906a513a4174510e21fac279e59b7618617e41de07527635125  research/native-moving-schur-sigma/SigmaPadeEventualNegativity.lean

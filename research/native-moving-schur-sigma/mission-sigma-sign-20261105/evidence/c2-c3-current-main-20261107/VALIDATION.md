@@ -40,7 +40,11 @@ C3 usa `p = 2i` e `p = 2i + 1` para cobrir explicitamente os setores par e ímpa
 
 ## Reconfirmação após PR #241 (2026-11-07)
 
-A ponta atual de `origin/main` é `24f61b01732f44599869350c4bf675c3f3a3dcb6`. Executei `git diff --quiet b604c06dd0c13e7f77c65fb0634aa0b082d6c8d1 24f61b01732f44599869350c4bf675c3f3a3dcb6 --` sobre `SigmaRHHeightBridge.lean`, `SigmaHeight50Integration.lean`, `SigmaPadeEventualNegativity.lean`, `SigmaParityNegativeDirection.lean` e `SigmaPadeAudit.lean`; o código de saída foi zero, sem diferenças. Assim, a compilação 4.32 e a auditoria transitiva arquivadas continuam cobrindo a closure C2/C3 atual. `git grep 'def sigmaLineZero' origin/main -- research/native-moving-schur-sigma` encontra somente a definição em `SigmaCertifiedNegativeDirection.lean`.
+A ponta consultada após a PR #241 era `origin/main@24f61b01732f44599869350c4bf675c3f3a3dcb6`. Executei `git diff --quiet b604c06dd0c13e7f77c65fb0634aa0b082d6c8d1 24f61b01732f44599869350c4bf675c3f3a3dcb6 --` sobre `SigmaRHHeightBridge.lean`, `SigmaHeight50Integration.lean`, `SigmaPadeEventualNegativity.lean`, `SigmaParityNegativeDirection.lean` e `SigmaPadeAudit.lean`; o código de saída foi zero, sem diferenças. Assim, a compilação 4.32 e a auditoria transitiva arquivadas continuavam cobrindo a closure C2/C3 nessa revisão. `git grep 'def sigmaLineZero' origin/main -- research/native-moving-schur-sigma` encontrou somente a definição em `SigmaCertifiedNegativeDirection.lean`.
+
+## Reconfirmação após PR #283 (2026-11-07)
+
+A `main` está em `71721874eb01071a07c83e4f71117b7d662e1b53`. Comparei os módulos C2/C3 cobertos pela auditoria entre `24f61b01732f44599869350c4bf675c3f3a3dcb6` e essa ponta; `git diff --exit-code` terminou sem diferenças. Portanto, a compilação Lean 4.32 e a auditoria transitiva registradas acima continuam aplicáveis. `git grep 'def sigmaLineZero' origin/main -- research/native-moving-schur-sigma` continua encontrando uma única definição em `SigmaCertifiedNegativeDirection.lean`. O checkpoint 4.35 (#221) permanece separado e incompleto.
 
 ## Comandos reproduzidos
 

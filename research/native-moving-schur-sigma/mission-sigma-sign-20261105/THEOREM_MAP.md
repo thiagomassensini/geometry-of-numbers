@@ -1,5 +1,7 @@
 # Mapa dos teoremas e obrigações
 
+**Estado na `main` em 2026-11-07:** `71721874eb01071a07c83e4f71117b7d662e1b53`. C1B (#155), C2 (#157) e C3 (#159) já estão integrados. A revalidação Lean 4.32 e a auditoria transitiva arquivadas continuam aplicáveis: os módulos C2/C3 auditados não mudaram desde a revisão comparada `24f61b01732f44599869350c4bf675c3f3a3dcb6`. A integração 4.32 de altura 50 em `b9ce1955c1e8830afad2323afe5266ed3f5f35d9` continua sendo a primeira referência C2; o checkpoint 4.35 (#221) permanece incompleto.
+
 ## Objetos que não devem ser confundidos
 
 `completedNativeOperatorCharacteristic` é a característica completada original; `completedSigmaLogJet d n` são os momentos sigma originais; `sigmaMatrix d s N` é a Hankel real original. `twoPoleMoment` e o operador de alturas são objetos distintos e não substituem esses termos.
