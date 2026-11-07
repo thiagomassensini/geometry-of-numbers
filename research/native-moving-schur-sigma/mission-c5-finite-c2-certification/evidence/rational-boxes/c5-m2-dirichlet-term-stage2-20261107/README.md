@@ -71,6 +71,13 @@ Os estados racionais `0…192` exportados por `#eval` estão em
 `state-export.log`; esse arquivo é dado de trabalho para construir novos
 certificados, não é por si só uma prova Lean.
 
+## Publicação do checkpoint
+
+A PR #243 publicou e integrou este resultado: commit de prova
+`86d42067db230b661321190ca397bb496e855186`, merge na `main`
+`20c30cec4b3964fc063d8eb3c93e09a41d319cfc`. O GitHub não reportou checks
+hospedados. A integração não altera o escopo parcial descrito acima.
+
 ## Tentativas que não validaram o estágio 2
 
 - `attempts/Stage2Monolithic.lean` e `attempts/state-stage2-build.log` registram

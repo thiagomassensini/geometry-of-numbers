@@ -1,6 +1,6 @@
 # C5 — mapa dos teoremas e obrigações
 
-## Piloto nodal m=2 — Taylor até n=2 (local, ainda não publicado)
+## Piloto nodal m=2 — Taylor até n=2 (PR #243 integrada; C5 parcial)
 
 `SigmaC5M2TaylorStateStage2Refined.lean` prova
 `c5RoundedExpStateC_stage2_correct_refined` para o argumento racional do nó
@@ -12,6 +12,9 @@ e atualização da soma eliminam as simplificações do produto complexo em uma
 Este teorema cobre `n=0,1,2`, não o Taylor completo com `n=192`, nem as quatro
 quadraturas de `c5RoundedExpC`, nem a caixa `c5CenteredDirichletTermBox` inteira.
 Ele ainda não demonstra a inclusão do coeficiente original na caixa racional.
+A PR #243 integrou o checkpoint, commit de prova
+`86d42067db230b661321190ca397bb496e855186`, merge
+`20c30cec4b3964fc063d8eb3c93e09a41d319cfc`; não houve checks hospedados.
 Fontes, exportação, erros e comando estão em
 `evidence/rational-boxes/c5-m2-dirichlet-term-stage2-20261107/README.md`.
 

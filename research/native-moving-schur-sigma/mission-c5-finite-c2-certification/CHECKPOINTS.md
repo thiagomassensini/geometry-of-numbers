@@ -1,6 +1,6 @@
 # C5 — checkpoints
 
-## 2026-11-07 — piloto m=2 até n=2 compilado localmente; publicação pendente
+## 2026-11-07 — piloto m=2 até n=2 integrado pela PR #243
 
 - No branch `codex/c5-m2-stage-transition-20261107`, baseado em
   `e96caa7b1850a0d2775c5f801ccfe598e4a2ee0d`, foi provado
@@ -13,8 +13,9 @@
 - Os erros de tentativas monolíticas e intermediárias foram preservados como
   evidência inválida em `evidence/rational-boxes/c5-m2-dirichlet-term-stage2-20261107/attempts/`.
 - Fontes, estados exportados, hashes, pins e reprodução estão no README dessa
-  evidência. Este item registra o checkpoint local; publicação e merge ainda
-  não ocorreram.
+  evidência. A PR #243 integrou o checkpoint, commit de prova
+  `86d42067db230b661321190ca397bb496e855186`, merge na `main`
+  `20c30cec4b3964fc063d8eb3c93e09a41d319cfc`; o GitHub não reportou checks.
 - C5 permanece incompleta. O próximo passo é o estado `n=3` e, após validar o
   método por estágios, a ligação CSV–Lean e a composição da fonte C2.
 

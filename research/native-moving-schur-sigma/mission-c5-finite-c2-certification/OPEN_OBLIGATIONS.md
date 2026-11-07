@@ -6,7 +6,9 @@ O piloto `(a,j)=(2/5,0)` agora prova, em Lean 4.32, somente a recorrência
 `c5RoundedExpStateC` até `n=2`. Permanecem em aberto `n=3…192`, as quatro
 quadraturas da exponencial, a igualdade com o termo nodal completo e a inclusão
 desse nó na composição dos coeficientes C2. A exportação `#eval` de todos os
-estados não é certificado formal. Evidência, comandos e erros estão em
+estados não é certificado formal. O checkpoint local foi integrado pela PR #243, merge
+`20c30cec4b3964fc063d8eb3c93e09a41d319cfc`; os checks hospedados não foram
+reportados. Evidência, comandos e erros estão em
 `evidence/rational-boxes/c5-m2-dirichlet-term-stage2-20261107/README.md`.
 As inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` e os sinais finais
 C5 continuam abertos.
