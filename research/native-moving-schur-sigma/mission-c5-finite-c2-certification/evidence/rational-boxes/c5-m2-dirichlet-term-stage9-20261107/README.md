@@ -57,4 +57,7 @@ bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaC5M2TaylorSta
 
 ## Publicação
 
-Este checkpoint está local, sem PR ou merge. É parcial e não conclui C5.
+A PR #257 integrou o commit de prova
+`62c9fbd7b04034f21ccf0336abf0d83d8c6a6592` na `main`, pelo merge
+`9655308b17dbf565d272f7578545bb68b7b0b867`. O GitHub não reportou checks
+hospedados. Este checkpoint é parcial e não conclui C5.

@@ -1,6 +1,6 @@
 # C5 — validação
 
-## Transição do nó m=2 para n=9 — passou localmente; PR pendente
+## Transição do nó m=2 para n=9 — passou e foi integrada pela PR #257; C5 parcial
 
 `SigmaC5M2TaylorStateStage9Certificate.lean` compilou em Lean 4.32.0 com
 `warningAsError=true`, Geometry e Carry nos pins indicados no README. O build
@@ -10,7 +10,10 @@ comando em `evidence/rational-boxes/c5-m2-dirichlet-term-stage9-20261107/`.
 
 A prova valida somente `c5RoundedExpStateC` até `n=9` no nó `(2/5,0)`. Estados
 seguintes, quadraturas, caixa completa, ponte CSV–Lean, inclusão da fonte C2 e
-sinais finais continuam abertos. C5 permanece incompleta.
+sinais finais continuam abertos. A PR #257 integrou o commit de prova
+`62c9fbd7b04034f21ccf0336abf0d83d8c6a6592` no merge
+`9655308b17dbf565d272f7578545bb68b7b0b867`; o GitHub não reportou checks
+hospedados. C5 permanece incompleta.
 
 ## Transição do nó m=2 para n=8 — passou e foi integrada pela PR #255; C5 parcial
 
