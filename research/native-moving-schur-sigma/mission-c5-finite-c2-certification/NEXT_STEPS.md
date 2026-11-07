@@ -1,17 +1,19 @@
 # Próximos passos — C5
 
-## Atualização — estágio Taylor 10 compilado localmente; PR pendente
+## Atualização — estágio Taylor 10 integrado pela PR #259
 
 `c5RoundedExpStateC_stage10_correct` passou em Lean 4.32.0 com
 `warningAsError=true`; cinco declarações auditadas dependem somente de axiomas
 padrão. A evidência está em
+A PR #259 integrou o commit de prova
+`5dd4f4874a192e83af26640f412f81f42239487b` no merge
+`d68eec91118e2cdcb89fced66a14062ef6170cf9`; o GitHub não reportou checks
+hospedados. O checkpoint cobre apenas `n≤10` no nó `(2/5,0)`. Evidência em
 `evidence/rational-boxes/c5-m2-dirichlet-term-stage10-20261107/README.md`.
-Este checkpoint cobre apenas `n≤10` no nó `(2/5,0)`.
 
-1. Publicar a transição `n=9→10` e registrar seu merge.
-2. Estender a recorrência para `n=11` e seguir até `n=192`.
-3. Certificar as quadraturas e a caixa nodal completa.
-4. Provar a ponte CSV–Lean, as inclusões da fonte C2 e os sinais finais.
+1. Estender a recorrência para `n=11` e seguir até `n=192`.
+2. Certificar as quadraturas e a caixa nodal completa.
+3. Provar a ponte CSV–Lean, as inclusões da fonte C2 e os sinais finais.
 
 C5 continua incompleta.
 

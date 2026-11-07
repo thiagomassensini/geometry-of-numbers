@@ -1,6 +1,6 @@
 # C5 — mapa dos teoremas e obrigações
 
-## Recorrência nodal m=2 até n=10 (validada localmente; PR pendente)
+## Recorrência nodal m=2 até n=10 (PR #259 integrada; C5 parcial)
 
 `SigmaC5M2TaylorStateStage10Certificate.lean` prova
 `c5RoundedExpStateC_stage10_correct` para `(a,j)=(2/5,0)`, importando o estado
@@ -9,9 +9,12 @@ coeficiente `1/362880`, o arredondamento e a soma. Lean 4.32.0 com
 `warningAsError=true` passou; a auditoria usa somente axiomas padrão. Evidência
 em `evidence/rational-boxes/c5-m2-dirichlet-term-stage10-20261107/`.
 
-Este checkpoint ainda não foi publicado. Não fecha `n=192`, os outros nós,
-quadraturas, caixa completa, inclusão dos coeficientes C2 originais nem os
-sinais finais. Próximo estado: `n=11`.
+A PR #259 integrou o commit de prova
+`5dd4f4874a192e83af26640f412f81f42239487b` no merge
+`d68eec91118e2cdcb89fced66a14062ef6170cf9`; o GitHub não reportou checks
+hospedados. Não fecha `n=192`, os outros nós, quadraturas, caixa completa,
+inclusão dos coeficientes C2 originais nem os sinais finais. Próximo estado:
+`n=11`.
 
 ## Recorrência nodal m=2 até n=9 (PR #257 integrada; C5 parcial)
 

@@ -1,10 +1,10 @@
 # Retomar primeiro — missão C5
 
-## Retomada mais recente — nó m=2, transição Taylor n=9→10 validada localmente
+## Retomada mais recente — nó m=2, transição Taylor n=9→10 integrada pela PR #259
 
 ```text
 MISSION: C5 — certificar as janelas negativas da fonte C2 original.
-CHECKPOINT: local, PR e merge pendentes.
+PROOF PR: #259, commit de prova 5dd4f4874a192e83af26640f412f81f42239487b, merge d68eec91118e2cdcb89fced66a14062ef6170cf9.
 BASE MAIN: 72d91196e14289f1818e33b539776f6fa80f8413 (PR #258 integrada).
 LAST VERIFIED THEOREM: c5RoundedExpStateC_stage10_correct.
 LAST COMPILED FILE: SigmaC5M2TaylorStateStage10Certificate.lean (Lean 4.32.0, warnings como erros).
@@ -14,7 +14,7 @@ OPEN: n=11…192, outros nós, quadraturas, caixa completa, ponte CSV–Lean, in
 EVIDENCE: evidence/rational-boxes/c5-m2-dirichlet-term-stage10-20261107/README.md.
 PINS: Geometry bf76ce8f5bb753b377a12ba6dbd5c397e4fb3; Carry 045369f6dedcb2e75e9aefed1d12c9f73b9a2532; Lean 4.32.0.
 EXPORT: probe #eval fornece dados; a igualdade está demonstrada no certificado Lean.
-NEXT: publicar a etapa; continuar em n=11 depois do merge.
+NEXT: continuar a recorrência do nó m=2 em n=11.
 DO NOT REPEAT: C1B/C2/C3/C4; migração geral para Lean 4.35; prova monolítica dos 192 passos.
 ```
 
