@@ -1,6 +1,6 @@
 # C5 — checkpoints
 
-## 2026-11-07 — caixa exponencial de estágio 2 provada (publicação pendente)
+## 2026-11-07 — caixa exponencial de estágio 2 provada e integrada (PR #226)
 
 - `c5ZeroExpStage2_eq` prova que `c5RoundedExpC 192 896 2` na entrada zero é
   exatamente `c5ZeroExpStage2Export`; quatro lemas verificam os pisos/tetos da
@@ -9,8 +9,11 @@
   passaram; somente `propext`, `Classical.choice` e `Quot.sound` aparecem.
 - Logs, pins, hashes e comandos estão em
   `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
-- O checkpoint ainda não foi publicado. A igualdade do estágio 2 não fecha a
-  ponte CSV–Lean ou as inclusões O3; C5 permanece incompleta.
+- PR #226 integrou o checkpoint: commit de prova
+  `ab0f2782369e7f0966fa6c769d23ca18ea9abb1f`, merge
+  `96579150be6700793970bf8cd84f91dd2cccb102`. O GitHub não reportou checks.
+- A igualdade do estágio 2 não fecha a ponte CSV–Lean ou as inclusões O3; C5
+  permanece incompleta.
 
 ## 2026-11-07 — caixa exponencial de estágio 1 provada e integrada (PR #224)
 

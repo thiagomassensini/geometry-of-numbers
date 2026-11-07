@@ -65,7 +65,9 @@ declarações passaram em Lean 4.32.0; somente `propext`, `Classical.choice` e
 `Quot.sound` aparecem. Logs, pins e hashes estão em
 `SigmaC5ZeroExpStagesCertificate.stage2-build.log`,
 `SigmaC5ZeroExpStagesCertificate.stage2-axioms.log`, `stage2-pins.txt` e
-`stage2-sha256.txt`. A publicação deste subpasso ainda está pendente.
+`stage2-sha256.txt`. A PR #226 integrou esse subpasso, commit de prova
+`ab0f2782369e7f0966fa6c769d23ca18ea9abb1f`, merge
+`96579150be6700793970bf8cd84f91dd2cccb102`; o GitHub não reportou checks.
 
 ## Pins e reprodução
 

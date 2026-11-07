@@ -33,7 +33,9 @@ O estágio 2 agora também passou: `c5ZeroExpStage2_eq` coincide com
 `c5ZeroExpStage2Export`; quatro novos lemas certificam os pisos/tetos por
 desigualdades racionais exatas. Build limpo e auditoria das onze raízes
 passaram em Lean 4.32.0, somente com axiomas padrão. Evidências e hashes estão
-no mesmo diretório. Este subpasso ainda aguarda publicação.
+no mesmo diretório. A PR #226 integrou o subpasso, commit de prova
+`ab0f2782369e7f0966fa6c769d23ca18ea9abb1f`, merge
+`96579150be6700793970bf8cd84f91dd2cccb102`; o GitHub não reportou checks.
 
 ## Componente `log 2` em blocos — PASSOU; C5 permanece parcial
 
