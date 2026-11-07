@@ -1,5 +1,19 @@
 # C5 — checkpoints
 
+## 2026-11-07 — transição m=2, n=6→7 validada localmente; PR pendente
+
+- `c5RoundedExpStateC_stage7_correct` prova a transição seguinte no nó
+  `(a,j)=(2/5,0)`, incluindo o produto de sinais não-negativos/não-positivos,
+  a escala `1/6! = 1/720`, os arredondamentos e a soma racional.
+- Lean 4.32.0 com `warningAsError=true` passou; as cinco raízes auditadas
+  usam somente axiomas padrão.
+- A fonte, o probe de exportação, os logs e os checksums estão em
+  `evidence/rational-boxes/c5-m2-dirichlet-term-stage7-20261107/`.
+- O checkpoint é local e ainda não tem PR ou merge. Ele cobre somente `n≤7`
+  de um nó; não cobre os estados seguintes, quadraturas, caixa completa,
+  inclusões da fonte C2 ou sinais finais. Próximo: publicar a etapa e avançar
+  para `n=8`.
+
 ## 2026-11-07 — transição m=2, n=5→6 integrada pela PR #251
 
 - `c5RoundedExpStateC_stage6_correct` prova a próxima transição da recorrência
