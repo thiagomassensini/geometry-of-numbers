@@ -1,5 +1,26 @@
 # C5 — validação
 
+## Cobertura zeta adaptativa dos 129 nós — PASSOU; C5 parcial
+
+`SigmaC5RationalNodeLogBounds.lean` e `SigmaC5RationalNodeInstantiate.lean`
+constroem as condições do avaliador de log/exp para `1≤m≤100` e provam
+`c5RationalZetaAdaptiveNodeBox_contains_at` para cada `j≤128`, com
+`b=j/100000` e `a∈[2/5,3/5]`. O teorema conjugado cobre parte imaginária
+negativa. A caixa conserva a cauda Euler–Maclaurin exata, limitada por
+`<10^-250`.
+
+A compilação limpa em Lean 4.32, com warnings como erros, terminou com
+`BUILD_EXIT=0` para os nove módulos da cadeia. O checker fail-closed aceitou 21
+raízes; aparecem somente `propext`, `Classical.choice` e `Quot.sound`. Logs,
+hashes, pins, comando de reprodução e tentativas anteriores estão no registro
+`evidence/rational-boxes/c5-adaptive-zeta-node-instantiation-validation.md`.
+
+Este checkpoint ainda não exporta extremos numéricos achatados nem compõe
+Gamma, o fator dependente de π e a fonte C2; não prova as inclusões O3 e não
+fecha C5. O código foi preparado em branch local com base no merge da PR #208
+`296e899e70bee78c54a3278e73e9bd89eaafaa58`, ainda sem publicação neste
+registro.
+
 ## Avaliador racional genérico de zeta — PROVADO CONDICIONALMENTE
 
 O build limpo de `SigmaC5RationalNodeEval.lean` e

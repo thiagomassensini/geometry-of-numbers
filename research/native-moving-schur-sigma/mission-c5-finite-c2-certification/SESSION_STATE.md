@@ -1,11 +1,36 @@
 # C5 — estado da sessão
 
+## Snapshot atual — cobertura formal dos 129 nós de zeta (checkpoint local)
+
+**Atualizado:** 2026-11-07 UTC. A branch local
+`codex/c5-node-instantiation-20261107` parte da `main` no merge da PR #208,
+`296e899e70bee78c54a3278e73e9bd89eaafaa58`. O código deste checkpoint ainda
+está local e não publicado. A compilação limpa dos módulos
+`SigmaC5RationalNodeLogBounds`, `SigmaC5RationalNodeInstantiate` e da auditoria
+passou em Lean 4.32 com `warningAsError=true`; o checker fail-closed aceitou
+21 raízes com apenas `propext`, `Classical.choice` e `Quot.sound`.
+
+`c5RationalZetaAdaptiveNodeBox_contains_at` inclui zeta nos nós
+`b=j/100000`, `0≤j≤128`, para `a∈[2/5,3/5]`; o teorema conjugado cobre a parte
+imaginária negativa. A escala adaptativa prova `m/2^k∈[1/2,1]` e os limites
+de log/exp necessários; a cauda Euler–Maclaurin `<10^-250` permanece na caixa.
+Logs limpos, hashes, pins, reprodução e falhas anteriores estão em
+`evidence/rational-boxes/c5-adaptive-zeta-node-instantiation-validation.md`
+e na pasta `c5-node-instantiation-clean-20261107/`.
+
+C5 ainda está incompleta: não há extremos racionais achatados, composição com
+Gamma, fator de π e expressão da fonte C2, nem prova das inclusões dos
+coeficientes nas caixas O3. Próxima obrigação: instanciar precisão e achatar as
+caixas, compor a fonte original mantendo sua cabeça e cauda, provar as duas
+inclusões O3 e então auditar os sinais. A lei distância × profundidade e os
+novos cadernos continuam adiados.
+
 **Atualizado:** 2026-11-07
 **Última integração de código:** PR #207, commit de prova
 `fb8bb31ed1fcbb4d1d9c88aceea1dd83539935df`, merge
 `27a61e6bebcce178b81b961f507400ed77b96d3b`. O avaliador zeta está integrado;
 O4/C5 continua explicitamente incompleta.
-**Status atual:** C1–C4, O3, a ponte Gamma de núcleo racional e o checkpoint Euler–Maclaurin de ordem alta estão integrados. A PR #198, commit de prova `a1646a1837603aee7d03384016ae514a7f7c820a`, foi mesclada na `main` em `36cba9d805bc3274538cdc93bd0a3702154edcb2`; a PR #205, commit de prova `61ddab8dbd5e669b2185a23c0900d2cba22dbf7a`, foi mesclada em `b56a90bceac12248bc5b8e6c2a247849ec885d6e`. O4/C5 segue aberta: ainda não há avaliações certificadas nos 129 nós nem inclusão formal dos coeficientes C2 nas caixas.
+**Integrações anteriores:** C1–C4, O3, a ponte Gamma de núcleo racional e o checkpoint Euler–Maclaurin de ordem alta estão integrados. A PR #198, commit de prova `a1646a1837603aee7d03384016ae514a7f7c820a`, foi mesclada na `main` em `36cba9d805bc3274538cdc93bd0a3702154edcb2`; a PR #205, commit de prova `61ddab8dbd5e669b2185a23c0900d2cba22dbf7a`, foi mesclada em `b56a90bceac12248bc5b8e6c2a247849ec885d6e`. O checkpoint local atual cobre zeta nos 129 nós, mas O4/C5 segue aberta: falta compor a fonte original e provar a inclusão formal dos coeficientes C2 nas caixas.
 
 **Checkpoint integrado — avaliador racional genérico (PR #207):** o commit de
 prova `fb8bb31ed1fcbb4d1d9c88aceea1dd83539935df` foi mesclado na `main` em
@@ -58,7 +83,7 @@ compilação limpa e a auditoria local estão registradas em
 
 **Checkpoint integrado — fator de completação dependente de π (PR #195):** `SigmaC5PiInterval.lean` transforma a faixa racional de π em faixa intervalar de `log π` com o `Interval.log1` certificado. `SigmaC5PiExp.lean` transporta essa faixa ao fator original `Complex.exp (-(s/2) * log π)` via `expCr`, para qualquer caixa `s` com o limite de norma exigido. Build limpo e auditoria das cinco raízes passaram em Lean 4.32; apenas axiomas padrão aparecem. PR #195, commit de prova `321ae94`, merge na `main` `0032b10295bfeaadb29d0387f9b99dde9b160ac3`. Logs, pins, hashes e comando estão em `evidence/rational-boxes/c5-pi-completion-factor-validation.md`. Este subpasso não avalia Gamma, a cauda C2 ou os 129 nós.
 
-**Próxima etapa de O4:** instanciar as condições `hhead`/`hbase` do avaliador para `j=0,…,128`, `b=j/100000` e as partes reais `2/5`, `901/2000`, `1099/2000` e `3/5`; extrair retângulos racionais concretos. Depois, combinar zeta, Gamma, fator dependente de π e a fonte C2 original, mantendo sua cabeça e cauda exata, para provar as inclusões O3. A validação genérica local está em `evidence/rational-boxes/c5-rational-node-evaluator-validation.md`; a análise inicial da rota de ordem 4 está em `c5-original-source-zeta-route-audit.md`. O4/C5 continua aberta.
+**Próxima etapa registrada na integração da PR #207 (superada):** instanciar as condições `hhead`/`hbase` do avaliador para `j=0,…,128`, `b=j/100000` e as partes reais `2/5`, `901/2000`, `1099/2000` e `3/5`; extrair retângulos racionais concretos. Essa cobertura de zeta foi provada no checkpoint local descrito acima. Ainda falta combinar zeta, Gamma, fator dependente de π e a fonte C2 original, mantendo sua cabeça e cauda exata, para provar as inclusões O3.
 
 **Checkpoint de graus 2–14 (2026-11-06):** `c5LagrangeBasis_zeroIndex_coeff_abs_le_two_pow`, `c5LagrangeBasis_nonzeroIndex_coeff_abs_le_weight`, `c5InterpolationCoeffAbsSum_le_four_mul_two_pow` e `c5InterpolationWeightSum_lt_ten_145` formalizam a cota uniforme simbólica. Build limpo: `c5-interpolation-degree2-14-final-clean-build.log`, `BUILD_EXIT=0`. A auditoria das 23 raízes aceita apenas `propext`, `Classical.choice` e `Quot.sound`; logs e hashes estão preservados. O checkpoint permanece explicitamente incompleto e não prova inclusão de caixas.
 **Checkpoint de grau um (2026-11-06):** a alteração simbólica de `SigmaRationalInterpolation.lean` passou build Lean 4.32 limpo e auditoria fail-closed de 21 raízes. Logs e hashes estão em `evidence/rational-boxes/degree1-weight-bound-validation.md`; tentativas anteriores incompletas e a prova rejeitada com `native_decide` foram mantidas como histórico.

@@ -1,0 +1,5 @@
+'SigmaC5Gamma.ratComplexToComplex_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SigmaC5Gamma.ratComplexToComplex_inv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SigmaC5Gamma.gammaFinite_eq_rationalCore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SigmaC5Gamma.gammaFiniteInterval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SigmaC5Gamma.gamma3072Interval_contains' depends on axioms: [propext, Classical.choice, Quot.sound]

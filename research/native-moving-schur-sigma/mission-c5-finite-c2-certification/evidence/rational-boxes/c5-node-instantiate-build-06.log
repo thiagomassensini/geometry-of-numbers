@@ -1,0 +1,13 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:198:43: error: mod_cast has type
+  (2 : ℚ) / 5 ≤ a
+but is expected to have type
+  (2 : ℝ) / 5 ≤ ↑a
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:199:37: error: mod_cast has type
+  a ≤ 3 / 5
+but is expected to have type
+  ↑a ≤ 3 / 5
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:203:4: error: mod_cast has type
+  ↑j / 100000 ≤ 128 / 100000
+but is expected to have type
+  ↑(↑j / 100000) ≤ 128 / 100000
+BUILD_EXIT=1

@@ -1,0 +1,31 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:242:60: error: unsolved goals
+nExp p j : ℕ
+a : ℚ
+hnExp : 0 < nExp
+hj : j ≤ 128
+haLo : 2 / 5 ≤ a
+haHi : a ≤ 3 / 5
+s : ℂ := ↑a + ↑(↑j / 100000) * Complex.I
+⊢ ↑a + -(↑j / 100000 * Complex.I) = ↑a - ↑j / 100000 * Complex.I
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:251:4: error(lean.unknownIdentifier): Unknown identifier `ZetaAsymptotics.riemannZeta_conj`
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:252:12: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  star (riemannZeta s)
+in the target expression
+  (c5ComplexIntervalConjugateBox (c5RationalZetaAdaptiveNodeBox nExp p a (↑j / 100000))).contains (riemannZeta (star s))
+
+nExp p j : ℕ
+a : ℚ
+hnExp : 0 < nExp
+hj : j ≤ 128
+haLo : 2 / 5 ≤ a
+haHi : a ≤ 3 / 5
+s : ℂ := ↑a + ↑(↑j / 100000) * Complex.I
+hs : star s = ↑a - ↑(↑j / 100000) * Complex.I
+hpositive :
+  (c5RationalZetaAdaptiveNodeBox nExp p a (↑j / 100000)).contains (riemannZeta (↑a + ↑(↑j / 100000) * Complex.I))
+hpositive' : (c5RationalZetaAdaptiveNodeBox nExp p a (↑j / 100000)).contains (riemannZeta s)
+hconj :
+  (c5ComplexIntervalConjugateBox (c5RationalZetaAdaptiveNodeBox nExp p a (↑j / 100000))).contains (star (riemannZeta s))
+hzeta : riemannZeta (star s) = star (riemannZeta s)
+⊢ (c5ComplexIntervalConjugateBox (c5RationalZetaAdaptiveNodeBox nExp p a (↑j / 100000))).contains (riemannZeta (star s))
+BUILD_EXIT=1

@@ -1,28 +1,24 @@
 # Próximos passos — C5
 
-**Estado:** a PR #207 integrou o avaliador racional genérico de zeta e levou
-a `main` ao merge `27a61e6bebcce178b81b961f507400ed77b96d3b`. O avaliador foi integrado como
-checkpoint explicitamente incompleto; C5 permanece parcial. C2/C3 da missão
-de negatividade já estão concluídas; este trabalho segue na certificação
-finita C5. Não há PR aberta para este checkpoint.
+**Estado atual:** a PR #208 está integrada em `main` no merge
+`296e899e70bee78c54a3278e73e9bd89eaafaa58`. O novo checkpoint da cobertura
+adaptativa dos 129 nós compila e passa a auditoria local, mas ainda não foi
+publicado. C2/C3 da missão de negatividade estão concluídas; a prioridade
+ativa é a certificação finita C5.
 
-1. `SigmaC5RationalNodeEval.lean` agora fatoriza exatamente a parte de
-   Bernoulli de `emZetaHighRHS 100 300` e prova uma caixa genérica para zeta,
-   sob condições explícitas. Instanciar `hhead` e `hbase` para os valores
-   `b=j/100000`, `0≤j≤128`, e as partes reais dos dois deslocamentos C2;
-   tratar as partes imaginárias negativas por conjugação, calcular os
-   retângulos racionais concretos e absorver a cauda `<10^-250`.
-2. Compor as caixas nodais com Gamma, o fator original dependente de π e a
-   fonte C2 original. Preservar a cabeça C2 mais a cauda exata e provar as
-   inclusões em `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
-3. Só depois concluir os sinais C5 incondicionais e atualizar o estado final.
+1. Publicar pela sequência checkpoint → push → PR → merge a prova adaptativa
+   já compilada, seus logs, pins e auditoria. A revisão local está descrita em
+   `evidence/rational-boxes/c5-adaptive-zeta-node-instantiation-validation.md`.
+2. Escolher `nExp`/`p` para a precisão O3 e exportar os extremos racionais das
+   caixas de zeta nos nós. A cobertura de todos os `j=0,…,128` e a conjugação
+   já estão provadas em `c5RationalZetaAdaptiveNodeBox_contains_at` e
+   `c5RationalZetaAdaptiveNodeConjugateBox_contains_at`.
+3. Compor as caixas com Gamma, o fator original dependente de π e a expressão
+   da fonte C2; preservar a cabeça e a cauda exata; provar as inclusões em
+   `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
+4. Auditar os teoremas finais de sinal C5 depois das duas inclusões.
 
-O avaliador genérico, a auditoria local e a publicação pela PR #207 (commit de
-prova `fb8bb31ed1fcbb4d1d9c88aceea1dd83539935df`, merge
-`27a61e6bebcce178b81b961f507400ed77b96d3b`) estão documentados em
-`evidence/rational-boxes/c5-rational-node-evaluator-validation.md`; ainda não
-há nenhum nó instanciado nem inclusão de coeficientes provada.
-
-Continuam adiados a lei quantitativa distância × profundidade e os novos
-cadernos. Não é necessário calcular a primeira profundidade de falha para a
-negatividade eventual já concluída em C2.
+Ainda não há inclusão dos coeficientes C2 nas caixas O3, então os sinais C5
+continuam condicionais. A lei quantitativa distância × profundidade e os
+novos cadernos ficam para depois; não é necessário calcular a primeira
+profundidade de falha para provar a negatividade eventual já concluída em C2.

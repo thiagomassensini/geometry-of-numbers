@@ -1,0 +1,34 @@
+'CarrySigmaObstruction.c5RatComplexToComplex_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatPochhammer_toComplex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionTerm_toComplex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatCorrectionSum_toComplex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RatScale_toComplex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5_emZetaHighRHS_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5ComplexIntervalRangeSum_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RationalZetaHeadBox_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RationalZetaBasePowerBox_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RationalZetaNodeBox_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5AdaptiveLogScaleValid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5LogQAdaptiveAbsBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5AdaptiveProductNormBoundLeFour' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RationalZetaAdaptiveTermSide' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5RationalZetaAdaptiveHeadBox_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5RationalZetaAdaptiveBasePowerBox_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5RationalZetaAdaptiveNodeBox_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5RationalZetaAdaptiveNodeBox_contains_at' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5AdaptiveLogScaleReducedRange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.c5ComplexIntervalConjugateBox_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5RationalZetaAdaptiveNodeConjugateBox_contains_at' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+BUILD_EXIT=0

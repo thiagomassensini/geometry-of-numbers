@@ -1,0 +1,25 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:130:53: error: Application type mismatch: The argument
+  hside.right.right
+has type
+  ((exact a b).neg.mul
+        { re := Interval.logQ 128 (c5AdaptiveLogScale (i + 1)) ↑(i + 1), im := Interval.exact 0 }).normBound ≤
+    2 ^ 2
+but is expected to have type
+  ((exact a b).neg.mul
+        { re := Interval.logQ 128 (c5AdaptiveLogScale (i + 1)) ↑(i + 1), im := Interval.exact 0 }).normBound ≤
+    2 ^ kE
+in the application
+  contains_dirichletTermBox2 ?m.106 hnExp ?m.108 (c5ExactRatPoint_contains a b) hside.left hside.right.left
+    hside.right.right
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:151:53: error: Application type mismatch: The argument
+  hside.right.right
+has type
+  ((exact a b).neg.mul { re := Interval.logQ 128 (c5AdaptiveLogScale 100) ↑100, im := Interval.exact 0 }).normBound ≤
+    2 ^ 2
+but is expected to have type
+  ((exact a b).neg.mul { re := Interval.logQ 128 (c5AdaptiveLogScale 100) ↑100, im := Interval.exact 0 }).normBound ≤
+    2 ^ kE
+in the application
+  contains_dirichletTermBox2 ?m.67 hnExp ?m.69 (c5ExactRatPoint_contains a b) hside.left hside.right.left
+    hside.right.right
+BUILD_EXIT=1

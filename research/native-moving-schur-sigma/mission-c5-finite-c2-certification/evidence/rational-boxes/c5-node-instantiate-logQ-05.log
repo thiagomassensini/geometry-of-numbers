@@ -1,0 +1,23 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:73:4: error: unsolved goals
+case hx
+a b : ℚ
+L : ZetaLean.Interval
+haLo : 2 / 5 ≤ a
+haHi : a ≤ 3 / 5
+hbLo : 0 ≤ b
+hbHi : b ≤ 128 / 100000
+hLLo : |L.lo| ≤ 5
+hLHi : |L.hi| ≤ 5
+hreal : |((Interval.exact (-a)).mul L).lo| ≤ |(-a)| * 5 ∧ |((Interval.exact (-a)).mul L).hi| ≤ |(-a)| * 5
+himag : |((Interval.exact (-b)).mul L).lo| ≤ |(-b)| * 5 ∧ |((Interval.exact (-b)).mul L).hi| ≤ |(-b)| * 5
+⊢ { lo := min (-(a * L.lo)) (-(a * L.hi)), hi := max (-(a * L.lo)) (-(a * L.hi)), le := ⋯ }.sub
+      { lo := 0, hi := 0, le := ⋯ } =
+    { lo := min (-(a * L.lo)) (-(a * L.hi)), hi := max (-(a * L.lo)) (-(a * L.hi)), le := ⋯ }
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:74:52: error: This simp argument is unused:
+  Interval.add
+
+Hint: Omit it from the simp argument list.
+  simp [ComplexInterval.neg, ComplexInterval.exact, Interval.exact, Interval.neg, I̵n̵t̵e̵r̵v̵a̵l̵.̵m̵u̵l̵,̵ ̵I̵n̵t̵e̵r̵v̵a̵l̵.̵a̵d̵d̵]̵I̲n̲t̲e̲r̲v̲a̲l̲.̲m̲u̲l̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+BUILD_EXIT=1

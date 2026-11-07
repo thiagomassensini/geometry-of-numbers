@@ -1,0 +1,43 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:12:46: error: unsolved goals
+case «1»
+m : ℕ
+hm0 : 1 ≤ 1
+hm100 : 1 ≤ 100
+⊢ False
+
+case «2»
+m : ℕ
+hm0 : 1 ≤ 2
+hm100 : 2 ≤ 100
+⊢ False
+
+case «3»
+m : ℕ
+hm0 : 1 ≤ 3
+hm100 : 3 ≤ 100
+⊢ False
+
+case «4»
+m : ℕ
+hm0 : 1 ≤ 4
+hm100 : 4 ≤ 100
+⊢ False
+
+case «5»
+m : ℕ
+hm0 : 1 ≤ 5
+hm100 : 5 ≤ 100
+⊢ False
+
+case «6»
+m : ℕ
+hm0 : 1 ≤ 6
+hm100 : 6 ≤ 100
+⊢ False
+
+case «7»
+m : ℕ
+hm0 : 1 ≤ 7
+hm100 : 7 ≤ 100
+⊢ False
+BUILD_EXIT=1

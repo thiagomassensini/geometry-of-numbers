@@ -1,0 +1,27 @@
+import SigmaC5RationalNodeEvalAudit
+import SigmaC5RationalNodeLogBounds
+import SigmaC5RationalNodeInstantiate
+
+open CarrySigmaObstruction
+
+#print axioms c5RatComplexToComplex_pow
+#print axioms c5RatPochhammer_toComplex
+#print axioms c5RatCorrectionTerm_toComplex
+#print axioms c5RatCorrectionSum_toComplex
+#print axioms c5RatScale_toComplex
+#print axioms c5_emZetaHighRHS_factor
+#print axioms c5ComplexIntervalRangeSum_contains
+#print axioms c5RationalZetaHeadBox_contains
+#print axioms c5RationalZetaBasePowerBox_contains
+#print axioms c5RationalZetaNodeBox_contains
+#print axioms c5AdaptiveLogScaleValid
+#print axioms c5LogQAdaptiveAbsBound
+#print axioms c5AdaptiveProductNormBoundLeFour
+#print axioms c5RationalZetaAdaptiveTermSide
+#print axioms c5RationalZetaAdaptiveHeadBox_contains
+#print axioms c5RationalZetaAdaptiveBasePowerBox_contains
+#print axioms c5RationalZetaAdaptiveNodeBox_contains
+#print axioms c5RationalZetaAdaptiveNodeBox_contains_at
+#print axioms c5AdaptiveLogScaleReducedRange
+#print axioms c5ComplexIntervalConjugateBox_contains
+#print axioms c5RationalZetaAdaptiveNodeConjugateBox_contains_at

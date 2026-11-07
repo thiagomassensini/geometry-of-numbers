@@ -1,0 +1,75 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:131:11: error: typeclass instance problem is stuck
+  IsStrictOrderedRing ?m.517
+
+Note: Lean will not try to resolve this typeclass instance problem because the first, second, and third type arguments to `IsStrictOrderedRing` contain metavariables. These arguments must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:136:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑(3 / 5)
+in the target expression
+  Type ?u.328
+
+nExp p : ℕ
+a b : ℚ
+haLo : 2 / 5 ≤ ↑a
+haHi : ↑a ≤ 3 / 5
+hbLo : 0 ≤ ↑b
+hbHi : ↑b ≤ 128 / 100000
+hden : (a - 1) ^ 2 + b ^ 2 ≠ 0
+hnExp : 0 < nExp
+s : ℂ := ⋯
+tail : ℂ := ⋯
+finite : ℂ := ⋯
+hsre : 2 / 5 ≤ s.re
+hsre' : s.re ≤ 3 / 5
+hsIm : |s.im| ≤ 128 / 100000
+hspos : 0 < s.re
+hsne : s ≠ 1
+hzeta : riemannZeta s = emZetaHighRHS 100 300 s
+hfactor :
+  emZetaHighRHS 100 300 (↑a + ↑b * Complex.I) =
+    ∑ i ∈ Finset.range 100, ↑i ^ (-(↑a + ↑b * Complex.I)) +
+        ↑100 ^ (-(↑a + ↑b * Complex.I)) * ratComplexToComplex (c5RatScale a b 300 100) -
+      ∑' (k : ℕ), emZetaHighBlock (↑a + ↑b * Complex.I) 300 ↑(k + 100)
+hfactor' : emZetaHighRHS 100 300 s = finite - tail
+hcastLo : ↑(2 / 5) = 2 / 5
+hcastHi : ↑(3 / 5) = 3 / 5
+hcastB : ↑(128 / 100000) = 128 / 100000
+haLoQ : 2 / 5 ≤ a
+⊢ Type ?u.328
+/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/SigmaC5RationalNodeInstantiate.lean:141:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ↑(128 / 100000)
+in the target expression
+  Type ?u.343
+
+nExp p : ℕ
+a b : ℚ
+haLo : 2 / 5 ≤ ↑a
+haHi : ↑a ≤ 3 / 5
+hbLo : 0 ≤ ↑b
+hbHi : ↑b ≤ 128 / 100000
+hden : (a - 1) ^ 2 + b ^ 2 ≠ 0
+hnExp : 0 < nExp
+s : ℂ := ⋯
+tail : ℂ := ⋯
+finite : ℂ := ⋯
+hsre : 2 / 5 ≤ s.re
+hsre' : s.re ≤ 3 / 5
+hsIm : |s.im| ≤ 128 / 100000
+hspos : 0 < s.re
+hsne : s ≠ 1
+hzeta : riemannZeta s = emZetaHighRHS 100 300 s
+hfactor :
+  emZetaHighRHS 100 300 (↑a + ↑b * Complex.I) =
+    ∑ i ∈ Finset.range 100, ↑i ^ (-(↑a + ↑b * Complex.I)) +
+        ↑100 ^ (-(↑a + ↑b * Complex.I)) * ratComplexToComplex (c5RatScale a b 300 100) -
+      ∑' (k : ℕ), emZetaHighBlock (↑a + ↑b * Complex.I) 300 ↑(k + 100)
+hfactor' : emZetaHighRHS 100 300 s = finite - tail
+hcastLo : ↑(2 / 5) = 2 / 5
+hcastHi : ↑(3 / 5) = 3 / 5
+hcastB : ↑(128 / 100000) = 128 / 100000
+haLoQ : 2 / 5 ≤ a
+haHiQ : a ≤ 3 / 5
+hbLoQ : 0 ≤ b
+⊢ Type ?u.343
+BUILD_EXIT=1
