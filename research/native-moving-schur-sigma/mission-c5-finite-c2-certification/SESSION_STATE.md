@@ -1,6 +1,6 @@
 # C5 — estado da sessão
 
-## Atualização — estágio Taylor 10 do nó m=2 validado localmente; PR pendente
+## Atualização — estágio Taylor 10 do nó m=2 integrado pela PR #259
 
 Na branch local `codex/c5-m2-stage10-20261107`, baseada na `main` após PR #258
 (`72d91196e14289f1818e33b539776f6fa80f8413`), foi provada
@@ -9,11 +9,13 @@ Na branch local `codex/c5-m2-stage10-20261107`, baseada na `main` após PR #258
 Carry indicados na evidência. As cinco declarações auditadas usam somente
 axiomas padrão, sem `sorryAx`. Fonte, probe, logs e hashes estão em
 `evidence/rational-boxes/c5-m2-dirichlet-term-stage10-20261107/`.
+O commit de prova `5dd4f4874a192e83af26640f412f81f42239487b` foi integrado pela
+PR #259 no merge `d68eec91118e2cdcb89fced66a14062ef6170cf9`; o GitHub não
+reportou checks hospedados.
 
-O checkpoint é somente `n≤10` para um nó, ainda sem PR. Os estados seguintes,
-demais nós, quadraturas, caixa completa, inclusão da fonte C2 e sinais finais
-continuam abertos. C5 permanece incompleta. Próximo: publicar esta etapa e
-continuar com `n=11`.
+O checkpoint cobre somente `n≤10` para um nó. Os estados seguintes, demais
+nós, quadraturas, caixa completa, inclusão da fonte C2 e sinais finais
+continuam abertos. C5 permanece incompleta. Próximo: continuar com `n=11`.
 
 ## Atualização — estágio Taylor 9 do nó m=2 integrado pela PR #257
 
