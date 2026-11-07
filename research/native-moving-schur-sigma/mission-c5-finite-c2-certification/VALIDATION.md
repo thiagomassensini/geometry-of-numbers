@@ -57,8 +57,11 @@ importa a prova integrada do estágio 3 e mostra que
 do estágio 3 e quatro certificam os pisos/tetos `2^896 - 11`, `2^896 + 15`,
 `-15` e `15`. Build e auditoria das nove raízes passaram em Lean 4.32.0,
 somente com axiomas padrão. Pins, hashes, logs e o erro inicial de import estão
-em `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`. A publicação do
-estágio 4 está pendente; C5 continua incompleta.
+em `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`. O estágio 4 foi
+integrado pela PR #230, commit de prova
+`fe2df2cd361d0d5096d6c4503468833e364b4481`, merge na `main`
+`f89cb99d6790bb2c84985c67022b8045a7fb181f`; o GitHub não reportou checks.
+C5 continua incompleta.
 
 ## Componente `log 2` em blocos — PASSOU; C5 permanece parcial
 

@@ -11,7 +11,7 @@
   de C2/C3; não é preciso calcular a primeira profundidade de falha para a
   negatividade eventual já provada.
 
-## Atualização mais recente — igualdade do estágio 4 (2026-11-07; publicação pendente)
+## Atualização mais recente — igualdade do estágio 4 integrada pela PR #230
 
 `SigmaC5ZeroExpStage4Certificate.lean` importa a prova integrada do estágio 3
 e prova que `c5RoundedExpC 192 896 4` na entrada zero coincide com
@@ -22,9 +22,11 @@ passaram; somente axiomas padrão aparecem. Pins, hashes, logs, comandos e o
 erro inicial de caminho de import estão em
 `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`.
 
-C5 continua incompleta: a ponte CSV–Lean, as inclusões dos coeficientes da
-fonte C2 nas caixas e os sinais finais seguem abertos. O estágio 4 aguarda
-publicação.
+O commit de prova `fe2df2cd361d0d5096d6c4503468833e364b4481` foi integrado pela
+PR #230, merge na `main`
+`f89cb99d6790bb2c84985c67022b8045a7fb181f`; o GitHub não reportou checks
+hospedados. C5 continua incompleta: a ponte CSV–Lean, as inclusões dos
+coeficientes da fonte C2 nas caixas e os sinais finais seguem abertos.
 
 ## Atualização anterior — igualdade do estágio 3 integrada pela PR #228
 

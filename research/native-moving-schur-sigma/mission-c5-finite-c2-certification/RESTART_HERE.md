@@ -1,6 +1,6 @@
 # Retomar primeiro — missão C5
 
-## Retomada mais recente — estágio 4 validado localmente
+## Retomada mais recente — estágio 4 integrado
 
 C1B/C2/C3 já estão integradas pelas PRs #155/#157/#159; não as refazer. A
 prioridade vigente é C5. O núcleo `m = 1` foi integrado pela PR #222, e as
@@ -15,19 +15,20 @@ ponte CSV–Lean e as inclusões dos coeficientes da fonte C2 nas caixas.
 
 `SigmaC5ZeroExpStage4Certificate.lean` importa o estágio 3 integrado e prova
 `c5ZeroExpStage4_eq`. O build e a auditoria das nove declarações passaram em
-Lean 4.32, somente com axiomas padrão. O estágio 4 está validado localmente e
-aguarda publicação; o erro inicial de import e os comandos estão preservados
-na evidência.
+Lean 4.32, somente com axiomas padrão. O estágio 4 foi integrado pela PR #230,
+commit de prova `fe2df2cd361d0d5096d6c4503468833e364b4481`, merge
+`f89cb99d6790bb2c84985c67022b8045a7fb181f`. O erro inicial de import, os
+comandos e os logs estão preservados na evidência.
 
-**Base de trabalho:** Geometry `main` após PR #229, merge
-`2e51137bc058dac3a3014b21143d121c6685faeb`, branch
-`codex/c5-zero-exp-stage4-20261107`.
+**Base de trabalho:** Geometry `main` após PR #230, merge
+`f89cb99d6790bb2c84985c67022b8045a7fb181f`, branch
+`codex/c5-zero-exp-stage4-state-after-merge-20261107`.
 
-Retomar publicando este checkpoint e avançando para o estágio 5 da exponencial
-arredondada. Builds, auditorias, pins, hashes, tentativas e sondas estão em
+Retomar provando e auditando o estágio 5 da exponencial arredondada. Builds,
+auditorias, pins, hashes, tentativas e sondas estão em
 `evidence/rational-boxes/c5-trivial-node-kernel-20261107/`. Depois, retomar a
 ponte CSV–Lean, compor a fonte C2 original e provar as inclusões O3. Os merges
-atuais fecham somente as igualdades dos estágios 1–3, não C5.
+atuais fecham somente as igualdades dos estágios 1–4, não C5.
 
 ## Retomada anterior — 2026-11-07 UTC, componente `log 2` certificado
 
