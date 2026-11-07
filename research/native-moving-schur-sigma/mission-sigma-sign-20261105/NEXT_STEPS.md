@@ -1,14 +1,14 @@
 # Próximos passos da missão
 
-**Estado conferido em 2026-11-07 contra `origin/main@24f61b01732f44599869350c4bf675c3f3a3dcb6`, após as PRs #240 e #241:** C0–C4 estão concluídos e integrados à `main`. C1B foi integrada pela PR #155 (merge `0586e238441096ecd2248e3f14bdac3a832af427`); C2 e C3 também estão integrados pelas PRs #157 e #159. Os módulos C2/C3 recompilaram em Lean 4.32 após o reinício; conferi que seus cinco módulos-fonte auditados não mudaram desde o snapshot compilado `b604c06dd0c13e7f77c65fb0634aa0b082d6c8d1`. A auditoria transitiva mais recente está em `evidence/c2-c3-current-main-20261107/`. As seções C2/C3 abaixo registram entregas concluídas, sem publicação pendente. A rota 4.32 publicada continua sendo a referência C2; o checkpoint 4.35 foi publicado pela PR #221 e continua preservado como validação incompleta. Retomar diretamente qualquer etapa posterior, sem repetir C0, C1, C1B, C2 ou C3.
+**Estado conferido em 2026-11-07 contra `origin/main@71721874eb01071a07c83e4f71117b7d662e1b53`, após a PR #283:** C0–C4 estão concluídos e integrados à `main`. C1B foi integrada pela PR #155 (merge `0586e238441096ecd2248e3f14bdac3a832af427`); C2 e C3 também estão integrados pelas PRs #157 e #159. Os módulos C2/C3 recompilaram em Lean 4.32 após o reinício. A comparação dos módulos auditados entre a ponta documental anterior `24f61b01732f44599869350c4bf675c3f3a3dcb6` e esta revisão não encontrou mudanças; a compilação e a auditoria transitiva arquivadas (133 raízes e 70.861 dependências) continuam aplicáveis. C1B, C2 e C3 não têm prova nem publicação pendente. A rota 4.32 publicada continua sendo a referência C2; o checkpoint 4.35 da PR #221 permanece preservado e incompleto. Retomar diretamente qualquer etapa posterior, sem repetir C0, C1, C1B, C2 ou C3.
 
 ## C2 — concluído e integrado
 
-1. Trabalhar sobre a integração Lean 4.32 publicada em `b9ce1955c1e8830afad2323afe5266ed3f5f35d9`, usando-a como referência e não iniciando a migração geral 4.35.
+1. A referência inicial foi a integração Lean 4.32 publicada em `b9ce1955c1e8830afad2323afe5266ed3f5f35d9`; não foi necessária migração geral para Lean 4.35.
 2. A junção foi compilada: `SigmaRHHeightBridge.lean` reutiliza a única definição de `CarrySigmaObstruction.sigmaLineZero` de C1. Também foram removidas duas provas strip-local duplicadas da bridge.
-3. O isolamento certificado, a decomposição exponencial completa do resto e o limite normalizado dos menores já foram compostos em
+3. O isolamento certificado, a decomposição exponencial completa do resto e o limite normalizado dos menores foram compostos em
    `∃ P : ℕ, ∀ p ≥ P, sigmaPadeD (1/5) p < 0`.
-4. Manter o resto analítico e as definições originais `completedSigmaLogJet` e `sigmaPadeD`. Não fechar o resultado adicionando hipóteses de sinal.
+4. O resultado preserva o resto analítico e as definições originais `completedSigmaLogJet` e `sigmaPadeD`, sem adicionar hipóteses de sinal.
 5. Integrado pela PR #157: commit de prova `bd1a6a04b8f98c33526059968c7fc079d48467f9`, merge na `main` `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`. Build e auditorias locais passaram; o GitHub não retornou status checks. Evidências: `evidence/c2-eventual-negativity/`.
 
 ## C3 — concluído e integrado

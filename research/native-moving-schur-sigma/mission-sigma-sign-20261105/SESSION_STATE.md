@@ -3,7 +3,7 @@
 **Atualizado:** 2026-11-07
 **Estado:** C0, C1, C1B, C2, C3 e C4 estão concluídos e integrados à `main`. A lei quantitativa distância × profundidade e os novos cadernos continuam adiados.
 
-**Conferência para retomada:** `origin/main@24f61b01732f44599869350c4bf675c3f3a3dcb6` contém as integrações publicadas C1B (#155), C2 (#157) e C3 (#159), além da reconciliação de estado pela PR #241; nenhuma tem publicação pendente. A revalidação após o reinício recompilou `SigmaRHHeightBridge.lean`, `SigmaHeight50Integration.lean`, os módulos finais C2/C3 e a auditoria em Lean 4.32; ela passou com 133 raízes públicas e 70.861 dependências. Reconfirmei que os cinco módulos-fonte auditados não mudaram entre a revisão validada `b604c06dd0c13e7f77c65fb0634aa0b082d6c8d1` e esta ponta da `main`; portanto a build e a auditoria salvas continuam aplicáveis. Logs, pins e hashes estão em `evidence/c2-c3-current-main-20261107/`. C1B foi integrado pela PR #155 no merge `0586e238441096ecd2248e3f14bdac3a832af427`. A integração publicada 4.32 continua sendo a referência C2; o checkpoint 4.35 foi publicado pela PR #221 e permanece explicitamente incompleto, sem migração geral de Geometry/Carry.
+**Conferência para retomada:** `origin/main@71721874eb01071a07c83e4f71117b7d662e1b53` contém as integrações publicadas C1B (#155), C2 (#157) e C3 (#159), além do checkpoint incompleto 4.35 (#221); nenhuma entrega C1B/C2/C3 está pendente. A revalidação após o reinício recompilou `SigmaRHHeightBridge.lean`, `SigmaHeight50Integration.lean`, os módulos finais C2/C3 e a auditoria em Lean 4.32; ela passou com 133 raízes públicas e 70.861 dependências. Os módulos C2/C3 auditados não mudaram entre a ponta documental anterior `24f61b01732f44599869350c4bf675c3f3a3dcb6` e esta revisão, portanto a compilação e a auditoria arquivadas continuam aplicáveis. Logs, pins e hashes estão em `evidence/c2-c3-current-main-20261107/`. C1B foi integrada pela PR #155 no merge `0586e238441096ecd2248e3f14bdac3a832af427`. A integração publicada 4.32 continua sendo a referência C2; a validação 4.35 permanece explicitamente incompleta, sem migração geral de Geometry/Carry.
 
 ## Base integrada
 
@@ -19,7 +19,7 @@
 **Concluído e integrado pela PR #157**, commit de prova `bd1a6a04b8f98c33526059968c7fc079d48467f9`, merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`. O corolário
 `exists_eventually_negative_sigmaPadeD_from_height50_certificate` foi acrescentado em
 `SigmaPadeEventualNegativity.lean` e prova o alvo abaixo sem hipóteses de sinal adicionais. A
-integração recompila os módulos compartilhados de C1 para reutilizar a definição única
+integração recompilou os módulos compartilhados de C1 para reutilizar a definição única
 `sigmaLineZero`; a duplicação de dois lemas strip-local da bridge também foi removida.
 Build Lean 4.32 e auditorias externa, de integração e transitiva passaram localmente. O GitHub
 não retornou status checks para a PR.
@@ -31,17 +31,17 @@ Resultado provado, nos momentos originais e sem hipótese adicional de sinal:
 ∃ P : ℕ, ∀ p ≥ P, sigmaPadeD (1/5) p < 0.
 ```
 
-A primeira referência é a integração Lean 4.32 publicada no commit
+A prova usa como primeira referência a integração Lean 4.32 publicada no commit
 `b9ce1955c1e8830afad2323afe5266ed3f5f35d9`, em especial
 `SigmaHeight50Integration.lean`, `SigmaRemainderDescent.lean` e
-`SigmaPadeConvergence.lean`. Reutilizar e compor:
+`SigmaPadeConvergence.lean`. A composição concluída reúne:
 
 - `exists_firstSigmaDisplacedProductIsolation_from_height50_certificate`;
 - `completedNative_sigmaRemainder_square_decomposition_of_isolation`;
 - `sigmaPadeNormalizedMinors_tendsto_of_unitCircle_twoPole_remainder`;
 - `sigmaPadeD_eventually_neg_of_normalized_limit`.
 
-Manter `completedSigmaLogJet` e `sigmaPadeD` originais, conservando o resto. Não inserir premissas de sinal para fechar o corolário. Ao reunir módulos, verificar e eliminar qualquer definição duplicada de `CarrySigmaObstruction.sigmaLineZero`.
+O corolário preserva `completedSigmaLogJet` e `sigmaPadeD` originais e conserva o resto; nenhuma premissa adicional de sinal foi inserida. Na junção, os módulos compartilhados de C1 foram recompilados e a definição duplicada de `CarrySigmaObstruction.sigmaLineZero` foi eliminada.
 
 ## C3 — concluído e integrado
 
