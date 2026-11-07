@@ -6,7 +6,7 @@
 - Lean 4.32.0, script `compile_sigma_pade.sh`, `warningAsError=true`; saída `BUILD_EXIT=0` registrada em `evidence/rational-boxes/c5-gamma-first-node-20261107/build-attempt11.log`.
 - Auditoria das raízes de inclusão: `propext`, `Classical.choice`, `Quot.sound`; sem `sorryAx`, axiomas próprios ou `native_decide`.
 - A caixa composta contém `Complex.Gamma (1/5 : ℂ)`, raio adicional `10⁻⁹⁹`.
-- Resultado ainda local no snapshot; não equivale à inclusão dos coeficientes C2. A fonte original e os sinais finais permanecem não certificados.
+- A PR #285 integrou o resultado no merge `832b201b6907c6682aa9657c3e4ff9da6dd40254`. A caixa não equivale à inclusão dos coeficientes C2; a fonte original e os sinais finais permanecem não certificados.
 
 ## Histórico — checkpoint do núcleo Gamma racional por blocos (PR #282)
 
