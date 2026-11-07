@@ -1,0 +1,7 @@
+'SigmaC5Zeta.emBernoulliCell' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SigmaC5Zeta.zeta_em_high_of_two_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SigmaC5Zeta.zeta_em_high' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SigmaC5Zeta.zeta_em_high_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SigmaC5Zeta.emZetaHighTail_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SigmaC5Zeta.emZetaHighTail_norm_le_node' depends on axioms: [propext, Classical.choice, Quot.sound]
+BUILD_EXIT=0

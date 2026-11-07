@@ -1,0 +1,14 @@
+import SigmaC5RationalNodeEval
+
+open CarrySigmaObstruction
+
+#print axioms c5RatComplexToComplex_pow
+#print axioms c5RatPochhammer_toComplex
+#print axioms c5RatCorrectionTerm_toComplex
+#print axioms c5RatCorrectionSum_toComplex
+#print axioms c5RatScale_toComplex
+#print axioms c5_emZetaHighRHS_factor
+#print axioms c5ComplexIntervalRangeSum_contains
+#print axioms c5RationalZetaHeadBox_contains
+#print axioms c5RationalZetaBasePowerBox_contains
+#print axioms c5RationalZetaNodeBox_contains

@@ -1,5 +1,23 @@
 # C5 — obrigações abertas
 
+## Snapshot mais recente — avaliador zeta genérico validado, sem caixas nodais
+
+`SigmaC5RationalNodeEval.lean` prova uma fatorização racional exata de
+`emZetaHighRHS 100 300` e um teorema genérico que inclui
+`riemannZeta(a+bi)` em `c5RationalZetaNodeBox`, desde que sejam fornecidas as
+condições explícitas de log/exp para os 99 termos da cabeça e para a potência
+de base 100. O resto analítico permanece inteiro e a inflação usada é
+`10^-250`. Build limpo Lean 4.32 e auditoria fail-closed de dez raízes passaram;
+somente axiomas padrão. Evidência e hashes:
+`evidence/rational-boxes/c5-rational-node-evaluator-validation.md`.
+
+**Ainda não há avaliações de nenhum dos 129 nós.** O primeiro próximo passo é
+instanciar essas condições para `b=j/100000`, `0≤j≤128`, nas partes reais dos
+argumentos da fonte C2; depois calcular os retângulos e compor Gamma, fator de
+π, cabeça e cauda C2. Nenhuma inclusão em `sigmaC00495SourceBoxes` ou
+`sigmaC01SourceBoxes` foi provada. O checkpoint é uma ponte condicional local,
+não O4 concluída; C5 continua parcial.
+
 ## Snapshot atual — ponte Gamma genérica integrada; avaliações ainda abertas
 
 A ponte integrada pela PR #198, `SigmaC5GammaRationalCore.lean`, separa `gammaFinite` em um

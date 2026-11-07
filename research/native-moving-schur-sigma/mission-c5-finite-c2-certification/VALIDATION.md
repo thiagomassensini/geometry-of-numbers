@@ -1,5 +1,21 @@
 # C5 — validação
 
+## Avaliador racional genérico de zeta — PROVADO CONDICIONALMENTE
+
+O build limpo de `SigmaC5RationalNodeEval.lean` e
+`SigmaC5RationalNodeEvalAudit.lean` passou em Lean 4.32, com warnings como
+erros. A auditoria de dez teoremas encontrou somente `propext`,
+`Classical.choice` e `Quot.sound`; o checker fail-closed passou. A fatorização
+de `emZetaHighRHS 100 300` mantém a soma de cauda explícita, e
+`c5RationalZetaNodeBox_contains` inclui zeta sob condições explícitas do
+avaliador `logQ`/`expCr`, inflando pela cota `<10^-250`.
+
+As condições de intervalo continuam sem instanciação concreta nos 129 nós.
+Este checkpoint não calcula caixas para Gamma ou para a fonte C2 e não prova
+as inclusões dos coeficientes nas caixas O3. Logs, pins, hashes e falha do
+primeiro comando de reprodução estão em
+`evidence/rational-boxes/c5-rational-node-evaluator-validation.md`.
+
 ## Reprodução das três caixas intervalares — PASSOU, condicional
 
 As três configurações prescritas foram executadas novamente em uma cópia

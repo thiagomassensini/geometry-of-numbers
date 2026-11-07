@@ -1,5 +1,28 @@
 # C5 — mapa dos teoremas e obrigações
 
+## Snapshot local de O4 — avaliador racional genérico de zeta
+
+Arquivo local: `research/native-moving-schur-sigma/SigmaC5RationalNodeEval.lean`
+na branch `codex/c5-rational-zeta-node-eval-20261106`; ainda não mesclado.
+
+| Declaração | Status, hipóteses e limite |
+|---|---|
+| `CarrySigmaObstruction.c5RatComplexToComplex_pow` | PROVADO: potências de pares racionais são preservadas pela conversão a `ℂ`. |
+| `CarrySigmaObstruction.c5RatPochhammer_toComplex` | PROVADO: Pochhammer finito racional complexo coincide com o coeficiente de Euler–Maclaurin em `ℂ`. |
+| `CarrySigmaObstruction.c5RatCorrectionTerm_toComplex` | PROVADO: cada correção de Bernoulli racional coincide com sua parcela complexa Euler–Maclaurin. |
+| `CarrySigmaObstruction.c5RatCorrectionSum_toComplex` | PROVADO: a soma finita das correções coincide com a soma em `ℂ`. |
+| `CarrySigmaObstruction.c5RatScale_toComplex` | PROVADO sob não anulação do denominador: a escala racional coincide com a escala analítica finita. |
+| `CarrySigmaObstruction.c5_emZetaHighRHS_factor` | PROVADO: para argumentos racionais, separa a cabeça finita, `100⁻ˢ` vezes a correção racional e a cauda exata EM. |
+| `CarrySigmaObstruction.c5ComplexIntervalRangeSum_contains` | PROVADO: soma finita de caixas contém a soma dos valores incluídos. |
+| `CarrySigmaObstruction.c5RationalZetaHeadBox_contains` | PROVADO CONDICIONALMENTE às hipóteses explícitas `hside` do avaliador de potências de Dirichlet. |
+| `CarrySigmaObstruction.c5RationalZetaBasePowerBox_contains` | PROVADO CONDICIONALMENTE à condição log/exp explícita para `m=100`. |
+| `CarrySigmaObstruction.c5RationalZetaNodeBox_contains` | PROVADO CONDICIONALMENTE para `2/5≤a≤3/5`, `0≤b≤128/100000` e as condições anteriores; contém `riemannZeta(a+bi)` após inflar o erro da cauda `<10^-250`. Não há instanciações nodais concretas. |
+
+O build limpo e o checker das dez raízes passaram em Lean 4.32; somente os
+axiomas padrão aparecem. Fonte, logs, pins, hashes e limite exato estão em
+`evidence/rational-boxes/c5-rational-node-evaluator-validation.md`. O módulo
+não compõe Gamma nem o escalar nativo C2 e não prova inclusões em O3.
+
 ## Snapshot atual — Gamma de núcleo racional integrada pela PR #198
 
 Arquivo integrado: `research/native-moving-schur-sigma/SigmaC5GammaRationalCore.lean`.
