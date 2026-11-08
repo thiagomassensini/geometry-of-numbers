@@ -1,11 +1,11 @@
 # Próximos passos — C5
 
-## Estado atual e próxima prova — prefixo Bernoulli de 128 entradas integrado pela PR #309 (2026-11-08)
+## Estado atual — prefixo Bernoulli de 160 entradas validado; integração pendente (2026-11-08)
 
-- `c5BernoulliPrimeTable_128_eq_data` prova os índices 0–127, apoiada no certificado integrado de 96 entradas. Commit de prova `b6f26114502116c65fe2482ebda3464e4b1fc645`; PR #309; merge `c7782c54b78f97b1ea3f5a61f6e0ceefe75f2f11`.
-- Reprodução limpa Lean 4.32.0 passou com `warningAsError=true`: quatro módulos terminaram com `BUILD_EXIT=0`; certificado em 1h15m45s, pico RSS 9.01 GiB; comparação racional exata de 601/601 valores; auditoria somente com `propext`, `Classical.choice` e `Quot.sound`.
-- Estado parcial: 128/601 igualdades estão provadas; 473 seguem abertas. A ponte formal das caixas CSV de zeta e as inclusões da fonte C5 continuam abertas.
-- **Próximo passo concreto:** provar `c5BernoulliPrimeTable_160_eq_data` a partir do prefixo 128; avançar em blocos até 601. Só então retomar a igualdade Lean da primeira caixa de zeta exportada. Evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix128-20261108/README.md`.
+- O prefixo 128 está integrado pela PR #309 (`c7782c54b78f97b1ea3f5a61f6e0ceefe75f2f11`). A prova `c5BernoulliPrimeTable_160_eq_data` em `SigmaC5BernoulliDataCertificate160.lean` compilou limpa e passou pela auditoria isolada dos axiomas em Lean 4.32.0.
+- A execução terminou com `EXIT=0`, `CLEAN_BUILD=PASS`, `AXIOM_AUDIT=PASS`; tempo 1h56m34s e pico RSS 12,572,772 KiB. As execuções interrompidas anteriores continuam registradas como tentativas sem resultado.
+- O estado formal é 160/601, com 441 igualdades abertas. A ponte das caixas CSV, inclusões da fonte e sinais finais também continuam abertas.
+- **Próxima ação concreta:** publicar por PR e integrar o prefixo 160; então iniciar a prova cumulativa do prefixo 192. Evidência, logs, auditoria, pins e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/README.md`.
 
 ## Histórico — prefixo Bernoulli de 64 entradas integrado (2026-11-08)
 

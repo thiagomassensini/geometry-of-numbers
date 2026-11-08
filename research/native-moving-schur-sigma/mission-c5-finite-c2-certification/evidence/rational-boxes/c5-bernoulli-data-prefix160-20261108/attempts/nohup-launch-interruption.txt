@@ -1,0 +1,7 @@
+Prefix-160 compile launch attempt 2 — detached child did not persist
+
+Launcher PID recorded: 14524
+Start timestamp recorded: 2026-11-08T08:49:19Z
+Observed immediately after the launcher returned: the PID was absent, no C5 Lean process existed, runner-status.txt still said RUNNING, the runner log and compile log were empty, and no .olean was produced. The script had created its empty output directory.
+
+Classification: launcher/process-group interruption before the Lean compile, not a proof result. The runner state and empty logs are preserved alongside this note. The next runner uses a detached tmux session, which remains queryable after the invoking command returns.

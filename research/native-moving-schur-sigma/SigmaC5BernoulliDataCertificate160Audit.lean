@@ -1,0 +1,3 @@
+import SigmaC5BernoulliDataCertificate160
+
+#print axioms CarrySigmaObstruction.c5BernoulliPrimeTable_160_eq_data

@@ -1,5 +1,13 @@
 # C5 — validação
 
+## Prefixo 160 — validação concluída; PR pendente (2026-11-08)
+
+- `c5BernoulliPrimeTable_160_eq_data` passou em reprodução limpa com Lean 4.32.0 e `warningAsError=true`: `BUILD_EXIT=0`, `CLEAN_BUILD=PASS`.
+- A auditoria isolada também passou: `AXIOM_AUDIT=PASS`; dependências axiomáticas somente `propext`, `Classical.choice`, `Quot.sound`; sem `sorryAx` ou axiomas próprios.
+- Tempo de compilação: 1h56m34s; pico RSS: 12,572,772 KiB (11.99 GiB). Auditoria: 4.23s, pico RSS 3,236,680 KiB. `sha256sum -c SHA256SUMS.txt` passou para todos os artefatos listados.
+- Duas execuções anteriores interrompidas continuam preservadas em `evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/attempts/`; não são falhas da prova. O auditor corrigido está no commit `3cea0c3`.
+- Resultado parcial em branch: 160/601 entradas formalmente certificadas; a ponte CSV–Lean, inclusões da fonte, 441 entradas e sinais finais continuam abertas. Integração PR/merge pendente.
+
 ## Validação recente — prefixo Bernoulli de 128 entradas (PR #309, 2026-11-08)
 
 - `c5BernoulliPrimeTable_128_eq_data` prova formalmente os índices 0–127 a partir do certificado integrado de 96 entradas.

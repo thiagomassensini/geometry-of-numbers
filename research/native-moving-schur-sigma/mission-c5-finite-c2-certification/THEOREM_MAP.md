@@ -1,5 +1,17 @@
 # C5 — mapa dos teoremas e obrigações
 
+## Prefixo Bernoulli com 160 entradas — provado e auditado nesta branch; PR pendente
+
+| Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |
+|---|---|---|---|---|
+| `CarrySigmaObstruction.c5BernoulliPrimeTable_160_eq_data` | `SigmaC5BernoulliDataCertificate160.lean` | nenhuma | entradas 0–159 da recorrência coincidem com `c5BernoulliPrimeDataPrefix160` | usa o prefixo integrado 128; **PROVADO e auditado em branch**, prova no commit `5f9cb0e`, auditor corrigido em `3cea0c3`; Lean 4.32 limpo, `warningAsError=true`, axiomas `propext`, `Classical.choice`, `Quot.sound`; PR/merge pendentes |
+
+O build limpo levou 1h56m34s com pico de 12,572,772 KiB; a auditoria isolada
+levou 4.23s. Logs, resultado, reprodutor e hashes estão em
+`evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/`. O avanço é
+parcial: 160/601 igualdades, 441 ainda abertas; zeta-box bridge, inclusões da
+fonte e sinais finais não são provados por este teorema.
+
 ## Prefixo Bernoulli com 128 entradas — integrado pela PR #309
 
 | Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |

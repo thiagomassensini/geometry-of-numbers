@@ -1,29 +1,32 @@
 # Retomar primeiro — missão C5
 
-## Estado atual — prefixo Bernoulli de 128 entradas integrado pela PR #309 (2026-11-08)
+## Estado atual — prefixo Bernoulli de 160 entradas validado; PR pendente (2026-11-08)
 
 ```text
 MISSION: C5 — certificar as janelas negativas da fonte C2 original.
 CURRENT PHASE: certificado formal dos dados da tabela usada pela avaliação de zeta.
-CURRENT SUBTASK: prove c5BernoulliPrimeTable_160_eq_data from the integrated 128-entry prefix.
-LAST VERIFIED THEOREM: CarrySigmaObstruction.c5BernoulliPrimeTable_128_eq_data.
-LAST COMPILED FILE: SigmaC5BernoulliDataCertificate128Audit.lean (Lean 4.32.0, warningAsError=true).
+CURRENT SUBTASK: integrate the validated prefix 160, then extend the cumulative proof to 192.
+LAST VERIFIED THEOREM: CarrySigmaObstruction.c5BernoulliPrimeTable_160_eq_data.
+LAST COMPILED FILE: SigmaC5BernoulliDataCertificate160Audit.lean (Lean 4.32.0, warningAsError=true).
 LAST SUCCESSFUL INTEGRATED PROOF: c5BernoulliPrimeTable_128_eq_data, proof commit b6f26114502116c65fe2482ebda3464e4b1fc645, PR #309, merge c7782c54b78f97b1ea3f5a61f6e0ceefe75f2f11.
-CURRENT MAIN SHA: c7782c54b78f97b1ea3f5a61f6e0ceefe75f2f11.
-OPEN PR: none.
-WHAT IS PROVED: indices 0–127 equal the first 128 rational data literals; clean build, exact 601-value table check, and isolated standard-axiom audit pass.
+CURRENT BRANCH: codex/c5-zeta-bernoulli-prefix160-20261108; proof commit 5f9cb0e, audit fix 3cea0c3, latest pre-result checkpoint 6f7e90844bde5d23652123b17d7c6f9b0b14ff3b.
+LAST REMOTE SHA: 6f7e90844bde5d23652123b17d7c6f9b0b14ff3b (confirmed equal to local before this state refresh).
+MAIN SHA: 9156f7e7363e7129a7a9c132a5f9a2276e4352cd.
+OPEN PR: none yet; create the proof-and-evidence PR after the checkpoint commit is pushed.
+ACTIVE BUILD: none. The completed tmux run is recorded in evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/runner-status.txt.
+WHAT IS PROVED: indices 0–159 equal the first 160 rational data literals; clean Lean 4.32 build and isolated standard-axiom audit pass. The exact 601-value table check inherited from prefix128 remains valid.
 WHAT IS CONDITIONAL: the final finite signs still depend on the unproved source-box inclusions sigmaC00495SourceBoxes and sigmaC01SourceBoxes.
-WHAT IS BLOCKED: no compiler blocker; the 473 remaining table equalities and the CSV–Lean zeta-box bridge remain open.
-EXACT NEXT COMMAND: create a branch from main@c7782c54b78f97b1ea3f5a61f6e0ceefe75f2f11 for the cumulative prefix160 proof.
-EXACT NEXT MATHEMATICAL OBLIGATION: prove c5BernoulliPrimeTable_160_eq_data from the 128-entry prefix; then finish 601 entries and resume the zeta-box bridge.
-DO NOT REPEAT: C1B/C2/C3/C4; the Bernoulli prefixes 32/64/96; the initial missing-prefix64 import failure; the invalid default-100000 simp attempt (preserved under attempts/).
+WHAT IS BLOCKED: the CSV–Lean zeta-box bridge and source inclusions remain open; 441 table equalities remain. Two earlier interrupted executions are preserved under this step's attempts/ directory and are not failures of the proof.
+EXACT NEXT COMMAND: git status --short; git rev-parse HEAD; git ls-remote origin refs/heads/codex/c5-zeta-bernoulli-prefix160-20261108
+EXACT NEXT MATHEMATICAL OBLIGATION: publish and merge the validated 160-entry checkpoint, then prove the cumulative prefix through 192.
+DO NOT REPEAT: C1B/C2/C3/C4; prefixes 32/64/96/128/160; the missing-prefix64 import failure; the invalid default-100000 simp attempt; either interrupted prefix160 execution. Do not relaunch the completed 160 build.
 ```
 
 The 128-entry run passed in Lean 4.32.0 with `warningAsError=true`; the audit
 accepts only `propext`, `Classical.choice` and `Quot.sound`. Build logs,
 verification output, errors from the earlier invalid attempts and hashes are
 in `evidence/rational-boxes/c5-bernoulli-data-prefix128-20261108/README.md`.
-This is still a partial data checkpoint: the other 473 equalities, zeta-box
+This is still a partial data checkpoint: the other 441 equalities, zeta-box
 bridge, source inclusions and final signs remain open. Do not reopen C1B/C2/C3/C4.
 
 ## Histórico — tabela de Bernoulli certificada até 64 entradas (2026-11-08)
