@@ -3,7 +3,7 @@
 ## Estado atual — prefixo Bernoulli de 160 entradas em compilação (2026-11-08)
 
 - Último resultado integrado: `CarrySigmaObstruction.c5BernoulliPrimeTable_128_eq_data`, PR #309, merge `c7782c54b78f97b1ea3f5a61f6e0ceefe75f2f11`.
-- `c5BernoulliPrimeTable_160_eq_data` está implementado em branch e em compilação Lean 4.32.0; nenhum log de sucesso ou auditoria 160 existe ainda. Sessão tmux: `c5-bernoulli-prefix160-20261108`; branch remota `codex/c5-zeta-bernoulli-prefix160-20261108`, checkpoint `dc5ee8b`.
+- `c5BernoulliPrimeTable_160_eq_data` está implementado em branch e em compilação Lean 4.32.0; nenhum log de sucesso ou auditoria 160 existe ainda. Sessão tmux: `c5-bernoulli-prefix160-20261108`. O commit `3cea0c3` corrigiu o auditor de axiomas para verificar o nome do teorema 160; o SHA remoto foi confirmado igual a `3cea0c387ff6e329c85255a41bc5e6de92318af5`.
 - Estado formal permanece 128/601 provado e 473 aberto. As inclusões `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes`, a ponte CSV–Lean e os sinais finais continuam abertos.
 - Evidência e instrução de retomada: `evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/README.md`; consulte o arquivo `runner-status.txt` antes de relançar.
 - Logs, pins, tentativas, comandos e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix128-20261108/README.md`.

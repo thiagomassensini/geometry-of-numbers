@@ -9,13 +9,14 @@ CURRENT SUBTASK: compile and audit c5BernoulliPrimeTable_160_eq_data from the in
 LAST VERIFIED THEOREM: CarrySigmaObstruction.c5BernoulliPrimeTable_128_eq_data.
 LAST COMPILED FILE: SigmaC5BernoulliDataCertificate128Audit.lean (Lean 4.32.0, warningAsError=true).
 LAST SUCCESSFUL INTEGRATED PROOF: c5BernoulliPrimeTable_128_eq_data, proof commit b6f26114502116c65fe2482ebda3464e4b1fc645, PR #309, merge c7782c54b78f97b1ea3f5a61f6e0ceefe75f2f11.
-CURRENT BRANCH: codex/c5-zeta-bernoulli-prefix160-20261108, latest checkpoint dc5ee8b.
+CURRENT BRANCH: codex/c5-zeta-bernoulli-prefix160-20261108; latest proof/runner checkpoint 3cea0c387ff6e329c85255a41bc5e6de92318af5.
+LAST REMOTE SHA: 3cea0c387ff6e329c85255a41bc5e6de92318af5 (confirmed equal to local before this state refresh).
 MAIN SHA: 9156f7e7363e7129a7a9c132a5f9a2276e4352cd.
 OPEN PR: none; the prefix160 proof is not validated.
 ACTIVE BUILD: tmux session c5-bernoulli-prefix160-20261108, pane PID 16470. State: evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/runner-status.txt.
 WHAT IS PROVED: indices 0–127 equal the first 128 rational data literals; clean build, exact 601-value table check, and isolated standard-axiom audit pass for prefix128.
 WHAT IS CONDITIONAL: the final finite signs still depend on the unproved source-box inclusions sigmaC00495SourceBoxes and sigmaC01SourceBoxes.
-WHAT IS BLOCKED: no mathematical/compiler error has been established for prefix160. Two earlier execution attempts were interrupted and are preserved under this step's attempts/ directory; 473 equalities and the CSV–Lean zeta-box bridge remain open.
+WHAT IS BLOCKED: no mathematical/compiler error has been established for prefix160. The axiom checker was corrected to match the prefix160 theorem in commit 3cea0c3. Two earlier execution attempts were interrupted and are preserved under this step's attempts/ directory; 473 equalities and the CSV–Lean zeta-box bridge remain open.
 EXACT NEXT COMMAND: cat research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/runner-status.txt; tmux has-session -t c5-bernoulli-prefix160-20261108
 EXACT NEXT MATHEMATICAL OBLIGATION: finish the current compile, audit #print axioms, and validate c5BernoulliPrimeTable_160_eq_data; then prove the next cumulative prefix and continue toward 601.
 DO NOT REPEAT: C1B/C2/C3/C4; prefixes 32/64/96/128; the missing-prefix64 import failure; the invalid default-100000 simp attempt; either interrupted prefix160 execution. Do not restart while runner-status is RUNNING.

@@ -5,6 +5,7 @@
 - O candidato `c5BernoulliPrimeTable_160_eq_data` ainda não tem compilação válida nem auditoria de axiomas; o estado continua 128/601.
 - A compilação atual está na sessão tmux `c5-bernoulli-prefix160-20261108`. Consulte `evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/runner-status.txt` antes de relançar.
 - Duas execuções anteriores foram interrompidas sem resultado do Lean e foram preservadas em `evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/attempts/`; não contam como aprovação ou contraexemplo.
+- O auditor de axiomas foi corrigido no commit `3cea0c3` para procurar `c5BernoulliPrimeTable_160_eq_data`; a prova e a auditoria ainda não terminaram.
 
 ## Validação recente — prefixo Bernoulli de 128 entradas (PR #309, 2026-11-08)
 

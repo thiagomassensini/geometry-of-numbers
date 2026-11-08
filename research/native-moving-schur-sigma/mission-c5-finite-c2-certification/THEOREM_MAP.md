@@ -4,7 +4,7 @@
 
 | Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |
 |---|---|---|---|---|
-| `CarrySigmaObstruction.c5BernoulliPrimeTable_160_eq_data` | `SigmaC5BernoulliDataCertificate160.lean` | nenhuma | entradas 0–159 da recorrência coincidem com `c5BernoulliPrimeDataPrefix160` | usa o teorema integrado de prefixo 128; **CANDIDATO, compilação e auditoria pendentes**, não contar como provado |
+| `CarrySigmaObstruction.c5BernoulliPrimeTable_160_eq_data` | `SigmaC5BernoulliDataCertificate160.lean` | nenhuma | entradas 0–159 da recorrência coincidem com `c5BernoulliPrimeDataPrefix160` | prova candidata no commit `5f9cb0e`; auditor de axiomas ajustado no commit `3cea0c3`; usa o teorema integrado de prefixo 128; **CANDIDATO, compilação e auditoria pendentes**, não contar como provado |
 
 O build está ativo na sessão tmux `c5-bernoulli-prefix160-20261108`; estado e
 evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/`.

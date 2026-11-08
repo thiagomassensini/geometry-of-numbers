@@ -3,10 +3,10 @@
 ## 2026-11-08 — prova do prefixo 160 em execução; resultado pendente
 
 - `SigmaC5BernoulliDataCertificate160.lean` contém uma prova candidata cumulativa apoiada no certificado 128 integrado. Ainda não há compilação nem auditoria válidas; o estado formal continua em 128/601.
-- Branch remota: `codex/c5-zeta-bernoulli-prefix160-20261108`; checkpoint atual `dc5ee8b` (`5f9cb0e` contém a prova candidata e o primeiro registro de tentativa). Base `main@9156f7e7363e7129a7a9c132a5f9a2276e4352cd`.
+- Branch remota: `codex/c5-zeta-bernoulli-prefix160-20261108`; SHA remoto confirmado `3cea0c387ff6e329c85255a41bc5e6de92318af5`. A prova candidata está em `5f9cb0e`; `dc5ee8b` tornou a execução retomável; `3cea0c3` corrigiu o auditor de axiomas para inspecionar o teorema 160. Base `main@9156f7e7363e7129a7a9c132a5f9a2276e4352cd`.
 - A reprodução está na sessão tmux `c5-bernoulli-prefix160-20261108`; PID de pane `16470`. Consulte `evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/runner-status.txt` e `run-state.txt` antes de qualquer nova execução.
 - Duas tentativas anteriores foram interrompidas sem resultado Lean e estão preservadas em `evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/attempts/`. Elas não contam como aprovação nem como falha matemática.
-- Próximo: aguardar a compilação 160; somente depois executar/verificar a auditoria, conferir os hashes, registrar tempos e então abrir PR. C5 permanece incompleta.
+- O verificador agora procura `c5BernoulliPrimeTable_160_eq_data`; a alteração está publicada em `3cea0c3`. Próximo: aguardar a compilação, conferir a auditoria, hashes e tempos, e então abrir PR. C5 permanece incompleta.
 
 ## 2026-11-08 — prefixo Bernoulli de 128 entradas integrado pela PR #309
 
