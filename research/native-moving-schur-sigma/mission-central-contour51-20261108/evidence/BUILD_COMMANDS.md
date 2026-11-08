@@ -192,4 +192,20 @@ exclusive output, and shared-library roots. The successful log was
 the checked-in copy is `C3_SigmaContour51ArbContourBridge-attempt42-success.log`. It exits 0 with
 warnings treated as errors, and `contour51OriginalResponse_eq_arb_formula_lower_path` reports only
 standard axioms. This closes the pointwise source-to-evaluator bridge throughout the lower path;
-complete-arc interval transfer and integration remain open.
+complete-arc interval transfer and rational weighted-sum comparison remain open.
+
+## Uniform-partition integration adapter — attempt 44
+
+After adding `contour51_intervalIntegral_bounds_of_uniform_partition`, the same Lean 4.32.0
+command template and exclusive output root were used with
+`MODULE_NAME=SigmaContour51ArbContourBridge`, redirecting output to
+`/home/thlinux/tmp/c2-contour51-20261108-lean432/logs/SigmaContour51ArbContourBridge-attempt44.log`.
+The checked-in successful output is `C3_SigmaContour51ArbContourBridge-attempt44-success.log`.
+It exits 0 with warnings treated as errors; the new theorem's axiom report is
+`[propext, Classical.choice, Quot.sound]`.
+
+This generic theorem converts pointwise lower and upper bounds on every closed rational arc
+`[k/N,(k+1)/N]` into the integral bounds given by the exact width-weighted endpoint sums. It does
+not establish that an Arb range contains the Lean evaluator, validate the Taylor/Cauchy remainders,
+or prove the resulting rational sum comparisons. Those remain the inputs needed to apply it to the
+4096-arc residual certificate. No C5 cache was used as an output.

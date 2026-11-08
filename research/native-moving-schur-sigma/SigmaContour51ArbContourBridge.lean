@@ -544,6 +544,104 @@ def contour51ArbFirstThreeLowerPathResidualIntervalBounds : Prop :=
       (contour51ArbLowerPathResidualIntegral n).re ≤
         (contour51ArbRecordedResidualUpper n : ℝ)
 
+/-- On an equal rational partition, pointwise bounds on each closed arc integrate to the
+corresponding width-weighted endpoint sums. This isolates the exact integration step from the
+separate proof that the Arb evaluator boxes enclose the Lean integrand on each arc. -/
+theorem contour51_intervalIntegral_bounds_of_uniform_partition {N : ℕ} (hN : 0 < N)
+    (f : ℝ → ℝ) (hf : Continuous f) (lower upper : ℕ → ℝ)
+    (hlo : ∀ k < N, ∀ x ∈ Set.Icc ((k : ℝ) / N) (((k + 1 : ℕ) : ℝ) / N),
+      lower k ≤ f x)
+    (hhi : ∀ k < N, ∀ x ∈ Set.Icc ((k : ℝ) / N) (((k + 1 : ℕ) : ℝ) / N),
+      f x ≤ upper k) :
+    (1 / (N : ℝ)) * (∑ k ∈ Finset.range N, lower k) ≤
+        (∫ x in (0 : ℝ)..1, f x) ∧
+      (∫ x in (0 : ℝ)..1, f x) ≤
+        (1 / (N : ℝ)) * (∑ k ∈ Finset.range N, upper k) := by
+  let a : ℕ → ℝ := fun k => (k : ℝ) / (N : ℝ)
+  have hNReal : (0 : ℝ) < N := by exact_mod_cast hN
+  have hNNe : (N : ℝ) ≠ 0 := hNReal.ne'
+  have hpartition (g : ℝ → ℝ) (hg : Continuous g) :
+      ∑ k ∈ Finset.range N, ∫ x in a k..a (k + 1), g x =
+        ∫ x in (0 : ℝ)..1, g x := by
+    simpa [a, hNNe] using
+      (intervalIntegral.sum_integral_adjacent_intervals
+        (f := g) (μ := volume) (a := a) (n := N)
+        (fun k _ => hg.intervalIntegrable _ _))
+  have hpartition_f := hpartition f hf
+  have hlo_piece : ∀ k < N,
+      (1 / (N : ℝ)) * lower k ≤ ∫ x in a k..a (k + 1), f x := by
+    intro k hk
+    have hab : a k ≤ a (k + 1) := by
+      dsimp [a]
+      apply div_le_div_of_nonneg_right
+      · exact_mod_cast Nat.le_succ k
+      · exact le_of_lt hNReal
+    have hconst : IntervalIntegrable (fun _ : ℝ => lower k) volume (a k) (a (k + 1)) :=
+      intervalIntegrable_const
+    have hfun : IntervalIntegrable f volume (a k) (a (k + 1)) :=
+      hf.intervalIntegrable _ _
+    have hmono : (∫ x in a k..a (k + 1), lower k) ≤
+        ∫ x in a k..a (k + 1), f x :=
+      intervalIntegral.integral_mono_on hab hconst hfun (by
+        intro x hx
+        apply hlo k hk x
+        simpa [a] using hx)
+    have hconstValue : (∫ x in a k..a (k + 1), lower k) =
+        (1 / (N : ℝ)) * lower k := by
+      rw [intervalIntegral.integral_const]
+      dsimp [a]
+      push_cast
+      field_simp [hNNe]
+      ring
+    rw [hconstValue] at hmono
+    exact hmono
+  have hhi_piece : ∀ k < N,
+      ∫ x in a k..a (k + 1), f x ≤ (1 / (N : ℝ)) * upper k := by
+    intro k hk
+    have hab : a k ≤ a (k + 1) := by
+      dsimp [a]
+      apply div_le_div_of_nonneg_right
+      · exact_mod_cast Nat.le_succ k
+      · exact le_of_lt hNReal
+    have hconst : IntervalIntegrable (fun _ : ℝ => upper k) volume (a k) (a (k + 1)) :=
+      intervalIntegrable_const
+    have hfun : IntervalIntegrable f volume (a k) (a (k + 1)) :=
+      hf.intervalIntegrable _ _
+    have hmono : (∫ x in a k..a (k + 1), f x) ≤
+        ∫ x in a k..a (k + 1), upper k :=
+      intervalIntegral.integral_mono_on hab hfun hconst (by
+        intro x hx
+        apply hhi k hk x
+        simpa [a] using hx)
+    have hconstValue : (∫ x in a k..a (k + 1), upper k) =
+        (1 / (N : ℝ)) * upper k := by
+      rw [intervalIntegral.integral_const]
+      dsimp [a]
+      push_cast
+      field_simp [hNNe]
+      ring
+    rw [hconstValue] at hmono
+    exact hmono
+  constructor
+  · calc
+      (1 / (N : ℝ)) * (∑ k ∈ Finset.range N, lower k) =
+          ∑ k ∈ Finset.range N, ((1 / (N : ℝ)) * lower k) := by
+            rw [Finset.mul_sum]
+      _ ≤ ∑ k ∈ Finset.range N, ∫ x in a k..a (k + 1), f x := by
+        apply Finset.sum_le_sum
+        intro k hk
+        exact hlo_piece k (Finset.mem_range.mp hk)
+      _ = ∫ x in (0 : ℝ)..1, f x := hpartition_f
+  · calc
+      (∫ x in (0 : ℝ)..1, f x) =
+          ∑ k ∈ Finset.range N, ∫ x in a k..a (k + 1), f x := hpartition_f.symm
+      _ ≤ ∑ k ∈ Finset.range N, ((1 / (N : ℝ)) * upper k) := by
+        apply Finset.sum_le_sum
+        intro k hk
+        exact hhi_piece k (Finset.mem_range.mp hk)
+      _ = (1 / (N : ℝ)) * (∑ k ∈ Finset.range N, upper k) := by
+        rw [Finset.mul_sum]
+
 theorem contour51ArbResidualIntervalBounds_of_lower_path_bounds
     (hPath : contour51ArbLowerPathResidualIntervalBounds) :
     contour51ArbResidualIntervalBounds := by
@@ -578,6 +676,7 @@ theorem completedNative_sigmaPadeD_zero_pos_of_contour51_lower_path_intervals
 #print axioms contour51SigmaXiLogDerivative_eq_arb_formula
 #print axioms contour51OriginalResponse_eq_arb_formula
 #print axioms contour51OriginalResponse_eq_arb_formula_lower_path
+#print axioms contour51_intervalIntegral_bounds_of_uniform_partition
 #print axioms contour51OriginalResidualQuotient_neg
 #print axioms contour51OriginalAngularResidualIntegrand_periodic
 #print axioms periodic_pi_integral_full_eq_lower_parameter

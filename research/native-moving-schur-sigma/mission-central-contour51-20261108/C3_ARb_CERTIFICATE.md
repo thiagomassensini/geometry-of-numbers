@@ -36,9 +36,12 @@ by Arb, with `F(z)≠0`, `0<Re(s)`, and `s≠1` stated; zeta nonvanishing follow
 from the source factorization. `contour51OriginalResponse_eq_arb_formula_lower_path`
 discharges the geometric conditions throughout the lower semicircle. The
 remaining certificate bridge is to transfer the complete-arc Arb enclosures
-and their Taylor/Cauchy remainders to Lean and integrate the bounds. The C2
-residue identity itself is already a compiled theorem for the original
-continuation.
+and their Taylor/Cauchy remainders to Lean, then verify the rational weighted
+endpoint sums. The exact integration step is now a compiled generic Lean
+theorem, `contour51_intervalIntegral_bounds_of_uniform_partition`: pointwise
+bounds on each rational subinterval imply the corresponding integral bounds.
+It does not prove the evaluator inclusions or sum comparisons. The C2 residue
+identity itself is already a compiled theorem for the original continuation.
 
 ## Coverage and interval method
 
@@ -124,10 +127,11 @@ lie above the recorded endpoints:
 These are rigorous external Arb enclosures and rational comparisons checked in
 Lean, but their inclusion in the actual Lean contour integrals is still an
 explicit hypothesis of `SigmaContour51ArbResidualGate.lean`. The half-circle
-parameterization, oddness reduction, and lower-path identity are already
-formalized. The remaining bridge is the transfer from each complete-arc Arb
-range, including its Taylor/Cauchy remainder, to the Lean evaluator and then
-to the integral. Accordingly,
+parameterization, oddness reduction, lower-path identity, and generic
+uniform-partition integration step are already formalized. The remaining
+bridge is the transfer from each complete-arc Arb range, including its
+Taylor/Cauchy remainder, to the Lean evaluator, and verification of the
+weighted rational endpoint sums. Accordingly,
 the six signs are externally certified but not yet discharged in Lean. The
 first-window determinant now has a conditional Lean gate from just the three
 intervals `e_0,e_1,e_2`; its exact rational margin proves

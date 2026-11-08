@@ -133,7 +133,10 @@ For the source-response theorem, zeta nonvanishing is derived from `F(z)≠0` an
 completed-zeta factorization. `contour51OriginalResponse_eq_arb_formula_lower_path` discharges the
 geometric side conditions uniformly for every lower-path parameter using C1's zero-free boundary
 and the radius 51. The remaining open bridge is to check the external Taylor/Cauchy ranges against
-this formal evaluator and integrate them over the full rational arc partition.
+this formal evaluator and verify the exact rational weighted sums. The generic Lean theorem
+`contour51_intervalIntegral_bounds_of_uniform_partition` now proves the integration step from
+pointwise bounds on each rational arc to the corresponding weighted integral bounds; it does not
+discharge either numerical-inclusion obligation.
 
 ## The three remainder notions
 
@@ -148,6 +151,9 @@ this formal evaluator and integrate them over the full rational arc partition.
 - The **Arb Taylor/Cauchy remainder** bounds omitted terms in the local Taylor evaluations of zeta
   and zeta-prime on each rational arc. Summing those complete-arc enclosures gives an external
   interval for the lower-path integral, hence for `e_n` only through the proved path identity.
+  The Lean partition theorem handles the exact integration once pointwise evaluator bounds and
+  rational weighted endpoint-sum comparisons have been proved; the external Arb remainder is not
+  itself a Lean hypothesis or a sign assumption.
   This numerical-analysis remainder is not a source tail or a second residual.
 - The **C5 displaced coefficient and determinant remainders** are another family and need an
   explicit `d=0` interval transport before they can say anything about these central `e_n`.

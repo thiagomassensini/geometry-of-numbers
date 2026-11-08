@@ -136,8 +136,10 @@ also compiled. The source response is now connected to the explicit Arb evaluato
 `F(z)≠0`, `0<Re(s)`, and `s≠1`, deriving zeta nonvanishing from the exact source factorization.
 `contour51OriginalResponse_eq_arb_formula_lower_path` discharges those conditions throughout the
 lower path. The remaining C3/C5 bridge is to show the per-arc rational intervals enclose the
-formal evaluator there, validate Taylor/Cauchy remainder ranges, and integrate the complete arcs.
-These interval inclusions are not Lean theorems yet.
+formal evaluator there, validate Taylor/Cauchy remainder ranges, and verify the rational weighted
+endpoint sums. The exact integration step from pointwise arc bounds to their weighted integral
+bounds is proved by `contour51_intervalIntegral_bounds_of_uniform_partition`; the certificate
+inclusions and endpoint-sum comparisons are not Lean theorems yet.
 For the first determinant, only `n=0,1,2` inclusions are required; the resulting strict absolute
 margin is `1/1000000000`. All six strict residual lower margins are recorded in
 `CHECKPOINTS.md`. The uniform `|R|≤4/5` Lean theorem is independently open for the all-window route.
