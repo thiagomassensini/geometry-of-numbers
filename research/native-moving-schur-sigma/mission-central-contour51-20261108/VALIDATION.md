@@ -83,6 +83,7 @@
 - Axiom audit: the pole-kernel integral, conditional Cauchy assembly, generic finite gluing, completed-native specialization, and source-normalized all-order identity each report `[propext, Classical.choice, Quot.sound]`.
 - SHA-256: residue source `ad83a9810d9c0cd7b3f1611a69efa58dddb401a954c0b22ab4c2fa81001dcb76`, OLean `/home/thlinux/tmp/c2-contour51-20261108-lean432/SigmaContour51Residue.olean` `8fecbe901c8eeb6cb50064a2867e1c61e11adfe839983668ae84b104abeea645`, success log `C2_SigmaContour51Residue-attempt5-success.log` `fcb85459a3f4d8dbb0b458ca1f2f2c7324d2c3d6166bbe6f37108ed40d815e1f`; finite-contour source `56fa6e0cb963c83beeb9aae4dc4dc57c3f18436d2607fb3a3cba25f085077597`, OLean `/home/thlinux/tmp/c2-contour51-20261108-lean432/SigmaContour51FiniteContour.olean` `f1e69205fee1c8d6c447235e70b81803a52f9bc96b22c4e8ff784e04aeaa32d6`, success log `C2_SigmaContour51FiniteContour-attempt34-success.log` `aa1b00690c688f0a5130953f1e254590dfe705d98667714d0611c2faef91f07b`.
 - Proof status: C2 is closed for one fixed ten-height list and every `n`. The Arb certificate is still not a Lean theorem, and no rational lower margins for the six central residual signs `e_0,…,e_5` have been certified. See the remaining-obligations section below and `RESTART_HERE.md`.
+- Publication: commit `1a4920b07d542e0f8077ef516d8c36981b1759f8` is pushed to `agent/c2-contour51-20261108`. Draft PR #314's description was refreshed; GitHub reports it open, draft, unmerged, based on B2 PR #311, and `CLEAN`.
 
 ## C2→C4→C6 composition for the original source — conditional theorem complete
 
