@@ -56,10 +56,14 @@ cancellation lemma that constructs an analytic extension of
 derivative formula for a regular function. `SigmaContour51FiniteContour.lean` additionally proves,
 by induction on `k`, that each partial-fraction kernel
 `(z-alpha)^(-1) * z^(-k)` has zero radius-51 circle integral for `k ≥ 1`, whenever `alpha` is
-nonzero and inside the circle. Its `#print axioms` output is `[propext, Classical.choice,
-Quot.sound]`. The successful build and source/OLean/log hashes are recorded in `VALIDATION.md`.
-The helper proves the individual kernel calculation; it does not yet build the analytic extension
-of the global finite correction or assemble the full identity.
+nonzero and inside the circle. The same module proves
+`contour51_cauchy_reduction_of_finite_correction`: assuming an analytic corrected function on the
+closed disk, circle integrability of the original response kernel, and its explicit boundary
+relation to the original response plus the finite pole sum, the normalized response integral equals
+the corrected function's Cauchy coefficient. Both
+`#print axioms` outputs are `[propext, Classical.choice, Quot.sound]`. The successful build and
+source/OLean/log hashes are recorded in `VALIDATION.md`. The assumptions remain explicit; the
+module does not yet construct the globally corrected analytic function.
 
 For `k ≥ 2` and `0 < |alpha| < 51`, partial fractions give
 
@@ -83,11 +87,13 @@ integrals above, but a search of `Mathlib/Analysis/Complex` and `Mathlib/Analysi
 found no general finite-residue theorem to apply directly. `SigmaContour51Residue.lean` and
 `SigmaContour51FiniteContour.lean` compile on Lean 4.32.0 with warnings-as-errors; their theorem
 axioms are `[propext, Classical.choice, Quot.sound]`. The individual partial-fraction kernel
-integral is now proved. The remaining formalization is:
+integral and its finite-sum/Cauchy assembly under explicit correction hypotheses are now proved.
+The remaining formalization is:
 
-1. a finite gluing argument for the twenty local extensions, using C1's exact root classification;
-2. use finite-sum linearity to combine the individual kernel integrals, then apply the existing
-   Cauchy formula to the globally corrected analytic function and identify its Taylor coefficient.
+1. a finite gluing argument for the twenty local extensions, using C1's exact root classification,
+   to provide the corrected function and prove its boundary relation;
+2. identify the corrected function's Taylor coefficient with `H_n - sum_j a_j^(n+1)` from the
+   source Taylor coefficients and the finite principal-part sum.
 
 Until these are proved in Lean, the formula above is a verified normalization and proof reduction,
 not a compiled contour theorem. Neither the numerical probe nor the external root boxes supply any

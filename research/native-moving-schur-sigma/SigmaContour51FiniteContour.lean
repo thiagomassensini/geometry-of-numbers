@@ -139,7 +139,71 @@ theorem contour51_pole_kernel_integrable_and_integral_zero
           rw [hpow]
           simp
 
+/-- If an analytic correction removes a finite set of interior simple-pole kernels from a
+boundary response, its normalized circle integral is the corresponding Cauchy coefficient.
+This packages the global integral step conditionally on the corrected function being regular. -/
+theorem contour51_cauchy_reduction_of_finite_correction
+    (R G : ℂ → ℂ) (poles : Finset ℂ) (n : ℕ)
+    (hG : DiffContOnCl ℂ G (ball (0 : ℂ) 51))
+    (hRInt : CircleIntegrable (fun z => R z / z ^ (n + 1)) 0 51)
+    (hpoles : ∀ a ∈ poles, a ∈ ball (0 : ℂ) 51 ∧ a ≠ 0)
+    (hcorr : EqOn (fun z => G z / z ^ (n + 1))
+      (fun z => R z / z ^ (n + 1) +
+        ∑ a ∈ poles, (1 / 2 : ℂ) * contour51PoleKernel a n z)
+      (sphere (0 : ℂ) 51)) :
+    (2 * Real.pi * Complex.I : ℂ)⁻¹ •
+      ∮ z in C(0, 51), R z / z ^ (n + 1) =
+        iteratedDeriv n G 0 / (n.factorial : ℂ) := by
+  have htermInt : ∀ a ∈ poles,
+      CircleIntegrable (fun z => (1 / 2 : ℂ) * contour51PoleKernel a n z) 0 51 := by
+    intro a ha
+    obtain ⟨haBall, ha0⟩ := hpoles a ha
+    exact (contour51_pole_kernel_integrable_and_integral_zero a n haBall ha0).1.const_smul
+  have hsumInt : CircleIntegrable
+      (fun z => ∑ a ∈ poles, (1 / 2 : ℂ) * contour51PoleKernel a n z) 0 51 :=
+    CircleIntegrable.fun_sum poles htermInt
+  have htermZero : ∀ a ∈ poles,
+      (∮ z in C(0, 51), (1 / 2 : ℂ) * contour51PoleKernel a n z) = 0 := by
+    intro a ha
+    obtain ⟨haBall, ha0⟩ := hpoles a ha
+    have hzero :=
+      (contour51_pole_kernel_integrable_and_integral_zero a n haBall ha0).2
+    calc
+      (∮ z in C(0, 51), (1 / 2 : ℂ) * contour51PoleKernel a n z) =
+          (1 / 2 : ℂ) * (∮ z in C(0, 51), contour51PoleKernel a n z) :=
+        circleIntegral.integral_const_mul (1 / 2 : ℂ) (contour51PoleKernel a n) 0 51
+      _ = 0 := by rw [hzero]; simp
+  have hsumZero : (∮ z in C(0, 51),
+      ∑ a ∈ poles, (1 / 2 : ℂ) * contour51PoleKernel a n z) = 0 := by
+    rw [circleIntegral.integral_fun_sum htermInt]
+    exact Finset.sum_eq_zero htermZero
+  have hGintegral :
+      (∮ z in C(0, 51), G z / z ^ (n + 1)) =
+        (∮ z in C(0, 51), R z / z ^ (n + 1)) +
+          (∮ z in C(0, 51),
+            ∑ a ∈ poles, (1 / 2 : ℂ) * contour51PoleKernel a n z) := by
+    calc
+      (∮ z in C(0, 51), G z / z ^ (n + 1)) =
+          ∮ z in C(0, 51),
+            (fun z => R z / z ^ (n + 1) +
+              ∑ a ∈ poles, (1 / 2 : ℂ) * contour51PoleKernel a n z) z :=
+        circleIntegral.integral_congr (by norm_num) hcorr
+      _ = _ := circleIntegral.integral_add hRInt hsumInt
+  have hsame :
+      (∮ z in C(0, 51), G z / z ^ (n + 1)) =
+        (∮ z in C(0, 51), R z / z ^ (n + 1)) := by
+    rw [hGintegral, hsumZero]
+    ring
+  have hCauchy := normalized_circle_integral_coefficient G n hG
+  calc
+    (2 * Real.pi * Complex.I : ℂ)⁻¹ •
+        ∮ z in C(0, 51), R z / z ^ (n + 1) =
+      (2 * Real.pi * Complex.I : ℂ)⁻¹ •
+        ∮ z in C(0, 51), G z / z ^ (n + 1) := by rw [hsame]
+    _ = iteratedDeriv n G 0 / (n.factorial : ℂ) := hCauchy
+
 #print axioms contour51_pole_kernel_integrable_and_integral_zero
+#print axioms contour51_cauchy_reduction_of_finite_correction
 
 end
 end CarrySigmaObstruction

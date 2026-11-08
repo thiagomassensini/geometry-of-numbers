@@ -1,0 +1,15 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51FiniteContour.lean:178:40: error: Application type mismatch: The argument
+  poles
+has type
+  Finset ℂ
+of sort `Type` but is expected to have type
+  ∀ i ∈ ?m.388, CircleIntegrable (?m.389 i) ?m.390 ?m.391
+of sort `Prop` in the application
+  circleIntegral.integral_fun_sum poles
+'CarrySigmaObstruction.contour51_pole_kernel_integrable_and_integral_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51_cauchy_reduction_of_finite_correction' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
