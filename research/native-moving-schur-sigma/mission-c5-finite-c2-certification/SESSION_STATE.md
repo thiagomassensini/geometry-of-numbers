@@ -1,13 +1,13 @@
 # C5 — estado da sessão
 
-## Estado atual — prefixo Bernoulli 192 integrado pela PR #313 (2026-11-08)
+## Estado atual — candidato do prefixo Bernoulli 224 checkpointado (2026-11-08)
 
-- `CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data` prova as entradas 0–191 a partir do prefixo 160 integrado. Build limpo Lean 4.32.0 com `warningAsError=true`: `CLEAN_BUILD=PASS`, `EXIT=0`; auditoria isolada: `AXIOM_AUDIT=PASS`, somente `propext`, `Classical.choice`, `Quot.sound`, sem `sorryAx` ou axiomas próprios.
-- Build: 3h07m38s, pico RSS 16,632,976 KiB. Auditoria: 4.40s, pico 3,236,712 KiB. Evidência, logs, pins, reprodução e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/README.md`.
-- PR #313 foi integrada; commit da prova `636ea8d7ceea1af08adafcdb4d373e8e9b9895b4`; merge na `main` `f0bd4ec675a3dc483f55373d3a58092042fac67d`. O registro documental pós-merge parte desse HEAD.
-- Prefixo formal integrado: 192/601; 409 entradas permanecem abertas. Não confundir esse avanço com certificação das caixas da fonte ou dos sinais finais.
-- Obrigações restantes: ponte CSV–Lean das caixas de zeta; inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`; composição com a fonte original e sinais finais de `sigmaPadeD`.
-- Próxima ação: iniciar `c5BernoulliPrimeTable_224_eq_data` em branch isolada, sem refazer os prefixos integrados. C1B/C2/C3/C4 e a migração geral Lean 4.35 não devem ser reabertas.
+- Último teorema validado e integrado: `CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data`, PR #313, merge `f0bd4ec675a3dc483f55373d3a58092042fac67d`; a atualização de estado pós-merge é o commit `513b73b54d232d7f0375ca3a2381b749fc17dba3`.
+- O candidato `CarrySigmaObstruction.c5BernoulliPrimeTable_224_eq_data` e seu auditor isolado estão preparados em `SigmaC5BernoulliDataCertificate224.lean` e `SigmaC5BernoulliDataCertificate224Audit.lean`. O reprodutor limpo usa Lean 4.32.0, `warningAsError=true` e o `.olean` integrado do prefixo 192.
+- Esta branch ainda não tem resultado de compilação nem auditoria. O estado formal validado continua 192/601; não contar as 32 entradas candidatas. A integração, logs, pins, comando de retomada e estado do runner ficam em `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/`.
+- Branch `codex/c5-zeta-bernoulli-prefix224-20261108`; base `main@513b73b54d232d7f0375ca3a2381b749fc17dba3`. O checkpoint da candidata será publicado antes de iniciar build; ainda não há PR nem compilação ativa.
+- Permanecem abertas a ponte CSV–Lean das caixas de zeta, as inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`, a composição com a fonte original e os sinais finais de `sigmaPadeD`.
+- Próxima ação após confirmar o push do checkpoint: executar o `run-detached.sh` de prefixo 224, acompanhar o runner até término e auditar o resultado. C1B/C2/C3/C4 e a migração geral para Lean 4.35 não devem ser reabertas.
 
 ## Histórico — prefixo Bernoulli de 64 entradas integrado (2026-11-08)
 

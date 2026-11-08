@@ -1,27 +1,28 @@
 # Retomar primeiro — missão C5
 
-## Estado atual — prefixo 192 integrado; próximo bloco 224 (2026-11-08)
+## Estado atual — checkpoint da candidata Bernoulli 224 (2026-11-08)
 
 ```text
 MISSION: C5 — certificação finita dos sinais da fonte C2 original.
 CURRENT PHASE: completar a tabela racional e conectá-la às inclusões da fonte original.
-CURRENT SUBTASK: provar c5BernoulliPrimeTable_224_eq_data.
-LAST VERIFIED THEOREM: CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data.
+CURRENT SUBTASK: compilar e auditar c5BernoulliPrimeTable_224_eq_data.
+LAST VERIFIED THEOREM: CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data (integrado pela PR #313).
 LAST COMPILED FILE: SigmaC5BernoulliDataCertificate192Audit.lean; Lean 4.32.0, warningAsError=true.
 LAST SUCCESSFUL PROOF COMMIT: 636ea8d7ceea1af08adafcdb4d373e8e9b9895b4.
 LAST MERGE: PR #313, f0bd4ec675a3dc483f55373d3a58092042fac67d.
-MAIN SHA: f0bd4ec675a3dc483f55373d3a58092042fac67d.
+MAIN SHA: 513b73b54d232d7f0375ca3a2381b749fc17dba3.
+CURRENT BRANCH: codex/c5-zeta-bernoulli-prefix224-20261108.
 OPEN PR: nenhuma.
-ACTIVE BUILD: nenhum.
-WHAT IS PROVED: prefixo Bernoulli 192/601 integrado e auditado; axiomas somente propext, Classical.choice, Quot.sound. C1B/C2/C3/C4 continuam integradas e concluídas nos seus escopos.
-WHAT IS CONDITIONAL: os sinais finais dependem das inclusões ainda não provadas sigmaC00495SourceBoxes e sigmaC01SourceBoxes.
-WHAT IS BLOCKED: 409 entradas, ponte CSV–Lean das caixas de zeta, inclusões da fonte e sinais finais permanecem abertos. C5 está incompleta.
-EXACT NEXT COMMAND: git worktree add -b codex/c5-zeta-bernoulli-prefix224-20261108 /home/thlinux/worktrees/geometry-of-numbers-c5-zeta-bernoulli-prefix224-20261108 origin/main
-EXACT NEXT MATHEMATICAL OBLIGATION: provar c5BernoulliPrimeTable_224_eq_data a partir do prefixo integrado 192 e da recorrência de Bernoulli.
-DO NOT REPEAT: C1B/C2/C3/C4; prefixos Bernoulli 32/64/96/128/160/192, inclusive build e auditoria do 192. Não reabrir a falha do import prefix160 nem o limite inválido de simplificação. Não iniciar migração geral Lean 4.35.
+ACTIVE BUILD: nenhum; runner-status.txt = NOT_STARTED.
+WHAT IS PROVED: prefixo Bernoulli 192/601 integrado e auditado; axiomas somente propext, Classical.choice, Quot.sound. C1B/C2/C3/C4 continuam integradas nos escopos concluídos.
+WHAT IS CONDITIONAL: sinais finais dependem das inclusões não provadas sigmaC00495SourceBoxes e sigmaC01SourceBoxes.
+WHAT IS BLOCKED: candidata 224 ainda sem build; 409 entradas, ponte CSV–Lean, inclusões da fonte e sinais finais permanecem abertos. C5 está incompleta.
+EXACT NEXT COMMAND: bash research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/run-detached.sh
+EXACT NEXT MATHEMATICAL OBLIGATION: compilar e auditar c5BernoulliPrimeTable_224_eq_data a partir do prefixo integrado 192 e da recorrência de Bernoulli.
+DO NOT REPEAT: prefixos Bernoulli 32/64/96/128/160/192; build/auditoria 192; C1B/C2/C3/C4; não reabrir a falha do import prefix160 nem o limite inválido de simplificação. Não iniciar migração geral Lean 4.35.
 ```
 
-O prefixo 192 levou 3h07m38s, pico RSS 16,632,976 KiB; auditoria 4.40s, pico RSS 3,236,712 KiB. Evidência, reprodução, pins e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/README.md`.
+O prefixo 192 levou 3h07m38s e pico RSS 16,632,976 KiB; a auditoria levou 4.40s e pico RSS 3,236,712 KiB. Evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/README.md`.
 
 ## Histórico — tabela de Bernoulli certificada até 64 entradas (2026-11-08)
 

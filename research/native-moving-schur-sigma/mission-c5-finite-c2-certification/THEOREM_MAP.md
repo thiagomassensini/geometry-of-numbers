@@ -1,5 +1,15 @@
 # C5 — mapa dos teoremas e obrigações
 
+## Prefixo Bernoulli com 224 entradas — candidato checkpointado; compilação pendente
+
+| Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |
+|---|---|---|---|---|
+| `CarrySigmaObstruction.c5BernoulliPrimeTable_224_eq_data` | `SigmaC5BernoulliDataCertificate224.lean` | nenhuma | entradas 0–223 da recorrência coincidem com `c5BernoulliPrimeDataPrefix224` | estende o prefixo integrado 192 por recorrência de Bernoulli; **CANDIDATO**, build limpo e auditoria pendentes; não contar acima de 192/601 |
+
+O reprodutor e os pins estão em
+`evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/`. O build deve
+ser executado apenas depois de confirmar o checkpoint remoto.
+
 ## Prefixo Bernoulli com 192 entradas — integrado pela PR #313
 
 | Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |

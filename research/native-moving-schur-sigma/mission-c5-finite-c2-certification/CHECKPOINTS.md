@@ -1,5 +1,13 @@
 # C5 — checkpoints
 
+## 2026-11-08 — candidato ao prefixo Bernoulli 224 preparado; build pendente
+
+- `c5BernoulliPrimeTable_224_eq_data` estende o certificado integrado 192 aos índices 0–223. O arquivo de prova, auditor, script de reprodução, pins e logs placeholder estão neste branch.
+- Estado atual validado segue em 192/601. Não iniciar build antes de confirmar o push do checkpoint.
+- Base `main@513b73b54d232d7f0375ca3a2381b749fc17dba3`; branch `codex/c5-zeta-bernoulli-prefix224-20261108`.
+- Comando de retomada e status: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/README.md`, `runner-status.txt` e `run-state.txt`.
+- Próximo: publicar candidato e estado; iniciar build limpo/auditoria só após o push. C5 permanece incompleta.
+
 ## 2026-11-08 — prefixo Bernoulli 192 integrado pela PR #313
 
 - `CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data` estende o prefixo integrado 160 aos índices 0–191. Build limpo Lean 4.32.0 com `warningAsError=true`: `CLEAN_BUILD=PASS`, `AXIOM_AUDIT=PASS`, `EXIT=0`; axiomas somente `propext`, `Classical.choice`, `Quot.sound`.

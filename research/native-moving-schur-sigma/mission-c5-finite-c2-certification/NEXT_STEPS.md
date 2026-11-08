@@ -1,12 +1,12 @@
 # Próximos passos — C5
 
-## Estado atual — prefixo Bernoulli 192 integrado (2026-11-08)
+## Estado atual — candidato ao prefixo 224 preparado (2026-11-08)
 
-- `c5BernoulliPrimeTable_192_eq_data` foi compilado e auditado limpo em Lean 4.32.0; PR #313, merge `f0bd4ec675a3dc483f55373d3a58092042fac67d`.
-- A `main` tem 192/601 entradas formalmente certificadas; 409 ainda estão abertas. Build: 3h07m38s, pico RSS 16,632,976 KiB; auditoria: 4.40s, axiomas apenas `propext`, `Classical.choice`, `Quot.sound`.
-- Evidência, reprodução, pins e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/README.md`.
-- **Próxima ação concreta:** conferir branches/PRs existentes para evitar duplicação; criar branch a partir do merge atual e provar `c5BernoulliPrimeTable_224_eq_data`, com checkpoint remoto antes de uma compilação longa.
-- A ponte CSV–Lean, inclusões da fonte original e sinais finais continuam abertas. C5 permanece incompleta; não reabrir C1B/C2/C3/C4.
+- O prefixo 192 está integrado pela PR #313, merge `f0bd4ec675a3dc483f55373d3a58092042fac67d`; estado pós-merge registrado em `main@513b73b54d232d7f0375ca3a2381b749fc17dba3`.
+- A prova cumulativa `c5BernoulliPrimeTable_224_eq_data` e o auditor estão preparados. Ainda não houve compilação; contar somente 192/601.
+- Branch candidata: `codex/c5-zeta-bernoulli-prefix224-20261108`. Reprodutor, pins e estado do runner: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/README.md`.
+- **Próxima ação concreta:** confirmar o commit e SHA remoto do checkpoint; então rodar `run-detached.sh`, acompanhar o build/auditoria e registrar resultado. Se passar, abrir PR parcial, revisar e integrar antes de avançar.
+- Ponte CSV–Lean, inclusões da fonte original e sinais finais seguem abertos. C5 permanece incompleta.
 
 ## Estado atual — prefixo Bernoulli de 160 entradas integrado (2026-11-08)
 

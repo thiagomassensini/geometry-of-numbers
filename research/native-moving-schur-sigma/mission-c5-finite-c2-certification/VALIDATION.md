@@ -1,5 +1,11 @@
 # C5 — validação
 
+## Prefixo 224 — candidato não compilado (2026-11-08)
+
+- `c5BernoulliPrimeTable_224_eq_data` e auditor isolado estão preparados na branch `codex/c5-zeta-bernoulli-prefix224-20261108`; build ainda não iniciado.
+- `RESULT.txt` registra `CLEAN_BUILD=PENDING` e `AXIOM_AUDIT=PENDING`. Até validação nova, o estado formal continua 192/601, integrado pela PR #313.
+- Pins, script de reprodução, último comando e estado do runner: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/README.md`.
+
 ## Prefixo 192 — validado e integrado pela PR #313 (2026-11-08)
 
 - `c5BernoulliPrimeTable_192_eq_data` passou em reprodução limpa Lean 4.32.0 com `warningAsError=true`: `BUILD_EXIT=0`, `CLEAN_BUILD=PASS`.
