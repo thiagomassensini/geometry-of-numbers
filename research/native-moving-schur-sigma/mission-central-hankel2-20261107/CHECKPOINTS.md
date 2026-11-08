@@ -22,7 +22,7 @@ Checkpoint 0 is complete. The worktree fast-forwarded to `ebd6c57c33edcf8596f098
 - [x] Replay the Momentos exact `Fraction` checker and independently reproduce the D0 failure under the coarse-only tail bound.
 - [x] Prove a conditional theorem for every original central consecutive 2×2 minor, retaining the original `completedSigmaLogJet` and `sigmaPadeD`, with decomposition, box, global-tail, low-index-sign, and refined-tail premises explicit.
 - [x] Compile all four modules with warnings as errors, pass the fail-closed axiom audit, record source/output hashes, and preserve the exact rational replay.
-- [ ] Commit and open a small PR for this compiled B1 checkpoint.
+- [x] Commit and open PR #304 for this compiled B1 checkpoint; the PR is mergeable and has no checks reported yet.
 
 ## Checkpoint 2 — height-50 ten-zero family
 

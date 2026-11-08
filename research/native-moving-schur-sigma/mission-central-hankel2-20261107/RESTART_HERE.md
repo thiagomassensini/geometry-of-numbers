@@ -5,11 +5,12 @@ Updated: 2026-11-08 (America/Sao_Paulo)
 ## State
 
 - Objective: prove the original-source theorem `∀ s, 0 < CarrySigmaPade.sigmaPadeD 0 s`; minimum deliverable is the explicit conditional B1 theorem.
-- Base: `origin/main` = `ebd6c57c33edcf8596f09889c7bf956e7d9b284f` (fast-forwarded after C5 PR #303; local branch is aligned before the B1 commit).
+- Base: `origin/main` = `ebd6c57c33edcf8596f09889c7bf956e7d9b284f` (fast-forwarded after C5 PR #303).
 - Worktree: `/home/thlinux/worktrees/geometry-of-numbers-c2-central-hankel2-allorder-20261107`.
-- Branch: `agent/c2-central-hankel2-allorder-20261107`, currently at the same SHA as `origin/main`; no remote branch/PR yet.
+- Branch: `agent/c2-central-hankel2-allorder-20261107`, pushed to `origin` and tracking PR #304.
+- PR: [#304](https://github.com/thiagomassensini/geometry-of-numbers/pull/304), open and mergeable; no checks are reported.
 - Lean pin: `leanprover/lean4:v4.32.0`.
-- Check Geometry open PRs before opening the B1 PR. Momentos PR #2 remains open at `49c9e53946708e3ac1690c25fe096a723ab7bf7d`.
+- Momentos PR #2 remains open at `49c9e53946708e3ac1690c25fe096a723ab7bf7d`.
 - The C5 initial build and clean reproduction loops have exited. At the 2026-11-08 05:15 UTC process check no Lean, Lake, or C5 reproduction process was active. B1 never used or modified a C5 cache or worktree.
 - The new output root for this mission is `/home/thlinux/tmp/c2-central-hankel2-20261107-lean432`; set `SIGMA_OUTPUT_DIR` to its absolute path and `SIGMA_REFERENCE_ROOT` to this worktree. No output/cache from C5 is reused.
 - For `SigmaCentralTenModeSourceGate` and its audit, set `SIGMA_HEIGHT50_BUILD=/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/integration:/home/thlinux/geometry-of-numbers/.lake/build/lib/lean`. Both paths are read-only. The second supplies the tracked `CanonicalFiniteHeight` import from Geometry of Numbers commit `d1577400c0d61bc90ecfd1f5759b8e4aaf5fc241`.
@@ -26,7 +27,7 @@ Updated: 2026-11-08 (America/Sao_Paulo)
 
 ## First action on resume
 
-Recheck `git status --short --branch`, `git log -15 --oneline`, fetch `origin`, and check whether the B1 PR already exists. Update the B1 docs, commit the compiled conditional checkpoint, push the branch, and open a small PR. Do not claim the unconditional theorem while the analytic bridge remains open.
+Check PR #304 review/merge status. Do not claim the unconditional theorem while the analytic bridge remains open.
 
 ## Last compiled theorem
 

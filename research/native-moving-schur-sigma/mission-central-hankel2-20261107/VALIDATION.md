@@ -53,6 +53,7 @@ This confirms the global tail premise alone cannot establish the shallow window 
 - Exact box, margin, ratio, and Fraction replay evidence is recorded under `evidence/`.
 - Exact compile commands, source hashes, `.olean` hashes, and raw logs are recorded in `evidence/lean-432/` and `evidence/BUILD_COMMANDS.md`.
 - The conditional theorem still depends on analytic assumptions listed in `OPEN_OBLIGATIONS.md`.
+- PR #304 is open and marked mergeable. `gh pr checks 304` reported no checks for the branch at the time of recording; the PR has not been merged.
 
 ## Final validation when the unconditional composition exists
 

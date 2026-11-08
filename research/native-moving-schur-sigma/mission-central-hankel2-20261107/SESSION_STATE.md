@@ -10,16 +10,17 @@ This worktree is dedicated to all central consecutive 2×2 minors of the origina
 |---|---|
 | Base `origin/main` | `ebd6c57c33edcf8596f09889c7bf956e7d9b284f` |
 | Branch | `agent/c2-central-hankel2-allorder-20261107` |
-| Local HEAD | `9d45f4e03b3e40186c74e72dba5e8077ecc59f8d` |
-| Remote branch | Not created |
-| Latest Geometry PR | Check again before creating the B1 PR; `origin/main` includes C5 merges through #303 |
+| Implementation commit | `f4b243b222b0e89a686c1eb2a0bd0e1d6dd923a4` |
+| Remote branch | `origin/agent/c2-central-hankel2-allorder-20261107` |
+| B1 PR | [#304](https://github.com/thiagomassensini/geometry-of-numbers/pull/304), open and mergeable; no checks reported |
+| Latest Geometry main | `origin/main` includes C5 merges through #303 |
 | Momentos PR #2 | Open, head `49c9e53946708e3ac1690c25fe096a723ab7bf7d` |
 | Lean | `leanprover/lean4:v4.32.0` |
 | Output/cache | `/home/thlinux/tmp/c2-central-hankel2-20261107-lean432`; only the read-only C2 integration and GeometryOfNumbers library builds were used |
 | Last successful compile | All four B1 modules compile with warnings as errors; fail-closed axiom audit passes |
-| Current stage | B1 conditional theorem and evidence complete; preparing commit and PR |
+| Current stage | B1 conditional theorem and evidence committed at `f4b243b`; PR #304 is open |
 
-After the initial inventory, `origin/main` advanced through C5 PRs #300 and #301. This worktree was fast-forwarded to `9d45f4e` without editing or reading the C5 worktree or cache. The C2 source files used by the read-only integration cache retain the recorded matching SHA256 values.
+After the initial inventory, `origin/main` advanced through C5 PRs #300–#303. This worktree fast-forwarded first to `9d45f4e` and later to `ebd6c57` without editing or using the C5 worktree or cache. The C2 source files used by the read-only integration cache retain the recorded matching SHA256 values.
 
 ## Concurrent C5 build
 
