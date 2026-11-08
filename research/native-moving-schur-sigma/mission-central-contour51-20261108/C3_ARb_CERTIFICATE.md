@@ -28,6 +28,15 @@ The script bounds `L` on the lower semicircle `z = 51 exp(-pi i u)`,
 modulus bound on the lower semicircle covers the upper semicircle as well.
 Zeros are not used to define `F`, `R`, or any central moment.
 
+On the Lean side, `completedNativeCharacteristicContinuation` is defined from
+Mathlib's entire regularized completed zeta, and
+`completedNativeCharacteristicContinuation_eq_sigmaCompletedXiParameter` plus
+`sigmaCompletedXiParameter_eq_completedFactor_mul_zeta` expose the classical
+completed-zeta expression on the right half-plane. The remaining certificate
+bridge must transport that expression and its derivative/logarithmic derivative
+to the exact Arb arc enclosures; the C2 residue identity itself is already a
+compiled theorem for the original continuation.
+
 ## Coverage and interval method
 
 The rational intervals `[k/512, (k+1)/512]`, for `k = 0,...,511`, partition
