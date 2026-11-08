@@ -1,30 +1,30 @@
 # Retomar primeiro — missão C5
 
-## Estado atual — retry corrigido do prefixo 224 ativo (2026-11-08)
+## Estado atual — prefixo 224 passou build e auditoria; PR pendente (2026-11-08)
 
 ```text
 MISSION: C5 — certificação finita dos sinais da fonte C2 original.
 CURRENT PHASE: completar a tabela racional e conectá-la às inclusões da fonte original.
-CURRENT SUBTASK: concluir a compilação corrigida 224; em paralelo, preservar o orçamento de sinais e a obrigação de fechar as caixas da fonte original.
-LAST VERIFIED THEOREM: CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data (integrado pela PR #313).
-LAST COMPILED FILE: SigmaC5BernoulliDataCertificate224.lean; Lean 4.32.0, warningAsError=true; retry corrigido ativo após 2h11m, sem erro observado.
+CURRENT SUBTASK: publicar e integrar o prefixo 224 já compilado/auditado; depois avançar sem refazer prefixos prévios e manter abertas as inclusões da fonte C2.
+LAST VERIFIED THEOREM: CarrySigmaObstruction.c5BernoulliPrimeTable_224_eq_data (branch); a main ainda tem prefixo 192 pela PR #313.
+LAST COMPILED FILE: SigmaC5BernoulliDataCertificate224.lean; Lean 4.32.0, warningAsError=true; `CLEAN_BUILD=PASS`, `EXIT=0` após 5h05m.
 LAST SUCCESSFUL PROOF COMMIT: 636ea8d7ceea1af08adafcdb4d373e8e9b9895b4.
 LAST MERGE: PR #313, f0bd4ec675a3dc483f55373d3a58092042fac67d.
-LAST REMOTE SHA: e96e6df5f652579d75896d4cd8732f367fcfd7af.
+LAST REMOTE SHA: 1aa396d1ce17f14af32c5eb9a8055d0e87c45868.
 MAIN SHA: 513b73b54d232d7f0375ca3a2381b749fc17dba3.
 CURRENT BRANCH: codex/c5-zeta-bernoulli-prefix224-20261108.
 OPEN PR: nenhuma.
-ACTIVE BUILD: tmux c5-bernoulli-prefix224-20261108; pane PID 151047; Lean PID 151152; started 2026-11-08T16:42:48Z; última observação 10.8 GiB RSS, 51 GiB MemAvailable, 13 GiB livres no disco. Confira runner-status.txt antes de qualquer ação.
+ACTIVE BUILD: nenhum; retry do prefixo 224 terminou em `EXIT=0` às 2026-11-08T21:47:48Z. Pico RSS 21,529,692 KiB; auditoria isolada `AXIOM_AUDIT=PASS`, só `propext`, `Classical.choice`, `Quot.sound`.
 LAST ERROR: `hn192` não fechou `n < c5BernoulliPrimeDataPrefix160.size + 32`; a recorrência gerou metas residuais de `getD` e a extensionalidade terminou em `Prefix160.size = 160`, por falta do prefixo 160 nas listas de simplificação.
-WHAT IS PROVED: prefixo 192/601 integrado e auditado; axiomas somente propext, Classical.choice, Quot.sound. A tentativa 224 não conta.
+WHAT IS PROVED: prefixo 192/601 integrado; prefixo 224/601 compilado limpo e auditado na branch; axiomas somente propext, Classical.choice, Quot.sound.
 WHAT IS CONDITIONAL: os sinais finais dependem das inclusões não provadas sigmaC00495SourceBoxes e sigmaC01SourceBoxes.
-WHAT IS BLOCKED: 409 entradas, ponte CSV–Lean, inclusões da fonte e sinais finais permanecem abertos.
-EXACT NEXT COMMAND: cat research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/runner-status.txt; ps -o pid,etime,%cpu,rss,state -p 151152
-EXACT NEXT MATHEMATICAL OBLIGATION: confirmar o retry 224 e a auditoria; depois avançar a tabela até 601 e ligar um nó Euler–Maclaurin às caixas Lean. A obrigação final de inclusão permanece `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
+WHAT IS BLOCKED: integração da PR pendente; 377 entradas após 224, ponte CSV–Lean, inclusões da fonte e sinais finais permanecem abertos.
+EXACT NEXT COMMAND: git status --short --branch; abrir PR da branch `codex/c5-zeta-bernoulli-prefix224-20261108` após conferir os artefatos em `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/`.
+EXACT NEXT MATHEMATICAL OBLIGATION: integrar a igualdade 0–223; em seguida, continuar blocos cumulativos até 601 e ligar um nó Euler–Maclaurin às caixas Lean. A obrigação final de inclusão permanece `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
 DO NOT REPEAT: prefixos 32/64/96/128/160/192; não recomeçar a prova 224 nem a auditoria 192. Não reabrir C1B/C2/C3/C4; não iniciar migração geral Lean 4.35. Não declarar sinais C5 incondicionais enquanto as caixas de fonte forem hipóteses.
 ```
 
-A correção acrescenta `c5BernoulliPrimeDataPrefix160` às quatro listas; a segunda compilação continua ativa. A tentativa 1, incluindo log integral, `runner-status`, `run-state`, resumo e hash do fonte, está em `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/attempts/first-build-failure-20261108/`. O estado formal validado permanece 192/601. A obrigação da fonte C2 e o orçamento de sinal são detalhados em `C5_SOURCE_SIGN_BUDGET_20261108.md`.
+A correção acrescenta `c5BernoulliPrimeDataPrefix160` às quatro listas. A tentativa 1, incluindo log integral, `runner-status`, `run-state`, resumo e hash do fonte, está preservada em `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/attempts/first-build-failure-20261108/`. O retry da prova e auditoria passou; a integração na `main` ainda aguarda PR. A obrigação da fonte C2 e o orçamento de sinal são detalhados em `C5_SOURCE_SIGN_BUDGET_20261108.md`.
 
 ## Histórico — tabela de Bernoulli certificada até 64 entradas (2026-11-08)
 

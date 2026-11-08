@@ -6,12 +6,13 @@ lacuna formal anterior à inclusão dos coeficientes estão registrados em
 `C5_SOURCE_SIGN_BUDGET_20261108.md`. As duas inclusões da fonte seguem abertas;
 os sinais derivados em O3 não são incondicionais.
 
-## Prefixo 224 — tentativa 1 falhou; tentativa 2 em andamento (2026-11-08)
+## Prefixo 224 — build limpo e auditoria aprovados (2026-11-08)
 
 - `c5BernoulliPrimeTable_224_eq_data` não compilou em Lean 4.32.0 na primeira tentativa. `BUILD_EXIT=1`, tempo 1h56m46s, pico RSS 9,869,328 KiB.
 - Erro: a inclusão do prefixo 160 faltou nas listas de simplificação, deixando aberto `c5BernoulliPrimeDataPrefix160.size = 160` e dependências de `getD` nos índices 192–223. A lista completa de mensagens está preservada em `attempts/first-build-failure-20261108/SigmaC5BernoulliDataCertificate224-clean-build.log`.
-- A auditoria isolada não foi rodada; `sorryAx` aparece no log do módulo incompleto em consequência das metas em aberto e não é aceito como resultado.
-- Estado validado segue 192/601 pela PR #313. A correção foi publicada em `1e0feaaf0609ab1733c8a32cea2ec15ded9a5dba`; a tentativa 2 começou às 16:42:48 UTC (pane PID 151047, Lean PID 151152). O resultado ainda está pendente.
+- A segunda compilação limpa terminou com `EXIT=0` após 5h05m; pico RSS 21,529,692 KiB. A auditoria isolada terminou com `AXIOM_AUDIT=PASS` em 4.55s e apenas `propext`, `Classical.choice`, `Quot.sound`. Sem `sorryAx`, `admit`, axiomas próprios ou `native_decide`.
+- A branch valida 224/601, ainda sem integração. `main` permanece em 192/601 pela PR #313 até a PR deste checkpoint ser integrada. A correção está em `1e0feaaf0609ab1733c8a32cea2ec15ded9a5dba`; log da primeira tentativa falha foi preservado.
+- Evidência, reprodutor e hashes em `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/`; manifesto regenerado e verificado integralmente.
 
 ## Prefixo 192 — validado e integrado pela PR #313 (2026-11-08)
 

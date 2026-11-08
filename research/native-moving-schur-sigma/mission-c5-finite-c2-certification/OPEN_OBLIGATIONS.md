@@ -1,17 +1,19 @@
 # C5 — obrigações abertas
 
-## Estado atual — prefixo integrado 192; retry corrigido do 224 ativo (2026-11-08)
+## Estado atual — prefixo 224 validado na branch; integração pendente (2026-11-08)
 
 A `main` contém 192/601 entradas pela PR #313. A primeira tentativa de provar o
-prefixo 224 falhou em metas de redução de arrays anexados; a tentativa corrigida
-está ativa, e 409 entradas seguem abertas no estado validado. Obrigações:
+prefixo 224 falhou em metas de redução de arrays anexados, mas o retry corrigido
+passou build e auditoria isolada; 224/601 estão validadas na branch, enquanto
+377 seguem abertas e a integração ainda está pendente. Obrigações:
 
-1. Acompanhar a segunda compilação limpa do prefixo 224, confirmar build e auditoria, então integrar o checkpoint; a primeira tentativa já está preservada.
+1. Abrir e integrar a PR do prefixo 224 validado; a primeira tentativa falha já está preservada.
 2. Provar a ligação Lean entre as caixas de zeta exportadas e a avaliação correspondente.
 3. Certificar os nós Gamma restantes e compor as caixas zeta/Gamma com o fator nativo original e as quadraturas da fonte completada.
 4. Provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` sem hipóteses auxiliares e fechar os sinais finais de `sigmaPadeD`.
 
-O erro do primeiro build, logs, pins, comandos e estado estão em
+Build limpo `EXIT=0`, auditoria `AXIOM_AUDIT=PASS`, logs, pins, comandos, erros
+da primeira tentativa e hashes estão em
 `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/`. O orçamento dos
 menores condicionais, as cinco correções cruzadas da fonte C2 e o primeiro elo
 formal que falta antes das caixas estão em `C5_SOURCE_SIGN_BUDGET_20261108.md`.
