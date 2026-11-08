@@ -8,11 +8,16 @@
 - Base: B2 PR #311 head `7509f5d9404fe2514d4c609acb4ad10b9b02ab54`; B1 is inherited through B2.
 - Exclusive Lean output: `/home/thlinux/tmp/c2-contour51-20261108-lean432`.
 - PR #304, #311, and #306 are open and mergeable; their heads were checked after `git fetch origin`. Do not modify their branches.
-- C0 is committed locally after the audit record; C1 is the next proof task.
+- C0 is committed and pushed as `96314ff` (`Docs: isolate radius-51 contour C0`).
+- C1 draft: `SigmaContour51DiskBridge.lean` packages the height-52 multiplicity exhaustion and the exact radius-51 root classification. It has not been compiled or committed yet.
+- C2 work in progress: `SigmaContour51Residue.lean` contains a generic simple-zero logarithmic-derivative limit lemma, and `mission-central-contour51-20261108/C2_RESIDUE_REDUCTION.md` records the exact normalization and the Cauchy-integral reduction. Neither is compiled yet.
+- C4/C6 drafts: `SigmaContour51RationalGate.lean` contains the conditional normalized-integral/radius conversion to the `C=40` tail, the four exact-rational margins, the shallow/large-window combination, and the conditional wrapper for the original `sigmaPadeD`. It has not been compiled yet.
+- C3 is now supported by `certify_contour51_bound.py`: 512 Arb interval arcs and explicit Cauchy Taylor remainders prove `|R|<4/5` on the full radius-51 circle. `C3_ARb_CERTIFICATE.md` records the method and `evidence/C3_ARb_ARCS.csv` the per-arc enclosures. This is a rigorous computer-assisted certificate, not a Lean theorem.
+- At the last check, a separate C5 Lean 4.32 process (PID `108950`) was still live after 1 hour 22 minutes, at 100% CPU and about 7.7 GiB RSS in its own worktree/output directory. Preserve it; recheck before any Lean build and wait until it exits.
 
 ## Next action
 
-Formalize the C1 disk-root theorem. The key multiplicity tool is `RHHeight.mem_and_simple_of_Ncount_le`, applied to the ten distinct B2 line-zero witnesses and `RHHeight.ncount_three_fiftytwo`. `sigmaContinuation_zero_re_ne_zero_of_height50` excludes a zero ordinate; `RHHeight.low_height` excludes `0 < Im ρ ≤ 3`; the height-52 count then handles every positive zero through `|Re z| ≤ 51`. Reflect negative heights by evenness of the original continuation.
+Recheck the active C5 process, then compile `SigmaContour51DiskBridge`, `SigmaContour51Residue`, and `SigmaContour51RationalGate` sequentially after it exits. Fix any errors, audit `#print axioms`, and commit/push the validated C1 checkpoint before continuing with C2's finite analytic gluing and C6 validation. The C3 circle estimate is already available as a separate Arb certificate, but is not imported by Lean. The key multiplicity tool is `RHHeight.mem_and_simple_of_Ncount_le`, applied to the ten distinct B2 line-zero witnesses and `RHHeight.ncount_three_fiftytwo`. `sigmaContinuation_zero_re_ne_zero_of_height50` excludes a zero ordinate; `RHHeight.low_height` excludes `0 < Im ρ ≤ 3`; the height-52 count then handles every positive zero through `|Re z| ≤ 51`. Reflect negative heights by evenness of the original continuation.
 
 Before every Lean build, check for active Lean/Lake processes; only the new output root may be written. Use the existing C2/height-52, B1, and B2 OLean artifacts read-only. Do not rebuild C2/C3 or use C5 caches.
 

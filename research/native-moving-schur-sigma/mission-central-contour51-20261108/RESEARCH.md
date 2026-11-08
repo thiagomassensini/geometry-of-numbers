@@ -32,7 +32,7 @@ would imply for all n,
 |e_n| ≤ (4/5)/51^(2n+1) ≤ 40*(1/2500)^(n+1).
 ```
 
-A convenient denominator-free equivalent certificate, given `F(z) ≠ 0` on the circle, is `25*|F'(z)|² ≤ 64*|F(z)|²`. **This inequality is not yet certified.**
+A convenient denominator-free equivalent certificate, given `F(z) ≠ 0` on the circle, is `25*|F'(z)|² ≤ 64*|F(z)|²`. The uniform `|R|≤4/5` bound has now been certified on the full circle by the reproducible Arb interval computation in `C3_ARb_CERTIFICATE.md`; the interval certificate is not yet imported or re-proved in Lean.
 
 ## New C=40 rational gate: exact arithmetic checked
 
@@ -67,11 +67,13 @@ Consequently, assuming `e_n≥0` for `0≤n≤5`, these four strict margins impl
 
 ## Minimal next checkpoints
 
-1. **C0 / source and 52-window:** reuse B2's ten height witnesses and the already-proved 52-height weighted count; prove exactly ten simple pairs in `|z|<51`, no boundary zeros, and center germ equality with the original C2 jets. Do not conflate distinct-zero count and multiplicity.
-2. **C1 / residues:** formalize the finite contour identity above in Lean (all n). No global factorization.
-3. **C2 / uniform interval bound:** bound `F` and `F'` on the full radius-51 circle, e.g. prove `25*|F'|²≤64*|F|²`, by certified interval arcs/derivative envelopes. A mesh maximum is not enough.
-4. **C3 / six original-source signs:** certify `H_n-P_n≥0`, n=0,...,5, from the *original* characteristic/germ using interval jets and the actual ten rational root boxes. The material-cell tail alone does not imply these signs.
-5. **C4 / rational gate:** port the four `M40_s>0` Fraction checks to Lean rational `norm_num`, combine with B1's existing `s≥4` proof; audit transitive axioms and compile with warnings as errors.
+1. **C0 / isolation and source audit:** complete; the independent contour branch and provenance are recorded in this mission directory.
+2. **C1 / disk roots:** reuse B2's ten height witnesses and the 52-height weighted count to prove exactly ten simple pairs in `|z|<51`, no boundary zeros, and center-germ equality with the original C2 jets. Do not conflate distinct-zero count and multiplicity.
+3. **C2 / finite residues:** formalize the finite contour identity above in Lean for every `n`, with local analytic cancellation and finite gluing. No global factorization is needed.
+4. **C3 / uniform interval bound:** complete as a computer-assisted certificate. `certify_contour51_bound.py` encloses all 512 rational parameter arcs with Arb Taylor bounds and proves `|R|<4/5`; the certificate is not yet a Lean theorem.
+5. **C4 / all-order tail:** use the finite contour identity, the C3 bound, and the exact radius conversion to prove `|e_n|≤40*(1/2500)^(n+1)` in Lean.
+6. **C5 / six original-source signs:** certify `H_n-P_n≥0`, `n=0,...,5`, from the *original* characteristic/germ using interval jets and the actual ten rational root boxes. The material-cell tail alone does not imply these signs.
+7. **C6 / rational gate:** prove the four `M40_s>0` margins in Lean, combine with B1's existing `s≥4` proof, and audit transitive axioms with warnings as errors.
 
 **Scope:** consecutive central 2×2 Hankel minors only. No all-dimension Hankel PSD claim, no global zero location claim. No `sorry`, `admit`, mathematical axioms, or substitution of a zero-defined source.
 

@@ -1,0 +1,11 @@
+C3 radius-51 interval certificate
+python=3.12.12 python-flint=0.8.0
+precision_bits=160 arcs=512 Taylor_order=32
+covered parameter: u in [0,1], z=51*exp(-pi*i*u)
+max |xi'/xi| upper=[1.4928249387552120190013128938539970415378021085 +/- 2.32e-47]
+max |R| upper=[0.74641246937760600950065644692699852076890105426 +/- 1.58e-48]
+min |zeta| lower=[0.94266026048758176563517816122305633101650423566 +/- 9.59e-49]
+max Taylor ratio upper=[0.62586345576762835186816220977276770396740796562 +/- 4.31e-48]
+conclusion: |R(z)| < 4/5 on the lower semicircle
+evenness of F gives R(-z)=-R(z), hence the same bound on |z|=51
+arc enclosures: research/native-moving-schur-sigma/mission-central-contour51-20261108/evidence/C3_ARb_ARCS.csv
