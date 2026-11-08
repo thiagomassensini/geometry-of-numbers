@@ -27,6 +27,16 @@ The successful `SigmaContour51Residue` build used the same environment values ab
 The evidence copy is `C2_SigmaContour51Residue-build.log`. The C5 process remained isolated in
 its own worktree/cache; at this build, `/proc/meminfo` reported about 56.6 GiB available.
 
+## C4/C6 conditional-gate build
+
+The successful `SigmaContour51RationalGate` build used the same environment values above, with
+`MODULE_NAME=SigmaContour51RationalGate`, and redirected output to
+`/home/thlinux/tmp/c2-contour51-20261108-lean432/logs/SigmaContour51RationalGate-attempt3.log`.
+The evidence copy is `C4C6_SigmaContour51RationalGate-build.log`; failed diagnostic attempts 1
+and 2 are preserved beside it. This build ran while C5 PID `151152` was active in its isolated
+worktree/cache, under the user's explicit parallel-build authorization; about 56.6 GiB was
+available. Builds within this branch remained sequential.
+
 ## Reproduce the PR #306 experiment
 
 ```bash

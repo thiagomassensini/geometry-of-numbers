@@ -1,0 +1,4 @@
+'CarrySigmaCentral.contour40EarlyMargin_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaCentral.contour40_radius_conversion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaCentral.contour40_tail_of_circle_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaCentral.sigmaPadeD_pos_of_contour40_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
