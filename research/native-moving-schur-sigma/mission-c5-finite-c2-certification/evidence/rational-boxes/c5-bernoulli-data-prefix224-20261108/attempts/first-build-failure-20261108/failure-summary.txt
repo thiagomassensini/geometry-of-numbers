@@ -1,0 +1,20 @@
+Attempt 1 — failed clean compilation
+
+Started UTC: 2026-11-08T14:34:55Z
+Finished UTC: 2026-11-08T16:33:53Z
+Runner: tmux c5-bernoulli-prefix224-20261108, pane PID 108840, Lean PID 108950
+Exit: 1
+Compiler: Lean 4.32.0, warningAsError=true
+Elapsed wall time: 1:56:46
+Peak RSS: 9,869,328 KiB
+Source SHA-256 at attempt: ae1b13d2ff3cc1cdeee18408057a21661d9f88acddf5186434dc6b5c73d595dc
+Checkpointed candidate commit: 84d5fc5854d66a9fe4dc50c1334705d528bf61af
+
+First concrete errors:
+1. In the append-prefix side condition, simplification left `c5BernoulliPrimeDataPrefix160.size + 32`; `hn192 : n < 192` did not close it because `c5BernoulliPrimeDataPrefix160` was omitted from the simp list.
+2. The odd/even recurrence goals for indices 192–223 also retained `getD` over nested appended arrays because the same base prefix definition was not unfolded.
+3. `Array.ext` ended with the size goal `c5BernoulliPrimeDataPrefix160.size = 160`; its size simplifier also omitted the base prefix definition.
+
+Lean printed `sorryAx` for the incomplete attempted theorem after these unsolved goals. The build command exited 1, so the isolated axiom audit was not run and no result from this attempt is accepted.
+
+Full compiler log is stored alongside this summary. The exact next code change is to include `c5BernoulliPrimeDataPrefix160` in the append-bound simp list, the odd/even `norm_num` lists, and the final array-size `simp` list; then make a new clean build attempt. Do not overwrite this attempt's log.

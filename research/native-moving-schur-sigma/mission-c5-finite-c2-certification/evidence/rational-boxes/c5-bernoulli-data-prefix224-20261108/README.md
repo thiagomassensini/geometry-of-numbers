@@ -4,8 +4,10 @@
 
 Esta etapa estende `CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data`
 aos índices 0–223 com `CarrySigmaObstruction.c5BernoulliPrimeTable_224_eq_data`.
-O prefixo 192 permanece o último integrado e validado. Este candidato não conta
-como provado até a compilação limpa e a auditoria isolada passarem.
+O prefixo 192 permanece o último integrado e validado. A primeira compilação
+limpa falhou após 1h56m46s por listas `simp` incompletas; o log e o erro foram
+preservados em `attempts/first-build-failure-20261108/`. O candidato não conta
+como provado e a auditoria isolada ainda não foi executada.
 
 A tabela tem 601 entradas. O candidato cobre 224; se validado, 377 ainda
 ficarão sem prova formal. A ponte CSV–Lean das caixas de zeta, as inclusões
@@ -29,20 +31,22 @@ original e os sinais finais seguem como obrigações separadas.
 
 ## Estado do runner
 
-Execução ativa iniciada em `2026-11-08T14:34:55Z`, na sessão tmux
-`c5-bernoulli-prefix224-20261108` (pane PID 108840, Lean PID 108950).
-`runner-status.txt` indica `RUNNING`. Para retomar o acompanhamento:
+A primeira tentativa foi iniciada em `2026-11-08T14:34:55Z` na sessão tmux
+`c5-bernoulli-prefix224-20261108` (pane PID 108840, Lean PID 108950) e terminou
+com `EXIT=1`. A correção ainda aguarda publicação. Para iniciar a segunda tentativa após o checkpoint:
 
 ```bash
 bash research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/run-detached.sh
 ```
 
-Acompanhe `runner-status.txt`, `run-state.txt` e os logs. Não relance enquanto
-o status for `RUNNING`. A execução limpa escreve logs, resultado, auditoria e SHA-256.
+Acompanhe `runner-status.txt`, `run-state.txt` e os logs. A falha foi causada
+pela omissão de `c5BernoulliPrimeDataPrefix160` nas listas de simplificação.
+A correção já inclui essa definição nas quatro listas afetadas e ainda aguarda
+commit/push antes da segunda tentativa. Logs de tentativas ficam arquivados.
 
 ## Critério de validação
 
-A reprodução compila a prova e o auditor em Lean 4.32.0 com
+A reprodução limpa compila a prova e o auditor em Lean 4.32.0 com
 `warningAsError=true`. A auditoria aceita somente `propext`, `Classical.choice`
 e `Quot.sound`, rejeitando `sorryAx`, `native_decide`, axiomas próprios e erros
 de compilação. Nenhum resultado deve ser contado como provado antes de ambos

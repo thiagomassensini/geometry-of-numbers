@@ -1,13 +1,12 @@
 # C5 — checkpoints
 
-## 2026-11-08 — candidato ao prefixo Bernoulli 224 preparado; build pendente
+## 2026-11-08 — primeira tentativa do prefixo 224 falhou; evidência preservada
 
-- `c5BernoulliPrimeTable_224_eq_data` estende o certificado integrado 192 aos índices 0–223. O arquivo de prova, auditor, script de reprodução, pins e logs placeholder estão neste branch.
-- Estado validado segue em 192/601. O checkpoint foi publicado antes do build; execução ativa desde 2026-11-08T14:34:55Z (tmux pane 108840, Lean PID 108950).
-- Checkpoint commit `84d5fc5854d66a9fe4dc50c1334705d528bf61af`; branch remota confirmada no mesmo SHA.
-- Base `main@513b73b54d232d7f0375ca3a2381b749fc17dba3`; branch `codex/c5-zeta-bernoulli-prefix224-20261108`.
-- Comando de retomada e status: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/README.md`, `runner-status.txt` e `run-state.txt`.
-- Próximo: acompanhar `runner-status.txt`, preservar os logs finais e auditar os axiomas; não lançar outra execução. C5 permanece incompleta.
+- A candidata `c5BernoulliPrimeTable_224_eq_data` terminou a compilação limpa com `EXIT=1` após 1h56m46s; pico RSS 9,869,328 KiB. A auditoria isolada não foi executada.
+- Primeiro erro: `hn192` não se simplificou para `n < Prefix160.size + 32`; os objetivos de `getD` na recorrência e o objetivo `Prefix160.size = 160` também ficaram abertos porque o bloco base `c5BernoulliPrimeDataPrefix160` faltava nas listas de simplificação.
+- A cópia completa do log, IDs do runner, resumo da falha, commit e SHA do fonte usado estão em `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/attempts/first-build-failure-20261108/`.
+- Último checkpoint remoto da execução: `42cb8beee085463b50835e104727d413266ea4d5`; a correção localizada já está no worktree, sem build repetido ainda. O único prefixo validado permanece 192/601.
+- Próximo: publicar a correção com a primeira falha arquivada e então repetir a reprodução limpa.
 
 ## 2026-11-08 — prefixo Bernoulli 192 integrado pela PR #313
 

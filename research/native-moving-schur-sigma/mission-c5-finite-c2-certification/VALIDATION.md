@@ -1,10 +1,11 @@
 # C5 — validação
 
-## Prefixo 224 — candidato não compilado (2026-11-08)
+## Prefixo 224 — primeira compilação falhou; auditoria não executada (2026-11-08)
 
-- `c5BernoulliPrimeTable_224_eq_data` e auditor isolado estão preparados na branch `codex/c5-zeta-bernoulli-prefix224-20261108`; build limpo em andamento desde 2026-11-08T14:34:55Z (tmux pane 108840, Lean PID 108950).
-- `RESULT.txt` permanece `CLEAN_BUILD=PENDING` e `AXIOM_AUDIT=PENDING` até a execução terminar. Até validação nova, o estado formal continua 192/601, integrado pela PR #313.
-- Pins, script de reprodução, último comando e estado do runner: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/README.md`.
+- `c5BernoulliPrimeTable_224_eq_data` não compilou em Lean 4.32.0 na primeira tentativa. `BUILD_EXIT=1`, tempo 1h56m46s, pico RSS 9,869,328 KiB.
+- Erro: a inclusão do prefixo 160 faltou nas listas de simplificação, deixando aberto `c5BernoulliPrimeDataPrefix160.size = 160` e dependências de `getD` nos índices 192–223. A lista completa de mensagens está preservada em `attempts/first-build-failure-20261108/SigmaC5BernoulliDataCertificate224-clean-build.log`.
+- A auditoria isolada não foi rodada; `sorryAx` aparece no log do módulo incompleto em consequência das metas em aberto e não é aceito como resultado.
+- Estado validado segue 192/601 pela PR #313. A correção já inclui `c5BernoulliPrimeDataPrefix160` nas quatro listas de simplificação; ela ainda aguarda checkpoint e nova compilação.
 
 ## Prefixo 192 — validado e integrado pela PR #313 (2026-11-08)
 

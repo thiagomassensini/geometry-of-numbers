@@ -26,6 +26,7 @@ theorem c5BernoulliPrimeTable_224_eq_data :
               Array.getD_eq_getD_getElem?]
             rw [Array.getElem?_append_left
               (by simpa [c5BernoulliPrimeDataPrefix192,
+                c5BernoulliPrimeDataPrefix160,
                 c5BernoulliPrimeDataPrefix128,
                 c5BernoulliPrimeDataPrefix96,
                 c5BernoulliPrimeDataPrefix64,
@@ -38,6 +39,7 @@ theorem c5BernoulliPrimeTable_224_eq_data :
             interval_cases n <;>
               norm_num [c5BernoulliPrimeDataPrefix224,
                 c5BernoulliPrimeDataPrefix192,
+                c5BernoulliPrimeDataPrefix160,
                 c5BernoulliPrimeDataPrefix128,
                 c5BernoulliPrimeDataPrefix96,
                 c5BernoulliPrimeDataPrefix64,
@@ -59,6 +61,7 @@ theorem c5BernoulliPrimeTable_224_eq_data :
               norm_num (config := { maxSteps := 1000000 })
                 [c5BernoulliPrimeDataPrefix224,
                 c5BernoulliPrimeDataPrefix192,
+                c5BernoulliPrimeDataPrefix160,
                 c5BernoulliPrimeDataPrefix128,
                 c5BernoulliPrimeDataPrefix96,
                 c5BernoulliPrimeDataPrefix64,
@@ -66,7 +69,8 @@ theorem c5BernoulliPrimeTable_224_eq_data :
                 Finset.sum_range_succ, Nat.choose]
   apply Array.ext
   · simp [c5BernoulliPrimeTable_size, c5BernoulliPrimeDataPrefix224,
-      c5BernoulliPrimeDataPrefix192, c5BernoulliPrimeDataPrefix128,
+      c5BernoulliPrimeDataPrefix192, c5BernoulliPrimeDataPrefix160,
+      c5BernoulliPrimeDataPrefix128,
       c5BernoulliPrimeDataPrefix96, c5BernoulliPrimeDataPrefix64,
       c5BernoulliPrimeDataPrefix32]
   · intro i hiTable hiData

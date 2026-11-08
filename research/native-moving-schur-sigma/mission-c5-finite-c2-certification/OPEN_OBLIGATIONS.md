@@ -1,18 +1,18 @@
 # C5 — obrigações abertas
 
-## Estado atual — candidato ao prefixo Bernoulli 224 (2026-11-08)
+## Estado atual — prefixo integrado 192; candidata 224 com falha inicial (2026-11-08)
 
-O último prefixo integrado é 192/601 (PR #313, merge
-`f0bd4ec675a3dc483f55373d3a58092042fac67d`). O candidato 224 está compilando limpo nesta branch; a auditoria ainda não
-terminou. Até ambos passarem, 409 entradas seguem abertas no estado validado. Obrigações:
+A `main` contém 192/601 entradas pela PR #313. A primeira tentativa de provar o
+prefixo 224 falhou em metas de redução de arrays anexados; 409 entradas seguem
+abertas no estado validado. Obrigações:
 
-1. Publicar o checkpoint do candidato 224, compilar e auditar; se válido, integrar e continuar os prefixos até 601.
+1. Publicar o patch que acrescenta `c5BernoulliPrimeDataPrefix160` às listas `simp`/`norm_num`, então repetir build/auditoria para o prefixo 224; a primeira tentativa já está preservada.
 2. Provar a ligação Lean entre as caixas de zeta exportadas e a avaliação correspondente.
 3. Certificar os nós Gamma restantes e compor as caixas zeta/Gamma com o fator nativo original e as quadraturas da fonte completada.
 4. Provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` sem hipóteses auxiliares e fechar os sinais finais de `sigmaPadeD`.
 
-C5 permanece incompleta. Evidências da candidata 224:
-`evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/README.md`.
+O erro do primeiro build, logs, pins, comandos e estado estão em
+`evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/`. C5 permanece incompleta.
 
 ## Estado atual — prefixo Bernoulli de 160 entradas integrado (2026-11-08)
 

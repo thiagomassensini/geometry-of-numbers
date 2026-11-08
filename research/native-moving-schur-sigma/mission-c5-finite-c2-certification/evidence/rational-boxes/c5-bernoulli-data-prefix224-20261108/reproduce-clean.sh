@@ -53,7 +53,7 @@ printf 'CLEAN_BUILD=PASS\nAXIOM_AUDIT=PASS\n' > "$C5_EVIDENCE/RESULT.txt"
     ../../../../SigmaC5BernoulliDataCertificate224Audit.lean \
     ../../../../SigmaC5BernoulliDataTable.lean \
     README.md pins.txt reproduce-clean.sh run-detached.sh run-under-tmux.sh \
-    check-axioms.py runner-status.txt run-state.txt reproduce-runner.log \
+    check-axioms.py \
     SigmaC5BernoulliDataCertificate224-clean-build.log \
     SigmaC5BernoulliDataCertificate224Audit-clean-build.log axiom-audit.log RESULT.txt \
     > SHA256SUMS.txt

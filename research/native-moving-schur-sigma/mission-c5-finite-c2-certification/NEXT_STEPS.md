@@ -1,12 +1,12 @@
 # Próximos passos — C5
 
-## Estado atual — candidato ao prefixo 224 preparado (2026-11-08)
+## Estado atual — primeira compilação do prefixo 224 falhou (2026-11-08)
 
-- O prefixo 192 está integrado pela PR #313, merge `f0bd4ec675a3dc483f55373d3a58092042fac67d`; estado pós-merge registrado em `main@513b73b54d232d7f0375ca3a2381b749fc17dba3`.
-- A prova cumulativa `c5BernoulliPrimeTable_224_eq_data` e o auditor estão preparados. Checkpoint publicado em `84d5fc5854d66a9fe4dc50c1334705d528bf61af`; build limpo em andamento desde 14:34:55 UTC, tmux pane PID 108840 e Lean PID 108950; até passar, contar somente 192/601.
-- Branch candidata: `codex/c5-zeta-bernoulli-prefix224-20261108`. Reprodutor, pins e estado do runner: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/README.md`.
-- **Próxima ação concreta:** conferir `runner-status.txt` e acompanhar a execução ativa; não relançar. Após o término, conferir o log de build, executar/confirmar a auditoria e registrar o resultado. Se passar, abrir PR parcial, revisar e integrar antes de avançar.
-- Ponte CSV–Lean, inclusões da fonte original e sinais finais seguem abertos. C5 permanece incompleta.
+- O prefixo 192 permanece integrado pela PR #313, merge `f0bd4ec675a3dc483f55373d3a58092042fac67d`; estado pós-merge `main@513b73b54d232d7f0375ca3a2381b749fc17dba3`.
+- A tentativa de `c5BernoulliPrimeTable_224_eq_data` levou 1h56m46s e terminou `EXIT=1`; pico RSS 9,869,328 KiB. A auditoria isolada não rodou e o estado provado continua 192/601.
+- Causa: as listas de simplificação não desdobravam `c5BernoulliPrimeDataPrefix160`, deixando abertas a cota do append, os cálculos de `getD` e o fechamento de tamanho do array. Erro integral: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/attempts/first-build-failure-20261108/`.
+- **Próxima ação concreta:** checkpointar e publicar a correção que inclui Prefix160 nas listas, então repetir build limpo e auditoria isolada. Não sobrescrever o log da primeira tentativa.
+- A ponte CSV–Lean, inclusões da fonte original e sinais finais continuam abertos. C5 permanece incompleta.
 
 ## Estado atual — prefixo Bernoulli de 160 entradas integrado (2026-11-08)
 
