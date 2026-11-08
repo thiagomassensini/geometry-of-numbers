@@ -1,5 +1,13 @@
 # C5 — validação
 
+## Validação recente — nó complementar de Gamma para `d=1/10` (PR #296)
+
+- Fonte: `SigmaC5GammaComplexNodeDOneUpperComplexGammaCertificate.lean`; teorema `CarrySigmaObstruction.c5GammaComplexNodeDOneUpperComplexBox_contains`.
+- `SigmaC5GammaDOneUpperLogBounds.lean` prova `|Interval.logQ 384 8 240| ≤ 10`, o limite que faz caber o argumento de potência no raio 8.
+- Seis módulos compilaram em Lean 4.32.0 com `warningAsError=true`; 16 relatórios contêm apenas `propext`, `Classical.choice`, `Quot.sound`. Sem `sorryAx`, axiomas próprios ou `native_decide`.
+- A caixa contém `Complex.Gamma (3/10 + (3/20) * Complex.I)`, compondo `240^z`, 16 blocos × 64 termos e erro `10⁻⁹⁹`. Pico RSS: 8.4 GiB; reprodução limpa passou.
+- Commit `e986390937265fc1bb759140ed7fb6d80d23eadf`, PR #296, merge `113ed1517fff040f4fc619cf7d5086c57f137427`. Evidência, pins, hashes, logs e falha corrigida: `evidence/rational-boxes/c5-gamma-d1-upper-complex-node-20261108/README.md`.
+
 ## Validação recente — primeiro nó complexo de Gamma para `d=1/10`
 
 - Fonte principal: `SigmaC5GammaComplexNodeDOneComplexGammaCertificate.lean`; declaração `CarrySigmaObstruction.c5GammaComplexNodeDOneComplexBox_contains`.

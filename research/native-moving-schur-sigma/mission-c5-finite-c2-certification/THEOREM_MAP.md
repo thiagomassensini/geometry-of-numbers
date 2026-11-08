@@ -1,5 +1,19 @@
 # C5 — mapa dos teoremas e obrigações
 
+## Resultado integrado — nó complementar complexo de Gamma em `d=1/10` (PR #296)
+
+| Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |
+|---|---|---|---|---|
+| `CarrySigmaObstruction.c5GammaComplexNodeDOneUpperComplexBox_contains` | `SigmaC5GammaComplexNodeDOneUpperComplexGammaCertificate.lean` | nenhuma | uma caixa racional contém `Complex.Gamma (3/10 + (3/20) * Complex.I)` | `240^z`, 16 blocos × 64 termos do núcleo racional, erro `gamma_finite_1024_240_error`; **PROVADO e integrado pela PR #296**, merge `113ed1517fff040f4fc619cf7d5086c57f137427` |
+| `CarrySigmaObstruction.c5GammaDOneUpper_logQ_absBound` | `SigmaC5GammaDOneUpperLogBounds.lean` | nenhuma | os extremos de `Interval.logQ 384 8 240` têm módulo `≤ 10` | limite refinado que permite a caixa de potência com raio 8; **PROVADO e integrado pela PR #296** |
+
+Lean 4.32.0 compilou seis módulos com warnings como erros. Auditoria de 16
+relatórios: somente `propext`, `Classical.choice`, `Quot.sound`; sem
+`sorryAx`, axiomas próprios ou `native_decide`. Reprodução, hashes, pins,
+logs e primeira tentativa corrigida: `evidence/rational-boxes/c5-gamma-d1-upper-complex-node-20261108/README.md`.
+Com o resultado da PR #294, o par complexo de `d=1/10` está fechado; avaliação
+nodal de zeta, demais nós, inclusão da fonte e sinais finais continuam abertos.
+
 ## Resultado integrado — primeiro nó complexo de Gamma para `d=1/10` (PR #294, Lean 4.32)
 
 | Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |

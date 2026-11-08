@@ -1,5 +1,13 @@
 # C5 — checkpoints
 
+## 2026-11-08 — nó complementar de Gamma em `d=1/10` integrado pela PR #296
+
+- `CarrySigmaObstruction.c5GammaComplexNodeDOneUpperComplexBox_contains` contém a caixa de `Γ(3/10 + 3i/20)`, completando o par complexo em `d=1/10` com o nó `Γ(1/5 + 3i/20)` da PR #294.
+- `SigmaC5GammaDOneUpperLogBounds.lean` prova `|Interval.logQ 384 8 240| ≤ 10`; a cota anterior 18 excedia o raio 8 aceito pelo avaliador de potência. Nenhuma hipótese adicional foi introduzida.
+- A caixa inclui `240^z`, 16 blocos × 64 termos e o resto `gamma_finite_1024_240_error ≤ 10⁻⁹⁹`. Seis módulos passaram em Lean 4.32.0, `warningAsError=true`; 16 relatórios usam apenas `propext`, `Classical.choice`, `Quot.sound`. Pico RSS: 8.4 GiB; reprodução limpa aprovada.
+- Commit de prova `e986390937265fc1bb759140ed7fb6d80d23eadf`, PR #296, merge `113ed1517fff040f4fc619cf7d5086c57f137427`. Evidência, incluindo a falha inicial, pins, hashes e logs: `evidence/rational-boxes/c5-gamma-d1-upper-complex-node-20261108/README.md`.
+- C5 segue parcial: avaliação nodal de zeta, outros nós, composição da fonte, inclusões e sinais finais permanecem abertos.
+
 ## 2026-11-08 — primeiro nó complexo de Gamma em `d=1/10` integrado pela PR #294
 
 - `CarrySigmaObstruction.c5GammaComplexNodeDOneComplexBox_contains` contém `Γ(1/5 + 3i/20)`, primeiro ponto complexo da malha de deslocamento `d=1/10`, na altura de Cauchy `3/10`.

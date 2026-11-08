@@ -1,24 +1,23 @@
 # C5 — obrigações abertas
 
-## Estado atual — três nós complexos de Gamma provados
+## Estado atual — quatro nós complexos de Gamma integrados
 
-Além das caixas reais em `1/5` e `901/4000`, estão integrados três pontos
-complexos: `c5GammaComplexNodeBox_contains` para `Γ(901/4000 + 3i/20)` (PR
-#290, merge `06001aaae85c19d01dca48a802fecbb06ffb381d`),
-`c5GammaComplexNodeUpperBox_contains` para `Γ(1099/4000 + 3i/20)` (PR #292,
-merge `18784869bd942422cfc2ace1b70e7e2ba8623b0f`) e
-`c5GammaComplexNodeDOneComplexBox_contains` para `Γ(1/5 + 3i/20)` (PR #294,
-merge `5175969e6e11ccb1a7460389e78efe7c8f78ee60`). Evidência do último:
-`evidence/rational-boxes/c5-gamma-d1-complex-node-20261108/README.md`.
+Além das caixas reais em `1/5` e `901/4000`, estão integrados os pontos
+complexos `Γ(901/4000 + 3i/20)` (PR #290),
+`Γ(1099/4000 + 3i/20)` (PR #292), `Γ(1/5 + 3i/20)` (PR #294) e
+`Γ(3/10 + 3i/20)` (PR #296). A última caixa é provada por
+`c5GammaComplexNodeDOneUpperComplexBox_contains`, integrada no merge
+`113ed1517fff040f4fc619cf7d5086c57f137427`; evidência em
+`evidence/rational-boxes/c5-gamma-d1-upper-complex-node-20261108/README.md`.
 
 Continuam abertas, em ordem:
 
-1. certificar o complementar `Γ(3/10 + 3i/20)` e os demais nós Gamma requeridos; completar a avaliação intervalar em Lean das caixas exportadas de zeta. A expansão Euler–Maclaurin de ordem 600 já está provada e integrada; falta a composição por nó;
-2. compor Gamma e zeta com o fator nativo original e as quadraturas da fonte completada;
-3. provar as inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` sem hipóteses auxiliares;
-4. fechar os sinais de `sigmaPadeD` original nos dois deslocamentos.
+1. Formalizar em Lean a ligação por nó entre as 516 caixas de zeta exportadas (129 nós × quatro coordenadas) e as caixas usadas no cálculo. CSV/`#eval` confirma exportação e cobertura, não a igualdade; Euler–Maclaurin de ordem 600 já está integrada.
+2. Certificar os demais nós Gamma requeridos e compor as caixas de zeta/Gamma com o fator nativo original e as quadraturas da fonte completada.
+3. Provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` sem hipóteses auxiliares.
+4. Fechar os sinais finais da `sigmaPadeD` original nos dois deslocamentos.
 
-Os certificados condicionais de O3 continuam corretos sob suas hipóteses, mas não são certificados incondicionais da fonte. C5 permanece incompleta.
+Os certificados condicionais de O3 continuam corretos sob suas hipóteses, mas não certificam a fonte incondicionalmente. C5 permanece incompleta.
 
 ## Histórico — primeira caixa real `Γ(1/5)` integrada
 

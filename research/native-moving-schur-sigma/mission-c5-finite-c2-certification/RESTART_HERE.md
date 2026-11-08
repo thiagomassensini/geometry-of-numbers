@@ -1,14 +1,15 @@
 # Retomar primeiro — missão C5
 
-## Estado atual — primeiro nó complexo de Gamma em `d=1/10` integrado (2026-11-08)
+## Estado atual — quatro nós complexos de Gamma integrados (2026-11-08)
 
 - C5 segue ativa; C1B/C2/C3/C4 permanecem concluídas. Não reiniciar essas fases nem a migração geral para Lean 4.35.
-- Resultado mais recente: `CarrySigmaObstruction.c5GammaComplexNodeDOneComplexBox_contains` em `SigmaC5GammaComplexNodeDOneComplexGammaCertificate.lean`, que contém `Complex.Gamma (1/5 + (3/20) * Complex.I)`, primeiro ponto complexo da malha `d=1/10`, altura de Cauchy `3/10`.
-- Cinco módulos passaram em Lean 4.32.0 com `warningAsError=true`; 14 relatórios usam somente `propext`, `Classical.choice`, `Quot.sound`, sem `sorryAx`, axiomas próprios ou `native_decide`. Pico de RSS: 8.4 GiB. A rotina de reprodução também passou.
-- Evidência, reprodução, pins, hashes e logs: `evidence/rational-boxes/c5-gamma-d1-complex-node-20261108/README.md`. PR #294 integrou o commit `752e6d1` no merge `5175969e6e11ccb1a7460389e78efe7c8f78ee60`.
-- Permanecem integrados os nós complexos `Γ(901/4000 + 3i/20)` e `Γ(1099/4000 + 3i/20)` para `d=99/2000`, pelas PRs #290 e #292. O ponto real `Γ(1/5)` também já está certificado.
-- Próxima obrigação: certificar o complementar `Γ(3/10 + 3i/20)` da malha `d=1/10` e os demais nós Gamma requeridos; fechar a avaliação intervalar por nó das caixas de zeta em Lean; então compor todos os fatores e quadraturas da fonte original para provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
-- Este checkpoint cobre três pontos complexos, incluindo apenas um dos dois pontos da malha `d=1/10`. C5, as inclusões da fonte original e os sinais finais da `sigmaPadeD` continuam incompletos.
+- A PR #296 integrou `CarrySigmaObstruction.c5GammaComplexNodeDOneUpperComplexBox_contains`, que contém `Complex.Gamma (3/10 + (3/20) * Complex.I)`. Isso fecha o par complexo de `d=1/10`, junto de `Γ(1/5 + 3i/20)` da PR #294.
+- Para a cota de potência de raio 8, `SigmaC5GammaDOneUpperLogBounds.lean` prova `|Interval.logQ 384 8 240| ≤ 10`; a composição inclui `240^z`, 16 blocos × 64 termos do núcleo racional e `gamma_finite_1024_240_error ≤ 10⁻⁹⁹`.
+- Seis módulos passaram em Lean 4.32.0 com `warningAsError=true`; 16 relatórios usam somente `propext`, `Classical.choice`, `Quot.sound`, sem `sorryAx`, axiomas próprios ou `native_decide`. Pico de RSS: 8.4 GiB. A reprodução limpa também passou; a primeira falha de composição foi preservada.
+- Evidência, reprodução, pins, hashes e logs: `evidence/rational-boxes/c5-gamma-d1-upper-complex-node-20261108/README.md`. PR #296 integrou o commit `e986390937265fc1bb759140ed7fb6d80d23eadf` no merge `113ed1517fff040f4fc619cf7d5086c57f137427`.
+- Também estão integrados `Γ(901/4000 + 3i/20)` e `Γ(1099/4000 + 3i/20)` para `d=99/2000` (PRs #290 e #292), e os pontos reais `Γ(1/5)` e `Γ(901/4000)`.
+- Próxima obrigação: formalizar em Lean a ligação das 516 caixas de zeta exportadas (129 nós × quatro coordenadas) às caixas usadas na avaliação nodal. A exportação CSV/`#eval` confirma os dados e a cobertura, mas não prova essa ligação; a expansão Euler–Maclaurin de ordem 600 já está integrada.
+- Depois, certificar os demais nós necessários e compor zeta, Gamma, fator nativo e quadraturas da fonte original para provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`. C5 e os sinais finais de `sigmaPadeD` continuam incompletos.
 
 ## Checkpoint anterior — caixa `Γ(1/5)` (PR #285 integrada)
 
