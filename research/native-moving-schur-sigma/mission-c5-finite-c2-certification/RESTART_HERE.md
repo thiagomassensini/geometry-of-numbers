@@ -14,12 +14,12 @@ LAST MERGE: PR #313, f0bd4ec675a3dc483f55373d3a58092042fac67d.
 MAIN SHA: 513b73b54d232d7f0375ca3a2381b749fc17dba3.
 CURRENT BRANCH: codex/c5-zeta-bernoulli-prefix224-20261108.
 OPEN PR: nenhuma.
-ACTIVE BUILD: nenhum; runner-status.txt = NOT_STARTED.
+ACTIVE BUILD: tmux c5-bernoulli-prefix224-20261108; pane PID 108840; Lean PID 108950; started 2026-11-08T14:34:55Z. Confira runner-status.txt antes de qualquer ação.
 CHECKPOINT STATUS: branch pushed; candidate source, runner and pins are durable in Git.
 WHAT IS PROVED: prefixo Bernoulli 192/601 integrado e auditado; axiomas somente propext, Classical.choice, Quot.sound. C1B/C2/C3/C4 continuam integradas nos escopos concluídos.
 WHAT IS CONDITIONAL: sinais finais dependem das inclusões não provadas sigmaC00495SourceBoxes e sigmaC01SourceBoxes.
-WHAT IS BLOCKED: candidata 224 ainda sem build; 409 entradas, ponte CSV–Lean, inclusões da fonte e sinais finais permanecem abertos. C5 está incompleta.
-EXACT NEXT COMMAND: bash research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/run-detached.sh
+WHAT IS BLOCKED: candidata 224 está em compilação; 409 entradas, ponte CSV–Lean, inclusões da fonte e sinais finais permanecem abertos. C5 está incompleta.
+EXACT NEXT COMMAND: cat research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/runner-status.txt; ps -o pid,etime,%cpu,rss,state -p 108950
 EXACT NEXT MATHEMATICAL OBLIGATION: compilar e auditar c5BernoulliPrimeTable_224_eq_data a partir do prefixo integrado 192 e da recorrência de Bernoulli.
 DO NOT REPEAT: prefixos Bernoulli 32/64/96/128/160/192; build/auditoria 192; C1B/C2/C3/C4; não reabrir a falha do import prefix160 nem o limite inválido de simplificação. Não iniciar migração geral Lean 4.35.
 ```

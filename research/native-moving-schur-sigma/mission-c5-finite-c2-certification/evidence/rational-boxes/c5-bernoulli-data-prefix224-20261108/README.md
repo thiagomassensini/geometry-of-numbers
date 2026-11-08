@@ -29,15 +29,16 @@ original e os sinais finais seguem como obrigações separadas.
 
 ## Estado do runner
 
-Antes da execução, `runner-status.txt` contém `NOT_STARTED`. O comando de
-retomada é:
+Execução ativa iniciada em `2026-11-08T14:34:55Z`, na sessão tmux
+`c5-bernoulli-prefix224-20261108` (pane PID 108840, Lean PID 108950).
+`runner-status.txt` indica `RUNNING`. Para retomar o acompanhamento:
 
 ```bash
 bash research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/run-detached.sh
 ```
 
-Acompanhe `runner-status.txt` e `run-state.txt`; não relance enquanto o status
-for `RUNNING`. A execução limpa escreve logs, resultado, auditoria e SHA-256.
+Acompanhe `runner-status.txt`, `run-state.txt` e os logs. Não relance enquanto
+o status for `RUNNING`. A execução limpa escreve logs, resultado, auditoria e SHA-256.
 
 ## Critério de validação
 

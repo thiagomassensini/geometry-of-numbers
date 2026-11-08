@@ -4,10 +4,10 @@
 
 - Último teorema validado e integrado: `CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data`, PR #313, merge `f0bd4ec675a3dc483f55373d3a58092042fac67d`; a atualização de estado pós-merge é o commit `513b73b54d232d7f0375ca3a2381b749fc17dba3`.
 - O candidato `CarrySigmaObstruction.c5BernoulliPrimeTable_224_eq_data` e seu auditor isolado estão preparados em `SigmaC5BernoulliDataCertificate224.lean` e `SigmaC5BernoulliDataCertificate224Audit.lean`. O reprodutor limpo usa Lean 4.32.0, `warningAsError=true` e o `.olean` integrado do prefixo 192.
-- Esta branch ainda não tem resultado de compilação nem auditoria. O estado formal validado continua 192/601; não contar as 32 entradas candidatas. A integração, logs, pins, comando de retomada e estado do runner ficam em `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/`.
-- Branch `codex/c5-zeta-bernoulli-prefix224-20261108`; base `main@513b73b54d232d7f0375ca3a2381b749fc17dba3`. Checkpoint da candidata publicado no commit `84d5fc5854d66a9fe4dc50c1334705d528bf61af`; remoto confirmado no mesmo SHA. Ainda não há PR nem compilação ativa.
+- A compilação limpa está em andamento desde 2026-11-08T14:34:55Z (tmux `c5-bernoulli-prefix224-20261108`, pane PID 108840, Lean PID 108950). Ainda não há resultado nem auditoria. O estado formal validado continua 192/601; não contar as 32 entradas candidatas. A integração, logs, pins, comando de retomada e estado do runner ficam em `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/`.
+- Branch `codex/c5-zeta-bernoulli-prefix224-20261108`; base `main@513b73b54d232d7f0375ca3a2381b749fc17dba3`. Checkpoint da candidata publicado no commit `84d5fc5854d66a9fe4dc50c1334705d528bf61af`; remoto confirmado no mesmo SHA. Ainda não há PR; a compilação está ativa e foi checkpointada.
 - Permanecem abertas a ponte CSV–Lean das caixas de zeta, as inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`, a composição com a fonte original e os sinais finais de `sigmaPadeD`.
-- Checkpoint remoto confirmado; próxima ação: executar o `run-detached.sh` de prefixo 224, acompanhar o runner até término e auditar o resultado. C1B/C2/C3/C4 e a migração geral para Lean 4.35 não devem ser reabertas.
+- Próxima ação: acompanhar `runner-status.txt`; não relançar enquanto indicar `RUNNING`. Após o término, conferir build e auditoria, registrar os logs e abrir PR parcial se aprovado. C1B/C2/C3/C4 e a migração geral para Lean 4.35 não devem ser reabertas.
 
 ## Histórico — prefixo Bernoulli de 64 entradas integrado (2026-11-08)
 

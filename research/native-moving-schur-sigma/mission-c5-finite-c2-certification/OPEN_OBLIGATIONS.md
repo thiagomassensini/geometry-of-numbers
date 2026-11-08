@@ -3,9 +3,8 @@
 ## Estado atual — candidato ao prefixo Bernoulli 224 (2026-11-08)
 
 O último prefixo integrado é 192/601 (PR #313, merge
-`f0bd4ec675a3dc483f55373d3a58092042fac67d`). O candidato 224 está preparado,
-mas ainda não compilado; portanto 409 entradas seguem abertas no estado
-validado. Obrigações:
+`f0bd4ec675a3dc483f55373d3a58092042fac67d`). O candidato 224 está compilando limpo nesta branch; a auditoria ainda não
+terminou. Até ambos passarem, 409 entradas seguem abertas no estado validado. Obrigações:
 
 1. Publicar o checkpoint do candidato 224, compilar e auditar; se válido, integrar e continuar os prefixos até 601.
 2. Provar a ligação Lean entre as caixas de zeta exportadas e a avaliação correspondente.

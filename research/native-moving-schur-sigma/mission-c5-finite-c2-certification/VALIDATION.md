@@ -2,8 +2,8 @@
 
 ## Prefixo 224 — candidato não compilado (2026-11-08)
 
-- `c5BernoulliPrimeTable_224_eq_data` e auditor isolado estão preparados na branch `codex/c5-zeta-bernoulli-prefix224-20261108`; build ainda não iniciado.
-- `RESULT.txt` registra `CLEAN_BUILD=PENDING` e `AXIOM_AUDIT=PENDING`. Até validação nova, o estado formal continua 192/601, integrado pela PR #313.
+- `c5BernoulliPrimeTable_224_eq_data` e auditor isolado estão preparados na branch `codex/c5-zeta-bernoulli-prefix224-20261108`; build limpo em andamento desde 2026-11-08T14:34:55Z (tmux pane 108840, Lean PID 108950).
+- `RESULT.txt` permanece `CLEAN_BUILD=PENDING` e `AXIOM_AUDIT=PENDING` até a execução terminar. Até validação nova, o estado formal continua 192/601, integrado pela PR #313.
 - Pins, script de reprodução, último comando e estado do runner: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/README.md`.
 
 ## Prefixo 192 — validado e integrado pela PR #313 (2026-11-08)
