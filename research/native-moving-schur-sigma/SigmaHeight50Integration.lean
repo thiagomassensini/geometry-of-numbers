@@ -57,6 +57,21 @@ private theorem height50_nine_box_certificates : sigmaNineZeroBoxes := by
   · exact ⟨ht8, by simpa [Complex.I] using hz8⟩
   · exact ⟨ht9, by simpa [Complex.I] using hz9⟩
 
+/-- The integrated height-50 certificates expose the same first zero used by the first-zero
+certificate together with all ten ordered rational boxes. The count remains a distinct-zero
+count; simplicity is supplied separately by the height-50 RH certificate. -/
+theorem sigmaHeight50_ten_zero_witnesses_and_count :
+    sigmaRHHeight50 ∧ sigmaZeroCount50 ∧
+      ∃ γ : ℝ, γ ∈ Set.Ioo (1413 / 100 : ℝ) (1414 / 100) ∧
+        riemannZeta (sigmaLineZero γ) = 0 ∧ sigmaTenZeroBoxesWithFirst γ := by
+  obtain ⟨γ, hγbox, hγzero⟩ := height50_first_zero_certificate
+  have hγline : riemannZeta (sigmaLineZero γ) = 0 := by
+    simpa [sigmaLineZero] using hγzero
+  have hboxes := sigmaTenZeroBoxesWithFirst_of_first_and_nine
+    γ hγbox hγline height50_nine_box_certificates
+  exact ⟨height50_rh_certificate, height50_count_certificate,
+    γ, hγbox, hγline, hboxes⟩
+
 /-- The native sigma isolation theorem with all finite-height premises discharged by the
 independently compiled Lean height-50 certificate. -/
 theorem exists_firstSigmaDisplacedProductIsolation_from_height50_certificate :
@@ -86,6 +101,7 @@ theorem exists_firstSigmaHeight50PadeRecovery_from_certificate :
 #print axioms HardyTenZeros.zero_in_4332
 #print axioms HardyTenZeros.zero_in_4800
 #print axioms HardyTenZeros.zero_in_4977
+#print axioms sigmaHeight50_ten_zero_witnesses_and_count
 #print axioms exists_firstSigmaDisplacedProductIsolation_from_height50_certificate
 #print axioms exists_firstSigmaHeight50PadeRecovery_from_certificate
 

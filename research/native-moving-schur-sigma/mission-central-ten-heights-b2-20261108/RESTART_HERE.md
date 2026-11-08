@@ -8,12 +8,13 @@
 - B2 worktree: `/home/thlinux/worktrees/geometry-of-numbers-c2-central-ten-heights-b2-20261108`.
 - Base: B1 PR head `6397f479f8c373b59cdffea512bbd8dd95b24fb3`.
 - Lean: `leanprover/lean4:v4.32.0`; exclusive output root `/home/thlinux/tmp/c2-central-ten-heights-b2-20261108-lean432`.
-- B2.0 is complete; no B2 source theorem has yet been added or compiled.
-- At 2026-11-08 06:15 UTC, no Lean/Lake/C5 process was active. Recheck before starting a build.
+- B2.0 and B2.1 are complete. Public theorem `CarrySigmaObstruction.sigmaHeight50_ten_zero_witnesses_and_count` compiles and has the transitive axiom set `[propext, Classical.choice, Quot.sound]`.
+- B2.1 source, OLean, successful log and failed first-attempt log hashes are recorded in `VALIDATION.md`. The successful build log is committed under `evidence/`.
+- C5 prefix128 completed before B2.1 compilation. Recheck that no Lean/Lake process is active before every later build.
 
 ## Next action
 
-Inspect `SigmaHeight50Integration.lean` and add a public theorem that packages `height50_rh_certificate`, `height50_count_certificate`, the first-zero witness, `height50_nine_box_certificates`, and `sigmaTenZeroBoxesWithFirst_of_first_and_nine`. Compile only after confirming the C5 build remains inactive. This is B2.1; commit and push when compiled and audited.
+Implement B2.2 in a new module: destruct the public B2.1 witness, define `a i = (ts i)⁻²`, and prove positivity, all rational `scaleLower`/`scaleUpper` bounds, `a 0 > a 1 > 0`, and the no-extra-hypothesis witness of B1's `hbox`. Compile only after confirming no C5 Lean/Lake process is active; then audit and commit/push B2.2.
 
 ## Honesty boundary
 
