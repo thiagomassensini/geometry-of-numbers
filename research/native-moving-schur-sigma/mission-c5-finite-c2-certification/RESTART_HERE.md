@@ -1,6 +1,6 @@
 # Retomar primeiro — missão C5
 
-## Estado atual — prefixo Bernoulli de 192 entradas candidato (2026-11-08)
+## Estado atual — prefixo Bernoulli de 192 em compilação (2026-11-08)
 
 ```text
 MISSION: C5 — certificar as janelas negativas da fonte C2 original.
@@ -13,12 +13,12 @@ CURRENT BRANCH: codex/c5-zeta-bernoulli-prefix192-20261108; based on main checkp
 LAST PROOF MERGE SHA: cb829d98d799df72f07c9aff03e9d93871da6f77 (PR #312).
 MAIN SHA BEFORE PREFIX 192: 605c55e899d62a658bed511d13be3b95b09840c8.
 OPEN PR: none; prefix 192 is an unvalidated candidate.
-ACTIVE BUILD: not started. Launcher: evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/run-detached.sh.
+ACTIVE BUILD: tmux c5-bernoulli-prefix192-20261108; pane PID 57490; Lean PID 57591; started 2026-11-08T11:06:58Z. State: evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/runner-status.txt.
 WHAT IS PROVED: indices 0–159 equal the first 160 rational data literals; clean Lean 4.32 build and isolated standard-axiom audit pass. The exact 601-value table check inherited from prefix128 remains valid.
 WHAT IS CONDITIONAL: the final finite signs still depend on the unproved source-box inclusions sigmaC00495SourceBoxes and sigmaC01SourceBoxes.
 WHAT IS BLOCKED: the CSV–Lean zeta-box bridge, source inclusions and signs remain open. Prefix 192 has not yet passed compilation/audit; 441 entries remain after the integrated prefix 160.
-EXACT NEXT COMMAND: bash research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/run-detached.sh
-EXACT NEXT MATHEMATICAL OBLIGATION: validate c5BernoulliPrimeTable_192_eq_data; if successful, publish and merge the checkpoint, then continue toward 224 and 601.
+EXACT NEXT COMMAND: cat research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/runner-status.txt; ps -o pid,etime,%cpu,rss,state -p 57591
+EXACT NEXT MATHEMATICAL OBLIGATION: let the active compile and audit finish; if successful, publish and merge the checkpoint, then continue toward 224 and 601.
 DO NOT REPEAT: C1B/C2/C3/C4; prefixes 32/64/96/128/160; the missing-prefix64 import failure; the invalid default-100000 simp attempt; prefix160 proof or its interrupted executions. Do not relaunch prefix192 while runner-status is RUNNING.
 ```
 

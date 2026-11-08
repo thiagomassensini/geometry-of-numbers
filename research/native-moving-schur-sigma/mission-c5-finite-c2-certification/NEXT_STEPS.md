@@ -4,7 +4,8 @@
 
 - O prefixo 160 está integrado pela PR #312, merge `cb829d98d799df72f07c9aff03e9d93871da6f77`; o estado provado continua 160/601.
 - `c5BernoulliPrimeTable_192_eq_data` e sua auditoria estão preparados. Ainda não houve compilação; não conte as 32 entradas novas.
-- Próxima ação: publicar o checkpoint desta branch e iniciar `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/run-detached.sh`; aguardar, conferir logs, hashes e axiomas. Se passar, abrir PR e integrar. Depois, seguir ao prefixo 224.
+- O checkpoint candidato está publicado no SHA `636ea8d7ceea1af08adafcdb4d373e8e9b9895b4`; a compilação persistente está ativa (Lean PID 57591). Acompanhar `runner-status.txt`; não iniciar execução paralela.
+- Próxima ação: aguardar o build, conferir logs, hashes e axiomas. Se passar, abrir PR e integrar. Depois, seguir ao prefixo 224.
 - A ponte CSV–Lean das caixas de zeta, inclusões da fonte e sinais finais continuam abertas.
 
 ## Estado atual — prefixo Bernoulli de 160 entradas integrado (2026-11-08)

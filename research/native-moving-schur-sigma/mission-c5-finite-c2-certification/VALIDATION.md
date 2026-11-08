@@ -2,9 +2,9 @@
 
 ## Prefixo 192 — candidato não validado (2026-11-08)
 
-- `c5BernoulliPrimeTable_192_eq_data` ainda não foi compilado em reprodução limpa; a auditoria isolada está preparada, mas não executada.
+- `c5BernoulliPrimeTable_192_eq_data` está em compilação limpa, iniciada às `2026-11-08T11:06:58Z` na sessão persistente `c5-bernoulli-prefix192-20261108` (Lean PID 57591). A auditoria isolada está preparada para executar depois da prova.
 - Não contar o prefixo como 192: o último estado formal validado e integrado é 160/601 pela PR #312.
-- Reprodutor e launcher: `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/`. Não relançar enquanto `runner-status.txt` indicar `RUNNING`.
+- Reprodutor, launcher, estado e logs: `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/`. Não relançar enquanto `runner-status.txt` indicar `RUNNING`.
 
 ## Prefixo 160 — validação concluída e integrada (2026-11-08)
 

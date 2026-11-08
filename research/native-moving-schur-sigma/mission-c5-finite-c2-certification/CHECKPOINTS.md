@@ -1,11 +1,13 @@
 # C5 — checkpoints
 
-## 2026-11-08 — candidato ao prefixo Bernoulli 192 preparado; build pendente
+## 2026-11-08 — prefixo Bernoulli 192 em compilação
 
 - `c5BernoulliPrimeTable_192_eq_data` estende o prefixo integrado 160. O arquivo Lean, auditor separado e reprodutor estão nesta branch; ainda não há resultado de compilação nem auditoria, portanto o estado provado permanece 160/601.
 - Base `main@605c55e899d62a658bed511d13be3b95b09840c8`; branch `codex/c5-zeta-bernoulli-prefix192-20261108`.
 - Cache de entrada: `.olean` de `c5BernoulliPrimeDataCertificate160`, preservado na worktree do prefixo 160; caminho configurável por `C5_PREFIX160_CACHE`.
-- Próximo: commit e push do candidato, iniciar `run-detached.sh`, acompanhar `runner-status.txt`, depois auditar e só então abrir PR. C5 permanece incompleta.
+- O candidato e o reprodutor estão commitados/pushados no SHA `636ea8d7ceea1af08adafcdb4d373e8e9b9895b4`; branch remota confirmada no mesmo SHA.
+- Execução atual: tmux `c5-bernoulli-prefix192-20261108`, PID de pane `57490`, Lean PID `57591`, iniciada às `2026-11-08T11:06:58Z`. Consulte `runner-status.txt` antes de qualquer ação; não iniciar outra enquanto `RUNNING`.
+- Próximo: aguardar o resultado, conferir build limpo, `#print axioms` e hashes; só então abrir PR. C5 permanece incompleta.
 
 ## 2026-11-08 — prefixo Bernoulli 160 integrado pela PR #312
 
