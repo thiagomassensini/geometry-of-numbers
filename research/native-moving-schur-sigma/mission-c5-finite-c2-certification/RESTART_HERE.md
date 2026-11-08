@@ -10,8 +10,8 @@ LAST VERIFIED THEOREM: CarrySigmaObstruction.c5BernoulliPrimeTable_224_eq_data, 
 LAST COMPILED FILE: SigmaC5BernoulliDataCertificate224.lean; Lean 4.32.0, warningAsError=true; `CLEAN_BUILD=PASS`, `EXIT=0` após 5h05m.
 LAST SUCCESSFUL PROOF COMMIT: d86ab885c4a9a99a2f5fc49cd3e0962f641ff06b.
 LAST MERGE: PR #315, 6e8d26af13f3a2dc2a687ec54b85a74c4697de5b.
-LAST REMOTE SHA: 6e8d26af13f3a2dc2a687ec54b85a74c4697de5b.
-MAIN SHA: 6e8d26af13f3a2dc2a687ec54b85a74c4697de5b.
+LAST REMOTE SHA: 8f5631a7808ad7c73491b558a894566e1d39899c.
+MAIN SHA: 8f5631a7808ad7c73491b558a894566e1d39899c.
 CURRENT BRANCH: codex/c5-zeta-bernoulli-prefix256-20261108 (preparação `95dc5eb`, ainda sem PR).
 OPEN PR: nenhuma.
 ACTIVE BUILD: prefixo 256 em tmux `c5-bernoulli-prefix256-20261108`, iniciado `2026-11-08T22:08:26Z`; PID do Lean `262780`, runner `RUNNING`, nenhum resultado ainda. O prefixo 224 anterior terminou em `EXIT=0` às 2026-11-08T21:47:48Z; seu pico RSS foi 21,529,692 KiB e auditoria isolada `AXIOM_AUDIT=PASS`, somente `propext`, `Classical.choice`, `Quot.sound`.

@@ -2,7 +2,7 @@
 
 ## Estado atual — prefixo 224 integrado; build do prefixo 256 em andamento (2026-11-08)
 
-- Último teorema validado e integrado: `CarrySigmaObstruction.c5BernoulliPrimeTable_224_eq_data`, PR #315, merge `6e8d26af13f3a2dc2a687ec54b85a74c4697de5b`; estado pós-merge em `main@6e8d26af13f3a2dc2a687ec54b85a74c4697de5b`.
+- Último teorema validado e integrado: `CarrySigmaObstruction.c5BernoulliPrimeTable_224_eq_data`, PR #315, merge `6e8d26af13f3a2dc2a687ec54b85a74c4697de5b`; `main` está agora em `8f5631a7808ad7c73491b558a894566e1d39899c` após registrar o estado pós-merge.
 - O candidato `c5BernoulliPrimeTable_224_eq_data` foi compilado uma vez em Lean 4.32.0 com `warningAsError=true`, mas o build terminou `EXIT=1` após 1h56m46s. Pico RSS 9,869,328 KiB; memória disponível permaneceu acima de 52 GiB. A auditoria isolada não foi executada.
 - Erro concreto: faltou incluir `c5BernoulliPrimeDataPrefix160` nas listas `simp`/`norm_num`. Isso deixou a cota de append como `n < c5BernoulliPrimeDataPrefix160.size + 32`, os cálculos dos índices 192–223 presos em `getD` de arrays anexados e o tamanho final em `Prefix160.size = 160`. O Lean reportou `sorryAx` somente porque os objetivos da tentativa falharam; nada dessa compilação conta como prova.
 - Log integral, `run-state`, status, primeira falha e hash do fonte pré-correção: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/attempts/first-build-failure-20261108/`. Não sobrescrever essa tentativa.

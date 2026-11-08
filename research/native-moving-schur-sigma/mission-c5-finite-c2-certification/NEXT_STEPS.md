@@ -2,7 +2,7 @@
 
 ## Estado atual — prefixo 224 integrado; prefixo 256 em compilação (2026-11-08)
 
-- PR #315 integrou `CarrySigmaObstruction.c5BernoulliPrimeTable_224_eq_data`; merge e estado atual da `main`: `6e8d26af13f3a2dc2a687ec54b85a74c4697de5b`.
+- PR #315 integrou `CarrySigmaObstruction.c5BernoulliPrimeTable_224_eq_data` no merge `6e8d26af13f3a2dc2a687ec54b85a74c4697de5b`; o registro pós-merge atualizou a `main` para `8f5631a7808ad7c73491b558a894566e1d39899c`.
 - A tentativa de `c5BernoulliPrimeTable_224_eq_data` levou 1h56m46s e terminou `EXIT=1`; pico RSS 9,869,328 KiB. A auditoria isolada não rodou e o estado provado continua 192/601.
 - Causa: as listas de simplificação não desdobravam `c5BernoulliPrimeDataPrefix160`, deixando abertas a cota do append, os cálculos de `getD` e o fechamento de tamanho do array. Erro integral: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/attempts/first-build-failure-20261108/`.
 - O retry 224 terminou com build e auditoria aprovados em Lean 4.32.0: somente axiomas padrão, sem `sorryAx`; 5h05m, pico RSS 21,529,692 KiB. Evidência completa: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/README.md`.
