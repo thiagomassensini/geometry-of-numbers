@@ -1,10 +1,10 @@
 # C5 — estado da sessão
 
-## Estado atual — prefixo Bernoulli de 160 entradas validado; PR pendente (2026-11-08)
+## Estado atual — prefixo Bernoulli de 160 entradas integrado (2026-11-08)
 
-- Último resultado integrado: `CarrySigmaObstruction.c5BernoulliPrimeTable_128_eq_data`, PR #309, merge `c7782c54b78f97b1ea3f5a61f6e0ceefe75f2f11`.
+- Último resultado integrado: `CarrySigmaObstruction.c5BernoulliPrimeTable_160_eq_data`, prova no commit `5f9cb0eeab2b6f70fda12aa62f62047e7206eec5`, PR #312, merge `cb829d98d799df72f07c9aff03e9d93871da6f77`.
 - `c5BernoulliPrimeTable_160_eq_data` compilou limpo em Lean 4.32.0 com `warningAsError=true`; a auditoria isolada passou com `propext`, `Classical.choice`, `Quot.sound`. Tempo 1h56m34s, pico RSS 12,572,772 KiB. Resultado `CLEAN_BUILD=PASS`, `AXIOM_AUDIT=PASS`, runner `EXIT=0`; commit de prova `5f9cb0e`, auditor ajustado em `3cea0c3`.
-- Estado formal: 160/601 provado e 441 aberto. As inclusões `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes`, a ponte CSV–Lean e os sinais finais continuam abertos. A prova 160 ainda aguarda PR/merge.
+- Estado formal: 160/601 provado e integrado; 441 seguem abertos. As inclusões `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes`, a ponte CSV–Lean e os sinais finais continuam abertos.
 - Evidência e retomada: `evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/README.md`; reprodução limpa, logs, auditoria, pins e checksums estão preservados.
 - Logs, pins, tentativas, comandos e hashes do prefixo anterior 128: `evidence/rational-boxes/c5-bernoulli-data-prefix128-20261108/README.md`.
 

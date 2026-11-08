@@ -1,24 +1,24 @@
 # Retomar primeiro — missão C5
 
-## Estado atual — prefixo Bernoulli de 160 entradas validado; PR pendente (2026-11-08)
+## Estado atual — prefixo Bernoulli de 160 entradas integrado (2026-11-08)
 
 ```text
 MISSION: C5 — certificar as janelas negativas da fonte C2 original.
 CURRENT PHASE: certificado formal dos dados da tabela usada pela avaliação de zeta.
-CURRENT SUBTASK: integrate the validated prefix 160, then extend the cumulative proof to 192.
+CURRENT SUBTASK: extend the cumulative Bernoulli table proof from 160 to 192.
 LAST VERIFIED THEOREM: CarrySigmaObstruction.c5BernoulliPrimeTable_160_eq_data.
 LAST COMPILED FILE: SigmaC5BernoulliDataCertificate160Audit.lean (Lean 4.32.0, warningAsError=true).
-LAST SUCCESSFUL INTEGRATED PROOF: c5BernoulliPrimeTable_128_eq_data, proof commit b6f26114502116c65fe2482ebda3464e4b1fc645, PR #309, merge c7782c54b78f97b1ea3f5a61f6e0ceefe75f2f11.
-CURRENT BRANCH: codex/c5-zeta-bernoulli-prefix160-20261108; proof commit 5f9cb0e, audit fix 3cea0c3, latest pre-result checkpoint 6f7e90844bde5d23652123b17d7c6f9b0b14ff3b.
-LAST REMOTE SHA: 6f7e90844bde5d23652123b17d7c6f9b0b14ff3b (confirmed equal to local before this state refresh).
-MAIN SHA: 9156f7e7363e7129a7a9c132a5f9a2276e4352cd.
-OPEN PR: none yet; create the proof-and-evidence PR after the checkpoint commit is pushed.
+LAST SUCCESSFUL INTEGRATED PROOF: c5BernoulliPrimeTable_160_eq_data, proof commit 5f9cb0eeab2b6f70fda12aa62f62047e7206eec5, PR #312, merge cb829d98d799df72f07c9aff03e9d93871da6f77.
+CURRENT BRANCH: codex/c5-prefix160-postmerge-state-20261108, state update based on main merge cb829d98d799df72f07c9aff03e9d93871da6f77.
+LAST PROOF MERGE SHA: cb829d98d799df72f07c9aff03e9d93871da6f77 (PR #312; verified at origin/main before this state update).
+MAIN SHA AFTER PREFIX 160 INTEGRATION: cb829d98d799df72f07c9aff03e9d93871da6f77.
+OPEN PR: none; proof PR #312 has been merged.
 ACTIVE BUILD: none. The completed tmux run is recorded in evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/runner-status.txt.
 WHAT IS PROVED: indices 0–159 equal the first 160 rational data literals; clean Lean 4.32 build and isolated standard-axiom audit pass. The exact 601-value table check inherited from prefix128 remains valid.
 WHAT IS CONDITIONAL: the final finite signs still depend on the unproved source-box inclusions sigmaC00495SourceBoxes and sigmaC01SourceBoxes.
 WHAT IS BLOCKED: the CSV–Lean zeta-box bridge and source inclusions remain open; 441 table equalities remain. Two earlier interrupted executions are preserved under this step's attempts/ directory and are not failures of the proof.
-EXACT NEXT COMMAND: git status --short; git rev-parse HEAD; git ls-remote origin refs/heads/codex/c5-zeta-bernoulli-prefix160-20261108
-EXACT NEXT MATHEMATICAL OBLIGATION: publish and merge the validated 160-entry checkpoint, then prove the cumulative prefix through 192.
+EXACT NEXT COMMAND: git fetch origin --prune; git rev-parse origin/main; git status --short
+EXACT NEXT MATHEMATICAL OBLIGATION: continue the cumulative Bernoulli table proof at prefix 192; then complete the CSV–Lean box bridge and source inclusions.
 DO NOT REPEAT: C1B/C2/C3/C4; prefixes 32/64/96/128/160; the missing-prefix64 import failure; the invalid default-100000 simp attempt; either interrupted prefix160 execution. Do not relaunch the completed 160 build.
 ```
 

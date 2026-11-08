@@ -1,13 +1,13 @@
 # C5 — obrigações abertas
 
-## Estado atual — prefixo Bernoulli de 160 entradas validado; integração pendente (2026-11-08)
+## Estado atual — prefixo Bernoulli de 160 entradas integrado (2026-11-08)
 
 `c5BernoulliPrimeTable_160_eq_data` certifica os índices 0–159 em Lean 4.32,
-com build e auditoria de axiomas aprovados; a PR/merge deste checkpoint ainda
-está pendente. Assim, 160/601 entradas estão formalmente provadas e faltam
-441. Obrigações abertas:
+com build e auditoria de axiomas aprovados, integrada pela PR #312 no merge
+`cb829d98d799df72f07c9aff03e9d93871da6f77`. Assim, 160/601 entradas estão
+formalmente provadas e faltam 441. Obrigações abertas:
 
-1. Publicar e integrar o prefixo 160; depois provar prefixos cumulativos até 601 e formalizar a ligação da menor caixa de zeta exportada à avaliação Lean.
+1. Provar prefixos cumulativos de 192 até 601 e formalizar a ligação da menor caixa de zeta exportada à avaliação Lean.
 2. Certificar os nós Gamma restantes e compor as caixas zeta/Gamma com o fator nativo original e as quadraturas da fonte completada.
 3. Provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` sem hipóteses auxiliares.
 4. Fechar os sinais finais da `sigmaPadeD` original nos dois deslocamentos.

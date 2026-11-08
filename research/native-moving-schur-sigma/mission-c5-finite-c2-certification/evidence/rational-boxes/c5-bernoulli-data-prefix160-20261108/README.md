@@ -53,7 +53,8 @@ do `#print axioms` passou: somente `propext`, `Classical.choice` e
 Este é um checkpoint parcial. A prova só valida a igualdade da recorrência de
 Bernoulli com os dados racionais até o índice 159. A ponte das caixas de zeta,
 as inclusões da fonte C2 e os dois sinais finais não são demonstrados aqui.
-Commit local de prova `5f9cb0e`; a integração pela PR ainda está pendente.
+Commit de prova `5f9cb0eeab2b6f70fda12aa62f62047e7206eec5`; integrada pela PR
+#312 no merge `cb829d98d799df72f07c9aff03e9d93871da6f77`.
 
 ## Tentativas anteriores
 
