@@ -1,0 +1,5 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-central-ten-heights-b2-20261108/research/native-moving-schur-sigma/SigmaCentralTenHeightRootBridge.lean:101:55: error(lean.unknownIdentifier): Unknown identifier `genuineCriticalStrip`
+'CarrySigmaObstruction.sigmaHeight50_original_characteristic_roots' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

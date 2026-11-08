@@ -30,6 +30,21 @@
 - Successful log SHA-256: `69230e90636a6ece8fe5e35de2d75755c481ee9b62ae30ef95fc549ed865742a`; see `evidence/B2.2-SigmaCentralTenHeightScaleBridge.log`.
 - Two failed attempts are preserved: the first used invalid Lean superscript syntax; the second exposed leftover superscript syntax in a helper and an argument-order mistake while proving positivity of the sum. Neither produced a successful OLean. Their log hashes are `c74bfca288988ed3103d69c94aa09d64c1603a8511730c148f174e1a2c69c860` and `8e1c069df0155b78e35a2a07e0d45df8eb3e45a0814c40e6287e0e8b4a9c864f`.
 
-## B2.3–B2.4
+## B2.3
 
-Pending. Existing C2/height-50 integration artifacts are read-only inputs; no C2/C3 build restart is permitted.
+- Source: `SigmaCentralTenHeightRootBridge.lean`.
+- Public theorem: `CarrySigmaObstruction.sigmaHeight50_original_characteristic_roots`. It transports the ten supplied positive zeta roots and their order-one property to `completedNativeCharacteristicContinuation`, obtains the negative roots and their order-one property by evenness, and uses the distinct-point count to classify every continuation root with `|Re w| ≤ 50` as one of the signed ten heights.
+- Build: Lean 4.32.0, `-DwarningAsError=true`, exit status 0; exact command in `evidence/BUILD_COMMANDS.md`.
+- Transitive axiom report: `[propext, Classical.choice, Quot.sound]`.
+- Source SHA-256: `7831cf58dc8cdeab4b98cd93ccbe6c1f8cedec2383130ef7edd6dd68d41f863e`.
+- OLean SHA-256: `e5ec3b6565d4c1757219c352ec56af8f405907472b2efe4f201651bf60f01e90`.
+- Successful log SHA-256: `2c742c5f2bd0db03a04c3c7fa3611f3486f76b7818d7285facf5b5ce9b944242`; see `evidence/B2.3-SigmaCentralTenHeightRootBridge.log`.
+- Two failed namespace-resolution attempts are preserved. Attempt 1 hash: `b5e55e6fe20d3f53cfc7b3d5538064766f007fcd78ae0fd2d96b1ee9052ccd7f`; attempt 2 hash: `a603da7040e896db59000463f1b90d33f50ea36ecfef90e565d4b73e512fa4a5`.
+
+## B2.4
+
+Pending. The fail-closed audit will require both scale theorem reports and the original-characteristic root theorem report, reject unexpected axioms, reject malformed/missing reports, and scan all B2 bridge sources for prohibited proof escapes or axiom declarations.
+
+## Build isolation
+
+Existing C2/height-50 integration artifacts are read-only inputs; no C2/C3 build restart is permitted. The B2 Lean outputs remain in `/home/thlinux/tmp/c2-central-ten-heights-b2-20261108-lean432`.
