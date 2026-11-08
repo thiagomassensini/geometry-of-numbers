@@ -1,0 +1,6 @@
+'CarrySigmaObstruction.sigmaHeight52_count_exhausts_ten_zeros_with_multiplicity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaContour51_original_characteristic_roots' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
