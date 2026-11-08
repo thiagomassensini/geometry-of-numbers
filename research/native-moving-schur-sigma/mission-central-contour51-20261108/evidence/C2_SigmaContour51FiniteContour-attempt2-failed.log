@@ -1,0 +1,65 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51FiniteContour.lean:62:32: error: Application type mismatch: The argument
+  hEq
+has type
+  EqOn (contour51PoleKernel a 0) (fun z => a⁻¹ • ((z - a)⁻¹ - z⁻¹)) (sphere 0 51)
+but is expected to have type
+  EqOn (contour51PoleKernel a 0) (fun z => a⁻¹ • ((z - a)⁻¹ - z⁻¹)) (sphere 0 |51|)
+in the application
+  circleIntegrable_congr hEq
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51FiniteContour.lean:107:32: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?a ^ ?m * ?a ^ ?n
+in the target expression
+  (z ^ 1) ^ (-2 - ↑n) * z ^ 1 = (z ^ 1) ^ (-2 - ↑n + 1)
+
+a : ℂ
+ha : a ∈ ball 0 51
+ha0 : a ≠ 0
+haNorm : ‖a‖ < 51
+hzInv : CircleIntegrable (fun z => (z - a)⁻¹) 0 51
+hzeroInv : CircleIntegrable (fun z => z⁻¹) 0 51
+n : ℕ
+hkernelN : CircleIntegrable (contour51PoleKernel a n) 0 51
+hzeroN : ∮ (z : ℂ) in C(0, 51), contour51PoleKernel a n z = 0
+p : ℂ → ℂ := fun z => z ^ (-↑(n + 2))
+hp : CircleIntegrable p 0 51
+z : ℂ
+hz : z ∈ sphere 0 51
+hzNorm : ‖z‖ = 51
+hz0 : z ≠ 0
+hza : z ≠ a
+⊢ (z ^ 1) ^ (-2 - ↑n) * z ^ 1 = (z ^ 1) ^ (-2 - ↑n + 1)
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51FiniteContour.lean:109:12: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  z ^ (-2 - ↑n) * z
+in the target expression
+  a * z ^ (-1 + (-1 + -↑n)) = z ^ (-1 + -↑n) - (z - a) * z ^ (-2 + -↑n)
+
+a : ℂ
+ha : a ∈ ball 0 51
+ha0 : a ≠ 0
+haNorm : ‖a‖ < 51
+hzInv : CircleIntegrable (fun z => (z - a)⁻¹) 0 51
+hzeroInv : CircleIntegrable (fun z => z⁻¹) 0 51
+n : ℕ
+hkernelN : CircleIntegrable (contour51PoleKernel a n) 0 51
+hzeroN : ∮ (z : ℂ) in C(0, 51), contour51PoleKernel a n z = 0
+p : ℂ → ℂ := fun z => z ^ (-↑(n + 2))
+hp : CircleIntegrable p 0 51
+z : ℂ
+hz : z ∈ sphere 0 51
+hzNorm : ‖z‖ = 51
+hz0 : z ≠ 0
+hza : z ≠ a
+hpow : z ^ (-2 - ↑n) * z = z ^ (-1 - ↑n)
+⊢ a * z ^ (-1 + (-1 + -↑n)) = z ^ (-1 + -↑n) - (z - a) * z ^ (-2 + -↑n)
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51FiniteContour.lean:115:32: error: Application type mismatch: The argument
+  hEq
+has type
+  EqOn (contour51PoleKernel a (n + 1)) (fun z => a⁻¹ • (contour51PoleKernel a n z - p z)) (sphere 0 51)
+but is expected to have type
+  EqOn (contour51PoleKernel a (n + 1)) (fun z => a⁻¹ • (contour51PoleKernel a n z - p z)) (sphere 0 |51|)
+in the application
+  circleIntegrable_congr hEq
+'CarrySigmaObstruction.contour51_pole_kernel_integrable_and_integral_zero' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

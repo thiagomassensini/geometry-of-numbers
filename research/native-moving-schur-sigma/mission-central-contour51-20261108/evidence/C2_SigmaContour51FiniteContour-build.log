@@ -1,0 +1,3 @@
+'CarrySigmaObstruction.contour51_pole_kernel_integrable_and_integral_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

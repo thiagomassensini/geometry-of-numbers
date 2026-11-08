@@ -1,0 +1,134 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51FiniteContour.lean:18:12: error(lean.dependsOnNoncomputable): failed to compile definition, consider marking it as 'noncomputable' because it depends on 'instInv', which is 'noncomputable'
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51FiniteContour.lean:35:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  CircleIntegrable (fun z => (z - ?m.115)⁻¹) ?m.114 ?m.116
+in the target expression
+  CircleIntegrable (fun z => z⁻¹) 0 51
+
+a : ℂ
+n : ℕ
+ha : a ∈ ball 0 51
+ha0 : a ≠ 0
+haNorm : ‖a‖ < 51
+hzInv : CircleIntegrable (fun z => (z - a)⁻¹) 0 51
+⊢ CircleIntegrable (fun z => z⁻¹) 0 51
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51FiniteContour.lean:59:8: error: Function expected at
+  CircleIntegrable.const_smul (CircleIntegrable.sub hzInv hzeroInv)
+but this term has type
+  CircleIntegrable (?m.297 • ((fun z => (z - a)⁻¹) - fun z => z⁻¹)) 0 51
+
+Note: Expected a function because this term is being applied to the argument
+  a⁻¹
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51FiniteContour.lean:61:9: error(lean.unknownIdentifier): Unknown constant `circleIntegral.circleIntegrable_congr`
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51FiniteContour.lean:69:14: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∮ (z : ℂ) in C(?c, ?R), ?f z • ?a
+in the target expression
+  ∮ (z : ℂ) in C(0, 51), a⁻¹ • ((z - a)⁻¹ - z⁻¹) =
+    a⁻¹ • ((∮ (z : ℂ) in C(0, 51), (z - a)⁻¹) - ∮ (z : ℂ) in C(0, 51), z⁻¹)
+
+a : ℂ
+ha : a ∈ ball 0 51
+ha0 : a ≠ 0
+haNorm : ‖a‖ < 51
+hzInv : CircleIntegrable (fun z => (z - a)⁻¹) 0 51
+hzeroInv : CircleIntegrable (fun z => z⁻¹) 0 51
+hEq : EqOn (contour51PoleKernel a 0) (fun z => a⁻¹ • ((z - a)⁻¹ - z⁻¹)) (sphere 0 51)
+hsum : CircleIntegrable (fun z => a⁻¹ • ((z - a)⁻¹ - z⁻¹)) 0 51
+hkernel : CircleIntegrable (contour51PoleKernel a 0) 0 51
+⊢ ∮ (z : ℂ) in C(0, 51), a⁻¹ • ((z - a)⁻¹ - z⁻¹) =
+    a⁻¹ • ((∮ (z : ℂ) in C(0, 51), (z - a)⁻¹) - ∮ (z : ℂ) in C(0, 51), z⁻¹)
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51FiniteContour.lean:72:12: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∮ (z : ℂ) in C(0, ?m.427), (z - 0)⁻¹
+in the target expression
+  a⁻¹ • (2 * ↑Real.pi * I - ∮ (z : ℂ) in C(0, 51), z⁻¹) = 0
+
+a : ℂ
+ha : a ∈ ball 0 51
+ha0 : a ≠ 0
+haNorm : ‖a‖ < 51
+hzInv : CircleIntegrable (fun z => (z - a)⁻¹) 0 51
+hzeroInv : CircleIntegrable (fun z => z⁻¹) 0 51
+hEq : EqOn (contour51PoleKernel a 0) (fun z => a⁻¹ • ((z - a)⁻¹ - z⁻¹)) (sphere 0 51)
+hsum : CircleIntegrable (fun z => a⁻¹ • ((z - a)⁻¹ - z⁻¹)) 0 51
+hkernel : CircleIntegrable (contour51PoleKernel a 0) 0 51
+⊢ a⁻¹ • (2 * ↑Real.pi * I - ∮ (z : ℂ) in C(0, 51), z⁻¹) = 0
+Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51FiniteContour.lean:85:33: error: unsolved goals
+a : ℂ
+ha : a ∈ ball 0 51
+ha0 : a ≠ 0
+haNorm : ‖a‖ < 51
+hzInv : CircleIntegrable (fun z => (z - a)⁻¹) 0 51
+hzeroInv : CircleIntegrable (fun z => z⁻¹) 0 51
+n : ℕ
+hkernelN : CircleIntegrable (contour51PoleKernel a n) 0 51
+hzeroN : ∮ (z : ℂ) in C(0, 51), contour51PoleKernel a n z = 0
+p : ℂ → ℂ := fun z => z ^ (-↑(n + 2))
+hp : CircleIntegrable p 0 51
+z : ℂ
+hz : z ∈ sphere 0 51
+hzNorm : ‖z‖ = 51
+hz0 : z ≠ 0
+hza : z ≠ a
+⊢ a * z ^ (-2 - ↑n) = a * z ^ (-2 - ↑n) - z ^ (-2 - ↑n) * z + z ^ (-1 - ↑n)
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51FiniteContour.lean:104:8: error: Function expected at
+  CircleIntegrable.const_smul (CircleIntegrable.sub hkernelN hp)
+but this term has type
+  CircleIntegrable (?m.706 • (contour51PoleKernel a n - p)) 0 51
+
+Note: Expected a function because this term is being applied to the argument
+  a⁻¹
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51FiniteContour.lean:106:9: error(lean.unknownIdentifier): Unknown constant `circleIntegral.circleIntegrable_congr`
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51FiniteContour.lean:114:14: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∮ (z : ℂ) in C(?c, ?R), ?f z • ?a
+in the target expression
+  ∮ (z : ℂ) in C(0, 51), a⁻¹ • (contour51PoleKernel a n z - p z) =
+    a⁻¹ • ((∮ (z : ℂ) in C(0, 51), contour51PoleKernel a n z) - ∮ (z : ℂ) in C(0, 51), p z)
+
+a : ℂ
+ha : a ∈ ball 0 51
+ha0 : a ≠ 0
+haNorm : ‖a‖ < 51
+hzInv : CircleIntegrable (fun z => (z - a)⁻¹) 0 51
+hzeroInv : CircleIntegrable (fun z => z⁻¹) 0 51
+n : ℕ
+hkernelN : CircleIntegrable (contour51PoleKernel a n) 0 51
+hzeroN : ∮ (z : ℂ) in C(0, 51), contour51PoleKernel a n z = 0
+p : ℂ → ℂ := fun z => z ^ (-↑(n + 2))
+hp : CircleIntegrable p 0 51
+hEq : EqOn (contour51PoleKernel a (n + 1)) (fun z => a⁻¹ • (contour51PoleKernel a n z - p z)) (sphere 0 51)
+hsum : CircleIntegrable (fun z => a⁻¹ • (contour51PoleKernel a n z - p z)) 0 51
+hkernel : CircleIntegrable (contour51PoleKernel a (n + 1)) 0 51
+⊢ ∮ (z : ℂ) in C(0, 51), a⁻¹ • (contour51PoleKernel a n z - p z) =
+    a⁻¹ • ((∮ (z : ℂ) in C(0, 51), contour51PoleKernel a n z) - ∮ (z : ℂ) in C(0, 51), p z)
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51FiniteContour.lean:120:12: error: Tactic `apply` failed: could not unify the conclusion of `@circleIntegral.integral_sub_zpow_of_ne`
+  ∮ (z : ℂ) in C(?c, ?R), (z - ?w) ^ ?n = 0
+with the goal
+  ∮ (z : ℂ) in C(0, 51), z ^ (-(↑n + 2)) = 0
+
+Note: The full type of `@circleIntegral.integral_sub_zpow_of_ne` is
+  ∀ {n : ℤ}, n ≠ -1 → ∀ (c w : ℂ) (R : ℝ), ∮ (z : ℂ) in C(c, R), (z - w) ^ n = 0
+
+a : ℂ
+ha : a ∈ ball 0 51
+ha0 : a ≠ 0
+haNorm : ‖a‖ < 51
+hzInv : CircleIntegrable (fun z => (z - a)⁻¹) 0 51
+hzeroInv : CircleIntegrable (fun z => z⁻¹) 0 51
+n : ℕ
+hkernelN : CircleIntegrable (contour51PoleKernel a n) 0 51
+hzeroN : ∮ (z : ℂ) in C(0, 51), contour51PoleKernel a n z = 0
+p : ℂ → ℂ := fun z => z ^ (-↑(n + 2))
+hp : CircleIntegrable p 0 51
+hEq : EqOn (contour51PoleKernel a (n + 1)) (fun z => a⁻¹ • (contour51PoleKernel a n z - p z)) (sphere 0 51)
+hsum : CircleIntegrable (fun z => a⁻¹ • (contour51PoleKernel a n z - p z)) 0 51
+hkernel : CircleIntegrable (contour51PoleKernel a (n + 1)) 0 51
+⊢ ∮ (z : ℂ) in C(0, 51), z ^ (-(↑n + 2)) = 0
+'CarrySigmaObstruction.contour51_pole_kernel_integrable_and_integral_zero' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

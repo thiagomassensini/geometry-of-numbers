@@ -1,0 +1,23 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51FiniteContour.lean:109:38: error: unsolved goals
+case e_a
+a : ℂ
+ha : a ∈ ball 0 51
+ha0 : a ≠ 0
+haNorm : ‖a‖ < 51
+hzInv : CircleIntegrable (fun z => (z - a)⁻¹) 0 51
+hzeroInv : CircleIntegrable (fun z => z⁻¹) 0 51
+n : ℕ
+hkernelN : CircleIntegrable (contour51PoleKernel a n) 0 51
+hzeroN : ∮ (z : ℂ) in C(0, 51), contour51PoleKernel a n z = 0
+p : ℂ → ℂ := fun z => z ^ (-↑(n + 2))
+hp : CircleIntegrable p 0 51
+z : ℂ
+hz : z ∈ sphere 0 51
+hzNorm : ‖z‖ = 51
+hz0 : z ≠ 0
+hza : z ≠ a
+⊢ -2 - ↑n + 1 = -1 - ↑n
+'CarrySigmaObstruction.contour51_pole_kernel_integrable_and_integral_zero' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

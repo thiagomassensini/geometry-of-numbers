@@ -37,6 +37,16 @@ and 2 are preserved beside it. This build ran while C5 PID `151152` was active i
 worktree/cache, under the user's explicit parallel-build authorization; about 56.6 GiB was
 available. Builds within this branch remained sequential.
 
+## C2 finite-kernel build
+
+The successful `SigmaContour51FiniteContour` build used the same environment values above, with
+`MODULE_NAME=SigmaContour51FiniteContour`, and redirected output to
+`/home/thlinux/tmp/c2-contour51-20261108-lean432/logs/SigmaContour51FiniteContour-attempt10.log`.
+The evidence copy is `C2_SigmaContour51FiniteContour-build.log`; failed diagnostic attempts 1–8
+are preserved beside it, with Lean's trailing whitespace removed from the diagnostic copies.
+This build ran while C5 PID `151152` was active in its separate worktree/cache, under the user's
+explicit parallel-build authorization; about 56 GiB was available.
+
 ## Reproduce the PR #306 experiment
 
 ```bash

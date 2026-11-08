@@ -1,0 +1,9 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51FiniteContour.lean:113:26: error: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51FiniteContour.lean:115:26: error: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+'CarrySigmaObstruction.contour51_pole_kernel_integrable_and_integral_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
