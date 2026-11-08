@@ -1,0 +1,9 @@
+Prefix-160 compile attempt 1 — interrupted, not a proof result
+
+Lean PID: 1185193
+Unified exec session: 70426
+Start window: 2026-11-08 about 04:54 UTC-3 (evidence log created at 04:54:21 UTC-3)
+Last confirmed live observation: elapsed 45:28; RSS 6,345,220 KiB; CPU 99.9%.
+Later observation: the session returned "Unknown process id"; no matching C5 Lean process existed, the redirected build log remained 0 bytes, and the expected .olean was absent. At that check the host showed about 60 GiB MemAvailable and 14 GiB free disk; dmesg was not readable, so the exit reason is unknown.
+
+Classification: interrupted/unknown exit. Do not count as compilation success or failure. The command was the evidence folder's reproduce-clean.sh, run in the foreground. The next attempt will run detached with a persisted PID, runner log, and exit status.
