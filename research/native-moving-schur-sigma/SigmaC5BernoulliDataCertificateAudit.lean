@@ -1,0 +1,5 @@
+import SigmaC5BernoulliDataCertificate
+
+open CarrySigmaObstruction
+
+#print axioms c5BernoulliPrimeTable_32_eq_data
