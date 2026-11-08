@@ -1,26 +1,26 @@
 # Retomar primeiro — missão C5
 
-## Estado atual — prefixo 224 integrado; C5 segue incompleta (2026-11-08)
+## Estado atual — prefixo 224 integrado; compilação do 256 ativa (2026-11-08)
 
 ```text
 MISSION: C5 — certificação finita dos sinais da fonte C2 original.
 CURRENT PHASE: completar a tabela racional e conectá-la às inclusões da fonte original.
-CURRENT SUBTASK: continuar os prefixos Bernoulli cumulativos a partir de 224 e provar o nó piloto que liga zeta Euler–Maclaurin às caixas exportadas; manter abertas as inclusões da fonte até serem provadas.
+CURRENT SUBTASK: concluir o build/auditoria do prefixo cumulativo 256 já ativo; depois continuar a tabela e provar o nó piloto Euler–Maclaurin. Manter abertas as inclusões da fonte até serem provadas.
 LAST VERIFIED THEOREM: CarrySigmaObstruction.c5BernoulliPrimeTable_224_eq_data, integrado na main pela PR #315.
 LAST COMPILED FILE: SigmaC5BernoulliDataCertificate224.lean; Lean 4.32.0, warningAsError=true; `CLEAN_BUILD=PASS`, `EXIT=0` após 5h05m.
 LAST SUCCESSFUL PROOF COMMIT: d86ab885c4a9a99a2f5fc49cd3e0962f641ff06b.
 LAST MERGE: PR #315, 6e8d26af13f3a2dc2a687ec54b85a74c4697de5b.
 LAST REMOTE SHA: 6e8d26af13f3a2dc2a687ec54b85a74c4697de5b.
 MAIN SHA: 6e8d26af13f3a2dc2a687ec54b85a74c4697de5b.
-CURRENT BRANCH: codex/c5-zeta-bernoulli-prefix224-20261108.
+CURRENT BRANCH: codex/c5-zeta-bernoulli-prefix256-20261108 (preparação `95dc5eb`, ainda sem PR).
 OPEN PR: nenhuma.
-ACTIVE BUILD: nenhum; retry do prefixo 224 terminou em `EXIT=0` às 2026-11-08T21:47:48Z. Pico RSS 21,529,692 KiB; auditoria isolada `AXIOM_AUDIT=PASS`, só `propext`, `Classical.choice`, `Quot.sound`.
+ACTIVE BUILD: prefixo 256 em tmux `c5-bernoulli-prefix256-20261108`, iniciado `2026-11-08T22:08:26Z`; PID do Lean `262780`, runner `RUNNING`, nenhum resultado ainda. O prefixo 224 anterior terminou em `EXIT=0` às 2026-11-08T21:47:48Z; seu pico RSS foi 21,529,692 KiB e auditoria isolada `AXIOM_AUDIT=PASS`, somente `propext`, `Classical.choice`, `Quot.sound`.
 LAST ERROR: `hn192` não fechou `n < c5BernoulliPrimeDataPrefix160.size + 32`; a recorrência gerou metas residuais de `getD` e a extensionalidade terminou em `Prefix160.size = 160`, por falta do prefixo 160 nas listas de simplificação.
-WHAT IS PROVED: prefixo 224/601 integrado; build limpo e auditoria Lean 4.32 aprovados; axiomas somente propext, Classical.choice, Quot.sound.
+WHAT IS PROVED: prefixo 224/601 integrado; build limpo e auditoria Lean 4.32 aprovados; axiomas somente propext, Classical.choice, Quot.sound. O candidato 256 ainda não conta como validado.
 WHAT IS CONDITIONAL: os sinais finais dependem das inclusões não provadas sigmaC00495SourceBoxes e sigmaC01SourceBoxes.
 WHAT IS BLOCKED: 377 entradas, ponte CSV–Lean, inclusões da fonte e sinais finais permanecem abertos. Os sinais originais não estão certificados.
-EXACT NEXT COMMAND: criar o próximo certificado cumulativo a partir do prefixo 224; consultar NEXT_STEPS.md e a reprodução do prefixo 224 antes de iniciar.
-EXACT NEXT MATHEMATICAL OBLIGATION: continuar blocos cumulativos a partir do prefixo 224 até 601 e ligar um nó Euler–Maclaurin às caixas Lean. A obrigação final de inclusão permanece `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
+EXACT NEXT COMMAND: verificar `runner-status.txt` e `run-state.txt` em `evidence/rational-boxes/c5-bernoulli-data-prefix256-20261108/`; se estiver `RUNNING`, aguardar a mesma sessão. Não iniciar build concorrente.
+EXACT NEXT MATHEMATICAL OBLIGATION: provar `c5BernoulliPrimeTable_256_eq_data`, depois seguir blocos até 601 e ligar um nó Euler–Maclaurin às caixas Lean. A obrigação final de inclusão permanece `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
 DO NOT REPEAT: prefixos 32/64/96/128/160/192; não recomeçar a prova 224 nem a auditoria 192. Não reabrir C1B/C2/C3/C4; não iniciar migração geral Lean 4.35. Não declarar sinais C5 incondicionais enquanto as caixas de fonte forem hipóteses.
 ```
 

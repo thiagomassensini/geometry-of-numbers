@@ -1,4 +1,2 @@
-CHECKPOINT=proof-source-prepared
-PROOF=c5BernoulliPrimeTable_256_eq_data
-STATUS=NOT_VALIDATED
-NEXT=compile-in-Lean-4.32-and-audit-axioms
+STARTED_UTC=2026-11-08T22:08:26Z
+PID=262672

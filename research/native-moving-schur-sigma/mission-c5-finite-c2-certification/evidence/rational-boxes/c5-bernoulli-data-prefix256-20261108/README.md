@@ -7,9 +7,10 @@ o resultado integrado do prefixo 224 aos índices 224–255. A tabela-fonte já
 contém `c5BernoulliPrimeDataPrefix256`; o certificado deve provar a igualdade
 por recorrência exata em `ℚ`, sem refazer prefixos anteriores.
 
-Este checkpoint está **em preparação para build**. Nenhum resultado 256 será
-considerado validado até a compilação limpa, auditoria transitiva de axiomas e
-checagem integral dos hashes passarem. `sigmaC00495SourceBoxes` e
+O build começou em `2026-11-08T22:08:26Z`, na sessão tmux
+`c5-bernoulli-prefix256-20261108`, com status `RUNNING`. Nenhum resultado 256
+será considerado validado até a compilação limpa, auditoria transitiva de
+axiomas e checagem integral dos hashes passarem. `sigmaC00495SourceBoxes` e
 `sigmaC01SourceBoxes` continuam sem prova; o prefixo Bernoulli não certifica os
 sinais da fonte original.
 

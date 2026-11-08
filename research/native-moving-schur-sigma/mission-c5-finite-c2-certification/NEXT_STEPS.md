@@ -1,12 +1,13 @@
 # Próximos passos — C5
 
-## Estado atual — prefixo 224 integrado; fonte C2 ainda não certificada (2026-11-08)
+## Estado atual — prefixo 224 integrado; prefixo 256 em compilação (2026-11-08)
 
 - PR #315 integrou `CarrySigmaObstruction.c5BernoulliPrimeTable_224_eq_data`; merge e estado atual da `main`: `6e8d26af13f3a2dc2a687ec54b85a74c4697de5b`.
 - A tentativa de `c5BernoulliPrimeTable_224_eq_data` levou 1h56m46s e terminou `EXIT=1`; pico RSS 9,869,328 KiB. A auditoria isolada não rodou e o estado provado continua 192/601.
 - Causa: as listas de simplificação não desdobravam `c5BernoulliPrimeDataPrefix160`, deixando abertas a cota do append, os cálculos de `getD` e o fechamento de tamanho do array. Erro integral: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/attempts/first-build-failure-20261108/`.
 - O retry 224 terminou com build e auditoria aprovados em Lean 4.32.0: somente axiomas padrão, sem `sorryAx`; 5h05m, pico RSS 21,529,692 KiB. Evidência completa: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/README.md`.
 - **Próxima ação concreta:** provar o próximo prefixo cumulativo partindo de 224, sem recompilar nem refazer prefixos já integrados; avançar até 601 e provar um nó piloto ligando Euler–Maclaurin às caixas exportadas. A caixa formal existente ainda não chega à fonte; ver `C5_SOURCE_SIGN_BUDGET_20261108.md`.
+- O certificado cumulativo 256 já está preparado no branch `codex/c5-zeta-bernoulli-prefix256-20261108`, commit `95dc5eb`; reprodução ativa em tmux `c5-bernoulli-prefix256-20261108`. Consultar `evidence/rational-boxes/c5-bernoulli-data-prefix256-20261108/` para pins, runner e retomada. A compilação e auditoria ainda não terminaram.
 - A ponte CSV–Lean, `sigmaC00495SourceBoxes`, `sigmaC01SourceBoxes` e os sinais incondicionais continuam abertos. C5 permanece incompleta.
 
 ## Estado atual — prefixo Bernoulli de 160 entradas integrado (2026-11-08)

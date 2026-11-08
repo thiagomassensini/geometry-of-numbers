@@ -3,12 +3,14 @@
 ## Estado atual — prefixo 224 integrado; C5 segue incompleta (2026-11-08)
 
 A `main` contém 224/601 entradas pelo merge da PR #315
-(`6e8d26af13f3a2dc2a687ec54b85a74c4697de5b`). A primeira tentativa do prefixo
+(`6e8d26af13f3a2dc2a687ec54b85a74c4697de5b`). O incremento 224–255 está em
+compilação/auditoria no branch `codex/c5-zeta-bernoulli-prefix256-20261108`;
+até a validação, o único prefixo contado é 224. A primeira tentativa do prefixo
 224 falhou em metas de redução de arrays anexados; o retry corrigido passou
 build e auditoria isolada e foi integrado. Restam 377 entradas na tabela.
 Obrigações:
 
-1. Provar os próximos prefixos cumulativos até 601, sem refazer os prefixos integrados.
+1. Concluir build e auditoria do prefixo 256; depois provar os próximos prefixos cumulativos até 601, sem refazer os prefixos integrados.
 2. Provar a ligação Lean entre as caixas de zeta exportadas e a avaliação correspondente, começando por um nó piloto.
 3. Certificar os nós Gamma restantes e compor as caixas zeta/Gamma com o fator nativo original e as quadraturas da fonte completada.
 4. Provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` sem hipóteses auxiliares e fechar os sinais finais de `sigmaPadeD`.

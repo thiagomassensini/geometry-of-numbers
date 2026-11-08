@@ -1,5 +1,12 @@
 # C5 — checkpoints
 
+## 2026-11-08 — prefixo 256 preparado; build/auditoria em andamento
+
+- `CarrySigmaObstruction.c5BernoulliPrimeTable_256_eq_data` estende o prefixo integrado 224 aos índices 224–255. O candidato ainda não está validado; o prefixo contado permanece 224/601.
+- Fonte de prova e runner foram publicados no branch `codex/c5-zeta-bernoulli-prefix256-20261108`, commit `95dc5eb`, claramente identificado como pré-validação.
+- Execução iniciada às `2026-11-08T22:08:26Z` em tmux `c5-bernoulli-prefix256-20261108`; PID Lean `262780`; status `RUNNING`, sem erro reportado até este registro.
+- Pins, reprodução e retomada: `evidence/rational-boxes/c5-bernoulli-data-prefix256-20261108/`. As inclusões da fonte C2 permanecem abertas.
+
 ## 2026-11-08 — prefixo 224 integrado pela PR #315
 
 - A primeira tentativa de compilar `c5BernoulliPrimeTable_224_eq_data` terminou com `EXIT=1` após 1h56m46s; pico RSS 9,869,328 KiB. A auditoria isolada não foi executada.
