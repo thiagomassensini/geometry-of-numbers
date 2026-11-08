@@ -1,0 +1,27 @@
+# Build commands — radius-51 contour route
+
+## Isolation
+
+- Before every Lean compile, confirm there is no active Lean/Lake process competing for memory.
+- Use only the exclusive output `/home/thlinux/tmp/c2-contour51-20261108-lean432`.
+- Use the existing C2 integration/external, B2, B1, and Mathlib outputs read-only; do not rebuild C2/C3 or write into C5 caches.
+
+## Lean module compile template
+
+Replace `MODULE_NAME` with one module in the isolated C2 contour branch. This invokes the repository script, which passes `-DwarningAsError=true` and checks the pinned Carry checkout.
+
+```bash
+CARRY_LEAN_ROOT=/home/thlinux/worktrees/carry-sigma-c2-pinned-045369 \
+SIGMA_OUTPUT_DIR=/home/thlinux/tmp/c2-contour51-20261108-lean432 \
+SIGMA_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108 \
+SIGMA_HEIGHT50_BUILD=/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/integration:/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/external:/home/thlinux/tmp/c2-central-ten-heights-b2-20261108-lean432:/home/thlinux/tmp/c2-central-hankel2-20261107-lean432:/home/thlinux/geometry-of-numbers/.lake/build/lib/lean \
+bash research/native-moving-schur-sigma/compile_sigma_pade.sh MODULE_NAME \
+  > /home/thlinux/tmp/c2-contour51-20261108-lean432/logs/MODULE_NAME.log 2>&1
+```
+
+## Reproduce the PR #306 experiment
+
+```bash
+python3 research/native-moving-schur-sigma/mission-central-contour51-20261108/reproduce.py \
+  > research/native-moving-schur-sigma/mission-central-contour51-20261108/evidence/PR306-reproduce.log 2>&1
+```

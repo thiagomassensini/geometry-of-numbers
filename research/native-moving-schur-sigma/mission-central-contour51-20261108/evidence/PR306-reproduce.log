@@ -1,0 +1,16 @@
+Circle |z|=51: grid N= 2048
+max sample norm R = 0.634520221651175412
+mean sample norm R = 0.569580198724316508
+Target uniform norm R <= 4/5 (NOT certified by this grid)
+Central first six jets and residuals: numerical only
+n=0: H=0.0231049931154189707889  e=0.00956074303923091  e/eta^(n+1)=23.90185759808
+n=1: H=0.0000371725992852696861649  e=9.34518811591709164e-7  e/eta^(n+1)=5.840742572448
+n=2: H=1.44173931400973279695e-7  e=1.97785053903660357e-10  e/eta^(n+1)=3.090391467245
+n=3: H=6.63031680252990869873e-10  e=5.13925976411856522e-14  e/eta^(n+1)=2.007523345359
+n=4: H=3.2136641506166012161e-12  e=1.46980503972281917e-17  e/eta^(n+1)=1.435356484104
+n=5: H=1.5876934514910153519e-14  e=4.44431065896308204e-21  e/eta^(n+1)=1.085036781973
+EXACT Fraction inequalities: early-window C=40 margins
+s=0: strict rational positive; approx 1.233805751396619e-10
+s=1: strict rational positive; approx 2.370461448625535e-15
+s=2: strict rational positive; approx 1.677704301041960e-20
+s=3: strict rational positive; approx 4.956177598481227e-26
