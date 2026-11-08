@@ -33,9 +33,8 @@ hipóteses. Portanto, **os sinais da fonte original não estão certificados**.
 - O domínio analítico da fonte original no disco Cauchy e os limites de pesos
   de interpolação já estão integrados. Também há caixas Gamma certificadas em
   nós selecionados, e a fórmula Euler–Maclaurin de zeta já está formalizada.
-- A tabela Bernoulli está certificada formalmente até 192/601 e integrada pela
-  PR #313. O teorema cumulativo 224 já está compilado e auditado na branch
-  `codex/c5-zeta-bernoulli-prefix224-20261108`; a PR #315 o integra. Não repetir
+- A tabela Bernoulli está certificada formalmente até 224/601 e integrada pela
+  PR #315, merge `6e8d26af13f3a2dc2a687ec54b85a74c4697de5b`. Não repetir
   prefixos anteriores nem relançar o build já concluído.
 
 ## Orçamento racional já disponível em O3
@@ -127,8 +126,8 @@ fonte até os coeficientes.
 
 Fortalecimento mínimo, preservando a missão e os resultados existentes:
 
-1. integrar o prefixo 224 da PR #315; depois avançar os blocos cumulativos da
-   tabela Bernoulli até 601, sem refazer prefixos provados;
+1. avançar os blocos cumulativos da tabela Bernoulli de 224 até 601, sem
+   refazer prefixos provados;
 2. usar a igualdade formal da tabela para provar **um nó piloto** por uma
    expressão finita Euler–Maclaurin em intervalos racionais complexos, somando
    o resto analítico já formalizado e fechando a igualdade com a caixa exportada;

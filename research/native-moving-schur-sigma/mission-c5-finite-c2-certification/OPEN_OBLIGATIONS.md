@@ -1,14 +1,15 @@
 # C5 — obrigações abertas
 
-## Estado atual — prefixo 224 validado; PR #315 aberta (2026-11-08)
+## Estado atual — prefixo 224 integrado; C5 segue incompleta (2026-11-08)
 
-A `main` contém 192/601 entradas pela PR #313. A primeira tentativa de provar o
-prefixo 224 falhou em metas de redução de arrays anexados, mas o retry corrigido
-passou build e auditoria isolada; 224/601 estão validadas na branch, enquanto
-377 seguem abertas e a integração ainda está pendente. Obrigações:
+A `main` contém 224/601 entradas pelo merge da PR #315
+(`6e8d26af13f3a2dc2a687ec54b85a74c4697de5b`). A primeira tentativa do prefixo
+224 falhou em metas de redução de arrays anexados; o retry corrigido passou
+build e auditoria isolada e foi integrado. Restam 377 entradas na tabela.
+Obrigações:
 
-1. Integrar a PR #315 do prefixo 224 validado; a primeira tentativa falha já está preservada.
-2. Provar a ligação Lean entre as caixas de zeta exportadas e a avaliação correspondente.
+1. Provar os próximos prefixos cumulativos até 601, sem refazer os prefixos integrados.
+2. Provar a ligação Lean entre as caixas de zeta exportadas e a avaliação correspondente, começando por um nó piloto.
 3. Certificar os nós Gamma restantes e compor as caixas zeta/Gamma com o fator nativo original e as quadraturas da fonte completada.
 4. Provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` sem hipóteses auxiliares e fechar os sinais finais de `sigmaPadeD`.
 

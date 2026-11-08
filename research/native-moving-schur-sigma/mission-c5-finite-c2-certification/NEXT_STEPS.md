@@ -1,12 +1,12 @@
 # Próximos passos — C5
 
-## Estado atual — prefixo 224 compilado/auditado; PR #315 aberta (2026-11-08)
+## Estado atual — prefixo 224 integrado; fonte C2 ainda não certificada (2026-11-08)
 
-- O prefixo 192 permanece integrado pela PR #313, merge `f0bd4ec675a3dc483f55373d3a58092042fac67d`; estado pós-merge `main@513b73b54d232d7f0375ca3a2381b749fc17dba3`.
+- PR #315 integrou `CarrySigmaObstruction.c5BernoulliPrimeTable_224_eq_data`; merge e estado atual da `main`: `6e8d26af13f3a2dc2a687ec54b85a74c4697de5b`.
 - A tentativa de `c5BernoulliPrimeTable_224_eq_data` levou 1h56m46s e terminou `EXIT=1`; pico RSS 9,869,328 KiB. A auditoria isolada não rodou e o estado provado continua 192/601.
 - Causa: as listas de simplificação não desdobravam `c5BernoulliPrimeDataPrefix160`, deixando abertas a cota do append, os cálculos de `getD` e o fechamento de tamanho do array. Erro integral: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/attempts/first-build-failure-20261108/`.
 - O retry 224 terminou com build e auditoria aprovados em Lean 4.32.0: somente axiomas padrão, sem `sorryAx`; 5h05m, pico RSS 21,529,692 KiB. Evidência completa: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/README.md`.
-- **Próxima ação concreta:** integrar a PR #315, que já está mergeável. Depois, continuar os blocos cumulativos até 601/601 e provar um nó de zeta em Lean ligando a avaliação Euler–Maclaurin às caixas exportadas. A caixa formal existente ainda não chega à fonte; ver `C5_SOURCE_SIGN_BUDGET_20261108.md`.
+- **Próxima ação concreta:** provar o próximo prefixo cumulativo partindo de 224, sem recompilar nem refazer prefixos já integrados; avançar até 601 e provar um nó piloto ligando Euler–Maclaurin às caixas exportadas. A caixa formal existente ainda não chega à fonte; ver `C5_SOURCE_SIGN_BUDGET_20261108.md`.
 - A ponte CSV–Lean, `sigmaC00495SourceBoxes`, `sigmaC01SourceBoxes` e os sinais incondicionais continuam abertos. C5 permanece incompleta.
 
 ## Estado atual — prefixo Bernoulli de 160 entradas integrado (2026-11-08)

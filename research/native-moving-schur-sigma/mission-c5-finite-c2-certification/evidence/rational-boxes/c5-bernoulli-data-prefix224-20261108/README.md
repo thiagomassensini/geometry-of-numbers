@@ -1,4 +1,4 @@
-# C5 — prefixo Bernoulli 224 validado, aguardando integração
+# C5 — prefixo Bernoulli 224 validado e integrado
 
 ## Escopo e estado
 
@@ -23,8 +23,8 @@ A primeira compilação, antes da correção, falhou após 1h56m46s porque falta
 permanecem preservados em `attempts/first-build-failure-20261108/`.
 
 A tabela tem 601 entradas. Com este candidato, 224/601 estão formalmente
-provadas nesta branch; 377 continuam abertas. A `main` ainda contém 192/601
-até a integração da PR deste checkpoint. A ponte CSV–Lean das caixas de zeta,
+provadas e integradas na `main`; 377 continuam abertas. A PR #315 foi mesclada
+no commit `6e8d26af13f3a2dc2a687ec54b85a74c4697de5b`, que contém 224/601. A ponte CSV–Lean das caixas de zeta,
 as inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`, a composição da
 fonte original e os sinais finais seguem abertas. Este resultado **não**
 certifica sinais C2/C5 nem altera as duas inclusões em aberto.
@@ -33,8 +33,8 @@ certifica sinais C2/C5 nem altera as duas inclusões em aberto.
 
 - Lean 4.32.0, toolchain commit `8c9756b28d64dab099da31a4c09229a9e6a2ef35`;
   Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`.
-- Base `main`: `513b73b54d232d7f0375ca3a2381b749fc17dba3` (PR #313 e registro
-  pós-merge do prefixo 192).
+- Base anterior `main`: `513b73b54d232d7f0375ca3a2381b749fc17dba3` (PR #313);
+  integração atual: merge da PR #315, `6e8d26af13f3a2dc2a687ec54b85a74c4697de5b`.
 - Referências de reprodução: Geometry
   `bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3`; Carry
   `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`.
@@ -42,8 +42,8 @@ certifica sinais C2/C5 nem altera as duas inclusões em aberto.
   indicado por `C5_PREFIX192_CACHE` (SHA-256 em `pins.txt`), e mantém os caches
   anteriores em `SIGMA_HEIGHT50_BUILD`. Todos os caminhos são configuráveis no
   reprodutor.
-- Branch `codex/c5-zeta-bernoulli-prefix224-20261108`; commit validado
-  `d86ab885c4a9a99a2f5fc49cd3e0962f641ff06b`; PR #315:
+- Branch `codex/c5-zeta-bernoulli-prefix224-20261108`; commit da prova
+  `d86ab885c4a9a99a2f5fc49cd3e0962f641ff06b`; PR #315 (mesclada):
   https://github.com/thiagomassensini/geometry-of-numbers/pull/315.
 
 ## Runner e resultado
@@ -71,9 +71,9 @@ checker fail-closed. Não reutilize a primeira tentativa falha como validação.
 
 ## Próxima obrigação
 
-Depois de integrar o prefixo 224, avançar a igualdade cumulativa da tabela até
-601 e provar a ponte entre as caixas exportadas e a avaliação zeta Lean em um
-nó piloto. Em seguida, compor as caixas nodais com Gamma, câmera e a fonte C2
+Com o prefixo 224 integrado, avançar a igualdade cumulativa da tabela até 601
+e provar a ponte entre as caixas exportadas e a avaliação zeta Lean em um nó
+piloto. Em seguida, compor as caixas nodais com Gamma, câmera e a fonte C2
 original até provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`. O
 orçamento intervalar e as margens condicionais estão em
 `../../../C5_SOURCE_SIGN_BUDGET_20261108.md`.
