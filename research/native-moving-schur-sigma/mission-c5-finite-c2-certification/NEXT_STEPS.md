@@ -1,5 +1,12 @@
 # Próximos passos — C5
 
+## Estado atual e próxima prova — prefixo Bernoulli de 64 entradas integrado (2026-11-08)
+
+- A PR #300 integrou `c5BernoulliPrimeTable_64_eq_data` (commit `509e773`, merge `90e2f571efb482993682a05ccc938ee9aef388e5`). As primeiras 64 entradas (índices 0–63) coincidem formalmente com a recorrência, com o certificado 0–32 como base.
+- Reprodução limpa passou: sonda, tabela, certificados 32 e 64, comparação racional exata dos 601 valores e auditoria isolada. Axiomas: somente `propext`, `Classical.choice`, `Quot.sound`. Certificado 0–64: 14:09, pico RSS 4.8 GiB.
+- A validação é parcial: 64 valores têm igualdade formal; 537 ainda precisam de prova em blocos. Nenhuma ligação formal das caixas CSV de zeta nem inclusão da fonte C5 foi fechada.
+- **Próximo passo concreto:** provar as primeiras 96 entradas (prefixo 0–95) usando o resultado até 64, depois seguir por blocos até 601. Só então retomar a igualdade Lean de uma caixa de zeta exportada. Evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix64-20261108/README.md`.
+
 ## Estado atual e próxima prova — prefixo Bernoulli 0–32 integrado (2026-11-08)
 
 - PR #298 integrou `c5BernoulliPrimeTable_32_eq_data` na `main` (commit `1ed4a00`, merge `171c19681482312bf71bffdcd23b24a728edf04b`). O primeiro bloco de 32 da tabela recursiva tem igualdade formal com os dados literais.

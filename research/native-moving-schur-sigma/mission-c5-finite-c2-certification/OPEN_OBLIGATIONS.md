@@ -1,5 +1,16 @@
 # C5 — obrigações abertas
 
+## Estado atual — prefixo Bernoulli de 64 entradas integrado (2026-11-08)
+
+A PR #300 integrou `c5BernoulliPrimeTable_64_eq_data` (commit `509e773`, merge `90e2f571efb482993682a05ccc938ee9aef388e5`). As entradas 0–63 têm igualdade formal com a recorrência. A conferência reprodutível dos 601 valores passou, mas as outras 537 entradas ainda não têm teoremas de igualdade. Obrigações abertas:
+
+1. Provar os blocos restantes, começando pelo prefixo de 96 entradas (índices 0–95); depois provar formalmente a ligação da menor caixa de zeta exportada à avaliação Lean.
+2. Certificar os nós Gamma restantes e compor as caixas zeta/Gamma com o fator nativo original e as quadraturas da fonte completada.
+3. Provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` sem hipóteses auxiliares.
+4. Fechar os sinais finais da `sigmaPadeD` original nos dois deslocamentos.
+
+C5 permanece incompleta. Evidência desta etapa: `evidence/rational-boxes/c5-bernoulli-data-prefix64-20261108/README.md`.
+
 ## Estado atual — certificado parcial da tabela de Bernoulli integrado (2026-11-08)
 
 A PR #298 integrou `c5BernoulliPrimeTable_32_eq_data` (commit `1ed4a00`, merge `171c19681482312bf71bffdcd23b24a728edf04b`). A comparação racional exata dos 601 literais com a saída da sonda passou, mas só o prefixo 0–32 está formalmente provado contra a recorrência. As obrigações abertas, na ordem de dependência, são:

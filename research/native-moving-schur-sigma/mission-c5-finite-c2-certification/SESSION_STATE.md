@@ -1,5 +1,13 @@
 # C5 — estado da sessão
 
+## Estado atual — prefixo Bernoulli de 64 entradas integrado (2026-11-08)
+
+- A PR #300 foi integrada na `main`: commit de prova `509e773`, merge `90e2f571efb482993682a05ccc938ee9aef388e5`.
+- `c5BernoulliPrimeTable_64_eq_data` prova as entradas 0–63. A reprodução recompila sonda, tabela, certificados 32/64 e auditoria; os 601 valores coincidem com os literais por comparação racional exata.
+- `CLEAN_BUILD=PASS`, `DATA_TABLE_CHECK=PASS`, `AXIOM_AUDIT=PASS`; a raiz usa somente `propext`, `Classical.choice`, `Quot.sound`. O certificado 0–64 levou 14:09 e 4.8 GiB RSS.
+- As outras 537 entradas ainda carecem de igualdade formal. Próximo: certificar o prefixo 0–95, depois continuar até 601 e retomar a ponte de zeta. C5 e as inclusões `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes` seguem abertas.
+- Evidência, comandos, tentativas e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix64-20261108/README.md`.
+
 ## Estado atual — igualdade formal do primeiro bloco Bernoulli integrada (2026-11-08)
 
 - A PR #298 foi integrada na `main`: commit de prova `1ed4a00`, merge `171c19681482312bf71bffdcd23b24a728edf04b`.
