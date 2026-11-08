@@ -13,7 +13,7 @@
 - C2 work in progress: `SigmaContour51Residue.lean` locally contains a generic simple-zero logarithmic-derivative limit lemma; `C2_RESIDUE_REDUCTION.md` records normalization and the Cauchy-integral reduction. Neither is compiled or part of the pushed branch.
 - C4/C6 drafts: `SigmaContour51RationalGate.lean` locally contains the conditional normalized-integral/radius conversion, four exact-rational margins, shallow/large-window combination, and conditional wrapper for original `sigmaPadeD`. It is uncompiled and not part of the pushed branch.
 - C3 is now supported by `certify_contour51_bound.py`: 512 Arb interval arcs and explicit Cauchy Taylor remainders prove `|R|<4/5` on the full radius-51 circle. `C3_ARb_CERTIFICATE.md` records the method and `evidence/C3_ARb_ARCS.csv` the per-arc enclosures. This is a rigorous computer-assisted certificate, not a Lean theorem.
-- Branch HEAD `95d2f5fc366c695e6e6c7b4c8122c06b8a63314c` is pushed; it includes C0 and the C3 certificate plus its runtime/hash hardening. No PR has been opened yet.
+- Draft PR #314 is open, stacked on B2 PR #311 (`agent/c2-central-ten-heights-b2-20261108`), and contains only the published C0/C3 checkpoint. Its head is `dd9c8c96d47772305067ead9f708cc4f44c114a8`; do not merge it while C1–C6 remain open.
 - At the last check, a separate C5 Lean 4.32 process (PID `108950`) was still live after 1 hour 47 minutes, at 100% CPU and about 8.8 GiB RSS in its own worktree/output directory. Preserve it; recheck before any Lean build and wait until it exits.
 
 ## Next action

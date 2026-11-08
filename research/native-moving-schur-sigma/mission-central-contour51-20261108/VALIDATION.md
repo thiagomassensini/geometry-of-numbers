@@ -6,7 +6,8 @@
 - PR #304: open/mergeable, base `main`, head `agent/c2-central-hankel2-allorder-20261107` at `6397f479f8c373b59cdffea512bbd8dd95b24fb3`.
 - PR #311: open/mergeable, based on the B1 branch, head `agent/c2-central-ten-heights-b2-20261108` at `7509f5d9404fe2514d4c609acb4ad10b9b02ab54`.
 - PR #306: open/mergeable, base `main`, head `agent/c2-central-contour51-20261108` at `e96e3a132ee6c4f494fee97e3ff1753f606514fc`. Its two original files were read in full and copied byte-for-byte; the original PR branch was not checked out for writing or modified.
-- Rechecked after the C3 checkpoint through GitHub on 2026-11-08: #304 and #311 remain open/mergeable; #306 remains open/mergeable and draft. Their heads are unchanged at the SHAs above. The new branch is based directly on B2 at `7509f5d9404fe2514d4c609acb4ad10b9b02ab54` and is pushed through `95d2f5fc366c695e6e6c7b4c8122c06b8a63314c`.
+- Rechecked after the C3 checkpoint through GitHub on 2026-11-08: #304 and #311 remain open/mergeable; #306 remains open/mergeable and draft. Their heads are unchanged at the SHAs above. The new branch is based directly on B2 at `7509f5d9404fe2514d4c609acb4ad10b9b02ab54`.
+- Draft PR #314 was created on 2026-11-08, base `agent/c2-central-ten-heights-b2-20261108` at `7509f5d9404fe2514d4c609acb4ad10b9b02ab54`, head `agent/c2-contour51-20261108` at `dd9c8c96d47772305067ead9f708cc4f44c114a8`. It is open, draft, and unmerged; GitHub currently reports `mergeable=false`. The PR body limits its claims to the published C0/C3 work and lists the remaining checkpoints.
 - New base commit: `7509f5d9404fe2514d4c609acb4ad10b9b02ab54`.
 - Worktree: `/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108`.
 - Branch: `agent/c2-contour51-20261108`.
