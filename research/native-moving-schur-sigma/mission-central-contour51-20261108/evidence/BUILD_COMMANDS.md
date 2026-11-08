@@ -168,5 +168,28 @@ It exited 0 with `-DwarningAsError=true`; all eight audited theorems print only
 `[propext, Classical.choice, Quot.sound]`. The C5 build remained isolated in its own worktree and
 cache, with about 45 GiB available. The checked-in success copy is
 `C3_SigmaContour51ArbContourBridge-build.log`. This theorem links the original source response to
-the derivative of Lean's entire completed-xi parameter function; expanding that derivative into
-the evaluator's zeta/Gamma formula and transferring the per-arc Arb enclosures remain open.
+the derivative of Lean's entire completed-xi parameter function.
+
+## Explicit original-source evaluator build
+
+After adding the factor split, Gamma/digamma identity, and direct original-response evaluator
+formula, the same Lean 4.32.0 command and exclusive output root were used with
+`MODULE_NAME=SigmaContour51ArbContourBridge`, writing to
+`/home/thlinux/tmp/c2-contour51-20261108-lean432/logs/SigmaContour51ArbContourBridge-attempt39.log`.
+The command exited 0 with `-DwarningAsError=true`. Its checked-in output is
+`C3_SigmaContour51ArbContourBridge-attempt39-success.log`; each new theorem's axiom report contains
+only `[propext, Classical.choice, Quot.sound]`. Source/OLean/log SHA-256 values are recorded in
+`VALIDATION.md`. This proves the pointwise formula from the original source under explicit domain
+and nonvanishing conditions. It does not import the external Arb enclosures, validate the per-arc
+Taylor/Cauchy bounds in Lean, or integrate their sum.
+
+## Lower-path evaluator-domain build
+
+After proving the geometric side conditions for every lower-path parameter, the module was
+rebuilt with `MODULE_NAME=SigmaContour51ArbContourBridge` and the same Lean 4.32.0 command,
+exclusive output, and shared-library roots. The successful log was
+`/home/thlinux/tmp/c2-contour51-20261108-lean432/logs/SigmaContour51ArbContourBridge-attempt42.log`;
+the checked-in copy is `C3_SigmaContour51ArbContourBridge-attempt42-success.log`. It exits 0 with
+warnings treated as errors, and `contour51OriginalResponse_eq_arb_formula_lower_path` reports only
+standard axioms. This closes the pointwise source-to-evaluator bridge throughout the lower path;
+complete-arc interval transfer and integration remain open.

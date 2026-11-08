@@ -131,10 +131,13 @@ continuation to the lower semicircle parameter used in the external Arb residual
 Lean proves `R` odd from `F` even, proves the quotient even and π-periodic, accounts for circle
 orientation and the `iz` derivative factor, and derives continuity from C1's zero-free circle. The
 adapter from `contour51ArbLowerPathResidualIntervalBounds` to the prior C2 interval proposition is
-also compiled. The remaining C3/C5 bridge is precise: prove the per-arc rational intervals contain
-this Lean path integrand and its integrals, including expansion of `xiLean'/xiLean` to the
-classical evaluator and verification of its Taylor/Cauchy remainder ranges. The exact source
-identity `R(z)=-(i/2)xiLean'/xiLean` is now proved, but the evaluator expansion is not.
+also compiled. The source response is now connected to the explicit Arb evaluator:
+`contour51OriginalResponse_eq_arb_formula` proves the zeta/Gamma/digamma expression under
+`F(z)≠0`, `0<Re(s)`, and `s≠1`, deriving zeta nonvanishing from the exact source factorization.
+`contour51OriginalResponse_eq_arb_formula_lower_path` discharges those conditions throughout the
+lower path. The remaining C3/C5 bridge is to show the per-arc rational intervals enclose the
+formal evaluator there, validate Taylor/Cauchy remainder ranges, and integrate the complete arcs.
+These interval inclusions are not Lean theorems yet.
 For the first determinant, only `n=0,1,2` inclusions are required; the resulting strict absolute
 margin is `1/1000000000`. All six strict residual lower margins are recorded in
 `CHECKPOINTS.md`. The uniform `|R|≤4/5` Lean theorem is independently open for the all-window route.

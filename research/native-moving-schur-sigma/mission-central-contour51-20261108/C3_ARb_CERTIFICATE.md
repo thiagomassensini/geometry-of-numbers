@@ -29,13 +29,16 @@ modulus bound on the lower semicircle covers the upper semicircle as well.
 Zeros are not used to define `F`, `R`, or any central moment.
 
 On the Lean side, `completedNativeCharacteristicContinuation` is defined from
-Mathlib's entire regularized completed zeta, and
-`completedNativeCharacteristicContinuation_eq_sigmaCompletedXiParameter` plus
-`sigmaCompletedXiParameter_eq_completedFactor_mul_zeta` expose the classical
-completed-zeta expression on the right half-plane. The remaining certificate
-bridge must transport that expression and its derivative/logarithmic derivative
-to the exact Arb arc enclosures; the C2 residue identity itself is already a
-compiled theorem for the original continuation.
+Mathlib's entire regularized completed zeta. In
+`SigmaContour51ArbContourBridge.lean`, the exact source response has been
+identified with `-(i/2)` times the explicit zeta/Gamma/digamma expression used
+by Arb, with `F(z)≠0`, `0<Re(s)`, and `s≠1` stated; zeta nonvanishing follows
+from the source factorization. `contour51OriginalResponse_eq_arb_formula_lower_path`
+discharges the geometric conditions throughout the lower semicircle. The
+remaining certificate bridge is to transfer the complete-arc Arb enclosures
+and their Taylor/Cauchy remainders to Lean and integrate the bounds. The C2
+residue identity itself is already a compiled theorem for the original
+continuation.
 
 ## Coverage and interval method
 
@@ -120,9 +123,11 @@ lie above the recorded endpoints:
 
 These are rigorous external Arb enclosures and rational comparisons checked in
 Lean, but their inclusion in the actual Lean contour integrals is still an
-explicit hypothesis of `SigmaContour51ArbResidualGate.lean`. That bridge must
-also formalize the half-circle parameterization, the oddness reduction, and
-the transfer from each complete-arc Arb range to the integral. Accordingly,
+explicit hypothesis of `SigmaContour51ArbResidualGate.lean`. The half-circle
+parameterization, oddness reduction, and lower-path identity are already
+formalized. The remaining bridge is the transfer from each complete-arc Arb
+range, including its Taylor/Cauchy remainder, to the Lean evaluator and then
+to the integral. Accordingly,
 the six signs are externally certified but not yet discharged in Lean. The
 first-window determinant now has a conditional Lean gate from just the three
 intervals `e_0,e_1,e_2`; its exact rational margin proves

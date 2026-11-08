@@ -13,6 +13,7 @@ integral.
 namespace CarrySigmaObstruction
 
 open CarrySelfAdjointOperator Complex MeasureTheory
+open Filter Topology
 open scoped Interval
 
 noncomputable section
@@ -129,6 +130,247 @@ theorem contour51OriginalResponse_eq_sigmaXiLogDerivative {z : ℂ}
   have hs : operatorHeightParameter z = s := rfl
   rw [hs]
   field_simp [hXi]
+
+/-- On the zero-free right half-plane region used by the Arb arcs, the completed-xi logarithmic
+derivative splits into the elementary, completed-Gamma, and zeta factors. The remaining Gamma
+factor can be expanded using Mathlib's `Complex.digamma`. -/
+theorem contour51SigmaXiLogDerivative_eq_zeta_gamma_factors {s : ℂ}
+    (hs : 0 < s.re) (hs1 : s ≠ 1) (hzeta : riemannZeta s ≠ 0) :
+    contour51SigmaXiLogDerivative s =
+      1 / s + 1 / (s - 1) + logDeriv Complex.Gammaℝ s +
+        logDeriv riemannZeta s := by
+  let prefactor : ℂ → ℂ := fun w =>
+    (1 / 2 : ℂ) * w * (w - 1) * Complex.Gammaℝ w
+  have hs0 : s ≠ 0 := by
+    intro h
+    have hr : s.re = 0 := by simpa using congrArg Complex.re h
+    linarith
+  have hsSubOne : s - 1 ≠ 0 := sub_ne_zero.mpr hs1
+  have hGammaNonzero : Complex.Gammaℝ s ≠ 0 :=
+    Complex.Gammaℝ_ne_zero_of_re_pos hs
+  have hGammaDiff : DifferentiableAt ℂ Complex.Gammaℝ s := by
+    have hpi : (Real.pi : ℂ) ≠ 0 := ofReal_ne_zero.mpr Real.pi_pos.ne'
+    have hexponent : DifferentiableAt ℂ (fun w : ℂ => -w / 2) s := by fun_prop
+    have hpiPow : DifferentiableAt ℂ (fun w : ℂ => (Real.pi : ℂ) ^ (-w / 2)) s :=
+      hexponent.const_cpow (Or.inl hpi)
+    have hhalf : DifferentiableAt ℂ (fun w : ℂ => w / 2) s := by fun_prop
+    have hGammaAt : DifferentiableAt ℂ Complex.Gamma (s / 2) :=
+      Complex.differentiableAt_Gamma (s / 2) (by
+        intro n hneg
+        have hre : (s / 2).re = -(n : ℝ) := by
+          simpa using congrArg Complex.re hneg
+        rw [Complex.div_re] at hre
+        have hn : 0 ≤ (n : ℝ) := Nat.cast_nonneg n
+        norm_num at hre
+        linarith)
+    have hGammaComp : DifferentiableAt ℂ
+        (fun w : ℂ => Complex.Gamma (w / 2)) s := hGammaAt.comp s hhalf
+    change DifferentiableAt ℂ
+      (fun w : ℂ => (Real.pi : ℂ) ^ (-w / 2) * Complex.Gamma (w / 2)) s
+    exact hpiPow.mul hGammaComp
+  have hprefactorNonzero : prefactor s ≠ 0 := by
+    dsimp [prefactor]
+    exact mul_ne_zero (mul_ne_zero (mul_ne_zero (by norm_num) hs0) hsSubOne)
+      hGammaNonzero
+  have hprefactorDiff : DifferentiableAt ℂ prefactor s := by
+    dsimp [prefactor]
+    exact (((differentiableAt_const (1 / 2 : ℂ)).mul differentiableAt_id).mul
+      (differentiableAt_id.sub_const 1)).mul hGammaDiff
+  have hzetaDiff : DifferentiableAt ℂ riemannZeta s :=
+    differentiableAt_riemannZeta hs1
+  have hproductNear :
+      (fun w : ℂ => sigmaCompletedXiParameter w) =ᶠ[𝓝 s]
+        (fun w : ℂ => prefactor w * riemannZeta w) := by
+    have hopen : IsOpen {w : ℂ | 0 < w.re} := isOpen_Ioi.preimage continuous_re
+    filter_upwards [hopen.eventually_mem hs, eventually_ne_nhds hs1] with w hw hw1
+    simpa [prefactor] using sigmaCompletedXiParameter_eq_completedFactor_mul_zeta hw hw1
+  have hproductValue : sigmaCompletedXiParameter s = prefactor s * riemannZeta s :=
+    sigmaCompletedXiParameter_eq_completedFactor_mul_zeta hs hs1
+  have hproductLogDeriv :
+      logDeriv (fun w : ℂ => prefactor w * riemannZeta w) s =
+        logDeriv prefactor s + logDeriv riemannZeta s :=
+    logDeriv_mul s hprefactorNonzero hzeta hprefactorDiff hzetaDiff
+  have hlinearDiff : DifferentiableAt ℂ (fun w : ℂ => (1 / 2 : ℂ) * w) s :=
+    differentiableAt_id.const_mul (1 / 2 : ℂ)
+  have hshiftDiff : DifferentiableAt ℂ (fun w : ℂ => w - 1) s :=
+    differentiableAt_id.sub_const 1
+  have hlinearNonzero : (1 / 2 : ℂ) * s ≠ 0 :=
+    mul_ne_zero (by norm_num) hs0
+  have hshiftNonzero : s - 1 ≠ 0 := hsSubOne
+  have hlinearLogDeriv :
+      logDeriv (fun w : ℂ => (1 / 2 : ℂ) * w) s = 1 / s := by
+    rw [logDeriv_apply, deriv_const_mul_id]
+    field_simp [hs0]
+  have hshiftLogDeriv : logDeriv (fun w : ℂ => w - 1) s = 1 / (s - 1) := by
+    rw [logDeriv_apply, deriv_sub_const, deriv_id'']
+  have hpolynomialLogDeriv :
+      logDeriv (fun w : ℂ => ((1 / 2 : ℂ) * w) * (w - 1)) s =
+        1 / s + 1 / (s - 1) := by
+    calc
+      logDeriv (fun w : ℂ => ((1 / 2 : ℂ) * w) * (w - 1)) s =
+          logDeriv (fun w : ℂ => (1 / 2 : ℂ) * w) s +
+            logDeriv (fun w : ℂ => w - 1) s :=
+        logDeriv_mul s hlinearNonzero hshiftNonzero hlinearDiff hshiftDiff
+      _ = 1 / s + 1 / (s - 1) := by rw [hlinearLogDeriv, hshiftLogDeriv]
+  have hpolynomialNonzero :
+      (1 / 2 : ℂ) * s * (s - 1) ≠ 0 := mul_ne_zero hlinearNonzero hshiftNonzero
+  have hpolynomialDiff : DifferentiableAt ℂ
+      (fun w : ℂ => ((1 / 2 : ℂ) * w) * (w - 1)) s := hlinearDiff.mul hshiftDiff
+  have hprefactorLogDeriv : logDeriv prefactor s =
+      1 / s + 1 / (s - 1) + logDeriv Complex.Gammaℝ s := by
+    change logDeriv
+      (fun w : ℂ => ((1 / 2 : ℂ) * w * (w - 1)) * Complex.Gammaℝ w) s = _
+    calc
+      logDeriv
+          (fun w : ℂ => ((1 / 2 : ℂ) * w * (w - 1)) * Complex.Gammaℝ w) s =
+          logDeriv (fun w : ℂ => (1 / 2 : ℂ) * w * (w - 1)) s +
+            logDeriv Complex.Gammaℝ s :=
+        logDeriv_mul s hpolynomialNonzero hGammaNonzero hpolynomialDiff hGammaDiff
+      _ = 1 / s + 1 / (s - 1) + logDeriv Complex.Gammaℝ s := by
+        rw [hpolynomialLogDeriv]
+  unfold contour51SigmaXiLogDerivative
+  rw [hproductNear.deriv_eq, hproductValue]
+  have hcombine := hproductLogDeriv
+  rw [hprefactorLogDeriv] at hcombine
+  simpa [logDeriv_apply, add_assoc, add_left_comm, add_comm] using hcombine
+
+/-- The real Gamma completion contributes the usual `-log(pi)/2 + digamma(s/2)/2`
+term to the completed-xi logarithmic derivative. -/
+theorem contour51GammaReal_logDeriv_eq_digamma {s : ℂ} (hs : 0 < s.re) :
+    logDeriv Complex.Gammaℝ s =
+      -(Complex.log (Real.pi : ℂ)) / 2 + Complex.digamma (s / 2) / 2 := by
+  have hpi : (Real.pi : ℂ) ≠ 0 := ofReal_ne_zero.mpr Real.pi_pos.ne'
+  have hexponent : DifferentiableAt ℂ (fun w : ℂ => -w / 2) s := by fun_prop
+  have hhalf : DifferentiableAt ℂ (fun w : ℂ => w / 2) s := by fun_prop
+  have hpiPowDiff : DifferentiableAt ℂ
+      (fun w : ℂ => (Real.pi : ℂ) ^ (-w / 2)) s :=
+    hexponent.const_cpow (Or.inl hpi)
+  have hpiPowNonzero : (Real.pi : ℂ) ^ (-s / 2) ≠ 0 :=
+    Complex.cpow_ne_zero_iff.mpr (Or.inl hpi)
+  have hGammaAt : DifferentiableAt ℂ Complex.Gamma (s / 2) :=
+    Complex.differentiableAt_Gamma (s / 2) (by
+      intro n hneg
+      have hre : (s / 2).re = -(n : ℝ) := by
+        simpa using congrArg Complex.re hneg
+      rw [Complex.div_re] at hre
+      have hn : 0 ≤ (n : ℝ) := Nat.cast_nonneg n
+      norm_num at hre
+      linarith)
+  have hGammaComp : DifferentiableAt ℂ
+      (fun w : ℂ => Complex.Gamma (w / 2)) s := hGammaAt.comp s hhalf
+  have hGammaNonzero : Complex.Gamma (s / 2) ≠ 0 :=
+    Complex.Gamma_ne_zero_of_re_pos (by
+      rw [Complex.div_re]
+      norm_num
+      linarith)
+  have hexponentDeriv : deriv (fun w : ℂ => -w / 2) s = -(1 / 2 : ℂ) := by
+    simp [deriv_div_const, one_div]
+    norm_num [one_div]
+  have hpiPowLogDeriv :
+      logDeriv (fun w : ℂ => (Real.pi : ℂ) ^ (-w / 2)) s =
+        -(Complex.log (Real.pi : ℂ)) / 2 := by
+    rw [logDeriv_apply, Complex.deriv_const_cpow hexponent (Real.pi : ℂ), hexponentDeriv]
+    field_simp [hpiPowNonzero]
+  have hGammaCompLogDeriv :
+      logDeriv (fun w : ℂ => Complex.Gamma (w / 2)) s =
+        Complex.digamma (s / 2) / 2 := by
+    calc
+      logDeriv (fun w : ℂ => Complex.Gamma (w / 2)) s =
+          logDeriv Complex.Gamma (s / 2) * deriv (fun w : ℂ => w / 2) s := by
+        simpa only [Function.comp_def] using
+          logDeriv_comp (f := Complex.Gamma) (g := fun w : ℂ => w / 2) (x := s)
+            hGammaAt hhalf
+      _ = Complex.digamma (s / 2) / 2 := by
+        rw [Complex.digamma_def]
+        simp [deriv_div_const]
+        ring
+  change logDeriv
+    (fun w : ℂ => (Real.pi : ℂ) ^ (-w / 2) * Complex.Gamma (w / 2)) s = _
+  calc
+    logDeriv
+        (fun w : ℂ => (Real.pi : ℂ) ^ (-w / 2) * Complex.Gamma (w / 2)) s =
+        logDeriv (fun w : ℂ => (Real.pi : ℂ) ^ (-w / 2)) s +
+          logDeriv (fun w : ℂ => Complex.Gamma (w / 2)) s := by
+      exact logDeriv_mul s hpiPowNonzero hGammaNonzero hpiPowDiff hGammaComp
+    _ = -(Complex.log (Real.pi : ℂ)) / 2 + Complex.digamma (s / 2) / 2 := by
+      rw [hpiPowLogDeriv, hGammaCompLogDeriv]
+
+/-- This is the exact logarithmic-derivative formula evaluated by the Arb arc scripts, now
+expressed for Lean's original completed characteristic with the explicit nonvanishing premises. -/
+theorem contour51SigmaXiLogDerivative_eq_arb_formula {s : ℂ}
+    (hs : 0 < s.re) (hs1 : s ≠ 1) (hzeta : riemannZeta s ≠ 0) :
+    contour51SigmaXiLogDerivative s =
+      1 / s + 1 / (s - 1) - (Complex.log (Real.pi : ℂ)) / 2 +
+        Complex.digamma (s / 2) / 2 + deriv riemannZeta s / riemannZeta s := by
+  rw [contour51SigmaXiLogDerivative_eq_zeta_gamma_factors hs hs1 hzeta,
+    contour51GammaReal_logDeriv_eq_digamma hs, logDeriv_apply]
+  ring
+
+/-- The original response itself equals the explicit zeta/Gamma/digamma expression evaluated by
+the Arb scripts throughout the zero-free right-half-plane region. The zeta nonvanishing condition
+is derived from the original source's nonvanishing and the exact completed-zeta factorization. -/
+theorem contour51OriginalResponse_eq_arb_formula {z : ℂ}
+    (hF : completedNativeCharacteristicContinuation z ≠ 0)
+    (hs : 0 < (operatorHeightParameter z).re)
+    (hs1 : operatorHeightParameter z ≠ 1) :
+    contour51OriginalResponse z =
+      (-(Complex.I / 2 : ℂ)) *
+        (1 / operatorHeightParameter z +
+          1 / (operatorHeightParameter z - 1) -
+          (Complex.log (Real.pi : ℂ)) / 2 +
+          Complex.digamma (operatorHeightParameter z / 2) / 2 +
+          deriv riemannZeta (operatorHeightParameter z) /
+            riemannZeta (operatorHeightParameter z)) := by
+  have hXi : sigmaCompletedXiParameter (operatorHeightParameter z) ≠ 0 := by
+    rw [← completedNativeCharacteristicContinuation_eq_sigmaCompletedXiParameter z]
+    exact hF
+  have hzeta : riemannZeta (operatorHeightParameter z) ≠ 0 := by
+    intro hz
+    have hfactor := sigmaCompletedXiParameter_eq_completedFactor_mul_zeta hs hs1
+    exact hXi (by simpa [hz] using hfactor)
+  rw [contour51OriginalResponse_eq_sigmaXiLogDerivative hF,
+    contour51SigmaXiLogDerivative_eq_arb_formula hs hs1 hzeta]
+
+/-- The original response on the complete lower semicircle is already in the exact explicit
+zeta/Gamma/digamma form evaluated by Arb. The circle's zero-free boundary comes from C1; the
+right-half-plane and pole-avoidance conditions follow from the lower-path geometry and radius 51. -/
+theorem contour51OriginalResponse_eq_arb_formula_lower_path {u : ℝ}
+    (hu : u ∈ Set.Icc (0 : ℝ) 1) :
+    contour51OriginalResponse (circleMap 0 51 (-Real.pi * u)) =
+      (-(Complex.I / 2 : ℂ)) *
+        (1 / operatorHeightParameter (circleMap 0 51 (-Real.pi * u)) +
+          1 / (operatorHeightParameter (circleMap 0 51 (-Real.pi * u)) - 1) -
+          (Complex.log (Real.pi : ℂ)) / 2 +
+          Complex.digamma (operatorHeightParameter (circleMap 0 51 (-Real.pi * u)) / 2) / 2 +
+          deriv riemannZeta (operatorHeightParameter (circleMap 0 51 (-Real.pi * u))) /
+            riemannZeta (operatorHeightParameter (circleMap 0 51 (-Real.pi * u)))) := by
+  let z : ℂ := circleMap 0 51 (-Real.pi * u)
+  have huAngle0 : -Real.pi * u ≤ 0 :=
+    mul_nonpos_of_nonpos_of_nonneg (neg_nonpos.mpr Real.pi_pos.le) hu.1
+  have huAngleLower : -Real.pi ≤ -Real.pi * u := by
+    have := mul_le_mul_of_nonpos_left hu.2 (neg_nonpos.mpr Real.pi_pos.le)
+    simpa using this
+  have him : z.im = 51 * Real.sin (-Real.pi * u) := by
+    simp only [z, circleMap_zero_im]
+  have hsin : Real.sin (-Real.pi * u) ≤ 0 :=
+    Real.sin_nonpos_of_nonpos_of_neg_pi_le huAngle0 huAngleLower
+  have hs : 0 < (operatorHeightParameter z).re := by
+    rw [operatorHeightParameter_re, him]
+    nlinarith
+  have hs1 : operatorHeightParameter z ≠ 1 := by
+    intro h
+    have hnorm : ‖z‖ = 51 := by simp [z, norm_circleMap_zero]
+    have hparamNorm : ‖operatorHeightParameter z - (1 / 2 : ℂ)‖ = ‖z‖ := by
+      simp [CarrySelfAdjointOperator.operatorHeightParameter]
+    rw [h] at hparamNorm
+    rw [hnorm] at hparamNorm
+    norm_num at hparamNorm
+  have hF : completedNativeCharacteristicContinuation z ≠ 0 := by
+    obtain ⟨_, _, _, _, _, _, hboundary, _⟩ :=
+      sigmaContour51_original_characteristic_roots
+    apply hboundary z
+    simp [z, norm_circleMap_zero]
+  simpa [z] using contour51OriginalResponse_eq_arb_formula hF hs hs1
 
 theorem contour51OriginalResponse_odd (z : ℂ) :
     contour51OriginalResponse (-z) = -contour51OriginalResponse z := by
@@ -331,6 +573,11 @@ theorem completedNative_sigmaPadeD_zero_pos_of_contour51_lower_path_intervals
 
 #print axioms contour51OriginalResponse_odd
 #print axioms contour51OriginalResponse_eq_sigmaXiLogDerivative
+#print axioms contour51SigmaXiLogDerivative_eq_zeta_gamma_factors
+#print axioms contour51GammaReal_logDeriv_eq_digamma
+#print axioms contour51SigmaXiLogDerivative_eq_arb_formula
+#print axioms contour51OriginalResponse_eq_arb_formula
+#print axioms contour51OriginalResponse_eq_arb_formula_lower_path
 #print axioms contour51OriginalResidualQuotient_neg
 #print axioms contour51OriginalAngularResidualIntegrand_periodic
 #print axioms periodic_pi_integral_full_eq_lower_parameter

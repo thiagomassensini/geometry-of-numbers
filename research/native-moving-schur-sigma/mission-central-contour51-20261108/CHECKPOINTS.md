@@ -21,7 +21,7 @@
 
   A conversão inclui o fator `i` da derivada do `circleMap`, a orientação positiva completa, a periodicidade π por paridade de `Q_n` e a mudança de variável `θ=-πu`. Portanto a parametrização e a redução meia-volta do script Arb agora estão fechadas em Lean, sem premissa analítica adicional.
 - [x] **Transferência da forma da hipótese.** `contour51ArbLowerPathResidualIntervalBounds` enuncia as inclusões diretamente nos seis integrais parametrizados usados pelo Arb. `contour51ArbResidualIntervalBounds_of_lower_path_bounds` transforma essa proposição exatamente na entrada dos gates anteriores; o teorema `completedNative_sigmaPadeD_zero_pos_of_contour51_lower_path_intervals` compõe o primeiro gate e preserva a margem absoluta `1/1000000000`.
-- [ ] **Ainda aberto: inclusões do avaliador Arb nos integrais Lean.** Não provamos que as faixas Acb por arco do script contêm os valores do avaliador da continuação Lean em cada arco. O Lean prova `F(z)=sigmaCompletedXiParameter(operatorHeightParameter z)` e a relação diferencial `R(z)=-(i/2) xiLean'/xiLean`; falta expandir essa derivada para `1/s + 1/(s-1) - log(pi)/2 + digamma(s/2)/2 + zeta'(s)/zeta(s)`, e formalizar as faixas Taylor/Cauchy-Arb e a soma sobre os 4096 arcos. As inclusões externas ainda não são teoremas Lean.
+- [ ] **Ainda aberto: inclusões do avaliador Arb nos integrais Lean.** O módulo prova em Lean a expansão exata de `xiLean'/xiLean` e, pelo teorema `contour51OriginalResponse_eq_arb_formula_lower_path`, identifica a resposta da fonte com a fórmula de zeta/Gamma/digamma em todo o caminho inferior `u∈[0,1]`; C1 fornece `F≠0`, e as condições geométricas são demonstradas. A não anulação de zeta é derivada da fatorização completada. Ainda falta provar que as faixas Acb por arco contêm os valores dessa fórmula Lean, incluindo os restos Taylor/Cauchy e a soma dos 4096 arcos. As inclusões externas ainda não são teoremas Lean.
 - [ ] **Ainda aberto: cota uniforme C3 em Lean.** O certificado externo de 512 arcos continua provando numericamente com aritmética Arb `|R|<0.746413<4/5`, mas a inclusão das faixas na função de Lean e o teorema uniforme não foram formalizados. A identidade de caminho não descarrega essa obrigação.
 - **Margens racionais de `e_0,…,e_5`.** Lean verifica que os endpoints externos permitem as margens estritas abaixo; elas só viram afirmações sobre os resíduos após a inclusão aberta acima.
 
@@ -57,10 +57,11 @@
   ```
 
   A prova diferencia a identidade exata `F(z)=sigmaCompletedXiParameter(s)` pela regra da cadeia e usa `ds/dz=i`. Não troca a fonte por um produto de zeros. Compila em Lean 4.32.0; a auditoria de axiomas dá `[propext, Classical.choice, Quot.sound]`, sem `sorry`, `admit` ou axioma declarado.
-- **Limite dessa ponte:** `xiLean'/xiLean` ainda não foi identificado formalmente com a expressão expandida usada pelo avaliador Arb (`1/s + 1/(s-1) - log(pi)/2 + digamma(s/2)/2 + zeta'(s)/zeta(s)`, nas regiões e convenções do script). Também falta formalizar as caixas Taylor/Cauchy por arco e sua soma. O certificado Arb continua externo, embora a relação diferencial entre a resposta original e a função completada de Lean esteja provada.
-- **Hipóteses analíticas ainda abertas:** (i) inclusão em Lean das 512 faixas Arb na resposta original em todo o círculo, para derivar `‖R‖≤4/5`; (ii) inclusão em Lean das 4096 faixas completas no integral inferior da fonte para `n=0,…,5`. Para o primeiro determinante bastam as inclusões correspondentes a `n=0,1,2`. Não foi introduzida hipótese de sinal para resto.
+- [x] **Expansão para o avaliador clássico.** `contour51SigmaXiLogDerivative_eq_zeta_gamma_factors`, `contour51GammaReal_logDeriv_eq_digamma` e `contour51SigmaXiLogDerivative_eq_arb_formula` provam a decomposição por fatores e a expressão explícita de zeta/Gamma/digamma. `contour51OriginalResponse_eq_arb_formula` liga a fonte original à expressão usada por Arb sob `F(z)≠0`, `0<Re(s)` e `s≠1`; a não anulação de zeta é deduzida, não postulada. Todos compilam em Lean 4.32 com axiomas padrão somente.
+- **Limite dessa ponte:** `contour51OriginalResponse_eq_arb_formula_lower_path` já aplica a identidade uniformemente ao caminho inferior e descarrega as condições geométricas usando C1. Falta a inclusão das caixas Acb na expressão Lean, a formalização dos restos Taylor/Cauchy e a soma sobre os arcos. O certificado Arb continua externo.
+- **Hipóteses analíticas ainda abertas:** (i) transferir para Lean as 512 faixas Arb e provar `‖R‖≤4/5` em todo o círculo; (ii) transferir para as integrais do caminho inferior as 4096 faixas completas para `e_0,…,e_5`, incluindo condições de domínio da fórmula, restos Taylor/Cauchy e quadratura por arcos. Para o primeiro determinante bastam as inclusões de `n=0,1,2`. Não foi introduzida hipótese de sinal para resto.
 - **Margens racionais externas, ainda condicionais às inclusões:** `e_0 > 9/1000`, `e_1 > 9/10000000`, `e_2 > 9/50000000000`, `e_3 > 1/25000000000000`, `e_4 > 1/100000000000000000`, `e_5 > 1/500000000000000000000`; limites superiores simples: `1/100`, `1/1000000`, `1/4000000000`, `1/10000000000000`, `1/50000000000000000`, `1/100000000000000000000`. Até provar as inclusões, estes números só comparam os extremos racionais externos; ainda não são sinais Lean dos `e_n`.
-- **Próximo lema mínimo:** provar `contour51ArbFirstThreeLowerPathResidualIntervalBounds` das caixas Arb completas para `n=0,1,2`, após formalizar a fórmula do avaliador e os restos por arco. Junto da identidade C2, da parametrização já compilada e do gate racional, isso dá `1/1000000000 < sigmaPadeD 0 0` para a fonte original, sem a hipótese global `hR`. Todas as janelas ainda exigem as seis inclusões e a cota uniforme C3 em Lean.
+- **Próximo lema mínimo:** provar `contour51ArbFirstThreeLowerPathResidualIntervalBounds` para `n=0,1,2` a partir das faixas Arb completas, usando `contour51OriginalResponse_eq_arb_formula_lower_path`, o limite ponto a ponto de cada arco e a integração dos restos. Junto da identidade C2, da parametrização já compilada e do gate racional, isso dá `1/1000000000 < sigmaPadeD 0 0` para a fonte original, sem a hipótese global `hR`. Todas as janelas ainda exigem as seis inclusões e a cota uniforme C3 em Lean.
 - A passagem aos determinantes continua preservando os cinco termos cruzados:
 
   ```text
@@ -69,7 +70,7 @@
   ```
 
 - **C5:** podem ser compartilhados aritmética racional de intervalos, avaliação em nós, normalização da fonte e transporte algébrico. Caixas em `d=0.0495` e `d=0.1` não são caixas centrais sem transformação quantitativa explícita. Não se repetiu a tabela de Bernoulli nem a avaliação dos nós zeta/Gamma.
-- Build: `evidence/C3_SigmaContour51ArbContourBridge-build.log`; SHA-256 da fonte `8871d3e5c2e748c6afa668078b261db2d959b36c2959d3a60bb3b68c5a2f0e47`, do OLean `a3165c228cb9d2a1959f10fc443aed2fe8af144ed311817834c6ae7a564d8130` e do log `29136cf8db2973529ee639a919c70f2cc3cb0143b4137d1a42375f43f059a1da`.
+- Build atual com a especialização em todo o caminho inferior: `evidence/C3_SigmaContour51ArbContourBridge-attempt42-success.log`; hashes da fonte, OLean e log estão em `VALIDATION.md`.
 
 Exact remaining Lean inputs:
 
@@ -88,11 +89,13 @@ theorem takes only `contour51ArbFirstThreeResidualIntervalBounds` for `n≤2`; t
 takes `hR` and `contour51ArbResidualIntervalBounds` for `n≤5`. The newer
 `contour51ArbLowerPathResidualIntervalBounds` is the equivalent statement in Arb's lower-path
 coordinates, and its adapter to these circle-integral hypotheses is now proved. No other analytic
-or sign premise is hidden in those conditional theorem statements. The existing Lean completed-zeta
-formula bridges the continuation to the classical xi expression, and the derivative of the original
-response is related to the log derivative of that Lean xi function. Expanding it to the evaluator
-formula and integrating the complete arc ranges remain open. The circle orientation, path
-scaling, response oddness, quotient evenness, and half-circle reduction are compiled.
+or sign premise is hidden in those conditional theorem statements. The original response is now
+proved equal to the explicit zeta/Gamma/digamma evaluator expression throughout the lower path by
+`contour51OriginalResponse_eq_arb_formula_lower_path`, which discharges `F(z)≠0`, `0<Re(s)`, and
+`s≠1`; zeta nonvanishing follows from source factorization. Transferring the complete arc ranges
+and their Taylor/Cauchy remainders and integrating those bounds remain open. The circle
+orientation, path scaling, response oddness, quotient evenness, and half-circle reduction are
+compiled.
 - [x] **Exact width interface for C5 residual signs.** `SigmaContour51BoxSensitivity.lean` proves that the current ten-mode power-sum boxes for `n=0,…,5` have widths strictly below `14/10^6`, `9/10^8`, `6/10^10`, `4/10^12`, `3/10^14`, and `2/10^16`. Its `completedNativeContour51Residual_nonneg_of_jet_margin` theorem shows that an original-source jet lower bound clearing `lowMoment n` by the corresponding rational budget implies `e_n≥0` for any height list in the B2 boxes. No such jet lower bound is proved here, so this does not close any residual sign. Exact per-height width diagnostics against the old non-certified probes identify likely refinement candidates; see `evidence/C2_box_sensitivity.log`.
 - [x] **C5 center transport, algebraic part only.** The same module proves `displacedProductC 0 z = completedNativeOperatorCharacteristic(z)^2`; with the explicit genuine-strip condition, a second theorem identifies it with `completedNativeCharacteristicContinuation(z)^2`, the original continuation used in the contour argument. It specializes the existing source Bézout recurrence at `d=0`, identifies its source log-derivative coefficient with `2*completedSigmaLogJet 0 n`, and proves `e_n = completedSigmaDisplacedMoment 0 n / 2 - P_n`. The generic source recurrence audit compiles with standard axioms only and retains the original `completedSigmaDensity`, `displacedProductC`, and central jets. C5 interval boxes at `d=99/2000` or `d=1/10` still do not transfer to `d=0` without a separate quantitative displacement bound.
 

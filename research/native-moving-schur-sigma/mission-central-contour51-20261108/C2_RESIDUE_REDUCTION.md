@@ -121,11 +121,19 @@ inclusions in these lower-path coordinates; a proved adapter converts them to th
 gate used by the residual and determinant theorems. Thus the path and normalization are no longer
 open. The source differential identity is also proved: for `F(z) ≠ 0`, Lean establishes
 `R(z)=-(i/2) xiLean'(s)/xiLean(s)`, where `xiLean := sigmaCompletedXiParameter` and
-`s=operatorHeightParameter z`. This differentiates the exact continuation identity and uses
-`ds/dz=i`. It does not yet expand `xiLean'/xiLean` into the classical zeta/Gamma expression used
-by the Arb evaluator. The inclusions themselves remain unproved in Lean: the external
-Taylor/Cauchy ranges still need to be checked against that formal evaluator and integrated over
-the full rational arc partition.
+`s=operatorHeightParameter z`. Under `0<Re(s)`, `s≠1`, and nonzero zeta, Lean now expands this
+exactly to
+
+```text
+R(z) = -(i/2) * (1/s + 1/(s-1) - log(pi)/2
+                   + digamma(s/2)/2 + zeta'(s)/zeta(s)).
+```
+
+For the source-response theorem, zeta nonvanishing is derived from `F(z)≠0` and the exact
+completed-zeta factorization. `contour51OriginalResponse_eq_arb_formula_lower_path` discharges the
+geometric side conditions uniformly for every lower-path parameter using C1's zero-free boundary
+and the radius 51. The remaining open bridge is to check the external Taylor/Cauchy ranges against
+this formal evaluator and integrate them over the full rational arc partition.
 
 ## The three remainder notions
 
