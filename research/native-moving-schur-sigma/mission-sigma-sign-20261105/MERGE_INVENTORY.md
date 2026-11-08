@@ -97,3 +97,7 @@ A ponta consultada é origin/main@78a10e8af611a5c690b248f8889b9e87674fd5c8. C1B 
 Os cinco módulos C2/C3 foram recompilados diretamente a partir dessa ponta em Lean 4.32 com warningAsError. Os verificadores C2/C3 aceitaram o corolário e os quatro relatórios públicos usando somente propext, Classical.choice e Quot.sound; SigmaPadeAudit refez a auditoria de 133 raízes públicas e 70.861 dependências. Os logs atuais estão em evidence/c2-c3-live-main-20261107/build-logs/; os logs pós-reinício anteriores permanecem preservados em evidence/c2-c3-current-main-20261107/.
 
 A integração Lean 4.32 no commit b9ce1955c1e8830afad2323afe5266ed3f5f35d9 continua sendo a primeira referência C2 e não mostrou impedimento. A prova conserva o resto e as definições originais, sem hipótese de sinal adicional. A tentativa 4.35 continua somente como checkpoint incompleto; patches, logs, pins, erro mais recente e comandos de retomada estão preservados no checkpoint publicado #221.
+
+## Reconciliação após retomada — 2026-11-08
+
+O inventário de PRs e integrações C1B/C2/C3 permanece válido na ponta `origin/main@ebd6c57c33edcf8596f09889c7bf956e7d9b284f`. A validação 4.32 de `78a10e8af611a5c690b248f8889b9e87674fd5c8` continua aplicável: nenhuma fonte Lean preexistente da closure C2/C3 mudou entre aquelas revisões; a auditoria registrou 133 raízes e 70.861 dependências. O checkpoint incompleto 4.35 da PR #221 continua versionado. Checksums e evidência da conferência estão em `evidence/c2-c3-priority-resume-20261108/VALIDATION.md`.

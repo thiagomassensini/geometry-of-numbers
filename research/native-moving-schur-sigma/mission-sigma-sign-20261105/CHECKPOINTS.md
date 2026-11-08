@@ -101,6 +101,10 @@ Os logs de compilação, auditoria, pins e hashes estão em `evidence/c2-c3-prio
 
 `origin/main@71721874eb01071a07c83e4f71117b7d662e1b53` mantém C1B integrada pela PR #155 (merge `0586e238441096ecd2248e3f14bdac3a832af427`), C2 pela PR #157 e C3 pela PR #159. A rota Lean 4.32 publicada em `b9ce1955c1e8830afad2323afe5266ed3f5f35d9` conclui C2 com os momentos originais, a decomposição completa do resto e sem hipóteses de sinal adicionais; C3 cobre as janelas `p=2i` e `p=2i+1` e transporta as direções negativas às dimensões maiores via C1B. A comparação dos fontes C2/C3 entre `24f61b0` e `7172187` não encontrou diferenças, então os builds e a auditoria transitiva arquivados (133 raízes, 70.861 dependências, axiomas padrão) continuam válidos. O checkpoint da tentativa 4.35 foi publicado pela PR #221 e segue explicitamente incompleto; overlays, patches, pins, manifests, logs com o último erro e comandos de retomada estão em `evidence/lean435-validation-incomplete/`. Não há impedimento demonstrado na rota 4.32 nem entrega C2/C3 por publicar.
 
+## Conferência na main após a retomada (2026-11-08)
+
+`origin/main@ebd6c57c33edcf8596f09889c7bf956e7d9b284f` mantém C1B (#155), C2 (#157), C3 (#159) e o checkpoint incompleto 4.35 (#221) integrados. Os fontes Lean C2/C3 permanecem idênticos à validação 4.32 de `origin/main@78a10e8af611a5c690b248f8889b9e87674fd5c8`; builds e auditoria transitiva aplicam-se à ponta atual (133 raízes, 70.861 dependências, axiomas padrão). Os checksums dos patches e logs preservados 4.35 foram conferidos. A rota 4.32 não apresenta bloqueio, portanto não há adaptação geral 4.35 a retomar antes de uma necessidade demonstrada. Veja `evidence/c2-c3-priority-resume-20261108/VALIDATION.md`.
+
 
 ## Conferência após a PR #288 — 2026-11-07
 

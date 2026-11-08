@@ -1,5 +1,17 @@
 # Registro de C2/C3 após a integração de C3
 
+## Retomada e reconciliação da prioridade — 2026-11-08
+
+`origin/main@ebd6c57c33edcf8596f09889c7bf956e7d9b284f` já contém as provas e integrações solicitadas: C1B pela PR #155 (merge `0586e238441096ecd2248e3f14bdac3a832af427`), C2 pela PR #157 (merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`) e C3 pela PR #159 (merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`). Portanto, não há código C2/C3 pendente de integração.
+
+A validação Lean 4.32 de 2026-11-07 foi compilada sobre `origin/main@78a10e8af611a5c690b248f8889b9e87674fd5c8`. A comparação de toda a árvore `research/native-moving-schur-sigma/` até `ebd6c57` encontrou apenas arquivos C5 novos/alterados e registros; nenhum módulo Lean preexistente da closure C2/C3 foi alterado. Os hashes e logs que identificam a execução estão em `evidence/c2-c3-live-main-20261107/`; por identidade de fontes, essa compilação e auditoria continuam aplicáveis à `main` atual. Os verificadores aceitaram apenas `propext`, `Classical.choice` e `Quot.sound`, e `SigmaPadeAudit` conferiu 133 raízes públicas e 70.861 dependências.
+
+A referência inicial de C2 é `SigmaHeight50Integration.lean` na revisão Lean 4.32 `b9ce1955c1e8830afad2323afe5266ed3f5f35d9`. Ela não apresenta bloqueio. O corolário publicado mantém `completedSigmaLogJet` e `sigmaPadeD` originais, a decomposição exponencial completa do resto e nenhuma hipótese de sinal adicional. C3 usa `p=2i` e `p=2i+1` e transporta as duas direções negativas para `M≥i₀+2` pela persistência C1B. `CarrySigmaObstruction.sigmaLineZero` tem uma única definição em `SigmaCertifiedNegativeDirection.lean`.
+
+O checkpoint 4.35 foi publicado pela PR #221 e permanece explicitamente incompleto. Os checksums dos patches Geometry/Carry e do arquivo de logs foram verificados nesta retomada; o tar contém o erro direto mais recente, os dois estados do scheduler e o build Geometry. O primeiro impedimento daquela rota continua sendo `CarrySelfAdjointOperator.RealLinearPMapReciprocalBlock`, na declaração `realAdjoint_ker_eq_bot_of_denseRange`: a API 4.35 espera `T.ker = ⊥`, enquanto a prova-base entrega `LinearMap.ker T.toFun = ⊥`; após a adaptação inicial, `Subtype.ext` deixa pendente o objetivo de injetividade no domínio subtype. Isso não é um bloqueio na rota C2 4.32 e não justifica uma migração geral de Geometry/Carry.
+
+Não foi necessário calcular a primeira profundidade de falha. A lei quantitativa distância × profundidade e os novos cadernos seguem adiados. Registro reproduzível desta conferência: `evidence/c2-c3-priority-resume-20261108/VALIDATION.md`.
+
 **Revalidação final:** os módulos C2/C3 foram recompilados e auditados em Lean 4.32 sobre as fontes de origin/main@9951fcb7315c25b6d878befc42b2d02c26a96ec7. A auditoria transitiva aceitou 133 roots públicos e 70.861 dependências com apenas axiomas padrão. Os logs, pins e hashes desta execução estão em evidence/c2-c3-final-validation-20261106/; a revalidação imediatamente após o reboot permanece em evidence/c2-c3-post-reboot-20261106/.
 
 **Registro original:** 2026-11-05, `main` em `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8` (após PR #159).

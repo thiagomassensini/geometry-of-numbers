@@ -1,11 +1,19 @@
 # Estado da missão — negatividade transversal all-order
 
-**Atualizado:** 2026-11-07
+**Atualizado:** 2026-11-08
 **Estado:** C0, C1, C1B, C2, C3 e C4 estão concluídos e integrados à `main`. A lei quantitativa distância × profundidade e os novos cadernos continuam adiados.
 
-**Conferência atual — 2026-11-07:** A ponta consultada é `origin/main@78a10e8af611a5c690b248f8889b9e87674fd5c8`. C1B (#155, merge 0586e238441096ecd2248e3f14bdac3a832af427), C2 (#157, merge f4f5cf5ecc60ea3747cbaf21389fab52832d3949), C3 (#159, merge b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8) e o checkpoint Lean 4.35 incompleto (#221, merge c67b2f72e0ad2f331c0966fb3ed82e98655e3df8) já estão publicados na main. Nenhuma entrega C1B/C2/C3 está pendente.
+**Conferência atual — 2026-11-08:** `origin/main@ebd6c57c33edcf8596f09889c7bf956e7d9b284f` contém C1B (#155, merge `0586e238441096ecd2248e3f14bdac3a832af427`), C2 (#157, merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`), C3 (#159, merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`) e o checkpoint Lean 4.35 incompleto (#221, merge `c67b2f72e0ad2f331c0966fb3ed82e98655e3df8`). C2 e C3 já estão integrados; não há prova nem publicação pendente desses alvos.
 
-Os cinco módulos C2/C3 foram recompilados diretamente a partir dessa ponta em Lean 4.32 com `-DwarningAsError=true`. Os verificadores C2/C3 aceitaram o corolário e os quatro relatórios públicos usando somente `propext`, `Classical.choice` e `Quot.sound`; `SigmaPadeAudit` refez a auditoria de 133 raízes públicas e 70.861 dependências. Os logs atuais estão em evidence/c2-c3-live-main-20261107/build-logs/; os logs pós-reinício anteriores permanecem preservados em evidence/c2-c3-current-main-20261107/.
+Os cinco módulos públicos de build C2/C3 e seus módulos-fonte de suporte continuam idênticos ao snapshot compilado em `origin/main@78a10e8af611a5c690b248f8889b9e87674fd5c8`; a comparação até a ponta atual só encontrou novos módulos e registros C5. Assim, a compilação Lean 4.32 com `-DwarningAsError=true`, os verificadores C2/C3 e a auditoria `SigmaPadeAudit` já arquivados continuam aplicáveis. Foram aceitos somente `propext`, `Classical.choice` e `Quot.sound`; a auditoria percorreu 133 raízes públicas e 70.861 dependências. Evidências: `evidence/c2-c3-live-main-20261107/` e `evidence/c2-c3-priority-resume-20261108/`.
+
+A rota C2 permanece a integração Lean 4.32 do commit `b9ce1955c1e8830afad2323afe5266ed3f5f35d9`, sem bloqueio identificado. Ela prova `∃ P : ℕ, ∀ p ≥ P, sigmaPadeD (1/5) p < 0` usando o isolamento certificado, a decomposição completa do resto e o limite normalizado dos menores; preserva `completedSigmaLogJet` e `sigmaPadeD` originais e não acrescenta hipóteses de sinal. C3 usa `p=2i` e `p=2i+1` para os setores par e ímpar e transporta cada direção negativa às dimensões `M≥i₀+2` via C1B. Não é necessário calcular a primeira profundidade de falha.
+
+O checkpoint #221 já publicou os overlays, patches, pins, manifests, logs, erro mais recente e comandos de retomada 4.35. Ele continua marcado como validação incompleta; sem impedimento em 4.32, não há motivo para retomar uma migração geral de Geometry/Carry.
+
+**Registro da conferência anterior — 2026-11-07:** A ponta consultada foi `origin/main@78a10e8af611a5c690b248f8889b9e87674fd5c8`. C1B (#155, merge 0586e238441096ecd2248e3f14bdac3a832af427), C2 (#157, merge f4f5cf5ecc60ea3747cbaf21389fab52832d3949), C3 (#159, merge b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8) e o checkpoint Lean 4.35 incompleto (#221, merge c67b2f72e0ad2f331c0966fb3ed82e98655e3df8) já estavam publicados na main.
+
+Na execução de 2026-11-07, os cinco módulos C2/C3 foram recompilados diretamente daquela ponta em Lean 4.32 com `-DwarningAsError=true`. Os verificadores C2/C3 aceitaram o corolário e os quatro relatórios públicos usando somente `propext`, `Classical.choice` e `Quot.sound`; `SigmaPadeAudit` refez a auditoria de 133 raízes públicas e 70.861 dependências. Os logs dessa execução estão em `evidence/c2-c3-live-main-20261107/build-logs/`; os logs pós-reinício anteriores permanecem preservados em `evidence/c2-c3-current-main-20261107/`.
 
 A integração Lean 4.32 no commit b9ce1955c1e8830afad2323afe5266ed3f5f35d9 continua sendo a primeira referência C2 e não mostrou impedimento. A prova conserva o resto e as definições originais, sem hipótese de sinal adicional. A tentativa 4.35 continua somente como checkpoint incompleto; patches, logs, pins, erro mais recente e comandos de retomada estão preservados no checkpoint publicado #221.
 

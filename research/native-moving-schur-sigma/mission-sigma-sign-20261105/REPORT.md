@@ -57,3 +57,7 @@ O lema `sigmaMatrix_prefix_submatrix` identifica exatamente a seção antiga com
 ## Limites
 
 Não se provam positividade central all-order, RH, negatividade de todos os pivôs ou crescimento do índice negativo. C3 cobre explicitamente as duas torres par/ímpar. A lei quantitativa distância × profundidade e os novos cadernos continuam adiados.
+
+## Reconciliação da prioridade C2/C3 — 2026-11-08
+
+Na ponta `origin/main@ebd6c57c33edcf8596f09889c7bf956e7d9b284f`, C1B (#155), C2 (#157) e C3 (#159) já estão integrados; a validação 4.32 de 2026-11-07 segue aplicável porque nenhum fonte Lean preexistente da closure C2/C3 mudou desde o snapshot compilado. A conclusão C2 mantém o resto exponencial e os momentos originais sem hipótese adicional de sinal. A conclusão C3 usa ambas as janelas par e ímpar e transporta as direções negativas para dimensões maiores via C1B. O checkpoint de portabilidade 4.35 continua publicado e incompleto pela PR #221. Não há tarefa de prova nem publicação C2/C3 pendente. Detalhes e hashes: `evidence/c2-c3-priority-resume-20261108/VALIDATION.md`.
