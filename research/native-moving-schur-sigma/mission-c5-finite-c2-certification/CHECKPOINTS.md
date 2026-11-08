@@ -1,12 +1,12 @@
 # C5 — checkpoints
 
-## 2026-11-08 — prefixo Bernoulli 192 compilado e auditado; integração pendente
+## 2026-11-08 — prefixo Bernoulli 192 integrado pela PR #313
 
-- `CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data` estende o prefixo 160 aos índices 0–191. Reprodução limpa Lean 4.32.0 com `warningAsError=true`: `CLEAN_BUILD=PASS`, `AXIOM_AUDIT=PASS`, `EXIT=0`; axiomas somente `propext`, `Classical.choice`, `Quot.sound`.
-- Tempo de compilação: 3h07m38s; pico RSS 16,632,976 KiB. Auditoria isolada: 4.40s, pico RSS 3,236,712 KiB.
-- Base `main@605c55e899d62a658bed511d13be3b95b09840c8`; branch `codex/c5-zeta-bernoulli-prefix192-20261108`. Prova no commit `636ea8d7ceea1af08adafcdb4d373e8e9b9895b4`; checkpoint com resultado e estado do runner no SHA `4da3b00f4e2ae510b303f79595acaa4afdac58ef`, já publicado no remoto. PR ainda não aberta.
-- O runner terminou com `EXIT=0`; logs, resultado, auditoria, pins, comandos e hashes estão em `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/`. O prefixo formal nesta branch é 192/601, com 409 restantes. Inclusões da fonte e sinais finais seguem abertos.
-- Próximo: atualizar manifesto, publicar o checkpoint do resultado, abrir e revisar PR, integrar; então continuar com o prefixo 224.
+- `CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data` estende o prefixo integrado 160 aos índices 0–191. Build limpo Lean 4.32.0 com `warningAsError=true`: `CLEAN_BUILD=PASS`, `AXIOM_AUDIT=PASS`, `EXIT=0`; axiomas somente `propext`, `Classical.choice`, `Quot.sound`.
+- Build: 3h07m38s, pico RSS 16,632,976 KiB. Auditoria isolada: 4.40s, pico RSS 3,236,712 KiB.
+- Prova no commit `636ea8d7ceea1af08adafcdb4d373e8e9b9895b4`; PR #313 mesclada no merge `f0bd4ec675a3dc483f55373d3a58092042fac67d`. `main` integrada no SHA desse merge.
+- Logs, resultado, auditoria, pins, comandos e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/`. Estado parcial integrado: 192/601; 409 entradas, ponte CSV–Lean, inclusões da fonte e sinais finais ainda abertos.
+- Próximo: provar o prefixo cumulativo 224.
 
 ## 2026-11-08 — prefixo Bernoulli 160 integrado pela PR #312
 

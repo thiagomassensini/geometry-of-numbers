@@ -1,28 +1,27 @@
 # Retomar primeiro — missão C5
 
-## Estado atual — prefixo Bernoulli 192 validado; integração pendente (2026-11-08)
+## Estado atual — prefixo 192 integrado; próximo bloco 224 (2026-11-08)
 
 ```text
 MISSION: C5 — certificação finita dos sinais da fonte C2 original.
-CURRENT PHASE: completar os dados racionais e conectá-los às inclusões da fonte original.
-CURRENT SUBTASK: publicar e integrar o prefixo 192 validado; depois continuar para 224.
-LAST VERIFIED THEOREM: CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data (na branch atual).
+CURRENT PHASE: completar a tabela racional e conectá-la às inclusões da fonte original.
+CURRENT SUBTASK: provar c5BernoulliPrimeTable_224_eq_data.
+LAST VERIFIED THEOREM: CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data.
 LAST COMPILED FILE: SigmaC5BernoulliDataCertificate192Audit.lean; Lean 4.32.0, warningAsError=true.
 LAST SUCCESSFUL PROOF COMMIT: 636ea8d7ceea1af08adafcdb4d373e8e9b9895b4.
-LAST CHECKPOINT COMMIT: 4da3b00f4e2ae510b303f79595acaa4afdac58ef (push remoto confirmado antes da atualização documental).
-CURRENT BRANCH: codex/c5-zeta-bernoulli-prefix192-20261108.
-MAIN SHA: 605c55e899d62a658bed511d13be3b95b09840c8.
-OPEN PR: nenhuma; prefixo 192 aguarda publicação em PR.
-ACTIVE BUILD: nenhum. O runner prefix192 terminou com EXIT=0.
-WHAT IS PROVED: prefixo 192/601 nesta branch; build limpo e auditoria dos axiomas passaram. A main ainda contém o prefixo 160 integrado pela PR #312, merge cb829d98d799df72f07c9aff03e9d93871da6f77.
-WHAT IS CONDITIONAL: sinais finais ainda dependem das inclusões não provadas sigmaC00495SourceBoxes e sigmaC01SourceBoxes.
-WHAT IS BLOCKED: ponte CSV–Lean das caixas de zeta, 409 igualdades da tabela, inclusões da fonte e sinais finais continuam abertos. C5 permanece incompleta.
-EXACT NEXT COMMAND: conferir o diff/manifesto, commitar os artefatos de resultado e abrir a PR da branch codex/c5-zeta-bernoulli-prefix192-20261108.
-EXACT NEXT MATHEMATICAL OBLIGATION: depois da integração do prefixo 192, provar c5BernoulliPrimeTable_224_eq_data sem repetir os prefixos já integrados.
-DO NOT REPEAT: C1B/C2/C3/C4; prefixos Bernoulli 32/64/96/128/160; proof candidate 192, sua compilação e auditoria aprovadas. Não reabrir a falha do import prefix160 nem o limite inválido de simplificação. Não reiniciar Lean 4.35 geral.
+LAST MERGE: PR #313, f0bd4ec675a3dc483f55373d3a58092042fac67d.
+MAIN SHA: f0bd4ec675a3dc483f55373d3a58092042fac67d.
+OPEN PR: nenhuma.
+ACTIVE BUILD: nenhum.
+WHAT IS PROVED: prefixo Bernoulli 192/601 integrado e auditado; axiomas somente propext, Classical.choice, Quot.sound. C1B/C2/C3/C4 continuam integradas e concluídas nos seus escopos.
+WHAT IS CONDITIONAL: os sinais finais dependem das inclusões ainda não provadas sigmaC00495SourceBoxes e sigmaC01SourceBoxes.
+WHAT IS BLOCKED: 409 entradas, ponte CSV–Lean das caixas de zeta, inclusões da fonte e sinais finais permanecem abertos. C5 está incompleta.
+EXACT NEXT COMMAND: git worktree add -b codex/c5-zeta-bernoulli-prefix224-20261108 /home/thlinux/worktrees/geometry-of-numbers-c5-zeta-bernoulli-prefix224-20261108 origin/main
+EXACT NEXT MATHEMATICAL OBLIGATION: provar c5BernoulliPrimeTable_224_eq_data a partir do prefixo integrado 192 e da recorrência de Bernoulli.
+DO NOT REPEAT: C1B/C2/C3/C4; prefixos Bernoulli 32/64/96/128/160/192, inclusive build e auditoria do 192. Não reabrir a falha do import prefix160 nem o limite inválido de simplificação. Não iniciar migração geral Lean 4.35.
 ```
 
-A prova 192 levou 3h07m38s e pico RSS de 16,632,976 KiB; a auditoria isolada levou 4.40s e pico de 3,236,712 KiB. Somente `propext`, `Classical.choice` e `Quot.sound` foram reportados. Logs, resultado, reprodução, pins e hashes estão em `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/README.md`.
+O prefixo 192 levou 3h07m38s, pico RSS 16,632,976 KiB; auditoria 4.40s, pico RSS 3,236,712 KiB. Evidência, reprodução, pins e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/README.md`.
 
 ## Histórico — tabela de Bernoulli certificada até 64 entradas (2026-11-08)
 

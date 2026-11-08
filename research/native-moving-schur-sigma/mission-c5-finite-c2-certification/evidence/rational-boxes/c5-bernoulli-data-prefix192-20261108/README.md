@@ -4,10 +4,9 @@
 
 `CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data` estende o
 certificado integrado do prefixo 160 aos índices 0–191. A compilação limpa e a
-auditoria isolada passaram. O resultado ainda aguarda PR e merge; o último
-prefixo integrado na `main` continua sendo 160.
+auditoria isolada passaram. O resultado foi integrado pela PR #313; a `main` contém agora o prefixo 192.
 
-São 192 das 601 entradas certificadas nesta branch; 409 continuam abertas. A
+São 192 das 601 entradas certificadas na main; 409 continuam abertas. A
 ponte CSV–Lean das caixas de zeta, as inclusões `sigmaC00495SourceBoxes` e
 `sigmaC01SourceBoxes`, a composição com a fonte original e os sinais finais
 seguem pendentes. Este checkpoint não certifica os sinais C2.
@@ -24,8 +23,8 @@ seguem pendentes. Este checkpoint não certifica os sinais C2.
   `C5_PREFIX160_CACHE` e reutiliza os caches certificados de 128, 96 e 64.
   Cada caminho pode ser substituído por variável de ambiente.
 - Prova: commit `636ea8d7ceea1af08adafcdb4d373e8e9b9895b4`;
-  checkpoint com launcher e estado: `4da3b00f4e2ae510b303f79595acaa4afdac58ef`.
-- Branch `codex/c5-zeta-bernoulli-prefix192-20261108`; PR ainda não aberta.
+  checkpoint com launcher e estado: `30894e8ccefde1e36186c45d79632d0349d6d53e`.
+- PR #313; merge `f0bd4ec675a3dc483f55373d3a58092042fac67d`; resultado integrado na `main`.
 
 ## Resultado de validação
 
@@ -37,7 +36,7 @@ seguem pendentes. Este checkpoint não certifica os sinais C2.
 - SHA-256 do arquivo da prova:
   `dc81863af236d296e084cdf65a002728be82a87f47c83704928fda1756e5e0a8`.
 - Logs, runner finalizado, estado da execução, resultado e hashes estão neste
-  diretório. Verifique os artefatos com `sha256sum -c SHA256SUMS.txt`.
+  diretório. No diretório deste arquivo, verifique os artefatos com `sha256sum -c SHA256SUMS.txt`.
 
 ## Reproduzir
 
@@ -47,5 +46,5 @@ bash research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evide
 
 O processo compila a prova e o módulo de auditoria em uma pasta nova, registra
 tempos e pico de RSS, verifica os axiomas e grava hashes. A execução registrada
-terminou; uma reprodução nova é opcional. Não contar o resultado como integrado
-até o merge da PR.
+terminou; uma reprodução nova é opcional. O resultado é parcial: ainda não prova
+as caixas da fonte ou os sinais finais.
