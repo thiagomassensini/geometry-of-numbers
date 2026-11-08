@@ -1,12 +1,12 @@
 # C5 — estado da sessão
 
-## Estado atual — prefixo Bernoulli de 96 entradas integrado (2026-11-08)
+## Estado atual — prefixo Bernoulli de 128 entradas validado localmente (2026-11-08)
 
-- A PR #302 integrou `CarrySigmaObstruction.c5BernoulliPrimeTable_96_eq_data`: commit de prova `4fc4c8d`, merge `b72149bf5727f2440c676f4f414664788fa010ba`.
-- As entradas 0–95 têm igualdade formal entre a recorrência e os literais. O build limpo Lean 4.32.0 com `warningAsError=true` levou 38m42s, com pico RSS de 6.45 GiB.
-- `CLEAN_BUILD=PASS`, `DATA_TABLE_CHECK=PASS` para os 601 valores racionais da sonda e `AXIOM_AUDIT=PASS`; apenas `propext`, `Classical.choice` e `Quot.sound`.
-- Estado parcial: 96/601 igualdades formais provadas; 505 continuam abertas. Próximo: provar o prefixo 0–127, depois avançar até 601 e retomar a ponte CSV–Lean das caixas de zeta. As inclusões `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes` seguem abertas.
-- Logs, pins, tentativas e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix96-20261108/README.md`.
+- `CarrySigmaObstruction.c5BernoulliPrimeTable_128_eq_data` estende o certificado integrado de 96 entradas aos índices 0–127. A fonte e a evidência estão na branch `codex/c5-zeta-bernoulli-prefix128-20261108`, ainda sem PR.
+- Build limpo Lean 4.32.0 com `warningAsError=true`: sonda, tabela, certificado 128 e auditoria isolada terminaram com `BUILD_EXIT=0`. O teorema levou 1h15m45s, pico RSS 9,450,592 KiB (aprox. 9.01 GiB).
+- `CLEAN_BUILD=PASS`, comparação racional exata de 601/601 valores (`DATA_TABLE_CHECK=PASS`) e `AXIOM_AUDIT=PASS`; o teorema depende somente de `propext`, `Classical.choice` e `Quot.sound`.
+- Estado parcial: 128/601 igualdades formais provadas; 473 continuam abertas. Próximo: publicar este checkpoint, provar o prefixo de 160 entradas e seguir até 601; depois retomar a ponte CSV–Lean das caixas de zeta. As inclusões `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes` e os sinais finais continuam abertos.
+- Logs, pins, tentativas, comandos e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix128-20261108/README.md`.
 
 ## Histórico — prefixo Bernoulli de 64 entradas integrado (2026-11-08)
 

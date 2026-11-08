@@ -1,5 +1,14 @@
 # C5 — checkpoints
 
+## 2026-11-08 — prefixo Bernoulli de 128 entradas validado localmente
+
+- `c5BernoulliPrimeTable_128_eq_data` estende a igualdade formal da recorrência até os índices 0–127, partindo do certificado de 96 entradas da PR #302.
+- Quatro módulos recompilaram em Lean 4.32.0 com `warningAsError=true`; o certificado levou 1h15m45s e atingiu pico RSS de 9,450,592 KiB. `CLEAN_BUILD=PASS`.
+- A comparação exata conferiu 601 coeficientes racionais; a auditoria isolada aceita apenas `propext`, `Classical.choice` e `Quot.sound`. `DATA_TABLE_CHECK=PASS`, `AXIOM_AUDIT=PASS`.
+- Fonte, falhas anteriores preservadas, comandos, logs, pins e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix128-20261108/README.md`.
+- Estado parcial: 128/601 igualdades provadas, 473 abertas. A ligação das caixas de zeta à avaliação Lean, as inclusões da fonte e os sinais finais não são cobertos. Próximo: publicar o checkpoint e provar prefixo 160.
+- A branch local é `codex/c5-zeta-bernoulli-prefix128-20261108`, baseada em `main@cd59cf7eb35a0e11c9336bf92dea5d6b683f7572`; ainda não há PR.
+
 ## 2026-11-08 — prefixo Bernoulli de 96 entradas certificado pela PR #302
 
 - `c5BernoulliPrimeTable_96_eq_data` prova formalmente as entradas 0–95, estendendo o certificado integrado de 64 entradas.

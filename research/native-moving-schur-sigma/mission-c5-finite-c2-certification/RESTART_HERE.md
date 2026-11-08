@@ -1,12 +1,31 @@
 # Retomar primeiro — missão C5
 
-## Estado atual — tabela de Bernoulli certificada até 96 entradas (2026-11-08)
+## Estado atual — prefixo Bernoulli de 128 entradas validado localmente (2026-11-08)
 
-- PR #302 está integrada na `main`: commit de prova `4fc4c8d`, merge `b72149bf5727f2440c676f4f414664788fa010ba`.
-- `c5BernoulliPrimeTable_96_eq_data` prova as entradas 0–95 usando o teorema integrado para 64 como base. A reprodução limpa compara exatamente os 601 valores da sonda com os literais.
-- Builds Lean 4.32.0 com `warningAsError=true` passaram; auditoria isolada aceita só `propext`, `Classical.choice` e `Quot.sound`. O certificado 0–96 levou 38m42s e atingiu 6.45 GiB RSS. Evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix96-20261108/README.md`.
-- Apenas 96/601 valores têm igualdade formal certificada; os outros 505 continuam abertos. Próximo: provar o prefixo de 128 entradas, índices 0–127, e avançar até 601; depois retomar a ponte formal com uma caixa de zeta.
-- Nenhuma caixa CSV de zeta ou inclusão da fonte C5 é provada aqui. C5 permanece incompleta; não reabrir C1B/C2/C3/C4.
+```text
+MISSION: C5 — certificar as janelas negativas da fonte C2 original.
+CURRENT PHASE: certificado formal dos dados da tabela usada pela avaliação de zeta.
+CURRENT SUBTASK: publicar c5BernoulliPrimeTable_128_eq_data.
+LAST VERIFIED THEOREM: CarrySigmaObstruction.c5BernoulliPrimeTable_128_eq_data.
+LAST COMPILED FILE: SigmaC5BernoulliDataCertificate128Audit.lean (Lean 4.32.0, warningAsError=true).
+LAST SUCCESSFUL INTEGRATED PROOF: c5BernoulliPrimeTable_96_eq_data, commit 4fc4c8d, PR #302, merge b72149bf5727f2440c676f4f414664788fa010ba.
+CURRENT BRANCH: codex/c5-zeta-bernoulli-prefix128-20261108.
+CURRENT BRANCH BASE / MAIN SHA: cd59cf7eb35a0e11c9336bf92dea5d6b683f7572.
+OPEN PR: none yet; prefix128 source and evidence are local on the named branch.
+WHAT IS PROVED: indices 0–127 equal the first 128 rational data literals; clean build, exact 601-value table check, and isolated standard-axiom audit pass.
+WHAT IS CONDITIONAL: the final finite signs still depend on the unproved source-box inclusions sigmaC00495SourceBoxes and sigmaC01SourceBoxes.
+WHAT IS BLOCKED: no compiler blocker; the 473 remaining table equalities and the CSV–Lean zeta-box bridge remain open.
+EXACT NEXT COMMAND: git add the prefix128 certificate, audit module, and evidence directory; commit and push this checkpoint.
+EXACT NEXT MATHEMATICAL OBLIGATION: prove c5BernoulliPrimeTable_160_eq_data from the 128-entry prefix; then finish 601 entries and resume the zeta-box bridge.
+DO NOT REPEAT: C1B/C2/C3/C4; the Bernoulli prefixes 32/64/96; the initial missing-prefix64 import failure; the invalid default-100000 simp attempt (preserved under attempts/).
+```
+
+The 128-entry run passed in Lean 4.32.0 with `warningAsError=true`; the audit
+accepts only `propext`, `Classical.choice` and `Quot.sound`. Build logs,
+verification output, errors from the earlier invalid attempts and hashes are
+in `evidence/rational-boxes/c5-bernoulli-data-prefix128-20261108/README.md`.
+This is still a partial data checkpoint: the other 473 equalities, zeta-box
+bridge, source inclusions and final signs remain open. Do not reopen C1B/C2/C3/C4.
 
 ## Histórico — tabela de Bernoulli certificada até 64 entradas (2026-11-08)
 

@@ -1,11 +1,11 @@
 # Próximos passos — C5
 
-## Estado atual e próxima prova — prefixo Bernoulli de 96 entradas integrado (2026-11-08)
+## Estado atual e próxima prova — prefixo Bernoulli de 128 entradas validado localmente (2026-11-08)
 
-- PR #302 integrou `c5BernoulliPrimeTable_96_eq_data` (commit `4fc4c8d`, merge `b72149bf5727f2440c676f4f414664788fa010ba`). As entradas 0–95 coincidem formalmente com a recorrência, apoiadas no certificado 0–64.
-- Reprodução limpa Lean 4.32.0 passou com `warningAsError=true`: certificado em 38m42s, pico RSS 6.45 GiB; comparação racional exata de 601/601 valores; auditoria somente com `propext`, `Classical.choice` e `Quot.sound`.
-- Estado parcial: 96/601 igualdades estão provadas; 505 seguem abertas. A ponte formal das caixas CSV de zeta e as inclusões da fonte C5 continuam abertas.
-- **Próximo passo concreto:** provar `c5BernoulliPrimeTable_128_eq_data` a partir do prefixo 96; depois avançar até 601. Só então retomar a igualdade Lean da primeira caixa de zeta exportada. Evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix96-20261108/README.md`.
+- `c5BernoulliPrimeTable_128_eq_data` prova os índices 0–127, apoiada no certificado integrado de 96 entradas. O código e os logs estão na branch `codex/c5-zeta-bernoulli-prefix128-20261108`, ainda sem PR.
+- Reprodução limpa Lean 4.32.0 passou com `warningAsError=true`: quatro módulos terminaram com `BUILD_EXIT=0`; certificado em 1h15m45s, pico RSS 9.01 GiB; comparação racional exata de 601/601 valores; auditoria somente com `propext`, `Classical.choice` e `Quot.sound`.
+- Estado parcial: 128/601 igualdades estão provadas; 473 seguem abertas. A ponte formal das caixas CSV de zeta e as inclusões da fonte C5 continuam abertas.
+- **Próximo passo concreto:** publicar este checkpoint e provar `c5BernoulliPrimeTable_160_eq_data` a partir do prefixo 128; avançar em blocos até 601. Só então retomar a igualdade Lean da primeira caixa de zeta exportada. Evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix128-20261108/README.md`.
 
 ## Histórico — prefixo Bernoulli de 64 entradas integrado (2026-11-08)
 
