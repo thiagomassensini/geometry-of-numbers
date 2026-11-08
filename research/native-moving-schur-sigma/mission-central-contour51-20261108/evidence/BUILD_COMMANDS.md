@@ -119,3 +119,27 @@ only refinement diagnostics and do not certify signs.
 python3 research/native-moving-schur-sigma/mission-central-contour51-20261108/reproduce.py \
   > research/native-moving-schur-sigma/mission-central-contour51-20261108/evidence/PR306-reproduce.log 2>&1
 ```
+
+## Original-source Arb residual intervals and Lean adapter
+
+The six residual intervals were generated with:
+
+```bash
+python3 research/native-moving-schur-sigma/mission-central-contour51-20261108/certify_contour51_residuals.py \
+  --arcs 4096 --precision 160 \
+  --json research/native-moving-schur-sigma/mission-central-contour51-20261108/evidence/C3_ARb_RESIDUALS_4096.json \
+  > research/native-moving-schur-sigma/mission-central-contour51-20261108/evidence/C3_ARb_RESIDUALS_4096.log 2>&1
+```
+
+Environment: Python 3.12, `python-flint` 0.8.0, Arb precision 160 bits, Taylor degree 32. The
+script reuses `certify_contour51_bound.certify_arc`; it evaluates complete interval arcs and applies
+exact rational arc widths. The output JSON stores outward rational endpoints. This is an external
+Arb certificate, not itself a Lean theorem.
+
+`SigmaContour51ArbResidualGate` compiled with the common Lean environment above and
+`MODULE_NAME=SigmaContour51ArbResidualGate`, redirecting output to
+`/home/thlinux/tmp/c2-contour51-20261108-lean432/logs/SigmaContour51ArbResidualGate-attempt7.log`.
+The success copy is `C2_SigmaContour51ArbResidualGate-attempt7-success.log`. Attempts 1–6 are
+preserved as diagnostics. The module verifies exact rational endpoint simplifications and proves
+conditional source-residual, first-window, and all-window theorems. Its interval-transfer
+proposition remains open; no external certificate is treated as an axiom or theorem.

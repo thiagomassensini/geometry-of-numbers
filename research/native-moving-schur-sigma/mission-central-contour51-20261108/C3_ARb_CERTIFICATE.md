@@ -81,3 +81,45 @@ strict inequalities and fails if any arc is not covered, zeta may vanish, or
 the final `4/5` target is missed. The C3 analytic estimate is therefore
 established with a small proof assistant dependency boundary at Arb. Importing
 or re-proving this certificate in Lean remains open.
+
+## Six original-source residual intervals
+
+The companion `certify_contour51_residuals.py` reuses the same interval Taylor
+and Cauchy-tail evaluator with 4096 rational parameter arcs. It encloses the
+range of `R(z)/z^(2*n+1)` on every complete arc and adds each real interval
+times its exact rational width. Since `F` is even, `R` is odd; with
+`z(u)=51 exp(-pi*i*u)`, the positively oriented normalized full-circle
+integral of `R(z)/z^(2*n+2)` equals the resulting half-circle parameter
+integral. The Lean C2 theorem identifies that full integral with the original
+central residual `e_n`. This calculation integrates the original source
+response directly; it does not subtract approximate zero powers.
+
+The exact outward rational interval endpoints are in
+`evidence/C3_ARb_RESIDUALS_4096.json`; the compact run output is in the adjacent
+`.log`. Lean verifies that the following strict rational lower margins lie
+below the recorded Arb lower endpoints, and that the simple upper bounds below
+lie above the recorded endpoints:
+
+| `n` | Arb interval lower endpoint (decimal display) | Lean checked `e_n` lower margin | Lean checked upper bound |
+|---:|---:|---:|---:|
+| 0 | `9.535852947110655e-3` | `9/1000` | `1/100` |
+| 1 | `9.180296036279536e-7` | `9/10000000` | `1/1000000` |
+| 2 | `1.874202910399414e-10` | `9/50000000000` | `1/4000000000` |
+| 3 | `4.542210478952836e-14` | `1/25000000000000` | `1/10000000000000` |
+| 4 | `1.205912260570632e-17` | `1/100000000000000000` | `1/50000000000000000` |
+| 5 | `2.797326848058986e-21` | `1/500000000000000000000` | `1/100000000000000000000` |
+
+These are rigorous external Arb enclosures and rational comparisons checked in
+Lean, but their inclusion in the actual Lean contour integrals is still an
+explicit hypothesis of `SigmaContour51ArbResidualGate.lean`. That bridge must
+also formalize the half-circle parameterization, the oddness reduction, and
+the transfer from each complete-arc Arb range to the integral. Accordingly,
+the six signs are externally certified but not yet discharged in Lean. The
+first-window determinant now has a conditional Lean gate from just the three
+intervals `e_0,e_1,e_2`; its exact rational margin retains the full product
+and square bounds, hence all five terms in the determinant difference.
+
+The six-residual run also executes the `|R|<4/5` check on each of its 4096
+arcs through `certify_arc`. The independent 512-arc C3 run remains the recorded
+uniform circle certificate. Neither run has yet supplied a Lean proof of the
+circle premise used by the all-window `C=40` tail.

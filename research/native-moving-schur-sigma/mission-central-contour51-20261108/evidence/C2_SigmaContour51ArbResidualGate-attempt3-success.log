@@ -1,0 +1,9 @@
+'CarrySigmaObstruction.contour51ArbResidualMargin_pos_and_below_recorded' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNativeContour51Residual_pos_of_arb_intervals' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNativeContour51Residuals_nonneg_of_arb_intervals' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

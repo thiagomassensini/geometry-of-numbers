@@ -1,6 +1,6 @@
 # C2 central 2×2 — finite-contour route at radius 51 (research checkpoint)
 
-**Date:** 2026-11-08. **State:** C1 root classification and the C2 radius-51 contour identity are compiled in Lean; C3 has a rigorous external Arb interval certificate; C4/C6 are compiled conditional results. The six C5 signs and hypotheses needed for unconditional positivity remain open. This is a separate stacked branch and does not alter B1 PR #304, B2, or the parallel C5 worktree.
+**Date:** 2026-11-08. **State:** C1 root classification and the C2 radius-51 contour identity are compiled in Lean; Arb externally certifies both the radius bound and rational intervals for the first six original-source residuals; C4/C6 and interval-conditional first/all-window gates compile in Lean. The Arb-to-Lean inclusion proofs remain open, so no unconditional positivity is claimed. This is a separate stacked branch and does not alter B1 PR #304, B2, or the parallel C5 worktree.
 
 ## Provenance: original source, not a spectral definition
 
@@ -32,7 +32,7 @@ would imply for all n,
 |e_n| ≤ (4/5)/51^(2n+1) ≤ 40*(1/2500)^(n+1).
 ```
 
-A convenient denominator-free equivalent certificate, given `F(z) ≠ 0` on the circle, is `25*|F'(z)|² ≤ 64*|F(z)|²`. The uniform `|R|≤4/5` bound has now been certified on the full circle by the reproducible Arb interval computation in `C3_ARb_CERTIFICATE.md`; the interval certificate is not yet imported or re-proved in Lean.
+A convenient denominator-free equivalent certificate, given `F(z) ≠ 0` on the circle, is `25*|F'(z)|² ≤ 64*|F(z)|²`. The uniform `|R|≤4/5` bound has been certified on the full circle by the reproducible Arb interval computation in `C3_ARb_CERTIFICATE.md`; the interval certificate is not yet imported or re-proved in Lean.
 
 ## New C=40 rational gate: exact arithmetic checked
 
@@ -67,7 +67,9 @@ percentage-of-cancellation estimate is used in the positivity gates.
 
 Consequently, assuming `e_n≥0` for `0≤n≤5`, these four strict margins imply `D_s(H)>0` for `0≤s<4`. For `s≥4`, `|e_n|≤40*eta^(n+1)` implies the existing B1 `|e_n|≤60*eta^(n+1)`; B1's already compiled `hankel2_pos_large_of_ten_boxes_and_global_tail` applies. Therefore:
 
-> **Conditional target:** the compiled `completedNative_sigmaPadeD_pos_of_contour51_bound` theorem proves that the original-source circle bound `‖R‖≤4/5` and six finite signs `e_0,...,e_5≥0` imply `forall s, sigmaPadeD 0 s > 0`. The C2 identity fixes the ten heights for all orders, and the C2→C4→C6 source bridge derives the scale boxes and decomposition. The C3 circle bound is rigorously certified by Arb but is not yet imported or re-proved in Lean. The six central signs remain open. This does not discharge B1's current `htail` premise verbatim.
+> **Conditional target:** the compiled `completedNative_sigmaPadeD_pos_of_contour51_bound` theorem proves that the original-source circle bound `‖R‖≤4/5` and six finite signs `e_0,...,e_5≥0` imply `forall s, sigmaPadeD 0 s > 0`. The C2 identity fixes the ten heights for all orders, and the C2→C4→C6 source bridge derives the scale boxes and decomposition. Arb now supplies exact rational intervals for the six signs, but neither those enclosures nor the circle bound have been transferred to Lean, so the hypotheses remain open. This does not discharge B1's current `htail` premise verbatim.
+
+The companion Arb computation integrates the original response on 4096 complete parameter arcs and encloses all six normalized contour integrals. `SigmaContour51ArbResidualGate.lean` records the exact rational endpoints and verifies strict lower and upper margins. Its proposition `contour51ArbResidualIntervalBounds` explicitly represents the remaining interval-transfer proof. The direct `completedNative_sigmaPadeD_zero_pos_of_contour51_arb_intervals` gate proves the first determinant from only the first three source intervals and an exact rational margin; this route does not need the global C3 tail bound.
 
 ## Exact width budgets and C5 center transport
 
@@ -82,7 +84,7 @@ Consequently, assuming `e_n≥0` for `0≤n≤5`, these four strict margins impl
 | 4 | `3/10^14` | `2.2551276469308842e-14` | `1.53e3` |
 | 5 | `2/10^16` | `1.3430971414644236e-16` | `3.02e4` |
 
-The last column compares exact rational box widths with the floating-point probes only to prioritize likely refinement. It does not certify a residual margin. Under that provisional comparison, the first one, three, four, and five height intervals dominate the uncertainty for `n=2,3,4,5`, respectively; `n=0,1` do not appear to need narrower height boxes. Confirm this selection only after original-source jet intervals exist.
+The last column compares exact rational box widths with floating-point probes only as a historical refinement diagnostic; it does not certify a residual margin. Under that provisional comparison, the first one, three, four, and five height intervals dominate the uncertainty for `n=2,3,4,5`, respectively. The new Arb contour intervals evaluate the original response and do not use approximate zero ordinates or box centers, so their signs do not require narrowing the ten height boxes. Keep the formal B2 boxes because they identify the finite modes in the C2 residue identity.
 
 The formal C5 center map is now explicit: `displacedProductC 0 z` is the square of `completedNativeOperatorCharacteristic z`; on the genuine native strip, the compiled theorem `c5CentralDisplacedProduct_eq_continuation_square` identifies it with the square of `completedNativeCharacteristicContinuation z`, which is the function used by the radius-51 contour proof. The strip condition remains explicit; this is not a claimed global equality outside the proved native strip. The generic displaced-source recurrence at `d=0` gives coefficient sequence `2*completedSigmaLogJet 0 n`; and `e_n = completedSigmaDisplacedMoment 0 n / 2 - P_n`. The audit `SigmaSourceBezoutAudit.lean` compiles with standard axioms and retains the original density/product and sigma jets. The C5 boxes at `d=99/2000` and `d=1/10` still need quantitative transport in `d` or direct center evaluation. No C5 Bernoulli or zeta/Gamma node certification was repeated.
 
@@ -94,7 +96,7 @@ The formal C5 center map is now explicit: `displacedProductC 0 z` is the square 
 - Sample mean modulus: **0.5695801987243165**.
 - Residuals `e_0..e_5` numerically: `0.00956074303923091`, `9.34518811591709e-7`, `1.97785053903660e-10`, `5.13925976411857e-14`, `1.46980503972282e-17`, `4.44431065896308e-21`.
 
-**Neither a finite mesh nor floating-point Cauchy coefficients prove a uniform bound or positivity.** The uniform circle bound is now established by the separate Arb interval certificate, while the six residual signs still require rigorous certification. The script uses the original source bridge to xi and the exact logarithmic-derivative formula; the earlier mpmath probe remains only a numerical cross-check.
+**Neither a finite mesh nor floating-point Cauchy coefficients prove a uniform bound or positivity.** The Arb scripts now give rigorous external interval certificates for the uniform circle bound and all six residuals. Their analytic and interval calculations are not yet formalized in Lean; the earlier mpmath probe remains only a numerical cross-check.
 
 ## Minimal next checkpoints
 
@@ -103,8 +105,8 @@ The formal C5 center map is now explicit: `displacedProductC 0 z` is the square 
 3. **C2 / finite residues:** complete. `SigmaContour51FiniteContour.lean` proves the source-normalized identity for every `n`; see `C2_RESIDUE_REDUCTION.md` and `VALIDATION.md`.
 4. **C3 / uniform interval bound:** complete as a computer-assisted certificate. `certify_contour51_bound.py` encloses all 512 rational parameter arcs with Arb Taylor bounds and proves `|R|<4/5`; the certificate is not yet a Lean theorem.
 5. **C4 / all-order tail:** the conditional Lean theorem deriving `|e_n|≤40*(1/2500)^(n+1)` from C2, the C3 circle bound, and exact radius conversion is complete. Discharging the circle-bound hypothesis in Lean remains open.
-6. **C5 / six original-source signs:** certify `H_n-P_n≥0`, `n=0,...,5`, from the *original* characteristic/germ using interval jets and the actual ten rational root boxes. The material-cell tail alone does not imply these signs.
-7. **C6 / rational gate:** complete. `SigmaContour51RationalGate.lean` proves the four exact `M40_s>0` margins and combines them with B1's `s≥4` proof; `SigmaContour51SourceTail.lean` specializes the conditional closure to the original completed characteristic. C3's Lean bound and C5's six signs remain explicit.
+6. **C5 / six original-source signs:** the 4096-arc Arb run now gives rational lower and upper intervals for `H_n-P_n`, `n=0,...,5`, from the original contour response. Prove their inclusion in the formal Lean contour integrals; the material-cell tail alone does not imply these signs.
+7. **C6 / rational gate:** complete. `SigmaContour51RationalGate.lean` proves the four exact `M40_s>0` margins and combines them with B1's `s≥4` proof; `SigmaContour51SourceTail.lean` specializes the conditional closure to the original completed characteristic. The Lean circle bound and six Arb interval transfers remain explicit for all windows. The first-window interval gate needs only the transfers for indices 0,1,2.
 
 **Scope:** consecutive central 2×2 Hankel minors only. No all-dimension Hankel PSD claim, no global zero location claim. No `sorry`, `admit`, mathematical axioms, or substitution of a zero-defined source.
 

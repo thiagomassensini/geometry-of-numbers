@@ -36,13 +36,13 @@ def polynomial_value(coefficients, x):
     return value
 
 
-def certify_arc(index, pi, log_pi):
+def certify_arc(index, pi, log_pi, arc_count=ARC_COUNT):
     """Return rigorous enclosures for one arc of z = 51*exp(-pi*i*u)."""
-    # u covers [index/ARC_COUNT, (index+1)/ARC_COUNT].  Its exact rational
+    # u covers [index/arc_count, (index+1)/arc_count].  Its exact rational
     # midpoint/radius are converted to Arb balls before multiplying by pi.
     u = arb(
-        fmpq(2 * index + 1, 2 * ARC_COUNT),
-        fmpq(1, 2 * ARC_COUNT),
+        fmpq(2 * index + 1, 2 * arc_count),
+        fmpq(1, 2 * arc_count),
     )
     angle = -pi * u
 
@@ -134,6 +134,8 @@ def certify_arc(index, pi, log_pi):
         "delta_over_radius_upper": ratio,
         "log_derivative_upper": log_derivative_upper,
         "response_upper": response_upper,
+        "z_arc": acb(51 * angle.cos(), 51 * angle.sin()),
+        "log_derivative": log_derivative,
     }
 
 

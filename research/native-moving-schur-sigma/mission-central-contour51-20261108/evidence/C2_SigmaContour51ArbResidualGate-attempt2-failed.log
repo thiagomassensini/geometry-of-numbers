@@ -1,0 +1,18 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbResidualGate.lean:151:4: error: Application type mismatch: The argument
+  (contour51ArbResidualMargin_pos_and_below_recorded n hn).left
+has type
+  (0 : ℚ) < contour51ArbResidualMargin n
+but is expected to have type
+  (0 : ℝ) < ↑(contour51ArbResidualMargin n)
+in the application
+  lt_trans (contour51ArbResidualMargin_pos_and_below_recorded n hn).left
+'CarrySigmaObstruction.contour51ArbResidualMargin_pos_and_below_recorded' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNativeContour51Residual_pos_of_arb_intervals' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNativeContour51Residuals_nonneg_of_arb_intervals' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
