@@ -1,5 +1,13 @@
 # C5 — estado da sessão
 
+## Estado atual — igualdade formal do primeiro bloco Bernoulli integrada (2026-11-08)
+
+- A PR #298 foi integrada na `main`: commit de prova `1ed4a00`, merge `171c19681482312bf71bffdcd23b24a728edf04b`.
+- `c5BernoulliPrimeTable_32_eq_data` certifica os primeiros 32 valores da tabela recursiva contra o bloco literal. A reprodução compara exatamente todos os 601 valores da sonda Lean com os literais; `CLEAN_BUILD=PASS`, `DATA_TABLE_CHECK=PASS`, `AXIOM_AUDIT=PASS`.
+- A auditoria isolada usa somente `propext`, `Classical.choice` e `Quot.sound`. A igualdade formal dos outros 569 valores não está provada; nenhum extremo CSV de zeta está ligado por este resultado a uma caixa Lean.
+- Próximo: provar prefixos cumulativos em blocos de 32, iniciando em 32–64; ao chegar a 601, retomar a ponte formal de uma caixa de zeta. C5 e as inclusões `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes` permanecem abertas.
+- Fontes e reprodução: `SigmaC5BernoulliData*.lean` e `evidence/rational-boxes/c5-bernoulli-data-prefix32-20261108/`.
+
 ## Estado atual — nó complementar de Gamma em `d=1/10` integrado (2026-11-08)
 
 - Missão C5 continua ativa; C1B/C2/C3/C4 já estão concluídas. Não reiniciar fases anteriores nem a migração geral para Lean 4.35.

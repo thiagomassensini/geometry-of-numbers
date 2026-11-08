@@ -1,5 +1,12 @@
 # Próximos passos — C5
 
+## Estado atual e próxima prova — prefixo Bernoulli 0–32 integrado (2026-11-08)
+
+- PR #298 integrou `c5BernoulliPrimeTable_32_eq_data` na `main` (commit `1ed4a00`, merge `171c19681482312bf71bffdcd23b24a728edf04b`). O primeiro bloco de 32 da tabela recursiva tem igualdade formal com os dados literais.
+- A reprodução limpa recompila sonda, tabela, certificado e auditoria; compara exatamente os 601 valores da sonda com os 601 literais. Resultado: `CLEAN_BUILD=PASS`, `DATA_TABLE_CHECK=PASS`, `AXIOM_AUDIT=PASS`; apenas os axiomas padrão `propext`, `Classical.choice`, `Quot.sound`.
+- A validação é parcial: só os primeiros 32 valores têm certificado formal. Os outros 569 ainda precisam de provas em blocos; nem a ligação CSV–Lean das caixas de zeta nem as inclusões da fonte C5 foram fechadas.
+- **Próximo passo concreto:** provar a igualdade do prefixo 64 a partir do prefixo 32 e da recorrência; repetir em blocos até 601. Em seguida, retomar a igualdade Lean da menor caixa de zeta exportada. Evidência e comandos: `evidence/rational-boxes/c5-bernoulli-data-prefix32-20261108/README.md`.
+
 ## Estado atual e próximo passo — par complexo de `d=1/10` integrado (2026-11-08)
 
 - Estão integrados os nós `Γ(901/4000 + 3i/20)` e `Γ(1099/4000 + 3i/20)` para `d=99/2000`, e `Γ(1/5 + 3i/20)` e `Γ(3/10 + 3i/20)` para `d=1/10`. Os pontos reais `Γ(1/5)` e `Γ(901/4000)` também têm caixas certificadas.

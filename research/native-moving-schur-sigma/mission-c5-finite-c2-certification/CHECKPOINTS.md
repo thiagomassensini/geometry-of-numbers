@@ -1,5 +1,13 @@
 # C5 — checkpoints
 
+## 2026-11-08 — primeiro bloco da tabela de Bernoulli certificado pela PR #298
+
+- `c5BernoulliPrimeTable_32_eq_data` prova em Lean 4.32 a igualdade da recorrência com as primeiras 32 entradas literais.
+- A reprodução recompila sonda, tabela, certificado e auditoria; confere por igualdade racional exata os 601 valores da sonda contra os dados literais. Build, auditoria e conferência passaram. A raiz usa somente `propext`, `Classical.choice`, `Quot.sound`.
+- Evidência, pins, comandos, tentativas anteriores, logs e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix32-20261108/README.md`.
+- Commit de prova `1ed4a00`; PR #298; merge na `main` `171c19681482312bf71bffdcd23b24a728edf04b`.
+- Escopo parcial: os outros 569 valores ainda precisam de igualdade formal em blocos. Nenhuma caixa CSV de zeta, inclusão de fonte ou conclusão C5 decorre deste checkpoint. Próximo: provar o prefixo 64 apoiado no 32.
+
 ## 2026-11-08 — nó complementar de Gamma em `d=1/10` integrado pela PR #296
 
 - `CarrySigmaObstruction.c5GammaComplexNodeDOneUpperComplexBox_contains` contém a caixa de `Γ(3/10 + 3i/20)`, completando o par complexo em `d=1/10` com o nó `Γ(1/5 + 3i/20)` da PR #294.
