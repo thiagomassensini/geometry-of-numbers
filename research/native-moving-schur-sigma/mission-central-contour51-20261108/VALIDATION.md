@@ -30,7 +30,7 @@
 - Environment: Python 3.12.12, python-flint 0.8.0, 160-bit Arb precision, 512 rational arcs, Taylor degree 32.
 - Result: maximum certified `|xi'/xi| < 1.492825`, hence maximum `|R| < 0.746413 < 4/5`; minimum certified `|zeta|` lower bound `>0.942660`. The script checked the Taylor-domain pole exclusion and every arc inequality.
 - Proof boundary: this is a rigorous computer-assisted Arb certificate, not a Lean theorem. The C4 Lean theorem still takes the circle bound/identity as explicit hypotheses.
-- SHA-256: script `ab18a38e9fcbf0eeebb27f047e81b2ec65f4816d70feae741e4f4007bed157ff`; certificate note `2c3a7dee8f9ba7514596c94a152843fb74907904833d686a9761f76060654690`; arc CSV `c1a2a37fcd1450c34181edd0f6fe7fac334fdf750be153d708c15f2e0fb90519`; run log `8e76addb77abdacf677b4e0a019b2e52bb86359f4172e1d4c8291b4eba868609`.
+- SHA-256: script `77afccf314b6214bb2c0b742ee8f570e4a01cc706d71d1d9d1690ceac76acdfd`; certificate note `a606656428f710fdcc7ea2ac959fe0d358c20aaf9069945ee558154ba2eb0307`; arc CSV `c1a2a37fcd1450c34181edd0f6fe7fac334fdf750be153d708c15f2e0fb90519`; run log `8e76addb77abdacf677b4e0a019b2e52bb86359f4172e1d4c8291b4eba868609`.
 
 ## Required provenance sources inspected
 

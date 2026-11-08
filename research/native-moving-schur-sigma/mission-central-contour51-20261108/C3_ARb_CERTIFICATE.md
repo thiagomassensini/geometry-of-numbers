@@ -54,8 +54,9 @@ Cauchy's coefficient estimate `|c_j| ≤ M/r^j` bounds the omitted tails. With
 Those error disks are added to the Arb Taylor-polynomial enclosures. The
 certificate then checks that each zeta range excludes zero before dividing to
 form `zeta'/zeta`. The rational and digamma terms are evaluated directly on
-the full arc ball. Every final `|L|` enclosure is checked strictly below
-`8/5`.
+the full arc ball. It also checks that the arc range avoids `s=0` and `s=1`,
+and that `Re(s)>0`, which keeps `digamma(s/2)` away from its poles. Every final
+`|L|` enclosure is checked strictly below `8/5`.
 
 ## Recorded run
 

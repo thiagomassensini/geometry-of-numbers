@@ -48,6 +48,12 @@ def certify_arc(index, pi, log_pi):
 
     # s = 1/2 + i*z = 1/2 - 51*sin(angle) + 51*i*cos(angle).
     s_arc = acb(arb(fmpq(1, 2)) - 51 * angle.sin(), 51 * angle.cos())
+    if not s_arc.real.lower() > 0:
+        raise ArithmeticError(f"arc {index}: digamma argument may meet a pole")
+    if not s_arc.abs_lower().lower() > 0:
+        raise ArithmeticError(f"arc {index}: s range may contain zero")
+    if not (s_arc - 1).abs_lower().lower() > 0:
+        raise ArithmeticError(f"arc {index}: s-1 range may contain zero")
     center = acb(s_arc.real.mid(), s_arc.imag.mid())
     delta = s_arc - center
 
