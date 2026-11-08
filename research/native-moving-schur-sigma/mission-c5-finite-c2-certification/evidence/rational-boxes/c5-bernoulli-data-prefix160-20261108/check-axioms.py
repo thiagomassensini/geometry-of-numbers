@@ -10,7 +10,7 @@ if len(sys.argv) != 2:
 
 log = Path(sys.argv[1]).read_text()
 reports = re.findall(
-    r"'CarrySigmaObstruction\.c5BernoulliPrimeTable_128_eq_data' depends on axioms: \[([^\]]+)\]",
+    r"'CarrySigmaObstruction\.c5BernoulliPrimeTable_160_eq_data' depends on axioms: \[([^\]]+)\]",
     log,
 )
 allowed = {"propext", "Classical.choice", "Quot.sound"}
