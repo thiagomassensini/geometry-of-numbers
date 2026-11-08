@@ -50,20 +50,34 @@ At every listed simple zero, analytic order one gives a local factorization
 shows that the finite sum `G` has an analytic extension across all twenty roots on the closed
 radius-51 disk.
 
-The compiled Lean modules package the simple-zero limit giving residue `-1/2`, a single-root
-cancellation lemma that constructs an analytic extension of
-`R(z) + 1/(2*(z-alpha))` from the order-one factorization, and Mathlib's normalized Cauchy
-derivative formula for a regular function. `SigmaContour51FiniteContour.lean` additionally proves,
-by induction on `k`, that each partial-fraction kernel
-`(z-alpha)^(-1) * z^(-k)` has zero radius-51 circle integral for `k ≥ 1`, whenever `alpha` is
-nonzero and inside the circle. The same module proves
-`contour51_cauchy_reduction_of_finite_correction`: assuming an analytic corrected function on the
-closed disk, circle integrability of the original response kernel, and its explicit boundary
-relation to the original response plus the finite pole sum, the normalized response integral equals
-the corrected function's Cauchy coefficient. Both
-`#print axioms` outputs are `[propext, Classical.choice, Quot.sound]`. The successful build and
-source/OLean/log hashes are recorded in `VALIDATION.md`. The assumptions remain explicit; the
-module does not yet construct the globally corrected analytic function.
+`SigmaContour51FiniteContour.lean` now completes this proof in Lean. The generic theorem
+`exists_contour51_corrected_log_derivative` takes an analytic function, its exact finite set of
+simple zeros in the closed disk, their strict interiority, and nonvanishing at the origin. At a
+listed zero it uses the local simple-zero cancellation to define the corrected function by the
+analytic extension plus the other regular pole terms; away from the zeros it uses the response plus
+the full finite principal-part sum. This finite gluing proves regularity on the closed disk and the
+boundary relation needed by the Cauchy reduction. Each kernel
+`(z-alpha)^(-1) * z^(-k)` has zero radius-51 circle integral for `k ≥ 1`, as proved by induction on
+`k`.
+
+The same theorem calculates the corrected Taylor coefficient directly: it is the response's
+original Taylor coefficient minus `(1/2) * sum_alpha alpha^(-1-n)`. The specialization
+`exists_completedNative_contour51_corrected_log_derivative` applies C1's exact root classification
+to the existing `completedNativeCharacteristicContinuation`. Finally,
+`completedNative_contour51_jet_residue_identity` identifies the original response coefficient with
+`completedSigmaLogJet 0 n` through the Carry source bridge and pairs the signed roots, giving the
+explicit identity
+
+```text
+normalized ∮ R(z) / z^(2*n+2)
+  = completedSigmaLogJet 0 n - sum_{i : Fin 10} (ts i)^(-2*n-2).
+```
+
+Here one fixed `ts` is selected by C1 for all `n`; every `ts i` also retains its exact rational
+B2 height interval. No factorization of the entire function or infinite zero sum is used. The relevant theorem reports
+from `#print axioms` are `[propext, Classical.choice, Quot.sound]`; the module compiles with
+warnings as errors and introduces no `sorryAx` or new axiom. The successful final source, OLean,
+and log hashes are recorded in `VALIDATION.md`.
 
 For `k ≥ 2` and `0 < |alpha| < 51`, partial fractions give
 
@@ -80,21 +94,25 @@ computes the integral of `G(z)/z^k` from the `(k-1)`st Taylor coefficient of `G`
 Taylor coefficient of the added finite principal-part sum is `-sum_j a_j^(n+1)`, so this
 coefficient is `H_n - sum_j a_j^(n+1)`.
 
-## Exact remaining Lean work
+## Formalization status and boundary
 
-The current Lean 4.32 Mathlib sources provide Cauchy integral formulas and the power-kernel circle
-integrals above, but a search of `Mathlib/Analysis/Complex` and `Mathlib/Analysis/Meromorphic`
-found no general finite-residue theorem to apply directly. `SigmaContour51Residue.lean` and
-`SigmaContour51FiniteContour.lean` compile on Lean 4.32.0 with warnings-as-errors; their theorem
-axioms are `[propext, Classical.choice, Quot.sound]`. The individual partial-fraction kernel
-integral and its finite-sum/Cauchy assembly under explicit correction hypotheses are now proved.
-The remaining formalization is:
+The finite gluing, boundary identity, Cauchy reduction, original-source coefficient normalization,
+and signed-root pairing are all compiled in Lean 4.32.0 with warnings as errors. C2's radius-51
+contour identity is therefore closed for every natural `n`. The Arb circle certificate and the
+remaining finite residual signs belong to later checkpoints; the C2 theorem does not establish
+unconditional positivity of all central Hankel minors by itself. The numerical probe and external
+root boxes are not used as analytic proof steps in C2.
 
-1. a finite gluing argument for the twenty local extensions, using C1's exact root classification,
-   to provide the corrected function and prove its boundary relation;
-2. identify the corrected function's Taylor coefficient with `H_n - sum_j a_j^(n+1)` from the
-   source Taylor coefficients and the finite principal-part sum.
+## The three remainder notions
 
-Until these are proved in Lean, the formula above is a verified normalization and proof reduction,
-not a compiled contour theorem. Neither the numerical probe nor the external root boxes supply any
-of the analytic extension steps.
+- The **material tail** is the exact omitted-index sum in the native finite-head identity for the
+  original C2 source. It is tied to the material cutoff and does not equal a ten-zero residual.
+- The **central ten-mode residual** is
+  `e_n = completedSigmaLogJet 0 n - ∑ i (ts i)^(-2*n-2)`. The theorem above proves it equals
+  the normalized radius-51 contour integral for the original completed response.
+- The **contour remainder bound** is C4's estimate on that contour integral. It yields
+  `|e_n| ≤ 40*(1/2500)^(n+1)` only after the uniform circle bound is supplied. The C5 displaced
+  coefficient and determinant remainders are a separate family and need an explicit `d=0`
+  specialization before they can say anything about these central `e_n`.
+
+No sign for any of these remainders is inferred without a separate theorem.

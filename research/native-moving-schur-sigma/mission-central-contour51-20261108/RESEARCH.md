@@ -1,6 +1,6 @@
 # C2 central 2×2 — finite-contour route at radius 51 (research checkpoint)
 
-**Date:** 2026-11-08. **State:** mathematical reduction + reproducible *non-certified* numerical probe + **exact** rational tests. **NOT a Lean proof** of unconditional central positivity. Separate branch from `main@ebd6c57`; does not change B1 PR #304, B2, or C5.
+**Date:** 2026-11-08. **State:** C1 root classification and the C2 radius-51 contour identity are compiled in Lean; C3 has a rigorous external Arb interval certificate; C4/C6 are compiled conditional results. The six C5 signs and hypotheses needed for unconditional positivity remain open. This is a separate stacked branch and does not alter B1 PR #304, B2, or the parallel C5 worktree.
 
 ## Provenance: original source, not a spectral definition
 
@@ -8,17 +8,17 @@ The original C2 second-difference source passes through Genuine, native `N`, and
 
 The exact C2 finite-material-head/omitted-material-tail identity is established on its native domain. It is **not** a global contour bound and its cutoff error is **not** automatically the ten-mode residual below. We use the established equal-germ bridge to the entire continuation.
 
-## New conditional finite-contour identity (needs Lean formalization)
+## Finite-contour identity (proved in Lean)
 
-Write `F(z)=completedNativeCharacteristicContinuation(z)` and `R(z)=-F'(z)/(2F(z))`. Assume the existing certified finite-height results are assembled so that the **only** zeros in `|z|<51` are ten distinct, simple positive real ordinates `γ_1,...,γ_10` and their negative partners, and no zeros lie on `|z|=51`. The 52-height certificate is already present in `RHHeight/Main.lean`: `ncount_three_fiftytwo : Zeta23.Ncount 3 52=10`, `rh_up_to_height_fiftytwo`, and `low_height`; it is not yet packaged in a central contour theorem.
+Write `F(z)=completedNativeCharacteristicContinuation(z)` and `R(z)=-F'(z)/(2F(z))`. `SigmaContour51DiskBridge.lean` assembles the certified finite-height results so the only zeros in `|z|≤51` are ten distinct, simple positive real ordinates `γ_1,...,γ_10` and their negative partners, with no boundary zeros. It uses `ncount_three_fiftytwo : Zeta23.Ncount 3 52=10`, `rh_up_to_height_fiftytwo`, and `low_height`.
 
-Define `a_j=γ_j^(-2)`, `P_n=sum_{j=1}^{10} a_j^(n+1)`, and `e_n := H_n-P_n` (comparison only). The residue theorem gives, **for every n≥0**,
+Define `a_j=γ_j^(-2)`, `P_n=sum_{j=1}^{10} a_j^(n+1)`, and `e_n := H_n-P_n` (comparison only). The compiled theorem `completedNative_contour51_jet_residue_identity` gives, **for every n≥0**,
 
 ```math
 e_n = (1/(2πi)) ∮_{|z|=51} [R(z) / z^(2n+2)] dz.
 ```
 
-At `z=0`, the residue is `H_n`. Every simple zero `z=±γ_j` gives `Res R=-1/2`; their combined contribution to the integrand is `-γ_j^(-2n-2)`. This is a finite residue identity: **no global Hadamard factorization, infinite zero sum, or Lehman tail is needed**.
+At `z=0`, the normalized Cauchy coefficient is `H_n`. Each simple zero `z=±γ_j` contributes `-1/(2*(±γ_j)^(2n+2))`; each pair contributes `-γ_j^(-2n-2)`. The Lean proof constructs and glues the finite analytic correction across the twenty simple zeros, integrates the pole kernels to zero, applies Cauchy's formula, and identifies the source coefficient. This finite identity uses **no global Hadamard factorization, infinite zero sum, or Lehman tail**. Full details are in `C2_RESIDUE_REDUCTION.md`.
 
 The circle estimate
 
@@ -53,7 +53,7 @@ The accompanying script asserts **with Python Fraction rational arithmetic**:
 
 Consequently, assuming `e_n≥0` for `0≤n≤5`, these four strict margins imply `D_s(H)>0` for `0≤s<4`. For `s≥4`, `|e_n|≤40*eta^(n+1)` implies the existing B1 `|e_n|≤60*eta^(n+1)`; B1's already compiled `hankel2_pos_large_of_ten_boxes_and_global_tail` applies. Therefore:
 
-> **Conditional target:** ten certified scales + the finite-contour identity + uniform circle bound `|R|≤4/5` + six finite signs `e_0,...,e_5≥0` imply `forall s, sigmaPadeD 0 s > 0`. The refined Lehman `T_1,...,T_4` obligations can be **replaced** by this stronger global estimate and a new rational gate. This does not discharge B1's current `htail` premise verbatim.
+> **Conditional target:** the compiled `completedNative_sigmaPadeD_pos_of_contour51_bound` theorem proves that the original-source circle bound `‖R‖≤4/5` and six finite signs `e_0,...,e_5≥0` imply `forall s, sigmaPadeD 0 s > 0`. The C2 identity fixes the ten heights for all orders, and the C2→C4→C6 source bridge derives the scale boxes and decomposition. The C3 circle bound is rigorously certified by Arb but is not yet imported or re-proved in Lean. The six central signs remain open. This does not discharge B1's current `htail` premise verbatim.
 
 ## Independent numerical probe — NOT A CERTIFICATE
 
@@ -69,11 +69,11 @@ Consequently, assuming `e_n≥0` for `0≤n≤5`, these four strict margins impl
 
 1. **C0 / isolation and source audit:** complete; the independent contour branch and provenance are recorded in this mission directory.
 2. **C1 / disk roots:** reuse B2's ten height witnesses and the 52-height weighted count to prove exactly ten simple pairs in `|z|<51`, no boundary zeros, and center-germ equality with the original C2 jets. Do not conflate distinct-zero count and multiplicity.
-3. **C2 / finite residues:** formalize the finite contour identity above in Lean for every `n`, with local analytic cancellation and finite gluing. No global factorization is needed.
+3. **C2 / finite residues:** complete. `SigmaContour51FiniteContour.lean` proves the source-normalized identity for every `n`; see `C2_RESIDUE_REDUCTION.md` and `VALIDATION.md`.
 4. **C3 / uniform interval bound:** complete as a computer-assisted certificate. `certify_contour51_bound.py` encloses all 512 rational parameter arcs with Arb Taylor bounds and proves `|R|<4/5`; the certificate is not yet a Lean theorem.
-5. **C4 / all-order tail:** use the finite contour identity, the C3 bound, and the exact radius conversion to prove `|e_n|≤40*(1/2500)^(n+1)` in Lean.
+5. **C4 / all-order tail:** the conditional Lean theorem deriving `|e_n|≤40*(1/2500)^(n+1)` from C2, the C3 circle bound, and exact radius conversion is complete. Discharging the circle-bound hypothesis in Lean remains open.
 6. **C5 / six original-source signs:** certify `H_n-P_n≥0`, `n=0,...,5`, from the *original* characteristic/germ using interval jets and the actual ten rational root boxes. The material-cell tail alone does not imply these signs.
-7. **C6 / rational gate:** prove the four `M40_s>0` margins in Lean, combine with B1's existing `s≥4` proof, and audit transitive axioms with warnings as errors.
+7. **C6 / rational gate:** complete. `SigmaContour51RationalGate.lean` proves the four exact `M40_s>0` margins and combines them with B1's `s≥4` proof; `SigmaContour51SourceTail.lean` specializes the conditional closure to the original completed characteristic. C3's Lean bound and C5's six signs remain explicit.
 
 **Scope:** consecutive central 2×2 Hankel minors only. No all-dimension Hankel PSD claim, no global zero location claim. No `sorry`, `admit`, mathematical axioms, or substitution of a zero-defined source.
 

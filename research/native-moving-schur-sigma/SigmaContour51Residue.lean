@@ -4,9 +4,9 @@ import Mathlib.Analysis.Complex.CauchyIntegral
 /-!
 # Local residues of the original radius-51 continuation
 
-This file records the exact simple-pole residue of the logarithmic derivative. The global finite
-contour formula additionally needs a finite analytic-removal/gluing argument; see
-`mission-central-contour51-20261108/C2_RESIDUE_REDUCTION.md`.
+This file records the exact simple-pole residue of the logarithmic derivative. The finite
+analytic-removal/gluing argument and source-normalized global contour formula are completed in
+`SigmaContour51FiniteContour.lean`; see `mission-central-contour51-20261108/C2_RESIDUE_REDUCTION.md`.
 -/
 
 namespace CarrySigmaObstruction
