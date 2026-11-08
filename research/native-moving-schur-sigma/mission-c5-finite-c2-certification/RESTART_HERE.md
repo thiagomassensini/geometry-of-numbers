@@ -9,11 +9,13 @@ CURRENT SUBTASK: compilar e auditar c5BernoulliPrimeTable_224_eq_data.
 LAST VERIFIED THEOREM: CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data (integrado pela PR #313).
 LAST COMPILED FILE: SigmaC5BernoulliDataCertificate192Audit.lean; Lean 4.32.0, warningAsError=true.
 LAST SUCCESSFUL PROOF COMMIT: 636ea8d7ceea1af08adafcdb4d373e8e9b9895b4.
+LAST CANDIDATE CHECKPOINT: 84d5fc5854d66a9fe4dc50c1334705d528bf61af (remote branch SHA confirmed).
 LAST MERGE: PR #313, f0bd4ec675a3dc483f55373d3a58092042fac67d.
 MAIN SHA: 513b73b54d232d7f0375ca3a2381b749fc17dba3.
 CURRENT BRANCH: codex/c5-zeta-bernoulli-prefix224-20261108.
 OPEN PR: nenhuma.
 ACTIVE BUILD: nenhum; runner-status.txt = NOT_STARTED.
+CHECKPOINT STATUS: branch pushed; candidate source, runner and pins are durable in Git.
 WHAT IS PROVED: prefixo Bernoulli 192/601 integrado e auditado; axiomas somente propext, Classical.choice, Quot.sound. C1B/C2/C3/C4 continuam integradas nos escopos concluídos.
 WHAT IS CONDITIONAL: sinais finais dependem das inclusões não provadas sigmaC00495SourceBoxes e sigmaC01SourceBoxes.
 WHAT IS BLOCKED: candidata 224 ainda sem build; 409 entradas, ponte CSV–Lean, inclusões da fonte e sinais finais permanecem abertos. C5 está incompleta.

@@ -22,10 +22,10 @@ original e os sinais finais seguem como obrigações separadas.
   `bf76ce8f5bb753b377a12ba6dbd5c397e4fb3fc3`; Carry
   `045369f6dedcb2e75e9aefed1d12c9f73b9a2532`.
 - A compilação usa o `.olean` integrado do prefixo 192, preservado no cache
-  indicado por `C5_PREFIX192_CACHE`, e mantém os caches anteriores no caminho
-  `SIGMA_HEIGHT50_BUILD`. Todos os caminhos são configuráveis no reprodutor.
+  indicado por `C5_PREFIX192_CACHE` (SHA-256 em `pins.txt`), e mantém os
+  caches anteriores em `SIGMA_HEIGHT50_BUILD`. Todos os caminhos são configuráveis no reprodutor.
 - Branch `codex/c5-zeta-bernoulli-prefix224-20261108`; prova candidata e
-  auditoria estão no commit de checkpoint registrado no Git.
+  auditoria estão no checkpoint `84d5fc5854d66a9fe4dc50c1334705d528bf61af`, confirmado no remoto antes da compilação.
 
 ## Estado do runner
 

@@ -3,9 +3,9 @@
 ## Estado atual — candidato ao prefixo 224 preparado (2026-11-08)
 
 - O prefixo 192 está integrado pela PR #313, merge `f0bd4ec675a3dc483f55373d3a58092042fac67d`; estado pós-merge registrado em `main@513b73b54d232d7f0375ca3a2381b749fc17dba3`.
-- A prova cumulativa `c5BernoulliPrimeTable_224_eq_data` e o auditor estão preparados. Ainda não houve compilação; contar somente 192/601.
+- A prova cumulativa `c5BernoulliPrimeTable_224_eq_data` e o auditor estão preparados. Checkpoint publicado em `84d5fc5854d66a9fe4dc50c1334705d528bf61af`; ainda não houve compilação; contar somente 192/601.
 - Branch candidata: `codex/c5-zeta-bernoulli-prefix224-20261108`. Reprodutor, pins e estado do runner: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/README.md`.
-- **Próxima ação concreta:** confirmar o commit e SHA remoto do checkpoint; então rodar `run-detached.sh`, acompanhar o build/auditoria e registrar resultado. Se passar, abrir PR parcial, revisar e integrar antes de avançar.
+- **Próxima ação concreta:** rodar `run-detached.sh`; acompanhar o build/auditoria e registrar resultado. Se passar, abrir PR parcial, revisar e integrar antes de avançar.
 - Ponte CSV–Lean, inclusões da fonte original e sinais finais seguem abertos. C5 permanece incompleta.
 
 ## Estado atual — prefixo Bernoulli de 160 entradas integrado (2026-11-08)

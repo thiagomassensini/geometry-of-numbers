@@ -12,6 +12,13 @@ C5_PREFIX96_CACHE=${C5_PREFIX96_CACHE:-/home/thlinux/worktrees/geometry-of-numbe
 C5_PREFIX128_CACHE=${C5_PREFIX128_CACHE:-/home/thlinux/worktrees/geometry-of-numbers-c5-zeta-bernoulli-prefix128-20261108/research/native-moving-schur-sigma/.cache/c5-bernoulli-data-prefix128-clean-20261108-1144056}
 C5_PREFIX160_CACHE=${C5_PREFIX160_CACHE:-/home/thlinux/worktrees/geometry-of-numbers-c5-zeta-bernoulli-prefix128-20261108/research/native-moving-schur-sigma/.cache/c5-bernoulli-data-prefix160-clean-20261108-16476}
 C5_PREFIX192_CACHE=${C5_PREFIX192_CACHE:-/home/thlinux/worktrees/geometry-of-numbers-c5-zeta-bernoulli-prefix192-20261108/research/native-moving-schur-sigma/.cache/c5-bernoulli-data-prefix192-clean-20261108-57495}
+C5_PREFIX192_OLEAN="$C5_PREFIX192_CACHE/SigmaC5BernoulliDataCertificate192.olean"
+C5_EXPECTED_PREFIX192_SHA=$(sed -n 's/^PREFIX192_OLEAN_SHA256=//p' "$C5_EVIDENCE/pins.txt")
+C5_ACTUAL_PREFIX192_SHA=$(sha256sum "$C5_PREFIX192_OLEAN" | cut -d' ' -f1)
+if [[ -z "$C5_EXPECTED_PREFIX192_SHA" || "$C5_ACTUAL_PREFIX192_SHA" != "$C5_EXPECTED_PREFIX192_SHA" ]]; then
+  echo "prefix-192 .olean SHA-256 mismatch" >&2
+  exit 2
+fi
 C5_OUTPUT="$C5_SOURCE_ROOT/.cache/c5-bernoulli-data-prefix224-clean-$$"
 C5_LEAN_BIN=${LEAN_BIN:-/home/thlinux/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lean}
 mkdir -p "$C5_OUTPUT"
