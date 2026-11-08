@@ -6,7 +6,7 @@ A `main` contém 192/601 entradas pela PR #313. A primeira tentativa de provar o
 prefixo 224 falhou em metas de redução de arrays anexados; 409 entradas seguem
 abertas no estado validado. Obrigações:
 
-1. Publicar o patch que acrescenta `c5BernoulliPrimeDataPrefix160` às listas `simp`/`norm_num`, então repetir build/auditoria para o prefixo 224; a primeira tentativa já está preservada.
+1. Acompanhar a segunda compilação limpa do prefixo 224, confirmar build e auditoria, então integrar o checkpoint; a primeira tentativa já está preservada.
 2. Provar a ligação Lean entre as caixas de zeta exportadas e a avaliação correspondente.
 3. Certificar os nós Gamma restantes e compor as caixas zeta/Gamma com o fator nativo original e as quadraturas da fonte completada.
 4. Provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` sem hipóteses auxiliares e fechar os sinais finais de `sigmaPadeD`.

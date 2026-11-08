@@ -1,11 +1,11 @@
 # C5 — validação
 
-## Prefixo 224 — primeira compilação falhou; auditoria não executada (2026-11-08)
+## Prefixo 224 — tentativa 1 falhou; tentativa 2 em andamento (2026-11-08)
 
 - `c5BernoulliPrimeTable_224_eq_data` não compilou em Lean 4.32.0 na primeira tentativa. `BUILD_EXIT=1`, tempo 1h56m46s, pico RSS 9,869,328 KiB.
 - Erro: a inclusão do prefixo 160 faltou nas listas de simplificação, deixando aberto `c5BernoulliPrimeDataPrefix160.size = 160` e dependências de `getD` nos índices 192–223. A lista completa de mensagens está preservada em `attempts/first-build-failure-20261108/SigmaC5BernoulliDataCertificate224-clean-build.log`.
 - A auditoria isolada não foi rodada; `sorryAx` aparece no log do módulo incompleto em consequência das metas em aberto e não é aceito como resultado.
-- Estado validado segue 192/601 pela PR #313. A correção já inclui `c5BernoulliPrimeDataPrefix160` nas quatro listas de simplificação; ela ainda aguarda checkpoint e nova compilação.
+- Estado validado segue 192/601 pela PR #313. A correção foi publicada em `1e0feaaf0609ab1733c8a32cea2ec15ded9a5dba`; a tentativa 2 começou às 16:42:48 UTC (pane PID 151047, Lean PID 151152). O resultado ainda está pendente.
 
 ## Prefixo 192 — validado e integrado pela PR #313 (2026-11-08)
 

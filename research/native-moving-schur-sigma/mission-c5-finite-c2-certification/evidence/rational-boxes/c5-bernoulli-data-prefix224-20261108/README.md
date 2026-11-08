@@ -33,16 +33,16 @@ original e os sinais finais seguem como obrigações separadas.
 
 A primeira tentativa foi iniciada em `2026-11-08T14:34:55Z` na sessão tmux
 `c5-bernoulli-prefix224-20261108` (pane PID 108840, Lean PID 108950) e terminou
-com `EXIT=1`. A correção ainda aguarda publicação. Para iniciar a segunda tentativa após o checkpoint:
+com `EXIT=1`. A correção foi publicada no commit `1e0feaaf0609ab1733c8a32cea2ec15ded9a5dba`; a segunda execução está ativa. Para acompanhar:
 
 ```bash
 bash research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/run-detached.sh
 ```
 
-Acompanhe `runner-status.txt`, `run-state.txt` e os logs. A falha foi causada
-pela omissão de `c5BernoulliPrimeDataPrefix160` nas listas de simplificação.
-A correção já inclui essa definição nas quatro listas afetadas e ainda aguarda
-commit/push antes da segunda tentativa. Logs de tentativas ficam arquivados.
+Acompanhe `runner-status.txt`, `run-state.txt` e os logs. O runner atual é
+`c5-bernoulli-prefix224-20261108`, pane PID 151047, Lean PID 151152, iniciado
+às 16:42:48 UTC. A primeira falha foi causada pela omissão de
+`c5BernoulliPrimeDataPrefix160`; ela foi corrigida e preservada no histórico.
 
 ## Critério de validação
 

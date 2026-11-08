@@ -5,7 +5,7 @@
 - O prefixo 192 permanece integrado pela PR #313, merge `f0bd4ec675a3dc483f55373d3a58092042fac67d`; estado pós-merge `main@513b73b54d232d7f0375ca3a2381b749fc17dba3`.
 - A tentativa de `c5BernoulliPrimeTable_224_eq_data` levou 1h56m46s e terminou `EXIT=1`; pico RSS 9,869,328 KiB. A auditoria isolada não rodou e o estado provado continua 192/601.
 - Causa: as listas de simplificação não desdobravam `c5BernoulliPrimeDataPrefix160`, deixando abertas a cota do append, os cálculos de `getD` e o fechamento de tamanho do array. Erro integral: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/attempts/first-build-failure-20261108/`.
-- **Próxima ação concreta:** checkpointar e publicar a correção que inclui Prefix160 nas listas, então repetir build limpo e auditoria isolada. Não sobrescrever o log da primeira tentativa.
+- **Próxima ação concreta:** acompanhar a segunda compilação em `runner-status.txt` (pane 151047, Lean PID 151152); não relançar. Após o término, conferir a auditoria isolada e registrar resultado. Não sobrescrever o log da primeira tentativa.
 - A ponte CSV–Lean, inclusões da fonte original e sinais finais continuam abertos. C5 permanece incompleta.
 
 ## Estado atual — prefixo Bernoulli de 160 entradas integrado (2026-11-08)

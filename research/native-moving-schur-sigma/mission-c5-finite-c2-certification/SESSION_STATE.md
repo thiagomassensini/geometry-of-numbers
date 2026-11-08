@@ -6,8 +6,8 @@
 - O candidato `c5BernoulliPrimeTable_224_eq_data` foi compilado uma vez em Lean 4.32.0 com `warningAsError=true`, mas o build terminou `EXIT=1` após 1h56m46s. Pico RSS 9,869,328 KiB; memória disponível permaneceu acima de 52 GiB. A auditoria isolada não foi executada.
 - Erro concreto: faltou incluir `c5BernoulliPrimeDataPrefix160` nas listas `simp`/`norm_num`. Isso deixou a cota de append como `n < c5BernoulliPrimeDataPrefix160.size + 32`, os cálculos dos índices 192–223 presos em `getD` de arrays anexados e o tamanho final em `Prefix160.size = 160`. O Lean reportou `sorryAx` somente porque os objetivos da tentativa falharam; nada dessa compilação conta como prova.
 - Log integral, `run-state`, status, primeira falha e hash do fonte pré-correção: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/attempts/first-build-failure-20261108/`. Não sobrescrever essa tentativa.
-- Branch `codex/c5-zeta-bernoulli-prefix224-20261108`; último checkpoint remoto da execução `42cb8beee085463b50835e104727d413266ea4d5`. Estado validado continua 192/601; 409 entradas abertas.
-- A correção já acrescenta `Prefix160` às quatro listas indicadas, mas ainda aguarda commit/push; depois disso iniciar nova compilação limpa. C1B/C2/C3/C4 e a migração geral Lean 4.35 não devem ser reabertas.
+- Branch `codex/c5-zeta-bernoulli-prefix224-20261108`; correção publicada no checkpoint `1e0feaaf0609ab1733c8a32cea2ec15ded9a5dba`. Estado validado continua 192/601; 409 entradas abertas.
+- A segunda compilação limpa está ativa desde 2026-11-08T16:42:48Z (tmux `c5-bernoulli-prefix224-20261108`, pane PID 151047, Lean PID 151152). O próximo passo é acompanhar o runner e auditar após conclusão; não relançar. C1B/C2/C3/C4 e a migração geral Lean 4.35 não devem ser reabertas.
 
 ## Histórico — prefixo Bernoulli de 64 entradas integrado (2026-11-08)
 

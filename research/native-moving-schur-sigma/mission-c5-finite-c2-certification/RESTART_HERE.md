@@ -10,21 +10,21 @@ LAST VERIFIED THEOREM: CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data (
 LAST COMPILED FILE: SigmaC5BernoulliDataCertificate224.lean; Lean 4.32.0, warningAsError=true; falhou após 1h56m46s.
 LAST SUCCESSFUL PROOF COMMIT: 636ea8d7ceea1af08adafcdb4d373e8e9b9895b4.
 LAST MERGE: PR #313, f0bd4ec675a3dc483f55373d3a58092042fac67d.
-LAST REMOTE SHA: 42cb8beee085463b50835e104727d413266ea4d5.
+LAST REMOTE SHA: 1e0feaaf0609ab1733c8a32cea2ec15ded9a5dba.
 MAIN SHA: 513b73b54d232d7f0375ca3a2381b749fc17dba3.
 CURRENT BRANCH: codex/c5-zeta-bernoulli-prefix224-20261108.
 OPEN PR: nenhuma.
-ACTIVE BUILD: nenhum; runner-status.txt = EXIT=1.
+ACTIVE BUILD: tmux c5-bernoulli-prefix224-20261108; pane PID 151047; Lean PID 151152; started 2026-11-08T16:42:48Z. Confira runner-status.txt antes de qualquer ação.
 LAST ERROR: `hn192` não fechou `n < c5BernoulliPrimeDataPrefix160.size + 32`; a recorrência gerou metas residuais de `getD` e a extensionalidade terminou em `Prefix160.size = 160`, por falta do prefixo 160 nas listas de simplificação.
 WHAT IS PROVED: prefixo 192/601 integrado e auditado; axiomas somente propext, Classical.choice, Quot.sound. A tentativa 224 não conta.
 WHAT IS CONDITIONAL: os sinais finais dependem das inclusões não provadas sigmaC00495SourceBoxes e sigmaC01SourceBoxes.
 WHAT IS BLOCKED: 409 entradas, ponte CSV–Lean, inclusões da fonte e sinais finais permanecem abertos.
-EXACT NEXT COMMAND: revisar o diff e `git diff --check`, atualizar os hashes, commitar e publicar a correção com a primeira tentativa preservada; só depois relançar.
+EXACT NEXT COMMAND: cat research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/runner-status.txt; ps -o pid,etime,%cpu,rss,state -p 151152
 EXACT NEXT MATHEMATICAL OBLIGATION: fechar a cota de append, a redução de `getD` nos índices 192–223 e o tamanho final do array usando a igualdade de prefixo 160.
 DO NOT REPEAT: prefixos 32/64/96/128/160/192; não recomeçar a prova 224 nem a auditoria 192. Não reabrir C1B/C2/C3/C4; não iniciar migração geral Lean 4.35.
 ```
 
-A correção já acrescenta `c5BernoulliPrimeDataPrefix160` às quatro listas afetadas, mas ainda não foi compilada. A tentativa 1, incluindo log integral, `runner-status`, `run-state`, resumo e hash do fonte, está em `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/attempts/first-build-failure-20261108/`. O estado formal validado permanece 192/601.
+A correção acrescenta `c5BernoulliPrimeDataPrefix160` às quatro listas; a segunda compilação está ativa. A tentativa 1, incluindo log integral, `runner-status`, `run-state`, resumo e hash do fonte, está em `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/attempts/first-build-failure-20261108/`. O estado formal validado permanece 192/601.
 
 ## Histórico — tabela de Bernoulli certificada até 64 entradas (2026-11-08)
 
