@@ -1,13 +1,12 @@
 # C5 — checkpoints
 
-## 2026-11-08 — prefixo Bernoulli 192 em compilação
+## 2026-11-08 — prefixo Bernoulli 192 compilado e auditado; integração pendente
 
-- `c5BernoulliPrimeTable_192_eq_data` estende o prefixo integrado 160. O arquivo Lean, auditor separado e reprodutor estão nesta branch; ainda não há resultado de compilação nem auditoria, portanto o estado provado permanece 160/601.
-- Base `main@605c55e899d62a658bed511d13be3b95b09840c8`; branch `codex/c5-zeta-bernoulli-prefix192-20261108`.
-- Cache de entrada: `.olean` de `c5BernoulliPrimeDataCertificate160`, preservado na worktree do prefixo 160; caminho configurável por `C5_PREFIX160_CACHE`.
-- O candidato e o reprodutor estão commitados/pushados no SHA `636ea8d7ceea1af08adafcdb4d373e8e9b9895b4`; branch remota confirmada no mesmo SHA.
-- Execução atual: tmux `c5-bernoulli-prefix192-20261108`, PID de pane `57490`, Lean PID `57591`, iniciada às `2026-11-08T11:06:58Z`. Consulte `runner-status.txt` antes de qualquer ação; não iniciar outra enquanto `RUNNING`.
-- Próximo: aguardar o resultado, conferir build limpo, `#print axioms` e hashes; só então abrir PR. C5 permanece incompleta.
+- `CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data` estende o prefixo 160 aos índices 0–191. Reprodução limpa Lean 4.32.0 com `warningAsError=true`: `CLEAN_BUILD=PASS`, `AXIOM_AUDIT=PASS`, `EXIT=0`; axiomas somente `propext`, `Classical.choice`, `Quot.sound`.
+- Tempo de compilação: 3h07m38s; pico RSS 16,632,976 KiB. Auditoria isolada: 4.40s, pico RSS 3,236,712 KiB.
+- Base `main@605c55e899d62a658bed511d13be3b95b09840c8`; branch `codex/c5-zeta-bernoulli-prefix192-20261108`. Prova no commit `636ea8d7ceea1af08adafcdb4d373e8e9b9895b4`; checkpoint com resultado e estado do runner no SHA `4da3b00f4e2ae510b303f79595acaa4afdac58ef`, já publicado no remoto. PR ainda não aberta.
+- O runner terminou com `EXIT=0`; logs, resultado, auditoria, pins, comandos e hashes estão em `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/`. O prefixo formal nesta branch é 192/601, com 409 restantes. Inclusões da fonte e sinais finais seguem abertos.
+- Próximo: atualizar manifesto, publicar o checkpoint do resultado, abrir e revisar PR, integrar; então continuar com o prefixo 224.
 
 ## 2026-11-08 — prefixo Bernoulli 160 integrado pela PR #312
 

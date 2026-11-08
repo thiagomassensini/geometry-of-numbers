@@ -1,14 +1,14 @@
 # C5 — estado da sessão
 
-## Estado atual — prova do prefixo Bernoulli de 192 em compilação (2026-11-08)
+## Estado atual — prefixo Bernoulli 192 validado, publicação pendente (2026-11-08)
 
-- Último resultado integrado: `CarrySigmaObstruction.c5BernoulliPrimeTable_160_eq_data`, prova no commit `5f9cb0eeab2b6f70fda12aa62f62047e7206eec5`, PR #312, merge `cb829d98d799df72f07c9aff03e9d93871da6f77`.
-- `c5BernoulliPrimeTable_160_eq_data` compilou limpo em Lean 4.32.0 com `warningAsError=true`; a auditoria isolada passou com `propext`, `Classical.choice`, `Quot.sound`. Tempo 1h56m34s, pico RSS 12,572,772 KiB. Resultado `CLEAN_BUILD=PASS`, `AXIOM_AUDIT=PASS`, runner `EXIT=0`; commit de prova `5f9cb0e`, auditor ajustado em `3cea0c3`.
-- `c5BernoulliPrimeTable_192_eq_data` compila agora em sessão tmux persistente `c5-bernoulli-prefix192-20261108` (pane PID 57490, Lean PID 57591; início UTC 11:06:58). Importa o `.olean` certificado de prefixo 160. Resultado ainda pendente; não contar 192 até build limpo e auditoria passarem.
-- Estado formal integrado: 160/601 provado; 441 seguem abertos. As inclusões `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes`, a ponte CSV–Lean e os sinais finais continuam abertos.
-- Próximo comando após publicar este checkpoint: `bash research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/run-detached.sh`.
-- Evidência e retomada: `evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/README.md`; reprodução limpa, logs, auditoria, pins e checksums estão preservados.
-- Logs, pins, tentativas, comandos e hashes do prefixo anterior 128: `evidence/rational-boxes/c5-bernoulli-data-prefix128-20261108/README.md`.
+- Teorema validado nesta branch: `CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data`, em `SigmaC5BernoulliDataCertificate192.lean`. Estende a igualdade dos dados recursivos aos índices 0–191 a partir do prefixo 160 integrado.
+- Build limpo Lean 4.32.0 com `warningAsError=true`: `CLEAN_BUILD=PASS`, `EXIT=0`; auditoria isolada: `AXIOM_AUDIT=PASS`, somente `propext`, `Classical.choice`, `Quot.sound`, sem `sorryAx` ou axiomas próprios. Build: 3h07m38s, pico RSS 16,632,976 KiB; auditoria: 4.40s, pico 3,236,712 KiB.
+- Evidência completa, logs, pins, comando de reprodução, estado de runner e SHA-256: `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/README.md`. O runner terminou com `EXIT=0`.
+- Branch `codex/c5-zeta-bernoulli-prefix192-20261108`; commit de prova `636ea8d7ceea1af08adafcdb4d373e8e9b9895b4`; checkpoint remoto existente `4da3b00f4e2ae510b303f79595acaa4afdac58ef`. PR ainda não aberta. Base `main` registrada: `605c55e899d62a658bed511d13be3b95b09840c8`.
+- Estado na branch: 192/601 entradas formalmente certificadas; 409 abertas. A `main` ainda contém o prefixo 160 pela PR #312 (merge `cb829d98d799df72f07c9aff03e9d93871da6f77`).
+- Obrigações C5 não cobertas: ponte CSV–Lean das caixas de zeta; inclusões da fonte original `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`; composição final e sinais de `sigmaPadeD`. Este checkpoint é parcial e não prova os sinais C2.
+- Próxima ação: publicar o resultado validado em PR, revisar e integrar; depois avançar ao prefixo 224. Não retomar C1B/C2/C3/C4 nem migrar Geometry/Carry para Lean 4.35.
 
 ## Histórico — prefixo Bernoulli de 64 entradas integrado (2026-11-08)
 

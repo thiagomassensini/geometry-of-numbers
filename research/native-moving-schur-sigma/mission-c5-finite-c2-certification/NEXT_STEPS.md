@@ -1,12 +1,13 @@
 # Próximos passos — C5
 
-## Estado atual — prova candidata do prefixo 192 (2026-11-08)
+## Estado atual — prefixo 192 validado na branch (2026-11-08)
 
-- O prefixo 160 está integrado pela PR #312, merge `cb829d98d799df72f07c9aff03e9d93871da6f77`; o estado provado continua 160/601.
-- `c5BernoulliPrimeTable_192_eq_data` e sua auditoria estão preparados. Ainda não houve compilação; não conte as 32 entradas novas.
-- O checkpoint candidato está publicado no SHA `636ea8d7ceea1af08adafcdb4d373e8e9b9895b4`; a compilação persistente está ativa (Lean PID 57591). Acompanhar `runner-status.txt`; não iniciar execução paralela.
-- Próxima ação: aguardar o build, conferir logs, hashes e axiomas. Se passar, abrir PR e integrar. Depois, seguir ao prefixo 224.
-- A ponte CSV–Lean das caixas de zeta, inclusões da fonte e sinais finais continuam abertas.
+- `c5BernoulliPrimeTable_192_eq_data` compilou limpo em Lean 4.32.0 e passou pela auditoria isolada: apenas `propext`, `Classical.choice`, `Quot.sound`; `CLEAN_BUILD=PASS`, `AXIOM_AUDIT=PASS`, `EXIT=0`.
+- Nesta branch há 192/601 entradas formalmente certificadas; 409 ainda estão abertas. O prefixo 192 ainda não está na `main`, cujo último checkpoint é o prefixo 160 da PR #312 (merge `cb829d98d799df72f07c9aff03e9d93871da6f77`).
+- Branch `codex/c5-zeta-bernoulli-prefix192-20261108`; prova `636ea8d7ceea1af08adafcdb4d373e8e9b9895b4`; último checkpoint remoto `4da3b00f4e2ae510b303f79595acaa4afdac58ef`. PR ainda não aberta.
+- Evidência e reprodução: `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/README.md`; build 3h07m38s, pico RSS 16,632,976 KiB.
+- **Próxima ação concreta:** recomputar e conferir `SHA256SUMS.txt`, commitar os logs/resultado/documentos atualizados, confirmar o push, abrir e revisar a PR, integrar à `main`; então avançar ao prefixo cumulativo 224.
+- A ponte CSV–Lean das caixas de zeta, inclusões da fonte original e sinais finais continuam abertas. C5 está incompleta.
 
 ## Estado atual — prefixo Bernoulli de 160 entradas integrado (2026-11-08)
 

@@ -1,10 +1,13 @@
 # C5 — validação
 
-## Prefixo 192 — candidato não validado (2026-11-08)
+## Prefixo 192 — build limpo e auditoria aprovados; PR pendente (2026-11-08)
 
-- `c5BernoulliPrimeTable_192_eq_data` está em compilação limpa, iniciada às `2026-11-08T11:06:58Z` na sessão persistente `c5-bernoulli-prefix192-20261108` (Lean PID 57591). A auditoria isolada está preparada para executar depois da prova.
-- Não contar o prefixo como 192: o último estado formal validado e integrado é 160/601 pela PR #312.
-- Reprodutor, launcher, estado e logs: `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/`. Não relançar enquanto `runner-status.txt` indicar `RUNNING`.
+- `c5BernoulliPrimeTable_192_eq_data` compilou em Lean 4.32.0 com `warningAsError=true`: `BUILD_EXIT=0`, `CLEAN_BUILD=PASS`.
+- A auditoria isolada passou: `AXIOM_AUDIT=PASS`; dependências axiomáticas somente `propext`, `Classical.choice`, `Quot.sound`; sem `sorryAx` ou axiomas próprios.
+- Build: 3h07m38s, pico RSS 16,632,976 KiB (aprox. 15.87 GiB). Auditoria: 4.40s, pico RSS 3,236,712 KiB.
+- `RESULT.txt` registra `CLEAN_BUILD=PASS`, `AXIOM_AUDIT=PASS`, `EXIT=0`. SHA-256 da prova: `dc81863af236d296e084cdf65a002728be82a87f47c83704928fda1756e5e0a8`. O manifesto lista fontes e evidências; conferir com `sha256sum -c SHA256SUMS.txt` no diretório de evidência.
+- Resultado parcial: prefixo de 192/601 provado nesta branch; 409 permanecem abertos. A `main` ainda está integrada somente até 160 pela PR #312. O prefixo 192 aguarda PR e merge.
+- Reprodutor, pins, logs, saída do auditor e estado final: `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/README.md`.
 
 ## Prefixo 160 — validação concluída e integrada (2026-11-08)
 
