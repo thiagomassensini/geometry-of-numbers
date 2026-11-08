@@ -1,5 +1,13 @@
 # C5 — validação
 
+## Validação recente — primeiro nó complexo de Gamma para `d=1/10`
+
+- Fonte principal: `SigmaC5GammaComplexNodeDOneComplexGammaCertificate.lean`; declaração `CarrySigmaObstruction.c5GammaComplexNodeDOneComplexBox_contains`.
+- Build limpo dos cinco módulos em Lean 4.32.0 com `warningAsError=true`, saída zero em cada etapa; reprodução executada de novo com sucesso. Pico RSS: 8.4 GiB.
+- Os 14 relatórios usam somente `propext`, `Classical.choice`, `Quot.sound`; sem `sorryAx`, axiomas próprios ou `native_decide`.
+- A caixa contém `Complex.Gamma (1/5 + (3/20) * Complex.I)`, usando `240^z`, 16 blocos × 64 termos do núcleo racional e erro `10⁻⁹⁹`.
+- PR #294 integrou o commit `752e6d1` no merge `5175969e6e11ccb1a7460389e78efe7c8f78ee60`. Builds, checker, reprodução, pins e hashes: `evidence/rational-boxes/c5-gamma-d1-complex-node-20261108/README.md`.
+
 ## Validação recente — segundo nó complexo de Gamma
 
 - Fonte principal: `SigmaC5GammaComplexNodeUpperGammaCertificate.lean`; declaração `CarrySigmaObstruction.c5GammaComplexNodeUpperBox_contains`.
