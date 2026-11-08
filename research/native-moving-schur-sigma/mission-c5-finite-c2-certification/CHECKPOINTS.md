@@ -1,13 +1,16 @@
 # C5 — checkpoints
 
-## 2026-11-08 — prefixo Bernoulli de 64 entradas certificado pela PR #300
+## 2026-11-08 — prefixo Bernoulli de 96 entradas certificado pela PR #302
 
-- `c5BernoulliPrimeTable_64_eq_data` prova formalmente as entradas 0–63, estendendo a igualdade 0–31 integrada pela PR #298.
-- Build limpo Lean 4.32.0 com warnings como erros; o certificado levou 14:09, com pico de RSS 4.8 GiB. Comparação racional exata dos 601 valores, build e auditoria passaram; axiomas padrão apenas.
-- Evidência, pins, comandos, tentativas, logs e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix64-20261108/README.md`.
-- Commit de prova `509e773`; PR #300; merge na `main` `90e2f571efb482993682a05ccc938ee9aef388e5`.
-- Escopo parcial: 537 entradas ainda precisam de prova formal. O próximo bloco cobre as primeiras 96 entradas; caixas de zeta e inclusão da fonte permanecem abertas.
+- `c5BernoulliPrimeTable_96_eq_data` prova formalmente as entradas 0–95, estendendo o certificado integrado de 64 entradas.
+- Build limpo Lean 4.32.0 com `warningAsError=true`: 38m42s, pico RSS 6.45 GiB. Comparação racional exata dos 601 valores e auditoria passaram; apenas `propext`, `Classical.choice` e `Quot.sound`.
+- Evidência, pins, comandos, tentativas, logs e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix96-20261108/README.md`.
+- Commit de prova `4fc4c8d`; PR #302; merge na `main` `b72149bf5727f2440c676f4f414664788fa010ba`.
+- Escopo parcial: 505 igualdades ainda precisam de prova formal. Próximo bloco: prefixo 0–127. A ponte das caixas de zeta e as inclusões da fonte permanecem abertas.
 
+## Histórico — 2026-11-08 — prefixo Bernoulli de 64 entradas certificado pela PR #300
+
+A PR #300 provou as entradas 0–63 e deixou 537 igualdades pendentes; o prefixo 0–95 foi integrado posteriormente pela PR #302. Evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix64-20261108/README.md`.
 ## 2026-11-08 — primeiro bloco da tabela de Bernoulli certificado pela PR #298
 
 - `c5BernoulliPrimeTable_32_eq_data` prova em Lean 4.32 a igualdade da recorrência com as primeiras 32 entradas literais.

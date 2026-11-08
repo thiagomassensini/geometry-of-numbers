@@ -1,20 +1,24 @@
 # Próximos passos — C5
 
-## Estado atual e próxima prova — prefixo Bernoulli de 64 entradas integrado (2026-11-08)
+## Estado atual e próxima prova — prefixo Bernoulli de 96 entradas integrado (2026-11-08)
 
-- A PR #300 integrou `c5BernoulliPrimeTable_64_eq_data` (commit `509e773`, merge `90e2f571efb482993682a05ccc938ee9aef388e5`). As primeiras 64 entradas (índices 0–63) coincidem formalmente com a recorrência, com o certificado 0–32 como base.
-- Reprodução limpa passou: sonda, tabela, certificados 32 e 64, comparação racional exata dos 601 valores e auditoria isolada. Axiomas: somente `propext`, `Classical.choice`, `Quot.sound`. Certificado 0–64: 14:09, pico RSS 4.8 GiB.
-- A validação é parcial: 64 valores têm igualdade formal; 537 ainda precisam de prova em blocos. Nenhuma ligação formal das caixas CSV de zeta nem inclusão da fonte C5 foi fechada.
-- **Próximo passo concreto:** provar as primeiras 96 entradas (prefixo 0–95) usando o resultado até 64, depois seguir por blocos até 601. Só então retomar a igualdade Lean de uma caixa de zeta exportada. Evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix64-20261108/README.md`.
+- PR #302 integrou `c5BernoulliPrimeTable_96_eq_data` (commit `4fc4c8d`, merge `b72149bf5727f2440c676f4f414664788fa010ba`). As entradas 0–95 coincidem formalmente com a recorrência, apoiadas no certificado 0–64.
+- Reprodução limpa Lean 4.32.0 passou com `warningAsError=true`: certificado em 38m42s, pico RSS 6.45 GiB; comparação racional exata de 601/601 valores; auditoria somente com `propext`, `Classical.choice` e `Quot.sound`.
+- Estado parcial: 96/601 igualdades estão provadas; 505 seguem abertas. A ponte formal das caixas CSV de zeta e as inclusões da fonte C5 continuam abertas.
+- **Próximo passo concreto:** provar `c5BernoulliPrimeTable_128_eq_data` a partir do prefixo 96; depois avançar até 601. Só então retomar a igualdade Lean da primeira caixa de zeta exportada. Evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix96-20261108/README.md`.
 
-## Estado atual e próxima prova — prefixo Bernoulli 0–32 integrado (2026-11-08)
+## Histórico — prefixo Bernoulli de 64 entradas integrado (2026-11-08)
+
+A PR #300 integrou o prefixo 0–63 e levou 14m09s, com pico de 4.8 GiB. Naquele checkpoint o próximo alvo era 0–95, agora integrado pela PR #302. Evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix64-20261108/README.md`.
+
+## Histórico — prefixo Bernoulli 0–32 integrado (2026-11-08)
 
 - PR #298 integrou `c5BernoulliPrimeTable_32_eq_data` na `main` (commit `1ed4a00`, merge `171c19681482312bf71bffdcd23b24a728edf04b`). O primeiro bloco de 32 da tabela recursiva tem igualdade formal com os dados literais.
 - A reprodução limpa recompila sonda, tabela, certificado e auditoria; compara exatamente os 601 valores da sonda com os 601 literais. Resultado: `CLEAN_BUILD=PASS`, `DATA_TABLE_CHECK=PASS`, `AXIOM_AUDIT=PASS`; apenas os axiomas padrão `propext`, `Classical.choice`, `Quot.sound`.
 - A validação é parcial: só os primeiros 32 valores têm certificado formal. Os outros 569 ainda precisam de provas em blocos; nem a ligação CSV–Lean das caixas de zeta nem as inclusões da fonte C5 foram fechadas.
 - **Próximo passo concreto:** provar a igualdade do prefixo 64 a partir do prefixo 32 e da recorrência; repetir em blocos até 601. Em seguida, retomar a igualdade Lean da menor caixa de zeta exportada. Evidência e comandos: `evidence/rational-boxes/c5-bernoulli-data-prefix32-20261108/README.md`.
 
-## Estado atual e próximo passo — par complexo de `d=1/10` integrado (2026-11-08)
+## Histórico — par complexo de `d=1/10` integrado (2026-11-08)
 
 - Estão integrados os nós `Γ(901/4000 + 3i/20)` e `Γ(1099/4000 + 3i/20)` para `d=99/2000`, e `Γ(1/5 + 3i/20)` e `Γ(3/10 + 3i/20)` para `d=1/10`. Os pontos reais `Γ(1/5)` e `Γ(901/4000)` também têm caixas certificadas.
 - PR #296 prova `CarrySigmaObstruction.c5GammaComplexNodeDOneUpperComplexBox_contains`. O limite refinado `|Interval.logQ 384 8 240| ≤ 10` torna válida a avaliação de potência com raio 8; a caixa Gamma mantém o resto formal `gamma_finite_1024_240_error ≤ 10⁻⁹⁹`.
