@@ -2,7 +2,7 @@
 
 ## Isolation
 
-- Before every Lean compile, confirm there is no active Lean/Lake process competing for memory.
+- Before every Lean compile, check Lean/Lake processes and available memory. The user authorized parallel execution on 2026-11-08 while C5 PID `151152` runs in a separate worktree; keep this branch's builds sequential and use only its exclusive output root.
 - Use only the exclusive output `/home/thlinux/tmp/c2-contour51-20261108-lean432`.
 - Use the existing C2 integration/external, B2, B1, and Mathlib outputs read-only; do not rebuild C2/C3 or write into C5 caches.
 
@@ -18,6 +18,14 @@ SIGMA_HEIGHT50_BUILD=/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-mai
 bash research/native-moving-schur-sigma/compile_sigma_pade.sh MODULE_NAME \
   > /home/thlinux/tmp/c2-contour51-20261108-lean432/logs/MODULE_NAME.log 2>&1
 ```
+
+## C2 residue-helper build
+
+The successful `SigmaContour51Residue` build used the same environment values above, with
+`MODULE_NAME=SigmaContour51Residue`, and redirected output to
+`/home/thlinux/tmp/c2-contour51-20261108-lean432/logs/SigmaContour51Residue-attempt4.log`.
+The evidence copy is `C2_SigmaContour51Residue-build.log`. The C5 process remained isolated in
+its own worktree/cache; at this build, `/proc/meminfo` reported about 56.6 GiB available.
 
 ## Reproduce the PR #306 experiment
 
