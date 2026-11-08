@@ -7,7 +7,7 @@
 - PR #311: open/mergeable, based on the B1 branch, head `agent/c2-central-ten-heights-b2-20261108` at `7509f5d9404fe2514d4c609acb4ad10b9b02ab54`.
 - PR #306: open/mergeable, base `main`, head `agent/c2-central-contour51-20261108` at `e96e3a132ee6c4f494fee97e3ff1753f606514fc`. Its two original files were read in full and copied byte-for-byte; the original PR branch was not checked out for writing or modified.
 - Rechecked after the C3 checkpoint through GitHub on 2026-11-08: #304 and #311 remain open/mergeable; #306 remains open/mergeable and draft. Their heads are unchanged at the SHAs above. The new branch is based directly on B2 at `7509f5d9404fe2514d4c609acb4ad10b9b02ab54`.
-- Draft PR #314 is stacked on base `agent/c2-central-ten-heights-b2-20261108` at `7509f5d9404fe2514d4c609acb4ad10b9b02ab54`. It was created at `dd9c8c96d47772305067ead9f708cc4f44c114a8`, updated for C0/C3 at `9252a04de2b864bcb26d6b4c146328b31ed33459`, and now includes C1 commit `4b104771b7cc3dfbd487584b57b5bba1680e273e` and C2 helper commit `4a8f4cb6f73a8d92b739297223dd535209f2a07f`. GitHub last reported it open, draft, unmerged, and `MERGEABLE`/`CLEAN`; the PR description is being updated with C4/C6's compiled conditional results. C2's global identity, the C3-to-Lean input, and the six C5 signs remain open.
+- Draft PR #314 is stacked on base `agent/c2-central-ten-heights-b2-20261108` at `7509f5d9404fe2514d4c609acb4ad10b9b02ab54`. It was created at `dd9c8c96d47772305067ead9f708cc4f44c114a8`, updated for C0/C3 at `9252a04de2b864bcb26d6b4c146328b31ed33459`, and now includes C1, C2 local residue, C4/C6 conditional, and C2 finite-kernel commits through head `224698a754eff667c37177b00949f8aa64d2aaa4`. GitHub reports it open, draft, unmerged, and `MERGEABLE`/`CLEAN`; its description includes the compiled conditional C4/C6 and finite-kernel results. C2's global identity, the C3-to-Lean input, and the six C5 signs remain open.
 - New base commit: `7509f5d9404fe2514d4c609acb4ad10b9b02ab54`.
 - Worktree: `/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108`.
 - Branch: `agent/c2-contour51-20261108`.
@@ -15,7 +15,7 @@
 - Lean toolchain: `leanprover/lean4:v4.32.0`; local `lean --version` reports Lean 4.32.0, commit `8c9756b28d64dab099da31a4c09229a9e6a2ef35`.
 - Read-only imported build paths: C2 integration and external artifacts under `/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/`; B2 output `/home/thlinux/tmp/c2-central-ten-heights-b2-20261108-lean432`; B1 rational-gate output `/home/thlinux/tmp/c2-central-hankel2-20261107-lean432`; Mathlib output `/home/thlinux/geometry-of-numbers/.lake/build/lib/lean`.
 - The primary checkout was already dirty with unrelated untracked `GeometryOfNumbers/Analysis/IntegerMomentGramPositivity.lean` and `research/entrywise-moment-square/`; neither is in this worktree or included in this branch.
-- No Lean C2/C3 rebuild was run. The C3 Arb script was executed in this worktree and its own evidence files. C5 and other Luna worktrees/caches were not used as build outputs.
+- No upstream C2 integration or C3 module was rebuilt. The C3 Arb script was executed in this worktree and its own evidence files. C5 and other Luna worktrees/caches were not used as build outputs.
 
 ## Investigation source identity
 
