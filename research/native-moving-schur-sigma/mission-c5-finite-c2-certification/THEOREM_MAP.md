@@ -1,14 +1,17 @@
 # C5 — mapa dos teoremas e obrigações
 
-## Resultado integrado — igualdade do prefixo Bernoulli com 64 entradas (PR #300)
+## Resultado integrado — igualdade do prefixo Bernoulli com 96 entradas (PR #302)
 
 | Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |
 |---|---|---|---|---|
-| `CarrySigmaObstruction.c5BernoulliPrimeTable_64_eq_data` | `SigmaC5BernoulliDataCertificate64.lean` | nenhuma | entradas 0–63 da recorrência coincidem com `c5BernoulliPrimeDataPrefix64` | **PROVADO e integrado pela PR #300**, commit `509e773`, merge `90e2f571efb482993682a05ccc938ee9aef388e5`; axiomas: `propext`, `Classical.choice`, `Quot.sound` |
+| `CarrySigmaObstruction.c5BernoulliPrimeTable_96_eq_data` | `SigmaC5BernoulliDataCertificate96.lean` | nenhuma | entradas 0–95 da recorrência coincidem com `c5BernoulliPrimeDataPrefix96` | **PROVADO e integrado pela PR #302**, commit `4fc4c8d`, merge `b72149bf5727f2440c676f4f414664788fa010ba`; axiomas: `propext`, `Classical.choice`, `Quot.sound` |
 
-O build limpo levou 14:09 para o certificado, com pico RSS de 4.8 GiB. A reprodução também comparou exatamente os 601 valores da sonda com os literais. Só 64 das 601 entradas têm igualdade formal certificada; o próximo prefixo a provar contém 96 entradas (índices 0–95). A ponte CSV–Lean e as inclusões C5 permanecem abertas. Evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix64-20261108/README.md`.
+O build limpo levou 38m42s, com pico RSS de 6.45 GiB. A reprodução comparou exatamente os 601 valores da sonda com os literais. Só 96 das 601 entradas têm igualdade formal certificada; o próximo prefixo a provar contém 128 entradas (índices 0–127). A ponte CSV–Lean e as inclusões C5 permanecem abertas. Evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix96-20261108/README.md`.
 
-## Resultado integrado — igualdade do prefixo Bernoulli 0–32 (PR #298)
+## Histórico — igualdade do prefixo Bernoulli com 64 entradas (PR #300)
+
+O certificado anterior provou 64/601 entradas em 14m09s e 4.8 GiB RSS; a PR #302 estendeu o resultado a 96 entradas. Evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix64-20261108/README.md`.
+## Histórico — igualdade do prefixo Bernoulli 0–32 (PR #298)
 
 | Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |
 |---|---|---|---|---|

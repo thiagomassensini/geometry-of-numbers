@@ -1,14 +1,18 @@
 # C5 — validação
 
-## Validação recente — prefixo Bernoulli de 64 entradas (PR #300)
+## Validação recente — prefixo Bernoulli de 96 entradas (PR #302)
 
-- `c5BernoulliPrimeTable_64_eq_data` prova as primeiras 64 entradas (índices 0–63), apoiando-se no certificado 0–32 integrado.
-- Reprodução limpa Lean 4.32.0 com `warningAsError=true`: sonda, tabela, certificados 32/64 e auditoria compilaram. `CLEAN_BUILD=PASS`.
-- Comparação racional exata da sonda com os 601 literais: `DATA_TABLE_CHECK=PASS`. Auditoria isolada: `AXIOM_AUDIT=PASS`; apenas `propext`, `Classical.choice`, `Quot.sound`.
-- O certificado 0–64 compilou em 14:09, pico RSS de aproximadamente 4.8 GiB. PR #300, commit `509e773`, merge `90e2f571efb482993682a05ccc938ee9aef388e5`.
-- Limite: 64/601 entradas estão formalmente provadas; as outras 537, a ponte CSV–Lean das caixas de zeta e as inclusões da fonte continuam abertas. Logs, pins, reprodução e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix64-20261108/README.md`.
+- `c5BernoulliPrimeTable_96_eq_data` prova as entradas 0–95, apoiando-se no certificado integrado de 64 entradas.
+- Reprodução limpa Lean 4.32.0 com `warningAsError=true`: sonda, tabela, teorema 96 e auditoria compilaram. `CLEAN_BUILD=PASS`.
+- Comparação racional exata da sonda com os 601 literais: `DATA_TABLE_CHECK=PASS`. Auditoria isolada: `AXIOM_AUDIT=PASS`; apenas `propext`, `Classical.choice` e `Quot.sound`.
+- O teorema compilou em 38m42s, pico RSS de 6.45 GiB. PR #302, commit `4fc4c8d`, merge `b72149bf5727f2440c676f4f414664788fa010ba`.
+- Limite: 96/601 entradas estão formalmente provadas; as outras 505, a ponte CSV–Lean das caixas de zeta e as inclusões da fonte continuam abertas. Evidências: `evidence/rational-boxes/c5-bernoulli-data-prefix96-20261108/README.md`.
 
-## Validação recente — primeiro bloco da tabela de Bernoulli (PR #298)
+## Histórico — prefixo Bernoulli de 64 entradas (PR #300)
+
+O certificado anterior provou 64/601 entradas em 14m09s, com pico RSS de aproximadamente 4.8 GiB. A PR #302 estendeu o prefixo até 96. Evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix64-20261108/README.md`.
+
+## Histórico — primeiro bloco da tabela de Bernoulli (PR #298)
 
 - `c5BernoulliPrimeTable_32_eq_data` prova formalmente que o prefixo de 32 valores coincide com a recorrência `c5BernoulliPrimeTable`.
 - Reprodução limpa em Lean 4.32.0 e `warningAsError=true`: sonda, tabela, certificado e auditoria compilaram; `CLEAN_BUILD=PASS`.
@@ -17,7 +21,7 @@
 - PR #298, commit `1ed4a00`, merge `171c19681482312bf71bffdcd23b24a728edf04b`. Fontes, pins, reprodução, logs, tentativas e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix32-20261108/README.md`.
 - Limite: apenas os primeiros 32 valores têm igualdade formal certificada. A verificação dos 601 literais contra a saída da sonda é uma comparação reprodutível, ainda não substitui as provas formais dos blocos restantes nem liga as caixas exportadas de zeta a definições Lean.
 
-## Validação recente — nó complementar de Gamma para `d=1/10` (PR #296)
+## Histórico — nó complementar de Gamma para `d=1/10` (PR #296)
 
 - Fonte: `SigmaC5GammaComplexNodeDOneUpperComplexGammaCertificate.lean`; teorema `CarrySigmaObstruction.c5GammaComplexNodeDOneUpperComplexBox_contains`.
 - `SigmaC5GammaDOneUpperLogBounds.lean` prova `|Interval.logQ 384 8 240| ≤ 10`, o limite que faz caber o argumento de potência no raio 8.
@@ -25,7 +29,7 @@
 - A caixa contém `Complex.Gamma (3/10 + (3/20) * Complex.I)`, compondo `240^z`, 16 blocos × 64 termos e erro `10⁻⁹⁹`. Pico RSS: 8.4 GiB; reprodução limpa passou.
 - Commit `e986390937265fc1bb759140ed7fb6d80d23eadf`, PR #296, merge `113ed1517fff040f4fc619cf7d5086c57f137427`. Evidência, pins, hashes, logs e falha corrigida: `evidence/rational-boxes/c5-gamma-d1-upper-complex-node-20261108/README.md`.
 
-## Validação recente — primeiro nó complexo de Gamma para `d=1/10`
+## Histórico — primeiro nó complexo de Gamma para `d=1/10`
 
 - Fonte principal: `SigmaC5GammaComplexNodeDOneComplexGammaCertificate.lean`; declaração `CarrySigmaObstruction.c5GammaComplexNodeDOneComplexBox_contains`.
 - Build limpo dos cinco módulos em Lean 4.32.0 com `warningAsError=true`, saída zero em cada etapa; reprodução executada de novo com sucesso. Pico RSS: 8.4 GiB.
@@ -33,7 +37,7 @@
 - A caixa contém `Complex.Gamma (1/5 + (3/20) * Complex.I)`, usando `240^z`, 16 blocos × 64 termos do núcleo racional e erro `10⁻⁹⁹`.
 - PR #294 integrou o commit `752e6d1` no merge `5175969e6e11ccb1a7460389e78efe7c8f78ee60`. Builds, checker, reprodução, pins e hashes: `evidence/rational-boxes/c5-gamma-d1-complex-node-20261108/README.md`.
 
-## Validação recente — segundo nó complexo de Gamma
+## Histórico — segundo nó complexo de Gamma
 
 - Fonte principal: `SigmaC5GammaComplexNodeUpperGammaCertificate.lean`; declaração `CarrySigmaObstruction.c5GammaComplexNodeUpperBox_contains`.
 - Build limpo dos cinco módulos em Lean 4.32.0 com `warningAsError=true`, saída 0 em cada etapa; pico RSS de 11.5 GiB.
@@ -41,7 +45,7 @@
 - A caixa contém `Complex.Gamma (1099/4000 + (3/20) * Complex.I)`, usando `240^z`, 16 blocos × 64 termos do núcleo racional e erro `10⁻⁹⁹`.
 - PR #292 integrou o commit `5a859f7` no merge `18784869bd942422cfc2ace1b70e7e2ba8623b0f`. Build, logs, pins, hashes e tentativas: `evidence/rational-boxes/c5-gamma-complex-upper-node-20261107/README.md`.
 
-## Validação recente — primeiro nó complexo de Gamma
+## Histórico — primeiro nó complexo de Gamma
 
 - Fonte principal: `SigmaC5GammaComplexNodeGammaCertificate.lean`; declaração `CarrySigmaObstruction.c5GammaComplexNodeBox_contains`.
 - O build limpo recompilou os cinco módulos em Lean 4.32.0 com `warningAsError=true`; cada etapa terminou com saída 0.

@@ -1,14 +1,18 @@
 # C5 — estado da sessão
 
-## Estado atual — prefixo Bernoulli de 64 entradas integrado (2026-11-08)
+## Estado atual — prefixo Bernoulli de 96 entradas integrado (2026-11-08)
 
-- A PR #300 foi integrada na `main`: commit de prova `509e773`, merge `90e2f571efb482993682a05ccc938ee9aef388e5`.
-- `c5BernoulliPrimeTable_64_eq_data` prova as entradas 0–63. A reprodução recompila sonda, tabela, certificados 32/64 e auditoria; os 601 valores coincidem com os literais por comparação racional exata.
-- `CLEAN_BUILD=PASS`, `DATA_TABLE_CHECK=PASS`, `AXIOM_AUDIT=PASS`; a raiz usa somente `propext`, `Classical.choice`, `Quot.sound`. O certificado 0–64 levou 14:09 e 4.8 GiB RSS.
-- As outras 537 entradas ainda carecem de igualdade formal. Próximo: certificar o prefixo 0–95, depois continuar até 601 e retomar a ponte de zeta. C5 e as inclusões `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes` seguem abertas.
-- Evidência, comandos, tentativas e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix64-20261108/README.md`.
+- A PR #302 integrou `CarrySigmaObstruction.c5BernoulliPrimeTable_96_eq_data`: commit de prova `4fc4c8d`, merge `b72149bf5727f2440c676f4f414664788fa010ba`.
+- As entradas 0–95 têm igualdade formal entre a recorrência e os literais. O build limpo Lean 4.32.0 com `warningAsError=true` levou 38m42s, com pico RSS de 6.45 GiB.
+- `CLEAN_BUILD=PASS`, `DATA_TABLE_CHECK=PASS` para os 601 valores racionais da sonda e `AXIOM_AUDIT=PASS`; apenas `propext`, `Classical.choice` e `Quot.sound`.
+- Estado parcial: 96/601 igualdades formais provadas; 505 continuam abertas. Próximo: provar o prefixo 0–127, depois avançar até 601 e retomar a ponte CSV–Lean das caixas de zeta. As inclusões `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes` seguem abertas.
+- Logs, pins, tentativas e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix96-20261108/README.md`.
 
-## Estado atual — igualdade formal do primeiro bloco Bernoulli integrada (2026-11-08)
+## Histórico — prefixo Bernoulli de 64 entradas integrado (2026-11-08)
+
+A PR #300 integrou `c5BernoulliPrimeTable_64_eq_data` (commit `509e773`, merge `90e2f571efb482993682a05ccc938ee9aef388e5`). A reprodução formal certificou as entradas 0–63; naquele momento faltavam 537 igualdades e o próximo alvo era 96. A PR #302 fechou esse alvo. Evidência anterior: `evidence/rational-boxes/c5-bernoulli-data-prefix64-20261108/README.md`.
+
+## Histórico — igualdade formal do primeiro bloco Bernoulli integrada (2026-11-08)
 
 - A PR #298 foi integrada na `main`: commit de prova `1ed4a00`, merge `171c19681482312bf71bffdcd23b24a728edf04b`.
 - `c5BernoulliPrimeTable_32_eq_data` certifica os primeiros 32 valores da tabela recursiva contra o bloco literal. A reprodução compara exatamente todos os 601 valores da sonda Lean com os literais; `CLEAN_BUILD=PASS`, `DATA_TABLE_CHECK=PASS`, `AXIOM_AUDIT=PASS`.
@@ -16,7 +20,7 @@
 - Próximo: provar prefixos cumulativos em blocos de 32, iniciando em 32–64; ao chegar a 601, retomar a ponte formal de uma caixa de zeta. C5 e as inclusões `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes` permanecem abertas.
 - Fontes e reprodução: `SigmaC5BernoulliData*.lean` e `evidence/rational-boxes/c5-bernoulli-data-prefix32-20261108/`.
 
-## Estado atual — nó complementar de Gamma em `d=1/10` integrado (2026-11-08)
+## Histórico — nó complementar de Gamma em `d=1/10` integrado (2026-11-08)
 
 - Missão C5 continua ativa; C1B/C2/C3/C4 já estão concluídas. Não reiniciar fases anteriores nem a migração geral para Lean 4.35.
 - PR #296 prova `CarrySigmaObstruction.c5GammaComplexNodeDOneUpperComplexBox_contains`, que contém `Complex.Gamma (3/10 + (3/20) * Complex.I)`. Com a PR #294, os dois pontos complexos da malha `d=1/10` estão fechados. Também estão integrados os nós `901/4000 + 3i/20` e `1099/4000 + 3i/20` para `d=99/2000`.

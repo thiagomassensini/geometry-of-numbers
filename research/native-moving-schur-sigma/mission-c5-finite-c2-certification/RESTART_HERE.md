@@ -1,14 +1,18 @@
 # Retomar primeiro — missão C5
 
-## Estado atual — tabela de Bernoulli certificada até 64 entradas (2026-11-08)
+## Estado atual — tabela de Bernoulli certificada até 96 entradas (2026-11-08)
 
-- PR #300 está integrada na `main`: commit de prova `509e773`, merge `90e2f571efb482993682a05ccc938ee9aef388e5`.
-- `c5BernoulliPrimeTable_64_eq_data` prova as primeiras 64 entradas, índices 0–63, usando o teorema integrado para 32 como base. A reprodução limpa também compara exatamente os 601 valores da sonda com os literais.
-- Builds Lean 4.32.0 com `warningAsError=true` passaram; auditoria isolada aceita só `propext`, `Classical.choice`, `Quot.sound`. O certificado 0–64 levou 14:09 e atingiu 4.8 GiB RSS. Evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix64-20261108/README.md`.
-- Apenas 64/601 valores têm igualdade formal certificada; os outros 537 continuam abertos. Próximo: provar o prefixo de 96 entradas, índices 0–95, e avançar em blocos até 601; depois retomar a ponte formal com uma caixa de zeta.
+- PR #302 está integrada na `main`: commit de prova `4fc4c8d`, merge `b72149bf5727f2440c676f4f414664788fa010ba`.
+- `c5BernoulliPrimeTable_96_eq_data` prova as entradas 0–95 usando o teorema integrado para 64 como base. A reprodução limpa compara exatamente os 601 valores da sonda com os literais.
+- Builds Lean 4.32.0 com `warningAsError=true` passaram; auditoria isolada aceita só `propext`, `Classical.choice` e `Quot.sound`. O certificado 0–96 levou 38m42s e atingiu 6.45 GiB RSS. Evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix96-20261108/README.md`.
+- Apenas 96/601 valores têm igualdade formal certificada; os outros 505 continuam abertos. Próximo: provar o prefixo de 128 entradas, índices 0–127, e avançar até 601; depois retomar a ponte formal com uma caixa de zeta.
 - Nenhuma caixa CSV de zeta ou inclusão da fonte C5 é provada aqui. C5 permanece incompleta; não reabrir C1B/C2/C3/C4.
 
-## Estado atual — primeiro bloco da tabela de Bernoulli certificado (2026-11-08)
+## Histórico — tabela de Bernoulli certificada até 64 entradas (2026-11-08)
+
+A PR #300 certificou 64/601 entradas e deixou o prefixo 0–95 como próximo alvo; esse prefixo foi integrado pela PR #302. Evidência anterior: `evidence/rational-boxes/c5-bernoulli-data-prefix64-20261108/README.md`.
+
+## Histórico — primeiro bloco da tabela de Bernoulli certificado (2026-11-08)
 
 - A PR #298 está integrada na `main`: commit de prova `1ed4a00`, merge `171c19681482312bf71bffdcd23b24a728edf04b`.
 - `c5BernoulliPrimeTable_32_eq_data` prova a igualdade entre a recorrência e o primeiro bloco literal de 32 coeficientes. A reprodução compara exatamente, como racionais, os 601 valores emitidos pela sonda Lean com a tabela literal (`DATA_TABLE_CHECK=PASS`); a igualdade formal dos 569 valores restantes continua pendente.
@@ -16,7 +20,7 @@
 - Próximo passo: provar o bloco 32–64 usando o prefixo certificado como base e avançar em blocos até 601. Depois, retomar a ponte formal de uma caixa de zeta exportada para a caixa Lean correspondente.
 - Este avanço não certifica caixas exportadas de zeta, inclusões da fonte ou sinais C5. C5 continua incompleta; C1B/C2/C3/C4 permanecem concluídas.
 
-## Estado atual — quatro nós complexos de Gamma integrados (2026-11-08)
+## Histórico — quatro nós complexos de Gamma integrados (2026-11-08)
 
 - C5 segue ativa; C1B/C2/C3/C4 permanecem concluídas. Não reiniciar essas fases nem a migração geral para Lean 4.35.
 - A PR #296 integrou `CarrySigmaObstruction.c5GammaComplexNodeDOneUpperComplexBox_contains`, que contém `Complex.Gamma (3/10 + (3/20) * Complex.I)`. Isso fecha o par complexo de `d=1/10`, junto de `Γ(1/5 + 3i/20)` da PR #294.
