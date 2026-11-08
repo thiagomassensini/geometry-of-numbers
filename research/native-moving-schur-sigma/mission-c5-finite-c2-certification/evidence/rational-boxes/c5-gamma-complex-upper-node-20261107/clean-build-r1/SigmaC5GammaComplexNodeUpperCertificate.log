@@ -1,0 +1,27 @@
+'c5GammaComplexNodeUpperChunk64RealFloor_0' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5GammaComplexNodeUpperChunk64ImagFloor_0' depends on axioms: [propext, Classical.choice, Quot.sound]
+	Command being timed: "bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaC5GammaComplexNodeUpperCertificate"
+	User time (seconds): 1530.94
+	System time (seconds): 305.98
+	Percent of CPU this job got: 617%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:57.72
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8694204
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1378151
+	Voluntary context switches: 120990
+	Involuntary context switches: 5433
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 165464
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+BUILD_EXIT=0

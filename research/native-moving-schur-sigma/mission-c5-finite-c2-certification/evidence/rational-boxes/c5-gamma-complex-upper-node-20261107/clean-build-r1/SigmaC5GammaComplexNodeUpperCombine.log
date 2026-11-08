@@ -1,0 +1,31 @@
+'c5GammaComplexNodeUpperCoreScaledReal_eq_chunkSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5GammaComplexNodeUpperCoreScaledImag_eq_chunkSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5GammaComplexNodeUpperCoreScaled_chunkBounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5GammaComplexNodeUpperRealFloorSum_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5GammaComplexNodeUpperImagFloorSum_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'c5GammaComplexNodeUpperCoreBox_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+	Command being timed: "bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaC5GammaComplexNodeUpperCombine"
+	User time (seconds): 319.35
+	System time (seconds): 24.72
+	Percent of CPU this job got: 103%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:33.76
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 11452192
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1100993
+	Voluntary context switches: 2620
+	Involuntary context switches: 3532
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 952
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+BUILD_EXIT=0
