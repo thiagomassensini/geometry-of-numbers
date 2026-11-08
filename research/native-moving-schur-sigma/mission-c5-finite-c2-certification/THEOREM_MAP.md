@@ -1,5 +1,16 @@
 # C5 — mapa dos teoremas e obrigações
 
+## Resultado integrado — segundo nó complexo de Gamma (PR #292, Lean 4.32)
+
+| Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |
+|---|---|---|---|---|
+| `CarrySigmaObstruction.c5GammaComplexNodeUpperBox_contains` | `SigmaC5GammaComplexNodeUpperGammaCertificate.lean` | nenhuma | uma caixa racional contém `Complex.Gamma (1099/4000 + (3/20) * Complex.I)` | `240^z`, 16 blocos do núcleo racional, erro `gamma_finite_1024_240_error`; **PROVADO e integrado pela PR #292**, merge `18784869bd942422cfc2ace1b70e7e2ba8623b0f` |
+
+Build limpo de cinco módulos, 14 relatórios de axiomas, hashes, pins e logs:
+`evidence/rational-boxes/c5-gamma-complex-upper-node-20261107/README.md`.
+É o nó complementar ao `901/4000 + 3i/20` da PR #290, para `d=99/2000` e
+altura `3/10`; não prova nós para `d=1/10`, caixas da fonte ou sinais finais.
+
 ## Resultado integrado — primeiro nó complexo de Gamma (PR #290, Lean 4.32)
 
 | Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |

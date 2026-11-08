@@ -1,12 +1,12 @@
 # C5 — estado da sessão
 
-## Estado atual — primeiro nó complexo de Gamma integrado (2026-11-07)
+## Estado atual — dois nós complexos de Gamma integrados (2026-11-08)
 
 - Missão C5 continua ativa; C1B/C2/C3/C4 já estão concluídas. Não reiniciar fases anteriores nem a migração geral para Lean 4.35.
-- `CarrySigmaObstruction.c5GammaComplexNodeBox_contains` contém `Complex.Gamma (901/4000 + (3/20) * Complex.I)`. A prova compõe os 16 blocos de pisos do núcleo racional, a caixa de `240^z` e o erro de `gamma_finite_1024_240_error`, inflado por `10⁻⁹⁹`.
-- Os cinco módulos passaram em Lean 4.32.0 com `warningAsError=true`; as raízes auditadas usam apenas `propext`, `Classical.choice` e `Quot.sound`, sem `sorryAx`, axiomas próprios ou `native_decide`. Fontes, comandos, logs, pins e hashes: `evidence/rational-boxes/c5-gamma-complex-node-20261107/README.md`.
-- PR #290 integrou o commit `482110b10c9173f6a8c9b231c7f3ed07c0935933`; merge na `main`: `06001aaae85c19d01dca48a802fecbb06ffb381d`.
-- O alcance é um nó complexo somente. Permanecem abertas a ponte CSV–Lean, as demais caixas Gamma e zeta/Hurwitz, a composição com o fator nativo e quadraturas, e as inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`; C5 continua incompleta.
+- `CarrySigmaObstruction.c5GammaComplexNodeBox_contains` contém `Complex.Gamma (901/4000 + (3/20) * Complex.I)` e `CarrySigmaObstruction.c5GammaComplexNodeUpperBox_contains` contém `Complex.Gamma (1099/4000 + (3/20) * Complex.I)`. Cada certificado compõe a potência `240^z`, 16 blocos × 64 termos do núcleo racional e o erro `gamma_finite_1024_240_error`, inflado por `10⁻⁹⁹`.
+- Para o segundo nó, os cinco módulos passaram em Lean 4.32.0 com `warningAsError=true`; 14 relatórios (11 declarações novas e três auxiliares recompiladas) usam apenas `propext`, `Classical.choice` e `Quot.sound`, sem `sorryAx`, axiomas próprios ou `native_decide`. Pico de RSS: 11.5 GiB. Evidência: `evidence/rational-boxes/c5-gamma-complex-upper-node-20261107/README.md`.
+- PR #292 integrou o commit `5a859f7`; merge na `main`: `18784869bd942422cfc2ace1b70e7e2ba8623b0f`. O primeiro nó entrou antes pela PR #290, merge `06001aaae85c19d01dca48a802fecbb06ffb381d`.
+- O alcance são dois nós complexos apenas para `d=99/2000`. Permanecem abertas as caixas dos nós Gamma restantes (incluindo `d=1/10`), a avaliação intervalar por nó da expansão Euler–Maclaurin de ordem 600 já integrada, a ponte CSV–Lean, a composição com o fator nativo e quadraturas, e as inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`; C5 continua incompleta.
 
 ## Histórico — caixa Gamma em `1/5` integrada pela PR #285
 

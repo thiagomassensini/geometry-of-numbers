@@ -1,13 +1,14 @@
 # Retomar primeiro — missão C5
 
-## Estado atual — primeiro nó complexo de Gamma integrado (2026-11-07)
+## Estado atual — segundo nó complexo de Gamma integrado (2026-11-08)
 
 - C5 segue ativa; C1B/C2/C3/C4 permanecem concluídas. Não reiniciar essas fases nem a migração geral para Lean 4.35.
-- Último resultado: `CarrySigmaObstruction.c5GammaComplexNodeBox_contains` em `SigmaC5GammaComplexNodeGammaCertificate.lean`, que contém `Complex.Gamma (901/4000 + (3/20) * Complex.I)`, nó da malha C2 para `d=99/2000` e altura de Cauchy `3/10`.
-- Os cinco módulos passaram em Lean 4.32.0 com `warningAsError=true`; as raízes auditadas usam somente `propext`, `Classical.choice`, `Quot.sound`, sem `sorryAx`, axiomas próprios ou `native_decide`.
-- Evidência e retomada: `evidence/rational-boxes/c5-gamma-complex-node-20261107/README.md` e `reproduce-clean.sh`. PR #290 integrou o commit `482110b10c9173f6a8c9b231c7f3ed07c0935933` no merge `06001aaae85c19d01dca48a802fecbb06ffb381d`.
-- Próxima obrigação: certificar os outros nós complexos e fechar a ponte CSV–Lean para as caixas de zeta; depois compor com o fator nativo original e as quadraturas para provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
-- Este checkpoint cobre somente um nó complexo de Gamma. C5 e os sinais finais da `sigmaPadeD` original continuam incompletos.
+- Resultado mais recente: `CarrySigmaObstruction.c5GammaComplexNodeUpperBox_contains` em `SigmaC5GammaComplexNodeUpperGammaCertificate.lean`, que contém `Complex.Gamma (1099/4000 + (3/20) * Complex.I)`, nó complementar para `d=99/2000` e altura de Cauchy `3/10`.
+- Cinco módulos passaram em Lean 4.32.0 com `warningAsError=true`; 14 relatórios de axiomas cobrem 11 declarações novas e três auxiliares recompiladas, usando somente `propext`, `Classical.choice`, `Quot.sound`, sem `sorryAx`, axiomas próprios ou `native_decide`. Pico de RSS: 11.5 GiB.
+- Evidência, reprodução, pins, hashes e logs: `evidence/rational-boxes/c5-gamma-complex-upper-node-20261107/README.md`. PR #292 integrou o commit `5a859f7` no merge `18784869bd942422cfc2ace1b70e7e2ba8623b0f`.
+- A PR #290 também integrou o primeiro nó complexo, `CarrySigmaObstruction.c5GammaComplexNodeBox_contains`, para `Γ(901/4000 + 3i/20)`, no merge `06001aaae85c19d01dca48a802fecbb06ffb381d`.
+- Próxima obrigação: avançar pelos nós Gamma restantes, em especial os da malha para `d=1/10`, e fechar a avaliação intervalar de zeta/exportação CSV em Lean; então compor todos os fatores e quadraturas da fonte original para provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
+- Este checkpoint cobre dois nós complexos em `d=99/2000`. C5, as inclusões da fonte original e os sinais finais da `sigmaPadeD` continuam incompletos.
 
 ## Checkpoint anterior — caixa `Γ(1/5)` (PR #285 integrada)
 
