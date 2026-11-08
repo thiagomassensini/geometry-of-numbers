@@ -1,5 +1,20 @@
 # C5 — obrigações abertas
 
+## Estado atual — prefixo Bernoulli 192 validado na branch (2026-11-08)
+
+O prefixo 192 foi compilado limpo e auditado em Lean 4.32.0 nesta branch, mas
+aguarda PR/merge. A `main` contém o prefixo 160 pela PR #312
+(`cb829d98d799df72f07c9aff03e9d93871da6f77`). Na branch, 192/601 entradas estão
+provadas; 409 ainda precisam de certificado formal. Obrigações:
+
+1. Publicar e integrar o checkpoint validado do prefixo 192; depois avançar em blocos até 601.
+2. Provar a ligação Lean entre as caixas de zeta exportadas e a avaliação correspondente.
+3. Certificar os nós Gamma restantes e compor as caixas zeta/Gamma com o fator nativo original e as quadraturas da fonte completada.
+4. Provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` sem hipóteses auxiliares e fechar os sinais finais de `sigmaPadeD`.
+
+C5 permanece incompleta. Evidência, logs, pins, comandos e hashes desta etapa:
+`evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/README.md`.
+
 ## Estado atual — prefixo Bernoulli de 160 entradas integrado (2026-11-08)
 
 `c5BernoulliPrimeTable_160_eq_data` certifica os índices 0–159 em Lean 4.32,

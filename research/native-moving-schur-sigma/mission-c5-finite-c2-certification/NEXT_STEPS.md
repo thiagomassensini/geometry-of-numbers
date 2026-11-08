@@ -1,5 +1,14 @@
 # Próximos passos — C5
 
+## Estado atual — prefixo 192 validado na branch (2026-11-08)
+
+- `c5BernoulliPrimeTable_192_eq_data` compilou limpo em Lean 4.32.0 e passou pela auditoria isolada: apenas `propext`, `Classical.choice`, `Quot.sound`; `CLEAN_BUILD=PASS`, `AXIOM_AUDIT=PASS`, `EXIT=0`.
+- Nesta branch há 192/601 entradas formalmente certificadas; 409 ainda estão abertas. O prefixo 192 ainda não está na `main`, cujo último checkpoint é o prefixo 160 da PR #312 (merge `cb829d98d799df72f07c9aff03e9d93871da6f77`).
+- Branch `codex/c5-zeta-bernoulli-prefix192-20261108`; prova `636ea8d7ceea1af08adafcdb4d373e8e9b9895b4`; último checkpoint remoto `4da3b00f4e2ae510b303f79595acaa4afdac58ef`. PR ainda não aberta.
+- Evidência e reprodução: `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/README.md`; build 3h07m38s, pico RSS 16,632,976 KiB.
+- **Próxima ação concreta:** recomputar e conferir `SHA256SUMS.txt`, commitar os logs/resultado/documentos atualizados, confirmar o push, abrir e revisar a PR, integrar à `main`; então avançar ao prefixo cumulativo 224.
+- A ponte CSV–Lean das caixas de zeta, inclusões da fonte original e sinais finais continuam abertas. C5 está incompleta.
+
 ## Estado atual — prefixo Bernoulli de 160 entradas integrado (2026-11-08)
 
 - O prefixo 128 está integrado pela PR #309 (`c7782c54b78f97b1ea3f5a61f6e0ceefe75f2f11`). A prova `c5BernoulliPrimeTable_160_eq_data` em `SigmaC5BernoulliDataCertificate160.lean` compilou limpa, passou pela auditoria isolada dos axiomas e foi integrada pela PR #312 (`cb829d98d799df72f07c9aff03e9d93871da6f77`).

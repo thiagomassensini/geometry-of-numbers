@@ -1,5 +1,13 @@
 # C5 — checkpoints
 
+## 2026-11-08 — prefixo Bernoulli 192 compilado e auditado; integração pendente
+
+- `CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data` estende o prefixo 160 aos índices 0–191. Reprodução limpa Lean 4.32.0 com `warningAsError=true`: `CLEAN_BUILD=PASS`, `AXIOM_AUDIT=PASS`, `EXIT=0`; axiomas somente `propext`, `Classical.choice`, `Quot.sound`.
+- Tempo de compilação: 3h07m38s; pico RSS 16,632,976 KiB. Auditoria isolada: 4.40s, pico RSS 3,236,712 KiB.
+- Base `main@605c55e899d62a658bed511d13be3b95b09840c8`; branch `codex/c5-zeta-bernoulli-prefix192-20261108`. Prova no commit `636ea8d7ceea1af08adafcdb4d373e8e9b9895b4`; checkpoint com resultado e estado do runner no SHA `4da3b00f4e2ae510b303f79595acaa4afdac58ef`, já publicado no remoto. PR ainda não aberta.
+- O runner terminou com `EXIT=0`; logs, resultado, auditoria, pins, comandos e hashes estão em `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/`. O prefixo formal nesta branch é 192/601, com 409 restantes. Inclusões da fonte e sinais finais seguem abertos.
+- Próximo: atualizar manifesto, publicar o checkpoint do resultado, abrir e revisar PR, integrar; então continuar com o prefixo 224.
+
 ## 2026-11-08 — prefixo Bernoulli 160 integrado pela PR #312
 
 - `SigmaC5BernoulliDataCertificate160.lean` provou a igualdade cumulativa até o índice 159 a partir do prefixo 128 integrado. Build limpo Lean 4.32.0: 1h56m34s, pico RSS 12,572,772 KiB; auditoria isolada: 4.23s. `CLEAN_BUILD=PASS`, `AXIOM_AUDIT=PASS`, `EXIT=0`; apenas `propext`, `Classical.choice`, `Quot.sound`.
