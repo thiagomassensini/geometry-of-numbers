@@ -1,10 +1,12 @@
 # C5 — obrigações abertas
 
-## Estado atual — prefixo Bernoulli de 96 entradas integrado (2026-11-08)
+## Estado atual — prefixo Bernoulli de 128 entradas validado localmente (2026-11-08)
 
-A PR #302 integrou `c5BernoulliPrimeTable_96_eq_data` (commit `4fc4c8d`, merge `b72149bf5727f2440c676f4f414664788fa010ba`). As entradas 0–95 têm igualdade formal com a recorrência; 505 das 601 ainda não têm teoremas de igualdade. Obrigações abertas:
+`c5BernoulliPrimeTable_128_eq_data` compila e certifica os índices 0–127,
+apoiada na PR #302. Ainda faltam 473 das 601 igualdades formais. Obrigações
+abertas:
 
-1. Provar os blocos restantes, começando pelo prefixo de 128 entradas (índices 0–127); ao completar a tabela, formalizar a ligação da menor caixa de zeta exportada à avaliação Lean.
+1. Publicar o checkpoint 128 e provar prefixos cumulativos começando por 160; ao completar a tabela, formalizar a ligação da menor caixa de zeta exportada à avaliação Lean.
 2. Certificar os nós Gamma restantes e compor as caixas zeta/Gamma com o fator nativo original e as quadraturas da fonte completada.
 3. Provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` sem hipóteses auxiliares.
 4. Fechar os sinais finais da `sigmaPadeD` original nos dois deslocamentos.

@@ -1,5 +1,16 @@
 # C5 — mapa dos teoremas e obrigações
 
+## Prefixo Bernoulli com 128 entradas — validado localmente, PR pendente
+
+| Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |
+|---|---|---|---|---|
+| `CarrySigmaObstruction.c5BernoulliPrimeTable_128_eq_data` | `SigmaC5BernoulliDataCertificate128.lean` | nenhuma | entradas 0–127 da recorrência coincidem com `c5BernoulliPrimeDataPrefix128` | usa o certificado integrado de 96 entradas, a recorrência de Bernoulli para pares e zeros ímpares; **PROVADO e compilado localmente**, aguardando PR; axiomas `propext`, `Classical.choice`, `Quot.sound` |
+
+O build limpo, a comparação exata dos 601 racionais e a auditoria estão em
+`evidence/rational-boxes/c5-bernoulli-data-prefix128-20261108/README.md`.
+473 igualdades formais, a ponte CSV–Lean, as inclusões da fonte e os sinais
+finais seguem abertos.
+
 ## Resultado integrado — igualdade do prefixo Bernoulli com 96 entradas (PR #302)
 
 | Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |
