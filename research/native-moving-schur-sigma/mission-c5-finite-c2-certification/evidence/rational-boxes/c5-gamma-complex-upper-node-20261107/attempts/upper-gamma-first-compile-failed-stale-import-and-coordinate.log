@@ -1,0 +1,65 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-zeta-csv-bridge-20261107/research/native-moving-schur-sigma/SigmaC5GammaComplexNodeUpperGammaCertificate.lean:30:15: error(lean.unknownIdentifier): Unknown identifier `c5GammaSecondRealPoint_logQ_absBound`
+/home/thlinux/worktrees/geometry-of-numbers-c5-zeta-csv-bridge-20261107/research/native-moving-schur-sigma/SigmaC5GammaComplexNodeUpperGammaCertificate.lean:29:74: error: unsolved goals
+⊢ ((gammaFiniteNegativePointBox (1099 / 4000) (3 / 20)).neg.mul
+        { re := Interval.logQ 384 8 240, im := Interval.exact 0 }).normBound ≤
+    8
+/home/thlinux/worktrees/geometry-of-numbers-c5-zeta-csv-bridge-20261107/research/native-moving-schur-sigma/SigmaC5GammaComplexNodeUpperGammaCertificate.lean:69:4: error: 'change' tactic failed, pattern
+  (Interval.exact (-(901 / 4000))).contains (-c5GammaComplexNodeUpperPoint).re ∧
+    (Interval.exact (-(3 / 20))).contains (-c5GammaComplexNodeUpperPoint).im
+is not definitionally equal to target
+  (gammaFiniteNegativePointBox (1099 / 4000) (3 / 20)).contains (-c5GammaComplexNodeUpperPoint)
+/home/thlinux/worktrees/geometry-of-numbers-c5-zeta-csv-bridge-20261107/research/native-moving-schur-sigma/SigmaC5GammaComplexNodeUpperGammaCertificate.lean:101:4: error: Type mismatch: After simplification, term
+  gammaFinite_eq_rationalCore 1024 240 (1099 / 4000) (3 / 20)
+    (Mathlib.Meta.NormNum.isNNRat_lt_true
+      (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℚ (Eq.refl 0)))
+      (Mathlib.Meta.NormNum.isNNRat_div
+        (Mathlib.Meta.NormNum.isNNRat_mul (Eq.refl HMul.hMul)
+          (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℚ (Eq.refl 1099)))
+          (Mathlib.Meta.NormNum.isNNRat_inv_pos
+            (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℚ (Eq.refl 4000))))
+          (Eq.refl (Nat.mul 1099 1)) (Eq.refl 4000)))
+      (Eq.refl true))
+ has type
+  gammaFinite 1024 240 (1099 / 4000 + 3 / 20 * Complex.I) =
+    240 ^ (1099 / 4000 + 3 / 20 * Complex.I) *
+      ratComplexToComplex (gammaFiniteRationalCore 1024 240 (1099 / 4000) (3 / 20))
+but is expected to have type
+  gammaFinite 1024 240 (901 / 4000 + 3 / 20 * Complex.I) =
+    240 ^ (901 / 4000 + 3 / 20 * Complex.I) *
+      ratComplexToComplex (gammaFiniteRationalCore 1024 240 (1099 / 4000) (3 / 20))
+'CarrySigmaObstruction.c5GammaComplexNodeUpperPowerArg_normBound' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5GammaComplexNodeUpperPowerBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5GammaComplexNodeUpperBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+Command exited with non-zero status 1
+	Command being timed: "bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaC5GammaComplexNodeUpperGammaCertificate"
+	User time (seconds): 10.07
+	System time (seconds): 4.79
+	Percent of CPU this job got: 103%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:14.31
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6573464
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 266831
+	Voluntary context switches: 2441
+	Involuntary context switches: 166
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1

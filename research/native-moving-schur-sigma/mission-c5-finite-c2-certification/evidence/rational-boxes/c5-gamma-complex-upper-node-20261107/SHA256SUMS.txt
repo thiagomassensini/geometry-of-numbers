@@ -1,0 +1,13 @@
+139b2d66e78ab218aba0363625bf8e6c3470b20c740ff9eb396a2457695a15cf  research/native-moving-schur-sigma/SigmaC5GammaComplexNodeUpperProbe.lean
+cf416a9102713d127b5b807fb9cdf5eaafa7c87c7adb7eaa415d99bc29fd1bd7  research/native-moving-schur-sigma/SigmaC5GammaComplexNodeUpperCertificate.lean
+8737644ee2f03afb6e1971edead343f590cffa578a36fb37b479516a9f7f80a3  research/native-moving-schur-sigma/SigmaC5GammaComplexNodeUpperCombine.lean
+4280b8ccaeceb782cd49b801f5fe3cd3c26d417021f4d2a129287a4ecda3367a  research/native-moving-schur-sigma/SigmaC5GammaComplexNodeUpperGammaCertificate.lean
+4f7edf9cd58a56e1c12de90e81391d5c3bb20c8ba0d1a016c253795d5c7b0580  research/native-moving-schur-sigma/check_c5_gamma_complex_upper_axioms.py
+4a443f40394a481ab9587667c70f0a888e86ae754900df025c55e4af90cc83c5  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-gamma-complex-upper-node-20261107/README.md
+1e021173c96f4db103393993c6cd1ec86395cb0c5a5e3bc7620065422ccf10fd  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-gamma-complex-upper-node-20261107/reproduce-clean.sh
+7c3ccee9c4f1ea738321939c7cb42ea28cfc8d74fba93087ae52ea01064c98c1  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-gamma-complex-upper-node-20261107/clean-build-r1/SigmaC5GammaComplexNodeUpperCertificate.log
+16e25eea1cdddef7679840388b3d5be476bf2b4dbf4b92371a641427d3e81d1e  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-gamma-complex-upper-node-20261107/clean-build-r1/SigmaC5GammaComplexNodeUpperCombine.log
+28f19c9f418a35d7a6458500bdeb1ba2e58a50177124f0de43ba3d6e13a15fd3  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-gamma-complex-upper-node-20261107/clean-build-r1/SigmaC5GammaComplexNodeUpperGammaCertificate.log
+77c2e9969ecfd824531a7cc48c1482f9173bf3838d4d10d459a31da1e66d2981  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-gamma-complex-upper-node-20261107/clean-build-r1/SigmaC5GammaComplexNodeUpperProbe.log
+76d13d91a36531bfbe1c24aad68155c9d2c77efadf9526945278add449b0ef9a  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-gamma-complex-upper-node-20261107/clean-build-r1/SigmaC5GammaSecondRealPointGammaCertificate.log
+6a9275938bed8560d7e600f1f90e37e7a3e0853bc1c0ba2c19212575adf40aa3  research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-gamma-complex-upper-node-20261107/attempts/upper-gamma-first-compile-failed-stale-import-and-coordinate.log
