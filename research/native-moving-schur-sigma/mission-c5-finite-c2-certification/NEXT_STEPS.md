@@ -1,12 +1,13 @@
 # Próximos passos — C5
 
-## Estado atual — prefixo Bernoulli 192 integrado (2026-11-08)
+## Estado atual — prefixo 224 compilado/auditado; PR #315 aberta (2026-11-08)
 
-- `c5BernoulliPrimeTable_192_eq_data` foi compilado e auditado limpo em Lean 4.32.0; PR #313, merge `f0bd4ec675a3dc483f55373d3a58092042fac67d`.
-- A `main` tem 192/601 entradas formalmente certificadas; 409 ainda estão abertas. Build: 3h07m38s, pico RSS 16,632,976 KiB; auditoria: 4.40s, axiomas apenas `propext`, `Classical.choice`, `Quot.sound`.
-- Evidência, reprodução, pins e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/README.md`.
-- **Próxima ação concreta:** conferir branches/PRs existentes para evitar duplicação; criar branch a partir do merge atual e provar `c5BernoulliPrimeTable_224_eq_data`, com checkpoint remoto antes de uma compilação longa.
-- A ponte CSV–Lean, inclusões da fonte original e sinais finais continuam abertas. C5 permanece incompleta; não reabrir C1B/C2/C3/C4.
+- O prefixo 192 permanece integrado pela PR #313, merge `f0bd4ec675a3dc483f55373d3a58092042fac67d`; estado pós-merge `main@513b73b54d232d7f0375ca3a2381b749fc17dba3`.
+- A tentativa de `c5BernoulliPrimeTable_224_eq_data` levou 1h56m46s e terminou `EXIT=1`; pico RSS 9,869,328 KiB. A auditoria isolada não rodou e o estado provado continua 192/601.
+- Causa: as listas de simplificação não desdobravam `c5BernoulliPrimeDataPrefix160`, deixando abertas a cota do append, os cálculos de `getD` e o fechamento de tamanho do array. Erro integral: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/attempts/first-build-failure-20261108/`.
+- O retry 224 terminou com build e auditoria aprovados em Lean 4.32.0: somente axiomas padrão, sem `sorryAx`; 5h05m, pico RSS 21,529,692 KiB. Evidência completa: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/README.md`.
+- **Próxima ação concreta:** integrar a PR #315, que já está mergeável. Depois, continuar os blocos cumulativos até 601/601 e provar um nó de zeta em Lean ligando a avaliação Euler–Maclaurin às caixas exportadas. A caixa formal existente ainda não chega à fonte; ver `C5_SOURCE_SIGN_BUDGET_20261108.md`.
+- A ponte CSV–Lean, `sigmaC00495SourceBoxes`, `sigmaC01SourceBoxes` e os sinais incondicionais continuam abertos. C5 permanece incompleta.
 
 ## Estado atual — prefixo Bernoulli de 160 entradas integrado (2026-11-08)
 

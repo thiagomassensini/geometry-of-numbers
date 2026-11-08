@@ -1,18 +1,23 @@
 # C5 — obrigações abertas
 
-## Estado atual — prefixo Bernoulli 192 integrado pela PR #313 (2026-11-08)
+## Estado atual — prefixo 224 validado; PR #315 aberta (2026-11-08)
 
-A `main` tem `c5BernoulliPrimeTable_192_eq_data`, integrada pela PR #313 no
-merge `f0bd4ec675a3dc483f55373d3a58092042fac67d`. São 192/601 entradas
-formalmente provadas; faltam 409. Obrigações:
+A `main` contém 192/601 entradas pela PR #313. A primeira tentativa de provar o
+prefixo 224 falhou em metas de redução de arrays anexados, mas o retry corrigido
+passou build e auditoria isolada; 224/601 estão validadas na branch, enquanto
+377 seguem abertas e a integração ainda está pendente. Obrigações:
 
-1. Provar o prefixo cumulativo 224 e continuar os blocos restantes até 601.
+1. Integrar a PR #315 do prefixo 224 validado; a primeira tentativa falha já está preservada.
 2. Provar a ligação Lean entre as caixas de zeta exportadas e a avaliação correspondente.
 3. Certificar os nós Gamma restantes e compor as caixas zeta/Gamma com o fator nativo original e as quadraturas da fonte completada.
 4. Provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` sem hipóteses auxiliares e fechar os sinais finais de `sigmaPadeD`.
 
-C5 permanece incompleta. Evidência, logs, pins, comandos e hashes do prefixo 192:
-`evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/README.md`.
+Build limpo `EXIT=0`, auditoria `AXIOM_AUDIT=PASS`, logs, pins, comandos, erros
+da primeira tentativa e hashes estão em
+`evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/`. O orçamento dos
+menores condicionais, as cinco correções cruzadas da fonte C2 e o primeiro elo
+formal que falta antes das caixas estão em `C5_SOURCE_SIGN_BUDGET_20261108.md`.
+C5 permanece incompleta.
 
 ## Estado atual — prefixo Bernoulli de 160 entradas integrado (2026-11-08)
 

@@ -1,5 +1,20 @@
 # C5 — mapa dos teoremas e obrigações
 
+## Prefixo Bernoulli com 224 entradas — compilado e auditado; PR #315 aberta
+
+| Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |
+|---|---|---|---|---|
+| `CarrySigmaObstruction.c5BernoulliPrimeTable_224_eq_data` | `SigmaC5BernoulliDataCertificate224.lean` | nenhuma | entradas 0–223 da recorrência coincidem com `c5BernoulliPrimeDataPrefix224` | estende o prefixo integrado 192 por recorrência de Bernoulli; **build limpo e auditoria aprovados** em Lean 4.32, somente axiomas padrão; PR #315 aberta, main ainda 192/601 |
+
+O reprodutor, logs, resultado, auditoria e pins estão em
+`evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/`.
+
+As caixas de coeficientes e os sinais de determinantes derivados permanecem
+condicionais a `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`. A análise das
+larguras absolutas, margens e cinco termos cruzados da C2 completa está em
+`C5_SOURCE_SIGN_BUDGET_20261108.md`; não reclassificar os sinais como
+incondicionais antes de provar ambas as inclusões.
+
 ## Prefixo Bernoulli com 192 entradas — integrado pela PR #313
 
 | Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |

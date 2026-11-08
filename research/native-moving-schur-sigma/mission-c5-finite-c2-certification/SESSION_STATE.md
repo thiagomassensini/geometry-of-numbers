@@ -1,13 +1,15 @@
 # C5 — estado da sessão
 
-## Estado atual — prefixo Bernoulli 192 integrado pela PR #313 (2026-11-08)
+## Estado atual — prefixo 224 compilado/auditado; PR #315 aberta (2026-11-08)
 
-- `CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data` prova as entradas 0–191 a partir do prefixo 160 integrado. Build limpo Lean 4.32.0 com `warningAsError=true`: `CLEAN_BUILD=PASS`, `EXIT=0`; auditoria isolada: `AXIOM_AUDIT=PASS`, somente `propext`, `Classical.choice`, `Quot.sound`, sem `sorryAx` ou axiomas próprios.
-- Build: 3h07m38s, pico RSS 16,632,976 KiB. Auditoria: 4.40s, pico 3,236,712 KiB. Evidência, logs, pins, reprodução e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/README.md`.
-- PR #313 foi integrada; commit da prova `636ea8d7ceea1af08adafcdb4d373e8e9b9895b4`; merge na `main` `f0bd4ec675a3dc483f55373d3a58092042fac67d`. O registro documental pós-merge parte desse HEAD.
-- Prefixo formal integrado: 192/601; 409 entradas permanecem abertas. Não confundir esse avanço com certificação das caixas da fonte ou dos sinais finais.
-- Obrigações restantes: ponte CSV–Lean das caixas de zeta; inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`; composição com a fonte original e sinais finais de `sigmaPadeD`.
-- Próxima ação: iniciar `c5BernoulliPrimeTable_224_eq_data` em branch isolada, sem refazer os prefixos integrados. C1B/C2/C3/C4 e a migração geral Lean 4.35 não devem ser reabertas.
+- Último teorema validado e integrado: `CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data`, PR #313, merge `f0bd4ec675a3dc483f55373d3a58092042fac67d`; estado pós-merge em `main@513b73b54d232d7f0375ca3a2381b749fc17dba3`.
+- O candidato `c5BernoulliPrimeTable_224_eq_data` foi compilado uma vez em Lean 4.32.0 com `warningAsError=true`, mas o build terminou `EXIT=1` após 1h56m46s. Pico RSS 9,869,328 KiB; memória disponível permaneceu acima de 52 GiB. A auditoria isolada não foi executada.
+- Erro concreto: faltou incluir `c5BernoulliPrimeDataPrefix160` nas listas `simp`/`norm_num`. Isso deixou a cota de append como `n < c5BernoulliPrimeDataPrefix160.size + 32`, os cálculos dos índices 192–223 presos em `getD` de arrays anexados e o tamanho final em `Prefix160.size = 160`. O Lean reportou `sorryAx` somente porque os objetivos da tentativa falharam; nada dessa compilação conta como prova.
+- Log integral, `run-state`, status, primeira falha e hash do fonte pré-correção: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/attempts/first-build-failure-20261108/`. Não sobrescrever essa tentativa.
+- Branch `codex/c5-zeta-bernoulli-prefix224-20261108`; correção publicada no checkpoint `1e0feaaf0609ab1733c8a32cea2ec15ded9a5dba`. Estado validado continua 192/601; 409 entradas abertas.
+- O retry corrigido concluiu `EXIT=0`: build limpo Lean 4.32.0 com `warningAsError=true`, `CLEAN_BUILD=PASS`; auditoria isolada `AXIOM_AUDIT=PASS`, somente `propext`, `Classical.choice`, `Quot.sound`, sem `sorryAx`, `admit`, axiomas próprios ou `native_decide`. Tempo 5h05m; pico RSS 21,529,692 KiB. Evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/`.
+- O resultado formal na branch é 224/601, com 377 igualdades ainda abertas. PR #315 está aberta e mergeável; a `main` ainda está em 192/601 até sua integração. Não existe build ativo. C1B/C2/C3/C4 e a migração geral Lean 4.35 não devem ser reabertas.
+- A obrigação formal da fonte C2 continua exatamente em `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`; O3 e as margens racionais do determinante continuam condicionais às duas. O orçamento, as cinco correções cruzadas e o primeiro ponto sem caixa formal estão registrados em `C5_SOURCE_SIGN_BUDGET_20261108.md`.
 
 ## Histórico — prefixo Bernoulli de 64 entradas integrado (2026-11-08)
 
