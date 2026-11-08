@@ -2,7 +2,8 @@
 
 ## Estado conferido
 
-- `origin/main`: `ebd6c57c33edcf8596f09889c7bf956e7d9b284f`.
+- Snapshot de código conferido: `ebd6c57c33edcf8596f09889c7bf956e7d9b284f`.
+- A primeira reconciliação documental foi integrada pela PR #307, merge `898e1ca03b8f1121cb3d699c3dfb7bcfc8ef3a5a`; ela não alterou arquivos Lean.
 - C1B: PR #155, merge `0586e238441096ecd2248e3f14bdac3a832af427`.
 - C2: PR #157, prova `bd1a6a04b8f98c33526059968c7fc079d48467f9`, merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`.
 - C3: PR #159, prova `35dc14f13bd314639ce0c65daedf32b20f298667`, merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`.
