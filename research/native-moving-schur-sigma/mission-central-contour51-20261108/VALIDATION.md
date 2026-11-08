@@ -6,6 +6,7 @@
 - PR #304: open/mergeable, base `main`, head `agent/c2-central-hankel2-allorder-20261107` at `6397f479f8c373b59cdffea512bbd8dd95b24fb3`.
 - PR #311: open/mergeable, based on the B1 branch, head `agent/c2-central-ten-heights-b2-20261108` at `7509f5d9404fe2514d4c609acb4ad10b9b02ab54`.
 - PR #306: open/mergeable, base `main`, head `agent/c2-central-contour51-20261108` at `e96e3a132ee6c4f494fee97e3ff1753f606514fc`. Its two original files were read in full and copied byte-for-byte; the original PR branch was not checked out for writing or modified.
+- Rechecked after the C3 checkpoint through GitHub on 2026-11-08: #304 and #311 remain open/mergeable; #306 remains open/mergeable and draft. Their heads are unchanged at the SHAs above. The new branch is based directly on B2 at `7509f5d9404fe2514d4c609acb4ad10b9b02ab54` and is pushed through `95d2f5fc366c695e6e6c7b4c8122c06b8a63314c`.
 - New base commit: `7509f5d9404fe2514d4c609acb4ad10b9b02ab54`.
 - Worktree: `/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108`.
 - Branch: `agent/c2-contour51-20261108`.
@@ -41,4 +42,4 @@
 
 ## C1–C6
 
-C1 source is drafted in `SigmaContour51DiskBridge.lean` but remains uncompiled. C2's generic local-residue theorem is drafted in `SigmaContour51Residue.lean`; `C2_RESIDUE_REDUCTION.md` records the normalization and finite Cauchy route, including the unformalized analytic extension/gluing step. C4's conditional normalized-integral bound and exact radius conversion, plus C6's rational margins and conditional closure, are drafted in `SigmaContour51RationalGate.lean`, also uncompiled. At the last resource check, external C5 process PID `108950` was still active in its own worktree, so no Lean build was started here. Recheck before compiling. Record each Lean command, successful and failed logs, theorem axioms, and source/OLean/log hashes at the checkpoint where they are obtained. Keep experimental claims separate from formal results.
+The C1 source in `SigmaContour51DiskBridge.lean`, C2 local-residue source in `SigmaContour51Residue.lean`, and C4/C6 source in `SigmaContour51RationalGate.lean` are local drafts only; none is in the pushed branch or compiled yet. `C2_RESIDUE_REDUCTION.md` records the normalization and finite Cauchy route, including the unformalized analytic extension/gluing step. At the last resource check, external C5 process PID `108950` was still active in its own worktree, so no Lean build was started here. Recheck before compiling. Record each Lean command, successful and failed logs, theorem axioms, and source/OLean/log hashes at the checkpoint where they are obtained. Keep experimental claims separate from formal results.
