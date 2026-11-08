@@ -1,12 +1,13 @@
 # C5 — validação
 
-## Validação recente — prefixo Bernoulli de 128 entradas (2026-11-08)
+## Validação recente — prefixo Bernoulli de 128 entradas (PR #309, 2026-11-08)
 
 - `c5BernoulliPrimeTable_128_eq_data` prova formalmente os índices 0–127 a partir do certificado integrado de 96 entradas.
 - Reprodução limpa Lean 4.32.0 com `warningAsError=true`: sonda, tabela, certificado 128 e auditoria compilaram; todos os logs registram `BUILD_EXIT=0` (`CLEAN_BUILD=PASS`).
 - Comparação racional exata da sonda com os literais: `DATA_TABLE_CHECK=PASS`, `COEFFICIENTS=601`. Auditoria isolada: `AXIOM_AUDIT=PASS`, apenas `propext`, `Classical.choice` e `Quot.sound`.
 - O teorema compilou em 1h15m45s, pico RSS de 9,450,592 KiB (aprox. 9.01 GiB). A tentativa anterior com limite padrão de simplificação falhou e continua preservada, não contabilizada como prova.
 - O certificado aumenta o prefixo formal para 128/601; 473 valores, a ponte CSV–Lean, as inclusões da fonte e os sinais finais continuam abertos. Evidência, pins, reprodução, logs e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix128-20261108/README.md`.
+- Integrado à `main` pela PR #309, commit de prova `b6f2611`, merge `c7782c54b78f97b1ea3f5a61f6e0ceefe75f2f11`.
 
 ## Validação recente — prefixo Bernoulli de 96 entradas (PR #302)
 
