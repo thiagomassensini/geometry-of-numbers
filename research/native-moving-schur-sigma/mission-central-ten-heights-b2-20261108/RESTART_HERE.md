@@ -8,13 +8,13 @@
 - B2 worktree: `/home/thlinux/worktrees/geometry-of-numbers-c2-central-ten-heights-b2-20261108`.
 - Base: B1 PR head `6397f479f8c373b59cdffea512bbd8dd95b24fb3`.
 - Lean: `leanprover/lean4:v4.32.0`; exclusive output root `/home/thlinux/tmp/c2-central-ten-heights-b2-20261108-lean432`.
-- B2.0 and B2.1 are complete. Public theorem `CarrySigmaObstruction.sigmaHeight50_ten_zero_witnesses_and_count` compiles and has the transitive axiom set `[propext, Classical.choice, Quot.sound]`.
-- B2.1 source, OLean, successful log and failed first-attempt log hashes are recorded in `VALIDATION.md`. The successful build log is committed under `evidence/`.
+- B2.0–B2.2 are complete. B2.1 exports the actual ten heights; B2.2 ties the reciprocal-square scales to those same witnesses and closes B1's `hbox`.
+- Source, OLean, successful build logs and failed first-attempt logs for B2.1/B2.2 are committed under `evidence/`; hashes and axiom reports are in `VALIDATION.md`.
 - C5 prefix128 completed before B2.1 compilation. Recheck that no Lean/Lake process is active before every later build.
 
 ## Next action
 
-Implement B2.2 in a new module: destruct the public B2.1 witness, define `a i = (ts i)⁻²`, and prove positivity, all rational `scaleLower`/`scaleUpper` bounds, `a 0 > a 1 > 0`, and the no-extra-hypothesis witness of B1's `hbox`. Compile only after confirming no C5 Lean/Lake process is active; then audit and commit/push B2.2.
+Implement B2.3 using `SigmaRHHeightBridge`: expose the ten original completed-characteristic roots and their order-one results from the B2.1 witness, use evenness for negative ordinates, and prove exhaustiveness on `0 < |Re w| ≤ 50` from the distinct-point count and separate simplicity. Keep the `operatorHeightParameter` and original continuation genealogy explicit. Compile only after confirming no Lean/Lake process is active; audit and commit/push B2.3.
 
 ## Honesty boundary
 

@@ -15,7 +15,7 @@ B2 supplies the scale-box premise `hbox` for B1 from the existing finite-height 
 ## Remaining B2 proof work
 
 - [x] Export the exact ten `Fin 10` witnesses and their original rational boxes through public theorem `sigmaHeight50_ten_zero_witnesses_and_count`, backed by the private `height50_*_certificate` results already in `SigmaHeight50Integration.lean`.
-- Convert those heights to reciprocal-square scales and prove they satisfy B1's rational scale boxes.
+- [x] Convert those same heights to reciprocal-square scales and prove positivity, B1's exact rational scale boxes, `a 0 > a 1 > 0`, and a no-extra-hypothesis witness of B1's `hbox`.
 - Prove the zeta-to-completed-characteristic zero and order transports at each positive height, use the even continuation for negative heights, and show the distinct-point count exhausts the height window without treating it as a multiplicity count.
 - Run a transitive axiom audit for every exported theorem. Add no axioms, `sorry`, `admit`, or `native_decide` substitutes.
 

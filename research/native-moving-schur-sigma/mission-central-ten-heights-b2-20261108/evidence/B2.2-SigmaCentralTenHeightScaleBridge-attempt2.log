@@ -1,0 +1,21 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-central-ten-heights-b2-20261108/research/native-moving-schur-sigma/SigmaCentralTenHeightScaleBridge.lean:44:2: error: 'change' tactic failed, pattern
+  1 / CarrySigmaCentral.ordinateUpper i ^ 2 ≤ t⁻
+is not definitionally equal to target
+  CarrySigmaCentral.scaleLower i ≤ (t ^ 2)⁻¹ ∧ (t ^ 2)⁻¹ ≤ CarrySigmaCentral.scaleUpper i
+/home/thlinux/worktrees/geometry-of-numbers-c2-central-ten-heights-b2-20261108/research/native-moving-schur-sigma/SigmaCentralTenHeightScaleBridge.lean:44:57: error: unexpected token '²'; expected command
+/home/thlinux/worktrees/geometry-of-numbers-c2-central-ten-heights-b2-20261108/research/native-moving-schur-sigma/SigmaCentralTenHeightScaleBridge.lean:78:41: error: Application type mismatch: The argument
+  hpos 0
+has type
+  0 < ts 0
+but is expected to have type
+  0 < ts 1
+in the application
+  add_pos (hpos 0)
+'CarrySigmaObstruction.sigmaHeight50_ten_height_scales' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.exists_sigmaHeight50_scale_hbox' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
