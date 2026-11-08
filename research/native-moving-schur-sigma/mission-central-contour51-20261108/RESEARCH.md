@@ -116,3 +116,31 @@ The formal C5 center map is now explicit: `displacedProductC 0 z` is the square 
 - [Entire native continuation and equality of germs](https://github.com/thiagomassensini/geometry-of-numbers/blob/main/research/native-moving-schur-sigma/SigmaNativeContinuation.lean)
 - [Height-52 count, simplicity](https://github.com/thiagomassensini/geometry-of-numbers/blob/main/research/native-moving-schur-sigma/height50-certified/hunts/rh_height_lean/lean/RHHeight/Main.lean)
 - [B1 strict rational gates and global large-window theorem](https://github.com/thiagomassensini/geometry-of-numbers/blob/agent/c2-central-hankel2-allorder-20261107/research/native-moving-schur-sigma/SigmaCentralTenModeRationalGate.lean)
+
+## Lean path bridge update — 2026-11-08
+
+`SigmaContour51ArbContourBridge.lean` now compiles the exact identity from the original completed
+continuation to the lower semicircle parameter used in the external Arb residual integration:
+
+```text
+(2πi)⁻¹ ∮ R(z)/z^(2n+2) dz
+  = ∫₀¹ (R(z(u))/z(u)^(2n+1)) du,
+  z(u)=circleMap 0 51 (-πu).
+```
+
+Lean proves `R` odd from `F` even, proves the quotient even and π-periodic, accounts for circle
+orientation and the `iz` derivative factor, and derives continuity from C1's zero-free circle. The
+adapter from `contour51ArbLowerPathResidualIntervalBounds` to the prior C2 interval proposition is
+also compiled. The remaining C3/C5 bridge is precise: prove the per-arc rational intervals contain
+this Lean path integrand and its integrals, including equality of the source derivative/log-
+derivative with the classical evaluator and verification of its Taylor/Cauchy remainder ranges.
+For the first determinant, only `n=0,1,2` inclusions are required; the resulting strict absolute
+margin is `1/1000000000`. All six strict residual lower margins are recorded in
+`CHECKPOINTS.md`. The uniform `|R|≤4/5` Lean theorem is independently open for the all-window route.
+
+This progress does not identify the C2 omitted-material tail, the ten-mode residual `e_n=H_n-P_n`,
+and the Arb Taylor/Cauchy remainder. Only the proved residue identity and lower-path identity
+relate `e_n` to the contour integral; the Taylor/Cauchy remainder only supports an external
+interval enclosure until its transfer is formalized. The C5 displaced-box signs still need an
+explicit interval transport to `d=0`; this branch reused no Bernoulli table or full zeta/Gamma node
+certificate.

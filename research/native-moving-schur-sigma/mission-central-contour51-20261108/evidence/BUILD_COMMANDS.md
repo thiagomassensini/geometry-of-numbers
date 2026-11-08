@@ -145,3 +145,15 @@ intermediate successful build with the three-residual interface before exposing 
 diagnostics/intermediate results. The module verifies exact rational endpoint simplifications and
 proves conditional source-residual, first-window, and all-window theorems. Its interval-transfer
 propositions remain open; no external certificate is treated as an axiom or theorem.
+
+## Arb lower-path identity and interval interface
+
+`SigmaContour51ArbContourBridge` compiled with Lean 4.32.0 and warnings treated as errors using the
+common environment above and `MODULE_NAME=SigmaContour51ArbContourBridge`, redirecting output to
+`/home/thlinux/tmp/c2-contour51-20261108-lean432/logs/SigmaContour51ArbContourBridge-attempt19.log`.
+It proves oddness of the original response, π-periodicity of the quotient, continuity from C1's
+zero-free boundary, and the exact identity between the normalized full-circle residual and the
+lower-path integral evaluated by Arb. It also adapts lower-path interval hypotheses to the previous
+residual interval gates and composes the first three with the `s=0` determinant gate. The external
+per-arc inclusions remain open; this build proves their exact path-coordinate interface and
+conditional consequences, not the Arb enclosures themselves.

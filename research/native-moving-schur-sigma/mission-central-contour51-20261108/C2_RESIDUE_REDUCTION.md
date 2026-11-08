@@ -103,6 +103,26 @@ remaining finite residual signs belong to later checkpoints; the C2 theorem does
 unconditional positivity of all central Hankel minors by itself. The numerical probe and external
 root boxes are not used as analytic proof steps in C2.
 
+## Arb lower-path identity proved in Lean
+
+`SigmaContour51ArbContourBridge.lean` proves the exact path reduction from the original source.
+Evenness of `F` gives oddness of `R=-F'/(2F)`; dividing by `z^(2n+1)` gives an even quotient
+`Q_n(z)=R(z)/z^(2n+1)`. C1's zero-free radius-51 boundary makes the angular quotient continuous.
+For every `n`, Lean proves
+
+```text
+(2πi)⁻¹ ∮_{|z|=51} R(z)/z^(2n+2) dz
+  = ∫₀¹ Q_n(circleMap 0 51 (-πu)) du.
+```
+
+This accounts for orientation, the circle derivative factor `iz`, π-periodicity, and the change
+`θ=-πu`. The proposition `contour51ArbLowerPathResidualIntervalBounds` states the exact interval
+inclusions in these lower-path coordinates; a proved adapter converts them to the circle-integral
+gate used by the residual and determinant theorems. Thus the path and normalization are no longer
+open. The inclusions themselves remain unproved in Lean: the external Taylor/Cauchy ranges still
+need to be transported to the actual derivative/log-derivative of the Lean continuation and
+integrated over the full rational arc partition.
+
 ## The three remainder notions
 
 - The **material tail** is the exact omitted-index sum in the native finite-head identity for the
@@ -110,9 +130,14 @@ root boxes are not used as analytic proof steps in C2.
 - The **central ten-mode residual** is
   `e_n = completedSigmaLogJet 0 n - ∑ i (ts i)^(-2*n-2)`. The theorem above proves it equals
   the normalized radius-51 contour integral for the original completed response.
-- The **contour remainder bound** is C4's estimate on that contour integral. It yields
-  `|e_n| ≤ 40*(1/2500)^(n+1)` only after the uniform circle bound is supplied. The C5 displaced
-  coefficient and determinant remainders are a separate family and need an explicit `d=0`
-  specialization before they can say anything about these central `e_n`.
+- The **C4 contour-integral bound** is the norm estimate for the normalized contour integral. From
+  `sup_|z|=51 |R(z)|≤4/5`, it gives `|e_n|≤40*(1/2500)^(n+1)` using the proved C2 residue identity
+  and rational radius conversion. This is not the material tail and supplies no sign.
+- The **Arb Taylor/Cauchy remainder** bounds omitted terms in the local Taylor evaluations of zeta
+  and zeta-prime on each rational arc. Summing those complete-arc enclosures gives an external
+  interval for the lower-path integral, hence for `e_n` only through the proved path identity.
+  This numerical-analysis remainder is not a source tail or a second residual.
+- The **C5 displaced coefficient and determinant remainders** are another family and need an
+  explicit `d=0` interval transport before they can say anything about these central `e_n`.
 
 No sign for any of these remainders is inferred without a separate theorem.

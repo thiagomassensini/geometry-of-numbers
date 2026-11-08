@@ -10,6 +10,42 @@
 - [x] **C2→C4→C6 source composition.** `SigmaContour51SourceTail.lean` fixes the same C1 root list for every order, derives its reciprocal-square scale boxes and the original-jet decomposition, applies C4 to the C2 contour identity, and feeds the resulting `C=40` tail into C6. `completedNative_sigmaPadeD_pos_of_contour51_bound` is an original-source conditional theorem: assuming the radius-51 bound `‖R‖≤4/5`, the six central residual signs imply `∀ s, 0 < sigmaPadeD 0 s`. `completedNative_sigmaPadeD_zero_pos_of_contour51_bound` proves the `s=0` gate assuming only `e_0≥0` and `e_2≥0`; the C4 absolute bound controls the middle moment without assuming `e_1≥0`. Each declaration reports only standard axioms. Thus `hdecomp` and `hbox` are discharged; the analytic circle bound and the Lean transfer of the residual intervals remain open.
 - [x] **Arb residual interface and first-window gate.** `SigmaContour51ArbResidualGate.lean` records exact rational endpoints from the 4096-arc JSON and proves the lower/upper coarse margins in Lean. `contour51ArbResidualIntervalBounds` states the six-interval transfer; `contour51ArbFirstThreeResidualIntervalBounds` states the minimal three-interval transfer. Under the latter, `completedNative_sigmaPadeD_zero_pos_of_contour51_arb_intervals` proves `1/1000000000 < sigmaPadeD 0 0`, with no `hR` premise. Its exact gate lower bound retains the product and square cross terms. The all-window wrapper needs `hR` and all six interval inclusions.
 
+## Adendo 2026-11-08 — caminho inferior Arb formalizado em Lean
+
+- [x] **Paridade e parametrização exata.** `SigmaContour51ArbContourBridge.lean` prova a partir de `completedNativeCharacteristicContinuation_even` que a resposta original `R(z)=-F'(z)/(2F(z))` é ímpar e que `Q_n(z)=R(z)/z^(2n+1)` é par. C1 fornece ausência de zeros em `|z|=51`; logo o integrando angular é contínuo e integrável. Para cada `n`, o teorema compilado `contour51OriginalResidualIntegral_eq_lower_path` identifica exatamente
+
+  ```text
+  (2πi)⁻¹ ∮ R(z)/z^(2n+2) dz
+    = ∫₀¹ Q_n(51 exp(-π i u)) du.
+  ```
+
+  A conversão inclui o fator `i` da derivada do `circleMap`, a orientação positiva completa, a periodicidade π por paridade de `Q_n` e a mudança de variável `θ=-πu`. Portanto a parametrização e a redução meia-volta do script Arb agora estão fechadas em Lean, sem premissa analítica adicional.
+- [x] **Transferência da forma da hipótese.** `contour51ArbLowerPathResidualIntervalBounds` enuncia as inclusões diretamente nos seis integrais parametrizados usados pelo Arb. `contour51ArbResidualIntervalBounds_of_lower_path_bounds` transforma essa proposição exatamente na entrada dos gates anteriores; o teorema `completedNative_sigmaPadeD_zero_pos_of_contour51_lower_path_intervals` compõe o primeiro gate e preserva a margem absoluta `1/1000000000`.
+- [ ] **Ainda aberto: inclusões do avaliador Arb nos integrais Lean.** Não provamos que as faixas Acb por arco do script contêm os valores do avaliador da continuação Lean em cada arco. O Lean já prova a identidade `F(z)=sigmaCompletedXiParameter(operatorHeightParameter z)` e a forma clássica de `xi` no semiplano aplicável; falta transportar também a derivada/log-derivada para a expressão `1/s + 1/(s-1) - log(pi)/2 + digamma(s/2)/2 + zeta'(s)/zeta(s)`, e formalizar as faixas Taylor/Cauchy-Arb e a soma sobre os 4096 arcos. As inclusões externas ainda não são teoremas Lean.
+- [ ] **Ainda aberto: cota uniforme C3 em Lean.** O certificado externo de 512 arcos continua provando numericamente com aritmética Arb `|R|<0.746413<4/5`, mas a inclusão das faixas na função de Lean e o teorema uniforme não foram formalizados. A identidade de caminho não descarrega essa obrigação.
+- **Margens racionais de `e_0,…,e_5`.** Lean verifica que os endpoints externos permitem as margens estritas abaixo; elas só viram afirmações sobre os resíduos após a inclusão aberta acima.
+
+  | `n` | margem inferior estrita disponível para `e_n` | limite superior simples disponível |
+  |---:|---:|---:|
+  | 0 | `9/1000` | `1/100` |
+  | 1 | `9/10000000` | `1/1000000` |
+  | 2 | `9/50000000000` | `1/4000000000` |
+  | 3 | `1/25000000000000` | `1/10000000000000` |
+  | 4 | `1/100000000000000000` | `1/50000000000000000` |
+  | 5 | `1/500000000000000000000` | `1/100000000000000000000` |
+
+- **Primeiro avanço incondicional ainda necessário.** O lema mínimo é provar `contour51ArbFirstThreeLowerPathResidualIntervalBounds`, isto é, as duas inclusões para os integrais do caminho inferior em `n=0,1,2`. Somado aos teoremas já compilados, isso fecha `sigmaPadeD 0 0 > 1/1000000000` para a fonte original, sem usar `hR`. Para todos os deslocamentos centrais, ainda são necessárias as seis inclusões e a cota uniforme C3 em Lean.
+- **Termos cruzados e resíduos.** Em toda passagem para determinantes, conservar a identidade completa
+
+  ```text
+  D_s(H)-D_s(P) = P_s*e_(s+2) + e_s*P_(s+2) - 2*P_(s+1)*e_(s+1)
+                 + e_s*e_(s+2) - e_(s+1)^2.
+  ```
+
+  Os limites da porta `s=0` usam intervalos absolutos para `H_0,H_1,H_2` e dão a margem racional estrita `1/1000000000`; não usam porcentagens de cancelamento nem uma hipótese de sinal para o resto. A cauda material finita de C2, o resíduo central dos dez modos `e_n`, e o resto/cota de integração no contorno são objetos diferentes; as relações provadas são `e_n=H_n-P_n` pelo C2 e `e_n` igual ao integral normalizado pelo teorema de resíduos. A cota C4 só se relaciona a esse último integral após fornecer a hipótese de círculo `hR`.
+- **Coordenação C5.** Podem ser compartilhados o avaliador intervalar genérico, aritmética racional de caixas, normalização da fonte e o transporte algébrico já provado. Não se duplicou a tabela de Bernoulli nem a certificação de todos os nós zeta/Gamma. Caixas certificadas em `d=0.0495` ou `d=0.1` não se tornam caixas no centro sem a transformação quantitativa explícita para `d=0`; a ponte de centro algébrica atual não transporta intervalos deslocados.
+- **Auditoria Lean.** O módulo compila em Lean 4.32.0 com `-DwarningAsError=true`; os `#print axioms` dos teoremas novos mostram apenas `[propext, Classical.choice, Quot.sound]`. Não há `sorry`, `admit` ou axioma matemático novo. O estado C3→C5 continua condicional e nenhuma positividade central incondicional é afirmada.
+
 Exact remaining Lean inputs:
 
 ```text
@@ -24,23 +60,25 @@ hArb : ∀ n ≤ 5,
 
 Here `L_n,U_n` are the exact rational endpoints in the Lean module and JSON. The first-window
 theorem takes only `contour51ArbFirstThreeResidualIntervalBounds` for `n≤2`; the all-window theorem
-takes `hR` and `contour51ArbResidualIntervalBounds` for `n≤5`. No other analytic or sign premise
-is hidden in those conditional theorem statements.
-The existing Lean completed-zeta formula bridges the continuation to the classical xi expression;
-the remaining certificate proof must transport its derivative/log-derivative formula to the Arb
-arc intervals, then formalize circle orientation, oddness, and integration of complete-arc ranges.
+takes `hR` and `contour51ArbResidualIntervalBounds` for `n≤5`. The newer
+`contour51ArbLowerPathResidualIntervalBounds` is the equivalent statement in Arb's lower-path
+coordinates, and its adapter to these circle-integral hypotheses is now proved. No other analytic
+or sign premise is hidden in those conditional theorem statements. The existing Lean completed-zeta
+formula bridges the continuation to the classical xi expression; only derivative/log-derivative
+transport and integration of the complete arc ranges remain open. The circle orientation, path
+scaling, response oddness, quotient evenness, and half-circle reduction are compiled.
 - [x] **Exact width interface for C5 residual signs.** `SigmaContour51BoxSensitivity.lean` proves that the current ten-mode power-sum boxes for `n=0,…,5` have widths strictly below `14/10^6`, `9/10^8`, `6/10^10`, `4/10^12`, `3/10^14`, and `2/10^16`. Its `completedNativeContour51Residual_nonneg_of_jet_margin` theorem shows that an original-source jet lower bound clearing `lowMoment n` by the corresponding rational budget implies `e_n≥0` for any height list in the B2 boxes. No such jet lower bound is proved here, so this does not close any residual sign. Exact per-height width diagnostics against the old non-certified probes identify likely refinement candidates; see `evidence/C2_box_sensitivity.log`.
 - [x] **C5 center transport, algebraic part only.** The same module proves `displacedProductC 0 z = completedNativeOperatorCharacteristic(z)^2`; with the explicit genuine-strip condition, a second theorem identifies it with `completedNativeCharacteristicContinuation(z)^2`, the original continuation used in the contour argument. It specializes the existing source Bézout recurrence at `d=0`, identifies its source log-derivative coefficient with `2*completedSigmaLogJet 0 n`, and proves `e_n = completedSigmaDisplacedMoment 0 n / 2 - P_n`. The generic source recurrence audit compiles with standard axioms only and retains the original `completedSigmaDensity`, `displacedProductC`, and central jets. C5 interval boxes at `d=99/2000` or `d=1/10` still do not transfer to `d=0` without a separate quantitative displacement bound.
 
 ## Residual signs, available margins, and remaining inputs
 
 - The central residuals are `e_n := completedSigmaLogJet 0 n - ∑ i, (ts i)^(-2*n-2)`. C2 now proves, for one fixed `ts` and every `n`, that this residual equals the normalized radius-51 contour integral. It is distinct from the omitted-material tail in the exact C2 finite-head identity and from C5's displaced coefficient/determinant remainders.
-- The external Arb interval certificate supplies strict rational lower margins for all six original residuals, as listed in `C3_ARb_CERTIFICATE.md` and stored exactly in `evidence/C3_ARb_RESIDUALS_4096.json`. Lean checks those rational comparisons. It does **not** yet prove that the Arb enclosures contain the corresponding Lean full-circle integrals; that interval-transfer proposition remains an explicit hypothesis. The older mpmath probes remain non-certified diagnostics only. C4's conditional upper bound `|e_n| ≤ 40*(1/2500)^(n+1)` is separate and supplies no sign by itself.
+- The external Arb interval certificate supplies strict rational lower margins for all six original residuals, as listed in `C3_ARb_CERTIFICATE.md` and stored exactly in `evidence/C3_ARb_RESIDUALS_4096.json`. Lean checks those rational comparisons and proves the exact full-circle to lower-path identity. It does **not** yet prove that the per-arc Arb enclosures contain the Lean lower-path integrals; this interval-transfer proposition remains an explicit hypothesis. The older mpmath probes remain non-certified diagnostics only. C4's conditional upper bound `|e_n| ≤ 40*(1/2500)^(n+1)` is separate and supplies no sign by itself.
 - The current B2 boxes give exact ten-mode interval widths with decimal displays `1.3038935355470468e-5`, `8.8707651982351861e-8`, `5.8021702152449330e-10`, `3.6785120434605851e-12`, `2.2551276469308842e-14`, and `1.3430971414644236e-16`. Lean proves strict rational upper budgets `14/10^6`, `9/10^8`, `6/10^10`, `4/10^12`, `3/10^14`, and `2/10^16`. Relative to the unverified probes, the widths are about `0.00136`, `0.0949`, `2.93`, `71.6`, `1.53e3`, and `3.02e4` times the corresponding probe. This comparison only guides refinement; it is not a residual margin. On that provisional scale, the leading 1, 3, 4, and 5 height intervals dominate the width for `n=2,3,4,5`, respectively; the other height boxes need no refinement on this estimate.
 - The available exact-rational *determinant* margins for C6's `C=40` gate have decimal displays approximately `1.233805751396619e-10`, `2.370461448625535e-15`, `1.677704301041960e-20`, and `4.956177598481227e-26` for `s=0,1,2,3`. The Lean theorem proves each exact rational expression is strictly positive. These bounds depend on the tail/sign premises and do not certify `e_n` signs.
 - These four determinant margins already use the lower and upper endpoint power sums over the full ten-scale boxes, so they account for the current box widths. `SigmaContour51BoxSensitivity.lean` proves exact width budgets, while the new Arb residual intervals evaluate the original contour source directly and so do not approximate the ten roots by their box centers. The external residual margins are absolute rational bounds, not cancellation percentages. Root-box refinement is therefore not needed to establish the current Arb signs; the remaining issue is the Lean interval-transfer proof.
 - Still needed for all windows: a Lean theorem supplying the C3 circle bound to C4 and the interval-transfer theorem for all six `e_n`. The source-level wrapper has already discharged `hdecomp` and `hbox` from the fixed C2 root list.
-- Smallest first-window advance: prove `contour51ArbFirstThreeResidualIntervalBounds` from the Arb arc ranges. The compiled direct `s=0` gate consumes only those three source intervals and proves the absolute determinant margin `1/1000000000 < sigmaPadeD 0 0`; it does not need the C3 `hR` bound. The all-window theorem still requires the C3 bound and `contour51ArbResidualIntervalBounds` for all six indices.
+- Smallest first-window advance: prove `contour51ArbFirstThreeLowerPathResidualIntervalBounds` from the complete Arb arc ranges for `n=0,1,2`. The compiled direct `s=0` gate consumes only those three source intervals and proves the absolute determinant margin `1/1000000000 < sigmaPadeD 0 0`; it does not need the C3 `hR` bound. The all-window theorem still requires the C3 bound and `contour51ArbLowerPathResidualIntervalBounds` for all six indices.
 - C5 reuse is limited to its general rational interval arithmetic, node evaluation, original-source normalization, and transport infrastructure. Its conditional signs at `d=99/2000` and `d=1/10` are not enclosures for central `e_n`; any reuse must prove a `d=0` specialization. Do not duplicate its Bernoulli table or full zeta/Gamma node certificate.
 - The center specialization is now proved for the formal source recurrence, but no nonzero-displacement source coefficient box has been transported. Reusable pieces remain the C5 rational ball arithmetic, fixed-node evaluator, original-source normalization, and coefficient transport; any numerical reuse must additionally enclose the change from the C5 displacement to `d=0`. No Bernoulli table or zeta/Gamma node evaluation was duplicated in this checkpoint.
 
