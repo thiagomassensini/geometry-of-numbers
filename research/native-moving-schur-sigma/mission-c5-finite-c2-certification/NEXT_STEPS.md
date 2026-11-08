@@ -1,11 +1,11 @@
 # Próximos passos — C5
 
-## Estado atual — prefixo Bernoulli de 160 entradas em compilação (2026-11-08)
+## Estado atual — prefixo Bernoulli de 160 entradas validado; integração pendente (2026-11-08)
 
-- O prefixo 128 está integrado pela PR #309 (`c7782c54b78f97b1ea3f5a61f6e0ceefe75f2f11`). A prova candidata `c5BernoulliPrimeTable_160_eq_data` está em `SigmaC5BernoulliDataCertificate160.lean`, mas ainda não compilou com sucesso.
-- A reprodução destacada está ativa na sessão tmux `c5-bernoulli-prefix160-20261108`; consulte `evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/runner-status.txt`. As duas tentativas interrompidas anteriores estão documentadas e não contam como validação.
-- Até a prova e auditoria 160 passarem, o estado continua 128/601 formalmente certificado e 473 igualdades abertas. A ponte das caixas CSV, inclusões da fonte e sinais finais também continuam abertas.
-- **Próxima ação concreta:** esperar a sessão existente; não relançar enquanto status for `RUNNING`. Em caso de sucesso, conferir o log do teorema, `#print axioms`, os hashes e então preparar a PR do prefixo 160. Evidência desta etapa: `evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/README.md`.
+- O prefixo 128 está integrado pela PR #309 (`c7782c54b78f97b1ea3f5a61f6e0ceefe75f2f11`). A prova `c5BernoulliPrimeTable_160_eq_data` em `SigmaC5BernoulliDataCertificate160.lean` compilou limpa e passou pela auditoria isolada dos axiomas em Lean 4.32.0.
+- A execução terminou com `EXIT=0`, `CLEAN_BUILD=PASS`, `AXIOM_AUDIT=PASS`; tempo 1h56m34s e pico RSS 12,572,772 KiB. As execuções interrompidas anteriores continuam registradas como tentativas sem resultado.
+- O estado formal é 160/601, com 441 igualdades abertas. A ponte das caixas CSV, inclusões da fonte e sinais finais também continuam abertas.
+- **Próxima ação concreta:** publicar por PR e integrar o prefixo 160; então iniciar a prova cumulativa do prefixo 192. Evidência, logs, auditoria, pins e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/README.md`.
 
 ## Histórico — prefixo Bernoulli de 64 entradas integrado (2026-11-08)
 

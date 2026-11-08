@@ -2,11 +2,11 @@
 
 ## Resultado
 
-Esta etapa tenta estender `c5BernoulliPrimeTable_128_eq_data` aos índices
-0–159 com `c5BernoulliPrimeTable_160_eq_data`. O resultado continua parcial:
-mesmo depois desta igualdade, 441 das 601 entradas ainda não estarão
-formalmente certificadas. A ponte CSV–Lean das caixas de zeta, as inclusões da
-fonte C5 e os sinais finais permanecem obrigações separadas.
+Esta etapa estendeu `c5BernoulliPrimeTable_128_eq_data` aos índices 0–159 com
+`c5BernoulliPrimeTable_160_eq_data`. O resultado continua parcial: 441 das 601
+entradas ainda não estão formalmente certificadas. A ponte CSV–Lean das caixas
+de zeta, as inclusões da fonte C5 e os sinais finais permanecem obrigações
+separadas.
 
 ## Ambiente fixado
 
@@ -35,7 +35,27 @@ prefixo 128; seu resultado está em
 reutiliza a mesma tabela literal, acrescentando somente o teorema cumulativo
 0–159.
 
-## Tentativa anterior e estado
+## Resultado validado (2026-11-08)
+
+`CarrySigmaObstruction.c5BernoulliPrimeTable_160_eq_data` compilou em uma
+reprodução limpa com Lean 4.32.0 e `warningAsError=true`. A auditoria isolada
+do `#print axioms` passou: somente `propext`, `Classical.choice` e
+`Quot.sound`; sem `sorryAx` ou axiomas próprios. A reprodução terminou com
+`EXIT=0`, `CLEAN_BUILD=PASS` e `AXIOM_AUDIT=PASS`.
+
+- Teorema: `research/native-moving-schur-sigma/SigmaC5BernoulliDataCertificate160.lean`.
+- Auditor: `SigmaC5BernoulliDataCertificate160Audit.lean`.
+- Tempo da prova cumulativa: 1h56m34s; pico RSS: 12,572,772 KiB (aprox. 11.99 GiB).
+- Auditoria isolada: 4.23s; pico RSS: 3,236,680 KiB.
+- SHA-256 do arquivo Lean da prova: `371c80b9add3cb8365d991393ef53b38678edf9175229907a8b1cab9b15b969e`.
+- A tabela agora tem 160/601 igualdades formalmente certificadas; 441 continuam abertas.
+
+Este é um checkpoint parcial. A prova só valida a igualdade da recorrência de
+Bernoulli com os dados racionais até o índice 159. A ponte das caixas de zeta,
+as inclusões da fonte C2 e os dois sinais finais não são demonstrados aqui.
+Commit local de prova `5f9cb0e`; a integração pela PR ainda está pendente.
+
+## Tentativas anteriores
 
 A primeira execução em primeiro plano desapareceu depois de cerca de 45
 minutos, sem log final nem `.olean`; o código de saída é desconhecido. O pico
@@ -44,10 +64,8 @@ execução destacada também foi encerrada junto do executor, antes do compilado
 Lean iniciar. Ambas as interrupções e os logs vazios estão preservados em
 `attempts/`; nenhuma conta como compilação válida nem como falha da prova.
 
-A reprodução atual é iniciada por `bash run-detached.sh`, que cria uma sessão
-tmux separada e grava seu nome, PID, horário e código de saída em arquivos
-desta pasta. Consulte `runner-status.txt` e `run-state.txt` para acompanhar a
-execução. Até a compilação e a auditoria passarem, nenhum resultado do prefixo
-160 deve ser contabilizado. C5 continua incompleta até que a tabela inteira,
-a ponte das caixas, as inclusões da fonte e os dois sinais finais estejam
-certificados.
+A reprodução usada foi iniciada por `bash run-detached.sh`, que criou uma
+sessão tmux separada. `runner-status.txt`, `run-state.txt`, os logs, o resultado
+e os hashes preservam o encerramento. A validação do prefixo 160 passou, mas C5
+continua incompleta até a tabela inteira, a ponte das caixas, as inclusões da
+fonte e os dois sinais finais estarem certificados.
