@@ -138,6 +138,10 @@ def certify_arc(index, pi, log_pi):
 
 
 def main():
+    if flint.__version__ != "0.8.0":
+        raise RuntimeError(
+            f"certificate recorded for python-flint 0.8.0, found {flint.__version__}"
+        )
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--csv",
