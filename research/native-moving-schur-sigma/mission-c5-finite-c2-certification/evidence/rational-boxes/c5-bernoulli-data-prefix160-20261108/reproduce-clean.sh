@@ -43,9 +43,15 @@ sha256sum \
   "$C5_EVIDENCE/README.md" \
   "$C5_EVIDENCE/reproduce-clean.sh" \
   "$C5_EVIDENCE/run-detached.sh" \
+  "$C5_EVIDENCE/run-under-tmux.sh" \
   "$C5_EVIDENCE/check-axioms.py" \
   "$C5_EVIDENCE/attempts/foreground-session-interruption.txt" \
   "$C5_EVIDENCE/attempts/SigmaC5BernoulliDataCertificate160-foreground-session-interrupted-empty-output.log" \
+  "$C5_EVIDENCE/attempts/nohup-launch-interruption.txt" \
+  "$C5_EVIDENCE/attempts/nohup-launch-second-attempt-empty-lean-log.log" \
+  "$C5_EVIDENCE/attempts/nohup-launch-second-attempt-empty-runner.log" \
+  "$C5_EVIDENCE/attempts/nohup-launch-second-attempt-run-state.txt" \
+  "$C5_EVIDENCE/attempts/nohup-launch-second-attempt-status-running.txt" \
   "$C5_EVIDENCE/SigmaC5BernoulliDataCertificate160-clean-build.log" \
   "$C5_EVIDENCE/SigmaC5BernoulliDataCertificate160Audit-clean-build.log" \
   "$C5_EVIDENCE/axiom-audit.log" \

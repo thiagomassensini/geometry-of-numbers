@@ -39,13 +39,15 @@ reutiliza a mesma tabela literal, acrescentando somente o teorema cumulativo
 
 A primeira execução em primeiro plano desapareceu depois de cerca de 45
 minutos, sem log final nem `.olean`; o código de saída é desconhecido. O pico
-observado foi 6,345,220 KiB de RSS, com CPU ativa. A interrupção e o log vazio
-foram preservados em `attempts/`; essa execução não conta como compilação
-válida nem como falha da prova.
+observado foi 6,345,220 KiB de RSS, com CPU ativa. A segunda tentativa de
+execução destacada também foi encerrada junto do executor, antes do compilador
+Lean iniciar. Ambas as interrupções e os logs vazios estão preservados em
+`attempts/`; nenhuma conta como compilação válida nem como falha da prova.
 
-A nova execução será iniciada por `bash run-detached.sh`, que salva o PID, o
-log do executor e o código de saída em arquivos desta pasta para sobreviver a
-uma mudança de turno. Até a compilação e a auditoria passarem, nenhum resultado
-do prefixo 160 deve ser contabilizado. C5 continua incompleta até que a tabela
-inteira, a ponte das caixas, as inclusões da fonte e os dois sinais finais
-estejam certificados.
+A reprodução atual é iniciada por `bash run-detached.sh`, que cria uma sessão
+tmux separada e grava seu nome, PID, horário e código de saída em arquivos
+desta pasta. Consulte `runner-status.txt` e `run-state.txt` para acompanhar a
+execução. Até a compilação e a auditoria passarem, nenhum resultado do prefixo
+160 deve ser contabilizado. C5 continua incompleta até que a tabela inteira,
+a ponte das caixas, as inclusões da fonte e os dois sinais finais estejam
+certificados.
