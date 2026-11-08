@@ -1,5 +1,13 @@
 # C5 — validação
 
+## Validação recente — prefixo Bernoulli de 64 entradas (PR #300)
+
+- `c5BernoulliPrimeTable_64_eq_data` prova as primeiras 64 entradas (índices 0–63), apoiando-se no certificado 0–32 integrado.
+- Reprodução limpa Lean 4.32.0 com `warningAsError=true`: sonda, tabela, certificados 32/64 e auditoria compilaram. `CLEAN_BUILD=PASS`.
+- Comparação racional exata da sonda com os 601 literais: `DATA_TABLE_CHECK=PASS`. Auditoria isolada: `AXIOM_AUDIT=PASS`; apenas `propext`, `Classical.choice`, `Quot.sound`.
+- O certificado 0–64 compilou em 14:09, pico RSS de aproximadamente 4.8 GiB. PR #300, commit `509e773`, merge `90e2f571efb482993682a05ccc938ee9aef388e5`.
+- Limite: 64/601 entradas estão formalmente provadas; as outras 537, a ponte CSV–Lean das caixas de zeta e as inclusões da fonte continuam abertas. Logs, pins, reprodução e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix64-20261108/README.md`.
+
 ## Validação recente — primeiro bloco da tabela de Bernoulli (PR #298)
 
 - `c5BernoulliPrimeTable_32_eq_data` prova formalmente que o prefixo de 32 valores coincide com a recorrência `c5BernoulliPrimeTable`.

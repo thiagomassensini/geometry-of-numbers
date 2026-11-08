@@ -1,5 +1,13 @@
 # C5 — mapa dos teoremas e obrigações
 
+## Resultado integrado — igualdade do prefixo Bernoulli com 64 entradas (PR #300)
+
+| Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |
+|---|---|---|---|---|
+| `CarrySigmaObstruction.c5BernoulliPrimeTable_64_eq_data` | `SigmaC5BernoulliDataCertificate64.lean` | nenhuma | entradas 0–63 da recorrência coincidem com `c5BernoulliPrimeDataPrefix64` | **PROVADO e integrado pela PR #300**, commit `509e773`, merge `90e2f571efb482993682a05ccc938ee9aef388e5`; axiomas: `propext`, `Classical.choice`, `Quot.sound` |
+
+O build limpo levou 14:09 para o certificado, com pico RSS de 4.8 GiB. A reprodução também comparou exatamente os 601 valores da sonda com os literais. Só 64 das 601 entradas têm igualdade formal certificada; o próximo prefixo a provar contém 96 entradas (índices 0–95). A ponte CSV–Lean e as inclusões C5 permanecem abertas. Evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix64-20261108/README.md`.
+
 ## Resultado integrado — igualdade do prefixo Bernoulli 0–32 (PR #298)
 
 | Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |

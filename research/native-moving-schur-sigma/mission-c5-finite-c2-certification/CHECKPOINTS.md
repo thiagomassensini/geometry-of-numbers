@@ -1,5 +1,13 @@
 # C5 — checkpoints
 
+## 2026-11-08 — prefixo Bernoulli de 64 entradas certificado pela PR #300
+
+- `c5BernoulliPrimeTable_64_eq_data` prova formalmente as entradas 0–63, estendendo a igualdade 0–31 integrada pela PR #298.
+- Build limpo Lean 4.32.0 com warnings como erros; o certificado levou 14:09, com pico de RSS 4.8 GiB. Comparação racional exata dos 601 valores, build e auditoria passaram; axiomas padrão apenas.
+- Evidência, pins, comandos, tentativas, logs e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix64-20261108/README.md`.
+- Commit de prova `509e773`; PR #300; merge na `main` `90e2f571efb482993682a05ccc938ee9aef388e5`.
+- Escopo parcial: 537 entradas ainda precisam de prova formal. O próximo bloco cobre as primeiras 96 entradas; caixas de zeta e inclusão da fonte permanecem abertas.
+
 ## 2026-11-08 — primeiro bloco da tabela de Bernoulli certificado pela PR #298
 
 - `c5BernoulliPrimeTable_32_eq_data` prova em Lean 4.32 a igualdade da recorrência com as primeiras 32 entradas literais.

@@ -1,5 +1,13 @@
 # Retomar primeiro — missão C5
 
+## Estado atual — tabela de Bernoulli certificada até 64 entradas (2026-11-08)
+
+- PR #300 está integrada na `main`: commit de prova `509e773`, merge `90e2f571efb482993682a05ccc938ee9aef388e5`.
+- `c5BernoulliPrimeTable_64_eq_data` prova as primeiras 64 entradas, índices 0–63, usando o teorema integrado para 32 como base. A reprodução limpa também compara exatamente os 601 valores da sonda com os literais.
+- Builds Lean 4.32.0 com `warningAsError=true` passaram; auditoria isolada aceita só `propext`, `Classical.choice`, `Quot.sound`. O certificado 0–64 levou 14:09 e atingiu 4.8 GiB RSS. Evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix64-20261108/README.md`.
+- Apenas 64/601 valores têm igualdade formal certificada; os outros 537 continuam abertos. Próximo: provar o prefixo de 96 entradas, índices 0–95, e avançar em blocos até 601; depois retomar a ponte formal com uma caixa de zeta.
+- Nenhuma caixa CSV de zeta ou inclusão da fonte C5 é provada aqui. C5 permanece incompleta; não reabrir C1B/C2/C3/C4.
+
 ## Estado atual — primeiro bloco da tabela de Bernoulli certificado (2026-11-08)
 
 - A PR #298 está integrada na `main`: commit de prova `1ed4a00`, merge `171c19681482312bf71bffdcd23b24a728edf04b`.
