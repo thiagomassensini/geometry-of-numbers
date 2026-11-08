@@ -103,7 +103,7 @@ Os logs de compilação, auditoria, pins e hashes estão em `evidence/c2-c3-prio
 
 ## Conferência na main após a retomada (2026-11-08)
 
-`origin/main@ebd6c57c33edcf8596f09889c7bf956e7d9b284f` mantém C1B (#155), C2 (#157), C3 (#159) e o checkpoint incompleto 4.35 (#221) integrados. Os fontes Lean C2/C3 permanecem idênticos à validação 4.32 de `origin/main@78a10e8af611a5c690b248f8889b9e87674fd5c8`; builds e auditoria transitiva aplicam-se à ponta atual (133 raízes, 70.861 dependências, axiomas padrão). Os checksums dos patches e logs preservados 4.35 foram conferidos. A rota 4.32 não apresenta bloqueio, portanto não há adaptação geral 4.35 a retomar antes de uma necessidade demonstrada. Veja `evidence/c2-c3-priority-resume-20261108/VALIDATION.md`.
+O snapshot de código `ebd6c57c33edcf8596f09889c7bf956e7d9b284f` contém C1B (#155), C2 (#157), C3 (#159) e o checkpoint incompleto 4.35 (#221) integrados. A reconciliação documental entrou depois pela PR #307, merge `898e1ca03b8f1121cb3d699c3dfb7bcfc8ef3a5a`. Os fontes Lean C2/C3 permanecem idênticos à validação 4.32 de `origin/main@78a10e8af611a5c690b248f8889b9e87674fd5c8`; builds e auditoria transitiva aplicam-se ao código integrado (133 raízes, 70.861 dependências, axiomas padrão). Os checksums dos patches e logs preservados 4.35 foram conferidos. A rota 4.32 não apresenta bloqueio, portanto não há adaptação geral 4.35 a retomar antes de uma necessidade demonstrada. Veja `evidence/c2-c3-priority-resume-20261108/VALIDATION.md`.
 
 
 ## Conferência após a PR #288 — 2026-11-07

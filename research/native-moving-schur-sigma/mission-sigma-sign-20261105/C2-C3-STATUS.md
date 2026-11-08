@@ -2,7 +2,7 @@
 
 ## Retomada e reconciliação da prioridade — 2026-11-08
 
-`origin/main@ebd6c57c33edcf8596f09889c7bf956e7d9b284f` já contém as provas e integrações solicitadas: C1B pela PR #155 (merge `0586e238441096ecd2248e3f14bdac3a832af427`), C2 pela PR #157 (merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`) e C3 pela PR #159 (merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`). Portanto, não há código C2/C3 pendente de integração.
+O snapshot de código `ebd6c57c33edcf8596f09889c7bf956e7d9b284f` já continha as provas e integrações solicitadas: C1B pela PR #155 (merge `0586e238441096ecd2248e3f14bdac3a832af427`), C2 pela PR #157 (merge `f4f5cf5ecc60ea3747cbaf21389fab52832d3949`) e C3 pela PR #159 (merge `b9cae2c0f4291ba7968c3ded2f2fecedf71cf9e8`). A reconciliação documental foi integrada depois pela PR #307, merge `898e1ca03b8f1121cb3d699c3dfb7bcfc8ef3a5a`; nenhum fonte Lean foi alterado. Portanto, não há código C2/C3 pendente de integração.
 
 A validação Lean 4.32 de 2026-11-07 foi compilada sobre `origin/main@78a10e8af611a5c690b248f8889b9e87674fd5c8`. A comparação de toda a árvore `research/native-moving-schur-sigma/` até `ebd6c57` encontrou apenas arquivos C5 novos/alterados e registros; nenhum módulo Lean preexistente da closure C2/C3 foi alterado. Os hashes e logs que identificam a execução estão em `evidence/c2-c3-live-main-20261107/`; por identidade de fontes, essa compilação e auditoria continuam aplicáveis à `main` atual. Os verificadores aceitaram apenas `propext`, `Classical.choice` e `Quot.sound`, e `SigmaPadeAudit` conferiu 133 raízes públicas e 70.861 dependências.
 
