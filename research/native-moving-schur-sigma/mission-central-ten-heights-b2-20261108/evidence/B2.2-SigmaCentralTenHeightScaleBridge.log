@@ -1,0 +1,2 @@
+'CarrySigmaObstruction.sigmaHeight50_ten_height_scales' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.exists_sigmaHeight50_scale_hbox' depends on axioms: [propext, Classical.choice, Quot.sound]

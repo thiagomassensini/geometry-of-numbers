@@ -1,0 +1,23 @@
+'RHHeight.rh_height_fifty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHHeight.zero_count_fifty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHHeight.rh_up_to_height_fiftytwo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HardyFirstZero.first_zero_on_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HardyTenZeros.ten_zeros_on_line_below_fifty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HardyTenZeros.zero_in_2102' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HardyTenZeros.zero_in_2501' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HardyTenZeros.zero_in_3042' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HardyTenZeros.zero_in_3293' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HardyTenZeros.zero_in_3758' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HardyTenZeros.zero_in_4091' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HardyTenZeros.zero_in_4332' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HardyTenZeros.zero_in_4800' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HardyTenZeros.zero_in_4977' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.sigmaHeight50_ten_zero_witnesses_and_count' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.exists_firstSigmaDisplacedProductIsolation_from_height50_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.exists_firstSigmaHeight50PadeRecovery_from_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
