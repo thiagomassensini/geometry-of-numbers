@@ -1,5 +1,13 @@
 # C5 — checkpoints
 
+## 2026-11-08 — primeiro nó complexo de Gamma em `d=1/10` integrado pela PR #294
+
+- `CarrySigmaObstruction.c5GammaComplexNodeDOneComplexBox_contains` contém `Γ(1/5 + 3i/20)`, primeiro ponto complexo da malha de deslocamento `d=1/10`, na altura de Cauchy `3/10`.
+- A caixa compõe `240^z`, 16 blocos de 64 termos do núcleo racional e `gamma_finite_1024_240_error`, com inflação `10⁻⁹⁹`.
+- Cinco módulos passaram em Lean 4.32.0 com `warningAsError=true`; 14 relatórios de axiomas aceitaram somente `propext`, `Classical.choice`, `Quot.sound`. Pico RSS: 8.4 GiB; reprodução limpa aprovada. Evidência, reprodução, pins, logs e hashes: `evidence/rational-boxes/c5-gamma-d1-complex-node-20261108/README.md`.
+- A PR #294 integrou o commit `752e6d1` no merge `5175969e6e11ccb1a7460389e78efe7c8f78ee60`.
+- Escopo parcial: `Γ(3/10 + 3i/20)` e os demais nós, zeta em Lean, inclusões da fonte e sinais finais continuam abertos.
+
 ## 2026-11-08 — segundo nó complexo de Gamma integrado pela PR #292
 
 - `CarrySigmaObstruction.c5GammaComplexNodeUpperBox_contains` contém `Γ(1099/4000 + 3i/20)`, o nó complexo complementar para `d=99/2000`, na altura de Cauchy `3/10`.

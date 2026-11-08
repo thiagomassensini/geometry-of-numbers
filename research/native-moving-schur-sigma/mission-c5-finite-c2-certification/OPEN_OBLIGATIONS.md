@@ -1,18 +1,19 @@
 # C5 — obrigações abertas
 
-## Estado atual — dois nós complexos de Gamma provados
+## Estado atual — três nós complexos de Gamma provados
 
-Além das caixas em `1/5` e `901/4000`, estão integradas as duas caixas complexas
-complementares para `d=99/2000`: `c5GammaComplexNodeBox_contains` para
-`Γ(901/4000 + 3i/20)` (PR #290, merge
-`06001aaae85c19d01dca48a802fecbb06ffb381d`) e
+Além das caixas reais em `1/5` e `901/4000`, estão integrados três pontos
+complexos: `c5GammaComplexNodeBox_contains` para `Γ(901/4000 + 3i/20)` (PR
+#290, merge `06001aaae85c19d01dca48a802fecbb06ffb381d`),
 `c5GammaComplexNodeUpperBox_contains` para `Γ(1099/4000 + 3i/20)` (PR #292,
-merge `18784869bd942422cfc2ace1b70e7e2ba8623b0f`). Evidência do último:
-`evidence/rational-boxes/c5-gamma-complex-upper-node-20261107/README.md`.
+merge `18784869bd942422cfc2ace1b70e7e2ba8623b0f`) e
+`c5GammaComplexNodeDOneComplexBox_contains` para `Γ(1/5 + 3i/20)` (PR #294,
+merge `5175969e6e11ccb1a7460389e78efe7c8f78ee60`). Evidência do último:
+`evidence/rational-boxes/c5-gamma-d1-complex-node-20261108/README.md`.
 
 Continuam abertas, em ordem:
 
-1. certificar os nós Gamma restantes, sobretudo para `d=1/10`, e completar a avaliação intervalar em Lean das caixas exportadas de zeta. A expansão Euler–Maclaurin de ordem 600 já está provada e integrada; falta a composição por nó;
+1. certificar o complementar `Γ(3/10 + 3i/20)` e os demais nós Gamma requeridos; completar a avaliação intervalar em Lean das caixas exportadas de zeta. A expansão Euler–Maclaurin de ordem 600 já está provada e integrada; falta a composição por nó;
 2. compor Gamma e zeta com o fator nativo original e as quadraturas da fonte completada;
 3. provar as inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` sem hipóteses auxiliares;
 4. fechar os sinais de `sigmaPadeD` original nos dois deslocamentos.
