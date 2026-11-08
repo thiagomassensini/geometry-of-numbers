@@ -1,0 +1,9 @@
+PASS: 8 B1 theorem closures use only allowed standard axioms
+CarrySigmaCentral.central_hankel2_pos_of_ten_boxes_and_tail: Classical.choice, Quot.sound, propext
+CarrySigmaCentral.early_margin_pos: Classical.choice, Quot.sound, propext
+CarrySigmaCentral.finiteMoment_hankel2_eq_pairMoment: Classical.choice, Quot.sound, propext
+CarrySigmaCentral.hankel2_add_error_expansion: Classical.choice, Quot.sound, propext
+CarrySigmaCentral.hankel2_error_abs_bound: Classical.choice, Quot.sound, propext
+CarrySigmaCentral.mainLower_le_tenMode_hankel2: Classical.choice, Quot.sound, propext
+CarrySigmaCentral.ratio_lt_one_of_four_le: Classical.choice, Quot.sound, propext
+CarrySigmaPade.sigmaPadeD_center_pos_of_conditional_ten_mode_tail: Classical.choice, Quot.sound, propext

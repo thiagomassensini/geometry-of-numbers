@@ -1,0 +1,10 @@
+import SigmaCentralTenModeSourceGate
+
+#print axioms CarrySigmaCentral.finiteMoment_hankel2_eq_pairMoment
+#print axioms CarrySigmaCentral.hankel2_add_error_expansion
+#print axioms CarrySigmaCentral.hankel2_error_abs_bound
+#print axioms CarrySigmaCentral.mainLower_le_tenMode_hankel2
+#print axioms CarrySigmaCentral.early_margin_pos
+#print axioms CarrySigmaCentral.ratio_lt_one_of_four_le
+#print axioms CarrySigmaCentral.central_hankel2_pos_of_ten_boxes_and_tail
+#print axioms CarrySigmaPade.sigmaPadeD_center_pos_of_conditional_ten_mode_tail
