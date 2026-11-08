@@ -1,0 +1,74 @@
+/home/thlinux/worktrees/geometry-of-numbers-c5-zeta-bernoulli-prefix64-20261108/research/native-moving-schur-sigma/SigmaC5BernoulliDataCertificate64.lean:22:10: error: Type mismatch: After simplification, term
+  hread
+ has type
+  bernoulli' n = c5BernoulliPrimeDataPrefix32[n]?.getD 0
+but is expected to have type
+  bernoulli' n =
+    (c5BernoulliPrimeDataPrefix32 ++
+            #[-7709321041217 / 510, 0, 2577687858367 / 6, 0, -26315271553053477373 / 1919190, 0, 2929993913841559 / 6,
+              0, -261082718496449122051 / 13530, 0, 1520097643918070802691 / 1806, 0, -27833269579301024235023 / 690, 0,
+              596451111593912163277961 / 282, 0, -5609403368997817686249127547 / 46410, 0,
+              495057205241079648212477525 / 66, 0, -801165718135489957347924991853 / 1590, 0,
+              29149963634884862421418123812691 / 798, 0, -2479392929313226753685415739663229 / 870, 0,
+              84483613348880041862046775994036021 / 354, 0, -1215233140483755572040304994079820246041491 / 56786730, 0,
+              12300585434086858541953039857403386151 / 6, 0])[n]?.getD
+      0
+/home/thlinux/worktrees/geometry-of-numbers-c5-zeta-bernoulli-prefix64-20261108/research/native-moving-schur-sigma/SigmaC5BernoulliDataCertificate64.lean:39:29: error: omega could not prove the goal:
+a possible counterexample may satisfy the constraints
+  b ≥ 0
+  32 ≤ a ≤ 63
+  a - b ≤ 0
+where
+ a := ↑n
+ b := ↑k
+/home/thlinux/worktrees/geometry-of-numbers-c5-zeta-bernoulli-prefix64-20261108/research/native-moving-schur-sigma/SigmaC5BernoulliDataCertificate64.lean:40:16: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∑ k ∈ Finset.range n, ↑(n.choose k) / ↑(n - k + 1) * bernoulli' k
+in the target expression
+  1 - ∑ k ∈ Finset.range n, ↑(n.choose k) / (↑n - ↑k + 1) * bernoulli' k = c5BernoulliPrimeDataPrefix64.getD n 0
+
+case neg
+n : ℕ
+ih : ∀ m < n, m < 64 → bernoulli' m = c5BernoulliPrimeDataPrefix64.getD m 0
+hn : n < 64
+hn32 : ¬n < 32
+hnlo : 32 ≤ n
+hodd : ¬Odd n
+hsum :
+  ∑ k ∈ Finset.range n, ↑(n.choose k) / ↑(n - k + 1) * bernoulli' k =
+    ∑ k ∈ Finset.range n, ↑(n.choose k) / ↑(n - k + 1) * c5BernoulliPrimeDataPrefix64.getD k 0
+⊢ 1 - ∑ k ∈ Finset.range n, ↑(n.choose k) / (↑n - ↑k + 1) * bernoulli' k = c5BernoulliPrimeDataPrefix64.getD n 0
+/home/thlinux/worktrees/geometry-of-numbers-c5-zeta-bernoulli-prefix64-20261108/research/native-moving-schur-sigma/SigmaC5BernoulliDataCertificate64.lean:49:8: error: Function expected at
+  Array.getElem_eq_getD 0
+but this term has type
+  ?m.1342[?m.1343] = Array.getD ?m.1342 ?m.1343 0
+
+Note: Expected a function because this term is being applied to the argument
+  hiTable
+'CarrySigmaObstruction.c5BernoulliPrimeTable_64_eq_data' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+Command exited with non-zero status 1
+	Command being timed: "bash /home/thlinux/worktrees/geometry-of-numbers-c5-zeta-bernoulli-prefix64-20261108/research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaC5BernoulliDataCertificate64"
+	User time (seconds): 45.93
+	System time (seconds): 2.60
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:48.24
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3649664
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 182526
+	Voluntary context switches: 2113
+	Involuntary context switches: 513
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
