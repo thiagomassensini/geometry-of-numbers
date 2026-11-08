@@ -7,7 +7,7 @@
 - PR #311: open/mergeable, based on the B1 branch, head `agent/c2-central-ten-heights-b2-20261108` at `7509f5d9404fe2514d4c609acb4ad10b9b02ab54`.
 - PR #306: open/mergeable, base `main`, head `agent/c2-central-contour51-20261108` at `e96e3a132ee6c4f494fee97e3ff1753f606514fc`. Its two original files were read in full and copied byte-for-byte; the original PR branch was not checked out for writing or modified.
 - Rechecked after the C3 checkpoint through GitHub on 2026-11-08: #304 and #311 remain open/mergeable; #306 remains open/mergeable and draft. Their heads are unchanged at the SHAs above. The new branch is based directly on B2 at `7509f5d9404fe2514d4c609acb4ad10b9b02ab54`.
-- Draft PR #314 was created on 2026-11-08, base `agent/c2-central-ten-heights-b2-20261108` at `7509f5d9404fe2514d4c609acb4ad10b9b02ab54`, head `agent/c2-contour51-20261108` initially at `dd9c8c96d47772305067ead9f708cc4f44c114a8`. A later GitHub recheck found head `9252a04de2b864bcb26d6b4c146328b31ed33459`; the PR remains open, draft, unmerged, and mergeable. Its body limits claims to the published C0/C3 work and lists the remaining checkpoints.
+- Draft PR #314 is stacked on base `agent/c2-central-ten-heights-b2-20261108` at `7509f5d9404fe2514d4c609acb4ad10b9b02ab54`. It was created at `dd9c8c96d47772305067ead9f708cc4f44c114a8`, updated for C0/C3 at `9252a04de2b864bcb26d6b4c146328b31ed33459`, and now includes C1 commit `4b104771b7cc3dfbd487584b57b5bba1680e273e`. GitHub last reported it open, draft, unmerged, and `MERGEABLE`/`CLEAN`; its title and body describe C0/C1/C3 and list C2/C4/C5/C6 as open.
 - New base commit: `7509f5d9404fe2514d4c609acb4ad10b9b02ab54`.
 - Worktree: `/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108`.
 - Branch: `agent/c2-contour51-20261108`.
@@ -39,7 +39,7 @@
 - `SigmaNativeContinuation.lean`: `completedNativeCharacteristicContinuation` is the existing regularized-completed-zeta expression in `operatorHeightParameter`; its analyticity, evenness, and equality to the native characteristic on the native strip are explicit.
 - `SigmaHeight50Integration.lean` and B2's `SigmaCentralTenHeightRootBridge.lean`: the same ten heights and positive/negative root statements come from B2; the moments are not rebuilt from zeros.
 - `RHHeight.Main`: `rh_up_to_height_fiftytwo`, `low_height`, and `ncount_three_fiftytwo` are imported from the existing compiled certificate. `RHHeight.Skeleton.mem_and_simple_of_Ncount_le` converts the multiplicity-weighted count into exact membership and simplicity once ten distinct roots are supplied.
-- C1 must use `Ncount` with multiplicity, not B2's distinct-point count alone.
+- C1 uses `Ncount` with multiplicity, not B2's distinct-point count alone.
 
 ## C1 radius-51 root classification
 
@@ -48,6 +48,7 @@
 - Result: exit 0 under Lean 4.32.0 with `-DwarningAsError=true`. Before compiling, `ps -C lean` and `ps -C lake` returned no processes; `/proc/meminfo` reported 60.8 GiB available. Only the exclusive output root was written; imported C2/C3, B2, B1, and Mathlib outputs remained read-only.
 - The module proves `sigmaHeight52_count_exhausts_ten_zeros_with_multiplicity` and `sigmaContour51_original_characteristic_roots`. Each `#print axioms` result is `[propext, Classical.choice, Quot.sound]`; neither uses `sorryAx` or a new axiom.
 - SHA-256: source `e2e14ecdb3e01cc5de70c96f3c8f00f0c706a25daa3649ed7ffe0f9cceb69b9f`; OLean `/home/thlinux/tmp/c2-contour51-20261108-lean432/SigmaContour51DiskBridge.olean` `1708d91c5541f0a0877e10f0a6f9936284210c04a6805b1b83e957cad786f33c`; successful log `6e958af821b714ad83e4180a5d01b1b685c9c918331172f551dfc8a7417e747d`.
+- Publication: commit `4b104771b7cc3dfbd487584b57b5bba1680e273e` is pushed to `agent/c2-contour51-20261108` and included in draft PR #314, which remains unmerged.
 - Proof boundary: C1 closes exact roots/order/boundary claims inside the closed disk. C2's finite contour-residue identity and the C3-to-Lean analytic estimate remain separate open obligations; C1 alone does not establish positivity.
 
 ## Remaining C2–C6 drafts
