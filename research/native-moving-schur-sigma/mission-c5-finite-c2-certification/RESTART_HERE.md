@@ -1,5 +1,13 @@
 # Retomar primeiro — missão C5
 
+## Estado atual — primeiro bloco da tabela de Bernoulli certificado (2026-11-08)
+
+- A PR #298 está integrada na `main`: commit de prova `1ed4a00`, merge `171c19681482312bf71bffdcd23b24a728edf04b`.
+- `c5BernoulliPrimeTable_32_eq_data` prova a igualdade entre a recorrência e o primeiro bloco literal de 32 coeficientes. A reprodução compara exatamente, como racionais, os 601 valores emitidos pela sonda Lean com a tabela literal (`DATA_TABLE_CHECK=PASS`); a igualdade formal dos 569 valores restantes continua pendente.
+- Sonda, tabela, certificado, auditoria isolada e logs estão em `SigmaC5BernoulliData*.lean` e `evidence/rational-boxes/c5-bernoulli-data-prefix32-20261108/`. Build limpo Lean 4.32.0 com `warningAsError=true`; axiomas do teorema: `propext`, `Classical.choice`, `Quot.sound`; `CLEAN_BUILD=PASS`, `AXIOM_AUDIT=PASS`.
+- Próximo passo: provar o bloco 32–64 usando o prefixo certificado como base e avançar em blocos até 601. Depois, retomar a ponte formal de uma caixa de zeta exportada para a caixa Lean correspondente.
+- Este avanço não certifica caixas exportadas de zeta, inclusões da fonte ou sinais C5. C5 continua incompleta; C1B/C2/C3/C4 permanecem concluídas.
+
 ## Estado atual — quatro nós complexos de Gamma integrados (2026-11-08)
 
 - C5 segue ativa; C1B/C2/C3/C4 permanecem concluídas. Não reiniciar essas fases nem a migração geral para Lean 4.35.

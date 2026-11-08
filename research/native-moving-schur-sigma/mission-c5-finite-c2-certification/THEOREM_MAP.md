@@ -1,5 +1,13 @@
 # C5 — mapa dos teoremas e obrigações
 
+## Resultado integrado — igualdade do prefixo Bernoulli 0–32 (PR #298)
+
+| Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |
+|---|---|---|---|---|
+| `CarrySigmaObstruction.c5BernoulliPrimeTable_32_eq_data` | `SigmaC5BernoulliDataCertificate.lean` | nenhuma | as primeiras 32 entradas da recorrência coincidem com `c5BernoulliPrimeDataPrefix32` | **PROVADO e integrado pela PR #298**, commit `1ed4a00`, merge `171c19681482312bf71bffdcd23b24a728edf04b`; auditoria: `propext`, `Classical.choice`, `Quot.sound` |
+
+`SigmaC5BernoulliDataTable.lean` registra os 601 valores em prefixos cumulativos. A reprodução compara exatamente os 601 valores com a saída Lean da recorrência, mas os outros 569 ainda não possuem teoremas de igualdade formal. O passo seguinte é certificar o prefixo 64 usando o resultado acima. Evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix32-20261108/README.md`. Nenhuma igualdade CSV–caixa de zeta ou inclusão C5 decorre desse prefixo.
+
 ## Resultado integrado — nó complementar complexo de Gamma em `d=1/10` (PR #296)
 
 | Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |

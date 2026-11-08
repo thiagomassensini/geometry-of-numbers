@@ -1,5 +1,14 @@
 # C5 — validação
 
+## Validação recente — primeiro bloco da tabela de Bernoulli (PR #298)
+
+- `c5BernoulliPrimeTable_32_eq_data` prova formalmente que o prefixo de 32 valores coincide com a recorrência `c5BernoulliPrimeTable`.
+- Reprodução limpa em Lean 4.32.0 e `warningAsError=true`: sonda, tabela, certificado e auditoria compilaram; `CLEAN_BUILD=PASS`.
+- Comparação racional exata entre os 601 valores emitidos pela sonda Lean e os literais: `DATA_TABLE_CHECK=PASS`, `COEFFICIENTS=601`.
+- Auditoria isolada: `AXIOM_AUDIT=PASS`, somente `propext`, `Classical.choice`, `Quot.sound`. Certificado ~2:34 e 3.7 GiB RSS; sonda ~1:42 e 2.7 GiB RSS.
+- PR #298, commit `1ed4a00`, merge `171c19681482312bf71bffdcd23b24a728edf04b`. Fontes, pins, reprodução, logs, tentativas e hashes: `evidence/rational-boxes/c5-bernoulli-data-prefix32-20261108/README.md`.
+- Limite: apenas os primeiros 32 valores têm igualdade formal certificada. A verificação dos 601 literais contra a saída da sonda é uma comparação reprodutível, ainda não substitui as provas formais dos blocos restantes nem liga as caixas exportadas de zeta a definições Lean.
+
 ## Validação recente — nó complementar de Gamma para `d=1/10` (PR #296)
 
 - Fonte: `SigmaC5GammaComplexNodeDOneUpperComplexGammaCertificate.lean`; teorema `CarrySigmaObstruction.c5GammaComplexNodeDOneUpperComplexBox_contains`.

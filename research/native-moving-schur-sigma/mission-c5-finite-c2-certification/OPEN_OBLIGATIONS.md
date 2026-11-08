@@ -1,5 +1,16 @@
 # C5 — obrigações abertas
 
+## Estado atual — certificado parcial da tabela de Bernoulli integrado (2026-11-08)
+
+A PR #298 integrou `c5BernoulliPrimeTable_32_eq_data` (commit `1ed4a00`, merge `171c19681482312bf71bffdcd23b24a728edf04b`). A comparação racional exata dos 601 literais com a saída da sonda passou, mas só o prefixo 0–32 está formalmente provado contra a recorrência. As obrigações abertas, na ordem de dependência, são:
+
+1. Provar por blocos a igualdade formal dos outros 569 coeficientes da tabela, começando por 32–64; usar essa tabela certificada para retomar a igualdade entre uma caixa de zeta exportada e sua avaliação Lean.
+2. Certificar os nós Gamma restantes necessários e compor as caixas de zeta/Gamma com o fator nativo original e as quadraturas da fonte completada.
+3. Provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` sem hipóteses auxiliares.
+4. Fechar os sinais finais da `sigmaPadeD` original nos dois deslocamentos.
+
+C5 permanece incompleta. Evidência desta etapa: `evidence/rational-boxes/c5-bernoulli-data-prefix32-20261108/README.md`.
+
 ## Estado atual — quatro nós complexos de Gamma integrados
 
 Além das caixas reais em `1/5` e `901/4000`, estão integrados os pontos
