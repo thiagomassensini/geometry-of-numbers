@@ -43,7 +43,13 @@
 
 ## B2.4
 
-Pending. The fail-closed audit will require both scale theorem reports and the original-characteristic root theorem report, reject unexpected axioms, reject malformed/missing reports, and scan all B2 bridge sources for prohibited proof escapes or axiom declarations.
+The fail-closed audit requires both scale theorem reports and the original-characteristic root theorem report, rejects unexpected axioms and malformed/missing reports, and scans all three B2 source modules for `sorry`, `admit`, `native_decide`, and any `axiom` token.
+
+- Command: `python3 research/native-moving-schur-sigma/mission-central-ten-heights-b2-20261108/evidence/check_b2_scale_root_axioms.py`; exit status 0.
+- Result: exactly three required scale/root reports accepted; all report only `[propext, Classical.choice, Quot.sound]`; all three B2 source files pass the forbidden-token scan.
+- Checker source SHA-256: `ef94563c48a223d16935d3e503cf999ee1c31de553518db8413edd9a46c134ec`.
+- Checker output SHA-256: `6c79ac002198b2f93b20d023605aee54ce7a7e256c553d35588e99b745b56e36`; see `evidence/B2.4-check_b2_scale_root_axioms.log`.
+- Exact command is also recorded in `evidence/BUILD_COMMANDS.md`.
 
 ## Build isolation
 

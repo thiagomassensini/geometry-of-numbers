@@ -17,12 +17,12 @@ B2 supplies the scale-box premise `hbox` for B1 from the existing finite-height 
 - [x] Export the exact ten `Fin 10` witnesses and their original rational boxes through public theorem `sigmaHeight50_ten_zero_witnesses_and_count`, backed by the private `height50_*_certificate` results already in `SigmaHeight50Integration.lean`.
 - [x] Convert those same heights to reciprocal-square scales and prove positivity, B1's exact rational scale boxes, `a 0 > a 1 > 0`, and a no-extra-hypothesis witness of B1's `hbox`.
 - [x] Prove the zeta-to-completed-characteristic zero and order transports at each positive height, use the even continuation for negative heights, and show the distinct-point count exhausts the height window without treating it as a multiplicity count.
-- Run a transitive axiom audit for every exported theorem. Add no axioms, `sorry`, `admit`, or `native_decide` substitutes.
+- [x] Run a transitive axiom audit for the exported scale/root theorems with a fail-closed checker. Add no axioms, `sorry`, `admit`, or `native_decide` substitutes.
 
 ## B2 validation still to record
 
-- [ ] Run `evidence/check_b2_scale_root_axioms.py` and retain its accepted report for both scale theorems and the original-characteristic root theorem.
-- [ ] Record the final source/OLean/log hashes and exact B2.3 compile command in `VALIDATION.md` and `evidence/BUILD_COMMANDS.md`.
+- [x] Run `evidence/check_b2_scale_root_axioms.py` and retain its accepted report for both scale theorems and the original-characteristic root theorem.
+- [x] Record the final source/OLean/log hashes and exact B2.3 compile command in `VALIDATION.md` and `evidence/BUILD_COMMANDS.md`.
 - [ ] Commit/push B2.4 and open a B2-specific PR without changing B1 PR #304.
 
 ## Still open beyond B2

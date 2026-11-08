@@ -14,7 +14,7 @@
 
 ## Next action
 
-Run `python3 research/native-moving-schur-sigma/mission-central-ten-heights-b2-20261108/evidence/check_b2_scale_root_axioms.py`; it fails closed unless each public scale/root theorem has exactly one successful-log report and only standard Lean axioms, and it scans the B2 source files for prohibited proof escapes. Confirm the recorded hashes and command inventory, then commit/push B2.4 and open the B2 PR.
+Open the B2 PR from `agent/c2-central-ten-heights-b2-20261108` against B1 branch `agent/c2-central-hankel2-allorder-20261107`, then record its URL here. PR #304 remains open and untouched; B1's four other assumptions and unconditional positivity remain open.
 
 ## Honesty boundary
 

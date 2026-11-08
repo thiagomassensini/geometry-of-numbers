@@ -46,3 +46,10 @@ SIGMA_HEIGHT50_BUILD=/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-mai
 bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaCentralTenHeightRootBridge \
   > /home/thlinux/tmp/c2-central-ten-heights-b2-20261108-lean432/logs/SigmaCentralTenHeightRootBridge.log 2>&1
 ```
+
+## B2.4 fail-closed source and axiom audit
+
+```bash
+python3 research/native-moving-schur-sigma/mission-central-ten-heights-b2-20261108/evidence/check_b2_scale_root_axioms.py \
+  > research/native-moving-schur-sigma/mission-central-ten-heights-b2-20261108/evidence/B2.4-check_b2_scale_root_axioms.log
+```
