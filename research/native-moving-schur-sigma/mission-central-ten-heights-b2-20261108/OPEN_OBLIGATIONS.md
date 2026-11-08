@@ -19,11 +19,11 @@ B2 supplies the scale-box premise `hbox` for B1 from the existing finite-height 
 - [x] Prove the zeta-to-completed-characteristic zero and order transports at each positive height, use the even continuation for negative heights, and show the distinct-point count exhausts the height window without treating it as a multiplicity count.
 - [x] Run a transitive axiom audit for the exported scale/root theorems with a fail-closed checker. Add no axioms, `sorry`, `admit`, or `native_decide` substitutes.
 
-## B2 validation still to record
+## B2 delivery status
 
 - [x] Run `evidence/check_b2_scale_root_axioms.py` and retain its accepted report for both scale theorems and the original-characteristic root theorem.
 - [x] Record the final source/OLean/log hashes and exact B2.3 compile command in `VALIDATION.md` and `evidence/BUILD_COMMANDS.md`.
-- [ ] Commit/push B2.4 and open a B2-specific PR without changing B1 PR #304.
+- [x] Commit/push B2.4 and open B2 PR [#311](https://github.com/thiagomassensini/geometry-of-numbers/pull/311) against B1 PR #304's branch without changing B1 PR #304.
 
 ## Still open beyond B2
 
