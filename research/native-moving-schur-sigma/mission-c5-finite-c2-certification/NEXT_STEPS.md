@@ -1,14 +1,13 @@
 # Próximos passos — C5
 
-## Estado atual e próximo passo — três nós complexos de Gamma integrados (2026-11-08)
+## Estado atual e próximo passo — par complexo de `d=1/10` integrado (2026-11-08)
 
-- `CarrySigmaObstruction.c5GammaComplexNodeBox_contains` contém `Γ(901/4000 + 3i/20)` e `CarrySigmaObstruction.c5GammaComplexNodeUpperBox_contains` contém `Γ(1099/4000 + 3i/20)`, os dois nós complexos da malha C2 em `d=99/2000`.
-- `CarrySigmaObstruction.c5GammaComplexNodeDOneComplexBox_contains` contém `Γ(1/5 + 3i/20)`, primeiro nó complexo da malha `d=1/10`; `Γ(1/5)` real também já tem caixa certificada.
-- O novo certificado compõe `240^z`, 16 blocos × 64 termos do núcleo racional e `gamma_finite_1024_240_error`, com inflação `10⁻⁹⁹`.
-- Os cinco módulos passaram em Lean 4.32.0 com `warningAsError=true`; 14 relatórios de axiomas usam só `propext`, `Classical.choice`, `Quot.sound`, sem `sorryAx`, axiomas próprios ou `native_decide`. Pico RSS: 8.4 GiB. A reprodução limpa também passou.
-- PR #294 integrou o commit `752e6d1` no merge `5175969e6e11ccb1a7460389e78efe7c8f78ee60`. Evidência e reprodução: `evidence/rational-boxes/c5-gamma-d1-complex-node-20261108/README.md`. Os dois pontos de `d=99/2000` estão documentados pelas PRs #290 e #292.
-- Próximo: provar o complementar `Γ(3/10 + 3i/20)` e avançar pelos demais nós Gamma requeridos, em paralelo à avaliação intervalar em Lean das caixas de zeta. A expansão de Euler–Maclaurin de ordem 600 já está provada e integrada; falta a composição por nó CSV–Lean.
-- Depois, compor todos os fatores da fonte original e as quadraturas para provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`, e fechar os sinais de `sigmaPadeD` original. C5 permanece incompleta.
+- Estão integrados os nós `Γ(901/4000 + 3i/20)` e `Γ(1099/4000 + 3i/20)` para `d=99/2000`, e `Γ(1/5 + 3i/20)` e `Γ(3/10 + 3i/20)` para `d=1/10`. Os pontos reais `Γ(1/5)` e `Γ(901/4000)` também têm caixas certificadas.
+- PR #296 prova `CarrySigmaObstruction.c5GammaComplexNodeDOneUpperComplexBox_contains`. O limite refinado `|Interval.logQ 384 8 240| ≤ 10` torna válida a avaliação de potência com raio 8; a caixa Gamma mantém o resto formal `gamma_finite_1024_240_error ≤ 10⁻⁹⁹`.
+- Seis módulos passaram em Lean 4.32.0 com `warningAsError=true`; 16 relatórios usam apenas `propext`, `Classical.choice`, `Quot.sound`, sem `sorryAx`, axiomas próprios ou `native_decide`. Pico RSS: 8.4 GiB; reprodução limpa aprovada.
+- PR #296 integrou o commit `e986390937265fc1bb759140ed7fb6d80d23eadf` no merge `113ed1517fff040f4fc619cf7d5086c57f137427`. Evidência completa: `evidence/rational-boxes/c5-gamma-d1-upper-complex-node-20261108/README.md`.
+- Próximo passo concreto: ligar formalmente, por nó, as 516 caixas de zeta exportadas (129 × quatro coordenadas) às caixas usadas no cálculo Lean. O CSV e `#eval` comprovam exportação/cobertura, não a igualdade necessária; a expansão Euler–Maclaurin de ordem 600 está provada e integrada.
+- Em seguida, avançar os demais nós Gamma e compor as caixas com o fator nativo e quadraturas para provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`. C5 permanece incompleta.
 
 ## Checkpoint anterior — caixa `Γ(1/5)` (PR #285 integrada)
 
