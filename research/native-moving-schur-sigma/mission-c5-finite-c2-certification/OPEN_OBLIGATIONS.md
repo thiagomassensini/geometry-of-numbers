@@ -1,15 +1,18 @@
 # C5 — obrigações abertas
 
-## Estado atual — primeiro nó complexo de Gamma provado
+## Estado atual — dois nós complexos de Gamma provados
 
-Além das caixas em `1/5` e `901/4000`, a PR #290 integrou
-`c5GammaComplexNodeBox_contains` para `Γ(901/4000 + 3i/20)` (merge
-`06001aaae85c19d01dca48a802fecbb06ffb381d`). Evidência e comando:
-`evidence/rational-boxes/c5-gamma-complex-node-20261107/README.md`.
+Além das caixas em `1/5` e `901/4000`, estão integradas as duas caixas complexas
+complementares para `d=99/2000`: `c5GammaComplexNodeBox_contains` para
+`Γ(901/4000 + 3i/20)` (PR #290, merge
+`06001aaae85c19d01dca48a802fecbb06ffb381d`) e
+`c5GammaComplexNodeUpperBox_contains` para `Γ(1099/4000 + 3i/20)` (PR #292,
+merge `18784869bd942422cfc2ace1b70e7e2ba8623b0f`). Evidência do último:
+`evidence/rational-boxes/c5-gamma-complex-upper-node-20261107/README.md`.
 
 Continuam abertas, em ordem:
 
-1. formalizar a ponte que relaciona a exportação CSV das caixas de zeta com os retângulos Lean usados na fonte, e certificar Gamma nos demais nós necessários;
+1. certificar os nós Gamma restantes, sobretudo para `d=1/10`, e completar a avaliação intervalar em Lean das caixas exportadas de zeta. A expansão Euler–Maclaurin de ordem 600 já está provada e integrada; falta a composição por nó;
 2. compor Gamma e zeta com o fator nativo original e as quadraturas da fonte completada;
 3. provar as inclusões `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` sem hipóteses auxiliares;
 4. fechar os sinais de `sigmaPadeD` original nos dois deslocamentos.

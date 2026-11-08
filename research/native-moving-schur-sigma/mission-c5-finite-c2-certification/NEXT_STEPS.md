@@ -1,12 +1,13 @@
 # Próximos passos — C5
 
-## Estado atual e próximo passo — primeiro nó complexo de Gamma integrado (2026-11-07)
+## Estado atual e próximo passo — dois nós complexos de Gamma integrados (2026-11-08)
 
-- `CarrySigmaObstruction.c5GammaComplexNodeBox_contains` contém `Γ(901/4000 + 3i/20)`, o primeiro nó complexo da malha C2 em `d=99/2000`, altura de Cauchy `3/10`.
-- Os cinco módulos passaram em Lean 4.32.0 com `warningAsError=true`. As raízes auditadas usam somente axiomas padrão (`propext`, `Classical.choice`, `Quot.sound`), sem `sorryAx`, axiomas próprios ou `native_decide`.
-- PR #290 integrou o commit `482110b10c9173f6a8c9b231c7f3ed07c0935933` no merge `06001aaae85c19d01dca48a802fecbb06ffb381d`. Comando, pins, hashes e logs: `evidence/rational-boxes/c5-gamma-complex-node-20261107/README.md` e `reproduce-clean.sh`.
-- Próximo: provar a ponte CSV–Lean para as caixas exportadas de zeta e compor pelo menos o fator de fonte do nó atual; em seguida estender a caixa Gamma aos demais nós requeridos pelas duas malhas.
-- Depois, compor todos os fatores originais e as quadraturas para provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`, e então fechar os sinais de `sigmaPadeD` original. C5 permanece incompleta.
+- `CarrySigmaObstruction.c5GammaComplexNodeBox_contains` contém `Γ(901/4000 + 3i/20)` e `CarrySigmaObstruction.c5GammaComplexNodeUpperBox_contains` contém `Γ(1099/4000 + 3i/20)`, os dois nós complexos conjugados da malha C2 em `d=99/2000`, altura `3/10`.
+- O segundo certificado compõe `240^z`, 16 blocos × 64 termos do núcleo racional e `gamma_finite_1024_240_error`, com inflação `10⁻⁹⁹`.
+- Os cinco módulos passaram em Lean 4.32.0 com `warningAsError=true`; 14 relatórios auditam 11 declarações novas e três auxiliares recompiladas. Só aparecem `propext`, `Classical.choice`, `Quot.sound`; sem `sorryAx`, axiomas próprios ou `native_decide`. Pico RSS: 11.5 GiB.
+- PR #292 integrou o commit `5a859f7` no merge `18784869bd942422cfc2ace1b70e7e2ba8623b0f`. Evidência e reprodução: `evidence/rational-boxes/c5-gamma-complex-upper-node-20261107/README.md` e `reproduce-clean.sh`. O primeiro nó está documentado em `c5-gamma-complex-node-20261107/README.md` (PR #290).
+- Próximo: continuar os nós Gamma, priorizando a malha `d=1/10`, e tornar utilizáveis em Lean as caixas exportadas de zeta. A expansão de Euler–Maclaurin de ordem 600 já está provada e integrada; falta sua avaliação intervalar por nó e a composição CSV–Lean.
+- Depois, compor todos os fatores da fonte original e as quadraturas para provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`, e fechar os sinais de `sigmaPadeD` original. C5 permanece incompleta.
 
 ## Checkpoint anterior — caixa `Γ(1/5)` (PR #285 integrada)
 
