@@ -104,6 +104,16 @@ theorem contour51ArbZeroDetMargin_pos : 0 < contour51ArbZeroDetMargin := by
     CarrySigmaCentral.ordinateLower, CarrySigmaCentral.ordinateUpper,
     Fin.sum_univ_succ]
 
+/-- The conservative first-window determinant margin exceeds one billionth in the original
+determinant scale. -/
+theorem contour51ArbZeroDetMargin_gt_rational :
+    1 / 1000000000 < contour51ArbZeroDetMargin := by
+  norm_num [contour51ArbZeroDetMargin, contour51ArbResidualMargin,
+    contour51ArbResidualUpperMargin, lowMoment, highMoment, tenModeMoment,
+    finitePowerMoment, CarrySigmaCentral.scaleLower, CarrySigmaCentral.scaleUpper,
+    CarrySigmaCentral.ordinateLower, CarrySigmaCentral.ordinateUpper,
+    Fin.sum_univ_succ]
+
 /-- The normalized original-source contour integral whose real part is the C2 residual `e_n`. -/
 def contour51OriginalResidualIntegral (n : ℕ) : ℂ :=
   (2 * Real.pi * Complex.I : ℂ)⁻¹ •
@@ -116,6 +126,14 @@ def contour51OriginalResidualIntegral (n : ℕ) : ℂ :=
 composition. Its proof from the arc data remains the outstanding certificate-to-Lean bridge. -/
 def contour51ArbResidualIntervalBounds : Prop :=
   ∀ n : ℕ, n ≤ 5 →
+    (contour51ArbRecordedResidualLower n : ℝ) ≤
+        (contour51OriginalResidualIntegral n).re ∧
+      (contour51OriginalResidualIntegral n).re ≤
+        (contour51ArbRecordedResidualUpper n : ℝ)
+
+/-- The first determinant only needs the residual intervals for orders zero through two. -/
+def contour51ArbFirstThreeResidualIntervalBounds : Prop :=
+  ∀ n : ℕ, n ≤ 2 →
     (contour51ArbRecordedResidualLower n : ℝ) ≤
         (contour51OriginalResidualIntegral n).re ∧
       (contour51OriginalResidualIntegral n).re ≤
@@ -205,12 +223,12 @@ theorem completedNativeContour51Residuals_nonneg_of_arb_intervals
 `e_0,e_1,e_2`; no global contour-tail hypothesis is needed. The interval gate preserves all five
 terms in `D(H)-D(P)` through its lower product and upper square bounds. -/
 theorem completedNative_sigmaPadeD_zero_pos_of_contour51_arb_intervals
-    (hArb : contour51ArbResidualIntervalBounds) :
+    (hArb : contour51ArbFirstThreeResidualIntervalBounds) :
     ∃ ts : Fin 10 → ℝ, StrictMono ts ∧
       (∀ i : Fin 10, 0 < ts i ∧ ts i < 50) ∧
       (∀ i : Fin 10,
         ts i ∈ Set.Ioo (sigmaTenZeroBoxLower i) (sigmaTenZeroBoxUpper i)) ∧
-      0 < CarrySigmaPade.sigmaPadeD 0 0 := by
+      1 / 1000000000 < CarrySigmaPade.sigmaPadeD 0 0 := by
   obtain ⟨ts, hmono, hbounds, hheightboxes, hforall⟩ :=
     completedNative_contour51_jet_residue_identity
   refine ⟨ts, hmono, hbounds, hheightboxes, ?_⟩
@@ -300,8 +318,8 @@ theorem completedNative_sigmaPadeD_zero_pos_of_contour51_arb_intervals
   have hmarginle : contour51ArbZeroDetMargin ≤ H 0 * H 2 - H 1 ^ 2 := by
     unfold contour51ArbZeroDetMargin
     nlinarith
-  have hdet : 0 < H 0 * H 2 - H 1 ^ 2 :=
-    lt_of_lt_of_le contour51ArbZeroDetMargin_pos hmarginle
+  have hdet : 1 / 1000000000 < H 0 * H 2 - H 1 ^ 2 :=
+    lt_of_lt_of_le contour51ArbZeroDetMargin_gt_rational hmarginle
   have hH : H = completedSigmaLogJet 0 := funext (fun n => (hdecomp n).symm)
   rw [hH] at hdet
   simpa [CarrySigmaPade.sigmaPadeD, CarrySigmaCentral.hankel2] using hdet
@@ -364,6 +382,7 @@ theorem completedNative_sigmaPadeD_pos_of_contour51_arb_intervals
 #print axioms contour51ArbResidualMargin_pos_and_below_recorded
 #print axioms contour51ArbResidualUpperMargin_above_recorded
 #print axioms contour51ArbZeroDetMargin_pos
+#print axioms contour51ArbZeroDetMargin_gt_rational
 #print axioms completedNativeContour51Residual_pos_of_arb_intervals
 #print axioms completedNativeContour51Residuals_nonneg_of_arb_intervals
 #print axioms completedNative_sigmaPadeD_zero_pos_of_contour51_arb_intervals

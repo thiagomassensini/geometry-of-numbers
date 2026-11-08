@@ -138,8 +138,10 @@ Arb certificate, not itself a Lean theorem.
 
 `SigmaContour51ArbResidualGate` compiled with the common Lean environment above and
 `MODULE_NAME=SigmaContour51ArbResidualGate`, redirecting output to
-`/home/thlinux/tmp/c2-contour51-20261108-lean432/logs/SigmaContour51ArbResidualGate-attempt7.log`.
-The success copy is `C2_SigmaContour51ArbResidualGate-attempt7-success.log`. Attempts 1–6 are
-preserved as diagnostics. The module verifies exact rational endpoint simplifications and proves
-conditional source-residual, first-window, and all-window theorems. Its interval-transfer
-proposition remains open; no external certificate is treated as an axiom or theorem.
+`/home/thlinux/tmp/c2-contour51-20261108-lean432/logs/SigmaContour51ArbResidualGate-attempt10.log`.
+The success copy is `C2_SigmaContour51ArbResidualGate-attempt10-success.log`; attempt 8 is an
+intermediate successful build with the three-residual interface before exposing the strict
+`1/1000000000` determinant lower bound in the theorem conclusion. Attempts 1–7 are preserved as
+diagnostics/intermediate results. The module verifies exact rational endpoint simplifications and
+proves conditional source-residual, first-window, and all-window theorems. Its interval-transfer
+propositions remain open; no external certificate is treated as an axiom or theorem.

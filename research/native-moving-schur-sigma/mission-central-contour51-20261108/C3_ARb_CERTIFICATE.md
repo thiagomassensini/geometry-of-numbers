@@ -125,8 +125,9 @@ also formalize the half-circle parameterization, the oddness reduction, and
 the transfer from each complete-arc Arb range to the integral. Accordingly,
 the six signs are externally certified but not yet discharged in Lean. The
 first-window determinant now has a conditional Lean gate from just the three
-intervals `e_0,e_1,e_2`; its exact rational margin retains the full product
-and square bounds, hence all five terms in the determinant difference.
+intervals `e_0,e_1,e_2`; its exact rational margin proves
+`1/1000000000 < sigmaPadeD 0 0` under those interval inclusions. The product
+and square bounds retain all five terms in the determinant difference.
 
 The six-residual run also executes the `|R|<4/5` check on each of its 4096
 arcs through `certify_arc`. The independent 512-arc C3 run remains the recorded
