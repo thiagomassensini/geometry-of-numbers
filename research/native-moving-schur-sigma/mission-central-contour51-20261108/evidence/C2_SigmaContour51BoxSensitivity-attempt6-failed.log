@@ -1,0 +1,36 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51BoxSensitivity.lean:51:2: error: Type mismatch: After simplification, term
+  completedSigmaDisplacedSource_log_derivative_eq_moments 0
+    (Mathlib.Meta.NormNum.isRat_lt_true
+      (Mathlib.Meta.NormNum.isRat_neg (Eq.refl Neg.neg)
+        (Mathlib.Meta.NormNum.IsNNRat.to_isRat
+          (Mathlib.Meta.NormNum.isNNRat_div
+            (Mathlib.Meta.NormNum.isNNRat_mul (Eq.refl HMul.hMul)
+              (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_one))
+              (Mathlib.Meta.NormNum.isNNRat_inv_pos
+                (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℝ (Eq.refl 2))))
+              (Eq.refl (Nat.mul 1 1)) (Eq.refl 2))))
+        (Eq.refl (Int.negOfNat 1)))
+      (Mathlib.Meta.NormNum.IsNNRat.to_isRat
+        (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_zero)))
+      (Eq.refl true))
+    (Mathlib.Meta.NormNum.isNNRat_lt_true
+      (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_zero))
+      (Mathlib.Meta.NormNum.isNNRat_div
+        (Mathlib.Meta.NormNum.isNNRat_mul (Eq.refl HMul.hMul)
+          (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_one))
+          (Mathlib.Meta.NormNum.isNNRat_inv_pos
+            (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.isNat_ofNat ℝ (Eq.refl 2))))
+          (Eq.refl (Nat.mul 1 1)) (Eq.refl 2)))
+      (Eq.refl true))
+ has type
+  @Eq (PowerSeries ℝ)
+    (-((PowerSeries.derivative ℝ) (completedSigmaDisplacedSourceSeries 0) * (completedSigmaDisplacedSourceSeries 0)⁻¹))
+    (PowerSeries.mk (completedSigmaDisplacedMoment 0))
+but is expected to have type
+  @Eq (PowerSeries ℝ)
+    (-((PowerSeries.derivative ℝ) (completedSigmaDisplacedSourceSeries 0) * (completedSigmaDisplacedSourceSeries 0)⁻¹))
+    (PowerSeries.mk fun n => 2 * completedSigmaLogJet 0 n)
+'CarrySigmaObstruction.contour51TenModeBoxWidth_lt_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.completedNativeContour51Residual_nonneg_of_jet_margin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

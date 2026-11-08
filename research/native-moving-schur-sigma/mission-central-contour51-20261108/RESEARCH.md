@@ -51,9 +51,40 @@ The accompanying script asserts **with Python Fraction rational arithmetic**:
 | 2 | 1.677704301041960e-20 |
 | 3 | 4.956177598481227e-26 |
 
+The determinant transport retains every term in the exact expansion, already formalized by
+`hankel2_add_error_expansion`:
+
+```text
+D_s(H) - D_s(P) =
+    P_s*e_(s+2) + e_s*P_(s+2) - 2*P_(s+1)*e_(s+1)
+  + e_s*e_(s+2) - e_(s+1)^2.
+```
+
+Here `P` is the finite ten-mode comparison, and `e_n=H_n-P_n` is the contour residual. The exact
+C2 omitted-material tail and the Cauchy/contour estimate are separate quantities; the contour
+residual equals the normalized contour integral only by the proved C2 residue identity. No
+percentage-of-cancellation estimate is used in the positivity gates.
+
 Consequently, assuming `e_n≥0` for `0≤n≤5`, these four strict margins imply `D_s(H)>0` for `0≤s<4`. For `s≥4`, `|e_n|≤40*eta^(n+1)` implies the existing B1 `|e_n|≤60*eta^(n+1)`; B1's already compiled `hankel2_pos_large_of_ten_boxes_and_global_tail` applies. Therefore:
 
 > **Conditional target:** the compiled `completedNative_sigmaPadeD_pos_of_contour51_bound` theorem proves that the original-source circle bound `‖R‖≤4/5` and six finite signs `e_0,...,e_5≥0` imply `forall s, sigmaPadeD 0 s > 0`. The C2 identity fixes the ten heights for all orders, and the C2→C4→C6 source bridge derives the scale boxes and decomposition. The C3 circle bound is rigorously certified by Arb but is not yet imported or re-proved in Lean. The six central signs remain open. This does not discharge B1's current `htail` premise verbatim.
+
+## Exact width budgets and C5 center transport
+
+`SigmaContour51BoxSensitivity.lean` proves the current B2 ten-mode interval widths are strictly below these rational budgets:
+
+| `n` | Rational width budget | Approximate exact width from Fraction arithmetic | Width / old non-certified `e_n` probe |
+|---:|---:|---:|---:|
+| 0 | `14/10^6` | `1.3038935355470468e-5` | `1.36e-3` |
+| 1 | `9/10^8` | `8.8707651982351861e-8` | `9.49e-2` |
+| 2 | `6/10^10` | `5.8021702152449330e-10` | `2.93` |
+| 3 | `4/10^12` | `3.6785120434605851e-12` | `71.6` |
+| 4 | `3/10^14` | `2.2551276469308842e-14` | `1.53e3` |
+| 5 | `2/10^16` | `1.3430971414644236e-16` | `3.02e4` |
+
+The last column compares exact rational box widths with the floating-point probes only to prioritize likely refinement. It does not certify a residual margin. Under that provisional comparison, the first one, three, four, and five height intervals dominate the uncertainty for `n=2,3,4,5`, respectively; `n=0,1` do not appear to need narrower height boxes. Confirm this selection only after original-source jet intervals exist.
+
+The formal C5 center map is now explicit: `displacedProductC 0 z` is the square of `completedNativeOperatorCharacteristic z`; on the genuine native strip, the compiled theorem `c5CentralDisplacedProduct_eq_continuation_square` identifies it with the square of `completedNativeCharacteristicContinuation z`, which is the function used by the radius-51 contour proof. The strip condition remains explicit; this is not a claimed global equality outside the proved native strip. The generic displaced-source recurrence at `d=0` gives coefficient sequence `2*completedSigmaLogJet 0 n`; and `e_n = completedSigmaDisplacedMoment 0 n / 2 - P_n`. The audit `SigmaSourceBezoutAudit.lean` compiles with standard axioms and retains the original density/product and sigma jets. The C5 boxes at `d=99/2000` and `d=1/10` still need quantitative transport in `d` or direct center evaluation. No C5 Bernoulli or zeta/Gamma node certification was repeated.
 
 ## Independent numerical probe — NOT A CERTIFICATE
 

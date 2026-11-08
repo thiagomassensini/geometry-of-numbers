@@ -1,0 +1,13 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51BoxSensitivity.lean:41:75: error: unsolved goals
+z : ℂ
+⊢ completedNativeOperatorCharacteristic z * completedNativeOperatorCharacteristic z =
+    completedNativeOperatorCharacteristic z ^ 2
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51BoxSensitivity.lean:49:6: error(lean.unknownIdentifier): Unknown identifier `momentSeries`
+
+Note: It is not possible to treat `momentSeries` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51BoxSensitivity.lean:64:9: error(lean.unknownIdentifier): Unknown identifier `momentSeries`
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51BoxSensitivity.lean:74:2: error: No goals to be solved
+'CarrySigmaObstruction.contour51TenModeBoxWidth_lt_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.completedNativeContour51Residual_nonneg_of_jet_margin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

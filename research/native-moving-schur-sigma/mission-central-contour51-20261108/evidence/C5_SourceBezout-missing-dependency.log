@@ -1,0 +1,32 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaSourceBezout.lean:1:0: error: unknown module prefix 'SourceBezout'
+
+No directory 'SourceBezout' or file 'SourceBezout.olean' in the search path entries:
+/home/thlinux/tmp/c2-contour51-20261108-lean432
+/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/integration
+/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/external
+/home/thlinux/tmp/c2-central-ten-heights-b2-20261108-lean432
+/home/thlinux/tmp/c2-central-hankel2-20261107-lean432
+/home/thlinux/geometry-of-numbers/.lake/build/lib/lean
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/.cache
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/.cache
+
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/Cli/.lake/build/lib/lean
+/home/thlinux/carry-c2-source-raw-green/.lake/packages/GreenFrame/.lake/build/lib/lean
+/home/thlinux/carry-c2-source-raw-green/.lake/packages/FiniteNativeCarryOperator/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/batteries/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/Qq/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/aesop/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/proofwidgets/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/importGraph/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/LeanSearchClient/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/plausible/.lake/build/lib/lean
+/home/thlinux/carry-c2-source-raw-green/.lake/packages/CPFormal/.lake/build/lib/lean
+/home/thlinux/carry-c2-source-raw-green/.lake/packages/NativeCarrySpectralWeyl/.lake/build/lib/lean
+/home/thlinux/carry-c2-source-raw-green/.lake/packages/CarryGeometry/.lake/build/lib/lean
+/home/thlinux/geometry-of-numbers/.lake/packages/mathlib/.lake/build/lib/lean
+/home/thlinux/carry-c2-source-raw-green/.lake/packages/NativeCarryC3Crosswalk/.lake/build/lib/lean
+/home/thlinux/carry-self-adjoint-operator/.lake/packages/geometry-of-numbers/.lake/build/lib/lean
+/home/thlinux/worktrees/carry-sigma-c2-pinned-045369/.lake/build/lib/lean
+/home/thlinux/.elan/toolchains/leanprover--lean4---v4.32.0/lib/lean
+/home/thlinux/.elan/toolchains/leanprover--lean4---v4.32.0/lib/lean

@@ -76,6 +76,43 @@ The focused first-window theorem needs the circle bound and just `e_0,e_2≥0`, 
 tail controlling its middle moment. The success log is copied to
 `C2_SigmaContour51SourceTail-attempt10-success.log`.
 
+## C5 zero-displacement transport and ten-mode box sensitivity
+
+The shared generic source recurrence was compiled into the exclusive C2 output root,
+because its OLean was not present in the imported B1/B2 artifact paths. `SourceBezout` is its
+prerequisite; this did not use the C5 worktree or cache. The first `SigmaSourceBezout` attempt is
+preserved as `C5_SourceBezout-missing-dependency.log`; after compiling `SourceBezout`, the module
+compiled successfully to `/home/thlinux/tmp/c2-contour51-20261108-lean432/SigmaSourceBezout.olean`.
+
+The generic source dependency/provenance audit compiled with the same environment as above:
+
+```bash
+CARRY_LEAN_ROOT=/home/thlinux/worktrees/carry-sigma-c2-pinned-045369 \
+SIGMA_OUTPUT_DIR=/home/thlinux/tmp/c2-contour51-20261108-lean432 \
+SIGMA_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108 \
+SIGMA_HEIGHT50_BUILD=/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/integration:/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/external:/home/thlinux/tmp/c2-central-ten-heights-b2-20261108-lean432:/home/thlinux/tmp/c2-central-hankel2-20261107-lean432:/home/thlinux/geometry-of-numbers/.lake/build/lib/lean \
+bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaSourceBezoutAudit \
+  > /home/thlinux/tmp/c2-contour51-20261108-lean432/logs/SigmaSourceBezoutAudit-attempt1.log 2>&1
+```
+
+It reports `57,386` type/body dependencies, standard axioms only, and confirms the original
+density/product and sigma moments are retained. The evidence copy is
+`C5_source_transport_audit.log`.
+
+`SigmaContour51BoxSensitivity` used the same environment template with
+`MODULE_NAME=SigmaContour51BoxSensitivity` and redirected to
+`/home/thlinux/tmp/c2-contour51-20261108-lean432/logs/SigmaContour51BoxSensitivity-attempt12.log`.
+It proves the six rational width budgets, the source-jet lower-margin interface, and the exact
+`d=0` C5 source specialization (the displaced product is `completedNativeOperatorCharacteristic²`
+and equals `completedNativeCharacteristicContinuation²` under the genuine-strip condition, the source
+coefficient is `2H_n`, and the residual-to-source-moment identity). The successful axiom audit reports only `[propext, Classical.choice, Quot.sound]` for
+each new theorem, including the strip-conditioned continuation bridge. The final log is
+`C2_SigmaContour51BoxSensitivity-attempt12-success.log`; failed attempts 1–7 and 10, and
+intermediate attempts 8 and 11, are preserved alongside it. The exact Fraction diagnostic command is
+`python3 research/native-moving-schur-sigma/mission-central-contour51-20261108/analyze_box_width_sensitivity.py`,
+with output in `evidence/C2_box_sensitivity.log`. Its comparisons with mpmath residual probes are
+only refinement diagnostics and do not certify signs.
+
 ## Reproduce the PR #306 experiment
 
 ```bash

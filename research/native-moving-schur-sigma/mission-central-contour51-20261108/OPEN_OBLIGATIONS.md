@@ -20,14 +20,23 @@ The ten zeros only define the comparison power sums `P_n`; they never define or 
 The new `SigmaContour51SourceTail.lean` specializes these generic results to the original completed
 characteristic. It derives the source decomposition and scale boxes from the fixed C2 root list and
 proves the all-window conclusion conditional only on the C3 circle norm bound and the six central
-signs. Those two obligations are not discharged here. The existing C5 signs at noncentral
-displacements do not imply these central residual signs without a separate `d=0` transport proof.
+signs. Those two obligations are not discharged here. `SigmaContour51BoxSensitivity.lean` now
+formalizes the exact C5 source specialization at `d=0`: the displaced product is the square of
+`completedNativeOperatorCharacteristic`, which equals the square of
+`completedNativeCharacteristicContinuation` under the explicit genuine-strip condition; the source
+log-derivative coefficients are `2*completedSigmaLogJet 0 n`, and `e_n` is half that source moment
+minus the ten-mode power sum. This algebraic identity does not move any C5 interval enclosure from
+`d=99/2000` or `d=1/10`; a quantitative displacement enclosure or a direct central source
+evaluation is still required.
 
 The same module now proves the first-window gate `completedNative_sigmaPadeD_zero_pos_of_contour51_bound`:
 once the circle bound is supplied, only `e_0≥0` and `e_2≥0` are required; `e_1` is bounded in
 absolute value and no sign assumption on it is made. The minimal first-window inputs still to prove
-from the original source are therefore the Lean circle bound plus those two residual signs.
+from the original source are therefore the Lean circle bound plus those two residual signs. The
+exact current power-sum widths and sufficient rational source-jet margins are compiled in
+`SigmaContour51BoxSensitivity.lean`; the required original-jet lower enclosures have not yet been
+obtained.
 
 ## Current mathematical limits
 
-The numerical contour and Taylor probes use 65-digit mpmath arithmetic, a finite mesh, and `mp.zetazero` only for subtracting the ten comparison powers. They do not certify an interval between mesh nodes, a sign, a root count, or an analytic remainder. C2's contour identity and C6's rational gates are now Lean theorems; the six original-source signs remain open, and the C3 interval certificate has not yet been imported or re-proved in Lean.
+The numerical contour and Taylor probes use 65-digit mpmath arithmetic, a finite mesh, and `mp.zetazero` only for subtracting the ten comparison powers. They do not certify an interval between mesh nodes, a sign, a root count, or an analytic remainder. C2's contour identity and C6's rational gates are Lean theorems; C3 has an external Arb interval certificate but no Lean proof; and none of `e_0,…,e_5` has a certified lower margin. The box-width comparison to the mpmath probes only prioritizes possible root-box refinement. The exact center transport of C5's source recurrence is proved, but the displaced numerical enclosures have not been transported to the center.

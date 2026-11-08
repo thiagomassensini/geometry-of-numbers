@@ -1,0 +1,5 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51BoxSensitivity.lean:58:6: error: No goals to be solved
+'CarrySigmaObstruction.contour51TenModeBoxWidth_lt_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.completedNativeContour51Residual_nonneg_of_jet_margin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
