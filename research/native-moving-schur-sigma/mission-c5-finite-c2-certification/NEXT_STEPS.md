@@ -1,5 +1,12 @@
 # Próximos passos — C5
 
+## Estado atual — prova candidata do prefixo 192 (2026-11-08)
+
+- O prefixo 160 está integrado pela PR #312, merge `cb829d98d799df72f07c9aff03e9d93871da6f77`; o estado provado continua 160/601.
+- `c5BernoulliPrimeTable_192_eq_data` e sua auditoria estão preparados. Ainda não houve compilação; não conte as 32 entradas novas.
+- Próxima ação: publicar o checkpoint desta branch e iniciar `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/run-detached.sh`; aguardar, conferir logs, hashes e axiomas. Se passar, abrir PR e integrar. Depois, seguir ao prefixo 224.
+- A ponte CSV–Lean das caixas de zeta, inclusões da fonte e sinais finais continuam abertas.
+
 ## Estado atual — prefixo Bernoulli de 160 entradas integrado (2026-11-08)
 
 - O prefixo 128 está integrado pela PR #309 (`c7782c54b78f97b1ea3f5a61f6e0ceefe75f2f11`). A prova `c5BernoulliPrimeTable_160_eq_data` em `SigmaC5BernoulliDataCertificate160.lean` compilou limpa, passou pela auditoria isolada dos axiomas e foi integrada pela PR #312 (`cb829d98d799df72f07c9aff03e9d93871da6f77`).

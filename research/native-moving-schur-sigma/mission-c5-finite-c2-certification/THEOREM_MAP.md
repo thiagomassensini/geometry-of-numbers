@@ -1,5 +1,14 @@
 # C5 — mapa dos teoremas e obrigações
 
+## Prefixo Bernoulli com 192 entradas — prova candidata; compilação pendente
+
+| Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |
+|---|---|---|---|---|
+| `CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data` | `SigmaC5BernoulliDataCertificate192.lean` | nenhuma | entradas 0–191 da recorrência coincidem com `c5BernoulliPrimeDataPrefix192` | parte do prefixo integrado 160, aplica a recorrência de Bernoulli aos índices 160–191; **CANDIDATO, build e auditoria pendentes**, não contar como provado |
+
+Prova, auditor isolado e reprodutor em preparação nesta branch. O último
+checkpoint validado continua sendo o prefixo 160 integrado pela PR #312.
+
 ## Prefixo Bernoulli com 160 entradas — integrado pela PR #312
 
 | Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |

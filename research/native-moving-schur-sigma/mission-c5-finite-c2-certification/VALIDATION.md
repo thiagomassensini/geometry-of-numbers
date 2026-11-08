@@ -1,5 +1,11 @@
 # C5 — validação
 
+## Prefixo 192 — candidato não validado (2026-11-08)
+
+- `c5BernoulliPrimeTable_192_eq_data` ainda não foi compilado em reprodução limpa; a auditoria isolada está preparada, mas não executada.
+- Não contar o prefixo como 192: o último estado formal validado e integrado é 160/601 pela PR #312.
+- Reprodutor e launcher: `evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/`. Não relançar enquanto `runner-status.txt` indicar `RUNNING`.
+
 ## Prefixo 160 — validação concluída e integrada (2026-11-08)
 
 - `c5BernoulliPrimeTable_160_eq_data` passou em reprodução limpa com Lean 4.32.0 e `warningAsError=true`: `BUILD_EXIT=0`, `CLEAN_BUILD=PASS`.

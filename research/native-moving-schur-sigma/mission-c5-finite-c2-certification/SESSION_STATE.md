@@ -1,10 +1,12 @@
 # C5 — estado da sessão
 
-## Estado atual — prefixo Bernoulli de 160 entradas integrado (2026-11-08)
+## Estado atual — prova do prefixo Bernoulli de 192 preparada; build pendente (2026-11-08)
 
 - Último resultado integrado: `CarrySigmaObstruction.c5BernoulliPrimeTable_160_eq_data`, prova no commit `5f9cb0eeab2b6f70fda12aa62f62047e7206eec5`, PR #312, merge `cb829d98d799df72f07c9aff03e9d93871da6f77`.
 - `c5BernoulliPrimeTable_160_eq_data` compilou limpo em Lean 4.32.0 com `warningAsError=true`; a auditoria isolada passou com `propext`, `Classical.choice`, `Quot.sound`. Tempo 1h56m34s, pico RSS 12,572,772 KiB. Resultado `CLEAN_BUILD=PASS`, `AXIOM_AUDIT=PASS`, runner `EXIT=0`; commit de prova `5f9cb0e`, auditor ajustado em `3cea0c3`.
-- Estado formal: 160/601 provado e integrado; 441 seguem abertos. As inclusões `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes`, a ponte CSV–Lean e os sinais finais continuam abertos.
+- `c5BernoulliPrimeTable_192_eq_data` está preparado em `SigmaC5BernoulliDataCertificate192.lean`, importando o `.olean` certificado de prefixo 160. Build limpo e auditoria ainda pendentes; não contar 192 até ambos passarem.
+- Estado formal integrado: 160/601 provado; 441 seguem abertos. As inclusões `sigmaC00495SourceBoxes`/`sigmaC01SourceBoxes`, a ponte CSV–Lean e os sinais finais continuam abertos.
+- Próximo comando após publicar este checkpoint: `bash research/native-moving-schur-sigma/mission-c5-finite-c2-certification/evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/run-detached.sh`.
 - Evidência e retomada: `evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/README.md`; reprodução limpa, logs, auditoria, pins e checksums estão preservados.
 - Logs, pins, tentativas, comandos e hashes do prefixo anterior 128: `evidence/rational-boxes/c5-bernoulli-data-prefix128-20261108/README.md`.
 

@@ -1,5 +1,20 @@
 # C5 — obrigações abertas
 
+## Estado atual — candidato ao prefixo Bernoulli 192 (2026-11-08)
+
+O prefixo 160 está integrado pela PR #312 (`cb829d98d799df72f07c9aff03e9d93871da6f77`).
+O teorema `c5BernoulliPrimeTable_192_eq_data` foi preparado a partir desse
+certificado, mas ainda aguarda compilação limpa e auditoria de axiomas.
+Até passar, somente 160/601 igualdades contam como provadas. Obrigações:
+
+1. Compilar e auditar o candidato 192; se válido, publicar e integrar e avançar em blocos até 601.
+2. Provar a ligação Lean entre as caixas de zeta exportadas e a avaliação correspondente.
+3. Certificar os nós Gamma restantes e compor as caixas zeta/Gamma com o fator nativo original e as quadraturas da fonte completada.
+4. Provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` sem hipóteses auxiliares e fechar os sinais finais de `sigmaPadeD`.
+
+C5 permanece incompleta. Evidência provisória desta etapa:
+`evidence/rational-boxes/c5-bernoulli-data-prefix192-20261108/README.md`.
+
 ## Estado atual — prefixo Bernoulli de 160 entradas integrado (2026-11-08)
 
 `c5BernoulliPrimeTable_160_eq_data` certifica os índices 0–159 em Lean 4.32,
