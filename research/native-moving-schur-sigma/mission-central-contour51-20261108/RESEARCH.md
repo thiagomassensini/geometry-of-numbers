@@ -63,7 +63,7 @@ Consequently, assuming `e_n≥0` for `0≤n≤5`, these four strict margins impl
 - Sample mean modulus: **0.5695801987243165**.
 - Residuals `e_0..e_5` numerically: `0.00956074303923091`, `9.34518811591709e-7`, `1.97785053903660e-10`, `5.13925976411857e-14`, `1.46980503972282e-17`, `4.44431065896308e-21`.
 
-**Neither a finite mesh nor floating-point Cauchy coefficients prove a uniform bound or positivity.** All six signs and the circle estimate require rigorous interval/Lean certification. Independent implementation of `F` and `F'` must be checked against the native normalization; the numerical probe additionally cross-checked at sample points against direct differentiation of xi.
+**Neither a finite mesh nor floating-point Cauchy coefficients prove a uniform bound or positivity.** The uniform circle bound is now established by the separate Arb interval certificate, while the six residual signs still require rigorous certification. The script uses the original source bridge to xi and the exact logarithmic-derivative formula; the earlier mpmath probe remains only a numerical cross-check.
 
 ## Minimal next checkpoints
 
