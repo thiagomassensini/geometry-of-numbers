@@ -1,5 +1,11 @@
 # C5 — validação
 
+## Prefixo 160 — validação ainda não concluída (2026-11-08)
+
+- O candidato `c5BernoulliPrimeTable_160_eq_data` ainda não tem compilação válida nem auditoria de axiomas; o estado continua 128/601.
+- A compilação atual está na sessão tmux `c5-bernoulli-prefix160-20261108`. Consulte `evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/runner-status.txt` antes de relançar.
+- Duas execuções anteriores foram interrompidas sem resultado do Lean e foram preservadas em `evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/attempts/`; não contam como aprovação ou contraexemplo.
+
 ## Validação recente — prefixo Bernoulli de 128 entradas (PR #309, 2026-11-08)
 
 - `c5BernoulliPrimeTable_128_eq_data` prova formalmente os índices 0–127 a partir do certificado integrado de 96 entradas.

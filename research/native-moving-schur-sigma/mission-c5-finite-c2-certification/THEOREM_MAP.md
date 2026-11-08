@@ -1,5 +1,14 @@
 # C5 — mapa dos teoremas e obrigações
 
+## Prefixo Bernoulli com 160 entradas — prova candidata; compilação pendente
+
+| Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |
+|---|---|---|---|---|
+| `CarrySigmaObstruction.c5BernoulliPrimeTable_160_eq_data` | `SigmaC5BernoulliDataCertificate160.lean` | nenhuma | entradas 0–159 da recorrência coincidem com `c5BernoulliPrimeDataPrefix160` | usa o teorema integrado de prefixo 128; **CANDIDATO, compilação e auditoria pendentes**, não contar como provado |
+
+O build está ativo na sessão tmux `c5-bernoulli-prefix160-20261108`; estado e
+evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix160-20261108/`.
+
 ## Prefixo Bernoulli com 128 entradas — integrado pela PR #309
 
 | Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |

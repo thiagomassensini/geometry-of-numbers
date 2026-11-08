@@ -1,13 +1,14 @@
 # C5 — obrigações abertas
 
-## Estado atual — prefixo Bernoulli de 128 entradas integrado pela PR #309 (2026-11-08)
+## Estado atual — prefixo Bernoulli de 160 entradas em compilação (2026-11-08)
 
-`c5BernoulliPrimeTable_128_eq_data` certifica os índices 0–127, apoiada na
-PR #302 e integrada pela PR #309 (merge
-`c7782c54b78f97b1ea3f5a61f6e0ceefe75f2f11`). Ainda faltam 473 das 601
+`c5BernoulliPrimeTable_128_eq_data` certifica os índices 0–127 e está
+integrada pela PR #309 (merge
+`c7782c54b78f97b1ea3f5a61f6e0ceefe75f2f11`). A prova candidata do prefixo
+160 ainda está compilando; até a validação passar, faltam 473 das 601
 igualdades formais. Obrigações abertas:
 
-1. Provar prefixos cumulativos começando por 160; ao completar a tabela, formalizar a ligação da menor caixa de zeta exportada à avaliação Lean.
+1. Concluir compilação e auditoria de `c5BernoulliPrimeTable_160_eq_data`; depois provar prefixos cumulativos até 601 e formalizar a ligação da menor caixa de zeta exportada à avaliação Lean.
 2. Certificar os nós Gamma restantes e compor as caixas zeta/Gamma com o fator nativo original e as quadraturas da fonte completada.
 3. Provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` sem hipóteses auxiliares.
 4. Fechar os sinais finais da `sigmaPadeD` original nos dois deslocamentos.
