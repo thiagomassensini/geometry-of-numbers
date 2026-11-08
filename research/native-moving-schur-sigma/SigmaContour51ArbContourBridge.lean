@@ -12,7 +12,7 @@ integral.
 
 namespace CarrySigmaObstruction
 
-open Complex MeasureTheory
+open CarrySelfAdjointOperator Complex MeasureTheory
 open scoped Interval
 
 noncomputable section
@@ -69,6 +69,66 @@ theorem periodic_pi_integral_full_eq_lower_parameter (q : ℝ → ℂ)
 def contour51OriginalResponse (z : ℂ) : ℂ :=
   -deriv completedNativeCharacteristicContinuation z /
     ((2 : ℂ) * completedNativeCharacteristicContinuation z)
+
+/-- The logarithmic derivative of the same completed-zeta parameter function used by the exact
+Lean continuation identity. -/
+def contour51SigmaXiLogDerivative (s : ℂ) : ℂ :=
+  deriv sigmaCompletedXiParameter s / sigmaCompletedXiParameter s
+
+theorem contour51OriginalResponse_eq_sigmaXiLogDerivative {z : ℂ}
+    (hF : completedNativeCharacteristicContinuation z ≠ 0) :
+    contour51OriginalResponse z =
+      (-(Complex.I / 2 : ℂ)) *
+        contour51SigmaXiLogDerivative (operatorHeightParameter z) := by
+  let s := operatorHeightParameter z
+  have hFvalue : completedNativeCharacteristicContinuation z =
+      sigmaCompletedXiParameter s :=
+    completedNativeCharacteristicContinuation_eq_sigmaCompletedXiParameter z
+  have hXi : sigmaCompletedXiParameter s ≠ 0 := by
+    rw [← hFvalue]
+    exact hF
+  have hXiDiff : DifferentiableAt ℂ sigmaCompletedXiParameter s := by
+    change DifferentiableAt ℂ (fun x : ℂ =>
+      (1 / 2 : ℂ) + (1 / 2 : ℂ) * x * (x - 1) * completedRiemannZeta₀ x) s
+    exact (differentiableAt_const (1 / 2 : ℂ)).add
+      ((((differentiableAt_const (1 / 2 : ℂ)).mul differentiableAt_id).mul
+        (differentiableAt_id.sub (differentiableAt_const (1 : ℂ)))).mul
+        differentiable_completedZeta₀.differentiableAt)
+  have hparamAnalytic : AnalyticAt ℂ operatorHeightParameter z :=
+    operatorHeightParameter_analyticAt z
+  have hcomp : completedNativeCharacteristicContinuation =
+      sigmaCompletedXiParameter ∘ operatorHeightParameter := by
+    funext w
+    exact completedNativeCharacteristicContinuation_eq_sigmaCompletedXiParameter w
+  have hderivComp := congrArg (fun f : ℂ → ℂ => deriv f z) hcomp
+  have hderivComp' : deriv completedNativeCharacteristicContinuation z =
+      deriv sigmaCompletedXiParameter (operatorHeightParameter z) *
+        deriv operatorHeightParameter z := by
+    calc
+      deriv completedNativeCharacteristicContinuation z =
+          deriv (sigmaCompletedXiParameter ∘ operatorHeightParameter) z := hderivComp
+      _ = _ := by
+        simpa only [Function.comp_def] using
+          deriv_comp_of_eq (x := z) (y := operatorHeightParameter z)
+            hXiDiff hparamAnalytic.differentiableAt rfl
+  have hparamDeriv : deriv operatorHeightParameter z = Complex.I := by
+    change deriv (fun w : ℂ => (1 / 2 : ℂ) + Complex.I * w) z = Complex.I
+    simp
+  have hFderiv : deriv completedNativeCharacteristicContinuation z =
+      Complex.I * deriv sigmaCompletedXiParameter s := by
+    calc
+      deriv completedNativeCharacteristicContinuation z =
+          deriv sigmaCompletedXiParameter (operatorHeightParameter z) *
+            deriv operatorHeightParameter z := hderivComp'
+      _ = Complex.I * deriv sigmaCompletedXiParameter s := by
+        rw [hparamDeriv]
+        dsimp [s]
+        ring
+  dsimp [contour51OriginalResponse, contour51SigmaXiLogDerivative]
+  rw [hFvalue, hFderiv]
+  have hs : operatorHeightParameter z = s := rfl
+  rw [hs]
+  field_simp [hXi]
 
 theorem contour51OriginalResponse_odd (z : ℂ) :
     contour51OriginalResponse (-z) = -contour51OriginalResponse z := by
@@ -270,6 +330,7 @@ theorem completedNative_sigmaPadeD_zero_pos_of_contour51_lower_path_intervals
     (contour51ArbFirstThreeResidualIntervalBounds_of_lower_path_bounds hPath)
 
 #print axioms contour51OriginalResponse_odd
+#print axioms contour51OriginalResponse_eq_sigmaXiLogDerivative
 #print axioms contour51OriginalResidualQuotient_neg
 #print axioms contour51OriginalAngularResidualIntegrand_periodic
 #print axioms periodic_pi_integral_full_eq_lower_parameter

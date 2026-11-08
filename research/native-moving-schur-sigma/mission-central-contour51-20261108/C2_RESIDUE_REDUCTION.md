@@ -119,9 +119,13 @@ This accounts for orientation, the circle derivative factor `iz`, π-periodicity
 `θ=-πu`. The proposition `contour51ArbLowerPathResidualIntervalBounds` states the exact interval
 inclusions in these lower-path coordinates; a proved adapter converts them to the circle-integral
 gate used by the residual and determinant theorems. Thus the path and normalization are no longer
-open. The inclusions themselves remain unproved in Lean: the external Taylor/Cauchy ranges still
-need to be transported to the actual derivative/log-derivative of the Lean continuation and
-integrated over the full rational arc partition.
+open. The source differential identity is also proved: for `F(z) ≠ 0`, Lean establishes
+`R(z)=-(i/2) xiLean'(s)/xiLean(s)`, where `xiLean := sigmaCompletedXiParameter` and
+`s=operatorHeightParameter z`. This differentiates the exact continuation identity and uses
+`ds/dz=i`. It does not yet expand `xiLean'/xiLean` into the classical zeta/Gamma expression used
+by the Arb evaluator. The inclusions themselves remain unproved in Lean: the external
+Taylor/Cauchy ranges still need to be checked against that formal evaluator and integrated over
+the full rational arc partition.
 
 ## The three remainder notions
 

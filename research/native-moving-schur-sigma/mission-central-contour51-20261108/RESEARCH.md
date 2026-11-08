@@ -132,8 +132,9 @@ Lean proves `R` odd from `F` even, proves the quotient even and π-periodic, acc
 orientation and the `iz` derivative factor, and derives continuity from C1's zero-free circle. The
 adapter from `contour51ArbLowerPathResidualIntervalBounds` to the prior C2 interval proposition is
 also compiled. The remaining C3/C5 bridge is precise: prove the per-arc rational intervals contain
-this Lean path integrand and its integrals, including equality of the source derivative/log-
-derivative with the classical evaluator and verification of its Taylor/Cauchy remainder ranges.
+this Lean path integrand and its integrals, including expansion of `xiLean'/xiLean` to the
+classical evaluator and verification of its Taylor/Cauchy remainder ranges. The exact source
+identity `R(z)=-(i/2)xiLean'/xiLean` is now proved, but the evaluator expansion is not.
 For the first determinant, only `n=0,1,2` inclusions are required; the resulting strict absolute
 margin is `1/1000000000`. All six strict residual lower margins are recorded in
 `CHECKPOINTS.md`. The uniform `|R|≤4/5` Lean theorem is independently open for the all-window route.

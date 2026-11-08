@@ -157,3 +157,16 @@ lower-path integral evaluated by Arb. It also adapts lower-path interval hypothe
 residual interval gates and composes the first three with the `s=0` determinant gate. The external
 per-arc inclusions remain open; this build proves their exact path-coordinate interface and
 conditional consequences, not the Arb enclosures themselves.
+
+## Source response to the completed-xi logarithmic derivative
+
+After adding `contour51OriginalResponse_eq_sigmaXiLogDerivative`, the module was rebuilt with the
+same command template and exclusive Lean 4.32.0 output root, using
+`MODULE_NAME=SigmaContour51ArbContourBridge` and log
+`/home/thlinux/tmp/c2-contour51-20261108-lean432/logs/SigmaContour51ArbContourBridge-attempt25.log`.
+It exited 0 with `-DwarningAsError=true`; all eight audited theorems print only
+`[propext, Classical.choice, Quot.sound]`. The C5 build remained isolated in its own worktree and
+cache, with about 45 GiB available. The checked-in success copy is
+`C3_SigmaContour51ArbContourBridge-build.log`. This theorem links the original source response to
+the derivative of Lean's entire completed-xi parameter function; expanding that derivative into
+the evaluator's zeta/Gamma formula and transferring the per-arc Arb enclosures remain open.
