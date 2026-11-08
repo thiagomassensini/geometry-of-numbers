@@ -1,0 +1,2 @@
+'CarrySigmaObstruction.c5BernoulliPrimeTable_32_eq_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+BUILD_EXIT=0
