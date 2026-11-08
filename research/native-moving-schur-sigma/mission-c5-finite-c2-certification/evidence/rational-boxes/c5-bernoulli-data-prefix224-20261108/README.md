@@ -42,8 +42,9 @@ certifica sinais C2/C5 nem altera as duas inclusões em aberto.
   indicado por `C5_PREFIX192_CACHE` (SHA-256 em `pins.txt`), e mantém os caches
   anteriores em `SIGMA_HEIGHT50_BUILD`. Todos os caminhos são configuráveis no
   reprodutor.
-- Branch `codex/c5-zeta-bernoulli-prefix224-20261108`. O commit validado e a
-  PR correspondente serão registrados aqui após a publicação do checkpoint.
+- Branch `codex/c5-zeta-bernoulli-prefix224-20261108`; commit validado
+  `d86ab885c4a9a99a2f5fc49cd3e0962f641ff06b`; PR #315:
+  https://github.com/thiagomassensini/geometry-of-numbers/pull/315.
 
 ## Runner e resultado
 

@@ -1,6 +1,6 @@
 # C5 — estado da sessão
 
-## Estado atual — prefixo 224 compilado e auditado; PR pendente (2026-11-08)
+## Estado atual — prefixo 224 compilado/auditado; PR #315 aberta (2026-11-08)
 
 - Último teorema validado e integrado: `CarrySigmaObstruction.c5BernoulliPrimeTable_192_eq_data`, PR #313, merge `f0bd4ec675a3dc483f55373d3a58092042fac67d`; estado pós-merge em `main@513b73b54d232d7f0375ca3a2381b749fc17dba3`.
 - O candidato `c5BernoulliPrimeTable_224_eq_data` foi compilado uma vez em Lean 4.32.0 com `warningAsError=true`, mas o build terminou `EXIT=1` após 1h56m46s. Pico RSS 9,869,328 KiB; memória disponível permaneceu acima de 52 GiB. A auditoria isolada não foi executada.
@@ -8,7 +8,7 @@
 - Log integral, `run-state`, status, primeira falha e hash do fonte pré-correção: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/attempts/first-build-failure-20261108/`. Não sobrescrever essa tentativa.
 - Branch `codex/c5-zeta-bernoulli-prefix224-20261108`; correção publicada no checkpoint `1e0feaaf0609ab1733c8a32cea2ec15ded9a5dba`. Estado validado continua 192/601; 409 entradas abertas.
 - O retry corrigido concluiu `EXIT=0`: build limpo Lean 4.32.0 com `warningAsError=true`, `CLEAN_BUILD=PASS`; auditoria isolada `AXIOM_AUDIT=PASS`, somente `propext`, `Classical.choice`, `Quot.sound`, sem `sorryAx`, `admit`, axiomas próprios ou `native_decide`. Tempo 5h05m; pico RSS 21,529,692 KiB. Evidência: `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/`.
-- O resultado formal na branch é 224/601, com 377 igualdades ainda abertas. `main` ainda está em 192/601 até a PR deste checkpoint ser integrada; não existe build ativo. C1B/C2/C3/C4 e a migração geral Lean 4.35 não devem ser reabertas.
+- O resultado formal na branch é 224/601, com 377 igualdades ainda abertas. PR #315 está aberta e mergeável; a `main` ainda está em 192/601 até sua integração. Não existe build ativo. C1B/C2/C3/C4 e a migração geral Lean 4.35 não devem ser reabertas.
 - A obrigação formal da fonte C2 continua exatamente em `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`; O3 e as margens racionais do determinante continuam condicionais às duas. O orçamento, as cinco correções cruzadas e o primeiro ponto sem caixa formal estão registrados em `C5_SOURCE_SIGN_BUDGET_20261108.md`.
 
 ## Histórico — prefixo Bernoulli de 64 entradas integrado (2026-11-08)

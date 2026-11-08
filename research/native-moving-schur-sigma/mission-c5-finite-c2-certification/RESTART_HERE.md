@@ -1,6 +1,6 @@
 # Retomar primeiro — missão C5
 
-## Estado atual — prefixo 224 passou build e auditoria; PR pendente (2026-11-08)
+## Estado atual — prefixo 224 passou build e auditoria; PR #315 aberta (2026-11-08)
 
 ```text
 MISSION: C5 — certificação finita dos sinais da fonte C2 original.
@@ -10,16 +10,16 @@ LAST VERIFIED THEOREM: CarrySigmaObstruction.c5BernoulliPrimeTable_224_eq_data (
 LAST COMPILED FILE: SigmaC5BernoulliDataCertificate224.lean; Lean 4.32.0, warningAsError=true; `CLEAN_BUILD=PASS`, `EXIT=0` após 5h05m.
 LAST SUCCESSFUL PROOF COMMIT: 636ea8d7ceea1af08adafcdb4d373e8e9b9895b4.
 LAST MERGE: PR #313, f0bd4ec675a3dc483f55373d3a58092042fac67d.
-LAST REMOTE SHA: 1aa396d1ce17f14af32c5eb9a8055d0e87c45868.
+LAST REMOTE SHA: d86ab885c4a9a99a2f5fc49cd3e0962f641ff06b.
 MAIN SHA: 513b73b54d232d7f0375ca3a2381b749fc17dba3.
 CURRENT BRANCH: codex/c5-zeta-bernoulli-prefix224-20261108.
-OPEN PR: nenhuma.
+OPEN PR: #315 — https://github.com/thiagomassensini/geometry-of-numbers/pull/315
 ACTIVE BUILD: nenhum; retry do prefixo 224 terminou em `EXIT=0` às 2026-11-08T21:47:48Z. Pico RSS 21,529,692 KiB; auditoria isolada `AXIOM_AUDIT=PASS`, só `propext`, `Classical.choice`, `Quot.sound`.
 LAST ERROR: `hn192` não fechou `n < c5BernoulliPrimeDataPrefix160.size + 32`; a recorrência gerou metas residuais de `getD` e a extensionalidade terminou em `Prefix160.size = 160`, por falta do prefixo 160 nas listas de simplificação.
 WHAT IS PROVED: prefixo 192/601 integrado; prefixo 224/601 compilado limpo e auditado na branch; axiomas somente propext, Classical.choice, Quot.sound.
 WHAT IS CONDITIONAL: os sinais finais dependem das inclusões não provadas sigmaC00495SourceBoxes e sigmaC01SourceBoxes.
 WHAT IS BLOCKED: integração da PR pendente; 377 entradas após 224, ponte CSV–Lean, inclusões da fonte e sinais finais permanecem abertos.
-EXACT NEXT COMMAND: git status --short --branch; abrir PR da branch `codex/c5-zeta-bernoulli-prefix224-20261108` após conferir os artefatos em `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/`.
+EXACT NEXT COMMAND: conferir estado/checks da PR #315 e integrar o incremento 192→224 se ela continuar mergeável.
 EXACT NEXT MATHEMATICAL OBLIGATION: integrar a igualdade 0–223; em seguida, continuar blocos cumulativos até 601 e ligar um nó Euler–Maclaurin às caixas Lean. A obrigação final de inclusão permanece `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`.
 DO NOT REPEAT: prefixos 32/64/96/128/160/192; não recomeçar a prova 224 nem a auditoria 192. Não reabrir C1B/C2/C3/C4; não iniciar migração geral Lean 4.35. Não declarar sinais C5 incondicionais enquanto as caixas de fonte forem hipóteses.
 ```

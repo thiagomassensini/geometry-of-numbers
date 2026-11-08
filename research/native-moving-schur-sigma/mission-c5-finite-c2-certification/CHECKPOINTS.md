@@ -1,6 +1,6 @@
 # C5 — checkpoints
 
-## 2026-11-08 — prefixo 224 compilado/auditado; orçamento dos sinais registrado
+## 2026-11-08 — prefixo 224 compilado/auditado; PR #315 aberta
 
 - A candidata `c5BernoulliPrimeTable_224_eq_data` terminou a compilação limpa com `EXIT=1` após 1h56m46s; pico RSS 9,869,328 KiB. A auditoria isolada não foi executada.
 - Primeiro erro: `hn192` não se simplificou para `n < Prefix160.size + 32`; os objetivos de `getD` na recorrência e o objetivo `Prefix160.size = 160` também ficaram abertos porque o bloco base `c5BernoulliPrimeDataPrefix160` faltava nas listas de simplificação.
@@ -8,7 +8,7 @@
 - A correção foi publicada em `1e0feaaf0609ab1733c8a32cea2ec15ded9a5dba`; o retry terminou com `EXIT=0`, `CLEAN_BUILD=PASS` e `AXIOM_AUDIT=PASS` em Lean 4.32.0. Tempo 5h05m, pico RSS 21,529,692 KiB. A auditoria reportou somente `propext`, `Classical.choice` e `Quot.sound`. O branch valida 224/601; a `main` permanece em 192/601 até integração da PR.
 - `C5_SOURCE_SIGN_BUDGET_20261108.md` registra as inclusões Lean ainda abertas, as larguras racionais condicionais em C4/determinante, as margens dos sinais experimentais e os cinco termos que invertem o resultado do modelo de dois modos. Não há alegação de sinal incondicional.
 - Logs da tentativa corrigida, auditoria, pins e hashes estão em `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/`; `sha256sum -c SHA256SUMS.txt` passou após regenerar o manifesto sem o arquivo temporário.
-- Próximo: publicar e integrar a PR do incremento 192→224; depois continuar a tabela cumulativa até 601/601. As inclusões C2 seguem abertas.
+- PR #315: https://github.com/thiagomassensini/geometry-of-numbers/pull/315; estado atual aberto e mergeável. Próximo: integrar o incremento 192→224 e continuar a tabela cumulativa até 601/601. As inclusões C2 seguem abertas.
 
 ## 2026-11-08 — prefixo Bernoulli 192 integrado pela PR #313
 

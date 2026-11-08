@@ -1,10 +1,10 @@
 # C5 — mapa dos teoremas e obrigações
 
-## Prefixo Bernoulli com 224 entradas — compilado e auditado; PR pendente
+## Prefixo Bernoulli com 224 entradas — compilado e auditado; PR #315 aberta
 
 | Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |
 |---|---|---|---|---|
-| `CarrySigmaObstruction.c5BernoulliPrimeTable_224_eq_data` | `SigmaC5BernoulliDataCertificate224.lean` | nenhuma | entradas 0–223 da recorrência coincidem com `c5BernoulliPrimeDataPrefix224` | estende o prefixo integrado 192 por recorrência de Bernoulli; **build limpo e auditoria aprovados** em Lean 4.32, somente axiomas padrão; PR pendente, main ainda 192/601 |
+| `CarrySigmaObstruction.c5BernoulliPrimeTable_224_eq_data` | `SigmaC5BernoulliDataCertificate224.lean` | nenhuma | entradas 0–223 da recorrência coincidem com `c5BernoulliPrimeDataPrefix224` | estende o prefixo integrado 192 por recorrência de Bernoulli; **build limpo e auditoria aprovados** em Lean 4.32, somente axiomas padrão; PR #315 aberta, main ainda 192/601 |
 
 O reprodutor, logs, resultado, auditoria e pins estão em
 `evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/`.
