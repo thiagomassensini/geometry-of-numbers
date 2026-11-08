@@ -1,5 +1,11 @@
 # C5 — validação
 
+O orçamento quantitativo das caixas já usadas em O3, a margem para os sinais,
+os cinco termos cruzados encontrados na avaliação C2 completa e a primeira
+lacuna formal anterior à inclusão dos coeficientes estão registrados em
+`C5_SOURCE_SIGN_BUDGET_20261108.md`. As duas inclusões da fonte seguem abertas;
+os sinais derivados em O3 não são incondicionais.
+
 ## Prefixo 224 — tentativa 1 falhou; tentativa 2 em andamento (2026-11-08)
 
 - `c5BernoulliPrimeTable_224_eq_data` não compilou em Lean 4.32.0 na primeira tentativa. `BUILD_EXIT=1`, tempo 1h56m46s, pico RSS 9,869,328 KiB.

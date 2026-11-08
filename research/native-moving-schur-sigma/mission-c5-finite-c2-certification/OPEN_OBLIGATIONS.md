@@ -1,10 +1,10 @@
 # C5 — obrigações abertas
 
-## Estado atual — prefixo integrado 192; candidata 224 com falha inicial (2026-11-08)
+## Estado atual — prefixo integrado 192; retry corrigido do 224 ativo (2026-11-08)
 
 A `main` contém 192/601 entradas pela PR #313. A primeira tentativa de provar o
-prefixo 224 falhou em metas de redução de arrays anexados; 409 entradas seguem
-abertas no estado validado. Obrigações:
+prefixo 224 falhou em metas de redução de arrays anexados; a tentativa corrigida
+está ativa, e 409 entradas seguem abertas no estado validado. Obrigações:
 
 1. Acompanhar a segunda compilação limpa do prefixo 224, confirmar build e auditoria, então integrar o checkpoint; a primeira tentativa já está preservada.
 2. Provar a ligação Lean entre as caixas de zeta exportadas e a avaliação correspondente.
@@ -12,7 +12,10 @@ abertas no estado validado. Obrigações:
 4. Provar `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes` sem hipóteses auxiliares e fechar os sinais finais de `sigmaPadeD`.
 
 O erro do primeiro build, logs, pins, comandos e estado estão em
-`evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/`. C5 permanece incompleta.
+`evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/`. O orçamento dos
+menores condicionais, as cinco correções cruzadas da fonte C2 e o primeiro elo
+formal que falta antes das caixas estão em `C5_SOURCE_SIGN_BUDGET_20261108.md`.
+C5 permanece incompleta.
 
 ## Estado atual — prefixo Bernoulli de 160 entradas integrado (2026-11-08)
 

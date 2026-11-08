@@ -1,14 +1,20 @@
 # C5 — mapa dos teoremas e obrigações
 
-## Prefixo Bernoulli com 224 entradas — candidato checkpointado; compilação pendente
+## Prefixo Bernoulli com 224 entradas — retry corrigido em compilação
 
 | Declaração | Arquivo | Hipóteses | Conclusão | Dependências/status |
 |---|---|---|---|---|
-| `CarrySigmaObstruction.c5BernoulliPrimeTable_224_eq_data` | `SigmaC5BernoulliDataCertificate224.lean` | nenhuma | entradas 0–223 da recorrência coincidem com `c5BernoulliPrimeDataPrefix224` | estende o prefixo integrado 192 por recorrência de Bernoulli; **CANDIDATO**, build limpo e auditoria pendentes; não contar acima de 192/601 |
+| `CarrySigmaObstruction.c5BernoulliPrimeTable_224_eq_data` | `SigmaC5BernoulliDataCertificate224.lean` | nenhuma | entradas 0–223 da recorrência coincidem com `c5BernoulliPrimeDataPrefix224` | estende o prefixo integrado 192 por recorrência de Bernoulli; retry corrigido em build limpo Lean 4.32 está ativo, auditoria pendente; não contar acima de 192/601 |
 
 O reprodutor e os pins estão em
-`evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/`. O build deve
-ser executado apenas depois de confirmar o checkpoint remoto.
+`evidence/rational-boxes/c5-bernoulli-data-prefix224-20261108/`. A auditoria
+deve ocorrer depois do build ativo.
+
+As caixas de coeficientes e os sinais de determinantes derivados permanecem
+condicionais a `sigmaC00495SourceBoxes` e `sigmaC01SourceBoxes`. A análise das
+larguras absolutas, margens e cinco termos cruzados da C2 completa está em
+`C5_SOURCE_SIGN_BUDGET_20261108.md`; não reclassificar os sinais como
+incondicionais antes de provar ambas as inclusões.
 
 ## Prefixo Bernoulli com 192 entradas — integrado pela PR #313
 
