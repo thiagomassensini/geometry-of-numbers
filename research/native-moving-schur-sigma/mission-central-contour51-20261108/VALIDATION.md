@@ -219,6 +219,36 @@
 - **Próximo passo técnico mínimo:** o script C3 monta `ζ`/`ζ′` com Taylor de ordem 32 e raio `1/4`, controla os restos por Cauchy, depois combina com caixas para `s`, `s-1`, `log π` e digamma. Os CSV/JSON guardam os extremos finais por arco, sem o rastro racional detalhado dos coeficientes Taylor e operações intermediárias. É necessário fornecer a Lean as inclusões por arco de `ζ` e `ζ′` com coeficientes/majorantes certificados e compor as caixas para a resposta/integrando. A primeira restrição útil é nos 4096 arcos para `n=0,1,2`; a cota da resposta usa separadamente os 512 arcos.
 - **Componentes C5 reutilizáveis identificados:** bolas reais e transporte racional (`SigmaFiniteRationalIntervals.lean`, `SigmaFiniteRationalIntervalTransport.lean`); contenção de pontos complexos racionais e tipo `ComplexInterval` (`SigmaC5RationalNodeEval.lean`); recorrência/normalização e especialização algébrica da fonte (`SigmaSourceBezout.lean`, `SigmaContour51BoxSensitivity.lean`). A avaliação Euler–Maclaurin e suas tabelas de nós zeta/Gamma/Bernoulli não são a série Taylor C3 e não foram refeitas. Qualquer reutilização de nó ainda precisa provar a transformação quantitativa dos centros e caixas.
 
+## C3 genérico — restos de Taylor/Cauchy e transferência intervalar
+
+- **Módulo:** `research/native-moving-schur-sigma/SigmaContour51TaylorRemainder.lean`.
+- **Teoremas compilados:** `contourTaylorCoefficient_norm_le`,
+  `contourTaylorDerivativeCoefficient_norm_le`,
+  `contourTaylorWeightedGeometricShift_sum`, `contourTaylorRemainder_norm_le`,
+  `contourTaylorDerivativeRemainder_norm_le`, `contourTaylorIntervalPolynomial_contains`,
+  `contourTaylorIntervalPolynomial_inflate_contains` e
+  `contourTaylorDerivativeIntervalPolynomial_inflate_contains`.
+- **Hipóteses:** Cauchy exige `DiffContOnCl ℂ f (ball c r)` e `‖f w‖≤M` na esfera; o resto da
+  derivada exige também `DifferentiableOn ℂ (deriv f) (ball c r)`. Ambos requerem `z∈ball c r`,
+  `0≤q<1` e `‖z-c‖≤q*r`. A transferência por caixas exige caixas explícitas contendo cada
+  coeficiente Taylor exato e o deslocamento, além de um erro racional. Esses dados não foram ainda
+  provados para os arcos Arb atuais.
+- **Fórmulas verificadas:** `M*q^(N+1)/(1-q)` para a cauda do valor e
+  `(M/r)*q^N*((N+1)-N*q)/(1-q)^2` para a cauda da derivada. Correspondem a `N=32`, `r=1/4` do C3.
+- **Build:** Lean 4.32.0, `-DwarningAsError=true`, saída exclusiva em
+  `/home/thlinux/tmp/c2-contour51-20261108-lean432`, código de saída 0. Comando em
+  `evidence/BUILD_COMMANDS.md`; log compilado em
+  `evidence/C3_SigmaContour51TaylorRemainder-success.log`.
+- **Axiomas:** os oito teoremas reportam somente `[propext, Classical.choice, Quot.sound]`. A
+  varredura do fonte não encontrou `sorry`, `admit`, `native_decide` nem axioma declarado.
+- **SHA-256:** fonte `994530cf7c4159c423ee099a8cfeca814e91fa964c66caa37381d2bb07336769`; OLean
+  `/home/thlinux/tmp/c2-contour51-20261108-lean432/SigmaContour51TaylorRemainder.olean`
+  `77b9e6bd16b8fe309aa6be1595441dec7d9101db6ee3fb7136154b90b61a67ee`; log
+  `32525b93029267fbccbb71850e719d7b69707e06ce34cc061241bae28ad961c5`.
+- **Limite atual:** o módulo não certifica caixas de coeficientes, majorantes de disco ou
+  deslocamentos a partir dos dados Arb. As inclusões dos 512/4096 arcos e os sinais dos resíduos
+  continuam abertos; nenhuma positividade central incondicional foi concluída.
+
 ## C3 — limites superiores verificados para os 512 arcos
 
 - **Exportação:** `generate_contour51_bound_lean.py` lê `response_upper` do CSV C3 em python-flint 0.8.0 a 160 bits e converte a ponta superior de cada bola Arb em fração racional outward-rounded. São 512 entradas ordenadas. A maior é `1866031173444015023751641117317496301922252635655657/2500000000000000000000000000000000000000000000000000`.

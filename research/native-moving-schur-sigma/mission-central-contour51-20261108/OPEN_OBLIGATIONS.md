@@ -116,6 +116,36 @@ C3 em cada arco: reutilizar qualquer avaliação de nó exige provar a transform
 das caixas. Nenhuma tabela Bernoulli nem lista completa de nós foi refeita neste trabalho. Caixas
 C5 em `d=0.0495` e `d=0.1` continuam sem transporte quantitativo ao centro.
 
+## Incremento formal de Taylor/Cauchy — 2026-11-08
+
+`SigmaContour51TaylorRemainder.lean` prova, para uma função holomorfa genérica e um disco com
+majorante de fronteira `M`, os restos de Taylor usados pelo script C3. A razão `q` é uma entrada
+verificável que satisfaz `‖z-c‖≤q*r` e `q<1`. Os restos são
+`M*q^(N+1)/(1-q)` para o valor e
+`(M/r)*q^N*((N+1)-N*q)/(1-q)^2` para a derivada. O módulo também verifica a propagação das
+caixas dos coeficientes e do deslocamento pelo polinômio intervalar e a inflação por um erro
+racional provado.
+
+Para cada arco C3 ainda precisam ser fornecidos e provados:
+
+1. Caixa racional para o centro e para todo deslocamento `s(u)-s₀` no arco, com
+   `‖s(u)-s₀‖≤q*(1/4)` e `q<1`.
+2. `DiffContOnCl` da zeta no disco de raio `1/4` e majorante de fronteira `M` derivado de
+   caixas racionais. A checagem externa de que o disco evita o polo não é um teorema Lean.
+3. Caixas racionais contendo os coeficientes exatos `deriv^k zeta(s₀)/k!`, para `k≤32`,
+   incluindo a ligação das bolas `acb_series.zeta()` aos coeficientes verdadeiros. O resto Cauchy
+   limita a cauda em relação ao Taylor exato; não valida as caixas dos coeficientes.
+4. Aplicar os restos para conter zeta e zeta′ no arco; conter separadamente `1/s`, `1/(s-1)`,
+   `log π` e `digamma(s/2)`; provar que a caixa de zeta exclui zero; e então demonstrar a inclusão
+   da resposta ou do integrando residual nas caixas Arb.
+5. Só então usar a integração compilada: nos 4096 arcos para `n=0,1,2` para o primeiro avanço;
+   nos seis índices para as seis margens; e nos 512 arcos em separado para obter `hR` e C4.
+
+O novo módulo verifica a transformação “coeficientes + deslocamento + resto racional → caixa
+contendo a função/derivada”, mas não descarrega esses inputs com os dados atuais. O resto do
+avaliador continua distinto do resíduo de dez modos e da cauda material da C2; os cinco cruzamentos
+do determinante permanecem inalterados.
+
 ## C3 — tabela racional e inclusão dos 512 arcos
 
 `SigmaContour51ArbBoundCertificate512.lean` verifica em Lean os 512 limites superiores racionais

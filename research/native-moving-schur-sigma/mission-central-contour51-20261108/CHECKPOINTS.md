@@ -171,3 +171,27 @@ The exact endpoints and certificate metadata are in `evidence/C3_ARb_RESIDUALS_4
 - `contour51Arb512ResponseArcEvaluatorInclusion` declara a obrigação contínua exata por arco fechado. Lean prova a cobertura racional de `[0,1]`; sob essa inclusão, deriva a cota do semicírculo, `hR` no círculo e compõe com o teorema de todas as janelas, sem esconder os seis sinais `e_n≥0`.
 - A inclusão da fórmula original nos 512 extremos, com restos Taylor/Cauchy, continua aberta. A tabela prova os limites dos extremos exportados, não a inclusão do avaliador. Também seguem abertas as inclusões residuais de 4096 arcos; para o primeiro avanço determinantal bastam `n=0,1,2`. Nenhuma positividade central incondicional foi declarada.
 - Compilado em Lean 4.32.0 com warnings como erros; teoremas condicionais novos usam somente `[propext, Classical.choice, Quot.sound]`. Logs e hashes completos estão em `VALIDATION.md`.
+
+## Incremento C3 — restos de Taylor/Cauchy e inclusão por caixas
+
+`SigmaContour51TaylorRemainder.lean` formaliza, a partir da estimativa de Cauchy de Mathlib,
+as duas cotas usadas pelo avaliador Arb. Sob `DiffContOnCl ℂ f (ball c r)`, uma cota
+`‖f w‖≤M` em `sphere c r`, `z∈ball c r`, `0≤q<1` e `‖z-c‖≤q*r`, Lean prova
+`‖f z - Taylor_N(f,c,z)‖ ≤ M*q^(N+1)/(1-q)`. Para a derivada, exige também
+`DifferentiableOn ℂ (deriv f) (ball c r)` e prova
+`‖deriv f z - TaylorDerivative_N(f,c,z)‖ ≤ (M/r)*q^N*((N+1)-N*q)/(1-q)^2`.
+
+O módulo formaliza ainda que caixas complexas retangulares dos coeficientes exatos e do
+deslocamento contêm o polinômio; ao inflar por um erro racional provado, a caixa contém o valor da
+função ou da derivada. Essa é a interface genérica necessária para a ordem 32 e raio `1/4` de C3.
+
+**Fronteira ainda aberta:** as caixas de coeficientes exportadas do Arb, os majorantes dos discos e
+as caixas do deslocamento ainda não foram ligados à zeta, à derivada da zeta, à digamma ou à
+resposta original. Assim, `contour51Arb512ResponseArcEvaluatorInclusion` e
+`contour51Arb4096FirstThreeArcEvaluatorInclusion` continuam hipóteses abertas. O resto de Taylor
+formalizado não é a cauda material da C2 nem o resíduo central `e_n`; somente inclusão por arco e
+integração transportam suas cotas para `e_n`. Nenhuma positividade central incondicional foi
+concluída.
+
+Compilado em Lean 4.32.0 com warnings como erros. Os oito teoremas auditados dependem somente de
+`[propext, Classical.choice, Quot.sound]`; comando e hashes estão em `VALIDATION.md`.

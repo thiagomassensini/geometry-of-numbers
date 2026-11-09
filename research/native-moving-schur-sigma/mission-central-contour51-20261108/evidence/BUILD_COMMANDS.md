@@ -237,6 +237,26 @@ the evidence copy is `C3_SigmaContour51ArbContourBridge-attempt68-success.log`. 
 Lean 4.32.0 with warnings treated as errors while C5 used its separate authorized worktree/cache;
 only the C2 exclusive output root was written.
 
+## C3 generic Cauchy Taylor remainder and interval polynomial transfer
+
+The standalone Taylor module compiled with Lean 4.32.0 and warnings as errors, using the exclusive
+C2 output root and read-only B1/B2, C2 integration, Carry, and Mathlib dependencies. C5 continued
+in its own worktree/cache; no C5 cache was used as output.
+
+```bash
+CARRY_LEAN_ROOT=/home/thlinux/worktrees/carry-sigma-c2-pinned-045369 \
+SIGMA_OUTPUT_DIR=/home/thlinux/tmp/c2-contour51-20261108-lean432 \
+SIGMA_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108 \
+SIGMA_HEIGHT50_BUILD=/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/integration:/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/external:/home/thlinux/tmp/c2-central-ten-heights-b2-20261108-lean432:/home/thlinux/tmp/c2-central-hankel2-20261107-lean432:/home/thlinux/geometry-of-numbers/.lake/build/lib/lean \
+bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaContour51TaylorRemainder
+```
+
+Successful output is at
+`/home/thlinux/tmp/c2-contour51-20261108-lean432/logs/SigmaContour51TaylorRemainder-final.log`
+and copied to `C3_SigmaContour51TaylorRemainder-success.log`. It prints all eight theorem axiom
+reports. This build verifies generic remainders and interval-box propagation only; Arb coefficient
+boxes, disk majorants, arc displacement bounds, and response assembly remain open.
+
 ## C3 512-arc response table and conditional `hR`
 
 Generate the exact rational table from the existing Arb CSV:

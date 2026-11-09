@@ -70,3 +70,15 @@ all-window theorem. The theorem still leaves six residual signs explicit. Provin
 pointwise inclusion, including Taylor/Cauchy remainders, is open; the separate 4096-arc residual
 inclusions are also open, with `n=0,1,2` the first-window minimum. Logs and hashes are in
 `VALIDATION.md`.
+
+### Latest C3 formal Taylor step
+
+`SigmaContour51TaylorRemainder.lean` compiles generic Cauchy bounds for the value and derivative
+Taylor tails, including the exact weighted-geometric derivative remainder. It also proves that
+rational complex interval boxes for exact Taylor coefficients and the displacement, inflated by a
+proved rational remainder, contain the function or derivative value. These results still require
+the coefficient boxes, `DiffContOnCl` plus a boundary majorant, and the closed-arc displacement
+bound. They do not verify those inputs for zeta/digamma or connect the 512/4096 tables to the
+original Lean evaluator. No residual signs or central positivity are discharged. See
+`OPEN_OBLIGATIONS.md` for the exact remaining inputs and `VALIDATION.md` for the Lean 4.32 build,
+axiom audit, and hashes.
