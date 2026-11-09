@@ -62,3 +62,11 @@ lemma for the first unconditional result is its restriction to `n=0,1,2`. Exact 
 new Lean build hash are recorded in `VALIDATION.md`. The existing source-response, C2 meromorphic
 residue identity, all five determinant cross terms, and the distinction among the source residual,
 the material C2 tail, and evaluator truncation remainder remain in force.
+
+Latest module: `SigmaContour51ArbBoundCertificate512.lean`. It verifies every rational response
+upper endpoint in the 512-arc table, proves the partition cover, and gives a conditional chain
+from `contour51Arb512ResponseArcEvaluatorInclusion` to the full-circle `hR` and the existing
+all-window theorem. The theorem still leaves six residual signs explicit. Proving the 512
+pointwise inclusion, including Taylor/Cauchy remainders, is open; the separate 4096-arc residual
+inclusions are also open, with `n=0,1,2` the first-window minimum. Logs and hashes are in
+`VALIDATION.md`.

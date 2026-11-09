@@ -1,0 +1,76 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbBoundCertificate512.lean:90:4: error: This simp argument is unused:
+  List.forall_mem_nil
+
+Hint: Omit it from the simp argument list.
+  simp only [contour51Arb512ResponseUpperBounds, List.forall_mem_cons,̵
+  ̵ ̵ ̵ ̵ ̵L̵i̵s̵t̵.̵f̵o̵r̵a̵l̵l̵_̵m̵e̵m̵_̵n̵i̵l̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbBoundCertificate512.lean:97:43: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  List.getD ?m.25 ?n ?d
+in the target expression
+  contour51Arb512ResponseUpperBounds.getD k 0 ∈ contour51Arb512ResponseUpperBounds
+
+k : ℕ
+hk : k < 512
+⊢ contour51Arb512ResponseUpperBounds.getD k 0 ∈ contour51Arb512ResponseUpperBounds
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbBoundCertificate512.lean:98:6: error: Type mismatch: After simplification, term
+  hk
+ has type
+  k < 512
+of sort `Prop` but is expected to have type
+  List ?m.24
+of sort `Type ?u.19`
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbBoundCertificate512.lean:124:2: error: unsolved goals
+case pos
+hu : 1 ∈ Set.Icc 0 1
+⊢ 511 / 512 ≤ 1
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbBoundCertificate512.lean:127:54: error: Application type mismatch: The argument
+  hu1
+has type
+  ¬u = 1
+but is expected to have type
+  1 ≠ u
+in the application
+  Ne.symm hu1
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbBoundCertificate512.lean:129:38: error: failed to prove positivity/nonnegativity/nonzeroness
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbBoundCertificate512.lean:132:55: error: linarith failed to find a contradiction
+u : ℝ
+hu : u ∈ Set.Icc 0 1
+hu1 : ¬u = 1
+huLt : u < 1
+k : ℕ := ⌊512 * u⌋₊
+hxnonneg : 0 ≤ 512 * u
+hkLo : ↑k ≤ 512 * u
+hkHi : 512 * u < ↑k + 1
+a✝ : ↑512 ≤ 512 * u
+⊢ False
+failed
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbBoundCertificate512.lean:137:6: error: Type mismatch
+  hkLo
+has type
+  ↑k ≤ 512 * u
+but is expected to have type
+  ↑k ≤ u * 512
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbBoundCertificate512.lean:140:6: error: Type mismatch
+  LT.lt.le hkHi
+has type
+  512 * u ≤ ↑k + 1
+but is expected to have type
+  u * 512 ≤ ↑k + 1
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbBoundCertificate512.lean:152:4: error: mod_cast has type
+  contour51Arb512ResponseUpperBound k < 4 / 5
+but is expected to have type
+  ↑(contour51Arb512ResponseUpperBound k) < 4 / 5
+'CarrySigmaObstruction.contour51ArbLowerSemicircleUniformResponseBound_of_512_arc_evaluator_inclusion' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51OriginalResponse_circle_norm_bound_of_512_arc_evaluator_inclusion' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbBoundCertificate512.lean:166:0: error: Unexpected name `CarrySigmaObstruction` after `end`: The current section is unnamed
+
+Hint: Delete the name `CarrySigmaObstruction` to end the current unnamed scope; outer named scopes can then be closed using additional `end` command(s):
+  end ̵C̵a̵r̵r̵y̵S̵i̵g̵m̵a̵O̵b̵s̵t̵r̵u̵c̵t̵i̵o̵n̵

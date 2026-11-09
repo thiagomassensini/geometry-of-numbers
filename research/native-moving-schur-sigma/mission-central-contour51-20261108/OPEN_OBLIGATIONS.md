@@ -115,3 +115,17 @@ e as tabelas de Bernoulli/nós zeta-Gamma do C5 não certificam automaticamente 
 C3 em cada arco: reutilizar qualquer avaliação de nó exige provar a transformação dos centros e
 das caixas. Nenhuma tabela Bernoulli nem lista completa de nós foi refeita neste trabalho. Caixas
 C5 em `d=0.0495` e `d=0.1` continuam sem transporte quantitativo ao centro.
+
+## C3 — tabela racional e inclusão dos 512 arcos
+
+`SigmaContour51ArbBoundCertificate512.lean` verifica em Lean os 512 limites superiores racionais
+da coluna `response_upper`, todos abaixo de `746413/1000000<4/5`, e prova que os arcos fechados
+da partição cobrem `[0,1]`. Sob `contour51Arb512ResponseArcEvaluatorInclusion`, isso produz a
+cota uniforme no semicírculo e, pela simetria já provada, a cota em todo o círculo de raio 51.
+
+A hipótese ainda não provada é a inclusão ponto a ponto da resposta da fonte original em cada
+extremo Arb: para todo `k<512` e todo `u∈[k/512,(k+1)/512]`, provar
+`‖R(circleMap 0 51 (-π*u))‖≤upper[k]`. Isso exige formalizar a avaliação zeta/Gamma/digamma e
+os restos Taylor/Cauchy em todos os arcos. Em separado, as inclusões residuais de 4096 arcos
+continuam abertas para `n=0,…,5`; a restrição `n=0,1,2` é o próximo lema mínimo para o primeiro
+determinante. A composição com todas as janelas deixa os seis sinais `e_n≥0` explícitos.

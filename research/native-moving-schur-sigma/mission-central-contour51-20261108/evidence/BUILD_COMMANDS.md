@@ -236,3 +236,19 @@ output root. The successful command redirected to
 the evidence copy is `C3_SigmaContour51ArbContourBridge-attempt68-success.log`. It compiled on
 Lean 4.32.0 with warnings treated as errors while C5 used its separate authorized worktree/cache;
 only the C2 exclusive output root was written.
+
+## C3 512-arc response table and conditional `hR`
+
+Generate the exact rational table from the existing Arb CSV:
+
+```bash
+python3 research/native-moving-schur-sigma/mission-central-contour51-20261108/generate_contour51_bound_lean.py
+```
+
+The exporter uses python-flint 0.8.0 at 160-bit precision and outward-rounds every
+`response_upper` ball. `SigmaContour51ArbBoundCertificate512` was compiled with the common Lean
+environment and exclusive output root above; the final command output is at
+`/home/thlinux/tmp/c2-contour51-20261108-lean432/logs/SigmaContour51ArbBoundCertificate512-attempt6.log`.
+Its committed evidence copy verifies the rational table, closed-arc cover, conditional response
+to `hR` bridge, and composition with the conditional all-window theorem. Pointwise evaluator
+inclusion is still an explicit premise.

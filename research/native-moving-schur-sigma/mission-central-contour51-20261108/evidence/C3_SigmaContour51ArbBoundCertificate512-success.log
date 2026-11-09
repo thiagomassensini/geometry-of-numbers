@@ -1,0 +1,9 @@
+'CarrySigmaObstruction.contour51ArbLowerSemicircleUniformResponseBound_of_512_arc_evaluator_inclusion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51OriginalResponse_circle_norm_bound_of_512_arc_evaluator_inclusion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNative_sigmaPadeD_pos_of_contour51_512_arc_inclusions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
