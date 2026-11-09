@@ -393,3 +393,28 @@ bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaContour51Arb5
 
 The successful build is `SigmaContour51Arb512ComponentComposition-attempt4.log`; its copied
 evidence has both theorem axiom audits. No component data were imported from C5's displaced boxes.
+
+## C3/C6 conditional first-window component bridge
+
+`SigmaContour51FirstWindowComponentBridge` composes the existing proven 4096-arc `s` and `z`
+geometry boxes and C5 `log π` box with caller-supplied continuous ζ, ζ′ and digamma boxes, positive
+norm-square bounds, and exact output endpoint comparisons. For records on all arcs, it proves the
+three integrand inclusions for `n=0,1,2`, transfers them to the original residual intervals, and
+derives the strict absolute determinant margin `10⁻⁹`. The component records are assumptions of the
+theorem and are still unprovided.
+
+Lean 4.32.0 build command (same pinned environment and output root as above):
+
+```bash
+CARRY_LEAN_ROOT=/home/thlinux/worktrees/carry-sigma-c2-pinned-045369 \
+SIGMA_OUTPUT_DIR=/home/thlinux/tmp/c2-contour51-20261108-lean432 \
+SIGMA_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108 \
+SIGMA_HEIGHT50_BUILD=/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/integration:/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/external:/home/thlinux/tmp/c2-central-ten-heights-b2-20261108-lean432:/home/thlinux/tmp/c2-central-hankel2-20261107-lean432:/home/thlinux/geometry-of-numbers/.lake/build/lib/lean \
+bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaContour51FirstWindowComponentBridge
+```
+
+The successful log is `SigmaContour51FirstWindowComponentBridge-attempt2.log`; the copied log
+contains three theorem axiom audits with only standard axioms. Attempt 1 is retained as a diagnostic:
+the final theorem returns only the determinant inequality, while the existing lower-path theorem
+also provides the exact ten-root witness, so the proof now explicitly projects its determinant
+conclusion.

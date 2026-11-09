@@ -265,7 +265,7 @@ de positividade central incondicional. O próximo lema útil é a inclusão unif
 arco a partir dos dados Taylor certificados; para o primeiro avanço, isso precisa cobrir
 `n=0,1,2` nos 4096 arcos antes do adaptador integral e da margem `1/10^9`.
 
-## Latest C3 geometry and component-composition increment — 2026-11-09
+## Latest C3 geometry, composition, and first-window increment — 2026-11-09
 
 - **Teoremas compilados:** `SigmaContour51ArcGeometry.lean` reutiliza a caixa racional C5 de
   `π/4` para provar `contour51C5PiBox_contains`. A caixa angular e a prova por
@@ -334,3 +334,25 @@ arco a partir dos dados Taylor certificados; para o primeiro avanço, isso preci
   `axiom`; as sete auditorias geométricas e as duas auditorias composicionais reportam somente
   axiomas-padrão. Logs, OLean e hashes estão em `evidence/C3_SigmaContour51ArcGeometry.md` e
   `evidence/C3_SigmaContour51Arb512ComponentComposition.md`.
+
+- **Ponte do primeiro determinante:** `SigmaContour51FirstWindowComponentBridge.lean` fixa as
+  caixas geométricas já provadas de `s(u)` e `z(u)` nos 4096 arcos e reutiliza a caixa C5 de
+  `log π`. Para cada arco, um registro finito contém as caixas contínuas de ζ, ζ′ e digamma, a
+  positividade dos intervalos de norma quadrada de `s`, `s-1` e ζ, as três positividades dos
+  denominadores `z^(2n+1)` para `n=0,1,2`, e comparações racionais das três caixas de integrando
+  com os endpoints Arb. Uma família dos 4096 registros implica as três inclusões ponto a ponto,
+  os intervalos dos três resíduos originais e então
+  `1/1000000000 < sigmaPadeD 0 0`. Este é um teorema condicional: o módulo não fornece registros
+  analíticos nem fecha nenhuma das inclusões Arb→Lean.
+- **Próximo lema mínimo, agora expresso como testemunha:** construir
+  `∀ k<4096, Contour51Arb4096FirstThreeArcComponentBoxes k`. Os campos que ainda precisam de
+  prova incluem os limites contínuos de ζ, ζ′ e digamma, positividade das normas e dos três
+  denominadores elevados, e as comparações das caixas compostas com ambos os endpoints externos
+  para cada `n=0,1,2`. Os teoremas Taylor/Cauchy existentes podem fornecer os campos de ζ/ζ′ se
+  suas caixas racionais de coeficientes, discos analíticos e restos forem certificados; não há
+  ainda dados de digamma contínuos nem prova de que as caixas finais cabem nos endpoints. Portanto
+  o primeiro avanço segue sem testemunha incondicional.
+- **Build/auditoria da ponte:** Lean 4.32.0, `-DwarningAsError=true`; os três `#print axioms`
+  reportam `[propext, Classical.choice, Quot.sound]`. A varredura do fonte não encontrou
+  `sorry`, `admit` ou axiomas declarados. Fonte, OLean, log e tentativa diagnóstica estão em
+  `evidence/C3_SigmaContour51FirstWindowComponentBridge.md`.

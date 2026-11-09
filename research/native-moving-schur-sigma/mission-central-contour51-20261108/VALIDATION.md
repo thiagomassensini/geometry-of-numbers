@@ -433,3 +433,36 @@ Lean 4.32.0, `-DwarningAsError=true`, saída exclusiva
 - Log SHA-256: `d0768e240ffb5b101e5dc88902e30ca7161692fe7e1dccda1d95350f4305b5be`.
 - Log completo e memo: `evidence/C3_SigmaContour51Arb512ComponentComposition-success.log` e
   `evidence/C3_SigmaContour51Arb512ComponentComposition.md`.
+
+## C3/C6 — composição condicional do primeiro determinante central
+
+`SigmaContour51FirstWindowComponentBridge.lean` fixa as caixas geométricas Lean de `s(u)` e
+`z(u)` em cada arco 4096, e a caixa C5 de `log π`. Um registro
+`Contour51Arb4096FirstThreeArcComponentBoxes k` fornece as caixas contínuas de ζ, ζ′ e digamma,
+limites inferiores positivos para `normSqRange` de `s`, `s-1` e ζ, positividade para os três
+denominadores elevados `z^(2n+1)` (`n=0,1,2`), e comparações dos extremos reais do integrando
+composto com ambos os endpoints Arb para cada um desses três índices.
+
+Sob uma família desses registros para todos os 4096 arcos, o módulo prova
+`contour51Arb4096FirstThreeArcEvaluatorInclusion`, transporta as inclusões contínuas para os três
+intervalos de resíduos originais e conclui o limite absoluto
+`1/1000000000 < CarrySigmaPade.sigmaPadeD 0 0`. As caixas analíticas e comparações são premissas
+explícitas ainda sem testemunhas; portanto o resultado é condicional e não declara positividade
+central incondicional. A fórmula do erro determinantal continua contendo os cinco termos cruzados
+completos, pela prova já compilada em C6.
+
+Lean 4.32.0, `-DwarningAsError=true`, saída exclusiva
+`/home/thlinux/tmp/c2-contour51-20261108-lean432`, exit 0. Os três `#print axioms` reportam
+somente `[propext, Classical.choice, Quot.sound]`; a varredura do fonte não encontrou `sorry`,
+`admit` ou declarações `axiom`.
+
+- Fonte SHA-256: `ab8fda175f859b0bdae99f1c4c55e12dd79f9ff06b14d63ce2333b11b6827c6c`.
+- OLean SHA-256: `37aaf507c44b2960f2dfc2a1777f736fdc48a548272cdb3bdeb9c5d610391105`.
+- Log SHA-256: `328ba1e8932550e8fb3918e51707b2f7e9eaa2b8878302754700cff08866afa0`.
+- Log completo e tentativa diagnóstica: `evidence/C3_SigmaContour51FirstWindowComponentBridge-success.log` e
+  `evidence/C3_SigmaContour51FirstWindowComponentBridge-attempt1-failed.log`.
+
+O próximo passo mínimo para tornar esse limite incondicional é provar a família dos registros. As
+caixas racionais de coeficientes verdadeiros de ζ, seus discos e majorantes Cauchy, caixas contínuas
+de digamma, positividade das faixas de norma e adequação dos extremos compostos às tabelas Arb
+continuam abertas. O módulo não importa como prova a saída Python Arb.

@@ -237,3 +237,20 @@ resposta com o endpoint Arb, então segue a inclusão nesse arco. A família dos
 `SigmaContour51ArcGeometry.lean` fornece as caixas geométricas `s(u)` e `z(u)` para esses 512
 arcos; ainda não há caixas Lean de ζ/ζ′/digamma nem comparações verificadas para preencher os
 registros. Portanto `hR` continua condicional.
+
+## Ponte condicional para o primeiro determinante central
+
+`SigmaContour51FirstWindowComponentBridge.lean` fixa as caixas Lean de `s(u)` e `z(u)` em cada
+arco 4096 e a caixa C5 de `log π`. Uma família
+`∀ k<4096, Contour51Arb4096FirstThreeArcComponentBoxes k` é suficiente para a inclusão uniforme
+dos integrandos originais de ordens `n=0,1,2`, a integração dos três intervalos residuais e a
+margem determinantal estrita `1/1000000000 < sigmaPadeD 0 0`.
+
+Essa família ainda não foi provada. Cada registro exige: (1) caixa contínua de ζ, ζ′ e digamma no
+arco; (2) positividade das faixas `normSqRange` para `s`, `s-1` e ζ; (3) positividade das faixas
+`normSqRange` para `z^(2n+1)`, nos três índices; (4) que a caixa intervalar composta do integrando
+tenha extremo inferior real acima do endpoint Arb inferior e extremo superior abaixo do endpoint
+Arb superior, para cada `n=0,1,2`. Os limites de `s`, `z` e `log π` não são hipóteses desse
+registro: seguem dos módulos Lean já compilados. A tabela Arb e as margens racionais não provam
+esses campos analíticos. Assim, a margem `10⁻⁹` ainda é condicional e não estabelece positividade
+central incondicional.

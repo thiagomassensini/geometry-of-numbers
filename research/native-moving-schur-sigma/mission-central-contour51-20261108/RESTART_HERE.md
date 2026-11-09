@@ -97,10 +97,10 @@ inclusion or residual sign follows from this generic arithmetic lemma. See `OPEN
 `SigmaContour51ArbIntervalComposition.lean` now composes explicit boxes for the source response
 and its residual quotient. The formula is proved contained under hypotheses for boxes of `s`, zeta,
 zeta derivative, digamma, `log π`, the contour parameter, and positive squared-norm boxes. The
-closed-arc endpoint adapter is currently only for `n=0` and still assumes every component box and
-every comparison with the Arb endpoints. It does not prove those inputs; `n=1,2` plus all component
-enclosures remain needed for the first determinant. See the evidence memo and exact list in
-`OPEN_OBLIGATIONS.md`.
+original closed-arc endpoint adapter in that module is only for `n=0` and assumes every component
+box and comparison with the Arb endpoints. The later `SigmaContour51FirstWindowComponentBridge`
+composes all three orders `n=0,1,2` from explicit records; it also does not prove those records.
+See the evidence memo and exact list in `OPEN_OBLIGATIONS.md`.
 
 ### Latest C3 coefficient-table bridge
 
@@ -139,10 +139,18 @@ response box implies the 512-arc Arb endpoint inclusion. Supplying such records 
 the existing response-inclusion premise used to derive `hR`. The implication is compiled and
 audited; the analytic records themselves remain unproved.
 
-The next minimum is the Lean component-box construction from exact ζ Taylor coefficients and
-Cauchy data, with digamma boxes and rational comparisons to the exported endpoints, first on all
-4096 arcs for `n=0,1,2`. It yields the already compiled `1/10^9` determinant margin only after the
-universal inclusion is proved. For the full target, all six residual transfers remain necessary;
-the 512-arc circle transfer now has a compiled component-box adapter but still needs its analytic
-records. C5's Bernoulli table and node lists were not rerun; displaced C5 boxes still have no
+### Latest first-window component bridge — 2026-11-09
+
+`SigmaContour51FirstWindowComponentBridge.lean` now composes a family of analytic component records
+for the 4096 arcs and `n=0,1,2` into the exact all-arc integrand inclusion, then into the three
+original-source residual intervals and the absolute determinant margin
+`1/1000000000 < sigmaPadeD 0 0`. The record uses the proven geometry boxes for `s` and `z` and the
+C5 `log π` box, leaving only ζ/ζ′/digamma enclosures, norm-square positivity, power-denominator
+positivity, and exact lower/upper endpoint comparisons as fields.
+
+This is still conditional: no family of those records has been constructed. The next minimum is to
+prove `∀ k<4096, Contour51Arb4096FirstThreeArcComponentBoxes k`, beginning with true ζ Taylor
+coefficient boxes and Cauchy remainders, continuous digamma boxes, and endpoint-width checks. For
+all windows, all six residual transfers and the independent 512-arc circle transfer are also
+necessary. C5's Bernoulli table and node lists were not rerun; displaced C5 boxes still have no
 quantitative transport to `d=0`.
