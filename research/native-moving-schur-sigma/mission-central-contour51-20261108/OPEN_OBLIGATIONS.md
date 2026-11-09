@@ -90,3 +90,28 @@ partir das 512 caixas completas de Arb, incluindo inclusão ponto a ponto da exp
 restos Taylor/Cauchy. Separadamente, permanece aberta a inclusão das 4096 caixas para os seis
 integrandos residuais. A primeira meta mínima continua sendo a inclusão de `n=0,1,2`; isso basta
 para o gate direto compilado de `1/1000000000 < sigmaPadeD 0 0`.
+
+### Próximo bloco analítico verificável
+
+O script C3 usa Taylor de ordem 32 para `ζ` e `ζ′` em cada arco, raio `1/4` e restos explícitos
+por Cauchy; em seguida combina as caixas de `s`, `s-1`, `log π` e `digamma(s/2)` para limitar
+`ζ′/ζ` e a resposta. O CSV C3 e o JSON residual atual armazenam os limites finais, mas não um
+rastro racional das caixas dos coeficientes Taylor e das operações intermediárias que permita a
+Lean verificar a inclusão da função. O menor novo certificado formal é uma inclusão de `ζ` e
+`ζ′` sobre um arco completo, a partir de caixas racionais para os coeficientes e do majorante e
+razão de Cauchy já descritos pelo script; depois combina-se essa caixa com as demais parcelas da
+fórmula Lean. Para o primeiro avanço central, esse mecanismo precisa cobrir os 4096 arcos e
+`n=0,1,2`; para `hR`, há a obrigação análoga nos 512 arcos.
+
+### Fronteira de reutilização C5
+
+Componentes reaproveitáveis sem refazer a certificação de C5: `SigmaFiniteRationalIntervals.lean`
+e `SigmaFiniteRationalIntervalTransport.lean` fornecem aritmética racional de bolas reais,
+contenção e transporte para somas/momentos; `SigmaC5RationalNodeEval.lean` fornece conversão e
+contenção de pontos complexos racionais e reutiliza o tipo retangular `ComplexInterval`; e
+`SigmaSourceBezout.lean` mais `SigmaContour51BoxSensitivity.lean` fornecem a recorrência da fonte,
+normalização e especialização algébrica em `d=0`. A fórmula de avaliação zeta via Euler–Maclaurin
+e as tabelas de Bernoulli/nós zeta-Gamma do C5 não certificam automaticamente a série Taylor de
+C3 em cada arco: reutilizar qualquer avaliação de nó exige provar a transformação dos centros e
+das caixas. Nenhuma tabela Bernoulli nem lista completa de nós foi refeita neste trabalho. Caixas
+C5 em `d=0.0495` e `d=0.1` continuam sem transporte quantitativo ao centro.
