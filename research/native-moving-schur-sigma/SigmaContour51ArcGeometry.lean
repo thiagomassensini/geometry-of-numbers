@@ -49,19 +49,19 @@ theorem contour51C5PiBox_upper_lt_eight : contour51C5PiBox.hi < 8 := by
   change c5PiQuarterInterval.hi * 4 < 8
   nlinarith [c5_pi_quarter_interval_lt_two]
 
-/-- The rational interval for the parameter `u` of arc `k` among 4096 equal
-subarcs of `[0,1]`. -/
-def contour51Arc4096UBox (k : ℕ) : Interval :=
-  { lo := (k : ℚ) / 4096
-    hi := ((k + 1 : ℕ) : ℚ) / 4096
+/-- The rational interval for the parameter `u` of arc `k` in a uniform
+partition of `[0,1]` into `N` closed subarcs. -/
+def contour51ArcPartitionUBox (N k : ℕ) : Interval :=
+  { lo := (k : ℚ) / (N : ℚ)
+    hi := ((k + 1 : ℕ) : ℚ) / (N : ℚ)
     le := by
-      apply div_le_div_of_nonneg_right _ (by norm_num)
+      apply div_le_div_of_nonneg_right _ (by positivity)
       exact_mod_cast (Nat.le_succ k) }
 
-theorem contour51Arc4096UBox_contains {k : ℕ} {u : ℝ}
-    (hu : u ∈ Set.Icc ((k : ℝ) / 4096) (((k + 1 : ℕ) : ℝ) / 4096)) :
-    (contour51Arc4096UBox k).contains u := by
-  simp only [Interval.contains, contour51Arc4096UBox]
+theorem contour51ArcPartitionUBox_contains {N k : ℕ} {u : ℝ}
+    (hu : u ∈ Set.Icc ((k : ℝ) / N) (((k + 1 : ℕ) : ℝ) / N)) :
+    (contour51ArcPartitionUBox N k).contains u := by
+  simp only [Interval.contains, contour51ArcPartitionUBox]
   constructor
   · push_cast
     exact hu.1
@@ -69,15 +69,17 @@ theorem contour51Arc4096UBox_contains {k : ℕ} {u : ℝ}
     push_cast at hu
     exact hu.2
 
-theorem contour51Arc4096UBox_bounds {k : ℕ} (hk : k < 4096) :
-    0 ≤ (contour51Arc4096UBox k).lo ∧ (contour51Arc4096UBox k).hi ≤ 1 := by
+theorem contour51ArcPartitionUBox_bounds {N k : ℕ} (hN : 0 < N) (hk : k < N) :
+    0 ≤ (contour51ArcPartitionUBox N k).lo ∧
+      (contour51ArcPartitionUBox N k).hi ≤ 1 := by
   constructor
-  · dsimp [contour51Arc4096UBox]
+  · dsimp [contour51ArcPartitionUBox]
     positivity
-  · dsimp [contour51Arc4096UBox]
-    have hk' : k + 1 ≤ 4096 := Nat.succ_le_of_lt hk
-    have hkQ : ((k + 1 : ℕ) : ℚ) ≤ 4096 := by exact_mod_cast hk'
-    rw [div_le_one₀ (by norm_num : (0 : ℚ) < 4096)]
+  · dsimp [contour51ArcPartitionUBox]
+    have hk' : k + 1 ≤ N := Nat.succ_le_of_lt hk
+    have hkQ : ((k + 1 : ℕ) : ℚ) ≤ (N : ℚ) := by exact_mod_cast hk'
+    have hNQ : (0 : ℚ) < (N : ℚ) := by exact_mod_cast hN
+    rw [div_le_one₀ hNQ]
     exact hkQ
 
 private theorem contour51Interval_mul_unit_bounds {x y : Interval}
@@ -118,81 +120,138 @@ private theorem contour51Interval_mul_unit_bounds {x y : Interval}
       (max (x.hi * y.lo) (x.hi * y.hi)) ≤ 8
     exact max_le (max_le hll8 hlh8) (max_le hhl8 hhh8)
 
-/-- Complex exponent box for `exp((-πu)I)` on one closed parameter arc. -/
-def contour51Arc4096AngleBox (k : ℕ) : ComplexInterval :=
+/-- Complex exponent box for `exp((-πu)I)` on one uniform-partition arc. -/
+def contour51ArcPartitionAngleBox (N k : ℕ) : ComplexInterval :=
   { re := Interval.exact 0
-    im := ((contour51C5PiBox.mul (contour51Arc4096UBox k)).neg) }
+    im := ((contour51C5PiBox.mul (contour51ArcPartitionUBox N k)).neg) }
 
-theorem contour51Arc4096AngleBox_normBound_le_eight {k : ℕ} (hk : k < 4096) :
-    ComplexInterval.normBound (contour51Arc4096AngleBox k) ≤ 8 := by
-  have hu := contour51Arc4096UBox_bounds hk
+theorem contour51ArcPartitionAngleBox_normBound_le_eight {N k : ℕ}
+    (hN : 0 < N) (hk : k < N) :
+    ComplexInterval.normBound (contour51ArcPartitionAngleBox N k) ≤ 8 := by
+  have hu := contour51ArcPartitionUBox_bounds hN hk
   have hprod := contour51Interval_mul_unit_bounds
     (le_of_lt contour51C5PiBox_lower_pos)
     (le_of_lt contour51C5PiBox_upper_lt_eight) hu.1 hu.2
-  have hhi0 : 0 ≤ (contour51C5PiBox.mul (contour51Arc4096UBox k)).hi :=
-    le_trans hprod.1 (contour51C5PiBox.mul (contour51Arc4096UBox k)).le
-  have hnegHi : -((contour51C5PiBox.mul (contour51Arc4096UBox k)).hi) ≤ 0 := by linarith
-  have hnegLo : -((contour51C5PiBox.mul (contour51Arc4096UBox k)).lo) ≤ 0 := by linarith [hprod.1]
-  unfold ComplexInterval.normBound contour51Arc4096AngleBox
+  have hhi0 : 0 ≤ (contour51C5PiBox.mul (contour51ArcPartitionUBox N k)).hi :=
+    le_trans hprod.1 (contour51C5PiBox.mul (contour51ArcPartitionUBox N k)).le
+  have hnegHi : -((contour51C5PiBox.mul (contour51ArcPartitionUBox N k)).hi) ≤ 0 := by
+    linarith
+  have hnegLo : -((contour51C5PiBox.mul (contour51ArcPartitionUBox N k)).lo) ≤ 0 := by
+    linarith [hprod.1]
+  unfold ComplexInterval.normBound contour51ArcPartitionAngleBox
   simp only [Interval.exact, Interval.neg]
   rw [abs_of_nonpos hnegHi, abs_of_nonpos hnegLo]
   simp only [abs_zero, max_self, zero_add, neg_neg]
   exact max_le hprod.2 (le_trans
-    (contour51C5PiBox.mul (contour51Arc4096UBox k)).le hprod.2)
+    (contour51C5PiBox.mul (contour51ArcPartitionUBox N k)).le hprod.2)
 
-theorem contour51Arc4096AngleBox_contains {k : ℕ} {u : ℝ}
-    (hu : u ∈ Set.Icc ((k : ℝ) / 4096) (((k + 1 : ℕ) : ℝ) / 4096)) :
-    (contour51Arc4096AngleBox k).contains
+theorem contour51ArcPartitionAngleBox_contains {N k : ℕ} {u : ℝ}
+    (hu : u ∈ Set.Icc ((k : ℝ) / N) (((k + 1 : ℕ) : ℝ) / N)) :
+    (contour51ArcPartitionAngleBox N k).contains
       (((-Real.pi * u : ℝ) : ℂ) * Complex.I) := by
-  have huBox := contour51Arc4096UBox_contains hu
+  have huBox := contour51ArcPartitionUBox_contains hu
   have hpiu := Interval.contains_mul contour51C5PiBox_contains huBox
   have hneg := Interval.contains_neg hpiu
   constructor
-  · norm_num [contour51Arc4096AngleBox, ComplexInterval.contains,
+  · norm_num [contour51ArcPartitionAngleBox, ComplexInterval.contains,
       Interval.contains, Interval.exact, Complex.mul_re, Complex.mul_im]
-  · simpa [contour51Arc4096AngleBox,
+  · simpa [contour51ArcPartitionAngleBox,
       Complex.mul_re, Complex.mul_im] using hneg
 
-/-- Certified rational box for `z(u) = 51 exp((-πu)I)` on arc `k`. -/
-def contour51Arc4096ZBox (k : ℕ) : ComplexInterval :=
+/-- Certified rational box for `z(u) = 51 exp((-πu)I)` on a uniform-partition arc. -/
+def contour51ArcPartitionZBox (N k : ℕ) : ComplexInterval :=
   ComplexInterval.smulQ 51
-    (ComplexInterval.expCr 32 80 3 (contour51Arc4096AngleBox k))
+    (ComplexInterval.expCr 32 80 3 (contour51ArcPartitionAngleBox N k))
+
+theorem contour51ArcPartitionZBox_contains {N k : ℕ} (hN : 0 < N) (hk : k < N)
+    {u : ℝ} (hu : u ∈ Set.Icc ((k : ℝ) / N) (((k + 1 : ℕ) : ℝ) / N)) :
+    (contour51ArcPartitionZBox N k).contains (circleMap 0 51 (-Real.pi * u)) := by
+  have hexp := ComplexInterval.contains_expCr 32 80 (by norm_num : 0 < 32) 3
+    (contour51ArcPartitionAngleBox N k) (((-Real.pi * u : ℝ) : ℂ) * Complex.I)
+    (contour51ArcPartitionAngleBox_contains hu)
+    (contour51ArcPartitionAngleBox_normBound_le_eight hN hk)
+  have hscale := ComplexInterval.contains_smulQ (q := 51) hexp
+  simpa [contour51ArcPartitionZBox, circleMap] using hscale
+
+/-- The affine map `s = 1/2 + i z` carries a complex rectangle for `z` to
+the corresponding rectangle for `s` on a uniform-partition arc. -/
+def contour51ArcPartitionSBox (N k : ℕ) : ComplexInterval :=
+  { re := (Interval.exact (1 / 2)).sub (contour51ArcPartitionZBox N k).im
+    im := (contour51ArcPartitionZBox N k).re }
+
+theorem contour51ArcPartitionSBox_contains {N k : ℕ} (hN : 0 < N) (hk : k < N)
+    {u : ℝ} (hu : u ∈ Set.Icc ((k : ℝ) / N) (((k + 1 : ℕ) : ℝ) / N)) :
+    (contour51ArcPartitionSBox N k).contains
+      (operatorHeightParameter (circleMap 0 51 (-Real.pi * u))) := by
+  have hz := contour51ArcPartitionZBox_contains hN hk hu
+  constructor
+  · have hre := operatorHeightParameter_re (circleMap 0 51 (-Real.pi * u))
+    rw [hre]
+    simpa [contour51ArcPartitionSBox, contour51ArcPartitionZBox] using
+      (Interval.contains_sub (Interval.contains_exact (1 / 2)) hz.2)
+  · have him := operatorHeightParameter_im (circleMap 0 51 (-Real.pi * u))
+    rw [him]
+    simpa [contour51ArcPartitionSBox, contour51ArcPartitionZBox] using hz.1
+
+/-- Radius-51 geometric boxes for the 4096 residual arcs. -/
+abbrev contour51Arc4096UBox (k : ℕ) : Interval := contour51ArcPartitionUBox 4096 k
+abbrev contour51Arc4096AngleBox (k : ℕ) : ComplexInterval :=
+  contour51ArcPartitionAngleBox 4096 k
+abbrev contour51Arc4096ZBox (k : ℕ) : ComplexInterval := contour51ArcPartitionZBox 4096 k
+abbrev contour51Arc4096SBox (k : ℕ) : ComplexInterval := contour51ArcPartitionSBox 4096 k
+
+theorem contour51Arc4096UBox_contains {k : ℕ} {u : ℝ}
+    (hu : u ∈ Set.Icc ((k : ℝ) / 4096) (((k + 1 : ℕ) : ℝ) / 4096)) :
+    (contour51Arc4096UBox k).contains u :=
+  contour51ArcPartitionUBox_contains hu
+
+theorem contour51Arc4096UBox_bounds {k : ℕ} (hk : k < 4096) :
+    0 ≤ (contour51Arc4096UBox k).lo ∧ (contour51Arc4096UBox k).hi ≤ 1 :=
+  contour51ArcPartitionUBox_bounds (by norm_num) hk
+
+theorem contour51Arc4096AngleBox_normBound_le_eight {k : ℕ} (hk : k < 4096) :
+    ComplexInterval.normBound (contour51Arc4096AngleBox k) ≤ 8 :=
+  contour51ArcPartitionAngleBox_normBound_le_eight (by norm_num) hk
+
+theorem contour51Arc4096AngleBox_contains {k : ℕ} {u : ℝ}
+    (hu : u ∈ Set.Icc ((k : ℝ) / 4096) (((k + 1 : ℕ) : ℝ) / 4096)) :
+    (contour51Arc4096AngleBox k).contains (((-Real.pi * u : ℝ) : ℂ) * Complex.I) :=
+  contour51ArcPartitionAngleBox_contains hu
 
 theorem contour51Arc4096ZBox_contains {k : ℕ} (hk : k < 4096) {u : ℝ}
     (hu : u ∈ Set.Icc ((k : ℝ) / 4096) (((k + 1 : ℕ) : ℝ) / 4096)) :
-    (contour51Arc4096ZBox k).contains (circleMap 0 51 (-Real.pi * u)) := by
-  have hexp := ComplexInterval.contains_expCr 32 80 (by norm_num : 0 < 32) 3
-    (contour51Arc4096AngleBox k) (((-Real.pi * u : ℝ) : ℂ) * Complex.I)
-    (contour51Arc4096AngleBox_contains hu)
-    (contour51Arc4096AngleBox_normBound_le_eight hk)
-  have hscale := ComplexInterval.contains_smulQ (q := 51) hexp
-  simpa [contour51Arc4096ZBox, circleMap] using hscale
-
-/-- The affine map `s = 1/2 + i z` carries a complex rectangle for `z` to
-the corresponding rectangle for `s`. -/
-def contour51Arc4096SBox (k : ℕ) : ComplexInterval :=
-  { re := (Interval.exact (1 / 2)).sub (contour51Arc4096ZBox k).im
-    im := (contour51Arc4096ZBox k).re }
+    (contour51Arc4096ZBox k).contains (circleMap 0 51 (-Real.pi * u)) :=
+  contour51ArcPartitionZBox_contains (by norm_num) hk hu
 
 theorem contour51Arc4096SBox_contains {k : ℕ} (hk : k < 4096) {u : ℝ}
     (hu : u ∈ Set.Icc ((k : ℝ) / 4096) (((k + 1 : ℕ) : ℝ) / 4096)) :
     (contour51Arc4096SBox k).contains
-      (operatorHeightParameter (circleMap 0 51 (-Real.pi * u))) := by
-  have hz := contour51Arc4096ZBox_contains hk hu
-  constructor
-  · have hre := operatorHeightParameter_re (circleMap 0 51 (-Real.pi * u))
-    rw [hre]
-    simpa [contour51Arc4096SBox] using
-      (Interval.contains_sub (Interval.contains_exact (1 / 2)) hz.2)
-  · have him := operatorHeightParameter_im (circleMap 0 51 (-Real.pi * u))
-    rw [him]
-    simpa [contour51Arc4096SBox] using hz.1
+      (operatorHeightParameter (circleMap 0 51 (-Real.pi * u))) :=
+  contour51ArcPartitionSBox_contains (by norm_num) hk hu
+
+/-- The same certified geometric enclosure for the 512 arcs used by the uniform
+circle-bound certificate. -/
+abbrev contour51Arc512ZBox (k : ℕ) : ComplexInterval := contour51ArcPartitionZBox 512 k
+abbrev contour51Arc512SBox (k : ℕ) : ComplexInterval := contour51ArcPartitionSBox 512 k
+
+theorem contour51Arc512ZBox_contains {k : ℕ} (hk : k < 512) {u : ℝ}
+    (hu : u ∈ Set.Icc ((k : ℝ) / 512) (((k + 1 : ℕ) : ℝ) / 512)) :
+    (contour51Arc512ZBox k).contains (circleMap 0 51 (-Real.pi * u)) :=
+  contour51ArcPartitionZBox_contains (by norm_num) hk hu
+
+theorem contour51Arc512SBox_contains {k : ℕ} (hk : k < 512) {u : ℝ}
+    (hu : u ∈ Set.Icc ((k : ℝ) / 512) (((k + 1 : ℕ) : ℝ) / 512)) :
+    (contour51Arc512SBox k).contains
+      (operatorHeightParameter (circleMap 0 51 (-Real.pi * u))) :=
+  contour51ArcPartitionSBox_contains (by norm_num) hk hu
 
 #print axioms contour51C5PiBox_contains
 #print axioms contour51Arc4096AngleBox_normBound_le_eight
 #print axioms contour51Arc4096AngleBox_contains
 #print axioms contour51Arc4096ZBox_contains
 #print axioms contour51Arc4096SBox_contains
+#print axioms contour51Arc512ZBox_contains
+#print axioms contour51Arc512SBox_contains
 
 end
 end CarrySigmaObstruction

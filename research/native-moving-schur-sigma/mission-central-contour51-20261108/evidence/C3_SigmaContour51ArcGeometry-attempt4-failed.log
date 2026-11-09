@@ -1,0 +1,22 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArcGeometry.lean:69:4: error: Type mismatch
+  hu.right
+has type
+  u ≤ ↑(k + 1) / 4096
+but is expected to have type
+  u ≤ (↑k + 1) / 4096
+'CarrySigmaObstruction.contour51C5PiBox_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.contour51Arc4096AngleBox_normBound_le_eight' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arc4096AngleBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arc4096ZBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arc4096SBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

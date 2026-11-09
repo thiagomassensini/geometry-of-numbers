@@ -1,0 +1,16 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51Arb512ComponentComposition.lean:67:4: error: mod_cast has type
+  (0 : ℚ) ≤ (contour51ArcPartitionUBox 512 k).lo
+but is expected to have type
+  (0 : ℝ) ≤ ↑k / 512
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51Arb512ComponentComposition.lean:69:4: error: mod_cast has type
+  (contour51ArcPartitionUBox 512 k).hi ≤ 1
+but is expected to have type
+  ↑(k + 1) / 512 ≤ 1
+'CarrySigmaObstruction.contour51Arb512ResponseArcEvaluatorInclusion_of_component_boxes_at_arc' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arb512ResponseArcEvaluatorInclusion_of_all_component_boxes' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

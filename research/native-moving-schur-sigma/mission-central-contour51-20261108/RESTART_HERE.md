@@ -117,24 +117,32 @@ the Arb data. The 4096 residual pointwise inclusions (first `n=0,1,2`) and the i
 512-arc circle inclusion remain open. Their exact assumptions, rational residual margins, Arb to
 Lean boundary, and C5 reuse limits are recorded in `OPEN_OBLIGATIONS.md` and `VALIDATION.md`.
 
-### Latest geometry step — 2026-11-08
+### Latest geometry and composition step — 2026-11-09
 
 `SigmaContour51ArcGeometry.lean` now proves continuous Lean boxes for the contour parameter
-`z(u)` and its source parameter `s(u)` over every closed 4096 arc, using the C5 rational π
-interval and certified `ComplexInterval.expCr`. The `log π` component box is separately supplied
-by `SigmaContour51C5PiBridge.lean`. Both modules compile under Lean 4.32 with warnings as errors;
-the geometry module has five theorem audits, all using only standard axioms. This closes the
-geometric containment fields of the C3 component record; it does not provide ζ/ζ′/digamma boxes,
-denominator norm-square lower bounds, or comparisons with Arb integrand endpoints.
+`z(u)` and its source parameter `s(u)` over every closed arc in either the 4096 or 512 uniform
+partition, using the C5 rational π interval and certified `ComplexInterval.expCr`. The `log π`
+component box is separately supplied by `SigmaContour51C5PiBridge.lean`. Both modules compile
+under Lean 4.32 with warnings as errors; the geometry module has seven theorem audits, all using
+only standard axioms. This closes the geometric containment fields of the C3 component record; it
+does not provide ζ/ζ′/digamma boxes, denominator norm-square lower bounds, or comparisons with Arb
+integrand endpoints.
 
 The external Arb state remains 512 arcs for `‖R‖<0.746413<4/5` and 4096 arcs for all six residual
 integrals. The exact Lean residue identity still identifies `e_n=H_n-P_n` with the normalized
 integral of the original source kernel. The material C2 tail and Taylor/Cauchy evaluator remainder
 are distinct. No unconditional residual sign, circle bound or central positivity is established.
 
+`SigmaContour51Arb512ComponentComposition.lean` now proves that a complete per-arc set of
+component boxes, positive norm-square intervals and an exact rational comparison of the composed
+response box implies the 512-arc Arb endpoint inclusion. Supplying such records for all arcs implies
+the existing response-inclusion premise used to derive `hR`. The implication is compiled and
+audited; the analytic records themselves remain unproved.
+
 The next minimum is the Lean component-box construction from exact ζ Taylor coefficients and
 Cauchy data, with digamma boxes and rational comparisons to the exported endpoints, first on all
 4096 arcs for `n=0,1,2`. It yields the already compiled `1/10^9` determinant margin only after the
-universal inclusion is proved. For the full target, all six residual transfers and the separate
-512-arc circle transfer remain necessary. C5's Bernoulli table and node lists were not rerun;
-displaced C5 boxes still have no quantitative transport to `d=0`.
+universal inclusion is proved. For the full target, all six residual transfers remain necessary;
+the 512-arc circle transfer now has a compiled component-box adapter but still needs its analytic
+records. C5's Bernoulli table and node lists were not rerun; displaced C5 boxes still have no
+quantitative transport to `d=0`.

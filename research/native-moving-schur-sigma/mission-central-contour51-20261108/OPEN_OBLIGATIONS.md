@@ -133,7 +133,8 @@ e imaginários. A hipótese exata para o quociente é `denNormSq.contains (Compl
 racionalmente que `((ComplexInterval.normSqRange denBox).lo : ℝ)>0`.
 
 Isso cobre apenas a soundness das operações de divisão. `SigmaContour51ArcGeometry.lean` agora
-fornece caixas Lean contínuas para `s(u)` e o parâmetro do contorno nos 4096 arcos; o bridge C5
+fornece caixas Lean contínuas para `s(u)` e o parâmetro do contorno nas partições de 4096 e 512
+arcos; o bridge C5
 para `log π` também compila. Continuam sem prova as caixas de `ζ(s(u))`, `ζ′(s(u))` e
 `digamma(s(u)/2)`, as caixas de `normSq` para `s`, `s-1`, ζ e a potência `z^(2n+1)`, e a inclusão
 do avaliador Lean nas faixas Arb. A fórmula combinadora pode usar quocientes sound sem axiomas
@@ -227,3 +228,12 @@ extremo Arb: para todo `k<512` e todo `u∈[k/512,(k+1)/512]`, provar
 os restos Taylor/Cauchy em todos os arcos. Em separado, as inclusões residuais de 4096 arcos
 continuam abertas para `n=0,…,5`; a restrição `n=0,1,2` é o próximo lema mínimo para o primeiro
 determinante. A composição com todas as janelas deixa os seis sinais `e_n≥0` explícitos.
+
+`SigmaContour51Arb512ComponentComposition.lean` agora formaliza a implicação componente a
+componente: se, em cada arco, forem provadas as caixas contínuas de `s`, ζ, ζ′, digamma e `log π`,
+as normas quadradas positivas de `s`, `s-1`, ζ e uma comparação racional do `normBound` da caixa de
+resposta com o endpoint Arb, então segue a inclusão nesse arco. A família dos 512 registros implica
+`contour51Arb512ResponseArcEvaluatorInclusion`, que já alimenta o teorema condicional de `hR`.
+`SigmaContour51ArcGeometry.lean` fornece as caixas geométricas `s(u)` e `z(u)` para esses 512
+arcos; ainda não há caixas Lean de ζ/ζ′/digamma nem comparações verificadas para preencher os
+registros. Portanto `hR` continua condicional.

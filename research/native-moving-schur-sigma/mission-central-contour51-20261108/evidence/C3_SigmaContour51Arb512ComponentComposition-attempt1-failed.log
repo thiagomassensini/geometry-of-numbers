@@ -1,0 +1,16 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51Arb512ComponentComposition.lean:63:21: error(lean.unknownIdentifier): Unknown identifier `contour51ArcPartitionUBox_bounds`
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51Arb512ComponentComposition.lean:61:47: error: unsolved goals
+k : ℕ
+hk : k < 512
+hbox : Contour51Arb512ArcComponentBoxes k
+u : ℝ
+hu : u ∈ contour51Arb512ParameterArc k
+⊢ ‖contour51OriginalResponse (circleMap 0 51 (-Real.pi * u))‖ ≤ ↑(contour51Arb512ResponseUpperBound k)
+'CarrySigmaObstruction.contour51Arb512ResponseArcEvaluatorInclusion_of_component_boxes_at_arc' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arb512ResponseArcEvaluatorInclusion_of_all_component_boxes' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

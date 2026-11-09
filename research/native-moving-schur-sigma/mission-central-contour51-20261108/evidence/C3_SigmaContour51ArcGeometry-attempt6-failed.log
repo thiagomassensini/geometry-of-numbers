@@ -1,0 +1,12 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArcGeometry.lean:143:51: error: Variable name `hk` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'CarrySigmaObstruction.contour51C5PiBox_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.contour51Arc4096AngleBox_normBound_le_eight' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arc4096AngleBox_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.contour51Arc4096ZBox_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.contour51Arc4096SBox_contains' depends on axioms: [propext, Classical.choice, Quot.sound]

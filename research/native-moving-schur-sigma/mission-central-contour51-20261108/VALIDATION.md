@@ -382,28 +382,54 @@
   `contour51Arb512ResponseArcEvaluatorInclusion` continuam abertas; nenhuma margem de `e_n` ou
   positividade central se torna incondicional.
 
-## C3 — caixas geométricas dos arcos 4096
+## C3 — caixas geométricas para partições uniformes de 4096 e 512 arcos
 
-`SigmaContour51ArcGeometry.lean` prova em Lean caixas racionais para `z(u)` e `s(u)` em cada arco
-fechado `[k/4096,(k+1)/4096]`. Reutiliza `c5_pi_quarter_interval_contains` para uma caixa tight de
-`π`, prova que o argumento complexo tem `normBound≤8`, usa `ComplexInterval.expCr 32 80 3`, escala
-por 51 e compõe com `operatorHeightParameter`. Hipóteses: `u` pertence ao arco e `k<4096`; nenhuma
-avaliação pontual substitui a inclusão contínua. Isso fornece os campos geométricos `sContains` e
-`parameterContains` do registro C3 de componentes. Não prova os limites positivos de norma quadrada
-ou a compatibilidade das caixas finais com extremos Arb.
+`SigmaContour51ArcGeometry.lean` prova caixas racionais para `z(u)` e `s(u)` sobre cada arco
+fechado `[k/N,(k+1)/N]` sempre que `0<N` e `k<N`. As partições `N=4096` e `N=512` ficam
+disponíveis por especialização. O módulo reutiliza `c5_pi_quarter_interval_contains` para a
+caixa tight de `π`, prova `normBound≤8`, aplica `ComplexInterval.expCr 32 80 3`, escala por 51 e
+compõe com `operatorHeightParameter`. Nenhuma avaliação pontual substitui a inclusão contínua.
+Isso fecha os campos geométricos de `sContains` e `parameterContains` nos registros de 4096 arcos,
+e oferece as mesmas entradas para compor a cota da resposta nos 512 arcos. Não prova os limites
+positivos de norma quadrada nem a compatibilidade das caixas finais com extremos Arb.
 
 Build final em Lean 4.32.0, `-DwarningAsError=true`, saída exclusiva
-`/home/thlinux/tmp/c2-contour51-20261108-lean432`; exit 0. Os cinco `#print axioms` retornam
+`/home/thlinux/tmp/c2-contour51-20261108-lean432`; exit 0. Os sete `#print axioms` retornam
 somente `[propext, Classical.choice, Quot.sound]`; varredura do fonte sem `sorry`, `admit` ou
 `axiom`. O log completo está em `evidence/C3_SigmaContour51ArcGeometry-success.log`.
 
-- Fonte SHA-256: `8fa865179e62d4ca6d1e83eded8f20e329e535ef5234c7ebe48c279232e151d1`.
-- OLean SHA-256: `d92eb400e09dbdecb4d69e0fe7401f07711eb527500b7b174bd34ae99eaf6deb`.
-- Log SHA-256: `8f3dc8369237ee2643d8adae41e5fe627bfd8988b37fed21f4c4bd7f12d426b8`.
+- Fonte SHA-256: `43499cc8f04929535203f03035c448507d0d2a2646722c95c90b836c900a2302`.
+- OLean SHA-256: `b17874f8ff593038c7ca833fb856cffed241a8958313644e07aeaacf6d59c981`.
+- Log SHA-256: `aceade4bfb3fd16ecd6813394c8f4992bfcacd9844a4cb4c77f02ceb68856ae9`.
 
-O avanço não muda a fronteira Arb–Lean: 512 arcos ainda não implicam em Lean `‖R‖≤4/5`; as seis
+O avanço não muda a fronteira Arb–Lean: caixas geométricas dos 512 arcos ainda não implicam em
+Lean `‖R‖≤4/5`; as seis
 tabelas 4096 ainda não implicam em Lean sinais dos resíduos. Continuam necessários os coeficientes
 Taylor exatos de ζ, analiticidade/majorantes/deslocamentos/restos, caixas contínuas de digamma,
 positividade das normas quadradas e comparações com cada extremo Arb. O próximo lema mínimo segue
 sendo a inclusão universal dos resíduos `n=0,1,2`, após essas caixas serem comprovadas. As margens
 racionais continuam sendo comparações com endpoints externos, não hipóteses descarregadas.
+
+## C3 — composição condicional dos componentes para os 512 arcos
+
+`SigmaContour51Arb512ComponentComposition.lean` formaliza dois passos: um registro de componentes
+por arco, contendo caixas de `s`, ζ, ζ′, digamma e `log π`, limites inferiores positivos para as
+normas quadradas de `s`, `s-1` e ζ, e uma comparação racional do `normBound` da resposta composta
+com o endpoint Arb, implica a inclusão contínua da resposta original em todo o arco; registros em
+todos os 512 arcos implicam `contour51Arb512ResponseArcEvaluatorInclusion`. A inclusão é exatamente
+a premissa já usada pela ponte condicional de `hR`.
+
+As hipóteses são entradas do registro e ainda não têm testemunhas. A geometria `s(u)` nos 512 arcos
+está provada no módulo anterior; a composição não produz caixas de ζ/ζ′/digamma, nem demonstra a
+positividade das normas ou os limites contra os endpoints. O gate do primeiro determinante usa os
+4096 intervalos de `e_0,e_1,e_2` e não depende deste `hR`.
+
+Lean 4.32.0, `-DwarningAsError=true`, saída exclusiva
+`/home/thlinux/tmp/c2-contour51-20261108-lean432`, exit 0. Os dois teoremas novos reportam somente
+`[propext, Classical.choice, Quot.sound]`; o fonte não contém `sorry`, `admit` ou `axiom`.
+
+- Fonte SHA-256: `45005370dc030387dacc3f38aa7492746503d4dbd2c66f31b6c619379024fa26`.
+- OLean SHA-256: `3f2037c8a552cdd4e060579eaa420d66744520d2c04ece83f09009b338973da0`.
+- Log SHA-256: `d0768e240ffb5b101e5dc88902e30ca7161692fe7e1dccda1d95350f4305b5be`.
+- Log completo e memo: `evidence/C3_SigmaContour51Arb512ComponentComposition-success.log` e
+  `evidence/C3_SigmaContour51Arb512ComponentComposition.md`.

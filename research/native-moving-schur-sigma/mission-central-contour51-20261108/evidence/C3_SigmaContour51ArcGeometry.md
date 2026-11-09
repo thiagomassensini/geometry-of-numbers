@@ -1,33 +1,36 @@
 # C3 — caixas geométricas formais para os arcos 4096
 
 `SigmaContour51ArcGeometry.lean` reutiliza a caixa racional C5 de `π/4`, escalada
-para uma caixa que contém `π`. Para cada `k < 4096`, a prova inclui o arco fechado
-`u ∈ [k/4096,(k+1)/4096]` na caixa angular, verifica `normBound ≤ 8`, aplica
-`ComplexInterval.expCr 32 80 3` e escala a exponencial por 51. O resultado é
-`contour51Arc4096ZBox_contains`; a identidade afim de `s` dá
-`contour51Arc4096SBox_contains`.
+para uma caixa que contém `π`. A construção agora vale para qualquer partição uniforme
+positiva de `[0,1]`: para `N>0`, `k<N`, e `u∈[k/N,(k+1)/N]`, inclui o arco fechado na caixa
+angular, verifica `normBound≤8`, aplica `ComplexInterval.expCr 32 80 3` e escala a exponencial por
+51. As especializações fornecem `z(u)` e `s(u)` para as partições de 4096 e 512 arcos.
 
 ## Teoremas compilados e hipóteses
 
 - `contour51C5PiBox_contains`: incondicional; reutiliza
   `c5_pi_quarter_interval_contains` de C5.
-- `contour51Arc4096UBox_contains`: assume apenas que `u` pertence ao arco racional
-  fechado correspondente.
-- `contour51Arc4096AngleBox_normBound_le_eight`: assume `k < 4096`.
-- `contour51Arc4096AngleBox_contains`: assume apenas que `u` pertence ao arco.
-- `contour51Arc4096ZBox_contains` e `contour51Arc4096SBox_contains`: assumem
-  `k < 4096` e `u` no arco fechado; não recebem amostras pontuais.
+- `contour51ArcPartitionUBox_contains` e `contour51ArcPartitionAngleBox_contains`:
+  assumem apenas que `u` pertence ao arco fechado correspondente.
+- `contour51ArcPartitionUBox_bounds` e `contour51ArcPartitionAngleBox_normBound_le_eight`:
+  assumem `0<N` e `k<N`.
+- `contour51ArcPartitionZBox_contains` e `contour51ArcPartitionSBox_contains`:
+  assumem `0<N`, `k<N` e `u` no arco fechado; não recebem amostras pontuais.
+- As especializações `contour51Arc4096ZBox_contains`, `contour51Arc4096SBox_contains`,
+  `contour51Arc512ZBox_contains` e `contour51Arc512SBox_contains` assumem somente `k<N` e `u`
+  no arco, com o valor positivo fixado de `N`.
 
-Todos os `#print axioms` retornam `[propext, Classical.choice, Quot.sound]`.
+Todos os sete `#print axioms` retornam `[propext, Classical.choice, Quot.sound]`.
 Compilação Lean 4.32.0 com `-DwarningAsError=true`, saída isolada
 `/home/thlinux/tmp/c2-contour51-20261108-lean432`; não há `sorry`, `admit` ou
 axiomas declarados no fonte.
 
 ## Relação com o certificado externo
 
-As caixas para `z(u)` e `s(u)` agora são teoremas Lean contínuos em cada arco.
-Elas podem preencher os campos geométricos `parameterContains` e `sContains` de
-`Contour51Arb4096N0ArcComponentBoxes`. Elas não foram comparadas ainda com caixas
+As caixas para `z(u)` e `s(u)` agora são teoremas Lean contínuos em cada arco de 4096 ou 512
+partições. As de 4096 podem preencher os campos geométricos `parameterContains` e `sContains` de
+`Contour51Arb4096N0ArcComponentBoxes`; as de 512 estão disponíveis para compor a inclusão da
+resposta na cota de círculo. Elas ainda não foram comparadas com caixas
 de componentes exportadas pelo Arb; o JSON C3 atual guarda faixas finais dos
 integrandos, não as caixas de `ζ`, `ζ′`, digamma e os intermediários da avaliação.
 Assim, não prova nenhum `composedLowerEndpoint`/`composedUpperEndpoint` nem a
@@ -52,7 +55,7 @@ sinal do resto foi adicionada.
    não cobrem digamma variando no contorno. A caixa de `log π` já é reutilizável
    pelo teorema `contour51C5LogPiBox_contains`.
 4. Inclusões para ζ e ζ′, positividade Lean das caixas de norma quadrada de
-   `s-1`, ζ e potências do parâmetro, e as comparações da caixa composta com
+   `s`, `s-1`, ζ e potências do parâmetro, e as comparações da caixa composta com
    cada extremo Arb.
 5. A inclusão contínua dos 4096 integrandos residuais para `n=0,…,5`, e a
    inclusão separada dos 512 arcos para `‖R‖≤4/5`.
@@ -78,7 +81,15 @@ SIGMA_HEIGHT50_BUILD=/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-mai
 bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaContour51ArcGeometry
 ```
 
-- Fonte SHA-256: `8fa865179e62d4ca6d1e83eded8f20e329e535ef5234c7ebe48c279232e151d1`
-- OLean SHA-256: `d92eb400e09dbdecb4d69e0fe7401f07711eb527500b7b174bd34ae99eaf6deb`
-- Log de sucesso SHA-256: `8f3dc8369237ee2643d8adae41e5fe627bfd8988b37fed21f4c4bd7f12d426b8`
-- Log completo: `/home/thlinux/tmp/c2-contour51-20261108-lean432/logs/SigmaContour51ArcGeometry-attempt7.log`
+- Fonte SHA-256: `43499cc8f04929535203f03035c448507d0d2a2646722c95c90b836c900a2302`
+- OLean SHA-256: `b17874f8ff593038c7ca833fb856cffed241a8958313644e07aeaacf6d59c981`
+- Log de sucesso SHA-256: `aceade4bfb3fd16ecd6813394c8f4992bfcacd9844a4cb4c77f02ceb68856ae9`
+- Log completo: `/home/thlinux/tmp/c2-contour51-20261108-lean432/logs/SigmaContour51ArcGeometry-attempt8.log`
+
+## Tentativas de compilação preservadas
+
+As tentativas 2–6 são mantidas em `C3_SigmaContour51ArcGeometry-attemptN-failed.log`. Elas
+identificaram, respectivamente, a redução incompleta de `Interval.contains`, camadas extras de
+cast racional/real, a forma do cast em `k+1`, e dois argumentos de arco não usados. A tentativa 7
+compilou a primeira versão especializada em 4096 arcos; a versão final generalizou a partição e
+foi recompilada na tentativa 8, incluindo as especializações para 512 e 4096.
