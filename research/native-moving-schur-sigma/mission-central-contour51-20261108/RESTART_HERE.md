@@ -154,3 +154,33 @@ coefficient boxes and Cauchy remainders, continuous digamma boxes, and endpoint-
 all windows, all six residual transfers and the independent 512-arc circle transfer are also
 necessary. C5's Bernoulli table and node lists were not rerun; displaced C5 boxes still have no
 quantitative transport to `d=0`.
+
+### C3 update — Euler–Maclaurin value-tail bound, 2026-11-09
+
+`SigmaC3ZetaEMTail.lean` proves, on `‖s‖≤54`, the Pochhammer estimate
+`‖(s)_600‖≤600!·2^712` and the strict value-tail estimate
+`‖∑' k, emZetaHighBlock s 300 (k+100)‖<10⁻⁴⁰` under `0<Re(s)` and `s≠1`. It reuses the
+existing C5 Euler–Maclaurin identity and Bernoulli data. The two theorem audits contain only
+`[propext, Classical.choice, Quot.sound]`; no `sorry`, `admit` or declared axiom is present.
+
+This is only the Euler–Maclaurin truncation tail for ζ's value. It is distinct from the material
+C2 tail, the ten-mode residual `e_n`, and the Arb Taylor/Cauchy remainder. It does not bound ζ′.
+The imported identity `zeta_em_high` covers `Re(s)>0, Im(s)>0`; the real-axis identity is
+separate. Extending that identity by conjugation to `Im(s)<0` and bounding the differentiated tail
+remain open. No C5 table or node list was recomputed.
+
+The external Arb/Acb state is unchanged: 512 arcs certify `|R|<0.746413<4/5` and 4096 arcs give
+the six rational residual endpoint intervals. Lean verifies the exported rational endpoint and
+weighted-sum arithmetic and the conditional integral transfers, but does not prove evaluator
+inclusion. The currently available strict positive lower margins for `e_0,…,e_5` remain, in
+order, `9/1000`, `9/10000000`, `9/50000000000`, `1/25000000000000`,
+`1/100000000000000000`, and `1/500000000000000000000`; they are still external endpoints, not
+Lean signs. The first determinant margin `1/1000000000` is likewise conditional on all 4096
+component records for `n=0,1,2`.
+
+The exact next lemma for a first unconditional determinant remains
+`∀ k < 4096, Contour51Arb4096FirstThreeArcComponentBoxes k`. Its ζ, ζ′ and digamma enclosures,
+positive denominator norm-square bounds, and exact Arb-endpoint comparisons are not proved. For
+the full all-window target, the six residual transfers and the separate 512-arc transfer to
+`‖R‖≤4/5` are also open. See `OPEN_OBLIGATIONS.md` and
+`evidence/C3_SigmaC3ZetaEMTail-success.log` for the exact theorem hypotheses and Lean audit.

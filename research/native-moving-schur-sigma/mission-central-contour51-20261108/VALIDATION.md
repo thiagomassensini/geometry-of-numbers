@@ -466,3 +466,42 @@ O próximo passo mínimo para tornar esse limite incondicional é provar a famí
 caixas racionais de coeficientes verdadeiros de ζ, seus discos e majorantes Cauchy, caixas contínuas
 de digamma, positividade das faixas de norma e adequação dos extremos compostos às tabelas Arb
 continuam abertas. O módulo não importa como prova a saída Python Arb.
+
+## C3 — cauda Euler–Maclaurin uniforme para `‖s‖≤54`
+
+`SigmaC3ZetaEMTail.lean` compila em Lean 4.32.0 com `-DwarningAsError=true` e saída exclusiva
+em `/home/thlinux/tmp/c2-contour51-20261108-lean432`. `c3_emPochhammer_norm_le_factorial_mul_two_pow`
+prova `‖emPochhammer s 600‖≤600!·2^712` sob `‖s‖≤54`. `c3_emZetaHighTail_norm_lt` usa esse
+resultado e o teorema genérico C5 para provar
+`‖∑' k, emZetaHighBlock s 300 (k+100)‖<1/10^40` sob as três hipóteses exatas
+`0<s.re`, `s≠1` e `‖s‖≤54`.
+
+Auditoria: ambos `#print axioms` retornam apenas `[propext, Classical.choice, Quot.sound]`;
+varredura do novo módulo não encontra `sorry`, `admit` ou declaração `axiom`. O fonte coincide
+com o hash compilado `7c876b49d0ca0c404df798ed1936301449bfd0a685c6a42f0f276875af3707cb`; OLean
+`244ddced06dab02703a0551482d86ebe5479d1dffb668ea711c75e3b0110f679`; log de sucesso
+`9b319045a5c76ec96fd37beea3d6ec75b31b01bc656f596f09b0d878039b5e0a`, versionado em
+`evidence/C3_SigmaC3ZetaEMTail-success.log`.
+
+Build reproduzível no worktree deste branch, importando os OLean C5 existentes somente para
+leitura e escrevendo no output C2 isolado:
+
+```sh
+CARRY_LEAN_ROOT=/home/thlinux/worktrees/carry-sigma-c2-pinned-045369 \
+SIGMA_OUTPUT_DIR=/home/thlinux/tmp/c2-contour51-20261108-lean432 \
+SIGMA_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108 \
+SIGMA_HEIGHT50_BUILD=/home/thlinux/worktrees/geometry-of-numbers-c5-em-high-order-20261106/research/native-moving-schur-sigma/.cache/c5-node-instantiation-clean-20261107:/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/integration:/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/external:/home/thlinux/tmp/c2-central-ten-heights-b2-20261108-lean432:/home/thlinux/tmp/c2-central-hankel2-20261107-lean432:/home/thlinux/geometry-of-numbers/.lake/build/lib/lean \
+bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaC3ZetaEMTail
+```
+
+The estimate bounds only the remainder of the Euler–Maclaurin value expression. It is not the
+material C2 tail, not the ten-mode residual `e_n`, and not the Arb Taylor/Cauchy remainder; it
+does not bound ζ′. The C5 identity `zeta_em_high` covers `Re(s)>0, Im(s)>0`; the extension to
+`Im(s)<0` by conjugation and a differentiated-tail bound remain open. The Arb state is unchanged:
+512 arcs certify externally `|R|<0.746413<4/5`, and the 4096 exact rational endpoint margins for
+`e_0,…,e_5` are, respectively, `9/1000`, `9/10000000`, `9/50000000000`,
+`1/25000000000000`, `1/100000000000000000`, and `1/500000000000000000000`. They remain external
+comparisons until pointwise Lean inclusion is proved. The next minimal theorem family for the
+first determinant is `∀ k<4096, Contour51Arb4096FirstThreeArcComponentBoxes k`; its ζ, ζ′,
+digamma, denominator-positivity and endpoint-comparison fields are still open. The conditional
+gate's absolute margin is `1/1000000000`; no unconditional central positivity is asserted.

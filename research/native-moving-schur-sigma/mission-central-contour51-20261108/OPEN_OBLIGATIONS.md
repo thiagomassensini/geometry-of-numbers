@@ -254,3 +254,55 @@ Arb superior, para cada `n=0,1,2`. Os limites de `s`, `z` e `log π` não são h
 registro: seguem dos módulos Lean já compilados. A tabela Arb e as margens racionais não provam
 esses campos analíticos. Assim, a margem `10⁻⁹` ainda é condicional e não estabelece positividade
 central incondicional.
+
+## Novo limite Euler–Maclaurin para a faixa C3 — 2026-11-09
+
+`SigmaC3ZetaEMTail.lean` reutiliza a fórmula e os dados Bernoulli C5 já compilados e amplia a
+cota da cauda de Euler–Maclaurin de `‖s‖≤1` para o alcance `‖s‖≤54` usado pela geometria do
+contorno. Em Lean 4.32.0, sem axiomas novos:
+
+- `c3_emPochhammer_norm_le_factorial_mul_two_pow` assume `‖s‖≤54` e prova
+  `‖(s)_600‖≤600!·2^712`.
+- `c3_emZetaHighTail_norm_lt` assume `0<Re(s)`, `s≠1` e `‖s‖≤54`; para os parâmetros
+  fixos `P=300`, `N=100`, prova
+  `‖∑' k, emZetaHighBlock(s,300,k+100)‖<10⁻⁴⁰`.
+
+Isso limita somente a cauda da expressão Euler–Maclaurin para o valor de ζ. A identidade C5
+`zeta_em_high` está provada no quadrante `Re(s)>0, Im(s)>0` e `zeta_em_high_real` no eixo
+real positivo fora do polo. A identidade Euler–Maclaurin no semiplano inferior ainda não está
+provada neste branch; a aplicação do novo limite aos pontos inferiores do parâmetro de ζ exige
+essa extensão por conjugação. Também não existe aqui limite para a derivada da cauda. Para caixas
+de ζ′ ainda é necessário diferenciar a representação e limitar separadamente a cauda derivada.
+
+O limite `10⁻⁴⁰` não é a cauda material da C2, não é `e_n` (resíduo dos dez modos) e não é o
+resto Taylor/Cauchy do avaliador Arb. Ele só pode ajudar a formar uma caixa de ζ depois da
+identidade correta, da avaliação intervalar da parte finita e do transporte de erros serem
+provados; não altera nenhum dos cinco termos cruzados do determinante. Em particular, as margens
+racionais externas para os resíduos continuam sem virar sinais Lean.
+
+## Estado exato e próximo lema mínimo
+
+As obrigações Lean não descarregadas são: (1) a inclusão universal, nos 4096 arcos, de ζ, ζ′,
+digamma, divisões e restos Taylor/Cauchy nas caixas contínuas dos componentes; (2) a extensão da
+identidade Euler–Maclaurin ao semiplano inferior para aplicar a decomposição finita mais a cauda
+no contorno inteiro; (3) um limite de cauda derivada ou outra caixa rigorosa para ζ′; (4) a inclusão
+separada da resposta nos 512 arcos para obter `‖R‖≤4/5` em Lean. Não há hipótese de sinal do
+resto introduzida.
+
+O próximo alvo mínimo que pode produzir o primeiro avanço determinantal é provar a família
+`∀ k < 4096, Contour51Arb4096FirstThreeArcComponentBoxes k`. Seus campos são as caixas contínuas
+verdadeiras de ζ, ζ′ e digamma; positividade racional das faixas de norma de `s`, `s-1`, ζ e
+`z^(2n+1)` para `n=0,1,2`; e as inclusões dos extremos das caixas compostas nos dois endpoints
+Arb para esses três índices. O adaptador compilado transforma exatamente essa família em
+`contour51ArbFirstThreeLowerPathResidualIntervalBounds` e então na margem absoluta
+`1/1000000000 < sigmaPadeD 0 0`. Nenhuma amostra numérica ou resto com sinal presumido satisfaz
+essas hipóteses.
+
+## Fronteira de compartilhamento com C5
+
+Reutilizáveis sem refazer a missão C5: o teorema geral de cauda Euler–Maclaurin, a tabela
+Bernoulli, a aritmética racional de intervalos, a caixa certificada de `log π`, as convenções de
+normalização e o transporte algébrico da fonte. Não são transferíveis diretamente os nós fixos
+C5 de ζ/Gamma, por não cobrirem os retângulos contínuos de C3 nem ζ′/digamma; caixas em
+deslocamentos `d=0.0495` e `d=0.1` também não fecham a inclusão no centro `d=0` sem teorema
+quantitativo de transporte. Nenhuma tabela Bernoulli ou lista completa de nós C5 foi duplicada.
