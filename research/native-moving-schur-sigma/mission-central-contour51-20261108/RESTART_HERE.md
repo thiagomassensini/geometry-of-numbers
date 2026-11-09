@@ -101,3 +101,18 @@ closed-arc endpoint adapter is currently only for `n=0` and still assumes every 
 every comparison with the Arb endpoints. It does not prove those inputs; `n=1,2` plus all component
 enclosures remain needed for the first determinant. See the evidence memo and exact list in
 `OPEN_OBLIGATIONS.md`.
+
+### Latest C3 coefficient-table bridge
+
+`SigmaContour51TaylorCoefficientBridge.lean` proves
+`contourTaylorCoefficient (deriv f) c k = (k+1) * contourTaylorCoefficient f c (k+1)` and
+constructs the derivative Taylor polynomial interval from the same coefficient boxes used for
+`f`. Its `contourTaylorCauchyValueAndDerivativeBoxes` theorem combines the function and derivative
+Cauchy remainders to produce both boxes under one explicit set of analytic hypotheses. Its four
+theorem audits report only `[propext, Classical.choice, Quot.sound]`. This matches the coefficient
+reuse in `acb_series.zeta()` and removes duplicate coefficient data for ζ′.
+
+The ζ coefficient boxes, Cauchy majorants, and arc displacement bounds are still not proved from
+the Arb data. The 4096 residual pointwise inclusions (first `n=0,1,2`) and the independent
+512-arc circle inclusion remain open. Their exact assumptions, rational residual margins, Arb to
+Lean boundary, and C5 reuse limits are recorded in `OPEN_OBLIGATIONS.md` and `VALIDATION.md`.

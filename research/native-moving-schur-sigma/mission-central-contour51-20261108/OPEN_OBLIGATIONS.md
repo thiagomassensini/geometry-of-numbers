@@ -166,8 +166,11 @@ Para cada arco C3 ainda precisam ser fornecidos e provados:
 2. `DiffContOnCl` da zeta no disco de raio `1/4` e majorante de fronteira `M` derivado de
    caixas racionais. A checagem externa de que o disco evita o polo não é um teorema Lean.
 3. Caixas racionais contendo os coeficientes exatos `deriv^k zeta(s₀)/k!`, para `k≤32`,
-   incluindo a ligação das bolas `acb_series.zeta()` aos coeficientes verdadeiros. O resto Cauchy
-   limita a cauda em relação ao Taylor exato; não valida as caixas dos coeficientes.
+   incluindo a ligação das bolas `acb_series.zeta()` aos coeficientes verdadeiros. Uma tabela
+   única basta: `SigmaContour51TaylorCoefficientBridge.lean` prova que o coeficiente de ζ′ no
+   índice `k` é `(k+1)` vezes o coeficiente de ζ no índice `k+1`, e que a mesma tabela de caixas
+   avalia o polinômio derivado. O resto Cauchy limita a cauda em relação ao Taylor exato; nem essa
+   identidade nem o resto validam as caixas dos coeficientes.
 4. Aplicar os restos para conter zeta e zeta′ no arco; conter separadamente `1/s`, `1/(s-1)`,
    `log π` e `digamma(s/2)`; provar que a caixa de zeta exclui zero; e então demonstrar a inclusão
    da resposta ou do integrando residual nas caixas Arb.
@@ -178,6 +181,27 @@ O novo módulo verifica a transformação “coeficientes + deslocamento + resto
 contendo a função/derivada”, mas não descarrega esses inputs com os dados atuais. O resto do
 avaliador continua distinto do resíduo de dez modos e da cauda material da C2; os cinco cruzamentos
 do determinante permanecem inalterados.
+
+## Uma tabela de Taylor para ζ e ζ′
+
+`SigmaContour51TaylorCoefficientBridge.lean` compila a identidade exata
+`contourTaylorCoefficient (deriv f) c k = (k+1) * contourTaylorCoefficient f c (k+1)`.
+Com caixas dos coeficientes de `f` até `N`, a aritmética retangular derivada constrói uma caixa
+para o polinômio de `deriv f` com `N` coeficientes; inflar por um erro derivativo provado contém
+`deriv f z`. Isso espelha o uso de `acb_series.zeta()` no C3 e elimina a necessidade de certificar
+uma tabela independente de coeficientes para ζ′.
+
+O teorema `contourTaylorCauchyValueAndDerivativeBoxes` reúne esse transporte com os dois restos
+de Cauchy: dadas analiticidade no disco, diferenciabilidade da derivada, majorante `M`, razão
+`q<1`, cota do deslocamento, caixas de coeficientes e limites racionais acima dos dois restos,
+ele conclui simultaneamente caixas para `f z` e `deriv f z`.
+
+As hipóteses explícitas são: caixas dos coeficientes Taylor de `f` até `N`, caixa do deslocamento
+`z-c` e limite racional para o resto Taylor de `deriv f`. Para obter esse resto por Cauchy,
+continuam necessários `DiffContOnCl` de `f`, diferenciabilidade da derivada, majorante de fronteira
+e `‖z-c‖≤q*r` com `0≤q<1`. Para ζ nos arcos atuais ainda não há prova das caixas exatas dos
+coeficientes, dos majorantes dos discos ou do transporte dos centros Arb para os argumentos Lean.
+Assim, essa ponte reduz os dados do avaliador, mas não descarrega as inclusões dos 512/4096 arcos.
 
 ## C3 — tabela racional e inclusão dos 512 arcos
 

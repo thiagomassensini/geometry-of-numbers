@@ -241,3 +241,23 @@ dos 512 arcos para `hR`.
 A compilação foi em Lean 4.32.0 com warnings como erros. Os sete teoremas auditados usam somente
 `[propext, Classical.choice, Quot.sound]`. Fonte, log, memo, comandos e hashes estão listados em
 `VALIDATION.md` e `evidence/C3_SigmaContour51ArbIntervalComposition.md`.
+
+## Incremento C3 — reutilização da tabela Taylor para ζ′
+
+`SigmaContour51TaylorCoefficientBridge.lean` compila a identidade exata
+`contourTaylorCoefficient (deriv f) c k = (k+1) * contourTaylorCoefficient f c (k+1)` e uma
+ponte de caixas: uma tabela racional de coeficientes de `f`, até `N`, basta para avaliar por
+retângulos o polinômio Taylor de `deriv f`; a inflação por um limite racional válido contém o
+valor exato da derivada. `contourTaylorCauchyValueAndDerivativeBoxes` agora combina as
+hipóteses analíticas e os limites racionais dos dois restos para concluir, de uma vez, caixas
+para `f z` e `deriv f z`. Os quatro teoremas novos reportam somente `[propext, Classical.choice,
+Quot.sound]`.
+
+Isso remove a necessidade de um segundo certificado independente para os 32 coeficientes de
+ζ′ por arco. Continua sem prova a inclusão das caixas Arb para os coeficientes exatos de ζ, o
+majorante analítico e o deslocamento em cada disco; também permanecem abertas as caixas de digamma,
+parâmetros, normas quadradas e comparações com os endpoints. Logo as inclusões de 4096 arcos
+(`n=0,…,5`) e 512 arcos seguem condicionais, bem como os seis sinais `e_n` e `hR`. Não há teorema
+de positividade central incondicional. O próximo lema útil é a inclusão uniforme de ζ/ζ′ em cada
+arco a partir dos dados Taylor certificados; para o primeiro avanço, isso precisa cobrir
+`n=0,1,2` nos 4096 arcos antes do adaptador integral e da margem `1/10^9`.

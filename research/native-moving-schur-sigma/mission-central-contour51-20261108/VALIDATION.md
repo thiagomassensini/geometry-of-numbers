@@ -309,3 +309,40 @@
 - **Auditoria:** Lean 4.32.0, `-DwarningAsError=true`. Os teoremas novos da tabela e das pontes dependem apenas de `[propext, Classical.choice, Quot.sound]`; não há `native_decide`, `sorry`, `admit` ou axiomas novos.
 - **Tentativas:** tentativa 1 interrompida após 11 minutos porque `interval_cases` repetia a expansão da lista; tentativas 2–4 corrigiram problemas de tipo, cobertura e conversão; tentativa 5 compilou a tabela e a ponte para `hR`; tentativa 6 compilou também a composição com o teorema condicional de todas as janelas. Logs preservados: `C3_SigmaContour51ArbBoundCertificate512-attempt{1,2,3,4,5}*` e `C3_SigmaContour51ArbBoundCertificate512-success.log`.
 - **Hashes SHA-256:** CSV `c1a2a37fcd1450c34181edd0f6fe7fac334fdf750be153d708c15f2e0fb90519`; gerador `c3c2cc6177c9ef6989e60b52e9a8aabb2bb6be35a37aeb555d229800a9a17669`; Lean `22a6736ab5be93fe62cdf770cd28b29bd539ab9ef7b8c7a8ec8ceec44ff8f159`; OLean `/home/thlinux/tmp/c2-contour51-20261108-lean432/SigmaContour51ArbBoundCertificate512.olean` `daad771c67482b650de324b9b517319f62fa59a032831a9724bd58916e1d9eba`; log `evidence/C3_SigmaContour51ArbBoundCertificate512-success.log` `8e5943ed413bedfba206d8605249ec3e37839c1deeb4f21755500585c5dba952`.
+
+## C3 — tabela única de coeficientes Taylor para ζ e ζ′
+
+- **Teorema algébrico compilado:** `contourTaylorCoefficient_deriv_eq_nat_mul` prova, para toda
+  função complexa `f`, centro `c` e índice `k`, a identidade
+  `contourTaylorCoefficient (deriv f) c k = (k+1) * contourTaylorCoefficient f c (k+1)`.
+- **Transporte por caixas compilado:**
+  `contourTaylorDerivativeIntervalPolynomial_from_function_coefficients_contains` usa caixas dos
+  coeficientes de `f` até `N` e uma caixa de `z-c` para conter o polinômio Taylor de `deriv f` com
+  `N` termos. `contourTaylorDerivativeIntervalPolynomial_from_function_coefficients_inflate_contains`
+  infla por um erro racional e contém `deriv f z` quando o limite desse resto foi provado. O
+  teorema `contourTaylorCauchyValueAndDerivativeBoxes` combina a caixa Taylor de `f`, a caixa do
+  polinômio derivado e os dois limites racionais de Cauchy para concluir simultaneamente as
+  inclusões de `f z` e `deriv f z`. Isso permite compartilhar a tabela de coeficientes de ζ do
+  Arb com ζ′, como faz `acb_series.zeta()`.
+- **Hipóteses exatas:** as provas de transporte recebem
+  `∀ k≤N, coeff[k] contém contourTaylorCoefficient f c k`, `deltaBox contém delta`, a igualdade
+  `delta=z-c` e limites racionais que majoram os dois restos. O teorema combinado exige ainda
+  `0<r`, `DiffContOnCl` de `f` no disco, `DifferentiableOn` da derivada no disco, majorante `M`
+  na esfera, `0≤q<1`, `z∈ball c r` e `‖z-c‖≤q*r`. O módulo não prova as caixas de coeficientes,
+  analiticidade de ζ nos discos, majorantes ou deslocamentos.
+- **Build e audit:** Lean 4.32.0, `-DwarningAsError=true`, saída exclusiva
+  `/home/thlinux/tmp/c2-contour51-20261108-lean432`, exit 0. Os quatro teoremas novos reportam
+  somente `[propext, Classical.choice, Quot.sound]`. O fonte não contém `sorry`, `admit` ou
+  declarações de axioma. Tentativas 1 e 3 falharam durante o desenvolvimento; tentativa 2 foi
+  uma compilação intermediária; tentativa 4 é a compilação final e está registrada em
+  `evidence/C3_SigmaContour51TaylorCoefficientBridge-success.log`.
+- **SHA-256:** fonte
+  `1bb5426aa763ab9aa424616a97c228f78db89faf9b5edd5aebd3941b5413bc1a`; OLean
+  `/home/thlinux/tmp/c2-contour51-20261108-lean432/SigmaContour51TaylorCoefficientBridge.olean`
+  `bcb295f9026adc25446d5acbb458a5733136512096cf70df3f8165a67d225c98`; log de sucesso
+  `7fb07ce21c0d26ac866751d4ef11aaaef81a4848152b0a72335e3bb24873fddf`.
+- **Limite:** os certificados atuais não exportam caixas racionais dos coeficientes Arb, discos,
+  restos ou caixas dos demais componentes. Nenhuma inclusão de 512/4096 arcos, sinal `e_n`, `hR`
+  ou positividade central incondicional resulta deste incremento. O próximo lema para o primeiro
+  avanço é a inclusão uniforme dos componentes Taylor da fonte nos arcos 4096 para `n=0,1,2`,
+  incluindo a validade analítica e as caixas exatas dos coeficientes.

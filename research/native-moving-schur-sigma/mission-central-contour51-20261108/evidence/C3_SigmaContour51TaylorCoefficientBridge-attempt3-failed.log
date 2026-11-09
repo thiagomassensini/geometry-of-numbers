@@ -1,0 +1,61 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51TaylorCoefficientBridge.lean:99:23: error: don't know how to synthesize implicit argument `N`
+  @contourTaylorRemainder_norm_le f c z r M q ?m.186 hr hf hM hz hq0 hq1 hdeltaNorm
+context:
+f : ℂ → ℂ
+c z : ℂ
+r M q : ℝ
+N : ℕ
+coeff : ℕ → ComplexInterval
+deltaBox : ComplexInterval
+valueError derivativeError : ℚ
+hr : 0 < r
+hf : DiffContOnCl ℂ f (Metric.ball c r)
+hdf : DifferentiableOn ℂ (deriv f) (Metric.ball c r)
+hM : ∀ w ∈ Metric.sphere c r, ‖f w‖ ≤ M
+hz : z ∈ Metric.ball c r
+hq0 : 0 ≤ q
+hq1 : q < 1
+hdeltaNorm : ‖z - c‖ ≤ q * r
+hcoeff : ∀ k ≤ N, (coeff k).contains (contourTaylorCoefficient f c k)
+hdelta : deltaBox.contains (z - c)
+hvalueTail : M * q ^ (N + 1) / (1 - q) ≤ ↑valueError
+hderivativeTail : M / r * q ^ N * (↑(N + 1) - ↑N * q) / (1 - q) ^ 2 ≤ ↑derivativeError
+⊢ ℕ
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51TaylorCoefficientBridge.lean:99:7: error: failed to infer `have` declaration type
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51TaylorCoefficientBridge.lean:98:69: error: unsolved goals
+f : ℂ → ℂ
+c z : ℂ
+r M q : ℝ
+N : ℕ
+coeff : ℕ → ComplexInterval
+deltaBox : ComplexInterval
+valueError derivativeError : ℚ
+hr : 0 < r
+hf : DiffContOnCl ℂ f (Metric.ball c r)
+hdf : DifferentiableOn ℂ (deriv f) (Metric.ball c r)
+hM : ∀ w ∈ Metric.sphere c r, ‖f w‖ ≤ M
+hz : z ∈ Metric.ball c r
+hq0 : 0 ≤ q
+hq1 : q < 1
+hdeltaNorm : ‖z - c‖ ≤ q * r
+hcoeff : ∀ k ≤ N, (coeff k).contains (contourTaylorCoefficient f c k)
+hdelta : deltaBox.contains (z - c)
+hvalueTail : M * q ^ (N + 1) / (1 - q) ≤ ↑valueError
+hderivativeTail : M / r * q ^ N * (↑(N + 1) - ↑N * q) / (1 - q) ^ 2 ≤ ↑derivativeError
+⊢ ((contourTaylorIntervalPolynomial coeff deltaBox (N + 1)).inflate valueError).contains (f z) ∧
+    ((contourTaylorIntervalPolynomial (fun k => ComplexInterval.smulQ (↑(k + 1)) (coeff (k + 1))) deltaBox N).inflate
+          derivativeError).contains
+      (deriv f z)
+'CarrySigmaObstruction.contourTaylorCoefficient_deriv_eq_nat_mul' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contourTaylorDerivativeIntervalPolynomial_from_function_coefficients_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contourTaylorDerivativeIntervalPolynomial_from_function_coefficients_inflate_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contourTaylorCauchyValueAndDerivativeBoxes' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

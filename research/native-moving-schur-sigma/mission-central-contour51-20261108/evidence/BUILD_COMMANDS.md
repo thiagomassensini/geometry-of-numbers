@@ -37,6 +37,30 @@ the compile audit and hashes. The endpoint adapter proves only n=0. The generic 
 for every n, but closing the first determinant still needs the n=1 and n=2 component-box and
 endpoint comparisons.
 
+## Reuse of the zeta Taylor coefficient table for its derivative
+
+`SigmaContour51TaylorCoefficientBridge` proves the exact coefficient shift
+`c_k(deriv f)=(k+1)c_(k+1)(f)` and derives a derivative-polynomial interval box from the same
+rational coefficient boxes used for `f`. `contourTaylorCauchyValueAndDerivativeBoxes` combines
+the generic value and derivative Cauchy bounds into simultaneous boxes. It does not certify any
+zeta coefficient or Cauchy input.
+The Lean 4.32.0 build used the exclusive output root and common environment above:
+
+```bash
+CARRY_LEAN_ROOT=/home/thlinux/worktrees/carry-sigma-c2-pinned-045369 \
+SIGMA_OUTPUT_DIR=/home/thlinux/tmp/c2-contour51-20261108-lean432 \
+SIGMA_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108 \
+SIGMA_HEIGHT50_BUILD=/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/integration:/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/external:/home/thlinux/tmp/c2-central-ten-heights-b2-20261108-lean432:/home/thlinux/tmp/c2-central-hankel2-20261107-lean432:/home/thlinux/geometry-of-numbers/.lake/build/lib/lean \
+bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaContour51TaylorCoefficientBridge
+```
+
+Attempts 1 and 3 failed during proof-script development and are retained as
+`C3_SigmaContour51TaylorCoefficientBridge-attempt1-failed.log` and
+`C3_SigmaContour51TaylorCoefficientBridge-attempt3-failed.log`; attempt 2 was an intermediate
+success before the combined Cauchy theorem. Attempt 4 compiled with warnings as errors and is
+`C3_SigmaContour51TaylorCoefficientBridge-success.log`. The four theorem audits report only
+standard Lean axioms. The source has no `sorry`, `admit`, or declared axiom.
+
 ## Isolation
 
 - Before every Lean compile, check Lean/Lake processes and available memory. The user authorized parallel execution on 2026-11-08 while C5 PID `151152` runs in a separate worktree; keep this branch's builds sequential and use only its exclusive output root.
