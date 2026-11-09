@@ -1,0 +1,12 @@
+'CarrySigmaObstruction.analytic_simple_zero_log_derivative_residue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.analytic_simple_zero_log_derivative_pole_cancellation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaContour51_original_characteristic_logDerivative_residue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.normalized_circle_integral_coefficient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

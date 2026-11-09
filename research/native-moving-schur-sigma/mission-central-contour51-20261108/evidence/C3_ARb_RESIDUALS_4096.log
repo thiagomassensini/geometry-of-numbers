@@ -1,0 +1,7 @@
+n=0: e_n in approximately [9.535852947110655e-03, 9.585633130868885e-03]; strict_rational_margin=9/1000; certified_positive=True (exact rational endpoints are in the JSON)
+n=1: e_n in approximately [9.180296036279536e-07, 9.510079786587546e-07]; strict_rational_margin=9/10000000; certified_positive=True (exact rational endpoints are in the JSON)
+n=2: e_n in approximately [1.874202910399414e-10, 2.081498269662835e-10]; strict_rational_margin=9/50000000000; certified_positive=True (exact rational endpoints are in the JSON)
+n=3: e_n in approximately [4.542210478952836e-14, 5.736309619014358e-14]; strict_rational_margin=1/25000000000000; certified_positive=True (exact rational endpoints are in the JSON)
+n=4: e_n in approximately [1.205912260570632e-17, 1.733697815335599e-17]; strict_rational_margin=1/100000000000000000; certified_positive=True (exact rational endpoints are in the JSON)
+n=5: e_n in approximately [2.797326848058986e-21, 6.091294784687753e-21]; strict_rational_margin=1/500000000000000000000; certified_positive=True (exact rational endpoints are in the JSON)
+exact rational certificate data: research/native-moving-schur-sigma/mission-central-contour51-20261108/evidence/C3_ARb_RESIDUALS_4096.json

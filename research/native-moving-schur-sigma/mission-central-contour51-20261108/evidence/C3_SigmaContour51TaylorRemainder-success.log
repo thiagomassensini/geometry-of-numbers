@@ -1,0 +1,20 @@
+'CarrySigmaObstruction.contourTaylorCoefficient_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.contourTaylorDerivativeCoefficient_norm_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contourTaylorWeightedGeometricShift_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contourTaylorRemainder_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.contourTaylorDerivativeRemainder_norm_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contourTaylorIntervalPolynomial_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contourTaylorIntervalPolynomial_inflate_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contourTaylorDerivativeIntervalPolynomial_inflate_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

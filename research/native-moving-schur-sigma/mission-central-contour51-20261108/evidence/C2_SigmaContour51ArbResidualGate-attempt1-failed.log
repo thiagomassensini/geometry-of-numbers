@@ -1,0 +1,22 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbResidualGate.lean:150:17: error: Application type mismatch: The argument
+  hpos n hn
+has type
+  ↑(contour51ArbResidualMargin n) < completedNativeContour51Residual ts n
+but is expected to have type
+  0 < completedNativeContour51Residual ts n
+in the application
+  le_of_lt (hpos n hn)
+'CarrySigmaObstruction.contour51ArbResidualMargin_pos_and_below_recorded' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNativeContour51Residual_pos_of_arb_intervals' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNativeContour51Residuals_nonneg_of_arb_intervals' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbResidualGate.lean:156:0: error: Unexpected name `CarrySigmaObstruction` after `end`: The current section is unnamed
+
+Hint: Delete the name `CarrySigmaObstruction` to end the current unnamed scope; outer named scopes can then be closed using additional `end` command(s):
+  end ̵C̵a̵r̵r̵y̵S̵i̵g̵m̵a̵O̵b̵s̵t̵r̵u̵c̵t̵i̵o̵n̵

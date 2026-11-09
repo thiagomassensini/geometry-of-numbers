@@ -1,0 +1,4 @@
+'ZetaLean.Interval.contains_squareRange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaLean.Interval.contains_reciprocalPositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaLean.ComplexInterval.contains_normSqRange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaLean.ComplexInterval.contains_divBox' depends on axioms: [propext, Classical.choice, Quot.sound]

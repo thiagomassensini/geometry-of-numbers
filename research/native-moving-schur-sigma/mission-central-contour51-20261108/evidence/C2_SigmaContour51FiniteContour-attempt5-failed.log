@@ -1,0 +1,28 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51FiniteContour.lean:112:12: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (z - a) * z ^ (-2 - ↑n)
+in the target expression
+  a * z ^ (-1 + (-1 + -↑n)) = z ^ (-1 + -↑n) - (z - a) * z ^ (-2 + -↑n)
+
+a : ℂ
+ha : a ∈ ball 0 51
+ha0 : a ≠ 0
+haNorm : ‖a‖ < 51
+hzInv : CircleIntegrable (fun z => (z - a)⁻¹) 0 51
+hzeroInv : CircleIntegrable (fun z => z⁻¹) 0 51
+n : ℕ
+hkernelN : CircleIntegrable (contour51PoleKernel a n) 0 51
+hzeroN : ∮ (z : ℂ) in C(0, 51), contour51PoleKernel a n z = 0
+p : ℂ → ℂ := fun z => z ^ (-↑(n + 2))
+hp : CircleIntegrable p 0 51
+z : ℂ
+hz : z ∈ sphere 0 51
+hzNorm : ‖z‖ = 51
+hz0 : z ≠ 0
+hza : z ≠ a
+hpow : z ^ (-2 - ↑n) * z = z ^ (-1 - ↑n)
+hdist : (z - a) * z ^ (-2 - ↑n) = z * z ^ (-2 - ↑n) - a * z ^ (-2 - ↑n)
+⊢ a * z ^ (-1 + (-1 + -↑n)) = z ^ (-1 + -↑n) - (z - a) * z ^ (-2 + -↑n)
+'CarrySigmaObstruction.contour51_pole_kernel_integrable_and_integral_zero' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

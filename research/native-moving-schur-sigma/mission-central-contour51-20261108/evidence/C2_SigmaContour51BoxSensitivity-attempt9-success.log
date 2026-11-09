@@ -1,0 +1,16 @@
+'CarrySigmaObstruction.contour51TenModeBoxWidth_lt_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.completedNativeContour51Residual_nonneg_of_jet_margin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5CentralDisplacedProduct_eq_characteristic_square' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5CentralSource_log_derivative_eq_twice_original_jets' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5CentralSource_log_derivative_coeff_eq_twice_original_jet' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.c5CentralResidual_eq_half_source_moment_sub_modes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

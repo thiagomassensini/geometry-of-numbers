@@ -1,0 +1,45 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbBoundCertificate512.lean:100:4: error: Type mismatch
+  Eq.symm (List.getElem_eq_getD 0)
+has type
+  contour51Arb512ResponseUpperBounds.getD k 0 = contour51Arb512ResponseUpperBounds[k]
+but is expected to have type
+  contour51Arb512ResponseUpperBounds[k] = contour51Arb512ResponseUpperBound k
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbBoundCertificate512.lean:135:6: error: Type mismatch: After simplification, term
+  Nat.floor_le hxnonneg
+ has type
+  ↑⌊u * 512⌋₊ ≤ u * 512
+but is expected to have type
+  ↑k ≤ u * 512
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbBoundCertificate512.lean:137:6: error: Type mismatch: After simplification, term
+  Nat.lt_floor_add_one (512 * u)
+ has type
+  u * 512 < ↑⌊u * 512⌋₊ + 1
+but is expected to have type
+  u * 512 < ↑k + 1
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbBoundCertificate512.lean:138:55: error: linarith failed to find a contradiction
+u : ℝ
+hu0 : 0 ≤ u
+hu1Bound : u ≤ 1
+hu1 : ¬u = 1
+huLt : u < 1
+k : ℕ := ⌊512 * u⌋₊
+hxnonneg : 0 ≤ 512 * u
+hkLo : ↑k ≤ u * 512
+hkHi : u * 512 < ↑k + 1
+a✝ : ↑512 ≤ 512 * u
+⊢ False
+failed
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbBoundCertificate512.lean:159:4: error: Type mismatch
+  hUpper
+has type
+  contour51Arb512ResponseUpperBound k < 4 / 5
+but is expected to have type
+  ↑(contour51Arb512ResponseUpperBound k) < 4 / 5
+'CarrySigmaObstruction.contour51ArbLowerSemicircleUniformResponseBound_of_512_arc_evaluator_inclusion' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51OriginalResponse_circle_norm_bound_of_512_arc_evaluator_inclusion' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

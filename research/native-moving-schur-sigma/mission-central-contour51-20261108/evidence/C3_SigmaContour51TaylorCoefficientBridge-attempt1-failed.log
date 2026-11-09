@@ -1,0 +1,39 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51TaylorCoefficientBridge.lean:34:2: error: No goals to be solved
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51TaylorCoefficientBridge.lean:47:16: error: don't know how to synthesize implicit argument `coeffExact`
+  @contourTaylorIntervalPolynomial_contains (fun k => ComplexInterval.smulQ (↑(k + 1)) (coeff (k + 1))) ?m.39 deltaBox
+    delta hdelta N ?m.40
+context:
+f : ℂ → ℂ
+c z : ℂ
+coeff : ℕ → ComplexInterval
+deltaBox : ComplexInterval
+delta : ℂ
+N : ℕ
+hcoeff : ∀ k ≤ N, (coeff k).contains (contourTaylorCoefficient f c k)
+hdelta : deltaBox.contains delta
+hdeltaExact : delta = z - c
+⊢ ℕ → ℂ
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51TaylorCoefficientBridge.lean:47:7: error: failed to infer `have` declaration type
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51TaylorCoefficientBridge.lean:46:74: error: unsolved goals
+f : ℂ → ℂ
+c z : ℂ
+coeff : ℕ → ComplexInterval
+deltaBox : ComplexInterval
+delta : ℂ
+N : ℕ
+hcoeff : ∀ k ≤ N, (coeff k).contains (contourTaylorCoefficient f c k)
+hdelta : deltaBox.contains delta
+hdeltaExact : delta = z - c
+⊢ (contourTaylorIntervalPolynomial (fun k => ComplexInterval.smulQ (↑(k + 1)) (coeff (k + 1))) deltaBox N).contains
+    (contourTaylorDerivativePolynomial f c z N)
+'CarrySigmaObstruction.contourTaylorCoefficient_deriv_eq_nat_mul' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contourTaylorDerivativeIntervalPolynomial_from_function_coefficients_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contourTaylorDerivativeIntervalPolynomial_from_function_coefficients_inflate_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

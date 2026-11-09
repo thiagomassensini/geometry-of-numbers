@@ -1,0 +1,28 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbResidualGate.lean:359:19: error: Application type mismatch: The argument
+  hpos
+has type
+  ↑(contour51ArbResidualMargin n) < e n
+but is expected to have type
+  0 < e n
+in the application
+  le_of_lt hpos
+'CarrySigmaObstruction.contour51ArbResidualMargin_pos_and_below_recorded' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51ArbResidualUpperMargin_above_recorded' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51ArbZeroDetMargin_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.completedNativeContour51Residual_pos_of_arb_intervals' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNativeContour51Residuals_nonneg_of_arb_intervals' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNative_sigmaPadeD_zero_pos_of_contour51_arb_intervals' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNative_sigmaPadeD_pos_of_contour51_arb_intervals' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

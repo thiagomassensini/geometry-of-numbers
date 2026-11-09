@@ -1,0 +1,32 @@
+'CarrySigmaObstruction.contour51OriginalResponse_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.contour51OriginalResponse_eq_sigmaXiLogDerivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51SigmaXiLogDerivative_eq_zeta_gamma_factors' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51GammaReal_logDeriv_eq_digamma' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51SigmaXiLogDerivative_eq_arb_formula' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51OriginalResponse_eq_arb_formula' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51OriginalResidualQuotient_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.contour51OriginalAngularResidualIntegrand_periodic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.periodic_pi_integral_full_eq_lower_parameter' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51OriginalResidualIntegral_eq_lower_path' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51ArbResidualIntervalBounds_of_lower_path_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNative_sigmaPadeD_zero_pos_of_contour51_lower_path_intervals' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

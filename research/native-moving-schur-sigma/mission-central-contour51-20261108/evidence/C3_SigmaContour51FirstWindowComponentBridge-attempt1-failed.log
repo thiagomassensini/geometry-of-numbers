@@ -1,0 +1,29 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51FirstWindowComponentBridge.lean:149:2: error: Tactic `apply` failed: could not unify the conclusion of `completedNative_sigmaPadeD_zero_pos_of_contour51_lower_path_intervals`
+  ∃ ts,
+    StrictMono ts ∧
+      (∀ (i : Fin 10), 0 < ts i ∧ ts i < 50) ∧
+        (∀ (i : Fin 10), ts i ∈ Set.Ioo (sigmaTenZeroBoxLower i) (sigmaTenZeroBoxUpper i)) ∧
+          1 / 1000000000 < CarrySigmaPade.sigmaPadeD 0 0
+with the goal
+  1 / 1000000000 < CarrySigmaPade.sigmaPadeD 0 0
+
+Note: The full type of `completedNative_sigmaPadeD_zero_pos_of_contour51_lower_path_intervals` is
+  contour51ArbFirstThreeLowerPathResidualIntervalBounds →
+    ∃ ts,
+      StrictMono ts ∧
+        (∀ (i : Fin 10), 0 < ts i ∧ ts i < 50) ∧
+          (∀ (i : Fin 10), ts i ∈ Set.Ioo (sigmaTenZeroBoxLower i) (sigmaTenZeroBoxUpper i)) ∧
+            1 / 1000000000 < CarrySigmaPade.sigmaPadeD 0 0
+
+hboxes : (k : ℕ) → k < 4096 → Contour51Arb4096FirstThreeArcComponentBoxes k
+⊢ 1 / 1000000000 < CarrySigmaPade.sigmaPadeD 0 0
+'_private.SigmaContour51FirstWindowComponentBridge.0.CarrySigmaObstruction.contour51Arb4096FirstThreeArcEvaluatorInclusion_at_arc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arb4096FirstThreeArcEvaluatorInclusion_of_component_boxes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNative_sigmaPadeD_zero_pos_of_first_three_component_boxes' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

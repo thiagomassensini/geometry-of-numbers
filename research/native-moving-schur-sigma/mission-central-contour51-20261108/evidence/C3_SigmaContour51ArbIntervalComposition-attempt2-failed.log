@@ -1,0 +1,46 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbIntervalComposition.lean:129:2: error: Type mismatch: After simplification, term
+  hsum₄
+ has type
+  ((((((exact 1 0).divBox sBox sBox.normSqRange hsNormSqPos).add
+                    ((exact 1 0).divBox (sBox.sub (exact 1 0)) (sBox.sub (exact 1 0)).normSqRange ⋯)).add
+                (smulQ (-1 / 2) logPiBox)).add
+            (smulQ 2⁻¹ digammaBox)).add
+        (zetaDerivativeBox.divBox zetaBox zetaBox.normSqRange hzetaNormSqPos)).contains
+    (s⁻¹ + (s + -1)⁻¹ + -log ↑Real.pi / 2 + (s / 2).digamma / 2 + deriv riemannZeta s / riemannZeta s)
+but is expected to have type
+  ((((((exact 1 0).divBox sBox sBox.normSqRange hsNormSqPos).add
+                    ((exact 1 0).divBox (sBox.sub (exact 1 0)) (sBox.sub (exact 1 0)).normSqRange ⋯)).add
+                (smulQ (-1 / 2) logPiBox)).add
+            (smulQ 2⁻¹ digammaBox)).add
+        (zetaDerivativeBox.divBox zetaBox zetaBox.normSqRange hzetaNormSqPos)).contains
+    (s⁻¹ + (s + -1)⁻¹ + -(log ↑Real.pi / 2) + (s / 2).digamma / 2 + deriv riemannZeta s / riemannZeta s)
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbIntervalComposition.lean:267:44: error: Type mismatch
+  hkNat
+has type
+  k < 4096
+but is expected to have type
+  (↑k + 1) / 4096 ≤ 1
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbIntervalComposition.lean:283:4: error: Invalid projection: Projection operates on types of the form `C ...` where C is a constant. The expression
+  contour51Arb4096FirstThreeArcEvaluatorInclusion
+has type `Prop` which does not have the necessary form.
+'CarrySigmaObstruction.contour51ArbSigmaXiLogDerivativeBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51ArbOriginalResponseBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51ArbOriginalResponseBox_contains_lower_path' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51ArbN0ResidualIntegrandBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arb4096N0ArcEvaluatorInclusion_of_component_boxes' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arb4096N0AllArcEvaluatorInclusion_of_component_boxes' does not depend on any axioms

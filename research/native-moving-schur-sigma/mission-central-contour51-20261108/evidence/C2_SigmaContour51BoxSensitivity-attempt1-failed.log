@@ -1,0 +1,23 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51BoxSensitivity.lean:51:6: error(lean.unknownIdentifier): Unknown identifier `completedSigmaLogJet`
+
+Note: It is not possible to treat `completedSigmaLogJet` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51BoxSensitivity.lean:60:32: error(lean.unknownIdentifier): Unknown identifier `completedSigmaLogJet`
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51BoxSensitivity.lean:65:2: error: linarith failed to find a contradiction
+ts : Fin 10 → ℝ
+n : ℕ
+hboxes : ∀ (i : Fin 10), ts i ∈ Set.Ioo (sigmaTenZeroBoxLower i) (sigmaTenZeroBoxUpper i)
+hjet : lowMoment n + contour51TenModeBoxWidthBudget n ≤ sorry
+hn : n ≤ 5
+a : Fin 10 → ℝ := fun i => (ts i ^ 2)⁻¹
+hbox : ∀ (i : Fin 10), scaleLower i ≤ a i ∧ a i ≤ scaleUpper i
+hmode : tenModeMoment (fun i => (ts i ^ 2)⁻¹) n ≤ highMoment n
+hwidth : contour51TenModeBoxWidth n < contour51TenModeBoxWidthBudget n
+hsource : highMoment n ≤ sorry
+a✝ : CarrySigmaSource.completedSigmaLogJet 0 n - tenModeMoment (fun i => (ts i ^ 2)⁻¹) n < 0
+⊢ False
+failed
+'CarrySigmaObstruction.contour51TenModeBoxWidth_lt_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.completedNativeContour51Residual_nonneg_of_jet_margin' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

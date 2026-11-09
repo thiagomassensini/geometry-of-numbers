@@ -1,0 +1,13 @@
+'CarrySigmaObstruction.contour51_scales_in_rational_boxes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.completedNativeContour51_decomposition' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNative_sigmaPadeD_pos_of_contour51_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.central_hankel2_zero_of_contour40_tail_and_outer_signs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNative_sigmaPadeD_zero_pos_of_contour51_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

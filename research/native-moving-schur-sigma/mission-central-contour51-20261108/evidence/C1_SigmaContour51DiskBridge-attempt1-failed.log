@@ -1,0 +1,122 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:66:84: error(lean.unknownIdentifier): Unknown identifier `𝓝`
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:113:6: error: 'calc' expression has type
+  ts i < 52
+but is expected to have type
+  ts i ≤ 52
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:118:11: error: Invalid `⟨...⟩` notation: The expected type `Real.le✝ (f i).im 52` is not an inductive type
+
+Note: This notation can only be used when the expected type is an inductive type with a single constructor
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:119:6: error: Type mismatch: After simplification, term
+  (htsBoxes i).right
+ has type
+  riemannZeta (2⁻¹ + ↑(ts i) * I) = 0
+but is expected to have type
+  riemannZeta (2⁻¹ + ↑(ts i) * I) = 0 ∧ 2⁻¹ < 1
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:120:4: error: unsolved goals
+case refine_2
+γ : ℝ
+ts : Fin 10 → ℝ
+hts0 : ts 0 = γ
+hmono : StrictMono ts
+htsBoxes :
+  ∀ (i : Fin 10), ts i ∈ Ioo (sigmaTenZeroBoxLower i) (sigmaTenZeroBoxUpper i) ∧ riemannZeta (1 / 2 + ↑(ts i) * I) = 0
+hroots :
+  ∀ (i : Fin 10),
+    completedNativeCharacteristicContinuation ↑(ts i) = 0 ∧
+      analyticOrderAt completedNativeCharacteristicContinuation ↑(ts i) = 1 ∧
+        completedNativeCharacteristicContinuation (-↑(ts i)) = 0 ∧
+          analyticOrderAt completedNativeCharacteristicContinuation (-↑(ts i)) = 1
+right✝ :
+  ∀ (w : ℂ),
+    completedNativeCharacteristicContinuation w = 0 →
+      |w.re| ≤ 50 → w.im = 0 ∧ w.re ≠ 0 ∧ ∃ i, w.re = ts i ∨ w.re = -ts i
+f : Fin 10 → ℂ := fun i => 1 / 2 + ↑(ts i) * I
+S : Finset ℂ := Finset.image f Finset.univ
+hf_inj : Function.Injective f
+hcard : S.card = 10
+i : Fin 10
+hρ : f i ∈ S
+hlow : 3 < ts i
+hhigh : ts i ≤ 52
+⊢ 3 < ts i
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:121:4: error: No goals to be solved
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:135:10: error: Application type mismatch: The argument
+  i
+has type
+  Fin 10
+of sort `Type` but is expected to have type
+  ∃ i, ρ = 1 / 2 + ↑(ts i) * I
+of sort `Prop` in the application
+  And.intro i
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:135:9: error: Insufficient number of fields for `⟨...⟩` constructor: Constructor `Eq.refl` does not have explicit fields, but 2 were provided
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:136:2: error: No goals to be solved
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:148:16: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Lattice ℂ
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:151:16: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Lattice ℂ
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:152:66: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Lattice ℂ
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:163:15: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Lattice ℂ
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:166:37: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Lattice ℂ
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:192:15: error: Application type mismatch: The argument
+  hζw
+has type
+  riemannZeta (operatorHeightParameter w) = 0
+but is expected to have type
+  riemannZeta (operatorHeightParameter w) = 0 ∧ 0 < (operatorHeightParameter w).re ∧ (operatorHeightParameter w).re < 1
+in the application
+  And.intro hζw
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:192:20: error: Application type mismatch: The argument
+  hsw.left
+has type
+  0 < (operatorHeightParameter w).re
+but is expected to have type
+  3 < (operatorHeightParameter w).im
+in the application
+  And.intro hsw.left
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:192:14: error: Invalid `⟨...⟩` notation: The expected type
+  Real.le✝ (operatorHeightParameter w).im 52
+is not an inductive type
+
+Note: This notation can only be used when the expected type is an inductive type with a single constructor
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:202:10: error: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:214:22: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Lattice ℂ
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:219:33: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Lattice ℂ
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:225:26: error(lean.unknownIdentifier): Unknown identifier `hroots`
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:226:26: error(lean.unknownIdentifier): Unknown identifier `hroots`
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:227:33: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Lattice ℂ
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51DiskBridge.lean:240:15: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Lattice ℂ
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+'CarrySigmaObstruction.sigmaHeight52_count_exhausts_ten_zeros_with_multiplicity' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaContour51_original_characteristic_roots' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

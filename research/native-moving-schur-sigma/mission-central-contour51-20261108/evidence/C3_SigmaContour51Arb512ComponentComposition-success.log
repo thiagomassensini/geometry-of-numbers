@@ -1,0 +1,6 @@
+'CarrySigmaObstruction.contour51Arb512ResponseArcEvaluatorInclusion_of_component_boxes_at_arc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arb512ResponseArcEvaluatorInclusion_of_all_component_boxes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

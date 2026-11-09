@@ -1,0 +1,12 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbBoundCertificate512.lean:159:4: error: mod_cast has type
+  contour51Arb512ResponseUpperBound k < 4 / 5
+but is expected to have type
+  ↑(contour51Arb512ResponseUpperBound k) < 4 / 5
+'CarrySigmaObstruction.contour51ArbLowerSemicircleUniformResponseBound_of_512_arc_evaluator_inclusion' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51OriginalResponse_circle_norm_bound_of_512_arc_evaluator_inclusion' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

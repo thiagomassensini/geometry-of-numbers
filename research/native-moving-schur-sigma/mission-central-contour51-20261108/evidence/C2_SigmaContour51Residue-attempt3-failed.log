@@ -1,0 +1,46 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51Residue.lean:28:49: error: unsolved goals
+G : ℂ → ℂ
+n : ℕ
+hG : DiffContOnCl ℂ G (Metric.ball 0 51)
+hformula :
+  ∮ (z : ℂ) in C(0, 51), (1 / (z - 0) ^ (n + 1)) • G z = (2 * ↑Real.pi * I / ↑n.factorial) • iteratedDeriv n G 0
+hkernel : ∮ (z : ℂ) in C(0, 51), G z / z ^ (n + 1) = ∮ (z : ℂ) in C(0, 51), (1 / (z - 0) ^ (n + 1)) • G z
+hfac : ↑n.factorial ≠ 0
+hpi : ↑Real.pi ≠ 0
+hI : I ≠ 0
+⊢ -(I * ((↑Real.pi)⁻¹ * (↑n.factorial * (iteratedDeriv n G 0 * (I * (↑Real.pi * 2) / ↑n.factorial * 2⁻¹))))) =
+    iteratedDeriv n G 0
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51Residue.lean:44:44: error: This simp argument is unused:
+  hfac
+
+Hint: Omit it from the simp argument list.
+  simp [mul_assoc, mul_left_comm, mul_comm, hf̵a̵c̵,̵ ̵h̵pi, hI]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51Residue.lean:44:50: error: This simp argument is unused:
+  hpi
+
+Hint: Omit it from the simp argument list.
+  simp [mul_assoc, mul_left_comm, mul_comm, hfac, hp̵i̵,̵ ̵h̵I]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51Residue.lean:44:55: error: This simp argument is unused:
+  hI
+
+Hint: Omit it from the simp argument list.
+  simp [mul_assoc, mul_left_comm, mul_comm, hfac, hpi,̵ ̵h̵I̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'CarrySigmaObstruction.analytic_simple_zero_log_derivative_residue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.analytic_simple_zero_log_derivative_pole_cancellation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaContour51_original_characteristic_logDerivative_residue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.normalized_circle_integral_coefficient' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

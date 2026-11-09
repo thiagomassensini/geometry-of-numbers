@@ -1,0 +1,7 @@
+n=0: weighted enclosure [9.535853046911439e-03, 9.585633031068103e-03]
+n=1: weighted enclosure [9.180296707931910e-07, 9.510079114935173e-07]
+n=2: weighted enclosure [1.874203339056722e-10, 2.081497841005528e-10]
+n=3: weighted enclosure [4.542212865256154e-14, 5.736307232711040e-14]
+n=4: weighted enclosure [1.205913341505973e-17, 1.733696734400259e-17]
+n=5: weighted enclosure [2.797333048934533e-21, 6.091288583812206e-21]
+per-arc rational ranges: research/native-moving-schur-sigma/mission-central-contour51-20261108/evidence/C3_ARb_RESIDUAL_ARCS_4096.json

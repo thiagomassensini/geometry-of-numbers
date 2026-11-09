@@ -1,0 +1,16 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51Arb512ComponentComposition.lean:70:4: error: mod_cast has type
+  (0 : ℚ) ≤ ↑k / 512
+but is expected to have type
+  (0 : ℝ) ≤ ↑k / 512
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51Arb512ComponentComposition.lean:72:4: error: mod_cast has type
+  @Nat.cast ℚ Rat.instNatCast (k + 1) / 512 ≤ 1
+but is expected to have type
+  @Nat.cast ℝ Real.instNatCast (k + 1) / 512 ≤ 1
+'CarrySigmaObstruction.contour51Arb512ResponseArcEvaluatorInclusion_of_component_boxes_at_arc' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arb512ResponseArcEvaluatorInclusion_of_all_component_boxes' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

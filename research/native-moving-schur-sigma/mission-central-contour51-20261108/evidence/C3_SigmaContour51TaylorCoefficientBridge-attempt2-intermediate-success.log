@@ -1,0 +1,9 @@
+'CarrySigmaObstruction.contourTaylorCoefficient_deriv_eq_nat_mul' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contourTaylorDerivativeIntervalPolynomial_from_function_coefficients_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contourTaylorDerivativeIntervalPolynomial_from_function_coefficients_inflate_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

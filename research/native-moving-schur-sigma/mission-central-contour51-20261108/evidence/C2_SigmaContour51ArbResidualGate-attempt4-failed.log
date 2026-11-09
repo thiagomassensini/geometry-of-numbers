@@ -1,0 +1,14 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbResidualGate.lean:158:23: error(lean.unknownIdentifier): Unknown identifier `sphere`
+
+Note: It is not possible to treat `sphere` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbResidualGate.lean:197:17: error(lean.unknownIdentifier): Unknown identifier `contour51Residual_pos_of_arb_bounds`
+'CarrySigmaObstruction.contour51ArbResidualMargin_pos_and_below_recorded' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNativeContour51Residual_pos_of_arb_intervals' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNativeContour51Residuals_nonneg_of_arb_intervals' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbResidualGate.lean:204:14: error(lean.unknownIdentifier): Unknown constant `completedNative_sigmaPadeD_pos_of_contour51_arb_intervals`

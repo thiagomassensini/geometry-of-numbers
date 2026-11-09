@@ -1,0 +1,24 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51RationalGate.lean:49:60: error: This simp argument is unused:
+  one_div_pow
+
+Hint: Omit it from the simp argument list.
+  simp [eta, div_eq_mul_inv,̵ ̵o̵n̵e̵_̵d̵i̵v̵_̵p̵o̵w̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51RationalGate.lean:54:16: error(lean.unknownIdentifier): Unknown identifier `sphere`
+
+Note: It is not possible to treat `sphere` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51RationalGate.lean:58:23: error(lean.unknownIdentifier): Unknown identifier `sphere`
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51RationalGate.lean:57:48: error: unsolved goals
+R : ℂ → ℂ
+n : ℕ
+hR : ∀ z ∈ sorry, ‖R z‖ ≤ 4 / 5
+⊢ ‖(2 * ↑Real.pi * I)⁻¹ • ∮ (z : ℂ) in C(0, 51), R z / z ^ (2 * n + 2)‖ ≤ 4 / 5 / 51 ^ (2 * n + 1)
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51RationalGate.lean:87:16: error(lean.unknownIdentifier): Unknown identifier `sphere`
+
+Note: It is not possible to treat `sphere` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51RationalGate.lean:96:6: error(lean.unknownIdentifier): Unknown identifier `contour51_normalized_integral_bound`
+'CarrySigmaCentral.contour40EarlyMargin_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaCentral.contour40_radius_conversion' depends on axioms: [propext, Classical.choice, Quot.sound]
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51RationalGate.lean:212:14: error(lean.unknownIdentifier): Unknown constant `contour40_tail_of_circle_identity`
+'CarrySigmaCentral.sigmaPadeD_pos_of_contour40_tail' depends on axioms: [propext, Classical.choice, Quot.sound]

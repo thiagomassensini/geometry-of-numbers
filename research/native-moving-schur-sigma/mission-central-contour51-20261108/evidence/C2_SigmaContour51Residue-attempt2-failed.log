@@ -1,0 +1,35 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51Residue.lean:25:28: error(lean.unknownIdentifier): Unknown identifier `ball`
+
+Note: It is not possible to treat `ball` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51Residue.lean:28:49: error: unsolved goals
+G : ℂ → ℂ
+n : ℕ
+hG : DiffContOnCl ℂ G sorry
+hformula :
+  ∮ (z : ℂ) in C(0, 51), (1 / (z - 0) ^ (n + 1)) • G z = (2 * ↑Real.pi * I / ↑n.factorial) • iteratedDeriv n G 0
+hkernel : ∮ (z : ℂ) in C(0, 51), G z / z ^ (n + 1) = ∮ (z : ℂ) in C(0, 51), (1 / (z - 0) ^ (n + 1)) • G z
+hfac : ↑n.factorial ≠ 0
+hpi : ↑Real.pi ≠ 0
+⊢ ↑n.factorial * iteratedDeriv n G 0 * ↑Real.pi * I * (↑n.factorial)⁻¹ * (↑Real.pi)⁻¹ * I⁻¹ = iteratedDeriv n G 0
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51Residue.lean:144:6: error: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'CarrySigmaObstruction.analytic_simple_zero_log_derivative_residue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.analytic_simple_zero_log_derivative_pole_cancellation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaContour51_original_characteristic_logDerivative_residue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.normalized_circle_integral_coefficient' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

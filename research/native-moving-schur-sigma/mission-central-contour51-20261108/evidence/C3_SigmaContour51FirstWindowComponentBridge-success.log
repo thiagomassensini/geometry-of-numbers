@@ -1,0 +1,9 @@
+'_private.SigmaContour51FirstWindowComponentBridge.0.CarrySigmaObstruction.contour51Arb4096FirstThreeArcEvaluatorInclusion_at_arc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arb4096FirstThreeArcEvaluatorInclusion_of_component_boxes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.completedNative_sigmaPadeD_zero_pos_of_first_three_component_boxes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

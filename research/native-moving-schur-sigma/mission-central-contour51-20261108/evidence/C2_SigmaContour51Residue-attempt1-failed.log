@@ -1,0 +1,49 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51Residue.lean:24:28: error(lean.unknownIdentifier): Unknown identifier `ball`
+
+Note: It is not possible to treat `ball` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51Residue.lean:34:10: error(lean.unknownIdentifier): Unknown identifier `integral_congr`
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51Residue.lean:35:10: error: No goals to be solved
+Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51Residue.lean:27:49: error: unsolved goals
+G : ℂ → ℂ
+n : ℕ
+hG : DiffContOnCl ℂ G sorry
+hformula :
+  ∮ (z : ℂ) in C(0, 51), (1 / (z - 0) ^ (n + 1)) • G z = (2 * ↑Real.pi * I / ↑n.factorial) • iteratedDeriv n G 0
+hkernel : ∮ (z : ℂ) in C(0, 51), G z / z ^ (n + 1) = ∮ (z : ℂ) in C(0, 51), (1 / (z - 0) ^ (n + 1)) • G z
+hfac : ↑n.factorial ≠ 0
+⊢ ↑n.factorial * iteratedDeriv n G 0 * ↑Real.pi * I * (↑n.factorial)⁻¹ * (↑Real.pi)⁻¹ * I⁻¹ = iteratedDeriv n G 0
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51Residue.lean:76:33: error: Application type mismatch: The argument
+  ContinuousAt.tendsto (AnalyticAt.continuousAt hg)
+has type
+  Tendsto g (𝓝 a) (𝓝 (g a))
+but is expected to have type
+  Tendsto g (𝓝[≠] a) (𝓝 (g a))
+in the application
+  Tendsto.congr' (EventuallyEq.symm hquot_eq) (ContinuousAt.tendsto (AnalyticAt.continuousAt hg))
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51Residue.lean:100:4: error: No goals to be solved
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51Residue.lean:101:23: error: Application type mismatch: The argument
+  hrewrite
+has type
+  (fun z => (z - a) * (-deriv F z / (2 * F z))) =ᶠ[𝓝[≠] a] fun z => -deriv F z / (2 * (F z / (z - a)))
+but is expected to have type
+  (fun z => -deriv F z / (2 * (F z / (z - a)))) =ᶠ[𝓝[≠] a] fun z => (z - a) * (-deriv F z / (2 * F z))
+in the application
+  Tendsto.congr' hrewrite
+'CarrySigmaObstruction.analytic_simple_zero_log_derivative_residue' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.sigmaContour51_original_characteristic_logDerivative_residue' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.normalized_circle_integral_coefficient' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
