@@ -377,7 +377,33 @@
   `SigmaC5PiInterval.lean` `6d0ad33d4a25c65a9b469c3ef0535e00f6e2e6675ec9524cbe02716391835488`, imported OLean
   `188d70193c2c530339df6e1b371490657efa570d3238607ca0a32b3d5646b8f0`.
 - **Limite:** esse resultado preenche uma caixa constante da fórmula de resposta, mas não certifica
-  ζ, ζ′, digamma, `s(u)`, os denominadores por arco ou suas comparações com os endpoints Arb. As
+  ζ, ζ′, digamma, os denominadores por arco ou suas comparações com os endpoints Arb. As
   inclusões `contour51Arb4096FirstThreeArcEvaluatorInclusion` e
   `contour51Arb512ResponseArcEvaluatorInclusion` continuam abertas; nenhuma margem de `e_n` ou
   positividade central se torna incondicional.
+
+## C3 — caixas geométricas dos arcos 4096
+
+`SigmaContour51ArcGeometry.lean` prova em Lean caixas racionais para `z(u)` e `s(u)` em cada arco
+fechado `[k/4096,(k+1)/4096]`. Reutiliza `c5_pi_quarter_interval_contains` para uma caixa tight de
+`π`, prova que o argumento complexo tem `normBound≤8`, usa `ComplexInterval.expCr 32 80 3`, escala
+por 51 e compõe com `operatorHeightParameter`. Hipóteses: `u` pertence ao arco e `k<4096`; nenhuma
+avaliação pontual substitui a inclusão contínua. Isso fornece os campos geométricos `sContains` e
+`parameterContains` do registro C3 de componentes. Não prova os limites positivos de norma quadrada
+ou a compatibilidade das caixas finais com extremos Arb.
+
+Build final em Lean 4.32.0, `-DwarningAsError=true`, saída exclusiva
+`/home/thlinux/tmp/c2-contour51-20261108-lean432`; exit 0. Os cinco `#print axioms` retornam
+somente `[propext, Classical.choice, Quot.sound]`; varredura do fonte sem `sorry`, `admit` ou
+`axiom`. O log completo está em `evidence/C3_SigmaContour51ArcGeometry-success.log`.
+
+- Fonte SHA-256: `8fa865179e62d4ca6d1e83eded8f20e329e535ef5234c7ebe48c279232e151d1`.
+- OLean SHA-256: `d92eb400e09dbdecb4d69e0fe7401f07711eb527500b7b174bd34ae99eaf6deb`.
+- Log SHA-256: `8f3dc8369237ee2643d8adae41e5fe627bfd8988b37fed21f4c4bd7f12d426b8`.
+
+O avanço não muda a fronteira Arb–Lean: 512 arcos ainda não implicam em Lean `‖R‖≤4/5`; as seis
+tabelas 4096 ainda não implicam em Lean sinais dos resíduos. Continuam necessários os coeficientes
+Taylor exatos de ζ, analiticidade/majorantes/deslocamentos/restos, caixas contínuas de digamma,
+positividade das normas quadradas e comparações com cada extremo Arb. O próximo lema mínimo segue
+sendo a inclusão universal dos resíduos `n=0,1,2`, após essas caixas serem comprovadas. As margens
+racionais continuam sendo comparações com endpoints externos, não hipóteses descarregadas.

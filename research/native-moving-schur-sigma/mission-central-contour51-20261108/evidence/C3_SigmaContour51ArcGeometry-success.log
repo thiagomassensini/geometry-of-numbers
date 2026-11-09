@@ -1,0 +1,7 @@
+'CarrySigmaObstruction.contour51C5PiBox_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.contour51Arc4096AngleBox_normBound_le_eight' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arc4096AngleBox_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.contour51Arc4096ZBox_contains' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CarrySigmaObstruction.contour51Arc4096SBox_contains' depends on axioms: [propext, Classical.choice, Quot.sound]

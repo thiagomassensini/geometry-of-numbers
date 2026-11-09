@@ -132,11 +132,13 @@ e imaginários. A hipótese exata para o quociente é `denNormSq.contains (Compl
 `0 < denNormSq.lo`; para derivar a positividade da caixa candidata, ainda é preciso verificar
 racionalmente que `((ComplexInterval.normSqRange denBox).lo : ℝ)>0`.
 
-Isso cobre apenas a soundness das operações de divisão. Continuam sem prova as caixas da fonte
-original que seriam as entradas: `s(u)`, `ζ(s(u))`, `ζ′(s(u))`, `digamma(s(u)/2)`, `log π`, e
-as caixas de `normSq` para `s`, `s-1`, `ζ` e a potência `z^(2n+1)`. A fórmula combinadora pode
-usar quocientes sound sem axiomas novos, mas nenhuma avaliação Arb é inferida desses dados e
-as hipóteses `contour51Arb4096FirstThreeArcEvaluatorInclusion`,
+Isso cobre apenas a soundness das operações de divisão. `SigmaContour51ArcGeometry.lean` agora
+fornece caixas Lean contínuas para `s(u)` e o parâmetro do contorno nos 4096 arcos; o bridge C5
+para `log π` também compila. Continuam sem prova as caixas de `ζ(s(u))`, `ζ′(s(u))` e
+`digamma(s(u)/2)`, as caixas de `normSq` para `s`, `s-1`, ζ e a potência `z^(2n+1)`, e a inclusão
+do avaliador Lean nas faixas Arb. A fórmula combinadora pode usar quocientes sound sem axiomas
+novos, mas nenhuma avaliação Arb é inferida desses dados e as hipóteses
+`contour51Arb4096FirstThreeArcEvaluatorInclusion`,
 `contour51Arb4096AllSixArcEvaluatorInclusion` e
 `contour51Arb512ResponseArcEvaluatorInclusion` permanecem abertas.
 
@@ -147,8 +149,10 @@ resposta original a partir de caixas dos componentes e a passagem do quociente r
 `z^(2n+1)` para qualquer `n`. Seu registro `Contour51Arb4096N0ArcComponentBoxes` torna explícitos
 os dados necessários no arco: caixas para `s`, zeta, zeta derivada, digamma, `log π` e o parâmetro;
 limites positivos das normas quadradas dos denominadores; e inclusões de cada ponto do arco nessas
-caixas. Para `n=0`, requer ainda comparar os extremos da parte real da caixa composta com os
-extremos Arb de cada arco; então deriva a inclusão ponto a ponto.
+caixas. `SigmaContour51ArcGeometry.lean` fornece agora os campos `sContains` e
+`parameterContains`; `SigmaContour51C5PiBridge.lean` fornece `logPiContains`. Para `n=0`, ainda
+é necessário comparar os extremos da parte real da caixa composta com os extremos Arb de cada
+arco; então o adaptador deriva a inclusão ponto a ponto.
 
 Esse adaptador não fornece os registros. Não há ainda demonstração das caixas analíticas, das
 normas quadradas positivas ou das comparações com os extremos; portanto, mesmo a inclusão completa

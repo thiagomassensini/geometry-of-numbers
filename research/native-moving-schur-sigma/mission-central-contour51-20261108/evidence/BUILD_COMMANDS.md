@@ -353,3 +353,24 @@ environment and exclusive output root above; the final command output is at
 Its committed evidence copy verifies the rational table, closed-arc cover, conditional response
 to `hR` bridge, and composition with the conditional all-window theorem. Pointwise evaluator
 inclusion is still an explicit premise.
+
+## C3 geometry boxes for each 4096 arc
+
+`SigmaContour51ArcGeometry` reuses the C5 certified quarter-π interval and the existing verified
+complex interval exponential. Its proof supplies continuous `z(u)` and `s(u)` component boxes for
+each closed 4096 arc. The final Lean 4.32.0 command, with warnings as errors and the exclusive C2
+output directory, was:
+
+```bash
+CARRY_LEAN_ROOT=/home/thlinux/worktrees/carry-sigma-c2-pinned-045369 \
+SIGMA_OUTPUT_DIR=/home/thlinux/tmp/c2-contour51-20261108-lean432 \
+SIGMA_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108 \
+SIGMA_HEIGHT50_BUILD=/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/integration:/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/external:/home/thlinux/tmp/c2-central-ten-heights-b2-20261108-lean432:/home/thlinux/tmp/c2-central-hankel2-20261107-lean432:/home/thlinux/geometry-of-numbers/.lake/build/lib/lean \
+bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaContour51ArcGeometry
+```
+
+Successful output: `/home/thlinux/tmp/c2-contour51-20261108-lean432/logs/SigmaContour51ArcGeometry-attempt7.log`,
+copied to `C3_SigmaContour51ArcGeometry-success.log`. All five new axiom audits report only
+`[propext, Classical.choice, Quot.sound]`. The theorem does not provide zeta, zeta derivative,
+digamma, norm-square positivity or Arb endpoint comparison boxes; those remain required for the
+residual and uniform-circle evaluator inclusions.

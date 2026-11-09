@@ -14,8 +14,9 @@ for this contour are therefore the exact `log π` interval, rational interval ar
 source normalization/transport already formalized separately. No Bernoulli table or full zeta or
 Gamma node list was duplicated.
 
-The bridge proves only the `log π` component. The zeta/derivative coefficient boxes, digamma box,
-parameter boxes, positive norm-square bounds, and comparisons with each Arb arc endpoint remain
+The bridge proves the `log π` component. `SigmaContour51ArcGeometry.lean` now supplies the
+continuous 4096-arc boxes for the contour parameter and `s(u)`. The zeta/derivative coefficient
+boxes, digamma box, positive norm-square bounds, and comparisons with each Arb arc endpoint remain
 open. No residual sign or central positivity conclusion follows.
 
 Lean 4.32.0, `-DwarningAsError=true`, exclusive C2 output root, exit 0. The theorem axiom report is

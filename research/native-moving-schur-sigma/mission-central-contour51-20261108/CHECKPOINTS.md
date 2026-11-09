@@ -207,8 +207,9 @@ divisão necessária para `1/s`, `1/(s-1)`, `ζ′/ζ` e os quocientes dos integ
 **Hipóteses não ocultas:** `contains_divBox` recebe as inclusões das caixas, a inclusão da norma
 quadrada e `0 < denNormSq.lo`. `normSqRange` fornece uma caixa candidata para a norma quadrada a
 partir da caixa complexa, mas o chamador ainda precisa provar que seu extremo inferior é positivo.
-O módulo não fornece caixas para zeta, derivada, digamma, `s(u)`, nem conecta saída Arb ao
-avaliador original; nenhuma inclusão C3 de 512 ou 4096 arcos foi descarregada.
+Esse módulo não fornece caixas para zeta, derivada ou digamma, nem conecta saída Arb ao avaliador
+original. `SigmaContour51ArcGeometry.lean` agora fornece as caixas de `s(u)` e do parâmetro nos
+4096 arcos; nenhuma inclusão C3 de 512 ou 4096 arcos foi descarregada.
 
 O módulo compila em Lean 4.32.0 com warnings como erros. Os quatro teoremas auditados dependem
 somente de `[propext, Classical.choice, Quot.sound]`; não há `sorry`, `admit` ou axioma declarado.
@@ -230,10 +231,12 @@ inclusão ponto a ponto de ordem zero. Essa é uma implicação condicional; nen
 comparações analíticas foi gerada/provada neste módulo. O teorema genérico para `n` não fornece os
 campos de `n=1,2` nem os respectivos limites contra a tabela.
 
-**Hipóteses ainda em aberto:** caixas uniformes por arco para `s`, zeta, zeta derivada, digamma,
-`log π` e o parâmetro; limites positivos das normas quadradas de `s`, `s-1`, zeta e da caixa do
-parâmetro elevada a `2n+1`; e comparações da caixa composta com os extremos racionais Arb. Para o
-primeiro determinante, são necessárias essas obrigações em `n=0,1,2`. Portanto
+**Hipóteses ainda em aberto:** `SigmaContour51ArcGeometry.lean` fornece caixas uniformes por arco
+para `s` e o parâmetro em 4096 arcos, e `SigmaContour51C5PiBridge.lean` fornece `log π`. Faltam
+caixas uniformes por arco para zeta, zeta derivada e digamma; limites positivos das normas
+quadradas de `s`, `s-1`, zeta e da caixa do parâmetro elevada a `2n+1`; e comparações da caixa
+composta com os extremos racionais Arb. Para o primeiro determinante, são necessárias essas
+obrigações em `n=0,1,2`. Portanto
 `contour51Arb4096FirstThreeArcEvaluatorInclusion` continua aberta e a margem `1/10^9` permanece
 condicional. Para todas as janelas ainda são necessárias as seis ordens, além da ponte separada
 dos 512 arcos para `hR`.
@@ -261,3 +264,59 @@ parâmetros, normas quadradas e comparações com os endpoints. Logo as inclusõ
 de positividade central incondicional. O próximo lema útil é a inclusão uniforme de ζ/ζ′ em cada
 arco a partir dos dados Taylor certificados; para o primeiro avanço, isso precisa cobrir
 `n=0,1,2` nos 4096 arcos antes do adaptador integral e da margem `1/10^9`.
+
+## Latest C3 geometry increment — 2026-11-08
+
+- **Teoremas compilados:** `SigmaContour51ArcGeometry.lean` reutiliza a caixa racional C5 de
+  `π/4` para provar `contour51C5PiBox_contains`; para cada `k<4096`, constrói a caixa do arco
+  fechado `u∈[k/4096,(k+1)/4096]`, prova `normBound≤8`, aplica a exponencial certificada
+  `ComplexInterval.expCr 32 80 3`, e prova `contour51Arc4096ZBox_contains` e
+  `contour51Arc4096SBox_contains`. Os dois últimos teoremas recebem `k<4096` e a pertença
+  contínua ao arco; não usam amostras.
+- **Hipóteses exatas:** `contour51C5PiBox_contains` é incondicional. `contour51Arc4096UBox_contains`
+  e `contour51Arc4096AngleBox_contains` exigem apenas `u` no arco; o limite de norma exige
+  `k<4096`; as inclusões de `z` e `s` exigem ambos. Todos os teoremas novos usam somente
+  `[propext, Classical.choice, Quot.sound]`.
+- **Base formal preservada:** C1 fixa a lista completa de raízes simples no disco e exclui zeros
+  no contorno; C2 compila `completedNative_contour51_jet_residue_identity`, identificando para
+  todo `n` o resíduo original `e_n=H_n-P_n` com a integral normalizada da resposta da fonte. A
+  fórmula zeta/Gamma/digamma de `R=-F'/(2F)` vale em todo `u∈[0,1]`, com não anulação/domínio
+  descarregados a partir de C1. Os adaptadores para integrar os 4096 extremos são condicionais à
+  inclusão contínua do avaliador. O gate determinantal direto conclui
+  `1/1000000000 < sigmaPadeD 0 0` a partir dos três intervalos de `e_0,e_1,e_2`; o teorema
+  all-window continua condicionado a `‖R‖≤4/5` e aos seis sinais residuais.
+- **Fronteira fechada:** as caixas geométricas de `z(u)`, `s(u)` e a caixa complexa de `log π`
+  agora têm teoremas Lean. Elas podem preencher `parameterContains`, `sContains` e
+  `logPiContains` em `Contour51Arb4096N0ArcComponentBoxes`. A positividade das caixas de norma
+  quadrada ainda não foi demonstrada em geral. As caixas C5 de `ζ` em nós fixos, os nós Gamma e
+  a tabela Bernoulli não foram refeitos nem transportados.
+- **Estado Arb ↔ Lean:** o certificado Arb/Acb continua externo: `|R|≤0.746413<4/5` em 512 arcos;
+  os seis intervalos de `e_0,…,e_5` vêm de 4096 arcos, 160 bits, Taylor ordem 32. Lean prova a
+  identidade de resíduos da fonte original, a fórmula do avaliador e as somas racionais, mas as
+  caixas finais exportadas são faixas dos integrandos e ainda não foram incluídas no avaliador
+  Lean. A nova geometria não prova caixas de `ζ`, `ζ′` ou digamma, nem as comparações de extremos.
+- **Obrigações ainda abertas:** (1) caixas racionais dos coeficientes Taylor verdadeiros de ζ até
+  ordem 32 nos centros, validade analítica dos discos, majorante de fronteira, deslocamentos e
+  restos Cauchy; (2) caixas contínuas de digamma; (3) positividade Lean das caixas de norma para
+  `s`, `s-1`, ζ e potências de `z`; (4) comparações das caixas compostas com cada extremo Arb e
+  inclusão dos 4096 integrandos para `n=0,…,5`; (5) inclusão independente dos 512 arcos para
+  `‖R‖≤4/5`. Não foi introduzida hipótese de sinal para qualquer resto.
+- **Seis margens externas exatas:** Lean compara os endpoints Arb aos limites inferiores
+  `9/1000`, `9/10000000`, `9/50000000000`, `1/25000000000000`,
+  `1/100000000000000000` e `1/500000000000000000000`, e aos limites superiores
+  `1/100`, `1/1000000`, `1/4000000000`, `1/10000000000000`,
+  `1/50000000000000000` e `1/100000000000000000000`. São comparações com endpoints externos,
+  ainda não sinais Lean dos resíduos originais.
+- **Determinante e sensibilidade:** a identidade mantém
+  `P_s*e_(s+2) + e_s*P_(s+2) - 2*P_(s+1)*e_(s+1) + e_s*e_(s+2) - e_(s+1)^2` completo.
+  Os orçamentos racionais C6 cobrem as larguras atuais das dez escalas; não foi necessário
+  estreitar caixas. Nenhuma porcentagem de cancelamento ou hipótese de sinal do resto é usada.
+- **Próximo lema mínimo:** produzir, para todos os arcos 4096, caixas Lean comprovadas de ζ e ζ′
+  a partir dos coeficientes Taylor verdadeiros e do resto Cauchy, mais a caixa de digamma e as
+  comparações com os endpoints. Com as caixas geométricas agora prontas, isso permite preencher
+  os registros componentes e provar primeiro a inclusão de `n=0,1,2`. A integração já compilada
+  dá então a margem absoluta `1/1000000000 < sigmaPadeD 0 0`. Até descarregar essas hipóteses,
+  nem as seis margens de `e_n`, nem `‖R‖≤4/5`, nem a positividade central são incondicionais.
+- **Build/auditoria:** Lean 4.32.0, warnings como erros, saída exclusiva
+  `/home/thlinux/tmp/c2-contour51-20261108-lean432`. O arquivo-fonte não tem `sorry`, `admit` ou
+  `axiom`; logs, OLean e hashes estão em `evidence/C3_SigmaContour51ArcGeometry.md`.
