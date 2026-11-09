@@ -116,6 +116,23 @@ C3 em cada arco: reutilizar qualquer avaliação de nó exige provar a transform
 das caixas. Nenhuma tabela Bernoulli nem lista completa de nós foi refeita neste trabalho. Caixas
 C5 em `d=0.0495` e `d=0.1` continuam sem transporte quantitativo ao centro.
 
+## Divisão intervalar complexa formalizada; enclosures analíticos ainda abertos
+
+`SigmaContour51ComplexIntervalDivision.lean` prova que uma caixa retangular para `z`, outra para
+`w`, e uma caixa racional positiva para `Complex.normSq w` produzem por `ComplexInterval.divBox`
+uma caixa que contém `z/w`. Também prova a construção `normSqRange` a partir dos intervalos reais
+e imaginários. A hipótese exata para o quociente é `denNormSq.contains (Complex.normSq w)` e
+`0 < denNormSq.lo`; para derivar a positividade da caixa candidata, ainda é preciso verificar
+racionalmente que `((ComplexInterval.normSqRange denBox).lo : ℝ)>0`.
+
+Isso cobre apenas a soundness das operações de divisão. Continuam sem prova as caixas da fonte
+original que seriam as entradas: `s(u)`, `ζ(s(u))`, `ζ′(s(u))`, `digamma(s(u)/2)`, `log π`, e
+as caixas de `normSq` para `s`, `s-1`, `ζ` e a potência `z^(2n+1)`. A fórmula combinadora pode
+agora usar quocientes sound sem axiomas novos, mas nenhuma avaliação Arb é inferida desses dados e
+as hipóteses `contour51Arb4096FirstThreeArcEvaluatorInclusion`,
+`contour51Arb4096AllSixArcEvaluatorInclusion` e
+`contour51Arb512ResponseArcEvaluatorInclusion` permanecem abertas.
+
 ## Incremento formal de Taylor/Cauchy — 2026-11-08
 
 `SigmaContour51TaylorRemainder.lean` prova, para uma função holomorfa genérica e um disco com

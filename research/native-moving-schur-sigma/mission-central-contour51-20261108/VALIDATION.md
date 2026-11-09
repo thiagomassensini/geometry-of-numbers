@@ -1,5 +1,30 @@
 # Validation ledger — radius-51 contour route
 
+## C3 generic complex interval division
+
+- **Módulo:** `SigmaContour51ComplexIntervalDivision.lean`.
+- **Teoremas compilados:** `Interval.contains_squareRange`,
+  `Interval.contains_reciprocalPositive`, `ComplexInterval.contains_normSqRange` e
+  `ComplexInterval.contains_divBox`.
+- **Hipóteses:** `contains_divBox` precisa de caixas contendo numerador `z` e denominador `w`, uma
+  caixa `denNormSq` com `Complex.normSq w` e `0 < denNormSq.lo`. `normSqRange` constrói uma caixa
+  candidata para a norma quadrada; provar que seu extremo inferior é positivo depende da caixa
+  concreta do chamador. Este módulo não inclui valores de zeta, digamma, fonte ou saídas Arb.
+- **Build:** Lean 4.32.0, `-DwarningAsError=true`, código de saída 0, output exclusivo
+  `/home/thlinux/tmp/c2-contour51-20261108-lean432`. O comando integral está em
+  `evidence/BUILD_COMMANDS.md`; a saída compilada está em
+  `evidence/C3_SigmaContour51ComplexIntervalDivision-success.log`.
+- **Auditoria:** os quatro teoremas reportam somente `[propext, Classical.choice, Quot.sound]`.
+  A fonte não contém `sorry`, `admit`, `native_decide` ou declaração de axioma.
+- **Tentativas:** os quatro primeiros diagnósticos encontraram erros de orientação dos lemas de
+  quadrado/recíproco, escopo das hipóteses de positividade e reescrita das fórmulas de divisão; o
+  quinto compilou. Os erros foram corrigidos no fonte final; os diagnósticos recuperáveis ficaram
+  no output transitório, não em arquivo bruto de evidência.
+- **SHA-256:** fonte `d10933c086f71ddfe48ad9b6fdd1ef5f3bf4ae95fe5cd6a072cb914195a4d0c9`; OLean
+  `/home/thlinux/tmp/c2-contour51-20261108-lean432/SigmaContour51ComplexIntervalDivision.olean`
+  `ef60f81a875eeeeedf546f6c1da524411b808794a2766f98cdf266ca782b9684`; log
+  `5b13ba5040f413bc1cfd8c6c2f63fe266e0c994e7f5184d00d3d1cccf2850eef`.
+
 ## C0 isolation and source audit
 
 - `git fetch origin` completed before creating the new branch.

@@ -82,3 +82,12 @@ bound. They do not verify those inputs for zeta/digamma or connect the 512/4096 
 original Lean evaluator. No residual signs or central positivity are discharged. See
 `OPEN_OBLIGATIONS.md` for the exact remaining inputs and `VALIDATION.md` for the Lean 4.32 build,
 axiom audit, and hashes.
+
+### Latest C3 interval division step
+
+`SigmaContour51ComplexIntervalDivision.lean` proves sound complex rectangular division when the
+caller supplies a denominator norm-square interval with a strictly positive rational lower bound.
+It also constructs a containing norm-square interval from a complex rectangle. This is reusable
+for the `1/s`, `1/(s-1)`, `ζ′/ζ` and residual-integrand quotients in the original evaluator. The
+component enclosures and positive lower bounds still need separate proofs; no Arb evaluator
+inclusion or residual sign follows from this generic arithmetic lemma. See `OPEN_OBLIGATIONS.md`.

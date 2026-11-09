@@ -195,3 +195,23 @@ concluída.
 
 Compilado em Lean 4.32.0 com warnings como erros. Os oito teoremas auditados dependem somente de
 `[propext, Classical.choice, Quot.sound]`; comando e hashes estão em `VALIDATION.md`.
+
+## Incremento C3 — divisão complexa intervalar sound
+
+`SigmaContour51ComplexIntervalDivision.lean` acrescenta aritmética verificada para caixas
+retangulares: `Interval.squareRange` e `ComplexInterval.normSqRange` contêm os quadrados/normas
+quadradas exatos; `ComplexInterval.divBox` contém `z/w` quando as caixas de numerador e denominador
+estão certificadas e uma caixa positiva contém `Complex.normSq w`. Isso formaliza a etapa de
+divisão necessária para `1/s`, `1/(s-1)`, `ζ′/ζ` e os quocientes dos integrandos residuais.
+
+**Hipóteses não ocultas:** `contains_divBox` recebe as inclusões das caixas, a inclusão da norma
+quadrada e `0 < denNormSq.lo`. `normSqRange` fornece uma caixa candidata para a norma quadrada a
+partir da caixa complexa, mas o chamador ainda precisa provar que seu extremo inferior é positivo.
+O módulo não fornece caixas para zeta, derivada, digamma, `s(u)`, nem conecta saída Arb ao
+avaliador original; nenhuma inclusão C3 de 512 ou 4096 arcos foi descarregada.
+
+O módulo compila em Lean 4.32.0 com warnings como erros. Os quatro teoremas auditados dependem
+somente de `[propext, Classical.choice, Quot.sound]`; não há `sorry`, `admit` ou axioma declarado.
+Comando, tentativas diagnósticas e hashes estão em `VALIDATION.md`. O próximo passo composicional
+é usar `divBox` na fórmula original sob as inclusões explícitas de cada componente e das normas
+quadradas positivas.

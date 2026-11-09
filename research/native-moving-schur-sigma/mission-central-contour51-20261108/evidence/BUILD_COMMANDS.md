@@ -1,5 +1,23 @@
 # Build commands — radius-51 contour route
 
+## C3 generic complex interval division
+
+The division soundness layer compiled with Lean 4.32.0 and warnings as errors in the exclusive C2
+output root. It imports the existing rational rectangle and complex interval APIs; no C5 build
+output is used.
+
+```bash
+CARRY_LEAN_ROOT=/home/thlinux/worktrees/carry-sigma-c2-pinned-045369 \
+SIGMA_OUTPUT_DIR=/home/thlinux/tmp/c2-contour51-20261108-lean432 \
+SIGMA_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108 \
+SIGMA_HEIGHT50_BUILD=/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/integration:/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/external:/home/thlinux/tmp/c2-central-ten-heights-b2-20261108-lean432:/home/thlinux/tmp/c2-central-hankel2-20261107-lean432:/home/thlinux/geometry-of-numbers/.lake/build/lib/lean \
+bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaContour51ComplexIntervalDivision
+```
+
+Successful output is `C3_SigmaContour51ComplexIntervalDivision-success.log`. The four `#print
+axioms` lines contain only standard axioms. The theorem requires a caller-supplied positive
+norm-square enclosure and does not verify the evaluator components or per-arc inclusions.
+
 ## Isolation
 
 - Before every Lean compile, check Lean/Lake processes and available memory. The user authorized parallel execution on 2026-11-08 while C5 PID `151152` runs in a separate worktree; keep this branch's builds sequential and use only its exclusive output root.
