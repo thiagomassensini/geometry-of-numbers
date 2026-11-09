@@ -35,24 +35,43 @@ absolute value and no sign assumption on it is made. The minimal first-window in
 from the original source using this route are therefore the Lean circle bound plus those two
 residual signs. A second gate in `SigmaContour51ArbResidualGate.lean` is sharper for the available
 certificate: it proves the first determinant from two-sided source intervals for `e_0,e_1,e_2`,
-without a global circle bound. Its exact rational determinant margin is proved in Lean, but the
-interval-to-integral transfer remains a hypothesis.
+without a global circle bound. Its exact rational determinant margin is proved in Lean. A compiled
+conditional adapter now transfers the 4096 arc table to those intervals; its universal
+pointwise-inclusion premise remains open.
+
+## Keep the three remainders distinct
+
+The source residual is `e_n = H_n - P_n`, where `H_n` is the original completed C2 coefficient
+and `P_n` is the exact ten-mode sum. The fixed-root Cauchy identity proves `H_n = P_n + e_n`,
+with `e_n` represented by the normalized contour integral of the original logarithmic derivative.
+The five determinant contributions stay together:
+
+`D_s(H)-D_s(P) = P_s*e_(s+2) + e_s*P_(s+2) - 2*P_(s+1)*e_(s+1) + e_s*e_(s+2) - e_(s+1)^2`.
+
+The material tail in the original C2 calculation is a separate object; no identity equating it to
+`e_n` is used here. The Taylor/Cauchy remainder in the Arb arc evaluator only bounds the evaluator
+on each parameter arc. It yields a bound for `e_n` only after pointwise inclusion is proved and the
+complete arc ranges are integrated. The source decomposition, ten-mode residue contribution, and
+evaluator remainder therefore cannot exchange bounds without these explicit identities and
+transfers.
 
 ## Current mathematical limits
 
-The older numerical contour and Taylor probes use 65-digit mpmath arithmetic and a finite mesh; they remain diagnostics only. Separate from them, C3 has rigorous external Arb certificates for the circle bound and two-sided intervals of the first six C2 residual integrals, with exact rational endpoints and positive lower margins in `C3_ARb_CERTIFICATE.md`. Neither certificate has been transferred to a Lean theorem. The exact open inputs are:
+The older numerical contour and Taylor probes use 65-digit mpmath arithmetic and a finite mesh; they remain diagnostics only. Separate from them, C3 has rigorous external Arb certificates for the circle bound and two-sided intervals of the first six C2 residual integrals, with exact rational endpoints and positive lower margins in `C3_ARb_CERTIFICATE.md`. Lean checks the rational arithmetic of all six 4096 per-arc tables and compiles their conditional integration adapters; it does not yet prove the Arb-to-Lean evaluator inclusion. The exact open inputs are:
 
 1. **Uniform circle bound:** prove in Lean that the 512-arc Arb enclosures imply `‖R z‖≤4/5` for every `‖z‖=51`, including validated Taylor/Cauchy remainders and their pointwise inclusion in the original response. `contour51OriginalResponse_eq_arb_formula_lower_path` now supplies the formal source evaluator on the lower semicircle; oddness handles the upper half. This is the `hR` input to C4.
-2. **Six residual intervals:** prove `contour51ArbLowerPathResidualIntervalBounds`, namely the lower and upper rational endpoint inequalities for each original lower-path integral `n≤5`, from all 4096 complete-arc Arb ranges. The explicit source evaluator and its domain conditions are proved for every lower-path point. The new Lean theorem `contour51_intervalIntegral_bounds_of_uniform_partition` discharges the exact integration step conditional on pointwise arc enclosures and rational weighted-sum comparisons. Still open are the complete-arc evaluator inclusions (including Taylor/Cauchy remainders) and verification that their weighted endpoint sums imply the six stored rational endpoints.
-3. **First unconditional advance:** only the first-three version for `n=0,1,2` is needed by `completedNative_sigmaPadeD_zero_pos_of_contour51_lower_path_intervals`; it yields the strict absolute margin `1/1000000000 < sigmaPadeD 0 0`.
+2. **Six residual intervals:** prove `contour51ArbLowerPathResidualIntervalBounds`, namely the lower and upper rational endpoint inequalities for each original lower-path integral `n≤5`, from all 4096 complete-arc Arb ranges. The exact rational lists, all twelve weighted sums, and their comparisons with the stored aggregate endpoints are compiled for all six orders. `contour51ArbAllSixLowerPathResidualIntervalBounds_of_4096_arc_evaluator_inclusion` compiles the complete list-to-integral transfer, conditional on universal inclusion of the original evaluator in every closed-arc box, including its validated Taylor/Cauchy remainders. This pointwise inclusion for `n=0,…,5` and the separate 512-arc circle-bound transfer remain open.
+3. **First unconditional advance:** prove the 4096-arc evaluator inclusion proposition for `n=0,1,2`. The compiled adapter then supplies `contour51ArbFirstThreeLowerPathResidualIntervalBounds`, and the existing determinant theorem gives the strict absolute margin `1/1000000000 < sigmaPadeD 0 0`.
 
-The source differential identity and its explicit evaluator expansion are now compiled; `contour51OriginalResponse_eq_arb_formula_lower_path` proves the exact formula at every `u∈[0,1]`, with `F(z)≠0`, `0<Re(s)`, and `s≠1` discharged from C1 and the path geometry. Zeta nonvanishing follows from source nonvanishing and the exact factorization. The original full-circle parameterization, orientation, oddness/evenness, lower-path identity, and integrability are also compiled. The remaining residual gap is the complete-arc evaluator/remainder transfer and exact comparison of its weighted rational sums with the stored endpoints; the interval integration step between those facts and the path integral is now a Lean theorem. For all-window positivity, there are no hidden premises beyond `hR` and all six residual intervals (equivalently the six signs in the separate source-tail theorem). The first-window gate uses only the first three two-sided intervals, without `hR` or a sign premise on a remainder. C5 displaced boxes at nonzero `d` remain distinct; no Bernoulli table or full zeta/Gamma node certificate was duplicated.
+The source differential identity and its explicit evaluator expansion are now compiled; `contour51OriginalResponse_eq_arb_formula_lower_path` proves the exact formula at every `u∈[0,1]`, with `F(z)≠0`, `0<Re(s)`, and `s≠1` discharged from C1 and the path geometry. Zeta nonvanishing follows from source nonvanishing and the exact factorization. The original full-circle parameterization, orientation, oddness/evenness, lower-path identity, and integrability are also compiled. The rational arithmetic and conditional integration of all six per-arc tables into the stored endpoint intervals are Lean theorems; the sole residual-transfer premise is the universal pointwise inclusion (including Taylor/Cauchy remainders). For all-window positivity, the Lean premises remain `hR` and all six residual intervals (equivalently the six signs in the separate source-tail theorem). The first-window gate uses the first three two-sided intervals, without `hR` or a sign premise on a remainder. C5 displaced boxes at nonzero `d` remain distinct; no Bernoulli table or full zeta/Gamma node certificate was duplicated.
 
 The strict rational lower margins available for `e_0,…,e_5` are, respectively,
 `9/1000`, `9/10000000`, `9/50000000000`, `1/25000000000000`,
 `1/100000000000000000`, and `1/500000000000000000000`. Until the lower-path interval
 proposition is proved from the Arb arc data, these are verified comparisons against external
 endpoints, not Lean signs for `e_n`. The next minimal lemma for an unconditional first advance is
-`contour51ArbFirstThreeLowerPathResidualIntervalBounds`, using the now-compiled original-source
-evaluator identity on the path and its remaining arc inclusion/remainder proof; it yields the compiled bound
-`1/1000000000 < sigmaPadeD 0 0` without the global circle estimate.
+the pointwise 4096-arc evaluator inclusion for `n=0,1,2`, including its validated Taylor/Cauchy
+remainder. The compiled adapter turns that universal inclusion into
+`contour51ArbFirstThreeLowerPathResidualIntervalBounds`; the existing determinant gate then gives
+`1/1000000000 < sigmaPadeD 0 0` without the global circle estimate. No current theorem asserts
+that pointwise inclusion or unconditional positivity.

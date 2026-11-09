@@ -1,0 +1,24 @@
+'CarrySigmaObstruction.contour51Arb4096WeightedLower0_eq_exported' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arb4096WeightedUpper0_eq_exported' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arb4096WeightedLower1_eq_exported' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arb4096WeightedUpper1_eq_exported' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arb4096WeightedLower2_eq_exported' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arb4096WeightedUpper2_eq_exported' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arb4096FirstThreeWeightedRecordedBounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arb4096AllSixWeightedRecordedBounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
