@@ -61,6 +61,26 @@ success before the combined Cauchy theorem. Attempt 4 compiled with warnings as 
 `C3_SigmaContour51TaylorCoefficientBridge-success.log`. The four theorem audits report only
 standard Lean axioms. The source has no `sorry`, `admit`, or declared axiom.
 
+## Reuse C5's `log π` interval in the radius-51 evaluator
+
+`SigmaContour51C5PiBridge` imports `c5_pi_log_interval_contains` from the existing C5 source and
+proves a complex-rectangle containment theorem for `Complex.log (Real.pi : ℂ)`. The imported
+`SigmaC5PiBounds` and `SigmaC5PiInterval` sources were compiled into the isolated C2 output root
+because their OLean files were not present there; the C5 cache was not read or written. Then the
+bridge was built with the same Lean 4.32.0 environment and `-DwarningAsError=true`:
+
+```bash
+CARRY_LEAN_ROOT=/home/thlinux/worktrees/carry-sigma-c2-pinned-045369 \
+SIGMA_OUTPUT_DIR=/home/thlinux/tmp/c2-contour51-20261108-lean432 \
+SIGMA_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108 \
+SIGMA_HEIGHT50_BUILD=/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/integration:/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/external:/home/thlinux/tmp/c2-central-ten-heights-b2-20261108-lean432:/home/thlinux/tmp/c2-central-hankel2-20261107-lean432:/home/thlinux/geometry-of-numbers/.lake/build/lib/lean \
+bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaContour51C5PiBridge
+```
+
+Attempt 1 needed one interval-containment simplification and is retained as
+`C3_SigmaContour51C5PiBridge-attempt1-failed.log`; attempt 2 compiled successfully as
+`C3_SigmaContour51C5PiBridge-success.log`. The one theorem reports only standard Lean axioms.
+
 ## Isolation
 
 - Before every Lean compile, check Lean/Lake processes and available memory. The user authorized parallel execution on 2026-11-08 while C5 PID `151152` runs in a separate worktree; keep this branch's builds sequential and use only its exclusive output root.

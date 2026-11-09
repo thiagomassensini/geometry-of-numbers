@@ -269,7 +269,7 @@
 - **Build/auditoria:** módulo recompilado sequencialmente em Lean 4.32.0 com `-DwarningAsError=true`, usando o output isolado `/home/thlinux/tmp/c2-contour51-20261108-lean432`, enquanto C5 compilava em seu worktree/cache separado autorizado. A memória disponível era 52 GiB. O `#print axioms` do teorema novo retorna `[propext, Classical.choice, Quot.sound]`; busca no fonte não encontrou `sorry`, `admit` ou declarações `axiom`.
 - **Hashes SHA-256:** fonte `a9850315d69db925621a61cb4ac691ab65a66a1854f1226528ebaab0e1dc1a07`; OLean `/home/thlinux/tmp/c2-contour51-20261108-lean432/SigmaContour51ArbContourBridge.olean` `043d215f168741637f1e5b31eb8597a2d5733ce3211738e7273b9c244c6d89c1`; log `evidence/C3_SigmaContour51ArbContourBridge-attempt68-success.log` `86dd46a098135dbeac5beda5877b2c4868671144ddb8f94f38147fe2a229c272`.
 - **Próximo passo técnico mínimo:** o script C3 monta `ζ`/`ζ′` com Taylor de ordem 32 e raio `1/4`, controla os restos por Cauchy, depois combina com caixas para `s`, `s-1`, `log π` e digamma. Os CSV/JSON guardam os extremos finais por arco, sem o rastro racional detalhado dos coeficientes Taylor e operações intermediárias. É necessário fornecer a Lean as inclusões por arco de `ζ` e `ζ′` com coeficientes/majorantes certificados e compor as caixas para a resposta/integrando. A primeira restrição útil é nos 4096 arcos para `n=0,1,2`; a cota da resposta usa separadamente os 512 arcos.
-- **Componentes C5 reutilizáveis identificados:** bolas reais e transporte racional (`SigmaFiniteRationalIntervals.lean`, `SigmaFiniteRationalIntervalTransport.lean`); contenção de pontos complexos racionais e tipo `ComplexInterval` (`SigmaC5RationalNodeEval.lean`); recorrência/normalização e especialização algébrica da fonte (`SigmaSourceBezout.lean`, `SigmaContour51BoxSensitivity.lean`). A avaliação Euler–Maclaurin e suas tabelas de nós zeta/Gamma/Bernoulli não são a série Taylor C3 e não foram refeitas. Qualquer reutilização de nó ainda precisa provar a transformação quantitativa dos centros e caixas.
+- **Componentes C5 reutilizáveis identificados:** bolas reais e transporte racional (`SigmaFiniteRationalIntervals.lean`, `SigmaFiniteRationalIntervalTransport.lean`); tipo `ComplexInterval` e avaliação pontual (`SigmaC5RationalNodeEval.lean`); caixa formal de `log π` (`SigmaC5PiInterval.lean`); recorrência/normalização da fonte (`SigmaSourceBezout.lean`, `SigmaContour51BoxSensitivity.lean`). C5 ζ é avaliada apenas em nós racionais perto de `1/2`, sem ζ′ ou Taylor para retângulos, e Gamma em nós fixos não fornece digamma contínuo no contorno. A conversão exata do `log π` já compila em `SigmaContour51C5PiBridge.lean`; nenhuma tabela Bernoulli ou lista de nós zeta/Gamma foi refeita. Transporte de nó ainda requer transformação quantitativa de centro e caixa.
 
 ## C3 genérico — restos de Taylor/Cauchy e transferência intervalar
 
@@ -346,3 +346,38 @@
   ou positividade central incondicional resulta deste incremento. O próximo lema para o primeiro
   avanço é a inclusão uniforme dos componentes Taylor da fonte nos arcos 4096 para `n=0,1,2`,
   incluindo a validade analítica e as caixas exatas dos coeficientes.
+
+## C3 — reutilização da caixa C5 para `log π`
+
+- **Módulo compilado:** `SigmaContour51C5PiBridge.lean` define
+  `contour51C5LogPiBox` a partir de `c5PiLogInterval 160` e prova
+  `contour51C5LogPiBox_contains : contour51C5LogPiBox.contains
+  (Complex.log (Real.pi : ℂ))`. A prova reutiliza `c5_pi_log_interval_contains` e `Complex.ofReal_log`;
+  não refaz a série de Machin nem a avaliação intervalar de logaritmos de C5.
+- **Fronteira C5 conferida:** `c5RationalZetaNodeBox_contains` e
+  `c5RationalZetaCenteredNodeBox_contains` certificam ζ apenas em nós racionais exatos próximos
+  a `0.5+0i` (`a∈[2/5,3/5]`, `b∈[0,128/100000]`), sem caixas de retângulo contínuo, ζ′ ou
+  coeficientes Taylor. Os certificados C5 de Gamma são nós fixos e não limitam a variação de
+  digamma sobre `s/2`. A aritmética intervalar, a normalização/transporte da fonte e a caixa de
+  `log π` são reutilizáveis; os nós zeta/Gamma/Bernoulli C5 não foram duplicados.
+- **Build e audit:** `SigmaC5PiBounds`, `SigmaC5PiInterval` (dependências C5 reutilizadas) e
+  `SigmaContour51C5PiBridge` foram compilados sequencialmente em Lean 4.32.0, com warnings como
+  erros, no output isolado `/home/thlinux/tmp/c2-contour51-20261108-lean432`; a última compilação
+  saiu com código 0. O `#print axioms` do teorema novo retorna somente
+  `[propext, Classical.choice, Quot.sound]`. O novo fonte não contém `sorry`, `admit` nem axioma
+  declarado. Tentativa 1 falhou apenas na prova de contenção do zero da caixa imaginária; tentativa
+  2 é a compilação final.
+- **SHA-256:** fonte do bridge
+  `4cd5f6d5faed5d3eca007d1929204b801daf7aaf8d3d02b42b658b4b1a68db41`; OLean
+  `/home/thlinux/tmp/c2-contour51-20261108-lean432/SigmaContour51C5PiBridge.olean`
+  `5d48fa605f104ea61bdf83f221e712864d3c07fc46a64beac3865ab8687a7ea0`; log final
+  `9942fa920300110a7d756364905bf17ce5b42a110d6bc258bf48d4924d03e97a`. C5 source/OLean hashes:
+  `SigmaC5PiBounds.lean` `b38d68df2ddbe6728218db09e9661980a7bf635398528a840ae129fe4bdc3f97`, imported OLean
+  `b15b9adb144e0965201bbd51dbfdadb10fa0384af5a532683c8b8ab50358322f`;
+  `SigmaC5PiInterval.lean` `6d0ad33d4a25c65a9b469c3ef0535e00f6e2e6675ec9524cbe02716391835488`, imported OLean
+  `188d70193c2c530339df6e1b371490657efa570d3238607ca0a32b3d5646b8f0`.
+- **Limite:** esse resultado preenche uma caixa constante da fórmula de resposta, mas não certifica
+  ζ, ζ′, digamma, `s(u)`, os denominadores por arco ou suas comparações com os endpoints Arb. As
+  inclusões `contour51Arb4096FirstThreeArcEvaluatorInclusion` e
+  `contour51Arb512ResponseArcEvaluatorInclusion` continuam abertas; nenhuma margem de `e_n` ou
+  positividade central se torna incondicional.

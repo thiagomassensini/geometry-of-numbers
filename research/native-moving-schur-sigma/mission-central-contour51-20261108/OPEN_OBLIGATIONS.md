@@ -110,11 +110,18 @@ e `SigmaFiniteRationalIntervalTransport.lean` fornecem aritmética racional de b
 contenção e transporte para somas/momentos; `SigmaC5RationalNodeEval.lean` fornece conversão e
 contenção de pontos complexos racionais e reutiliza o tipo retangular `ComplexInterval`; e
 `SigmaSourceBezout.lean` mais `SigmaContour51BoxSensitivity.lean` fornecem a recorrência da fonte,
-normalização e especialização algébrica em `d=0`. A fórmula de avaliação zeta via Euler–Maclaurin
-e as tabelas de Bernoulli/nós zeta-Gamma do C5 não certificam automaticamente a série Taylor de
-C3 em cada arco: reutilizar qualquer avaliação de nó exige provar a transformação dos centros e
-das caixas. Nenhuma tabela Bernoulli nem lista completa de nós foi refeita neste trabalho. Caixas
-C5 em `d=0.0495` e `d=0.1` continuam sem transporte quantitativo ao centro.
+normalização e especialização algébrica em `d=0`. `SigmaC5PiInterval.lean` fornece
+`c5_pi_log_interval_contains`, e `SigmaContour51C5PiBridge.lean` prova que essa caixa real,
+embutida numa caixa complexa retangular, contém exatamente `Complex.log (Real.pi : ℂ)`.
+
+Os avaliadores C5 `c5RationalZetaNodeBox_contains` e
+`c5RationalZetaCenteredNodeBox_contains` só certificam ζ em pontos racionais isolados próximos a
+`0.5+0i` (`a∈[2/5,3/5]`, `b∈[0,128/100000]`); eles não certificam retângulos contínuos, ζ′ ou
+coeficientes Taylor, e não cobrem o contorno de raio 51. Os certificados C5 de Gamma também são
+valores em nós fixos e não dão uma caixa uniforme para `digamma(s/2)`. Assim, nenhuma tabela de
+Bernoulli ou lista de nós zeta/Gamma foi refeita, e os nós C5 restantes exigiriam transformação
+quantitativa dos centros/caixas. As caixas de `d=0.0495` e `d=0.1` também continuam sem transporte
+quantitativo ao centro.
 
 ## Divisão intervalar complexa formalizada; enclosures analíticos ainda abertos
 

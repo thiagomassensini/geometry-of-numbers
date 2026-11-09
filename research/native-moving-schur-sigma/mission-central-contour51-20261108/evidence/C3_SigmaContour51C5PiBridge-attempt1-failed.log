@@ -1,0 +1,4 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51C5PiBridge.lean:32:2: error: unsolved goals
+case right
+⊢ (Interval.exact 0).contains 0
+'CarrySigmaObstruction.contour51C5LogPiBox_contains' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
