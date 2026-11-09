@@ -1,0 +1,21 @@
+'CarrySigmaObstruction.contour51ArbSigmaXiLogDerivativeBox_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51ArbOriginalResponseBox_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51ArbOriginalResponseBox_contains_lower_path' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51ArbN0ResidualIntegrandBox_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51ArbResidualIntegrandBox_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arb4096N0ArcEvaluatorInclusion_of_component_boxes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arb4096N0AllArcEvaluatorInclusion_of_component_boxes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

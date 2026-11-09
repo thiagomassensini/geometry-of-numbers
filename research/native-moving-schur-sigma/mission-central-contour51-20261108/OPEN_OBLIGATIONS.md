@@ -128,10 +128,26 @@ racionalmente que `((ComplexInterval.normSqRange denBox).lo : ℝ)>0`.
 Isso cobre apenas a soundness das operações de divisão. Continuam sem prova as caixas da fonte
 original que seriam as entradas: `s(u)`, `ζ(s(u))`, `ζ′(s(u))`, `digamma(s(u)/2)`, `log π`, e
 as caixas de `normSq` para `s`, `s-1`, `ζ` e a potência `z^(2n+1)`. A fórmula combinadora pode
-agora usar quocientes sound sem axiomas novos, mas nenhuma avaliação Arb é inferida desses dados e
+usar quocientes sound sem axiomas novos, mas nenhuma avaliação Arb é inferida desses dados e
 as hipóteses `contour51Arb4096FirstThreeArcEvaluatorInclusion`,
 `contour51Arb4096AllSixArcEvaluatorInclusion` e
 `contour51Arb512ResponseArcEvaluatorInclusion` permanecem abertas.
+
+## Composição da resposta formalizada; caixas por arco ainda não fornecidas
+
+`SigmaContour51ArbIntervalComposition.lean` prova a composição da fórmula zeta/Gamma/digamma da
+resposta original a partir de caixas dos componentes e a passagem do quociente residual por
+`z^(2n+1)` para qualquer `n`. Seu registro `Contour51Arb4096N0ArcComponentBoxes` torna explícitos
+os dados necessários no arco: caixas para `s`, zeta, zeta derivada, digamma, `log π` e o parâmetro;
+limites positivos das normas quadradas dos denominadores; e inclusões de cada ponto do arco nessas
+caixas. Para `n=0`, requer ainda comparar os extremos da parte real da caixa composta com os
+extremos Arb de cada arco; então deriva a inclusão ponto a ponto.
+
+Esse adaptador não fornece os registros. Não há ainda demonstração das caixas analíticas, das
+normas quadradas positivas ou das comparações com os extremos; portanto, mesmo a inclusão completa
+de ordem zero continua condicional. Os adaptadores por extremos `n=1,2` ainda não foram escritos.
+O primeiro avanço determinantal segue dependendo das inclusões para `n=0,1,2`; o objetivo completo
+segue dependendo das seis ordens residuais e da inclusão separada nos 512 arcos para `hR`.
 
 ## Incremento formal de Taylor/Cauchy — 2026-11-08
 

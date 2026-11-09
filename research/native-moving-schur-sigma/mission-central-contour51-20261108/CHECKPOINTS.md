@@ -212,6 +212,32 @@ avaliador original; nenhuma inclusão C3 de 512 ou 4096 arcos foi descarregada.
 
 O módulo compila em Lean 4.32.0 com warnings como erros. Os quatro teoremas auditados dependem
 somente de `[propext, Classical.choice, Quot.sound]`; não há `sorry`, `admit` ou axioma declarado.
-Comando, tentativas diagnósticas e hashes estão em `VALIDATION.md`. O próximo passo composicional
-é usar `divBox` na fórmula original sob as inclusões explícitas de cada componente e das normas
-quadradas positivas.
+Comando, tentativas diagnósticas e hashes estão em `VALIDATION.md`. A etapa seguinte já compõe
+`divBox` na resposta da fonte, de forma condicional às inclusões explícitas de cada componente e
+às normas quadradas positivas; veja o incremento abaixo.
+
+## Incremento C3 — composição condicional das caixas da resposta e do integrando
+
+`SigmaContour51ArbIntervalComposition.lean` combina caixas complexas explícitas para `s`, `ζ(s)`,
+`ζ′(s)`, `digamma(s/2)`, `log π` e o parâmetro do contorno. Lean prova a contenção da fórmula
+original da resposta no caminho inferior e do quociente residual por `z^(2n+1)` para todo `n`,
+usando a divisão intervalar sound recém-formalizada.
+
+O adaptador de tabela desenvolvido até aqui cobre **somente `n=0`**: se, para cada arco fechado,
+forem fornecidas todas as caixas dos componentes, positividade das quatro normas quadradas e
+comparações racionais entre a parte real da caixa composta e os extremos Arb, o Lean deriva a
+inclusão ponto a ponto de ordem zero. Essa é uma implicação condicional; nenhuma dessas caixas ou
+comparações analíticas foi gerada/provada neste módulo. O teorema genérico para `n` não fornece os
+campos de `n=1,2` nem os respectivos limites contra a tabela.
+
+**Hipóteses ainda em aberto:** caixas uniformes por arco para `s`, zeta, zeta derivada, digamma,
+`log π` e o parâmetro; limites positivos das normas quadradas de `s`, `s-1`, zeta e da caixa do
+parâmetro elevada a `2n+1`; e comparações da caixa composta com os extremos racionais Arb. Para o
+primeiro determinante, são necessárias essas obrigações em `n=0,1,2`. Portanto
+`contour51Arb4096FirstThreeArcEvaluatorInclusion` continua aberta e a margem `1/10^9` permanece
+condicional. Para todas as janelas ainda são necessárias as seis ordens, além da ponte separada
+dos 512 arcos para `hR`.
+
+A compilação foi em Lean 4.32.0 com warnings como erros. Os sete teoremas auditados usam somente
+`[propext, Classical.choice, Quot.sound]`. Fonte, log, memo, comandos e hashes estão listados em
+`VALIDATION.md` e `evidence/C3_SigmaContour51ArbIntervalComposition.md`.

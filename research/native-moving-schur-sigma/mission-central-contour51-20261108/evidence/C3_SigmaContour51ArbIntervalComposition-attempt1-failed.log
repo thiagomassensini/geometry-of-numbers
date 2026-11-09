@@ -1,0 +1,83 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbIntervalComposition.lean:40:14: error(lean.invalidField): Invalid field `add`: The environment does not contain `Function.add`, so it is not possible to project the field `add` from an expression
+  invSBox
+of type
+  0 < sBox.normSqRange.lo → ComplexInterval
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbIntervalComposition.lean:55:2: error: Type mismatch
+  (contour51ArbOriginalResponseBox sBox zetaBox zetaDerivativeBox digammaBox logPiBox).divBox parameterBox
+    parameterBox.normSqRange
+has type
+  0 < parameterBox.normSqRange.lo → ComplexInterval
+but is expected to have type
+  ComplexInterval
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbIntervalComposition.lean:84:44: error(lean.invalidField): Invalid field `contains`: The environment does not contain `Function.contains`, so it is not possible to project the field `contains` from an expression
+  contour51ArbOneBox.divBox sBox sBox.normSqRange
+of type
+  0 < sBox.normSqRange.lo → ComplexInterval
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbIntervalComposition.lean:89:52: error(lean.invalidField): Invalid field `contains`: The environment does not contain `Function.contains`, so it is not possible to project the field `contains` from an expression
+  contour51ArbOneBox.divBox sMinusOneBox sMinusOneBox.normSqRange
+of type
+  0 < sMinusOneBox.normSqRange.lo → ComplexInterval
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbIntervalComposition.lean:104:47: error(lean.invalidField): Invalid field `contains`: The environment does not contain `Function.contains`, so it is not possible to project the field `contains` from an expression
+  zetaDerivativeBox.divBox zetaBox zetaBox.normSqRange
+of type
+  0 < zetaBox.normSqRange.lo → ComplexInterval
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbIntervalComposition.lean:74:78: error: unsolved goals
+s : ℂ
+sBox zetaBox zetaDerivativeBox digammaBox logPiBox : ComplexInterval
+hs : sBox.contains s
+hzeta : zetaBox.contains (riemannZeta s)
+hzetaDerivative : zetaDerivativeBox.contains (deriv riemannZeta s)
+hdigamma : digammaBox.contains (s / 2).digamma
+hlogPi : logPiBox.contains (log ↑Real.pi)
+hsNormSqPos : 0 < sBox.normSqRange.lo
+hsMinusOneNormSqPos : 0 < (sBox.sub contour51ArbOneBox).normSqRange.lo
+hzetaNormSqPos : 0 < zetaBox.normSqRange.lo
+hOne : contour51ArbOneBox.contains 1
+sMinusOneBox : ComplexInterval := sBox.sub contour51ArbOneBox
+hsMinusOne : sMinusOneBox.contains (s - 1)
+hsInv : sorry
+hsMinusOneInv : sorry
+hlogPiTerm : (smulQ (-1 / 2) logPiBox).contains (-log ↑Real.pi / 2)
+hdigammaTerm : (smulQ (1 / 2) digammaBox).contains ((s / 2).digamma / 2)
+hzetaLogDerivative : sorry
+⊢ (contour51ArbSigmaXiLogDerivativeBox sBox zetaBox zetaDerivativeBox digammaBox logPiBox).contains
+    (1 / s + 1 / (s - 1) - log ↑Real.pi / 2 + (s / 2).digamma / 2 + deriv riemannZeta s / riemannZeta s)
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbIntervalComposition.lean:191:9: error: declaration uses `sorry`
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbIntervalComposition.lean:192:4: error: declaration uses `sorry`
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbIntervalComposition.lean:162:8: error: declaration uses `sorry`
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbIntervalComposition.lean:243:59: error: Application type mismatch: The argument
+  hu
+has type
+  u ∈ Set.Icc (↑k / 4096) (↑(k + 1) / 4096)
+but is expected to have type
+  u ∈ Set.Icc 0 1
+in the application
+  contour51ArbN0ResidualIntegrandBox_contains hu
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbIntervalComposition.lean:257:4: error: Invalid projection: Projection operates on types of the form `C ...` where C is a constant. The expression
+  contour51Arb4096FirstThreeArcEvaluatorInclusion
+has type `Prop` which does not have the necessary form.
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbIntervalComposition.lean:258:8: error: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce
+
+hboxes : (k : ℕ) → k < 4096 → Contour51Arb4096N0ArcComponentBoxes k
+⊢ sorry
+'CarrySigmaObstruction.contour51ArbSigmaXiLogDerivativeBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51ArbOriginalResponseBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51ArbOriginalResponseBox_contains_lower_path' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51ArbN0ResidualIntegrandBox_contains' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arb4096N0ArcEvaluatorInclusion_of_component_boxes' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arb4096N0AllArcEvaluatorInclusion_of_component_boxes' does not depend on any axioms

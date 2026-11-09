@@ -91,3 +91,13 @@ It also constructs a containing norm-square interval from a complex rectangle. T
 for the `1/s`, `1/(s-1)`, `ζ′/ζ` and residual-integrand quotients in the original evaluator. The
 component enclosures and positive lower bounds still need separate proofs; no Arb evaluator
 inclusion or residual sign follows from this generic arithmetic lemma. See `OPEN_OBLIGATIONS.md`.
+
+### Latest C3 response and residual composition
+
+`SigmaContour51ArbIntervalComposition.lean` now composes explicit boxes for the source response
+and its residual quotient. The formula is proved contained under hypotheses for boxes of `s`, zeta,
+zeta derivative, digamma, `log π`, the contour parameter, and positive squared-norm boxes. The
+closed-arc endpoint adapter is currently only for `n=0` and still assumes every component box and
+every comparison with the Arb endpoints. It does not prove those inputs; `n=1,2` plus all component
+enclosures remain needed for the first determinant. See the evidence memo and exact list in
+`OPEN_OBLIGATIONS.md`.

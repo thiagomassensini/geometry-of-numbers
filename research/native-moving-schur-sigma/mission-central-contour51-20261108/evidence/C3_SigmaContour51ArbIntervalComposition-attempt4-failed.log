@@ -1,0 +1,25 @@
+/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108/research/native-moving-schur-sigma/SigmaContour51ArbIntervalComposition.lean:135:24: error: This simp argument is unused:
+  sub_eq_add_neg
+
+Hint: Omit it from the simp argument list.
+  simp only [contour51ArbSigmaXiLogDerivativeBox, sMinusOneBox, c̵o̵n̵t̵o̵u̵r̵5̵1̵A̵r̵b̵O̵n̵e̵B̵o̵x̵,̵ ̵s̵u̵b̵_̵e̵q̵_̵a̵d̵d̵_̵n̵e̵g̵]̵c̲o̲n̲t̲o̲u̲r̲5̲1̲A̲r̲b̲O̲n̲e̲B̲o̲x̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'CarrySigmaObstruction.contour51ArbSigmaXiLogDerivativeBox_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51ArbOriginalResponseBox_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51ArbOriginalResponseBox_contains_lower_path' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51ArbN0ResidualIntegrandBox_contains' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arb4096N0ArcEvaluatorInclusion_of_component_boxes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'CarrySigmaObstruction.contour51Arb4096N0AllArcEvaluatorInclusion_of_component_boxes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

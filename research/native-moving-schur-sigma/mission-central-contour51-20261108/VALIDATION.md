@@ -25,6 +25,33 @@
   `ef60f81a875eeeeedf546f6c1da524411b808794a2766f98cdf266ca782b9684`; log
   `5b13ba5040f413bc1cfd8c6c2f63fe266e0c994e7f5184d00d3d1cccf2850eef`.
 
+## C3 composição intervalar da resposta original
+
+- **Módulo e resultados:** `SigmaContour51ArbIntervalComposition.lean` prova
+  `contour51ArbSigmaXiLogDerivativeBox_contains`,
+  `contour51ArbOriginalResponseBox_contains_lower_path`,
+  `contour51ArbN0ResidualIntegrandBox_contains` e o lema genérico
+  `contour51ArbResidualIntegrandBox_contains` para todo `n`. Para as caixas dos componentes,
+  `contour51Arb4096N0ArcEvaluatorInclusion_of_component_boxes` e
+  `contour51Arb4096N0AllArcEvaluatorInclusion_of_component_boxes` derivam a inclusão da parte real
+  de ordem zero em cada arco, sob comparação racional com os extremos Arb.
+- **Hipóteses explícitas:** caixas uniformes no arco para `s`, `ζ(s)`, `ζ′(s)`, `digamma(s/2)`,
+  `log π` e o parâmetro; caixas de norma quadrada com limite inferior positivo para os divisores;
+  e, no adaptador n=0, comparações da caixa composta com os extremos externos. O módulo não fornece
+  esses dados. O adaptador por extremos de n=1 e n=2 não existe ainda; assim
+  `contour51Arb4096FirstThreeArcEvaluatorInclusion` e a margem determinantal `1/10^9` continuam
+  abertas/condicionais. As seis ordens e a ponte dos 512 arcos para `hR` também permanecem abertas.
+- **Build/auditoria:** Lean 4.32.0, `-DwarningAsError=true`, output exclusivo C2. Os sete teoremas
+  auditados reportam somente `[propext, Classical.choice, Quot.sound]`; não há `sorry`, `admit`,
+  `native_decide` ou axiomas declarados.
+- **Evidência:** comando, hipótese de cada caixa, limitações e hashes estão em
+  `evidence/C3_SigmaContour51ArbIntervalComposition.md`; log em
+  `evidence/C3_SigmaContour51ArbIntervalComposition-success.log`. Tentativas 1–4 falhas e a
+  compilação intermediária da tentativa 5 estão preservadas na mesma pasta, com hashes e causas na
+  nota; a tentativa 6 corresponde ao log final. As mensagens `sorryAx` em logs 1–2 são apenas
+  recuperação de declarações que não elaboraram, não dependências do fonte final, cuja auditoria
+  contém somente axiomas padrão.
+
 ## C0 isolation and source audit
 
 - `git fetch origin` completed before creating the new branch.

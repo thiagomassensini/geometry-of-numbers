@@ -18,6 +18,25 @@ Successful output is `C3_SigmaContour51ComplexIntervalDivision-success.log`. The
 axioms` lines contain only standard axioms. The theorem requires a caller-supplied positive
 norm-square enclosure and does not verify the evaluator components or per-arc inclusions.
 
+## C3 response and residual interval composition
+
+This module proves the arithmetic composition from explicit component boxes to the original
+response and residual quotient. The component boxes, their positive norm-square lower bounds, and
+the comparisons with the Arb endpoints remain hypotheses.
+
+```bash
+CARRY_LEAN_ROOT=/home/thlinux/worktrees/carry-sigma-c2-pinned-045369 \
+SIGMA_OUTPUT_DIR=/home/thlinux/tmp/c2-contour51-20261108-lean432 \
+SIGMA_REFERENCE_ROOT=/home/thlinux/worktrees/geometry-of-numbers-c2-contour51-20261108 \
+SIGMA_HEIGHT50_BUILD=/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/integration:/home/thlinux/worktrees/geometry-of-numbers-sigma-c2-c3-main/research/native-moving-schur-sigma/.cache/c3-validation/c2/external:/home/thlinux/tmp/c2-central-ten-heights-b2-20261108-lean432:/home/thlinux/tmp/c2-central-hankel2-20261107-lean432:/home/thlinux/geometry-of-numbers/.lake/build/lib/lean \
+bash research/native-moving-schur-sigma/compile_sigma_pade.sh SigmaContour51ArbIntervalComposition
+```
+
+The successful output is `C3_SigmaContour51ArbIntervalComposition-success.log`; the memo records
+the compile audit and hashes. The endpoint adapter proves only n=0. The generic quotient lemma is
+for every n, but closing the first determinant still needs the n=1 and n=2 component-box and
+endpoint comparisons.
+
 ## Isolation
 
 - Before every Lean compile, check Lean/Lake processes and available memory. The user authorized parallel execution on 2026-11-08 while C5 PID `151152` runs in a separate worktree; keep this branch's builds sequential and use only its exclusive output root.
