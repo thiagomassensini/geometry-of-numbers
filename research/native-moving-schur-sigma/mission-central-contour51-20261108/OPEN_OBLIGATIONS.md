@@ -75,3 +75,18 @@ remainder. The compiled adapter turns that universal inclusion into
 `contour51ArbFirstThreeLowerPathResidualIntervalBounds`; the existing determinant gate then gives
 `1/1000000000 < sigmaPadeD 0 0` without the global circle estimate. No current theorem asserts
 that pointwise inclusion or unconditional positivity.
+
+## Incremento compilado: redução semicircular para `hR`
+
+`contour51ArbLowerSemicircleUniformResponseBound` nomeia a obrigação contínua
+`∀ u∈[0,1], ‖R(circleMap 0 51 (-π*u))‖≤4/5`. O teorema
+`contour51OriginalResponse_circle_norm_bound_of_lower_semicircle_uniform_bound` prova que essa
+obrigação implica a cota em toda a esfera de raio 51, usando a periodicidade do parâmetro e a
+paridade ímpar de `R=-F'/(2F)` para a continuação completada original `F`. Essa prova compila sem
+hipóteses além da premissa semicircular e axiomas padrão do Lean.
+
+O teorema não integra o certificado externo: a premissa universal ainda precisa ser demonstrada a
+partir das 512 caixas completas de Arb, incluindo inclusão ponto a ponto da expressão original e
+restos Taylor/Cauchy. Separadamente, permanece aberta a inclusão das 4096 caixas para os seis
+integrandos residuais. A primeira meta mínima continua sendo a inclusão de `n=0,1,2`; isso basta
+para o gate direto compilado de `1/1000000000 < sigmaPadeD 0 0`.

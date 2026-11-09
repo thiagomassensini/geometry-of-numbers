@@ -226,3 +226,13 @@ conditional adapter from per-arc inclusion to the six original lower-path residu
 Lean environment used the branch source directory and `/home/thlinux/tmp/c2-contour51-20261108-lean432`
 first in `LEAN_PATH`, followed by the existing B1/B2, C2 integration/external, Carry, and Mathlib
 build directories. No OLean was written to the shared primary checkout or to C5's cache.
+
+## C3 lower-semicircle to full-circle bound
+
+After the geometric reduction theorem and its `#print axioms` audit were added,
+`SigmaContour51ArbContourBridge` was recompiled with the common environment above and the exclusive
+output root. The successful command redirected to
+`/home/thlinux/tmp/c2-contour51-20261108-lean432/logs/SigmaContour51ArbContourBridge-attempt68.log`;
+the evidence copy is `C3_SigmaContour51ArbContourBridge-attempt68-success.log`. It compiled on
+Lean 4.32.0 with warnings treated as errors while C5 used its separate authorized worktree/cache;
+only the C2 exclusive output root was written.

@@ -48,3 +48,17 @@ Before every Lean build, check for active Lean/Lake processes; only the new outp
 Keep `completedNativeCharacteristicContinuation` as the original continuation. It is the existing `completedRiemannZeta₀` expression under `operatorHeightParameter`; `completedNativeCharacteristicContinuation_eq_native` identifies its original native germ on the established strip. Never define `F`, `R`, or `H_n` from the zeros.
 
 The unconditional all-order positivity target is not established by C0 or C1. B1's `hdecomp`, `he`, `hnonneg`, and `htail` remain explicit until the later checkpoints actually prove replacements.
+
+## Latest C3 contour bridge increment
+
+`SigmaContour51ArbContourBridge.lean` now contains the compiled theorem
+`contour51OriginalResponse_circle_norm_bound_of_lower_semicircle_uniform_bound`: a uniform
+`4/5` bound on the exact lower semicircle implies the required full-circle `hR`, by periodicity
+and oddness of the original response. The input proposition is
+`contour51ArbLowerSemicircleUniformResponseBound`; it is still open from Arb data because Lean
+does not yet prove the evaluator inclusion and Taylor/Cauchy remainder bound on every one of the
+512 arcs. The separate 4096-arc residual inclusion remains open for `n=0,…,5`; the minimum next
+lemma for the first unconditional result is its restriction to `n=0,1,2`. Exact margins and the
+new Lean build hash are recorded in `VALIDATION.md`. The existing source-response, C2 meromorphic
+residue identity, all five determinant cross terms, and the distinction among the source residual,
+the material C2 tail, and evaluator truncation remainder remain in force.

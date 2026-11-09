@@ -387,6 +387,83 @@ theorem contour51OriginalResponse_odd (z : ℂ) :
     hderivNeg]
   ring
 
+/-- Uniform source-response bound required from the external 512-arc certificate, stated on
+the exact lower-semicircle parameterization used by Arb. This is an explicit universal
+continuum proposition; finite samples are not sufficient to establish it. -/
+def contour51ArbLowerSemicircleUniformResponseBound : Prop :=
+  ∀ u ∈ Set.Icc (0 : ℝ) 1,
+    ‖contour51OriginalResponse (circleMap 0 51 (-Real.pi * u))‖ ≤ 4 / 5
+
+/-- A lower-semicircle bound for the original response extends to the whole radius-51 circle.
+The proof uses the exact circle parameterization and oddness of the original response; the
+remaining premise is precisely the continuum estimate that the Arb-to-Lean inclusion must prove. -/
+theorem contour51OriginalResponse_circle_norm_bound_of_lower_semicircle_uniform_bound
+    (hpath : contour51ArbLowerSemicircleUniformResponseBound) :
+    ∀ z ∈ Metric.sphere (0 : ℂ) 51,
+      ‖contour51OriginalResponse z‖ ≤ 4 / 5 := by
+  intro z hz
+  have hzImage : z ∈ circleMap 0 51 '' Set.Ioc (0 : ℝ) (2 * Real.pi) := by
+    rw [image_circleMap_Ioc]
+    simpa using hz
+  rcases hzImage with ⟨θ, hθ, rfl⟩
+  have hθqpos : 0 < θ / Real.pi := div_pos hθ.1 Real.pi_pos
+  have hθqle2 : θ / Real.pi ≤ 2 := by
+    apply (div_le_iff₀ Real.pi_pos).2
+    nlinarith [hθ.2]
+  by_cases hθπ : θ ≤ Real.pi
+  · let u : ℝ := 1 - θ / Real.pi
+    have hθqle1 : θ / Real.pi ≤ 1 := by
+      apply (div_le_iff₀ Real.pi_pos).2
+      nlinarith [hθπ]
+    have hu : u ∈ Set.Icc (0 : ℝ) 1 := by
+      constructor
+      · dsimp [u]
+        linarith
+      · dsimp [u]
+        linarith
+    have harg : -Real.pi * u = θ - Real.pi := by
+      dsimp [u]
+      field_simp [Real.pi_ne_zero]
+      ring
+    have hnegCircle : circleMap 0 51 (θ - Real.pi) =
+        -circleMap 0 51 θ := by
+      have hper := periodic_circleMap (0 : ℂ) 51 (θ - Real.pi)
+      have hshift : θ - Real.pi + 2 * Real.pi = θ + Real.pi := by ring
+      rw [hshift] at hper
+      calc
+        circleMap 0 51 (θ - Real.pi) = circleMap 0 51 (θ + Real.pi) := hper.symm
+        _ = -circleMap 0 51 θ := by
+          simp [circleMap, add_mul, Complex.exp_add]
+    have hresponse : contour51OriginalResponse (circleMap 0 51 (θ - Real.pi)) =
+        -contour51OriginalResponse (circleMap 0 51 θ) := by
+      rw [hnegCircle]
+      exact contour51OriginalResponse_odd _
+    have hbound := hpath u hu
+    rw [harg, hresponse] at hbound
+    simpa only [norm_neg] using hbound
+  · let u : ℝ := 2 - θ / Real.pi
+    have hθqgt1 : 1 < θ / Real.pi := by
+      apply (lt_div_iff₀ Real.pi_pos).2
+      nlinarith [hθπ]
+    have hu : u ∈ Set.Icc (0 : ℝ) 1 := by
+      constructor
+      · dsimp [u]
+        linarith
+      · dsimp [u]
+        linarith
+    have harg : -Real.pi * u = θ - 2 * Real.pi := by
+      dsimp [u]
+      field_simp [Real.pi_ne_zero]
+      ring
+    have hcircle : circleMap 0 51 (θ - 2 * Real.pi) = circleMap 0 51 θ := by
+      have hper := periodic_circleMap (0 : ℂ) 51 (θ - 2 * Real.pi)
+      have hshift : θ - 2 * Real.pi + 2 * Real.pi = θ := by ring
+      rw [hshift] at hper
+      exact hper.symm
+    have hbound := hpath u hu
+    rw [harg, hcircle] at hbound
+    exact hbound
+
 /-- The quotient used for `e_n` is even. Its angular restriction is consequently π-periodic. -/
 def contour51OriginalResidualQuotient (n : ℕ) (z : ℂ) : ℂ :=
   contour51OriginalResponse z / z ^ (2 * n + 1)
@@ -1127,6 +1204,7 @@ theorem completedNative_sigmaPadeD_zero_pos_of_contour51_lower_path_intervals
     (contour51ArbFirstThreeResidualIntervalBounds_of_lower_path_bounds hPath)
 
 #print axioms contour51OriginalResponse_odd
+#print axioms contour51OriginalResponse_circle_norm_bound_of_lower_semicircle_uniform_bound
 #print axioms contour51OriginalResponse_eq_sigmaXiLogDerivative
 #print axioms contour51SigmaXiLogDerivative_eq_zeta_gamma_factors
 #print axioms contour51GammaReal_logDeriv_eq_digamma
