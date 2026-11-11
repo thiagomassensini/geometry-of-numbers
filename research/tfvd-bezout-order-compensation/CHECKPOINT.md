@@ -1,23 +1,22 @@
 # Checkpoint — TFVD/Bézout order compensation
 
-- Fase atual: Checkpoint 2 concluído; iniciando determinante bordeado (Checkpoint 3).
-- Commit-base (`origin/main`, 2026-11-10): `8f5631a7808ad7c73491b558a894566e1d39899c`.
-- Branch isolada: `agent/tfvd-bezout-order-compensation-20261110` (worktree dedicado).
-- Árvore original preservada: havia itens não rastreados `GeometryOfNumbers/Analysis/IntegerMomentGramPositivity.lean` e `research/entrywise-moment-square/`; nenhum foi alterado.
+- Fase atual: Checkpoint 3 concluído; iniciando transporte exato ao TFVD (Checkpoint 4).
+- Base: `origin/main` `8f5631a7808ad7c73491b558a894566e1d39899c`; branch isolada `agent/tfvd-bezout-order-compensation-20261110`.
+- Árvore original preservada: os dois itens não rastreados preexistentes ficaram no clone original, sem alterações.
 - Pins: Lean `v4.32.0`; mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`; GreenFrame `cd2d838bee67ad23f869a02f8ed9f0a0feb926fa`.
-- PRs #41, #69, #70, #143, #144 e #145 confirmadas integradas; arquivos e relatórios de pesquisa estão no `main`.
-- Reuso principal: `research/tfvd-bezout-schur-residual/SourceBezout.lean`, `KernelBudget.lean`, `SourceMap.lean`, `SourceBlocks.lean`, `SourceSchur.lean`, `LiteralTfvd.lean`, `Repartition.lean`, `NativeRepartition64.lean`.
-- Fórmula inicial: `CarrySourceBezout.mixed_kernel_coefficient`, especializada à mesma sequência; evitar reconstruir o kernel ou importar os gates de sinal C3.
-- Comandos de reconhecimento: `git status --short`, `git branch --show-current`, `git remote -v`, `git fetch origin`, `git rev-parse origin/main`; PRs consultadas no GitHub.
-- Commit matemático do Checkpoint 1: `033b669f683fe033ff315f7ad83e870d3ff28b79`.
-- Commit matemático do Checkpoint 2: `78933afd622eb63c94af7055d56a1f104bae490a`.
-- Arquivos criados: `CoefficientLaw.lean`, `RankOneUpdate.lean`, `Regression.lean`, `validate.sh`; o cache privado é ignorado pelo `.gitignore` local.
-- Teoremas provados: fórmulas dos dois kernels; dependência por prefixo; update matricial de posto um para qualquer sequência real, ordem, setor e deslocamento.
-- Regressões provadas: blocos 2×2; diagonal nova 3×3 em ambos setores; updates `c₅/c₆`; controle negativo `1-u-u²` com não semidefinição positiva.
-- Validação: `bash research/tfvd-bezout-order-compensation/validate.sh` passou; recompilou a cadeia PR70 até `TwoEvenSourceMargin` e os três módulos novos com `warningAsError=true`.
-- Auditoria de axiomas dos teoremas novos/regressões: somente `propext`, `Classical.choice`, `Quot.sound`.
-- Falhas/dificuldades: `NativeRepartition64` depende de `FourNativeBoxes`; o script central ainda não inclui o caminho adicional das caixas C3. Isso não afeta o módulo algébrico do Checkpoint 1.
-- Próximo passo exato: fechar `det_add_lastCoordinateMatrix` via expansão Laplace na última linha e transportar o update para o determinante do bloco Bézout.
-- Obrigações abertas: determinante/J explícito, limiar de Schur, transporte TFVD e certificação independente do sinal C3.
-- Sinal: nenhum resultado de positividade novo alegado; os sinais theta da PR #144 não são premissas dos gates geométricos.
-- Sinal: nenhum resultado de positividade nova alegado; os sinais theta da PR #144 não serão premissas dos gates C3 geométricos.
+- PRs #41, #69, #70, #143, #144 e #145 foram confirmadas integradas ao `main`.
+- Reuso: `SourceBezout.lean`, `KernelBudget.lean`, `SourceMap.lean`, `SourceBlocks.lean`, `SourceSchur.lean`, `LiteralTfvd.lean`, `Repartition.lean` e resultados de `NativeRepartition64.lean`.
+- Commit do Checkpoint 1: `033b669f683fe033ff315f7ad83e870d3ff28b79`; Checkpoint 2: `78933afd622eb63c94af7055d56a1f104bae490a`.
+- Commit do Checkpoint 3: `69cb7ee` — determinante bordeado, lei de Schur e limiar; push confirmado ao remoto.
+- Arquivos novos: `CoefficientLaw.lean`, `RankOneUpdate.lean`, `Regression.lean`, `BorderedDeterminant.lean`, `SchurThreshold.lean`, `validate.sh`.
+- Lei geral provada para toda sequência real, ordem e setor: o coeficiente `m=2n+s+1` atualiza somente a última diagonal por `-m*c₀δ`.
+- Prefixo e acoplamento antigo invariantes; o determinante é afim mesmo com prefixo singular. O termo constante é o determinante após zerar apenas `cₘ`.
+- Schur é afim no coeficiente novo; limiar demonstrado como equivalência sob `c₀>0`, sem concluir seu sinal.
+- Ponte ao pivô nativo é condicional a `0<nativeC 0` e à invertibilidade do prefixo; fatores `c₀²` foram preservados via `sourceSchur_eq_scaled`.
+- Regressões compiladas: blocos 2×2 e diagonais 3×3 par/ímpar; controle `1-u-u²` não semidefinido positivo.
+- Validação: `bash research/tfvd-bezout-order-compensation/validate.sh` passou com `warningAsError=true`; recompilou a cadeia PR70 até `TwoEvenSourceMargin` e todos os cinco módulos da missão.
+- `git diff --check` passou. Auditoria de axiomas nos teoremas públicos: somente `propext`, `Classical.choice`, `Quot.sound`.
+- Falhas/dificuldades: o script ainda não compila `NativeRepartition64`/`FourNativeBoxes`; não foi alegada positividade nativa nem C3 nova.
+- Próximo passo exato: formalizar a igualdade exata da resposta de coeficiente `cₘ = Re H_M(m)+Re T_M(m)` e a lei condicional de compensação usando os lemas TFVD importados.
+- Obrigações abertas: expressão adjugata explícita para o termo constante, transporte TFVD, intervalo geométrico independente dos pivôs C3; nenhuma desigualdade de cabeça certificada.
+- Sinal: nenhuma positividade all-order ou de terceiro pivô foi provada; equivalência/limiar não são prova de sinal.
