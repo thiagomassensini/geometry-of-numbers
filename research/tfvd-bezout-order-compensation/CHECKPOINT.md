@@ -1,6 +1,6 @@
 # Checkpoint — TFVD/Bézout order compensation
 
-- Fase atual: Checkpoint 3 concluído; iniciando transporte exato ao TFVD (Checkpoint 4).
+- Fase atual: Checkpoint 4 concluído; iniciando auditoria geométrica finita C3 (Checkpoint 5).
 - Base: `origin/main` `8f5631a7808ad7c73491b558a894566e1d39899c`; branch isolada `agent/tfvd-bezout-order-compensation-20261110`.
 - Árvore original preservada: os dois itens não rastreados preexistentes ficaram no clone original, sem alterações.
 - Pins: Lean `v4.32.0`; mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`; GreenFrame `cd2d838bee67ad23f869a02f8ed9f0a0feb926fa`.
@@ -8,15 +8,18 @@
 - Reuso: `SourceBezout.lean`, `KernelBudget.lean`, `SourceMap.lean`, `SourceBlocks.lean`, `SourceSchur.lean`, `LiteralTfvd.lean`, `Repartition.lean` e resultados de `NativeRepartition64.lean`.
 - Commit do Checkpoint 1: `033b669f683fe033ff315f7ad83e870d3ff28b79`; Checkpoint 2: `78933afd622eb63c94af7055d56a1f104bae490a`.
 - Commit do Checkpoint 3: `69cb7ee` — determinante bordeado, lei de Schur e limiar; push confirmado ao remoto.
-- Arquivos novos: `CoefficientLaw.lean`, `RankOneUpdate.lean`, `Regression.lean`, `BorderedDeterminant.lean`, `SchurThreshold.lean`, `validate.sh`.
+- Commit do Checkpoint 4: `10aa06a` — lei de fronteira/head-tail TFVD; push confirmado ao remoto.
+- Arquivos novos: `CoefficientLaw.lean`, `RankOneUpdate.lean`, `Regression.lean`, `BorderedDeterminant.lean`, `SchurThreshold.lean`, `TfvdBoundaryLaw.lean`, `validate.sh`.
 - Lei geral provada para toda sequência real, ordem e setor: o coeficiente `m=2n+s+1` atualiza somente a última diagonal por `-m*c₀δ`.
 - Prefixo e acoplamento antigo invariantes; o determinante é afim mesmo com prefixo singular. O termo constante é o determinante após zerar apenas `cₘ`.
 - Schur é afim no coeficiente novo; limiar demonstrado como equivalência sob `c₀>0`, sem concluir seu sinal.
 - Ponte ao pivô nativo é condicional a `0<nativeC 0` e à invertibilidade do prefixo; fatores `c₀²` foram preservados via `sourceSchur_eq_scaled`.
+- `literal_head_tail` transporta exatamente `cₘ=Re H_M(m)+Re T_M(m)`; quatro cruzamentos, cutoffs independentes e repartição do bordo seguem os lemas PR70.
+- Regra suficiente formal: `J−m c₀ D Re H > m c₀ D ε` e `|Re T|≤ε`, com `m,c₀,D>0`, implica determinante positivo. A margem de cabeça segue aberta.
 - Regressões compiladas: blocos 2×2 e diagonais 3×3 par/ímpar; controle `1-u-u²` não semidefinido positivo.
-- Validação: `bash research/tfvd-bezout-order-compensation/validate.sh` passou com `warningAsError=true`; recompilou a cadeia PR70 até `TwoEvenSourceMargin` e todos os cinco módulos da missão.
+- Validação: `bash research/tfvd-bezout-order-compensation/validate.sh` passou com `warningAsError=true`; recompilou a cadeia PR70 até `TwoEvenSourceMargin` e todos os seis módulos da missão.
 - `git diff --check` passou. Auditoria de axiomas nos teoremas públicos: somente `propext`, `Classical.choice`, `Quot.sound`.
 - Falhas/dificuldades: o script ainda não compila `NativeRepartition64`/`FourNativeBoxes`; não foi alegada positividade nativa nem C3 nova.
-- Próximo passo exato: formalizar a igualdade exata da resposta de coeficiente `cₘ = Re H_M(m)+Re T_M(m)` e a lei condicional de compensação usando os lemas TFVD importados.
-- Obrigações abertas: expressão adjugata explícita para o termo constante, transporte TFVD, intervalo geométrico independente dos pivôs C3; nenhuma desigualdade de cabeça certificada.
+- Próximo passo exato: auditar as caixas C3 existentes até `c₆`, sem importar o sinal theta, e registrar se elas fecham as margens dos setores `s=0,1`, `n=2`.
+- Obrigações abertas: identificar o termo constante com `det(A)d<−bᵀadj(A)b`, caixa independente para os jets C3 da cabeça até ordens 10/12 e respectivas desigualdades de margem.
 - Sinal: nenhuma positividade all-order ou de terceiro pivô foi provada; equivalência/limiar não são prova de sinal.
