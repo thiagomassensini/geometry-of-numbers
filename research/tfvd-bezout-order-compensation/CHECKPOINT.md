@@ -1,6 +1,6 @@
 # Checkpoint — TFVD/Bézout order compensation
 
-- Fase atual: Checkpoint 0 concluído; iniciando a lei universal dos coeficientes.
+- Fase atual: Checkpoint 1 concluído; validando a atualização de posto um (Checkpoint 2).
 - Commit-base (`origin/main`, 2026-11-10): `8f5631a7808ad7c73491b558a894566e1d39899c`.
 - Branch isolada: `agent/tfvd-bezout-order-compensation-20261110` (worktree dedicado).
 - Árvore original preservada: havia itens não rastreados `GeometryOfNumbers/Analysis/IntegerMomentGramPositivity.lean` e `research/entrywise-moment-square/`; nenhum foi alterado.
@@ -9,9 +9,13 @@
 - Reuso principal: `research/tfvd-bezout-schur-residual/SourceBezout.lean`, `KernelBudget.lean`, `SourceMap.lean`, `SourceBlocks.lean`, `SourceSchur.lean`, `LiteralTfvd.lean`, `Repartition.lean`, `NativeRepartition64.lean`.
 - Fórmula inicial: `CarrySourceBezout.mixed_kernel_coefficient`, especializada à mesma sequência; evitar reconstruir o kernel ou importar os gates de sinal C3.
 - Comandos de reconhecimento: `git status --short`, `git branch --show-current`, `git remote -v`, `git fetch origin`, `git rev-parse origin/main`; PRs consultadas no GitHub.
-- Teoremas novos: nenhum ainda.
-- Validações: reconhecimento concluído; ainda sem compilação de arquivos novos.
-- Falhas/dificuldades: o worktree novo não contém `.lake` nem caches privados; validação deverá apontar ao cache Lean já usado pelas pesquisas sem modificar a árvore preexistente.
-- Próximo passo exato: formalizar as duas fórmulas explícitas do coeficiente de `sourceKernel` e extrair o update em `c_(2n+s+1)`.
-- Obrigações matemáticas abertas: dependência triangular, atualização de posto um, determinante bordeado sem inversa, limiar de Schur e transporte TFVD.
+- Commit matemático do Checkpoint 1: `033b669f683fe033ff315f7ad83e870d3ff28b79`.
+- Arquivos criados: `CoefficientLaw.lean`, `validate.sh`; o cache de compilação é ignorado pelo `.gitignore` local.
+- Teoremas provados: `responseCoefficient_even/odd`; `sourceKernel_even/odd_coefficient_explicit`; `sourceKernel_coefficient_depends_on_prefix`.
+- Validação: `bash research/tfvd-bezout-order-compensation/validate.sh` passou; recompilou a cadeia PR70 até `TwoEvenSourceMargin` e o módulo novo com `warningAsError=true`.
+- Auditoria de axiomas dos teoremas acima: somente `propext`, `Classical.choice`, `Quot.sound`.
+- Falhas/dificuldades: `NativeRepartition64` depende de `FourNativeBoxes`; o script central ainda não inclui o caminho adicional das caixas C3. Isso não afeta o módulo algébrico do Checkpoint 1.
+- Próximo passo exato: compilar a versão final de `RankOneUpdate.lean`, executar as regressões e provar a atualização matricial exclusiva na última diagonal.
+- Obrigações abertas: regressões 2×2/3×3, determinante bordeado sem inversa, limiar de Schur e transporte TFVD.
+- Sinal: nenhum resultado de positividade novo alegado; os sinais theta da PR #144 não são premissas dos gates geométricos.
 - Sinal: nenhum resultado de positividade nova alegado; os sinais theta da PR #144 não serão premissas dos gates C3 geométricos.
