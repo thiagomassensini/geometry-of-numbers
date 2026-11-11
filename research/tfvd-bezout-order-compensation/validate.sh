@@ -26,7 +26,7 @@ for module in SourceBezout SourceMap SourceNative SourceBlocks SchurTransport \
   compile_pr70 "$module"
 done
 
-for module in CoefficientLaw RankOneUpdate Regression; do
+for module in CoefficientLaw RankOneUpdate Regression BorderedDeterminant SchurThreshold; do
   lean -DwarningAsError=true --root="$task_dir" \
     -o "$task_dir/.cache/$module.olean" "$task_dir/$module.lean"
 done
