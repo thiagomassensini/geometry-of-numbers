@@ -1,0 +1,94 @@
+import FiniteC3Gate
+import Regression
+import Lean
+
+open Lean Elab Command
+
+/-- Fail if a public result in this module depends on an axiom outside
+Mathlib’s standard foundational set. -/
+elab "#assert_standard_axioms " id:ident : command => do
+  let decl ← liftCoreM <| realizeGlobalConstNoOverloadWithInfo id
+  let axioms ← collectAxioms decl
+  let allowed := #[`propext, `Classical.choice, `Quot.sound]
+  for axiomName in axioms do
+    unless allowed.contains axiomName do
+      throwError "Unexpected axiom: {decl} depends on {axiomName}"
+
+namespace CarrySourceBezout
+
+#assert_standard_axioms responseCoefficient_even
+#print axioms responseCoefficient_even
+#assert_standard_axioms responseCoefficient_odd
+#print axioms responseCoefficient_odd
+#assert_standard_axioms sourceKernel_even_coefficient_explicit
+#print axioms sourceKernel_even_coefficient_explicit
+#assert_standard_axioms sourceKernel_odd_coefficient_explicit
+#print axioms sourceKernel_odd_coefficient_explicit
+#assert_standard_axioms sourceKernel_coefficient_depends_on_prefix
+#print axioms sourceKernel_coefficient_depends_on_prefix
+#assert_standard_axioms det_add_lastCoordinateMatrix
+#print axioms det_add_lastCoordinateMatrix
+#assert_standard_axioms coefficientBlock_prefix
+#print axioms coefficientBlock_prefix
+#assert_standard_axioms sourceBezout_borderedDet_lastCoefficient
+#print axioms sourceBezout_borderedDet_lastCoefficient
+#assert_standard_axioms regression_even_two
+#print axioms regression_even_two
+#assert_standard_axioms regression_odd_two
+#print axioms regression_odd_two
+#assert_standard_axioms regression_even_three_last_entry
+#print axioms regression_even_three_last_entry
+#assert_standard_axioms regression_odd_three_last_entry
+#print axioms regression_odd_three_last_entry
+#assert_standard_axioms regression_even_three_last_update
+#print axioms regression_even_three_last_update
+#assert_standard_axioms regression_odd_three_last_update
+#print axioms regression_odd_three_last_update
+#assert_standard_axioms regression_negative_control
+#print axioms regression_negative_control
+#assert_standard_axioms nativeC_coefficient_eq_literal_head_tail
+#print axioms nativeC_coefficient_eq_literal_head_tail
+#assert_standard_axioms nativeSource_borderedDet_literal_head_tail
+#print axioms nativeSource_borderedDet_literal_head_tail
+#assert_standard_axioms sourceBoundary_compensation_sufficient
+#print axioms sourceBoundary_compensation_sufficient
+#assert_standard_axioms nativeSource_borderedDet_pos_of_boundary_margin
+#print axioms nativeSource_borderedDet_pos_of_boundary_margin
+#assert_standard_axioms native_residual_four_terms_boundary_repartition
+#print axioms native_residual_four_terms_boundary_repartition
+#assert_standard_axioms sourceCoefficientZero_eq_update
+#print axioms sourceCoefficientZero_eq_update
+#assert_standard_axioms sourceBezout_oldPrefix_unchanged
+#print axioms sourceBezout_oldPrefix_unchanged
+#assert_standard_axioms sourceBezout_oldCoupling_unchanged
+#print axioms sourceBezout_oldCoupling_unchanged
+#assert_standard_axioms sourceSchur_lastCoefficient_update
+#print axioms sourceSchur_lastCoefficient_update
+#assert_standard_axioms sourceBezout_lastCoefficient_threshold
+#print axioms sourceBezout_lastCoefficient_threshold
+#assert_standard_axioms sourceBezout_borderedDet_lastCoefficient_exact
+#print axioms sourceBezout_borderedDet_lastCoefficient_exact
+#assert_standard_axioms nativeSource_lastCoefficient_threshold
+#print axioms nativeSource_lastCoefficient_threshold
+#assert_standard_axioms nativeSource_pivot_iff_source_threshold
+#print axioms nativeSource_pivot_iff_source_threshold
+#assert_standard_axioms nativeC_coefficient_eq_c3_boundary_split
+#print axioms nativeC_coefficient_eq_c3_boundary_split
+#assert_standard_axioms nativeSource_borderedDet_c3_boundary_split
+#print axioms nativeSource_borderedDet_c3_boundary_split
+#assert_standard_axioms c3_original_tail_real_bound
+#print axioms c3_original_tail_real_bound
+#assert_standard_axioms c3_even_third_determinant_positive_of_head_margin
+#print axioms c3_even_third_determinant_positive_of_head_margin
+#assert_standard_axioms c3_odd_third_determinant_positive_of_head_margin
+#print axioms c3_odd_third_determinant_positive_of_head_margin
+#assert_standard_axioms sourceCoefficientUpdate_eq_of_lt
+#print axioms sourceCoefficientUpdate_eq_of_lt
+#assert_standard_axioms sourceKernel_even_last_update
+#print axioms sourceKernel_even_last_update
+#assert_standard_axioms sourceKernel_odd_last_update
+#print axioms sourceKernel_odd_last_update
+#assert_standard_axioms sourceBezout_lastCoefficient_rankOne
+#print axioms sourceBezout_lastCoefficient_rankOne
+
+end CarrySourceBezout

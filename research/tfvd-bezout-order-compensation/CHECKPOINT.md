@@ -1,6 +1,6 @@
 # Checkpoint — TFVD/Bézout order compensation
 
-- Fase atual: Checkpoint 4 concluído; iniciando auditoria geométrica finita C3 (Checkpoint 5).
+- Fase atual: Checkpoint 5 (C3) formalizado como PARTIAL; validações concluídas, consolidando PR.
 - Base: `origin/main` `8f5631a7808ad7c73491b558a894566e1d39899c`; branch isolada `agent/tfvd-bezout-order-compensation-20261110`.
 - Árvore original preservada: os dois itens não rastreados preexistentes ficaram no clone original, sem alterações.
 - Pins: Lean `v4.32.0`; mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`; GreenFrame `cd2d838bee67ad23f869a02f8ed9f0a0feb926fa`.
@@ -17,9 +17,14 @@
 - `literal_head_tail` transporta exatamente `cₘ=Re H_M(m)+Re T_M(m)`; quatro cruzamentos, cutoffs independentes e repartição do bordo seguem os lemas PR70.
 - Regra suficiente formal: `J−m c₀ D Re H > m c₀ D ε` e `|Re T|≤ε`, com `m,c₀,D>0`, implica determinante positivo. A margem de cabeça segue aberta.
 - Regressões compiladas: blocos 2×2 e diagonais 3×3 par/ímpar; controle `1-u-u²` não semidefinido positivo.
-- Validação: `bash research/tfvd-bezout-order-compensation/validate.sh` passou com `warningAsError=true`; recompilou a cadeia PR70 até `TwoEvenSourceMargin` e todos os seis módulos da missão.
-- `git diff --check` passou. Auditoria de axiomas nos teoremas públicos: somente `propext`, `Classical.choice`, `Quot.sound`.
-- Falhas/dificuldades: o script ainda não compila `NativeRepartition64`/`FourNativeBoxes`; não foi alegada positividade nativa nem C3 nova.
-- Próximo passo exato: auditar as caixas C3 existentes até `c₆`, sem importar o sinal theta, e registrar se elas fecham as margens dos setores `s=0,1`, `n=2`.
-- Obrigações abertas: identificar o termo constante com `det(A)d<−bᵀadj(A)b`, caixa independente para os jets C3 da cabeça até ordens 10/12 e respectivas desigualdades de margem.
+- Validação específica final: `bash research/tfvd-bezout-order-compensation/validate.sh` passou com código 0 e `warningAsError=true`; recompilou a cadeia PR70, C3Tail256 e todos os oito módulos da missão.
+- `Audit.lean` aplica `#assert_standard_axioms` e `#print axioms` aos 37 teoremas públicos; todos usam somente `propext`, `Classical.choice`, `Quot.sound`.
+- Arquivos adicionais da fase 5: `FiniteC3Gate.lean`, `Audit.lean`, `REPORT.md`; script `validate.sh` compila explicitamente a cadeia necessária e todos os módulos da missão.
+- Fase 5: `c₃` original de cauda/256 tem limite formal `10⁻²⁰` para índices até 6; os dois gates são condicionais à margem exata da cabeça. Diagnósticos C3 não intervalares não foram usados como prova; status PARTIAL nos dois setores.
+- `lake build --wfail` passou com 8.850 jobs após `lake exe cache get`; auditorias Foundation/Geometry/Analysis e `git diff --check` passaram.
+- `validate.sh` constrói explicitamente as bibliotecas auxiliares originais CPFormal, CarryGeometry, NativeCarrySpectralWeyl e GreenFrame e o alvo do operador antes de C3Tail256; esses projetos auxiliares não tiveram fontes alteradas.
+- Diagnóstico de setup: a primeira repetição revelou `.olean` auxiliares ausentes; a compilação das bibliotecas originais corrigiu a cadeia e a validação final passou.
+- `lake build --wfail` passou com 8.850 jobs após `lake exe cache get`; `audit-foundation.sh`, `audit-geometry.sh` e `audit-analysis.sh` passaram. Saídas completas em `/tmp/tfvd-audit-*.log` (fora do repositório).
+- Próximo passo exato: revisar escopo/diff, fazer commits separados das fases 5/6, push e abrir PR.
+- Obrigações abertas: identificar o termo constante com `det(A)d<−bᵀadj(A)b`, obter caixas independentes para os jets C3 da cabeça nas ordens 10/12 e provar as margens correspondentes.
 - Sinal: nenhuma positividade all-order ou de terceiro pivô foi provada; equivalência/limiar não são prova de sinal.
