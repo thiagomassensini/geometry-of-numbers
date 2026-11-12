@@ -70,6 +70,26 @@ theorem hankel_transportedCofactor_energy (c h : ℕ → ℝ) (hc : c 0 ≠ 0)
     criticalVector_pair h _ n hA]
   simp [criticalVector]
 
+/-- The product in the cofactor normalization is the only required
+nonvanishing condition, once the source recurrence identifies the two blocks. -/
+theorem transportedCofactor_properties_of_ne_zero (c h : ℕ → ℝ)
+    (hr : SourceRecurrence c h) (s : Bool) (n : ℕ)
+    (hD : c 0 * (coefficientBlock (sourceKernel c s) n).det ≠ 0) :
+    let H := hankelMatrix h (if s then 1 else 0) (n + 1)
+    let p := sourceMomentSchur h (if s then 1 else 0) n
+    let v := transportedCofactor c s n
+    v (Fin.last n) = 1 ∧ H *ᵥ v = Fin.snoc 0 p ∧ matrixPair H v v = p := by
+  have hc : c 0 ≠ 0 := fun he => hD (by rw [he, zero_mul])
+  have hdet : (coefficientBlock (sourceKernel c s) n).det ≠ 0 :=
+    fun he => hD (by rw [he, mul_zero])
+  rw [source_bezout_det c h hr s n, hankelMatrix_source] at hdet
+  have hA : IsUnit (sourceMomentMatrix h (if s then 1 else 0) n) :=
+    (Matrix.isUnit_iff_isUnit_det _).mpr
+      (isUnit_iff_ne_zero.mpr (fun he => hdet (by rw [he, mul_zero])))
+  exact ⟨transportedCofactor_last c h hc hr s n hA,
+    hankel_mulVec_transportedCofactor c h hc hr s n hA,
+    hankel_transportedCofactor_energy c h hc hr s n hA⟩
+
 theorem sourceMomentSchur_pos_of_block_posDef (h : ℕ → ℝ) (s n : ℕ)
     (hA : IsUnit (sourceMomentMatrix h s n))
     (hH : (sourceMomentMatrix h s (n + 1)).PosDef) :
@@ -85,6 +105,7 @@ theorem sourceMomentSchur_pos_of_block_posDef (h : ℕ → ℝ) (s n : ℕ)
   rwa [criticalVector_pair h s n hA, hv, one_mul] at hp
 
 #print axioms sourceMomentSchur_pos_of_block_posDef
+#print axioms transportedCofactor_properties_of_ne_zero
 #print axioms transportedCofactor_eq_criticalVector
 #print axioms transportedCofactor_last
 #print axioms hankel_mulVec_transportedCofactor
