@@ -1,6 +1,6 @@
 # Checkpoint — TFVD/Bézout order compensation
 
-- Fase atual: Checkpoint 5 (C3) PARTIAL commitado; fase 6 documental concluída, preparando PR.
+- Fase atual: PR #316 mesclada; registro final do SHA de merge.
 - Base: `origin/main` `8f5631a7808ad7c73491b558a894566e1d39899c`; branch isolada `agent/tfvd-bezout-order-compensation-20261110`.
 - Árvore original preservada: os dois itens não rastreados preexistentes ficaram no clone original, sem alterações.
 - Pins: Lean `v4.32.0`; mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`; GreenFrame `cd2d838bee67ad23f869a02f8ed9f0a0feb926fa`.
@@ -10,6 +10,7 @@
 - Commit do Checkpoint 3: `69cb7ee` — determinante bordeado, lei de Schur e limiar; push confirmado ao remoto.
 - Commit do Checkpoint 4: `10aa06a` — lei de fronteira/head-tail TFVD; push confirmado ao remoto.
 - Commit do Checkpoint 5: `73c9cdc` — gates condicionais C3, auditoria de 37 teoremas e validação reproduzível; push confirmado.
+- Commit de consolidação documental: `7fffbd7`; PR #316 mesclada sem checks obrigatórios reportados ou proteção de branch; merge `9774ddd42616ad12b9e9a2b9ad93aa89cb7ee796`.
 - Arquivos novos: `CoefficientLaw.lean`, `RankOneUpdate.lean`, `Regression.lean`, `BorderedDeterminant.lean`, `SchurThreshold.lean`, `TfvdBoundaryLaw.lean`, `FiniteC3Gate.lean`, `Audit.lean`, `REPORT.md`, `validate.sh`.
 - Lei geral provada para toda sequência real, ordem e setor: o coeficiente `m=2n+s+1` atualiza somente a última diagonal por `-m*c₀δ`.
 - Prefixo e acoplamento antigo invariantes; o determinante é afim mesmo com prefixo singular. O termo constante é o determinante após zerar apenas `cₘ`.
@@ -26,6 +27,6 @@
 - `validate.sh` constrói explicitamente as bibliotecas auxiliares originais CPFormal, CarryGeometry, NativeCarrySpectralWeyl e GreenFrame e o alvo do operador antes de C3Tail256; esses projetos auxiliares não tiveram fontes alteradas.
 - Diagnóstico de setup: a primeira repetição revelou `.olean` auxiliares ausentes; a compilação das bibliotecas originais corrigiu a cadeia e a validação final passou.
 - `lake build --wfail` passou com 8.850 jobs após `lake exe cache get`; `audit-foundation.sh`, `audit-geometry.sh` e `audit-analysis.sh` passaram. Saídas completas em `/tmp/tfvd-audit-*.log` (fora do repositório).
-- Próximo passo exato: confirmar `git diff --check`, commitar relatório/checkpoint final, abrir PR contra `main` e inspecionar estado/CI e possibilidade de merge protegido.
+- Próximo passo exato: revisar e mesclar a PR documental de acompanhamento que registra o SHA do merge #316.
 - Obrigações abertas: identificar o termo constante com `det(A)d<−bᵀadj(A)b`, obter caixas independentes para os jets C3 da cabeça nas ordens 10/12 e provar as margens correspondentes.
 - Sinal: nenhuma positividade all-order ou de terceiro pivô foi provada; equivalência/limiar não são prova de sinal.
