@@ -4,6 +4,7 @@
 - PR #318 merged into `main` on 2026-11-12 at `21c24415de48b184f5ad0498f9ac28e7c64a8195`.
 - Provenance-only PR #319 merged into `main` at `d4df30eb426653121c42cfe1bcfed68d3ce9bfed`.
 - Current continuation branch: `agent/c3-completed-crosswalk-20261112`, based on updated `main` at `d4df30e`.
+- Crosswalk commit: `f93a34a2eaa9ee6162758231b7a7171160009556` (pushed).
 - Worktree: `/home/thlinux/worktrees/c3-cofactor-chiral-certification-20261112`; pins unchanged (Lean 4.32.0, mathlib `81a5d257`, GreenFrame `cd2d838`).
 - PRs #316/#317 confirmed integrated; original dirty worktree preserved.
 - Latest code commit: `18da645`; final report/audit commit: `64a6169`; both are included in PR #318.
