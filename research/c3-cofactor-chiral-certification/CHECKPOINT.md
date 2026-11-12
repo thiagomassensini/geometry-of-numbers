@@ -3,7 +3,7 @@
 - Base: `origin/main` `1e0a6c80957fb7a1385cdb6a1869d04dbf40b64d`; branch `agent/c3-cofactor-chiral-certification-20261112`.
 - Worktree: `/home/thlinux/worktrees/c3-cofactor-chiral-certification-20261112`; pins unchanged (Lean 4.32.0, mathlib `81a5d257`, GreenFrame `cd2d838`).
 - PRs #316/#317 confirmed integrated; original dirty worktree preserved.
-- Latest code commit: `cd83061` (pushed).
+- Latest code commit: `18da645` (pushed); report and validation artifacts are being committed now.
 - Phase: exact C3/48 head/tail, completed tail bound, rational head boxes, and Gamma jet boxes through order 12.
 - New modules: previous 15 modules plus `GammaThirteen`.
 - Cofactor identity: exact 3×3 determinant/cofactor formula, including singular prefixes; positive-definite gate is explicitly conditional on `a>0`, prefix determinant `D>0`, and strict cofactor margin.
@@ -13,12 +13,15 @@
 - Completion: `completed_native_head_tail48` is an exact split using the original value multiplier and Gamma; `completed_tail48_jet_error_through_twelve` proves its tail contribution is at most `10⁻²⁰` for all orders 0…12 by the original multiplier bound and Cauchy.
 - Head: `accelerated_head48_jet_formula` identifies all 13 factorial-normalized jets with the exact finite material samples; rational interval propagation proves `head48_reference_contains` for every order 0…12, using sample addresses only through 169.
 - Order-26 series: summability, complex norm bound, and `M=48`, `k≤6` pre-Cauchy budget `≤10⁻²⁰`; this is not yet a completed-characteristic tail bound.
-- Validation: all 15 task modules compiled directly with `-DwarningAsError=true`; new head formula and interval theorems use only `propext`, `Classical.choice`, `Quot.sound`.
+- Validation: all 18 task modules compiled directly with `-DwarningAsError=true`; new head formula and interval theorems use only `propext`, `Classical.choice`, `Quot.sound`.
 - Recent validation fix: `C3Regression` now imports the actual existing synthetic negative-control theorem name `negative_control_not_posSemidef`.
 - Gamma: exact rational coefficient centers through index 12, a tightened rational `log 3` reference, and native Gamma jet enclosures through order 12 are proved; all use only `propext`, `Classical.choice`, `Quot.sound`.
 - Validation: `GammaThirteen.lean` compiled directly with `-DwarningAsError=true`; `#print axioms` reported only the three accepted foundational axioms.
 - New module: `CompletedBoxes48.lean` adds exact-rational interval addition, multiplication, reciprocal recurrence, powers, and convolutions without intermediate grid rounding; the completed finite head coefficients through jet order 12 are enclosed.
 - Validation: `CompletedBoxes48.lean` compiles with warnings as errors; all four public enclosure theorems audited to `[propext, Classical.choice, Quot.sound]`.
-- Diagnostic: exact Fraction propagation of the current head/Gamma reference boxes plus the existing `10⁻²⁰` tail allowance gives an odd cofactor-margin interval crossing zero (about `[-9.11e-32, 1.00e-31]`); this is a reproducible arithmetic diagnostic, not a Lean sign theorem.
+- Diagnostic: `diagnose_completed_boxes48.py` exactly propagates the current head/Gamma-reference boxes plus the `10⁻²⁰` tail allowance; the odd margin crosses zero (about `[-9.11e-32, 1.00e-31]`). Gamma-native replacement error is not included; this is not a source sign theorem.
 - Open: prove the full-source coefficient crosswalk through `c₆` including Gamma replacement and the original tail; independently certify the cofactor margin; chiral-order-11 transport.
 - Next exact step: formalize the completed-head jet/Gamma replacement crosswalk, use the original M=48 tail theorem to enclose native `c₀,…,c₆`, and check the resulting cofactor interval in Lean. If it crosses zero, report PARTIAL without a signal claim.
+- Validation: `lake build --wfail` passed all 8,857 jobs; `scripts/audit-foundation.sh`, `scripts/audit-geometry.sh`, and `scripts/audit-analysis.sh` all passed.
+- Validation: `validate.sh` compiled all 18 research modules, audited the new axioms, found no forbidden placeholders, and ran the exact Fraction diagnostic; `git diff --check` passed.
+- Consolidation: `REPORT.md`, `validate.sh`, and `diagnose_completed_boxes48.py` are complete; this is a PARTIAL handoff, not a source sign certification.
