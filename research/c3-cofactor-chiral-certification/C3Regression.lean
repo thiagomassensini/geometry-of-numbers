@@ -55,7 +55,7 @@ regression module; it is deliberately not classified as a physical Carry source.
 theorem reused_synthetic_negative_control :
     ¬(CarrySourceBezout.coefficientBlock
         (CarrySourceBezout.sourceKernel CarrySourceBezout.negativeControl false) 2).PosSemidef :=
-  CarrySourceBezout.regression_negative_control
+  CarrySourceBezout.negative_control_not_posSemidef
 
 #print axioms odd_reference_direction_is_positive
 #print axioms regression_positive_gate
