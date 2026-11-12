@@ -124,6 +124,149 @@ theorem border_det {n : ℕ} [CommRing R]
       simp
   | succ n => exact border_det_succ A b d
 
+def directionalEnergy {n : ℕ} [CommRing R]
+    (A : Matrix (Fin n) (Fin n) R) (b : Fin n → R) (d : R) (u : Fin n → R) : R :=
+  dotProduct u (A.mulVec u) + 2 * dotProduct u b + d
+
+def directionalResidual {n : ℕ} [CommRing R]
+    (A : Matrix (Fin n) (Fin n) R) (b : Fin n → R) (u : Fin n → R) : Fin n → R :=
+  A.mulVec u + b
+
+def liftedDirection {n : ℕ} [One R] (u : Fin n → R) : Fin n.succ → R :=
+  Fin.lastCases 1 u
+
+private theorem dotProduct_add_left {n : ℕ} [CommRing R]
+    (x y z : Fin n → R) :
+    dotProduct (x + y) z = dotProduct x z + dotProduct y z := by
+  calc
+    dotProduct (x + y) z = dotProduct z (x + y) := dotProduct_comm _ _
+    _ = dotProduct z x + dotProduct z y := dotProduct_add _ _ _
+    _ = dotProduct x z + dotProduct y z := by rw [dotProduct_comm z x, dotProduct_comm z y]
+
+private theorem dotProduct_smul_right {n : ℕ} [CommRing R]
+    (r : R) (x y : Fin n → R) :
+    dotProduct x (r • y) = r * dotProduct x y := by
+  unfold dotProduct
+  rw [Finset.mul_sum]
+  apply Finset.sum_congr rfl
+  intro i hi
+  simp only [Pi.smul_apply]
+  ring
+
+private theorem dotProduct_mulVec_symmetric {n : ℕ} [CommRing R]
+    (A : Matrix (Fin n) (Fin n) R) (hA : A.transpose = A)
+    (x y : Fin n → R) :
+    dotProduct (A.mulVec x) y = dotProduct x (A.mulVec y) := by
+  have hvec : Matrix.vecMul x A = A.mulVec x := by
+    calc
+      Matrix.vecMul x A = Matrix.vecMul x A.transpose := by
+        exact congrArg (Matrix.vecMul x) hA.symm
+      _ = A.mulVec x := Matrix.vecMul_transpose A x
+  calc
+    dotProduct (A.mulVec x) y = dotProduct (Matrix.vecMul x A) y := by rw [hvec]
+    _ = dotProduct x (A.mulVec y) := (Matrix.dotProduct_mulVec x A y).symm
+
+private theorem adjugate_mulVec_right {n : ℕ} [CommRing R]
+    (A : Matrix (Fin n) (Fin n) R) (u : Fin n → R) :
+    A.adjugate.mulVec (A.mulVec u) = A.det • u := by
+  rw [Matrix.mulVec_mulVec u A.adjugate A, Matrix.adjugate_mul]
+  simp [Matrix.smul_mulVec]
+
+theorem border_quadratic_eq_directionalEnergy {n : ℕ} [CommRing R]
+    (A : Matrix (Fin n) (Fin n) R) (b : Fin n → R) (d : R) (u : Fin n → R) :
+    dotProduct (liftedDirection u) ((border A b d).mulVec (liftedDirection u)) =
+      directionalEnergy A b d u := by
+  have hBv : (border A b d).mulVec (liftedDirection u) =
+      Fin.lastCases (dotProduct b u + d) (fun i => (A.mulVec u) i + b i) := by
+    ext i
+    refine Fin.lastCases ?_ (fun i => ?_) i
+    · rw [Matrix.mulVec_apply, dotProduct]
+      rw [Fin.sum_univ_castSucc]
+      simp only [Matrix.row_apply, border_last_castSucc, border_last_last,
+        liftedDirection, Fin.lastCases_castSucc, Fin.lastCases_last]
+      simp [dotProduct]
+    · rw [Matrix.mulVec_apply, dotProduct]
+      rw [Fin.sum_univ_castSucc]
+      simp only [Matrix.row_apply, border_castSucc_castSucc, border_castSucc_last,
+        liftedDirection, Fin.lastCases_castSucc, Fin.lastCases_last]
+      simp [Matrix.mulVec, dotProduct]
+  have hsum :
+      (∑ i : Fin n, u i * ((A.mulVec u) i + b i)) =
+        (∑ i : Fin n, u i * (A.mulVec u) i) + (∑ i : Fin n, u i * b i) := by
+    rw [← Finset.sum_add_distrib]
+    apply Finset.sum_congr rfl
+    intro i hi
+    ring
+  have hcomm : (∑ i : Fin n, b i * u i) = ∑ i : Fin n, u i * b i := by
+    apply Finset.sum_congr rfl
+    intro i hi
+    ring
+  rw [dotProduct, Fin.sum_univ_castSucc]
+  simp only [liftedDirection, Fin.lastCases_castSucc, Fin.lastCases_last]
+  rw [hBv]
+  simp only [Fin.lastCases_castSucc, Fin.lastCases_last, one_mul]
+  change (∑ i : Fin n, u i * ((A.mulVec u) i + b i)) +
+      ((∑ i : Fin n, b i * u i) + d) =
+    (∑ i : Fin n, u i * (A.mulVec u) i) +
+      2 * (∑ i : Fin n, u i * b i) + d
+  rw [hsum, hcomm]
+  ring
+
+theorem border_directional_identity {n : ℕ} [CommRing R]
+    (A : Matrix (Fin n) (Fin n) R) (b : Fin n → R) (d : R) (u : Fin n → R)
+    (hA : A.transpose = A) :
+    A.det * directionalEnergy A b d u -
+        dotProduct (directionalResidual A b u)
+          (A.adjugate.mulVec (directionalResidual A b u)) =
+      (border A b d).det := by
+  let x := A.mulVec u
+  have hJAx : A.adjugate.mulVec x = A.det • u := by
+    dsimp [x]
+    exact adjugate_mulVec_right A u
+  have hAxAdjB : A.mulVec (A.adjugate.mulVec b) = A.det • b := by
+    rw [Matrix.mulVec_mulVec b A A.adjugate, Matrix.mul_adjugate]
+    simp [Matrix.smul_mulVec]
+  have hquad :
+      dotProduct x (A.adjugate.mulVec x) = A.det * dotProduct u x := by
+    rw [hJAx, dotProduct_smul_right]
+    rw [dotProduct_comm x u]
+  have hcrossLeft :
+      dotProduct x (A.adjugate.mulVec b) = A.det * dotProduct u b := by
+    calc
+      dotProduct x (A.adjugate.mulVec b) =
+          dotProduct u (A.mulVec (A.adjugate.mulVec b)) := by
+            dsimp [x]
+            exact dotProduct_mulVec_symmetric A hA u (A.adjugate.mulVec b)
+      _ = dotProduct u (A.det • b) := by rw [hAxAdjB]
+      _ = A.det * dotProduct u b := dotProduct_smul_right _ _ _
+  have hcrossRight :
+      dotProduct b (A.adjugate.mulVec x) = A.det * dotProduct u b := by
+    rw [hJAx, dotProduct_smul_right, dotProduct_comm b u]
+  have hexpand :
+      dotProduct (x + b) (A.adjugate.mulVec (x + b)) =
+        dotProduct x (A.adjugate.mulVec x) +
+          dotProduct x (A.adjugate.mulVec b) +
+          dotProduct b (A.adjugate.mulVec x) +
+          dotProduct b (A.adjugate.mulVec b) := by
+    rw [Matrix.mulVec_add, dotProduct_add, dotProduct_add_left,
+      dotProduct_add_left]
+    ring
+  dsimp [directionalEnergy, directionalResidual]
+  change A.det * (dotProduct u (A.mulVec u) + 2 * dotProduct u b + d) -
+      dotProduct (A.mulVec u + b)
+        (A.adjugate.mulVec (A.mulVec u + b)) = (border A b d).det
+  rw [show A.mulVec u = x by rfl, show A.mulVec u + b = x + b by rfl,
+    hexpand, hquad, hcrossLeft, hcrossRight]
+  calc
+    A.det * (dotProduct u (A.mulVec u) + 2 * dotProduct u b + d) -
+        (A.det * dotProduct u (A.mulVec u) +
+          A.det * dotProduct u b + A.det * dotProduct u b +
+          dotProduct b (A.adjugate.mulVec b)) =
+      A.det * d - dotProduct b (A.adjugate.mulVec b) := by ring
+    _ = (border A b d).det := by
+      rw [border_det]
+      rfl
+
 def cofactorVector {n : ℕ} [CommRing R]
     (A : Matrix (Fin n) (Fin n) R) (b : Fin n → R) : Fin n.succ → R :=
   Fin.lastCases A.det (fun i => -(A.adjugate.mulVec b) i)
@@ -234,6 +377,8 @@ theorem cofactorVector_three_by_three [CommRing R] (a b d e f : R) :
 #print axioms border_det_succ
 #print axioms border_upperLeft
 #print axioms border_det
+#print axioms border_quadratic_eq_directionalEnergy
+#print axioms border_directional_identity
 #print axioms border_mulVec_cofactor
 #print axioms cofactorVector_quadratic
 #print axioms border_det_three_by_three
