@@ -4,14 +4,19 @@
 
 ## A. Origem e proveniência
 
-- Repositório: `thiagomassensini/geometry-of-numbers`; a primeira etapa foi desenvolvida na branch `agent/c3-cofactor-chiral-certification-20261112` e o crosswalk continuou na branch `agent/c3-completed-crosswalk-20261112`.
-- A etapa inicial partiu de `origin/main` em `1e0a6c80957fb7a1385cdb6a1869d04dbf40b64d`; a continuação parte do `main` atualizado em `d4df30eb426653121c42cfe1bcfed68d3ce9bfed`.
+- Repositório: `thiagomassensini/geometry-of-numbers`; esta continuação está na branch `agent/c3-cofactor-chiral-certification-20261112-next`.
+- Esta etapa parte de `origin/main` em `e4f5de51cad523963a327c8295067f88fc7855fa` (PR #321 integrada), preservando os trabalhos anteriores de #316–#320.
 - Pins não alterados: Lean 4.32.0, mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`, GreenFrame `cd2d838bee67ad23f869a02f8ed9f0a0feb926fa`.
 - PRs #316 e #317 já estavam integradas. As definições da completion, Gamma, chart, fonte e stencil C3 original são reutilizadas; pesos e fatores não foram modificados.
 - A validação direta usa as dependências Lean já compiladas dos dois repositórios locais. A árvore de trabalho original, que tinha mudanças preexistentes, permaneceu intocada.
+- O transporte quiral importa `CompletedHeadEight`, cuja dependência `ThirdSourcePrefix` vem do cache de #146; o SHA-256 da fonte `research/c3-tilt-prime/ThirdSourcePrefix.lean` coincide com a cópia da branch de #146 usada para compilar esse cache (`c3d5e49a945942a92d26776857a721a8d82eff706d13e917ee2a6e88eb4e5b5e`).
 
 ## B. Resultados demonstrados em Lean
 
+- `GeneralCofactorIdentity.lean` prova para todo anel comutativo e todo tamanho finito a identidade do determinante bordeado, incluindo prefixos singulares e o caso de prefixo vazio. Para prefixo simétrico, `border_quadratic_eq_directionalEnergy` identifica a energia definida pelos coeficientes com `vᵀBv`, e `border_directional_identity` prova `det B=D E(u)-rᵀadj(A)r` para toda direção `u`, sem inversa. O módulo também prova `B*w = (0,…,0,det B)` e `wᵀBw = det(A)*det(B)` para `w=(-adj(A)b,det A)`, sem hipótese de positividade.
+- `border_det_three_by_three` e `cofactorVector_three_by_three` recuperam, respectivamente, `D*g-d*e²+2*b*e*f-a*f²` e o vetor explícito `[b*f-d*e,b*e-a*f,D]` da fórmula geral.
+- `odd_third_prefix_isUnit_from_completed_c3` reutiliza a certificação da fonte C3 completada para provar a invertibilidade do prefixo ímpar 2×2. A prova depende do head C3 e dos coeficientes de ordem baixa, não do sinal do terceiro pivô.
+- `odd_third_critical_balance_tendsto` e `odd_third_scaled_relative_deficit_tendsto` especializam o transporte quiral ao bloco ímpar de ordem 11 sem hipótese adicional de invertibilidade do prefixo. `odd_third_gap_coefficient_pos_iff` identifica o sinal do coeficiente de déficit com o sinal do Schur; `odd_third_relative_deficit_eventually_pos` continua condicional a esse sinal.
 - `odd_third_cofactor_identity`: determinante do bloco simétrico 3×3 igual ao determinante do prefixo vezes a energia residual menos o termo da adjugata. Não requer que o prefixo seja invertível.
 - `odd_third_cofactor_vector_identity` e `odd_third_cofactor_vector_quadratic`: identidades exatas para o vetor cofactorial.
 - O módulo `SchurGate.lean` prova que a margem cofactorial positiva implica positividade definida do bloco 3×3 sob as hipóteses explícitas de prefixo positivo e determinante do prefixo positivo.
@@ -22,6 +27,20 @@
 - `GammaHeadCrosswalk.lean` demonstra a fase exata do head completado, o erro da substituição pela Gamma nativa como uma soma finita ponderada pelos jatos reais do head, e o transporte desse erro junto com a cauda `M=48` para os jatos da característica completada original. O único bound Gamma usado é `native_gamma_thirteen_boxes`.
 
 ## C. Identidade e porta cofactorial
+
+Em dimensão arbitrária, para `A : Matrix (Fin n) (Fin n) R`, `b : Fin n → R` e o bloco simétrico bordeado
+
+\[
+B=\begin{pmatrix}A&b\\b^{\mathsf T}&d\end{pmatrix},\qquad D=\det A,
+\]
+
+o novo módulo estabelece a identidade sem divisão
+
+\[
+\det B=Dd-\sum_i b_i(\operatorname{adj}(A)b)_i.
+\]
+
+Ela vale mesmo para `D=0`; a prova usa expansão de Laplace e uma permutação cíclica dos menores para Cramer. Para qualquer `u`, com `v=(u,1)` e `r=Au+b`, também prova `det B=D(vᵀBv)-rᵀadj(A)r`, identificando `vᵀBv` com `directionalEnergy`. Para `w=(-adj(A)b,D)`, vale `B w=(0,…,0,det B)` e `w^{\mathsf T}Bw=D\det B`. São identidades algébricas, não desigualdades de sinal.
 
 Para
 
@@ -58,7 +77,7 @@ O script `diagnose_completed_boxes48.py` refaz com `fractions.Fraction` a propag
 [-9.10708079037569\times10^{-32},\;1.00488624771212\times10^{-31}],
 \]
 
-que contém zero. A inclusão do jato nativo completo na vizinhança de erro é provada em Lean; a avaliação final da margem é um diagnóstico racional reproduzível, não um teorema Lean de positividade. Ela mostra que a propagação intervalar independente atual não fecha a porta; para concluir será necessária uma inclusão mais estreita ou uma estimativa que preserve correlações entre coeficientes.
+que contém zero. A inclusão do jato nativo completo na vizinhança de erro é provada em Lean; a avaliação final da margem é um diagnóstico racional reproduzível, não um teorema Lean de positividade. Para concluir será necessária uma inclusão mais estreita que preserve dependências entre jatos de ordem baixa e coeficientes Gamma de ordem alta, ou uma estimativa direta da margem.
 
 ## F. Contraexemplos e limitações
 
@@ -69,18 +88,22 @@ que contém zero. A inclusão do jato nativo completo na vizinhança de erro é 
 
 ## G. Obrigações ainda abertas
 
-- Provar em Lean que caixas correlacionadas ou mais estreitas dos coeficientes nativos implicam a margem cofactorial estritamente positiva; as caixas independentes atuais não fecham o sinal.
-- Fazer o transporte chiral de ordem 11, que não foi concluído nesta branch.
+- Certificar uma margem cofactorial ímpar estritamente positiva pela fonte original; a faixa rigorosa existente ainda contém zero.
+- O transporte quiral de ordem 11 está formalizado; eventual positividade do déficit continua dependente da desigualdade de sinal do Schur, que não foi demonstrada.
 
 ## H. Validação
 
 - `GammaThirteen.lean`: compilado com `lean -DwarningAsError=true`; auditoria de axiomas reportou apenas `propext`, `Classical.choice` e `Quot.sound`.
 - `CompletedBoxes48.lean`: compilado com `lean -DwarningAsError=true`; `chart_jet_box_exact`, `reciprocal_jet_box_exact`, `left_jet_box_exact48` e `completed_jet_box_exact48` usam apenas `propext`, `Classical.choice` e `Quot.sound`.
 - `GammaHeadCrosswalk.lean`: compilado com `lean -DwarningAsError=true`; os quatro teoremas públicos usam apenas `propext`, `Classical.choice` e `Quot.sound`.
-- `validate.sh`: recompilou os 19 módulos da pesquisa com warnings como erros, auditou axiomas, não encontrou placeholders proibidos e executou o diagnóstico racional.
-- `lake build --wfail`: sucesso em todos os 8.850 alvos do projeto nesta continuação.
-- `bash scripts/audit-foundation.sh`, `bash scripts/audit-geometry.sh` e `bash scripts/audit-analysis.sh`: todos passaram. Fundação não encontrou axiomas; geometria respeitou seu conjunto permitido; análise respeitou os axiomas padrão.
-- `git diff --check` e a varredura de `sorry`, `admit` e `native_decide` passaram.
+- `GeneralCofactorIdentity.lean`: compilado diretamente com warnings como erros; a auditoria dos dez teoremas públicos reportou apenas `propext`, `Classical.choice` e `Quot.sound`.
+- `ChiralOrder11.lean`: compilado diretamente com warnings como erros; os cinco teoremas públicos usam apenas `propext`, `Classical.choice` e `Quot.sound`.
+- `bash research/c3-cofactor-chiral-certification/validate.sh`: passou explicitamente pelos 20 módulos, com warnings como erros, impressão dos axiomas públicos, regressões e diagnóstico racional. Os resultados públicos novos dependem apenas de `propext`, `Classical.choice` e `Quot.sound`.
+- `bash research/c3-odd-head-source/validate.sh`: passou nos oito módulos que sustentam o prefixo ímpar C3, incluindo `CompletedHeadEight.lean`; não encontrou atalhos de prova nem axiomas novos.
+- `lake build --wfail`: passou em todos os 8.850 alvos.
+- `bash scripts/audit-foundation.sh`, `bash scripts/audit-geometry.sh` e `bash scripts/audit-analysis.sh`: passaram. Fundação não encontrou axiomas; geometria respeitou seu conjunto permitido; análise permitiu apenas os axiomas padrão.
+- `git diff --check` e a varredura de `sorry`, `admit`, `native_decide` e declarações `axiom` nos módulos da missão passaram.
+- Commit novo `1b1b05a` (`feat(c3): add directional cofactor and odd order-11 transport`) foi validado e enviado para a branch da PR.
 - `diagnose_completed_boxes48.py`: aritmética racional exata, reproduzível com Python padrão; combina caixas de jatos do head validadas em Lean, a cota Gamma transportada em Lean e a cota original da cauda. Sua saída diagnóstica não afirma positividade.
 - Commit de retomada: `18da645 feat(c3): propagate exact completed head coefficient boxes` (enviado à branch remota).
 - PR #318 foi mesclada em `main` em 2026-11-12; SHA do merge: `21c24415de48b184f5ad0498f9ac28e7c64a8195`. A PR continha os commits `18da645` e `64a6169` e manteve a classificação PARTIAL.
@@ -88,7 +111,8 @@ que contém zero. A inclusão do jato nativo completo na vizinhança de erro é 
 - Commit do crosswalk Gamma/cauda: `f93a34a2eaa9ee6162758231b7a7171160009556`, enviado à branch `agent/c3-completed-crosswalk-20261112`.
 - PR #320 foi mesclada em `main` em 2026-11-12; SHA do merge: `f5b403f31cc63a1f1a4af069180b0516f88841f1`. Ela incluiu o crosswalk, o relatório atualizado e o diagnóstico exato, mantendo PARTIAL.
 - Não foram usados `sorry`, `admit`, `native_decide` ou axiomas novos.
+- Continuação desta branch: `GeneralCofactorIdentity.lean` formaliza a identidade direcional geral; `ChiralOrder11.lean` transporta o limite quiral usando o prefixo C3 já certificado. A certificação do terceiro pivô segue PARTIAL, sem novo resultado de sinal.
 
 ## I. Próxima missão mínima
 
-Preservar correlações entre os coeficientes `c₀,…,c₆` ao avaliar a margem cofactorial odd e formalizar uma desigualdade estrita independente, pois as caixas intervalares independentes completas ainda incluem zero.
+Preservar as dependências entre os jatos da cabeça C3 e os coeficientes Gamma de ordem alta ao avaliar a margem cofactorial ímpar; a faixa rigorosa atual ainda contém zero.

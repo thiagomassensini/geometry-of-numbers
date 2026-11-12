@@ -5,6 +5,8 @@ task_dir=$(cd "$(dirname "$0")" && pwd)
 repo_root=$(cd "$task_dir/../.." && pwd)
 geometry_root=${GEOMETRY_ROOT:-/home/thlinux/geometry-of-numbers}
 carry_root=${CARRY_ROOT:-/home/thlinux/carry-self-adjoint-operator}
+source_orientation_cache=${CARRY_PR145_CACHE:-/home/thlinux/geometry-of-numbers-c3-source-orientation/research/c3-source-orientation/.cache}
+third_source_cache=${CARRY_PR146_CACHE:-/home/thlinux/geometry-of-numbers-critical-tilt-prime/research/c3-tilt-prime/.cache}
 
 for required in "$repo_root" "$geometry_root" "$carry_root"; do
   if [[ ! -d "$required" ]]; then
@@ -27,7 +29,7 @@ research_build_paths=$(find \
 
 cd "$carry_root"
 lake_path=$(lake env printenv LEAN_PATH)
-export LEAN_PATH="$task_dir/.cache:$cache_paths$research_build_paths$geometry_root/.lake/build/lib/lean:$carry_root/.lake/build/lib/lean:$lake_path"
+export LEAN_PATH="$task_dir/.cache:$cache_paths$source_orientation_cache:$third_source_cache:$research_build_paths$geometry_root/.lake/build/lib/lean:$carry_root/.lake/build/lib/lean:$lake_path"
 
 modules=(
   C3Acceleration48
@@ -40,6 +42,8 @@ modules=(
   C3CompletionTail48
   C3Head48Jet
   C3Head48Boxes
+  GeneralCofactorIdentity
+  ChiralOrder11
   CofactorIdentity
   SchurGate
   IntervalGate
