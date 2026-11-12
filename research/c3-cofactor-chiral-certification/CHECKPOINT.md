@@ -3,7 +3,7 @@
 - Base: `origin/main` `1e0a6c80957fb7a1385cdb6a1869d04dbf40b64d`; branch `agent/c3-cofactor-chiral-certification-20261112`.
 - Worktree: `/home/thlinux/worktrees/c3-cofactor-chiral-certification-20261112`; pins unchanged (Lean 4.32.0, mathlib `81a5d257`, GreenFrame `cd2d838`).
 - PRs #316/#317 confirmed integrated; original dirty worktree preserved.
-- Latest code commit: `e4aa282` (pushed pending).
+- Latest code commit: `cd83061` (pushed).
 - Phase: exact C3/48 head/tail, completed tail bound, rational head boxes, and Gamma jet boxes through order 12.
 - New modules: previous 15 modules plus `GammaThirteen`.
 - Cofactor identity: exact 3×3 determinant/cofactor formula, including singular prefixes; positive-definite gate is explicitly conditional on `a>0`, prefix determinant `D>0`, and strict cofactor margin.
@@ -17,5 +17,8 @@
 - Recent validation fix: `C3Regression` now imports the actual existing synthetic negative-control theorem name `negative_control_not_posSemidef`.
 - Gamma: exact rational coefficient centers through index 12, a tightened rational `log 3` reference, and native Gamma jet enclosures through order 12 are proved; all use only `propext`, `Classical.choice`, `Quot.sound`.
 - Validation: `GammaThirteen.lean` compiled directly with `-DwarningAsError=true`; `#print axioms` reported only the three accepted foundational axioms.
-- Open: convolve head, elementary completion factors, and Gamma into completed source coefficient boxes through `c₆`; prove those source boxes contain the actual coefficients; unconditional cofactor margin; independent chiral-order-11 transport.
-- Next exact step: propagate the verified head/Gamma interval boxes through the original elementary completion and combine the completed tail error at M=48, then evaluate the cofactor gate.
+- New module: `CompletedBoxes48.lean` adds exact-rational interval addition, multiplication, reciprocal recurrence, powers, and convolutions without intermediate grid rounding; the completed finite head coefficients through jet order 12 are enclosed.
+- Validation: `CompletedBoxes48.lean` compiles with warnings as errors; all four public enclosure theorems audited to `[propext, Classical.choice, Quot.sound]`.
+- Diagnostic: exact Fraction propagation of the current head/Gamma reference boxes plus the existing `10⁻²⁰` tail allowance gives an odd cofactor-margin interval crossing zero (about `[-9.11e-32, 1.00e-31]`); this is a reproducible arithmetic diagnostic, not a Lean sign theorem.
+- Open: prove the full-source coefficient crosswalk through `c₆` including Gamma replacement and the original tail; independently certify the cofactor margin; chiral-order-11 transport.
+- Next exact step: formalize the completed-head jet/Gamma replacement crosswalk, use the original M=48 tail theorem to enclose native `c₀,…,c₆`, and check the resulting cofactor interval in Lean. If it crosses zero, report PARTIAL without a signal claim.
