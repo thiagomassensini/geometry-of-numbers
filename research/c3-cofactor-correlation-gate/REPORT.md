@@ -4,6 +4,7 @@
 
 This checkpoint continues branch `agent/c3-cofactor-correlation-gate-20261112`,
 based on `de8f044d78260fd4ba9f728c3bb313adfa0255df` (the merged PR #322 base).
+The certificate implementation is recorded in commit `1dc54c4`.
 It uses the original completed C3 characteristic, C3/48 head and boundary,
 original completion multiplier, native Gamma factor, and the finite coefficient
 candidate balls already present in `research/c3-cofactor-chiral-certification/`.

@@ -2,7 +2,7 @@
 
 - Phase: finite odd third-block source certificate completed; final validation is reproducible.
 - Branch: `agent/c3-cofactor-correlation-gate-20261112`; base `de8f044d78260fd4ba9f728c3bb313adfa0255df`.
-- Latest prior commit: `a4116b7`; continuation commit: `8b4268a`.
+- Latest prior commit: `a4116b7`; certificate implementation commit: `1dc54c4`.
 - New Lean modules: `ChartReciprocal`, `BaseCoefficient`, `CompletedCoefficient`, `CorrelationInterval`, `LeftJetMagnitudeLow/High`, `LeftJetMagnitude`, `BoundaryTransport`, `FiniteReferenceTable`, `SourceCoefficientGreen`.
 - Reused existing modules: `GammaHeadCrosswalk`, `C3CompletionTail48`, `GammaThirteen`, `IntervalGate`, `SourceGate`.
 - Proven: shared-variable completed coefficient polynomial and outward-rounded interval containment.
