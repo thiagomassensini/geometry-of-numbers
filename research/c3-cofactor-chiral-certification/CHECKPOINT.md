@@ -1,32 +1,18 @@
 # Checkpoint — C3 cofactor / third odd pivot
 
-- Original base: `origin/main` `1e0a6c80957fb7a1385cdb6a1869d04dbf40b64d`; original branch `agent/c3-cofactor-chiral-certification-20261112`.
-- PR #318 merged into `main` on 2026-11-12 at `21c24415de48b184f5ad0498f9ac28e7c64a8195`.
-- Provenance-only PR #319 merged into `main` at `d4df30eb426653121c42cfe1bcfed68d3ce9bfed`.
-- Crosswalk PR #320 merged into `main` on 2026-11-12 at `f5b403f31cc63a1f1a4af069180b0516f88841f1`.
-- Current continuation branch: `agent/c3-completed-crosswalk-20261112`, based on updated `main` at `d4df30e`.
-- Crosswalk commit: `f93a34a2eaa9ee6162758231b7a7171160009556` (pushed).
-- Worktree: `/home/thlinux/worktrees/c3-cofactor-chiral-certification-20261112`; pins unchanged (Lean 4.32.0, mathlib `81a5d257`, GreenFrame `cd2d838`).
-- PRs #316/#317 confirmed integrated; original dirty worktree preserved.
-- Latest code commit: `18da645`; final report/audit commit: `64a6169`; both are included in PR #318.
-- Phase: C3/48 head/tail and coefficient enclosures through order 12; exact quantitative transport from the native Gamma and completed tail to the original characteristic jets.
-- New continuation module: `GammaHeadCrosswalk.lean`.
-- Cofactor identity: exact 3×3 determinant/cofactor formula, including singular prefixes; positive-definite gate is explicitly conditional on `a>0`, prefix determinant `D>0`, and strict cofactor margin.
-- Canaries: positive conditional case; failing negative margin; singular-prefix identity; noncritical direction; reused synthetic negative control. No arbitrary-source positivity claim.
-- Interval gate: rational candidate boxes imply positive odd block margin and PosDef, but source inclusion in those boxes is unproved.
-- C3/48: exact doubled cell identity, finite window with both boundaries, boundary tends to zero, exact infinite decomposition into the original `realCpBracketCutoffTail` plus the order-26 lattice series, and exact 24-point stencil.
-- Completion: `completed_native_head_tail48` is an exact split using the original value multiplier and Gamma; `completed_tail48_jet_error_through_twelve` proves its tail contribution is at most `10⁻²⁰` for all orders 0…12 by the original multiplier bound and Cauchy.
-- Head: `accelerated_head48_jet_formula` identifies all 13 factorial-normalized jets with the exact finite material samples; rational interval propagation proves `head48_reference_contains` for every order 0…12, using sample addresses only through 169.
-- Order-26 series: summability, complex norm bound, and `M=48`, `k≤6` pre-Cauchy budget `≤10⁻²⁰`; this is not yet a completed-characteristic tail bound.
-- Validation: all 18 task modules compiled directly with `-DwarningAsError=true`; new head formula and interval theorems use only `propext`, `Classical.choice`, `Quot.sound`.
-- Recent validation fix: `C3Regression` now imports the actual existing synthetic negative-control theorem name `negative_control_not_posSemidef`.
-- Gamma: exact rational coefficient centers through index 12, a tightened rational `log 3` reference, and native Gamma jet enclosures through order 12 are proved; all use only `propext`, `Classical.choice`, `Quot.sound`.
-- Validation: `GammaThirteen.lean` compiled directly with `-DwarningAsError=true`; `#print axioms` reported only the three accepted foundational axioms.
-- New module: `CompletedBoxes48.lean` adds exact-rational interval addition, multiplication, reciprocal recurrence, powers, and convolutions without intermediate grid rounding; the completed finite head coefficients through jet order 12 are enclosed.
-- Validation: `CompletedBoxes48.lean` compiles with warnings as errors; all four public enclosure theorems audited to `[propext, Classical.choice, Quot.sound]`.
-- Diagnostic: `diagnose_completed_boxes48.py` exactly propagates the current head/Gamma-reference boxes plus the `10⁻²⁰` tail allowance; the odd margin crosses zero (about `[-9.11e-32, 1.00e-31]`). Gamma-native replacement error is not included; this is not a source sign theorem.
-- Crosswalk: exact head phase; Gamma replacement error is `Σ |leftRealJet48 j|·10⁻²⁴`; full characteristic jet error adds the proved original `10⁻²⁰` tail. All public theorem axioms are fundational only.
-- Diagnostic: exact Fraction propagation including Gamma replacement gives odd cofactor margin about `[-9.10708083e-32, 1.00488625e-31]`; it still crosses zero, so status remains PARTIAL.
-- Validation: all 19 research modules compiled with warnings as errors; `lake build --wfail` passed 8,850 jobs; foundation, geometry, and analysis audits passed; diagnostic and placeholder scan passed.
-- Open: independently prove a positive cofactor margin with tighter/correlated coefficient information; chiral-order-11 transport remains open.
-- Next exact step: preserve coefficient correlations through the nonlinear cofactor calculation and test whether that yields a strict positive margin; do not assert GREEN unless Lean closes the inequality.
+MISSÃO: certificar cofactorialmente o terceiro pivô ímpar pela fonte C3 completada e transportar ao saldo quiral.
+BASE_SHA: `e4f5de51cad523963a327c8295067f88fc7855fa` (`origin/main` após PR #320 e #321).
+BRANCH: `agent/c3-cofactor-chiral-certification-20261112-next`.
+HEAD_SHA: `e4f5de51cad523963a327c8295067f88fc7855fa` (branch recém-criada; árvore limpa).
+FASE: Checkpoint 0 concluído; Missão A ainda não satisfeita em dimensão geral.
+STATUS: PARTIAL; nenhum certificado de sinal para o terceiro pivô foi alegado.
+ÚLTIMO COMMIT: `e4f5de5` (main; PR #321, documentação de proveniência, integrada).
+ARQUIVOS NOVOS: nenhum nesta continuação; reutilizar `CofactorIdentity.lean`, `SchurGate.lean`, `GammaHeadCrosswalk.lean` e os módulos C3 existentes.
+TEOREMAS PROVADOS: identidade cofactorial 3×3 e vetor associado sem prefixo inversível; gate PosDef condicional; crosswalk Gamma/cauda até ordem 12. Falta a identidade abstrata para qualquer dimensão pedida na Missão A.
+BUILD QUE PASSOU: branch base contém validação de 19 módulos com warnings como erros, `lake build --wfail` (8.850 jobs) e três auditorias; são evidências do commit integrado anterior.
+CHECKS PENDENTES: compilar e auditar imediatamente o novo módulo geral; revisar a regressão abstrata e integrar seus imports no validador específico.
+BLOQUEIO ATUAL: nenhum.
+PRÓXIMA AÇÃO EXATA: provar, para `A : Matrix (Fin n)`, o determinante bordeado geral sem hipótese de invertibilidade, usando expansão de cofatores/Cramer, e deduzir as identidades do vetor cofactorial.
+
+Registros prévios integrados: PR #318 merge `21c24415de48b184f5ad0498f9ac28e7c64a8195`; PR #319 `d4df30eb426653121c42cfe1bcfed68d3ce9bfed`; PR #320 `f5b403f31cc63a1f1a4af069180b0516f88841f1`; PR #321 `e4f5de51cad523963a327c8295067f88fc7855fa`.
+Pins mantidos: Lean 4.32.0, mathlib `81a5d257`, GreenFrame `cd2d838`. A árvore original com alterações preexistentes segue preservada.
