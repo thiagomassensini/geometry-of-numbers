@@ -1,23 +1,17 @@
-# Checkpoint — certificação cofactorial C3
+# Checkpoint — C3 cofactor / third odd pivot
 
-- Fase atual: checkpoint C3/48 parcial concluído; próxima tarefa é transportar o tail de ordem 26 à cabeça/cauda da característica completada e obter jets até `c₆`.
-- Repositório: `thiagomassensini/geometry-of-numbers`; worktree `/home/thlinux/worktrees/c3-cofactor-chiral-certification-20261112`.
-- Branch `agent/c3-cofactor-chiral-certification-20261112`, base `origin/main` `1e0a6c80957fb7a1385cdb6a1869d04dbf40b64d`; PRs #316/#317 confirmadas.
-- Pins: Lean `v4.32.0`; mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`; GreenFrame `cd2d838bee67ad23f869a02f8ed9f0a0feb926fa`.
-- Árvore original preservada; trabalho somente na branch isolada. Cache Lean é ignorado por `.gitignore` local.
-- Commits publicados: `8c4287e` reconhecimento; `005f344` identidade cofactorial 3×3; `617bbad` gate condicional e canários.
-- Arquivos novos: `CofactorIdentity.lean`, `SchurGate.lean`, `C3Regression.lean`, `IntervalGate.lean`, `SourceGate.lean`, `C3Acceleration48.lean`, `C3Power26Step.lean`, `C3Power26Tail.lean`, `C3Power26Series.lean`, `.gitignore`.
-- Resultados: identidade do determinante e do vetor cofactorial 3×3, incluindo prefixo singular; critério condicional de PosDef via completar quadrados, sem inversa matricial.
-- Teorema de gate: `odd_third_posDef_of_cofactor_gate`; hipóteses incluem explicitamente `a>0`, `D>0` e margem cofactorial estrita.
-- Canários passaram: gate positivo; margem negativa rejeitada; prefixo singular na identidade; direção racional não crítica; controle sintético `1-u-u²` reutilizado de `CarrySourceBezout.regression_negative_control`.
-- `IntervalGate.lean` certifica por `norm_num` racional uma margem cofactorial candidata positiva e cotas inferiores positivas para a entrada inicial e o prefixo.
-- `SourceGate.lean` propaga rigorosamente as sete caixas candidatas para as entradas do bloco, o prefixo e a margem; prova positividade definida **condicional** às caixas. Não afirma que a fonte C3 satisfaz essas caixas.
-- `C3Acceleration48.lean` prova a identidade celular exata para qualquer sequência complexa, por composição `fd 12` da aceleração original; o kernel 26 aparece com o fator `1/729²`.
-- `C3Power26Step.lean`, `C3Power26Tail.lean` e `C3Power26Series.lean` provam o telescopamento independente, a cota de série na malha C3 e o orçamento racional `≤10⁻²⁰` em `M=48`, `k≤6` antes do multiplicador/Cauchy da característica completada.
-- Observação: a identidade cofactorial vale para qualquer direção `u`; logo escolher a direção racional não altera o sinal exato, podendo ajudar somente no condicionamento intervalar.
-- Validação Lean com `-DwarningAsError=true` passou nos nove módulos novos compilados explicitamente; axiomas impressos para o gate cofactorial e a identidade celular: somente `propext`, `Classical.choice`, `Quot.sound`.
-- Último commit publicado: `10bf6a4`; os módulos C3/48 e este checkpoint serão publicados em commit separado.
-- Limitação C3/48: ainda não foi provado o stencil explícito dos 24 pesos, nem a identidade cabeça+cauda original, multiplicador de completion e estimativa de Cauchy após esse multiplicador. O orçamento `10⁻²⁰` é somente para a série não completada de 26ª diferenças antes desses fatores.
-- Limitação física: não há nesta branch prova de que `nativeC 0…6` cai nas caixas candidatas; o limite de série não certifica os coeficientes da cabeça.
-- Próximo passo exato: formalizar `c3Boundary48` como o stencil original de 24 endereços e transportar a soma infinita à cabeça/cauda nativa; depois avaliar os jets 10 e 12.
-- Obrigações em aberto: identidade abstrata para dimensão arbitrária; caixas C3 correlacionadas até `c₆`; margem cofactorial incondicional; transporte quiral de ordem 11.
+- Base: `origin/main` `1e0a6c80957fb7a1385cdb6a1869d04dbf40b64d`; branch `agent/c3-cofactor-chiral-certification-20261112`.
+- Worktree: `/home/thlinux/worktrees/c3-cofactor-chiral-certification-20261112`; pins unchanged (Lean 4.32.0, mathlib `81a5d257`, GreenFrame `cd2d838`).
+- PRs #316/#317 confirmed integrated; original dirty worktree preserved.
+- Latest code commit: `f03d4ad` (pushed pending).
+- Phase: exact C3/48 infinite boundary decomposition proved for the original uncompleted bracket.
+- New modules: `CofactorIdentity`, `SchurGate`, `C3Regression`, `IntervalGate`, `SourceGate`, `C3Acceleration48`, `C3Power26Step`, `C3Power26Tail`, `C3Power26Series`, `C3Boundary48Finite`, `C3Boundary48Infinity`.
+- Cofactor identity: exact 3×3 determinant/cofactor formula, including singular prefixes; positive-definite gate is explicitly conditional on `a>0`, prefix determinant `D>0`, and strict cofactor margin.
+- Canaries: positive conditional case; failing negative margin; singular-prefix identity; noncritical direction; reused synthetic negative control. No arbitrary-source positivity claim.
+- Interval gate: rational candidate boxes imply positive odd block margin and PosDef, but source inclusion in those boxes is unproved.
+- C3/48: exact doubled cell identity, finite window with both boundaries, boundary tends to zero, and exact infinite decomposition into the original `realCpBracketCutoffTail` plus the order-26 lattice series.
+- Order-26 series: summability, complex norm bound, and `M=48`, `k≤6` pre-Cauchy budget `≤10⁻²⁰`; this is not yet a completed-characteristic tail bound.
+- Validation: all 11 task modules compiled directly with `-DwarningAsError=true`; public theorem axiom output only `propext`, `Classical.choice`, `Quot.sound`.
+- Recent validation fix: `C3Regression` now imports the actual existing synthetic negative-control theorem name `negative_control_not_posSemidef`.
+- Open: 24-address stencil equality; completion/Cauchy transport; completed source coefficient boxes through `c₆`; unconditional cofactor margin; independent chiral-order-11 transport.
+- Next exact step: prove `c3Boundary48` equals the 24 rational-weighted samples from addresses `a,…,a+23`, checking the supplied weights by Lean.
