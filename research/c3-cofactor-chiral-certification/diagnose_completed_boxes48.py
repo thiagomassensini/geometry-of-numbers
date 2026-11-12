@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-"""Exact Fraction diagnostic for the M=48 reference-jet cofactor interval.
+"""Exact Fraction diagnostic for the M=48 native-source cofactor interval.
 
 This reads the rational endpoints from the Lean source tables and repeats the
 same interval recurrences with Python's exact fractions.  It diagnoses whether
-these reference boxes can certify the odd third pivot.  The calculation does
-not include the native-Gamma replacement error, so it is not a source sign
-certificate; the Lean containment theorems remain the formal enclosure proof.
+these enclosures can certify the odd third pivot. It includes the exact
+head-dependent Gamma replacement allowance from
+`completed_native_jet_reference_error48` and the proved M=48 completion-tail
+allowance. It remains a diagnostic for the margin: the full seven coefficient
+boxes are not shown to imply a positive margin, so this is not a sign claim.
 """
 
 from __future__ import annotations
@@ -166,17 +168,23 @@ def main() -> None:
     with_reciprocal = [convolution(polynomial_exponential, reciprocal, n) for n in range(13)]
     with_head = [convolution(with_reciprocal, head, n) for n in range(13)]
     completed_reference = [convolution(with_head, gamma, n) for n in range(13)]
+    gamma_replacement_error = [
+        sum(max(abs(with_head[j][0]), abs(with_head[j][1])) for j in range(n + 1))
+        / 10**24
+        for n in range(13)
+    ]
 
     # For F(z)=C(z²), c_j is (-1)^j times the real even jet because the source
-    # variable includes the original i-phase.  The completion tail radius is
-    # the already-proved M=48 bound, added symmetrically here.
+    # variable includes the original i-phase. The head-dependent Gamma
+    # replacement error and the proved M=48 completion tail are both included.
     tail = Fraction(1, 10**20)
     coefficients: list[Interval] = []
     for j in range(7):
         coefficient = completed_reference[2 * j]
         if j % 2:
             coefficient = neg(coefficient)
-        coefficients.append((coefficient[0] - tail, coefficient[1] + tail))
+        radius = tail + gamma_replacement_error[2 * j]
+        coefficients.append((coefficient[0] - radius, coefficient[1] + radius))
 
     c = coefficients
     two = point(2)
@@ -226,8 +234,10 @@ def main() -> None:
     )
     margin = sub(mul(prefix, energy), adjugate)
 
-    print("Exact Fraction diagnostic: M=48 finite Gamma-reference head + tail radius.")
-    print("Native-Gamma replacement error is not included in these boxes.")
+    print("Exact Fraction diagnostic: M=48 head + native-Gamma replacement + completed tail.")
+    print("Gamma replacement allowances by jet order 0..12:")
+    for r, error in enumerate(gamma_replacement_error):
+        print(f"r={r}: {decimal(error)}")
     for j, interval in enumerate(coefficients):
         print(
             f"c{j}: [{decimal(interval[0])}, {decimal(interval[1])}] "

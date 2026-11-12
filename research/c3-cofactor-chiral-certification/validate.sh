@@ -46,6 +46,7 @@ modules=(
   C3Regression
   GammaThirteen
   CompletedBoxes48
+  GammaHeadCrosswalk
   SourceGate
 )
 
