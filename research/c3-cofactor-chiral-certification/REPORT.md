@@ -83,6 +83,7 @@ que contém zero. Este cálculo não inclui a substituição dos centros pela Ga
 - `git diff --check` e a varredura de `sorry`, `admit` e `native_decide` passaram.
 - `diagnose_completed_boxes48.py`: aritmética racional exata, reproduzível com Python padrão; sua saída é diagnóstica e não substitui a prova Lean de inclusão da fonte completa.
 - Commit de retomada: `18da645 feat(c3): propagate exact completed head coefficient boxes` (enviado à branch remota).
+- PR #318 foi mesclada em `main` em 2026-11-12; SHA do merge: `21c24415de48b184f5ad0498f9ac28e7c64a8195`. A PR continha os commits `18da645` e `64a6169` e manteve a classificação PARTIAL.
 - Não foram usados `sorry`, `admit`, `native_decide` ou axiomas novos.
 
 ## I. Próxima missão mínima
