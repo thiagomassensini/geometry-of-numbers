@@ -1,0 +1,31 @@
+# Checkpoint — TFVD/Bézout order compensation
+
+- Fase atual: Checkpoint 5 (C3) PARTIAL commitado; fase 6 documental concluída, preparando PR.
+- Base: `origin/main` `8f5631a7808ad7c73491b558a894566e1d39899c`; branch isolada `agent/tfvd-bezout-order-compensation-20261110`.
+- Árvore original preservada: os dois itens não rastreados preexistentes ficaram no clone original, sem alterações.
+- Pins: Lean `v4.32.0`; mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`; GreenFrame `cd2d838bee67ad23f869a02f8ed9f0a0feb926fa`.
+- PRs #41, #69, #70, #143, #144 e #145 foram confirmadas integradas ao `main`.
+- Reuso: `SourceBezout.lean`, `KernelBudget.lean`, `SourceMap.lean`, `SourceBlocks.lean`, `SourceSchur.lean`, `LiteralTfvd.lean`, `Repartition.lean` e resultados de `NativeRepartition64.lean`.
+- Commit do Checkpoint 1: `033b669f683fe033ff315f7ad83e870d3ff28b79`; Checkpoint 2: `78933afd622eb63c94af7055d56a1f104bae490a`.
+- Commit do Checkpoint 3: `69cb7ee` — determinante bordeado, lei de Schur e limiar; push confirmado ao remoto.
+- Commit do Checkpoint 4: `10aa06a` — lei de fronteira/head-tail TFVD; push confirmado ao remoto.
+- Commit do Checkpoint 5: `73c9cdc` — gates condicionais C3, auditoria de 37 teoremas e validação reproduzível; push confirmado.
+- Arquivos novos: `CoefficientLaw.lean`, `RankOneUpdate.lean`, `Regression.lean`, `BorderedDeterminant.lean`, `SchurThreshold.lean`, `TfvdBoundaryLaw.lean`, `FiniteC3Gate.lean`, `Audit.lean`, `REPORT.md`, `validate.sh`.
+- Lei geral provada para toda sequência real, ordem e setor: o coeficiente `m=2n+s+1` atualiza somente a última diagonal por `-m*c₀δ`.
+- Prefixo e acoplamento antigo invariantes; o determinante é afim mesmo com prefixo singular. O termo constante é o determinante após zerar apenas `cₘ`.
+- Schur é afim no coeficiente novo; limiar demonstrado como equivalência sob `c₀>0`, sem concluir seu sinal.
+- Ponte ao pivô nativo é condicional a `0<nativeC 0` e à invertibilidade do prefixo; fatores `c₀²` foram preservados via `sourceSchur_eq_scaled`.
+- `literal_head_tail` transporta exatamente `cₘ=Re H_M(m)+Re T_M(m)`; quatro cruzamentos, cutoffs independentes e repartição do bordo seguem os lemas PR70.
+- Regra suficiente formal: `J−m c₀ D Re H > m c₀ D ε` e `|Re T|≤ε`, com `m,c₀,D>0`, implica determinante positivo. A margem de cabeça segue aberta.
+- Regressões compiladas: blocos 2×2 e diagonais 3×3 par/ímpar; controle `1-u-u²` não semidefinido positivo.
+- Validação específica final: `bash research/tfvd-bezout-order-compensation/validate.sh` passou com código 0 e `warningAsError=true`; recompilou a cadeia PR70, C3Tail256 e todos os oito módulos da missão.
+- `Audit.lean` aplica `#assert_standard_axioms` e `#print axioms` aos 37 teoremas públicos; todos usam somente `propext`, `Classical.choice`, `Quot.sound`.
+- Arquivos adicionais da fase 5: `FiniteC3Gate.lean`, `Audit.lean`, `REPORT.md`; script `validate.sh` compila explicitamente a cadeia necessária e todos os módulos da missão.
+- Fase 5: `c₃` original de cauda/256 tem limite formal `10⁻²⁰` para índices até 6; os dois gates são condicionais à margem exata da cabeça. Diagnósticos C3 não intervalares não foram usados como prova; status PARTIAL nos dois setores.
+- `lake build --wfail` passou com 8.850 jobs após `lake exe cache get`; auditorias Foundation/Geometry/Analysis e `git diff --check` passaram.
+- `validate.sh` constrói explicitamente as bibliotecas auxiliares originais CPFormal, CarryGeometry, NativeCarrySpectralWeyl e GreenFrame e o alvo do operador antes de C3Tail256; esses projetos auxiliares não tiveram fontes alteradas.
+- Diagnóstico de setup: a primeira repetição revelou `.olean` auxiliares ausentes; a compilação das bibliotecas originais corrigiu a cadeia e a validação final passou.
+- `lake build --wfail` passou com 8.850 jobs após `lake exe cache get`; `audit-foundation.sh`, `audit-geometry.sh` e `audit-analysis.sh` passaram. Saídas completas em `/tmp/tfvd-audit-*.log` (fora do repositório).
+- Próximo passo exato: confirmar `git diff --check`, commitar relatório/checkpoint final, abrir PR contra `main` e inspecionar estado/CI e possibilidade de merge protegido.
+- Obrigações abertas: identificar o termo constante com `det(A)d<−bᵀadj(A)b`, obter caixas independentes para os jets C3 da cabeça nas ordens 10/12 e provar as margens correspondentes.
+- Sinal: nenhuma positividade all-order ou de terceiro pivô foi provada; equivalência/limiar não são prova de sinal.
