@@ -20,6 +20,17 @@ theorem fd_comp (m n : ℕ) (f : ℕ → ℂ) :
         _ = fd (m+1+n) f a := by
           rw [show m+n+1 = m+1+n by omega]
 
+/-- The doubled acceleration polynomial with the denominator `729^2`
+cleared. It applies in particular to the indeterminate of `Polynomial ℚ`.
+The middle factor is `729 * B(D)` in the forward-difference basis. -/
+theorem c3_acceleration48_polynomial {R : Type*} [CommRing R] (D : R) :
+    729^2 * D^2 =
+      (1 - (1 + D)^3) *
+        (-243*D + 243*D^2 - 162*D^3 + 81*D^4 - 27*D^5 +
+          9*D^7 - 9*D^8 + 6*D^9 - 3*D^10 + D^11) *
+        (729 + D^12) + D^26 := by
+  ring
+
 /-- Doubled boundary polynomial B(D)(1+D^12/729), kept in its original
 forward-difference form so the exact cell identity follows by reusing the
 already checked C3 acceleration. -/
@@ -35,6 +46,7 @@ theorem c3_acceleration48_cell (f : ℕ → ℂ) (a : ℕ) :
   unfold c3Boundary48
   linear_combination h0 + (1/729:ℂ) * h12
 
+#print axioms c3_acceleration48_polynomial
 #print axioms c3_acceleration48_cell
 
 end
