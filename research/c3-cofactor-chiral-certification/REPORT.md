@@ -12,6 +12,8 @@
 
 ## B. Resultados demonstrados em Lean
 
+- `GeneralCofactorIdentity.lean` prova para todo anel comutativo e todo tamanho finito a identidade do determinante bordeado, incluindo prefixos singulares e o caso de prefixo vazio. O mesmo módulo prova `B*w = (0,…,0,det B)` e `wᵀBw = det(A)*det(B)` para `w=(-adj(A)b,det A)`, sem hipótese de positividade nem inversibilidade.
+- `border_det_three_by_three` e `cofactorVector_three_by_three` recuperam, respectivamente, `D*g-d*e²+2*b*e*f-a*f²` e o vetor explícito `[b*f-d*e,b*e-a*f,D]` da fórmula geral.
 - `odd_third_cofactor_identity`: determinante do bloco simétrico 3×3 igual ao determinante do prefixo vezes a energia residual menos o termo da adjugata. Não requer que o prefixo seja invertível.
 - `odd_third_cofactor_vector_identity` e `odd_third_cofactor_vector_quadratic`: identidades exatas para o vetor cofactorial.
 - O módulo `SchurGate.lean` prova que a margem cofactorial positiva implica positividade definida do bloco 3×3 sob as hipóteses explícitas de prefixo positivo e determinante do prefixo positivo.
@@ -22,6 +24,20 @@
 - `GammaHeadCrosswalk.lean` demonstra a fase exata do head completado, o erro da substituição pela Gamma nativa como uma soma finita ponderada pelos jatos reais do head, e o transporte desse erro junto com a cauda `M=48` para os jatos da característica completada original. O único bound Gamma usado é `native_gamma_thirteen_boxes`.
 
 ## C. Identidade e porta cofactorial
+
+Em dimensão arbitrária, para `A : Matrix (Fin n) (Fin n) R`, `b : Fin n → R` e o bloco simétrico bordeado
+
+\[
+B=\begin{pmatrix}A&b\\b^{\mathsf T}&d\end{pmatrix},\qquad D=\det A,
+\]
+
+o novo módulo estabelece a identidade sem divisão
+
+\[
+\det B=Dd-\sum_i b_i(\operatorname{adj}(A)b)_i.
+\]
+
+Ela vale mesmo para `D=0`; a prova usa expansão de Laplace e uma permutação cíclica dos menores para Cramer. Também estabelece, para `w=(-adj(A)b,D)`, `B w=(0,…,0,det B)` e `w^{\mathsf T}Bw=D\det B`. São identidades algébricas, não desigualdades de sinal.
 
 Para
 
@@ -77,7 +93,8 @@ que contém zero. A inclusão do jato nativo completo na vizinhança de erro é 
 - `GammaThirteen.lean`: compilado com `lean -DwarningAsError=true`; auditoria de axiomas reportou apenas `propext`, `Classical.choice` e `Quot.sound`.
 - `CompletedBoxes48.lean`: compilado com `lean -DwarningAsError=true`; `chart_jet_box_exact`, `reciprocal_jet_box_exact`, `left_jet_box_exact48` e `completed_jet_box_exact48` usam apenas `propext`, `Classical.choice` e `Quot.sound`.
 - `GammaHeadCrosswalk.lean`: compilado com `lean -DwarningAsError=true`; os quatro teoremas públicos usam apenas `propext`, `Classical.choice` e `Quot.sound`.
-- `validate.sh`: recompilou os 19 módulos da pesquisa com warnings como erros, auditou axiomas, não encontrou placeholders proibidos e executou o diagnóstico racional.
+- `GeneralCofactorIdentity.lean`: compilado diretamente com warnings como erros; a auditoria dos seis teoremas públicos reportou apenas `propext`, `Classical.choice` e `Quot.sound`.
+- `validate.sh`: iniciado para recompilar os 20 módulos da pesquisa com warnings como erros, auditar axiomas, verificar placeholders e executar o diagnóstico racional; o resultado completo será registrado após a conclusão.
 - `lake build --wfail`: sucesso em todos os 8.850 alvos do projeto nesta continuação.
 - `bash scripts/audit-foundation.sh`, `bash scripts/audit-geometry.sh` e `bash scripts/audit-analysis.sh`: todos passaram. Fundação não encontrou axiomas; geometria respeitou seu conjunto permitido; análise respeitou os axiomas padrão.
 - `git diff --check` e a varredura de `sorry`, `admit` e `native_decide` passaram.
@@ -88,6 +105,7 @@ que contém zero. A inclusão do jato nativo completo na vizinhança de erro é 
 - Commit do crosswalk Gamma/cauda: `f93a34a2eaa9ee6162758231b7a7171160009556`, enviado à branch `agent/c3-completed-crosswalk-20261112`.
 - PR #320 foi mesclada em `main` em 2026-11-12; SHA do merge: `f5b403f31cc63a1f1a4af069180b0516f88841f1`. Ela incluiu o crosswalk, o relatório atualizado e o diagnóstico exato, mantendo PARTIAL.
 - Não foram usados `sorry`, `admit`, `native_decide` ou axiomas novos.
+- Continuação desta branch: `GeneralCofactorIdentity.lean` formaliza o lema bordeado geral e as identidades do vetor cofactorial. A inclusão do módulo no validador foi adicionada; a certificação C3 segue PARTIAL, sem novo resultado de sinal.
 
 ## I. Próxima missão mínima
 

@@ -40,6 +40,7 @@ modules=(
   C3CompletionTail48
   C3Head48Jet
   C3Head48Boxes
+  GeneralCofactorIdentity
   CofactorIdentity
   SchurGate
   IntervalGate
