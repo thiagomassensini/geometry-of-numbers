@@ -86,6 +86,7 @@ que contém zero. A inclusão do jato nativo completo na vizinhança de erro é 
 - PR #318 foi mesclada em `main` em 2026-11-12; SHA do merge: `21c24415de48b184f5ad0498f9ac28e7c64a8195`. A PR continha os commits `18da645` e `64a6169` e manteve a classificação PARTIAL.
 - PR #319, apenas de proveniência, foi mesclada em `main` no SHA `d4df30eb426653121c42cfe1bcfed68d3ce9bfed`.
 - Commit do crosswalk Gamma/cauda: `f93a34a2eaa9ee6162758231b7a7171160009556`, enviado à branch `agent/c3-completed-crosswalk-20261112`.
+- PR #320 foi mesclada em `main` em 2026-11-12; SHA do merge: `f5b403f31cc63a1f1a4af069180b0516f88841f1`. Ela incluiu o crosswalk, o relatório atualizado e o diagnóstico exato, mantendo PARTIAL.
 - Não foram usados `sorry`, `admit`, `native_decide` ou axiomas novos.
 
 ## I. Próxima missão mínima
