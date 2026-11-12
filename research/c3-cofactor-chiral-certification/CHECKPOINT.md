@@ -1,9 +1,10 @@
 # Checkpoint — C3 cofactor / third odd pivot
 
 - Base: `origin/main` `1e0a6c80957fb7a1385cdb6a1869d04dbf40b64d`; branch `agent/c3-cofactor-chiral-certification-20261112`.
+- PR #318 merged into `main` on 2026-11-12 at `21c24415de48b184f5ad0498f9ac28e7c64a8195`.
 - Worktree: `/home/thlinux/worktrees/c3-cofactor-chiral-certification-20261112`; pins unchanged (Lean 4.32.0, mathlib `81a5d257`, GreenFrame `cd2d838`).
 - PRs #316/#317 confirmed integrated; original dirty worktree preserved.
-- Latest code commit: `18da645` (pushed); report and validation artifacts are being committed now.
+- Latest code commit: `18da645`; final report/audit commit: `64a6169`; both are included in PR #318.
 - Phase: exact C3/48 head/tail, completed tail bound, rational head boxes, and Gamma jet boxes through order 12.
 - New modules: previous 15 modules plus `GammaThirteen`.
 - Cofactor identity: exact 3×3 determinant/cofactor formula, including singular prefixes; positive-definite gate is explicitly conditional on `a>0`, prefix determinant `D>0`, and strict cofactor margin.
