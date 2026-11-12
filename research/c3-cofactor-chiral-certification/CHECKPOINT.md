@@ -1,12 +1,14 @@
 # Checkpoint — C3 cofactor / third odd pivot
 
-- Base: `origin/main` `1e0a6c80957fb7a1385cdb6a1869d04dbf40b64d`; branch `agent/c3-cofactor-chiral-certification-20261112`.
+- Original base: `origin/main` `1e0a6c80957fb7a1385cdb6a1869d04dbf40b64d`; original branch `agent/c3-cofactor-chiral-certification-20261112`.
 - PR #318 merged into `main` on 2026-11-12 at `21c24415de48b184f5ad0498f9ac28e7c64a8195`.
+- Provenance-only PR #319 merged into `main` at `d4df30eb426653121c42cfe1bcfed68d3ce9bfed`.
+- Current continuation branch: `agent/c3-completed-crosswalk-20261112`, based on updated `main` at `d4df30e`.
 - Worktree: `/home/thlinux/worktrees/c3-cofactor-chiral-certification-20261112`; pins unchanged (Lean 4.32.0, mathlib `81a5d257`, GreenFrame `cd2d838`).
 - PRs #316/#317 confirmed integrated; original dirty worktree preserved.
 - Latest code commit: `18da645`; final report/audit commit: `64a6169`; both are included in PR #318.
-- Phase: exact C3/48 head/tail, completed tail bound, rational head boxes, and Gamma jet boxes through order 12.
-- New modules: previous 15 modules plus `GammaThirteen`.
+- Phase: C3/48 head/tail and coefficient enclosures through order 12; exact quantitative transport from the native Gamma and completed tail to the original characteristic jets.
+- New continuation module: `GammaHeadCrosswalk.lean`.
 - Cofactor identity: exact 3×3 determinant/cofactor formula, including singular prefixes; positive-definite gate is explicitly conditional on `a>0`, prefix determinant `D>0`, and strict cofactor margin.
 - Canaries: positive conditional case; failing negative margin; singular-prefix identity; noncritical direction; reused synthetic negative control. No arbitrary-source positivity claim.
 - Interval gate: rational candidate boxes imply positive odd block margin and PosDef, but source inclusion in those boxes is unproved.
@@ -21,8 +23,8 @@
 - New module: `CompletedBoxes48.lean` adds exact-rational interval addition, multiplication, reciprocal recurrence, powers, and convolutions without intermediate grid rounding; the completed finite head coefficients through jet order 12 are enclosed.
 - Validation: `CompletedBoxes48.lean` compiles with warnings as errors; all four public enclosure theorems audited to `[propext, Classical.choice, Quot.sound]`.
 - Diagnostic: `diagnose_completed_boxes48.py` exactly propagates the current head/Gamma-reference boxes plus the `10⁻²⁰` tail allowance; the odd margin crosses zero (about `[-9.11e-32, 1.00e-31]`). Gamma-native replacement error is not included; this is not a source sign theorem.
-- Open: prove the full-source coefficient crosswalk through `c₆` including Gamma replacement and the original tail; independently certify the cofactor margin; chiral-order-11 transport.
-- Next exact step: formalize the completed-head jet/Gamma replacement crosswalk, use the original M=48 tail theorem to enclose native `c₀,…,c₆`, and check the resulting cofactor interval in Lean. If it crosses zero, report PARTIAL without a signal claim.
-- Validation: `lake build --wfail` passed all 8,857 jobs; `scripts/audit-foundation.sh`, `scripts/audit-geometry.sh`, and `scripts/audit-analysis.sh` all passed.
-- Validation: `validate.sh` compiled all 18 research modules, audited the new axioms, found no forbidden placeholders, and ran the exact Fraction diagnostic; `git diff --check` passed.
-- Consolidation: `REPORT.md`, `validate.sh`, and `diagnose_completed_boxes48.py` are complete; this is a PARTIAL handoff, not a source sign certification.
+- Crosswalk: exact head phase; Gamma replacement error is `Σ |leftRealJet48 j|·10⁻²⁴`; full characteristic jet error adds the proved original `10⁻²⁰` tail. All public theorem axioms are fundational only.
+- Diagnostic: exact Fraction propagation including Gamma replacement gives odd cofactor margin about `[-9.10708083e-32, 1.00488625e-31]`; it still crosses zero, so status remains PARTIAL.
+- Validation: all 19 research modules compiled with warnings as errors; `lake build --wfail` passed 8,850 jobs; foundation, geometry, and analysis audits passed; diagnostic and placeholder scan passed.
+- Open: independently prove a positive cofactor margin with tighter/correlated coefficient information; chiral-order-11 transport remains open.
+- Next exact step: preserve coefficient correlations through the nonlinear cofactor calculation and test whether that yields a strict positive margin; do not assert GREEN unless Lean closes the inequality.
