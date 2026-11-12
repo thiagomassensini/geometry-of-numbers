@@ -1,0 +1,403 @@
+import ChartReciprocal
+
+namespace C3CofactorCorrelation
+
+open CarryC3Boxes CarryC3Tail CarryC3Gamma C3Cofactor
+open scoped BigOperators
+
+noncomputable section
+set_option autoImplicit false
+set_option maxHeartbeats 12000000
+set_option maxRecDepth 30000
+
+def normalizedPolynomialCoefficientQ (i : ℕ) : ℚ :=
+  if i = 0 then 1 else if i = 2 then -4 else 0
+
+def normalizedExponentialCoefficientQ (e : ℕ) : ℚ :=
+  (-1 / 2 : ℚ) ^ e / (e.factorial : ℚ)
+
+def normalizedOuterBasePolynomialCoefficientBoxTable : Fin 13 → Fin 13 → Box := ![
+  ![
+    ⟨1 / 1, 1000000000000000000000001 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩
+  ],
+  ![
+    ⟨2599344583898510502872449 / 1000000000000000000000000, 51986891677970210057449 / 20000000000000000000000⟩,
+    ⟨-1 / 2, -499999999999999999999999 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩
+  ],
+  ![
+    ⟨664378157332810880531001 / 500000000000000000000000, 1328756314665621761062003 / 1000000000000000000000000⟩,
+    ⟨-51986891677970210057449 / 40000000000000000000000, -20307379561707113303691 / 15625000000000000000000⟩,
+    ⟨1 / 8, 125000000000000000000001 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩
+  ],
+  ![
+    ⟨265337257514798631368543 / 1000000000000000000000000, 8291789297337457230267 / 31250000000000000000000⟩,
+    ⟨-332189078666405440265501 / 500000000000000000000000, -664378157332810880531001 / 1000000000000000000000000⟩,
+    ⟨20307379561707113303691 / 62500000000000000000000, 324918072987313812859057 / 1000000000000000000000000⟩,
+    ⟨-10416666666666666666667 / 500000000000000000000000, -20833333333333333333333 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩
+  ],
+  ![
+    ⟨7990169319853565223113 / 1000000000000000000000000, 3995084659926782611557 / 500000000000000000000000⟩,
+    ⟨-8291789297337457230267 / 62500000000000000000000, -132668628757399315684271 / 1000000000000000000000000⟩,
+    ⟨664378157332810880531 / 4000000000000000000000, 166094539333202720132751 / 1000000000000000000000000⟩,
+    ⟨-54153012164552302143177 / 1000000000000000000000000, -6769126520569037767897 / 125000000000000000000000⟩,
+    ⟨1302083333333333333333 / 500000000000000000000000, 2604166666666666666667 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩
+  ],
+  ![
+    ⟨-631018797664604085549 / 125000000000000000000000, -5048150381316832684391 / 1000000000000000000000000⟩,
+    ⟨-3995084659926782611557 / 1000000000000000000000000, -998771164981695652889 / 250000000000000000000000⟩,
+    ⟨33167157189349828921067 / 1000000000000000000000000, 8291789297337457230267 / 250000000000000000000000⟩,
+    ⟨-27682423222200453355459 / 1000000000000000000000000, -13841211611100226677729 / 500000000000000000000000⟩,
+    ⟨6769126520569037767897 / 1000000000000000000000000, 3384563260284518883949 / 500000000000000000000000⟩,
+    ⟨-260416666666666666667 / 1000000000000000000000000, -130208333333333333333 / 500000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩
+  ],
+  ![
+    ⟨-37124513580427738913 / 100000000000000000000000, -371245135804277389129 / 1000000000000000000000000⟩,
+    ⟨504815038131683268439 / 200000000000000000000000, 631018797664604085549 / 250000000000000000000000⟩,
+    ⟨998771164981695652889 / 1000000000000000000000000, 99877116498169565289 / 100000000000000000000000⟩,
+    ⟨-2763929765779152410089 / 500000000000000000000000, -5527859531558304820177 / 1000000000000000000000000⟩,
+    ⟨432537862846882083679 / 125000000000000000000000, 3460302902775056669433 / 1000000000000000000000000⟩,
+    ⟨-67691265205690377679 / 100000000000000000000000, -676912652056903776789 / 1000000000000000000000000⟩,
+    ⟨2712673611111111111 / 125000000000000000000000, 21701388888888888889 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩
+  ],
+  ![
+    ⟨13238055396239603641 / 100000000000000000000000, 132380553962396036411 / 1000000000000000000000000⟩,
+    ⟨46405641975534673641 / 250000000000000000000000, 37124513580427738913 / 200000000000000000000000⟩,
+    ⟨-631018797664604085549 / 1000000000000000000000000, -157754699416151021387 / 250000000000000000000000⟩,
+    ⟨-33292372166056521763 / 200000000000000000000000, -83230930415141304407 / 500000000000000000000000⟩,
+    ⟨345491220722394051261 / 500000000000000000000000, 690982441444788102523 / 1000000000000000000000000⟩,
+    ⟨-2703361642793013023 / 7812500000000000000000, -346030290277505666943 / 1000000000000000000000000⟩,
+    ⟨11281877534281729613 / 200000000000000000000000, 28204693835704324033 / 500000000000000000000000⟩,
+    ⟨-31001984126984127 / 20000000000000000000000, -1550099206349206349 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩
+  ],
+  ![
+    ⟨1506971551181795367 / 100000000000000000000000, 15069715511817953671 / 1000000000000000000000000⟩,
+    ⟨-33095138490599009103 / 500000000000000000000000, -13238055396239603641 / 200000000000000000000000⟩,
+    ⟨-23202820987767336821 / 500000000000000000000000, -46405641975534673641 / 1000000000000000000000000⟩,
+    ⟨105169799610767347591 / 1000000000000000000000000, 13146224951345918449 / 125000000000000000000000⟩,
+    ⟨20807732603785326101 / 1000000000000000000000000, 10403866301892663051 / 500000000000000000000000⟩,
+    ⟨-69098244144478810253 / 1000000000000000000000000, -17274561036119702563 / 250000000000000000000000⟩,
+    ⟨5767171504625094449 / 200000000000000000000000, 14417928761562736123 / 500000000000000000000000⟩,
+    ⟨-1007310494132297287 / 250000000000000000000000, -4029241976529189147 / 1000000000000000000000000⟩,
+    ⟨24220300099206349 / 250000000000000000000000, 96881200396825397 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩
+  ],
+  ![
+    ⟨-3501713794815342457 / 1000000000000000000000000, -437714224351917807 / 125000000000000000000000⟩,
+    ⟨-1883714438977244209 / 250000000000000000000000, -1506971551181795367 / 200000000000000000000000⟩,
+    ⟨16547569245299504551 / 1000000000000000000000000, 2068446155662438069 / 125000000000000000000000⟩,
+    ⟨7734273662589112273 / 1000000000000000000000000, 3867136831294556137 / 500000000000000000000000⟩,
+    ⟨-13146224951345918449 / 1000000000000000000000000, -821639059459119903 / 62500000000000000000000⟩,
+    ⟨-2080773260378532611 / 1000000000000000000000000, -208077326037853261 / 100000000000000000000000⟩,
+    ⟨2879093506019950427 / 500000000000000000000000, 1151637402407980171 / 200000000000000000000000⟩,
+    ⟨-2059704108794676589 / 1000000000000000000000000, -514926027198669147 / 250000000000000000000000⟩,
+    ⟨251827623533074321 / 1000000000000000000000000, 125913811766537161 / 500000000000000000000000⟩,
+    ⟨-1076457782186949 / 200000000000000000000000, -672786113866843 / 125000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩
+  ],
+  ![
+    ⟨-561567433439878447 / 1000000000000000000000000, -112313486687975689 / 200000000000000000000000⟩,
+    ⟨437714224351917807 / 250000000000000000000000, 1750856897407671229 / 1000000000000000000000000⟩,
+    ⟨117732152436077763 / 62500000000000000000000, 1883714438977244209 / 1000000000000000000000000⟩,
+    ⟨-1378964103774958713 / 500000000000000000000000, -110317128301996697 / 40000000000000000000000⟩,
+    ⟨-193356841564727807 / 200000000000000000000000, -483392103911819517 / 500000000000000000000000⟩,
+    ⟨328655623783647961 / 250000000000000000000000, 262924499026918369 / 200000000000000000000000⟩,
+    ⟨3467955433964221 / 20000000000000000000000, 173397771698211051 / 1000000000000000000000000⟩,
+    ⟨-411299072288564347 / 1000000000000000000000000, -205649536144282173 / 500000000000000000000000⟩,
+    ⟨64365753399833643 / 500000000000000000000000, 128731506799667287 / 1000000000000000000000000⟩,
+    ⟨-13990423529615241 / 1000000000000000000000000, -349760588240381 / 25000000000000000000000⟩,
+    ⟨269114445546737 / 1000000000000000000000000, 134557222773369 / 500000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩
+  ],
+  ![
+    ⟨88812556527625307 / 1000000000000000000000000, 88812556527625311 / 1000000000000000000000000⟩,
+    ⟨140391858359969611 / 500000000000000000000000, 35097964589992403 / 125000000000000000000000⟩,
+    ⟨-27357139021994863 / 62500000000000000000000, -437714224351917807 / 1000000000000000000000000⟩,
+    ⟨-313952406496207369 / 1000000000000000000000000, -39244050812025921 / 125000000000000000000000⟩,
+    ⟨172370512971869839 / 500000000000000000000000, 344741025943739679 / 1000000000000000000000000⟩,
+    ⟨96678420782363903 / 1000000000000000000000000, 377650081181109 / 3906250000000000000000⟩,
+    ⟨-109551874594549321 / 1000000000000000000000000, -2738796864863733 / 25000000000000000000000⟩,
+    ⟨-1238555512130079 / 100000000000000000000000, -12385555121300789 / 1000000000000000000000000⟩,
+    ⟨25706192018035271 / 1000000000000000000000000, 3213274002254409 / 125000000000000000000000⟩,
+    ⟨-3575875188879647 / 500000000000000000000000, -7151750377759293 / 1000000000000000000000000⟩,
+    ⟨349760588240381 / 500000000000000000000000, 699521176480763 / 1000000000000000000000000⟩,
+    ⟨-12232474797579 / 1000000000000000000000000, -6116237398789 / 500000000000000000000000⟩,
+    ⟨0 / 1, 1 / 1000000000000000000000000⟩
+  ],
+  ![
+    ⟨19715876023912019 / 1000000000000000000000000, 1971587602391203 / 100000000000000000000000⟩,
+    ⟨-2775392391488291 / 62500000000000000000000, -44406278263812653 / 1000000000000000000000000⟩,
+    ⟨-35097964589992403 / 500000000000000000000000, -14039185835996961 / 200000000000000000000000⟩,
+    ⟨36476185362659817 / 500000000000000000000000, 14590474145063927 / 200000000000000000000000⟩,
+    ⟨39244050812025921 / 1000000000000000000000000, 19622025406012961 / 500000000000000000000000⟩,
+    ⟨-2154631412148373 / 62500000000000000000000, -34474102594373967 / 1000000000000000000000000⟩,
+    ⟨-125883360393703 / 15625000000000000000000, -8056535065196991 / 1000000000000000000000000⟩,
+    ⟨1565026779922133 / 200000000000000000000000, 3912566949805333 / 500000000000000000000000⟩,
+    ⟨774097195081299 / 1000000000000000000000000, 7740971950813 / 10000000000000000000000⟩,
+    ⟨-714060889389869 / 500000000000000000000000, -1428121778779737 / 1000000000000000000000000⟩,
+    ⟨89396879721991 / 250000000000000000000000, 71517503777593 / 200000000000000000000000⟩,
+    ⟨-15898208556381 / 500000000000000000000000, -31796417112761 / 1000000000000000000000000⟩,
+    ⟨509686449899 / 1000000000000000000000000, 5096864499 / 10000000000000000000000⟩
+  ]
+]
+
+def normalizedOuterBasePolynomialCoefficientBoxCalc (n e : ℕ) : Box :=
+  if e ≤ n then
+    exactRangeSumBox (fun i =>
+      if i + e ≤ n then
+        (Box.point (normalizedPolynomialCoefficientQ i)).mul
+          ((Box.point (normalizedExponentialCoefficientQ e)).mul
+            (normalizedChartReciprocalBox (n - i - e)))
+      else Box.point 0) n
+  else Box.point 0
+
+def normalizedOuterBasePolynomialCoefficientBox (n e : ℕ) : Box :=
+  if hn : n < 13 then
+    if he : e < 13 then
+      normalizedOuterBasePolynomialCoefficientBoxTable ⟨n, hn⟩ ⟨e, he⟩
+    else normalizedOuterBasePolynomialCoefficientBoxCalc n e
+  else normalizedOuterBasePolynomialCoefficientBoxCalc n e
+
+theorem normalized_outer_base_polynomial_coefficient_box_row_0 (e : Fin 13) :
+    (normalizedOuterBasePolynomialCoefficientBoxCalc 0 e.val).Subset
+      (normalizedOuterBasePolynomialCoefficientBoxTable 0 e) := by
+  fin_cases e <;> decide +kernel
+
+theorem normalized_outer_base_polynomial_coefficient_box_row_1 (e : Fin 13) :
+    (normalizedOuterBasePolynomialCoefficientBoxCalc 1 e.val).Subset
+      (normalizedOuterBasePolynomialCoefficientBoxTable 1 e) := by
+  fin_cases e <;> decide +kernel
+
+theorem normalized_outer_base_polynomial_coefficient_box_row_2 (e : Fin 13) :
+    (normalizedOuterBasePolynomialCoefficientBoxCalc 2 e.val).Subset
+      (normalizedOuterBasePolynomialCoefficientBoxTable 2 e) := by
+  fin_cases e <;> decide +kernel
+
+theorem normalized_outer_base_polynomial_coefficient_box_row_3 (e : Fin 13) :
+    (normalizedOuterBasePolynomialCoefficientBoxCalc 3 e.val).Subset
+      (normalizedOuterBasePolynomialCoefficientBoxTable 3 e) := by
+  fin_cases e <;> decide +kernel
+
+theorem normalized_outer_base_polynomial_coefficient_box_row_4 (e : Fin 13) :
+    (normalizedOuterBasePolynomialCoefficientBoxCalc 4 e.val).Subset
+      (normalizedOuterBasePolynomialCoefficientBoxTable 4 e) := by
+  fin_cases e <;> decide +kernel
+
+theorem normalized_outer_base_polynomial_coefficient_box_row_5 (e : Fin 13) :
+    (normalizedOuterBasePolynomialCoefficientBoxCalc 5 e.val).Subset
+      (normalizedOuterBasePolynomialCoefficientBoxTable 5 e) := by
+  fin_cases e <;> decide +kernel
+
+theorem normalized_outer_base_polynomial_coefficient_box_row_6 (e : Fin 13) :
+    (normalizedOuterBasePolynomialCoefficientBoxCalc 6 e.val).Subset
+      (normalizedOuterBasePolynomialCoefficientBoxTable 6 e) := by
+  fin_cases e <;> decide +kernel
+
+theorem normalized_outer_base_polynomial_coefficient_box_row_7 (e : Fin 13) :
+    (normalizedOuterBasePolynomialCoefficientBoxCalc 7 e.val).Subset
+      (normalizedOuterBasePolynomialCoefficientBoxTable 7 e) := by
+  fin_cases e <;> decide +kernel
+
+theorem normalized_outer_base_polynomial_coefficient_box_row_8 (e : Fin 13) :
+    (normalizedOuterBasePolynomialCoefficientBoxCalc 8 e.val).Subset
+      (normalizedOuterBasePolynomialCoefficientBoxTable 8 e) := by
+  fin_cases e <;> decide +kernel
+
+theorem normalized_outer_base_polynomial_coefficient_box_row_9 (e : Fin 13) :
+    (normalizedOuterBasePolynomialCoefficientBoxCalc 9 e.val).Subset
+      (normalizedOuterBasePolynomialCoefficientBoxTable 9 e) := by
+  fin_cases e <;> decide +kernel
+
+theorem normalized_outer_base_polynomial_coefficient_box_row_10 (e : Fin 13) :
+    (normalizedOuterBasePolynomialCoefficientBoxCalc 10 e.val).Subset
+      (normalizedOuterBasePolynomialCoefficientBoxTable 10 e) := by
+  fin_cases e <;> decide +kernel
+
+theorem normalized_outer_base_polynomial_coefficient_box_row_11 (e : Fin 13) :
+    (normalizedOuterBasePolynomialCoefficientBoxCalc 11 e.val).Subset
+      (normalizedOuterBasePolynomialCoefficientBoxTable 11 e) := by
+  fin_cases e <;> decide +kernel
+
+theorem normalized_outer_base_polynomial_coefficient_box_row_12 (e : Fin 13) :
+    (normalizedOuterBasePolynomialCoefficientBoxCalc 12 e.val).Subset
+      (normalizedOuterBasePolynomialCoefficientBoxTable 12 e) := by
+  fin_cases e <;> decide +kernel
+
+theorem normalized_outer_base_polynomial_coefficient_box_table_bound
+    (n e : Fin 13) :
+    (normalizedOuterBasePolynomialCoefficientBoxCalc n.val e.val).Subset
+      (normalizedOuterBasePolynomialCoefficientBoxTable n e) := by
+  fin_cases n
+  · exact normalized_outer_base_polynomial_coefficient_box_row_0 e
+  · exact normalized_outer_base_polynomial_coefficient_box_row_1 e
+  · exact normalized_outer_base_polynomial_coefficient_box_row_2 e
+  · exact normalized_outer_base_polynomial_coefficient_box_row_3 e
+  · exact normalized_outer_base_polynomial_coefficient_box_row_4 e
+  · exact normalized_outer_base_polynomial_coefficient_box_row_5 e
+  · exact normalized_outer_base_polynomial_coefficient_box_row_6 e
+  · exact normalized_outer_base_polynomial_coefficient_box_row_7 e
+  · exact normalized_outer_base_polynomial_coefficient_box_row_8 e
+  · exact normalized_outer_base_polynomial_coefficient_box_row_9 e
+  · exact normalized_outer_base_polynomial_coefficient_box_row_10 e
+  · exact normalized_outer_base_polynomial_coefficient_box_row_11 e
+  · exact normalized_outer_base_polynomial_coefficient_box_row_12 e
+
+theorem normalized_polynomial_coefficient_point (i : ℕ) :
+    (Box.point (normalizedPolynomialCoefficientQ i)).Contains
+      (normalizedPolynomialJet i) := by
+  by_cases h0 : i = 0
+  · subst i
+    simpa [normalizedPolynomialCoefficientQ, normalizedPolynomialJet] using
+      (Box.point_contains (1 : ℚ))
+  · by_cases h2 : i = 2
+    · subst i
+      simpa [normalizedPolynomialCoefficientQ, normalizedPolynomialJet] using
+        (Box.point_contains (-4 : ℚ))
+    · simp [normalizedPolynomialCoefficientQ, normalizedPolynomialJet, h0, h2,
+        Box.point, Box.Contains]
+
+theorem normalized_exponential_coefficient_point (e : ℕ) :
+    (Box.point (normalizedExponentialCoefficientQ e)).Contains
+      (((-1 / 2 : ℝ) ^ e) / (e.factorial : ℝ)) := by
+  have hcast : ((normalizedExponentialCoefficientQ e : ℚ) : ℝ) =
+      ((-1 / 2 : ℝ) ^ e) / (e.factorial : ℝ) := by
+    simp [normalizedExponentialCoefficientQ, Rat.cast_div, Rat.cast_pow,
+      Rat.cast_ofNat, Rat.cast_neg, Rat.cast_one, Rat.cast_natCast]
+  rw [← hcast]
+  exact Box.point_contains _
+
+theorem normalized_outer_base_polynomial_coefficient_box_calc_contains
+    (n e : ℕ) :
+    (normalizedOuterBasePolynomialCoefficientBoxCalc n e).Contains
+      (normalizedOuterBasePolynomialCoeff chartRatio (Real.log 3) n e) := by
+  by_cases he : e ≤ n
+  · rw [normalizedOuterBasePolynomialCoefficientBoxCalc, if_pos he]
+    unfold normalizedOuterBasePolynomialCoeff
+    rw [if_pos he]
+    apply exact_range_sum_box_contains
+    intro i hi
+    by_cases hie : i + e ≤ n
+    · rw [if_pos hie]
+      have hinner := Box.mul_contains
+        (normalized_exponential_coefficient_point e)
+        (normalized_chart_reciprocal_box_contains (n - i - e))
+      have houter := Box.mul_contains (normalized_polynomial_coefficient_point i) hinner
+      simpa [normalizedOuterBasePolynomialCoefficientBoxCalc, hie] using houter
+    · rw [if_neg hie]
+      simp only [Box.point, Box.Contains, Rat.cast_zero]
+      simp [hie]
+  · rw [normalizedOuterBasePolynomialCoefficientBoxCalc, if_neg he]
+    unfold normalizedOuterBasePolynomialCoeff
+    rw [if_neg he]
+    simp [Box.point, Box.Contains]
+
+theorem normalized_outer_base_polynomial_coefficient_box_contains
+    (n e : ℕ) :
+    (normalizedOuterBasePolynomialCoefficientBox n e).Contains
+      (normalizedOuterBasePolynomialCoeff chartRatio (Real.log 3) n e) := by
+  have hcalc := normalized_outer_base_polynomial_coefficient_box_calc_contains n e
+  by_cases hn : n < 13
+  · by_cases he : e < 13
+    · have htable := normalized_outer_base_polynomial_coefficient_box_table_bound
+        ⟨n, hn⟩ ⟨e, he⟩
+      have hout := Box.subset_contains htable hcalc
+      simpa [normalizedOuterBasePolynomialCoefficientBox, hn, he] using hout
+    · simpa [normalizedOuterBasePolynomialCoefficientBox, hn, he] using hcalc
+  · simpa [normalizedOuterBasePolynomialCoefficientBox, hn] using hcalc
+
+def normalizedOuterBasePolynomialBox (n : ℕ) : Box :=
+  exactRangeSumBox (fun e => (normalizedOuterBasePolynomialCoefficientBox n e).mul
+    (powBoxExact piLogReference e)) n
+
+theorem normalized_outer_base_polynomial_box_contains (n : Fin 13) :
+    (normalizedOuterBasePolynomialBox n.val).Contains
+      (normalizedOuterBaseHorner (Real.log Real.pi) chartRatio (Real.log 3) n.val) := by
+  unfold normalizedOuterBasePolynomialBox normalizedOuterBaseHorner
+  apply exact_range_sum_box_contains
+  intro e he
+  exact Box.mul_contains
+    (normalized_outer_base_polynomial_coefficient_box_contains n.val e)
+    (powBoxExact_contains pi_log_reference_contains e)
+
+theorem normalized_outer_base_box_contains (n : Fin 13) :
+    (normalizedOuterBasePolynomialBox n.val).Contains
+      (normalizedOuterBaseJet (Real.log Real.pi) chartRatio (Real.log 3) n.val) := by
+  rw [normalizedOuterBaseJet_eq_horner n (Real.log Real.pi) chartRatio (Real.log 3)]
+  exact normalized_outer_base_polynomial_box_contains n
+
+
+end
+end C3CofactorCorrelation

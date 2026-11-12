@@ -238,6 +238,12 @@ theorem normalizedOuterBaseJet_eq_horner (r : Fin 13) (p q ell : ℝ) :
       normalizedExponentialJet, normalizedChartReciprocal, convolution,
       reciprocalJet, Finset.sum_range_succ] <;> ring
 
+theorem convolution_cross_through_twelve (r : Fin 13)
+    (a b c : ℕ → ℝ) :
+    convolution (convolution a b) c r.val =
+      convolution b (convolution a c) r.val := by
+  fin_cases r <;> simp [convolution, Finset.sum_range_succ] <;> ring
+
 def normalizedGammaJet (r : ℕ) : ℝ :=
   if hr : r < 13 then
     (gammaRealReference13 ⟨r, hr⟩ : ℝ) /
@@ -270,9 +276,25 @@ theorem gammaReferenceJet_eq_normalized (r : ℕ) (hr : r < 13) :
           (gammaRealReference13 ⟨0, by omega⟩ : ℝ)⁻¹) := by
           rw [mul_comm _ (gammaRealReference13 ⟨r, hr⟩ : ℝ)]
 
-def normalizedCompletedJet48 (r : ℕ) : ℝ :=
-  convolution (normalizedLeftJet48 (Real.log Real.pi) chartRatio (Real.log 3))
+def normalizedOuterCompletedJet48 (r : ℕ) : ℝ :=
+  convolution (normalizedOuterBaseJet (Real.log Real.pi) chartRatio (Real.log 3))
     normalizedGammaJet r
+
+def normalizedCompletedJet48 (r : ℕ) : ℝ :=
+  convolution head48RealJet normalizedOuterCompletedJet48 r
+
+theorem normalizedCompleted_group (r : Fin 13) :
+    convolution (normalizedLeftJet48 (Real.log Real.pi) chartRatio (Real.log 3))
+      normalizedGammaJet r.val = normalizedCompletedJet48 r.val := by
+  change convolution
+      (convolution (normalizedOuterBaseJet (Real.log Real.pi) chartRatio (Real.log 3))
+        head48RealJet) normalizedGammaJet r.val =
+    convolution head48RealJet
+      (convolution (normalizedOuterBaseJet (Real.log Real.pi) chartRatio (Real.log 3))
+        normalizedGammaJet) r.val
+  exact convolution_cross_through_twelve r
+    (normalizedOuterBaseJet (Real.log Real.pi) chartRatio (Real.log 3))
+    head48RealJet normalizedGammaJet
 
 def completedJet48Scale : ℝ := leftJet48Scale * gammaReferenceScale
 
@@ -294,11 +316,10 @@ theorem finiteCompletedRealJet48_eq_normalized (r : Fin 13) :
     intro j hj
     have hjr : j ≤ r.val := Nat.le_of_lt_succ (Finset.mem_range.mp hj)
     simp only [dif_pos (by omega : r.val-j < 13)]
-  unfold normalizedCompletedJet48 completedJet48Scale
+  unfold completedJet48Scale
   rw [hsum, hl, hg]
-  exact convolution_scale_both
-    (normalizedLeftJet48 (Real.log Real.pi) chartRatio (Real.log 3))
-    normalizedGammaJet leftJet48Scale gammaReferenceScale r.val
+  rw [convolution_scale_both]
+  rw [normalizedCompleted_group r]
 
 end
 end C3CofactorCorrelation

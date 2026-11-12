@@ -187,6 +187,13 @@ def main() -> None:
     left_abs = [max(abs(lo), abs(hi)) for lo, hi in left_real_jet]
     if any(x > 3 for x in left_abs):
         raise AssertionError("left-jet bound required for the Gamma ledger failed")
+    print("left-jet absolute bounds from the shared exact-rational enclosure:")
+    for j, value in enumerate(left_abs):
+        grid = 10**6
+        bound = F((value * grid).numerator // (value * grid).denominator + 1, grid)
+        print(f"  j={j}: < {bound.numerator}/{bound.denominator} ({decimal(bound)})")
+    left_abs_total = sum(left_abs, F(0))
+    print(f"sum of 13 absolute bounds: {decimal(left_abs_total)}")
     gamma_error = max(
         sum(left_abs[: r + 1], F(0)) / 10**24 for r in range(13)
     )
@@ -228,7 +235,7 @@ def main() -> None:
             raise AssertionError(f"candidate coefficient box {j} is too narrow")
 
     print(f"minimum candidate slack: {decimal(smallest_slack, 16)}")
-    print("classification: exact-rational diagnostic only; Lean source crosswalk remains required.")
+    print("classification: exact-rational diagnostic; Lean source crosswalk is proved in SourceCoefficientGreen.lean.")
 
 
 if __name__ == "__main__":
