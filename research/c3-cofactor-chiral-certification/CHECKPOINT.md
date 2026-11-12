@@ -3,6 +3,7 @@
 - Original base: `origin/main` `1e0a6c80957fb7a1385cdb6a1869d04dbf40b64d`; original branch `agent/c3-cofactor-chiral-certification-20261112`.
 - PR #318 merged into `main` on 2026-11-12 at `21c24415de48b184f5ad0498f9ac28e7c64a8195`.
 - Provenance-only PR #319 merged into `main` at `d4df30eb426653121c42cfe1bcfed68d3ce9bfed`.
+- Crosswalk PR #320 merged into `main` on 2026-11-12 at `f5b403f31cc63a1f1a4af069180b0516f88841f1`.
 - Current continuation branch: `agent/c3-completed-crosswalk-20261112`, based on updated `main` at `d4df30e`.
 - Crosswalk commit: `f93a34a2eaa9ee6162758231b7a7171160009556` (pushed).
 - Worktree: `/home/thlinux/worktrees/c3-cofactor-chiral-certification-20261112`; pins unchanged (Lean 4.32.0, mathlib `81a5d257`, GreenFrame `cd2d838`).
