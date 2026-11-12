@@ -4,8 +4,8 @@
 - Worktree: `/home/thlinux/worktrees/c3-cofactor-chiral-certification-20261112`; pins unchanged (Lean 4.32.0, mathlib `81a5d257`, GreenFrame `cd2d838`).
 - PRs #316/#317 confirmed integrated; original dirty worktree preserved.
 - Latest code commit: `e4aa282` (pushed pending).
-- Phase: exact C3/48 head/tail, completed tail bound, and rational head jet boxes through order 12.
-- New modules: `CofactorIdentity`, `SchurGate`, `C3Regression`, `IntervalGate`, `SourceGate`, `C3Acceleration48`, `C3Power26Step`, `C3Power26Tail`, `C3Power26Series`, `C3Boundary48Finite`, `C3Boundary48Infinity`, `C3Boundary48Stencil`, `C3CompletionTail48`, `C3Head48Jet`, `C3Head48Boxes`.
+- Phase: exact C3/48 head/tail, completed tail bound, rational head boxes, and Gamma jet boxes through order 12.
+- New modules: previous 15 modules plus `GammaThirteen`.
 - Cofactor identity: exact 3×3 determinant/cofactor formula, including singular prefixes; positive-definite gate is explicitly conditional on `a>0`, prefix determinant `D>0`, and strict cofactor margin.
 - Canaries: positive conditional case; failing negative margin; singular-prefix identity; noncritical direction; reused synthetic negative control. No arbitrary-source positivity claim.
 - Interval gate: rational candidate boxes imply positive odd block margin and PosDef, but source inclusion in those boxes is unproved.
@@ -15,5 +15,7 @@
 - Order-26 series: summability, complex norm bound, and `M=48`, `k≤6` pre-Cauchy budget `≤10⁻²⁰`; this is not yet a completed-characteristic tail bound.
 - Validation: all 15 task modules compiled directly with `-DwarningAsError=true`; new head formula and interval theorems use only `propext`, `Classical.choice`, `Quot.sound`.
 - Recent validation fix: `C3Regression` now imports the actual existing synthetic negative-control theorem name `negative_control_not_posSemidef`.
-- Open: extend Gamma jet enclosures through order 12; combine all original completion factors and the head/tail ledger into completed source boxes through `c₆`; unconditional cofactor margin; independent chiral-order-11 transport.
-- Next exact step: derive rational Gamma jet boxes through order 12 from the existing finite Gamma formula and `native_gamma_jet_error`, then propagate them with the verified head intervals.
+- Gamma: exact rational coefficient centers through index 12, a tightened rational `log 3` reference, and native Gamma jet enclosures through order 12 are proved; all use only `propext`, `Classical.choice`, `Quot.sound`.
+- Validation: `GammaThirteen.lean` compiled directly with `-DwarningAsError=true`; `#print axioms` reported only the three accepted foundational axioms.
+- Open: convolve head, elementary completion factors, and Gamma into completed source coefficient boxes through `c₆`; prove those source boxes contain the actual coefficients; unconditional cofactor margin; independent chiral-order-11 transport.
+- Next exact step: propagate the verified head/Gamma interval boxes through the original elementary completion and combine the completed tail error at M=48, then evaluate the cofactor gate.
