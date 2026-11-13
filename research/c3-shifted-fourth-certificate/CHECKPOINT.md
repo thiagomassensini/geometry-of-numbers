@@ -3,7 +3,7 @@
 - Phase: both original-source 4×4 moment blocks proved PosDef; targeted revalidation passed; PR #329 open and unmerged.
 - Branch: `agent/c3-central-fourth-same-boxes-20261113`.
 - Base `main`: `bdbc1792e143dd8377cdb55638731aeea432b7db`; no merge performed.
-- Proof commit: `11615e06344dd610c8cc4747bbc656d6dd0c0ef5`.
+- Proof commits: `11615e06344dd610c8cc4747bbc656d6dd0c0ef5` (central gate) and `f9f5767e28d8d01c334c285c38a0c1fec14195ef` (shifted 4×4 PosDef corollary).
 - Previous documentation commits already pushed: `3a0928f1c9a51855c78a0b9f1ffc93fb8a8d4a02`, `ceda6e880f5216fd8877187df07e2df0f72bdf2b`.
 - PR: https://github.com/thiagomassensini/geometry-of-numbers/pull/329 (`CLEAN`/`MERGEABLE`, no status checks).
 - Source: original completed C3, M=80/C3-48, original Gamma completion/tail; same normalized coefficient boxes through `a₈` as shifted certificate.
