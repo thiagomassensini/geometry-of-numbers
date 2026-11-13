@@ -841,5 +841,15 @@ theorem native_odd_fourth_momentSchur_positive17 :
       CarrySelfAdjointOperator.completedNativeRealEvenCharacteristicCoefficient_zero_ne_zero)).mp
       hpivot
 
+theorem native_odd_fourth_moment_posDef17 :
+    (sourceMomentMatrix nativeH 1 4).PosDef := by
+  have hB3 : (coefficientBlock (sourceKernel C3CofactorCorrelation.nativeC true) 3).PosDef := by
+    rw [native_odd_third_block_eq17]
+    exact C3CofactorCorrelation.completed_native_odd_third_block_posDef
+  have hH3 : (sourceMomentMatrix nativeH 1 3).PosDef :=
+    (native_source_bezout_posDef_iff true 3).mp hB3
+  exact (sourceMomentMatrix_succ_posDef_iff nativeH 1 3 hH3).mpr
+    native_odd_fourth_momentSchur_positive17
+
 end
 end C3ShiftedFourth

@@ -61,6 +61,7 @@ import SourceAudit
 #print axioms C3ShiftedFourth.native_odd_fourth_bezout_determinant_positive17
 #print axioms C3ShiftedFourth.native_odd_fourth_sourceSchur_positive17
 #print axioms C3ShiftedFourth.native_odd_fourth_momentSchur_positive17
+#print axioms C3ShiftedFourth.native_odd_fourth_moment_posDef17
 
 #print axioms C3ShiftedFourth.native_normalized_even_fourth_cofactor_gate17
 #print axioms C3ShiftedFourth.native_even_fourth_bezout_determinant_positive17
@@ -73,3 +74,4 @@ import SourceAudit
   C3ShiftedFourth.native_even_fourth_moment_posDef17
   C3ShiftedFourth.native_even_fourth_bezout_determinant_positive17
   C3ShiftedFourth.native_normalized_even_fourth_cofactor_gate17
+  C3ShiftedFourth.native_odd_fourth_moment_posDef17

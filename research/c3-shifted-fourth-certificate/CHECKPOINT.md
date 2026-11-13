@@ -1,21 +1,23 @@
 # Checkpoint — original-source C3 fourth pivots
 
-- Phase: central same-box fourth pivot proved; all validations passed; PR #329 open, unmerged, and mergeable.
+- Phase: both original-source 4×4 moment blocks proved PosDef; targeted revalidation passed; PR #329 open and unmerged.
 - Branch: `agent/c3-central-fourth-same-boxes-20261113`.
 - Base `main`: `bdbc1792e143dd8377cdb55638731aeea432b7db`; no merge performed.
 - Proof commit: `11615e06344dd610c8cc4747bbc656d6dd0c0ef5`.
-- Checkpoint/report commit already pushed: `3a0928f1c9a51855c78a0b9f1ffc93fb8a8d4a02`.
+- Previous documentation commits already pushed: `3a0928f1c9a51855c78a0b9f1ffc93fb8a8d4a02`, `ceda6e880f5216fd8877187df07e2df0f72bdf2b`.
 - PR: https://github.com/thiagomassensini/geometry-of-numbers/pull/329 (`CLEAN`/`MERGEABLE`, no status checks).
 - Source: original completed C3, M=80/C3-48, original Gamma completion/tail; same normalized coefficient boxes through `a₈` as shifted certificate.
 - Files added: `CentralFourthGate17.lean`, `CentralFourthSource17.lean`.
-- Files updated: `Audit17.lean`, `validate.sh`, `REPORT.md`, `CHECKPOINT.md`.
-- Central results: positive 4×4 source Bézout determinant, order-3 source Schur, ordinary moment Schur, and `sourceMomentMatrix nativeH 0 4` PosDef.
+- Files updated: `FourthIntervalGate17.lean`, `Audit17.lean`, `validate.sh`, `REPORT.md`, `CHECKPOINT.md`.
+- Results: positive shifted and central order-3 moment Schur pivots; `(sourceMomentMatrix nativeH 1 4).PosDef` and `(sourceMomentMatrix nativeH 0 4).PosDef`; positive central Bézout determinant/source Schur.
 - Exact central gate lower bound: `(1177581716 - 22122) / 10^50 > 0`.
+- Tables: correlated normalized boxes through `a₈`; order-16 source jets; 4,505 integer-grid samples and 60 amplitude entries regenerated exactly.
+- Tail budget: original `completed_tail48_jet_bound` at M=80, r=16 is about `1.08504e-27`; no third acceleration used.
 - Prefix provenance: orders 1–2 from source coefficients; 3×3 prefix from existing original-source third-pivot certificate.
-- Source audit: 66,275-declaration closure; standard axioms only; theta-box/sign dependencies absent.
-- Passed: post-report full mission `validate.sh`; both central modules compiled with warnings as errors; `Audit17.lean` source audit.
+- Source audit: five roots, 66,472-declaration closure; standard axioms only; specified theta-box/sign dependencies absent.
+- Passed: full mission `validate.sh` before the final shifted `PosDef` corollary; afterward, updated `FourthIntervalGate17.lean` and `Audit17.lean` compiled with warnings as errors and the five-root source audit passed.
 - Passed: root `lake build --wfail` (8,850 jobs) and `audit-foundation.sh`, `audit-geometry.sh`, `audit-analysis.sh`.
 - Root checks reused an already-built sibling Mathlib cache after matching manifest, Mathlib SHA `81a5d257c8e410db227a6665ed08f64fea08e997`, and Lean toolchain; local build path uses an ignored symlink to that cache.
 - Initial central proof issues fixed: D30/35/50 reductions, ambiguous `nativeC`, and real-vector star simplification.
 - No proof or validation work remains open.
-- Next exact step: await review on PR #329; keep it open and unmerged.
+- Next exact lemma: certify the central fifth pivot `s=0, n=4` (new source coefficient `c₉`) independently of the positive 4×4 prefix. Operationally, await review on PR #329; keep it open and unmerged.

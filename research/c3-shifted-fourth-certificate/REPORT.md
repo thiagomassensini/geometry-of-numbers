@@ -50,6 +50,9 @@ The new and extended modules prove the following interfaces:
   `0 < CarrySelfAdjointOperator.sourceMomentSchur nativeH 1 3`, transported
   through the existing identity `p_B = c₀² p_H` with the nonzero original
   completion coefficient.
+- `native_odd_fourth_moment_posDef17`: using the original-source positive
+  shifted 3×3 prefix and the newly certified shifted Schur pivot,
+  `(sourceMomentMatrix nativeH 1 4).PosDef`.
 - `native_normalized_even_fourth_cofactor_gate17` and
   `native_normalized_even_fourth_determinant_eq_gate17`: with the same
   normalized coefficient boxes through `a₈`, the original central-sector
@@ -137,11 +140,13 @@ from its original M=80 source certificate. The central pivot
 source coefficient boxes and the same M=80/C3-48/Gamma completion and tail.
 Lean also proves `(sourceMomentMatrix nativeH 0 4).PosDef`. The central
 source-side 4×4 Bézout determinant and its source Schur pivot are positive.
+The new `native_odd_fourth_moment_posDef17` corollary also proves
+`(sourceMomentMatrix nativeH 1 4).PosDef` from the source-certified shifted
+3×3 prefix and fourth Schur pivot.
 
 These results are specific to `s ∈ {0,1}, n = 3`. They do not certify later
-pivots or all-order positivity. Positive definiteness of the central 4×4
-moment matrix is proved; no `PosDef` claim is made for the shifted 4×4 moment
-matrix.
+pivots or all-order positivity. Positive definiteness is proved for both
+4×4 moment matrices.
 
 ## F. Counterchecks and limitations
 
@@ -183,6 +188,14 @@ cache ran out of filesystem space. Validation then reused a complete sibling
 cache after confirming the identical Lake manifest, Mathlib commit
 `81a5d257c8e410db227a6665ed08f64fea08e997`, and Lean toolchain. The root build
 and all three audit scripts were rerun successfully from this branch.
+
+After adding the shifted 4×4 `PosDef` corollary, the modified
+`FourthIntervalGate17.lean` and `Audit17.lean` were directly recompiled with
+`-DwarningAsError=true`; the source-orientation audit passed for five roots,
+closure 66,472, standard axioms only, and the specified theta dependencies
+absent. The unchanged research modules, source-table regeneration, preflights,
+and placeholder scan passed in the immediately preceding full `validate.sh`
+run.
 
 The correlated Python preflight reports the positive lower bound above. The
 wide independent-box preflight reports the negative diagnostic bound above.
