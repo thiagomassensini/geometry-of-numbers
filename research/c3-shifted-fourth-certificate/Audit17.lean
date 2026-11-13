@@ -5,6 +5,8 @@ import CoefficientBoxes17
 import FourthGate17
 import FourthSourceGate17
 import FourthIntervalGate17
+import CentralFourthSource17
+import SourceAudit
 #print axioms C3ShiftedFourth.tight_low_sample_log_evaluator_eq
 #print axioms C3ShiftedFourth.tight_low_sample_amplitude_evaluator_check
 #print axioms C3ShiftedFourth.tight_m80_log_box_contains
@@ -59,3 +61,15 @@ import FourthIntervalGate17
 #print axioms C3ShiftedFourth.native_odd_fourth_bezout_determinant_positive17
 #print axioms C3ShiftedFourth.native_odd_fourth_sourceSchur_positive17
 #print axioms C3ShiftedFourth.native_odd_fourth_momentSchur_positive17
+
+#print axioms C3ShiftedFourth.native_normalized_even_fourth_cofactor_gate17
+#print axioms C3ShiftedFourth.native_even_fourth_bezout_determinant_positive17
+#print axioms C3ShiftedFourth.native_even_fourth_sourceSchur_positive17
+#print axioms C3ShiftedFourth.native_even_fourth_momentSchur_positive17
+#print axioms C3ShiftedFourth.native_even_fourth_moment_posDef17
+
+#audit_source_orientation
+  C3ShiftedFourth.native_even_fourth_momentSchur_positive17
+  C3ShiftedFourth.native_even_fourth_moment_posDef17
+  C3ShiftedFourth.native_even_fourth_bezout_determinant_positive17
+  C3ShiftedFourth.native_normalized_even_fourth_cofactor_gate17

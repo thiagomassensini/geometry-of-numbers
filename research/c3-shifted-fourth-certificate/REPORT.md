@@ -1,15 +1,18 @@
-# C3 shifted fourth pivot: source certificate
+# C3 fourth pivots: original-source certificates
 
 ## A. Origin and provenance
 
-This certificate addresses the original completed C3 source at cutoff `M = 80`,
-with the C3/48 bracket, original Gamma completion, and original tail ledger. It
-targets the shifted sector `s = 1` at block order `n = 3`, so the new source
-coefficient is `c₈`. The source, completion, cutoff, camera, amplitude, and tail
-weights were not modified.
+These certificates address the original completed C3 source at cutoff `M = 80`,
+with the C3/48 bracket, original Gamma completion, and original tail ledger.
+The shifted sector `s = 1, n = 3` uses coefficient `c₈`; the central extension
+certifies `s = 0, n = 3` using the same normalized coefficient boxes through
+`a₈`. The source, completion, cutoff, camera, amplitude, and tail weights were
+not modified.
 
 - Worktree: `/home/thlinux/worktrees/c3-shifted-fourth-certificate-20261112`.
-- Branch: `agent/c3-shifted-fourth-certificate-20261112`.
+- Shifted certificate: PR #327, merged on 2026-11-13.
+- Central extension: branch `agent/c3-central-fourth-same-boxes-20261113`,
+  based on `bdbc1792e143dd8377cdb55638731aeea432b7db`, and not merged.
 - Validation base: `6c5c97b03925c398bf77a561d6e76b14563265e0`; the branch tip before
   this resumed certificate work was `c5edad6`.
 - Lean: 4.32.0; Mathlib pin
@@ -47,6 +50,22 @@ The new and extended modules prove the following interfaces:
   `0 < CarrySelfAdjointOperator.sourceMomentSchur nativeH 1 3`, transported
   through the existing identity `p_B = c₀² p_H` with the nonzero original
   completion coefficient.
+- `native_normalized_even_fourth_cofactor_gate17` and
+  `native_normalized_even_fourth_determinant_eq_gate17`: with the same
+  normalized coefficient boxes through `a₈`, the original central-sector
+  fourth cofactor gate equals the bordered determinant.
+- `native_even_fourth_bezout_determinant_positive17` and
+  `native_even_fourth_sourceSchur_positive17`: the original central 4×4
+  source Bézout determinant and order-3 source Schur pivot are positive.
+- `native_even_fourth_momentSchur_positive17` and
+  `native_even_fourth_moment_posDef17`: the central native moment Schur pivot
+  is positive, and `sourceMomentMatrix nativeH 0 4` is positive definite.
+
+The central rational gate lower endpoint is exactly
+`(1177581716 - 22122) / 10^50 > 0` (approximately `1.177559594 × 10⁻⁴¹`).
+The central prefix uses source coefficient facts at orders 1 and 2 and the
+already source-certified third pivot at order 2; the gate has no theta sign
+dependency.
 
 The interval proof is staged: candidate coefficient balls are first shown to
 contain the native source; the odd-block components and the fixed-direction
@@ -111,15 +130,18 @@ boxes. No independently widened coefficient box is used to close the sign.
 
 ## E. Finite C3 status
 
-**GREEN for the original completed C3 shifted fourth moment-Schur pivot**
-`sourceMomentSchur nativeH 1 3`: its strict positivity is a Lean theorem,
-proved from the original source with the source head, Gamma completion and
-tail ledger above. The source-side shifted 4×4 Bézout determinant and its
-source Schur pivot are also proved positive.
+**GREEN for both original completed C3 fourth moment-Schur pivots certified
+here.** The shifted pivot `sourceMomentSchur nativeH 1 3` is strictly positive
+from its original M=80 source certificate. The central pivot
+`sourceMomentSchur nativeH 0 3` is strictly positive from the same original
+source coefficient boxes and the same M=80/C3-48/Gamma completion and tail.
+Lean also proves `(sourceMomentMatrix nativeH 0 4).PosDef`. The central
+source-side 4×4 Bézout determinant and its source Schur pivot are positive.
 
-This status is specific to `s = 1, n = 3`. It is not a certificate for the
-ordinary-sector fourth pivot, later pivots, or all-order positivity. No claim
-of `PosDef` for the full 4×4 moment matrix is included in this report.
+These results are specific to `s ∈ {0,1}, n = 3`. They do not certify later
+pivots or all-order positivity. Positive definiteness of the central 4×4
+moment matrix is proved; no `PosDef` claim is made for the shifted 4×4 moment
+matrix.
 
 ## F. Counterchecks and limitations
 
@@ -140,20 +162,27 @@ positivity equivalence.
 - The general all-order last-coefficient/determinant/Schur law and its TFVD
   head-tail transport are a separate task and are not proved by this finite
   C3 module.
-- The ordinary-sector fourth pivot and both towers beyond the certified finite
-  order remain open here.
+- Both towers beyond the certified finite order remain open here.
 - No general positive Gram representation, all-order Hankel positivity, or
   universal source inequality is established.
 
 ## H. Validation and audit
 
-`bash research/c3-shifted-fourth-certificate/validate.sh` passed end to end in
-the configured worktree. It compiled every listed research module with
-`-DwarningAsError=true`, ran the integer-grid and amplitude table regeneration
-checks, compiled `Audit17.lean`, ran both rational preflights, scanned for
-`sorry`, `admit`, `native_decide`, and new axioms, and passed `git diff --check`.
-The audit roots for the new coefficient, gate, determinant and Schur theorems
-report only `propext`, `Classical.choice`, and `Quot.sound`.
+The updated `bash research/c3-shifted-fourth-certificate/validate.sh` passed
+end to end in the configured worktree. It compiled every listed research
+module with `-DwarningAsError=true`, regenerated the integer-grid and
+amplitude tables, compiled `Audit17.lean`, ran both rational preflights,
+scanned for `sorry`, `admit`, `native_decide`, and new axioms, and passed
+`git diff --check`. The audit roots for the new coefficient, gate, determinant
+and Schur theorems report only `propext`, `Classical.choice`, and `Quot.sound`.
+
+The root `lake build --wfail` passed (8,850 jobs), as did
+`scripts/audit-foundation.sh`, `scripts/audit-geometry.sh`, and
+`scripts/audit-analysis.sh`. The first attempt to build this worktree's Mathlib
+cache ran out of filesystem space. Validation then reused a complete sibling
+cache after confirming the identical Lake manifest, Mathlib commit
+`81a5d257c8e410db227a6665ed08f64fea08e997`, and Lean toolchain. The root build
+and all three audit scripts were rerun successfully from this branch.
 
 The correlated Python preflight reports the positive lower bound above. The
 wide independent-box preflight reports the negative diagnostic bound above.
@@ -166,9 +195,14 @@ pre-merge check GitHub reported `CLEAN`/`MERGEABLE` and no status checks. It
 was merged on 2026-11-13; merge commit:
 `131079fb7539dea352945c9758fec86bad3e9591`.
 
+The central-source extension is on branch
+`agent/c3-central-fourth-same-boxes-20261113`, based on current `main` SHA
+`bdbc1792e143dd8377cdb55638731aeea432b7db`. It is a separate, unmerged change;
+the earlier shifted result remains PR #327, merge commit
+`131079fb7539dea352945c9758fec86bad3e9591`.
+
 ## I. Next minimal obligation
 
-Certify the ordinary-sector fourth source Schur pivot (`s = 0, n = 3`) from
-the original C3 source using the corresponding normalized coefficient boxes
-and a separately audited interval gate; keep its sign proof independent of
-the shifted-sector result.
+Certify the central fifth source Schur pivot (`s = 0, n = 4`) from the
+original C3 source with a separately audited gate; do not infer its sign from
+the now-positive 4×4 central prefix.
