@@ -13,4 +13,6 @@
 - Full `bash research/c3-shifted-fourth-certificate/validate.sh` passed after the final report/diagnostic wording update: all Lean modules compiled with warnings as errors; both table generators, the axioms audit, both preflights, placeholder scan, and `git diff --check` passed.
 - Axioms of new public roots: only `propext`, `Classical.choice`, `Quot.sound`; no `sorry`, `admit`, `native_decide`, or new axiom declarations.
 - Updated report: `REPORT.md`, including finite GREEN scope and remaining obligations; diagnostic scripts now distinguish the loose negative control from the correlated Lean gate.
-- Next exact step: commit and push the validated finite shifted fourth-pivot certificate, then open a PR with the finite GREEN scope and all-order limitations stated explicitly.
+- PR: #327, `https://github.com/thiagomassensini/geometry-of-numbers/pull/327`, against `main`; GitHub reports `CLEAN`/`MERGEABLE` and no status checks are configured or reported.
+- Commit: `f4c5a14970af6f89e7a108be3f162d165dbc6ba6` (`research(c3): certify shifted fourth source pivot`), pushed to the task branch.
+- Next exact step: perform the ordinary protected merge of PR #327; if GitHub rejects it for protection or missing review/check requirements, leave it open and record the block.
