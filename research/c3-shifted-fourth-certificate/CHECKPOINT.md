@@ -2,7 +2,7 @@
 
 - Status: PARTIAL; Lean now certifies original M=80 head jets 14 and 16, but native `c₇,c₈` inclusion and the shifted 4×4 pivot remain open.
 - Base/branch: `6c5c97b03925c398bf77a561d6e76b14563265e0`; `agent/c3-shifted-fourth-certificate-20261112`.
-- Checkpoint commit: `fc35ebd` (`research(c3): certify M80 source amplitude boxes`); the scoped C3 prompt says not to merge main.
+- Latest mathematical checkpoint: `92e3653` (`research(c3): certify tight M80 head jets at orders 14 and 16`); branch remains separate from main.
 - Pins: Lean 4.32.0, Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`, GreenFrame `cd2d838bee67ad23f869a02f8ed9f0a0feb926fa`.
 - Reused: GoN #323/#324 C3/48 source and correlation files; the two third-pivot certificates remain upstream dependencies, not premises for the fourth-pivot sign.
 - New Lean modules include the prior transport modules plus `GridArithmetic17`, `TightInputTable17`, `TightInputCertificates17`, `GridHeadEvaluation17`, `GridJetTable17`, and `GridJetCertificates17`; all are listed in `validate.sh`.
@@ -18,4 +18,4 @@
 - Remaining gate: transport the new order-14/16 Lean head enclosures through correlated completion, weighted Gamma, and original tail error; prove native `c₇,c₈` lie in the candidate boxes; then certify the 4×4 determinant/Schur sign.
 - Not proved: native `c₇,c₈` inclusion in gate boxes; the 4×4 Bézout/Hankel sign; central 4×4 corollary.
 - Next exact step: add the grid-certified order-14/16 head enclosures to the normalized completion convolution box and derive the native `c₇,c₈` candidate-box inclusion from the existing Gamma and tail bounds.
-- This checkpoint is not yet committed or pushed. The work remains isolated on this branch; no PR or merge has been made.
+- No PR or merge has been made; the fourth-pivot coefficient inclusion remains open.
