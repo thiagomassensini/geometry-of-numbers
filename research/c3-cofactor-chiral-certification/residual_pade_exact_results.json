@@ -1,0 +1,42 @@
+{
+  "by_family": {
+    "arbitrary_rational": {
+      "cases": 24,
+      "invertible_prefixes": 24,
+      "singular_prefixes": 0
+    },
+    "positive_moments": {
+      "cases": 24,
+      "invertible_prefixes": 24,
+      "singular_prefixes": 0
+    },
+    "rank_one_constant": {
+      "cases": 24,
+      "invertible_prefixes": 6,
+      "singular_prefixes": 18
+    },
+    "signed_moments": {
+      "cases": 24,
+      "invertible_prefixes": 24,
+      "singular_prefixes": 0
+    },
+    "zero_sequence": {
+      "cases": 24,
+      "invertible_prefixes": 3,
+      "singular_prefixes": 21
+    }
+  },
+  "cases": 120,
+  "checks": [
+    "H*w = (0,...,0,det(H))",
+    "all Dbar*Q_s-Nbar coefficients below 2n vanish",
+    "coefficient 2n equals det(H)",
+    "transported residual coefficients below 2n+s vanish",
+    "transported coefficient 2n+s equals c0*det(H)",
+    "invertible cases satisfy det(H)/det(G) = Schur pivot"
+  ],
+  "empty_prefix_cases": 15,
+  "invertible_prefixes": 81,
+  "singular_prefixes": 39,
+  "suite": "independent exact rational reconstruction of the residual checks"
+}
