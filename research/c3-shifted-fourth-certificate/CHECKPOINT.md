@@ -1,6 +1,6 @@
 # Checkpoint — C3 shifted fourth block
 
-- Status: PARTIAL; Lean now certifies original M=80 head jets 14 and 16, but native `c₇,c₈` inclusion and the shifted 4×4 pivot remain open.
+- Status: PARTIAL; Lean certifies original M=80 head jets 14 and 16, the exact native coefficient crosswalk error, and source containment in its derived boxes. Native `c₇,c₈` inclusion in the tighter gate boxes and the shifted 4×4 pivot remain open.
 - Base/branch: `6c5c97b03925c398bf77a561d6e76b14563265e0`; `agent/c3-shifted-fourth-certificate-20261112`.
 - Latest mathematical checkpoint: `92e3653` (`research(c3): certify tight M80 head jets at orders 14 and 16`); branch remains separate from main.
 - Pins: Lean 4.32.0, Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`, GreenFrame `cd2d838bee67ad23f869a02f8ed9f0a0feb926fa`.
@@ -9,13 +9,13 @@
 - Proved: Gamma center crosswalk and native Gamma error through jet 16; exact M=80 head/Gamma/tail transport; formal-series convolution crosswalk; table-verified normalized chart reciprocal through order 16; correlated normalized completion reference enclosure through jet 16.
 - Proven in this continuation: the low 205 log table agrees with the original `rationalLogBox`; the low 205 amplitude table is checked against the original `expBox`; all 530 grid sample jets are checked in Lean; the order-14 and order-16 original M=80 head jets lie in the generated tight boxes.
 - Certified head intervals: order 14 `[1950031647244927799/10^30, 1950031647244938748/10^30]`; order 16 `[590644054642505800/10^30, 590644054642507801/10^30]`.
+- New Lean results in `CoefficientBoxes17.lean`: `native_jet_crosswalk_real_bound17`, `native_finite_coefficient_box17_contains`, and `native_coefficient_box17_contains`; in `FourthGate17.lean`: `native_odd_fourth_block_eq` gives the shifted 4×4 source block explicitly. These are algebraic/enclosure results, not a determinant sign.
 - Axioms: new public theorem audit reports only `propext`, `Classical.choice`, `Quot.sound`.
-- Passed this continuation: direct compilation of `TightInputTable17`, `TightInputCertificates17`, `GridHeadEvaluation17`, `GridJetTable17`, `GridJetCertificates17`, and `Audit17.lean`, all with warnings as errors; the updated audit reports only `propext`, `Classical.choice`, `Quot.sound`.
-- The full `validate.sh` rerun was stopped during the heavy rebuild of pre-existing `TightHeadSource` under high host load. The previous full validation and upstream audits remain recorded above, but do not count as a full validation of these latest files.
+- Validation: the full `validate.sh` rerun compiled through `JetMagnitude17`; its first candidate-box subset proof spent 6m49s in an unproductive exact reduction and was stopped. That attempted theorem was removed. The resulting `CoefficientBoxes17.lean`, `FourthGate17.lean`, and `Audit17.lean` then compiled directly with warnings as errors; the audit reports only `propext`, `Classical.choice`, `Quot.sound`. The end-to-end script has not completed on this final state.
 - Legacy validator caveat: #324 `validate.sh` itself stopped because its Lean path omits `CompletedHeadEight`; the correct dependency cache was added for the manual continuation, whose remaining modules compiled.
 - Exact correlated Python preflight: 3,192-term fixed-direction gate lower bound `6.743605186895089…e-54 > 0` for candidate normalized coefficient boxes. This is diagnostic only, not a Lean source inclusion.
 - Negative control: independently widened source boxes give gate lower bound about `-2.1772e-45`; they do not certify the sign.
-- Remaining gate: transport the new order-14/16 Lean head enclosures through correlated completion, weighted Gamma, and original tail error; prove native `c₇,c₈` lie in the candidate boxes; then certify the 4×4 determinant/Schur sign.
+- Remaining gate: prove native `c₇,c₈` lie in the tighter correlated candidate boxes using a tractable Lean endpoint certificate; then evaluate the 4×4 determinant/Schur margin.
 - Not proved: native `c₇,c₈` inclusion in gate boxes; the 4×4 Bézout/Hankel sign; central 4×4 corollary.
-- Next exact step: add the grid-certified order-14/16 head enclosures to the normalized completion convolution box and derive the native `c₇,c₈` candidate-box inclusion from the existing Gamma and tail bounds.
+- Next exact step: replace the expensive unfolding of the nested rational `Box` sums by compact, independently generated endpoint certificates, prove candidate-box inclusion for `c₇,c₈`, then feed those bounds to a Lean-certified shifted 4×4 determinant gate.
 - No PR or merge has been made; the fourth-pivot coefficient inclusion remains open.

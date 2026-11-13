@@ -191,10 +191,8 @@ def generate() -> tuple[str, str]:
     if len(weights) != 24:
         raise AssertionError(f"expected 24 boundary weights, found {len(weights)}")
 
-    jets14 = [gsample(a, l, 14) for a, l in zip(amps, logs)]
-    jets16 = [gsample(a, l, 16) for a, l in zip(amps, logs)]
-    head14 = head_box(jets14, 14, weights)
-    head16 = head_box(jets16, 16, weights)
+    jets = [[gsample(a, l, r) for a, l in zip(amps, logs)] for r in range(17)]
+    heads = [head_box(jets[r], r, weights) for r in range(17)]
     inputs = (
         "import HighSampleAmplitude17\n\nnamespace C3ShiftedFourth\n\n"
         "open CarryC3Boxes\n\nnoncomputable section\nset_option maxRecDepth 30000\n"
@@ -207,10 +205,14 @@ def generate() -> tuple[str, str]:
         "import GridArithmetic17\n\nnamespace C3ShiftedFourth\n\n"
         "noncomputable section\nset_option maxRecDepth 30000\n"
         "/-- Generated from the 205 original primitive boxes and the 60 M=80 `expBox`/log boxes. -/\n"
-        + lean_table("gridM80SampleJet14Reference17", jets14) + "\n"
-        + lean_table("gridM80SampleJet16Reference17", jets16) + "\n"
-        + f"def gridM80Head14Reference17 : GridBox := ⟨{head14[0]}, {head14[1]}⟩\n"
-        + f"def gridM80Head16Reference17 : GridBox := ⟨{head16[0]}, {head16[1]}⟩\n\n"
+        + "\n".join(
+            lean_table(f"gridM80SampleJet{r}Reference17", jets[r])
+            for r in range(17)
+        ) + "\n"
+        + "\n".join(
+            f"def gridM80Head{r}Reference17 : GridBox := ⟨{heads[r][0]}, {heads[r][1]}⟩"
+            for r in range(17)
+        ) + "\n\n"
         + "end\nend C3ShiftedFourth\n"
     )
     return inputs, jets
@@ -225,7 +227,7 @@ def main() -> None:
             raise SystemExit("TightInputTable17.lean differs from its exact-rational generator")
         if not output.exists() or output.read_text() != content:
             raise SystemExit("GridJetTable17.lean differs from its exact-rational generator")
-        print("PASS: tight input tables and all 530 integer-grid sample jets regenerate exactly")
+        print("PASS: tight input tables and all 4,505 integer-grid sample jets regenerate exactly")
     else:
         input_path.write_text(inputs)
         output.write_text(content)

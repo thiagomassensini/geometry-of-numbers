@@ -1,6 +1,8 @@
 import SourceTransport17
 import HighCoefficientBoxes17
 import GridJetCertificates17
+import CoefficientBoxes17
+import FourthGate17
 #print axioms C3ShiftedFourth.tight_low_sample_log_evaluator_eq
 #print axioms C3ShiftedFourth.tight_low_sample_amplitude_evaluator_check
 #print axioms C3ShiftedFourth.tight_m80_log_box_contains
@@ -28,11 +30,13 @@ import GridJetCertificates17
 #print axioms C3ShiftedFourth.grid_m80_log_contains
 #print axioms C3ShiftedFourth.grid_m80_sample_jet_box
 #print axioms C3ShiftedFourth.grid_head80_jet_box
-#print axioms C3ShiftedFourth.grid_sample_jet14_reference_contains
-#print axioms C3ShiftedFourth.grid_sample_jet16_reference_contains
-#print axioms C3ShiftedFourth.grid_m80_head14_box17_contains
-#print axioms C3ShiftedFourth.grid_m80_head16_box17_contains
-#print axioms C3ShiftedFourth.grid_m80_head14_reference17_eq
-#print axioms C3ShiftedFourth.grid_m80_head16_reference17_eq
+#print axioms C3ShiftedFourth.grid_sample_jet_reference17_contains
+#print axioms C3ShiftedFourth.grid_m80_head_box17_contains
+#print axioms C3ShiftedFourth.grid_m80_head_box17_eq_reference
+#print axioms C3ShiftedFourth.certified_head80_jet_box17_contains
 #print axioms C3ShiftedFourth.tight_head80_jet14_box17
 #print axioms C3ShiftedFourth.tight_head80_jet16_box17
+#print axioms C3ShiftedFourth.native_odd_fourth_block_eq
+#print axioms C3ShiftedFourth.native_jet_crosswalk_real_bound17
+#print axioms C3ShiftedFourth.native_finite_coefficient_box17_contains
+#print axioms C3ShiftedFourth.native_coefficient_box17_contains

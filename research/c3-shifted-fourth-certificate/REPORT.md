@@ -25,16 +25,21 @@ The new modules prove:
 - `normalized_outer_base_polynomial_coefficient_box_verified17_contains`, `normalized_outer_completed_polynomial_box_verified17_contains`, and `normalized_completed_reference_box_verified80_contains`: formal interval containment for the correlated normalized completion reference through jet 16.
 - `tight_high_sample_amplitude_evaluator_check`: each of the 60 new M=80 amplitude boxes for sample addresses 206–265 is checked by Lean against the original rational `expBox` calculation.
 - `tight_high_sample_amplitude_contains`, `tight_high_sample_jet_box`, `cached_m80_sample_jet_box`, and `tight_head80_jet_box_cached`: enclosures for the additional high samples and the exact M=80 head, for every jet order. The first 205 sample amplitudes reuse the already certified primitive boxes.
+- `native_coefficient_sourceJet_eq` and `native_jet_crosswalk_real_bound17`: identify the native completed coefficient with the original completed-source jet and bound its difference from the signed finite M=80 reference jet, using the original jet/Gamma/tail allowances.
+- `native_finite_coefficient_box17_contains` and `native_coefficient_box17_contains`: prove containment of the signed finite reference coefficient and of the native coefficient in their computed Lean `Box` enclosures for indices 0 through 8. The latter boxes are the direct propagated boxes; they are not the tighter correlated candidate envelopes used by the numerical gate.
+- `native_odd_fourth_block_eq`: expands the odd-sector 4×4 Bézout source block from its defining formal kernel, with the expected linear `−8 c₀c₈` term in the last diagonal. It is a matrix identity only; no determinant, Schur, or positivity theorem follows from it.
 
 Direct compilation was done with `-DwarningAsError=true`. `Audit17.lean` reports only `[propext, Classical.choice, Quot.sound]` for the new theorem roots. The placeholder scan found no `sorry`, `admit`, `native_decide`, or new axioms.
 
 ## Numerical gate and what remains unproved
 
-`preflight_correlated_coefficients.py` computes exact rational candidate boxes from the same-log-π correlated completion and the weighted Gamma/M=80 tail ledger. For the fixed rational Bézout direction, the 3,192-term exact interval expansion has lower bound
+`preflight_correlated_coefficients.py` computes exact rational candidate boxes from the same-log-π correlated completion and the weighted Gamma/M=80 tail ledger. Its coefficient radii fit the chosen candidate radii through `c₈`; for the fixed rational Bézout direction, the 3,192-term exact interval expansion has lower bound
 
 `6.74360518689508947997160988154063898922555 × 10⁻⁵⁴ > 0`.
 
 That proves only that the **candidate boxes** pass the gate. It does not prove that the original native coefficients lie in those boxes. The independent-box diagnostic loses correlation and gives a lower bound about `−2.1772 × 10⁻⁴⁵`, so it cannot close the sign.
+
+The direct Lean crosswalk and source-box containment are now formalized, but an attempted proof that the propagated nested `Box` enclosures are subsets of the tighter candidate envelopes was computationally impractical: unfolding the finite rational grid/convolution expressions spent 6m49s without closing the first containment. That attempt was removed rather than treating the diagnostic as a Lean proof. The resulting coefficient and block modules compile; candidate inclusion remains open.
 
 The resumed work removes that head-evaluation bottleneck. `TightInputTable17.lean` caches the first 205 outputs of the original rational log and exponential box evaluators, and `TightInputCertificates17.lean` checks those values in Lean. The 60 high-address amplitudes continue to use the previously checked M=80 table. `GridArithmetic17.lean` and `GridHeadEvaluation17.lean` evaluate sample jets on an integer grid; the factorial reciprocal is applied as an exact rational scale before the final rounding, avoiding a large interval from rounding `1/r!` first. `GridJetCertificates17.lean` proves the resulting head intervals contain the original M=80 bracket jets:
 
@@ -47,8 +52,8 @@ Consequently, the shifted 4×4 Bézout determinant, its Schur complement, `0 < s
 
 ## Validation and audit notes
 
-- Before this continuation, `bash research/c3-shifted-fourth-certificate/validate.sh` passed for the prior state. In this continuation, `TightInputTable17`, `TightInputCertificates17`, `GridHeadEvaluation17`, `GridJetTable17`, `GridJetCertificates17`, and `Audit17.lean` were compiled directly with `-DwarningAsError=true`. The full script was started but stopped while rebuilding the heavy pre-existing `TightHeadSource` under a host load of about 60 simultaneous Lean processes; its full rerun is still outstanding.
-- The updated `Audit17.lean` reports only `[propext, Classical.choice, Quot.sound]` for the new table and head-containment theorems. The exact-rational preflight still gives the candidate-box gate lower bound `6.743605186895089… × 10⁻⁵⁴ > 0`; this remains a diagnostic until native `c₇,c₈` are enclosed by the candidate boxes.
+- In this continuation, the updated validator compiled the source and grid chain through `JetMagnitude17`. Its first version of `CoefficientBoxes17.lean` then entered the impractical candidate-subset reduction and was interrupted after 6m49s. After removing that unclosed claim, `CoefficientBoxes17.lean`, `FourthGate17.lean`, and `Audit17.lean` compiled directly with `-DwarningAsError=true`. The complete `validate.sh` has not completed on the final state.
+- The updated `Audit17.lean` reports only `[propext, Classical.choice, Quot.sound]` for the new source-box and 4×4 identity theorems. Python preflights passed: the candidate-box gate lower bound remains `6.743605186895089… × 10⁻⁵⁴ > 0`, while the independent-box control remains negative. The correlated result is still diagnostic until native `c₇,c₈` are proved to lie in the candidate boxes.
 - `research/c3-cofactor-correlation-gate/validate.sh`: passed, including its existing source coefficient and tail checks.
 - The legacy `research/c3-cofactor-chiral-certification/validate.sh` stopped at `ChiralOrder11` because its `LEAN_PATH` omitted the existing `CompletedHeadEight.olean` dependency. After adding that dependency cache locally (without editing the validator or dependency source), the remaining #324 modules, `SourceSchurShift`, and certificate audit compiled. The certificate audit reports 17 result roots and excludes the alternative sign routes.
 - Diagnostics `diagnose_completed_boxes48.py` and `compare_c3_heads.py` ran; the former's old independently boxed cofactor interval contains zero, as expected from lost correlation.
@@ -58,4 +63,4 @@ Consequently, the shifted 4×4 Bézout determinant, its Schur complement, `0 < s
 
 ## Next exact obligation
 
-Transport the new Lean head enclosures for orders 14 and 16 through the existing correlated completion, weighted Gamma, and original tail ledgers, then prove the native `c₇,c₈` inclusions in the candidate gate boxes. Only after those inclusions are proved can the existing cofactor identity and certified 3×3 prefix conclude the shifted fourth pivot.
+Replace the slow unfolding of the nested rational `Box` sums with compact exact endpoint certificates and prove native `c₇,c₈` inclusion in the correlated candidate boxes. Only after those inclusions are proved can the fixed-direction gate or an exact determinant/Schur certificate conclude the shifted fourth pivot.

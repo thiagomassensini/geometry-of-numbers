@@ -1,6 +1,7 @@
 import HighChartReciprocal17
 import CorrelatedJets17
 import FastHeadEvaluation17
+import GridJetCertificates17
 
 namespace C3ShiftedFourth
 
@@ -122,7 +123,7 @@ theorem normalized_outer_completed_box_verified17_contains (r : Fin 17) :
 
 def normalizedCompletedReferenceBoxVerified80 (n : ℕ) : Box :=
   exactRangeSumBox (fun k =>
-    (tightHead80JetBoxCached k).mul
+    (certifiedHead80JetBox17 k).mul
       (if n-k < 13 then normalizedOuterCompletedPolynomialBox (n-k)
         else normalizedOuterCompletedPolynomialBoxVerified17 (n-k))) n
 
@@ -133,7 +134,7 @@ theorem normalized_completed_reference_box_verified80_contains (r : Fin 17) :
     convolution
   apply exact_range_sum_box_contains
   intro k hk
-  have hhead := tight_head80_jet_box_cached k
+  have hhead := certified_head80_jet_box17_contains k (by omega)
   have hn : r.val-k < 17 := by
     have hr := r.isLt
     omega

@@ -14,8 +14,8 @@ done
 
 mkdir -p "$TASK_DIR/.cache"
 base_lean_path="$(cd "$CARRY_ROOT" && lake env printenv LEAN_PATH)"
-cache_paths="$(find "$TASK_DIR/../.." "$GEOMETRY_ROOT/research" "$CARRY_ROOT/research" \
-  "$CORRELATION_DIR" "$CHIRAL_DIR" -type d -path '*/.cache*' -printf '%p:' 2>/dev/null || true)"
+cache_paths="$(find "$TASK_DIR" "$GEOMETRY_ROOT/research" "$CARRY_ROOT/research" \
+  "$PRIOR_RESEARCH_ROOT" -type d -path '*/.cache*' -printf '%p:' 2>/dev/null || true)"
 research_build_paths="$(find "$GEOMETRY_ROOT/.lake/build/research" "$CARRY_ROOT/.lake/build/research" \
   -mindepth 1 -maxdepth 1 -type d -printf '%p:' 2>/dev/null || true)"
 export LEAN_PATH="$TASK_DIR/.cache:$CORRELATION_DIR/.cache:$CHIRAL_DIR/.cache:$cache_paths$research_build_paths$GEOMETRY_ROOT/.lake/build/lib/lean:$CARRY_ROOT/.lake/build/lib/lean:$base_lean_path"
@@ -39,6 +39,9 @@ modules=(
   GridJetTable17
   GridJetCertificates17
   HighCoefficientBoxes17
+  JetMagnitude17
+  CoefficientBoxes17
+  FourthGate17
 )
 for module in "${modules[@]}"; do
   printf 'Lean: %s\n' "$module"
