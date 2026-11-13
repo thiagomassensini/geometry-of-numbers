@@ -2,7 +2,7 @@
 
 - Status: PARTIAL; Lean certifies original M=80 head jets 14 and 16, the exact native coefficient crosswalk error, and source containment in its derived boxes. Native `c₇,c₈` inclusion in the tighter gate boxes and the shifted 4×4 pivot remain open.
 - Base/branch: `6c5c97b03925c398bf77a561d6e76b14563265e0`; `agent/c3-shifted-fourth-certificate-20261112`.
-- Latest mathematical checkpoint: `92e3653` (`research(c3): certify tight M80 head jets at orders 14 and 16`); branch remains separate from main.
+- Latest mathematical checkpoint: `bd09d48` (`research(c3): transport high-order boxes to native source`), following `92e3653` for the order-14/16 head jets; branch remains separate from main.
 - Pins: Lean 4.32.0, Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`, GreenFrame `cd2d838bee67ad23f869a02f8ed9f0a0feb926fa`.
 - Reused: GoN #323/#324 C3/48 source and correlation files; the two third-pivot certificates remain upstream dependencies, not premises for the fourth-pivot sign.
 - New Lean modules include the prior transport modules plus `GridArithmetic17`, `TightInputTable17`, `TightInputCertificates17`, `GridHeadEvaluation17`, `GridJetTable17`, and `GridJetCertificates17`; all are listed in `validate.sh`.
