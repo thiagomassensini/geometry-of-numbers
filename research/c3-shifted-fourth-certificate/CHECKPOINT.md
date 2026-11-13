@@ -1,21 +1,16 @@
-# Checkpoint — C3 shifted fourth block
+# Checkpoint — C3 shifted fourth pivot
 
-- Status: PARTIAL; Lean certifies original M=80 head jets 14 and 16, the exact native coefficient crosswalk error, and source containment in its derived boxes. Native `c₇,c₈` inclusion in the tighter gate boxes and the shifted 4×4 pivot remain open.
-- Base/branch: `6c5c97b03925c398bf77a561d6e76b14563265e0`; `agent/c3-shifted-fourth-certificate-20261112`.
-- Latest mathematical checkpoint: `bd09d48` (`research(c3): transport high-order boxes to native source`), following `92e3653` for the order-14/16 head jets; branch remains separate from main.
+- Status: GREEN for the finite original-source shifted pivot `sourceMomentSchur nativeH 1 3`; all-order positivity and the ordinary fourth pivot remain open.
+- Branch: `agent/c3-shifted-fourth-certificate-20261112`; validated base `6c5c97b`; previous branch tip `c5edad6`.
+- Source: original completed C3, M=80 head, C3/48 bracket, original Gamma completion and tail ledger; no source scales or weights changed.
 - Pins: Lean 4.32.0, Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`, GreenFrame `cd2d838bee67ad23f869a02f8ed9f0a0feb926fa`.
-- Reused: GoN #323/#324 C3/48 source and correlation files; the two third-pivot certificates remain upstream dependencies, not premises for the fourth-pivot sign.
-- New Lean modules include the prior transport modules plus `GridArithmetic17`, `TightInputTable17`, `TightInputCertificates17`, `GridHeadEvaluation17`, `GridJetTable17`, and `GridJetCertificates17`; all are listed in `validate.sh`.
-- Proved: Gamma center crosswalk and native Gamma error through jet 16; exact M=80 head/Gamma/tail transport; formal-series convolution crosswalk; table-verified normalized chart reciprocal through order 16; correlated normalized completion reference enclosure through jet 16.
-- Proven in this continuation: the low 205 log table agrees with the original `rationalLogBox`; the low 205 amplitude table is checked against the original `expBox`; all 530 grid sample jets are checked in Lean; the order-14 and order-16 original M=80 head jets lie in the generated tight boxes.
-- Certified head intervals: order 14 `[1950031647244927799/10^30, 1950031647244938748/10^30]`; order 16 `[590644054642505800/10^30, 590644054642507801/10^30]`.
-- New Lean results in `CoefficientBoxes17.lean`: `native_jet_crosswalk_real_bound17`, `native_finite_coefficient_box17_contains`, and `native_coefficient_box17_contains`; in `FourthGate17.lean`: `native_odd_fourth_block_eq` gives the shifted 4×4 source block explicitly. These are algebraic/enclosure results, not a determinant sign.
-- Axioms: new public theorem audit reports only `propext`, `Classical.choice`, `Quot.sound`.
-- Validation: final `bash research/c3-shifted-fourth-certificate/validate.sh` passed end to end with warnings as errors, including all new modules, `Audit17.lean`, both table regenerators, both rational preflights, placeholder scan, and `git diff --check`. The audit reports only `propext`, `Classical.choice`, `Quot.sound`. An earlier candidate-subset attempt spent 6m49s in an unproductive exact reduction and was removed before this successful run.
-- Legacy validator caveat: #324 `validate.sh` itself stopped because its Lean path omits `CompletedHeadEight`; the correct dependency cache was added for the manual continuation, whose remaining modules compiled.
-- Exact correlated Python preflight: 3,192-term fixed-direction gate lower bound `6.743605186895089…e-54 > 0` for candidate normalized coefficient boxes. This is diagnostic only, not a Lean source inclusion.
-- Negative control: independently widened source boxes give gate lower bound about `-2.1772e-45`; they do not certify the sign.
-- Remaining gate: prove native `c₇,c₈` lie in the tighter correlated candidate boxes using a tractable Lean endpoint certificate; then evaluate the 4×4 determinant/Schur margin.
-- Not proved: native `c₇,c₈` inclusion in gate boxes; the 4×4 Bézout/Hankel sign; central 4×4 corollary.
-- Next exact step: replace the expensive unfolding of the nested rational `Box` sums by compact, independently generated endpoint certificates, prove candidate-box inclusion for `c₇,c₈`, then feed those bounds to a Lean-certified shifted 4×4 determinant gate.
-- No PR or merge has been made; the fourth-pivot coefficient inclusion remains open.
+- New modules: `TightNormalizedChart17.lean`, `FourthSourceGate17.lean`, `FourthIntervalGate17.lean`; earlier coefficient/grid modules were extended; `validate.sh` and `Audit17.lean` include them.
+- Proved: native normalized coefficient containment through `a₈`; fixed-direction cofactor gate lower bound `> 67/10^55`; shifted 4×4 source Bézout determinant positive; shifted source Schur pivot positive; native moment pivot `0 < sourceMomentSchur nativeH 1 3`.
+- Dependencies: positive odd third-order source prefix, original coefficient/head/Gamma/tail enclosures, exact bordered determinant identity and existing source-to-moment Schur scaling `p_B = c₀² p_H`.
+- Sign provenance: the fourth-direction sign comes from the original-source correlated interval gate. No theta/Stieltjes positivity is used as its sign premise.
+- Correlated Python preflight: exact gate lower `6.743605186895089… × 10⁻⁵⁴`; Lean proves source inclusion and its own coarser strict lower bound.
+- Negative control: independently widened coefficient intervals give about `−2.177195073027048 × 10⁻⁴⁵`; this loses correlation and does not contradict the formal correlated gate.
+- Full `bash research/c3-shifted-fourth-certificate/validate.sh` passed after the final report/diagnostic wording update: all Lean modules compiled with warnings as errors; both table generators, the axioms audit, both preflights, placeholder scan, and `git diff --check` passed.
+- Axioms of new public roots: only `propext`, `Classical.choice`, `Quot.sound`; no `sorry`, `admit`, `native_decide`, or new axiom declarations.
+- Updated report: `REPORT.md`, including finite GREEN scope and remaining obligations; diagnostic scripts now distinguish the loose negative control from the correlated Lean gate.
+- Next exact step: commit and push the validated finite shifted fourth-pivot certificate, then open a PR with the finite GREEN scope and all-order limitations stated explicitly.

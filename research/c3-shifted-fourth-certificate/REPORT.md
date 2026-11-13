@@ -1,66 +1,171 @@
-# C3 shifted fourth block: resumed certificate status
+# C3 shifted fourth pivot: source certificate
 
-## Objective and status
+## A. Origin and provenance
 
-This work targets the shifted 4×4 Hankel block (`s = 1`, `n = 3`) from the original completed C3 source, using the M=80 C3/48 head, the original Gamma completion, and the existing M=80 tail ledger. Status is **PARTIAL**. The Lean development now transports the original source to correlated reference jets through order 16 and formally encloses those reference jets, but it does not prove the numeric inclusion needed for the fourth pivot.
+This certificate addresses the original completed C3 source at cutoff `M = 80`,
+with the C3/48 bracket, original Gamma completion, and original tail ledger. It
+targets the shifted sector `s = 1` at block order `n = 3`, so the new source
+coefficient is `c₈`. The source, completion, cutoff, camera, amplitude, and tail
+weights were not modified.
 
-The two third pivots proved in GoN #323/#324 are reused only as established prefix results. No theta/Stieltjes positivity is used to prove the fourth direction. No central 4×4 conclusion is claimed.
+- Worktree: `/home/thlinux/worktrees/c3-shifted-fourth-certificate-20261112`.
+- Branch: `agent/c3-shifted-fourth-certificate-20261112`.
+- Validation base: `6c5c97b03925c398bf77a561d6e76b14563265e0`; the branch tip before
+  this resumed certificate work was `c5edad6`.
+- Lean: 4.32.0; Mathlib pin
+  `81a5d257c8e410db227a6665ed08f64fea08e997`; GreenFrame pin
+  `cd2d838bee67ad23f869a02f8ed9f0a0feb926fa`.
+- Reused source and transport modules from `research/c3-cofactor-chiral-certification/`
+  and `research/c3-cofactor-correlation-gate/`, including the M=80 head,
+  `C3CompletionTail48`, Gamma crosswalk and error ledger, `SourceCoefficientGreen`,
+  and the source/moment Schur identities.
+- The odd third-order prefix determinant and positive-definite prefix are
+  reused source-coefficient results. The fourth-direction sign is proved by
+  the new source gate below; theta/Stieltjes positivity is not a premise.
 
-## Provenance
+## B. Results proved in Lean
 
-- Task worktree base: `6c5c97b03925c398bf77a561d6e76b14563265e0`; branch `agent/c3-shifted-fourth-certificate-20261112`.
-- Toolchain: Lean 4.32.0; Mathlib pin `81a5d257c8e410db227a6665ed08f64fea08e997`; GreenFrame pin `cd2d838bee67ad23f869a02f8ed9f0a0feb926fa`.
-- Source modules reused from `research/c3-cofactor-chiral-certification/` and `research/c3-cofactor-correlation-gate/`, including `C3CompletionTail48`, `GammaThirteen`, `GammaHeadCrosswalk`, `SourceCoefficientGreen`, `FiniteReferenceTable`, and the existing coefficient/moment identities.
-- The original bracket, completion, M=80 cutoff, boundary stencil, and tail bound were not altered.
+The new and extended modules prove the following interfaces:
 
-## Lean results
+- `native_coefficient_candidate17_contains_c7` and
+  `native_coefficient_candidate17_contains_c8`: source enclosures for the two
+  highest coefficients needed by the 4×4 block.
+- `normalized_native_coefficient17_contains`: for every `j : Fin 9`, the
+  original native ratio `cⱼ/c₀` lies in its correlated rational candidate ball.
+  The proof uses the M=80 head, the original Gamma residual and C3/48 tail,
+  rounded grid endpoints, and the independent bound `c₀ > 49/100`.
+- `native_normalized_fourth_cofactor_gate17`: the fixed-direction cofactor
+  gate evaluated at the actual normalized native coefficients is positive.
+- `native_normalized_fourth_determinant_eq_gate17` and
+  `native_odd_fourth_bezout_determinant_positive17`: the cofactor gate is the
+  determinant of the bordered normalized block, and the original shifted 4×4
+  Bézout block has positive determinant.
+- `native_odd_fourth_sourceSchur_positive17`: the shifted source Bézout Schur
+  pivot at order 3 is positive, using the positive third-order prefix
+  determinant and the exact bordered determinant factorization.
+- `native_odd_fourth_momentSchur_positive17`:
+  `0 < CarrySelfAdjointOperator.sourceMomentSchur nativeH 1 3`, transported
+  through the existing identity `p_B = c₀² p_H` with the nonzero original
+  completion coefficient.
 
-The new modules prove:
+The interval proof is staged: candidate coefficient balls are first shown to
+contain the native source; the odd-block components and the fixed-direction
+energy/residual are then enclosed by rational balls; the final rational lower
+endpoint is proved greater than `67/10^55`. The value is strictly positive.
+The Python correlated preflight independently reports the sharper rational
+lower endpoint
+`6.74360518689508947997160988154063898922555 × 10⁻⁵⁴` for its exact interval
+calculation. The Lean theorem relies on its own checked rational-ball
+containment and endpoint proof, not on Python output.
 
-- `gamma_reference_center_difference13` and `native_gamma_crosswalk_boxes`: the rational Gamma reference is crosswalked to the old table and the native Gamma error is bounded through jet 16.
-- `completed_head80_gamma_replacement_error_crosswalk` and `completed_native_jet_crosswalk_error80`: exact M=80 head/Gamma replacement and original tail transport, with the weighted per-jet Gamma allowance.
-- `convolution_eq_realJetSeries_coeff`, `realJetSeries_convolution`, and `convolution_cross_through_sixteen`: exact convolution reindexing via formal power series.
-- `finite_completed_crosswalk_eq_normalized80`: exact scale relation from the finite completed reference jets to the correlated normalized reference jets.
-- `normalized_chart_reciprocal_box17_table_bound` and `normalized_chart_reciprocal_box17_table_contains`: rational table bounds for the normalized chart reciprocal through order 16, proved from its recurrence and the original chart boxes.
-- `normalized_outer_base_polynomial_coefficient_box_verified17_contains`, `normalized_outer_completed_polynomial_box_verified17_contains`, and `normalized_completed_reference_box_verified80_contains`: formal interval containment for the correlated normalized completion reference through jet 16.
-- `tight_high_sample_amplitude_evaluator_check`: each of the 60 new M=80 amplitude boxes for sample addresses 206–265 is checked by Lean against the original rational `expBox` calculation.
-- `tight_high_sample_amplitude_contains`, `tight_high_sample_jet_box`, `cached_m80_sample_jet_box`, and `tight_head80_jet_box_cached`: enclosures for the additional high samples and the exact M=80 head, for every jet order. The first 205 sample amplitudes reuse the already certified primitive boxes.
-- `native_coefficient_sourceJet_eq` and `native_jet_crosswalk_real_bound17`: identify the native completed coefficient with the original completed-source jet and bound its difference from the signed finite M=80 reference jet, using the original jet/Gamma/tail allowances.
-- `native_finite_coefficient_box17_contains` and `native_coefficient_box17_contains`: prove containment of the signed finite reference coefficient and of the native coefficient in their computed Lean `Box` enclosures for indices 0 through 8. The latter boxes are the direct propagated boxes; they are not the tighter correlated candidate envelopes used by the numerical gate.
-- `native_odd_fourth_block_eq`: expands the odd-sector 4×4 Bézout source block from its defining formal kernel, with the expected linear `−8 c₀c₈` term in the last diagonal. It is a matrix identity only; no determinant, Schur, or positivity theorem follows from it.
+The cofactor identity is algebraic and uses the adjugate form of the bordered
+determinant. The inverse appears only in the later Schur factorization, after
+the prefix determinant is known positive. The final moment-pivot statement
+retains the factor `c₀²`; it does not identify this with any differently
+normalized source remainder.
 
-Direct compilation was done with `-DwarningAsError=true`. `Audit17.lean` reports only `[propext, Classical.choice, Quot.sound]` for the new theorem roots. The placeholder scan found no `sorry`, `admit`, `native_decide`, or new axioms.
+## C. Fourth-direction and determinant calculation
 
-## Numerical gate and what remains unproved
+Let `aⱼ = cⱼ/c₀` be the normalized source coefficients. For a symmetric prefix
+`A`, coupling vector `b`, lower-right entry `d`, and fixed direction `u`, the
+formal gate proved in `FourthIntervalGate17.lean` is
 
-`preflight_correlated_coefficients.py` computes exact rational candidate boxes from the same-log-π correlated completion and the weighted Gamma/M=80 tail ledger. Its coefficient radii fit the chosen candidate radii through `c₈`; for the fixed rational Bézout direction, the 3,192-term exact interval expansion has lower bound
+```text
+det(A) · (uᵀAu + 2bᵀu + d) − (Au+b)ᵀ adj(A) (Au+b).
+```
 
-`6.74360518689508947997160988154063898922555 × 10⁻⁵⁴ > 0`.
+By the exact bordered identity this equals the determinant of the block
+obtained by evaluating the quadratic form at the direction `(u,1)`. The
+rational boxes show that this value is positive for the actual native `a₀,…,a₈`.
+Together with the source-certified positive prefix determinant, the bordered
+determinant factorization yields the positive source Schur pivot. The existing
+Schur transport then yields the native moment pivot `sourceMomentSchur
+nativeH 1 3`.
 
-That proves only that the **candidate boxes** pass the gate. It does not prove that the original native coefficients lie in those boxes. The independent-box diagnostic loses correlation and gives a lower bound about `−2.1772 × 10⁻⁴⁵`, so it cannot close the sign.
+This is a finite fourth-pivot certificate. It is not an all-order law and does
+not by itself assert positive definiteness of every block in either tower.
 
-The direct Lean crosswalk and source-box containment are now formalized, but an attempted proof that the propagated nested `Box` enclosures are subsets of the tighter candidate envelopes was computationally impractical: unfolding the finite rational grid/convolution expressions spent 6m49s without closing the first containment. That attempt was removed rather than treating the diagnostic as a Lean proof. The resulting coefficient and block modules compile; candidate inclusion remains open.
+## D. Original-source and interval transport
 
-The resumed work removes that head-evaluation bottleneck. `TightInputTable17.lean` caches the first 205 outputs of the original rational log and exponential box evaluators, and `TightInputCertificates17.lean` checks those values in Lean. The 60 high-address amplitudes continue to use the previously checked M=80 table. `GridArithmetic17.lean` and `GridHeadEvaluation17.lean` evaluate sample jets on an integer grid; the factorial reciprocal is applied as an exact rational scale before the final rounding, avoiding a large interval from rounding `1/r!` first. `GridJetCertificates17.lean` proves the resulting head intervals contain the original M=80 bracket jets:
+The certificate retains the source genealogy: original C3 brackets and M=80
+head, completion through the original Gamma factor, coefficient extraction,
+then the native Bézout/moment identities. It uses the exact formal-series
+convolution, the normalized chart reciprocal recurrence through jet 16, the
+correlated normalized completion boxes, and the original per-jet Gamma and
+tail allowances. The head cache is checked against the rational `logBox` and
+`expBox` evaluators, and Lean checks the integer-grid sample jets before their
+use in the M=80 head sum.
 
-- order 14: `[1950031647244927799/10^30, 1950031647244938748/10^30]`;
-- order 16: `[590644054642505800/10^30, 590644054642507801/10^30]`.
+For reproducibility, the order-14 and order-16 head enclosures are:
 
-The rational generator reproduces the caches, and Lean checks all 530 sample-jet entries before using them in the head sum. This is a Lean containment for the original finite M=80 head, not yet an inclusion for the completed native coefficients `c₇,c₈`.
+- order 14: `[1950031647244927799/10^30,
+  1950031647244938748/10^30]`;
+- order 16: `[590644054642505800/10^30,
+  590644054642507801/10^30]`.
 
-Consequently, the shifted 4×4 Bézout determinant, its Schur complement, `0 < sourceMomentSchur h 1 3`, and `PosDef (G₁,4)` remain **unproved**. The existing third-prefix positivity does not supply the missing fourth margin by itself.
+The normalized candidate balls through `a₈` use the same-log-π correlation.
+Lean proves their native inclusions via the residual grid endpoints in
+`FourthSourceGate17.lean`; `CoefficientBoxes17.lean` additionally proves the
+direct source coefficient inclusions for `c₇,c₈` from the transported source
+boxes. No independently widened coefficient box is used to close the sign.
 
-## Validation and audit notes
+## E. Finite C3 status
 
-- In this continuation, the first candidate-subset reduction was interrupted after 6m49s without closing. After removing that unproved, computationally impractical theorem, the final `bash research/c3-shifted-fourth-certificate/validate.sh` passed end to end: all Lean modules with `-DwarningAsError=true`, `Audit17.lean`, both table regenerators, both rational preflights, placeholder scan, and `git diff --check`.
-- The updated `Audit17.lean` reports only `[propext, Classical.choice, Quot.sound]` for the new source-box and 4×4 identity theorems. Python preflights passed: the candidate-box gate lower bound remains `6.743605186895089… × 10⁻⁵⁴ > 0`, while the independent-box control remains negative. The correlated result is still diagnostic until native `c₇,c₈` are proved to lie in the candidate boxes.
-- `research/c3-cofactor-correlation-gate/validate.sh`: passed, including its existing source coefficient and tail checks.
-- The legacy `research/c3-cofactor-chiral-certification/validate.sh` stopped at `ChiralOrder11` because its `LEAN_PATH` omitted the existing `CompletedHeadEight.olean` dependency. After adding that dependency cache locally (without editing the validator or dependency source), the remaining #324 modules, `SourceSchurShift`, and certificate audit compiled. The certificate audit reports 17 result roots and excludes the alternative sign routes.
-- Diagnostics `diagnose_completed_boxes48.py` and `compare_c3_heads.py` ran; the former's old independently boxed cofactor interval contains zero, as expected from lost correlation.
-- `lake build --wfail` passed in the legacy dependency worktree (`cf66116e72a19b27be5441cda34e1fb723b88adc`, 8,850 jobs). `audit-foundation.sh`, `audit-geometry.sh`, and `audit-analysis.sh` all passed there.
-- The root build and audits do not compile the new `research/` modules; those were compiled directly by the task validator.
-- Whitespace and placeholder scans passed. Checkpoint commit `fc35ebd` contains only this task's research artifacts; the branch is kept separate and has not been merged. The main GoN and Carry checkouts contain unrelated pre-existing changes that were left untouched.
+**GREEN for the original completed C3 shifted fourth moment-Schur pivot**
+`sourceMomentSchur nativeH 1 3`: its strict positivity is a Lean theorem,
+proved from the original source with the source head, Gamma completion and
+tail ledger above. The source-side shifted 4×4 Bézout determinant and its
+source Schur pivot are also proved positive.
 
-## Next exact obligation
+This status is specific to `s = 1, n = 3`. It is not a certificate for the
+ordinary-sector fourth pivot, later pivots, or all-order positivity. No claim
+of `PosDef` for the full 4×4 moment matrix is included in this report.
 
-Replace the slow unfolding of the nested rational `Box` sums with compact exact endpoint certificates and prove native `c₇,c₈` inclusion in the correlated candidate boxes. Only after those inclusions are proved can the fixed-direction gate or an exact determinant/Schur certificate conclude the shifted fourth pivot.
+## F. Counterchecks and limitations
+
+The script `preflight_source_boxes.py` also evaluates a much wider
+per-coefficient enclosure. Its gate lower bound is about
+`−2.177195073027048 × 10⁻⁴⁵`, so that enclosure alone cannot certify a sign.
+This is a loss-of-correlation diagnostic, not a counterexample to the source
+or to the correlated Lean certificate. The correlated normalized candidate
+balls and their source inclusions are the inputs to the formal gate.
+
+The positive prefix is a required dependency of the bordered Schur argument;
+it is the previously source-certified third pivot. The fourth sign is not
+inferred from alternating coefficient signs, small tail size alone, or a
+positivity equivalence.
+
+## G. Obligations still open
+
+- The general all-order last-coefficient/determinant/Schur law and its TFVD
+  head-tail transport are a separate task and are not proved by this finite
+  C3 module.
+- The ordinary-sector fourth pivot and both towers beyond the certified finite
+  order remain open here.
+- No general positive Gram representation, all-order Hankel positivity, or
+  universal source inequality is established.
+
+## H. Validation and audit
+
+`bash research/c3-shifted-fourth-certificate/validate.sh` passed end to end in
+the configured worktree. It compiled every listed research module with
+`-DwarningAsError=true`, ran the integer-grid and amplitude table regeneration
+checks, compiled `Audit17.lean`, ran both rational preflights, scanned for
+`sorry`, `admit`, `native_decide`, and new axioms, and passed `git diff --check`.
+The audit roots for the new coefficient, gate, determinant and Schur theorems
+report only `propext`, `Classical.choice`, and `Quot.sound`.
+
+The correlated Python preflight reports the positive lower bound above. The
+wide independent-box preflight reports the negative diagnostic bound above.
+The legacy dependencies are imported from their recorded worktrees; the
+task-specific validator compiles the research modules directly because the
+root Lake build does not enumerate them automatically. Validation artifacts
+are the modules and scripts named above; no external numeric result is used
+as a Lean proof premise.
+
+## I. Next minimal obligation
+
+Certify the ordinary-sector fourth source Schur pivot (`s = 0, n = 3`) from
+the original C3 source using the corresponding normalized coefficient boxes
+and a separately audited interval gate; keep its sign proof independent of
+the shifted-sector result.

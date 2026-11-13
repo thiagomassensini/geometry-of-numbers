@@ -165,9 +165,85 @@ theorem native_coefficient_box17_contains (j : Fin 9) :
   apply Box.expand_contains (native_finite_coefficient_box17_contains j)
   exact native_jet_crosswalk_real_bound17 j
 
+theorem native_coefficient_grid_box17_c7 :
+    GridBox.ofBox (nativeCoefficientBox17 ⟨7, by omega⟩) =
+      ⟨-103096261385986, -103096261306448⟩ := by
+  decide +kernel
+
+theorem native_coefficient_grid_box17_c8 :
+    GridBox.ofBox (nativeCoefficientBox17 ⟨8, by omega⟩) =
+      ⟨209976582231, 209977379476⟩ := by
+  decide +kernel
+
+theorem native_coefficient_box17_subset_candidate_c7 :
+    (nativeCoefficientBox17 ⟨7, by omega⟩).Subset
+      (nativeCoefficientCandidateEnvelope17 ⟨7, by omega⟩) := by
+  have hgrid : Box.Subset
+      (GridBox.toBox (GridBox.ofBox (nativeCoefficientBox17 ⟨7, by omega⟩)))
+      (nativeCoefficientCandidateEnvelope17 ⟨7, by omega⟩) := by
+    rw [native_coefficient_grid_box17_c7]
+    norm_num [GridBox.toBox, nativeCoefficientCandidateEnvelope17,
+      grid_denominator_rat_value, nativeCoefficientCandidate17, Box.Subset]
+  have hround := grid_toBox_ofBox_contains (nativeCoefficientBox17 ⟨7, by omega⟩)
+  exact ⟨hgrid.1.trans hround.1, hround.2.trans hgrid.2⟩
+
+theorem native_coefficient_box17_subset_candidate_c8 :
+    (nativeCoefficientBox17 ⟨8, by omega⟩).Subset
+      (nativeCoefficientCandidateEnvelope17 ⟨8, by omega⟩) := by
+  have hgrid : Box.Subset
+      (GridBox.toBox (GridBox.ofBox (nativeCoefficientBox17 ⟨8, by omega⟩)))
+      (nativeCoefficientCandidateEnvelope17 ⟨8, by omega⟩) := by
+    rw [native_coefficient_grid_box17_c8]
+    norm_num [GridBox.toBox, nativeCoefficientCandidateEnvelope17,
+      grid_denominator_rat_value, nativeCoefficientCandidate17, Box.Subset]
+  have hround := grid_toBox_ofBox_contains (nativeCoefficientBox17 ⟨8, by omega⟩)
+  exact ⟨hgrid.1.trans hround.1, hround.2.trans hgrid.2⟩
+
+theorem native_coefficient_candidate17_contains_c7 :
+    (nativeCoefficientCandidate17 ⟨7, by omega⟩).Contains
+      (C3CofactorCorrelation.nativeC 7) := by
+  have hbox := Box.subset_contains native_coefficient_box17_subset_candidate_c7
+    (native_coefficient_box17_contains ⟨7, by omega⟩)
+  change ((nativeCoefficientCandidateEnvelope17 ⟨7, by omega⟩).lo : ℝ) ≤ _ ∧
+      _ ≤ ((nativeCoefficientCandidateEnvelope17 ⟨7, by omega⟩).hi : ℝ) at hbox
+  simp only [nativeCoefficientCandidateEnvelope17] at hbox
+  change |C3CofactorCorrelation.nativeC 7 -
+    (nativeCoefficientCandidate17 ⟨7, by omega⟩).center| ≤
+      (nativeCoefficientCandidate17 ⟨7, by omega⟩).radius
+  rw [abs_le]
+  constructor
+  · push_cast at hbox ⊢
+    linarith [hbox.1]
+  · push_cast at hbox ⊢
+    linarith [hbox.2]
+
+theorem native_coefficient_candidate17_contains_c8 :
+    (nativeCoefficientCandidate17 ⟨8, by omega⟩).Contains
+      (C3CofactorCorrelation.nativeC 8) := by
+  have hbox := Box.subset_contains native_coefficient_box17_subset_candidate_c8
+    (native_coefficient_box17_contains ⟨8, by omega⟩)
+  change ((nativeCoefficientCandidateEnvelope17 ⟨8, by omega⟩).lo : ℝ) ≤ _ ∧
+      _ ≤ ((nativeCoefficientCandidateEnvelope17 ⟨8, by omega⟩).hi : ℝ) at hbox
+  simp only [nativeCoefficientCandidateEnvelope17] at hbox
+  change |C3CofactorCorrelation.nativeC 8 -
+    (nativeCoefficientCandidate17 ⟨8, by omega⟩).center| ≤
+      (nativeCoefficientCandidate17 ⟨8, by omega⟩).radius
+  rw [abs_le]
+  constructor
+  · push_cast at hbox ⊢
+    linarith [hbox.1]
+  · push_cast at hbox ⊢
+    linarith [hbox.2]
+
 #print axioms native_jet_crosswalk_real_bound17
 #print axioms native_finite_coefficient_box17_contains
 #print axioms native_coefficient_box17_contains
+#print axioms native_coefficient_grid_box17_c7
+#print axioms native_coefficient_grid_box17_c8
+#print axioms native_coefficient_box17_subset_candidate_c7
+#print axioms native_coefficient_box17_subset_candidate_c8
+#print axioms native_coefficient_candidate17_contains_c7
+#print axioms native_coefficient_candidate17_contains_c8
 
 end
 end C3ShiftedFourth

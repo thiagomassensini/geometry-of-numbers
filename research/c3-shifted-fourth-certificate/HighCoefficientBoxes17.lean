@@ -2,6 +2,7 @@ import HighChartReciprocal17
 import CorrelatedJets17
 import FastHeadEvaluation17
 import GridJetCertificates17
+import TightNormalizedChart17
 
 namespace C3ShiftedFourth
 
@@ -14,15 +15,6 @@ noncomputable section
 set_option autoImplicit false
 set_option maxHeartbeats 30000000
 set_option maxRecDepth 30000
-
-def normalizedChartReciprocalBoxVerified17 (n : ℕ) : Box :=
-  if h : n < 17 then normalizedChartReciprocalBoxTable17 ⟨n, h⟩ else Box.point 0
-
-theorem normalized_chart_reciprocal_box_verified17_contains (n : ℕ) (hn : n < 17) :
-    (normalizedChartReciprocalBoxVerified17 n).Contains
-      (normalizedChartReciprocal chartRatio (Real.log 3) n) := by
-  simp [normalizedChartReciprocalBoxVerified17, hn]
-  exact normalized_chart_reciprocal_box17_contains ⟨n, hn⟩
 
 def normalizedOuterBasePolynomialCoefficientBoxVerified17
     (n e : ℕ) : Box :=
@@ -109,23 +101,19 @@ theorem normalized_outer_completed_polynomial_box_verified17_contains (n : Fin 1
       n.val e n.isLt)
     (powBoxExact_contains pi_log_reference_contains e)
 
+def normalizedOuterCompletedBoxVerified17 (n : ℕ) : Box :=
+  normalizedOuterCompletedPolynomialBoxVerified17 n
+
 theorem normalized_outer_completed_box_verified17_contains (r : Fin 17) :
-    ((if r.val < 13 then normalizedOuterCompletedPolynomialBox r.val
-      else normalizedOuterCompletedPolynomialBoxVerified17 r.val)).Contains
+    (normalizedOuterCompletedBoxVerified17 r.val).Contains
       (normalizedOuterCompletedJet17 r.val) := by
-  by_cases hr : r.val < 13
-  · simp [hr]
-    rw [normalizedOuterCompletedJet17_eq_old ⟨r.val, hr⟩]
-    exact C3CofactorCorrelation.normalized_outer_completed_box_contains ⟨r.val, hr⟩
-  · simp [hr]
-    rw [normalized_outer_completed_jet_eq_polynomial17 r]
-    exact normalized_outer_completed_polynomial_box_verified17_contains r
+  rw [normalized_outer_completed_jet_eq_polynomial17 r]
+  exact normalized_outer_completed_polynomial_box_verified17_contains r
 
 def normalizedCompletedReferenceBoxVerified80 (n : ℕ) : Box :=
   exactRangeSumBox (fun k =>
     (certifiedHead80JetBox17 k).mul
-      (if n-k < 13 then normalizedOuterCompletedPolynomialBox (n-k)
-        else normalizedOuterCompletedPolynomialBoxVerified17 (n-k))) n
+      (normalizedOuterCompletedBoxVerified17 (n-k))) n
 
 theorem normalized_completed_reference_box_verified80_contains (r : Fin 17) :
     (normalizedCompletedReferenceBoxVerified80 r.val).Contains
@@ -139,9 +127,7 @@ theorem normalized_completed_reference_box_verified80_contains (r : Fin 17) :
     have hr := r.isLt
     omega
   have houter := normalized_outer_completed_box_verified17_contains ⟨r.val-k, hn⟩
-  by_cases hlow : r.val-k < 13
-  · simpa [hlow] using Box.mul_contains hhead houter
-  · simpa [hlow] using Box.mul_contains hhead houter
+  simpa [normalizedOuterCompletedBoxVerified17] using Box.mul_contains hhead houter
 
 end
 end C3ShiftedFourth

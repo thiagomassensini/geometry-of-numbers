@@ -238,8 +238,8 @@ def main() -> None:
     print(f"source-box gate center={decimal_fraction(constant, 42)}")
     print(f"source-box gate variation={decimal_fraction(variation, 42)}")
     print(f"source-box exact lower={decimal_fraction(lower, 42)}")
-    print("classification:", "candidate box gate passes" if lower > 0 else "candidate box gate fails")
-    print("Lean must still prove the finite head boxes, Gamma error, and C3/48 tail inclusion.")
+    print("classification:", "loose independent-box gate passes" if lower > 0 else "loose independent-box gate does not certify the sign")
+    print("This widened per-coefficient enclosure is a negative control for lost correlation. The Lean certificate uses the correlated normalized coefficient envelopes and proves their inclusion for native c0,...,c8, then transports the fixed-direction gate through the bordered determinant and Schur identities.")
 
 
 if __name__ == "__main__":

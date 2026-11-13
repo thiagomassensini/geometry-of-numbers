@@ -12,6 +12,11 @@ private def gridDenNat : ℕ := 10^30
 private def gridDenInt : ℤ := 10^30
 private def gridDenRat : ℚ := 10^30
 
+/-- Public value of the rational grid denominator, for interval endpoints
+consumed by later certificate modules. -/
+theorem grid_denominator_rat_value : gridDenRat = 10^30 := by
+  norm_num [gridDenRat]
+
 /-- Integer interval endpoints measured in units of `10⁻³⁰`. -/
 structure GridBox where
   lo : ℤ

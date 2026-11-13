@@ -298,7 +298,7 @@ def main() -> None:
     print(f"  variation={decimal_fraction(variation,42)}")
     print(f"  lower={decimal_fraction(lower,42)}")
     print("status:","candidate source boxes certify the gate" if lower > 0 else "interval gate crosses zero")
-    print("All analytic inclusions and the Lean matrix/Schur bridge remain to be proved.")
+    print("Diagnostic exact interval calculation only; the matching native coefficient-box inclusion and the determinant/Schur transport are proved in Lean by FourthSourceGate17.lean and FourthIntervalGate17.lean.")
 
 
 if __name__ == "__main__":
