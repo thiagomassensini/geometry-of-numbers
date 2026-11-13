@@ -48,7 +48,7 @@ Consequently, the shifted 4×4 Bézout determinant, its Schur complement, `0 < s
 - Diagnostics `diagnose_completed_boxes48.py` and `compare_c3_heads.py` ran; the former's old independently boxed cofactor interval contains zero, as expected from lost correlation.
 - `lake build --wfail` passed in the legacy dependency worktree (`cf66116e72a19b27be5441cda34e1fb723b88adc`, 8,850 jobs). `audit-foundation.sh`, `audit-geometry.sh`, and `audit-analysis.sh` all passed there.
 - The root build and audits do not compile the new `research/` modules; those were compiled directly by the task validator.
-- Whitespace and placeholder scans passed. The task branch remains uncommitted and isolated. The main GoN and Carry checkouts contain unrelated pre-existing changes that were left untouched.
+- Whitespace and placeholder scans passed. Checkpoint commit `fc35ebd` contains only this task's research artifacts; the branch is kept separate and has not been merged. The main GoN and Carry checkouts contain unrelated pre-existing changes that were left untouched.
 
 ## Next exact obligation
 

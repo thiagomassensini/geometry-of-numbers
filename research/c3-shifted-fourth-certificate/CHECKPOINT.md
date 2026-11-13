@@ -2,7 +2,7 @@
 
 - Status: PARTIAL; exact transport and order-16 reference boxes compile, but the shifted 4×4 source pivot is not certified.
 - Base/branch: `6c5c97b03925c398bf77a561d6e76b14563265e0`; `agent/c3-shifted-fourth-certificate-20261112`.
-- Commit: none; deliverables remain untracked in the isolated worktree. `AGENTS.md` says no commit/push without a user request; the scoped C3 prompt says not to merge main.
+- Checkpoint commit: `fc35ebd` (`research(c3): certify M80 source amplitude boxes`); the scoped C3 prompt says not to merge main.
 - Pins: Lean 4.32.0, Mathlib `81a5d257c8e410db227a6665ed08f64fea08e997`, GreenFrame `cd2d838bee67ad23f869a02f8ed9f0a0feb926fa`.
 - Reused: GoN #323/#324 C3/48 source and correlation files; the two third-pivot certificates remain upstream dependencies, not premises for the fourth-pivot sign.
 - New Lean modules: `GammaCrosswalk17`, `SourceTransport17`, `HighChartReciprocal17`, `HighSampleAmplitude17`, `FastHeadEvaluation17`, `HighCoefficientBoxes17`, and `Audit17`; all are listed in `validate.sh`.
