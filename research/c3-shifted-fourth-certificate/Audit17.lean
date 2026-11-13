@@ -1,6 +1,10 @@
 import SourceTransport17
 import HighCoefficientBoxes17
-import FastHeadEvaluation17
+import GridJetCertificates17
+#print axioms C3ShiftedFourth.tight_low_sample_log_evaluator_eq
+#print axioms C3ShiftedFourth.tight_low_sample_amplitude_evaluator_check
+#print axioms C3ShiftedFourth.tight_m80_log_box_contains
+#print axioms C3ShiftedFourth.tight_m80_amplitude_box_contains
 #print axioms C3ShiftedFourth.gamma_reference_center_difference13
 #print axioms C3ShiftedFourth.native_gamma_crosswalk_boxes
 #print axioms C3ShiftedFourth.completed_native_jet_crosswalk_error80
@@ -15,3 +19,20 @@ import FastHeadEvaluation17
 #print axioms C3ShiftedFourth.tight_high_sample_jet_box
 #print axioms C3ShiftedFourth.cached_m80_sample_jet_box
 #print axioms C3ShiftedFourth.tight_head80_jet_box_cached
+#print axioms C3ShiftedFourth.grid_toBox_ofBox_contains
+#print axioms C3ShiftedFourth.grid_toBox_gmul
+#print axioms C3ShiftedFourth.grid_toBox_gscale
+#print axioms C3ShiftedFourth.grid_toBox_gpow
+#print axioms C3ShiftedFourth.grid_toBox_gbsumFin
+#print axioms C3ShiftedFourth.grid_m80_amplitude_contains
+#print axioms C3ShiftedFourth.grid_m80_log_contains
+#print axioms C3ShiftedFourth.grid_m80_sample_jet_box
+#print axioms C3ShiftedFourth.grid_head80_jet_box
+#print axioms C3ShiftedFourth.grid_sample_jet14_reference_contains
+#print axioms C3ShiftedFourth.grid_sample_jet16_reference_contains
+#print axioms C3ShiftedFourth.grid_m80_head14_box17_contains
+#print axioms C3ShiftedFourth.grid_m80_head16_box17_contains
+#print axioms C3ShiftedFourth.grid_m80_head14_reference17_eq
+#print axioms C3ShiftedFourth.grid_m80_head16_reference17_eq
+#print axioms C3ShiftedFourth.tight_head80_jet14_box17
+#print axioms C3ShiftedFourth.tight_head80_jet16_box17

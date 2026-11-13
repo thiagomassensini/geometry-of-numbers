@@ -36,13 +36,19 @@ Direct compilation was done with `-DwarningAsError=true`. `Audit17.lean` reports
 
 That proves only that the **candidate boxes** pass the gate. It does not prove that the original native coefficients lie in those boxes. The independent-box diagnostic loses correlation and gives a lower bound about `−2.1772 × 10⁻⁴⁵`, so it cannot close the sign.
 
-The new chart table removes recursive chart-reciprocal expansion. The resume added exact rational amplitudes for the 60 extra M=80 samples and a cached Lean head enclosure. The remaining bottleneck is numeric evaluation: Lean evaluation of the cached M=80 head jet 14, and even of one cached sample jet, reached about 8.54 GB without finishing within 3½ minutes. I stopped those exploratory reductions. A Python exact-rational diagnostic gives approximate tight-head intervals `[1.9500316472449276e-12, 1.9500316472449389e-12]` for jet 14 and `[5.9064405464250576e-13, 5.9064405464250778e-13]` for jet 16. These diagnostics use tighter low-address boxes than the cached Lean head and are not proof of its interval inclusion. The table generator `generate_high_amplitudes.py` reproduces the 60 amplitude entries exactly, while Lean independently checks each entry against `expBox`. There is still no Lean proof that the head jets 14 and 16, after completion and tail transport, lie in the candidate coefficient boxes for `c₇` and `c₈`.
+The resumed work removes that head-evaluation bottleneck. `TightInputTable17.lean` caches the first 205 outputs of the original rational log and exponential box evaluators, and `TightInputCertificates17.lean` checks those values in Lean. The 60 high-address amplitudes continue to use the previously checked M=80 table. `GridArithmetic17.lean` and `GridHeadEvaluation17.lean` evaluate sample jets on an integer grid; the factorial reciprocal is applied as an exact rational scale before the final rounding, avoiding a large interval from rounding `1/r!` first. `GridJetCertificates17.lean` proves the resulting head intervals contain the original M=80 bracket jets:
+
+- order 14: `[1950031647244927799/10^30, 1950031647244938748/10^30]`;
+- order 16: `[590644054642505800/10^30, 590644054642507801/10^30]`.
+
+The rational generator reproduces the caches, and Lean checks all 530 sample-jet entries before using them in the head sum. This is a Lean containment for the original finite M=80 head, not yet an inclusion for the completed native coefficients `c₇,c₈`.
 
 Consequently, the shifted 4×4 Bézout determinant, its Schur complement, `0 < sourceMomentSchur h 1 3`, and `PosDef (G₁,4)` remain **unproved**. The existing third-prefix positivity does not supply the missing fourth margin by itself.
 
 ## Validation and audit notes
 
-- `bash research/c3-shifted-fourth-certificate/validate.sh`: passed after the resume additions. It explicitly compiled all task Lean modules with warnings as errors, audited all new public theorem roots, checked the generated high-amplitude table, scanned for forbidden placeholders/axioms, and ran the two exact-rational diagnostics.
+- Before this continuation, `bash research/c3-shifted-fourth-certificate/validate.sh` passed for the prior state. In this continuation, `TightInputTable17`, `TightInputCertificates17`, `GridHeadEvaluation17`, `GridJetTable17`, `GridJetCertificates17`, and `Audit17.lean` were compiled directly with `-DwarningAsError=true`. The full script was started but stopped while rebuilding the heavy pre-existing `TightHeadSource` under a host load of about 60 simultaneous Lean processes; its full rerun is still outstanding.
+- The updated `Audit17.lean` reports only `[propext, Classical.choice, Quot.sound]` for the new table and head-containment theorems. The exact-rational preflight still gives the candidate-box gate lower bound `6.743605186895089… × 10⁻⁵⁴ > 0`; this remains a diagnostic until native `c₇,c₈` are enclosed by the candidate boxes.
 - `research/c3-cofactor-correlation-gate/validate.sh`: passed, including its existing source coefficient and tail checks.
 - The legacy `research/c3-cofactor-chiral-certification/validate.sh` stopped at `ChiralOrder11` because its `LEAN_PATH` omitted the existing `CompletedHeadEight.olean` dependency. After adding that dependency cache locally (without editing the validator or dependency source), the remaining #324 modules, `SourceSchurShift`, and certificate audit compiled. The certificate audit reports 17 result roots and excludes the alternative sign routes.
 - Diagnostics `diagnose_completed_boxes48.py` and `compare_c3_heads.py` ran; the former's old independently boxed cofactor interval contains zero, as expected from lost correlation.
@@ -52,4 +58,4 @@ Consequently, the shifted 4×4 Bézout determinant, its Schur complement, `0 < s
 
 ## Next exact obligation
 
-Prove correlated rational enclosures for the original M=80 head jets 14 and 16 without evaluating the whole repeated interval expression at once. Then use the already formalized weighted Gamma and original tail ledgers to prove the native `c₇,c₈` inclusions in the gate boxes. Only after that inclusion is proved can the existing cofactor identity and certified 3×3 prefix be used to conclude the shifted fourth pivot.
+Transport the new Lean head enclosures for orders 14 and 16 through the existing correlated completion, weighted Gamma, and original tail ledgers, then prove the native `c₇,c₈` inclusions in the candidate gate boxes. Only after those inclusions are proved can the existing cofactor identity and certified 3×3 prefix conclude the shifted fourth pivot.

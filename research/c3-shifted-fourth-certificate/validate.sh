@@ -31,7 +31,13 @@ modules=(
   SourceTransport17
   HighChartReciprocal17
   HighSampleAmplitude17
+  TightInputTable17
+  TightInputCertificates17
+  GridArithmetic17
   FastHeadEvaluation17
+  GridHeadEvaluation17
+  GridJetTable17
+  GridJetCertificates17
   HighCoefficientBoxes17
 )
 for module in "${modules[@]}"; do
@@ -39,6 +45,9 @@ for module in "${modules[@]}"; do
   lean -DwarningAsError=true --root="$TASK_DIR" \
     -o "$TASK_DIR/.cache/$module.olean" "$TASK_DIR/$module.lean"
 done
+
+printf 'Python integer-grid jet table regeneration check\n'
+python3 "$TASK_DIR/generate_grid_jets17.py" --check
 
 printf 'Python rational table regeneration check\n'
 python3 "$TASK_DIR/generate_high_amplitudes.py"
