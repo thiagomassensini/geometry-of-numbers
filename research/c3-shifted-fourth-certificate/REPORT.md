@@ -162,7 +162,9 @@ task-specific validator compiles the research modules directly because the
 root Lake build does not enumerate them automatically. Validation artifacts
 are the modules and scripts named above; no external numeric result is used
 as a Lean proof premise. PR #327 was opened against `main`; at the recorded
-pre-merge check GitHub reported `CLEAN`/`MERGEABLE` and no status checks.
+pre-merge check GitHub reported `CLEAN`/`MERGEABLE` and no status checks. It
+was merged on 2026-11-13; merge commit:
+`131079fb7539dea352945c9758fec86bad3e9591`.
 
 ## I. Next minimal obligation
 
