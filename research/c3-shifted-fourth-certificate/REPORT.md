@@ -197,8 +197,9 @@ was merged on 2026-11-13; merge commit:
 
 The central-source extension is on branch
 `agent/c3-central-fourth-same-boxes-20261113`, based on current `main` SHA
-`bdbc1792e143dd8377cdb55638731aeea432b7db`. It is a separate, unmerged change;
-the earlier shifted result remains PR #327, merge commit
+`bdbc1792e143dd8377cdb55638731aeea432b7db`; it is open as PR #329 and remains
+unmerged. Its proof commit is `11615e06344dd610c8cc4747bbc656d6dd0c0ef5`.
+The earlier shifted result remains PR #327, merge commit
 `131079fb7539dea352945c9758fec86bad3e9591`.
 
 ## I. Next minimal obligation

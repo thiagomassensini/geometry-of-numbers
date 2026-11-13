@@ -1,8 +1,10 @@
 # Checkpoint — original-source C3 fourth pivots
 
-- Phase: central same-box fourth pivot proved; all targeted and root validations passed.
+- Phase: central same-box fourth pivot proved; all validations passed; PR #329 open, unmerged, and mergeable.
 - Branch: `agent/c3-central-fourth-same-boxes-20261113`.
 - Base `main`: `bdbc1792e143dd8377cdb55638731aeea432b7db`; no merge performed.
+- Proof commit: `11615e06344dd610c8cc4747bbc656d6dd0c0ef5`.
+- PR: https://github.com/thiagomassensini/geometry-of-numbers/pull/329 (`CLEAN`/`MERGEABLE`, no status checks).
 - Source: original completed C3, M=80/C3-48, original Gamma completion/tail; same normalized coefficient boxes through `a₈` as shifted certificate.
 - Files added: `CentralFourthGate17.lean`, `CentralFourthSource17.lean`.
 - Files updated: `Audit17.lean`, `validate.sh`, `REPORT.md`, `CHECKPOINT.md`.
@@ -14,5 +16,5 @@
 - Passed: root `lake build --wfail` (8,850 jobs) and `audit-foundation.sh`, `audit-geometry.sh`, `audit-analysis.sh`.
 - Root checks reused an already-built sibling Mathlib cache after matching manifest, Mathlib SHA `81a5d257c8e410db227a6665ed08f64fea08e997`, and Lean toolchain; local build path uses an ignored symlink to that cache.
 - Initial central proof issues fixed: D30/35/50 reductions, ambiguous `nativeC`, and real-vector star simplification.
-- Open: final diff/placeholder review, checkpoint commit/push, and unmerged PR.
-- Next exact step: inspect the scoped diff and placeholder scan, then commit, push, and open the PR; do not merge.
+- Checkpoint commit/push remains to record this PR state; no proof or validation work is open.
+- Next exact step: commit and push this checkpoint update; leave PR #329 open and unmerged for review.
