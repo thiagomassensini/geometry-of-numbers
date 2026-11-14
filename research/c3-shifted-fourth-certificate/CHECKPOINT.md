@@ -1,11 +1,11 @@
 # Checkpoint — original-source C3 fourth pivots
 
-- Phase: both original-source 4×4 moment blocks proved PosDef; targeted revalidation passed; PR #329 open and unmerged.
-- Branch: `agent/c3-central-fourth-same-boxes-20261113`.
-- Base `main`: `bdbc1792e143dd8377cdb55638731aeea432b7db`; no merge performed.
+- Phase: both original-source 4×4 moment blocks proved PosDef; PR #329 merged.
+- Certificate branch: `agent/c3-central-fourth-same-boxes-20261113`.
+- Merge commit on `main`: `0e59f10c367e5f7ed5cd441abec3fa3bc1f74708` (PR #329).
 - Proof commits: `11615e06344dd610c8cc4747bbc656d6dd0c0ef5` (central gate) and `f9f5767e28d8d01c334c285c38a0c1fec14195ef` (shifted 4×4 PosDef corollary).
 - Previous documentation commits already pushed: `3a0928f1c9a51855c78a0b9f1ffc93fb8a8d4a02`, `ceda6e880f5216fd8877187df07e2df0f72bdf2b`.
-- PR: https://github.com/thiagomassensini/geometry-of-numbers/pull/329 (`CLEAN`/`MERGEABLE`, no status checks).
+- PR: https://github.com/thiagomassensini/geometry-of-numbers/pull/329 (merged 2026-11-13 São Paulo time; no status checks were configured).
 - Source: original completed C3, M=80/C3-48, original Gamma completion/tail; same normalized coefficient boxes through `a₈` as shifted certificate.
 - Files added: `CentralFourthGate17.lean`, `CentralFourthSource17.lean`.
 - Files updated: `FourthIntervalGate17.lean`, `Audit17.lean`, `validate.sh`, `REPORT.md`, `CHECKPOINT.md`.
@@ -20,4 +20,4 @@
 - Root checks reused an already-built sibling Mathlib cache after matching manifest, Mathlib SHA `81a5d257c8e410db227a6665ed08f64fea08e997`, and Lean toolchain; local build path uses an ignored symlink to that cache.
 - Initial central proof issues fixed: D30/35/50 reductions, ambiguous `nativeC`, and real-vector star simplification.
 - No proof or validation work remains open.
-- Next exact lemma: certify the central fifth pivot `s=0, n=4` (new source coefficient `c₉`) independently of the positive 4×4 prefix. Operationally, await review on PR #329; keep it open and unmerged.
+- Next exact lemma: certify the central fifth pivot `s=0, n=4` (new source coefficient `c₉`) independently of the positive 4×4 prefix.
