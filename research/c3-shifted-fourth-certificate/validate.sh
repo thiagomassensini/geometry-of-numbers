@@ -47,6 +47,8 @@ modules=(
   FourthGate17
   FourthSourceGate17
   FourthIntervalGate17
+  CentralFourthGate17
+  CentralFourthSource17
 )
 for module in "${modules[@]}"; do
   printf 'Lean: %s\n' "$module"
