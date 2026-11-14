@@ -1,0 +1,7 @@
+High zero tail T0 = 0.022723566878980892 < 60/2500 = 0.024
+D_0 > 2.83566043188920e-10
+D_1 > 2.68831487875457e-15
+D_2 > 1.74257015571398e-20
+D_3 > 5.08933215861573e-26
+s>=4: relative error at s=4 < 0.40844996142660117 <1; geometric decay proves all later
+ALL CENTRAL 2x2 MINORS POSITIVE in the paper argument, under external analytic inputs.
