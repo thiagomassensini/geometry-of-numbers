@@ -309,3 +309,12 @@ Kernel status is now established:
 
 - `nativeSourceFiniteBoundaryEnergy_pos_12`: passes
 - `nativeSourceFiniteBoundaryEnergy_pos_8`: passes
+
+## Luna G C2 sign transport
+
+The downstream finite C2 sign certification based on
+carry-self-adjoint-operator PR #118 is recorded in
+[`LUNA_G_C2_CHECKPOINT.md`](LUNA_G_C2_CHECKPOINT.md). It restricts the existing
+H6/K6 certificates to every prefix through order six, then transports the
+original boundary-energy margins to the exact diagonal C2 cutoff. The
+all-order sign obligation remains open.
