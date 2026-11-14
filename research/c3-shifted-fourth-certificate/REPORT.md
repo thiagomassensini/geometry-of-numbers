@@ -208,11 +208,13 @@ pre-merge check GitHub reported `CLEAN`/`MERGEABLE` and no status checks. It
 was merged on 2026-11-13; merge commit:
 `131079fb7539dea352945c9758fec86bad3e9591`.
 
-The central-source extension is on branch
-`agent/c3-central-fourth-same-boxes-20261113`, based on current `main` SHA
-`bdbc1792e143dd8377cdb55638731aeea432b7db`; it is open as PR #329 and remains
-unmerged. The central gate is in commit `11615e06344dd610c8cc4747bbc656d6dd0c0ef5`;
-the shifted full-block `PosDef` corollary is in `f9f5767`.
+The central-source extension was developed on branch
+`agent/c3-central-fourth-same-boxes-20261113`, from base SHA
+`bdbc1792e143dd8377cdb55638731aeea432b7db`, and merged through PR #329 on
+2026-11-13 (São Paulo time). The merge commit is
+`0e59f10c367e5f7ed5cd441abec3fa3bc1f74708`. The central gate is in commit
+`11615e06344dd610c8cc4747bbc656d6dd0c0ef5`; the shifted full-block `PosDef`
+corollary is in `f9f5767e28d8d01c334c285c38a0c1fec14195ef`.
 The earlier shifted result remains PR #327, merge commit
 `131079fb7539dea352945c9758fec86bad3e9591`.
 
