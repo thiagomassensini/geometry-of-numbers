@@ -3,6 +3,7 @@ import Regression
 import CarrySelfAdjointOperator.CompletedNativeChiralBoundaryParityCoordinates
 import CarrySelfAdjointOperator.CompletedNativeChiralEvenBoundarySplit
 import CarrySelfAdjointOperator.CanonicalCompletedNativeStieltjesOperator
+import CarrySelfAdjointOperator.CompletedNativeC2CentralLegEnergyLimit
 import Mathlib.LinearAlgebra.Matrix.PosDef
 
 namespace CanonicalNativeBoundaryTransfer
@@ -10,6 +11,7 @@ open scoped BigOperators ComplexConjugate Matrix
 open GeometryOfNumbers.Analysis.BaseTwoCompletion
 open CarrySelfAdjointOperator
 open CarryStructuralKrylov
+open Filter Topology
 noncomputable section
 set_option autoImplicit false
 
@@ -75,6 +77,23 @@ private theorem canonical_h6k6_posDef_native :
       (GeometryOfNumbers.Analysis.shiftedHankel canonicalCompletedNativeLogDerivativeMoment 6).PosDef := by
   simpa [canonical_moments_eq_native] using regression_H6_K6
 
+/-- Every leading principal pair through size six inherits positivity from
+the certified canonical H6/K6 pair. The restriction is by the exact Fin
+prefix embedding; no new sign premise is introduced. -/
+theorem canonical_hankel_pair_posDef_of_le_six (n : ℕ) (hn : n ≤ 6) :
+    (GeometryOfNumbers.Analysis.hankelGram canonicalCompletedNativeLogDerivativeMoment n).PosDef ∧
+      (GeometryOfNumbers.Analysis.shiftedHankel canonicalCompletedNativeLogDerivativeMoment n).PosDef := by
+  have h6 := canonical_h6k6_posDef_native
+  constructor
+  · have hsub := Matrix.PosDef.submatrix h6.1 (Fin.castLE_injective hn)
+    convert hsub using 1
+    ext i j
+    simp [Fin.castLE]
+  · have hsub := Matrix.PosDef.submatrix h6.2 (Fin.castLE_injective hn)
+    convert hsub using 1
+    ext i j
+    simp [Fin.castLE]
+
 /-- Capstone target E12: strict positivity of the original native boundary
 energy, reusing the canonical H6/K6 certificates. -/
 theorem nativeSourceFiniteBoundaryEnergy_pos_12 :
@@ -111,6 +130,32 @@ theorem nativeSourceFiniteBoundaryEnergy_pos_8 :
     ∀ x : Fin 8 → ℂ, x ≠ 0 → 0 < nativeSourceFiniteBoundaryEnergy 8 x := by
   simpa [Nat.mul_comm] using
     boundary_energy_pos_of_canonical_pair_posDef 4 hankel4_posDef_native shifted4_posDef_native
+
+/-- The original finite boundary energy is strictly positive at every even
+dimension through twelve, using only the existing H6/K6 finite certificate. -/
+theorem nativeSourceFiniteBoundaryEnergy_pos_2n_of_le_six (n : ℕ) (hn : n ≤ 6) :
+    ∀ x : Fin (2*n) → ℂ, x ≠ 0 → 0 < nativeSourceFiniteBoundaryEnergy (2*n) x := by
+  have hpair := canonical_hankel_pair_posDef_of_le_six n hn
+  exact boundary_energy_pos_of_canonical_pair_posDef n hpair.1 hpair.2
+
+/-- Certified C2 sign for each fixed order 1 through 6. Its cutoff is the
+original diagonal cutoff `nativeSourceC2TailCutoff n k`; the radial index k
+and the C2 cell count M remain distinct. The coercivity constant may depend
+on n and is obtained from the original finite boundary energy by compactness. -/
+theorem nativeSourceC2CentralLeg_eventually_positive_of_order_le_six
+    (n : ℕ) (hn : n ≤ 6) :
+    ∃ δ : ℝ, 0 < δ ∧
+      ∀ᶠ k : ℕ in atTop, ∀ x : Fin (2*n) → ℂ,
+        δ*‖x‖^2 ≤ nativeSourceC2CentralLegReadout n k
+          (nativeSourceC2TailCutoff n k) x := by
+  obtain ⟨δ, hδ, hbound⟩ :=
+    nativeSourceC2CentralLeg_eventually_margin_of_boundary_pos n
+      (nativeSourceFiniteBoundaryEnergy_pos_2n_of_le_six n hn)
+  refine ⟨δ/16, div_pos hδ (by norm_num), ?_⟩
+  filter_upwards [hbound] with k hk
+  intro x
+  have h := hk x
+  nlinarith
 
 end
 end CanonicalNativeBoundaryTransfer
