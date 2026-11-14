@@ -387,6 +387,39 @@ theorem exists_sigmaSchur_quartic_remainder (s n : ℕ)
       _ ≤ B * (-d)^4 := hposB
       _ = B * d^4 := by ring
 
+/-- Quantitative endpoint gate supplied by the quartic theorem. Once source interval bounds
+discharge either displayed margin, the corresponding pivot sign follows without a Hankel-sign
+assumption. -/
+theorem exists_sigmaSchur_quartic_sign_gate (s n : ℕ)
+    (hA0 : IsUnit (sourceMomentMatrix canonicalCompletedNativeLogDerivativeMoment s n)) :
+    ∃ δ B : ℝ, 0 < δ ∧ 0 ≤ B ∧ δ < 1/2 ∧
+      (∀ d : ℝ, |d| ≤ δ →
+        0 < sigmaSchur 0 s n - sigmaSchurCurvatureAmplitude s n*d^2 - B*d^4 →
+          0 < sigmaSchur d s n) ∧
+      (∀ d : ℝ, |d| ≤ δ →
+        sigmaSchur 0 s n - sigmaSchurCurvatureAmplitude s n*d^2 + B*d^4 < 0 →
+          sigmaSchur d s n < 0) := by
+  obtain ⟨δ, B, hδ, hB, hδsmall, hrem⟩ := exists_sigmaSchur_quartic_remainder s n hA0
+  refine ⟨δ, B, hδ, hB, hδsmall, ?_, ?_⟩
+  · intro d hd hmargin
+    have herror := hrem d hd
+    have hlo := (abs_le.mp herror).1
+    have hrepr : sigmaSchur d s n =
+        sigmaSchur 0 s n - sigmaSchurCurvatureAmplitude s n*d^2 +
+          (sigmaSchur d s n - sigmaSchur 0 s n +
+            sigmaSchurCurvatureAmplitude s n*d^2) := by ring
+    rw [hrepr]
+    linarith
+  · intro d hd hmargin
+    have herror := hrem d hd
+    have hhi := (abs_le.mp herror).2
+    have hrepr : sigmaSchur d s n =
+        sigmaSchur 0 s n - sigmaSchurCurvatureAmplitude s n*d^2 +
+          (sigmaSchur d s n - sigmaSchur 0 s n +
+            sigmaSchurCurvatureAmplitude s n*d^2) := by ring
+    rw [hrepr]
+    linarith
+
 end
 end CarryMovingSigma
 
@@ -394,3 +427,4 @@ end CarryMovingSigma
 #print axioms CarryMovingSigma.sigmaSchur_fixed_direction_residual_form
 #print axioms CarryMovingSigma.sigmaSchur_le_fixed_direction_of_posDef
 #print axioms CarryMovingSigma.exists_sigmaSchur_quartic_remainder
+#print axioms CarryMovingSigma.exists_sigmaSchur_quartic_sign_gate
