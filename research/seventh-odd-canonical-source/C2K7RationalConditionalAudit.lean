@@ -1,0 +1,11 @@
+import C2K7RationalConditional
+
+#check CarrySeventhOddCanonical.c2K7_scaled_pivots_pos
+#check CarrySeventhOddCanonical.c2K7_scaled_posDef
+#check CarrySeventhOddCanonical.c2K7_matrix_posDef_of_rational_source_boxes
+#check CarrySeventhOddCanonical.c2K7_pivot_pos_of_rational_source_boxes
+
+#print axioms CarrySeventhOddCanonical.c2K7_scaled_pivots_pos
+#print axioms CarrySeventhOddCanonical.c2K7_scaled_posDef
+#print axioms CarrySeventhOddCanonical.c2K7_matrix_posDef_of_rational_source_boxes
+#print axioms CarrySeventhOddCanonical.c2K7_pivot_pos_of_rational_source_boxes
