@@ -133,9 +133,29 @@ source-discriminant, parity, congruence and physical theorems PASS.
 Axioms only: propext, Classical.choice, Quot.sound. No sorry/admit,
 no custom axiom, no merge, no new shared Lake dependency.
 
-Full ordered audit:
+FULL ordered audit: PASS, exit code 0, 2026-11-17.
   research/projective-chiral-complex-cauchy/validate-physical-eight.sh
   /home/thlinux/carry-self-adjoint-operator
+
+It checked exact toolchain/mathlib/GreenFrame revisions, rebuilt
+GoN 4×4 through 8×8 parity and Schur modules, recompiled GoN–CSA
+physical comparison modules in dependency order, including the
+old expensive sixth-order 36-cross congruence, all new 8×8 modules,
+and the original eight-source sign/characteristic ceiling bridge.
+Each requested #print axioms appeared, with ONLY propext,
+Classical.choice, Quot.sound. No error, sorryAx, custom axiom
+or new Lake dependency.
+
+Separately, the original GoN source file
+research/critical-source-return/KnownMargins.lean was recompiled
+directly against the current pins with -DwarningAsError=true
+(exit 0), so the K4 source certificate was checked from its own
+source, not merely from a cached .olean.
+
+The full script imports earlier certified research .oleans for
+the historical source dependency chain. They are an explicit
+precondition, not silently redefined. The source-file recheck
+above confirms the key K4 theorem under current toolchain.
 
 Scope is LOCAL, radial, fixed N=8, eventually in k without explicit
 numerical threshold. Not arbitrary-position Schur contraction,
