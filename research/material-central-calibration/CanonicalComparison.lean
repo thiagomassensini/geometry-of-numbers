@@ -1,3 +1,4 @@
+import GeometryOfNumbers.Analysis.CarryMaterialComplexCauchyPick
 import CarrySelfAdjointOperator.RealAxisWronskianDslopeSewing
 import GeometryOfNumbers.Analysis.CarryMaterialProjectiveChiralSewing
 import GeometryOfNumbers.Analysis.CarryMaterialFourthPivot
@@ -4853,3 +4854,51 @@ theorem material_chiral_matrix_eq_native_dslope_numerator
 
 end
 end CarryMaterialPhysicalProjectiveChiralComparison
+
+
+/-!
+## Real boundary of the new GENUINE complex material Cauchy--Pick source
+
+The complex source is defined in GoN entirely from the preexisting C2
+material gradients, original whole-cell return, camera, completion and vector
+derivative. The equalities below are sourced from the already formalized
+real-height material/native comparison; they are NOT a complex identity
+principle and do NOT impose equality in the radial upper half-plane.
+-/
+namespace CarryMaterialComplexPhysicalComparison
+
+open GeometryOfNumbers.Analysis CarrySelfAdjointOperator
+
+theorem material_complex_value_boundary_eq_native (t : ℝ) :
+    carryMaterialComplexValueReadout (t : ℂ) =
+      completedNativeOperatorCharacteristic (t : ℂ) := by
+  rw [carryMaterialComplexValueReadout_ofReal]
+  exact CarryMaterialCanonicalComparison.material_response t
+
+theorem material_complex_companion_boundary_eq_native (t : ℝ) :
+    carryMaterialComplexCompanionReadout (t : ℂ) =
+      completedNativeOperatorBoundaryCompanion (t : ℂ) := by
+  unfold carryMaterialComplexCompanionReadout
+  rw [carryMaterialComplexCompanion_ofReal]
+  exact CarryMaterialResponseComparison.material_companion t
+
+theorem material_complex_response_boundary_eq_native (t : ℝ) :
+    carryMaterialComplexResponse (t : ℂ) =
+      completedGreenNormalizedResponse completedNativeOperatorCharacteristic
+        completedNativeOperatorBoundaryCompanion (t : ℂ) := by
+  rw [carryMaterialComplexResponse_ofReal]
+  exact CarryMaterialResponseComparison.material_normalized_response t
+
+theorem material_complex_chiralGreen_boundary_eq_native (t u : ℝ) :
+    carryMaterialComplexChiralGreen (t : ℂ) (u : ℂ) =
+      completedGreenWronskian completedNativeOperatorCharacteristic
+        completedNativeOperatorBoundaryCompanion (u : ℂ) (t : ℂ) := by
+  rw [carryMaterialComplexChiralGreen_ofReal]
+  exact CarryMaterialPhysicalProjectiveChiralComparison.material_chiral_source_eq_completed_native_wronskian t u
+
+#print axioms material_complex_value_boundary_eq_native
+#print axioms material_complex_companion_boundary_eq_native
+#print axioms material_complex_response_boundary_eq_native
+#print axioms material_complex_chiralGreen_boundary_eq_native
+
+end CarryMaterialComplexPhysicalComparison
