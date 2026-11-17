@@ -4,6 +4,7 @@ import CarrySelfAdjointOperator.CompletedNativeChiralBoundaryParityCoordinates
 import CarrySelfAdjointOperator.CompletedNativeChiralEvenBoundarySplit
 import CarrySelfAdjointOperator.CanonicalCompletedNativeStieltjesOperator
 import CarrySelfAdjointOperator.CompletedNativeC2CentralLegEnergyLimit
+import CarrySelfAdjointOperator.NativeCriticalC2JordanGreenLimit
 import Mathlib.LinearAlgebra.Matrix.PosDef
 
 namespace CanonicalNativeBoundaryTransfer
@@ -156,6 +157,64 @@ theorem nativeSourceC2CentralLeg_eventually_positive_of_order_le_six
   intro x
   have h := hk x
   nlinarith
+
+/-- The H6/K6 certificate makes the complete Schur theta-Green integral
+strictly positive through pivot order five. The enlarged prefix has size
+`n+1 ≤ 6`; this is a finite result and imports no all-order positivity. -/
+theorem nativeCriticalGreenPositive_of_order_le_five
+    (b : Bool) (n : ℕ) (hn : n ≤ 5) :
+    0 < ∫ u in Set.Ioi (0 : ℝ),
+      (nativeThetaGreenPolynomial
+        (nativeSchurThetaPolynomial (if b then 1 else 0) n)).eval u *
+          XiThetaCosine.thetaTail u := by
+  have hpair := canonical_hankel_pair_posDef_of_le_six (n+1) (by omega)
+  cases b with
+  | false =>
+      have hNext :
+          (sourceMomentMatrix canonicalCompletedNativeLogDerivativeMoment
+            0 (n+1)).PosDef := by
+        convert hpair.1 using 1
+        ext i j
+        simp [sourceMomentMatrix, GeometryOfNumbers.Analysis.hankelGram]
+      simpa using nativeCriticalGreenPositive_of_extendedPrefix_posDef 0 n hNext
+  | true =>
+      have hNext :
+          (sourceMomentMatrix canonicalCompletedNativeLogDerivativeMoment
+            1 (n+1)).PosDef := by
+        convert hpair.2 using 1
+        ext i j
+        simp [sourceMomentMatrix, GeometryOfNumbers.Analysis.shiftedHankel]
+      simpa using nativeCriticalGreenPositive_of_extendedPrefix_posDef 1 n hNext
+
+/-- The even Euler integral is positive through pivot order five, by H6/K6
+and the exact even Euler balance. -/
+theorem nativeSchurEuler_even_integral_pos_of_order_le_five
+    (n : ℕ) (hn : n ≤ 5) :
+    0 < nativeXiPolynomialIntegral (nativeSchurEulerPolynomial 0 n) := by
+  have hpair := canonical_hankel_pair_posDef_of_le_six (n+1) (by omega)
+  have hNext :
+      (sourceMomentMatrix canonicalCompletedNativeLogDerivativeMoment
+        0 (n+1)).PosDef := by
+    convert hpair.1 using 1
+    ext i j
+    simp [sourceMomentMatrix, GeometryOfNumbers.Analysis.hankelGram]
+  exact nativeSchurEuler_even_integral_pos_of_extendedPrefix_posDef n hNext
+
+/-- The odd Euler compensation inequality is certified through pivot order
+five by H6/K6 and the exact odd Euler balance. -/
+theorem nativeSchurEuler_odd_compensation_of_order_le_five
+    (n : ℕ) (hn : n ≤ 5) :
+    -2 * completedNativeRealEvenCharacteristicCoefficient 0 *
+        (nativeSchurCriticalReadout 1 n)^2 <
+      nativeXiPolynomialIntegral (nativeSchurEulerPolynomial 1 n) := by
+  have hpair := canonical_hankel_pair_posDef_of_le_six (n+1) (by omega)
+  have hNext :
+      (sourceMomentMatrix canonicalCompletedNativeLogDerivativeMoment
+        1 (n+1)).PosDef := by
+    convert hpair.2 using 1
+    ext i j
+    simp [sourceMomentMatrix, GeometryOfNumbers.Analysis.shiftedHankel]
+  exact nativeSchurEuler_odd_compensation_of_extendedPrefix_posDef n hNext
 
 end
 end CanonicalNativeBoundaryTransfer

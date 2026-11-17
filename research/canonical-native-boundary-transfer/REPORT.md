@@ -318,3 +318,14 @@ carry-self-adjoint-operator PR #118 is recorded in
 H6/K6 certificates to every prefix through order six, then transports the
 original boundary-energy margins to the exact diagonal C2 cutoff. The
 all-order sign obligation remains open.
+
+## Finite Schur theta-Green signs
+
+The H6/K6 certificate in #331 also supplies both canonical Hankel prefixes at
+size `n+1` for every `n ≤ 5`. The follow-up checkpoint
+[`C2_GREEN_FINITE_CHECKPOINT.md`](C2_GREEN_FINITE_CHECKPOINT.md) records three
+new finite consequences: positivity of the complete Schur theta-Green
+integral in both sectors, strict positivity of the even Euler integral, and
+the odd Euler compensation inequality. Their Carry dependency is the
+conditional bridge from the Schur pivot to the C2/Jordan/Green common scalar;
+the source estimate for orders beyond five remains open.
