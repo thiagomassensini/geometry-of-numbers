@@ -56,6 +56,7 @@ dominance of the negative Jordan channel.
 ## Publication metadata
 
 - GoN commit: `5af5ebe6ec692b439d9657eeebf53a4af467f20e`.
+- Follow-up finite pivot/remainder commit: `85c5d47`.
 - GoN branch: `luna/c2-green-finite-331-20261116`.
 - GoN draft PR #333: https://github.com/thiagomassensini/geometry-of-numbers/pull/333,
   stacked on #331 (base `codex/luna-g-c2-sign-transport-2026-11-14`).
