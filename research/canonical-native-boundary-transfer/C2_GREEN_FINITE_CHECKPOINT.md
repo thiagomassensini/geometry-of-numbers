@@ -14,6 +14,11 @@
 
 In `CanonicalBoundaryTransfer.lean`:
 
+- `nativeSourceSchurPivot_pos_of_order_le_five`: both canonical Schur pivots
+  are strictly positive for `n ≤ 5`, by applying the H6/K6 pair at size
+  `n+1 ≤ 6` and the finite Schur complement equivalence.
+- `nativeSourceSchurRemainder_pos_of_order_le_five`: the matching native
+  Schur remainder is positive, using `c₀ > 0`.
 - `nativeCriticalGreenPositive_of_order_le_five`: for either sector and every
   `n ≤ 5`, the complete theta-Green integral of the Schur source polynomial
   is strictly positive. It obtains the enlarged prefix of size `n+1 ≤ 6`
@@ -35,7 +40,7 @@ the Green density.
   `bash research/canonical-native-boundary-transfer/compile_module.sh
   CanonicalBoundaryTransfer /home/thlinux/worktrees/luna-c2-euler-geometric-sign-20261116`.
 - Compiled `Audit.lean` with the same script and Carry worktree.
-- `#print axioms` for all three new theorems reports only `propext`,
+- `#print axioms` for all five new theorems reports only `propext`,
   `Classical.choice`, and `Quot.sound`.
 - `compile_module.sh --check` confirmed all Geometry of Numbers and Carry
   dependency oleans were present.

@@ -324,8 +324,8 @@ all-order sign obligation remains open.
 The H6/K6 certificate in #331 also supplies both canonical Hankel prefixes at
 size `n+1` for every `n ≤ 5`. The follow-up checkpoint
 [`C2_GREEN_FINITE_CHECKPOINT.md`](C2_GREEN_FINITE_CHECKPOINT.md) records three
-new finite consequences: positivity of the complete Schur theta-Green
-integral in both sectors, strict positivity of the even Euler integral, and
-the odd Euler compensation inequality. Their Carry dependency is the
+new finite consequences: positive canonical pivots and remainders, positivity
+of the complete Schur theta-Green integral in both sectors, strict positivity
+of the even Euler integral, and the odd Euler compensation inequality. Their Carry dependency is the
 conditional bridge from the Schur pivot to the C2/Jordan/Green common scalar;
 the source estimate for orders beyond five remains open.
