@@ -1,3 +1,6 @@
+import GeometryOfNumbers.Analysis.CarryMaterialComplexCauchyPick
+import CarrySelfAdjointOperator.RealAxisWronskianDslopeSewing
+import GeometryOfNumbers.Analysis.CarryMaterialProjectiveChiralSewing
 import GeometryOfNumbers.Analysis.CarryMaterialFourthPivot
 import GeometryOfNumbers.Analysis.CarryMaterialSourceFactor
 import GeometryOfNumbers.Analysis.CarryMaterialMixedSchur
@@ -4769,3 +4772,133 @@ namespace CarryMaterialFourthPivotComparison
 #assert_central_comparison_axioms material_fourth_cholesky_of_source_estimate
 #print axioms material_fourth_cholesky_of_source_estimate
 end CarryMaterialFourthPivotComparison
+
+
+/-!
+## Cross-repository physical projective-chiral sewing
+
+The SOURCE-derived two-arm chiral difference already equals the full valve
+Green after subtracting the physical hidden return, in the original material
+Hilbert space. The existing cross-repository comparison then identifies this
+source expression with the native completed Wronskian, including its
+archimedean dressing. No positivity, target factorization or new sign assumed.
+-/
+namespace CarryMaterialPhysicalProjectiveChiralComparison
+open GeometryOfNumbers.Analysis CarrySelfAdjointOperator
+open scoped InnerProductSpace ComplexConjugate
+noncomputable section
+
+theorem material_chiral_source_eq_completed_native_wronskian (t u : ℝ) :
+    carryMaterialCompleteChiralGreenPairing t u =
+      completedGreenWronskian completedNativeOperatorCharacteristic
+        completedNativeOperatorBoundaryCompanion (u : ℂ) (t : ℂ) := by
+  rw [carryMaterialCompleteChiralGreenPairing_eq_valve 1 (by norm_num)]
+  exact CarryMaterialValveGlobalReturnComparison.material_valve_return_green_wronskian
+    1 (by norm_num) t u
+
+/-- The physical two-arm source reaches the exact real-axis normalized
+divided-slope numerator, WITHOUT canceling the (u-t) separation.
+This is a division-free scalar sewing and not a positive carrier theorem.
+At u=t the identity is valid but does not extract the diagonal dslope. -/
+theorem material_chiral_source_eq_native_dslope_numerator (t u : ℝ)
+    (htF : completedNativeOperatorCharacteristic (t : ℂ) ≠ 0)
+    (huF : completedNativeOperatorCharacteristic (u : ℂ) ≠ 0) :
+    carryMaterialCompleteChiralGreenPairing t u =
+      2 * completedNativeOperatorCharacteristic (t : ℂ) *
+        completedNativeOperatorCharacteristic (u : ℂ) * ((u-t : ℝ) : ℂ) *
+        dslope (completedGreenNormalizedResponse
+          completedNativeOperatorCharacteristic
+          completedNativeOperatorBoundaryCompanion) (t : ℂ) (u : ℂ) := by
+  rw [material_chiral_source_eq_completed_native_wronskian]
+  exact completedNativeWronskian_ofReal_eq_divisionFreeDslope t u htF huF
+
+/-- Every finite real-time family: the C2 source's two authentic Hilbert
+Grams realize the NORMALIZED NATIVE DSLOPE NUMERATOR with all entries and
+crossings retained. The right side is a signed difference; no PSD follows.
+The zero parameter separation is not inverted. -/
+theorem material_chiral_matrix_eq_native_dslope_numerator
+    (N : ℕ) (time : Fin N → ℝ)
+    (hF : ∀ i : Fin N,
+      completedNativeOperatorCharacteristic (time i : ℂ) ≠ 0) :
+    Matrix.of (fun i j : Fin N =>
+      2 * completedNativeOperatorCharacteristic (time i : ℂ) *
+        completedNativeOperatorCharacteristic (time j : ℂ) *
+        (((time j-time i) : ℝ) : ℂ) *
+        dslope (completedGreenNormalizedResponse
+          completedNativeOperatorCharacteristic
+          completedNativeOperatorBoundaryCompanion)
+            (time i : ℂ) (time j : ℂ)) =
+      (Complex.I / 2) •
+        (Matrix.gram ℂ (fun i : Fin N =>
+          carryMaterialCompleteChiralPositive
+            (carryMaterialCompanionValuePair (time i))) -
+         Matrix.gram ℂ (fun i : Fin N =>
+          carryMaterialCompleteChiralNegative
+            (carryMaterialCompanionValuePair (time i)))) := by
+  calc
+    _ = Matrix.of (fun i j : Fin N =>
+      carryValveReturnGreen 1 (time i) (time j)) := by
+        ext i j
+        change _ = carryValveReturnGreen 1 (time i) (time j)
+        rw [← carryMaterialCompleteChiralGreenPairing_eq_valve 1 (by norm_num)]
+        exact (material_chiral_source_eq_native_dslope_numerator
+          (time i) (time j) (hF i) (hF j)).symm
+    _ = _ := carryMaterialCompleteChiralValveMatrix_eq_gramDifference
+      1 (by norm_num) N time
+
+#print axioms material_chiral_matrix_eq_native_dslope_numerator
+
+#print axioms material_chiral_source_eq_native_dslope_numerator
+
+#print axioms material_chiral_source_eq_completed_native_wronskian
+
+end
+end CarryMaterialPhysicalProjectiveChiralComparison
+
+
+/-!
+## Real boundary of the new GENUINE complex material Cauchy--Pick source
+
+The complex source is defined in GoN entirely from the preexisting C2
+material gradients, original whole-cell return, camera, completion and vector
+derivative. The equalities below are sourced from the already formalized
+real-height material/native comparison; they are NOT a complex identity
+principle and do NOT impose equality in the radial upper half-plane.
+-/
+namespace CarryMaterialComplexPhysicalComparison
+
+open GeometryOfNumbers.Analysis CarrySelfAdjointOperator
+
+theorem material_complex_value_boundary_eq_native (t : ℝ) :
+    carryMaterialComplexValueReadout (t : ℂ) =
+      completedNativeOperatorCharacteristic (t : ℂ) := by
+  rw [carryMaterialComplexValueReadout_ofReal]
+  exact CarryMaterialCanonicalComparison.material_response t
+
+theorem material_complex_companion_boundary_eq_native (t : ℝ) :
+    carryMaterialComplexCompanionReadout (t : ℂ) =
+      completedNativeOperatorBoundaryCompanion (t : ℂ) := by
+  unfold carryMaterialComplexCompanionReadout
+  rw [carryMaterialComplexCompanion_ofReal]
+  exact CarryMaterialResponseComparison.material_companion t
+
+theorem material_complex_response_boundary_eq_native (t : ℝ) :
+    carryMaterialComplexResponse (t : ℂ) =
+      completedGreenNormalizedResponse completedNativeOperatorCharacteristic
+        completedNativeOperatorBoundaryCompanion (t : ℂ) := by
+  rw [carryMaterialComplexResponse_ofReal]
+  exact CarryMaterialResponseComparison.material_normalized_response t
+
+theorem material_complex_chiralGreen_boundary_eq_native (t u : ℝ) :
+    carryMaterialComplexChiralGreen (t : ℂ) (u : ℂ) =
+      completedGreenWronskian completedNativeOperatorCharacteristic
+        completedNativeOperatorBoundaryCompanion (u : ℂ) (t : ℂ) := by
+  rw [carryMaterialComplexChiralGreen_ofReal]
+  exact CarryMaterialPhysicalProjectiveChiralComparison.material_chiral_source_eq_completed_native_wronskian t u
+
+#print axioms material_complex_value_boundary_eq_native
+#print axioms material_complex_companion_boundary_eq_native
+#print axioms material_complex_response_boundary_eq_native
+#print axioms material_complex_chiralGreen_boundary_eq_native
+
+end CarryMaterialComplexPhysicalComparison
