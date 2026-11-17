@@ -4,6 +4,7 @@ import CarrySelfAdjointOperator.CompletedNativeChiralBoundaryParityCoordinates
 import CarrySelfAdjointOperator.CompletedNativeChiralEvenBoundarySplit
 import CarrySelfAdjointOperator.CanonicalCompletedNativeStieltjesOperator
 import CarrySelfAdjointOperator.CompletedNativeC2CentralLegEnergyLimit
+import CarrySelfAdjointOperator.NativeCriticalC2JordanGreenLimit
 import Mathlib.LinearAlgebra.Matrix.PosDef
 
 namespace CanonicalNativeBoundaryTransfer
@@ -156,6 +157,76 @@ theorem nativeSourceC2CentralLeg_eventually_positive_of_order_le_six
   intro x
   have h := hk x
   nlinarith
+
+/-- The H6/K6 certificate makes the complete Schur theta-Green integral
+strictly positive through pivot order five. The enlarged prefix has size
+`n+1 ≤ 6`; this is a finite result and imports no all-order positivity. -/
+private theorem canonical_source_extendedPrefix_posDef_of_order_le_five
+    (b : Bool) (n : ℕ) (hn : n ≤ 5) :
+    (sourceMomentMatrix canonicalCompletedNativeLogDerivativeMoment
+      (if b then 1 else 0) (n+1)).PosDef := by
+  have hpair := canonical_hankel_pair_posDef_of_le_six (n+1) (by omega)
+  cases b with
+  | false =>
+      convert hpair.1 using 1
+      ext i j
+      simp [sourceMomentMatrix, GeometryOfNumbers.Analysis.hankelGram]
+  | true =>
+      convert hpair.2 using 1
+      ext i j
+      simp [sourceMomentMatrix, GeometryOfNumbers.Analysis.shiftedHankel]
+
+/-- The H6/K6 certificate makes every canonical pivot through order five
+strictly positive. The Schur equivalence is applied only after its old prefix
+has been inherited as a principal submatrix. -/
+theorem nativeSourceSchurPivot_pos_of_order_le_five
+    (b : Bool) (n : ℕ) (hn : n ≤ 5) :
+    0 < sourceMomentSchur canonicalCompletedNativeLogDerivativeMoment
+      (if b then 1 else 0) n := by
+  have hNext := canonical_source_extendedPrefix_posDef_of_order_le_five b n hn
+  have hA := Matrix.PosDef.submatrix hNext (Fin.castSucc_injective n)
+  exact (sourceMomentMatrix_succ_posDef_iff
+    canonicalCompletedNativeLogDerivativeMoment (if b then 1 else 0) n hA).mp hNext
+
+/-- The corresponding native Schur remainder is positive through pivot order
+five, using the strictly positive leading coefficient `c₀`. -/
+theorem nativeSourceSchurRemainder_pos_of_order_le_five
+    (b : Bool) (n : ℕ) (hn : n ≤ 5) :
+    0 < nativeSourceSchurRemainder (if b then 1 else 0) n := by
+  have hp := nativeSourceSchurPivot_pos_of_order_le_five b n hn
+  have hc0 : 0 < completedNativeRealEvenCharacteristicCoefficient 0 :=
+    lt_of_lt_of_le (by norm_num : (0 : ℝ) < 1/3)
+      completedNativeRealEvenCharacteristicCoefficient_zero_ge_third
+  rw [nativeSourceSchurRemainder_eq]
+  exact mul_pos hc0 hp
+
+theorem nativeCriticalGreenPositive_of_order_le_five
+    (b : Bool) (n : ℕ) (hn : n ≤ 5) :
+    0 < ∫ u in Set.Ioi (0 : ℝ),
+      (nativeThetaGreenPolynomial
+        (nativeSchurThetaPolynomial (if b then 1 else 0) n)).eval u *
+          XiThetaCosine.thetaTail u := by
+  exact nativeCriticalGreenPositive_of_extendedPrefix_posDef
+    (if b then 1 else 0) n
+    (canonical_source_extendedPrefix_posDef_of_order_le_five b n hn)
+
+/-- The even Euler integral is positive through pivot order five, by H6/K6
+and the exact even Euler balance. -/
+theorem nativeSchurEuler_even_integral_pos_of_order_le_five
+    (n : ℕ) (hn : n ≤ 5) :
+    0 < nativeXiPolynomialIntegral (nativeSchurEulerPolynomial 0 n) := by
+  exact nativeSchurEuler_even_integral_pos_of_extendedPrefix_posDef n
+    (canonical_source_extendedPrefix_posDef_of_order_le_five false n hn)
+
+/-- The odd Euler compensation inequality is certified through pivot order
+five by H6/K6 and the exact odd Euler balance. -/
+theorem nativeSchurEuler_odd_compensation_of_order_le_five
+    (n : ℕ) (hn : n ≤ 5) :
+    -2 * completedNativeRealEvenCharacteristicCoefficient 0 *
+        (nativeSchurCriticalReadout 1 n)^2 <
+      nativeXiPolynomialIntegral (nativeSchurEulerPolynomial 1 n) := by
+  exact nativeSchurEuler_odd_compensation_of_extendedPrefix_posDef n
+    (canonical_source_extendedPrefix_posDef_of_order_le_five true n hn)
 
 end
 end CanonicalNativeBoundaryTransfer
