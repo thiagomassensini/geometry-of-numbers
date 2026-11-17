@@ -1,0 +1,105 @@
+import PhysicalPickFiveNative
+import PhysicalPickSixOddSourceHankel
+import GeometryOfNumbers.Analysis.CarryMaterialPickSixParity
+import Mathlib.Tactic
+
+/-!
+Six radial normalized finite differences of the COMPLETED Green
+Cauchy-Pick kernel. The limiting 6×6 matrix splits into a canonical
+unshifted 3×3 and the original shifted 3×3 (sixth odd source).
+Their signs are proven independently from prior material/theta sources.
+-/
+namespace CarrySelfAdjointOperator
+open Filter GeometryOfNumbers.Analysis CarryMaterialPhysicalFiveSource
+open scoped Matrix ComplexConjugate ComplexOrder MatrixOrder
+noncomputable section
+set_option autoImplicit false
+
+def canonicalCompletedNativeRadialSixPointDifferenceMatrix (k : ℕ) :
+    Matrix (Fin 6) (Fin 6) ℂ :=
+  Matrix.of fun p q =>
+    completedGreenKernelTwoStepShiftedForwardDifference
+      canonicalCompletedNativePolarizedDslopeKernel
+      (canonicalCompletedC3RadialSecondStep k)
+      (canonicalCompletedC3RadialSecondStep k) p q
+
+theorem canonicalCompletedNativeRadialSixPointDifferenceMatrix_tendsto :
+    Tendsto canonicalCompletedNativeRadialSixPointDifferenceMatrix atTop
+      (nhds (Matrix.of fun i j : Fin 6 =>
+        polarizedGreenMomentCoefficient canonicalCompletedNativeLogDerivativeMoment i j)) := by
+  apply tendsto_pi_nhds.mpr
+  intro i
+  apply tendsto_pi_nhds.mpr
+  intro j
+  have hd : Tendsto (fun k : ℕ => (k,k)) atTop atTop := by
+    rw [← prod_atTop_atTop_eq]
+    exact tendsto_id.prodMk tendsto_id
+  change Tendsto (fun k => completedGreenKernelTwoStepShiftedForwardDifference
+    canonicalCompletedNativePolarizedDslopeKernel
+    (canonicalCompletedC3RadialSecondStep k)
+    (canonicalCompletedC3RadialSecondStep k)
+    (i : ℕ) (j : ℕ)) atTop (nhds _)
+  simpa only [Function.comp_def, Matrix.of_apply] using
+    (completedNativePolarizedDslope_shiftedRadial_tendsto (i : ℕ) (j : ℕ)).comp hd
+
+theorem polarizedGreenMomentCoefficient_six_det (h : ℕ → ℝ) :
+    (Matrix.of fun i j : Fin 6 => polarizedGreenMomentCoefficient h i j).det =
+      (((hankelGram h 3).det * (shiftedHankel h 3).det : ℝ) : ℂ) := by
+  have heq : (Matrix.of fun i j : Fin 6 =>
+      polarizedGreenMomentCoefficient h i j) =
+    !![(h 0 : ℂ), 0, (h 1 : ℂ), 0, (h 2 : ℂ), 0;
+       0, (h 1 : ℂ), 0, (h 2 : ℂ), 0, (h 3 : ℂ);
+       (h 1 : ℂ), 0, (h 2 : ℂ), 0, (h 3 : ℂ), 0;
+       0, (h 2 : ℂ), 0, (h 3 : ℂ), 0, (h 4 : ℂ);
+       (h 2 : ℂ), 0, (h 3 : ℂ), 0, (h 4 : ℂ), 0;
+       0, (h 3 : ℂ), 0, (h 4 : ℂ), 0, (h 5 : ℂ)] := by
+    ext i j
+    fin_cases i <;> fin_cases j <;>
+      norm_num [polarizedGreenMomentCoefficient, evenMomentDiagonalCoefficient]
+  rw [heq, c2_six_parity_determinant]
+  have hE :
+      (!![(h 0 : ℂ), (h 1 : ℂ), (h 2 : ℂ);
+           (h 1 : ℂ), (h 2 : ℂ), (h 3 : ℂ);
+           (h 2 : ℂ), (h 3 : ℂ), (h 4 : ℂ)] : Matrix (Fin 3) (Fin 3) ℂ) =
+        (hankelGram h 3).map Complex.ofRealHom := by
+    ext i j
+    fin_cases i <;> fin_cases j <;> rfl
+  have hO :
+      (!![(h 1 : ℂ), (h 2 : ℂ), (h 3 : ℂ);
+           (h 2 : ℂ), (h 3 : ℂ), (h 4 : ℂ);
+           (h 3 : ℂ), (h 4 : ℂ), (h 5 : ℂ)] : Matrix (Fin 3) (Fin 3) ℂ) =
+        (shiftedHankel h 3).map Complex.ofRealHom := by
+    ext i j
+    fin_cases i <;> fin_cases j <;> rfl
+  rw [hE, hO]
+  change (Complex.ofRealHom.mapMatrix (hankelGram h 3)).det *
+      (Complex.ofRealHom.mapMatrix (shiftedHankel h 3)).det =
+      Complex.ofRealHom ((hankelGram h 3).det * (shiftedHankel h 3).det)
+  rw [← Complex.ofRealHom.map_det, ← Complex.ofRealHom.map_det,
+    Complex.ofRealHom.map_mul]
+
+theorem canonicalCompletedNativeRadialSixPointDifferenceMatrix_det_tendsto :
+    Tendsto (fun k => (canonicalCompletedNativeRadialSixPointDifferenceMatrix k).det)
+      atTop (nhds (((hankelGram canonicalCompletedNativeLogDerivativeMoment 3).det *
+        (shiftedHankel canonicalCompletedNativeLogDerivativeMoment 3).det : ℝ) : ℂ)) := by
+  have h := (continuous_id.matrix_det.tendsto _).comp
+    canonicalCompletedNativeRadialSixPointDifferenceMatrix_tendsto
+  simpa only [Function.comp_def, id_eq, polarizedGreenMomentCoefficient_six_det] using h
+
+theorem canonicalCompletedNativeRadialSixPointDifferenceMatrix_det_eventually_re_pos :
+    ∀ᶠ k : ℕ in atTop,
+      0 < (canonicalCompletedNativeRadialSixPointDifferenceMatrix k).det.re := by
+  have he : 0 < (hankelGram canonicalCompletedNativeLogDerivativeMoment 3).det :=
+    canonical_native_unshifted_hankel_three_det_pos
+  have ho : 0 < (shiftedHankel canonicalCompletedNativeLogDerivativeMoment 3).det :=
+    canonicalCompletedNativeShiftedHankel_three_det_pos
+  have ht := Complex.continuous_re.continuousAt.tendsto.comp
+    canonicalCompletedNativeRadialSixPointDifferenceMatrix_det_tendsto
+  apply Filter.Tendsto.eventually_lt tendsto_const_nhds ht
+  simpa only [Complex.ofReal_re] using mul_pos he ho
+
+#print axioms polarizedGreenMomentCoefficient_six_det
+#print axioms canonicalCompletedNativeRadialSixPointDifferenceMatrix_det_eventually_re_pos
+
+end
+end CarrySelfAdjointOperator
