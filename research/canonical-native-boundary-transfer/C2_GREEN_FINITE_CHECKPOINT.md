@@ -44,6 +44,12 @@ the Green density.
   `Classical.choice`, and `Quot.sound`.
 - `compile_module.sh --check` confirmed all Geometry of Numbers and Carry
   dependency oleans were present.
+- The Carry integration module artifact used by these successful compiles has
+  SHA-256 `e030eb52cf4bae0018014fb1128785b8d3847ab53f74e51e7a0f9cda4a2f2862`,
+  matching the `.olean` emitted by the published Carry integration branch.
+- A fresh rerun of `scripts/audit-analysis.sh` was stopped at 8,789/8,847
+  modules during a broad clean rebuild of generated dependencies. No source
+  failure was reported; the focused changed module and audit passed above.
 
 ## Exact gap remaining
 
@@ -55,8 +61,9 @@ dominance of the negative Jordan channel.
 
 ## Publication metadata
 
-- GoN commit: `5af5ebe6ec692b439d9657eeebf53a4af467f20e`.
+- GoN base finite-sign commit: `5af5ebe6ec692b439d9657eeebf53a4af467f20e`.
 - Follow-up finite pivot/remainder commit: `85c5d47`.
+- Current branch/checkpoint commit: `054292e79c61adf74055607e52982f7b182a71f7`.
 - GoN branch: `luna/c2-green-finite-331-20261116`.
 - GoN draft PR #333: https://github.com/thiagomassensini/geometry-of-numbers/pull/333,
   stacked on #331 (base `codex/luna-g-c2-sign-transport-2026-11-14`).
