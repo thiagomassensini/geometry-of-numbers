@@ -59,6 +59,19 @@ This new determinant of the raw five-even coefficient block
 is newly named here, not misleadingly claimed to be a
 previously named nine-source discriminant in CSA.
 
+Normalization warning: the ACTUAL physical full finite Green
+even-even boundary coefficient is
+  2 * (-1)^(i+j) * a_(i+j)
+  = 4 * (-1)^(i+j) * h_(i+j),
+by the PREEXISTING CSA theorem
+  nativeSourceEvenBoundaryCoefficient_eq_polarizedPrimeDepth.
+Thus the raw a-matrix is related to the physical full even sector
+by an extra OUTER factor 2 and an alternating diagonal phase.
+The raw determinant ratio 2*sigma is not called a literal
+unrescaled physical full-boundary pivot. The total physical
+boundary is addressed independently below via the ORIGINAL
+nativeSourceFiniteBoundaryEnergy and exact zero padding.
+
 The ORIGINAL inverse-coupled fifth-even Schur margin is
   sigma = sourceMomentSchur h 0 4
         = h8 - b^T H4^(-1) b, b_i=h_(i+4).
