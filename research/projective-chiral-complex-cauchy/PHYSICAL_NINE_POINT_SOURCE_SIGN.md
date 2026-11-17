@@ -86,6 +86,33 @@ actual inverse-coupled original source residual. The factor
 two is the source coefficient normalization, not a new metric.
 No symbolic 5×5 determinant expansion is used.
 
+## New normalized coupling / angular source fraction
+
+We also certified the RELATIVE sign without choosing a metric.
+Define only the original source inverse-coupling energy
+
+  E = b^T H4^(-1) b >= 0, where b_i=h_(i+4).
+
+The original diagonal is h8>0. The old-source
+Schur residual sigma=h8-E was already source-certified positive.
+NEW Lean (PhysicalPickNineRelativeSourceAngle.lean):
+
+  nativeNineEvenCouplingEnergy_nonneg;
+  nativeNineEvenSourceDiagonal_pos;
+  nativeNineEvenNormalizedCoupling_range:
+      0 <= E/h8 < 1;
+  nativeNineEvenNormalizedResidual_pos_le_one:
+      0 < sigma/h8 <= 1;
+  nativeNineEvenNormalizedPartition:
+      sigma/h8 + E/h8 = 1.
+
+The pair (E/h8, sigma/h8) is an EXACT normalized partition
+between past-source coupling and residual ninth-even source energy.
+It resembles a squared-cosine/squared-sine budget in the POSITIVE
+finite source form, but no operator-level physical angle and no
+rate of decay as dimension increases is asserted. The result
+is fixed at the native even fifth coordinate.
+
 ## The complete physical boundary, not just the even sector
 
 The original source energy is

@@ -66,7 +66,7 @@ for mod in PhysicalPickTwoStrictNative PhysicalPickFourNative \
   PhysicalPickEightNative PhysicalPickEightCongruence \
   PhysicalPickEightSign PhysicalPickEightFinal \
   PhysicalPickNineEvenSourceHankel PhysicalPickNineEvenSignBridge \
-  PhysicalPickNineSchurDetLaw PhysicalPickNinePhysicalBoundary PhysicalPickNineNative \
+  PhysicalPickNineSchurDetLaw PhysicalPickNineRelativeSourceAngle PhysicalPickNinePhysicalBoundary PhysicalPickNineNative \
   PhysicalPickNineCongruence PhysicalPickNineSign PhysicalPickNineFinal; do
   lean_compile "$mod"
 done
@@ -122,6 +122,10 @@ for decl in \
   nativeSourceNineEvenRawDiscriminant_pos \
   nativeEvenFiveDet_eq_four_det_mul_sourceSchur \
   nativeSourceNineEvenRawRatio_eq_twice_originalPivot \
+  nativeNineEvenCouplingEnergy_nonneg \
+  nativeNineEvenNormalizedCoupling_range \
+  nativeNineEvenNormalizedResidual_pos_le_one \
+  nativeNineEvenNormalizedPartition \
   nativeSourceNineEvenOriginalPivot_pos \
   nativeSourceNineEvenOriginalQuadratic_sewing \
   nativeSourceNineEvenCriticalDirection_energy \
