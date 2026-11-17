@@ -129,8 +129,14 @@ FOCUSED validation: PASS, Lean 4.32 with -DwarningAsError=true.
 #prints report only
   propext, Classical.choice, Quot.sound.
 No new axiom, sorry/admit, or merge was introduced.
-The independent FULL order-respecting reproduction script is
-provided below for audit.
+The independent FULL order-respecting reproduction script was
+executed and completed with exit code 0 on 2026-11-17.
+Recompiled all historical GoN–CSA comparator modules and the
+new seventh-order source, parity, congruence, sign and physical closure
+with Lean 4.32 and -DwarningAsError=true.
+Result: PASS; only propext, Classical.choice and Quot.sound in
+#print axioms; no error, sorryAx or new custom axiom.
+This is a reproducible fixed-order proof, not an all-order sign claim.
 
 Reproduce:
   research/projective-chiral-complex-cauchy/validate-physical-seven.sh
