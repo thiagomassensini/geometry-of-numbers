@@ -50,5 +50,12 @@ dominance of the negative Jordan channel.
 
 ## Publication metadata
 
-Record commit SHA and draft PR URL here after pushing this branch. The parent
-Carry integration branch and its draft PR must be recorded alongside them.
+- GoN commit: `5af5ebe6ec692b439d9657eeebf53a4af467f20e`.
+- GoN branch: `luna/c2-green-finite-331-20261116`.
+- GoN draft PR #333: https://github.com/thiagomassensini/geometry-of-numbers/pull/333,
+  stacked on #331 (base `codex/luna-g-c2-sign-transport-2026-11-14`).
+- Carry dependency commit: `9f0d2d979c532c3a5efe2ff64a4c2b88d58196ce`.
+- Carry branch: `luna/c2-jordan-green-unifier-20261116`.
+- Carry draft PR #126: https://github.com/thiagomassensini/carry-self-adjoint-operator/pull/126,
+  stacked on #119 (which depends on #118).
+- Neither branch has been merged. PR #331 remains open.
