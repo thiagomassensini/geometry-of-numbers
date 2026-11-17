@@ -71,6 +71,15 @@ premises or target Gram:
   nativeSourceEightOddBoundaryEnergy_strict_pos
 (the last for every nonzero COMPLEX vector u,v,w,t).
 
+There is also a direct positive answer to the original CSA
+characteristic ceiling gate:
+  nativeSourceEightCharacteristicCoefficient_lt_ceiling
+     completedNativeRealEvenCharacteristicCoefficient 8
+       < nativeSourceEightCharacteristicCeiling.
+This is obtained via the original CSA iff and the proved delta8>0,
+not by altering the characteristic factor or making a new assumption.
+It is a fixed-order source-8 strict bound, not all-order.
+
 ## Physical 8×8 Pick and HB defect
 
 The eight canonical radial sample heights are exactly

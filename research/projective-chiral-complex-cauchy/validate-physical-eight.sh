@@ -100,6 +100,7 @@ for decl in \
   nativeSourceEightOddDiscriminant_pos \
   nativeSourceEightOddMargin_eq_two_shiftedHankel_ratio \
   nativeSourceEightOddMargin_pos \
+  nativeSourceEightCharacteristicCoefficient_lt_ceiling \
   nativeSourceEightOddBoundaryEnergy_strict_pos \
   c2_eight_parity_determinant \
   hermitian_fin_eight_posDef_of_leading_posDef_det_pos \

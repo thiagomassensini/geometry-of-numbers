@@ -100,6 +100,17 @@ theorem nativeSourceEightOddMargin_pos :
 #print axioms nativeSourceEightOddMargin_eq_two_shiftedHankel_ratio
 #print axioms nativeSourceEightOddMargin_pos
 
+/-- This also closes the explicit order-eight characteristic ceiling
+that the original CSA boundary analysis had left as an iff gate.
+The bound is a CONSEQUENCE of the unchanged source certificate. -/
+theorem nativeSourceEightCharacteristicCoefficient_lt_ceiling :
+    completedNativeRealEvenCharacteristicCoefficient 8 <
+      nativeSourceEightCharacteristicCeiling :=
+  nativeSourceEightOddDiscriminant_pos_iff_characteristic_ceiling.mp
+    nativeSourceEightOddDiscriminant_pos
+
+#print axioms nativeSourceEightCharacteristicCoefficient_lt_ceiling
+
 #print axioms nativeSourceEightOddDiscriminant_eq_sixteen_shiftedHankel_four_det
 #print axioms nativeSourceEightOddDiscriminant_pos
 #print axioms nativeSourceEightOddBoundaryEnergy_strict_pos
