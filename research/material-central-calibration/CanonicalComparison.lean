@@ -1,3 +1,5 @@
+import PhysicalPickTwoStrictNative
+import GeometryOfNumbers.Analysis.CarryMaterialPickThreeSchurCriterion
 import CarrySelfAdjointOperator.CompletedNativeRadialThreePointDeterminant
 import CarrySelfAdjointOperator.CompletedNativeChiralTwoPointControl
 import GeometryOfNumbers.Analysis.CarryMaterialComplexPickSignGate
@@ -5214,5 +5216,116 @@ theorem physicalC2RadialPickMatrix_three_det_eventually_re_pos :
 
 #print axioms physicalC2RadialPickMatrix_eventually_eq_native_dslope
 #print axioms physicalC2RadialPickMatrix_three_det_eventually_re_pos
+
+end CarryMaterialPhysicalRadialMultiplierGate
+
+
+
+/-! ## Strict physical C2 two- and three-direction radial certificate
+
+h₀>0 and h₁>0 imply the confluent 2×2 difference determinant is
+eventually nonzero. With the previously transported C2 Pick 2×2 PSD
+this yields PD. The physical 3×3 then follows by a noncircular
+Schur--Sylvester lemma and the previously transported positive determinant.
+-/
+namespace CarryMaterialPhysicalRadialMultiplierGate
+
+open GeometryOfNumbers.Analysis CarrySelfAdjointOperator
+open Filter
+open scoped ComplexOrder Matrix MatrixOrder
+
+/-- No extra two-point sign premise: eventual strictness is a consequence
+of the existing source Pick PSD and the certified C2 confluent limit. -/
+theorem physicalC2RadialPickMatrix_two_eventually_posDef :
+    ∀ᶠ k : ℕ in atTop,
+      (physicalC2RadialPickMatrix k 2).PosDef := by
+  filter_upwards [physicalC2RadialPick_two_eventually_posSemidef,
+    physicalC2RadialPickMatrix_eventually_eq_native_dslope 2,
+    canonicalCompletedNativeRadialDslopeSampleMatrix_two_det_eventually_ne_zero]
+    with k hPSD hEq hDet
+  have hM : (physicalC2RadialPickMatrix k 2).PosSemidef := hPSD
+  apply hM.posDef_iff_det_ne_zero.mpr
+  rw [hEq]
+  exact hDet
+
+/-- The physical 3×3 Pick section has its genuine 2×2 upper-left corner
+strictly positive, without assuming such a fact at the beginning. -/
+theorem physicalC2RadialPickMatrix_three_leading_two_eventually_posDef :
+    ∀ᶠ k : ℕ in atTop,
+      ((physicalC2RadialPickMatrix k 3).submatrix
+        Fin.castSucc Fin.castSucc).PosDef := by
+  filter_upwards [physicalC2RadialPickMatrix_two_eventually_posDef] with k hk
+  have hSub :
+      (physicalC2RadialPickMatrix k 3).submatrix
+          Fin.castSucc Fin.castSucc =
+        physicalC2RadialPickMatrix k 2 := by
+    ext i j
+    rfl
+  rwa [hSub]
+
+/-- Unconditional C2 physical radial 3×3 Pick positive definiteness,
+eventually. Algebraic Schur positivity uses the EXISTING two-point
+positivity and the EXISTING third determinant sign, with Hermiticity
+proved directly from the genuine source C2 response. -/
+theorem physicalC2RadialPickMatrix_three_eventually_posDef :
+    ∀ᶠ k : ℕ in atTop,
+      (physicalC2RadialPickMatrix k 3).PosDef := by
+  filter_upwards [physicalC2RadialPickMatrix_three_leading_two_eventually_posDef,
+    physicalC2RadialPickMatrix_three_det_eventually_re_pos,
+    physicalC2Radial_eventually_regular 3] with k hLeading hDetRe hRegular
+  let M := physicalC2RadialPickMatrix k 3
+  have hHerm : M.IsHermitian := by
+    exact carryMaterialComplexSourcePickMatrix_isHermitian 3
+      (fun i => canonicalCompletedC3RadialTiltPoint k i)
+      (fun i => canonicalCompletedC3RadialTiltPoint_im_pos k i)
+      (fun i => (hRegular i).1)
+  have hDetStar : star M.det = M.det := by
+    calc
+      star M.det = (Mᴴ).det := (Matrix.det_conjTranspose M).symm
+      _ = M.det := by rw [hHerm]
+  have hDetIm : M.det.im = 0 := by
+    exact Complex.conj_eq_iff_im.mp (by simpa [Complex.star_def] using hDetStar)
+  have hDet : (0 : ℂ) < M.det :=
+    Complex.pos_iff.mpr ⟨hDetRe, hDetIm.symm⟩
+  exact hermitian_fin_three_posDef_of_leading_posDef_det_pos M
+    hHerm hLeading hDet
+
+/-- The actual physical C2 multiplier defect 3×3 is PSD, eventually,
+by the invertible HB gauge equivalence in GoN #335. -/
+theorem physicalC2RadialDefectMatrix_three_eventually_posSemidef :
+    ∀ᶠ k : ℕ in atTop,
+      (physicalC2RadialDefectMatrix k 3).PosSemidef := by
+  filter_upwards [physicalC2RadialPickMatrix_three_eventually_posDef,
+    physicalC2Radial_eventually_regular 3] with k hPick hReg
+  have hU : ∀ i : Fin 3,
+      0 < (canonicalCompletedC3RadialTiltPoint k i).im :=
+    fun i => canonicalCompletedC3RadialTiltPoint_im_pos k i
+  exact (carryMaterialComplexSourcePickMatrix_posSemidef_iff_sourceDefect 3
+    (fun i => canonicalCompletedC3RadialTiltPoint k i)
+    hU (fun i => (hReg i).1) (fun i => (hReg i).2)).mp hPick.posSemidef
+
+#print axioms physicalC2RadialPickMatrix_two_eventually_posDef
+#print axioms physicalC2RadialPickMatrix_three_eventually_posDef
+#print axioms physicalC2RadialDefectMatrix_three_eventually_posSemidef
+
+
+
+/-- Strong form: the actual MATERIAL C2 3×3 HB multiplier defect is
+positive DEFINITE on the eventual canonical radial family. Not merely PSD.
+The positive physical Pick and the defect are diagonally congruent through
+the nonzero source HB amplitudes, so strictness cannot be lost. -/
+theorem physicalC2RadialDefectMatrix_three_eventually_posDef :
+    ∀ᶠ k : ℕ in atTop,
+      (physicalC2RadialDefectMatrix k 3).PosDef := by
+  filter_upwards [physicalC2RadialPickMatrix_three_eventually_posDef,
+    physicalC2Radial_eventually_regular 3] with k hPick hReg
+  have hU : ∀ i : Fin 3,
+      0 < (canonicalCompletedC3RadialTiltPoint k i).im :=
+    fun i => canonicalCompletedC3RadialTiltPoint_im_pos k i
+  exact (carryMaterialComplexSourcePickMatrix_posDef_iff_sourceDefect 3
+    (fun i => canonicalCompletedC3RadialTiltPoint k i)
+    hU (fun i => (hReg i).1) (fun i => (hReg i).2)).mp hPick
+
+#print axioms physicalC2RadialDefectMatrix_three_eventually_posDef
 
 end CarryMaterialPhysicalRadialMultiplierGate
