@@ -141,7 +141,19 @@ Scope is LOCAL, radial, fixed N=8, eventually in k without explicit
 numerical threshold. Not arbitrary-position Schur contraction,
 all-order positive Hankel/Gram or RH.
 
-For N=9, the next missing NEW sign will be the unshifted even H5;
-the odd K4 is now certified. The source-first sign must be controlled
-separately, independent of the ready all-N finite-difference
-transport.
+For N=9 the next newly APPLIED sign is even H5, but its
+positive definiteness is ALREADY certified in
+  CarryCriticalSource.even_source_five_posDef
+under the original source, so no new theta integration is needed.
+For fixed N=10, odd K5 is already certified by
+  CarryThetaPattern.odd_source_five_posDef.
+For N=11, even H6 is already certified by
+  CarrySixthEven.even_source_six_posDef.
+For N=12, odd K6 is already certified by
+  CarrySixthOdd.odd_source_six_posDef.
+Each requires an exact canonical identification and the physical
+N-point radial sign transport/Schur closure before being claimed.
+These are FOUR FINITE source certificates, NOT arbitrary-order
+positivity, uniform radial cutoff or an infinite physical Gram.
+The binomial finite-difference congruence itself is already
+general in N in the original CSA.
