@@ -1,3 +1,4 @@
+import GeometryOfNumbers.Analysis.CarryMaterialComplexPickSignGate
 import GeometryOfNumbers.Analysis.CarryMaterialComplexCauchyPick
 import CarrySelfAdjointOperator.RealAxisWronskianDslopeSewing
 import GeometryOfNumbers.Analysis.CarryMaterialProjectiveChiralSewing
@@ -4868,6 +4869,7 @@ principle and do NOT impose equality in the radial upper half-plane.
 namespace CarryMaterialComplexPhysicalComparison
 
 open GeometryOfNumbers.Analysis CarrySelfAdjointOperator
+open scoped ComplexConjugate
 
 theorem material_complex_value_boundary_eq_native (t : ℝ) :
     carryMaterialComplexValueReadout (t : ℂ) =
@@ -4900,5 +4902,117 @@ theorem material_complex_chiralGreen_boundary_eq_native (t u : ℝ) :
 #print axioms material_complex_companion_boundary_eq_native
 #print axioms material_complex_response_boundary_eq_native
 #print axioms material_complex_chiralGreen_boundary_eq_native
+
+
+
+/-! The genuine physical C2 and native completed characteristic coincide
+on a COMPLEX neighborhood of the origin, using the independent real-axis
+comparison plus the analytic identity principle. -/
+theorem material_complex_value_eq_native_germ :
+    carryMaterialComplexValueReadout =ᶠ[nhds (0 : ℂ)]
+      completedNativeOperatorCharacteristic := by
+  apply analyticAt_eventuallyEq_of_forall_real
+    carryMaterialComplexValueReadout
+    completedNativeOperatorCharacteristic
+    carryMaterialComplexValueReadout_analyticAt_zero
+    (completedNativeOperatorCharacteristic_analyticAt zero_mem_completedNativeHeightDomain)
+    material_complex_value_boundary_eq_native
+
+/-- The native scalar companion is the readout of the genuinely differentiated
+full C2 MATERIAL carrier throughout the same complex germ. -/
+theorem material_complex_companion_eq_native_germ :
+    carryMaterialComplexCompanionReadout =ᶠ[nhds (0 : ℂ)]
+      completedNativeOperatorBoundaryCompanion := by
+  have hD := material_complex_value_eq_native_germ.deriv
+  have hS : ∀ᶠ z : ℂ in nhds 0,
+      DifferentiableAt ℂ carryMaterialComplexDressedState z :=
+    carryMaterialComplexDressedState_analyticAt_zero.eventually_analyticAt.mono
+      (fun z hz => hz.differentiableAt)
+  filter_upwards [hD,hS] with z hzDeriv hzState
+  rw [carryMaterialComplexCompanionReadout_eq_neg_deriv z hzState,
+    completedNativeOperatorBoundaryCompanion_eq_neg_deriv z, hzDeriv]
+
+/-- Source-first normalized response has the exact native holomorphic germ,
+not just agreement of the jets on the real line. -/
+theorem material_complex_response_eq_native_germ :
+    carryMaterialComplexResponse =ᶠ[nhds (0 : ℂ)]
+      completedGreenNormalizedResponse completedNativeOperatorCharacteristic
+        completedNativeOperatorBoundaryCompanion := by
+  filter_upwards [material_complex_value_eq_native_germ,
+    material_complex_companion_eq_native_germ] with z hF hPsi
+  change carryMaterialComplexCompanionReadout z /
+        (2 * carryMaterialComplexValueReadout z) =
+      completedNativeOperatorBoundaryCompanion z /
+        (2 * completedNativeOperatorCharacteristic z)
+  rw [hPsi, hF]
+
+#print axioms material_complex_value_eq_native_germ
+#print axioms material_complex_companion_eq_native_germ
+#print axioms material_complex_response_eq_native_germ
+
+
+
+/-- The exact C2 PHYSICAL Cauchy--Pick quotient coincides with the
+completed native Cauchy--Pick divided response throughout a complex germ
+for every non-reflected-crossing pair. This is obtained AFTER the
+independently proved real-axis identity and analytic identity theorem,
+never by defining the source using a target moment or native kernel. -/
+theorem material_complex_Pick_eq_native_germ :
+    ∀ᶠ z : ℂ in nhds 0, ∀ᶠ w : ℂ in nhds 0,
+      w ≠ conj z →
+        carryMaterialComplexPickKernel z w =
+          ((completedGreenNormalizedResponse completedNativeOperatorCharacteristic
+            completedNativeOperatorBoundaryCompanion) w -
+           conj ((completedGreenNormalizedResponse completedNativeOperatorCharacteristic
+            completedNativeOperatorBoundaryCompanion) z)) / (w - conj z) := by
+  filter_upwards [material_complex_response_eq_native_germ,
+    carryMaterialComplexValueReadout_eventually_ne_zero] with z hzR hzF
+  filter_upwards [material_complex_response_eq_native_germ,
+    carryMaterialComplexValueReadout_eventually_ne_zero] with w hwR hwF
+  intro hSep
+  rw [carryMaterialComplexPickKernel_eq_polarizedResponse z w hzF hwF hSep,
+      hzR, hwR]
+
+/-- The physically defined Hermite--Biehler source quotient equals the native
+quotient locally in COMPLEX height, as a consequence rather than an axiom. -/
+theorem material_complex_source_chiral_quotient_eq_native_germ :
+    carryMaterialComplexChiralQuotient =ᶠ[nhds (0 : ℂ)]
+      (fun z => (completedNativeOperatorBoundaryCompanion z -
+                   Complex.I * completedNativeOperatorCharacteristic z) /
+                (completedNativeOperatorBoundaryCompanion z +
+                   Complex.I * completedNativeOperatorCharacteristic z)) := by
+  filter_upwards [material_complex_value_eq_native_germ,
+      material_complex_companion_eq_native_germ] with z hzF hzPsi
+  simp only [carryMaterialComplexChiralQuotient,
+    carryMaterialComplexPositiveHB, carryMaterialComplexNegativeHB, hzF, hzPsi]
+
+#print axioms material_complex_Pick_eq_native_germ
+#print axioms material_complex_source_chiral_quotient_eq_native_germ
+
+
+
+/-- In the certified complex germ, the source physical Cauchy--Pick kernel
+is LITERALLY the CSA polarized native dslope kernel, not merely an
+isomorphic surrogate. The diagonal is evaluated only at positive
+imaginary height to avoid conjugate collision. -/
+theorem material_complex_Pick_eq_native_dslope_germ :
+    ∀ᶠ z : ℂ in nhds 0, ∀ᶠ w : ℂ in nhds 0,
+      w ≠ conj z →
+      carryMaterialComplexPickKernel z w =
+        canonicalCompletedNativePolarizedDslopeKernel z w := by
+  have hStrip : ∀ᶠ z : ℂ in nhds 0,
+      z ∈ completedNativeHeightDomain :=
+    isOpen_completedNativeHeightDomain.mem_nhds zero_mem_completedNativeHeightDomain
+  filter_upwards [material_complex_Pick_eq_native_germ, hStrip] with z hPick hzStrip
+  filter_upwards [hPick] with w hPoint
+  intro hSep
+  rw [hPoint hSep]
+  have hNum := canonicalCompletedNativePolarizedResponseNumerator_eq_mul_dslope
+    (z := z) (w := w) hzStrip hSep
+  unfold canonicalCompletedNativePolarizedResponseNumerator at hNum
+  rw [hNum]
+  exact mul_div_cancel_left₀ _ (sub_ne_zero.mpr hSep)
+
+#print axioms material_complex_Pick_eq_native_dslope_germ
 
 end CarryMaterialComplexPhysicalComparison
