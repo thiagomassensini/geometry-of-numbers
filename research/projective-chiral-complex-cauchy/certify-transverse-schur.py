@@ -1,5 +1,6 @@
 """Certified finite sign tests for the original completed log-modulus moments."""
 
+from argparse import ArgumentParser
 from math import comb
 
 from flint import arb, arb_mat, arb_series, ctx, fmpq
@@ -60,14 +61,16 @@ def schur(moments, sector, degree):
     ), vector
 
 
-def first_negative_dimension(moments):
-    for order in range(len(moments)):
-        degree, sector = divmod(order, 2)
-        pivot, _ = schur(moments, sector, degree)
+def first_negative_dimension(moments, *, sector=None):
+    indices = range(len(moments)) if sector is None else range(sector, len(moments), 2)
+    for order in indices:
+        degree, parity = divmod(order, 2)
+        dimension = order + 1 if sector is None else degree + 1
+        pivot, _ = schur(moments, parity, degree)
         if pivot < 0:
-            return order + 1, pivot
+            return dimension, pivot
         if not pivot > 0:
-            raise ArithmeticError(f"pivot sign unresolved at dimension {order + 1}: {pivot}")
+            raise ArithmeticError(f"pivot sign unresolved at dimension {dimension}: {pivot}")
     raise ArithmeticError("no negative pivot within the tested prefix")
 
 
@@ -123,14 +126,12 @@ def normalized_central_basis(moments, sector, size):
     return arb_mat([[columns[j][i] for j in range(size)] for i in range(size)])
 
 
-def interval_perturbation_bound(moments, sector, size, terms, radius):
-    """Operator norm bound on the entire interval in a central orthonormal basis."""
-    if size == 0:
-        return arb(0)
-    basis = normalized_central_basis(moments, sector, size)
+def normalized_error_bound(moments, sector, basis, terms, radius, first_order):
+    """Operator norm bound for the Taylor tail in the normalized central basis."""
+    size = basis.nrows()
     absolute_basis = arb_mat([[abs(basis[i, j]) for j in range(size)] for i in range(size)])
     error = arb_mat(size, size)
-    for order in range(1, terms):
+    for order in range(first_order, terms):
         coefficient = arb_mat([
             [transverse_coefficient(moments, i + j + sector, order) for j in range(size)]
             for i in range(size)
@@ -146,6 +147,112 @@ def interval_perturbation_bound(moments, sector, size, terms, radius):
     ])
     error += absolute_basis.transpose() * tail * absolute_basis
     return max(sum(error[i, j] for j in range(size)).upper() for i in range(size))
+
+
+def interval_perturbation_bound(moments, sector, size, terms, radius):
+    if size == 0:
+        return arb(0)
+    basis = normalized_central_basis(moments, sector, size)
+    return normalized_error_bound(moments, sector, basis, terms, radius, first_order=1)
+
+
+def isotropic_shift(matrix, diagonal):
+    size = matrix.nrows()
+    return arb_mat([
+        [matrix[i, j] + (diagonal if i == j else 0) for j in range(size)]
+        for i in range(size)
+    ])
+
+
+def symmetric_sign(matrix):
+    """Return 1 for positive definite, -1 for a negative direction, or 0 if unresolved."""
+    rows = matrix.tolist()
+    for k in range(len(rows)):
+        pivot = rows[k][k]
+        if pivot < 0:
+            return -1
+        if not pivot > 0:
+            return 0
+        for i in range(k + 1, len(rows)):
+            factor = rows[i][k] / pivot
+            for j in range(k + 1, i + 1):
+                rows[i][j] -= factor * rows[j][k]
+    return 1
+
+
+def normalized_quadratic_model(moments, sector, size, terms, radius):
+    basis = normalized_central_basis(moments, sector, size)
+    curvature = arb_mat([
+        [transverse_coefficient(moments, i + j + sector, 1) for j in range(size)]
+        for i in range(size)
+    ])
+    quadratic = (basis.transpose() * curvature * basis) * (radius ** 2)
+    remainder = normalized_error_bound(moments, sector, basis, terms, radius, first_order=2)
+    return quadratic, remainder
+
+
+def critical_radius_bracket(quadratic, remainder, steps):
+    """Bracket the first loss using the positive window and a negative endpoint."""
+    lo, hi = fmpq(0), fmpq(1)
+    for _ in range(steps):
+        middle = (lo + hi) / 2
+        scaled = quadratic * (arb(middle) ** 2)
+        tail = remainder * arb(middle) ** 4
+        if symmetric_sign(isotropic_shift(scaled, 1 - tail)) == 1:
+            lo = middle
+        elif symmetric_sign(isotropic_shift(scaled, 1 + tail)) == -1:
+            hi = middle
+        else:
+            break
+    return lo, hi
+
+
+def deep_window():
+    ctx.prec = 6144
+    count, terms = 168, 6
+    radius = fmpq(1, 10 ** 100)
+    central = source_moments(count + terms)
+    shifted = transverse_moments(central, count, terms, arb(radius))
+    dimension, pivot = first_negative_dimension(shifted)
+    unshifted_dimension, _ = first_negative_dimension(shifted, sector=0)
+    direct = source_moments(max(dimension, 2 * unshifted_dimension - 1), radius)
+    if (
+        first_negative_dimension(direct)[0] != dimension
+        or first_negative_dimension(direct, sector=0)[0] != unshifted_dimension
+        or not all(x.overlaps(y) for x, y in zip(shifted, direct))
+    ):
+        raise ArithmeticError("direct and transverse certificates disagree")
+
+    last_degree, last_sector = divmod(dimension - 1, 2)
+    central_pivot, _ = schur(central, last_sector, last_degree)
+    if not central_pivot > 0:
+        raise ArithmeticError("central pivot sign unresolved")
+    models = [
+        normalized_quadratic_model(central, s, (dimension + 1 - s) // 2, terms, arb(radius))
+        for s in (0, 1)
+    ]
+    # Arithmetic after the central congruence still uses certified ball
+    # operations. In these coordinates the matrices are close to the identity.
+    ctx.prec = 256
+    for sector, (quadratic, remainder) in enumerate(models):
+        size = (dimension - sector) // 2
+        prefix = arb_mat([[quadratic[i, j] for j in range(size)] for i in range(size)])
+        if symmetric_sign(isotropic_shift(prefix, 1 - remainder)) != 1:
+            raise ArithmeticError("positive interval unresolved")
+        print(f"sector {sector}: normalized fourth-and-higher remainder <= {remainder.str(10)}")
+    quadratic, remainder = models[last_sector]
+    if symmetric_sign(isotropic_shift(quadratic, 1 + remainder)) != -1:
+        raise ArithmeticError("quadratic model did not certify the endpoint failure")
+    lo, hi = critical_radius_bracket(quadratic, remainder, 16)
+    cutoff_ratio = (4 * last_degree + 2 * last_sector + 2) * arb(2) ** (
+        4 * last_degree + 2 * last_sector + 3
+    ) / central_pivot
+    print(f"positive prefix on the full interval: {dimension - 1}")
+    print(f"first negative dimension at the endpoint: {dimension}, pivot {pivot.str(12)}")
+    print(f"first negative dimension in the unshifted sector: {unshifted_dimension}")
+    print(f"first loss radius for dimension {dimension}, in units of 1e-100: [{lo}, {hi}]")
+    print(f"central pivot in that direction: {central_pivot.str(12)}")
+    print(f"lower bound for (16M-4)/clock scale in the existing cell budget: {cutoff_ratio.str(10)}")
 
 
 def main():
@@ -195,4 +302,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = ArgumentParser(description=__doc__)
+    parser.add_argument("--deep", action="store_true", help="certify the window at distance 1e-100")
+    if parser.parse_args().deep:
+        deep_window()
+    else:
+        main()
