@@ -201,3 +201,43 @@ uniform all-order positivity, fixed infinite Gram or RH.
 
 For N=10, both H5 and K5 already have separate finite source
 certificates. No N=10 physical transport is claimed here.
+
+
+## Recovery audit, 2026-11-18
+
+After interruption the ninth-order worktree, published branch, and
+source-first exact sign declarations were recovered without editing the
+older GoN or CSA sources.
+
+The sequential Lean compilation logs from the GoN–CSA ninth-order
+audit were checked by:
+  python3 research/projective-chiral-complex-cauchy/verify-physical-nine-logs.py
+
+Result: PASS for all 64 manifest-listed old and new declarations.
+Every listed axiom print in the logs contains only propext,
+Classical.choice and Quot.sound. No error or sorryAx appears
+in those checked logs. Compiled olean artifacts for all nine new
+source/sign/physical modules exist.
+
+Separately, these ORIGINAL research source files were recompiled
+directly using Lean 4.32 and -DwarningAsError=true, both PASS
+with zero exit status:
+  research/critical-source-return/KnownMargins.lean
+  research/theta-fifth-odd-pattern/TenSourceReturn.lean
+
+The log verifier is a read-only completion check, not a fresh
+end-to-end recompilation; a clean exit status of the former,
+hot-edited all-module wrapper was not independently recorded.
+This distinction is intentional. The ninth physical Pick/HB theorems
+are present in the successful sequential Lean compilation logs.
+No claim of uniform-in-N positivity or physical global Gram
+identification follows.
+
+The exact new-even sign is:
+  sigma_4 = h8 - bT H4^-1 b > 0,
+  delta9_raw/delta7_raw = 2 sigma_4,
+  (sigma_4 + bT H4^-1 b)/h8 = 1.
+The raw factor 2 must not be substituted for the complete
+alternating Green boundary normalization; its outer scale and
+phases are accounted for by the separate original-boundary
+theorem nativeSourceNineCompleteBoundaryEnergy_pos.
