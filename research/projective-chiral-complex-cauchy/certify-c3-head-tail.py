@@ -9,36 +9,50 @@ TRANSVERSE = run_path(str(Path(__file__).with_name("certify-transverse-schur.py"
 BOUNDARY_WEIGHTS = (728, -1444, 638, 1092, -2445, 2640, -1911, 987, -363, 91, -14, 1)
 
 
-def raw_head_and_boundary(s, cutoff):
-    def sample(address):
-        return (-s * arb(address).log()).exp()
-
+def raw_c3_prefix(s, cutoff):
     finite = 1
     for cell in range(cutoff):
         a = 3 * cell + 2
-        finite += sample(a) - 2 * sample(a + 1) + sample(a + 2)
+        finite += (-s * arb(a).log()).exp()
+        finite -= 2 * (-s * arb(a + 1).log()).exp()
+        finite += (-s * arb(a + 2).log()).exp()
+    return finite
+
+
+def raw_head_and_boundary(s, cutoff):
     first = 3 * cutoff + 2
-    boundary = sum(weight * sample(first + j) for j, weight in enumerate(BOUNDARY_WEIGHTS)) / 729
-    return finite + boundary, boundary
+    boundary = sum(
+        weight * (-s * arb(first + j).log()).exp()
+        for j, weight in enumerate(BOUNDARY_WEIGHTS)
+    ) / 729
+    return raw_c3_prefix(s, cutoff) + boundary, boundary
+
+
+def raw_c3_omitted(s, cutoff):
+    first = 3 * cutoff + 2
+    # Deflating at 1 cancels in the second difference of the three
+    # ordered Hurwitz legs.
+    return sum(
+        weight * s.zeta(arb(fmpq(first + j, 3)), deflate=True)
+        for j, weight in enumerate((1, -2, 1))
+    ) * (-s * arb(3).log()).exp()
+
+
+def camera_factor(s):
+    return 1 - ((1 - s) * arb(3).log()).exp()
+
+
+def completion_prefactor(s):
+    return s * (s - 1) * (s / 2).gamma() * (-s * arb.pi().log() / 2).exp() / 2
 
 
 def completed_c3_parts(count, displacement=fmpq(0), cutoff=64):
     """Exact accelerated C3 split, evaluated with outward-rounded series."""
     ctx.cap = 2 * count + 2
     s = arb_series([arb(fmpq(1, 2) + displacement), 1])
-    log_three = arb(3).log()
-    chart = 1 - ((1 - s) * log_three).exp()
-    dressing = s * (s - 1) * (s / 2).gamma() * (-s * arb.pi().log() / 2).exp() / (2 * chart)
-
+    dressing = completion_prefactor(s) / camera_factor(s)
     head, boundary = raw_head_and_boundary(s, cutoff)
-    first = 3 * cutoff + 2
-    # The three Hurwitz terms describe the three ordered legs of the
-    # original omitted cells. Deflating at 1 cancels in their second difference.
-    omitted = sum(
-        weight * s.zeta(arb(fmpq(first + j, 3)), deflate=True)
-        for j, weight in enumerate((1, -2, 1))
-    ) * (-s * log_three).exp()
-    return dressing * head, dressing * (omitted - boundary)
+    return dressing * head, dressing * (raw_c3_omitted(s, cutoff) - boundary)
 
 
 def log_moments(characteristic, count):
