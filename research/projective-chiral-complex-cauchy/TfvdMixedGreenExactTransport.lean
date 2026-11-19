@@ -38,6 +38,22 @@ def tfvdReconstructedReflectedGradientPairing
         (c2DirichletGradientPrefixEnrichedAnalysis q S
           (reflectedParameter s) N)) n)
 
+/-- The ACTUAL TFVD boundary trace of the two-edge native wave.
+This is the original first-edge value and weighted first derivative.
+It is NOT by definition the normalized log-wave carrier (1,1)/(z,conj z);
+identifying those requires a separate physical boundary crosswalk. -/
+theorem tfvdNativeGradientActualBoundaryTrace_two
+    (q : ℝ) (S : Finset NativeGpreBoundaryContext) (s : ℂ) :
+    nativeGpreFiniteTfvdAnalysisTraceProjection S
+        (c2DirichletGradientPrefixEnrichedAnalysis q S s 2) =
+      (positiveDirichletGradient s 0,
+        (q : ℂ)⁻¹ * positiveDirichletGradient s 1 -
+          positiveDirichletGradient s 0) := by
+  change carryWeightedVerticalTrace q
+    (nativeGpreCanonicalVerticalRealization (c2DirichletGradientPrefixCore s 2)) = _
+  rw [carryWeightedVerticalTrace_apply]
+  simp [c2DirichletGradientPrefixCore_apply]
+
 /-- Exact preservation of the MIXED Green bulk. This is not a condition
 imposed on the boundary relation: it holds for all s, N, admissible q, S. -/
 theorem tfvdReconstructedReflectedGradientPairing_eq
@@ -170,6 +186,7 @@ end
 
 end CPFormal.Analytic.Cp
 
+#print axioms CPFormal.Analytic.Cp.tfvdNativeGradientActualBoundaryTrace_two
 #print axioms CPFormal.Analytic.Cp.genuine_zero_tfvd_mixed_green_not_tendsto_zero
 #print axioms CPFormal.Analytic.Cp.genuine_zero_tfvd_mixed_green_full_ledger_tendsto_zero
 #print axioms CPFormal.Analytic.Cp.tfvdReconstructedReflectedGradientPairing_eq

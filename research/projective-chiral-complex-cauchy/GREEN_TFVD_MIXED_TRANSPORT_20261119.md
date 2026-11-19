@@ -18,6 +18,14 @@ O teorema é `tfvdReconstructedReflectedGradientPairing_eq`. É igualdade finita
 
 A positividade estrita (`Re TFVD_Mixed(N,s)>0`, quando `N>0` e `s` pertence à faixa Genuine) e o limite para `E_∞(s)>0` são transportados sem perda.
 
+**Traço físico realmente produzido pelo TFVD:** também provei `tfvdNativeGradientActualBoundaryTrace_two`. No prefixo original de duas arestas, o traço TFVD é literalmente
+
+```
+(∇f_s(0), q⁻¹ ∇f_s(1) − ∇f_s(0)).
+```
+
+Esse par não é, por definição, o par característico refletido `(z, conj z)` nem o endpoint normalizado `(1,1)` da realização logarítmica. A obrigação restante exige **uma identificação dinâmica de traços** entre essas duas construções, não a substituição nominal de um pelo outro.
+
 ## 2. O defeito angular não desaparece ao reconstruir
 
 A identidade finita com *seed*, centro, pernas e correção angular preservados é:
