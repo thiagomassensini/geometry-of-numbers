@@ -1,0 +1,58 @@
+ℹ [8796/8799] Replayed GeometryOfNumbers.Analysis.CarryMaterialProjectiveChiralSewing
+info: GeometryOfNumbers/Analysis/CarryMaterialProjectiveChiralSewing.lean:175:0: 'GeometryOfNumbers.Analysis.carryMaterialChiralLegs_green' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GeometryOfNumbers/Analysis/CarryMaterialProjectiveChiralSewing.lean:176:0: 'GeometryOfNumbers.Analysis.carryMaterialCompleteChiralDifference_eq_green' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/CarryMaterialProjectiveChiralSewing.lean:177:0: 'GeometryOfNumbers.Analysis.carryMaterialCompleteChiralGreenPairing_eq_valve' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/CarryMaterialProjectiveChiralSewing.lean:178:0: 'GeometryOfNumbers.Analysis.carryMaterialCompleteChiralValveMatrix_eq_gramDifference' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8797/8799] Replayed GeometryOfNumbers.Analysis.CarryMaterialComplexCauchySource
+info: GeometryOfNumbers/Analysis/CarryMaterialComplexCauchySource.lean:140:0: 'GeometryOfNumbers.Analysis.carryMaterialComplexState_ofReal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GeometryOfNumbers/Analysis/CarryMaterialComplexCauchySource.lean:141:0: 'GeometryOfNumbers.Analysis.carryMaterialComplexReturn_differentiableOn_ball' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/CarryMaterialComplexCauchySource.lean:142:0: 'GeometryOfNumbers.Analysis.carryMaterialComplexState_differentiableAt_ofReal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8798/8799] Replayed GeometryOfNumbers.Analysis.CarryMaterialComplexCompletedPair
+info: GeometryOfNumbers/Analysis/CarryMaterialComplexCompletedPair.lean:130:0: 'GeometryOfNumbers.Analysis.carryMaterialComplexCompanion_ofReal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/CarryMaterialComplexCompletedPair.lean:131:0: 'GeometryOfNumbers.Analysis.carryMaterialComplexCompanionReadout_eq_neg_deriv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8799/8799] Built GeometryOfNumbers.Analysis.CarryMaterialComplexCauchyPick (8.4s)
+info: GeometryOfNumbers/Analysis/CarryMaterialComplexCauchyPick.lean:307:0: 'GeometryOfNumbers.Analysis.carryMaterialComplexChiralGreen_eq_boundary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/CarryMaterialComplexCauchyPick.lean:308:0: 'GeometryOfNumbers.Analysis.carryMaterialComplexPickKernel_eq_polarizedResponse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/CarryMaterialComplexCauchyPick.lean:309:0: 'GeometryOfNumbers.Analysis.carryMaterialComplexPick_diagonal_of_positive_im' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/CarryMaterialComplexCauchyPick.lean:310:0: 'GeometryOfNumbers.Analysis.carryMaterialComplexChiralGreen_ofReal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/CarryMaterialComplexCauchyPick.lean:311:0: 'GeometryOfNumbers.Analysis.carryMaterialComplexChiralGreenMatrix_eq_signedGram' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/CarryMaterialComplexCauchyPick.lean:312:0: 'GeometryOfNumbers.Analysis.carryMaterialComplexPickMatrix_eq_response' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/CarryMaterialComplexCauchyPick.lean:313:0: 'GeometryOfNumbers.Analysis.carryMaterialComplexResponse_ofReal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/CarryMaterialComplexCauchyPick.lean:314:0: 'GeometryOfNumbers.Analysis.carryMaterialComplexValueReadout_zero_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/CarryMaterialComplexCauchyPick.lean:315:0: 'GeometryOfNumbers.Analysis.carryMaterialComplexValueReadout_eventually_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeometryOfNumbers/Analysis/CarryMaterialComplexCauchyPick.lean:317:0: 'GeometryOfNumbers.Analysis.carryMaterialComplexPickKernel_eq_sourceHermiteBiehler' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Build completed successfully (8799 jobs).

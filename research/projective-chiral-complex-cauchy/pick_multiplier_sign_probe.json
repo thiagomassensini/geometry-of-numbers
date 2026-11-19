@@ -1,0 +1,38 @@
+[
+  {
+    "sample": "imaginary_three",
+    "n": 3,
+    "min_pick_eigenvalue": "1.35560437329816492227848e-12",
+    "min_defect_eigenvalue": "5.376165421489362657797113e-12",
+    "max_gram_gauge_error": "6.443185173e-91",
+    "max_q_abs": "0.99538967207967746807",
+    "max_hermitian_error": "0.0"
+  },
+  {
+    "sample": "offset_four",
+    "n": 4,
+    "min_pick_eigenvalue": "5.666215546176776563366475e-16",
+    "min_defect_eigenvalue": "2.247229941473674310991588e-15",
+    "max_gram_gauge_error": "1.008665298e-90",
+    "max_q_abs": "0.99630967322739452704",
+    "max_hermitian_error": "0.0"
+  },
+  {
+    "sample": "imaginary_five",
+    "n": 5,
+    "min_pick_eigenvalue": "4.086499974828597612694153e-24",
+    "min_defect_eigenvalue": "1.620978992992518173746491e-23",
+    "max_gram_gauge_error": "1.108381259e-90",
+    "max_q_abs": "0.99677053050954182914",
+    "max_hermitian_error": "0.0"
+  },
+  {
+    "sample": "offset_six",
+    "n": 6,
+    "min_pick_eigenvalue": "3.971462653489205949675463e-26",
+    "min_defect_eigenvalue": "1.572494719790829458476825e-25",
+    "max_gram_gauge_error": "3.221592587e-91",
+    "max_q_abs": "0.99631003113651717399",
+    "max_hermitian_error": "0.0"
+  }
+]

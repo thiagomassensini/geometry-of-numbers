@@ -1,3 +1,13 @@
+import PhysicalPickFourSign
+import GeometryOfNumbers.Analysis.CarryMaterialPickFourSchurCriterion
+import PhysicalPickTwoStrictNative
+import GeometryOfNumbers.Analysis.CarryMaterialPickThreeSchurCriterion
+import CarrySelfAdjointOperator.CompletedNativeRadialThreePointDeterminant
+import CarrySelfAdjointOperator.CompletedNativeChiralTwoPointControl
+import GeometryOfNumbers.Analysis.CarryMaterialComplexPickSignGate
+import GeometryOfNumbers.Analysis.CarryMaterialComplexCauchyPick
+import CarrySelfAdjointOperator.RealAxisWronskianDslopeSewing
+import GeometryOfNumbers.Analysis.CarryMaterialProjectiveChiralSewing
 import GeometryOfNumbers.Analysis.CarryMaterialFourthPivot
 import GeometryOfNumbers.Analysis.CarryMaterialSourceFactor
 import GeometryOfNumbers.Analysis.CarryMaterialMixedSchur
@@ -4769,3 +4779,632 @@ namespace CarryMaterialFourthPivotComparison
 #assert_central_comparison_axioms material_fourth_cholesky_of_source_estimate
 #print axioms material_fourth_cholesky_of_source_estimate
 end CarryMaterialFourthPivotComparison
+
+
+/-!
+## Cross-repository physical projective-chiral sewing
+
+The SOURCE-derived two-arm chiral difference already equals the full valve
+Green after subtracting the physical hidden return, in the original material
+Hilbert space. The existing cross-repository comparison then identifies this
+source expression with the native completed Wronskian, including its
+archimedean dressing. No positivity, target factorization or new sign assumed.
+-/
+namespace CarryMaterialPhysicalProjectiveChiralComparison
+open GeometryOfNumbers.Analysis CarrySelfAdjointOperator
+open scoped InnerProductSpace ComplexConjugate
+noncomputable section
+
+theorem material_chiral_source_eq_completed_native_wronskian (t u : ℝ) :
+    carryMaterialCompleteChiralGreenPairing t u =
+      completedGreenWronskian completedNativeOperatorCharacteristic
+        completedNativeOperatorBoundaryCompanion (u : ℂ) (t : ℂ) := by
+  rw [carryMaterialCompleteChiralGreenPairing_eq_valve 1 (by norm_num)]
+  exact CarryMaterialValveGlobalReturnComparison.material_valve_return_green_wronskian
+    1 (by norm_num) t u
+
+/-- The physical two-arm source reaches the exact real-axis normalized
+divided-slope numerator, WITHOUT canceling the (u-t) separation.
+This is a division-free scalar sewing and not a positive carrier theorem.
+At u=t the identity is valid but does not extract the diagonal dslope. -/
+theorem material_chiral_source_eq_native_dslope_numerator (t u : ℝ)
+    (htF : completedNativeOperatorCharacteristic (t : ℂ) ≠ 0)
+    (huF : completedNativeOperatorCharacteristic (u : ℂ) ≠ 0) :
+    carryMaterialCompleteChiralGreenPairing t u =
+      2 * completedNativeOperatorCharacteristic (t : ℂ) *
+        completedNativeOperatorCharacteristic (u : ℂ) * ((u-t : ℝ) : ℂ) *
+        dslope (completedGreenNormalizedResponse
+          completedNativeOperatorCharacteristic
+          completedNativeOperatorBoundaryCompanion) (t : ℂ) (u : ℂ) := by
+  rw [material_chiral_source_eq_completed_native_wronskian]
+  exact completedNativeWronskian_ofReal_eq_divisionFreeDslope t u htF huF
+
+/-- Every finite real-time family: the C2 source's two authentic Hilbert
+Grams realize the NORMALIZED NATIVE DSLOPE NUMERATOR with all entries and
+crossings retained. The right side is a signed difference; no PSD follows.
+The zero parameter separation is not inverted. -/
+theorem material_chiral_matrix_eq_native_dslope_numerator
+    (N : ℕ) (time : Fin N → ℝ)
+    (hF : ∀ i : Fin N,
+      completedNativeOperatorCharacteristic (time i : ℂ) ≠ 0) :
+    Matrix.of (fun i j : Fin N =>
+      2 * completedNativeOperatorCharacteristic (time i : ℂ) *
+        completedNativeOperatorCharacteristic (time j : ℂ) *
+        (((time j-time i) : ℝ) : ℂ) *
+        dslope (completedGreenNormalizedResponse
+          completedNativeOperatorCharacteristic
+          completedNativeOperatorBoundaryCompanion)
+            (time i : ℂ) (time j : ℂ)) =
+      (Complex.I / 2) •
+        (Matrix.gram ℂ (fun i : Fin N =>
+          carryMaterialCompleteChiralPositive
+            (carryMaterialCompanionValuePair (time i))) -
+         Matrix.gram ℂ (fun i : Fin N =>
+          carryMaterialCompleteChiralNegative
+            (carryMaterialCompanionValuePair (time i)))) := by
+  calc
+    _ = Matrix.of (fun i j : Fin N =>
+      carryValveReturnGreen 1 (time i) (time j)) := by
+        ext i j
+        change _ = carryValveReturnGreen 1 (time i) (time j)
+        rw [← carryMaterialCompleteChiralGreenPairing_eq_valve 1 (by norm_num)]
+        exact (material_chiral_source_eq_native_dslope_numerator
+          (time i) (time j) (hF i) (hF j)).symm
+    _ = _ := carryMaterialCompleteChiralValveMatrix_eq_gramDifference
+      1 (by norm_num) N time
+
+#print axioms material_chiral_matrix_eq_native_dslope_numerator
+
+#print axioms material_chiral_source_eq_native_dslope_numerator
+
+#print axioms material_chiral_source_eq_completed_native_wronskian
+
+end
+end CarryMaterialPhysicalProjectiveChiralComparison
+
+
+/-!
+## Real boundary of the new GENUINE complex material Cauchy--Pick source
+
+The complex source is defined in GoN entirely from the preexisting C2
+material gradients, original whole-cell return, camera, completion and vector
+derivative. The equalities below are sourced from the already formalized
+real-height material/native comparison; they are NOT a complex identity
+principle and do NOT impose equality in the radial upper half-plane.
+-/
+namespace CarryMaterialComplexPhysicalComparison
+
+open GeometryOfNumbers.Analysis CarrySelfAdjointOperator
+open scoped ComplexConjugate
+
+theorem material_complex_value_boundary_eq_native (t : ℝ) :
+    carryMaterialComplexValueReadout (t : ℂ) =
+      completedNativeOperatorCharacteristic (t : ℂ) := by
+  rw [carryMaterialComplexValueReadout_ofReal]
+  exact CarryMaterialCanonicalComparison.material_response t
+
+theorem material_complex_companion_boundary_eq_native (t : ℝ) :
+    carryMaterialComplexCompanionReadout (t : ℂ) =
+      completedNativeOperatorBoundaryCompanion (t : ℂ) := by
+  unfold carryMaterialComplexCompanionReadout
+  rw [carryMaterialComplexCompanion_ofReal]
+  exact CarryMaterialResponseComparison.material_companion t
+
+theorem material_complex_response_boundary_eq_native (t : ℝ) :
+    carryMaterialComplexResponse (t : ℂ) =
+      completedGreenNormalizedResponse completedNativeOperatorCharacteristic
+        completedNativeOperatorBoundaryCompanion (t : ℂ) := by
+  rw [carryMaterialComplexResponse_ofReal]
+  exact CarryMaterialResponseComparison.material_normalized_response t
+
+theorem material_complex_chiralGreen_boundary_eq_native (t u : ℝ) :
+    carryMaterialComplexChiralGreen (t : ℂ) (u : ℂ) =
+      completedGreenWronskian completedNativeOperatorCharacteristic
+        completedNativeOperatorBoundaryCompanion (u : ℂ) (t : ℂ) := by
+  rw [carryMaterialComplexChiralGreen_ofReal]
+  exact CarryMaterialPhysicalProjectiveChiralComparison.material_chiral_source_eq_completed_native_wronskian t u
+
+#print axioms material_complex_value_boundary_eq_native
+#print axioms material_complex_companion_boundary_eq_native
+#print axioms material_complex_response_boundary_eq_native
+#print axioms material_complex_chiralGreen_boundary_eq_native
+
+
+
+/-! The genuine physical C2 and native completed characteristic coincide
+on a COMPLEX neighborhood of the origin, using the independent real-axis
+comparison plus the analytic identity principle. -/
+theorem material_complex_value_eq_native_germ :
+    carryMaterialComplexValueReadout =ᶠ[nhds (0 : ℂ)]
+      completedNativeOperatorCharacteristic := by
+  apply analyticAt_eventuallyEq_of_forall_real
+    carryMaterialComplexValueReadout
+    completedNativeOperatorCharacteristic
+    carryMaterialComplexValueReadout_analyticAt_zero
+    (completedNativeOperatorCharacteristic_analyticAt zero_mem_completedNativeHeightDomain)
+    material_complex_value_boundary_eq_native
+
+/-- The native scalar companion is the readout of the genuinely differentiated
+full C2 MATERIAL carrier throughout the same complex germ. -/
+theorem material_complex_companion_eq_native_germ :
+    carryMaterialComplexCompanionReadout =ᶠ[nhds (0 : ℂ)]
+      completedNativeOperatorBoundaryCompanion := by
+  have hD := material_complex_value_eq_native_germ.deriv
+  have hS : ∀ᶠ z : ℂ in nhds 0,
+      DifferentiableAt ℂ carryMaterialComplexDressedState z :=
+    carryMaterialComplexDressedState_analyticAt_zero.eventually_analyticAt.mono
+      (fun z hz => hz.differentiableAt)
+  filter_upwards [hD,hS] with z hzDeriv hzState
+  rw [carryMaterialComplexCompanionReadout_eq_neg_deriv z hzState,
+    completedNativeOperatorBoundaryCompanion_eq_neg_deriv z, hzDeriv]
+
+/-- Source-first normalized response has the exact native holomorphic germ,
+not just agreement of the jets on the real line. -/
+theorem material_complex_response_eq_native_germ :
+    carryMaterialComplexResponse =ᶠ[nhds (0 : ℂ)]
+      completedGreenNormalizedResponse completedNativeOperatorCharacteristic
+        completedNativeOperatorBoundaryCompanion := by
+  filter_upwards [material_complex_value_eq_native_germ,
+    material_complex_companion_eq_native_germ] with z hF hPsi
+  change carryMaterialComplexCompanionReadout z /
+        (2 * carryMaterialComplexValueReadout z) =
+      completedNativeOperatorBoundaryCompanion z /
+        (2 * completedNativeOperatorCharacteristic z)
+  rw [hPsi, hF]
+
+#print axioms material_complex_value_eq_native_germ
+#print axioms material_complex_companion_eq_native_germ
+#print axioms material_complex_response_eq_native_germ
+
+
+
+/-- The exact C2 PHYSICAL Cauchy--Pick quotient coincides with the
+completed native Cauchy--Pick divided response throughout a complex germ
+for every non-reflected-crossing pair. This is obtained AFTER the
+independently proved real-axis identity and analytic identity theorem,
+never by defining the source using a target moment or native kernel. -/
+theorem material_complex_Pick_eq_native_germ :
+    ∀ᶠ z : ℂ in nhds 0, ∀ᶠ w : ℂ in nhds 0,
+      w ≠ conj z →
+        carryMaterialComplexPickKernel z w =
+          ((completedGreenNormalizedResponse completedNativeOperatorCharacteristic
+            completedNativeOperatorBoundaryCompanion) w -
+           conj ((completedGreenNormalizedResponse completedNativeOperatorCharacteristic
+            completedNativeOperatorBoundaryCompanion) z)) / (w - conj z) := by
+  filter_upwards [material_complex_response_eq_native_germ,
+    carryMaterialComplexValueReadout_eventually_ne_zero] with z hzR hzF
+  filter_upwards [material_complex_response_eq_native_germ,
+    carryMaterialComplexValueReadout_eventually_ne_zero] with w hwR hwF
+  intro hSep
+  rw [carryMaterialComplexPickKernel_eq_polarizedResponse z w hzF hwF hSep,
+      hzR, hwR]
+
+/-- The physically defined Hermite--Biehler source quotient equals the native
+quotient locally in COMPLEX height, as a consequence rather than an axiom. -/
+theorem material_complex_source_chiral_quotient_eq_native_germ :
+    carryMaterialComplexChiralQuotient =ᶠ[nhds (0 : ℂ)]
+      (fun z => (completedNativeOperatorBoundaryCompanion z -
+                   Complex.I * completedNativeOperatorCharacteristic z) /
+                (completedNativeOperatorBoundaryCompanion z +
+                   Complex.I * completedNativeOperatorCharacteristic z)) := by
+  filter_upwards [material_complex_value_eq_native_germ,
+      material_complex_companion_eq_native_germ] with z hzF hzPsi
+  simp only [carryMaterialComplexChiralQuotient,
+    carryMaterialComplexPositiveHB, carryMaterialComplexNegativeHB, hzF, hzPsi]
+
+#print axioms material_complex_Pick_eq_native_germ
+#print axioms material_complex_source_chiral_quotient_eq_native_germ
+
+
+
+/-- In the certified complex germ, the source physical Cauchy--Pick kernel
+is LITERALLY the CSA polarized native dslope kernel, not merely an
+isomorphic surrogate. The diagonal is evaluated only at positive
+imaginary height to avoid conjugate collision. -/
+theorem material_complex_Pick_eq_native_dslope_germ :
+    ∀ᶠ z : ℂ in nhds 0, ∀ᶠ w : ℂ in nhds 0,
+      w ≠ conj z →
+      carryMaterialComplexPickKernel z w =
+        canonicalCompletedNativePolarizedDslopeKernel z w := by
+  have hStrip : ∀ᶠ z : ℂ in nhds 0,
+      z ∈ completedNativeHeightDomain :=
+    isOpen_completedNativeHeightDomain.mem_nhds zero_mem_completedNativeHeightDomain
+  filter_upwards [material_complex_Pick_eq_native_germ, hStrip] with z hPick hzStrip
+  filter_upwards [hPick] with w hPoint
+  intro hSep
+  rw [hPoint hSep]
+  have hNum := canonicalCompletedNativePolarizedResponseNumerator_eq_mul_dslope
+    (z := z) (w := w) hzStrip hSep
+  unfold canonicalCompletedNativePolarizedResponseNumerator at hNum
+  rw [hNum]
+  exact mul_div_cancel_left₀ _ (sub_ne_zero.mpr hSep)
+
+#print axioms material_complex_Pick_eq_native_dslope_germ
+
+end CarryMaterialComplexPhysicalComparison
+
+
+/-! ## Truly sourced physical C2 radial multiplier defect
+
+The same exact complex source, not an independent native target definition,
+is sampled on the previous canonical two-point radial Cauchy grid.
+The local complex identification is evaluated on *every finite family*
+eventually. The existing unconditional one/two-point certificates can then be
+transported here, without asserting an all-order sign.
+-/
+namespace CarryMaterialPhysicalRadialMultiplierGate
+open GeometryOfNumbers.Analysis CarrySelfAdjointOperator
+open Filter
+open scoped ComplexConjugate ComplexOrder MatrixOrder
+
+noncomputable section
+
+/-- The SOURCE C2 defect, not a target Gram, on the canonical radial grid. -/
+def physicalC2RadialDefectMatrix (k N : ℕ) : Matrix (Fin N) (Fin N) ℂ :=
+  carryMaterialComplexSourceDefectMatrix N
+    (fun i => canonicalCompletedC3RadialTiltPoint k i)
+
+/-- For every fixed size, the exact source C2 defect eventually agrees
+entrywise with the independently formalized native radial Pick defect. -/
+theorem physicalC2RadialDefectMatrix_eventually_eq_native
+    (N : ℕ) :
+    ∀ᶠ k : ℕ in atTop,
+      physicalC2RadialDefectMatrix k N =
+        canonicalCompletedNativeRadialChiralPickSampleMatrix k N := by
+  have hQ : carryMaterialComplexChiralQuotient =ᶠ[nhds (0 : ℂ)]
+       completedNativeHermiteBiehlerChiralQuotient := by
+    filter_upwards [CarryMaterialComplexPhysicalComparison.material_complex_source_chiral_quotient_eq_native_germ]
+      with z hq
+    simpa only [completedNativeHermiteBiehlerChiralQuotient,
+      completedNativeNegativeHermiteBiehlerCoordinate,
+      completedNativePositiveHermiteBiehlerCoordinate,
+      completedNativeOperatorBoundaryCompanion_eq_neg_deriv] using hq
+  have hFamily :
+      ∀ᶠ k : ℕ in atTop, ∀ i : Fin N,
+        carryMaterialComplexChiralQuotient (canonicalCompletedC3RadialTiltPoint k i) =
+          completedNativeHermiteBiehlerChiralQuotient
+            (canonicalCompletedC3RadialTiltPoint k i) := by
+    rw [Filter.eventually_all]
+    intro i
+    exact (canonicalCompletedC3RadialTiltPoint_tendsto_zero (i : ℕ)).eventually hQ
+  filter_upwards [hFamily] with k hk
+  ext i j
+  simp only [physicalC2RadialDefectMatrix,
+    carryMaterialComplexSourceDefectMatrix,
+    canonicalCompletedNativeRadialChiralPickSampleMatrix, Matrix.of_apply]
+  rw [hk i, hk j]
+  unfold completedNativeHermiteBiehlerChiralPickKernel
+  ring
+
+/-- An UNCONDITIONAL TWO-POINT positive result for the actual source C2
+multiplier defect. The positivity itself comes from an existing independently
+certified low-order native theta/xi-cosine result, transported by the new
+analytic identity. No higher-order positivity is asserted. -/
+theorem physicalC2RadialDefectMatrix_two_eventually_posSemidef :
+    ∀ᶠ k : ℕ in atTop,
+      (physicalC2RadialDefectMatrix k 2).PosSemidef := by
+  filter_upwards
+    [physicalC2RadialDefectMatrix_eventually_eq_native 2,
+     canonicalCompletedNativeRadialChiralPickSampleMatrix_two_eventually_posSemidef]
+    with k hEq hPos
+  rwa [hEq]
+
+#print axioms physicalC2RadialDefectMatrix_eventually_eq_native
+#print axioms physicalC2RadialDefectMatrix_two_eventually_posSemidef
+
+end
+
+/-- On every fixed finite radial family, the ACTUAL physical C2 value and
+positive Hermite--Biehler coordinate are eventually both nonzero. This is
+deduced from the independently proved C2 complex germ and the existing
+native nonvanishing lemmas. -/
+theorem physicalC2Radial_eventually_regular (N : ℕ) :
+    ∀ᶠ k : ℕ in atTop, ∀ i : Fin N,
+      carryMaterialComplexValueReadout
+          (canonicalCompletedC3RadialTiltPoint k i) ≠ 0 ∧
+      carryMaterialComplexPositiveHB
+          (canonicalCompletedC3RadialTiltPoint k i) ≠ 0 := by
+  have hP : ∀ᶠ z : ℂ in nhds 0, carryMaterialComplexPositiveHB z ≠ 0 := by
+    filter_upwards [CarryMaterialComplexPhysicalComparison.material_complex_value_eq_native_germ,
+      CarryMaterialComplexPhysicalComparison.material_complex_companion_eq_native_germ,
+      completedNativePositiveHermiteBiehlerCoordinate_eventually_ne_zero]
+      with z hzF hzPsi hNative
+    unfold carryMaterialComplexPositiveHB
+    rw [hzF, hzPsi]
+    simpa only [completedNativePositiveHermiteBiehlerCoordinate,
+      completedNativeOperatorBoundaryCompanion_eq_neg_deriv] using hNative
+  have hF : ∀ᶠ z : ℂ in nhds 0,
+      carryMaterialComplexValueReadout z ≠ 0 :=
+    carryMaterialComplexValueReadout_eventually_ne_zero
+  rw [Filter.eventually_all]
+  intro i
+  exact (canonicalCompletedC3RadialTiltPoint_tendsto_zero (i : ℕ)).eventually
+    (hF.and hP)
+
+/-- The genuinely material C2 Pick kernel (not just its multiplier defect)
+is unconditionally PSD for the two-point canonical radial family,
+eventually. Every source regularity hypothesis is proved from the same
+original C2 vector carrier, not inferred from the PSD conclusion. -/
+theorem physicalC2RadialPick_two_eventually_posSemidef :
+    ∀ᶠ k : ℕ in atTop,
+      (carryMaterialComplexSourcePickMatrix 2
+        (fun i => canonicalCompletedC3RadialTiltPoint k i)).PosSemidef := by
+  filter_upwards [physicalC2Radial_eventually_regular 2,
+     physicalC2RadialDefectMatrix_two_eventually_posSemidef]
+     with k hReg hDef
+  have hUpper : ∀ i : Fin 2,
+      0 < (canonicalCompletedC3RadialTiltPoint k i).im :=
+    fun i => canonicalCompletedC3RadialTiltPoint_im_pos k i
+  exact (carryMaterialComplexSourcePickMatrix_posSemidef_iff_sourceDefect
+    2 (fun i => canonicalCompletedC3RadialTiltPoint k i)
+      hUpper (fun i => (hReg i).1) (fun i => (hReg i).2)).mpr hDef
+
+#print axioms physicalC2Radial_eventually_regular
+#print axioms physicalC2RadialPick_two_eventually_posSemidef
+
+
+/-- The original source C2 Pick kernel, sampled at the actual canonical
+radial heights: no new vector or spectral function is inserted. -/
+noncomputable def physicalC2RadialPickMatrix (k N : ℕ) : Matrix (Fin N) (Fin N) ℂ :=
+  carryMaterialComplexSourcePickMatrix N
+    (fun i => canonicalCompletedC3RadialTiltPoint k i)
+
+/-- All finite physical C2 radial Cauchy--Pick matrices eventually equal
+the canonical completed-native dslope matrices. The proof uses the two
+single-variable complex *germ* identities uniformly over Fin N, not a
+potentially invalid diagonalization of a nested ∀ᶠ z, ∀ᶠ w statement. -/
+theorem physicalC2RadialPickMatrix_eventually_eq_native_dslope
+    (N : ℕ) :
+    ∀ᶠ k : ℕ in atTop,
+      physicalC2RadialPickMatrix k N =
+        canonicalCompletedNativeRadialDslopeSampleMatrix k N := by
+  have hGerm :
+      ∀ᶠ z : ℂ in nhds 0,
+        carryMaterialComplexValueReadout z ≠ 0 ∧
+        carryMaterialComplexResponse z =
+          completedGreenNormalizedResponse
+            completedNativeOperatorCharacteristic
+            completedNativeOperatorBoundaryCompanion z ∧
+        z ∈ completedNativeHeightDomain :=
+    by
+      filter_upwards [carryMaterialComplexValueReadout_eventually_ne_zero,
+        CarryMaterialComplexPhysicalComparison.material_complex_response_eq_native_germ,
+        isOpen_completedNativeHeightDomain.mem_nhds zero_mem_completedNativeHeightDomain]
+        with z hF hR hDomain
+      exact ⟨hF, hR, hDomain⟩
+  have hFamily : ∀ᶠ k : ℕ in atTop, ∀ i : Fin N,
+      carryMaterialComplexValueReadout
+          (canonicalCompletedC3RadialTiltPoint k i) ≠ 0 ∧
+      carryMaterialComplexResponse (canonicalCompletedC3RadialTiltPoint k i) =
+          completedGreenNormalizedResponse
+            completedNativeOperatorCharacteristic
+            completedNativeOperatorBoundaryCompanion
+              (canonicalCompletedC3RadialTiltPoint k i) ∧
+      canonicalCompletedC3RadialTiltPoint k i ∈ completedNativeHeightDomain := by
+    rw [Filter.eventually_all]
+    intro i
+    exact (canonicalCompletedC3RadialTiltPoint_tendsto_zero (i : ℕ)).eventually hGerm
+  filter_upwards [hFamily] with k hk
+  ext i j
+  let z := canonicalCompletedC3RadialTiltPoint k i
+  let w := canonicalCompletedC3RadialTiltPoint k j
+  have hSep : w ≠ conj z :=
+    carryMaterialComplexPick_separated_of_positive_im z w
+      (canonicalCompletedC3RadialTiltPoint_im_pos k i)
+      (canonicalCompletedC3RadialTiltPoint_im_pos k j)
+  change carryMaterialComplexPickKernel z w =
+    canonicalCompletedNativePolarizedDslopeKernel z w
+  rw [carryMaterialComplexPickKernel_eq_polarizedResponse z w
+    (hk i).1 (hk j).1 hSep]
+  rw [(hk i).2.1, (hk j).2.1]
+  have hNum := canonicalCompletedNativePolarizedResponseNumerator_eq_mul_dslope
+    (z := z) (w := w) (hk i).2.2 hSep
+  unfold canonicalCompletedNativePolarizedResponseNumerator at hNum
+  rw [hNum]
+  exact mul_div_cancel_left₀ _ (sub_ne_zero.mpr hSep)
+
+/-- Source-FIRST physical 3×3 radial PICK determinant is eventually
+strictly positive. The transported sign uses the already certified native
+sixth-order theta/moment margin plus exact analytic remainder control.
+THIS IS NOT a proof of PSD of the 3×3 matrix, which still requires its
+principal-minor conditions. -/
+theorem physicalC2RadialPickMatrix_three_det_eventually_re_pos :
+    ∀ᶠ k : ℕ in atTop,
+      0 < (physicalC2RadialPickMatrix k 3).det.re := by
+  filter_upwards [physicalC2RadialPickMatrix_eventually_eq_native_dslope 3,
+      canonicalCompletedNativeRadialThreePointDeterminant_eventually_re_pos]
+      with k hEq hPos
+  rwa [hEq]
+
+#print axioms physicalC2RadialPickMatrix_eventually_eq_native_dslope
+#print axioms physicalC2RadialPickMatrix_three_det_eventually_re_pos
+
+end CarryMaterialPhysicalRadialMultiplierGate
+
+
+
+/-! ## Strict physical C2 two- and three-direction radial certificate
+
+h₀>0 and h₁>0 imply the confluent 2×2 difference determinant is
+eventually nonzero. With the previously transported C2 Pick 2×2 PSD
+this yields PD. The physical 3×3 then follows by a noncircular
+Schur--Sylvester lemma and the previously transported positive determinant.
+-/
+namespace CarryMaterialPhysicalRadialMultiplierGate
+
+open GeometryOfNumbers.Analysis CarrySelfAdjointOperator
+open Filter
+open scoped ComplexOrder Matrix MatrixOrder
+
+/-- No extra two-point sign premise: eventual strictness is a consequence
+of the existing source Pick PSD and the certified C2 confluent limit. -/
+theorem physicalC2RadialPickMatrix_two_eventually_posDef :
+    ∀ᶠ k : ℕ in atTop,
+      (physicalC2RadialPickMatrix k 2).PosDef := by
+  filter_upwards [physicalC2RadialPick_two_eventually_posSemidef,
+    physicalC2RadialPickMatrix_eventually_eq_native_dslope 2,
+    canonicalCompletedNativeRadialDslopeSampleMatrix_two_det_eventually_ne_zero]
+    with k hPSD hEq hDet
+  have hM : (physicalC2RadialPickMatrix k 2).PosSemidef := hPSD
+  apply hM.posDef_iff_det_ne_zero.mpr
+  rw [hEq]
+  exact hDet
+
+/-- The physical 3×3 Pick section has its genuine 2×2 upper-left corner
+strictly positive, without assuming such a fact at the beginning. -/
+theorem physicalC2RadialPickMatrix_three_leading_two_eventually_posDef :
+    ∀ᶠ k : ℕ in atTop,
+      ((physicalC2RadialPickMatrix k 3).submatrix
+        Fin.castSucc Fin.castSucc).PosDef := by
+  filter_upwards [physicalC2RadialPickMatrix_two_eventually_posDef] with k hk
+  have hSub :
+      (physicalC2RadialPickMatrix k 3).submatrix
+          Fin.castSucc Fin.castSucc =
+        physicalC2RadialPickMatrix k 2 := by
+    ext i j
+    rfl
+  rwa [hSub]
+
+/-- Unconditional C2 physical radial 3×3 Pick positive definiteness,
+eventually. Algebraic Schur positivity uses the EXISTING two-point
+positivity and the EXISTING third determinant sign, with Hermiticity
+proved directly from the genuine source C2 response. -/
+theorem physicalC2RadialPickMatrix_three_eventually_posDef :
+    ∀ᶠ k : ℕ in atTop,
+      (physicalC2RadialPickMatrix k 3).PosDef := by
+  filter_upwards [physicalC2RadialPickMatrix_three_leading_two_eventually_posDef,
+    physicalC2RadialPickMatrix_three_det_eventually_re_pos,
+    physicalC2Radial_eventually_regular 3] with k hLeading hDetRe hRegular
+  let M := physicalC2RadialPickMatrix k 3
+  have hHerm : M.IsHermitian := by
+    exact carryMaterialComplexSourcePickMatrix_isHermitian 3
+      (fun i => canonicalCompletedC3RadialTiltPoint k i)
+      (fun i => canonicalCompletedC3RadialTiltPoint_im_pos k i)
+      (fun i => (hRegular i).1)
+  have hDetStar : star M.det = M.det := by
+    calc
+      star M.det = (Mᴴ).det := (Matrix.det_conjTranspose M).symm
+      _ = M.det := by rw [hHerm]
+  have hDetIm : M.det.im = 0 := by
+    exact Complex.conj_eq_iff_im.mp (by simpa [Complex.star_def] using hDetStar)
+  have hDet : (0 : ℂ) < M.det :=
+    Complex.pos_iff.mpr ⟨hDetRe, hDetIm.symm⟩
+  exact hermitian_fin_three_posDef_of_leading_posDef_det_pos M
+    hHerm hLeading hDet
+
+/-- The actual physical C2 multiplier defect 3×3 is PSD, eventually,
+by the invertible HB gauge equivalence in GoN #335. -/
+theorem physicalC2RadialDefectMatrix_three_eventually_posSemidef :
+    ∀ᶠ k : ℕ in atTop,
+      (physicalC2RadialDefectMatrix k 3).PosSemidef := by
+  filter_upwards [physicalC2RadialPickMatrix_three_eventually_posDef,
+    physicalC2Radial_eventually_regular 3] with k hPick hReg
+  have hU : ∀ i : Fin 3,
+      0 < (canonicalCompletedC3RadialTiltPoint k i).im :=
+    fun i => canonicalCompletedC3RadialTiltPoint_im_pos k i
+  exact (carryMaterialComplexSourcePickMatrix_posSemidef_iff_sourceDefect 3
+    (fun i => canonicalCompletedC3RadialTiltPoint k i)
+    hU (fun i => (hReg i).1) (fun i => (hReg i).2)).mp hPick.posSemidef
+
+#print axioms physicalC2RadialPickMatrix_two_eventually_posDef
+#print axioms physicalC2RadialPickMatrix_three_eventually_posDef
+#print axioms physicalC2RadialDefectMatrix_three_eventually_posSemidef
+
+
+
+/-- Strong form: the actual MATERIAL C2 3×3 HB multiplier defect is
+positive DEFINITE on the eventual canonical radial family. Not merely PSD.
+The positive physical Pick and the defect are diagonally congruent through
+the nonzero source HB amplitudes, so strictness cannot be lost. -/
+theorem physicalC2RadialDefectMatrix_three_eventually_posDef :
+    ∀ᶠ k : ℕ in atTop,
+      (physicalC2RadialDefectMatrix k 3).PosDef := by
+  filter_upwards [physicalC2RadialPickMatrix_three_eventually_posDef,
+    physicalC2Radial_eventually_regular 3] with k hPick hReg
+  have hU : ∀ i : Fin 3,
+      0 < (canonicalCompletedC3RadialTiltPoint k i).im :=
+    fun i => canonicalCompletedC3RadialTiltPoint_im_pos k i
+  exact (carryMaterialComplexSourcePickMatrix_posDef_iff_sourceDefect 3
+    (fun i => canonicalCompletedC3RadialTiltPoint k i)
+    hU (fun i => (hReg i).1) (fun i => (hReg i).2)).mp hPick
+
+#print axioms physicalC2RadialDefectMatrix_three_eventually_posDef
+
+end CarryMaterialPhysicalRadialMultiplierGate
+
+
+
+/-! ## Fourth physical C2 Cauchy--Pick direction: strict sign
+
+No ad hoc metric: the original source C2 response is sampled at
+the four exact radial heights z_j = i*(j+1)/(k+1).
+-/
+namespace CarryMaterialPhysicalRadialMultiplierGate
+open GeometryOfNumbers.Analysis CarrySelfAdjointOperator Filter
+open scoped Matrix ComplexConjugate ComplexOrder MatrixOrder
+
+theorem physicalC2RadialPickMatrix_four_det_eventually_re_pos :
+    ∀ᶠ k : ℕ in atTop,
+      0 < (physicalC2RadialPickMatrix k 4).det.re := by
+  filter_upwards [physicalC2RadialPickMatrix_eventually_eq_native_dslope 4,
+    canonicalCompletedNativeRadialDslopeSampleMatrix_four_det_eventually_re_pos]
+    with k hEq hDet
+  rwa [hEq]
+
+theorem physicalC2RadialPickMatrix_four_leading_three_eventually_posDef :
+    ∀ᶠ k : ℕ in atTop,
+      ((physicalC2RadialPickMatrix k 4).submatrix
+         Fin.castSucc Fin.castSucc).PosDef := by
+  filter_upwards [physicalC2RadialPickMatrix_three_eventually_posDef] with k hk
+  have hSub :
+      (physicalC2RadialPickMatrix k 4).submatrix
+          Fin.castSucc Fin.castSucc =
+        physicalC2RadialPickMatrix k 3 := by
+    ext i j
+    rfl
+  rwa [hSub]
+
+/-- The actual source-first completed C2 radial Pick matrix 4x4
+is eventually strictly positive definite, with ALL 16 crossings. -/
+theorem physicalC2RadialPickMatrix_four_eventually_posDef :
+    ∀ᶠ k : ℕ in atTop,
+      (physicalC2RadialPickMatrix k 4).PosDef := by
+  filter_upwards [physicalC2RadialPickMatrix_four_leading_three_eventually_posDef,
+    physicalC2RadialPickMatrix_four_det_eventually_re_pos,
+    physicalC2Radial_eventually_regular 4] with k hLeading hDetRe hRegular
+  let M := physicalC2RadialPickMatrix k 4
+  have hHerm : M.IsHermitian := by
+    exact carryMaterialComplexSourcePickMatrix_isHermitian 4
+      (fun i => canonicalCompletedC3RadialTiltPoint k i)
+      (fun i => canonicalCompletedC3RadialTiltPoint_im_pos k i)
+      (fun i => (hRegular i).1)
+  have hDetStar : star M.det = M.det := by
+    calc
+      star M.det = (Mᴴ).det := (Matrix.det_conjTranspose M).symm
+      _ = M.det := by rw [hHerm]
+  have hDetIm : M.det.im = 0 := by
+    exact Complex.conj_eq_iff_im.mp (by simpa [Complex.star_def] using hDetStar)
+  have hDet : (0 : ℂ) < M.det :=
+    Complex.pos_iff.mpr ⟨hDetRe, hDetIm.symm⟩
+  exact hermitian_fin_four_posDef_of_leading_posDef_det_pos M
+    hHerm hLeading hDet
+
+/-- The positive DEFINITE fourth physical HB multiplier defect:
+true for all nonzero four-coefficient combinations on sufficiently
+fine canonical radial grids. -/
+theorem physicalC2RadialDefectMatrix_four_eventually_posDef :
+    ∀ᶠ k : ℕ in atTop,
+      (physicalC2RadialDefectMatrix k 4).PosDef := by
+  filter_upwards [physicalC2RadialPickMatrix_four_eventually_posDef,
+    physicalC2Radial_eventually_regular 4] with k hPick hReg
+  have hU : ∀ i : Fin 4,
+      0 < (canonicalCompletedC3RadialTiltPoint k i).im :=
+    fun i => canonicalCompletedC3RadialTiltPoint_im_pos k i
+  exact (carryMaterialComplexSourcePickMatrix_posDef_iff_sourceDefect 4
+    (fun i => canonicalCompletedC3RadialTiltPoint k i)
+    hU (fun i => (hReg i).1) (fun i => (hReg i).2)).mp hPick
+
+#print axioms physicalC2RadialPickMatrix_four_eventually_posDef
+#print axioms physicalC2RadialDefectMatrix_four_eventually_posDef
+
+end CarryMaterialPhysicalRadialMultiplierGate

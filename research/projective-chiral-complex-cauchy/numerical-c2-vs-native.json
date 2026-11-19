@@ -1,0 +1,52 @@
+{
+  "dps": 95,
+  "meaning": "independent exact C2 Hurwitz second-difference analytic continuation compared with native reference",
+  "heights": [
+    {
+      "z": "(0.0 + 0.05j)",
+      "abs_completed_diff": "4.6816763546921983272e-97",
+      "abs_normalized_response_diff": "1.8287798260516399715e-99",
+      "abs_c2_chart_minus_camera_times_zeta": "1.8726705418768793309e-96"
+    },
+    {
+      "z": "(0.0 + 0.1j)",
+      "abs_completed_diff": "9.3633527093843966543e-97",
+      "abs_normalized_response_diff": "3.6575596521032799431e-99",
+      "abs_c2_chart_minus_camera_times_zeta": "0.0"
+    },
+    {
+      "z": "(0.0 + 0.2j)",
+      "abs_completed_diff": "4.6816763546921983272e-97",
+      "abs_normalized_response_diff": "0.0",
+      "abs_c2_chart_minus_camera_times_zeta": "0.0"
+    },
+    {
+      "z": "(0.1 + 0.07j)",
+      "abs_completed_diff": "5.4146264819088377491e-97",
+      "abs_normalized_response_diff": "3.6575596521032799431e-99",
+      "abs_c2_chart_minus_camera_times_zeta": "5.7057930572811167112e-97"
+    }
+  ],
+  "samples": [
+    {
+      "partial_cells": 100,
+      "absolute_bracket_tail_at_z_0_10i": "0.000022598429504551108832"
+    },
+    {
+      "partial_cells": 1000,
+      "absolute_bracket_tail_at_z_0_10i": "9.0534066689184312623e-7"
+    },
+    {
+      "partial_cells": 4000,
+      "absolute_bracket_tail_at_z_0_10i": "1.3006367594851200801e-7"
+    }
+  ],
+  "pick": {
+    "n": 3,
+    "max_entrywise_difference": "5.8520954433652479089e-98",
+    "max_physical_HB_factorization_error": "3.4819967888023225058e-96",
+    "min_eigenvalue": "1.355604373298164922278e-12",
+    "max_eigenvalue": "0.06931259443662132507305",
+    "status": "numerical non-interval only, not a sign proof"
+  }
+}

@@ -1,0 +1,30 @@
+'GeometryOfNumbers.Analysis.carryMaterialComplexChiralGreen_eq_boundary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.carryMaterialComplexPickKernel_eq_polarizedResponse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.carryMaterialComplexPick_diagonal_of_positive_im' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.carryMaterialComplexChiralGreen_ofReal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.carryMaterialComplexChiralGreenMatrix_eq_signedGram' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.carryMaterialComplexPickMatrix_eq_response' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.carryMaterialComplexResponse_ofReal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.carryMaterialComplexValueReadout_zero_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.carryMaterialComplexValueReadout_eventually_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeometryOfNumbers.Analysis.carryMaterialComplexPickKernel_eq_sourceHermiteBiehler' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
