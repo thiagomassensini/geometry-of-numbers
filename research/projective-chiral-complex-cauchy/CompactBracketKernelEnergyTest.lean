@@ -1,4 +1,5 @@
 import CPFormal.Genuine.CpFiniteChart
+import CPFormal.Analytic.CpNativeGpreTfvdAnalysis
 import Mathlib.Tactic
 
 /-! Exact finite-support diagnostic: a genuine C3 bracket-kernel sample
@@ -92,9 +93,68 @@ theorem no_unrestricted_C3_chart_gradient_coercivity :
   rw [henergy, compactBracketKernelSample_chart_zero] at htoy
   norm_num at htoy
 
+/-- Original first three ordinary edge differences of the compact
+C3-kernel sample, as an actual finite native TFVD edge state. -/
+def compactC3KernelGradientCore : NativeGpreComplexEdgeCore :=
+  Finsupp.single 0 (2 : ℂ) +
+    Finsupp.single 1 (-1 : ℂ) +
+      Finsupp.single 2 (-1 : ℂ)
+
+/-- The three native core coordinates are LITERALLY the ordinary forward
+differences of the arithmetic C3-bracket-kernel sample. -/
+theorem compactC3KernelGradientCore_eq_sample_differences
+    {n : ℕ} (hn : n < 3) :
+    compactC3KernelGradientCore n =
+      compactBracketKernelSample ((n : ℤ) + 2) -
+        compactBracketKernelSample ((n : ℤ) + 1) := by
+  interval_cases n <;>
+    norm_num [compactC3KernelGradientCore, compactBracketKernelSample,
+      Finsupp.single_apply]
+
+/-- Faithful TFVD reconstruction preserves all six energy units even
+though the arithmetic C3 chart of the underlying sample is ZERO. -/
+theorem compactC3Kernel_reconstructedTfvd_energy_eq_six
+    (q : ℝ) (hqpos : 0 < q) (hq1 : q < 1)
+    (S : Finset NativeGpreBoundaryContext) :
+    (∑ n ∈ Finset.range 3,
+      Complex.normSq
+        ((nativeGpreFiniteTfvdReconstruction q hqpos.le hq1 S
+          (nativeGpreFiniteTfvdAnalysis q S
+            (nativeGpreCanonicalVerticalRealization compactC3KernelGradientCore))) n)) =
+      6 := by
+  have hpoint (n : ℕ) :
+      (nativeGpreFiniteTfvdReconstruction q hqpos.le hq1 S
+        (nativeGpreFiniteTfvdAnalysis q S
+          (nativeGpreCanonicalVerticalRealization compactC3KernelGradientCore))) n =
+      compactC3KernelGradientCore n := by
+    rw [nativeGpreFiniteTfvdReconstruction_analysis
+      q hqpos hq1 S (nativeGpreCanonicalVerticalRealization compactC3KernelGradientCore)]
+    rfl
+  simp_rw [hpoint]
+  norm_num [compactC3KernelGradientCore, Finset.sum_range_succ,
+    Finsupp.single_apply]
+
+/-- The sharp mismatch: the C3 chart of the original sample vanishes at
+every cutoff, while its reconstructed ordinary gradient state has energy 6. -/
+theorem compactC3Kernel_tfvd_no_scalar_energy_collapse
+    (q : ℝ) (hqpos : 0 < q) (hq1 : q < 1)
+    (S : Finset NativeGpreBoundaryContext) :
+    (∀ M : ℕ,
+      CPFormal.Genuine.Cp.finiteChart 3 M compactBracketKernelSample = 0) ∧
+      (∑ n ∈ Finset.range 3,
+        Complex.normSq
+          ((nativeGpreFiniteTfvdReconstruction q hqpos.le hq1 S
+            (nativeGpreFiniteTfvdAnalysis q S
+              (nativeGpreCanonicalVerticalRealization compactC3KernelGradientCore))) n)) =
+        6 := by
+  exact ⟨compactBracketKernelSample_chart_zero,
+    compactC3Kernel_reconstructedTfvd_energy_eq_six q hqpos hq1 S⟩
+
 end
 end CPFormal.Analytic.Cp
 
+#print axioms CPFormal.Analytic.Cp.compactC3Kernel_tfvd_no_scalar_energy_collapse
+#print axioms CPFormal.Analytic.Cp.compactC3Kernel_reconstructedTfvd_energy_eq_six
 #print axioms CPFormal.Analytic.Cp.no_unrestricted_C3_chart_gradient_coercivity
 #print axioms CPFormal.Analytic.Cp.compactBracketKernelEdgeEnergy_three_eq_six
 #print axioms CPFormal.Analytic.Cp.compactBracketKernelSample_chart_zero

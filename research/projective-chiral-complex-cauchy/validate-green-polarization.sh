@@ -12,7 +12,7 @@ fi
 export PATH="$HOME/.elan/bin:$PATH"
 export LEAN_PATH="$(cd "$csa_root" && lake env printenv LEAN_PATH)"
 cd "$repo"
-for name in ReflectedGreenPolarizationGate CompactBracketKernelEnergyTest GreenAngularCorrectionAtZeros; do
+for name in ReflectedGreenPolarizationGate CompactBracketKernelEnergyTest GreenAngularCorrectionAtZeros TfvdMixedGreenExactTransport; do
   f="research/projective-chiral-complex-cauchy/$name.lean"
   outfile="/tmp/green-polarization-${name}-$$.log"
   echo "[lean] $f"
@@ -25,4 +25,4 @@ for name in ReflectedGreenPolarizationGate CompactBracketKernelEnergyTest GreenA
   grep "depends on axioms" "$outfile" || true
   rm -f "$outfile"
 done
-echo "PASS: all 3 Lean files, no sorryAx, pin=$cpformal_commit"
+echo "PASS: all 4 Lean files, no sorryAx, pin=$cpformal_commit"
