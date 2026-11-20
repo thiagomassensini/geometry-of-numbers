@@ -157,3 +157,7 @@ import GeometryOfNumbers.Analysis.LogDerivativeScale
 import GeometryOfNumbers.Analysis.CarryMaterialReadoutQuotient
 
 /-! Separate entry point for Zone B. `GeometryOfNumbers` remains discrete only. -/
+
+/-! C2 source-first theta/Bézout algebra; analytic identification remains a separate gate. -/
+import GeometryOfNumbers.Analysis.C2ThetaBezoutAlgebra
+import GeometryOfNumbers.Analysis.C2ThetaDensityBridge
