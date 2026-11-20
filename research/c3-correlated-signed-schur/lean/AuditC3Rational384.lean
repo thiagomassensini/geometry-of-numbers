@@ -1,0 +1,8 @@
+import C3QuadraticRational384
+
+#print axioms CarrySourceBezout.all_twenty_three_c3_bounds
+#print axioms CarrySourceBezout.signed_linear_impulse_expansion
+#print axioms CarrySourceBezout.original_c3_head_tail384
+#print axioms CarrySourceBezout.original_c3_joint_source_budget384
+#print axioms CarrySourceBezout.signed_quadratic_source_bound
+#print axioms CarrySourceBezout.original_c3_joint_source_budget384_rational

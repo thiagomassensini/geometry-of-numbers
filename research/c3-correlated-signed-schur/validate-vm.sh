@@ -21,6 +21,9 @@ modules=(
  NativeOldPrefixSignedGate SignedSourceTail GroupedSourceBudget NativeSignedGate CombinedEulerBezout
  C3CompletedJetBoxes C3TailNativeCrosswalkAny C3Certified384Boxes
  C3LinearSupport AuditC3JetBoxes
+ C3ImpulseLinearity C3TwentyThreeBoxes C3ImpulseExpansion
+ C3JointSource384 C3JointQuadraticBudget C3QuadraticRational384
+ AuditC3Rational384
 )
 for mod in "${modules[@]}"; do
   echo "[Lean] $mod"

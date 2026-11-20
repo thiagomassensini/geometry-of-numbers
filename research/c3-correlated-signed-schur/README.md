@@ -96,3 +96,24 @@ python3 numerics/c3_arb_signed_gate.py 384 9 320
 Requer `python-flint` e o arquivo de momentos da VM em `/home/thlinux/momentos/native-jet-vm-20260930/native_jet_exploration/moments512.json`. Resultados novos aparecem em `evidence/`.
 
 **Integridade:** os checkouts com alterações preexistentes não foram mexidos; este material foi consolidado num worktree isolado e publicado em branch própria.
+
+## 7. Atualização formal — 23 jatos e impulso correlacionado (20/11/2026)
+
+A continuação em `lean/C3TwentyThreeBoxes.lean`, `lean/C3ImpulseLinearity.lean`,
+`lean/C3ImpulseExpansion.lean`, `lean/C3JointSource384.lean`,
+`lean/C3JointQuadraticBudget.lean` e `lean/C3QuadraticRational384.lean`
+fecha **no kernel Lean** a expansão linear por impulsos, que antes aparecia
+como a hipótese `hCoeff`, e o erro quadrático TT com **cotas de jatos
+racionais provadas para todo índice**.
+
+O teorema `original_c3_joint_source_budget384_rational` estabelece um
+orçamento de erro do funcional assinado S da fonte completada genuína,
+sem premissas sobre a expansão de impulsos ou o erro quadrático. O
+orçamento é finito nas dimensões indicadas, mas continua conservador;
+a desigualdade estrita necessária para certificar W>0 **não está fechada
+por este teorema**.
+
+Os intervalos Arb de 320 dps seguem como evidência externa, não
+identificados com as caixas Lean mais largas. Ver
+`reports/RELATORIO_RATIONAL_23_IMPULSOS_20261120.md`. O README original
+de proveniência e a comparação teta/TFVD acima permanecem válidos.
