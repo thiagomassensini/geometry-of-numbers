@@ -123,3 +123,19 @@ A especialização em ordem 9 dos **dois setores originais** está em
 `lean/AuditC3NativeNine.lean`. Esses corolários certificam o erro
 assinado com os endereços distintos 10/10 e 11/10, mas **não certificam
 o sinal da curvatura**.
+
+## 8. Pesquisa sobre a inclinação e o resíduo após 100 momentos (20/11/2026)
+
+O teste em numerics/finite_jacobi_100.py reconstrói, a partir dos momentos
+armazenados, o operador de Jacobi positivo de dimensão 50 que reproduz
+os primeiros 100 momentos. Arb certificou 50 pivôs positivos em H0 e
+50 em H1 para as **casas decimais armazenadas**; o algoritmo de Jacobi
+exibe 50 nós e pesos positivos, sem receber zeros como entrada.
+
+O relatório reports/RELATORIO_100_MOMENTOS_RESIDUO_JACOBI_HARDY_20261120.md
+explica a identidade de quadratura, a invariância do sinal ao retirar
+a inclinação e a ponte **já provada** no CSA: não recorrência finita
+incondicional + energia nativa do bordo PSD em todas as ordens ⇒
+positividade estrita de todas as torres Hankel. A obrigação aberta é
+a não negatividade da energia nativa original, não a ausência de
+recorrência. Esses resultados não demonstram all-order por números.
