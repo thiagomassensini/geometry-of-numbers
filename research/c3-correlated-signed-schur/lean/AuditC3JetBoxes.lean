@@ -1,0 +1,7 @@
+import C3Certified384Boxes
+import C3LinearSupport
+
+#print axioms CarryC3Tail.completed_c3_tail_jet_bound_general
+#print axioms CarrySourceBezout.c3_regrouped_tail_any_bound
+#print axioms CarrySourceBezout.c3_tail384_jet22
+#print axioms CarrySourceBezout.signed_linear_prefixTail
