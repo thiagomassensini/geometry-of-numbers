@@ -23,7 +23,7 @@ modules=(
  C3LinearSupport AuditC3JetBoxes
  C3ImpulseLinearity C3TwentyThreeBoxes C3ImpulseExpansion
  C3JointSource384 C3JointQuadraticBudget C3QuadraticRational384
- AuditC3Rational384
+ AuditC3Rational384 C3NativeNineCertifiedError AuditC3NativeNine
 )
 for mod in "${modules[@]}"; do
   echo "[Lean] $mod"

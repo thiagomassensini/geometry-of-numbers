@@ -40,3 +40,18 @@ A próxima obrigação genuína é obter as **caixas finas diretamente em Lean**
 - Sem afirmações all-order, RH ou equivalência de zeros Green/Genuine sem ponte adicional.
 
 Nenhum valor de zero crítico foi usado como entrada da prova.
+
+## Corolários Lean por setor na ordem 9
+
+`C3NativeNineCertifiedError.lean` especializa a desigualdade original em
+`native_even_nine_c3_signed_error` e `native_odd_nine_c3_signed_error`.
+No primeiro setor, ambas as fontes usam a carta 10×10; no segundo, a
+perna de B usa a carta 11×11 com coordenada zero inicial, e a de p usa
+a carta 10×10. Ambos dependem dos mesmos 23 jatos T₀…T₂₂ do completamento
+C3/384. Os enunciados quantificam qualquer vetor real de Schur de
+tamanho 10, portanto não injetam um vetor ajustado à resposta numérica.
+
+**Status:** Lean --wfail PASS; auditoria `AuditC3NativeNine.lean`
+retornou exclusivamente `[propext, Classical.choice, Quot.sound]` nos
+dois teoremas. São certificados FORMAIS DE ERRO, não provas da
+desigualdade de margem `W>0` para n=9.

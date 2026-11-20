@@ -117,3 +117,9 @@ Os intervalos Arb de 320 dps seguem como evidência externa, não
 identificados com as caixas Lean mais largas. Ver
 `reports/RELATORIO_RATIONAL_23_IMPULSOS_20261120.md`. O README original
 de proveniência e a comparação teta/TFVD acima permanecem válidos.
+
+A especialização em ordem 9 dos **dois setores originais** está em
+`lean/C3NativeNineCertifiedError.lean`, com auditoria de axiomas em
+`lean/AuditC3NativeNine.lean`. Esses corolários certificam o erro
+assinado com os endereços distintos 10/10 e 11/10, mas **não certificam
+o sinal da curvatura**.
