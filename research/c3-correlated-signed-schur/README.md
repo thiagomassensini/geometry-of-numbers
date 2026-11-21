@@ -407,3 +407,30 @@ Relatório e reprodução:
 - scripts/sigma_full_hankel_direct_c2_checks.py + .json
 
 Não se alterou a implementação C2, o completion, os momentos, a cauda exata ou os certificados Lean originais.
+
+## 19. O MEIO QUE RECUPERA ALTURAS CONTROLA O SINAL? — LEI DE ASSINATURA (21/11/2026)
+
+Pergunta: o mesmo 1/2 que transforma a inclinação dos pivôs na altura γ=b^(m_b/2) impõe também a positividade de Schur?
+
+Concluímos duas coisas DIFERENTES, formalizadas em Lean:
+
+1. **A escala positiva NÃO determina o sinal**: para todo a>0, r_n real, shift s e dimensão N, com h_n=a^(n+1)r_n, existe congruência EXATA H(h)=a^(s+1)D_aH(r)D_a; logo PSD, PosDef e sinais de determinantes são equivalentes. Se o prefixo anterior for PosDef, o sinal POSITIVO do próprio pivô Schur é preservado em qualquer ordem. O expoente 1/2 é a leitura da potência quadrática, e o sinal fica na microcurvatura residual.
+
+2. **O COMPLETADO ORIGINAL conserva a obrigação assinada**: para os jets h_n=coeficientes de −F'(z)/(2F(z)), F=A*N, a normalização r_n=h_n/a^(n+1) não modifica o gate da massa theta positiva vs negativa nem o TFVD C2 de quatro cruzamentos exatos HH+HT+TH+TT em todos N,s,x,M,P. Isso é EQUIVALÊNCIA, não prova da dominação.
+
+Contramodelo Lean REFORÇADO: h_n^(±)=2^(−n−1)±4^(−n−1), momentos individualmente positivos na versão negativa, possuem exatos MESMOS dois modos de pencil λ=1/2 e 1/4 e alturas extraíveis √2 e 2 em qualquer shift, mas det H2(s)=±(1/8)^(s+1)/16. Portanto nem recuperação exata dos dois modos da álgebra pencil implica PSD. É um modelo auxiliar, NÃO a C2.
+
+Pista física mais forte já formalizada no GoN SigmaTwoPoleModel: ζ=(γ+id)^(−2) tem módulo 1/(γ²+d²) e parte imaginária −2γd/(γ²+d²)²; det auxiliar = −4m²γ²d²/(γ²+d²)^(2s+6). A mesma potência quadrática contém escala E fase, mas a negatividade só é transmitida à fonte completa C2 sob controle de restos e de todos os canais.
+
+**Lacuna:** provar para a fonte nativa completada uma LEI DE MICROCURVATURA/DOMINAÇÃO de massas assinadas em TODAS as dimensões, usando correlações de pernas, seed, fatores câmera, Gamma, cauda exata e retorno Green, não apenas a inclinação de escala. Os links material→métrico positivos permanecem sem prova all-order.
+
+Novos módulos:
+- lean/NativeQuadraticSlopeSignatureSeparation.lean
+- lean/NativeSlopeResidualExactTfvdSignGate.lean
+- lean/NativeTwoModeSlopeSignAdversary.lean
+- lean/NativeTwoModeSamePencilOppositeSign.lean
+- lean/AuditNativeSlopeSignSeparation.lean
+- validate-native-slope-sign-separation-vm.sh
+Relatório: reports/RELATORIO_MEIA_ESCALA_ALTURAS_ASSINATURA_SCHUR_20261121.md.
+
+Validação Lean 4.32 -DwarningAsError=true exit 0, 25 declarações auditadas, axiomas apenas propext, Classical.choice, Quot.sound, sem RH, sem sorry.
