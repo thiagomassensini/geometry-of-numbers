@@ -303,3 +303,25 @@ Ela equivale à PSD da matriz Pick COMPLETADA em TODAS as ordens e fecha as torr
 
 Relatório: reports/RELATORIO_C2_TFVD_SCHUR_POSITIVIDADE_SEM_RH_20261121.md.
 Validação: validate-native-two-point-tfvd-schur-vm.sh.
+
+## 15. Auditoria das PRs da genealogia e um novo bootstrap ALL-ORDER de TFVD/Bézout (21/11/2026)
+
+Reabertos os fontes e status das PRs indicadas em primos, GoN, CSA e momentos. O mapa completo distingue MERGED de OPEN e provas de dimensão fixa de teoremas com n arbitrário:
+reports/MAPA_ALL_ORDER_PRS_TFVD_HEAD_MARGIN_20261121.md.
+
+A descoberta operacional é que GoN #316 fornece uma lei AFIM exata do ÚNICO coeficiente novo de cada pivô (m=2n+1 ou 2n+2), enquanto GoN #70/#131 fornecem cabeça/cauda da fonte original. Compusemos esses resultados com o critério all-order de Schur do CSA em:
+
+- lean/AllOrderTfvdHeadMarginBootstrap.lean
+- lean/AuditAllOrderTfvdHeadMarginBootstrap.lean
+- validate-allorder-tfvd-headmargin-vm.sh
+
+Foi PROVADO em Lean: se em toda ordem n e paridade b existir corte M com erro epsilon>=abs(Re(literalTail M m)) e a margem J_n(b)-m*c0*Re(literalHead M m) superar m*c0*epsilon, então todos os Hankel CANÔNICOS completados de ambos os setores são PosDef para TODO n, e a energia de bordo original é estritamente positiva em toda dimensão.
+
+A premissa HasNativeAllOrderTfvdHeadMargins é ainda ABERTA; nenhum zero espectral nem RH é assumido. Os axiomas de auditoria são apenas propext, Classical.choice e Quot.sound. O método reduz a obrigação a provar as margens geométricas de cabeça, pois o erro de cauda controlado em n fixo não basta sem um sinal estrito.
+
+ALERTAS DE NÃO CIRCULARIDADE:
+- Primos #51 tilt não autocancela, mas #52 prova que não compensação carrier+seed é EQUIVALENTE à não anulação forte off-critical; não usar como premissa nova.
+- GoN #331–333 (OPEN) fornecem positividade C2 até ordem seis baseada em certificado H6/K6; não promovê-la a todas as ordens.
+- CSA #126 Green integral positivo exige prefixo aumentado PosDef; é readout, não fonte do sinal.
+- CSA #124 dá também uma rota ALL-ORDER condicional por orçamento aditivo de retorno físico; Primos #34 fornece Bessel material, mas ainda falta entrelaçador exato Bessel -> Jordan/Schur completado.
+- Os momentos theta/cosseno positivos não podem ser confundidos com os momentos da log derivada de F=A*N.
