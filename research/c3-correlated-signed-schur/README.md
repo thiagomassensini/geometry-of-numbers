@@ -157,3 +157,29 @@ o controle do defeito assinado do transporte roda→fonte completada.
 
 Veja numerics/wheel_prime_schur_exact.py, evidence/wheel_prime_schur_exact.json
 e reports/RELATORIO_RODAS_LSB_DIRECOES_SCHUR_20261120.md.
+
+## 10. Câmera 2 completa, redundância C4 e dominância física (20/11/2026)
+
+**Correção conceitual:** a câmera 4 oferece resíduo de norma² 1/8
+somente quando comparada ao LSB superficial da câmera 2. Com toda
+a profundidade v2, divisibilidade por 4 já está RESOLVIDA pela
+câmera 2. Os teoremas Lean de C2DepthCameraRedundancy.lean formalizam
+esse fato para 4 e todas as potências 2^k.
+
+PrimeWheelNativeSignedGate.lean conecta as identidades físicas exatas
+de NativeDeflation.lean com os limites Schur de ResidualTest.lean.
+Os teoremas native_odd_pivot_nonneg_of_eventual_return_dominance e
+native_even_pivot_nonneg_of_eventual_return_dominance demonstram o
+seguinte GATE: se o retorno no verdadeiro resíduo crítico não excede,
+eventualmente, a incidência ainda não resolvida, então o pivô
+correspondente é não negativo.
+
+**A condição de dominância ainda está aberta.** Não supomos que
+a Gram das rodas seja a Gram dos momentos nem trocamos a fonte
+por um portador Green refutado pelos no-go anteriores.
+
+Arquivos novos: lean/C2DepthCameraRedundancy.lean,
+lean/PrimeWheelNativeSignedGate.lean, lean/AuditPrimeWheelNativeSignedGate.lean,
+validate-wheel-vm.sh, numerics/wheel_depth_redundancy_exact.py,
+evidence/wheel_depth_redundancy_exact.json e
+reports/RELATORIO_CAMERA2_PROFUNDIDADE_RETORNO_ASSINADO_20261120.md.

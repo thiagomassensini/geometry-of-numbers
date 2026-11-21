@@ -1,0 +1,49 @@
+{
+  "status": "EXACT_RATIONAL_TEST_NOT_NATIVE_POSITIVITY",
+  "description": "Conditional expectation in finite periodic L2; camera2 interpreted as full dyadic depth.",
+  "tests": [
+    {
+      "depth_resolution": 2,
+      "period": 12,
+      "composite4_after_parity": "1/8",
+      "composite4_after_complete_dyadic_depth": "0",
+      "newprime3_after_complete_dyadic_depth": "2/9"
+    },
+    {
+      "depth_resolution": 3,
+      "period": 24,
+      "composite4_after_parity": "1/8",
+      "composite4_after_complete_dyadic_depth": "0",
+      "newprime3_after_complete_dyadic_depth": "2/9"
+    },
+    {
+      "depth_resolution": 4,
+      "period": 48,
+      "composite4_after_parity": "1/8",
+      "composite4_after_complete_dyadic_depth": "0",
+      "newprime3_after_complete_dyadic_depth": "2/9"
+    },
+    {
+      "depth_resolution": 5,
+      "period": 96,
+      "composite4_after_parity": "1/8",
+      "composite4_after_complete_dyadic_depth": "0",
+      "newprime3_after_complete_dyadic_depth": "2/9"
+    },
+    {
+      "depth_resolution": 6,
+      "period": 192,
+      "composite4_after_parity": "1/8",
+      "composite4_after_complete_dyadic_depth": "0",
+      "newprime3_after_complete_dyadic_depth": "2/9"
+    },
+    {
+      "depth_resolution": 7,
+      "period": 384,
+      "composite4_after_parity": "1/8",
+      "composite4_after_complete_dyadic_depth": "0",
+      "newprime3_after_complete_dyadic_depth": "2/9"
+    }
+  ],
+  "composite6_indicator_is_product_of_prime2_and_prime3": true
+}
