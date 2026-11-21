@@ -139,3 +139,21 @@ incondicional + energia nativa do bordo PSD em todas as ordens ⇒
 positividade estrita de todas as torres Hankel. A obrigação aberta é
 a não negatividade da energia nativa original, não a ausência de
 recorrência. Esses resultados não demonstram all-order por números.
+
+## 9. Rodas primas LSB e nova direção Schur (20/11/2026)
+
+A propriedade original LSB_p(n)=0 ⇔ p|n produz um resultado CRT exato:
+para um primo novo p não dividindo a roda anterior W, a inovação
+g_p(n)=1_{p|n}−1/p é ortogonal a toda função W-periódica e tem energia
+(p−1)/p²>0. Portanto, cada novo primo é uma nova direção da Gram DAS
+RODAS. Câmeras compostas também podem revelar profundidades novas (4
+sobre a roda 2 dá energia 1/8); “nova direção” não equivale a “novo primo”.
+
+Os teoremas primeDepthGeometricMoment_eq_canonical e
+nativeLogGenerator_basisVector_primeDepthLedger do CSA já transportam a
+genealogia aritmética do ledger de câmeras primas até os momentos
+nativos completados, MAS NÃO sua positividade quadrática. Continua aberto
+o controle do defeito assinado do transporte roda→fonte completada.
+
+Veja numerics/wheel_prime_schur_exact.py, evidence/wheel_prime_schur_exact.json
+e reports/RELATORIO_RODAS_LSB_DIRECOES_SCHUR_20261120.md.

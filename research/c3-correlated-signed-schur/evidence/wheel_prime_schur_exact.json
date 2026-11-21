@@ -1,0 +1,71 @@
+{
+  "status": "EXACT_RATIONAL_WHEEL_L2_NOT_NATIVE_MOMENT_PROOF",
+  "wheel_prime_rows": [
+    {
+      "old_primorial": 1,
+      "new_prime": 2,
+      "period": 2,
+      "wheel_residual_norm_squared": "1/4",
+      "old_camera_covariances": []
+    },
+    {
+      "old_primorial": 2,
+      "new_prime": 3,
+      "period": 6,
+      "wheel_residual_norm_squared": "2/9",
+      "old_camera_covariances": [
+        [
+          2,
+          "0"
+        ]
+      ]
+    },
+    {
+      "old_primorial": 6,
+      "new_prime": 5,
+      "period": 30,
+      "wheel_residual_norm_squared": "4/25",
+      "old_camera_covariances": [
+        [
+          2,
+          "0"
+        ],
+        [
+          3,
+          "0"
+        ]
+      ]
+    },
+    {
+      "old_primorial": 30,
+      "new_prime": 7,
+      "period": 210,
+      "wheel_residual_norm_squared": "6/49",
+      "old_camera_covariances": [
+        [
+          2,
+          "0"
+        ],
+        [
+          3,
+          "0"
+        ],
+        [
+          5,
+          "0"
+        ]
+      ]
+    }
+  ],
+  "composite_4_fresh_direction_norm_squared": "1/8",
+  "positive_moment_counterexample": {
+    "expression": "h_n=1+2^(-n)-3^(-n)",
+    "first_three": [
+      "1",
+      "7/6",
+      "41/36"
+    ],
+    "negative_det_2x2": "-2/9"
+  },
+  "conclusion": "A new independent prime-wheel direction gives a strictly positive WHEEL Gram pivot; a positivity-preserving identification with the completed-native moment Gram remains open."
+}
