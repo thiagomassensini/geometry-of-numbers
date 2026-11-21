@@ -278,3 +278,28 @@ lean/ExternalRHNativeZeroLocalization.lean, lean/AuditExternalRHNativeZeroLocali
 Fontes públicas: https://alpo.ge/remark.pdf ;
 https://math.mit.edu/~drew/grh/ ;
 https://github.com/CocoSgt/riemann-hypothesis-lean/blob/main/src/Supplements/Kernels/MainTheorems.lean .
+
+## 14. Positividade SEM RH: TFVD material + verdadeiro resto físico Schur, duas direções (21/11/2026)
+
+Objetivo independente: a prova externa de RH é apenas referência metodológica. Não importar RH como hipótese nem usar produto de zeros para gerar medida positiva.
+
+Os módulos LEAN anteriores do CSA já forneciam:
+- Kernel Pick quiral Q(z) na característica COMPLETADA F=A*N.
+- Matriz Pick radial = Gram(Cauchy incident)-Gram(retorno Q*Cauchy), na métrica física ORIGINAL.
+- PSD Pick all-order EVENTUAL ⇒ PSD dos dois Hankel de momentos canônicos via congruência de diferenças progressivas e limites.
+- Matriz da fonte ORIGINAL seis canais TFVD/Green = 1/2 da congruência positiva de amplitude aplicada ao MESMO defeito de Cauchy/retorno.
+- PSD Pick 2x2 EVENTUAL incondicional, porém apoiada por desigualdades theta/cosseno (não por um teorema C2 puro).
+
+Nesta rodada formalizamos e auditamos:
+- lean/NativeTwoPointSchurSourcePositivity.lean: subtração física exata da componente de cabeça c' = c-alpha*e0 sem alterar remainingIncident nem nativeOut; positividade do verdadeiro resto Schur sob contração original; aplicação INCONDICIONAL às duas primeiras direções; primeiro pivô deslocado canônico n=0 não negativo SEM RH.
+- No mesmo módulo, a redução CONDICIONAL de TODOS os restos Schur à positividade Pick original em todas as dimensões (sem inventar uma Gram substituta).
+- lean/NativeTwoPointTfvdSourcePositivity.lean: PSD INCONDICIONAL da matriz POLARIZADA material original semeada TFVD/Green de seis canais em duas direções, para cutoffs admissíveis e radial k suficientemente grande.
+- lean/AuditNativeTwoPointTfvdSchur.lean: nove declarações, apenas propext, Classical.choice e Quot.sound.
+
+A condição ainda aberta da rota independente é:
+  ∀ N, ∀ᶠ k atTop, ∀ c ∈ C^N,
+  ||Σ_i c_i Q(z_(k,i)) φ_(k,i)|| ≤ ||Σ_i c_i φ_(k,i)||.
+Ela equivale à PSD da matriz Pick COMPLETADA em TODAS as ordens e fecha as torres de momentos pelos teoremas CSA já compilados. O próximo trabalho é demonstrá-la a partir das fontes C2/Genuine/TFVD/Green e profundidades, controlando todos os cruzamentos e a Gamma. O sinal do conectado escalar de b_T isolado NÃO basta (contraexemplo 2x2 indefinido já provado).
+
+Relatório: reports/RELATORIO_C2_TFVD_SCHUR_POSITIVIDADE_SEM_RH_20261121.md.
+Validação: validate-native-two-point-tfvd-schur-vm.sh.
