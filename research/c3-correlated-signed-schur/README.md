@@ -222,3 +222,39 @@ aberta de PSD do COMPLETED native moment Hankel.
 Próxima obrigação: dominância assinada de incidência residual sobre
 retorno, no verdadeiro polinômio crítico de Schur e com todas as
 correções Gamma/TFVD preservadas; não impor retorno=0 na parte nova.
+
+## 12. C2 conectado e signo do Schur (20/11/2026)
+
+A inversão de Dirichlet do C2 odd-core satisfaz b_T*a_T=a_T log;
+no par de primos ímpares distintos o coeficiente b_T(pq) é
+log(pq)*(a_T(pq)-a_T(p)*a_T(q)). Esta relação já estava provada
+no primos; os novos teoremas da pesquisa investigam sua assinatura.
+
+**Torre diádica exata** T_k=60*2^k: o conectado C2 em 3*5 é
+-3/8*2^-k-1/32*4^-k<0, provado em Lean. Isso também implica
+b_(T_k)(15)<0 e sinal negativo da célula TFVD/Dirichlet ORIGINAL
+no parâmetro s=0 em toda a torre.
+
+**No-go de Gram ingênua:** K_T(p,q)=a_T(p)*a_T(q)-a_T(pq),
+com entradas positivas, tem determinante 2x2 [3,5] igual a
+-1/64*4^-k<0 para TODO k da torre. Normalizar pela energia
+quadrática da profundidade multiplicando K por 2^k produz um
+resíduo escalar 3/8+1/32*2^-k>0 mas conserva determinante
+-1/64<0: escala meio NÃO cria positividade. Uma correção
+rank-one só à última diagonal desta matriz TENTATIVA precisaria
+de delta>=1/(16+2^-k), como provado em Lean. Este não é um
+orçamento afirmado para a Gamma real.
+
+A lei de duplicação em m e a submultiplicatividade a_T(pq)<=a_T(p)a_T(q)
+para TODOS os cutoffs foram apenas testadas em caixas finitas; existe
+um gate abstrato Lean sob hipóteses antítonas e de duplicação,
+mas tais premissas não foram provadas em geral para a massa nativa.
+
+Os resultados C2 são finitos/aritméticos: não identificam K_T
+com a Gram de F=A*N, nem demonstram PSD, Green positivo,
+positividade all-order dos pivôs ou RH.
+
+Veja reports/RELATORIO_DEFECTO_CONECTADO_C2_NORMALIZACAO_SCHUR_20261120.md,
+lean/C2DepthRankOneRepairGate.lean, lean/AuditC2ConnectedDepthScale.lean,
+numerics/c2_connected_depth_scale_exact.py, evidence/c2_connected_depth_scale_exact.json
+e validate-c2-connected-depth-scale-vm.sh.
