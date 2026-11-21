@@ -1,0 +1,39 @@
+{
+  "method": "direct ORIGINAL C2 finite bracket head+Hurwitz tail (exact) + camera + Gamma completion; Cauchy Fourier extraction; not interval certified",
+  "rows": [
+    {
+      "d": "0.2",
+      "Nmax": 7,
+      "precision": 165,
+      "points": 224,
+      "max_log_jump": 0.00016192339255637444,
+      "results": {
+        "0": {
+          "first_full_negative_dimension": 5,
+          "negative_pivot": "-6.72919775822804164268511636371e-25"
+        },
+        "1": {
+          "first_full_negative_dimension": 4,
+          "negative_pivot": "-7.12690282688519442445534782659e-23"
+        }
+      }
+    },
+    {
+      "d": "0.00001",
+      "Nmax": 10,
+      "precision": 235,
+      "points": 256,
+      "max_log_jump": 0.00014172777075917813,
+      "results": {
+        "0": {
+          "first_full_negative_dimension": 9,
+          "negative_pivot": "-8.39861158037260655367656531089e-53"
+        },
+        "1": {
+          "first_full_negative_dimension": 8,
+          "negative_pivot": "-7.19485083494081178551172787006e-51"
+        }
+      }
+    }
+  ]
+}

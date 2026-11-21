@@ -1,0 +1,266 @@
+{
+  "method": "C2 central moments from exact head+tail plus local transverse Taylor; no zeros input; 180 dps not interval certified",
+  "source": "/home/thlinux/momentos/investigations/c2_sigma_crossing_even_jet_hierarchy_20261105/quartic_frontier_native_strip.json",
+  "rows": [
+    {
+      "d": "0",
+      "Nmax": 17,
+      "first": {
+        "0": {
+          "first_full_negative_dimension": null,
+          "negative_pivot": null,
+          "ldl_signs": "+++++++++++++++++",
+          "first_adjacent_window_negative_shift_in_sample": null
+        },
+        "1": {
+          "first_full_negative_dimension": null,
+          "negative_pivot": null,
+          "ldl_signs": "+++++++++++++++++",
+          "first_adjacent_window_negative_shift_in_sample": null
+        }
+      },
+      "same_with_12_terms": true,
+      "same_with_18_terms": true
+    },
+    {
+      "d": "0.2",
+      "Nmax": 11,
+      "first": {
+        "0": {
+          "first_full_negative_dimension": 5,
+          "negative_pivot": "-6.72919775822804164268511636371e-25",
+          "ldl_signs": "++++-",
+          "first_adjacent_window_negative_shift_in_sample": 7
+        },
+        "1": {
+          "first_full_negative_dimension": 4,
+          "negative_pivot": "-7.12690282688519442445534782659e-23",
+          "ldl_signs": "+++-",
+          "first_adjacent_window_negative_shift_in_sample": 7
+        }
+      },
+      "same_with_12_terms": true,
+      "same_with_18_terms": true
+    },
+    {
+      "d": "0.1",
+      "Nmax": 11,
+      "first": {
+        "0": {
+          "first_full_negative_dimension": 5,
+          "negative_pivot": "-7.98963421415875056444394665902e-26",
+          "ldl_signs": "++++-",
+          "first_adjacent_window_negative_shift_in_sample": 9
+        },
+        "1": {
+          "first_full_negative_dimension": 5,
+          "negative_pivot": "-1.4629502931885845713146274268e-27",
+          "ldl_signs": "++++-",
+          "first_adjacent_window_negative_shift_in_sample": 9
+        }
+      },
+      "same_with_12_terms": true,
+      "same_with_18_terms": true
+    },
+    {
+      "d": "0.05",
+      "Nmax": 11,
+      "first": {
+        "0": {
+          "first_full_negative_dimension": 5,
+          "negative_pivot": "-5.08783443693348547291594641386e-27",
+          "ldl_signs": "++++-",
+          "first_adjacent_window_negative_shift_in_sample": 10
+        },
+        "1": {
+          "first_full_negative_dimension": 5,
+          "negative_pivot": "-9.0696888168958194022417517716e-29",
+          "ldl_signs": "++++-",
+          "first_adjacent_window_negative_shift_in_sample": 10
+        }
+      },
+      "same_with_12_terms": true,
+      "same_with_18_terms": true
+    },
+    {
+      "d": "0.02",
+      "Nmax": 11,
+      "first": {
+        "0": {
+          "first_full_negative_dimension": 6,
+          "negative_pivot": "-5.86815345054035932218378473991e-32",
+          "ldl_signs": "+++++-",
+          "first_adjacent_window_negative_shift_in_sample": 13
+        },
+        "1": {
+          "first_full_negative_dimension": 5,
+          "negative_pivot": "-4.67055490251030100723283772446e-30",
+          "ldl_signs": "++++-",
+          "first_adjacent_window_negative_shift_in_sample": 13
+        }
+      },
+      "same_with_12_terms": true,
+      "same_with_18_terms": true
+    },
+    {
+      "d": "0.01",
+      "Nmax": 11,
+      "first": {
+        "0": {
+          "first_full_negative_dimension": 6,
+          "negative_pivot": "-9.00178908410256035438892554455e-33",
+          "ldl_signs": "+++++-",
+          "first_adjacent_window_negative_shift_in_sample": 15
+        },
+        "1": {
+          "first_full_negative_dimension": 6,
+          "negative_pivot": "-7.84419002679552766098611875654e-35",
+          "ldl_signs": "+++++-",
+          "first_adjacent_window_negative_shift_in_sample": 15
+        }
+      },
+      "same_with_12_terms": true,
+      "same_with_18_terms": true
+    },
+    {
+      "d": "0.001",
+      "Nmax": 17,
+      "first": {
+        "0": {
+          "first_full_negative_dimension": 7,
+          "negative_pivot": "-1.61864029403162269594339749536e-39",
+          "ldl_signs": "++++++-",
+          "first_adjacent_window_negative_shift_in_sample": 20
+        },
+        "1": {
+          "first_full_negative_dimension": 7,
+          "negative_pivot": "-1.29374724706819808054871820165e-41",
+          "ldl_signs": "++++++-",
+          "first_adjacent_window_negative_shift_in_sample": 20
+        }
+      },
+      "same_with_12_terms": true,
+      "same_with_18_terms": true
+    },
+    {
+      "d": "0.00001",
+      "Nmax": 17,
+      "first": {
+        "0": {
+          "first_full_negative_dimension": 9,
+          "negative_pivot": "-8.39861158037260655367656531089e-53",
+          "ldl_signs": "++++++++-",
+          "first_adjacent_window_negative_shift_in_sample": null
+        },
+        "1": {
+          "first_full_negative_dimension": 8,
+          "negative_pivot": "-7.19485083494081178551172787006e-51",
+          "ldl_signs": "+++++++-",
+          "first_adjacent_window_negative_shift_in_sample": null
+        }
+      },
+      "same_with_12_terms": true,
+      "same_with_18_terms": true
+    },
+    {
+      "d": "0.0000001",
+      "Nmax": 17,
+      "first": {
+        "0": {
+          "first_full_negative_dimension": 11,
+          "negative_pivot": "-1.23721178991442960984465940778e-65",
+          "ldl_signs": "++++++++++-",
+          "first_adjacent_window_negative_shift_in_sample": null
+        },
+        "1": {
+          "first_full_negative_dimension": 10,
+          "negative_pivot": "-6.72247934427031181920699641705e-64",
+          "ldl_signs": "+++++++++-",
+          "first_adjacent_window_negative_shift_in_sample": null
+        }
+      },
+      "same_with_12_terms": true,
+      "same_with_18_terms": true
+    },
+    {
+      "d": "0.000000001",
+      "Nmax": 17,
+      "first": {
+        "0": {
+          "first_full_negative_dimension": 12,
+          "negative_pivot": "-6.56459809129161342827865585226e-75",
+          "ldl_signs": "+++++++++++-",
+          "first_adjacent_window_negative_shift_in_sample": null
+        },
+        "1": {
+          "first_full_negative_dimension": 12,
+          "negative_pivot": "-1.91411842879317323353615294772e-76",
+          "ldl_signs": "+++++++++++-",
+          "first_adjacent_window_negative_shift_in_sample": null
+        }
+      },
+      "same_with_12_terms": true,
+      "same_with_18_terms": true
+    },
+    {
+      "d": "0.00000000001",
+      "Nmax": 17,
+      "first": {
+        "0": {
+          "first_full_negative_dimension": 13,
+          "negative_pivot": "-7.50433124484290478705716422396e-84",
+          "ldl_signs": "++++++++++++-",
+          "first_adjacent_window_negative_shift_in_sample": null
+        },
+        "1": {
+          "first_full_negative_dimension": 13,
+          "negative_pivot": "-7.15567387209567971402312131564e-86",
+          "ldl_signs": "++++++++++++-",
+          "first_adjacent_window_negative_shift_in_sample": null
+        }
+      },
+      "same_with_12_terms": true,
+      "same_with_18_terms": true
+    },
+    {
+      "d": "0.0000000000001",
+      "Nmax": 17,
+      "first": {
+        "0": {
+          "first_full_negative_dimension": 15,
+          "negative_pivot": "-8.33911952273792065148513169741e-97",
+          "ldl_signs": "++++++++++++++-",
+          "first_adjacent_window_negative_shift_in_sample": null
+        },
+        "1": {
+          "first_full_negative_dimension": 14,
+          "negative_pivot": "-1.19167797185093408549787719426e-94",
+          "ldl_signs": "+++++++++++++-",
+          "first_adjacent_window_negative_shift_in_sample": null
+        }
+      },
+      "same_with_12_terms": true,
+      "same_with_18_terms": true
+    },
+    {
+      "d": "0.000000000000001",
+      "Nmax": 17,
+      "first": {
+        "0": {
+          "first_full_negative_dimension": 16,
+          "negative_pivot": "-1.51837840012814543930866453119e-105",
+          "ldl_signs": "+++++++++++++++-",
+          "first_adjacent_window_negative_shift_in_sample": null
+        },
+        "1": {
+          "first_full_negative_dimension": 16,
+          "negative_pivot": "-1.99286753830323800929770215799e-107",
+          "ldl_signs": "+++++++++++++++-",
+          "first_adjacent_window_negative_shift_in_sample": null
+        }
+      },
+      "same_with_12_terms": true,
+      "same_with_18_terms": true
+    }
+  ]
+}

@@ -372,3 +372,38 @@ Lean e auditoria (7 declarações, axiomas-padrão somente):
 Relatório: reports/RELATORIO_SIGMA_FUGA_PRIMEIRA_NEGATIVIDADE_ALL_ORDER_20261121.md
 
 **Próxima obrigação:** controlar em toda dimensão a PRIMEIRA falha de PSD da matriz inteira, ou demonstrar diretamente a dominância incidente-retorno física all-order pela geometria C2. A mera fuga dos menores adjacentes D_s é uma indicação útil da curvatura transversal mas não entrega Schur global.
+
+
+## 18. FUGA DA PRIMEIRA DIMENSÃO negativa: experimento exato C2 e curvatura dos pivôs (21/11/2026)
+
+Investigação original a partir dos 48 momentos centrais guardados em momentos/investigations/c2_sigma_crossing_even_jet_hierarchy_20261105/quartic_frontier_native_strip.json. Esses H_n vêm da cabeça C2, CAUDA EXATA Hurwitz, fator câmera e completion A(z); NÃO usamos zeros ou RH como input.
+
+Novo teste da PRIMEIRA DIMENSÃO NEGATIVA da Hankel COMPLETA via LDL em ambos os setores, em vez da primeira janela 2x2 deslocada:
+
+| d=σ−1/2 | primeiro N negativo par | primeiro N negativo ímpar |
+|---:|---:|---:|
+| 0.2 | 5 | 4 |
+| 0.01 | 6 | 6 |
+| 0.001 | 7 | 7 |
+| 1e-5 | 9 | 8 |
+| 1e-7 | 11 | 10 |
+| 1e-9 | 12 | 12 |
+| 1e-11 | 13 | 13 |
+| 1e-13 | 15 | 14 |
+| 1e-15 | 16 | 16 |
+
+Os deslocamentos foram reconstruídos por Taylor transversal local até os coeficientes H disponíveis, com 180 dps; recalculamos independentemente a F COMPLETA diretamente em d=0.2 (L=12, 165 dps) e em d=1e-5 (235 dps), confirmando as primeiras dimensões e pivôs negativos. Tudo isso é resultado NUMÉRICO, não Lean certificado ou intervalo de rigor.
+
+Uma investigação adicional dos pivôs móveis p_(s,n)(d) confirmou que a primeira raiz diminui rapidamente em n. Por exemplo, em n=7: raiz par ≈3.09561565e−5, ímpar ≈7.71403582e−6. A previsão quadrática baseada no teorema Lean já existente CarryMovingSigma.moving_schur_curvature_expanded difere apenas ≈0.2% nessas ordens. O comportamento nas amostras sugere aumento de N_neg(d) compatível com log(1/|d|), mas ainda NÃO prova limite uniforme em n.
+
+**Uma prova prévia importante foi resgatada:** GoN research/native-local-sigma-positivity/FiniteNeighborhood.lean, teorema both_six_sigmaMatrices_eventually_posDef, já demonstra que existe δ6>0 com H6(d) e K6(d) PosDef numa vizinhança comum de d=0 (certificados centrais de sexta ordem). Assim a primeira falha verdadeira deve ocorrer APÓS N=6 para d suficientemente pequeno — isso é Lean, sem RH, porém SÓ N≤6. O teorema genérico sigmaMatrix_finite_eventually_posDef exige PosDef do prefixo central fixo como hipótese e não fecha ∀N.
+
+**Ponto de lógica essencial:** a fuga da primeira DIMENSÃO negativa para infinito, sob não recorrência canônica e continuidade já provadas, é essencialmente equivalente à positividade all-order central. Não serve como prova independente se sua derivação simplesmente pressupuser todos os pivôs centrais positivos. A nova obrigação é uma desigualdade de energia da fonte C2/TFVD/Bessel e retorno COMPLETADO que forneça margens p_(s,n)(0)>0 para todo n sem usar RH. A curvatura e o resto transversal quartico podem então determinar raios δ_n (não uniformes em n).
+
+Relatório e reprodução:
+- reports/RELATORIO_SIGMA_PRIMEIRA_DIMENSAO_NEGATIVA_C2_EXATA_20261121.md
+- scripts/sigma_full_hankel_ldl_probe.py + .json
+- scripts/sigma_full_schur_critical_radii.py + .json
+- scripts/sigma_full_hankel_direct_c2_checks.py + .json
+
+Não se alterou a implementação C2, o completion, os momentos, a cauda exata ou os certificados Lean originais.
