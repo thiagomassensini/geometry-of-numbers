@@ -258,3 +258,23 @@ Veja reports/RELATORIO_DEFECTO_CONECTADO_C2_NORMALIZACAO_SCHUR_20261120.md,
 lean/C2DepthRankOneRepairGate.lean, lean/AuditC2ConnectedDepthScale.lean,
 numerics/c2_connected_depth_scale_exact.py, evidence/c2_connected_depth_scale_exact.json
 e validate-c2-connected-depth-scale-vm.sh.
+
+## 13. Levent Alpöge/Claude RH/GRH formalizada: auditoria, sinal e interface nativa (21/11/2026)
+
+Investigação dos enunciados e cadeia de imports da prova Lean publicada em 20/11/2026 (17,4 milhões de linhas), com verificação independente MIT por kernels. Eixo lógico:
+- prova externa: Main.riemannHypothesis : Mathlib.RiemannHypothesis, via rhOfAll, UpperTheory.FinalTheorems.everyCharacter, automorfia/theta lifts;
+- geometria ORIGINAL CSA: NativeScalarGenuineIdentification -> NativeScalarZetaIdentification -> F(z)=A(z)N(z), sem alterar origem do operador;
+- novo teorema Lean CONDICIONAL no CSA v4.32: completedNative_zero_height_real_of_RiemannHypothesis. RH da Mathlib + F(z)=0 em altura da faixa crítica implica Im(z)=0. Compilação -DwarningAsError=true aprovada, auditoria de axiomas somente propext, Classical.choice, Quot.sound.
+
+NÃO importamos o projeto externo (Lean/Mathlib v4.33.1) na nossa branch 4.32. O teorema tem RH EXPLICITAMENTE como argumento; não é uma prova independente de RH nem de PSD do momento Hankel.
+
+Em seu esboço, Alpöge cita sinal de uma forma Weil via determinantes e variância, Guinand–Weil / von Mangoldt, controle do resto por Parseval, multiplicidades obtidas por theta lifts com comprimento ~sqrt(X), normas/slope de Bost, trace formula. Inspecionamos partes do código (arquivos de Main, MainTheorems, MainConclusion, MeanPositiveSemidefinite, BehrendVariance e lifts). Não foi identificada equivalência física entre a forma Weil externa e nosso Green/TFVD; não inventar essa equivalência.
+
+Uma rota analítica DOWNSTREAM usando RH é F/F(0) como produto Hadamard de zeros reais ±gamma, e h_n=Σ_gamma m_gamma gamma^(-2n-2); então a energia do Hankel é Σ_gamma (m_gamma/gamma²) P(gamma^-2)²≥0. A passagem de produto INFINITO até os h_n de nossa F NÃO foi formalizada neste commit. O esqueleto finito é formalizado no projeto momentos em MomentHankelPositivity.lean; theta/cosine PSD não é o mesmo que log-derivative Hankel.
+
+Veja: reports/RELATORIO_ALPOGE_RH_CODIGO_SINAL_NATIVO_20261121.md,
+lean/ExternalRHNativeZeroLocalization.lean, lean/AuditExternalRHNativeZeroLocalization.lean.
+
+Fontes públicas: https://alpo.ge/remark.pdf ;
+https://math.mit.edu/~drew/grh/ ;
+https://github.com/CocoSgt/riemann-hypothesis-lean/blob/main/src/Supplements/Kernels/MainTheorems.lean .
