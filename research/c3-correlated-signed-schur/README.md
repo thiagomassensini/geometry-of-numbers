@@ -183,3 +183,42 @@ lean/PrimeWheelNativeSignedGate.lean, lean/AuditPrimeWheelNativeSignedGate.lean,
 validate-wheel-vm.sh, numerics/wheel_depth_redundancy_exact.py,
 evidence/wheel_depth_redundancy_exact.json e
 reports/RELATORIO_CAMERA2_PROFUNDIDADE_RETORNO_ASSINADO_20261120.md.
+
+## 11. Mangoldt, pernas/centro e retorno não anulado (20/11/2026)
+
+A profundidade posicional da câmera prima é o ledger do log n; a
+convolução multiplicativa de Möbius extrai a função Λ nas potências
+primas. Novos teoremas compilados em Lean ligam os dois diretamente
+no objeto primeDepthLogLedger do CSA, antes da síntese analítica.
+
+- PrimeDepthMangoldtBracket.lean: log n = soma Λ(d) por divisores, e
+  para todo centro c≥2, Δ₁ log c <0 — embora os termos das pernas do
+  stencil venham com sinal +1. Assim, centro/perna não produz sozinho
+  energia positiva na derivada logarítmica. Perfil 1/n tem sinal oposto.
+- PrimePowerLegCenterIncidence.lean: um divisor d≥3 numa perna do C2
+  tem coeficiente +1; quando cai no centro (d≥2), coeficiente −2.
+- NativeReturnPrimitiveVariation.lean: o canal de retorno deflacionado
+  é exatamente a síntese nativa original ponderada por Q(zᵢ)−Q(z₀).
+- NativeReturnNontrivialDerivative.lean: usando a derivada COMPLETADA
+  Q′(0)=−4i h₀ com h₀>0, demonstra
+  (k+1)(Q(zₖ,₁)−Q(zₖ,₀))→4h₀ e prova que o nativeOut da segunda
+  fonte radial não zera para k suficientemente grande.
+
+Consequência nova: o retorno físico não cancela exclusivamente
+as contribuições que a primeira cabeça já capturou; ele também atua
+na SEGUNDA direção radial original. Isso NÃO demonstra um pivô
+negativo e e₁ radial não é sinônimo de nova câmera prima.
+
+- Auditoria Lean AuditPrimeDepthMangoldtReturn.lean imprimiu apenas
+  axiomas-padrão; teste intervalar Arb em numerics/mangoldt_leg_center_arb_canaries.py.
+- Reproduzir: validate-mangoldt-return-vm.sh.
+- Relatório: reports/RELATORIO_C2_MANGOLDT_NORMA_MEIO_RETORNO_PRIMITIVO_20261120.md.
+
+A lei de meio (b^-k massa → b^-k/2 amplitude) já está provada
+independentemente em FoundationalHalfScalingCapstone.lean.
+Não misturar essa compatibilidade de norma com a hipótese ainda
+aberta de PSD do COMPLETED native moment Hankel.
+
+Próxima obrigação: dominância assinada de incidência residual sobre
+retorno, no verdadeiro polinômio crítico de Schur e com todas as
+correções Gamma/TFVD preservadas; não impor retorno=0 na parte nova.

@@ -1,0 +1,32 @@
+{
+  "status": "SCALAR_LOCAL_C2_CP_BRACKET_ARBITRARY_PRECISION_INTERVAL_CANARY_NOT_NATIVE_HANKEL_SIGN",
+  "precision_dps": 110,
+  "inputs": "integer centers 5, radii 1 (C2) and 1,2 (C5), no zero heights",
+  "source": "f=n^{-1/2}, g=log(n)*n^{-1/2}, log(n)",
+  "checks": {
+    "C2_half_power_c5": {
+      "value_interval": "[0.01382109946394713780254454495847140448474390293150139836375652971095169265443054465754414216592712914862916308 +/- 5.87e-111]",
+      "sign_certified_for_decimal_rational_input": "positive"
+    },
+    "C2_log_weighted_half_c5": {
+      "value_interval": "[-0.0148951103124636469135993238121856153733526465442424067845801478073724256794910289641013647061232093246654828 +/- 3.70e-110]",
+      "sign_certified_for_decimal_rational_input": "negative"
+    },
+    "C2_log_c5": {
+      "value_interval": "[-0.0408219945202551295545770651553198701772117476335202297285614208306828162876224155690620203833710701859581339 +/- 2.38e-110]",
+      "sign_certified_for_decimal_rational_input": "negative"
+    },
+    "C5_half_power_c5": {
+      "value_interval": "[0.07470865066288425096254039420209842677184962222593943901233345220230225516371102026554990103938426018818668904 +/- 8.89e-111]",
+      "sign_certified_for_decimal_rational_input": "positive"
+    },
+    "C5_log_weighted_half_c5": {
+      "value_interval": "[-0.0846511368111023558661377222491276452425489617862924314728937711551796863917697426823398288613154641009855681 +/- 6.47e-110]",
+      "sign_certified_for_decimal_rational_input": "negative"
+    },
+    "C5_log_c5": {
+      "value_interval": "[-0.2151753816650328822554977512419897149438391687659450333597727202039666357322597101680555231681266760048590167 +/- 2.37e-110]",
+      "sign_certified_for_decimal_rational_input": "negative"
+    }
+  }
+}
