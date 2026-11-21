@@ -344,3 +344,31 @@ Auditoria: lean/AuditNativeExactTailAllOrder.lean (20 declarações, axiomas ape
 Validação: validate-native-exact-tail-allorder-vm.sh (Lean -DwarningAsError=true). Nenhuma hipótese RH.
 
 **Próxima obrigação geométrica:** encontrar uma LEI DE COMPENSAÇÃO ASSINADA, preferivelmente via entrelaçador Bessel Primos #34 → retorno quiral F=A*N, que prove a massa positiva domina a negativa em TODOS os polinômios de jets da fonte nativa, não apenas certificados de ordem finita. A conservação da cauda já está FECHADA; a dominação não.
+
+## 17. Limite sigma→1/2 e deslocamento da primeira inversão de sinal (21/11/2026)
+
+Reaberto o estudo ORIGINAL momentos/investigations/c2_sigma_crossing_even_jet_hierarchy_20261105:
+d=0.2 gera primeira janela 2x2 negativa no SHIFT s=7; d=1e-5 no SHIFT s=32; extrações de jets usam a cabeça C2+cauda Hurwitz EXATA. Esse deslocamento da PRIMEIRA JANELA é NUMÉRICO, não prova de limite all-order ou de primeira dimensão negativa.
+
+Há uma ponte importante REAL em GoN:
+SigmaNeighborhood.sigma_matrix_continuous_center prova que para toda dimensão N fixa a matriz de jets sigmaMatrix(d,s,N) varia continuamente em d=0, e sigma_matrix_center a identifica com os momentos canônicos completados.
+
+Nesta rodada formalizamos SigmaNativeFullFailureDimensionEscapes, a hipótese precisa de que a primeira dimensão NEGATIVA da matriz Hankel COMPLETA (não o índice da janela 2x2) vai a infinito quando d→0: ∀b,N ∃δ>0 ∀0<|d|<δ, sigmaMatrix(d,s_b,N).PosSemidef.
+
+Sob essa hipótese AINDA ABERTA, três novos teoremas compilados demonstram:
+- todos Hankel originais no centro são PSD;
+- a forma EXATA TFVD de quatro cruzamentos HH+HT+TH+TT é não negativa para todos M,P, b,N,x;
+- a massa theta positiva da fonte completada domina a negativa para todos os jets.
+Não se assume RH, e não se presume que a hipótese de fuga tenha sido demonstrada.
+
+**NO-GO rigoroso:** uma sequência artificial com h0=1,h1=1,h2=2,h3=5,h4=63/5 e cauda h_n=(63/5)*3^(n-4) tem TODOS os menores consecutivos 2x2 não negativos, mas determinante de Hankel 3x3 = -2/5. Portanto, mesmo provar que a primeira JANELA negativa foge para infinito não é suficiente para positividade all-order.
+
+Lean e auditoria (7 declarações, axiomas-padrão somente):
+- lean/TransverseSignThresholdCenterClosure.lean
+- lean/NativeSigmaFirstFailureAllOrderGate.lean
+- lean/TransverseTwoWindowNotEnough.lean
+- lean/AuditNativeSigmaThresholdCenterClosure.lean
+- validate-sigma-first-failure-center-vm.sh
+Relatório: reports/RELATORIO_SIGMA_FUGA_PRIMEIRA_NEGATIVIDADE_ALL_ORDER_20261121.md
+
+**Próxima obrigação:** controlar em toda dimensão a PRIMEIRA falha de PSD da matriz inteira, ou demonstrar diretamente a dominância incidente-retorno física all-order pela geometria C2. A mera fuga dos menores adjacentes D_s é uma indicação útil da curvatura transversal mas não entrega Schur global.
