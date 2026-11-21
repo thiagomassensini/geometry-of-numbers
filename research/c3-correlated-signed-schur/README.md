@@ -325,3 +325,22 @@ ALERTAS DE NÃO CIRCULARIDADE:
 - CSA #126 Green integral positivo exige prefixo aumentado PosDef; é readout, não fonte do sinal.
 - CSA #124 dá também uma rota ALL-ORDER condicional por orçamento aditivo de retorno físico; Primos #34 fornece Bessel material, mas ainda falta entrelaçador exato Bessel -> Jordan/Schur completado.
 - Os momentos theta/cosseno positivos não podem ser confundidos com os momentos da log derivada de F=A*N.
+
+## 16. CAUDA EXATA: conservação dos quatro cruzamentos = Schur = theta-Green (21/11/2026)
+
+Corrigimos explicitamente a distinção: literalTail é CAUDA ORIGINAL COMPLETA e EXATA em todo cutoff, com completion e fronteira; somente a escolha de truncar a cabeça sem ela gera erro de APROXIMAÇÃO. A identidade all-order não usa esse erro.
+
+As igualdades já existentes no GoN e CSA foram COMPOSTAS em Lean com dois resultados novos:
+
+- NativeExactTailSchurThetaGreenConservation.lean: para a direção crítica original de Schur (prefixo antigo invertível), todo par de cutoffs M,P tem HH+HT+TH+TT = c0*R(s,n) = c0*(massPos-massNeg) = c0*integral theta-Green. Alterar HH por cutoff muda os outros três termos na quantidade oposta EXATAMENTE. Nenhum sinal é presumido.
+- NativeExactTailAllJetSignedMassGate.lean: a mesma identidade para TODA ordem N e TODO vetor x, independentemente de prefixo invertível. A forma quadrática do Hankel completado é literalmente a soma dos quatro cruzamentos C2/Genuine/TFVD e igual à massa theta assinada. Formalizada a equivalência:
+  TODOS os Hankel PSD ↔ TODOS os quatro-cruzamentos completos não negativos ↔ massa negativa theta ≤ massa positiva theta em todas as direções.
+  É equivalência, NÃO um certificado incondicional da desigualdade.
+
+O novo NativeExactTailSignNoGo.lean constrói a série FORMAL de teste C(u)=1+u, H=T=C/2 não nulos, decomposição exata, primeiro Bézout par = -1. Mostra que exatidão ALGÉBRICA da cauda não fixa o sinal; NÃO representa o C2 verdadeiro. Além disso, a massa negativa theta no Schur ímpar é rigorosamente >0 em TODA ordem na fonte real.
+
+Relatório detalhado: reports/RELATORIO_TFVD_CAUDA_EXATA_SCHUR_ALL_ORDER_SINAL_20261121.md.
+Auditoria: lean/AuditNativeExactTailAllOrder.lean (20 declarações, axiomas apenas propext, Classical.choice, Quot.sound).
+Validação: validate-native-exact-tail-allorder-vm.sh (Lean -DwarningAsError=true). Nenhuma hipótese RH.
+
+**Próxima obrigação geométrica:** encontrar uma LEI DE COMPENSAÇÃO ASSINADA, preferivelmente via entrelaçador Bessel Primos #34 → retorno quiral F=A*N, que prove a massa positiva domina a negativa em TODOS os polinômios de jets da fonte nativa, não apenas certificados de ordem finita. A conservação da cauda já está FECHADA; a dominação não.
